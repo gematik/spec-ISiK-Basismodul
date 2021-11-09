@@ -22,21 +22,17 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
 * address contains
     Strassenanschrift 0..* and
     Postfach 0..*
-* address[Strassenanschrift] only AddressDeBasis
-  * ^patternAddress.type = #physical
   * type 1.. MS
-  * type = #physical (exactly)
   * line 1..1 MS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
+* address[Strassenanschrift] only AddressDeBasis
+  * ^patternAddress.type = #physical
+  * type = #physical (exactly)
 * address[Postfach] only AddressDeBasis
   * ^patternAddress.type = #postal
-  * type 1.. MS
   * type = #postal (exactly)
-  * line 1..1 MS
-  * city 1.. MS
-  * postalCode 1.. MS
 
 Instance: relatedPerson
 InstanceOf: ISiKAngehoeriger
