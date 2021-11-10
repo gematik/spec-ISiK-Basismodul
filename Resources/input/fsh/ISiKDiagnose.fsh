@@ -25,13 +25,9 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
       Orphanet 0..1 MS
   * coding[ICD-10-GM] only CodingICD10GM
     * ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
-    * extension contains
-        Mehrfachcodierungs-Kennzeichen 0..1 MS and
-        Seitenlokalisation 0..1 MS and
-        Diagnosesicherheit 0..1 MS
+    * extension[Mehrfachcodierungs-Kennzeichen] MS
+    * extension[Seitenlokalisation] MS
+    * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] from $alpha-id (required)
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
