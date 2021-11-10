@@ -408,7 +408,6 @@
               "path": "url"
             }
           ],
-          "ordered": false,
           "rules": "open"
         }
       },
@@ -444,7 +443,6 @@
               "path": "url"
             }
           ],
-          "ordered": false,
           "rules": "open"
         }
       },
@@ -486,24 +484,6 @@
         "mustSupport": true
       },
       {
-        "id": "Patient.address.type",
-        "path": "Patient.address.type",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.address.city",
-        "path": "Patient.address.city",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.address.postalCode",
-        "path": "Patient.address.postalCode",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
         "id": "Patient.address:Strassenanschrift",
         "path": "Patient.address",
         "sliceName": "Strassenanschrift",
@@ -526,14 +506,13 @@
         "id": "Patient.address:Strassenanschrift.extension:Stadtteil",
         "path": "Patient.address.extension",
         "sliceName": "Stadtteil",
-        "min": 0,
-        "max": "1",
         "mustSupport": false
       },
       {
-        "id": "Patient.address:Strassenanschrift.extension:Stadtteil.url",
-        "path": "Patient.address.extension.url",
-        "fixedUri": "Stadtteil"
+        "id": "Patient.address:Strassenanschrift.type",
+        "path": "Patient.address.type",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Patient.address:Strassenanschrift.line",
@@ -542,57 +521,22 @@
         "mustSupport": true
       },
       {
-        "id": "Patient.address:Strassenanschrift.line.extension",
-        "path": "Patient.address.line.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "Patient.address:Strassenanschrift.line.extension:Strasse",
         "path": "Patient.address.line.extension",
         "sliceName": "Strasse",
-        "min": 0,
-        "max": "1",
         "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Strasse.url",
-        "path": "Patient.address.line.extension.url",
-        "fixedUri": "Strasse"
       },
       {
         "id": "Patient.address:Strassenanschrift.line.extension:Hausnummer",
         "path": "Patient.address.line.extension",
         "sliceName": "Hausnummer",
-        "min": 0,
-        "max": "1",
         "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Hausnummer.url",
-        "path": "Patient.address.line.extension.url",
-        "fixedUri": "Hausnummer"
       },
       {
         "id": "Patient.address:Strassenanschrift.line.extension:Adresszusatz",
         "path": "Patient.address.line.extension",
         "sliceName": "Adresszusatz",
-        "min": 0,
-        "max": "1",
         "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Adresszusatz.url",
-        "path": "Patient.address.line.extension.url",
-        "fixedUri": "Adresszusatz"
       },
       {
         "id": "Patient.address:Strassenanschrift.line.extension:Postfach",
@@ -605,23 +549,16 @@
               "path": "url"
             }
           ],
-          "ordered": false,
+          "description": "Extensions are always sliced by (at least) url",
           "rules": "open"
         },
-        "min": 0,
         "max": "0",
         "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Postfach.url",
-        "path": "Patient.address.line.extension.url",
-        "fixedUri": "Postfach"
       },
       {
         "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Strasse",
         "path": "Patient.address.line.extension",
         "sliceName": "Strasse",
-        "min": 0,
         "max": "0",
         "mustSupport": true
       },
@@ -629,7 +566,6 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Hausnummer",
         "path": "Patient.address.line.extension",
         "sliceName": "Hausnummer",
-        "min": 0,
         "max": "0",
         "mustSupport": true
       },
@@ -637,8 +573,19 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Adresszusatz",
         "path": "Patient.address.line.extension",
         "sliceName": "Adresszusatz",
-        "min": 0,
         "max": "0",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Strassenanschrift.city",
+        "path": "Patient.address.city",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Strassenanschrift.postalCode",
+        "path": "Patient.address.postalCode",
+        "min": 1,
         "mustSupport": true
       },
       {
