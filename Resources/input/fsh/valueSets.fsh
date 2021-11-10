@@ -1,5 +1,5 @@
-ValueSet: diagnoses-sct
-Id: diagnoses-sct
+ValueSet: DiagnosesSCT
+Id: DiagnosesSCT
 Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes"
 * ^date = "2020-05-01"
 * ^experimental = true
@@ -11,8 +11,8 @@ Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with ex
     concept is-a #272379006 and
     concept is-a #243796009
 
-ValueSet: ProzedurenCodes-SCT
-Id: ProzedurenCodes-SCT
+ValueSet: ProzedurenCodesSCT
+Id: ProzedurenCodesSCT
 Description: "Enthaelt alle SNOMED Procedure Codes"
 * ^date = "2020-09-18"
 * ^experimental = false
@@ -21,8 +21,8 @@ Description: "Enthaelt alle SNOMED Procedure Codes"
 * ^version = "1.0"
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
-ValueSet: ProzedurenKategorie-SCT
-Id: ProzedurenKategorie-SCT
+ValueSet: ProzedurenKategorieSCT
+Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * ^version = "1.0"
 * ^date = "2020-09-18"
