@@ -47,31 +47,20 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * ^patternHumanName.use = #official
   * use 1.. MS
   * family 1.. MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
-    * extension contains
-        namenszusatz 0..1 MS and
-        nachname 0..1 MS and
-        vorsatzwort 0..1 MS
+    * extension[namenszusatz] 0..1 MS
+    * extension[nachname] 0..1 MS
+    * extension[vorsatzwort] 0..1 MS
   * given 1.. MS
   * prefix MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
-    * extension contains prefix-qualifier 0..1 MS
+    * extension[prefix-qualifier] 0..1 MS
     * extension[prefix-qualifier].value[x] = #AC (exactly)
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
   * use 1.. MS
   * family 1.. MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
-    * extension contains
-        namenszusatz 0..1 MS and
-        nachname 0..1 MS and
-        vorsatzwort 0..1 MS
+    * extension[namenszusatz] 0..1 MS
+    * extension[nachname] 0..1 MS
+    * extension[vorsatzwort] 0..1 MS
   * given ..0
   * prefix ..0
 * telecom.system 1..
