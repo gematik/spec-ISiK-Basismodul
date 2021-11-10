@@ -6,17 +6,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * obeys ISiK-enc-1
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * id 1.. MS
-* extension ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "url"
-  * ^slicing.rules = #open
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
-* extension[Aufnahmegrund].extension ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "url"
-  * ^slicing.rules = #open
-* extension[Aufnahmegrund].extension contains
-    ErsteUndZweiteStelle 0..1 MS and
-    DritteStelle 0..1 MS and
-    VierteStelle 0..1 MS
+* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
+* extension[Aufnahmegrund].extension[DritteStelle] MS
+* extension[Aufnahmegrund].extension[VierteStelle] MS
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
