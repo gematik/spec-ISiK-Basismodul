@@ -33,10 +33,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
       SNOMED-CT 0..1
   * coding[OPS] only CodingOPS
   * coding[OPS] from OpsVS (required)
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
-    * extension contains Seitenlokalisation 0..1 MS
+    * extension[Seitenlokalisation] MS
     * system MS
     * version MS
     * code MS
