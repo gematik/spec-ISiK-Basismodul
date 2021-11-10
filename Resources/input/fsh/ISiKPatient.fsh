@@ -66,14 +66,8 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
 * telecom.system 1..
 * telecom.value 1..
 * gender 1.. MS
-  * extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
 * birthDate 1.. MS
-  * extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
   * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
   * extension[Data-Absent-Reason].value[x] MS
@@ -87,16 +81,10 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
     Postfach 0..* MS
 * address[Strassenanschrift] only AddressDeBasis
   * ^patternAddress.type = #both
-  * extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * extension contains Stadtteil 0..1
   * extension[Stadtteil] ^mustSupport = false
   * type 1.. MS
   * line 1.. MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
     * extension contains
         Strasse 0..1 MS and
         Hausnummer 0..1 MS and
@@ -109,16 +97,10 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
 * address[Postfach] only AddressDeBasis
   * ^patternAddress.type = #postal
-  * extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * extension contains Stadtteil 0..1
   * extension[Stadtteil] ^mustSupport = false
   * type 1.. MS
   * line 1.. MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
     * extension contains
         Strasse 0..0 and
         Hausnummer 0..0 and
