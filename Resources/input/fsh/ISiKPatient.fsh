@@ -79,33 +79,27 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
-* address[Strassenanschrift] only AddressDeBasis
-  * ^patternAddress.type = #both
-  * extension contains Stadtteil 0..1
-  * extension[Stadtteil] ^mustSupport = false
+* address[Postfach] only AddressDeBasis
+  * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
-    * extension contains
-        Strasse 0..1 MS and
-        Hausnummer 0..1 MS and
-        Adresszusatz 0..1 MS and
-        Postfach 0..0
+    * extension[Strasse] 0..0 
+    * extension[Hausnummer] 0..0 
+    * extension[Adresszusatz] 0..0 
+    * extension[Postfach] 0..1 MS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
     * obeys pat-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
-* address[Postfach] only AddressDeBasis
-  * ^patternAddress.type = #postal
-  * extension contains Stadtteil 0..1
-  * extension[Stadtteil] ^mustSupport = false
+* address[Strassenanschrift] only AddressDeBasis
+  * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS
-    * extension contains
-        Strasse 0..0 and
-        Hausnummer 0..0 and
-        Adresszusatz 0..0 and
-        Postfach 0..1 MS
+    * extension[Strasse] 0..1 MS
+    * extension[Hausnummer] 0..1 MS
+    * extension[Adresszusatz] 0..1 MS
+    * extension[Postfach] 0..0
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS

@@ -408,6 +408,7 @@
               "path": "url"
             }
           ],
+          "ordered": false,
           "rules": "open"
         }
       },
@@ -443,6 +444,7 @@
               "path": "url"
             }
           ],
+          "ordered": false,
           "rules": "open"
         }
       },
@@ -503,12 +505,6 @@
         "mustSupport": true
       },
       {
-        "id": "Patient.address:Strassenanschrift.extension:Stadtteil",
-        "path": "Patient.address.extension",
-        "sliceName": "Stadtteil",
-        "mustSupport": false
-      },
-      {
         "id": "Patient.address:Strassenanschrift.type",
         "path": "Patient.address.type",
         "min": 1,
@@ -542,39 +538,7 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Postfach",
         "path": "Patient.address.line.extension",
         "sliceName": "Postfach",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "description": "Extensions are always sliced by (at least) url",
-          "rules": "open"
-        },
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Strasse",
-        "path": "Patient.address.line.extension",
-        "sliceName": "Strasse",
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Hausnummer",
-        "path": "Patient.address.line.extension",
-        "sliceName": "Hausnummer",
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.address:Strassenanschrift.line.extension:Postfach:Adresszusatz",
-        "path": "Patient.address.line.extension",
-        "sliceName": "Adresszusatz",
-        "max": "0",
-        "mustSupport": true
+        "max": "0"
       },
       {
         "id": "Patient.address:Strassenanschrift.city",
@@ -609,6 +573,80 @@
         "sliceName": "Postfach",
         "min": 0,
         "max": "*",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ],
+        "patternAddress": {
+          "type": "postal"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.type",
+        "path": "Patient.address.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.line",
+        "path": "Patient.address.line",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.line.extension:Strasse",
+        "path": "Patient.address.line.extension",
+        "sliceName": "Strasse",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address:Postfach.line.extension:Hausnummer",
+        "path": "Patient.address.line.extension",
+        "sliceName": "Hausnummer",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address:Postfach.line.extension:Adresszusatz",
+        "path": "Patient.address.line.extension",
+        "sliceName": "Adresszusatz",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address:Postfach.line.extension:Postfach",
+        "path": "Patient.address.line.extension",
+        "sliceName": "Postfach",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.city",
+        "path": "Patient.address.city",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.postalCode",
+        "path": "Patient.address.postalCode",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address:Postfach.country",
+        "path": "Patient.address.country",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "pat-cnt-2or3-char",
+            "severity": "warning",
+            "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
+            "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+          }
+        ],
         "mustSupport": true
       }
     ]
