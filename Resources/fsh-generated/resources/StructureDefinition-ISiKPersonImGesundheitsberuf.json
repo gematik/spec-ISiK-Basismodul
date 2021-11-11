@@ -260,7 +260,9 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "comment": "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification.",
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift",
@@ -278,24 +280,20 @@
         ],
         "patternAddress": {
           "type": "both"
-        }
-      },
-      {
-        "id": "Practitioner.address:Strassenanschrift.extension:Stadtteil",
-        "path": "Practitioner.address.extension",
-        "sliceName": "Stadtteil",
+        },
         "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift.type",
         "path": "Practitioner.address.type",
         "min": 1,
-        "fixedCode": "both"
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift.line",
         "path": "Practitioner.address.line",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift.line.extension:Strasse",
@@ -319,61 +317,98 @@
         "id": "Practitioner.address:Strassenanschrift.line.extension:Postfach",
         "path": "Practitioner.address.line.extension",
         "sliceName": "Postfach",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "description": "Extensions are always sliced by (at least) url",
-          "rules": "open"
-        },
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.address:Strassenanschrift.line.extension:Postfach:Strasse",
-        "path": "Practitioner.address.line.extension",
-        "sliceName": "Strasse",
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.address:Strassenanschrift.line.extension:Postfach:Hausnummer",
-        "path": "Practitioner.address.line.extension",
-        "sliceName": "Hausnummer",
-        "max": "0",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.address:Strassenanschrift.line.extension:Postfach:Adresszusatz",
-        "path": "Practitioner.address.line.extension",
-        "sliceName": "Adresszusatz",
-        "max": "0",
-        "mustSupport": true
+        "max": "0"
       },
       {
         "id": "Practitioner.address:Strassenanschrift.city",
         "path": "Practitioner.address.city",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift.postalCode",
         "path": "Practitioner.address.postalCode",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Strassenanschrift.country",
         "path": "Practitioner.address.country",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Practitioner.address:Postfach",
         "path": "Practitioner.address",
         "sliceName": "Postfach",
         "min": 0,
-        "max": "1"
+        "max": "*",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ],
+        "patternAddress": {
+          "type": "postal"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.type",
+        "path": "Practitioner.address.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.line",
+        "path": "Practitioner.address.line",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.line.extension:Strasse",
+        "path": "Practitioner.address.line.extension",
+        "sliceName": "Strasse",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.address:Postfach.line.extension:Hausnummer",
+        "path": "Practitioner.address.line.extension",
+        "sliceName": "Hausnummer",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.address:Postfach.line.extension:Adresszusatz",
+        "path": "Practitioner.address.line.extension",
+        "sliceName": "Adresszusatz",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.address:Postfach.line.extension:Postfach",
+        "path": "Practitioner.address.line.extension",
+        "sliceName": "Postfach",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.city",
+        "path": "Practitioner.address.city",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.postalCode",
+        "path": "Practitioner.address.postalCode",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Postfach.country",
+        "path": "Practitioner.address.country",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Practitioner.gender",
