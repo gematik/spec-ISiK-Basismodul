@@ -11,9 +11,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * display ..0
 * name 1..1
 * name only HumannameDeBasis
-* gender.extension ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "url"
-  * ^slicing.rules = #open
 * gender.extension contains GenderOtherDE named Geschlecht-Administrativ 0..*
 * gender.extension[Geschlecht-Administrativ] ^mustSupport = false
 * address ^slicing.discriminator.type = #pattern

@@ -69,9 +69,6 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * admitSource 1.. MS
   * admitSource from AufnahmeanlassVS (preferred)
   * dischargeDisposition MS
-    * extension ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "url"
-      * ^slicing.rules = #open
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
 * location MS
   * location MS

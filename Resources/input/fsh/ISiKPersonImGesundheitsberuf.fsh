@@ -73,9 +73,6 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
   * postalCode 1.. MS
   * country 1.. MS
 * gender MS
-  * extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
   * extension[Geschlecht-Administrativ].value[x] MS
 * birthDate.extension ^slicing.discriminator.type = #value

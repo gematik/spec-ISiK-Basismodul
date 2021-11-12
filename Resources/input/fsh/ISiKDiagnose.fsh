@@ -48,13 +48,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * ^slicing.rules = #closed
 * onsetPeriod only Period
   * ^sliceName = "onsetPeriod"
-  * start.extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * start.extension contains ExtensionLebensphase named Lebensphase-Start 0..1
-  * end.extension ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "url"
-    * ^slicing.rules = #open
   * end.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
 * onsetDateTime only dateTime
   * ^sliceName = "onsetDateTime"
