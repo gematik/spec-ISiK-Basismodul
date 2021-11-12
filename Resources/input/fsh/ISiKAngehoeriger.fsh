@@ -2,8 +2,7 @@ Profile: ISiKAngehoeriger
 Parent: RelatedPerson
 Id: ISiKAngehoeriger
 Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien."
-* ^status = #active
-* ^experimental = true
+* insert Meta
 * obeys relatedp-de-1
 * patient only Reference(ISiKPatient)
   * reference 1..

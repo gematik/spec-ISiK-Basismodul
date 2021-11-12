@@ -2,11 +2,7 @@ Profile: ISiKVersicherungsverhaeltnisSelbstzahler
 Parent: Coverage
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
-* ^version = "0.1"
-* ^status = #active
-* ^experimental = true
-* ^date = "2020-10-15"
-* ^publisher = "gematik GmbH"
+* insert Meta
 * status ^mustSupport = false
 * type 1..
   * coding 1..

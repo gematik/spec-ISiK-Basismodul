@@ -2,10 +2,7 @@ Profile: ISiKVersicherungsverhaeltnisGesetzlich
 Parent: CoverageDeBasis
 Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
-* ^version = "0.1"
-* ^experimental = true
-* ^date = "2020-09-09"
-* ^publisher = "gematik GmbH"
+* insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
 * id 1..
 * identifier MS
