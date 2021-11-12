@@ -67,7 +67,7 @@ Usage: #example
 Invariant: proc-ISiK-1
 Description: "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden"
 Severity: #error
-Expression: "code.coding.where(system = 'http://fhir.de/CodeSystem/dimdi/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()"
+Expression: "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()"
 
 Invariant: proc-ISiK-2
 Description: "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden"
@@ -77,7 +77,7 @@ Expression: "code.coding.exists() implies category.coding.exists()"
 Invariant: sct-ops-1
 Description: "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext."
 Severity: #error
-Expression: "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/dimdi/ops').exists() or text.exists()"
+Expression: "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() or text.exists()"
 
 Invariant: proc-ISiK-3
 Description: "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
