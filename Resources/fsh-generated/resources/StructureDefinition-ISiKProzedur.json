@@ -11,8 +11,8 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur",
-  "version": "1.0",
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur",
+  "version": "2.0",
   "name": "ISiKProzedur",
   "status": "active",
   "description": "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien.",
@@ -62,7 +62,7 @@
             "severity": "error",
             "human": "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden",
             "expression": "code.coding.exists() implies category.coding.exists()",
-            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
           }
         ]
       },
@@ -133,7 +133,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "preferred",
-          "valueSet": "https://gematik.de/fhir/ISiK/ValueSet/ProzedurenKategorie-SCT"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorie-SCT"
         }
       },
       {
@@ -165,7 +165,7 @@
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
           }
         ],
         "mustSupport": true
@@ -233,7 +233,7 @@
         "max": "1",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/ISiK/ValueSet/ProzedurenCodes-SCT"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodes-SCT"
         }
       },
       {

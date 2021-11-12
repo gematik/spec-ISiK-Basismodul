@@ -1,8 +1,8 @@
 Instance: ISiK-capabilityStatement-basis-server
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "https://gematik.de/fhir/ISiK/CapabilityStatement/basis-server"
-* version = "1.0"
+* url = "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/basis-server"
+* version = "2.0"
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
 * status = #active
@@ -17,7 +17,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul|1.0.0"
+* implementationGuide = "https://gematik.de/fhir/ISiK/v2/ImplementationGuide/ISiK-basismodul|2.0.0"
 * rest.mode = #server
 * rest.resource[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL

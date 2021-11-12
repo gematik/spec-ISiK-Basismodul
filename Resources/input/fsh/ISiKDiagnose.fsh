@@ -2,7 +2,7 @@ Profile: ISiKDiagnose
 Parent: Condition
 Id: ISiKDiagnose
 Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien."
-* ^version = "1.0"
+* ^version = "2.0"
 * ^status = #active
 * obeys isik-con1
 * id MS

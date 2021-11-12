@@ -2,10 +2,10 @@ ValueSet: DiagnosesSCT
 Id: DiagnosesSCT
 Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes"
 * ^date = "2020-05-01"
-* ^experimental = true
+* ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^status = #active
-* ^version = "1.0"
+* ^version = "2.0"
 * include codes from system SNOMED_CT
     where concept is-a #404684003 and
     concept is-a #272379006 and
@@ -16,18 +16,18 @@ Id: ProzedurenCodesSCT
 Description: "Enthaelt alle SNOMED Procedure Codes"
 * ^date = "2020-09-18"
 * ^experimental = false
-* ^publisher = "https://gematik.de"
+* ^publisher = "gematik GmbH"
 * ^status = #active
-* ^version = "1.0"
+* ^version = "2.0"
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
 ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
-* ^version = "1.0"
+* ^version = "2.0"
 * ^date = "2020-09-18"
 * ^experimental = false
-* ^publisher = "https://gematik.de"
+* ^publisher = "gematik GmbH"
 * ^status = #active
 * SNOMED_CT#103693007 "Diagnostic procedure"
 * SNOMED_CT#363679005 "Imaging"
