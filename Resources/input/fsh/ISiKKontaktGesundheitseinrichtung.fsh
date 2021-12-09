@@ -108,7 +108,8 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
 * hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
-* location.location.display = "Krankenhaus XYZ"
+* location.physicalType = $sct229772003 "Bed (physical object)"
+* location.location.display = "Bett 123"
 * serviceProvider.display = "Fachabteilung XYZ"
 
 Invariant: ISiK-enc-1
