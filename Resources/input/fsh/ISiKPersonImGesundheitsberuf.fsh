@@ -12,12 +12,16 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
   * ^slicing.rules = #open
 * identifier contains
     Arztnummer 0..* MS and
-    EFN 0..1 MS
+    EFN 0..1 MS and
+    TelematikId 0..1 MS
 * identifier[Arztnummer] only IdentifierLanr
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
   * ^patternIdentifier.type = $v2-0203#DN
+  * type 1..
+* identifier[TelematikId] only IdentifierTelematikId
+  * ^patternIdentifier.type = $v2-0203#PRN
   * type 1..
 * name MS
   * ^slicing.discriminator.type = #pattern
