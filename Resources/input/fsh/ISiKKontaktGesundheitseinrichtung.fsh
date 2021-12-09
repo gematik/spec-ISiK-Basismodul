@@ -61,10 +61,12 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * end MS
 * diagnosis MS
   * condition MS
-    * reference 1..
+    * reference 1.. MS
   * use 1.. MS
     * ^binding.strength = #extensible
   * rank MS
+* account 1.. MS
+  * reference 1.. MS
 * hospitalization 1.. MS
   * admitSource 1.. MS
   * admitSource from AufnahmeanlassVS (preferred)
@@ -103,6 +105,7 @@ Usage: #example
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
 * diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
+* account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
