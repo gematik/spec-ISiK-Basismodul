@@ -75,7 +75,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * identifier MS
     * display 1.. MS
   * physicalType 1..1 MS
-  * physicalType 1..1 from ISiKLocationPhysicalType (extensible)
+  * physicalType from ISiKLocationPhysicalType (extensible)
 * serviceProvider MS
   * display 1.. MS
 * partOf MS
