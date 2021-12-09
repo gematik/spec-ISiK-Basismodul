@@ -114,7 +114,11 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.physicalType = $LocationPhysicalType#bd "Bed"
+* location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
+* location.location.identifier.value = "123"
 * location.location.display = "Bett 123"
+* serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
+* serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
 
 Invariant: ISiK-enc-1
