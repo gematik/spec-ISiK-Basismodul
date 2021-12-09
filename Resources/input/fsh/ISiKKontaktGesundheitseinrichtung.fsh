@@ -39,7 +39,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type contains
-    Kontaktebene 0..1 MS and
+    Kontaktebene 1..1 MS and
     KontaktArt 0..1 MS
 * type[Kontaktebene] from KontaktebeneDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/Kontaktebene"
