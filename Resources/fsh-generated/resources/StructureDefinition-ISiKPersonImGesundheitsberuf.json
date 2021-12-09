@@ -145,6 +145,37 @@
         "min": 1
       },
       {
+        "id": "Practitioner.identifier:TelematikId",
+        "path": "Practitioner.identifier",
+        "sliceName": "TelematikId",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ],
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "PRN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:TelematikId.type",
+        "path": "Practitioner.identifier.type",
+        "min": 1
+      },
+      {
         "id": "Practitioner.name",
         "path": "Practitioner.name",
         "slicing": {
@@ -419,20 +450,6 @@
         "mustSupport": true
       },
       {
-        "id": "Practitioner.gender.extension",
-        "path": "Practitioner.gender.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ",
         "path": "Practitioner.gender.extension",
         "sliceName": "Geschlecht-Administrativ",
@@ -457,19 +474,6 @@
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ.value[x]",
         "path": "Practitioner.gender.extension.value[x]",
         "mustSupport": true
-      },
-      {
-        "id": "Practitioner.birthDate.extension",
-        "path": "Practitioner.birthDate.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        }
       },
       {
         "id": "Practitioner.birthDate.extension:Data-Absent-Reason",
