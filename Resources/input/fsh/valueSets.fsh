@@ -27,6 +27,6 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 ValueSet: ISiKLocationPhysicalType
 Id: ISiKLocationPhysicalType
 * insert Meta
-* SNOMED_CT#229772003 "Bed (physical object)"
-* SNOMED_CT#223398003 "Room of building (environment)"
-* SNOMED_CT#225746001 "Ward (environment)"
+* LocationType#bd "Bed"
+* LocationType#ro "Room"
+* LocationType#wa "Ward"
