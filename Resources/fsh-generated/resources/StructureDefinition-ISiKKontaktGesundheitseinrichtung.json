@@ -222,13 +222,14 @@
           ],
           "rules": "open"
         },
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Encounter.type:Kontaktebene",
         "path": "Encounter.type",
         "sliceName": "Kontaktebene",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -417,10 +418,25 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.location.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.location.location.display",
         "path": "Encounter.location.location.display",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.physicalType",
+        "path": "Encounter.location.physicalType",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKLocationPhysicalType"
+        }
       },
       {
         "id": "Encounter.serviceProvider",
