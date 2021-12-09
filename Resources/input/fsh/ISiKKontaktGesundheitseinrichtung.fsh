@@ -72,7 +72,9 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
 * location MS
   * location MS
+    * identifier MS
     * display 1.. MS
+  * physicalType 1..1 MS from ISiKLocationPhysicalType (extensible)
 * serviceProvider MS
   * display 1.. MS
 * partOf MS
