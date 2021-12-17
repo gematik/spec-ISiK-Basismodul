@@ -4,24 +4,18 @@ Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
 * status ^mustSupport = false
-* type 1..
-  * coding 1..
-    * system 1..
-    * system = "http://fhir.de/CodeSystem/versicherungsart-de-basis" (exactly)
-    * code 1..
-    * code = #SEL (exactly)
-* policyHolder ..0
+* type MS
+  * coding MS
+    * system MS
+    * code MS
 * subscriber only Reference(ISiKPatient or ISiKAngehoeriger)
 * subscriber MS
   * display 1.. MS
-* subscriberId ..0
 * beneficiary only Reference(ISiKPatient)
 * beneficiary MS
   * reference 1.. MS
 * payor only Reference(ISiKPatient or ISiKAngehoeriger)
 * payor MS
-* order ..0
-* network ..0
 
 Instance: coveragePrivat
 InstanceOf: ISiKVersicherungsverhaeltnisSelbstzahler
