@@ -3,8 +3,13 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
-* obeys ISiK-enc-1
+* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* . ^constraint[6].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* . ^constraint[7].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* . ^constraint[8].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* . ^constraint[9].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* . ^constraint[10].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * id 1.. MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
@@ -58,8 +63,8 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * ^patternCoding.system = "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
 * subject 1.. MS
   * reference 1.. MS
-* period 1.. MS
-  * start 1.. MS
+* period 0.. MS
+  * start 0.. MS
   * end MS
 * diagnosis MS
   * condition MS
@@ -125,5 +130,30 @@ Usage: #example
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben"
-Severity: #warning
-Expression: "status = 'finished' implies period.end.exists()"
+Severity: #error
+Expression: "status = 'finished' implies period.start.exists() and period.end.exists()"
+
+Invariant: ISiK-enc-2
+Description: "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()"
+
+Invariant: ISiK-enc-3
+Description: "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'in-progress' implies period.start.exists()"
+
+Invariant: ISiK-enc-4
+Description: "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'onleave' implies period.start.exists()"
+
+Invariant: ISiK-enc-5
+Description: "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'cancelled' implies period.end.exists()"
+
+Invariant: ISiK-enc-6
+Description: "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'unknown' implies period.start.exists()"
