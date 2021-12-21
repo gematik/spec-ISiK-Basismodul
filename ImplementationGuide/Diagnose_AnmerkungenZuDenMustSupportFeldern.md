@@ -3,7 +3,7 @@
 ### `Condition.clinicalStatus`
 
 **Bedeutung:**  
-Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist.
+Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist. Alle in einem System möglichen Clinical-Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "active" und "inactive". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 **Hinweise:**
 
