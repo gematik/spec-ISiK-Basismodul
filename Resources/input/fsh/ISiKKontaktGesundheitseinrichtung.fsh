@@ -11,6 +11,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * extension[Aufnahmegrund].extension[DritteStelle] MS
 * extension[Aufnahmegrund].extension[VierteStelle] MS
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
+* identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
