@@ -56,14 +56,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.recordedDate" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
 
-1. Der Suchparameter "onset-date" KANN unterstützt werden:
-
-    Beispiele
-
-    ```GET [base]/Condition?onset-date=2020-08```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.onsetDate" & "Condition.onsetPeriod" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
-
 1. Der Suchparameter "related" MUSS unterstützt werden:
 
    Beispiele
