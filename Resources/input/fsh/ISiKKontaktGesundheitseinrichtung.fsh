@@ -10,6 +10,11 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
 * extension[Aufnahmegrund].extension[DritteStelle] MS
 * extension[Aufnahmegrund].extension[VierteStelle] MS
+* extension[+]
+    * url = Canonical(http://hl7.org/fhir/5.0/StructureDefinition/extension-plannedStartDate)
+    * mustSupport = true
+    * min = 0
+    * max = "1"
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
