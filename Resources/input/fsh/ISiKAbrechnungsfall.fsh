@@ -11,6 +11,9 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * identifier contains Aufnahmenummer 0..1 MS
 * identifier[Aufnahmenummer] only IdentifierAufnahmenummer
   * ^patternIdentifier.type = $v2-0203#VN
+  * type MS
+  * system MS
+  * value MS
 * status MS
 * type 1.. MS
 * type from AbrechnungsartVS (preferred)
