@@ -23,8 +23,8 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * ^slicing.rules = #open
 * identifier contains Aufnahmenummer 0..1 MS
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
-  * type MS
-    * coding MS
+  * type 1.. MS
+    * coding 1.. MS
       * ^slicing.discriminator.type = #pattern
       * ^slicing.discriminator.path = "$this"
       * ^slicing.rules = #open
