@@ -24,6 +24,12 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * status MS
 * type 1.. MS
 * type from AbrechnungsartVS (preferred)
-* subject 1.. MS // Slice subject: Min 1. Referent auf Patient
-  * reference 1.. MS
+* subject 1.. MS
+  * ^slicing.discriminator.type = #type
+  * ^slicing.discriminator.path = "resolve()"
+  * ^slicing.rules = #open
+  * subject contains Patient 1..1 MS
+  * subject[Patient]
+    * ^type.code = "Reference"
+    * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/Patient"
 // extension:billingDiagnosis und extension:billingProcedure einfügen. Abstimmung mit PA notwendig. Siehe https://chat.fhir.org/#narrow/stream/224725-german.2Fcommitters/topic/Gestaltung.20Profil.20Account.20.23255
