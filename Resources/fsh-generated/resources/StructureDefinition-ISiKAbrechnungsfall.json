@@ -151,13 +151,24 @@
       {
         "id": "Account.subject",
         "path": "Account.subject",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "resolve()"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Account.subject.reference",
-        "path": "Account.subject.reference",
+        "id": "Account.subject:Patient",
+        "path": "Account.subject",
+        "sliceName": "Patient",
         "min": 1,
+        "max": "1",
         "mustSupport": true
       }
     ]
