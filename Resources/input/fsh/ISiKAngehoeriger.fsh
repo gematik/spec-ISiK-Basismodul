@@ -16,6 +16,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
 * address ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+* address MS
 * address contains
     Strassenanschrift 0..* and
     Postfach 0..*
