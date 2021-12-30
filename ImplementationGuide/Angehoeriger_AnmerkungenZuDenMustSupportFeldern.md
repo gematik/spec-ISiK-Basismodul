@@ -1,3 +1,13 @@
-## Anmerkungen zu den Must-Support-Feldern
+### Anmerkungen zu den Must-Support-Feldern
 
-Im Profil ISiKAngehoeriger sind keine Must-Support-Felder definiert.
+### `RelatedPerson.name`
+
+**Bedeutung:** Name der angehörigen Person
+
+**Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/Ressourcen-Patient-Name)
+
+### `RelatedPerson.patient`
+
+**Bedeutung:** Referenz zum/zur verwandten PatientIn
+
+
