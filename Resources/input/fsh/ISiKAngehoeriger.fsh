@@ -4,11 +4,12 @@ Id: ISiKAngehoeriger
 Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien."
 * insert Meta
 * obeys relatedp-de-1
+* patient 1..1 MS
 * patient only Reference(ISiKPatient)
   * reference 1..
   * identifier ..0
   * display ..0
-* name 1..1
+* name 1..1 MS
 * name only HumannameDeBasis
 * gender.extension contains GenderOtherDE named Geschlecht-Administrativ 0..*
 * gender.extension[Geschlecht-Administrativ] ^mustSupport = false
