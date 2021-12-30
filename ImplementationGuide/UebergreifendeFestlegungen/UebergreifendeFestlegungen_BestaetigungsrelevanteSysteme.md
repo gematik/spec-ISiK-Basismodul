@@ -5,14 +5,16 @@ Softwareprodukte eines informationstechnischen Systems im Krankenhaus, die eine 
 integrieren müssen. 
 
 ### Definition
-In die Definition einbezogen sind ausschließlich Softwareprodukte, die als zentrales
-Informationssystem für ein Krankenhaus hergestellt und üblicherweise als
-Krankenhausinformationssystem (KIS) oder Klinisches Arbeitsplatzsystem (KAS)
-bezeichnet werden.
-In diesen werden regelmäßig Patientendaten, Diagnosen und Prozeduren zum Zwecke der Abrechnung oder im Sinne einer elektronischen Patientenakte zusammengefasst.
-Das definierte Softwareprodukt umfasst die an der
-Bereitstellung der offenen und standardisierten Schnittstelle gemäß § 371 SGB V
-beteiligten Systembestandteile und die Datenhaltung in dem Softwareprodukt (Persistenzebene).
+Bestätigungsrelevant im Kontext des Basismoduls der ISiK Stufe 2 sind alle Softwareprodukte, die mindestens eine der in Liste 1 angegebenen klinischen Daten verarbeiten und dauerhaft speichern. Die Verarbeitung schließt in diesem Kontext die Organisation, die Erhebung, die Erfassung, die Anpassung, die Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, die Verbreitung oder eine andere Form der Bereitstellung ein. Ausgenommen sind Softwareprodukte, die ausschließlich zur redundanten Datenspeicherung und -Wiederherstellung eingesetzt werden.
+
+Liste 1:
+
+- Patient/in (Patient)
+- Kontakt/Fall (Encounter)
+- Diagnose (Condition)
+- Prozedur (Procedure)
+- Versicherungsverhältnis (Coverage)
+- Bericht aus Subsystem (Bundle)
 
 Hinweise zu dieser Definition können an die [DKG-Geschäftsstelle](https://www.dkgev.de/dkg/verband-auf-einen-blick/geschaeftsstelle/) gerichtet werden.
 
