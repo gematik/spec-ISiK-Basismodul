@@ -2,7 +2,7 @@
 
 #### Profil ISiKVersicherungsverhaeltnisGesetzlich
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich, hybrid}}
 
@@ -10,7 +10,7 @@
 
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler, hybrid}}
 

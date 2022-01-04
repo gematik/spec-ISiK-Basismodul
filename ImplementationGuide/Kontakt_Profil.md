@@ -1,10 +1,10 @@
 ### Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://simplifier.net/ISiK/ISiKencounter)
+[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung)
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
