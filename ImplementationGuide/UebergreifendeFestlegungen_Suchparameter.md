@@ -61,7 +61,7 @@ Der Modifier `:identifier` MUSS für alle spezifizierten Suchparameter vom Typ '
 
 **Beispiele**:
 
-```[base]/Coverage?Payor:identifier=http://fhir.de/NamingSystem/arge-ik/iknr|123456``` <br>
+```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
 Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für [Chaining](http://hl7.org/fhir/search.html#chaining) und [Reverse Chaining](http://hl7.org/fhir/search.html#has) verpflichtend implementiert werden. Chaining und Reverse Chaining für die Suchparameter "patient", "subject" und "encounter" (definiert auf den jeweiligen Datenobjekten) MÜSSEN über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) untersützt werden. Für alle weiteren Reference-Suchparameter KANN Chaining und Reverse Chaining implementiert werden.
@@ -80,5 +80,5 @@ Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.
 ``[base]/Patient?_has:Procedure:patient:encounter.identifier=12345``
 Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweisen und einen deren Procedure auf einen Encounter verweist z.B. mit der Aufnahmenummer '1234-5'.
 
-``[base]/Procedure?_has:Encounter:diagnosis:diagnosis:Condition.code=http://fhir.de/CodeSystem/dimdi/icd-10-gm|F16.1``
+``[base]/Procedure?_has:Encounter:diagnosis:diagnosis:Condition.code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|F16.1``
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Encounter.diagnosis.condition` auf einen Encounter verweisen, der wiederrum mit einer Condition verlinkt ist mit dem ICD-10-GM Code 'F16.1'.
