@@ -1,6 +1,6 @@
 ### Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme, hybrid}}
 

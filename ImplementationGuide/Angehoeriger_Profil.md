@@ -1,6 +1,6 @@
 ## Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger, hybrid}}
 
