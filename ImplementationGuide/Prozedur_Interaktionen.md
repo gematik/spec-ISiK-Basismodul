@@ -32,7 +32,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Procedure?code=http://fhir.de/CodeSystem/dimdi/ops|5-470```
+    ```GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Procedure.code" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
