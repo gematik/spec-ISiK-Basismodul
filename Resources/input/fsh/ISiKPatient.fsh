@@ -90,7 +90,7 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys pat-cnt-2or3-char
+    * obeys address-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
 * address[Strassenanschrift] only AddressDeBasis
   * ^patternAddress.type = #both
@@ -103,7 +103,7 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys pat-cnt-2or3-char
+    * obeys address-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
 
 Instance: patient
