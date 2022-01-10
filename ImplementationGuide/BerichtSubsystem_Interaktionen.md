@@ -74,6 +74,14 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.title" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
+1. Der Suchparameter für "type" MUSS unterstützt werden:
+
+    Beispiele:
+
+    ```GET [base]/Composition?type=123```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
 1. Der Suchparameter für "_profile" KANN unterstützt werden:
 
     Beispiele:
@@ -81,15 +89,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/Composition?_profile=https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all)
-
-1. Der Suchparameter für "type" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?type=123```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-  
 
 ## Verarbeitung des Dokumentes
 
