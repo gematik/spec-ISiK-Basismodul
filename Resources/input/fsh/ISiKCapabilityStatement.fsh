@@ -462,6 +462,11 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "type"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "_profile"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].type = #Bundle
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
 * document.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
