@@ -1,10 +1,10 @@
 ### FHIR-Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://simplifier.net/ISiK/ISiKpatient)
+[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient)
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 

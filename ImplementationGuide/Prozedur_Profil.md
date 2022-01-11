@@ -1,10 +1,10 @@
 ### Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://simplifier.net/ISiK/prozedur)
+[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur)
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 

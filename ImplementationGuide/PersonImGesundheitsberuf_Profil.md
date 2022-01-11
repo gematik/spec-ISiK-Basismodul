@@ -1,6 +1,6 @@
 ### Profil
 
-**Canonical URL**: https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf```
 
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf, hybrid}}
 
