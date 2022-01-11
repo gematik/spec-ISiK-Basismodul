@@ -230,6 +230,23 @@
               "definition": "http://hl7.org/fhir/SearchParameter/individual-telecom",
               "type": "token"
             }
+          ],
+          "searchRevInclude": [
+            "Composition:patient",
+            "Composition:subject",
+            "Composition:author",
+            "Condition:patient",
+            "Condition:subject",
+            "Procedure:patient",
+            "Procedure:subject",
+            "Encounter:patient",
+            "Encounter:subject",
+            "Coverage:beneficiary",
+            "Coverage:subscriber",
+            "Coverage:patient",
+            "Coverage:payor",
+            "Account:subject",
+            "Account:patient"
           ]
         },
         {
@@ -396,6 +413,19 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri"
             }
+          ],
+          "searchInclude": [
+            "Encounter:patient",
+            "Encounter:subject",
+            "Encounter:part-of",
+            "Encounter:diagnosis",
+            "Encounter:account"
+          ],
+          "searchRevInclude": [
+            "Encounter:part-of",
+            "Condition:encounter",
+            "Composition:encounter",
+            "Procedure:encounter"
           ]
         },
         {
@@ -529,6 +559,14 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Condition-category",
               "type": "token"
             }
+          ],
+          "searchInclude": [
+            "Condition:patient",
+            "Condition:subject",
+            "Condition:encounter"
+          ],
+          "searchRevInclude": [
+            "Encounter:diagnosis"
           ]
         },
         {
@@ -662,6 +700,14 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri"
             }
+          ],
+          "searchInclude": [
+            "Procedure:patient",
+            "Procedure:subject",
+            "Procedure:encounter"
+          ],
+          "searchRevInclude": [
+            "Encounter:diagnosis"
           ]
         },
         {
@@ -785,6 +831,12 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri"
             }
+          ],
+          "searchInclude": [
+            "Coverage:subscriber",
+            "Coverage:patient",
+            "Coverage:payor",
+            "Coverage:beneficiary"
           ]
         },
         {
@@ -863,6 +915,13 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri"
             }
+          ],
+          "searchInclude": [
+            "RelatedPerson:patient"
+          ],
+          "searchRevInclude": [
+            "Coverage:subscriber",
+            "Coverage:payor"
           ]
         },
         {
@@ -997,14 +1056,6 @@
           "type": "Composition",
           "supportedProfile": [
             "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme"
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
           ],
           "interaction": [
             {
@@ -1127,6 +1178,13 @@
               "type": "uri"
             }
           ],
+          "searchInclude": [
+            "Composition:patient",
+            "Composition:subject",
+            "Composition:encounter"
+          ]
+        },
+        {
           "type": "Bundle",
           "supportedProfile": [
             "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
