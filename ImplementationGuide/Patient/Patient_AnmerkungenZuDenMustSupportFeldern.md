@@ -59,3 +59,7 @@
 **Bedeutung:** Geburtsdatum
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/Ressourcen-Patient#Ressourcen-Patient-Geburtsdatum)
+
+### Stornierung von Patienten
+
+Im Rahmen des ISiK Basismoduls SOLLTE die Stornierung eines Patienten durch die Löschung der Patienten-Ressource abgebildet werden. Insbesondere ist es nicht ausreichend, die Stornierung über das Feld `Patient.active` abzubilden.
