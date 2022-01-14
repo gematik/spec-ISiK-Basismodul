@@ -13,7 +13,7 @@ Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumente
 Falls die Referenz auf die in der Composition enthaltenen Patienten und/oder Encounter nicht auflösbar ist, MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](http://hl7.org/fhir/issue-type) verwendet werden.
 
 Das Bundle muss folgendem Profil entsprechen:
-{{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle, hybrid}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle, hybrid}}
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
@@ -70,7 +70,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Composition?_profile=https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme```
+    ```GET [base]/Composition?_profile=https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all)
 
