@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel für das Profil ISiKAngehoeriger:
 
-{{xml:Examples/ISiKAngehoeriger.xml}}
+{{json:Resources/fsh-generated/RelatedPerson-relatedPerson.json}}

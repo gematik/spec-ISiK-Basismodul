@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel für das Profil ISiKKontaktGesundheitseinrichtung:
 
-{{xml:Examples/ISiKKontaktGesundheitseinrichtung.xml}}
+{{json:Resources/fsh-generated/Encounter-encounter.json}}
