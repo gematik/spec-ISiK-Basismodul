@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Prozedur:
 
-{{xml:Examples/ISiKProzedur.xml}}
+{{json:Resources/fsh-generated/Procedure-procedure.json}}

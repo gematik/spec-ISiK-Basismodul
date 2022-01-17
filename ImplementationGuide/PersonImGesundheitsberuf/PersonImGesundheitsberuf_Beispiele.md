@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel PersonImGesundheitsberuf:
 
-{{xml:Examples/ISiKPersonImGesundheitsberuf.xml}}
+{{json:Resources/fsh-generated/Practitioner-practitioner.json}}

@@ -4,7 +4,7 @@
 
 **Bedeutung:** Lebenslange Arztnummer. Im Krankenhaus ist die Lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
 
-**Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/PersoneninGesundheitsberufen#LebenslangeArztnummerLANR)
+**Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/IdentifierfrPractitionerPractitionerRole#LebenslangeArztnummerLANR-Identifier)
 
 Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im KBV-Kontext das Akronym ANR gebräuchlich. Die Bezeichnung des Slices hat jedoch keinerlei Auswirkungen auf die Kompatibilität.
 

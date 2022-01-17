@@ -1,6 +1,6 @@
 ### Profil
 
-**Canonical URL**: ```https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose```
+**Canonical URL**: ```https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDiagnose```
 
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDiagnose, hybrid}}
 
