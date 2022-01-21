@@ -90,6 +90,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * admitSource from AufnahmeanlassVS (preferred)
   * dischargeDisposition MS
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
+  * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
 * location MS
   * location MS
     * identifier 1.. MS
