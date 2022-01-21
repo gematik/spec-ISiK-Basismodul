@@ -94,6 +94,13 @@
             "human": "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'unknown' implies period.start.exists()",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-7",
+            "severity": "error",
+            "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
+            "expression": "diagnosis.use.all(coding.code != 'billing')'",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
       },

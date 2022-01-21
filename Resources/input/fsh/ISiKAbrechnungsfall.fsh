@@ -28,7 +28,6 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * coverage MS
   * extension contains ExtensionAbrechnungsart named Abrechnungsart 0..1 MS
 
-
 // extension:billingDiagnosis und extension:billingProcedure einfügen. Abstimmung mit PA notwendig. Siehe https://chat.fhir.org/#narrow/stream/224725-german.2Fcommitters/topic/Gestaltung.20Profil.20Account.20.23255
 
 Extension: ExtensionAbrechnungsart
@@ -45,4 +44,12 @@ Title:  "Abrechnungsdiagnose"
 * extension contains Condition 0..* MS and
     Procedure 0..* MS
 * extension[Condition].value[x] only Reference(Condition)
+* extension[Condition].value[x].extension contains ExtensionDRGUse named DRGUse 0..1 MS
 * extension[Procedure].value[x] only Reference(Procedure)
+* extension[Procedure].value[x].extension contains ExtensionDRGUse named DRGUse 0..1 MS
+
+Extension: ExtensionDRGUse
+Id: drg-use
+* insert Meta
+* value[x] only code
+* valueCode from ISiKAccountDRG (required)

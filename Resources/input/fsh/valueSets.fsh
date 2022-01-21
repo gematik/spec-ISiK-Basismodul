@@ -44,8 +44,6 @@ Id: ISiKKontaktDiagnoseOptional
 * ISiKKontaktDiagnose#department-main-diagnosis "Abteilung Hauptdiagnose"
 * ISiKKontaktDiagnose#hospital-main-diagnosis "Krankenhaus Hauptdiagnose"
 * ISiKKontaktDiagnose#cause-of-death "Todesursache"
-* ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
-* ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"
 * ISiKKontaktDiagnose#infection-control-diagnosis "Infektionsschutzdiagnose"
 * $DiagnosisRole#AD "Admission diagnosis"
 * $DiagnosisRole#DD "Discharge diagnosis"
@@ -56,3 +54,9 @@ Title: "ISiKAccountType"
 * insert Meta
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
+
+ValueSet: ISiKAccountDRG
+Id: ISiKAccountDRG
+* insert Meta
+* ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
+* ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"
