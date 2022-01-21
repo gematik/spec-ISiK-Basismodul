@@ -415,21 +415,51 @@
         "id": "Encounter.diagnosis.use",
         "path": "Encounter.diagnosis.use",
         "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "extension": [
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding",
+        "path": "Encounter.diagnosis.use.coding",
+        "slicing": {
+          "discriminator": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "DiagnosisRole"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-              "valueBoolean": true
+              "type": "pattern",
+              "path": "$this"
             }
           ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnoseVerpflichtend",
+        "path": "Encounter.diagnosis.use.coding",
+        "sliceName": "DiagnoseVerpflichtend",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "system": "foo"
+        },
+        "mustSupport": true,
+        "binding": {
           "strength": "extensible",
-          "description": "The type of diagnosis this condition represents.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/diagnosis-role"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnoseOptional",
+        "path": "Encounter.diagnosis.use.coding",
+        "sliceName": "DiagnoseOptional",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "bar"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
         }
       },
       {
