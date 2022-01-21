@@ -157,3 +157,8 @@ Invariant: ISiK-enc-6
 Description: "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'unknown' implies period.start.exists()"
+
+Invariant: ISiK-enc-7
+Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
+Severity: #error
+Expression: "diagnosis.use.all(coding.code != 'billing')'"
