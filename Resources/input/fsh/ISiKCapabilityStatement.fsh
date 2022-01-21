@@ -145,6 +145,11 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-subject"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "part-of"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "date"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
@@ -152,11 +157,6 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "location"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "part-of"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
