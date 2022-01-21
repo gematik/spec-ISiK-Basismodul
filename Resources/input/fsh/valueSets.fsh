@@ -30,3 +30,22 @@ Id: ISiKLocationPhysicalType
 * LocationType#bd "Bed"
 * LocationType#ro "Room"
 * LocationType#wa "Ward"
+
+ValueSet: ISiKKontaktDiagnoseVerpflichtend
+Id: ISiKKontaktDiagnoseVerpflichtend
+* insert Meta
+* ISiKKontaktDiagnose#referral-diagnosis "Überweisungsdiagnose"
+* ISiKKontaktDiagnose#treatment-diagnosis "Behandlungsdiagnose"
+
+ValueSet: ISiKKontaktDiagnoseOptional
+Id: ISiKKontaktDiagnoseOptional
+* insert Meta
+* ISiKKontaktDiagnose#surgery-diagnosis "Operationsdiagnose"
+* ISiKKontaktDiagnose#department-main-diagnosis "Abteilung Hauptdiagnose"
+* ISiKKontaktDiagnose#hospital-main-diagnosis "Krankenhaus Hauptdiagnose"
+* ISiKKontaktDiagnose#cause-of-death "Todesursache"
+* ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
+* ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"
+* ISiKKontaktDiagnose#infection-control-diagnosis "Infektionsschutzdiagnose"
+* $DiagnosisRole#AD "Admission diagnosis"
+* $DiagnosisRole#DD "Discharge diagnosis"
