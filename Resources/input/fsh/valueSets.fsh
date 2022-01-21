@@ -49,3 +49,10 @@ Id: ISiKKontaktDiagnoseOptional
 * ISiKKontaktDiagnose#infection-control-diagnosis "Infektionsschutzdiagnose"
 * $DiagnosisRole#AD "Admission diagnosis"
 * $DiagnosisRole#DD "Discharge diagnosis"
+
+ValueSet: ISiKAccountType
+Id: ISiKAccountType
+Title: "ISiKAccountType"
+* insert Meta
+* $v3-ActCode#AMB "ambulatory"
+* $v3-ActCode#IMP "inpatient encounter"
