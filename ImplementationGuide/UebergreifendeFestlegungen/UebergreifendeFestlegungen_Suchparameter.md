@@ -83,6 +83,13 @@ Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.
 ``[base]/Procedure?_has:Encounter:diagnosis:diagnosis:Condition.code=http://fhir.de/CodeSystem/dimdi/icd-10-gm|F16.1``
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Encounter.diagnosis.condition` auf einen Encounter verweisen, der wiederrum mit einer Condition verlinkt ist mit dem ICD-10-GM Code 'F16.1'.
 
+Der Modifier `:type` MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+
+**Beispiele**:
+
+``[base]/Procedure?subject:Patient=Test``
+Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweist mit dem der ID "Test". Hierdurch werden Referenzen auf den Ressourcentyp "Group" in der Suche ausgeschlossen.
+
 ## Best Practice Empfehlungen für Standard-Suchfilter
 
 Diese grundlegenden Best Practice Empfehlungen beziehen sich auf die korrekte Verwaltung des Suchprozesses seitens des Servers mit Bezug auf Sicherheit im klinischen Umfeld. Unstimmigkeiten in den Erwartungen zwischen Client und Server können dazu führen, dass mehr Ressourcen als erwartet oder angemessen gefunden werden, oder, dass Ressourcen in den Suchergebnissen fehlen, die eigentlich vorhanden sein sollten. Im Folgenden werden daher Empfehlungen für Standard-Suchfilter genannt, die ein Grundmaß an Sicherheit im klinischen Umfeld bereitstellen sollen.
