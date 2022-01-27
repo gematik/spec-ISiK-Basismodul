@@ -1,0 +1,443 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKKontaktGesundheitseinrichtung",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Management"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKKontaktGesundheitseinrichtung",
+  "version": "2.0.0",
+  "name": "ISiKKontaktGesundheitseinrichtung",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "constraint": [
+          {
+            "key": "ISiK-enc-1",
+            "severity": "warning",
+            "human": "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben",
+            "expression": "status = 'finished' implies period.end.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          }
+        ]
+      },
+      {
+        "id": "Encounter.id",
+        "path": "Encounter.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund",
+        "path": "Encounter.extension",
+        "sliceName": "Aufnahmegrund",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/Aufnahmegrund"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle",
+        "path": "Encounter.extension.extension",
+        "sliceName": "ErsteUndZweiteStelle",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:DritteStelle",
+        "path": "Encounter.extension.extension",
+        "sliceName": "DritteStelle",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:Aufnahmegrund.extension:VierteStelle",
+        "path": "Encounter.extension.extension",
+        "sliceName": "VierteStelle",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier",
+        "path": "Encounter.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer",
+        "path": "Encounter.identifier",
+        "sliceName": "Aufnahmenummer",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "VN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.type",
+        "path": "Encounter.identifier.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.type.coding",
+        "path": "Encounter.identifier.type.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.type.coding:vn-type",
+        "path": "Encounter.identifier.type.coding",
+        "sliceName": "vn-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "VN",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.type.coding:vn-type.system",
+        "path": "Encounter.identifier.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.type.coding:vn-type.code",
+        "path": "Encounter.identifier.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.system",
+        "path": "Encounter.identifier.system",
+        "min": 1
+      },
+      {
+        "id": "Encounter.identifier:Aufnahmenummer.value",
+        "path": "Encounter.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "short": "planned | in-progress | onleave | finished | cancelled +",
+        "definition": "planned | in-progress | onleave | finished | cancelled +.",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/EncounterStatusDe",
+          "description": "Eingeschränkter Status vgl. FHIR R5"
+        }
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/EncounterClassDE"
+        }
+      },
+      {
+        "id": "Encounter.type",
+        "path": "Encounter.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.type:Kontaktebene",
+        "path": "Encounter.type",
+        "sliceName": "Kontaktebene",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/Kontaktebene"
+            }
+          ]
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/kontaktebene-de",
+          "description": "Kontaktebene"
+        }
+      },
+      {
+        "id": "Encounter.type:KontaktArt",
+        "path": "Encounter.type",
+        "sliceName": "KontaktArt",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/kontaktart-de"
+            }
+          ]
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/kontaktart-de"
+        }
+      },
+      {
+        "id": "Encounter.serviceType",
+        "path": "Encounter.serviceType",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType.coding",
+        "path": "Encounter.serviceType.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType.coding:Fachabteilungsschluessel",
+        "path": "Encounter.serviceType.coding",
+        "sliceName": "Fachabteilungsschluessel",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel"
+        }
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject.reference",
+        "path": "Encounter.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.start",
+        "path": "Encounter.period.start",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.end",
+        "path": "Encounter.period.end",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis",
+        "path": "Encounter.diagnosis",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.condition",
+        "path": "Encounter.diagnosis.condition",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.condition.reference",
+        "path": "Encounter.diagnosis.condition.reference",
+        "min": 1
+      },
+      {
+        "id": "Encounter.diagnosis.use",
+        "path": "Encounter.diagnosis.use",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "DiagnosisRole"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+              "valueBoolean": true
+            }
+          ],
+          "strength": "extensible",
+          "description": "The type of diagnosis this condition represents.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/diagnosis-role"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis.rank",
+        "path": "Encounter.diagnosis.rank",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization",
+        "path": "Encounter.hospitalization",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.admitSource",
+        "path": "Encounter.hospitalization.admitSource",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass"
+        }
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition",
+        "path": "Encounter.hospitalization.dischargeDisposition",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund",
+        "path": "Encounter.hospitalization.dischargeDisposition.extension",
+        "sliceName": "Entlassungsgrund",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/Entlassungsgrund"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location",
+        "path": "Encounter.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.location.display",
+        "path": "Encounter.location.location.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider.display",
+        "path": "Encounter.serviceProvider.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.partOf",
+        "path": "Encounter.partOf",
+        "mustSupport": true
+      }
+    ]
+  }
+}

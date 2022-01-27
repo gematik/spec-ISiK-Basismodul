@@ -1,0 +1,209 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKAngehoeriger",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Individuals"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKAngehoeriger",
+  "version": "2.0.0",
+  "name": "ISiKAngehoeriger",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "RelatedPerson",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "RelatedPerson",
+        "path": "RelatedPerson",
+        "constraint": [
+          {
+            "key": "relatedp-de-1",
+            "severity": "error",
+            "human": "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden",
+            "expression": "gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()",
+            "source": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKAngehoeriger"
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.patient",
+        "path": "RelatedPerson.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.patient.reference",
+        "path": "RelatedPerson.patient.reference",
+        "min": 1
+      },
+      {
+        "id": "RelatedPerson.patient.identifier",
+        "path": "RelatedPerson.patient.identifier",
+        "max": "0"
+      },
+      {
+        "id": "RelatedPerson.patient.display",
+        "path": "RelatedPerson.patient.display",
+        "max": "0"
+      },
+      {
+        "id": "RelatedPerson.name",
+        "path": "RelatedPerson.name",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "HumanName",
+            "profile": [
+              "http://fhir.de/StructureDefinition/humanname-de-basis"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.gender.extension:Geschlecht-Administrativ",
+        "path": "RelatedPerson.gender.extension",
+        "sliceName": "Geschlecht-Administrativ",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gender-amtlich-de"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "RelatedPerson.address",
+        "path": "RelatedPerson.address",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "RelatedPerson.address.type",
+        "path": "RelatedPerson.address.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address.line",
+        "path": "RelatedPerson.address.line",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address.city",
+        "path": "RelatedPerson.address.city",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address.postalCode",
+        "path": "RelatedPerson.address.postalCode",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address.country",
+        "path": "RelatedPerson.address.country",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address:Strassenanschrift",
+        "path": "RelatedPerson.address",
+        "sliceName": "Strassenanschrift",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ],
+        "patternAddress": {
+          "type": "physical"
+        }
+      },
+      {
+        "id": "RelatedPerson.address:Strassenanschrift.type",
+        "path": "RelatedPerson.address.type",
+        "fixedCode": "physical"
+      },
+      {
+        "id": "RelatedPerson.address:Postfach",
+        "path": "RelatedPerson.address",
+        "sliceName": "Postfach",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ],
+        "patternAddress": {
+          "type": "postal"
+        }
+      },
+      {
+        "id": "RelatedPerson.address:Postfach.type",
+        "path": "RelatedPerson.address.type",
+        "fixedCode": "postal"
+      }
+    ]
+  }
+}
