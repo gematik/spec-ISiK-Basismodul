@@ -38,7 +38,7 @@
     "application/fhir+json"
   ],
   "implementationGuide": [
-    "https://gematik.de/fhir/ISiK/v2/ImplementationGuide/ISiK-basismodul|1.0.0"
+    "https://gematik.de/fhir/ISiK/v2/ImplementationGuide/ISiK-basismodul|2.0.0"
   ],
   "rest": [
     {
@@ -345,6 +345,17 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "part-of",
+              "definition": "http://hl7.org/fhir/SearchParameter/Encounter-part-of",
+              "type": "reference"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "MAY"
                 }
               ],
@@ -360,17 +371,6 @@
                 }
               ],
               "name": "location",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "part-of",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "reference"
             },

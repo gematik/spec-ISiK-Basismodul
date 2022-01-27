@@ -26,3 +26,6 @@ Alias: $diagnoses-sct = https://gematik.de/fhir/ISiK/v2/ValueSet/diagnoses-sct
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
 Alias: $ProzedurenKategorie-SCT = https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorie-SCT
 Alias: $ProzedurenCodes-SCT = https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodes-SCT
+Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
+Alias: $DiagnosisRole = http://terminology.hl7.org/CodeSystem/diagnosis-role
+Alias: $WahlleistungExtension = http://fhir.de/StructureDefinition/Wahlleistung

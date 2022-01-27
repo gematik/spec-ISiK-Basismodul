@@ -55,9 +55,51 @@
         "constraint": [
           {
             "key": "ISiK-enc-1",
-            "severity": "warning",
+            "severity": "error",
             "human": "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben",
-            "expression": "status = 'finished' implies period.end.exists()",
+            "expression": "status = 'finished' implies period.start.exists() and period.end.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-2",
+            "severity": "error",
+            "human": "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben",
+            "expression": "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-3",
+            "severity": "error",
+            "human": "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben",
+            "expression": "status = 'in-progress' implies period.start.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-4",
+            "severity": "error",
+            "human": "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben",
+            "expression": "status = 'onleave' implies period.start.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-5",
+            "severity": "error",
+            "human": "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben",
+            "expression": "status = 'cancelled' implies period.end.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-6",
+            "severity": "error",
+            "human": "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben",
+            "expression": "status = 'unknown' implies period.start.exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-7",
+            "severity": "error",
+            "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
+            "expression": "diagnosis.use.all(coding.code != 'billing')'",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
@@ -103,6 +145,38 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.extension:plannedStartDate",
+        "path": "Encounter.extension",
+        "sliceName": "plannedStartDate",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.extension:plannedEndDate",
+        "path": "Encounter.extension",
+        "sliceName": "plannedEndDate",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.identifier",
         "path": "Encounter.identifier",
         "slicing": {
@@ -138,6 +212,7 @@
       {
         "id": "Encounter.identifier:Aufnahmenummer.type",
         "path": "Encounter.identifier.type",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -222,13 +297,14 @@
           ],
           "rules": "open"
         },
+        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Encounter.type:Kontaktebene",
         "path": "Encounter.type",
         "sliceName": "Kontaktebene",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCodeableConcept": {
           "coding": [
@@ -314,13 +390,11 @@
       {
         "id": "Encounter.period",
         "path": "Encounter.period",
-        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Encounter.period.start",
         "path": "Encounter.period.start",
-        "min": 1,
         "mustSupport": true
       },
       {
@@ -341,27 +415,58 @@
       {
         "id": "Encounter.diagnosis.condition.reference",
         "path": "Encounter.diagnosis.condition.reference",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Encounter.diagnosis.use",
         "path": "Encounter.diagnosis.use",
         "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "extension": [
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding",
+        "path": "Encounter.diagnosis.use.coding",
+        "slicing": {
+          "discriminator": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "DiagnosisRole"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-              "valueBoolean": true
+              "type": "pattern",
+              "path": "$this"
             }
           ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnoseVerpflichtend",
+        "path": "Encounter.diagnosis.use.coding",
+        "sliceName": "DiagnoseVerpflichtend",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
+        },
+        "mustSupport": true,
+        "binding": {
           "strength": "extensible",
-          "description": "The type of diagnosis this condition represents.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/diagnosis-role"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
+        }
+      },
+      {
+        "id": "Encounter.diagnosis.use.coding:DiagnoseOptional",
+        "path": "Encounter.diagnosis.use.coding",
+        "sliceName": "DiagnoseOptional",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
         }
       },
       {
@@ -370,9 +475,37 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.account",
+        "path": "Encounter.account",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.account.reference",
+        "path": "Encounter.account.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.hospitalization",
         "path": "Encounter.hospitalization",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.extension:Wahlleistung",
+        "path": "Encounter.hospitalization.extension",
+        "sliceName": "Wahlleistung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/Wahlleistung"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -417,14 +550,36 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.location.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.location.location.display",
         "path": "Encounter.location.location.display",
         "min": 1,
         "mustSupport": true
       },
       {
+        "id": "Encounter.location.physicalType",
+        "path": "Encounter.location.physicalType",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKLocationPhysicalType"
+        }
+      },
+      {
         "id": "Encounter.serviceProvider",
         "path": "Encounter.serviceProvider",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider.identifier",
+        "path": "Encounter.serviceProvider.identifier",
+        "min": 1,
         "mustSupport": true
       },
       {

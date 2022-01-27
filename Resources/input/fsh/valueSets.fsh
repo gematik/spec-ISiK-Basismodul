@@ -23,3 +23,40 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * SNOMED_CT#18629005 "Administration of medicine"
 * SNOMED_CT#277132007 "Therapeutic procedure"
 * SNOMED_CT#394841004 "Other category"
+
+ValueSet: ISiKLocationPhysicalType
+Id: ISiKLocationPhysicalType
+* insert Meta
+* LocationType#bd "Bed"
+* LocationType#ro "Room"
+* LocationType#wa "Ward"
+
+ValueSet: ISiKKontaktDiagnoseVerpflichtend
+Id: ISiKKontaktDiagnoseVerpflichtend
+* insert Meta
+* ISiKKontaktDiagnose#referral-diagnosis "Überweisungsdiagnose"
+* ISiKKontaktDiagnose#treatment-diagnosis "Behandlungsdiagnose"
+
+ValueSet: ISiKKontaktDiagnoseOptional
+Id: ISiKKontaktDiagnoseOptional
+* insert Meta
+* ISiKKontaktDiagnose#surgery-diagnosis "Operationsdiagnose"
+* ISiKKontaktDiagnose#department-main-diagnosis "Abteilung Hauptdiagnose"
+* ISiKKontaktDiagnose#hospital-main-diagnosis "Krankenhaus Hauptdiagnose"
+* ISiKKontaktDiagnose#cause-of-death "Todesursache"
+* ISiKKontaktDiagnose#infection-control-diagnosis "Infektionsschutzdiagnose"
+* $DiagnosisRole#AD "Admission diagnosis"
+* $DiagnosisRole#DD "Discharge diagnosis"
+
+ValueSet: ISiKAccountType
+Id: ISiKAccountType
+Title: "ISiKAccountType"
+* insert Meta
+* $v3-ActCode#AMB "ambulatory"
+* $v3-ActCode#IMP "inpatient encounter"
+
+ValueSet: ISiKAccountDRG
+Id: ISiKAccountDRG
+* insert Meta
+* ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
+* ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"

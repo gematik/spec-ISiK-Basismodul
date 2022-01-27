@@ -1,7 +1,7 @@
 Profile: ISiKPatient
 Parent: Patient
 Id: ISiKPatient
-Description: "Dieses Profil die Nutzung von administrativen Patientendaten in ISiK Szenarien."
+Description: "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien."
 * insert Meta
 * obeys isik-pat-1
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
