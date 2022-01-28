@@ -102,7 +102,7 @@ Usage: #example
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
 * code.coding.version = "2019"
-* code.coding = $-icd-10-gm#H36.0 "Retinopathia diabetica"
+* code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
 * recordedDate = "2021-05-24"

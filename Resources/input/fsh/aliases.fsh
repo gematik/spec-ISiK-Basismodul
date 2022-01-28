@@ -1,7 +1,6 @@
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $icd-10-gm = http://fhir.de/CodeSystem/bfarm/icd-10-gm
 Alias: $icd-10-gm-mehrfachcodierungs-kennzeichen = http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen
-Alias: $-icd-10-gm = http://fhir.de/CodeSystem/bfarm/-icd-10-gm
 Alias: $loinc = http://loinc.org
 Alias: $AufnahmegrundErsteUndZweiteStelle = http://fhir.de/CodeSystem/dkgev/AufnahmegrundErsteUndZweiteStelle
 Alias: $AufnahmegrundDritteStelle = http://fhir.de/CodeSystem/dkgev/AufnahmegrundDritteStelle
