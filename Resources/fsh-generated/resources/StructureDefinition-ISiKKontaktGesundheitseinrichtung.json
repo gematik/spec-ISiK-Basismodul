@@ -122,6 +122,13 @@
             "human": "Ein Abteilungskontakt oder Versorgungsstellenkontakt muss auf den übergeordneten Kontakt verweisen",
             "expression": "type.coding.where(code = 'einrichtungskontakt').exists().not() implies partOf.exists()",
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-11",
+            "severity": "error",
+            "human": "Ein Einrichtungskontakt sollte einen serviceType mit Fachabteilungsschlüssel enthalten",
+            "expression": "type.coding.where(code = 'einrichtungskontakt').exists() implies serviceType.exists()",
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
       },
@@ -368,7 +375,6 @@
       {
         "id": "Encounter.serviceType",
         "path": "Encounter.serviceType",
-        "min": 1,
         "mustSupport": true
       },
       {
@@ -390,7 +396,7 @@
         "id": "Encounter.serviceType.coding:Fachabteilungsschluessel",
         "path": "Encounter.serviceType.coding",
         "sliceName": "Fachabteilungsschluessel",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "patternCoding": {
           "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
@@ -399,6 +405,21 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel"
+        }
+      },
+      {
+        "id": "Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel",
+        "path": "Encounter.serviceType.coding",
+        "sliceName": "ErweiterterFachabteilungsschluessel",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/dkgev/FachabteilungsschluesselErweitert"
         }
       },
       {
