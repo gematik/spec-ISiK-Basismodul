@@ -55,7 +55,7 @@
         "path": "Account.extension",
         "sliceName": "Abrechnungsdiagnose",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",
@@ -85,7 +85,7 @@
         "id": "Account.identifier:Aufnahmenummer",
         "path": "Account.identifier",
         "sliceName": "Aufnahmenummer",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -166,10 +166,17 @@
         "mustSupport": true
       },
       {
+        "id": "Account.coverage.extension",
+        "path": "Account.coverage.extension",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "Account.coverage.extension:Abrechnungsart",
         "path": "Account.coverage.extension",
         "sliceName": "Abrechnungsart",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -179,6 +186,11 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Account.coverage.coverage",
+        "path": "Account.coverage.coverage",
         "mustSupport": true
       }
     ]

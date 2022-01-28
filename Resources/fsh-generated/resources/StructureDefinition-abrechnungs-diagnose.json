@@ -31,96 +31,82 @@
   "differential": {
     "element": [
       {
-        "id": "Extension.extension:Condition",
+        "id": "Extension.extension:Use",
         "path": "Extension.extension",
-        "sliceName": "Condition",
+        "sliceName": "Use",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Extension.extension:Condition.extension",
+        "id": "Extension.extension:Use.extension",
         "path": "Extension.extension.extension",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Condition.url",
+        "id": "Extension.extension:Use.url",
         "path": "Extension.extension.url",
-        "fixedUri": "Condition"
+        "fixedUri": "Use"
       },
       {
-        "id": "Extension.extension:Condition.value[x]",
+        "id": "Extension.extension:Use.value[x]",
         "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Condition"
-            ]
+            "code": "Coding"
           }
         ]
       },
       {
-        "id": "Extension.extension:Condition.value[x].extension:DRGUse",
-        "path": "Extension.extension.value[x].extension",
-        "sliceName": "DRGUse",
+        "id": "Extension.extension:Use.valueCoding",
+        "path": "Extension.extension.valueCoding",
         "min": 0,
         "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/drg-use"
-            ]
-          }
-        ],
-        "mustSupport": true
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDrgUse"
+        }
       },
       {
-        "id": "Extension.extension:Procedure",
+        "id": "Extension.extension:Referenz",
         "path": "Extension.extension",
-        "sliceName": "Procedure",
+        "sliceName": "Referenz",
         "min": 0,
         "max": "*",
         "mustSupport": true
       },
       {
-        "id": "Extension.extension:Procedure.extension",
+        "id": "Extension.extension:Referenz.extension",
         "path": "Extension.extension.extension",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Procedure.url",
+        "id": "Extension.extension:Referenz.url",
         "path": "Extension.extension.url",
-        "fixedUri": "Procedure"
+        "fixedUri": "Referenz"
       },
       {
-        "id": "Extension.extension:Procedure.value[x]",
+        "id": "Extension.extension:Referenz.value[x]",
         "path": "Extension.extension.value[x]",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition",
               "http://hl7.org/fhir/StructureDefinition/Procedure"
             ]
           }
         ]
-      },
-      {
-        "id": "Extension.extension:Procedure.value[x].extension:DRGUse",
-        "path": "Extension.extension.value[x].extension",
-        "sliceName": "DRGUse",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/drg-use"
-            ]
-          }
-        ],
-        "mustSupport": true
       },
       {
         "id": "Extension.url",

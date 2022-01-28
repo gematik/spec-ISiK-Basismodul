@@ -55,8 +55,8 @@ Title: "ISiKAccountType"
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
 
-ValueSet: ISiKAccountDRG
-Id: ISiKAccountDRG
+ValueSet: ISiKDrgUse
+Id: ISiKDrgUse
 * insert Meta
 * ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
 * ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"
