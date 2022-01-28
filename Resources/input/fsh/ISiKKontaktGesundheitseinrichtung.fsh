@@ -3,14 +3,7 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
-* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[6].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[7].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[8].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[9].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[10].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-* . ^constraint[11].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8 and ISiK-enc-9 and ISiK-enc-10
 * id 1.. MS
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -180,3 +173,13 @@ Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')'"
+
+Invariant: ISiK-enc-9
+Description: "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten"
+Severity: #error
+Expression: "status = 'finished' and type.coding.where(code = 'einrichtungskontakt').exists() implies diagnosis.exists()"
+
+Invariant: ISiK-enc-10
+Description: "Ein Abteilungskontakt oder Versorgungsstellenkontakt muss auf den übergeordneten Kontakt verweisen"
+Severity: #error
+Expression: "type.coding.where(code = 'einrichtungskontakt').exists().not() implies partOf.exists()"
