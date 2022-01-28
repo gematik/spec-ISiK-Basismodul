@@ -77,12 +77,12 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       * ^slicing.discriminator.path = "$this"
       * ^slicing.rules = #open
     * coding contains 
-      DiagnoseVerpflichtend 1..1 MS and 
-      DiagnoseOptional 0..1 MS
-    * coding[DiagnoseVerpflichtend] from ISiKKontaktDiagnoseVerpflichtend (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
-    * coding[DiagnoseOptional] from ISiKKontaktDiagnoseOptional (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
+      Diagnosetyp 1..1 MS and 
+      DiagnosesubTyp 0..1 MS
+    * coding[Diagnosetyp] from ISiKDiagnoseTyp (required)
+      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
+    * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)
+      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
   * rank MS
 * account 1.. MS
   * reference 1.. MS

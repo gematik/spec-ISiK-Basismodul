@@ -31,14 +31,14 @@ Id: ISiKLocationPhysicalType
 * LocationType#ro "Room"
 * LocationType#wa "Ward"
 
-ValueSet: ISiKKontaktDiagnoseVerpflichtend
-Id: ISiKKontaktDiagnoseVerpflichtend
+ValueSet: ISiKDiagnoseTyp
+Id: ISiKDiagnoseTyp
 * insert Meta
 * ISiKKontaktDiagnose#referral-diagnosis "Überweisungsdiagnose"
 * ISiKKontaktDiagnose#treatment-diagnosis "Behandlungsdiagnose"
 
-ValueSet: ISiKKontaktDiagnoseOptional
-Id: ISiKKontaktDiagnoseOptional
+ValueSet: ISiKDiagnosesubtyp
+Id: ISiKDiagnosesubtyp
 * insert Meta
 * ISiKKontaktDiagnose#surgery-diagnosis "Operationsdiagnose"
 * ISiKKontaktDiagnose#department-main-diagnosis "Abteilung Hauptdiagnose"

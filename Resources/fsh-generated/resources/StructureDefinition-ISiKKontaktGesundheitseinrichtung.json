@@ -56,50 +56,50 @@
           {
             "key": "ISiK-enc-1",
             "severity": "error",
-            "human": "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben",
-            "expression": "status = 'finished' implies period.start.exists() and period.end.exists()",
+            "human": "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben",
+            "expression": "status = 'finished' and class = 'AMB' implies period.start.exists()",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
-            "human": "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben",
-            "expression": "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()",
+            "human": "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben",
+            "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-3",
+            "severity": "error",
+            "human": "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben",
+            "expression": "status = 'planned' implies period.exists().not()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-4",
+            "severity": "warning",
+            "human": "Geplante Kontakte sollten die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden",
+            "expression": "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists()",
+            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+          },
+          {
+            "key": "ISiK-enc-5",
             "severity": "error",
             "human": "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'in-progress' implies period.start.exists()",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
-            "key": "ISiK-enc-4",
+            "key": "ISiK-enc-6",
             "severity": "error",
             "human": "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'onleave' implies period.start.exists()",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
-            "key": "ISiK-enc-5",
-            "severity": "error",
-            "human": "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben",
-            "expression": "status = 'cancelled' implies period.end.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-          },
-          {
-            "key": "ISiK-enc-6",
-            "severity": "error",
+            "key": "ISiK-enc-7",
+            "severity": "warning",
             "human": "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'unknown' implies period.start.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-          },
-          {
-            "key": "ISiK-enc-7",
-            "severity": "error",
-            "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
-            "expression": "diagnosis.use.all(coding.code != 'billing')'",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
@@ -445,33 +445,33 @@
         "mustSupport": true
       },
       {
-        "id": "Encounter.diagnosis.use.coding:DiagnoseVerpflichtend",
+        "id": "Encounter.diagnosis.use.coding:Diagnosetyp",
         "path": "Encounter.diagnosis.use.coding",
-        "sliceName": "DiagnoseVerpflichtend",
+        "sliceName": "Diagnosetyp",
         "min": 1,
         "max": "1",
         "patternCoding": {
-          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
+          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
         },
         "mustSupport": true,
         "binding": {
-          "strength": "extensible",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
         }
       },
       {
-        "id": "Encounter.diagnosis.use.coding:DiagnoseOptional",
+        "id": "Encounter.diagnosis.use.coding:DiagnosesubTyp",
         "path": "Encounter.diagnosis.use.coding",
-        "sliceName": "DiagnoseOptional",
+        "sliceName": "DiagnosesubTyp",
         "min": 0,
         "max": "1",
         "patternCoding": {
-          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
+          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
         },
         "mustSupport": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubtyp"
         }
       },
       {
