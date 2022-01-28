@@ -142,9 +142,9 @@ Usage: #example
 * serviceProvider.display = "Fachabteilung XYZ"
 
 Invariant: ISiK-enc-1
-Description: "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben"
+Description: "Abgeschlossene und ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
 Description: "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben"
