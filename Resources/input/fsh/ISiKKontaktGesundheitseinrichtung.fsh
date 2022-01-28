@@ -84,10 +84,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)
       * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
   * rank MS
-* account 1.. MS
+* account 0.. MS
   * reference 1.. MS
-* hospitalization 1.. MS
-  * admitSource 1.. MS
+* hospitalization ..1 MS
+  * admitSource 0..1 MS
   * admitSource from AufnahmeanlassVS (preferred)
   * dischargeDisposition MS
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
