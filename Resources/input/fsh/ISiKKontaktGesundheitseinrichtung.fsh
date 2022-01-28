@@ -75,7 +75,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       * ^slicing.rules = #open
     * coding contains 
       Diagnosetyp 1..1 MS and 
-      DiagnosesubTyp 0..1 MS
+      DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from ISiKDiagnoseTyp (required)
       * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
     * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)

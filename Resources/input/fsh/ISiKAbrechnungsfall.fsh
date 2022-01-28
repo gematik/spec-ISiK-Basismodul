@@ -18,7 +18,7 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * value MS
 * status MS
 * type 1.. MS
-* type from ISiKAccountType (preferred)
+* type from ISiKAccountType (required)
 * subject 1.. MS
   * ^slicing.discriminator.type = #type
   * ^slicing.discriminator.path = "resolve()"
