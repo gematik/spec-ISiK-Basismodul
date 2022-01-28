@@ -12,6 +12,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * . ^constraint[10].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * . ^constraint[11].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * id 1.. MS
+* extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
 * extension[Aufnahmegrund].extension[DritteStelle] MS

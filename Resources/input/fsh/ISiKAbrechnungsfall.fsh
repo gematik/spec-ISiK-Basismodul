@@ -3,6 +3,7 @@ Parent: Account
 Id: ISiKAbrechnungsfall
 Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistungen in ISiK-Szenarien"
 * insert Meta
+* extension MS
 * extension contains ExtensionAbrechnungsDiagnose named Abrechnungsdiagnose 0..1 MS
 * id 1.. MS
 * identifier 1.. MS
