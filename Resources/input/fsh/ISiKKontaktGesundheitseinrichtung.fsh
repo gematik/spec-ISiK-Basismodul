@@ -142,36 +142,41 @@ Usage: #example
 * serviceProvider.display = "Fachabteilung XYZ"
 
 Invariant: ISiK-enc-1
-Description: "Abgeschlossene und ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
+Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
-Description: "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben"
+Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()"
+Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
+Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'planned' implies period.exists().not()"
+
+Invariant: ISiK-enc-4
+Description: "Geplante Kontakte sollten die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden"
+Severity: #warning
+Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists()"
+
+Invariant: ISiK-enc-5
 Description: "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'in-progress' implies period.start.exists()"
 
-Invariant: ISiK-enc-4
+Invariant: ISiK-enc-6
 Description: "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'onleave' implies period.start.exists()"
 
-Invariant: ISiK-enc-5
-Description: "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben"
-Severity: #error
-Expression: "status = 'cancelled' implies period.end.exists()"
-
-Invariant: ISiK-enc-6
+Invariant: ISiK-enc-7
 Description: "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben"
-Severity: #error
+Severity: #warning
 Expression: "status = 'unknown' implies period.start.exists()"
 
-Invariant: ISiK-enc-7
+Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')'"
