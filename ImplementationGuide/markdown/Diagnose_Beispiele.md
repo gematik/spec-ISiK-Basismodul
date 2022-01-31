@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Diagnose:
 
-{{xml:Examples/ISiKDiagnose.xml}}
+{{xml:Resources/fsh-generated/resources/Condition-condition.json}}
