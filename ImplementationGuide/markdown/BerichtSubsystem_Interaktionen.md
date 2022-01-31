@@ -25,7 +25,7 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten 
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
 
-{{render:../../Materialien/Composition-Bundle.png}}
+{{render:Materialien/Composition-Bundle.png}}
 *Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.*
 
 ## Hinweise zum Umgang mit der menschenlesbaren Repräsentation
