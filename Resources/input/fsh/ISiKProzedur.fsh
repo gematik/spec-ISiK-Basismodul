@@ -6,7 +6,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
 * ^status = #active
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
-* ^constraint.source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+// * ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
 * id 1.. MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
