@@ -9,7 +9,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
 * extension contains $condition-related named ReferenzPrimaerdiagnose 0..1 MS
-* extension[ReferenzPrimaerdiagnose].value[x].reference MS
+* extension[ReferenzPrimaerdiagnose].valueReference MS
 * clinicalStatus MS
 * code 1.. MS
   * obeys icd-text-1
