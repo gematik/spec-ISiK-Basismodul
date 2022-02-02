@@ -35,11 +35,6 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
   * coding[OPS] only $CodingOPS
   * coding[OPS] from $ops (required)
     * extension[Seitenlokalisation] MS
-        * ^slicing.discriminator.type = #value
-        * ^slicing.discriminator.path = "url"
-        * ^slicing.rules = #open
-        * ^sliceName = "Seitenlokalisation"
-        * ^mustSupport = true
     * system MS
     * version MS
     * code MS
