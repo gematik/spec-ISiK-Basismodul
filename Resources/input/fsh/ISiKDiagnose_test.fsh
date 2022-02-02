@@ -1,6 +1,6 @@
-Profile: ISiKDiagnose_test
+Profile: ISiKDiagnosetest
 Parent: Condition
-Id: ISiKDiagnose_test
+Id: ISiKDiagnosetest
 Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien."
 * insert Meta
 * obeys isik-con1
