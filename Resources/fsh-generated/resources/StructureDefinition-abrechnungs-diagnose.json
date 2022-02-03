@@ -1,0 +1,137 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "abrechnungs-diagnose",
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-diagnose",
+  "version": "2.0.0",
+  "name": "ExtensionAbrechnungsDiagnose",
+  "title": "Abrechnungsdiagnose",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension:Condition",
+        "path": "Extension.extension",
+        "sliceName": "Condition",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Condition.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:Condition.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "Condition"
+      },
+      {
+        "id": "Extension.extension:Condition.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Condition.value[x].extension:DRGUse",
+        "path": "Extension.extension.value[x].extension",
+        "sliceName": "DRGUse",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/drg-use"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Procedure",
+        "path": "Extension.extension",
+        "sliceName": "Procedure",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:Procedure.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:Procedure.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "Procedure"
+      },
+      {
+        "id": "Extension.extension:Procedure.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Procedure.value[x].extension:DRGUse",
+        "path": "Extension.extension.value[x].extension",
+        "sliceName": "DRGUse",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/drg-use"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-diagnose"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
