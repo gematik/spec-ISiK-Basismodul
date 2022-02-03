@@ -60,8 +60,8 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#F16.1 "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(patient)
+* encounter = Reference(encounter)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -75,8 +75,8 @@ Usage: #example
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#!
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(patient)
+* encounter = Reference(encounter)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -89,8 +89,8 @@ Usage: #example
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#†
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(patient)
+* encounter = Reference(encounter)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -104,8 +104,8 @@ Usage: #example
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(patient)
+* encounter = Reference(encounter)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -116,7 +116,7 @@ Usage: #example
 * code.coding.version = "2020"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
 * subject = Reference(patient)
-* encounter = Reference(Encounter/encounter01)
+* encounter = Reference(encounter)
 * onsetDateTime = "2019-09-02"
 * recordedDate = "2020-10-14"
 
