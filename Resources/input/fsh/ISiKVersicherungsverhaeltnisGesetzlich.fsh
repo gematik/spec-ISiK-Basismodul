@@ -1,5 +1,5 @@
 Profile: ISiKVersicherungsverhaeltnisGesetzlich
-Parent: http://fhir.de/StructureDefinition/coverage-de-gkv
+Parent: http://fhir.de/StructureDefinition/coverage-de-basis
 Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
