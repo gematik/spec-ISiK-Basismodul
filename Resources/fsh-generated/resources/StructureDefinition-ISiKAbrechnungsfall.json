@@ -1,0 +1,186 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKAbrechnungsfall",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Financial.General"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKAbrechnungsfall",
+  "version": "2.0.0",
+  "name": "ISiKAbrechnungsfall",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil beschreibt die Gruppierung von medizinischen Leistungen in ISiK-Szenarien",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Account",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Account",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Account.id",
+        "path": "Account.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Account.extension",
+        "path": "Account.extension",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.extension:Abrechnungsdiagnose",
+        "path": "Account.extension",
+        "sliceName": "Abrechnungsdiagnose",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-diagnose"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Account.identifier",
+        "path": "Account.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Account.identifier:Aufnahmenummer",
+        "path": "Account.identifier",
+        "sliceName": "Aufnahmenummer",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-aufnahmenummer"
+            ]
+          }
+        ],
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "VN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Account.identifier:Aufnahmenummer.type",
+        "path": "Account.identifier.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.identifier:Aufnahmenummer.system",
+        "path": "Account.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.identifier:Aufnahmenummer.value",
+        "path": "Account.identifier.value",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.status",
+        "path": "Account.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.type",
+        "path": "Account.type",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKAccountType"
+        }
+      },
+      {
+        "id": "Account.subject",
+        "path": "Account.subject",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "resolve()"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Account.subject:Patient",
+        "path": "Account.subject",
+        "sliceName": "Patient",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.coverage",
+        "path": "Account.coverage",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.coverage.extension:Abrechnungsart",
+        "path": "Account.coverage.extension",
+        "sliceName": "Abrechnungsart",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-art"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
