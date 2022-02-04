@@ -106,7 +106,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 
-Instance: patient
+Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[0].type = $identifier-type-de-basis#GKV

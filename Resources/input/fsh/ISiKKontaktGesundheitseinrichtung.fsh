@@ -103,7 +103,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * display 1.. MS
 * partOf MS
 
-Instance: encounter
+Instance: BeispielKontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
@@ -121,10 +121,10 @@ Usage: #example
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#versorgungsstellenkontakt
 * serviceType = $Fachabteilungsschluessel#0100
-* subject = Reference(Patient/test)
+* subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
-* diagnosis.condition = Reference(Condition/test)
+* diagnosis.condition = Reference(MittelgradigeIntelligenzminderung)
 * diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E

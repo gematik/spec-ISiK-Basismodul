@@ -49,7 +49,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
 * performed[x] only dateTime or Period
 * note MS
 
-Instance: procedure
+Instance: Appendektomie
 InstanceOf: ISiKProzedur
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
@@ -60,8 +60,8 @@ Usage: #example
 * code.coding[+].version = "2020"
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
-* subject = Reference(patient)
-* encounter = Reference(encounter)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(BeispielKontakt)
 * performedDateTime = "2020-04-23"
 * note.text = "Testnotiz"
 

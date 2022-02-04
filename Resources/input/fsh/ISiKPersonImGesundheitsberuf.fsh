@@ -86,7 +86,7 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
 * qualification.code.coding 1..
 * qualification.code.coding from $KBV_VS_Base_Practitioner_Speciality (preferred)
 
-Instance: practitioner
+Instance: PractitionerWalterArzt
 InstanceOf: ISiKPersonImGesundheitsberuf
 Usage: #example
 * meta.source = "http://krankenhaus.de"

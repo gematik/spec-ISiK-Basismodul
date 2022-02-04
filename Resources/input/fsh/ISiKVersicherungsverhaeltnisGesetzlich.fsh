@@ -49,7 +49,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
     * value MS
   * display 1.. MS
 
-Instance: coverageGesetzlich
+Instance: CoverageGesetzlich
 InstanceOf: ISiKVersicherungsverhaeltnisGesetzlich
 Usage: #example
 * identifier.type = $identifier-type-de-basis#GKV
@@ -57,7 +57,7 @@ Usage: #example
 * identifier.value = "A234567890"
 * status = #active
 * type = $versicherungsart-de-basis#GKV
-* beneficiary = Reference(patient)
+* beneficiary = Reference(PatientinMusterfrau)
 * payor.identifier.type = $v2-0203#XX
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * payor.identifier.value = "260326822"

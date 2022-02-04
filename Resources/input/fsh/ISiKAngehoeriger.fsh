@@ -46,10 +46,10 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
 
-Instance: relatedPerson
+Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger
 Usage: #example
-* patient = Reference(patient)
+* patient = Reference(PatientinMusterfrau)
 * name.family = "Mustermann"
 * name.given = "Maxine"
 * address.type = #physical

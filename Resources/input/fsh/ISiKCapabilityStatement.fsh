@@ -1,4 +1,4 @@
-Instance: ISiK-capabilityStatement-basis-server
+Instance: ISiKCapabilityStatementBasisServer
 InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/basis-server"
