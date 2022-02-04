@@ -58,49 +58,49 @@
             "severity": "error",
             "human": "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben",
             "expression": "status = 'finished' implies period.start.exists() and period.end.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
             "human": "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben",
             "expression": "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-3",
             "severity": "error",
             "human": "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'in-progress' implies period.start.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-4",
             "severity": "error",
             "human": "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'onleave' implies period.start.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-5",
             "severity": "error",
             "human": "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben",
             "expression": "status = 'cancelled' implies period.end.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-6",
             "severity": "error",
             "human": "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'unknown' implies period.start.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-7",
             "severity": "error",
             "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
             "expression": "diagnosis.use.all(coding.code != 'billing')'",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
       },
