@@ -32,58 +32,58 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * value MS
   * assigner MS
     * identifier.system MS
-    * identifier.value MS
-    * display MS
-* active MS
-* name MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  * ^comment = "In order to maintain the differntiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
-* name contains
-    Name 1..1 MS and
-    Geburtsname 0..1 MS
-* name[Name] only HumannameDeBasis
-  * ^patternHumanName.use = #official
-  * use 1.. MS
-  * family 1.. MS
-    * extension[namenszusatz] 0..1 MS
-    * extension[nachname] 0..1 MS
-    * extension[vorsatzwort] 0..1 MS
-  * given 1.. MS
-  * prefix MS
-    * extension[prefix-qualifier] 0..1 MS
-    * extension[prefix-qualifier].value[x] = #AC (exactly)
-* name[Geburtsname] only HumannameDeBasis
-  * ^patternHumanName.use = #maiden
-  * use 1.. MS
-  * family 1.. MS
-    * extension[namenszusatz] 0..1 MS
-    * extension[nachname] 0..1 MS
-    * extension[vorsatzwort] 0..1 MS
-  * given ..0
-  * prefix ..0
-* telecom.system 1..
-* telecom.value 1..
-* gender 1.. MS
-  * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
-* birthDate 1.. MS
-  * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
-  * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
-  * extension[Data-Absent-Reason].value[x] MS
-* address MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
-* address contains
-    Strassenanschrift 0..* MS and
-    Postfach 0..* MS
-* address[Postfach] only AddressDeBasis
-  * ^patternAddress.type = #postal
-  * type 1.. MS
-  * line 1.. MS
-    * extension[Strasse] 0..0 
+        * identifier.value MS
+        * display MS
+    * active MS
+    * name MS
+      * ^slicing.discriminator.type = #pattern
+      * ^slicing.discriminator.path = "$this"
+      * ^slicing.rules = #open
+      * ^comment = "In order to maintain the differntiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
+    * name contains
+        Name 1..1 MS and
+        Geburtsname 0..1 MS
+    * name[Name] only HumannameDeBasis
+      * ^patternHumanName.use = #official
+      * use 1.. MS
+      * family 1.. MS
+        * extension[namenszusatz] 0..1 MS
+        * extension[nachname] 0..1 MS
+        * extension[vorsatzwort] 0..1 MS
+      * given 1.. MS
+      * prefix MS
+        * extension[prefix-qualifier] 0..1 MS
+        * extension[prefix-qualifier].value[x] = #AC (exactly)
+    * name[Geburtsname] only HumannameDeBasis
+      * ^patternHumanName.use = #maiden
+      * use 1.. MS
+      * family 1.. MS
+        * extension[namenszusatz] 0..1 MS
+        * extension[nachname] 0..1 MS
+        * extension[vorsatzwort] 0..1 MS
+      * given ..0
+      * prefix ..0
+    * telecom.system 1..
+    * telecom.value 1..
+    * gender 1.. MS
+      * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
+    * birthDate 1.. MS
+      * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
+      * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
+      * extension[Data-Absent-Reason].value[x] MS
+    * address MS
+      * ^slicing.discriminator.type = #pattern
+      * ^slicing.discriminator.path = "$this"
+      * ^slicing.rules = #open
+      * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
+    * address contains
+        Strassenanschrift 0..* MS and
+        Postfach 0..* MS
+    * address[Postfach] only AddressDeBasis
+      * ^patternAddress.type = #postal
+      * type 1.. MS
+      * line 1.. MS
+        * extension[Strasse] 0..0
     * extension[Hausnummer] 0..0 
     * extension[Adresszusatz] 0..0 
     * extension[Postfach] 0..1 MS
