@@ -118,7 +118,7 @@ Usage: #example
 * subject = Reference(patient)
 * encounter = Reference(Encounter/encounter01)
 * onsetDateTime = "2019-09-02"
-* recordedDate = "2020-10-14"
+* recordedDate = "2021-01-01"
 
 Invariant: isik-con1
 Description: "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden"
