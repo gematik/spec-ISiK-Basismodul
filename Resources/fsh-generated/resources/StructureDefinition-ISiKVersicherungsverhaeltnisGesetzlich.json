@@ -33,8 +33,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "system"
+              "type": "pattern",
+              "path": "$this"
             }
           ],
           "rules": "open"
@@ -58,6 +58,22 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "GKV",
+                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.identifier:KrankenversichertenID.type",
+        "path": "Coverage.identifier.type",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -78,28 +94,32 @@
       {
         "id": "Coverage.type",
         "path": "Coverage.type",
-        "comment": "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen.",
-        "mustSupport": true
+        "comment": "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
       },
       {
         "id": "Coverage.type.coding",
         "path": "Coverage.type.coding",
-        "min": 1,
-        "mustSupport": true
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
       },
       {
-        "id": "Coverage.type.coding.system",
-        "path": "Coverage.type.coding.system",
+        "id": "Coverage.type.coding:VersicherungsArtDeBasis",
+        "path": "Coverage.type.coding",
+        "sliceName": "VersicherungsArtDeBasis",
         "min": 1,
-        "fixedUri": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
-        "mustSupport": true
-      },
-      {
-        "id": "Coverage.type.coding.code",
-        "path": "Coverage.type.coding.code",
-        "min": 1,
-        "fixedCode": "GKV",
-        "mustSupport": true
+        "max": "1",
+        "patternCoding": {
+          "code": "GKV",
+          "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+        }
       },
       {
         "id": "Coverage.subscriber",
@@ -198,6 +218,12 @@
             ]
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor.identifier.type",
+        "path": "Coverage.payor.identifier.type",
+        "min": 1,
         "mustSupport": true
       },
       {
