@@ -8,7 +8,13 @@ Description: "A document style representation of the receipt (complete, self-con
 * type = #document (exactly)
 * type MS
 * timestamp 1.. MS
+* identifier 1.. MS
 * entry MS
+  * fullUrl 1..1 MS
+  * resource 1..1 MS
+  * search 0..0
+  * request 0..0
+  * response 0..0
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "resource.type.coding.code"
   * ^slicing.rules = #open
