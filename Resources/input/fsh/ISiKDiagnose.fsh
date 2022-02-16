@@ -26,7 +26,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
-  * coding[Alpha-ID] from $alpha-id (required)
+  * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
     * code 1.. MS
@@ -52,17 +52,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * ^sliceName = "onsetDateTime"
 * recordedDate 1.. MS
 * note MS
-
-Instance: Example-condition-ausrufezeichen-primaer
-InstanceOf: ISiKDiagnose
-Usage: #example
-* clinicalStatus = $condition-clinical#active
-* code.coding.version = "2019"
-* code.coding = $icd-10-gm#F16.1 "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
-* recordedDate = "2021-05-24"
-* note.text = "Beispiel für eine Anmerkung"
 
 Instance: Example-condition-ausrufezeichen-sekundaer
 InstanceOf: ISiKDiagnose

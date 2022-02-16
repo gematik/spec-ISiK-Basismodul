@@ -2,16 +2,15 @@ Profile: ISiKProzedur
 Parent: Procedure
 Id: ISiKProzedur
 Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien."
-* ^version = "1.0"
-* ^status = #active
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
-// * ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
 * id 1.. MS
+* extension MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
-* extension contains $ProzedurDokumentationsdatum named Dokumentationsdatum 0..1 MS
+* extension contains ExtensionProzedurDokumentationsdatum named Dokumentationsdatum 0..1 MS
 * status MS
 * category MS
   * coding ^slicing.discriminator.type = #pattern
@@ -32,8 +31,8 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
   * coding contains
       OPS 0..1 MS and
       SNOMED-CT 0..1
-  * coding[OPS] only $CodingOPS
-  * coding[OPS] from $ops (required)
+  * coding[OPS] only CodingOPS
+  * coding[OPS] from OpsVS (required)
     * extension[Seitenlokalisation] MS
     * system MS
     * version MS
