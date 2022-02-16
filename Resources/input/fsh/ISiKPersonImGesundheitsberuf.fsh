@@ -12,13 +12,17 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
   * ^slicing.rules = #open
 * identifier contains
     Arztnummer 0..* MS and
-    EFN 0..1 MS
+    EFN 0..1 MS // and
+//    TelematikId 0..1 MS
 * identifier[Arztnummer] only IdentifierLanr
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
+// * identifier[TelematikId] only IdentifierTelematikId
+//  * ^patternIdentifier.type = $v2-0203#PRN
+//  * type 1..
 * name MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -51,17 +55,19 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
-    * extension[Strasse] 0..0 
-    * extension[Hausnummer] 0..0 
-    * extension[Adresszusatz] 0..0 
+    * extension[Strasse] 0..0
+    * extension[Hausnummer] 0..0
+    * extension[Adresszusatz] 0..0
     * extension[Postfach] 0..1 MS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS

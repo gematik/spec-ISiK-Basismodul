@@ -2,58 +2,66 @@ Profile: ISiKKontaktGesundheitseinrichtung
 Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
-* insert Meta
+* ^status = #active
 * obeys ISiK-enc-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * id 1.. MS
-* extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
-* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
-* extension[Aufnahmegrund].extension[DritteStelle] MS
-* extension[Aufnahmegrund].extension[VierteStelle] MS
-* identifier 1.. MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
+* extension ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[0].path = "url"
   * ^slicing.rules = #open
-* identifier contains Aufnahmenummer 0..1 MS
+* extension contains $Aufnahmegrund named Aufnahmegrund 0..1 MS
+  * ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[0].path = "url"
+  * ^slicing.rules = #open
+* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] ^sliceName = "ErsteUndZweiteStelle"
+  * ^mustSupport = true
+* extension[Aufnahmegrund].extension[DritteStelle] ^sliceName = "DritteStelle"
+  * ^mustSupport = true
+* extension[Aufnahmegrund].extension[VierteStelle] ^sliceName = "VierteStelle"
+  * ^mustSupport = true
+* identifier 1.. MS
+  * ^slicing.discriminator[0].type = #pattern
+  * ^slicing.discriminator[0].path = "$this"
+  * ^slicing.rules = #open
+* identifier contains Aufnahmenummer ..1 MS
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
   * type MS
     * coding MS
-      * ^slicing.discriminator.type = #pattern
-      * ^slicing.discriminator.path = "$this"
+      * ^slicing.discriminator[0].type = #pattern
+      * ^slicing.discriminator[0].path = "$this"
       * ^slicing.rules = #open
     * coding contains vn-type 1..1 MS
     * coding[vn-type] = $v2-0203#VN
-      * system 1.. MS
-      * code 1.. MS
+    * coding[vn-type].system 1.. MS
+    * coding[vn-type].code 1.. MS
   * system 1..
   * value 1..
 * status MS
-* status from EncounterStatusDe (required)
+* status from $EncounterStatusDe (required)
   * ^short = "planned | in-progress | onleave | finished | cancelled +"
   * ^definition = "planned | in-progress | onleave | finished | cancelled +."
   * ^binding.description = "Eingeschränkter Status vgl. FHIR R5"
 * class MS
-* class from EncounterClassDE (required)
+* class from $EncounterClassDE (required)
 * type MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
+  * ^slicing.discriminator[0].type = #pattern
+  * ^slicing.discriminator[0].path = "$this"
   * ^slicing.rules = #open
 * type contains
-    Kontaktebene 0..1 MS and
-    KontaktArt 0..1 MS
-* type[Kontaktebene] from KontaktebeneDe (required)
-  * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/Kontaktebene"
+    Kontaktebene ..1 MS and
+    KontaktArt ..1 MS
+* type[Kontaktebene] from $kontaktebene-de (required)
+  * ^patternCodeableConcept.coding[0].system = "http://fhir.de/CodeSystem/Kontaktebene"
   * ^binding.description = "Kontaktebene"
-* type[KontaktArt] from KontaktartDe (required)
-  * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
+* type[KontaktArt] from $kontaktart-de (required)
+* type[KontaktArt] ^patternCodeableConcept.coding[0].system = "http://fhir.de/CodeSystem/kontaktart-de"
 * serviceType 1.. MS
   * coding 1.. MS
-    * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "$this"
+    * ^slicing.discriminator[0].type = #pattern
+    * ^slicing.discriminator[0].path = "$this"
     * ^slicing.rules = #open
-  * coding contains Fachabteilungsschluessel 0..1 MS
-  * coding[Fachabteilungsschluessel] from FachabteilungsschluesselVS (required)
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
+  * coding contains Fachabteilungsschluessel ..1 MS
+  * coding[Fachabteilungsschluessel] from $Fachabteilungsschluessel (required)
+  * coding[Fachabteilungsschluessel] ^patternCoding.system = "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
 * subject 1.. MS
   * reference 1.. MS
 * period 1.. MS
@@ -65,11 +73,11 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * use 1.. MS
     * ^binding.strength = #extensible
   * rank MS
-* hospitalization 1.. MS
+* hospitalization MS
   * admitSource 1.. MS
-  * admitSource from AufnahmeanlassVS (preferred)
+  * admitSource from $Aufnahmeanlass (preferred)
   * dischargeDisposition MS
-    * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
+    * extension contains $Entlassungsgrund named Entlassungsgrund ..1 MS
 * location MS
   * location MS
     * display 1.. MS
