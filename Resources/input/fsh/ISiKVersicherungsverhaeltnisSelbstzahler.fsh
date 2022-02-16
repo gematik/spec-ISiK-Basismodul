@@ -22,3 +22,11 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * payor MS
 * order ..0
 * network ..0
+
+Instance: coveragePrivat
+InstanceOf: ISiKVersicherungsverhaeltnisSelbstzahler
+Usage: #example
+* status = #active
+* type = $versicherungsart-de-basis#SEL
+* beneficiary = Reference(patient)
+* payor = Reference(patient)
