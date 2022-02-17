@@ -1,8 +1,8 @@
-Instance: ISiK-capabilityStatement-basis-server
+Instance: isik-capabilityStatement-basis-server
 InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "https://gematik.de/fhir/ISiK/CapabilityStatement/basis-server"
-* version = "2.0"
+* version = "1.0"
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
 * status = #active
@@ -15,9 +15,9 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * kind = #requirements
 * fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
-* format[+] = #application/fhir+json
-* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul|2.0.0"
+* format[0] = #xml
+* format[+] = #json
+* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul|1.0.3"
 * rest.mode = #server
 * rest.resource[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
@@ -152,17 +152,17 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "location"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-location"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "part-of"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-part-of"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "service-provider"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-service-provider"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
@@ -333,7 +333,7 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #RelatedPerson
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiKTI/StructureDefinition/ISiKAngehoeriger"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -363,7 +363,7 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Practitioner
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiKTI/StructureDefinition/ISiKPersonImGesundheitsberuf"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -413,12 +413,12 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Composition
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiKTI/StructureDefinition/ISiKBerichtSubSysteme"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme"
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Bundle
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiKTI/StructureDefinition/ISiKBerichtBundle"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
 * document.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * document.extension.valueCode = #SHALL
 * document.mode = #consumer
-* document.profile = "https://gematik.de/fhir/ISiKTI/StructureDefinition/ISiKBerichtBundle"
+* document.profile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
