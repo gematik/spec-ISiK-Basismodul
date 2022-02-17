@@ -31,21 +31,3 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * extension contains ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
 
-// extension:billingDiagnosis und extension:billingProcedure einfügen. Abstimmung mit PA notwendig. Siehe https://chat.fhir.org/#narrow/stream/224725-german.2Fcommitters/topic/Gestaltung.20Profil.20Account.20.23255
-
-Extension: ExtensionAbrechnungsart
-Id: abrechnungs-art
-Title:  "Abrechnungsart"
-* insert Meta
-* value[x] only Coding
-* valueCoding from AbrechnungsartVS (required)
-
-Extension: ExtensionAbrechnungsDiagnose
-Id: abrechnungs-diagnose
-Title:  "Abrechnungsdiagnose"
-* insert Meta
-* extension contains Use 0..* MS and
-    Referenz 0..* MS
-* extension[Use].value[x] only Coding
-* extension[Use].valueCoding from ISiKDrgUse (required)
-* extension[Referenz].value[x] only Reference(Condition or Procedure)
