@@ -31,14 +31,14 @@ Id: ISiKLocationPhysicalType
 * LocationType#ro "Room"
 * LocationType#wa "Ward"
 
-ValueSet: ISiKKontaktDiagnoseVerpflichtend
-Id: ISiKKontaktDiagnoseVerpflichtend
+ValueSet: ISiKDiagnoseTyp
+Id: ISiKDiagnoseTyp
 * insert Meta
 * ISiKKontaktDiagnose#referral-diagnosis "Überweisungsdiagnose"
 * ISiKKontaktDiagnose#treatment-diagnosis "Behandlungsdiagnose"
 
-ValueSet: ISiKKontaktDiagnoseOptional
-Id: ISiKKontaktDiagnoseOptional
+ValueSet: ISiKDiagnosesubtyp
+Id: ISiKDiagnosesubtyp
 * insert Meta
 * ISiKKontaktDiagnose#surgery-diagnosis "Operationsdiagnose"
 * ISiKKontaktDiagnose#department-main-diagnosis "Abteilung Hauptdiagnose"
@@ -55,8 +55,8 @@ Title: "ISiKAccountType"
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
 
-ValueSet: ISiKAccountDRG
-Id: ISiKAccountDRG
+ValueSet: ISiKDrgUse
+Id: ISiKDrgUse
 * insert Meta
 * ISiKKontaktDiagnose#principle-DRG "Principle-DRG"
 * ISiKKontaktDiagnose#secondary-DRG "Secondary-DRG"
