@@ -85,7 +85,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * reference 1.. MS
 * hospitalization ..1 MS
   * admitSource 0..1 MS
-  * admitSource from AufnahmeanlassVS (preferred)
+  * admitSource from AufnahmeanlassVS (extensible)
   * dischargeDisposition MS
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
