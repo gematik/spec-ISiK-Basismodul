@@ -100,6 +100,16 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * display 1.. MS
 * partOf MS
 
+Extension: PlannedStartDate
+Id: PlannedStartDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+* value[x] only dateTime
+
+Extension: PlannedEndDate
+Id: PlannedEndDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+* value[x] only dateTime
+
 Instance: encounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
