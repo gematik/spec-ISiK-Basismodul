@@ -1,6 +1,6 @@
 Profile: ISiKBerichtBundle
 Parent: Composition
-Id: ISiKBerichtSubSysteme
+Id: ISiKBerichtBundle
 Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden."
 * ^status = #active
 * id 1..
