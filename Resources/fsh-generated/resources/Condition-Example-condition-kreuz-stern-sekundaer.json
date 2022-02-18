@@ -1,11 +1,19 @@
 {
   "resourceType": "Condition",
-  "id": "Example-condition-ausrufezeichen-primaer",
+  "id": "Example-condition-kreuz-stern-sekundaer",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKDiagnose"
     ]
   },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/condition-related",
+      "valueReference": {
+        "reference": "Condition/Example-condition-kreuz-stern-primaer"
+      }
+    }
+  ],
   "clinicalStatus": {
     "coding": [
       {
@@ -17,10 +25,19 @@
   "code": {
     "coding": [
       {
+        "extension": [
+          {
+            "url": "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
+            "valueCoding": {
+              "code": "*",
+              "system": "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"
+            }
+          }
+        ],
         "version": "2019",
-        "code": "F16.1",
+        "code": "H36.0",
         "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
-        "display": "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
+        "display": "Retinopathia diabetica"
       }
     ]
   },

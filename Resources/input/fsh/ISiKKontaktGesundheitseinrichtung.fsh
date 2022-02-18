@@ -100,15 +100,15 @@ Usage: #example
 * identifier.value = "0123456789"
 * status = #finished
 * class = $v3-ActCode#IMP
-* type[0] = $kontaktart-de#operation
+* type[0] = $kontaktart-de-codesystem#operation
 * type[+] = $Kontaktebene#versorgungsstellenkontakt
-* serviceType = $Fachabteilungsschluessel#0100
+* serviceType = $Fachabteilungsschluessel-codesystem#0100
 * subject = Reference(Patient/test)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
 * diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
-* hospitalization.admitSource = $Aufnahmeanlass#E
+* hospitalization.admitSource = $Aufnahmeanlass-codesystem#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
@@ -116,8 +116,3 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.location.display = "Krankenhaus XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
-
-Invariant: ISiK-enc-1
-Description: "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben"
-Severity: #warning
-Expression: "status = 'finished' implies period.end.exists()"

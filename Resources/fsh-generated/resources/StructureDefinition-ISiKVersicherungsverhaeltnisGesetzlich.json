@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKVersicherungsverhaeltnisGesetzlich",
   "url": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-  "version": "2.0.0",
+  "version": "1.0.3",
   "name": "ISiKVersicherungsverhaeltnisGesetzlich",
   "status": "draft",
   "experimental": false,
-  "date": "2021-11-12",
+  "date": "2022-07-02",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -170,6 +170,26 @@
         "path": "Coverage.beneficiary.display",
         "short": "Name der Versicherten Person",
         "definition": "Die Angabe des Namens des Versicherten dient der geeigenten Darstellung für den Benutzer und hat keine technische Bedeutung."
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "mapping": [
+          {
+            "identity": "KVDT",
+            "map": "4133"
+          }
+        ]
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "mapping": [
+          {
+            "identity": "KVDT",
+            "map": "4110"
+          }
+        ]
       },
       {
         "id": "Coverage.payor",

@@ -54,16 +54,16 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
     * value MS
   * display 1.. MS
 
-  Instance: coverageGesetzlich
-  InstanceOf: ISiKVersicherungsverhaeltnisGesetzlich
-  Usage: #example
-  * identifier.type = $identifier-type-de-basis#GKV
-  * identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-  * identifier.value = "A234567890"
-  * status = #active
-  * type = $versicherungsart-de-basis#GKV
-  * beneficiary = Reference(patient)
-  * payor.identifier.type = $v2-0203#XX
-  * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
-  * payor.identifier.value = "260326822"
-  * payor.display = "Eine Gesundheitskasse"
+Instance: coverageGesetzlich
+InstanceOf: ISiKVersicherungsverhaeltnisGesetzlich
+Usage: #example
+* identifier.type = $identifier-type-de-basis#GKV
+* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier.value = "A234567890"
+* status = #active
+* type = $versicherungsart-de-basis#GKV
+* beneficiary = Reference(patient)
+* payor.identifier.type = $v2-0203#XX
+* payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor.identifier.value = "260326822"
+* payor.display = "Eine Gesundheitskasse"

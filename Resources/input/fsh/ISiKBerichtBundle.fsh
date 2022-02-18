@@ -1,6 +1,6 @@
-Profile: ISiKBerichtSubSysteme
+Profile: ISiKBerichtBundle
 Parent: Composition
-Id: ISiKBerichtSubSysteme
+Id: ISiKBerichtBundle
 Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden."
 * ^status = #active
 * id 1..
@@ -62,7 +62,3 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * text 1.. MS
   * section MS
 
-Invariant: ISiK-docBundle-1
-Description: "All referenced Resources must be contained in the Bundle"
-Severity: #error
-Expression: "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)"

@@ -91,7 +91,7 @@ Usage: #example
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
 * code.coding.version = "2019"
-* code.coding = $-icd-10-gm#H36.0 "Retinopathia diabetica"
+* code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
 * recordedDate = "2021-05-24"
@@ -108,12 +108,3 @@ Usage: #example
 * onsetDateTime = "2019-09-02"
 * recordedDate = "2020-10-14"
 
-Invariant: isik-con1
-Description: "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden"
-Severity: #error
-Expression: "code.coding.exists() implies encounter.exists()"
-
-Invariant: icd-text-1
-Description: "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
-Severity: #error
-Expression: "coding.exists().not() implies text.exists()"

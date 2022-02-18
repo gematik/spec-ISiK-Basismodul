@@ -1,8 +1,8 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "ISiK-capabilityStatement-basis-server",
-  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/basis-server",
-  "version": "2.0",
+  "id": "isik-capabilityStatement-basis-server",
+  "url": "https://gematik.de/fhir/ISiK/CapabilityStatement/basis-server",
+  "version": "1.0",
   "name": "ISiKCapabilityStatementBasisServer",
   "title": "ISiK CapabilityStatement Basis Server",
   "status": "active",
@@ -34,11 +34,11 @@
   "kind": "requirements",
   "fhirVersion": "4.0.1",
   "format": [
-    "application/fhir+xml",
-    "application/fhir+json"
+    "xml",
+    "json"
   ],
   "implementationGuide": [
-    "https://gematik.de/fhir/ISiK/v2/ImplementationGuide/ISiK-basismodul|2.0.0"
+    "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul|1.0.3"
   ],
   "rest": [
     {
@@ -53,7 +53,7 @@
           ],
           "type": "Patient",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPatient"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
           ],
           "interaction": [
             {
@@ -241,7 +241,7 @@
           ],
           "type": "Encounter",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           ],
           "interaction": [
             {
@@ -360,7 +360,7 @@
                 }
               ],
               "name": "location",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
+              "definition": "http://hl7.org/fhir/SearchParameter/Encounter-location",
               "type": "reference"
             },
             {
@@ -371,7 +371,7 @@
                 }
               ],
               "name": "part-of",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
+              "definition": "http://hl7.org/fhir/SearchParameter/Encounter-part-of",
               "type": "reference"
             },
             {
@@ -382,7 +382,7 @@
                 }
               ],
               "name": "service-provider",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
+              "definition": "http://hl7.org/fhir/SearchParameter/Encounter-service-provider",
               "type": "reference"
             },
             {
@@ -407,7 +407,7 @@
           ],
           "type": "Condition",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDiagnose"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose"
           ],
           "interaction": [
             {
@@ -540,7 +540,7 @@
           ],
           "type": "Procedure",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           ],
           "interaction": [
             {
@@ -673,8 +673,8 @@
           ],
           "type": "Coverage",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
           ],
           "interaction": [
             {
@@ -796,7 +796,7 @@
           ],
           "type": "RelatedPerson",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKAngehoeriger"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
           ],
           "interaction": [
             {
@@ -874,7 +874,7 @@
           ],
           "type": "Practitioner",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPersonImGesundheitsberuf"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf"
           ],
           "interaction": [
             {
@@ -996,7 +996,7 @@
           ],
           "type": "Composition",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme"
           ]
         },
         {
@@ -1008,7 +1008,7 @@
           ],
           "type": "Bundle",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
           ]
         }
       ]
@@ -1023,7 +1023,7 @@
         }
       ],
       "mode": "consumer",
-      "profile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
+      "profile": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
     }
   ]
 }

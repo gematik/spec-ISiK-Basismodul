@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKProzedur",
-  "version": "2.0.0",
+  "version": "1.0.3",
   "name": "ISiKProzedur",
   "status": "draft",
   "experimental": false,
-  "date": "2021-11-12",
+  "date": "2022-07-02",
   "publisher": "gematik GmbH",
   "description": "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -76,6 +76,11 @@
         "mustSupport": true
       },
       {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "mustSupport": true
+      },
+      {
         "id": "Procedure.extension:Dokumentationsdatum",
         "path": "Procedure.extension",
         "sliceName": "Dokumentationsdatum",
@@ -123,7 +128,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "preferred",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorie-SCT"
+          "valueSet": "https://gematik.de/fhir/IsiK/ValueSet/ProzedurenKategorie-SCT"
         }
       },
       {
@@ -146,8 +151,8 @@
           {
             "key": "sct-ops-1",
             "severity": "error",
-            "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext.",
-            "expression": "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() or text.exists()",
+            "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden.",
+            "expression": "(coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()) or (text.exists() and coding.exists().not())",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {
@@ -223,7 +228,7 @@
         "max": "1",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodes-SCT"
+          "valueSet": "https://gematik.de/fhir/IsiK/ValueSet/ProzedurenCodes-SCT"
         }
       },
       {

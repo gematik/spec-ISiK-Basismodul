@@ -1,6 +1,6 @@
 {
   "resourceType": "Condition",
-  "id": "Example-condition-kreuz-stern-sekundaer",
+  "id": "Example-condition-ausrufezeichen-sekundaer",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKDiagnose"
@@ -10,14 +10,14 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/condition-related",
       "valueReference": {
-        "reference": "Condition/Example-condition-kreuz-stern-primaer"
+        "reference": "Example-condition-ausrufezeichen-primaer"
       }
     }
   ],
   "clinicalStatus": {
     "coding": [
       {
-        "code": "active",
+        "code": "recurrence",
         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
       }
     ]
@@ -29,15 +29,15 @@
           {
             "url": "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen",
             "valueCoding": {
-              "code": "*",
+              "code": "!",
               "system": "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"
             }
           }
         ],
         "version": "2019",
-        "code": "H36.0",
-        "system": "http://fhir.de/CodeSystem/bfarm/-icd-10-gm",
-        "display": "Retinopathia diabetica"
+        "code": "U69.32",
+        "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+        "display": "Intravenöser Konsum sonstiger psychotroper Substanzen"
       }
     ]
   },
