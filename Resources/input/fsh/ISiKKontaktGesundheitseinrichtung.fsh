@@ -149,6 +149,7 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
+* partOf = Reference(Encounter/example)
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
@@ -188,7 +189,7 @@ Expression: "status = 'unknown' implies period.start.exists()"
 Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
-Expression: "diagnosis.use.all(coding.code != 'billing')'"
+Expression: "diagnosis.use.all(coding.code != 'billing')"
 
 Invariant: ISiK-enc-9
 Description: "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten"
