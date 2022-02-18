@@ -106,7 +106,7 @@
             "key": "ISiK-enc-8",
             "severity": "error",
             "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
-            "expression": "diagnosis.use.all(coding.code != 'billing')'",
+            "expression": "diagnosis.use.all(coding.code != 'billing')",
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
@@ -492,9 +492,6 @@
         "sliceName": "Diagnosetyp",
         "min": 1,
         "max": "1",
-        "patternCoding": {
-          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
-        },
         "mustSupport": true,
         "binding": {
           "strength": "required",
@@ -507,9 +504,6 @@
         "sliceName": "DiagnosesubTyp",
         "min": 0,
         "max": "*",
-        "patternCoding": {
-          "system": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
-        },
         "mustSupport": true,
         "binding": {
           "strength": "extensible",
