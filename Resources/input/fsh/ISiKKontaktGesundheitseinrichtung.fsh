@@ -77,9 +77,9 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from ISiKDiagnoseTyp (required)
-      * ^patternCoding.system = ISiKKontaktDiagnose
+      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/CodeSystem/ISiKKontaktDiagnose"
     * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)
-      * ^patternCoding.system = ISiKKontaktDiagnose
+      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/CodeSystem/ISiKKontaktDiagnose"
   * rank MS
 * account 0.. MS
   * reference 1.. MS
