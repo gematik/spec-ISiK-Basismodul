@@ -77,9 +77,9 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from ISiKDiagnoseTyp (required)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
+      * ^patternCoding.system = ISiKKontaktDiagnose
     * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
+      * ^patternCoding.system = ISiKKontaktDiagnose
   * rank MS
 * account 0.. MS
   * reference 1.. MS
@@ -134,7 +134,7 @@ Usage: #example
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
-* diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
+* diagnosis.use = ISiKKontaktDiagnose#treatment-diagnosis
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
