@@ -100,6 +100,18 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * display 1.. MS
 * partOf MS
 
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedStartDate
+Id: PlannedStartDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+* value[x] only dateTime
+
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedEndDate
+Id: PlannedEndDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+* value[x] only dateTime
+
 Instance: encounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
