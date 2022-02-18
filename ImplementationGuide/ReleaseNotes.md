@@ -20,7 +20,7 @@ Datum: 27.08.2021
 
 - Korrektur der Suchinteraktion für das Datenobjekt "Condition": ```Condition.onset[x]``` enthält kein Must-Support-Flag, daher ist die Suche nach "onset-date" keine Pflicht. Der Suchparameter wurde nun als optional markiert.
 - Beschreibung von Encounter.status enthielt Teile der Beschreibung von Condition.status. Diese wurden nun gelöscht.
-- Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://simplifier.net/guide/basisprofil-de-r4/AmbulanterstationrerFallEncounterAccountEpisodeOfCare) gewährleisten wurde dieses Feld als optional gekennzeichnet.
+- Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-AmbulanterStationaererFall.html) gewährleisten wurde dieses Feld als optional gekennzeichnet.
 - Das Binding an Procedure.code:OPS enthielt ein Binding an ein ValueSet mit falscher Canonical-URL.
 - Korrektur der Interaktionen auf Coverage: Für Coverage.payor für das Profil ISiKVersicherungsverhaeltnisGesetzlich muss nur die Suche mittels des identifier-Modifiers untersützt werden, jedoch nicht die Suche auf die dazugehörige Referenz.
 - Hinweis hinzugefügt, dass sowohl für die Implementierung von ISiK, als auch für den anschließenden Betrieb eines ISiK-konformen Systems eine SNOMED-Lizenz notwendig ist.

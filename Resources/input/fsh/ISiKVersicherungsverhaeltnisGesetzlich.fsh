@@ -1,28 +1,31 @@
 Profile: ISiKVersicherungsverhaeltnisGesetzlich
-Parent: CoverageDeBasis
+Parent: http://fhir.de/StructureDefinition/coverage-de-basis
 Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
 * id 1..
 * identifier MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "system"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
   * ^short = "Primärer Identifier der Versicherung"
   * ^definition = "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versichertennummer identifiziert werden. Ist diese nicht bekannt, so wird die 10-stellige VersichertenID statt dessen verwendet."
 * identifier contains KrankenversichertenID 1..1 MS
 * identifier[KrankenversichertenID] only IdentifierKvid10
+  * ^patternIdentifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
+  * type 1.. MS
   * system MS
   * value MS
 * status MS
-* type MS
+* type 
   * ^comment = "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
-  * coding 1.. MS
-    * system 1.. MS
-    * system = "http://fhir.de/CodeSystem/versicherungsart-de-basis" (exactly)
-    * code 1.. MS
-    * code = #GKV (exactly)
+  * coding 
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+  * coding contains VersicherungsArtDeBasis 1..1
+  * coding[VersicherungsArtDeBasis] = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
 * subscriber only Reference(ISiKAngehoeriger)
   * ^definition = "Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung"
   * identifier 1..
@@ -45,6 +48,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
   * ^comment = "Die Angabe der IK-Nummer des Versicherers in payor.identifier ist verpflichtend. Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird."
   * identifier only IdentifierIknr
   * identifier MS
+    * type 1.. MS
     * system MS
     * value MS
   * display 1.. MS

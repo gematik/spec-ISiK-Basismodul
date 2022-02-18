@@ -7,8 +7,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
 * patient 1..1 MS
 * patient only Reference(ISiKPatient)
   * reference 1..
-  * identifier ..0
-  * display ..0
 * name 1..1 MS
 * name only HumannameDeBasis
 * gender.extension contains GenderOtherDE named Geschlecht-Administrativ 0..*
