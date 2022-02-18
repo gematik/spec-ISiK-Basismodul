@@ -2,6 +2,12 @@
 
 Für die Ressource Patient MUSS die REST-Interaktion "READ" implementiert werden.
 
+Für die Ressource Patient KANN die REST-Interaktion "POST" implementiert werden. Diese Interaktion dient für die Vorabübermittelung von (unverifizierten und/oder unvollständigen) Patientenstammdaten. Eine ```Patient```-Ressource welche NICHT durch das bestäigungsrelevante System angelegt wird MUSS in ```Patient.meta.tag``` eine Angabe enthalten, dass diese Ressource durch ein Fremdsystem erzeugt wurden ist. Dieser Tag MUSS durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht mitübermitteln.
+
+* Das bestäigungsrelevante System SOLLTE die übermittelte ```Patient```-Ressource löschen oder als inaktiv kennzeichnen, insoweit Geschäftsregeln oder andere Gründe dazu führen, dass die ```Patient```-Ressource nicht permanent angelegt wird im System (z.B. keine Bestätigung durch die Anwender\*in des Systems oder keine Aufnahme der Patient\*in). 
+* Sollte die ```Patient```-Ressource dauerhaft übernommen werden in das bestäigungsrelevante System, MUSS der entsprechende Tag in ```Patient.meta.tag``` entfernt werden. Im diesem Falle MUSS die id der Ressource stabil bleiben und darf nicht geändert werden.
+* Übermittelte Ressourcen MÜSSEN im Falle einer erfolgreichen Übermittelung direkt über die READ- und SEARCH-Interaktionen zur Verfügung gestellt werden.
+
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
 1. Der Suchparameter "_id" MUSS unterstützt werden:
