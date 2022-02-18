@@ -49,3 +49,17 @@ Title:  "Abrechnungsdiagnose"
 * extension[Use].value[x] only Coding
 * extension[Use].valueCoding from ISiKDrgUse (required)
 * extension[Referenz].value[x] only Reference(Condition or Procedure)
+
+Instance: account
+InstanceOf: ISiKAbrechnungsfall
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.value = "0123456789"
+* status = #active
+* type = $v3-ActCode#AMB
+* subject = Reference(Patient/test)
+* coverage
+  * extension.url = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-art"
+  * extension.valueCoding = $Abrechnungsart#DRG "Diagnosebezogene Fallgruppen"
+  * coverage = Reference(Coverage/test)
