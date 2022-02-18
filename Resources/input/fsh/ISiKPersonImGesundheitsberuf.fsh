@@ -124,8 +124,3 @@ Usage: #example
 * birthDate.extension.valueCode = #masked
 * qualification.code.coding.version = "http://snomed.info/sct/900000000000207008/version/20200131"
 * qualification.code.coding = $sct#112247003 "Medical doctor (occupation)"
-
-Invariant: prac-de-1
-Description: "Die amtliche Differenzierung der Geschlechtsangabe 'other' darf nur gefüllt sein, wenn das Geschlecht 'other' angegeben ist"
-Severity: #error
-Expression: "gender='other' or gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').empty()"

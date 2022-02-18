@@ -116,8 +116,3 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.location.display = "Krankenhaus XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
-
-Invariant: ISiK-enc-1
-Description: "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben"
-Severity: #warning
-Expression: "status = 'finished' implies period.end.exists()"

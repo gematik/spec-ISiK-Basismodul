@@ -62,7 +62,3 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * text 1.. MS
   * section MS
 
-Invariant: ISiK-docBundle-1
-Description: "All referenced Resources must be contained in the Bundle"
-Severity: #error
-Expression: "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)"
