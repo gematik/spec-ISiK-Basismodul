@@ -31,3 +31,4 @@ Alias: $ProzedurenCodes-SCT = https://gematik.de/fhir/ISiK/v2/ValueSet/Prozedure
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
 Alias: $DiagnosisRole = http://terminology.hl7.org/CodeSystem/diagnosis-role
 Alias: $WahlleistungExtension = http://fhir.de/StructureDefinition/Wahlleistung
+Alias: $Abrechnungsart = http://fhir.de/CodeSystem/dkgev/Abrechnungsart

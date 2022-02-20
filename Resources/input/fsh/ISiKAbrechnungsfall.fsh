@@ -31,3 +31,16 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
 
+Instance: account
+InstanceOf: ISiKAbrechnungsfall
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.value = "0123456789"
+* status = #active
+* type = $v3-ActCode#AMB
+* subject = Reference(Patient/test)
+* coverage
+  * extension.url = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-art"
+  * extension.valueCoding = $Abrechnungsart#DRG "Diagnosebezogene Fallgruppen"
+  * coverage = Reference(Coverage/test)

@@ -32,22 +32,6 @@
       }
     ]
   },
-  "diagnosis": [
-    {
-      "use": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
-            "code": "CC",
-            "display": "Hauptdiagnose"
-          }
-        ]
-      },
-      "condition": {
-        "reference": "Condition/test"
-      }
-    }
-  ],
   "extension": [
     {
       "url": "http://fhir.de/StructureDefinition/Aufnahmegrund",
@@ -105,6 +89,21 @@
     "start": "2021-02-12",
     "end": "2021-02-13"
   },
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition/test"
+      },
+      "use": {
+        "coding": [
+          {
+            "code": "treatment-diagnosis",
+            "system": "https://gematik.de/fhir/ISiK/v2/CodeSystem/ISiKKontaktDiagnose"
+          }
+        ]
+      }
+    }
+  ],
   "account": [
     {
       "reference": "Account/test"
@@ -171,5 +170,8 @@
       "value": "XYZ"
     },
     "display": "Fachabteilung XYZ"
+  },
+  "partOf": {
+    "reference": "Encounter/example"
   }
 }

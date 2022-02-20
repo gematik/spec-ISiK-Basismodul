@@ -77,15 +77,13 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnoseTyp"
     * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKDiagnosesubTyp"
   * rank MS
 * account 0.. MS
   * reference 1.. MS
 * hospitalization ..1 MS
   * admitSource 0..1 MS
-  * admitSource from AufnahmeanlassVS (preferred)
+  * admitSource from AufnahmeanlassVS (extensible)
   * dischargeDisposition MS
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
@@ -99,6 +97,18 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * identifier 1.. MS
   * display 1.. MS
 * partOf MS
+
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedStartDate
+Id: PlannedStartDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+* value[x] only dateTime
+
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedEndDate
+Id: PlannedEndDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+* value[x] only dateTime
 
 Instance: encounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -122,7 +132,7 @@ Usage: #example
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
-* diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
+* diagnosis.use = ISiKKontaktDiagnose#treatment-diagnosis
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
@@ -137,6 +147,7 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
+* partOf = Reference(Encounter/example)
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
@@ -176,7 +187,7 @@ Expression: "status = 'unknown' implies period.start.exists()"
 Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
-Expression: "diagnosis.use.all(coding.code != 'billing')'"
+Expression: "diagnosis.use.all(coding.code != 'billing')"
 
 Invariant: ISiK-enc-9
 Description: "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten"

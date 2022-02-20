@@ -15,7 +15,7 @@ Dennoch erstellt die gematik für die Durchführung des Verfahrens eigene, techn
 
 Die Hinweise zur Kompatibilität sind jeweils im Unterkapitel "Kompatibilität" der einzelnen Datenobjekte zu finden.
 
-Wichtig: Inkompatibilitäten, die sich dadurch ergeben, dass die [KBV-Basisprofile](https://simplifier.net/base1x0) und die [Formularübergreifenden Vorgaben für Digitale Muster](https://simplifier.net/for) noch eine ältere Fassung der Deutschen Basisprofile (<1.0) verwenden, werden bei der Betrachtung der Kompatibilitäten nicht gesondert aufgeführt. Hierzu verweisen wir auf die [Releasenotes der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/ReleaseNotes). Ein Update dieser Profile auf die Version 1.0 ist seitens der KBV avisiert, zum Zeitpunkt der Veröffentlichung konnte jedoch noch kein konkreter Termin genannt werden.
+Wichtig: Inkompatibilitäten, die sich dadurch ergeben, dass die [KBV-Basisprofile](https://simplifier.net/base1x0) und die [Formularübergreifenden Vorgaben für Digitale Muster](https://simplifier.net/for) noch eine ältere Fassung der Deutschen Basisprofile (<1.0) verwenden, werden bei der Betrachtung der Kompatibilitäten nicht gesondert aufgeführt. Hierzu verweisen wir auf die [Releasenotes der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/ReleaseNotes.html). Ein Update dieser Profile auf die Version 1.0 ist seitens der KBV avisiert, zum Zeitpunkt der Veröffentlichung konnte jedoch noch kein konkreter Termin genannt werden.
 
 
 Das Erfordernis der Erstellung eigener, unabhängiger Profile für ISiK ergibt sich aus folgenden Gründen:
