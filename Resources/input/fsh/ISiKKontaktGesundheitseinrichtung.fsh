@@ -132,7 +132,7 @@ Usage: #example
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
-* diagnosis.use = ISiKKontaktDiagnose#treatment-diagnosis
+* diagnosis.use = KontaktDiagnoseProzedur#treatment-diagnosis
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
