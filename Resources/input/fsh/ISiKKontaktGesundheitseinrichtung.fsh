@@ -76,8 +76,8 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * coding contains 
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
-    * coding[Diagnosetyp] from ISiKDiagnoseTyp (required)
-    * coding[DiagnosesubTyp] from ISiKDiagnosesubtyp (extensible)
+    * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
+    * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (extensible)
   * rank MS
 * account 0.. MS
   * reference 1.. MS
@@ -132,7 +132,7 @@ Usage: #example
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(Condition/test)
-* diagnosis.use = ISiKKontaktDiagnose#treatment-diagnosis
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
