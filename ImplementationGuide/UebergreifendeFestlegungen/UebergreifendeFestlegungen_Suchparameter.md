@@ -83,7 +83,7 @@ Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.
 ``[base]/Procedure?_has:Encounter:diagnosis:diagnosis:Condition.code=http://fhir.de/CodeSystem/dimdi/icd-10-gm|F16.1``
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Encounter.diagnosis.condition` auf einen Encounter verweisen, der wiederrum mit einer Condition verlinkt ist mit dem ICD-10-GM Code 'F16.1'.
 
-Der Modifier `:type` MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+Der [type] Modifier MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
 **Beispiele**:
 
