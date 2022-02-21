@@ -77,7 +77,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
-    * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (extensible)
+    * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
   * rank MS
 * account 0.. MS
   * reference 1.. MS
