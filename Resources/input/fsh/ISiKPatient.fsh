@@ -121,13 +121,13 @@ Usage: #example
 * identifier[=].assigner.display = "Test PKV AG"
 * active = true
 * name[0].use = #official
-* name[=].family = "Fürstin Von Musterfrau"
+* name[=].family = "Fürstin von Musterfrau"
   * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
   * extension[=].valueString = "Graf"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
   * extension[=].valueString = "Musterfrau"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-  * extension[=].valueString = "Von"
+  * extension[=].valueString = "von"
 * name[=].given = "Erika"
 * name[=].prefix = "Dr."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"

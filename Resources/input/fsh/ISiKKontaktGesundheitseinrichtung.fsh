@@ -3,14 +3,7 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
-* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7
-* . ^constraint[5].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[6].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[7].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[8].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[9].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[10].source = Canonical(ISiKKontaktGesundheitseinrichtung)
-* . ^constraint[11].source = Canonical(ISiKKontaktGesundheitseinrichtung)
+* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8 and ISiK-enc-9 and ISiK-enc-10 and ISiK-enc-11
 * id 1.. MS
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -55,14 +48,18 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from KontaktartDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
-* serviceType 1.. MS
+* serviceType 0..1 MS
   * coding 1.. MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
-  * coding contains Fachabteilungsschluessel 0..1 MS
-  * coding[Fachabteilungsschluessel] from FachabteilungsschluesselVS (required)
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
+  * coding contains
+    Fachabteilungsschluessel 1..1 MS and 
+    ErweiterterFachabteilungsschluessel 0..1 MS
+  * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselVS (required)
+    * ^patternCoding.system = $FachabteilungsschluesselCS
+  * coding[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
+    * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
 * subject 1.. MS
   * reference 1.. MS
 * period 0.. MS
@@ -77,18 +74,16 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
       * ^slicing.discriminator.path = "$this"
       * ^slicing.rules = #open
     * coding contains 
-      DiagnoseVerpflichtend 1..1 MS and 
-      DiagnoseOptional 0..1 MS
-    * coding[DiagnoseVerpflichtend] from ISiKKontaktDiagnoseVerpflichtend (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseVerpflichtend"
-    * coding[DiagnoseOptional] from ISiKKontaktDiagnoseOptional (extensible)
-      * ^patternCoding.system = "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKKontaktDiagnoseOptional"
+      Diagnosetyp 1..1 MS and 
+      DiagnosesubTyp 0.. MS
+    * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
+    * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
   * rank MS
-* account 1.. MS
+* account 0.. MS
   * reference 1.. MS
-* hospitalization 1.. MS
-  * admitSource 1.. MS
-  * admitSource from AufnahmeanlassVS (preferred)
+* hospitalization ..1 MS
+  * admitSource 0..1 MS
+  * admitSource from AufnahmeanlassVS (extensible)
   * dischargeDisposition MS
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
@@ -102,6 +97,18 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * identifier 1.. MS
   * display 1.. MS
 * partOf MS
+
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedStartDate
+Id: PlannedStartDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
+* value[x] only dateTime
+
+// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
+Extension: PlannedEndDate
+Id: PlannedEndDate
+* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
+* value[x] only dateTime
 
 Instance: BeispielKontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -120,12 +127,12 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#versorgungsstellenkontakt
-* serviceType = $Fachabteilungsschluessel#0100
+* serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(MittelgradigeIntelligenzminderung)
-* diagnosis.use = $diagnosis-role#CC "Hauptdiagnose"
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
 * account = Reference(Account/test)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
@@ -140,38 +147,59 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
+* partOf = Reference(Encounter/example)
 
 Invariant: ISiK-enc-1
-Description: "Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben"
+Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'finished' implies period.start.exists() and period.end.exists()"
+Expression: "status = 'finished' and class = 'AMB' implies period.start.exists()"
 
 Invariant: ISiK-enc-2
-Description: "Geplante Kontakte sollten einen geplanten Start-Zeitpunkt angeben"
+Description: "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben"
 Severity: #error
-Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists() and period.exists().not()"
+Expression: "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()"
 
 Invariant: ISiK-enc-3
+Description: "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben"
+Severity: #error
+Expression: "status = 'planned' implies period.exists().not()"
+
+Invariant: ISiK-enc-4
+Description: "Geplante Kontakte sollten die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden"
+Severity: #warning
+Expression: "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists()"
+
+Invariant: ISiK-enc-5
 Description: "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'in-progress' implies period.start.exists()"
 
-Invariant: ISiK-enc-4
+Invariant: ISiK-enc-6
 Description: "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben"
 Severity: #error
 Expression: "status = 'onleave' implies period.start.exists()"
 
-Invariant: ISiK-enc-5
-Description: "Abgebrochene Kontakte sollten einen End-Zeitpunkt angeben"
-Severity: #error
-Expression: "status = 'cancelled' implies period.end.exists()"
-
-Invariant: ISiK-enc-6
+Invariant: ISiK-enc-7
 Description: "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben"
-Severity: #error
+Severity: #warning
 Expression: "status = 'unknown' implies period.start.exists()"
 
-Invariant: ISiK-enc-7
+Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
-Expression: "diagnosis.use.all(coding.code != 'billing')'"
+Expression: "diagnosis.use.all(coding.code != 'billing')"
+
+Invariant: ISiK-enc-9
+Description: "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten"
+Severity: #error
+Expression: "status = 'finished' and type.coding.where(code = 'einrichtungskontakt').exists() implies diagnosis.exists()"
+
+Invariant: ISiK-enc-10
+Description: "Ein Abteilungskontakt oder Versorgungsstellenkontakt muss auf den übergeordneten Kontakt verweisen"
+Severity: #error
+Expression: "type.coding.where(code = 'einrichtungskontakt').exists().not() implies partOf.exists()"
+
+Invariant: ISiK-enc-11
+Description: "Ein Einrichtungskontakt sollte einen serviceType mit Fachabteilungsschlüssel enthalten"
+Severity: #error
+Expression: "type.coding.where(code = 'einrichtungskontakt').exists() implies serviceType.exists()"

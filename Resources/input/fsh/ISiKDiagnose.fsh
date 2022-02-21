@@ -9,7 +9,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
-* extension contains $condition-related named ReferenzPrimaerdiagnose 0..1 MS
+* extension contains $condition-related named related 0..1 MS
 * clinicalStatus MS
 * code 1.. MS
   * obeys icd-text-1
@@ -118,7 +118,7 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(BeispielKontakt)
 * onsetDateTime = "2019-09-02"
-* recordedDate = "2020-10-14"
+* recordedDate = "2021-01-01"
 
 Invariant: isik-con1
 Description: "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden"
