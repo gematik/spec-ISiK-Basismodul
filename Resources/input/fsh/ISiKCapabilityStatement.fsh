@@ -527,5 +527,3 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "name"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-name"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension.valueCode = #SHALL
