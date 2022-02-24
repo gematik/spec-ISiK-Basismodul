@@ -59,6 +59,13 @@ Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb 
 
 Der Modifier `:identifier` MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
+Der [type] Modifier MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+
+**Beispiele**:
+
+``[base]/Procedure?subject:Patient=Test``
+Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweist mit dem der ID "Test". Hierdurch werden Referenzen auf den Ressourcentyp "Group" in der Suche ausgeschlossen.
+
 **Beispiele**:
 
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
