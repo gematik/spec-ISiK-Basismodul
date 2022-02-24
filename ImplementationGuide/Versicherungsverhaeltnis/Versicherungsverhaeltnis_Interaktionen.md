@@ -46,7 +46,15 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
 
-6. Der Suchparameter "payor" in Kombination mit einem identifier-Modifier MUSS unterstützt werden:
+6. Der Suchparameter "patient" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/Coverage?patient=Patient/123```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+
+7. Der Suchparameter "payor" in Kombination mit einem identifier-Modifier MUSS unterstützt werden:
 
    Beispiele:
 
@@ -54,7 +62,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
 
-1. Der Suchparameter  "_profile" KANN unterstützt werden:
+8. Der Suchparameter  "_profile" KANN unterstützt werden:
 
     Beispiele:
 
