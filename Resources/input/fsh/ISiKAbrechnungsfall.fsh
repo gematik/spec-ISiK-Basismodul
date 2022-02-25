@@ -41,6 +41,6 @@ Usage: #example
 * type = $v3-ActCode#AMB
 * subject = Reference(PatientinMusterfrau)
 * coverage
-  * extension.url = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-art"
+  * extension.url = "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart"
   * extension.valueCoding = $Abrechnungsart#DRG "Diagnosebezogene Fallgruppen"
   * coverage = Reference(CoverageGesetzlich)
