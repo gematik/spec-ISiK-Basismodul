@@ -110,7 +110,6 @@ Id: PlannedEndDate
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
-
 Instance: Einrichtungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
@@ -124,7 +123,7 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
-* diagnosis.condition = Reference(MittelgradigeIntelligenzminderung)
+* diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
 * diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
 * account = Reference(AbrechnungsfallAmbulant)
 
