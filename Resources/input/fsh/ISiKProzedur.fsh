@@ -61,7 +61,6 @@ Usage: #example
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(BeispielKontakt)
 * performedDateTime = "2020-04-23"
 * note.text = "Testnotiz"
 
