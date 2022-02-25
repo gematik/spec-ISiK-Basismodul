@@ -23,9 +23,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * ^slicing.discriminator.type = #type
   * ^slicing.discriminator.path = "resolve()"
   * ^slicing.rules = #open
-* subject contains Patient 1..1 MS
-* subject[Patient]
-* subject[Patient] only Reference(Patient)
+* subject contains ISiKPatient 1..1 MS
+* subject[ISiKPatient] only Reference(ISiKPatient)
 * coverage MS
   * extension 1..1 MS
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
