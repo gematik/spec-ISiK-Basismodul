@@ -110,7 +110,24 @@ Id: PlannedEndDate
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
-Instance: BeispielKontakt
+
+Instance: Einrichtungskontakt
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[0] = $Kontaktebene#einrichtungskontakt
+* subject = Reference(PatientinMusterfrau)
+* period.start = "2021-02-12"
+* period.end = "2021-02-13"
+* diagnosis.condition = Reference(MittelgradigeIntelligenzminderung)
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
+* account = Reference(AbrechnungsfallAmbulant)
+
+Instance: Versorgungsstellenkontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
@@ -131,9 +148,7 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
-* diagnosis.condition = Reference(MittelgradigeIntelligenzminderung)
-* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
-* account = Reference(Account/test)
+* account = Reference(AbrechnungsfallAmbulant)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
