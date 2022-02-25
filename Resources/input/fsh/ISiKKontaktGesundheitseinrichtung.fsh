@@ -120,6 +120,7 @@ Usage: #example
 * status = #finished
 * class = $v3-ActCode#IMP
 * type[0] = $Kontaktebene#einrichtungskontakt
+* serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
