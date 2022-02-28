@@ -4,7 +4,7 @@ Id: ISiKPatient
 Description: "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien."
 * insert Meta
 * obeys isik-pat-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+* . ^constraint[5].source = Canonical(ISiKPatient)
 * id 1.. MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
@@ -91,7 +91,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -104,9 +104,9 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * ^constraint[1].source = Canonical(ISiKPatient)
 
-Instance: patient
+Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[0].type = $identifier-type-de-basis#GKV

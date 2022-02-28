@@ -1,6 +1,6 @@
 {
   "resourceType": "Account",
-  "id": "account",
+  "id": "AbrechnungsfallAmbulant",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKAbrechnungsfall"
@@ -31,14 +31,14 @@
   },
   "subject": [
     {
-      "reference": "Patient/test"
+      "reference": "Patient/PatientinMusterfrau"
     }
   ],
   "coverage": [
     {
       "extension": [
         {
-          "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/abrechnungs-art",
+          "url": "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart",
           "valueCoding": {
             "code": "DRG",
             "system": "http://fhir.de/CodeSystem/dkgev/Abrechnungsart",
@@ -47,7 +47,7 @@
         }
       ],
       "coverage": {
-        "reference": "Coverage/test"
+        "reference": "Coverage/CoverageGesetzlich"
       }
     }
   ]

@@ -14,10 +14,10 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * payor only Reference(ISiKPatient or ISiKAngehoeriger)
 * payor MS
 
-Instance: coveragePrivat
+Instance: CoveragePrivat
 InstanceOf: ISiKVersicherungsverhaeltnisSelbstzahler
 Usage: #example
 * status = #active
 * type = $versicherungsart-de-basis#SEL
-* beneficiary = Reference(patient)
-* payor = Reference(patient)
+* beneficiary = Reference(PatientinMusterfrau)
+* payor = Reference(PatientinMusterfrau)

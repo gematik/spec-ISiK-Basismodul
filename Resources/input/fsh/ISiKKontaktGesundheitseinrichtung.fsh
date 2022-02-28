@@ -110,7 +110,24 @@ Id: PlannedEndDate
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
-Instance: encounter
+Instance: Einrichtungskontakt
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[0] = $Kontaktebene#einrichtungskontakt
+* serviceType = $FachabteilungsschluesselCS#0100
+* subject = Reference(PatientinMusterfrau)
+* period.start = "2021-02-12"
+* period.end = "2021-02-13"
+* diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
+* account = Reference(AbrechnungsfallAmbulant)
+
+Instance: Versorgungsstellenkontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
@@ -128,12 +145,10 @@ Usage: #example
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#versorgungsstellenkontakt
 * serviceType = $FachabteilungsschluesselCS#0100
-* subject = Reference(Patient/test)
+* subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
-* diagnosis.condition = Reference(Condition/test)
-* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
-* account = Reference(Account/test)
+* account = Reference(AbrechnungsfallAmbulant)
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
@@ -147,7 +162,7 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
-* partOf = Reference(Encounter/example)
+* partOf = Reference(Einrichtungskontakt)
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"

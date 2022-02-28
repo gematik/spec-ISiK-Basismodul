@@ -1,4 +1,4 @@
-Instance: ISiK-capabilityStatement-basis-server
+Instance: ISiKCapabilityStatementBasisServer
 InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/basis-server"
@@ -203,12 +203,12 @@ Usage: #definition
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "location"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-location"
-* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "service-provider"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-service-provider"
-* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "_profile"

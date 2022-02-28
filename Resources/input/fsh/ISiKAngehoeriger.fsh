@@ -31,7 +31,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+    * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 * address[Strassenanschrift] only AddressDeBasis
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -46,10 +46,10 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
 
-Instance: relatedPerson
+Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger
 Usage: #example
-* patient = Reference(patient)
+* patient = Reference(PatientinMusterfrau)
 * name.family = "Mustermann"
 * name.given = "Maxine"
 * address.type = #physical
