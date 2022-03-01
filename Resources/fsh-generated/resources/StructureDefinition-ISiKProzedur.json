@@ -58,7 +58,7 @@
             "severity": "error",
             "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
             "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-2",
@@ -128,7 +128,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "preferred",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorie-SCT"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorieSCT"
         }
       },
       {
@@ -153,7 +153,7 @@
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext.",
             "expression": "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() or text.exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-3",
@@ -228,7 +228,7 @@
         "max": "1",
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodes-SCT"
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodesSCT"
         }
       },
       {
