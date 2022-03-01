@@ -72,7 +72,7 @@ Usage: #example
 * extension.valueReference = Reference(Example-condition-ausrufezeichen-primaer)
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#!
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#!
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
 * subject = Reference(PatientinMusterfrau)
@@ -86,7 +86,7 @@ Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding.version = "2021"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#†
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
 * subject = Reference(PatientinMusterfrau)
@@ -100,8 +100,8 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(Example-condition-kreuz-stern-primaer)
 * clinicalStatus = $condition-clinical#active
-* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
+* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen-sd
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#*
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(PatientinMusterfrau)
