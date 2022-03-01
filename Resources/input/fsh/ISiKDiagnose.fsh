@@ -100,8 +100,8 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(Example-condition-kreuz-stern-primaer)
 * clinicalStatus = $condition-clinical#active
-* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
+* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen-sd
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#*
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(PatientinMusterfrau)
