@@ -31,7 +31,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
     * code 1.. MS
-  * coding[SNOMED-CT] from $diagnoses-sct (required)
+  * coding[SNOMED-CT] from $diagnosesSCT (required)
     * ^patternCoding.system = "http://snomed.info/sct"
     * system 1.. MS
     * code 1.. MS
@@ -100,7 +100,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(Example-condition-kreuz-stern-primaer)
 * clinicalStatus = $condition-clinical#active
-* code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-Condition/test"
+* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
