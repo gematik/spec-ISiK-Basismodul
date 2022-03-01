@@ -72,7 +72,7 @@ Usage: #example
 * extension.valueReference = Reference(Example-condition-ausrufezeichen-primaer)
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#!
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#!
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
 * subject = Reference(PatientinMusterfrau)
@@ -86,7 +86,7 @@ Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding.version = "2021"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#†
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
 * subject = Reference(PatientinMusterfrau)
