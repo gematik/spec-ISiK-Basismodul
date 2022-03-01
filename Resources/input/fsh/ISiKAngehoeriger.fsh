@@ -52,7 +52,7 @@ Usage: #example
 * patient = Reference(PatientinMusterfrau)
 * name.family = "Mustermann"
 * name.given = "Maxine"
-* address.type = #physical
+* address.type = #both
 * address.line = "Milchstr. 42"
 * address.city = "Beispielstadt"
 * address.postalCode = "78143"
