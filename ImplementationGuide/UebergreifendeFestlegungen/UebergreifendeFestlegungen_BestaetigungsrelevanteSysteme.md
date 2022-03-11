@@ -23,7 +23,8 @@ Ausschlaggebend für den Umfang der zu zertifizierenden Datenobjekte sind die Fu
 |-
 | CapabilityStatement | alle | 
 | Patient/in (Patient) | alle |
-| Kontakt/Fall (Encounter)| alle | 
+| Kontakt/Fall (Encounter)| alle |
+| Abrechnungsfall (Account)| alle |
 | Diagnose (Condition) | Systeme, in denen Diagnosen (kodiert oder als Freitext) erfasst, verwaltet und angezeigt werden können|
 | Prozedur (Procedure) | Systeme, in denen Prozeduren (kodiert oder als Freitext) erfasst, verwaltet und angezeigt werden können| 
 | Versicherungsverhältnis (Coverage) | Systeme, in denen Versicherungsverhältnisse eines Patienten erfasst, verwaltet und angezeigt werden können | 
