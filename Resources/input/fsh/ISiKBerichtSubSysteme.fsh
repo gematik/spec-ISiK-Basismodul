@@ -68,8 +68,8 @@ Usage: #example
 * identifier.value = "urn:oid:2.16.840.1.113883.6.96"
 * status = #final
 * type = $loinc#55112-7
-* subject = Reference(patient)
-* encounter = Reference(encounter)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
 * date = "2020-10-19"
 * author.type = "Device"
 * author.display = "Gerät XY, Fa. Z, Modell T"
