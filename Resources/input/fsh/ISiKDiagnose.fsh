@@ -130,7 +130,7 @@ Usage: #example
 * recordedDate = "2021-01-01"
 
 Invariant: isik-con1
-Description: "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden"
+Description: "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte."
 Severity: #error
 Expression: "code.coding.exists() implies encounter.exists()"
 
