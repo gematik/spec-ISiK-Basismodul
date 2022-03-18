@@ -94,3 +94,5 @@ Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfa
 * `section.title` + Freitext **oder**
 * `section.title` + `Resource.text` der referenzierten Ressource **oder**
 * `section.title` + eine aggregierte Repräsentation von `Resource.text` wenn in einer Section mehrere Ressourcen referenziert werden.
+
+---

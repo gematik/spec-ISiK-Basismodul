@@ -14,3 +14,5 @@ Instanzen, die gegen ISiKDiagnose valide sind, sind auch valide gegen
   * wenn unter `Condition.code.coding` mindestens eine ICD-10-codierte Darstellung der Diagnose angegeben wurde
   * wenn unter `Condition.verificationStatus`  ein Wert angegeben wurde
   * wenn unter `Condition.asserter` eine Referenz auf einen Practitioner angegeben werden.
+
+---

@@ -22,3 +22,5 @@ Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem Profil ["Cov
 
 Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen
 * Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile - v1.0.0](http://fhir.de/StructureDefinition/coverage-de-sel)
+
+---

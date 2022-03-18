@@ -6,3 +6,5 @@ Weiterhin ist aus den Kontaktinformationen der aktuelle Aufenthaltsort des Patie
 Klinische Ressourcen werden in FHIR durch Verlinkung auf die Encounter-Ressource in einen Kontext zum Einrichtungskontakt gestellt. Dieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen und Abrechnungsprozessen.
 
 Am Beginn der meisten klinischen Workflows steht die Auswahl des Fallkontextes. Dies geschieht bspw. durch Suchen der Encounter-Ressource anhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. Daraufhin werden die zutreffenden Suchergebnisse angezeigt und der gewünschte Einrichtungskontakt ausgewählt.
+
+---
