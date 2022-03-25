@@ -34,3 +34,5 @@ Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes er
 ### `Procedure.note`
 
 **Bedeutung:**  Weitere optionale Freitext-Notizen bezogen auf die durchgeführte Prozedur.
+
+---
