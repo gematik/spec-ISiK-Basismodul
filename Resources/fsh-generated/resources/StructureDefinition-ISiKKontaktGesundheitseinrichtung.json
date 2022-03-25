@@ -112,6 +112,7 @@
           {
             "key": "ISiK-enc-9",
             "severity": "error",
+<<<<<<< HEAD
             "human": "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten",
             "expression": "status = 'finished' and type.coding.where(code = 'einrichtungskontakt').exists() implies diagnosis.exists()",
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
@@ -128,6 +129,10 @@
             "severity": "error",
             "human": "Ein Einrichtungskontakt sollte einen serviceType mit Fachabteilungsschlüssel enthalten",
             "expression": "type.coding.where(code = 'einrichtungskontakt').exists() implies serviceType.exists()",
+=======
+            "human": "Falls eine Referenz auf den Abrechnungsfall vorliegt, sollte der Identifier dieses Abrechnungsfalles vorliegen",
+            "expression": "account.reference.exists() implies account.identifier.exists()",
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
@@ -342,15 +347,31 @@
         "patternCodeableConcept": {
           "coding": [
             {
+<<<<<<< HEAD
               "system": "http://fhir.de/CodeSystem/Kontaktebene"
+=======
+              "code": "Fachabteilungskontakt"
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
             }
           ]
         },
         "mustSupport": true,
         "binding": {
+<<<<<<< HEAD
           "strength": "required",
           "valueSet": "http://fhir.de/ValueSet/kontaktebene-de",
           "description": "Kontaktebene"
+=======
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "EncounterType"
+            }
+          ],
+          "strength": "example",
+          "description": "Kontaktebene",
+          "valueSet": "http://hl7.org/fhir/ValueSet/encounter-type"
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
         }
       },
       {
@@ -527,6 +548,15 @@
         "mustSupport": true
       },
       {
+<<<<<<< HEAD
+=======
+        "id": "Encounter.account.identifier",
+        "path": "Encounter.account.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
         "id": "Encounter.hospitalization",
         "path": "Encounter.hospitalization",
         "mustSupport": true
@@ -625,11 +655,14 @@
         "path": "Encounter.serviceProvider.display",
         "min": 1,
         "mustSupport": true
+<<<<<<< HEAD
       },
       {
         "id": "Encounter.partOf",
         "path": "Encounter.partOf",
         "mustSupport": true
+=======
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
       }
     ]
   }

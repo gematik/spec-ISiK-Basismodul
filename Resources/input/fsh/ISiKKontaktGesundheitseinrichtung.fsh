@@ -3,7 +3,11 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
+<<<<<<< HEAD
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8 and ISiK-enc-9 and ISiK-enc-10 and ISiK-enc-11
+=======
+* obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8 and ISiK-enc-9
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 * id 1.. MS
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -43,8 +47,13 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * type contains
     Kontaktebene 1..1 MS and
     KontaktArt 0..1 MS
+<<<<<<< HEAD
 * type[Kontaktebene] from KontaktebeneDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/Kontaktebene"
+=======
+* type[Kontaktebene]
+  * ^patternCodeableConcept.coding.code = #Fachabteilungskontakt
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from KontaktartDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
@@ -80,6 +89,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
   * rank MS
 * account 0.. MS
+<<<<<<< HEAD
+=======
+  * identifier 1.. MS
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
   * reference 1.. MS
 * hospitalization ..1 MS
   * admitSource 0..1 MS
@@ -96,7 +109,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
+<<<<<<< HEAD
 * partOf MS
+=======
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedStartDate
@@ -110,6 +126,7 @@ Id: PlannedEndDate
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
+<<<<<<< HEAD
 Instance: Einrichtungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
@@ -128,6 +145,9 @@ Usage: #example
 * account = Reference(AbrechnungsfallAmbulant)
 
 Instance: Versorgungsstellenkontakt
+=======
+Instance: Fachabteilungskontakt
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
@@ -143,12 +163,23 @@ Usage: #example
 * status = #finished
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
+<<<<<<< HEAD
 * type[+] = $Kontaktebene#versorgungsstellenkontakt
+=======
+* type[+] = #Fachabteilungskontakt
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
+<<<<<<< HEAD
 * account = Reference(AbrechnungsfallAmbulant)
+=======
+* diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
+* diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
+* account = Reference(AbrechnungsfallAmbulant)
+* account.identifier.value = "XZY"
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
@@ -162,7 +193,10 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
+<<<<<<< HEAD
 * partOf = Reference(Einrichtungskontakt)
+=======
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
@@ -205,6 +239,7 @@ Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')"
 
 Invariant: ISiK-enc-9
+<<<<<<< HEAD
 Description: "Ein abgeschlossener Einrichtungskontakt muss eine Diagnose enthalten"
 Severity: #error
 Expression: "status = 'finished' and type.coding.where(code = 'einrichtungskontakt').exists() implies diagnosis.exists()"
@@ -218,3 +253,8 @@ Invariant: ISiK-enc-11
 Description: "Ein Einrichtungskontakt sollte einen serviceType mit Fachabteilungsschlüssel enthalten"
 Severity: #error
 Expression: "type.coding.where(code = 'einrichtungskontakt').exists() implies serviceType.exists()"
+=======
+Description: "Falls eine Referenz auf den Abrechnungsfall vorliegt, sollte der Identifier dieses Abrechnungsfalles vorliegen"
+Severity: #error
+Expression: "account.reference.exists() implies account.identifier.exists()"
+>>>>>>> 7669d5e898822764e27c9f25d5619f988c265d26
