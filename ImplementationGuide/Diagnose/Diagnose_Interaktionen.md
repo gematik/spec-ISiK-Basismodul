@@ -81,3 +81,5 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     Anwendungshinweise: Weitere Informationen zur Suche nach "category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
+
+---

@@ -7,4 +7,6 @@ Instanzen, die gegen dieses Profil valide sind, auch valide gegen
    * sofern für den Angehörigen mindestens ein Vor- und Nachname angegeben wurde.   
    * wenn die Ressource einen Narrative enthält und in den Metadaten die Canonical-URL des KBV-Profile angegeben wird
 
+---
+
 

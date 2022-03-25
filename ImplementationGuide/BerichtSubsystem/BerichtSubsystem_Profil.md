@@ -1,7 +1,9 @@
 ### Profil
 
-**Canonical URL**: ```https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme```
+@```
+from StructureDefinition where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme' select Name: name, Canonical: url
+```
 
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKberichtsubsysteme)
+---

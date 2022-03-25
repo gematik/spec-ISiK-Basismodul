@@ -69,3 +69,5 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/Practitioner?gender=female```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Practitioner.gender" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
+---

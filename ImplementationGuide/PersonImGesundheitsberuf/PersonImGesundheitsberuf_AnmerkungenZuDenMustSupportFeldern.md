@@ -31,3 +31,5 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
 ### `Practitioner.qualification`
 
 **Bedeutung:** Ärztliche Qualifikation(en). Es MÜSSEN die Qualifikationen des Arztes bereitgestellt werden, um nach Ärzten einer Qualifikation zu suchen oder sie bspw. in Dokumenten anzuzeigen.
+
+---

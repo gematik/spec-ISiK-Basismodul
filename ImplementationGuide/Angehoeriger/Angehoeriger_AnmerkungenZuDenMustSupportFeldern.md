@@ -39,3 +39,5 @@
 **Bedeutung:** Land (kann z. B. ein ISO 3166-Code mit 2 oder 3 Buchstaben sein)
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Datentypen-Address.html)
+
+---
