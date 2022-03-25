@@ -64,3 +64,5 @@ Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden (vgl. FHI
 ### `Condition.extension:ReferenzPrimaerdiagnose`
 
 **Bedeutung:** Bei Mehrfachkodierten ICD-Diagnosen (z.B. Kreuz-Stern-Notation) muss die Sekundär- auf die Primärdiagnose verlinkt werden
+
+---

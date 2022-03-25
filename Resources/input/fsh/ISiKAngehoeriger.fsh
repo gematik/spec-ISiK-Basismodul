@@ -44,7 +44,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+    * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 
 Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger

@@ -104,3 +104,5 @@ Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammen
 ## Hinweise zum Umgang mit strukturierten Daten
 
 Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, so dass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
+
+---
