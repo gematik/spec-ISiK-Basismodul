@@ -33,3 +33,5 @@
 ### `Encounter.serviceProvider`
 
 **Bedeutung:** Falls Details zur verantwortlichen Organisationeinheit vorliegen, KÖNNEN diese in einer beliebigen Detailtiefe angegeben werden. 
+
+---

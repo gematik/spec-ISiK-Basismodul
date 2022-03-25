@@ -2,16 +2,19 @@
 
 #### Profil ISiKVersicherungsverhaeltnisGesetzlich
 
-**Canonical URL**: ```https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich```
+@```
+from StructureDefinition where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich' select Name: name, Canonical: url
+```
 
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKversicherungsverhaeltnisgesetzlich)
 
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
-**Canonical URL**: ```https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler```
+@```
+from StructureDefinition where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler' select Name: name, Canonical: url
+```
 
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKversicherungsverhaeltnisselbstzahler)
+---

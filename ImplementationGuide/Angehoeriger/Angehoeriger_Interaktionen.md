@@ -29,3 +29,5 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/RelatedPerson?name=Alpenzauber```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "RelatedPerson.name" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](http://hl7.org/fhir/R4/search.html#string).
+
+    ---

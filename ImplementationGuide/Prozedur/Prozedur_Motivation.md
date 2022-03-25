@@ -6,3 +6,5 @@ In FHIR werden Prozeduren mit der [Procedure](http://hl7.org/fhir/procedure.html
 
 Da die Prozeduren in klinischen Primärsystemen in der Regel in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches.
 Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.
+
+---
