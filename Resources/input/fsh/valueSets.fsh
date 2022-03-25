@@ -23,3 +23,19 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * SNOMED_CT#18629005 "Administration of medicine"
 * SNOMED_CT#277132007 "Therapeutic procedure"
 * SNOMED_CT#394841004 "Other category"
+
+ValueSet: ISiKLocationPhysicalType
+Id: ISiKLocationPhysicalType
+* insert Meta
+* LocationType#bd "Bed"
+* LocationType#ro "Room"
+* LocationType#wa "Ward"
+
+
+ValueSet: ISiKAccountType
+Id: ISiKAccountType
+Title: "ISiKAccountType"
+* insert Meta
+* $v3-ActCode#AMB "ambulatory"
+* $v3-ActCode#IMP "inpatient encounter"
+

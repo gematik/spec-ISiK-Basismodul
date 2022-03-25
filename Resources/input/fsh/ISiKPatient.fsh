@@ -1,10 +1,10 @@
 Profile: ISiKPatient
 Parent: Patient
 Id: ISiKPatient
-Description: "Dieses Profil die Nutzung von administrativen Patientendaten in ISiK Szenarien."
+Description: "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien."
 * insert Meta
 * obeys isik-pat-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+* . ^constraint[5].source = Canonical(ISiKPatient)
 * id 1.. MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
@@ -90,8 +90,8 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys pat-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * obeys address-cnt-2or3-char
+    * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -103,10 +103,10 @@ Description: "Dieses Profil die Nutzung von administrativen Patientendaten in IS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys pat-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * obeys address-cnt-2or3-char
+    * ^constraint[1].source = Canonical(ISiKPatient)
 
-Instance: patient
+Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[0].type = $identifier-type-de-basis#GKV
@@ -121,13 +121,13 @@ Usage: #example
 * identifier[=].assigner.display = "Test PKV AG"
 * active = true
 * name[0].use = #official
-* name[=].family = "Fürstin Von Musterfrau"
+* name[=].family = "Fürstin von Musterfrau"
   * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
   * extension[=].valueString = "Graf"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
   * extension[=].valueString = "Musterfrau"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-  * extension[=].valueString = "Von"
+  * extension[=].valueString = "von"
 * name[=].given = "Erika"
 * name[=].prefix = "Dr."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"

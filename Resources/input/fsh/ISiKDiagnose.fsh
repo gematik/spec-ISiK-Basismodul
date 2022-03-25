@@ -5,11 +5,11 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
 * insert Meta
 * obeys isik-con1
 * id MS
+* extension MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
-* extension contains $condition-related named ReferenzPrimaerdiagnose 0..1 MS
-* extension[ReferenzPrimaerdiagnose].value[x].reference MS
+* extension contains $condition-related named related 0..1 MS
 * clinicalStatus MS
 * code 1.. MS
   * obeys icd-text-1
@@ -31,7 +31,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
     * code 1.. MS
-  * coding[SNOMED-CT] from $diagnoses-sct (required)
+  * coding[SNOMED-CT] from $diagnosesSCT (required)
     * ^patternCoding.system = "http://snomed.info/sct"
     * system 1.. MS
     * code 1.. MS
@@ -60,8 +60,8 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#F16.1 "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Versorgungsstellenkontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -72,11 +72,11 @@ Usage: #example
 * extension.valueReference = Reference(Example-condition-ausrufezeichen-primaer)
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#!
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#!
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Versorgungsstellenkontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -86,11 +86,11 @@ Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding.version = "2021"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#†
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Versorgungsstellenkontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -100,28 +100,37 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/condition-related"
 * extension.valueReference = Reference(Example-condition-kreuz-stern-primaer)
 * clinicalStatus = $condition-clinical#active
-* code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen#*
+* code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen-sd
+* code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#*
 * code.coding.version = "2019"
-* code.coding = $-icd-10-gm#H36.0 "Retinopathia diabetica"
-* subject = Reference(Patient/example)
-* encounter = Reference(Encounter/example)
+* code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Versorgungsstellenkontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
-Instance: condition
+Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.version = "2020"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
-* subject = Reference(patient)
-* encounter = Reference(Encounter/encounter01)
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Versorgungsstellenkontakt)
 * onsetDateTime = "2019-09-02"
-* recordedDate = "2020-10-14"
+* recordedDate = "2021-01-01"
+
+Instance: BehandlungsDiagnoseFreitext
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.text = "Behandlungsdiagnose"
+* subject = Reference(PatientinMusterfrau)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
 
 Invariant: isik-con1
-Description: "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden"
+Description: "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte."
 Severity: #error
 Expression: "code.coding.exists() implies encounter.exists()"
 

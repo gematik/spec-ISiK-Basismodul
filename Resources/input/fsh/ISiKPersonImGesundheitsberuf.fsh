@@ -4,7 +4,7 @@ Id: ISiKPersonImGesundheitsberuf
 Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien."
 * insert Meta
 * obeys prac-de-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/Practitioner"
+* . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * id MS
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
@@ -12,12 +12,16 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
   * ^slicing.rules = #open
 * identifier contains
     Arztnummer 0..* MS and
-    EFN 0..1 MS
+    EFN 0..1 MS and
+    TelematikId 0..1 MS
 * identifier[Arztnummer] only IdentifierLanr
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
   * ^patternIdentifier.type = $v2-0203#DN
+  * type 1..
+* identifier[TelematikId] only IdentifierTelematikId
+  * ^patternIdentifier.type = $v2-0203#PRN
   * type 1..
 * name MS
   * ^slicing.discriminator.type = #pattern
@@ -82,7 +86,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
 * qualification.code.coding 1..
 * qualification.code.coding from $KBV_VS_Base_Practitioner_Speciality (preferred)
 
-Instance: practitioner
+Instance: PractitionerWalterArzt
 InstanceOf: ISiKPersonImGesundheitsberuf
 Usage: #example
 * meta.source = "http://krankenhaus.de"

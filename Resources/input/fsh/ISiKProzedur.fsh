@@ -4,8 +4,9 @@ Id: ISiKProzedur
 Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien."
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+* . ^constraint[5].source = Canonical(ISiKProzedur)
 * id 1.. MS
+* extension MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
@@ -16,13 +17,13 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
   * coding contains SNOMED-CT 0..1 MS
-  * coding[SNOMED-CT] from $ProzedurenKategorie-SCT (preferred)
+  * coding[SNOMED-CT] from $ProzedurenKategorieSCT (preferred)
     * system 1.. MS
     * system = "http://snomed.info/sct"
     * code 1.. MS
 * code MS
   * obeys sct-ops-1 and proc-ISiK-3
-  * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+  * ^constraint[1].source = Canonical(ISiKProzedur)
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -36,7 +37,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * system MS
     * version MS
     * code MS
-  * coding[SNOMED-CT] from $ProzedurenCodes-SCT (required)
+  * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * system 1.. MS
     * system = "http://snomed.info/sct"
     * code 1.. MS
@@ -48,7 +49,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
 * performed[x] only dateTime or Period
 * note MS
 
-Instance: procedure
+Instance: Appendektomie
 InstanceOf: ISiKProzedur
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
@@ -59,8 +60,7 @@ Usage: #example
 * code.coding[+].version = "2020"
 * code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
-* subject = Reference(patient)
-* encounter = Reference(Encounter/patient)
+* subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2020-04-23"
 * note.text = "Testnotiz"
 

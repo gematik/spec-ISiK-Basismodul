@@ -1,32 +1,23 @@
 Profile: ISiKVersicherungsverhaeltnisSelbstzahler
-Parent: Coverage
+Parent: http://fhir.de/StructureDefinition/coverage-de-sel
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
 * status ^mustSupport = false
 * type 1..
-  * coding 1..
-    * system 1..
-    * system = "http://fhir.de/CodeSystem/versicherungsart-de-basis" (exactly)
-    * code 1..
-    * code = #SEL (exactly)
-* policyHolder ..0
 * subscriber only Reference(ISiKPatient or ISiKAngehoeriger)
 * subscriber MS
   * display 1.. MS
-* subscriberId ..0
 * beneficiary only Reference(ISiKPatient)
 * beneficiary MS
   * reference 1.. MS
 * payor only Reference(ISiKPatient or ISiKAngehoeriger)
 * payor MS
-* order ..0
-* network ..0
 
-Instance: coveragePrivat
+Instance: CoveragePrivat
 InstanceOf: ISiKVersicherungsverhaeltnisSelbstzahler
 Usage: #example
 * status = #active
 * type = $versicherungsart-de-basis#SEL
-* beneficiary = Reference(patient)
-* payor = Reference(patient)
+* beneficiary = Reference(PatientinMusterfrau)
+* payor = Reference(PatientinMusterfrau)
