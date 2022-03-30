@@ -3,13 +3,6 @@ Parent: CodeSystem
 Id: ISiKCodeSystem
 Description: "Dieses Profil beschreibt die maschinenlesbare Repräsentation von system-sepzifischen Kodierungen in ISiK-Szenarien"
 * insert Meta
-* meta MS
-  * tag 1..* MS
-    * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "$this"
-    * ^slicing.rules = #open
-  * tag contains Context 1..* MS
-  * tag[Context] from http://hl7.org/fhir/ValueSet/resource-types (required)
 * id 1.. MS
 * url 1.. MS
 * version 1.. MS
@@ -19,3 +12,16 @@ Description: "Dieses Profil beschreibt die maschinenlesbare Repräsentation von 
 * concept 1.. MS
   * code MS
   * display 1.. MS
+  * definition MS
+
+Instance: CodeSystemExample
+InstanceOf: ISiKCodeSystem
+Usage: #example
+* url = "http://example.org/fhir/CodeSystem/TestKatalog"
+* version = "1.0.0"
+* name = "TestKatalog"
+* status = #active
+* content = #complete
+* concept[0].code = #test
+* concept[0].display = "Test"
+* concept[0].definition = "Dies ist ein Test-Code"
