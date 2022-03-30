@@ -10,7 +10,7 @@
 
 **Bedeutung:** Version des CodeSystems
 
-**Hinweise:** Jede Änderung des CodeSystems MUSS eine Änderung in der Version des CodeSystems und ValueSets nach sich ziehen.
+**Hinweise:** Jede Änderung des CodeSystems MUSS eine Änderung in der Version des CodeSystems und gebundenen ValueSets nach sich ziehen. Die Versionierung SOLLTE auf Basis von [Semantic Versioning](https://semver.org) basieren.
 
 ### `CodeSystem.name`
 
