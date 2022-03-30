@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel CodeSystem:
 
-{{json:codesystem}}
+{{json:CodeSystemExample}}
