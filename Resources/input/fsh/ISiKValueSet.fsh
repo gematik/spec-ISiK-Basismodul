@@ -20,3 +20,18 @@ Description: "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes f√
 * expansion.contains.version 1.. MS
 * expansion.contains.code 1.. MS
 * expansion.contains.display 1.. MS
+
+Instance: ISiKValueSetExample
+InstanceOf: ISiKValueSet
+Usage: #example
+* url = "http://example.org/fhir/ValueSet/TestValueSet"
+* version = "1.0.0"
+* name = "TestValueSet"
+* status = #active
+* useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
+* useContext.valueCodeableConcept = http://hl7.org/fhir/resource-types#Encounter
+* expansion.timestamp = "2022-03-30"
+* expansion.contains.system = "http://example.org/fhir/CodeSystem/TestKatalog"
+* expansion.contains.version = "1.0.0"
+* expansion.contains.code = #test
+* expansion.contains.display = "Test"
