@@ -61,7 +61,7 @@ Usage: #example
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#F16.1 "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Versorgungsstellenkontakt)
+* encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -76,7 +76,7 @@ Usage: #example
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Versorgungsstellenkontakt)
+* encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -90,7 +90,7 @@ Usage: #example
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Versorgungsstellenkontakt)
+* encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -105,7 +105,7 @@ Usage: #example
 * code.coding.version = "2019"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Versorgungsstellenkontakt)
+* encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 
@@ -116,7 +116,7 @@ Usage: #example
 * code.coding.version = "2020"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
 * subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Versorgungsstellenkontakt)
+* encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"
 * recordedDate = "2021-01-01"
 

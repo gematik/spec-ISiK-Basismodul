@@ -1,6 +1,6 @@
 {
   "resourceType": "Encounter",
-  "id": "Versorgungsstellenkontakt",
+  "id": "Fachabteilungskontakt",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
@@ -10,16 +10,15 @@
     {
       "coding": [
         {
-          "system": "http://fhir.de/CodeSystem/kontaktart-de",
-          "code": "operation"
+          "code": "operation",
+          "system": "http://fhir.de/CodeSystem/kontaktart-de"
         }
       ]
     },
     {
       "coding": [
         {
-          "code": "versorgungsstellenkontakt",
-          "system": "http://fhir.de/CodeSystem/Kontaktebene"
+          "code": "Fachabteilungskontakt"
         }
       ]
     }
@@ -89,9 +88,27 @@
     "start": "2021-02-12",
     "end": "2021-02-13"
   },
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition/BehandlungsDiagnoseFreitext"
+      },
+      "use": {
+        "coding": [
+          {
+            "code": "treatment-diagnosis",
+            "system": "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"
+          }
+        ]
+      }
+    }
+  ],
   "account": [
     {
-      "reference": "Account/AbrechnungsfallAmbulant"
+      "reference": "Account/AbrechnungsfallAmbulant",
+      "identifier": {
+        "value": "XZY"
+      }
     }
   ],
   "hospitalization": {
@@ -155,8 +172,5 @@
       "value": "XYZ"
     },
     "display": "Fachabteilung XYZ"
-  },
-  "partOf": {
-    "reference": "Encounter/Einrichtungskontakt"
   }
 }
