@@ -33,3 +33,4 @@ Alias: $diagnosesSCT = https://gematik.de/fhir/ISiK/v2/ValueSet/DiagnosesSCT
 Alias: $ProzedurenKategorieSCT = https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenKategorieSCT
 Alias: $KBV_VS_Base_Practitioner_Speciality = https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality
 Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/ISiK/v2/ValueSet/ProzedurenCodesSCT
+Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
