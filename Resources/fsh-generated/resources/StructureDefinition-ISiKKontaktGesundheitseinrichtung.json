@@ -127,6 +127,16 @@
       {
         "id": "Encounter.extension",
         "path": "Encounter.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -530,6 +540,20 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.hospitalization.extension",
+        "path": "Encounter.hospitalization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
         "id": "Encounter.hospitalization.extension:Wahlleistung",
         "path": "Encounter.hospitalization.extension",
         "sliceName": "Wahlleistung",
@@ -578,34 +602,141 @@
       {
         "id": "Encounter.location",
         "path": "Encounter.location",
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location",
-        "path": "Encounter.location.location",
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location.identifier",
-        "path": "Encounter.location.location.identifier",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location.display",
-        "path": "Encounter.location.location.display",
-        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "physicalType"
+            }
+          ],
+          "rules": "closed"
+        },
         "mustSupport": true
       },
       {
         "id": "Encounter.location.physicalType",
         "path": "Encounter.location.physicalType",
-        "min": 1,
-        "mustSupport": true,
         "binding": {
           "strength": "extensible",
           "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKLocationPhysicalType"
         }
+      },
+      {
+        "id": "Encounter.location:Zimmer",
+        "path": "Encounter.location",
+        "sliceName": "Zimmer",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location",
+        "path": "Encounter.location.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.display",
+        "path": "Encounter.location.location.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.physicalType",
+        "path": "Encounter.location.physicalType",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ro",
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett",
+        "path": "Encounter.location",
+        "sliceName": "Bett",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.location",
+        "path": "Encounter.location.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.location.display",
+        "path": "Encounter.location.location.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bett.physicalType",
+        "path": "Encounter.location.physicalType",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "bd",
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station",
+        "path": "Encounter.location",
+        "sliceName": "Station",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location",
+        "path": "Encounter.location.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.display",
+        "path": "Encounter.location.location.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.physicalType",
+        "path": "Encounter.location.physicalType",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "wa",
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
+            }
+          ]
+        },
+        "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider",
