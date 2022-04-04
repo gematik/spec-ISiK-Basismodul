@@ -70,7 +70,7 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
 
 | Hinweis | Änderung gegenüber ISiK-Basis-Modul Stufe 1!|
 |---------|---------------------|
-| {{render:ImplementationGuide/Images/ig_bilder_Warning.jpg}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren.|
+| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren.|
 
 {{render:ImplementationGuide/Images/Encounter-Modell-Fallnummer.png}}
 
