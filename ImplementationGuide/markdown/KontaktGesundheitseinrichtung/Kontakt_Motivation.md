@@ -14,30 +14,30 @@ Wichtig ist die Herausstellung, dass "Besuch" und "Fall" keine synonymen Begriff
 
 Der Begriff "Fall" gruppiert im Sprachgebrauch verschiedene Konzepte, die in FHIR durch unterschiedliche Ressourcen repräsentiert werden:
 
-* Aufenthalt/Besuch/Kontakt (Encounter)
+* **Aufenthalt/Besuch/Kontakt (Encounter):**
 Der stationäre Aufenthalt oder ambulante Kontakt eines Patienten in einer Gesundheitseinrichtung wird in FHIR durch die Ressource Encounter abgebildet.
 
-* Abrechnungsfall (Account)
+* **Abrechnungsfall (Account):**
 Der Fall im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die Ressource Account repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
 {{render:ImplementationGuide/Images/Encounter-Modell-Abrechnung.png}}
 
-* Medizinischer Fall (EpisodeOfCare)
+* **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die EpisodeOfCare dargestellt.
 {{render:ImplementationGuide/Images/Encounter-Modell-Medizinisch.png}}
 
 #### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
 In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide/EinfachesAufbaumodell?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
-* Einrichtungskontakt
+* **Einrichtungskontakt:**
 Der Kontakt eines Patienten mit einer Einrichtung (z.B: Klinik) gruppiert mehrere Besuche bei einer Einrichtung mit gemeinsamem Behandlungskontext.
 
-* Abteilungskontakt
+* **Abteilungskontakt:**
 Der Kontakt des Patienten mit einer Fachabteilung eines Krankenhauses (z.B. einer Ambulanz oder einer stationären Fachabteilung).
 
-* Versorgungsstellenkontakt
+* **Versorgungsstellenkontakt:**
 Der Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder Endoskopie
 
-Zur Unterscheidung der verschiedenen Kontaktebenenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encoutner wird über die `Encounter.partOf`-Referenz hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
+Zur Unterscheidung der verschiedenen Kontaktebenenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
 
 {{render:ImplementationGuide/Images/Encounter-Modell-MII.png}}
 
@@ -47,7 +47,7 @@ Für die Ausbaustufe 2 des ISiK Basismoduls werden alle zuvor genannten Sichtwei
 
 {{render:ImplementationGuide/Images/Encounter-Modelle.png}}
 
-Verpflichten umzusetzen ist für bestätigungsrelevante Systeme der Account im Sinne der Gruppierung einzelner Besuche zu einem gemeisamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
+Verpflichtend umzusetzen ist für bestätigungsrelevante Systeme der Account im Sinne der Gruppierung einzelner Besuche zu einem gemeisamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
 
 Herstellern steht es frei, weitere Ressourcen, wir zum Beispiel die EpisodeOfCare oder den Encounter im Sinne des Einrichtungskontaktes bzw. des Versorgungststellenkontaktes zu implementieren.
 
@@ -63,13 +63,14 @@ Die "Fall"-Nummer ist ein im Kontext der stationären Versorgung häufig verwend
 
 In den meisten Fällen handelt es sich bei der "Fall"-Nummer um einen eindeutigen Identifier des Abrechnungsfalls. 
 Im ISiK-Kontext ist die Fallnummer daher als Identifier des Accounts zu sehen und nicht geeignet, einen Encounter eindeutig zu identifizieren und damit den für FHIR-Ressourcen erforderlichen Encounter-Kontext zu etablieren.
+Es müssen zusätzliche Kriterien, wie z.B. Zeitraum(`Encounter.period`), Fallart (`Encounter.class`) oder Status (`Encounter.status`) berücksichtigt werden, um den korrekten Encounter zu finden.
 
-ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als Suchkriterium verwendet wird, auch von Systemen, die rein der medizinischen Versorgung dienen und keine Abrechnungsfunktionen implementieren. 
-Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nuru m Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als Logische Referenz auf den Account im Encounter verpflichtend.
+ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primäres Suchkriterium verwendet wird; auch von Systemen, die rein der medizinischen Versorgung dienen und keine Abrechnungsfunktionen implementieren. 
+Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.
 
 | Hinweis | Änderung gegenüber ISiK-Basis-Modul Stufe 1!|
 |---------|---------------------|
-| {{render:Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren.|
+| {{render:ImplementationGuide/images/ig_bilder_Warning.jpg}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren.|
 
 {{render:ImplementationGuide/Images/Encounter-Modell-Fallnummer.png}}
 
