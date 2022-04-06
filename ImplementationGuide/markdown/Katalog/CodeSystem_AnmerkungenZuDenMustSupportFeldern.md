@@ -22,13 +22,13 @@
 
 **Bedeutung:** Indikation ob das CodeSystem in aktiver Verwendung ist.
 
-**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "active" und "retired". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "active" und "retired". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 ### `CodeSystem.content`
 
 **Bedeutung:** Angabe ob es sich um eine vollständige Repräsentation des CodeSystems oder nur um einen Auszug handelt.
 
-**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "fragment" und "complete". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "fragment" und "complete". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 ### `CodeSystem.concept`
 
