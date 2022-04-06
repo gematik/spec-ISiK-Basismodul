@@ -10,7 +10,7 @@
 
 ### `Account.status`
 
-**Bedeutung:** Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen und derzeitig noch aktiven Abrechnungsfällen angegeben werden. Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "active", "inactive". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Bedeutung:** Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen und derzeitig noch aktiven Abrechnungsfällen angegeben werden. Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "active", "inactive". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 **Hinweise:** Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/account-definitions.html#Account.status)
 
@@ -26,6 +26,6 @@
 
 ### `Account.coverage`
 
-**Bedeutung:** Pro Abrechnungskontext (z.B. Selbstzahler, DRG, PEPP) sollte ein eigener Account angelegt werden. Für jeden Account sollte es ersichtlich sein über welche Coverage der Account beglichen werden soll.
+**Bedeutung:** Pro Abrechnungskontext (z.B. Selbstzahler, DRG, PEPP) sollte ein eigener Account angelegt werden. Für jeden Account sollte ersichtlich sein, über welche Coverage der Account beglichen werden soll.
 
 ---
