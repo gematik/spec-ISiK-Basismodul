@@ -10,11 +10,11 @@ Im Folgenden leiten wir - die gematik GmbH - her, warum die bestehenden Integrat
 
 Der aktuell in Krankenhäusern vorherrschende Integrationsansatz nach dem Standard HL7 Version 2 (HL7v2) sieht vor, dass fachdomänenspezifische Systeme Nachrichten versenden, sobald für andere Systeme interessante Ereignisse eintreten. Bei Anlegen einer Diagnose in einem System für medizinische Dokumentation wird beispielsweise eine entsprechende Nachricht versendet, die vom Abrechnungssystem konsumiert und in der Rechnungslegung berücksichtigt wird. Für diesen Ansatz ist es nötig, dass die konsumierenden Systeme direkt auf die für sie passenden Nachrichten reagieren können. Leider werden dieselben Inhalte in verschiedenen Krankenhäusern oft unterschiedlich in HL7v2-Nachrichten kodiert. Darum wird häufig ein Kommunikationsserver verwendet, der die krankenhausspezifischen Nachrichten in ein Format übersetzt, dass die konsumierenden Systeme verarbeiten können. Erst wenn diese Übersetzung der HL7v2 Nachrichten eingerichtet ist, können Daten zwischen den Systemen ausgetauscht werden.
 
-Daraus ergeben sich einige relevante Nachteile.
+Daraus ergeben sich einige relevante Nachteile:
 
 1. Es ist nur eine im Voraus definierte Datenverarbeitung möglich. Es müssen Verarbeitungsregeln im Kommunikationsserver festgelegt werden, die empfangene HL7v2-Nachrichten zur Weiterverarbeitung in ein geeignetes Format überführen.
 2. Es können keine HL7v2-Nachrichten genutzt werden, die vor Aktivierung der Verarbeitungsregeln im Krankenhaus versandt wurden. Damit bleibt ein großer Teil der verfügbaren Daten des Krankenhauses ungenutzt.
-3. Gerade große Krankenhäuser müssen tausende dieser Verarbeitungsregeln verwalten. So wird der Überblick erschwert und nicht mehr benötigte Regeln belasten den Kommunikationsserver.
+3. Gerade große Krankenhäuser müssen tausende dieser Verarbeitungsregeln verwalten. Dies erschwert den Überblick und nicht mehr benötigte Regeln belasten den Kommunikationsserver.
 
 Daher hat der Gesetzgeber im Patientendaten-Schutzgesetz (PDSG) der gematik den Auftrag erteilt, offene und standardisierte Schnittstellen zu spezifizieren, die über den reaktiven Datenaustausch hinaus einen bedarfsgerechten Datenaustausch ermöglichen. Die Einhaltung dieser Spezifikation wird in dem ISiK Bestätigungsverfahren geprüft. Die Beschreibung des Bestätigungsverfahrens ist nicht Inhalt dieses Implementierungsleitfadens und wird im Fachportal der gematik erfolgen (<https://fachportal.gematik.de/>).
 

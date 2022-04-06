@@ -5,7 +5,7 @@ Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine [
 Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Spezifikation](http://hl7.org/fhir/http.html#capabilities) unterstützt werden.
 Der MODE-Parameter kann ignoriert werden.
 
-Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar. (`kind` = "requirements"). Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, wird die [CapabilityStatement-Expectation](http://hl7.org/fhir/extension-capabilitystatement-expectation.html)-Extension mit den möglichen Werten "SHALL" (=MUSS) und "MAY" (=KANN) verwendet.
+Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind` = "requirements"). Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, wird die [CapabilityStatement-Expectation](http://hl7.org/fhir/extension-capabilitystatement-expectation.html)-Extension mit den möglichen Werten "SHALL" (=MUSS) und "MAY" (=KANN) verwendet.
 
 Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind`= "instance" liefern und im Element `software` den Namen und die Versionsnummer angeben.
 
