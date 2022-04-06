@@ -34,7 +34,7 @@ Ausschlaggebend für den Umfang der zu zertifizierenden Datenobjekte sind die Fu
 | Person im Gesundheitsberuf (Practitioner) | optional** |
 | Bericht aus Subsystem (Bundle) | Systeme, in denen klinische Dokumente (strukturiert oder unstrukturiert) verwaltet und angezeigt werden können |
 
- \* kann in Verbindung mit dem Versicherungsverhältnis (Coverage) verwendet werden zur Abbildung von abweichenden Rechnungsempfängern oder Angaben zum/zur Hauptversicherten. Kontaktinformationen (z.B. Telefonnummer des Ehepartners) können in Patient.contact abgebildet werden
+ \* kann in Verbindung mit dem Versicherungsverhältnis (Coverage) zur Abbildung von abweichenden Rechnungsempfängern oder Angaben zum/zur Hauptversicherten verwendet werden. Kontaktinformationen (z.B. Telefonnummer des Ehepartners) können in Patient.contact abgebildet werden
  
  \** kann in Verbindung mit Condition/Procedure verwendet werden um Angaben zur diagnostizierenden/behandelnden Person zu machen
 
