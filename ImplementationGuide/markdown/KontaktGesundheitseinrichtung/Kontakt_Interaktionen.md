@@ -14,7 +14,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "identifier" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Encounter?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456```
 
@@ -22,7 +22,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Encounter?status=finished```
 
@@ -30,7 +30,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "class" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Encounter?class=IMP```
 
@@ -38,7 +38,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "type" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Encounter?type=http://fhir.de/CodeSystem/kontaktart-de|stationaer```
 

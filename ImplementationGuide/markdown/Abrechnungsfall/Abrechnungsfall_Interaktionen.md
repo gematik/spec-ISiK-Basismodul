@@ -14,7 +14,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "identifier" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Account?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456```
 
@@ -22,7 +22,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Account?status=active```
 
@@ -30,7 +30,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "type" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Account?type=http://terminology.hl7.org/CodeSystem/v3-ActCode|AMB```
 

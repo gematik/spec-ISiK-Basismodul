@@ -50,7 +50,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "recorded-date" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Condition?recorded-date=2015-01-01T12:00:23Z+02:00```
 
@@ -58,7 +58,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "related" MUSS unterstützt werden:
 
-   Beispiele
+   Beispiele:
 
    ```GET [base]/Condition?related=Condition/123```
 
