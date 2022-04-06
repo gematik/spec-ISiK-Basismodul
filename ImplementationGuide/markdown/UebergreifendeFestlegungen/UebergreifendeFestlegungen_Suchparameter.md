@@ -1,6 +1,6 @@
 ## Allgemeine Hinweise zu Suchparametern
 
-Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt welche im Bestätigungsverfahrens ISiK unterstützt werden MÜSSEN.
+Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt welche im Bestätigungsverfahrens ISiK unterstützt werden MÜSSEN.
 
 Es MUSS sichergestellt werden, dass nicht unterstützte oder leere Suchparameter **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/search.html#errors). Alle unterstützten und verwendeten Suchparameter sind im Self-Link des Suchbundles korrekt anzugeben.
 
@@ -122,7 +122,7 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 
     - Beispiele: ``GET [base]/Encounter?_include=Patient:subject``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/search.html#revinclude).
-    - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/CapabilityStatement.md}}.
+    - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
     Der ```:iterate``` Modifier KANN unterstützt werden.
 
@@ -130,7 +130,7 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 
     - Beispiele: ``GET [base]/Patient?_revinclude=Encounter:subject``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/search.html#revinclude).
-    - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/CapabilityStatement.md}}.
+    - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
     Der ```:iterate``` Modifier KANN unterstützt werden.
 
