@@ -38,13 +38,13 @@
 
 ### `Patient.address:Strassenanschrift`
 
-**Bedeutung:** Straßen-Adresse
+**Bedeutung:** Straßenadresse
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Addresse)
 
 ### `Patient.address:Postfach`
 
-**Bedeutung:** Postfach-Adresse
+**Bedeutung:** Postfachadresse
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Addresse)
 

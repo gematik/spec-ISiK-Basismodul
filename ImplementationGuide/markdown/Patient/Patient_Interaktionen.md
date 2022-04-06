@@ -32,7 +32,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "given" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?given=Erika```
 
@@ -42,7 +42,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "family" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?family=Musterfrau```
 
@@ -52,7 +52,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "birthdate" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?birthdate=1964-12-08```
 
@@ -60,7 +60,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "gender" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?gender=female```
 
@@ -70,7 +70,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "name" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?name=Erika```
 
@@ -98,7 +98,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "address-city" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?address-city=Berlin```
 
@@ -108,7 +108,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "address-country" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?address-country=DE```
 
@@ -118,7 +118,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "address-postalcode" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?address-postalcode=10117```
 
@@ -128,7 +128,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "active" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?active=true```
 
@@ -138,7 +138,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "telecom" KANN unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/Patient?telecom=phone|+49152236898```
 
