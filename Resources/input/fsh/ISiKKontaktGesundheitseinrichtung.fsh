@@ -89,14 +89,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
 * location MS
-/*   * location 1.. MS
-    * identifier 1.. MS
-    * display 1.. MS
-  * physicalType 1..1 MS */
   * physicalType from ISiKLocationPhysicalType (extensible)
 * location ^slicing.discriminator.type = #pattern
 * location ^slicing.discriminator.path = "physicalType"
-* location ^slicing.rules = #closed
+* location ^slicing.rules = #open
 * location contains  Zimmer 0..1 MS and Bett 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
