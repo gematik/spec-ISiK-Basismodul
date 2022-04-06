@@ -83,7 +83,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
   
 
-## Verarbeitung des Dokumentes
+### Verarbeitung des Dokumentes
 
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
@@ -96,12 +96,12 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 {{render:ImplementationGuide/Images/Composition-Bundle.png}}
 *Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.*
 
-## Hinweise zum Umgang mit der menschenlesbaren Repräsentation
+### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
 
 Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
 Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
 
-## Hinweise zum Umgang mit strukturierten Daten
+### Hinweise zum Umgang mit strukturierten Daten
 
 Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, so dass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
 

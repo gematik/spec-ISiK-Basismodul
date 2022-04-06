@@ -2,11 +2,11 @@
 
 Die Verwendung des [Must-Support-Flags](http://hl7.org/fhir/profiling.html#mustsupport) an Profil-Elementen  hat im Kontext dieses Leitfadens folgende Bedeutung:
 
-1. Im Kontext der Erstellung von FHIR-Ressourcen
+1. Im Kontext der Erstellung von FHIR-Ressourcen:
 
     Wenn die entsprechende Information in einem der Testszenarien bekannt ist, dann MUSS das Feld in der erstellten Ressource gefüllt sein. Ist die Information nicht bekannt, KANN es leer bleiben.
 
-2. Im Kontext der Verarbeitung von FHIR-Ressourcen
+2. Im Kontext der Verarbeitung von FHIR-Ressourcen:
 
     Wenn die entsprechende Information in einer Ressource vorhanden ist, so MUSS diese vom verarbeitenden System ausgewertet, persistiert und dem Anwender dargestellt werden können.
 

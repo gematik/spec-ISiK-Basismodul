@@ -1,5 +1,5 @@
 ### Kompatibilität
 
-Seitens der KVB, als auch der Medizininformatik-Initiative wurden zum Zeitpunkt der Veröffentlichung der vorliegenden Spezifikation kein Profil für den Ressourcentyp "Account" definiert, sodass kein Abgleich der Kompabilität durchgeführt wurde.
+Seitens der KBV, als auch der Medizininformatik-Initiative wurde zum Zeitpunkt der Veröffentlichung der vorliegenden Spezifikation kein Profil für den Ressourcentyp "Account" definiert, sodass kein Abgleich der Kompabilität durchgeführt werden konnte.
 
 ---

@@ -2,9 +2,9 @@
 
 ### `ValueSet.url`
 
-**Bedeutung:** Eineindeutige Url zur Identifizierung des ValueSets. Absoulte Url sind zu bevorzugen.
+**Bedeutung:** Eineindeutige Url zur Identifizierung des ValueSets. Absolute Urls sind zu bevorzugen.
 
-**Hinweise:** OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE ein Canonical Url vergeben werden.
+**Hinweise:** OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE eine Canonical Url vergeben werden.
 
 ### `ValueSet.version`
 
@@ -22,7 +22,7 @@
 
 **Bedeutung:** Indikation ob das ValueSet in aktiver Verwendung ist.
 
-**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "active" und "retired". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Hinweise:** Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "active" und "retired". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 ### `ValueSet.useContext`
 

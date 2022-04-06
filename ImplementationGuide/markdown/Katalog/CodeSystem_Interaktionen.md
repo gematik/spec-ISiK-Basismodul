@@ -22,7 +22,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "name" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/CodeSystem?name=TestCodeSystem```
 
@@ -30,7 +30,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/CodeSystem?status=active```
 
@@ -39,7 +39,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "version" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/CodeSystem?version=1.0.0```
 
@@ -47,7 +47,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "content-mode" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/CodeSystem?content-mode=complete```
 

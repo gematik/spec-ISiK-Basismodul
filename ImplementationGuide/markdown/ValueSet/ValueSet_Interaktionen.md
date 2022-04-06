@@ -22,7 +22,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "name" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/ValueSet?name=TestValueSet```
 
@@ -30,7 +30,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/ValueSet?status=active```
 
@@ -39,7 +39,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "version" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/ValueSet?version=1.0.0```
 
@@ -47,7 +47,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "context-type-value" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/CodeSystem?content-mode=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
 

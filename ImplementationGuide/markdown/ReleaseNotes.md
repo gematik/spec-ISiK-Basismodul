@@ -1,3 +1,5 @@
+# Release Notes
+
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
@@ -8,10 +10,10 @@ Version: 1.0.2
 Datum: 07.10.2021
 
 - Update der Deutschen Basisprofile auf die Version 1.1.0
-- Korrektur der Invarianten 'isik-pat-1', 'relatedp-de-1' und 'proc-ISiK-1'
+- Korrektur der Invarianten "isik-pat-1", "relatedp-de-1" und "proc-ISiK-1"
 - Slicing in Procedure.code.coding korrigiert
 - Encounter.hospitalization Kardinalität korrigiert (1..1 -> 0..1)
-- Fehlendes Must-Support Flag für Pflichtfeld RelatedPerson.patient hinzugefügt
+- Fehlendes Must-Support-Flag für Pflichtfeld RelatedPerson.patient hinzugefügt
 
 ----
 Version: 1.0.1
@@ -47,7 +49,7 @@ Datum: 25.05.2021
 - Hinweis präzisiert, dass die eingesetzte Software eines Drittherstellers nur im Rahmen des Bestätigungsverfahrens zu einem Bestandteil des Primärsystems wird
 - Canoncial der ImplementationGuide-Ressource für ISiK harmonisiert mit den Schema der restlichen Canonicals
 - :not und :text Modifier waren als Modifier für String-Suchparameter anstelle von Token-Suchparameter definiert
-- Anpassung der ISiK-Profile an die Version v1.0.0-rc1 der Deutschen Basisprofile:
+- Anpassung der ISiK-Profile an die Version v1.0.0-rc1 der Deutschen Basisprofile
 
 ###### Im Vergleich zu der Version 1.0.0-alpha9 ergeben sich in den deutschen Basisprofile folgende Änderungen:
 
@@ -64,7 +66,7 @@ Datum: 25.05.2021
 - Kardinalität von Condition.diagnosis.use auf 1..1 angepasst
 - FHIRPath Constraint isik-con1 hinzugefügt
 - Hinweis zu Condition.encounter erweitert
-- Must-support Flag für Condition.encounter hinzugefügt
+- Must-support-Flag für Condition.encounter hinzugefügt
 
 ##### Kontakt
 - Hinweise zu der begrifflichen Abgrenzung von Fall / Kontakt hinzugefügt
@@ -76,5 +78,6 @@ Datum: 25.05.2021
 - Update der Beispieldaten
 
 ##### Prozedur
-- Must-support Flag für Procedure.encounter hinzugefügt
+- Must-support-Flag für Procedure.encounter hinzugefügt
+
 ----
