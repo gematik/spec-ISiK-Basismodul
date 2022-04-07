@@ -612,3 +612,10 @@ Usage: #definition
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
+* rest.resource[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].extension.valueCode = #MAY
+* rest.resource[=].type = #Binary
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
