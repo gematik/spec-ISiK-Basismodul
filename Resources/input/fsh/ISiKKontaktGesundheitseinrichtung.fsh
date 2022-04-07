@@ -43,8 +43,8 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * type contains
     Kontaktebene 1..1 MS and
     KontaktArt 0..1 MS
-* type[Kontaktebene]
-  * ^patternCodeableConcept.coding.code = #Fachabteilungskontakt
+* type[Kontaktebene] from http://fhir.de/ValueSet/kontaktebene-de (required)
+  * ^patternCodeableConcept.coding = $Kontaktebene#Fachabteilungskontakt
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from KontaktartDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
