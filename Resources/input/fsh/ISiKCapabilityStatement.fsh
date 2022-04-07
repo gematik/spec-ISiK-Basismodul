@@ -17,7 +17,6 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* instantiates = Canonical(ISiKCapabilityStatementBasisServer)
 * rest.mode = #server
 * rest.resource[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
