@@ -62,6 +62,16 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
+1. Der Suchparameter "account" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/Encounter?account=Account/123```
+
+    ```GET [base]/Encounter?account:identifier=https://example.org/fhir/sid/abrechnungsfallnr|123456```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.account" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+
 1. Der Suchparameter "date" MUSS unterstützt werden:
 
    Beispiele:
@@ -69,16 +79,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/Encounter?date=lt2020-26-10```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.period" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
-
-    Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
-
-1. Der Suchparameter "partOf" MUSS unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Encounter?part-of=Encounter/test```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.partOf" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
