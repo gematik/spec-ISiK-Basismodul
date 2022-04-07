@@ -321,21 +321,16 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "code": "Fachabteilungskontakt"
+              "code": "Fachabteilungskontakt",
+              "system": "http://fhir.de/CodeSystem/Kontaktebene"
             }
           ]
         },
         "mustSupport": true,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "EncounterType"
-            }
-          ],
-          "strength": "example",
-          "description": "Kontaktebene",
-          "valueSet": "http://hl7.org/fhir/ValueSet/encounter-type"
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/kontaktebene-de",
+          "description": "Kontaktebene"
         }
       },
       {
@@ -381,7 +376,7 @@
         "id": "Encounter.serviceType.coding:Fachabteilungsschluessel",
         "path": "Encounter.serviceType.coding",
         "sliceName": "Fachabteilungsschluessel",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "patternCoding": {
           "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"
