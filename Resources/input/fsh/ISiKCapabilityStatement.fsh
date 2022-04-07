@@ -549,7 +549,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-name"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
@@ -589,7 +589,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-name"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
@@ -604,7 +604,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "context-type-value"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-version"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-context-type-value"
 * rest.resource[=].searchParam[=].type = #composite
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
