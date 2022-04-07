@@ -8,6 +8,8 @@ Klinische Ressourcen werden in FHIR durch Verlinkung auf die Encounter-Ressource
 
 Am Beginn der meisten klinischen Workflows steht die Auswahl des Besuchskontextes. Dies geschieht bspw. durch Suchen der Encounter-Ressource anhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. Daraufhin werden die zutreffenden Suchergebnisse angezeigt und der gewünschte Besuch ausgewählt.
 
+---
+
 #### Der Begriff "Fall" im Kontext von FHIR
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" keine synonymen Begriffe sind. 
@@ -25,6 +27,8 @@ Der Fall im Sinne einer Gruppierung von medizinischen Leistungen, die in einem g
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die EpisodeOfCare dargestellt.
 {{render:ImplementationGuide/Images/Encounter-Modell-Medizinisch.png}}
 
+---
+
 #### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
 In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide/EinfachesAufbaumodell?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
@@ -40,6 +44,8 @@ Der Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder
 Zur Unterscheidung der verschiedenen Kontaktebenenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
 
 {{render:ImplementationGuide/Images/Encounter-Modell-MII.png}}
+
+---
 
 #### Der Begriff "Fall" im Kontext der ISiK-Spezifikation
 
@@ -57,6 +63,8 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
 * jegliche, im ISiK-Basis-Modul als auch in anderen ISiK-Modulen definierte Ressourcen, die über einen Encounter-Kontext verfügen, müssen auf einen ISiK-Encounter (Abteilungskontakt) referenzieren.
 {{render:ImplementationGuide/Images/Encounter-Modell-ISiK.png}}
 
+---
+
 #### Die Repräsentation der "Fall"-Nummer
 
 Die "Fall"-Nummer ist ein im Kontext der stationären Versorgung häufig verwendetes Vehikel, um (insbesondere in der HL7-V2-Kommunikation) mit einfachen Mitteln den Fallkontext medizinischer Dokumentationen herzustellen.
@@ -70,7 +78,7 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
 
 | Hinweis | Änderung gegenüber ISiK-Basis-Modul Stufe 1!|
 |---------|---------------------|
-| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren.|
+| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren. Der Encounter kann weiterhin einen von der Abrechnungsfallnummer unabhänigen Identifier enthalten (z.B. "Aufnahmenummer", Bewegungsnummer). Dieser identifiziert eineindeutig den jeweiligen Kontakt.|
 
 {{render:ImplementationGuide/Images/Encounter-Modell-Fallnummer.png}}
 
