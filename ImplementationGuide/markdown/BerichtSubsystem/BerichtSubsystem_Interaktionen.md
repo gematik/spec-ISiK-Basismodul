@@ -8,89 +8,21 @@ Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mitte
 
    Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der [FHIR-Basisspezifikation - Abschnitt "Document End-Points"](https://www.hl7.org/fhir/documents.html#bundle).
   
-Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
+Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren Entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
 
 Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](http://hl7.org/fhir/issue-type) verwendet werden.
 
 Das Bundle muss folgendem Profil entsprechen:
-{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle, hybrid}}
-
-Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
-
-1. Der Suchparameter "_id" MUSS unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?_id=103270```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
-
-1. Der Suchparameter "identifier" MUSS unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?identifier=urn:oid:2.16.840.1.113883.6.96```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-
-1. Der Suchparameter "subject" MUSS unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?subject=Patient/123```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
-
-1. Der Suchparameter "date" MUSS unterstützt werden:
-
-   Beispiele:
-
-    ```GET [base]/Composition?date=lt2020-26-10```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "date" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/search.html#date).
-
-1. Der Suchparameter "encounter" MUSS unterstützt werden:
-
-   Beispiele:
-
-    ```GET [base]/Composition?encounter=Encounter/123```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
-
-
-1. Der Suchparameter "title" MUSS unterstützt werden:
-
-   Beispiele:
-
-    ```GET [base]/Composition?title=ExampleTitle```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.title" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-
-1. Der Suchparameter für "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?_profile=https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtSubSysteme```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all)
-
-1. Der Suchparameter für "type" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Composition?type=123```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Composition.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-  
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
 ### Verarbeitung des Dokumentes
 
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
-1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand der Aufnahmenummer ('Patient.identifier')
-2. Extraktion der Encounter.Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Aufnahmenummer ('Encounter.identifier')
-3. Extraktion der Composition-Ressource aus dem Bundle und Auslesen der mit 'mustSupport' gekennzeichneten Meta-Daten, sowie der menschenlesbaren Repräsentation des Dokumentes ('Composition.text' + 'Composition.section.text')
-4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten 
+1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlich identifizieren Merkmalen
+2. Extraktion der Encounter.Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer ('Encounter.account.identifier') oder ähnlich identifizieren Merkmalen
+3. Extraktion der Composition-Ressource aus dem Bundle und Auslesen der mit 'mustSupport' gekennzeichneten Meta-Daten, sowie der menschenlesbaren Repräsentation des Dokumentes ('Composition.text', 'Composition.section.text', 'Composition.section.section.text')
+4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
 
 {{render:ImplementationGuide/Images/Composition-Bundle.png}}
@@ -100,6 +32,34 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 
 Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
 Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
+
+### Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle
+
+Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
+
+* Die aufzulösende Referenz ist eine URN  (immer absolut, z. B. "urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12"):
+  * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
+  * Wenn einer gefunden wird, ist die Auflösung erfolgreich (und endet hier)
+  * Andernfalls schlägt die Auflösung fehl (und endet hier). Die Referenz hat in dieser Spezifikation keine definierte Bedeutung.
+
+* Wenn die Referenz eine absolute URL ist (z. B. "https://fhir.example.org/base/Patient/123", "https://fhir.example.org/base/Patient/123/_history/a"):
+  * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
+  * Wenn einer gefunden wird, ist die Auflösung hier erfolgreich (und endet)
+  * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated).  Wenn er auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
+
+* Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
+  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](http://hl7.org/fhir/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
+    * Extrahieren die [root] aus der fullUrl des Bundle-Entries und fügen die relative Referenz daran an (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
+    * Folge den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
+
+### Persitierung der menschenlesbaren Repräsentation
+
+Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
+Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezfikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/documentreference-mappings.html#fhircomposition).
+
+Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
+
+Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben werden.
 
 ### Hinweise zum Umgang mit strukturierten Daten
 
