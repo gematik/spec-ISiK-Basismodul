@@ -81,7 +81,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * rank MS
 * account 0.. MS
   * identifier 1.. MS
-  * reference 1.. MS
+  * reference 0.. MS
 * hospitalization ..1 MS
   * admitSource 0..1 MS
   * admitSource from AufnahmeanlassVS (extensible)
@@ -206,8 +206,3 @@ Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')"
-
-Invariant: ISiK-enc-9
-Description: "Falls eine Referenz auf den Abrechnungsfall vorliegt, sollte der Identifier dieses Abrechnungsfalles vorliegen"
-Severity: #error
-Expression: "account.reference.exists() implies account.identifier.exists()"
