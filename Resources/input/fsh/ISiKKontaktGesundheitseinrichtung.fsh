@@ -206,8 +206,3 @@ Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')"
-
-Invariant: ISiK-enc-9
-Description: "Falls eine Referenz auf den Abrechnungsfall vorliegt, sollte der Identifier dieses Abrechnungsfalles vorliegen"
-Severity: #error
-Expression: "account.reference.exists() implies account.identifier.exists()"
