@@ -54,7 +54,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-    Fachabteilungsschluessel 1..1 MS and 
+    Fachabteilungsschluessel 0..1 MS and 
     ErweiterterFachabteilungsschluessel 0..1 MS
   * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselVS (required)
     * ^patternCoding.system = $FachabteilungsschluesselCS
