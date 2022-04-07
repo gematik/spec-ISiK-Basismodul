@@ -606,11 +606,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "context-type-value"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-version"
 * rest.resource[=].searchParam[=].type = #composite
-* rest.resource[=].type = #Binary
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Binary
@@ -618,3 +613,5 @@ Usage: #definition
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
+* rest.resource[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].extension.valueCode = #MAY
