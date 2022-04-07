@@ -36,6 +36,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
 * category MS
+* category.coding MS
 * category.coding ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
