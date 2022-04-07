@@ -43,8 +43,8 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * type contains
     Kontaktebene 1..1 MS and
     KontaktArt 0..1 MS
-* type[Kontaktebene]
-  * ^patternCodeableConcept.coding.code = #Fachabteilungskontakt
+* type[Kontaktebene] from http://fhir.de/ValueSet/kontaktebene-de (required)
+  * ^patternCodeableConcept.coding = $Kontaktebene#Fachabteilungskontakt
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from KontaktartDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
@@ -54,7 +54,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-    Fachabteilungsschluessel 1..1 MS and 
+    Fachabteilungsschluessel 0..1 MS and 
     ErweiterterFachabteilungsschluessel 0..1 MS
   * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselVS (required)
     * ^patternCoding.system = $FachabteilungsschluesselCS
@@ -144,7 +144,7 @@ Usage: #example
 * status = #finished
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
-* type[+] = #Fachabteilungskontakt
+* type[+] = $Kontaktebene#Fachabteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
