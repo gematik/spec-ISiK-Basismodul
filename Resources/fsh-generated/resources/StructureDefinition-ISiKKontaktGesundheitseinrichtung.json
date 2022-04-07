@@ -108,13 +108,6 @@
             "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
             "expression": "diagnosis.use.all(coding.code != 'billing')",
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-          },
-          {
-            "key": "ISiK-enc-9",
-            "severity": "error",
-            "human": "Falls eine Referenz auf den Abrechnungsfall vorliegt, sollte der Identifier dieses Abrechnungsfalles vorliegen",
-            "expression": "account.reference.exists() implies account.identifier.exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
       },
