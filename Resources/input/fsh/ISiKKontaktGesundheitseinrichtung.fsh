@@ -44,7 +44,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     Kontaktebene 1..1 MS and
     KontaktArt 0..1 MS
 * type[Kontaktebene] from http://fhir.de/ValueSet/kontaktebene-de (required)
-  * ^patternCodeableConcept.coding = $Kontaktebene#Fachabteilungskontakt
+  * ^patternCodeableConcept.coding = $Kontaktebene#abteilungskontakt
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from KontaktartDe (required)
   * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
@@ -144,7 +144,7 @@ Usage: #example
 * status = #finished
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
-* type[+] = $Kontaktebene#Fachabteilungskontakt
+* type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
