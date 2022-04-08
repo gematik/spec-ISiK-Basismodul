@@ -23,7 +23,7 @@ Instance: Binary-PDF-Example-short
 InstanceOf: Binary
 Usage: #example
 * contentType = #application/pdf
-* securityContext = Reference(Patient/PatientinMusterfrau)
+* securityContext = Reference(PatientinMusterfrau)
 * data = "JVBERi0xLjUNJeLjz9MNCjEw"
 
 Instance: Binary-JPEG-Example
