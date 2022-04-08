@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel für das Profil ISiKAbrechnungsfall:
 
-{{json:account}}
+{{json:resources-fsh-generated-resources-account-abrechnungsfallambulant}}

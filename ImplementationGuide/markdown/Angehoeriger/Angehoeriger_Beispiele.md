@@ -2,6 +2,6 @@
 
 Valides Minimalbeispiel für das Profil ISiKAngehoeriger:
 
-{{json:relatedPerson}}
+{{json:isikangehoerigermustermann}}
 
 ---
