@@ -20,8 +20,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * type 1.. MS
 * type from ISiKAccountType (required)
 * subject 1.. MS
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "resolve()"
+  * ^slicing.discriminator.type = #profile
+  * ^slicing.discriminator.path = "$this.resolve()"
   * ^slicing.rules = #open
 * subject contains ISiKPatient 1..1 MS
 * subject[ISiKPatient] only Reference(ISiKPatient)
