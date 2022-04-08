@@ -144,7 +144,7 @@ Usage: #example
 * status = #finished
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
-* type[+] = $Kontaktebene#Fachabteilungskontakt
+* type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"
