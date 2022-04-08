@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel PersonImGesundheitsberuf:
 
-{{json:practitioner}}
+{{json:practitionerwalterarzt}}

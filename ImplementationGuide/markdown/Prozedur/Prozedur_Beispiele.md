@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Prozedur:
 
-{{json:procedure}}
+{{json:appendektomie}}

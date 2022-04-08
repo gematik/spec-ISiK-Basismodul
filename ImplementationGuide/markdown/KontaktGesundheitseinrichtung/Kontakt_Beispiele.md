@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel für das Profil ISiKKontaktGesundheitseinrichtung:
 
-{{json:encounter}}
+{{json:versorgungsstellenkontakt}}

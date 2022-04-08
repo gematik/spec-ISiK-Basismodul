@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Patient:
 
-{{json:ValueSetExample}}
+{{json:isikvaluesetexample}}

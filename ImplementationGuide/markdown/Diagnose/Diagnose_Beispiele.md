@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Diagnose:
 
-{{json:condition}}
+{{json:example-condition-kreuz-stern-primaer}}
