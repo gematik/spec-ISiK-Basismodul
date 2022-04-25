@@ -2,6 +2,7 @@ Profile: ISiKDiagnose
 Parent: Condition
 Id: ISiKDiagnose
 Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien."
+* ^status = #active
 * insert Meta
 * obeys isik-con1
 * id MS
