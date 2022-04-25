@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKProzedur",
+  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur",
   "version": "1.0.3",
   "name": "ISiKProzedur",
   "status": "draft",
@@ -65,7 +65,7 @@
             "severity": "error",
             "human": "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden",
             "expression": "code.coding.exists() implies category.coding.exists()",
-            "source": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           }
         ]
       },
@@ -160,7 +160,7 @@
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/ISiK//StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           }
         ],
         "mustSupport": true
