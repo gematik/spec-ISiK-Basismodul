@@ -2,6 +2,7 @@ Profile: ISiKPersonImGesundheitsberuf
 Parent: Practitioner
 Id: ISiKPersonImGesundheitsberuf
 Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien."
+* ^status = #active
 * insert Meta
 * obeys prac-de-1
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/Practitioner"
