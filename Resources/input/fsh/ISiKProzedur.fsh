@@ -2,7 +2,6 @@ Profile: ISiKProzedur
 Parent: Procedure
 Id: ISiKProzedur
 Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien."
-* ^status = #active
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"

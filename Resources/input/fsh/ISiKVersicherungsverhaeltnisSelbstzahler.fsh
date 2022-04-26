@@ -2,7 +2,6 @@ Profile: ISiKVersicherungsverhaeltnisSelbstzahler
 Parent: Coverage
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
-* ^status = #active
 * insert Meta
 * status ^mustSupport = false
 * type 1..
