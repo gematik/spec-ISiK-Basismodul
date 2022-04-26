@@ -2,7 +2,7 @@ Profile: ISiKKontaktGesundheitseinrichtung
 Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
-* ^status = #active
+* insert Meta
 * obeys ISiK-enc-1
 * id 1.. MS
 * extension ^slicing.discriminator[0].type = #value
