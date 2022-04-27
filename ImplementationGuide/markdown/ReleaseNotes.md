@@ -3,6 +3,20 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 1.0.3
+
+Datum: 07.02.2022
+- Update der Deutschen Basisprofile auf die Version 1.2.0
+- Fix Type Slicing in ```Condition.extension:ReferenzPrimaerdiagnose.value[x]```
+- ```onset-date``` als Kann-Suchparameter für Condition entfernt, da dieses Element nicht als Must-Support gekennzeichnet ist
+- ```address``` als Kann-Suchparameter für Practitioner entfernt, da dieses Element nicht als Must-Support gekennzeichnet ist
+- Korrektur .source-Elemente in FHIRPath Constraints
+- Korrektur von .definition im CapabilityStatement für Suchparameter ```Encounter-location```, ```Encounter-part-of```, ```Encounter-service-provider```
+- Harmonisierung Constraint ```sct-ops-1``` mit der dazugehörigen menschenlesbaren Beschreibung 
+
+----
+
+----
 Version: 1.0.2
 
 Datum: 07.10.2021
@@ -20,7 +34,7 @@ Datum: 27.08.2021
 
 - Korrektur der Suchinteraktion für das Datenobjekt "Condition": ```Condition.onset[x]``` enthält kein Must-Support-Flag, daher ist die Suche nach "onset-date" keine Pflicht. Der Suchparameter wurde nun als optional markiert.
 - Beschreibung von Encounter.status enthielt Teile der Beschreibung von Condition.status. Diese wurden nun gelöscht.
-- Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://simplifier.net/guide/basisprofil-de-r4/AmbulanterstationrerFallEncounterAccountEpisodeOfCare) gewährleisten wurde dieses Feld als optional gekennzeichnet.
+- Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://ig.fhir.de/basisprofile-de/1.0.0/Ressourcen-AmbulanterStationaererFall.html) gewährleisten wurde dieses Feld als optional gekennzeichnet.
 - Das Binding an Procedure.code:OPS enthielt ein Binding an ein ValueSet mit falscher Canonical-URL.
 - Korrektur der Interaktionen auf Coverage: Für Coverage.payor für das Profil ISiKVersicherungsverhaeltnisGesetzlich muss nur die Suche mittels des identifier-Modifiers untersützt werden, jedoch nicht die Suche auf die dazugehörige Referenz.
 - Hinweis hinzugefügt, dass sowohl für die Implementierung von ISiK, als auch für den anschließenden Betrieb eines ISiK-konformen Systems eine SNOMED-Lizenz notwendig ist.

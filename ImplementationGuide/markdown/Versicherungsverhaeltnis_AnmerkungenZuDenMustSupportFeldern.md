@@ -5,7 +5,7 @@
 ### `Coverage.identifier:KrankenversichertenID`
 
 **Bedeutung:** Der unveränderliche, 10-stellige Teil der Krankenversichertennummer zur Identifikation des Versicherten, die Krankenversicherten-ID.
-**Hinweise:** Dieser identifier ist zur eindeutigen Identifikation des gesetzlich Versicherten nötig, in den von diesem Profil unterstützten Anwendungsszenarien, siehe [Beschreibung der Deutschen Basisprofile](https://simplifier.net/guide/basisprofil-de-r4/gesetzlicheKrankenversichertennummer10-stelligeKVIDe).
+**Hinweise:** Dieser identifier ist zur eindeutigen Identifikation des gesetzlich Versicherten nötig, in den von diesem Profil unterstützten Anwendungsszenarien, siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/GesetzlicheKrankenversichertennummer10-stelligeKVID-Identifier.html).
 
 ### `Coverage.status`
 

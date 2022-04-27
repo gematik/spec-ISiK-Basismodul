@@ -2,8 +2,8 @@
 
 Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisGesetzlich:
 
-{{xml:Resources/fsh-generated/resources/Coverage-coverageGesetzlich.json}}
+{{xml:Examples/ISiKVersicherungsverhaeltnisGesetzlich.xml}}
 
 Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisSelbstzahler:
 
-{{xml:Resources/fsh-generated/resources/Coverage-coveragePrivat.json}}
+{{xml:Examples/ISiKVersicherungsverhaeltnisSelbstzahler.xml}}

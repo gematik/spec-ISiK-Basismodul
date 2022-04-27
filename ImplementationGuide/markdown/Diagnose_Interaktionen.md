@@ -62,7 +62,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    ```GET [base]/Condition?related=Condition/123```
 
-   Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.related" finden sich im [Leitfaden Basis DE (R4) - Abschnitt "Diagnosen (Condition) - Doppel-/Mehrfachkodierte ICD-Codes"](https://simplifier.net/guide/basisprofil-de-r4/Ressourcen-DiagnosenCondition).
+   Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.related" finden sich im [Leitfaden Basis DE (R4) - Abschnitt "Diagnosen (Condition) - Doppel-/Mehrfachkodierte ICD-Codes"](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-DiagnosenCondition.html).
 
 1. Der Suchparameter "_profile" KANN unterstützt werden:
 

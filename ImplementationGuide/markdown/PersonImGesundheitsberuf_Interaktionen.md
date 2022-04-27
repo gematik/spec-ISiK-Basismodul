@@ -54,14 +54,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/search.html#all).
 
-1. Der Suchparameter "address" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Practitioner?address=Berlin```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Practitioner.address" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](http://hl7.org/fhir/R4/search.html#string).
-
 1. Der Suchparameter "gender" KANN unterstützt werden:
 
     Beispiele:
