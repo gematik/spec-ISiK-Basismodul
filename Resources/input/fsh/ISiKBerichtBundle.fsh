@@ -3,7 +3,7 @@ Parent: Composition
 Id: ISiKBerichtBundle
 Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden."
 * insert Meta
-* id 1..
+* id 0..1
 * text 1.. MS
   * status = #extensions (exactly)
   * status MS

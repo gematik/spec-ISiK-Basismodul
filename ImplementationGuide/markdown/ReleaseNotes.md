@@ -3,6 +3,13 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 1.0.4
+
+Datum: 31.05.2022
+- Die Kardinalität des Elements ```id``` ist nun ```0..1``` in den Ressourcen Patient, Encounter, Condition, Coverage, Bundle und Procedure.
+
+----
+
 Version: 1.0.3
 
 Datum: 07.02.2022
@@ -12,9 +19,7 @@ Datum: 07.02.2022
 - ```address``` als Kann-Suchparameter für Practitioner entfernt, da dieses Element nicht als Must-Support gekennzeichnet ist
 - Korrektur .source-Elemente in FHIRPath Constraints
 - Korrektur von .definition im CapabilityStatement für Suchparameter ```Encounter-location```, ```Encounter-part-of```, ```Encounter-service-provider```
-- Harmonisierung Constraint ```sct-ops-1``` mit der dazugehörigen menschenlesbaren Beschreibung 
-
-----
+- Harmonisierung Constraint ```sct-ops-1``` mit der dazugehörigen menschenlesbaren Beschreibung
 
 ----
 Version: 1.0.2
