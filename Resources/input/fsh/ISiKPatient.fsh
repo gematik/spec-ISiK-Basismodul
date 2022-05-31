@@ -5,7 +5,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * insert Meta
 * obeys isik-pat-1
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
-* id 1.. MS
+* id 0..1 MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
