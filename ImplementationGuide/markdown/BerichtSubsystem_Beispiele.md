@@ -1,3 +1,3 @@
 ### Beispiele
 
-{{xml:Examples/ISiKBerichtSubsysteme.xml}}
+{{json:composition-blutdruck}}

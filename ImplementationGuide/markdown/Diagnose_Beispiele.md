@@ -2,4 +2,4 @@
 
 Valides Minimalbeispiel Diagnose:
 
-{{xml:Examples/ISiKDiagnose.xml}}
+{{json:Example-condition-kreuz-stern-primaer}}
