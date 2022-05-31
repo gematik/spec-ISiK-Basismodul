@@ -1,0 +1,41 @@
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="Example-condition-kreuz-stern-sekundaer"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/condition-related">
+    <valueReference>
+      <reference value="Condition/Example-condition-kreuz-stern-primaer"/>
+    </valueReference>
+  </extension>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <code>
+    <coding>
+      <extension url="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen">
+        <valueCoding>
+          <system value="http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"/>
+          <code value="*"/>
+        </valueCoding>
+      </extension>
+      <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+      <version value="2019"/>
+      <code value="H36.0"/>
+      <display value="Retinopathia diabetica"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <recordedDate value="2021-05-24"/>
+  <note>
+    <text value="Beispiel für eine Anmerkung"/>
+  </note>
+</Condition>
