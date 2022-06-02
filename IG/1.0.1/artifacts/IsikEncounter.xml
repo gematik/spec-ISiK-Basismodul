@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKKontaktGesundheitseinrichtung" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung" />
+  <name value="ISiKKontaktGesundheitseinrichtung" />
+  <status value="active" />
+  <description value="Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+      <constraint>
+        <key value="ISiK-enc-1" />
+        <severity value="warning" />
+        <human value="Abgeschlossene Kontakte sollten einen End-Zeitpunkt angeben" />
+        <expression value="status = 'finished' implies period.end.exists()" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung" />
+      </constraint>
+    </element>
+    <element id="Encounter.id">
+      <path value="Encounter.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.extension">
+      <path value="Encounter.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Encounter.extension:Aufnahmegrund">
+      <path value="Encounter.extension" />
+      <sliceName value="Aufnahmegrund" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/Aufnahmegrund" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.extension:Aufnahmegrund.extension">
+      <path value="Encounter.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Encounter.extension:Aufnahmegrund.extension:ErsteUndZweiteStelle">
+      <path value="Encounter.extension.extension" />
+      <sliceName value="ErsteUndZweiteStelle" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.extension:Aufnahmegrund.extension:DritteStelle">
+      <path value="Encounter.extension.extension" />
+      <sliceName value="DritteStelle" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.extension:Aufnahmegrund.extension:VierteStelle">
+      <path value="Encounter.extension.extension" />
+      <sliceName value="VierteStelle" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer">
+      <path value="Encounter.identifier" />
+      <sliceName value="Aufnahmenummer" />
+      <max value="1" />
+      <patternIdentifier>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+            <code value="VN" />
+          </coding>
+        </type>
+      </patternIdentifier>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.type">
+      <path value="Encounter.identifier.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.type.coding">
+      <path value="Encounter.identifier.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.type.coding:vn-type">
+      <path value="Encounter.identifier.type.coding" />
+      <sliceName value="vn-type" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="VN" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.type.coding:vn-type.system">
+      <path value="Encounter.identifier.type.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.type.coding:vn-type.code">
+      <path value="Encounter.identifier.type.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.system">
+      <path value="Encounter.identifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.identifier:Aufnahmenummer.value">
+      <path value="Encounter.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.status">
+      <path value="Encounter.status" />
+      <short value="planned | in-progress | onleave | finished | cancelled +" />
+      <definition value="planned | in-progress | onleave | finished | cancelled +." />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Eingeschränkter Status vgl. FHIR R5" />
+        <valueSet value="http://fhir.de/ValueSet/EncounterStatusDe" />
+      </binding>
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/EncounterClassDE" />
+      </binding>
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.type:Kontaktebene">
+      <path value="Encounter.type" />
+      <sliceName value="Kontaktebene" />
+      <max value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://fhir.de/CodeSystem/Kontaktebene" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Kontaktebene" />
+        <valueSet value="http://fhir.de/ValueSet/kontaktebene-de" />
+      </binding>
+    </element>
+    <element id="Encounter.type:KontaktArt">
+      <path value="Encounter.type" />
+      <sliceName value="KontaktArt" />
+      <max value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://fhir.de/CodeSystem/kontaktart-de" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/kontaktart-de" />
+      </binding>
+    </element>
+    <element id="Encounter.serviceType">
+      <path value="Encounter.serviceType" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceType.coding">
+      <path value="Encounter.serviceType.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceType.coding:Fachabteilungsschluessel">
+      <path value="Encounter.serviceType.coding" />
+      <sliceName value="Fachabteilungsschluessel" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel" />
+      </patternCoding>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel" />
+      </binding>
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.reference">
+      <path value="Encounter.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period.start">
+      <path value="Encounter.period.start" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period.end">
+      <path value="Encounter.period.end" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis">
+      <path value="Encounter.diagnosis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis.condition">
+      <path value="Encounter.diagnosis.condition" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis.condition.reference">
+      <path value="Encounter.diagnosis.condition.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.diagnosis.use">
+      <path value="Encounter.diagnosis.use" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="extensible" />
+      </binding>
+    </element>
+    <element id="Encounter.diagnosis.rank">
+      <path value="Encounter.diagnosis.rank" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.hospitalization">
+      <path value="Encounter.hospitalization" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.hospitalization.admitSource">
+      <path value="Encounter.hospitalization.admitSource" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="preferred" />
+        <valueSet value="http://fhir.de/ValueSet/dgkev/Aufnahmeanlass" />
+      </binding>
+    </element>
+    <element id="Encounter.hospitalization.dischargeDisposition">
+      <path value="Encounter.hospitalization.dischargeDisposition" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.hospitalization.dischargeDisposition.extension">
+      <path value="Encounter.hospitalization.dischargeDisposition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Encounter.hospitalization.dischargeDisposition.extension:Entlassungsgrund">
+      <path value="Encounter.hospitalization.dischargeDisposition.extension" />
+      <sliceName value="Entlassungsgrund" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/Entlassungsgrund" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location">
+      <path value="Encounter.location" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location">
+      <path value="Encounter.location.location" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location.display">
+      <path value="Encounter.location.location.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceProvider.display">
+      <path value="Encounter.serviceProvider.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.partOf">
+      <path value="Encounter.partOf" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,77 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="practitioner"/>
+  <meta>
+    <source value="http://krankenhaus.de"/>
+    <profile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf"/>
+  </meta>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="LANR"/>
+      </coding>
+    </type>
+    <system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+    <value value="123456789"/>
+  </identifier>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="DN"/>
+      </coding>
+    </type>
+    <system value="http://fhir.de/sid/bundesaerztekammer/efn"/>
+    <value value="123456789123456"/>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <use value="official"/>
+    <text value="Walter Arzt"/>
+    <family value="Arzt">
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+        <valueString value="Arzt"/>
+      </extension>
+    </family>
+    <given value="Walter"/>
+  </name>
+  <name>
+    <use value="maiden"/>
+    <text value="Gross"/>
+    <family value="Gross">
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+        <valueString value="Gross"/>
+      </extension>
+    </family>
+  </name>
+  <address>
+    <type value="both"/>
+    <line value="Schmiedegasse 16">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="16"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Schmiedegasse"/>
+      </extension>
+    </line>
+    <city value="Potsdam"/>
+    <postalCode value="14469"/>
+    <country value="DE"/>
+  </address>
+  <gender value="male" />
+  <birthDate>
+    <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+      <valueCode value="masked"/>
+    </extension>
+  </birthDate>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <version value="http://snomed.info/sct/900000000000207008/version/20200131"/>
+        <code value="112247003"/>
+        <display value="Medical doctor (occupation)"/>
+      </coding>
+    </code>
+  </qualification>
+</Practitioner>

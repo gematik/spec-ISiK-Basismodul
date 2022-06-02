@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKAngehoeriger" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+  <name value="ISiKAngehoeriger" />
+  <status value="active" />
+  <experimental value="true" />
+  <description value="Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="RelatedPerson" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="RelatedPerson">
+      <path value="RelatedPerson" />
+      <constraint>
+        <key value="relatedp-de-1" />
+        <severity value="error" />
+        <human value="Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden" />
+        <expression value="gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()" />
+        <source value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+      </constraint>
+    </element>
+    <element id="RelatedPerson.patient">
+      <path value="RelatedPerson.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.patient.reference">
+      <path value="RelatedPerson.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.patient.identifier">
+      <path value="RelatedPerson.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.patient.display">
+      <path value="RelatedPerson.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.name">
+      <path value="RelatedPerson.name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.gender.extension">
+      <path value="RelatedPerson.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="RelatedPerson.gender.extension:Geschlecht-Administrativ">
+      <path value="RelatedPerson.gender.extension" />
+      <sliceName value="Geschlecht-Administrativ" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="RelatedPerson.address">
+      <path value="RelatedPerson.address" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift">
+      <path value="RelatedPerson.address" />
+      <sliceName value="Strassenanschrift" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <patternAddress>
+        <type value="physical" />
+      </patternAddress>
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift.type">
+      <path value="RelatedPerson.address.type" />
+      <min value="1" />
+      <fixedCode value="physical" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift.line">
+      <path value="RelatedPerson.address.line" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift.city">
+      <path value="RelatedPerson.address.city" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift.postalCode">
+      <path value="RelatedPerson.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Strassenanschrift.country">
+      <path value="RelatedPerson.address.country" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Postfach">
+      <path value="RelatedPerson.address" />
+      <sliceName value="Postfach" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <patternAddress>
+        <type value="postal" />
+      </patternAddress>
+    </element>
+    <element id="RelatedPerson.address:Postfach.type">
+      <path value="RelatedPerson.address.type" />
+      <min value="1" />
+      <fixedCode value="postal" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Postfach.line">
+      <path value="RelatedPerson.address.line" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Postfach.city">
+      <path value="RelatedPerson.address.city" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.address:Postfach.postalCode">
+      <path value="RelatedPerson.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
