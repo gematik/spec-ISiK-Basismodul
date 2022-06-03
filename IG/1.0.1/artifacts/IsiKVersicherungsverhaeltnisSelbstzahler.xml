@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKVersicherungsverhaeltnisSelbstzahler" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler" />
+  <version value="0.1" />
+  <name value="ISiKVersicherungsverhaeltnisSelbstzahler" />
+  <status value="active" />
+  <experimental value="true" />
+  <date value="2020-10-15" />
+  <publisher value="gematik GmbH" />
+  <description value="Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Coverage" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Coverage.status">
+      <path value="Coverage.status" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Coverage.type">
+      <path value="Coverage.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.type.coding">
+      <path value="Coverage.type.coding" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.type.coding.system">
+      <path value="Coverage.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/versicherungsart-de-basis" />
+    </element>
+    <element id="Coverage.type.coding.code">
+      <path value="Coverage.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="SEL" />
+    </element>
+    <element id="Coverage.policyHolder">
+      <path value="Coverage.policyHolder" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber">
+      <path value="Coverage.subscriber" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriber.display">
+      <path value="Coverage.subscriber.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriberId">
+      <path value="Coverage.subscriberId" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.beneficiary">
+      <path value="Coverage.beneficiary" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary.reference">
+      <path value="Coverage.beneficiary.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.order">
+      <path value="Coverage.order" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.network">
+      <path value="Coverage.network" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

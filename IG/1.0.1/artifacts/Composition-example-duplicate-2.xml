@@ -1,0 +1,80 @@
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="composition-blutdruck" />
+  <meta>
+    <profile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme" />
+  </meta>
+  <text>
+    <status value="extensions" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p> Blutdruckmessung vom 19.10.2020</p>
+      <p> Mustermann, Max (*1.1.1970)</p>
+      <p> Aufnahmenummer: 12345<br /> Fallnummer: 54321</p>
+      <p> gemessen mit Gerät XY, Fa. Z, Modell T</p>
+    </div>
+  </text>
+  <identifier>
+    <system value="urn:ietf:rfc:3986" />
+    <value value="urn:oid:2.16.840.1.113883.6.96" />
+  </identifier>
+  <status value="final" />
+  <type>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="55112-7" />
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/patient" />
+  </subject>
+  <encounter>
+    <reference value="Encounter/encounter" />
+  </encounter>
+  <date value="2020-10-19" />
+  <author>
+    <type value="Device" />
+    <display value="Gerät XY, Fa. Z, Modell T" />
+  </author>
+  <title value="Blutdruckmessung vom 19.10.2020" />
+  <section>
+    <title value="Messung" />
+    <text>
+      <status value="generated" />
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <table>
+          <tr>
+            <td>
+              <b> Systolisch</b>
+            </td>
+            <td>
+              <b> Diastolisch</b>
+            </td>
+            <td>
+              <b> Einheit</b>
+            </td>
+            <td>
+              <b> Uhrzeit</b>
+            </td>
+          </tr>
+          <tr>
+            <td> 
+							140
+						</td>
+            <td> 
+							110
+						</td>
+            <td> 
+							mmHG
+						</td>
+            <td> 
+							17:15h
+						</td>
+          </tr>
+        </table>
+      </div>
+    </text>
+<!-- OBSERVATION AUF DIE HIER VERWIESEN WIRD EXISTIERT NOCH NICHT ALS EXAMPLE   -->
+<!--    <entry>-->
+<!--      <reference value="Observation/example2" />-->
+<!--    </entry>-->
+  </section>
+</Composition>
