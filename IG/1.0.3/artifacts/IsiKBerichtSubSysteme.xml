@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKBerichtSubSysteme" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme" />
+  <version value="1.0.3" />
+  <name value="ISiKBerichtSubSysteme" />
+  <status value="active" />
+  <description value="Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="fhirdocumentreference" />
+    <uri value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
+    <name value="FHIR DocumentReference" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition.id">
+      <path value="Composition.id" />
+      <min value="1" />
+    </element>
+    <element id="Composition.text">
+      <path value="Composition.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.text.status">
+      <path value="Composition.text.status" />
+      <fixedCode value="extensions" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.text.div">
+      <path value="Composition.text.div" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.identifier">
+      <path value="Composition.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Composition.identifier.system">
+      <path value="Composition.identifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Composition.identifier.value">
+      <path value="Composition.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Composition.status">
+      <path value="Composition.status" />
+      <fixedCode value="final" />
+    </element>
+    <element id="Composition.type.coding">
+      <path value="Composition.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Composition.type.coding:LOINC">
+      <path value="Composition.type.coding" />
+      <sliceName value="LOINC" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://loinc.org" />
+        <code value="55112-7" />
+      </patternCoding>
+    </element>
+    <element id="Composition.type.coding:LOINC.system">
+      <path value="Composition.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.type.coding:LOINC.code">
+      <path value="Composition.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.type.coding:KDL">
+      <path value="Composition.type.coding" />
+      <sliceName value="KDL" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://dvmd.de/fhir/CodeSystem/kdl" />
+      </patternCoding>
+    </element>
+    <element id="Composition.type.coding:KDL.system">
+      <path value="Composition.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://dvmd.de/fhir/CodeSystem/kdl" />
+    </element>
+    <element id="Composition.type.coding:KDL.code">
+      <path value="Composition.type.coding.code" />
+      <min value="1" />
+      <constraint>
+        <key value="kdl-1" />
+        <severity value="warning" />
+        <human value="KDL-Code ungültig" />
+        <expression value="matches('[A-Z]{2}[0-9]{6}')" />
+        <source value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme" />
+      </constraint>
+    </element>
+    <element id="Composition.type.coding:IHE">
+      <path value="Composition.type.coding" />
+      <sliceName value="IHE" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://ihe-d.de/CodeSystems/IHEXDStypeCode" />
+      </patternCoding>
+    </element>
+    <element id="Composition.type.coding:IHE.system">
+      <path value="Composition.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://ihe-d.de/CodeSystems/IHEXDStypeCode" />
+    </element>
+    <element id="Composition.type.coding:IHE.code">
+      <path value="Composition.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.category.coding">
+      <path value="Composition.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.category.coding:LOINC">
+      <path value="Composition.category.coding" />
+      <sliceName value="LOINC" />
+      <max value="1" />
+    </element>
+    <element id="Composition.category.coding:LOINC.system">
+      <path value="Composition.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.category.coding:LOINC.code">
+      <path value="Composition.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.category.coding:IHE">
+      <path value="Composition.category.coding" />
+      <sliceName value="IHE" />
+      <max value="1" />
+    </element>
+    <element id="Composition.category.coding:IHE.system">
+      <path value="Composition.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://ihe-d.de/CodeSystems/IHEXDSclassCode" />
+    </element>
+    <element id="Composition.category.coding:IHE.code">
+      <path value="Composition.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject.reference">
+      <path value="Composition.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.encounter">
+      <path value="Composition.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.encounter.reference">
+      <path value="Composition.encounter.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf" />
+      </type>
+    </element>
+    <element id="Composition.author.display">
+      <path value="Composition.author.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section.title">
+      <path value="Composition.section.title" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section.section">
+      <path value="Composition.section.section" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
