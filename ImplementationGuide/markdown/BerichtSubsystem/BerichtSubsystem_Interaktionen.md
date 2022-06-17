@@ -59,6 +59,8 @@ Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der F
 
 Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
 
+**Hinweis:** Es ist zu beachten, dass in einem Attachment-Datentyp im Element "url" eine absolute URL anzugeben ist. Somit muss zunächst das Binary auf dem externen System per POST angelegt werden. Der hieraus resultierende Link kann anschließend im Attachment verwendet werden.
+
 Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben werden.
 
 ### Hinweise zum Umgang mit strukturierten Daten
