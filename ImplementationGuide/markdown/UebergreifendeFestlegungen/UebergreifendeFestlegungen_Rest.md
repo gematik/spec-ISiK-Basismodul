@@ -12,6 +12,22 @@ Das Erstellen einer Ressource KANN per HTTP POST (vgl. [FHIR RESTful API - creat
 
 Eine Ressource welche NICHT durch das bestätigungsrelevante System angelegt wird, MUSS in ```Resource.meta.tag``` eine Angabe enthalten, welche indiziert, dass diese Ressource durch ein Fremdsystem erzeugt wurde. Dieser Tag MUSS durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht mit übermitteln. Die Kodierung MUSS mindestens mittels des CodeSystems ```http://fhir.de/CodeSystem/common-meta-tag-de``` erfolgen. Weitere Kodierungen KÖNNEN hinzugefügt werden.
 
+```
+json
+{
+    "resourceType": "Patient",
+    "meta": {
+        "tag": [
+            {
+                "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
+                "code": "external"
+            }
+        ]
+    }
+    [...]
+}
+```
+
 Eine weitere Differenzierung der Herkunft kann mittels ```Resource.meta.security``` kodiert werden. Hierzu KÖNNEN Codes aus dem ValueSet [SecurityIntegrityObservationValue](http://terminology.hl7.org/ValueSet/v3-SecurityIntegrityObservationValue) verwendet werden.
 
 Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System übernommen werden, MUSS der entsprechende Tag in ```Patient.meta.tag``` entfernt werden. In diesem Falle MUSS die id der Ressource stabil bleiben und darf nicht verändert werden.
