@@ -34,3 +34,10 @@ Hinweis: Es sei darauf hingewiesen, dass sowohl für die Implementierung der ISi
 gematik GmbH
 
 [Impressum](https://www.gematik.de/impressum/)
+
+**Gender-Hinweis** 
+
+Zugunsten des Leseflusses wird in dieser Publikation meist die
+männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer
+geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle
+weiteren Geschlechter, neben männlich und weiblich, ab.

@@ -1,6 +1,6 @@
 ## Allgemeine Hinweise zu Suchparametern
 
-Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im  Rahmen des Bestätigungsverfahren von ISiK unterstützt werden MÜSSEN.
+Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
 Es MUSS sichergestellt werden, dass nicht unterstützte oder leere Suchparameter **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/search.html#errors). Alle unterstützten und verwendeten Suchparameter sind im Self-Link des Suchbundles korrekt anzugeben.
 
@@ -146,7 +146,7 @@ Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das Capab
 
 ## Best Practice Empfehlungen für Standard-Suchfilter
 
-Diese grundlegenden Best Practice Empfehlungen beziehen sich auf die korrekte Verwaltung des Suchprozesses seitens des Servers mit Bezug auf Sicherheit im klinischen Umfeld. Unstimmigkeiten in den Erwartungen zwischen Client und Server können dazu führen, dass mehr Ressourcen als erwartet oder angemessen gefunden werden, oder, dass Ressourcen in den Suchergebnissen fehlen, die eigentlich vorhanden sein sollten. Im Folgenden werden daher Empfehlungen für Standard-Suchfilter genannt, die ein Grundmaß an Sicherheit im klinischen Umfeld bereitstellen sollen.
+Diese grundlegenden Best Practice Empfehlungen beziehen sich auf die korrekte Verwaltung des Suchprozesses seitens des Servers, mit Bezug auf Sicherheit im klinischen Umfeld. Unstimmigkeiten in den Erwartungen zwischen Client und Server können dazu führen, dass mehr Ressourcen als erwartet oder angemessen gefunden werden, oder, dass Ressourcen in den Suchergebnissen fehlen, die eigentlich vorhanden sein sollten. Im Folgenden werden daher Empfehlungen für Standard-Suchfilter genannt, die ein Grundmaß an Sicherheit im klinischen Umfeld bereitstellen sollen.
 
 - Der Server SOLLTE dafür sorgen, dass Clients die benötigten Informationen finden können, auch bei Inhalten, die sich über mehrere FHIR-Ressourcen hinweg strecken.
 
@@ -154,6 +154,6 @@ Diese grundlegenden Best Practice Empfehlungen beziehen sich auf die korrekte Ve
 
 - Wenn der Inhalt eines Suchparameters syntaktisch falsch ist, SOLLTE der Server einen Fehler zurückgeben. Handelt es sich jedoch um eine logische Bedingung (z. B. einen Code), SOLLTE der Server die Suche verarbeiten, einschließlich des Parameters. Als Ergebnis wird in diesem Fall eine leere Suchmenge zurückgegeben, da der Parameter nicht erfüllt werden kann. In solchen Fällen kann zusätzlich ein OperationOutcome mit Hinweisen und Warnungen über den Suchprozess in das Ergebnis aufgenommen werden. Dieses wird in die Suchergebnisse als Eintrag mit [search mode](https://www.hl7.org/fhir/bundle-definitions.html#Bundle.entry.search.mode) = [`outcome`](https://www.hl7.org/fhir/valueset-search-entry-mode.html) aufgenommen. Clients können diese Informationen nutzen, um zukünftige Suchen zu verbessern.
 
-- Wenn der Server geeignete Standardfilter bei der Suche auf der Grundlage des Patientenkontextes (z. B. das Herausfiltern von fehlerhaften Datensätzen oder inaktiven und verstorbenden Patienten) enthält, SOLLTEN diese angemessen und eindeutig dokumentiert sein (vorzugsweise durch Aufnahme in den 'self link' für eine Suche).
+- Wenn der Server geeignete Standardfilter bei der Suche auf der Grundlage des Patientenkontextes (z. B. das Herausfiltern von fehlerhaften Datensätzen oder inaktiven und verstorbenen Patienten) enthält, SOLLTEN diese angemessen und eindeutig dokumentiert sein (vorzugsweise durch Aufnahme in den 'self link' für eine Suche).
 
 - Weitere Hinweise können in der [FHIR Spezifikation im Abschnitt `Search`]((https://www.hl7.org/fhir/search.html#errors)) eingesehen werden.

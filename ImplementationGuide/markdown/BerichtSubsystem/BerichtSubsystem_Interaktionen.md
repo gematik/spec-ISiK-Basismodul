@@ -30,14 +30,14 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 
 ### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
 
-Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
+Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, Datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
 Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
 
 ### Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle
 
 Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
 
-* Die aufzulösende Referenz ist eine URN  (immer absolut, z. B. "urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12"):
+* Die aufzulösende Referenz ist eine URN (immer absolut, z. B. "urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12"):
   * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
   * Wenn einer gefunden wird, ist die Auflösung erfolgreich (und endet hier)
   * Andernfalls schlägt die Auflösung fehl (und endet hier). Die Referenz hat in dieser Spezifikation keine definierte Bedeutung.
@@ -45,26 +45,26 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
 * Wenn die Referenz eine absolute URL ist (z. B. "https://fhir.example.org/base/Patient/123", "https://fhir.example.org/base/Patient/123/_history/a"):
   * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
   * Wenn einer gefunden wird, ist die Auflösung hier erfolgreich (und endet)
-  * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated).  Wenn er auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
+  * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
   * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](http://hl7.org/fhir/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
-    * Extrahieren die [root] aus der fullUrl des Bundle-Entries und fügen die relative Referenz daran an (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
-    * Folge den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
+    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
+    * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
-### Persitierung der menschenlesbaren Repräsentation
+### Persistierung der menschenlesbaren Repräsentation
 
 Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
-Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezfikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/documentreference-mappings.html#fhircomposition).
+Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/documentreference-mappings.html#fhircomposition).
 
 Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
 
 **Hinweis:** Es ist zu beachten, dass in einem Attachment-Datentyp im Element "url" eine absolute URL anzugeben ist. Somit muss zunächst das Binary auf dem externen System per POST angelegt werden. Der hieraus resultierende Link kann anschließend im Attachment verwendet werden.
 
-Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben werden.
+Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt wird, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben wird.
 
 ### Hinweise zum Umgang mit strukturierten Daten
 
-Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, so dass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
+Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
 
 ---
