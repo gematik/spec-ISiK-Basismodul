@@ -47,6 +47,6 @@ Siehe entsprechenden Eintrag zum Profil ISiKVersicherungsverhaeltnisGesetzlich o
 
 **Bedeutung:** Der Rechnungsempfänger.
 
-**Hinweise:** Der Rechnungsempfänger für Selbstzahler ist entweder der Patient selbst,  Hauptversicherte oder eine andere Partei.
+**Hinweise:** Der Rechnungsempfänger für Selbstzahler ist entweder der Patient selbst, Hauptversicherte oder eine andere Partei.
 
 ---
