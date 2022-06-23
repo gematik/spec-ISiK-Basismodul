@@ -8,7 +8,7 @@ Das Dokumentationsdatum der Prozedur MUSS zu Qualitätssicherungszwecken angegeb
 ### `Procedure.status`
 
 **Bedeutung:**
-Kodierter klinischer Status der Prozedur. MUSS angegeben werden, da die Interpretation der Prozedur davon abhängt ob diese 'completed' ist oder einen anderen Status aufweist. Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "completed" und "unknown". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+Kodierter klinischer Status der Prozedur. MUSS angegeben werden, da die Interpretation der Prozedur davon abhängt, ob diese 'completed' ist oder einen anderen Status aufweist. Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "completed" und "unknown". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 ### `Procedure.category`
 
@@ -29,10 +29,10 @@ Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes er
 
 ### `Procedure.subject`
 
-**Bedeutung:**  Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
+**Bedeutung:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
 
 ### `Procedure.note`
 
-**Bedeutung:**  Weitere optionale Freitext-Notizen bezogen auf die durchgeführte Prozedur.
+**Bedeutung:** Weitere optionale Freitext-Notizen bezogen auf die durchgeführte Prozedur.
 
 ---

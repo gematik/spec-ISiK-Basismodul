@@ -13,7 +13,7 @@ berücksichtigen.
 Hierbei ist anzumerken, dass der Zusatz "for mobile" seitens IHE irreführend sein kann.
 Konkret fasst IHE unter diesem Begriff nicht nur Systeme zusammen, die "Plattform- und Ressourcenbeschränkt sind, wie z.B. Tablets, Smartphones und Embedded Devices, sondern auch größere Systeme in Umgebungen, in denen die Interoperabilitätsanforderungen einfach sind (z.B. Anzeige der aktuellen Übersicht eines Patienten)" (Quelle: IHE QEDm - Introduction)
 
-Die im folgenden genannten IHE-Spezifikationen beschreiben lediglich Interaktionen zwischen den Systemen und machen verbindliche Vorgaben zum Ablauf, Format und zu den unterstützten Such-Parametern, jedoch keine inhaltlichen Vorgaben. So beschreibt PDQm beispielweise den Ablauf einer Suche nach Patientendaten, enthält aber keine Vereinbarungen, wie die zurückgelieferte Patientenressource konkret auszusehen hat (Pflichtfelder, Terminologien, Contraints).
+Die im Folgenden genannten IHE-Spezifikationen beschreiben lediglich Interaktionen zwischen den Systemen und machen verbindliche Vorgaben zum Ablauf, Format und zu den unterstützten Such-Parametern, jedoch keine inhaltlichen Vorgaben. So beschreibt PDQm beispielweise den Ablauf einer Suche nach Patientendaten, enthält aber keine Vereinbarungen, wie die zurückgelieferte Patientenressource konkret auszusehen hat (Pflichtfelder, Terminologien, Contraints).
 
 Der Mehrwert der ISiK-Spezifikation besteht darin, dass die genannten IHE-Interaktionen um Festlegungen zu den auszutauschenden Inhalten ergänzt werden, die zugeschnitten sind auf die Anforderungen des Datenaustausches zwischen Systemen innerhalb einer Einrichtung, basierend auf den Deutschen Basisprofilen von HL7 Deutschland e.V. und abgeglichen mit den Festlegungen der KBV zu den Inhalten der elektronischen Patientenakte (MIOs) sowie den Spezifikationen der Medizininformatik-Initiative.
 
@@ -23,7 +23,7 @@ Die Darstellungen der in diesen IHE-Profilen festgelegten Interaktionen und UseC
 
 #### Umfang
 PDQm unterstützt das Abfragen von demografischen Patientendaten.
-Damit fällt dieser Anwendungfall vollständig in den Umfang der Festlegungen von ISiK.
+Damit fällt dieser Anwendungsfall vollständig in den Umfang der Festlegungen von ISiK.
 
 #### Akteure
 PDQm definiert die Kommunikation zwischen zwei Akteuren:
@@ -69,7 +69,7 @@ So beschränkt sich QEDm zum Beispiel auf die Encounter-Suchparameter `patient` 
 ### Abweichungen
 Hersteller, die die ISiK-Vorgaben implementiert haben, können erwarten, dass ihre Systeme damit die Anforderungen von QEDm im Rahmen der oben genannten Optionen sowie PDQm vollständig erfüllen.
 
-Sollten sich Abweichungen ergeben in dem Sinne, dass Hersteller, die ISiK implementiert und erfogreich bestätigt haben *zusätzliche* Funktionen implementieren müssen, um QEDm- bzw. PDQm-konform zu sein, so werden diese hier aufgelistet:
+Sollten sich Abweichungen ergeben in dem Sinne, dass Hersteller, die ISiK implementiert und erfolgreich bestätigt haben *zusätzliche* Funktionen implementieren müssen, um QEDm- bzw. PDQm-konform zu sein, so werden diese hier aufgelistet:
 
 * PDQm fordert die Implementierung des Suchparameters `address-state`. Dieser ist nicht Bestandteil der ISiK-Spezifikation
 * IHE fordert von Clinical Data Source- sowie Patient Demographic Supplier-Akteuren die Implementierung der Spezifikationen ATNA Secure Node oder ATNA Secure Application. Diese sind nicht Bestandteil des ISiK-Bestätigungsverfahrens.
