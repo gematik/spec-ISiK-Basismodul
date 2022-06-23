@@ -22,7 +22,7 @@
 
 ### `Account.subject`
 
-**Bedeutung:**  Ein Patientenbezug des Falls MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
+**Bedeutung:** Ein Patientenbezug des Falls MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
 
 ### `Account.coverage`
 
