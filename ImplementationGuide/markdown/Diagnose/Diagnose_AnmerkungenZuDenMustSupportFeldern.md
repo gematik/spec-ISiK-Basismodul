@@ -2,8 +2,7 @@
 
 ### `Condition.clinicalStatus`
 
-**Bedeutung:**  
-Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist. Alle in einem System möglichen Clinical-Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte "active" und "inactive". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Bedeutung:** Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist. Alle in einem System möglichen Clinical-Status-Werte müssen über FHIR korrekt repräsentiert werden, können mindestens jedoch die Status-Werte "active" und "inactive" unterstützen. Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
 **Hinweise:**
 
@@ -11,7 +10,7 @@ Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpre
 
 ### `Condition.code.coding`
 
-**Bedeutung:**  Codierte Diagnose. Die Kodierung KANN nach den Vorgaben des BfArM per [ICD-10GM](https://www.dimdi.de/dynamic/de/klassifikationen/icd/) kodiert werden. Weiterhin sind folgende Kodiersysteme u.a. auf Basis von Empfehlungen des BfArM zulässig:
+**Bedeutung:** Kodierte Diagnose. Die Kodierung KANN nach den Vorgaben des BfArM per [ICD-10GM](https://www.dimdi.de/dynamic/de/klassifikationen/icd/) kodiert werden. Weiterhin sind folgende Kodiersysteme u.a. auf Basis von Empfehlungen des BfArM zulässig:
  - [SNOMED CT](http://www.snomed.org)
  - [Alpha-ID](https://www.dimdi.de/dynamic/de/klassifikationen/icd/alpha-id/)
  - [Orpha-Kennnummer](http://www.orpha.net/national/DE-DE/index/startseite/)
@@ -30,7 +29,7 @@ Die Freitextdiagnose darf nur alleinstehend angegeben werden, solange keine kodi
 
 ### `Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen`
 
-**Hinweise:**  ICD-Mehfachcodierungs-Kennzeichen ("†", "\*", "!") müssen vom Code abgetrennt und in der Extension angegeben werden.
+**Hinweise:** ICD-Mehfachcodierungs-Kennzeichen ("†", "\*", "!") müssen vom Code abgetrennt und in der Extension angegeben werden.
 
 ### `Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit`
 
@@ -38,11 +37,11 @@ Die Freitextdiagnose darf nur alleinstehend angegeben werden, solange keine kodi
 
 ### `Condition.subject`
 
-**Bedeutung:**  Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
+**Bedeutung:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
 
 ### `Condition.encounter`
 
-**Bedeutung:**  Fallbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
+**Bedeutung:** Der Fallbezug einer Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
 
 **Hinweise:**
 
@@ -51,7 +50,7 @@ Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen
 
 ### `Condition.recordedDate`
 
-**Bedeutung:**  Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.
+**Bedeutung:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.
 
 **Hinweise:**
 
@@ -59,10 +58,10 @@ Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden (vgl. FHI
 
 ### `Condition.note`
 
-**Bedeutung:**  Weitere optionale Freitext-Notizen bezogen auf die Diagnose.
+**Bedeutung:** Weitere optionale Freitext-Notizen bezogen auf die Diagnose.
 
 ### `Condition.extension:ReferenzPrimaerdiagnose`
 
-**Bedeutung:** Bei Mehrfachkodierten ICD-Diagnosen (z.B. Kreuz-Stern-Notation) muss die Sekundär- auf die Primärdiagnose verlinkt werden
+**Bedeutung:** Bei mehrfachkodierten ICD-Diagnosen (z.B. Kreuz-Stern-Notation) muss die Sekundär- auf die Primärdiagnose verlinkt werden
 
 ---

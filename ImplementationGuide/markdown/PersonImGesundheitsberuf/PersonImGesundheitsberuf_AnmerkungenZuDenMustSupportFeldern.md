@@ -2,7 +2,7 @@
 
 ### `Practitioner.identifier:ANR`
 
-**Bedeutung:** Lebenslange Arztnummer. Im Krankenhaus ist die Lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
+**Bedeutung:** Lebenslange Arztnummer. Im Krankenhaus ist die lebenslange Arztnummer der Ärzte bekannt und MUSS zur eindeutigen Identifikation eines Arztes bereitgestellt werden.
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/LebenslangeArztnummerLANR-Identifier.html)
 
@@ -14,11 +14,11 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
 
 ### `Practitioner.address:Strassenanschrift`
 
-**Bedeutung:** Straßenanschrift. Ist die Adresse bekannt unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.
+**Bedeutung:** Straßenanschrift. Ist die Adresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.
 
 ### `Practitioner.address:Postfach`
 
-**Bedeutung:** Postfachanschrift. Ist die Postfachadresse bekannt unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.
+**Bedeutung:** Postfachanschrift. Ist die Postfachadresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.
 
 ### `Practitioner.gender`
 
