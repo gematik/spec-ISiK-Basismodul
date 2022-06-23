@@ -49,7 +49,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/CodeSystem?content-mode=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
+    ```GET [base]/ValueSet?content-mode=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.useContext" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Composite Search Parameters"](https://www.hl7.org/fhir/search.html#composite).
 
