@@ -5,7 +5,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
 * insert Meta
 * obeys relatedp-de-1
 * patient 1..1 MS
-* patient only Reference(ISiKPatient)
   * reference 1..
 * name 1..1 MS
 * name only HumannameDeBasis
