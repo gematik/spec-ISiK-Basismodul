@@ -33,6 +33,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
     * ^short = "VersichertenID (10-stellig) des Hauptversicherten"
     * ^patternIdentifier.system = "http://fhir.de/NamingSystem/gkv/kvid-10"
   * display ^short = "Name des Hauptversicherten"
+* beneficiary only Reference(ISiKPatient)
 * beneficiary MS
   * ^definition = "Benennt die versicherte Person."
   * ^comment = "Die Angabe der 10-stelligen Krankenversichertennummer ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden."
