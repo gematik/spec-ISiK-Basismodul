@@ -5,13 +5,10 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
 * status ^mustSupport = false
 * type 1..
-* subscriber only Reference(ISiKPatient or ISiKAngehoeriger)
 * subscriber MS
   * display 1.. MS
-* beneficiary only Reference(ISiKPatient)
 * beneficiary MS
   * reference 1.. MS
-* payor only Reference(ISiKPatient or ISiKAngehoeriger)
 * payor MS
 
 Instance: CoveragePrivat
