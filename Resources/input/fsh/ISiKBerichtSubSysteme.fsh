@@ -50,7 +50,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * category.coding[IHE].system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
 * category.coding[IHE].code 1..
 * subject 1.. MS
-* subject only Reference(ISiKPatient)
+* subject only Reference(Patient)
   * reference 1.. MS
 * encounter 1.. MS
 * encounter only Reference(ISiKKontaktGesundheitseinrichtung)
