@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur",
+  "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur",
   "version": "2.0.0-ballot",
   "name": "ISiKProzedur",
   "status": "active",
@@ -58,14 +58,14 @@
             "severity": "error",
             "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
             "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-2",
             "severity": "error",
             "human": "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden",
             "expression": "code.coding.exists() implies category.coding.exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur"
           }
         ]
       },
@@ -153,14 +153,14 @@
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext.",
             "expression": "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() or text.exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-3",
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur"
           }
         ],
         "mustSupport": true
