@@ -4,7 +4,7 @@ Id: ISiKPersonImGesundheitsberuf
 Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien."
 * insert Meta
 * obeys prac-de-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/Practitioner"
+* . ^constraint[5].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/Practitioner"
 * id 0..1 MS
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern

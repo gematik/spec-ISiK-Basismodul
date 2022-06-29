@@ -4,7 +4,7 @@ Id: ISiKProzedur
 Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien."
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+* . ^constraint[5].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKProzedur"
 * id 0..1 MS
 * extension MS
 * extension ^slicing.discriminator.type = #value
@@ -23,7 +23,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * code 1.. MS
 * code MS
   * obeys sct-ops-1 and proc-ISiK-3
-  * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+  * ^constraint[1].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKProzedur"
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"

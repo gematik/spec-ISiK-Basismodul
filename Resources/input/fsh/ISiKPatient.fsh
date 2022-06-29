@@ -4,7 +4,7 @@ Id: ISiKPatient
 Description: "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien."
 * insert Meta
 * obeys isik-pat-1
-* . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+* . ^constraint[5].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKPatient"
 * id 0..1 MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
@@ -93,7 +93,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * ^constraint[1].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKPatient"
 * address[Strassenanschrift] only AddressDeBasis
 // extension working only with ms or cardinality
   * extension[Stadtteil]
@@ -108,7 +108,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
     * obeys address-cnt-2or3-char
-    * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+    * ^constraint[1].source = "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKPatient"
 
 Instance: patient
 InstanceOf: ISiKPatient
