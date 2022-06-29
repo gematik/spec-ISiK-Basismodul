@@ -11,12 +11,12 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose",
-  "version": "1.0.4",
+  "url": "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKDiagnose",
+  "version": "1.0.5",
   "name": "ISiKDiagnose",
   "status": "active",
   "experimental": false,
-  "date": "2022-07-02",
+  "date": "2022-01-07",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -68,7 +68,7 @@
             "severity": "error",
             "human": "Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden",
             "expression": "code.coding.exists() implies encounter.exists()",
-            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose"
+            "source": "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKDiagnose"
           }
         ]
       },
@@ -108,7 +108,7 @@
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose"
+            "source": "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKDiagnose"
           }
         ],
         "mustSupport": true
@@ -205,7 +205,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/IsiK/ValueSet/diagnoses-sct"
+          "valueSet": "https://gematik.de/fhir/isik/v1/Basismodul/ValueSet/diagnoses-sct"
         }
       },
       {

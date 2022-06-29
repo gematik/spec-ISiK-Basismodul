@@ -11,12 +11,12 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger",
-  "version": "1.0.4",
+  "url": "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKAngehoeriger",
+  "version": "1.0.5",
   "name": "ISiKAngehoeriger",
   "status": "active",
   "experimental": false,
-  "date": "2022-07-02",
+  "date": "2022-01-07",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -53,7 +53,7 @@
             "severity": "error",
             "human": "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden",
             "expression": "gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()",
-            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+            "source": "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKAngehoeriger"
           }
         ]
       },
@@ -64,7 +64,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+              "https://gematik.de/fhir/isik/v1/StructureDefinition/ISiKPatient"
             ]
           }
         ],
@@ -174,7 +174,7 @@
             "severity": "warning",
             "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
             "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+            "source": "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKAngehoeriger"
           }
         ],
         "mustSupport": true
@@ -226,7 +226,7 @@
             "severity": "warning",
             "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
             "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+            "source": "https://gematik.de/fhir/isik/v1/Basismodul/StructureDefinition/ISiKAngehoeriger"
           }
         ],
         "mustSupport": true
