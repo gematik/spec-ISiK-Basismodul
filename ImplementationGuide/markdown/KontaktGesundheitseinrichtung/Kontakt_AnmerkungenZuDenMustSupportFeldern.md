@@ -24,7 +24,7 @@
 
 **Bedeutung:** Der Rahmen des Kontaktes MUSS zur zeitlichen Einordnung angeben werden.
 
-**Hinweise:** Es ist der FHIRPath Constraint ISiK-enc-1 zu beachten. Siehe [JSON Repräsentation FHIR Profil ISiK Encounter](https://simplifier.net/ISiK/ISiKEncounter/~json).
+**Hinweise:** Es ist der FHIRPath Constraint ISiK-enc-1 zu beachten. Siehe [JSON Repräsentation FHIR Profil ISiK Encounter](https://simplifier.net/IsiK/ISiKKontaktGesundheitseinrichtung/~json).
 
 ### `Encounter.location`
 
