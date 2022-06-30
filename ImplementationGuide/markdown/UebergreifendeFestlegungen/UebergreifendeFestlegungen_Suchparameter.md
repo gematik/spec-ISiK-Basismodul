@@ -156,4 +156,4 @@ Diese grundlegenden Best Practice Empfehlungen beziehen sich auf die korrekte Ve
 
 - Wenn der Server geeignete Standardfilter bei der Suche auf der Grundlage des Patientenkontextes (z. B. das Herausfiltern von fehlerhaften Datensätzen oder inaktiven und verstorbenen Patienten) enthält, SOLLTEN diese angemessen und eindeutig dokumentiert sein (vorzugsweise durch Aufnahme in den 'self link' für eine Suche).
 
-- Weitere Hinweise können in der [FHIR Spezifikation im Abschnitt `Search`]((https://www.hl7.org/fhir/search.html#errors)) eingesehen werden.
+- Weitere Hinweise können in der [FHIR Spezifikation im Abschnitt `Search`](https://www.hl7.org/fhir/search.html#errors) eingesehen werden.
