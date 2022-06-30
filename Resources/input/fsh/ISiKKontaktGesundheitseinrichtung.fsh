@@ -119,12 +119,14 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedStartDate
 Id: PlannedStartDate
+* insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
 
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedEndDate
 Id: PlannedEndDate
+* insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 

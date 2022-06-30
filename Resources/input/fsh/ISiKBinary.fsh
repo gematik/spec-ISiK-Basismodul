@@ -7,6 +7,7 @@ Dazu werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) 
 über die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. 
 Binary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen
 (z.B. Patient und Encounter) gestellt.  "
+* insert Meta
 * contentType 1..1 MS
   * ^short = "MimeType der Binärdaten"
   * ^comment = "z.B. &quot;application/pdf&quot; oder &quot;image/jpeg&quot; "
