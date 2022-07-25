@@ -32,7 +32,7 @@ Datum: 30.06.2022
 * ISiKPatient:
     * Umbenennung Slice von "Patient.identifier:Versichertennummer-GKV in "Patient.identifier:VersichertenId-GKV"
 * ISiKPersonImGesundheitsberuf:
-    * Element Practitioner.identifier:TelematikId hinzugefügt (must-support)
+    * Element "Practitioner.identifier:TelematikId" hinzugefügt (must-support)
 * ISiKVersicherungsverhaeltnisGesetzlich:
     * Must-Support Flag auf "Coverage.payor.identifier.type" hinzugefügt
 * ISiKKontaktGesundheitseinrichtung
@@ -41,12 +41,12 @@ Datum: 30.06.2022
     * Änderung Kardinalität von Element "Encounter.identifier:Aufnahmenummer.type" auf 1..1
     * Änderung Kardinalität von Element "Encounter.type:Kontaktebene" auf 1..1
     * Element "Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel" hinzugefügt
-    * Änderung Kardinalität von Encounter.period von 1..1 auf 0..1
+    * Änderung Kardinalität von "Encounter.period" von 1..1 auf 0..1
     * Element "Encounter.diagnosis.use.coding:Diagnosetyp" und "Encounter.diagnosis.use.coding:DiagnosesubTyp" hinzugefügt
     * Must-Support Flag auf Element "Encounter.account" hinzugefügt
     * Änderung der Binding-Strength des Elementes "Encounter.hospitalization.admitSource" von "preferred" auf "extensible"
     * Extensible ValueSet zu Element "Encounter.location.physicalType" hinzugefügt
-    * Anstelle von ""Encounter.location.location.display"" ist nun "Encounter.serviceProvider.identifier" zu verwenden
+    * Anstelle von "Encounter.location.location.display" ist nun "Encounter.serviceProvider.identifier" zu verwenden
     * Must-Support-Flag entfernt auf Element "Encounter.partOf"
 
 ----
