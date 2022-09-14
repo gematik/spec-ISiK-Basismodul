@@ -123,7 +123,7 @@ Usage: #example
 * name[0].use = #official
 * name[=].family = "Fürstin von Musterfrau"
   * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-  * extension[=].valueString = "Graf"
+  * extension[=].valueString = "Fürstin"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
   * extension[=].valueString = "Musterfrau"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
