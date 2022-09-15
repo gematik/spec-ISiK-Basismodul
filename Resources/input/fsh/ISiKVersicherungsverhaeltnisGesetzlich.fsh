@@ -18,7 +18,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
   * system MS
   * value MS
 * status MS
-* type 
+* type MS
   * ^comment = "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
   * coding 
     * ^slicing.discriminator.type = #pattern
