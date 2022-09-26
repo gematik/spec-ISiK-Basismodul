@@ -4,7 +4,7 @@ Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
 * status MS
-* type 1.. MS
+* type MS
 * subscriber only Reference(Patient or RelatedPerson)
 * subscriber MS
   * display 1.. MS
