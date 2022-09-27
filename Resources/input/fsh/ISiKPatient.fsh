@@ -81,7 +81,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
 // extension is working only with ms or cardinality
-  * extension[Stadtteil]
+  * extension[Stadtteil] 
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
@@ -96,7 +96,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
 * address[Strassenanschrift] only AddressDeBasis
 // extension working only with ms or cardinality
-  * extension[Stadtteil]
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS
