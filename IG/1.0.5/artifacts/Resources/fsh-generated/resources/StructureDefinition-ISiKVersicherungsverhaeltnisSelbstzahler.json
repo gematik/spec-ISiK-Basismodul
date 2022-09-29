@@ -1,0 +1,168 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKVersicherungsverhaeltnisSelbstzahler",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Financial.Support"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler",
+  "version": "1.0.4",
+  "name": "ISiKVersicherungsverhaeltnisSelbstzahler",
+  "status": "active",
+  "experimental": false,
+  "date": "2022-07-02",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "cpha3pharm",
+      "uri": "http://www.pharmacists.ca/",
+      "name": "Canadian Pharmacy Associaiton eclaims standard"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding",
+        "path": "Coverage.type.coding",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.system",
+        "path": "Coverage.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.code",
+        "path": "Coverage.type.coding.code",
+        "min": 1,
+        "fixedCode": "SEL",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.policyHolder",
+        "path": "Coverage.policyHolder",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.subscriber",
+        "path": "Coverage.subscriber",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient",
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.display",
+        "path": "Coverage.subscriber.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriberId",
+        "path": "Coverage.subscriberId",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary.reference",
+        "path": "Coverage.beneficiary.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient",
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.order",
+        "path": "Coverage.order",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.network",
+        "path": "Coverage.network",
+        "max": "0"
+      }
+    ]
+  }
+}
