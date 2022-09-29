@@ -141,7 +141,7 @@ Usage: #example
 * extension.extension[+].url = "VierteStelle"
 * extension.extension[=].valueCoding = $AufnahmegrundVierteStelle#1 "Normalfall"
 * identifier.type = $v2-0203#VN
-* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
 * status = #finished
 * class = $v3-ActCode#IMP

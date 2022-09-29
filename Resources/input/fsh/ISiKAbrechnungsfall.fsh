@@ -34,7 +34,7 @@ Instance: AbrechnungsfallAmbulant
 InstanceOf: ISiKAbrechnungsfall
 Usage: #example
 * identifier.type = $v2-0203#VN
-* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
 * status = #active
 * type = $v3-ActCode#AMB
