@@ -66,6 +66,7 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
   * postalCode 1.. MS
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS

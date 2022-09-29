@@ -93,6 +93,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS
