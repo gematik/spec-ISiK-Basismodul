@@ -9,7 +9,7 @@ Status: Finale Release-Version (Technical Correction 5)
 
 Realm: Deutschland
 
-Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter:  https://github.com/gematik/api-ISiK/releases
+Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter: https://gematik.github.io/spec-ISiK-Basismodul/index.html
 
 
 ----
