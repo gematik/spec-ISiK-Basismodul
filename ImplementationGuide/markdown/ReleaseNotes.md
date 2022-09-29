@@ -3,6 +3,14 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 1.0.5
+
+Datum: 30.09.2022
+
+- Stadtteil Extension ist bei ISiKAngehoeriger, ISiKPersonenImGesundheitsBeruf und ISiKPatient nun Must Support.
+- Bei ISiKVersicherungsverhaeltnisSelbstzahler sind die Elemente ```relatedPerson.status```, ```relatedPerson.type```, ```relatedPerson.type.coding```,```relatedPerson.type.coding.system``` und ```relatedPerson.type.coding.code``` nun Must Support
+----
+
 Version: 1.0.4
 
 Datum: 31.05.2022
