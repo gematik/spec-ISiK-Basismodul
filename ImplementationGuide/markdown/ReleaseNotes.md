@@ -5,6 +5,26 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 2.0.1
+
+Datum: 30.09.2022
+
+* ISiKPatient:
+  * .address.Strassenanschrift.extension:Stadtteil, .type, .status nun Must Support
+* ISiKPersonImGesundheitsberuf:
+  * .address.Strassenanschrift.extension:Stadtteil, nun Must Support
+* ISiKAngehöriger:
+  * .address.Strassenanschrift.extension:Stadtteil, nun Must Support
+* ISiKAbrechnungsfall
+  * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
+* ISiKKontaktGesundheitseinrichtung
+  * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
+* ISiKVersicherungsverhaeltnisGesetzlich
+  * .type ist nun Must Support
+* ISiKVersicherungsverhaeltnisSelbstzahler
+  * .type und .status ist nun Must Support
+
+----
 Version: 2.0.0
 
 Datum: 30.06.2022
