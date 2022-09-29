@@ -3,12 +3,12 @@ Parent: Coverage
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
-* status ^mustSupport = false
-* type 1..
-  * coding 1..
-    * system 1..
+* status MS
+* type 1.. MS
+  * coding 1.. MS
+    * system 1.. MS
     * system = "http://fhir.de/CodeSystem/versicherungsart-de-basis" (exactly)
-    * code 1..
+    * code 1.. MS
     * code = #SEL (exactly)
 * policyHolder ..0
 * subscriber only Reference(ISiKPatient or ISiKAngehoeriger)
