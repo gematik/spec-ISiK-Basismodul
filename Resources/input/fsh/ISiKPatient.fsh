@@ -114,7 +114,7 @@ Usage: #example
 * identifier[=].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[=].value = "A123456789"
 * identifier[+].type = $v2-0203#MR
-* identifier[=].system = "https://fhir.krankenhaus.example/NamingSystem/PID"
+* identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[=].value = "TestPID"
 * identifier[+].use = #secondary
 * identifier[=].type = $identifier-type-de-basis#PKV
