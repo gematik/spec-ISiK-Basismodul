@@ -20,8 +20,6 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
   * reference 1.. MS
 * payor only Reference(ISiKPatient or ISiKAngehoeriger)
 * payor MS
-* order ..0
-* network ..0
 
 Instance: coveragePrivat
 InstanceOf: ISiKVersicherungsverhaeltnisSelbstzahler
