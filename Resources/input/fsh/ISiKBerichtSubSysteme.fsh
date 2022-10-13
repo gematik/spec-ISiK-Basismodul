@@ -3,23 +3,25 @@ Parent: Composition
 Id: ISiKBerichtSubSysteme
 Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden."
 * insert Meta
-* id 0..1
+* id 0..1 MS
 * text 1.. MS
   * status = #extensions (exactly)
   * status MS
   * div MS
-* identifier 1..
-  * system 1..
-  * value 1..
+* identifier 1.. MS
+  * system 1.. MS
+  * value 1.. MS
+* status MS
 * status = #final (exactly)
-* type.coding 1..
+* type MS
+* type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 0..1 and
-    KDL 0..1 and
-    IHE 0..1
+    LOINC 0..1 MS and
+    KDL 0..1 MS and
+    IHE 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
   * system 1..
   * system = "http://loinc.org" (exactly)
@@ -33,12 +35,13 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * system 1..
   * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
+* category MS
 * category.coding ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* category.coding contains
-    LOINC 0..1 and
-    IHE 0..1
+* category.coding contains 
+    LOINC 0..1 MS and
+    IHE 0..1 MS
 * category.coding[LOINC].system 1..
 * category.coding[LOINC].system = "http://loinc.org" (exactly)
 * category.coding[LOINC].code 1..
