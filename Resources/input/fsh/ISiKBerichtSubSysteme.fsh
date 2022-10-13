@@ -55,6 +55,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * encounter only Reference(ISiKKontaktGesundheitseinrichtung)
   * reference 1.. MS
 * date MS
+* author MS
 * author only Reference(PractitionerRole or Device or Organization or ISiKAngehoeriger or ISiKPatient or ISiKPersonImGesundheitsberuf)
   * display 1.. MS
 * title MS
