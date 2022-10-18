@@ -7,7 +7,7 @@ Usage: #definition
 * title = "ISiK CapabilityStatement Basis Server"
 * status = #active
 * experimental = false
-* date = "2020-12-17"
+* date = "2022-10-30"
 * publisher = "gematik GmbH"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
