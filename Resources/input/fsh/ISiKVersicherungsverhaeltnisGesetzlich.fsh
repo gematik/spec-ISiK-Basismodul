@@ -4,7 +4,6 @@ Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-* id 0..1
 * identifier MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "system"
