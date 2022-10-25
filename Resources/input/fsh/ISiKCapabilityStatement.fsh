@@ -2,7 +2,7 @@ Instance: ISiKCapabilityStatementBasisServer
 InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server"
-* version = "2.0.0"
+* version = "2.0.2"
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
 * status = #active
