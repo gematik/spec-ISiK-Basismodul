@@ -14,7 +14,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
-* identifier[Versichertennummer-GKV] only IdentifierKvid10
+* identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
   * type 1.. MS
   * system MS
