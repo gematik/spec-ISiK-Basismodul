@@ -11,7 +11,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
-    Versichertennummer-GKV 0..1 MS and
+    VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[Versichertennummer-GKV] only IdentifierKvid10

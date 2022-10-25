@@ -5,7 +5,7 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
 * insert Meta
 * obeys prac-de-1
 * . ^constraint[5].source = "http://gematik.de/fhir/ISiK/StructureDefinition/Practitioner"
-* id 0..1 MS
+* id MS
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
