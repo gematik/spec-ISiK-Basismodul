@@ -4,13 +4,6 @@ Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
 * obeys ISiK-enc-1
-* extension ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[0].path = "url"
-  * ^slicing.rules = #open
-* extension contains $Aufnahmegrund named Aufnahmegrund 0..1 MS
-  * ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[0].path = "url"
-  * ^slicing.rules = #open
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
