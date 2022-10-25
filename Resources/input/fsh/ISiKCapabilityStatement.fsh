@@ -1,7 +1,7 @@
 Instance: isik-capabilityStatement-basis-server
 InstanceOf: CapabilityStatement
 Usage: #definition
-* Meta-CapabilityStatement
+* insert Meta-CapabilityStatement
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
 * contact.telecom.system = #url
