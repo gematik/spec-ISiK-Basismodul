@@ -17,7 +17,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
   * coding contains SNOMED-CT 0..1 MS
-  * coding[SNOMED-CT] from $ProzedurenKategorie-SCT (preferred)
+  * coding[SNOMED-CT] from ProzedurenKategorieSCT (preferred)
     * system 1.. MS
     * system = "http://snomed.info/sct"
     * code 1.. MS
@@ -37,7 +37,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * system MS
     * version MS
     * code MS
-  * coding[SNOMED-CT] from $ProzedurenCodes-SCT (required)
+  * coding[SNOMED-CT] from ProzedurenCodesSCT (required)
     * system 1.. MS
     * system = "http://snomed.info/sct"
     * code 1.. MS
