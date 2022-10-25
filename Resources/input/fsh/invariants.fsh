@@ -1,8 +1,3 @@
-Invariant: ISiK-docBundle-1
-Description: "All referenced Resources must be contained in the Bundle"
-Severity: #error
-Expression: "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)"
-
 Invariant: kdl-1
 Description: "KDL-Code ungültig"
 Severity: #warning
