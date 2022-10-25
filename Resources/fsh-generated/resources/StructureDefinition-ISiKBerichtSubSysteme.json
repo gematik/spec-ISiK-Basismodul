@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "name": "ISiKBerichtSubSysteme",
   "status": "active",
   "experimental": false,
-  "date": "2022-07-02",
+  "date": "2022-10-31",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
   "fhirVersion": "4.0.1",
@@ -55,6 +55,11 @@
   "differential": {
     "element": [
       {
+        "id": "Composition.id",
+        "path": "Composition.id",
+        "mustSupport": true
+      },
+      {
         "id": "Composition.text",
         "path": "Composition.text",
         "min": 1,
@@ -74,22 +79,31 @@
       {
         "id": "Composition.identifier",
         "path": "Composition.identifier",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.identifier.system",
         "path": "Composition.identifier.system",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.identifier.value",
         "path": "Composition.identifier.value",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.status",
         "path": "Composition.status",
-        "fixedCode": "final"
+        "fixedCode": "final",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding",
@@ -103,7 +117,8 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:LOINC",
@@ -114,7 +129,8 @@
         "patternCoding": {
           "code": "55112-7",
           "system": "http://loinc.org"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:LOINC.system",
@@ -135,7 +151,8 @@
         "max": "1",
         "patternCoding": {
           "system": "http://dvmd.de/fhir/CodeSystem/kdl"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:KDL.system",
@@ -165,7 +182,8 @@
         "max": "1",
         "patternCoding": {
           "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:IHE.system",
@@ -177,6 +195,11 @@
         "id": "Composition.type.coding:IHE.code",
         "path": "Composition.type.coding.code",
         "min": 1
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "mustSupport": true
       },
       {
         "id": "Composition.category.coding",
@@ -196,7 +219,8 @@
         "path": "Composition.category.coding",
         "sliceName": "LOINC",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Composition.category.coding:LOINC.system",
@@ -214,7 +238,8 @@
         "path": "Composition.category.coding",
         "sliceName": "IHE",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Composition.category.coding:IHE.system",
@@ -287,7 +312,8 @@
               "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Composition.author.display",
