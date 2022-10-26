@@ -5,7 +5,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
 * insert Meta
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
-* id 1.. MS
+* id MS
 * extension MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
@@ -75,9 +75,9 @@ Severity: #error
 Expression: "code.coding.exists() implies category.coding.exists()"
 
 Invariant: sct-ops-1
-Description: "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext."
+Description: "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden."
 Severity: #error
-Expression: "coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() or text.exists()"
+Expression: "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()"
 
 Invariant: proc-ISiK-3
 Description: "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
