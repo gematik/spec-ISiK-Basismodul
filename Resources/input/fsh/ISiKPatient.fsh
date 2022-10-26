@@ -5,7 +5,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * insert Meta
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
-* id 1.. MS
+* id 0..1 MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -114,7 +114,7 @@ Usage: #example
 * identifier[=].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[=].value = "A123456789"
 * identifier[+].type = $v2-0203#MR
-* identifier[=].system = "https://fhir.krankenhaus.example/NamingSystem/PID"
+* identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[=].value = "TestPID"
 * identifier[+].use = #secondary
 * identifier[=].type = $identifier-type-de-basis#PKV
@@ -163,3 +163,8 @@ Invariant: isik-pat-1
 Description: "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden"
 Severity: #error
 Expression: "gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()"
+
+Invariant: address-cnt-2or3-char
+Description: "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2."
+Severity: #warning
+Expression: "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))"

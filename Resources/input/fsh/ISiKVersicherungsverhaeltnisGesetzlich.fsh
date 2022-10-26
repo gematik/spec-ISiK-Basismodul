@@ -4,7 +4,6 @@ Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-* id 1..
 * identifier MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -20,11 +19,11 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
 * status MS
 * type MS
   * ^comment = "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
-  * coding 
+  * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
-  * coding contains VersicherungsArtDeBasis 1..1
+  * coding contains VersicherungsArtDeBasis 1..1 MS
   * coding[VersicherungsArtDeBasis] = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
 * subscriber only Reference(ISiKAngehoeriger)
   * ^definition = "Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung"
