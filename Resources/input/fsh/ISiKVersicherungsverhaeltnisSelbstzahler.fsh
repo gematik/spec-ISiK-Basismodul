@@ -5,7 +5,6 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
 * status MS
 * type MS
-* subscriber only Reference(Patient or RelatedPerson)
 * subscriber MS
   * display 1.. MS
 * beneficiary only Reference(Patient)
