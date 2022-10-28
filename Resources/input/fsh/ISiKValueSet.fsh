@@ -25,7 +25,7 @@ Instance: ISiKValueSetExample
 InstanceOf: ISiKValueSet
 Usage: #example
 * url = "http://example.org/fhir/ValueSet/TestValueSet"
-* version = "1.0.0"
+* version = "2.0.2"
 * name = "TestValueSet"
 * status = #active
 * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus

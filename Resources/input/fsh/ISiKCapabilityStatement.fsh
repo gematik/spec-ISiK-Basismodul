@@ -1,14 +1,9 @@
 Instance: ISiKCapabilityStatementBasisServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server"
-* version = "2.0.0"
+* insert Meta-CapabilityStatement
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
-* status = #active
-* experimental = false
-* date = "2020-12-17"
-* publisher = "gematik GmbH"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Basismoduls zu bestehen."

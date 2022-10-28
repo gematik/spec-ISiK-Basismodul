@@ -18,7 +18,7 @@ Instance: CodeSystemExample
 InstanceOf: ISiKCodeSystem
 Usage: #example
 * url = "http://example.org/fhir/CodeSystem/TestKatalog"
-* version = "1.0.0"
+* version = "2.0.2"
 * name = "TestKatalog"
 * status = #active
 * content = #complete
