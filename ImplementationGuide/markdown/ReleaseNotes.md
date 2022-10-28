@@ -3,6 +3,31 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 1.0.6
+
+Datum: 31.10.2022
+
+- Angehöriger
+  - Line Extensions ```Strasse```, ```Hausnummer``` und ```Adresszusatz``` sind nun Must Support
+- BerichtBundle wurde wiederhergestellt
+- BerichtBundle für Subsysteme
+  - ```id``` ist nun 0..1 und Must Support
+  - ```identifier```, ```identifier.system```, ```identifier.value``` sind nun Must Support
+  - ```status``` ist nun Must Support
+  - ```type``` und ```type.coding``` sind nun Must Support
+  - Die Codesysteme ```LOINC```, ```KDL``` und ```IHE``` im Element  ```type.coding``` sind nun Must Support
+  - ```category``` ist nun Must Support
+  - Die Codesysteme ```LOINC``` und ```IHE``` im Element ```category.coding``` sind nun Must Support
+  - ```author``` ist nun Must Support
+- Kontakt
+  - Aufnahmegrund Extension ist mit den Elementen ```ErsteUndZweiteStelle``` ```DritteStelle``` und```VierteStelle``` Must Support
+  - ```serviceType``` ist nun 0..1
+  - ```reference``` ist nun Must Support
+  - ```admitSource``` ist nun 0..1
+- Patient
+  - Der Identifier ```Versichertennummer-GKV``` wird zu ```VersichertenId-GKV```
+- Invarianten wurden verbessert
+----
 Version: 1.0.5
 
 Datum: 30.09.2022

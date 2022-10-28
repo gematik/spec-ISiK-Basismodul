@@ -26,7 +26,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
     * extension[Strasse] 0..1
     * extension[Hausnummer] 0..1
     * extension[Adresszusatz] 0..1
-    * extension[Postfach] 0..1
+    * extension[Postfach] 0..1 MS
   * city 1.. MS
   * postalCode 1.. MS
     * obeys address-cnt-2or3-char
@@ -36,13 +36,13 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS
-    * extension[Strasse] 0..1
-    * extension[Hausnummer] 0..1
-    * extension[Adresszusatz] 0..1
+    * extension[Strasse] 0..1 MS
+    * extension[Hausnummer] 0..1 MS
+    * extension[Adresszusatz] 0..1 MS
     * extension[Postfach] 0..1
   * city 1.. MS
   * postalCode 1.. MS
-  * country  1.. MS
+  * country 1.. MS
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
 

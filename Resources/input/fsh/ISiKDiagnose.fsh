@@ -4,7 +4,7 @@ Id: ISiKDiagnose
 Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien."
 * insert Meta
 * obeys isik-con1
-* id 0..1 MS
+* extension MS
 * extension ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open

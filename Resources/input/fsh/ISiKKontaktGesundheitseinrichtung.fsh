@@ -4,20 +4,11 @@ Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
 * obeys ISiK-enc-1
-* id 0..1 MS
-* extension ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[0].path = "url"
-  * ^slicing.rules = #open
-* extension contains $Aufnahmegrund named Aufnahmegrund 0..1 MS
-  * ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[0].path = "url"
-  * ^slicing.rules = #open
-* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] ^sliceName = "ErsteUndZweiteStelle"
-  * ^mustSupport = true
-* extension[Aufnahmegrund].extension[DritteStelle] ^sliceName = "DritteStelle"
-  * ^mustSupport = true
-* extension[Aufnahmegrund].extension[VierteStelle] ^sliceName = "VierteStelle"
-  * ^mustSupport = true
+* extension MS
+* extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
+* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
+* extension[Aufnahmegrund].extension[DritteStelle] MS
+* extension[Aufnahmegrund].extension[VierteStelle] MS
 * identifier 1.. MS
   * ^slicing.discriminator[0].type = #pattern
   * ^slicing.discriminator[0].path = "$this"
@@ -54,7 +45,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * ^binding.description = "Kontaktebene"
 * type[KontaktArt] from $kontaktart-de (required)
 * type[KontaktArt] ^patternCodeableConcept.coding[0].system = "http://fhir.de/CodeSystem/kontaktart-de"
-* serviceType 1.. MS
+* serviceType 0..1 MS
   * coding 1.. MS
     * ^slicing.discriminator[0].type = #pattern
     * ^slicing.discriminator[0].path = "$this"
@@ -69,12 +60,12 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * end MS
 * diagnosis MS
   * condition MS
-    * reference 1..
+    * reference 1.. MS
   * use 1.. MS
     * ^binding.strength = #extensible
   * rank MS
 * hospitalization MS
-  * admitSource 1.. MS
+  * admitSource 0..1 MS
   * admitSource from $Aufnahmeanlass (preferred)
   * dischargeDisposition MS
     * extension contains $Entlassungsgrund named Entlassungsgrund ..1 MS

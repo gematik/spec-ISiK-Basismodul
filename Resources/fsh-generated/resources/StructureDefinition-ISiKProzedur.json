@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "name": "ISiKProzedur",
   "status": "active",
   "experimental": false,
-  "date": "2022-07-02",
+  "date": "2022-10-31",
   "publisher": "gematik GmbH",
   "description": "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -151,7 +151,7 @@
             "key": "sct-ops-1",
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden.",
-            "expression": "(coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()) or (text.exists() and coding.exists().not())",
+            "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists())",
             "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {

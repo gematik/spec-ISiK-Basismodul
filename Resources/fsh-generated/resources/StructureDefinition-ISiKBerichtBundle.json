@@ -4,7 +4,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Documents"
+      "valueString": "Foundation.Other"
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
@@ -12,19 +12,20 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "name": "ISiKBerichtBundle",
+  "title": "ISiKBerichtBundle",
   "status": "active",
   "experimental": false,
-  "date": "2022-07-02",
+  "date": "2022-10-31",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
+  "description": "A document style representation of the receipt (complete, self-contained, signed)",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
-      "identity": "workflow",
-      "uri": "http://hl7.org/fhir/workflow",
-      "name": "Workflow Pattern"
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
     },
     {
       "identity": "rim",
@@ -37,11 +38,6 @@
       "name": "CDA (R2)"
     },
     {
-      "identity": "fhirdocumentreference",
-      "uri": "http://hl7.org/fhir/documentreference",
-      "name": "FHIR DocumentReference"
-    },
-    {
       "identity": "w5",
       "uri": "http://hl7.org/fhir/fivews",
       "name": "FiveWs Pattern Mapping"
@@ -49,279 +45,103 @@
   ],
   "kind": "resource",
   "abstract": false,
-  "type": "Composition",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "Composition.text",
-        "path": "Composition.text",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.text.status",
-        "path": "Composition.text.status",
-        "fixedCode": "extensions",
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.text.div",
-        "path": "Composition.text.div",
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.identifier",
-        "path": "Composition.identifier",
-        "min": 1
-      },
-      {
-        "id": "Composition.identifier.system",
-        "path": "Composition.identifier.system",
-        "min": 1
-      },
-      {
-        "id": "Composition.identifier.value",
-        "path": "Composition.identifier.value",
-        "min": 1
-      },
-      {
-        "id": "Composition.status",
-        "path": "Composition.status",
-        "fixedCode": "final"
-      },
-      {
-        "id": "Composition.type.coding",
-        "path": "Composition.type.coding",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "pattern",
-              "path": "$this"
-            }
-          ],
-          "rules": "open"
-        },
-        "min": 1
-      },
-      {
-        "id": "Composition.type.coding:LOINC",
-        "path": "Composition.type.coding",
-        "sliceName": "LOINC",
-        "min": 0,
-        "max": "1",
-        "patternCoding": {
-          "code": "55112-7",
-          "system": "http://loinc.org"
-        }
-      },
-      {
-        "id": "Composition.type.coding:LOINC.system",
-        "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://loinc.org"
-      },
-      {
-        "id": "Composition.type.coding:LOINC.code",
-        "path": "Composition.type.coding.code",
-        "min": 1
-      },
-      {
-        "id": "Composition.type.coding:KDL",
-        "path": "Composition.type.coding",
-        "sliceName": "KDL",
-        "min": 0,
-        "max": "1",
-        "patternCoding": {
-          "system": "http://dvmd.de/fhir/CodeSystem/kdl"
-        }
-      },
-      {
-        "id": "Composition.type.coding:KDL.system",
-        "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl"
-      },
-      {
-        "id": "Composition.type.coding:KDL.code",
-        "path": "Composition.type.coding.code",
-        "min": 1,
+        "id": "Bundle",
+        "path": "Bundle",
         "constraint": [
           {
-            "key": "kdl-1",
-            "severity": "warning",
-            "human": "KDL-Code ungültig",
-            "expression": "matches('[A-Z]{2}[0-9]{6}')",
+            "key": "ISiK-docBundle-1",
+            "severity": "error",
+            "human": "All referenced Resources must be contained in the Bundle",
+            "expression": "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)",
             "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
           }
         ]
       },
       {
-        "id": "Composition.type.coding:IHE",
-        "path": "Composition.type.coding",
-        "sliceName": "IHE",
-        "min": 0,
-        "max": "1",
-        "patternCoding": {
-          "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
-        }
-      },
-      {
-        "id": "Composition.type.coding:IHE.system",
-        "path": "Composition.type.coding.system",
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
         "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        "mustSupport": true
       },
       {
-        "id": "Composition.type.coding:IHE.code",
-        "path": "Composition.type.coding.code",
-        "min": 1
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "document",
+        "mustSupport": true
       },
       {
-        "id": "Composition.category.coding",
-        "path": "Composition.category.coding",
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
-              "path": "$this"
+              "type": "value",
+              "path": "resource.type.coding.code"
             }
           ],
           "rules": "open"
-        }
-      },
-      {
-        "id": "Composition.category.coding:LOINC",
-        "path": "Composition.category.coding",
-        "sliceName": "LOINC",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.category.coding:LOINC.system",
-        "path": "Composition.category.coding.system",
+        },
         "min": 1,
-        "fixedUri": "http://loinc.org"
+        "mustSupport": true
       },
       {
-        "id": "Composition.category.coding:LOINC.code",
-        "path": "Composition.category.coding.code",
-        "min": 1
-      },
-      {
-        "id": "Composition.category.coding:IHE",
-        "path": "Composition.category.coding",
-        "sliceName": "IHE",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Composition.category.coding:IHE.system",
-        "path": "Composition.category.coding.system",
+        "id": "Bundle.entry.fullUrl",
+        "path": "Bundle.entry.fullUrl",
         "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        "mustSupport": true
       },
       {
-        "id": "Composition.category.coding:IHE.code",
-        "path": "Composition.category.coding.code",
-        "min": 1
-      },
-      {
-        "id": "Composition.subject",
-        "path": "Composition.subject",
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Composition",
+        "path": "Bundle.entry",
+        "sliceName": "Composition",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Composition.resource",
+        "path": "Bundle.entry.resource",
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.subject.reference",
-        "path": "Composition.subject.reference",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.encounter",
-        "path": "Composition.encounter",
-        "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.encounter.reference",
-        "path": "Composition.encounter.reference",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.date",
-        "path": "Composition.date",
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.author",
-        "path": "Composition.author",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/Device",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger",
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient",
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPersonImGesundheitsberuf"
+            "code": "Composition",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme"
             ]
           }
         ]
-      },
-      {
-        "id": "Composition.author.display",
-        "path": "Composition.author.display",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.title",
-        "path": "Composition.title",
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.section",
-        "path": "Composition.section",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.section.title",
-        "path": "Composition.section.title",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.section.text",
-        "path": "Composition.section.text",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.section.section",
-        "path": "Composition.section.section",
-        "mustSupport": true
       }
     ]
   }
