@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKVersicherungsverhaeltnisGesetzlich",
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "name": "ISiKVersicherungsverhaeltnisGesetzlich",
   "status": "active",
   "experimental": false,
-  "date": "2022-06-30",
+  "date": "2022-10-31",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -21,11 +21,6 @@
         "id": "Coverage",
         "path": "Coverage",
         "definition": "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-      },
-      {
-        "id": "Coverage.id",
-        "path": "Coverage.id",
-        "min": 1
       },
       {
         "id": "Coverage.identifier",
@@ -109,7 +104,8 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Coverage.type.coding:VersicherungsArtDeBasis",
@@ -120,7 +116,8 @@
         "patternCoding": {
           "code": "GKV",
           "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Coverage.subscriber",
