@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1d8eab03c0c1880" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Basismodul
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Angehoeriger.html">
+                                            Angehoeriger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            Person Im Gesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <p>Im Rahmen der ISiK-Veröffentlichungen wird das <a href="https://semver.org/lang/de/">Semantic Versioning</a> verwendet.</p>
+<p>Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.</p>
+<hr />
+<p>Version: 1.0.6</p>
+<p>Datum: 31.10.2022</p>
+<ul>
+<li>Angehöriger
+<ul>
+<li>Line Extensions <code>Strasse</code>, <code>Hausnummer</code> und <code>Adresszusatz</code> sind nun Must Support</li>
+</ul>
+</li>
+<li>BerichtBundle wurde wiederhergestellt</li>
+<li>BerichtBundle für Subsysteme
+<ul>
+<li><code>id</code> ist nun 0..1 und Must Support</li>
+<li><code>identifier</code>, <code>identifier.system</code>, <code>identifier.value</code> sind nun Must Support</li>
+<li><code>status</code> ist nun Must Support</li>
+<li><code>type</code> und <code>type.coding</code> sind nun Must Support</li>
+<li>Die Codesysteme <code>LOINC</code>, <code>KDL</code> und <code>IHE</code> im Element  <code>type.coding</code> sind nun Must Support</li>
+<li><code>category</code> ist nun Must Support</li>
+<li>Die Codesysteme <code>LOINC</code> und <code>IHE</code> im Element <code>category.coding</code> sind nun Must Support</li>
+<li><code>author</code> ist nun Must Support</li>
+</ul>
+</li>
+<li>Kontakt
+<ul>
+<li>Aufnahmegrund Extension ist mit den Elementen <code>ErsteUndZweiteStelle</code> <code>DritteStelle</code> und<code>VierteStelle</code> Must Support</li>
+<li><code>serviceType</code> ist nun 0..1</li>
+<li><code>reference</code> ist nun Must Support</li>
+<li><code>admitSource</code> ist nun 0..1</li>
+</ul>
+</li>
+<li>Patient
+<ul>
+<li>Der Identifier <code>Versichertennummer-GKV</code> wird zu <code>VersichertenId-GKV</code></li>
+</ul>
+</li>
+<li>Invarianten wurden verbessert</li>
+</ul>
+<hr />
+<p>Version: 1.0.5</p>
+<p>Datum: 30.09.2022</p>
+<ul>
+<li>Stadtteil Extension ist bei ISiKAngehoeriger, ISiKPersonenImGesundheitsBeruf und ISiKPatient nun Must Support.</li>
+<li>Bei ISiKVersicherungsverhaeltnisSelbstzahler sind die Elemente <code>relatedPerson.status</code>, <code>relatedPerson.type</code>, <code>relatedPerson.type.coding</code>,<code>relatedPerson.type.coding.system</code> und <code>relatedPerson.type.coding.code</code> nun Must Support</li>
+</ul>
+<hr />
+<p>Version: 1.0.4</p>
+<p>Datum: 31.05.2022</p>
+<ul>
+<li>Die Kardinalität des Elements <code>id</code> ist nun <code>0..1</code> in den Ressourcen Patient, Encounter, Condition, Coverage, Bundle und Procedure.</li>
+</ul>
+<hr />
+<p>Version: 1.0.3</p>
+<p>Datum: 07.02.2022</p>
+<ul>
+<li>Update der Deutschen Basisprofile auf die Version 1.2.0</li>
+<li>Fix Type Slicing in <code>Condition.extension:ReferenzPrimaerdiagnose.value[x]</code></li>
+<li><code>onset-date</code> als Kann-Suchparameter für Condition entfernt, da dieses Element nicht als Must-Support gekennzeichnet ist</li>
+<li><code>address</code> als Kann-Suchparameter für Practitioner entfernt, da dieses Element nicht als Must-Support gekennzeichnet ist</li>
+<li>Korrektur .source-Elemente in FHIRPath Constraints</li>
+<li>Korrektur von .definition im CapabilityStatement für Suchparameter <code>Encounter-location</code>, <code>Encounter-part-of</code>, <code>Encounter-service-provider</code></li>
+<li>Harmonisierung Constraint <code>sct-ops-1</code> mit der dazugehörigen menschenlesbaren Beschreibung</li>
+</ul>
+<hr />
+<p>Version: 1.0.2</p>
+<p>Datum: 07.10.2021</p>
+<ul>
+<li>Update der Deutschen Basisprofile auf die Version 1.1.0</li>
+<li>Korrektur der Invarianten 'isik-pat-1', 'relatedp-de-1' und 'proc-ISiK-1'</li>
+<li>Slicing in Procedure.code.coding korrigiert</li>
+<li>Encounter.hospitalization Kardinalität korrigiert (1..1 -&gt; 0..1)</li>
+<li>Fehlendes Must-Support Flag für Pflichtfeld RelatedPerson.patient hinzugefügt</li>
+</ul>
+<hr />
+<p>Version: 1.0.1</p>
+<p>Datum: 27.08.2021</p>
+<ul>
+<li>Korrektur der Suchinteraktion für das Datenobjekt &quot;Condition&quot;: <code>Condition.onset[x]</code> enthält kein Must-Support-Flag, daher ist die Suche nach &quot;onset-date&quot; keine Pflicht. Der Suchparameter wurde nun als optional markiert.</li>
+<li>Beschreibung von Encounter.status enthielt Teile der Beschreibung von Condition.status. Diese wurden nun gelöscht.</li>
+<li>Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu <a href="https://ig.fhir.de/basisprofile-de/1.0.0/Ressourcen-AmbulanterStationaererFall.html">Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland</a> gewährleisten wurde dieses Feld als optional gekennzeichnet.</li>
+<li>Das Binding an Procedure.code:OPS enthielt ein Binding an ein ValueSet mit falscher Canonical-URL.</li>
+<li>Korrektur der Interaktionen auf Coverage: Für Coverage.payor für das Profil ISiKVersicherungsverhaeltnisGesetzlich muss nur die Suche mittels des identifier-Modifiers untersützt werden, jedoch nicht die Suche auf die dazugehörige Referenz.</li>
+<li>Hinweis hinzugefügt, dass sowohl für die Implementierung von ISiK, als auch für den anschließenden Betrieb eines ISiK-konformen Systems eine SNOMED-Lizenz notwendig ist.</li>
+<li>Die FHIRPath-Constraints relatedp-de-1 und pat-de-1 resultierten in einem falschen Ergebnis falls das &quot;gender&quot;-Element innerhalb des Datenobjektes &quot;Patient&quot; bzw. &quot;Practitioner&quot; nicht gesetzt war.</li>
+<li>Hinweise hinzugefügt für die korrekte Implementierung einer OperationOutcome falls ein Bericht eines Subsystems eine nicht-existierende Referenz auf ein &quot;Patient&quot;- oder &quot;Encounter&quot;-Datenobjekt enthält.</li>
+<li>Update auf die <a href="https://simplifier.net/packages/de.basisprofil.r4/1.0.0">Deutschen Basisprofile Version 1.0.0</a>.</li>
+</ul>
+<hr />
+<p>Version: 1.0.0</p>
+<p>Datum: 29.06.2021</p>
+<h5 id="ubergreifende-festlegungen">Übergreifende Festlegungen</h5>
+<ul>
+<li>Korrektur von verpflichtenden Suchparametern im CapabilityStatement mit Hinblick auf Must-Support-Flags in den Datenobjekt-Profilen</li>
+<li>Anpassung der ISiK-Profile an die Version v1.0.0-rc4 der Deutschen Basisprofile</li>
+</ul>
+<hr />
+<p>Version: 1.0.0 CC1</p>
+<p>Datum: 25.05.2021</p>
+<h5 id="ubergreifende-festlegungen-1">Übergreifende Festlegungen</h5>
+<ul>
+<li>Hinweis angepasst, dass HTTPS im produktiven Einsatz verpflichtend ist</li>
+<li>Hinweis präzisiert, dass die eingesetzte Software eines Drittherstellers nur im Rahmen des Bestätigungsverfahrens zu einem Bestandteil des Primärsystems wird</li>
+<li>Canoncial der ImplementationGuide-Ressource für ISiK harmonisiert mit den Schema der restlichen Canonicals</li>
+<li>:not und :text Modifier waren als Modifier für String-Suchparameter anstelle von Token-Suchparameter definiert</li>
+<li>Anpassung der ISiK-Profile an die Version v1.0.0-rc1 der Deutschen Basisprofile:</li>
+</ul>
+<h6 id="im-vergleich-zu-der-version-1.0.0-alpha9-ergeben-sich-in-den-deutschen-basisprofile-folgende-anderungen">Im Vergleich zu der Version 1.0.0-alpha9 ergeben sich in den deutschen Basisprofile folgende Änderungen:</h6>
+<ul>
+<li>ValueSet Binding in Lebensphase-Extension korrigiert</li>
+<li>Übersetzung von marital-status (&quot;S&quot;) korrigiert</li>
+<li>BSNR und LANR aus CodeSystem-identifier-type-de gelöscht (sind bereits in HL7 v2 Table 0203 enthalten)</li>
+<li>Constraint gender-amtlich-1 in die Extension gender-amtlich direkt eingefügt</li>
+<li>Verweis auf own-prefix Extension in Extension-humanname-namenszusatz korrigiert</li>
+<li>Anpassung der ICD-10-GM-Extensions und des Coding-Datentyp-Profils zur korrekten Abbildung von Mehrfachkodierungen</li>
+<li>Änderung der canonical URL folgender, ehemals DIMDI, jetzt BfArM CodeSysteme: ICD-10-GM, OPS, ATC</li>
+</ul>
+<h5 id="diagnose">Diagnose</h5>
+<ul>
+<li>Kein Must Support mehr für Condition.onset</li>
+<li>Kardinalität von Condition.diagnosis.use auf 1..1 angepasst</li>
+<li>FHIRPath Constraint isik-con1 hinzugefügt</li>
+<li>Hinweis zu Condition.encounter erweitert</li>
+<li>Must-support Flag für Condition.encounter hinzugefügt</li>
+</ul>
+<h5 id="kontakt">Kontakt</h5>
+<ul>
+<li>Hinweise zu der begrifflichen Abgrenzung von Fall / Kontakt hinzugefügt</li>
+<li>Basis-Statuswerte &quot;in-progress&quot;, &quot;finished&quot; und &quot;cancelled&quot; werden nun gefordert</li>
+</ul>
+<h5 id="patient">Patient</h5>
+<ul>
+<li>Kardinalität 0..* für Slices von Patient.address</li>
+<li>FHIRPath Constraint isik-pat-1 hinzugefügt</li>
+<li>Update der Beispieldaten</li>
+</ul>
+<h5 id="prozedur">Prozedur</h5>
+<ul>
+<li>Must-support Flag für Procedure.encounter hinzugefügt</li>
+</ul>
+<hr />
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
