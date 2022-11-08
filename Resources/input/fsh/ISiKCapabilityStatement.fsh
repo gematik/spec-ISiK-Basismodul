@@ -616,3 +616,5 @@ Usage: #definition
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
 * document.extension.url = $capabilitystatement-expectation
 * document.extension.valueCode = #SHALL
+* document.mode = #consumer
+* document.profile = "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
