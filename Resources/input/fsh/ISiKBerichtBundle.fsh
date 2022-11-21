@@ -21,16 +21,21 @@ Description: "A document style representation of the receipt (complete, self-con
 * entry contains Composition 1..1 MS
 * entry[Composition].resource only ISiKBerichtSubSysteme
 
-Instance: Bundle-Beispiel
+Instance: ISiKBundle-Example
 InstanceOf: ISiKBerichtBundle
 Usage: #example
 Title: "Bundle-Beispiel-Blutdruck"
 Description: "Beispiel für ein Bundle mit Composition Blutdruck"
 * identifier.value = "urn:oid:2.16.840.1.113883.6.96"
 * timestamp = "2013-06-08T10:57:34+01:00"
-* total = 1
-* entry.fullUrl = "http://meinfhirserver.de/Composition/composition-blutdruck"
-* entry.resource = composition-blutdruck
+* entry[0].resource = composition-blutdruck
+* entry[=].fullUrl = "http://meinfhirserver.de/Composition/composition-blutdruck"
+* entry[+].resource = PatientinMusterfrau
+* entry[=].fullUrl = "http://meinfhirserver.de/Patient/PatientinMusterfrau"
+* entry[+].resource = Fachabteilungskontakt
+* entry[=].fullUrl = "http://meinfhirserver.de/Encounter/Fachabteilungskontakt"
+
+
 
 Invariant: ISiK-docBundle-1
 Description: "All referenced Resources must be contained in the Bundle"
