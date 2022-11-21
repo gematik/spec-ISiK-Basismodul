@@ -2,8 +2,8 @@
 
 Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisGesetzlich:
 
-{{json:ISiKVersicherungsverhaeltnisGesetzlich}}
+{{json:coverageGesetzlich}}
 
 Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisSelbstzahler:
 
-{{json:ISiKVersicherungsverhaeltnisSelbstzahler}}
+{{json:coveragePrivat}}
