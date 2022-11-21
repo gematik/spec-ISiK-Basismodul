@@ -84,4 +84,4 @@ Usage: #example
 Invariant: kdl-1
 Description: "KDL-Code ungültig"
 Severity: #warning
-Expression: "matches('[A-Z]{2}[0-9]{6}')"
+Expression: "matches('^[A-Z]{2}[0-9]{6}$')"

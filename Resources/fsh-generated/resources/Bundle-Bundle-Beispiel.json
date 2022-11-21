@@ -1,0 +1,69 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-Beispiel",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"
+    ]
+  },
+  "type": "document",
+  "identifier": {
+    "value": "urn:oid:2.16.840.1.113883.6.96"
+  },
+  "timestamp": "2013-06-08T10:57:34+01:00",
+  "total": 1,
+  "entry": [
+    {
+      "fullUrl": "http://meinfhirserver.de/Composition/composition-blutdruck",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "composition-blutdruck",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
+          ]
+        },
+        "status": "final",
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>"
+        },
+        "identifier": {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.6.96"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "55112-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/PatientinMusterfrau"
+        },
+        "encounter": {
+          "reference": "Encounter/Fachabteilungskontakt"
+        },
+        "date": "2020-10-19",
+        "author": [
+          {
+            "type": "Device",
+            "display": "Gerät XY, Fa. Z, Modell T"
+          }
+        ],
+        "title": "Blutdruckmessung vom 19.10.2020",
+        "section": [
+          {
+            "title": "Messung",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
