@@ -1585,9 +1585,9 @@
               "valueCode": "MAY"
             }
           ],
-          "type": "Binary",
+          "type": "Composition",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtSubSysteme"
           ],
           "interaction": [
             {
@@ -1600,8 +1600,32 @@
               "code": "read"
             }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "type": "Bundle",
+          "supportedProfile": [
+            "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
+          ]
         }
       ]
+    }
+  ],
+  "document": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ],
+      "mode": "consumer",
+      "profile": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle"
     }
   ]
 }
