@@ -20,7 +20,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung' )
+where url in ('https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf' )
 for differential.element
 select
 Path: path,
