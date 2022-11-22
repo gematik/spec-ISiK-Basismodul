@@ -71,12 +71,12 @@ Usage: #example
 * identifier.value = "urn:oid:2.16.840.1.113883.6.96"
 * status = #final
 * type = $loinc#55112-7
-* subject = Reference(PatientinMusterfrau)
-* encounter = Reference(Fachabteilungskontakt)
-* date = "2020-10-19"
+* subject = Reference(PatientinMusterfrauMinimal)
+* encounter = Reference(FachabteilungskontaktMinimal)
+* date = "2022-05-03"
 * author.type = "Device"
 * author.display = "Gerät XY, Fa. Z, Modell T"
-* title = "Blutdruckmessung vom 19.10.2020"
+* title = "Blutdruckmessung vom 3.5.2022"
 * section.title = "Messung"
 * section.text.status = #generated
 * section.text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b> Systolisch</b></td><td><b> Diastolisch</b></td><td><b> Einheit</b></td><td><b> Uhrzeit</b></td></tr><tr><td> \r\n\t\t\t\t\t\t\t140\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t110\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\tmmHG\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t17:15h\r\n\t\t\t\t\t\t</td></tr></table></div>"
