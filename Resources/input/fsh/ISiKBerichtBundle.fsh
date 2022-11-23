@@ -27,7 +27,7 @@ Usage: #example
 Title: "Bundle-Beispiel-Blutdruck"
 Description: "Beispiel für ein Bundle mit Composition Blutdruck, das folgende User Story repräsentiert: Die Patientin von Musterfrau war vom 3. bis 5. Mai 2022 als stationärer Fall anlässlich einer geplanten Operation im Krankenhaus. Dabei wurde am 3. Mai der Blutdruck gemessen und das Ergebnis in einem Peripheriesystem vermerkt. Das Peripheriesystem sendet das Messergebnis an das KIS, so dass das KIS dieses in die Gesamtdokumentation zur Patientin aufnehmen kann."
 * identifier.value = "urn:oid:2.16.840.1.113883.6.96"
-* timestamp = "2022-03-03T17:57:34+01:00"
+* timestamp = "2022-05-03T17:57:34+01:00"
 * entry[0].resource = composition-blutdruck
 * entry[=].fullUrl = "http://meinfhirserver.de/Composition/composition-blutdruck"
 * entry[+].resource = PatientinMusterfrauMinimal
@@ -45,16 +45,8 @@ Description: "Minimalbeispiel für Patientin Musterfrau "
 * identifier[=].value = "TestPID"
 * name[0].use = #official
 * name[=].family = "Fürstin von Musterfrau"
-  * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-  * extension[=].valueString = "Fürstin"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension[=].valueString = "Musterfrau"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-  * extension[=].valueString = "von"
 * name[=].given = "Erika"
 * name[=].prefix = "Dr."
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
-  * extension.valueCode = #AC
 * gender = #female
 
 Instance: FachabteilungskontaktMinimal
