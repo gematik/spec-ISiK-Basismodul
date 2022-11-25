@@ -50,6 +50,7 @@ Description: "Minimalbeispiel für Patientin Musterfrau "
 * name[=].given = "Erika"
 * name[=].prefix = "Dr."
 * gender = #female
+* birthDate = "1964-08-12"
 
 Instance: FachabteilungskontaktMinimal
 InstanceOf: Encounter
