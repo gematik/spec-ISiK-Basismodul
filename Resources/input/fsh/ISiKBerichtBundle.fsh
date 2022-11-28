@@ -65,7 +65,7 @@ Usage: #example
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrauMinimal)
 * period.start = "2022-05-03"
-* period.end = "2021-05-05"
+* period.end = "2022-05-05"
 
 Invariant: ISiK-docBundle-1
 Description: "All referenced Resources must be contained in the Bundle"
