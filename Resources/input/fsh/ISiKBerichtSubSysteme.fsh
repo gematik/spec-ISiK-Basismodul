@@ -85,7 +85,7 @@ Usage: #example
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">   <p> Familienname:Fürstin von Musterfrau</p>   <p> Geburtsdatum:1964-08-12</p>   <p> PID:TestPID</p> </div>"
 * section[=].entry = Reference(PatientinMusterfrauMinimal)
-* section[+].title = "Fallkonkat"
+* section[+].title = "Fallkontakt"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">  <p>Kontaktart:Operation</p> <p>Startdatum:03.05.2022t</p> <p>Enddatum:05.05.2022</p> </div> "
 * section[=].entry = Reference(FachabteilungskontaktMinimal)
