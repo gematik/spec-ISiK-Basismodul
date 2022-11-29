@@ -66,6 +66,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 Instance: composition-blutdruck
 InstanceOf: ISiKBerichtSubSysteme
 Usage: #example
+* id = "74b471ba-6fc9-11ed-a1eb-0242ac120002"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p> Bericht-Status:final</p>   <p> Bericht-Typ:Berichtzusammenfassung / Document Summary</p>   <p> Datum:03.05.2022</p>   <p> Titel:Blutdruckmessung vom 3.5.2022</p>   <p> Autor:Gerät XY, Fa. Z, Modell T</p></div>"
 * identifier.type = $v2-0203#FILL
 * identifier.system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
