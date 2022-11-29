@@ -84,11 +84,11 @@ Usage: #example
 * section[+].title = "Patient"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">   <p> Familienname:Fürstin von Musterfrau</p>   <p> Geburtsdatum:1964-08-12</p>   <p> PID:TestPID</p> </div>"
-* section[=].entry = Reference(PatientinMusterfrauMinimal)
+* section[=].entry.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * section[+].title = "Fallkontakt"
 * section[=].text.status = #generated
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">  <p>Kontaktart:Operation</p> <p>Startdatum:03.05.2022t</p> <p>Enddatum:05.05.2022</p> </div> "
-* section[=].entry = Reference(FachabteilungskontaktMinimal)
+* section[=].entry.reference = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 
 Invariant: kdl-1
 Description: "KDL-Code ungültig"
