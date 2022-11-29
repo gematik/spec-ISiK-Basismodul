@@ -31,18 +31,17 @@ Description: "Beispiel für ein Bundle mit Composition Blutdruck, das folgende U
 * identifier.value = "0123456789"
 * timestamp = "2022-05-03T17:57:34+01:00"
 * entry[0].resource = composition-blutdruck
-* entry[=].fullUrl = "74b471ba-6fc9-11ed-a1eb-0242ac120002"
+* entry[=].fullUrl = "urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002"
 * entry[+].resource = PatientinMusterfrauMinimal
-* entry[=].fullUrl = "74b468be-6fc9-11ed-a1eb-0242ac120002"
+* entry[=].fullUrl = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * entry[+].resource = FachabteilungskontaktMinimal
-* entry[=].fullUrl = "74b46c1a-6fc9-11ed-a1eb-0242ac120002"
+* entry[=].fullUrl = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 
 
 Instance: PatientinMusterfrauMinimal
 InstanceOf: Patient
 Usage: #example
 Description: "Minimalbeispiel für Patientin Musterfrau "
-* id = "74b468be-6fc9-11ed-a1eb-0242ac120002"
 * identifier[0].type = $v2-0203#MR
 * identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[=].value = "TestPID"
@@ -56,7 +55,6 @@ Description: "Minimalbeispiel für Patientin Musterfrau "
 Instance: FachabteilungskontaktMinimal
 InstanceOf: Encounter
 Usage: #example
-* id = "74b46c1a-6fc9-11ed-a1eb-0242ac120002"
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
@@ -65,7 +63,7 @@ Usage: #example
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
-* subject = Reference(PatientinMusterfrauMinimal)
+* subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * period.start = "2022-05-03"
 * period.end = "2022-05-05"
 
