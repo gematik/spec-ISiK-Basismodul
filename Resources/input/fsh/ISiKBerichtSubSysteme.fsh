@@ -39,7 +39,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * category.coding ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* category.coding contains 
+* category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
 * category.coding[LOINC].system 1..
@@ -67,17 +67,26 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 Instance: composition-blutdruck
 InstanceOf: ISiKBerichtSubSysteme
 Usage: #example
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b> Systolisch</b></td><td><b> Diastolisch</b></td><td><b> Einheit</b></td><td><b> Uhrzeit</b></td></tr><tr><td> \r\n\t\t\t\t\t\t\t140\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t110\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\tmmHG\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t17:15h\r\n\t\t\t\t\t\t</td></tr></table></div>"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:2.16.840.1.113883.6.96"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p> Bericht-Status:final</p>   <p> Bericht-Typ:Berichtzusammenfassung / Document Summary</p>   <p> Datum:03.05.2022</p>   <p> Titel:Blutdruckmessung vom 3.5.2022</p>   <p> Autor:Gerät XY, Fa. Z, Modell T</p></div>"
+* identifier.type = $v2-0203#FILL
+* identifier.system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
+* identifier.value = "0123456789"
 * status = #final
 * type = $loinc#55112-7
-* subject = Reference(patient)
-* encounter = Reference(encounter)
-* date = "2020-10-19"
+* subject = Reference(PatientinMusterfrauMinimal)
+* encounter = Reference(FachabteilungskontaktMinimal)
+* date = "2022-05-03"
 * author.type = "Device"
 * author.display = "Gerät XY, Fa. Z, Modell T"
-* title = "Blutdruckmessung vom 19.10.2020"
-* section.title = "Messung"
-* section.text.status = #generated
-* section.text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b> Systolisch</b></td><td><b> Diastolisch</b></td><td><b> Einheit</b></td><td><b> Uhrzeit</b></td></tr><tr><td> \r\n\t\t\t\t\t\t\t140\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t110\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\tmmHG\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t17:15h\r\n\t\t\t\t\t\t</td></tr></table></div>"
+* title = "Blutdruckmessung vom 3.5.2022"
+* section[0].title = "Messung"
+* section[=].text.status = #generated
+* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b> Systolisch</b></td><td><b> Diastolisch</b></td><td><b> Einheit</b></td><td><b> Uhrzeit</b></td></tr><tr><td> \r\n\t\t\t\t\t\t\t140\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t110\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\tmmHG\r\n\t\t\t\t\t\t</td><td> \r\n\t\t\t\t\t\t\t17:15h\r\n\t\t\t\t\t\t</td></tr></table></div>"
+* section[+].title = "Patient"
+* section[=].text.status = #generated
+* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">   <p> Familienname:Fürstin von Musterfrau</p>   <p> Geburtsdatum:1964-08-12</p>   <p> PID:TestPID</p> </div>"
+// * section[=].entry = Reference(PatientinMusterfrauMinimal)
+// * section[+].title = "Fallkontakt"
+// * section[=].text.status = #generated
+// * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">  <p>Kontaktart:Operation</p> <p>Startdatum:03.05.2022t</p> <p>Enddatum:05.05.2022</p> </div> "
+// * section[=].entry = Reference(FachabteilungskontaktMinimal)
