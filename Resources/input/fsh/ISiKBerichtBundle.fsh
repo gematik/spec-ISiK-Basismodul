@@ -60,7 +60,7 @@ Usage: #example
 * identifier.value = "0123456789"
 * status = #arrived
 * class = $v3-ActCode#IMP
-* type[0] = $kontaktart-de#operation
+* type[0] = $kontaktart-de-codesystem#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $Fachabteilungsschluessel-codesystem#0100
 * subject = Reference(PatientinMusterfrauMinimal)
