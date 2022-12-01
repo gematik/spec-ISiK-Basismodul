@@ -62,7 +62,7 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#abteilungskontakt
-* serviceType = $FachabteilungsschluesselCS#0100
+* serviceType = $Fachabteilungsschluessel-codesystem#0100
 * subject = Reference(PatientinMusterfrauMinimal)
 * period.start = "2022-05-03"
 * period.end = "2022-05-05"
