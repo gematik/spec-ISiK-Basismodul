@@ -58,7 +58,7 @@ Usage: #example
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
-* status = #arrived
+* status = $EncounterStatusCS#unknown
 * class = $v3-ActCode#IMP
 * type[0] = $kontaktart-de-codesystem#operation
 * type[+] = $Kontaktebene#abteilungskontakt

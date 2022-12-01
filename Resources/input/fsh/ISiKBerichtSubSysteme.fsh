@@ -71,7 +71,7 @@ Usage: #example
 * identifier.type = $v2-0203#FILL
 * identifier.system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
 * identifier.value = "0123456789"
-* status = #final
+* status = $EncounterStatusCS#final
 * type = $loinc#55112-7
 * subject = Reference(PatientinMusterfrauMinimal)
 * encounter = Reference(FachabteilungskontaktMinimal)
