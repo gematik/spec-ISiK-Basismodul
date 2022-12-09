@@ -13,6 +13,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
 * identifier contains
     Arztnummer 0..* MS and
     EFN 0..1 MS // and
+    * ^comment = "In Bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (siehe Hinweis Oracle Cerner), daher wird der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben. Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung. [Stand 9.12.2022]"
 //    TelematikId 0..1 MS
 * identifier[Arztnummer] only IdentifierLanr
   * ^patternIdentifier.type = $v2-0203#LANR
