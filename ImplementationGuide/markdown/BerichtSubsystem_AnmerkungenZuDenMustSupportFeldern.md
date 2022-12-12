@@ -27,7 +27,16 @@
 
 **Bedeutung:** Subsystem-seitig zugewiesener Identifier des Berichtes mit Angabe der URL des vom Subsystem verwendeten Namensraumes
 
-**Hinweise:** Die Verwendung von OIDs ist möglich. Dafür KANN folgendes Format verwenden:
+**Hinweise:** Werden eigene Identifier bzw. NamingSystems verwendet, so sei auf den Leitfaden der Basisprofile Deutschland (HL7 Deutschland) zu den [Best-Practices bei Namensräumen](https://ig.fhir.de/basisprofile-de/stable/Terminologie-Namensraeume.html) verwiesen.
+
+Dazu ein Beispiel für einen Identifier eines Sub-System-Berichts:
+```xml
+<identifier>
+    <system value="https://fhir.krankenhaus.example/sid/system-a/berichtnummer" />
+    <value value="0123456789" />
+</identifier>
+```
+Die Verwendung von OIDs ist möglich, wird jedoch nicht empfohlen. Für die Verwendnung von OIDs KANN folgendes Format verwendet werden:
 
 * Das Feld `system` enthält den festen Wert "urn:ietf:rfc:3986"
 * Das Feld `value` enthält die OID mit dem Präfix "urn:oid:"
