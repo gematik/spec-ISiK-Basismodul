@@ -31,11 +31,11 @@ Description: "Beispiel für ein Bundle mit Composition Blutdruck, das folgende U
 * identifier.value = "0123456789"
 * timestamp = "2022-05-03T17:57:34+01:00"
 * entry[0].resource = composition-blutdruck
-* entry[=].fullUrl = "http://meinfhirserver.de/Composition/composition-blutdruck"
+* entry[=].fullUrl = "urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002"
 * entry[+].resource = PatientinMusterfrauMinimal
-* entry[=].fullUrl = "http://meinfhirserver.de/Patient/PatientinMusterfrauMinimal"
+* entry[=].fullUrl = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * entry[+].resource = FachabteilungskontaktMinimal
-* entry[=].fullUrl = "http://meinfhirserver.de/Encounter/FachabteilungskontaktMinimal"
+* entry[=].fullUrl = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 
 
 Instance: PatientinMusterfrauMinimal
@@ -63,7 +63,7 @@ Usage: #example
 * type[0] = $kontaktart-de-codesystem#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $Fachabteilungsschluessel-codesystem#0100
-* subject = Reference(PatientinMusterfrauMinimal)
+* subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * period.start = "2022-05-03"
 * period.end = "2022-05-05"
 
