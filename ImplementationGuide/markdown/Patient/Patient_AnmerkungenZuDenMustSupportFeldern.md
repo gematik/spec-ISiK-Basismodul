@@ -28,7 +28,7 @@
 
 **Bedeutung:** Vollständiger Name
 
-**Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Name)
+**Hinweise:** Wenn kein Name vorliegt, SOLLTE die [data-absent-reasons](https://www.hl7.org/fhir/extension-data-absent-reason.html)-Extension eingesetzt werden. Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Name)
 
 ### `Patient.name:geburtsname` 
 
