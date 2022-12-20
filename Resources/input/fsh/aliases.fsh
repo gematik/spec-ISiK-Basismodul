@@ -16,6 +16,7 @@ Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent
 Alias: $diagnosis-role = http://terminology.hl7.org/CodeSystem/diagnosis-role
 Alias: $EncounterClassDE = http://fhir.de/ValueSet/EncounterClassDE
 Alias: $EncounterStatusDe = http://fhir.de/ValueSet/EncounterStatusDe
+Alias: $EncounterStatusCS = http://hl7.org/fhir/encounter-status
 Alias: $Entlassungsgrund = http://fhir.de/StructureDefinition/Entlassungsgrund
 Alias: $EntlassungsgrundDritteStelle = http://fhir.de/CodeSystem/dkgev/EntlassungsgrundDritteStelle
 Alias: $EntlassungsgrundErsteUndZweiteStelle = http://fhir.de/CodeSystem/dkgev/EntlassungsgrundErsteUndZweiteStelle
