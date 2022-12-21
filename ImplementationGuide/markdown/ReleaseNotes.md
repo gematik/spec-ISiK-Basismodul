@@ -5,6 +5,21 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 2.0.3
+
+Datum: 21.12.2022
+
+- CapabilityStatemtent
+  - Composition und Bundle-Parameter hinzugefügt
+- ISiKBerichtSubsystem
+  - ```encounter``` auf FHIR-Core gesetzt
+- ISiKBerichtBundle
+  - Beispiele hinzugefügt
+- Weitere geringfügige Änderungen am Implementierungsleitfaden
+
+
+
+----
 Version: 2.0.2
 
 Datum: 31.10.2022
