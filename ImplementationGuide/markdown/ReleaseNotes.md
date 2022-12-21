@@ -4,7 +4,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 1.0.7
 
-Datum: 20.12.2022
+Datum: 21.12.2022
 
 - Beispiel für BerichtBundle erzeugt
 - PersonInGesundheitsberuf MS von Identifier EFN entfernt
