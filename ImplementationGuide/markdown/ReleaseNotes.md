@@ -7,6 +7,22 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 ----
 Version: 2.0.2
 
+Datum: 21.12.2022
+
+- CapabilityStatemtent
+  - Composition und Bundle-Parameter hinzugefügt
+- ISiKBerichtSubsystem
+  - ```encounter``` auf FHIR-Core gesetzt
+- ISiKBerichtBundle
+  - Beispiel hinzugefügt
+-
+- Weitere Changes am Implementierungsleitfaden
+
+
+
+----
+Version: 2.0.2
+
 Datum: 31.10.2022
 
 - Bericht für Subsysteme
