@@ -7,7 +7,7 @@ Version: 1.0.7
 Datum: 21.12.2022
 
 - Beispiel für BerichtBundle erzeugt
-- PersonInGesundheitsberuf MS von Identifier EFN entfernt
+- ~~PersonInGesundheitsberuf MS von Identifier EFN entfernt~~
 - Weitere Änderungen an IG oder Beschreibung, die keine Strukturänderungen an Profilen entsprechen
 
 
