@@ -8,9 +8,8 @@ Version: 2.0.4
 
 Datum: XX.XX.2023
 
-- ISiKPersonImGesundheitsberuf
-  - Reference to Core Profile RelatedPerson insteaf of ISiKAngehoreiger (conforms to general designdecision)
 - ISiKVersicherungsverhaeltnisGesetzlich
+  - ```Reference``` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoeriger (entspricht allgemeinem Design-Prinzip)
   - ```Coverage.beneficiary.identifier``` URL in ```patternidentifier.system``` ersetzt
 
 ----
