@@ -56,7 +56,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.recordedDate" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
 
-1. Der Suchparameter "related" MUSS unterstützt werden:
+1. Der custom Suchparameter "related" MUSS unterstützt werden:
 
    Beispiele
 

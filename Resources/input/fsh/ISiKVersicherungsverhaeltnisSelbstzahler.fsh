@@ -11,14 +11,14 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
     * code 1.. MS
     * code = #SEL (exactly)
 * policyHolder ..0
-* subscriber only Reference(ISiKPatient or ISiKAngehoeriger)
+* subscriber only Reference(Patient or RelatedPerson)
 * subscriber MS
   * display 1.. MS
 * subscriberId ..0
-* beneficiary only Reference(ISiKPatient)
+* beneficiary only Reference(Patient)
 * beneficiary MS
   * reference 1.. MS
-* payor only Reference(ISiKPatient or ISiKAngehoeriger)
+* payor only Reference(Patient or RelatedPerson)
 * payor MS
 
 Instance: coveragePrivat
