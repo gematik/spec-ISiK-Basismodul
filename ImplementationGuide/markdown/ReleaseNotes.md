@@ -4,7 +4,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 1.0.8
 
-Datum: 31.01.2023
+Datum: 30.01.2023
 
 In einigen Profilen wurden Reference-Elemente erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind. Betroffene Profile sind:
 - ISiKVersicherungsverhaeltnisGesetzlich
