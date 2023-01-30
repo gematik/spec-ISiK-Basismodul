@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKVersicherungsverhaeltnisGesetzlich",
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "name": "ISiKVersicherungsverhaeltnisGesetzlich",
   "status": "active",
   "experimental": false,
-  "date": "2022-12-21",
+  "date": "2023-01-30",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -104,7 +104,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
         ]
@@ -136,14 +136,6 @@
         "path": "Coverage.beneficiary",
         "definition": "Benennt die versicherte Person.",
         "comment": "Die Angabe der 10-stelligen Krankenversichertennummer ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden.",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
