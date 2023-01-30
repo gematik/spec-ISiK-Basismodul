@@ -6,7 +6,7 @@ Version: 1.0.8
 
 Datum: 31.01.2023
 
-In einigen profilen wurden Reference-Elemente erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind. Betroffen Profile sind:
+In einigen Profilen wurden Reference-Elemente erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind. Betroffene Profile sind:
 - ISiKVersicherungsverhaeltnisGesetzlich
   - ```Reference``` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoreiger 
   - ```Reference``` auf Kernspezifikation-Profil Patient statt ISiKPatient 
