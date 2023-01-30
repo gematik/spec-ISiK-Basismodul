@@ -6,12 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 2.0.4
 
-Datum: XX.XX.2023
+Datum: 31.01.2023
 
 - ISiKVersicherungsverhaeltnisGesetzlich
   - ```Reference``` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoeriger (entspricht allgemeinem Design-Prinzip)
   - ```Coverage.beneficiary.identifier``` URL in ```patternidentifier.system``` ersetzt
-
+- weitere Änderungen an Implementierungsleitfaeden (informativ)
 ----
 Version: 2.0.3
 
