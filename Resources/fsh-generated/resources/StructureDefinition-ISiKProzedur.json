@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "ISiKProzedur",
   "status": "active",
   "experimental": false,
@@ -58,7 +58,7 @@
             "severity": "error",
             "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
             "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-2",
@@ -152,7 +152,7 @@
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden.",
             "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists())",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-3",
