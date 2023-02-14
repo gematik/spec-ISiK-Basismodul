@@ -107,7 +107,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 * link MS 
-  * ^comment = "Die MS-Flag dient in ISiK der Auflösbarkeit inaktiver Patient-Ressourcen (Stand 14.02.2023)."
+  * ^comment = "Die MS-Flag dient in ISiK der Auflösbarkeit inaktiver Patient-Ressourcen, falls diesen eine aktive Patient-Ressource zugeordnet worden ist (Stand 14.02.2023)."
 
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
