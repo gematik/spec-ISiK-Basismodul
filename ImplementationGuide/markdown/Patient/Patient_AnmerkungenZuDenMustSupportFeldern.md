@@ -60,8 +60,16 @@
 
 **Hinweise:** Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Geburtsdatum)
 
+### `Patient.link`
+
+**Bedeutung:** Link zu einer anderen Patienten-Ressource, die die gleiche Person betrifft
+
+**Hinweise:** Wenn eine Patient-Ressource zusammengeführt wird, dann SOLLTE das System die nicht mehr gültige Patient-Ressource (ggf. vorläufige Patient-Ressource) stornieren (s.u.) und SOLLTE, im Falle des Setzens des Feldes `Patient.active` auf `false`, im Link-Element den noch aktiven Patienten referenzieren. Der Kernspezifikation entsprechend wird weiterhin nicht davon ausgegangen, dass verknüpfte Patient-Ressourcen bidirektional verknüpft sind.
+
 ### Stornierung von Patienten
 
 Im Rahmen des ISiK Basismoduls SOLLTE die Stornierung eines Patienten entweder durch das Löschen der Patienten-Ressource oder der Verwendung des Feldes `Patient.active` abgebildet werden. Dies ist abhängig davon, wie die Stornierung im bestätigungsrelevanten System umgesetzt ist. Im letzteren Fall wird die Stornierung durch das Setzen von `Patient.active` auf `false` gekennzeichnet.
+
+
 
 ---
