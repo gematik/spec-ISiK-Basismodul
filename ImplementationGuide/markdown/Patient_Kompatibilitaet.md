@@ -1,9 +1,9 @@
 ### Kompatibilität
 
-Dieses Profil basiert auf dem [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://simplifier.net/base1x0/kbvprbasepatient).
+Dieses Profil basiert auf dem [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://simplifier.net/base1x0/kbv_pr_base_patient).
 
 Instanzen, die gegen ISiKPatient valide sind, sind auch valide gegen
-* [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.1.3](https://simplifier.net/base1x0/kbvprbasepatient)
+* [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.1.3](https://simplifier.net/base1x0/kbv_pr_base_patient)
 * [Profil Patient im International Patient Summary (IPS) - STU-1](http://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
 * [Profil Patient der MI-Initiative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulperson/patientin)
   * wenn in indentifier:pid.assigner eine Referenz auf eine Organisation angegeben wurde
