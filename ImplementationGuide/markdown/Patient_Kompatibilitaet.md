@@ -2,7 +2,7 @@
 
 Dieses Profil basiert auf dem [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://simplifier.net/base1x0/kbvprbasepatient).
 
-Instanzen, die gegen ISiKPatient valide sind, sind auch valide gegen
+Instanzen, die gegen ISiKPatient valide sind, sind (mit wenigen Einschränkungen) auch valide gegen
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.1.3](https://simplifier.net/base1x0/kbvprbasepatient)
   * hier ist zu beachten, dass die KBV im Patienten-Profil für Address.country ein "extensible"-Binding auf die DEÜV-Codes festlegt; dies weicht von der ISiK Verwendung von ISO-Codes ab
 * [Profil Patient im International Patient Summary (IPS) - STU-1](http://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
