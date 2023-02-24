@@ -8,7 +8,7 @@ Instanzen, die gegen ISiKPatient valide sind, sind auch valide gegen
 * [Profil Patient der MI-Initiative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulperson/patientin)
   * wenn in indentifier:pid.assigner eine Referenz auf eine Organisation angegeben wurde
   * wenn in identifier:versichertenId_GKV.assigner die IK-NR der Krankenversicherung angegeben ist
-* [Profil Patient der KBV Archiv- und Wechselschnittstelle - v1.2.0](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbvprawpatient)
+* [Profil Patient der KBV Archiv- und Wechselschnittstelle - v1.2.0](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbv_pr_aw_patient)
   * wenn die Ressource einen Narrative enthält und in den Metadaten die Canonical-URL des KBV-Profile angegeben wird
 
 Instanzen, die gegen dieses Profil valide sind, sind **nicht** valide gegen
