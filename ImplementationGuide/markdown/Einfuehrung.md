@@ -25,7 +25,7 @@ Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für de
 
 **Kontakt**
 
-[ISiK@gematik.de](mailto:ISiK@gematik.de)
+Allgemeine Fragen und Anmerkungen zu ISiK und ISiP können über unser Anfrageportal eingestellt werden: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
 
 **Herausgeber**
 
