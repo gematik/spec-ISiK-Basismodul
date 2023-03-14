@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtSubSysteme",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "name": "ISiKBerichtSubSysteme",
   "status": "active",
   "experimental": false,
-  "date": "2022-10-31",
+  "date": "2023-01-30",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
   "fhirVersion": "4.0.1",
@@ -169,7 +169,7 @@
             "key": "kdl-1",
             "severity": "warning",
             "human": "KDL-Code ungültig",
-            "expression": "matches('[A-Z]{2}[0-9]{6}')",
+            "expression": "matches('^[A-Z]{2}[0-9]{6}$')",
             "source": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
           }
         ]
@@ -276,21 +276,6 @@
       {
         "id": "Composition.encounter",
         "path": "Composition.encounter",
-        "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.encounter.reference",
-        "path": "Composition.encounter.reference",
-        "min": 1,
         "mustSupport": true
       },
       {
