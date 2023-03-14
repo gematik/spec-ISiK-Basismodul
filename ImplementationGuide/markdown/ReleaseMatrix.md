@@ -13,6 +13,7 @@ Folgende Tabelle zeigt Abhängigkeiten zwischen den verschiedenen Modulen von IS
 | [ISiP](https://simplifier.net/isip)     |       1.0.2      |       31.1.2023           | 30.06.2025 |   01.07.2024  |  -   |   [ISiK - Basis (Stufe 2)](https://simplifier.net/isik)     |
 
 
+
 \* Die Gültigkeit ist eine ungefähre, prognostische Angabe, die mit dem jetzigen Stand der Projektierung zusammenhängt. Die ISiK-Module werden bis zur formalen Abkündigung Gültigkeit besitzen.
 
 Weitere Abhängigkeiten zu externen Packages sind unter den jeweiligen Simplifier-Projekten in der View "Dependencies" zu finden.
