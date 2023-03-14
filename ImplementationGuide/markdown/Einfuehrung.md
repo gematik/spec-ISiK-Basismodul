@@ -3,7 +3,7 @@
 ----
 Version: 2.0.5
 
-Datum: 27.02.2023
+Datum: 14.03.2023
 
 Realm: Deutschland
 
@@ -33,7 +33,7 @@ gematik GmbH
 
 [Impressum](https://www.gematik.de/impressum/)
 
-**Gender-Hinweis** 
+**Gender-Hinweis**
 
 Zugunsten des Leseflusses wird in dieser Publikation meist die
 männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer
