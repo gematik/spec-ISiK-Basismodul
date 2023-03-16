@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "name": "ISiKVersicherungsverhaeltnisSelbstzahler",
   "status": "active",
   "experimental": false,
-  "date": "2022-10-31",
+  "date": "2023-02-02",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK.",
   "fhirVersion": "4.0.1",
@@ -98,15 +98,6 @@
       {
         "id": "Coverage.subscriber",
         "path": "Coverage.subscriber",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient",
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
@@ -123,14 +114,6 @@
       {
         "id": "Coverage.beneficiary",
         "path": "Coverage.beneficiary",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
@@ -146,8 +129,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient",
-              "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger"
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
         ],

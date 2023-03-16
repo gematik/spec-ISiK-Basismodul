@@ -2,6 +2,49 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+---
+Version: 1.0.9-pre-release2
+
+Datum: 02.02.2023
+
+- Fix Expression : https://github.com/gematik/spec-ISiK-Basismodul/commit/82f61b6ddad00e58b42822c504a992c2622e79c3 
+- Anpassung URL - https://github.com/gematik/spec-ISiK-Basismodul/pull/191/commits/59d0f694db5550d49850ec1af198a927b3f6098f
+
+---
+Version: 1.0.8
+
+Datum: 30.01.2023
+
+In einigen Profilen wurden Reference-Elemente erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind. Betroffene Profile sind:
+- ISiKVersicherungsverhaeltnisGesetzlich
+  - ```Reference``` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoreiger 
+  - ```Reference``` auf Kernspezifikation-Profil Patient statt ISiKPatient 
+- ISiKVersicherungsverhaeltnisSelbstzahler
+  - ```Reference``` auf Kernspezifikation-Profil Patient statt ISiKPatient
+  - ```Reference``` auf Kernspezifikation-Profil RleatedPerson statt ISiKAngehoeriger 
+- ISiKBerichtSubSysteme
+  - ```Reference``` auf Kernspezifikation-Profil Patient statt ISiKPatient
+  - ```Reference``` auf Kernspezifikation-Profil Encounter statt ISiKKontaktGesundheitseinrichtung  
+- ISiKAngehoeriger
+  - ```Reference``` auf Kernspezifikation-Profil Patient statt ISiKPatient 
+
+Weitere Änderungen:
+- ISiKVersicherungsverhaeltnisGesetzlich
+  - ```Coverage.beneficiary.identifier``` URL in ```patternidentifier.system``` ersetzt
+
+- weitere Änderungen an Implementierungsleitfaden (informativ)
+
+
+---
+Version: 1.0.7
+
+Datum: 21.12.2022
+
+- Beispiel für BerichtBundle erzeugt
+- ~~PersonInGesundheitsberuf MS von Identifier EFN entfernt~~
+- Weitere Änderungen an IG oder Beschreibung, die keine Strukturänderungen an Profilen entsprechen
+
+
 ----
 Version: 1.0.6
 

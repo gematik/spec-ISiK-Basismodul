@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "name": "ISiKProzedur",
   "status": "active",
   "experimental": false,
-  "date": "2022-10-31",
+  "date": "2023-02-02",
   "publisher": "gematik GmbH",
   "description": "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -58,7 +58,7 @@
             "severity": "error",
             "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
             "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-2",
@@ -151,8 +151,8 @@
             "key": "sct-ops-1",
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden.",
-            "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists())",
-            "source": "http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
+            "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()",
+            "source": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-3",
