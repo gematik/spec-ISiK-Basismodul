@@ -10,12 +10,17 @@ Description: "A document style representation of the receipt (complete, self-con
 * timestamp 1.. MS
 * identifier 1.. MS
 * entry MS
-  * obeys ISiK-docBundle-2
+  // * obeys ISiK-docBundle-2
   * fullUrl 1..1 MS
   * resource 1..1 MS
   * search 0..0
   * request 0..0
   * response 0..0
+  * ^slicing.discriminator.type = #exists
+  * ^slicing.discriminator.path = "resource"
+  * ^slicing.rules = #open
+* entry contains Composition 1..1 MS
+* entry[Composition].resource only ISiKBerichtSubSysteme
 
 Instance: ISiKBundle-Example
 InstanceOf: ISiKBerichtBundle
