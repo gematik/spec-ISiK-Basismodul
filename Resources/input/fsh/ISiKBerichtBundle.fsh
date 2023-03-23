@@ -71,4 +71,4 @@ Expression: "Bundle.entry.descendants().reference.distinct().subsetOf(%context.e
 Invariant: ISiK-docBundle-2
 Description: "Composition in Bundle must be of type ISiKBerichtSubsystem."
 Severity: #error
-Expression: "entry.first().resource.is(ISiKBerichtSubsystem)"
+Expression: "entry.first().resource.is(ISiKBerichtSubsysteme)"
