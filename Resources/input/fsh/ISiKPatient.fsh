@@ -110,13 +110,13 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[0].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
 * identifier[=].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[=].value = "A123456789"
-* identifier[+].type = $v2-0203#MR
+* identifier[Patientennummer].type = $v2-0203#MR
 * identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[=].value = "TestPID"
-* identifier[+].use = #secondary
+* identifier[Versichertennummer_PKV].use = #secondary
 * identifier[=].type = $identifier-type-de-basis#PKV
 * identifier[=].value = "1234567890"
 * identifier[=].assigner.display = "Test PKV AG"
