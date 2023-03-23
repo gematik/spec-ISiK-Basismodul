@@ -16,7 +16,7 @@ Description: "A document style representation of the receipt (complete, self-con
   * search 0..0
   * request 0..0
   * response 0..0
-  * ^slicing.discriminator.type = #exists
+  * ^slicing.discriminator.type = #profile
   * ^slicing.discriminator.path = "resource"
   * ^slicing.rules = #open
 * entry contains Composition 1..1 MS
