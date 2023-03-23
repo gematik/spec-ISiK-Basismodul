@@ -111,15 +111,15 @@ Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[=].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[=].value = "A123456789"
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
-* identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[=].value = "TestPID"
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "TestPID"
 * identifier[Versichertennummer_PKV].use = #secondary
-* identifier[=].type = $identifier-type-de-basis#PKV
-* identifier[=].value = "1234567890"
-* identifier[=].assigner.display = "Test PKV AG"
+* identifier[Versichertennummer_PKV].type = $identifier-type-de-basis#PKV
+* identifier[Versichertennummer_PKV].value = "1234567890"
+* identifier[Versichertennummer_PKV].assigner.display = "Test PKV AG"
 * active = true
 * name[0].use = #official
 * name[=].family = "Fürstin von Musterfrau"
