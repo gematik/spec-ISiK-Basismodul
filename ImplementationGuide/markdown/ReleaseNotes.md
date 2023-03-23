@@ -13,6 +13,8 @@ Datum: 23.03.2023
   - Einschränkung der Umsetzungspflicht für Suchparameter vom Typ "Token" auf Datentypen "code", "Coding" oder "CodeableConcept"
 - ISiKBerichtBundle
   - Slicing-Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung (https://github.com/gematik/spec-ISiK-Basismodul/pull/202/commits/e4cf702116c0d9c7a11260efc4cc9e583ba4ea889)
+- ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
+  -Fixed identifier-Slicing of Type VersichertenId-GKV
 
 ----
 Version: 2.0.4
