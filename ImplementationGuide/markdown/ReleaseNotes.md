@@ -4,6 +4,19 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+Version: 2.0.5
+
+Datum: 24.03.2023
+
+- Änderungen am IG
+  - Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country
+  - Einschränkung der Umsetzungspflicht für Suchparameter vom Typ "Token" auf Datentypen "code", "Coding" oder "CodeableConcept"
+- ISiKBerichtBundle
+  - Slicing-Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung (https://github.com/gematik/spec-ISiK-Basismodul/pull/202/commits/e4cf702116c0d9c7a11260efc4cc9e583ba4ea889)
+- ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
+  -Fixed identifier-Slicing of Type VersichertenId-GKV
+
+----
 Version: 2.0.4
 
 Datum: 31.01.2023
