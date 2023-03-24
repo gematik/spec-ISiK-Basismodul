@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 2.0.5
 
-Datum: 23.03.2023
+Datum: 24.03.2023
 
 - Änderungen am IG
   - Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country
