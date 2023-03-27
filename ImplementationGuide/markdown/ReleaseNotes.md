@@ -4,6 +4,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+Version: 3.0.0-rc1
+
+- tbd.
+
+----
+
 Version: 2.0.5
 
 Datum: 24.03.2023
@@ -25,6 +31,7 @@ Datum: 31.01.2023
   - ```Reference``` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoeriger (entspricht allgemeinem Design-Prinzip)
   - ```Coverage.beneficiary.identifier``` URL in ```patternidentifier.system``` ersetzt
 - weitere Änderungen an Implementierungsleitfaeden (informativ)
+
 ----
 Version: 2.0.3
 
