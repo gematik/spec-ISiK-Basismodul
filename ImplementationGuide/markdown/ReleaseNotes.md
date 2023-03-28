@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.0-rc1
 
-- tbd.
+- ISiKProzedur: SNOMED-Kodierung auf Must Support gesetzt
 
 ----
 
