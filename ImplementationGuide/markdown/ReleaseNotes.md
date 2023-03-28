@@ -6,8 +6,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.0-rc1
 
-- tbd.
-
+* ISiKVersicherungsverhaeltnisSelbstzahler
+  * Organisation als möglicher 'payor' hinzugefügt 
 ----
 
 Version: 2.0.5
