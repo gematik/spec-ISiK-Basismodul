@@ -6,7 +6,10 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.0-rc1
 
-- tbd.
+Datum: 29.03.2023
+
+- Klarstellung am IG KontaktGesundheitseinrichtung
+  - Klarstellung zur Suche nach "date" in "Encounter": hier wurde bei unterschiedlichen FHIR Stores ein unterschiedliches Verhalten beobachtet, wenn mehrere Suchparameter angegeben werden. Daher soll die Suche auf die Angabe eines Suchwerts unter Beachtung der Semantik der zulässigen Prefixe beschränkt sein.
 
 ----
 
