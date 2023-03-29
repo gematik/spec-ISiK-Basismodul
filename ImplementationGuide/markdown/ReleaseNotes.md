@@ -8,8 +8,8 @@ Version: 3.0.0-rc1
 
 Datum: 28.03.2023
 
-- ISiKAbrechnungsfall: Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil De Pre-Release
-
+- ISiKAbrechnungsfall: Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release
+- ISiKProzedur: SNOMED-Kodierung auf Must Support gesetzt
 ----
 Version: 2.0.5
 
