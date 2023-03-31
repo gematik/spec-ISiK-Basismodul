@@ -10,5 +10,5 @@ RuleSet: Meta-CapabilityStatement
 * version = "3.0.0-rc1"
 * publisher = "gematik GmbH"
 * date = "2023-03-31"
-* implementationGuide = "https://gematik.de/fhir/isik/v2/Basismodul/ImplementationGuide|3.0.0-rc1"
-* url = "https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server"
+* implementationGuide = "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|3.0.0-rc1"
+* url = "https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server"
