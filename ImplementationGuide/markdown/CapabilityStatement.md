@@ -16,8 +16,8 @@ Die Verwendung der [CapabilityStatement-Expectation](http://hl7.org/fhir/extensi
 
 ## CapabilityStatement (Requirement) ISiK
 
-Canonical: ```https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/core-server```
+Canonical: ```https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/core-server```
 
-[Link Simplifier Profil Übersicht](https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server)
+[Link Simplifier Profil Übersicht](https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server)
 
-{{render:https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server}}
+{{render:https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server}}

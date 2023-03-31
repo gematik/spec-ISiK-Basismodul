@@ -1,10 +1,10 @@
 ### Profil
 
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur, hybrid}}
+{{tree:https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur, hybrid}}
 
 ---
 
@@ -12,7 +12,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/v2/Basismodul
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -20,7 +20,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKProzedur' )
+where url in ('https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur' )
 for differential.element
 select
 Path: path,
