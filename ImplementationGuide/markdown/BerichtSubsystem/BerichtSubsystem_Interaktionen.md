@@ -15,6 +15,8 @@ Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-R
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 2](https://simplifier.net/guide/isik-dokumentenaustausch/ImplementationGuide-markdown-AkteureUndInteraktionen?version=current#ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten).
+
 ### Verarbeitung des Dokumentes
 
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:

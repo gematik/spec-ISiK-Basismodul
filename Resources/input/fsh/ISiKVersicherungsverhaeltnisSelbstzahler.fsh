@@ -3,9 +3,8 @@ Parent: http://fhir.de/StructureDefinition/coverage-de-sel
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
 Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * insert Meta
-* status ^mustSupport = false
-* type 1..
-* subscriber only Reference(Patient or RelatedPerson)
+* status MS
+* type MS
 * subscriber MS
   * display 1.. MS
 * beneficiary only Reference(Patient)

@@ -2,13 +2,16 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementBasisServer",
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server",
-  "version": "2.0.0",
-  "name": "ISiKCapabilityStatementBasisServer",
-  "title": "ISiK CapabilityStatement Basis Server",
   "status": "active",
   "experimental": false,
-  "date": "2020-12-17",
+  "version": "2.0.5",
   "publisher": "gematik GmbH",
+  "date": "2023-03-24",
+  "implementationGuide": [
+    "https://gematik.de/fhir/isik/v2/Basismodul/ImplementationGuide|2.0.5"
+  ],
+  "name": "ISiKCapabilityStatementBasisServer",
+  "title": "ISiK CapabilityStatement Basis Server",
   "contact": [
     {
       "telecom": [
@@ -1604,9 +1607,9 @@
               "valueCode": "MAY"
             }
           ],
-          "type": "Binary",
+          "type": "Composition",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
           ],
           "interaction": [
             {
@@ -1619,8 +1622,32 @@
               "code": "read"
             }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "type": "Bundle",
+          "supportedProfile": [
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"
+          ]
         }
       ]
+    }
+  ],
+  "document": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ],
+      "mode": "consumer",
+      "profile": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"
     }
   ]
 }

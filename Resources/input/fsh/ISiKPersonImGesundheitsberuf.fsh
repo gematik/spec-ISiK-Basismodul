@@ -20,6 +20,8 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
 * identifier[EFN] only IdentifierEfn
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
+  * ^comment = "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden." 
+  // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
   * ^patternIdentifier.type = $v2-0203#PRN
   * type 1..
@@ -58,14 +60,15 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
-    * extension[Strasse] 0..0 
-    * extension[Hausnummer] 0..0 
-    * extension[Adresszusatz] 0..0 
+    * extension[Strasse] 0..0
+    * extension[Hausnummer] 0..0
+    * extension[Adresszusatz] 0..0
     * extension[Postfach] 0..1 MS
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS

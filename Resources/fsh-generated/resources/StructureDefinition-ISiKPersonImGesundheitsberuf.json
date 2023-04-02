@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKPersonImGesundheitsberuf",
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf",
-  "version": "2.0.0-ballot",
+  "version": "2.0.5",
   "name": "ISiKPersonImGesundheitsberuf",
   "status": "active",
   "experimental": false,
-  "date": "2022-04-07",
+  "date": "2023-03-24",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -107,6 +107,7 @@
         "id": "Practitioner.identifier:EFN",
         "path": "Practitioner.identifier",
         "sliceName": "EFN",
+        "comment": "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -305,6 +306,12 @@
         "patternAddress": {
           "type": "both"
         },
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address:Strassenanschrift.extension:Stadtteil",
+        "path": "Practitioner.address.extension",
+        "sliceName": "Stadtteil",
         "mustSupport": true
       },
       {

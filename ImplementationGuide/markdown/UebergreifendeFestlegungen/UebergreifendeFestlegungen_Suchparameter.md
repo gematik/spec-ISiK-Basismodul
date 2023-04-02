@@ -45,7 +45,9 @@ Diese Suchanfrage gibt alle Patienten zurück zum Client, welche in einem Adress
 
 ### Token
 
-Die Modifier `:text` und `:not` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden.
+Der Modifier `:not` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
+
+Der Modifier `:text` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "Coding" oder "CodeableConcept" verwendet werden.
 
 **Beispiele**:
 
@@ -139,7 +141,7 @@ Folgende Suchparameter KÖNNEN für alle bestätigungsrelevante Datenojekte impl
 
 * ``_profile``
 
-    - Beispiele: ``GET [base]/Patient?_profile=https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient``
+    - Beispiele: ``GET [base]/Patient?_profile=https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPatient``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
 
 Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.

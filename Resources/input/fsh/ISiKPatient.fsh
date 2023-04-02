@@ -5,7 +5,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * insert Meta
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
-* id 1.. MS
+* id 0..1 MS
 * identifier MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -93,6 +93,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
+  * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
   * line 1.. MS
@@ -109,21 +110,21 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[0].type = $identifier-type-de-basis#GKV
-* identifier[=].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[=].value = "A123456789"
-* identifier[+].type = $v2-0203#MR
-* identifier[=].system = "https://fhir.krankenhaus.example/NamingSystem/PID"
-* identifier[=].value = "TestPID"
-* identifier[+].use = #secondary
-* identifier[=].type = $identifier-type-de-basis#PKV
-* identifier[=].value = "1234567890"
-* identifier[=].assigner.display = "Test PKV AG"
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "TestPID"
+* identifier[Versichertennummer_PKV].use = #secondary
+* identifier[Versichertennummer_PKV].type = $identifier-type-de-basis#PKV
+* identifier[Versichertennummer_PKV].value = "1234567890"
+* identifier[Versichertennummer_PKV].assigner.display = "Test PKV AG"
 * active = true
 * name[0].use = #official
 * name[=].family = "Fürstin von Musterfrau"
   * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-  * extension[=].valueString = "Graf"
+  * extension[=].valueString = "Fürstin"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
   * extension[=].valueString = "Musterfrau"
   * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
@@ -158,7 +159,14 @@ Usage: #example
 * address[=].postalCode = "98764"
 * address[=].country = "DE"
 
+
 Invariant: isik-pat-1
 Description: "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden"
 Severity: #error
 Expression: "gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()"
+
+Invariant: address-cnt-2or3-char
+Description: "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2."
+Severity: #warning
+Expression: "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))"
+

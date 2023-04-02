@@ -1,14 +1,9 @@
 Instance: ISiKCapabilityStatementBasisServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "https://gematik.de/fhir/isik/v2/Basismodul/CapabilityStatement/basis-server"
-* version = "2.0.0"
+* insert Meta-CapabilityStatement
 * name = "ISiKCapabilityStatementBasisServer"
 * title = "ISiK CapabilityStatement Basis Server"
-* status = #active
-* experimental = false
-* date = "2020-12-17"
-* publisher = "gematik GmbH"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Basismoduls zu bestehen."
@@ -626,3 +621,13 @@ Usage: #definition
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
+* rest.resource[=].type = #Composition
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
+* rest.resource[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].type = #Bundle
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"
+* document.extension.url = $capabilitystatement-expectation
+* document.extension.valueCode = #SHALL
+* document.mode = #consumer
+* document.profile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"

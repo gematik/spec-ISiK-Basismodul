@@ -4,7 +4,6 @@ Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-* id 1..
 * identifier MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -18,27 +17,27 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
   * system MS
   * value MS
 * status MS
-* type 
+* type MS
   * ^comment = "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
-  * coding 
+  * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
-  * coding contains VersicherungsArtDeBasis 1..1
+  * coding contains VersicherungsArtDeBasis 1..1 MS
   * coding[VersicherungsArtDeBasis] = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
-* subscriber only Reference(ISiKAngehoeriger)
+* subscriber only Reference(RelatedPerson)
   * ^definition = "Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung"
   * identifier 1..
   * identifier only IdentifierKvid10
     * ^short = "VersichertenID (10-stellig) des Hauptversicherten"
-    * ^patternIdentifier.system = "http://fhir.de/NamingSystem/gkv/kvid-10"
+    * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
   * display ^short = "Name des Hauptversicherten"
 * beneficiary MS
   * ^definition = "Benennt die versicherte Person."
   * ^comment = "Die Angabe der 10-stelligen Krankenversichertennummer ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden."
   * reference 1.. MS
   * identifier ^short = "Identifier der versicherten Person"
-    * ^patternIdentifier.system = "http://fhir.de/NamingSystem/gkv/kvid-10"
+    * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
   * display ^short = "Name der Versicherten Person"
     * ^definition = "Die Angabe des Namens des Versicherten dient der geeigenten Darstellung für den Benutzer und hat keine technische Bedeutung."
 * payor ..1 MS

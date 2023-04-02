@@ -1,15 +1,13 @@
-<img src="https://raw.githubusercontent.com/gematik/api-ISiK/master/images/Gematik_Logo_Flag.jpg" alt="gematik logo" width="400"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/master-isik-stufe-2/Material/Gematik_Logo_Flag.png" alt="gematik logo" width="400"/>
 
 ----
-Version: 2.0.0 (Ballotierung)
+Version: 2.0.5
 
-Datum: 04.02.2022
-
-Status: In Ballotierung
+Datum: 24.03.2023
 
 Realm: Deutschland
 
-Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter:  https://github.com/gematik/api-ISiK/releases
+Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter: https://gematik.github.io/spec-ISiK-Basismodul/index.html
 
 
 ----
@@ -23,11 +21,13 @@ Hersteller bestätigungsrelevanter Systeme sollen durch diesen IG in die Lage ve
 
 Weitere Informationen siehe [§373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
 
-Hinweis: Es sei darauf hingewiesen, dass sowohl für die Implementierung der ISiK-Spezifikation, als auch für den Betrieb eines Produktes das die ISiK-Spezfikation implementiert eine SNOMED-CT-Lizenz notwendig ist. Diese kann durch das beim [National Release Center für SNOMED CT in Deutschland](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html) beantragt werden.
+Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim [National Release Center für SNOMED CT in Deutschland](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html) beantragt werden.
 
 **Kontakt**
 
-[ISiK@gematik.de](ISiK@gematik.de)
+Bringen Sie Allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
+
+Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff "Portalzugang".
 
 **Herausgeber**
 
@@ -35,7 +35,7 @@ gematik GmbH
 
 [Impressum](https://www.gematik.de/impressum/)
 
-**Gender-Hinweis** 
+**Gender-Hinweis**
 
 Zugunsten des Leseflusses wird in dieser Publikation meist die
 männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer

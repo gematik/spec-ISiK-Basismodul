@@ -27,7 +27,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
-  * coding[Alpha-ID] from $alpha-id (required)
+  * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
     * code 1.. MS

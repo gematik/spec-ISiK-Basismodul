@@ -4,7 +4,7 @@ Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
-* id 1.. MS
+* id 0..1 MS
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
@@ -119,12 +119,14 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedStartDate
 Id: PlannedStartDate
+* insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
 
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedEndDate
 Id: PlannedEndDate
+* insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
@@ -139,7 +141,7 @@ Usage: #example
 * extension.extension[+].url = "VierteStelle"
 * extension.extension[=].valueCoding = $AufnahmegrundVierteStelle#1 "Normalfall"
 * identifier.type = $v2-0203#VN
-* identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnr"
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
 * status = #finished
 * class = $v3-ActCode#IMP

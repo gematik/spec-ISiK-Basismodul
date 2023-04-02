@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKVersicherungsverhaeltnisGesetzlich",
   "url": "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-  "version": "2.0.0-ballot",
+  "version": "2.0.5",
   "name": "ISiKVersicherungsverhaeltnisGesetzlich",
   "status": "active",
   "experimental": false,
-  "date": "2022-04-07",
+  "date": "2023-03-24",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -21,11 +21,6 @@
         "id": "Coverage",
         "path": "Coverage",
         "definition": "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-      },
-      {
-        "id": "Coverage.id",
-        "path": "Coverage.id",
-        "min": 1
       },
       {
         "id": "Coverage.identifier",
@@ -94,7 +89,8 @@
       {
         "id": "Coverage.type",
         "path": "Coverage.type",
-        "comment": "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
+        "comment": "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen.",
+        "mustSupport": true
       },
       {
         "id": "Coverage.type.coding",
@@ -108,7 +104,8 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Coverage.type.coding:VersicherungsArtDeBasis",
@@ -119,7 +116,8 @@
         "patternCoding": {
           "code": "GKV",
           "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Coverage.subscriber",
@@ -129,7 +127,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKAngehoeriger"
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
         ]
@@ -148,7 +146,7 @@
           }
         ],
         "patternIdentifier": {
-          "system": "http://fhir.de/NamingSystem/gkv/kvid-10"
+          "system": "http://fhir.de/sid/gkv/kvid-10"
         }
       },
       {
@@ -174,7 +172,7 @@
         "path": "Coverage.beneficiary.identifier",
         "short": "Identifier der versicherten Person",
         "patternIdentifier": {
-          "system": "http://fhir.de/NamingSystem/gkv/kvid-10"
+          "system": "http://fhir.de/sid/gkv/kvid-10"
         }
       },
       {
