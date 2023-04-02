@@ -82,6 +82,22 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
+1. Der Suchparameter "date-start" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/Encounter?date-start=lt2020-26-10```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.period" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
+
+1. Der Suchparameter "end-date" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/Encounter?end-date-start=lt2020-26-10```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.period" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
+
 1. Der Suchparameter "location" KANN unterstützt werden:
 
     Beispiele:

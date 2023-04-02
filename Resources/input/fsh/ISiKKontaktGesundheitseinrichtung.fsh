@@ -206,3 +206,44 @@ Invariant: ISiK-enc-8
 Description: "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein"
 Severity: #error
 Expression: "diagnosis.use.all(coding.code != 'billing')"
+
+
+Instance: Encounter-date-start
+InstanceOf: SearchParameter
+Usage: #definition
+* description = "The actual start date of the Encounter (Backport from R5)"
+* insert MetaInstance
+* name = "date-start"
+* code = #date-start
+* base = #Encounter
+* type = #date
+* expression = "Encounter.period.start"
+* comparator[0] = #eq
+* comparator[+] = #ne
+* comparator[+] = #gt
+* comparator[+] = #ge
+* comparator[+] = #lt
+* comparator[+] = #le
+* comparator[+] = #sa
+* comparator[+] = #eb
+* comparator[+] = #ap
+
+Instance: Encounter-end-date
+InstanceOf: SearchParameter
+Usage: #definition
+* description = "The actual end date of the Encounter (Backport from R5)"
+* insert MetaInstance
+* name = "end-date"
+* code = #end-date
+* base = #Encounter
+* type = #date
+* expression = "Encounter.period.end"
+* comparator[0] = #eq
+* comparator[+] = #ne
+* comparator[+] = #gt
+* comparator[+] = #ge
+* comparator[+] = #lt
+* comparator[+] = #le
+* comparator[+] = #sa
+* comparator[+] = #eb
+* comparator[+] = #ap
