@@ -49,7 +49,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 #### Der Begriff "Fall" im Kontext der ISiK-Spezifikation
 
-Für die Ausbaustufe 2 des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
+Für die Ausbaustufe 2 und 3 des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
 
 {{render:ImplementationGuide/Images/Encounter-Modelle.png}}
 
