@@ -9,15 +9,20 @@ Version: 3.0.0-rc2
 Datum: 03.04.2023
 
 * KontaktGesundheitseinrichtung: SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene "period" zu ermöglichen
+  * feat: Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/242>
 
 Version: 3.0.0-rc1
 
 Datum: 31.03.2023
 
 * ISiKAbrechnungsfall: Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release
+  * Enhancement/account identifier by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/238>
 * ISiKProzedur: SNOMED-Kodierung auf Must Support gesetzt
+  * add: MS for SNOMED by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/239>
 * ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als möglicher 'payor' hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
+  * add: organization as payor by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/236>
 
+**Full Changelog**: <https://github.com/gematik/spec-ISiK-Basismodul/compare/v.2.0.5...v3.0.0-rc2>
 
 ----
 Version: 2.0.5
