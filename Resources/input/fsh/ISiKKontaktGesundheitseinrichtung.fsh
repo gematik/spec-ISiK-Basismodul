@@ -213,7 +213,7 @@ Expression: "diagnosis.use.all(coding.code != 'billing')"
 Instance: Encounter-date-start
 InstanceOf: SearchParameter
 Usage: #definition
-* description = "The actual start date of the Encounter (Backport from R5)"
+* description = "The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."
 * insert MetaInstance
 * name = "date-start"
 * code = #date-start
@@ -233,7 +233,7 @@ Usage: #definition
 Instance: Encounter-end-date
 InstanceOf: SearchParameter
 Usage: #definition
-* description = "The actual end date of the Encounter (Backport from R5)"
+* description = "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."
 * insert MetaInstance
 * name = "end-date"
 * code = #end-date
