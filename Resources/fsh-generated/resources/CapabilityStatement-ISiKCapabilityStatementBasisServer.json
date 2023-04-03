@@ -6,7 +6,7 @@
   "experimental": false,
   "version": "3.0.0-rc1",
   "publisher": "gematik GmbH",
-  "date": "2023-03-31",
+  "date": "2023-04-03",
   "implementationGuide": [
     "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|3.0.0-rc1"
   ],
@@ -495,11 +495,33 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ],
               "name": "date",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-date",
+              "type": "date"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "date-start",
+              "definition": "https://gematik.de/fhir/isik/v3/Basismodul/SearchParameter/Encounter-date-start",
+              "type": "date"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "end-date",
+              "definition": "https://gematik.de/fhir/isik/v3/Basismodul/SearchParameter/Encounter-end-date",
               "type": "date"
             },
             {

@@ -6,12 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.0-rc1
 
-Datum: 28.03.2023
+Datum: 03.04.2023
 
 * ISiKAbrechnungsfall: Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release
 * ISiKProzedur: SNOMED-Kodierung auf Must Support gesetzt
-* ISiKVersicherungsverhaeltnisSelbstzahler
-  * Organisation als möglicher 'payor' hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
+* ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als möglicher 'payor' hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
+* KontaktGesundheitseinrichtung: SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene "period" zu ermöglichen
 
 ----
 Version: 2.0.5
