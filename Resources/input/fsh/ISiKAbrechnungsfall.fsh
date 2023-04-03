@@ -11,8 +11,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains Aufnahmenummer 1..1 MS
-* identifier[Aufnahmenummer] only IdentifierAufnahmenummer
-  * ^patternIdentifier.type = $v2-0203#VN
+* identifier[Aufnahmenummer] only IdentifierAbrechnungsnummer
+  * ^patternIdentifier.type = $v2-0203#AN
   * type MS
   * system MS
   * value MS
@@ -30,10 +30,24 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
 
+/* Folgende Profil-Definition entspricht dem Basisprofil-DE Profil 'Identifier-Profil für die Abbildung einer Abrechnungsnummer ("Fallnummer")' (https://simplifier.net/Basisprofil-DE-R4/IdentifierAbrechnungsnummer , bzw.: https://github.com/hl7germany/basisprofil-de-r4/blob/master/resources/input/fsh/profiles/IdentifierAbrechnungsnummer.fsh)
+die nocht nicht als Package released ist.
+TODO Bei einem Release des Basisprofile-De-Packages muss dieses Profil ersetzt werden.*/
+Profile: IdentifierAbrechnungsnummer
+Parent: Identifier
+Id: identifier-abrechnungsnummer
+Title: "Identifier-Profil für die Abbildung einer Abrechnungsnummer (\"Fallnummer\") "
+Description: "Identifier-Profil für die Abbildung einer organisationsspezifischen Abrechnungsnummer (\"Fallnummer\")"
+* type 1..
+* type = $v2-0203#AN
+* type from IdentifierTypeDeBasis (extensible)
+* system 1..
+* value 1..
+
 Instance: AbrechnungsfallAmbulant
 InstanceOf: ISiKAbrechnungsfall
 Usage: #example
-* identifier.type = $v2-0203#VN
+* identifier.type = $v2-0203#AN
 * identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
 * status = #active

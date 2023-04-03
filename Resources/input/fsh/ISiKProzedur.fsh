@@ -30,7 +30,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * ^slicing.rules = #open
   * coding contains
       OPS 0..1 MS and
-      SNOMED-CT 0..1
+      SNOMED-CT 0..1 MS
   * coding[OPS] only CodingOPS
   * coding[OPS] from OpsVS (required)
     * extension[Seitenlokalisation] MS
