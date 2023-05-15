@@ -10,7 +10,9 @@ Die Suche MUSS sowohl mittels HTTP GET als auch HTTP POST (vgl. [FHIR RESTful Se
 ## Create-Interaktionen
 Das Erstellen einer Ressource KANN per HTTP POST (vgl. [FHIR RESTful API - create](https://www.hl7.org/fhir/http.html#create)) unterstützt werden. Einzelne Datenobjekte (spezifiziert im vorliegenden Basismodul oder in einem ISiK Erweiterungsmodul) können diese Interaktion als verpflichtend kennzeichnen.
 
-Eine Ressource welche NICHT durch das bestätigungsrelevante System angelegt wird, MUSS in ```Resource.meta.tag``` eine Angabe enthalten, welche indiziert, dass diese Ressource durch ein Fremdsystem erzeugt wurde. Dieser Tag MUSS durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht mit übermitteln. Die Kodierung MUSS mindestens mittels des CodeSystems ```http://fhir.de/CodeSystem/common-meta-tag-de``` erfolgen. Weitere Kodierungen KÖNNEN hinzugefügt werden.
+Es liegt im Ermessen des bestätigungsrelevanten Systems, ob eine externe Ressource durch das System direkt übernommen wird. Auch wie die Herkunft der übernommenen Ressource gekennzeichnet wird, liegt im Ermessen des bestätigungsrelevanten Systems.
+
+Eine Ressource welche NICHT durch das bestätigungsrelevante System angelegt wird, KANN in ```Resource.meta.tag``` eine Angabe enthalten, welche indiziert, dass diese Ressource durch ein Fremdsystem erzeugt wurde. Dieser Tag KANN durch den Server hinzugefügt werden, sollte der Client diese Angabe nicht mit übermitteln. Die Kodierung SOLLTE mindestens mittels des CodeSystems ```http://fhir.de/CodeSystem/common-meta-tag-de``` erfolgen. Weitere Kodierungen KÖNNEN hinzugefügt werden.
 
 ```
 json
@@ -30,7 +32,8 @@ json
 
 Eine weitere Differenzierung der Herkunft kann mittels ```Resource.meta.security``` kodiert werden. Hierzu KÖNNEN Codes aus dem ValueSet [SecurityIntegrityObservationValue](http://terminology.hl7.org/ValueSet/v3-SecurityIntegrityObservationValue) verwendet werden.
 
-Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System übernommen werden, MUSS der entsprechende Tag in ```Patient.meta.tag``` entfernt werden. In diesem Falle MUSS die id der Ressource stabil bleiben und darf nicht verändert werden.
+Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System übernommen werden, KANN der entsprechende Tag in ```Patient.meta.tag``` entfernt werden. In diesem Falle MUSS die id der Ressource stabil bleiben und darf nicht verändert werden.
+
 
 Per Create-Interaktion erzeugte Ressourcen MÜSSEN im Falle einer erfolgreichen Übermittlung direkt über die READ- und SEARCH-Interaktionen zur Verfügung gestellt werden.
 
