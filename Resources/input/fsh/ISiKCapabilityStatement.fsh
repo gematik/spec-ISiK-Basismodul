@@ -625,7 +625,6 @@ Usage: #definition
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Composition
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
-* document.mode = #consumer
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Bundle
