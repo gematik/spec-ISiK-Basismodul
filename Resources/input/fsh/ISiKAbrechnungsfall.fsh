@@ -5,7 +5,7 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * insert Meta
 * extension MS
 * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur named AbrechnungsDiagnoseProzedur 0..1 MS
-* id 1.. MS
+* id MS
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
