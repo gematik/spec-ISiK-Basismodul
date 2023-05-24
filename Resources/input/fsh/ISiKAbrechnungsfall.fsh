@@ -19,12 +19,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * status MS
 * type 1.. MS
 * type from ISiKAccountType (required)
-* subject 1.. MS
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "resolve()"
-  * ^slicing.rules = #open
-* subject contains PatientISiK 1..1 MS
-* subject[PatientISiK] only Reference(Patient)
+* subject only Reference(Patient)
+* subject 1..1 MS
 * coverage MS
   * extension 1..1 MS
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
