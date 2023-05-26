@@ -10,8 +10,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* identifier contains Aufnahmenummer 1..1 MS
-* identifier[Aufnahmenummer] only IdentifierAbrechnungsnummer
+* identifier contains Abrechnungsnummer 1..1 MS
+* identifier[Abrechnungsnummer] only IdentifierAbrechnungsnummer
   * ^patternIdentifier.type = $v2-0203#AN
   * type MS
   * system MS
@@ -41,7 +41,7 @@ Instance: AbrechnungsfallAmbulant
 InstanceOf: ISiKAbrechnungsfall
 Usage: #example
 * identifier.type = $v2-0203#AN
-* identifier.system = "https://test.krankenhaus.de/fhir/sid/aufnahmenummer"
+* identifier.system = "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer"
 * identifier.value = "0123456789"
 * status = #active
 * type = $v3-ActCode#AMB
