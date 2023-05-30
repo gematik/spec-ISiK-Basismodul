@@ -4,11 +4,11 @@
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server",
   "status": "draft",
   "experimental": false,
-  "version": "3.0.0-rc2",
+  "version": "3.0.0-rc3",
   "publisher": "gematik GmbH",
-  "date": "2023-04-03",
+  "date": "2023-05-10",
   "implementationGuide": [
-    "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|3.0.0-rc2"
+    "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|3.0.0-rc3"
   ],
   "name": "ISiKCapabilityStatementBasisServer",
   "title": "ISiK CapabilityStatement Basis Server",
@@ -1607,9 +1607,9 @@
               "valueCode": "MAY"
             }
           ],
-          "type": "Composition",
+          "type": "Binary",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary"
           ],
           "interaction": [
             {
@@ -1621,6 +1621,18 @@
               ],
               "code": "read"
             }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "type": "Composition",
+          "supportedProfile": [
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
           ]
         },
         {
