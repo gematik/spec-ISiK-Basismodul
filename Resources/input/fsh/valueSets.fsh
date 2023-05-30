@@ -39,3 +39,9 @@ Title: "ISiKAccountType"
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
 
+ValueSet: ISiKAccountIdentifierType
+Id: ISiKAccountIdentifierType
+Title: "ISiKAccountIdentifierType"
+* insert Meta
+* $v2-0203#AN "Account number"
+

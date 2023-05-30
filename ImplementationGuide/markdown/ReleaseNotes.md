@@ -4,6 +4,32 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+Version: 3.0.0-rc3
+
+Datum: 30.05.2023
+
+* Allgemein: Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert
+  * update provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
+* ISiKCapabilityStatement: Read Shall für Composition entfernt
+  * fix capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
+* ISiKAbrechnungsfall: 
+  * Änderung des Codierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
+    * Enhancement/account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
+    * Update/identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
+  * Änderung der falschen Kardinalität
+    * fix cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
+  * Nur der Patient als Subject zugelassen
+    * Update/account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
+* ISiK Prozedur: MS für SNOMED-Codierung
+  * add: MS for SNOMED by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/239
+* ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als zahlende Instanz hinzugefügt
+  * add: organization as payor by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/236
+* ISiK KontaktGesundheitseinrichtung: Suchparameter für Encounter.date start/end aus R5 übernommen
+  * feat: Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/242
+* ISiKBerichtSubSysteme: References generisch statt ISiK-spezifisch
+  * update Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
+
+----
 Version: 3.0.0-rc2
 
 Datum: 03.04.2023
@@ -11,6 +37,7 @@ Datum: 03.04.2023
 * KontaktGesundheitseinrichtung: SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene "period" zu ermöglichen
   * feat: Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/242>
 
+----
 Version: 3.0.0-rc1
 
 Datum: 31.03.2023
