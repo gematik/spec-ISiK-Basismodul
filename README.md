@@ -1,6 +1,6 @@
 # ISiK-Basismodul-Stufe-3
 
-Siehe (Basismodul Stufe 3)[https://simplifier.net/isik-basis-v3]
+Siehe [Basismodul Stufe 3](https://simplifier.net/isik-basis-v3)
 
 # ImplementationGuides
 
