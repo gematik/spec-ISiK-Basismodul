@@ -1,11 +1,15 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/master-isik-stufe-2/Material/Gematik_Logo_Flag.png" alt="gematik logo" width="400"/>
 
 ----
-Version: 3.0.0-rc3
+Version: 3.0.0
 
-Datum: 30.05.2023
+Datum: 01.07.2023
+
+Status: Aktiv
 
 Realm: Deutschland
+
+
 
 Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter: https://gematik.github.io/spec-ISiK-Basismodul/index.html
 
