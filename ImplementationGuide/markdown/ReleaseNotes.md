@@ -9,7 +9,7 @@ Version: 3.0.0
 
 Datum: 1.7.2023
 
-* Mit dem Release der Version 3.0.0 werden die unten gelisteten Änderungen normativ bindend.
+* Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ bindend.
 
 ----
 Version: 3.0.0-rc3
