@@ -2,7 +2,7 @@
 
 # ISiK Basismodul Stufe 1
 ## About The Project 
-The Information Technology Systems in Hospitals (ISiK – Informationstechnische Systeme in Krankenhäusern) "Basic Module" enables use-case-independent functionalities for the communication and validation of data within hospital environments, by providing FHIR resources, examples and an implementation guide.
+The Information Technology Systems in Hospitals (ISiK – Informationstechnische Systeme in Krankenhäusern) "Basic Module" enables use-case-independent functionalities for the communication and validation of data within hospital environments, by providing FHIR resources, examples and an Implementation Guide (IG).
  
 ## Release Notes
 See [ReleaseNotes](ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the releases; new releases only refer to the present level (Stufe), there may be more recent releases (Technical Corrections - TC) at another level (e.g. 'Basismodul Stufe 2 - TC 2.0.9'  instead of 'Basismodul Stufe 1 - TC 1.0.6').
