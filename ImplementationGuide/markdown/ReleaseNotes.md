@@ -5,9 +5,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 1.0.10
 
-Datum: XX.03.2023
-- ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
-  -Fixed identifier-Slicing of Type VersichertenId-GKV
+Datum: 28.06.2023
+- Patient Example (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
+  -Fixed identifier-Slicing of Type VersichertenId-GKV (MR entfernt)
 
 ---
 Version: 1.0.9
