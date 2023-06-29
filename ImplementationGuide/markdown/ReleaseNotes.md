@@ -2,6 +2,14 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+
+Version: 1.0.10
+
+Datum: 28.06.2023
+- Patient Example (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
+  -Fixed identifier-Slicing of Type VersichertenId-GKV (MR entfernt)
+
+---
 Version: 1.0.9
 
 Datum: 22.03.2023
