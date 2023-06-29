@@ -9,6 +9,8 @@ For more information see our page on the [gematik specialist Portal - Fachportal
 ## Release Notes
 See [ReleaseNotes](ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the releases; new releases only refer to the present level (Stufe), there may be more recent releases (Technical Corrections - TC) at another level (e.g. 'Basismodul Stufe 2 - TC 2.0.9'  instead of 'Basismodul Stufe 1 - TC 1.0.6').
 
+Under the Github Releases a rendered version of the IG is available as a .zip-Folder (beginning from 1.0.10).
+
 
 ## List of Repos
 For more relevant repositories related to the ISiK project see:
