@@ -130,9 +130,9 @@ Datum: 27.08.2021
 
 - Korrektur der Suchinteraktion für das Datenobjekt "Condition": ```Condition.onset[x]``` enthält kein Must-Support-Flag, daher ist die Suche nach "onset-date" keine Pflicht. Der Suchparameter wurde nun als optional markiert.
 - Beschreibung von Encounter.status enthielt Teile der Beschreibung von Condition.status. Diese wurden nun gelöscht.
-- Der Slice Encounter.type:Kontaktart ist wurde fälschlicherweise als Pflichtfeld makiert. Um eine Kompabilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://ig.fhir.de/basisprofile-de/1.0.0/Ressourcen-AmbulanterStationaererFall.html) gewährleisten wurde dieses Feld als optional gekennzeichnet.
+- Der Slice Encounter.type:Kontaktart wurde fälschlicherweise als Pflichtfeld markiert. Um eine Kompatibilität zu [Repräsentation der Fallarten in FHIR - Deutsche Basisprofile HL7 Deutschland](https://ig.fhir.de/basisprofile-de/1.0.0/Ressourcen-AmbulanterStationaererFall.html) zu gewährleisten, wurde dieses Feld als optional gekennzeichnet.
 - Das Binding an Procedure.code:OPS enthielt ein Binding an ein ValueSet mit falscher Canonical-URL.
-- Korrektur der Interaktionen auf Coverage: Für Coverage.payor für das Profil ISiKVersicherungsverhaeltnisGesetzlich muss nur die Suche mittels des identifier-Modifiers untersützt werden, jedoch nicht die Suche auf die dazugehörige Referenz.
+- Korrektur der Interaktionen auf Coverage: Für Coverage.payor für das Profil ISiKVersicherungsverhaeltnisGesetzlich muss nur die Suche mittels des identifier-Modifiers unterstützt werden, jedoch nicht die Suche auf die dazugehörige Referenz.
 - Hinweis hinzugefügt, dass sowohl für die Implementierung von ISiK, als auch für den anschließenden Betrieb eines ISiK-konformen Systems eine SNOMED-Lizenz notwendig ist.
 - Die FHIRPath-Constraints relatedp-de-1 und pat-de-1 resultierten in einem falschen Ergebnis falls das "gender"-Element innerhalb des Datenobjektes "Patient" bzw. "Practitioner" nicht gesetzt war.
 - Hinweise hinzugefügt für die korrekte Implementierung einer OperationOutcome falls ein Bericht eines Subsystems eine nicht-existierende Referenz auf ein "Patient"- oder "Encounter"-Datenobjekt enthält.
