@@ -4,7 +4,7 @@
 
 **Bedeutung:** Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen und derzeitig noch aktiven Kontakten angegeben werden. Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte, "in-progress", "finished" und "cancelled". Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
 
-**Hinweise:** Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/encounter-definitions.html#Encounter.status)
+**Hinweise:** Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.status)
 
 ### `Encounter.class`
 

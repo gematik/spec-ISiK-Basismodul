@@ -10,7 +10,7 @@ Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mitte
   
 Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
 
-Falls die Referenz auf die in der Composition enthaltenen Patienten und/oder Encounter nicht auflösbar ist, MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](http://hl7.org/fhir/issue-type) verwendet werden.
+Falls die Referenz auf die in der Composition enthaltenen Patienten und/oder Encounter nicht auflösbar ist, MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/R4/codesystem-issue-type.html) verwendet werden.
 
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/ISiK/StructureDefinition/ISiKBerichtBundle, hybrid}}
