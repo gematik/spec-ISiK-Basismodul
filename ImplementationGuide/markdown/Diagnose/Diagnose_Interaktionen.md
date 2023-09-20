@@ -76,7 +76,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Condition?category=http://hl7.org/fhir/ValueSet/condition-category|problem-list-item```
+    ```GET [base]/Condition?category=http://hl7.org/fhir/R4/ValueSet/condition-category|problem-list-item```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
