@@ -18,7 +18,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Coverage?identifier=https://fhir.de/CodeSystem/identifier-type-de-basis|0123456789```
+    ```GET [base]/Coverage?identifier=http://fhir.de/CodeSystem/identifier-type-de-basis|0123456789```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -34,7 +34,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Coverage?type=https://fhir.de/CodeSystem/versicherungsart-de-basis|GKV```
+    ```GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|GKV```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -116,7 +116,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Coverage?type=https://fhir.de/CodeSystem/versicherungsart-de-basis|SEL```
+    ```GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|SEL```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 

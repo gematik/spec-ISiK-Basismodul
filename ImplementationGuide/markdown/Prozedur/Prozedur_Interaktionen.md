@@ -16,7 +16,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Procedure?status=https://hl7.org/fhir/event-status|entered-in-error```
+    ```GET [base]/Procedure?status=http://hl7.org/fhir/event-status|entered-in-error```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Procedure.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -24,7 +24,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Procedure?category=https://snomed.info/sct|387713003```
+    ```GET [base]/Procedure?category=http://snomed.info/sct|387713003```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Procedure.category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -32,7 +32,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Procedure?code=https://fhir.de/CodeSystem/bfarm/ops|5-470```
+    ```GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Procedure.code" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 

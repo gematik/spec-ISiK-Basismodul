@@ -16,7 +16,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Encounter?identifier=https://test.krankenhaus.de/fhir/sid/fallnr|123456```
+    ```GET [base]/Encounter?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -40,7 +40,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Encounter?type=https://fhir.de/CodeSystem/kontaktart-de|stationaer```
+    ```GET [base]/Encounter?type=http://fhir.de/CodeSystem/kontaktart-de|stationaer```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 

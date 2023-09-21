@@ -22,7 +22,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Patient?identifier=https://fhir.krankenhaus.example|1032702```
+    ```GET [base]/Patient?identifier=http://fhir.krankenhaus.example|1032702```
 
     ```GET [base]/Patient?identifier=1032702```
 
