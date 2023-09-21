@@ -4,7 +4,7 @@ Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:Implementa
 
 Es MUSS sichergestellt werden, dass nicht unterstützte oder leere Suchparameter **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/search.html#errors). Alle unterstützten und verwendeten Suchparameter sind im Self-Link des Suchbundles korrekt anzugeben.
 
-Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Parameter-Typen](http://hl7.org/fhir/R4/search.html):
+Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Parameter-Typen](https://hl7.org/fhir/R4/search.html):
 
 * Number
 * Date/DateTime
@@ -16,7 +16,7 @@ Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Paramete
 * URI
 * Special
 
-Des Weiteren werden zusätzlich sogenannte 'Modifier' pro Suchparameter-Typ definiert. Eine Übersicht findet sich unter ["Search Modifiers"](http://hl7.org/fhir/R4/search.html#modifiers).
+Des Weiteren werden zusätzlich sogenannte 'Modifier' pro Suchparameter-Typ definiert. Eine Übersicht findet sich unter ["Search Modifiers"](https://hl7.org/fhir/R4/search.html#modifiers).
 
 Für die im Rahmen dieses Leitfadens relevanten Typen gelten folgende allgemeinen Festlegungen:
 
@@ -32,7 +32,7 @@ Suche nach allen Patienten mit einem Geburtsdatum 2000-01-01T00:00 oder später.
 ```[base]/Patient?birthDate=eq2000-01-01``` <br>
 Suche nach allen Patienten mit einem Geburtsdatum von 2000-01-01T00:00 bis (aber nicht einschließlich) 2000-02-01T00:00
 
-Es ist zu beachten, dass jedes Datum einen impliziten Werte-Bereich besitzt. Siehe http://hl7.org/fhir/R4/search.html#date.
+Es ist zu beachten, dass jedes Datum einen impliziten Werte-Bereich besitzt. Siehe https://hl7.org/fhir/R4/search.html#date.
 
 ### String
 
@@ -73,7 +73,7 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für [Chaining](http://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](http://hl7.org/fhir/R4/search.html#has) verpflichtend implementiert werden. Chaining und Reverse Chaining MUSS für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
+Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend implementiert werden. Chaining und Reverse Chaining MUSS für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
 
 **Beispiele**:
 
@@ -99,13 +99,13 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 * ``_id``
 
     - Beispiele: ``GET [base]/Patient?_id=103270``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
     - Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.
 
 * ``_tag``
 
     - Beispiele: ``GET [base]/Patient?_tag=https://example.org/codes|needs-review``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all) und [FHIR-Basisspezifikation - Abschnitt "Tags"](https://www.hl7.org/fhir/resource.html#simple-tags).
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all) und [FHIR-Basisspezifikation - Abschnitt "Tags"](https://www.hl7.org/fhir/resource.html#simple-tags).
 
 * ``_has``
 
@@ -142,7 +142,7 @@ Folgende Suchparameter KÖNNEN für alle bestätigungsrelevante Datenojekte impl
 * ``_profile``
 
     - Beispiele: ``GET [base]/Patient?_profile=https://gematik.de/fhir/ISiK/v3/StructureDefinition/ISiKPatient``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
 Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
 

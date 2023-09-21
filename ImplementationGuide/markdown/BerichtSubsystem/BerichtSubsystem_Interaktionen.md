@@ -15,7 +15,7 @@ Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-R
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
-Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 2](https://simplifier.net/guide/isik-dokumentenaustausch/ImplementationGuide-markdown-AkteureUndInteraktionen?version=current#ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten).
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 2](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Dokumentenaustausch-Stufe-3/ImplementationGuide-markdown-AkteureUndInteraktionen?version=current#ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten).
 
 ### Verarbeitung des Dokumentes
 
@@ -50,7 +50,7 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
   * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
-  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](http://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
+  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
     * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 

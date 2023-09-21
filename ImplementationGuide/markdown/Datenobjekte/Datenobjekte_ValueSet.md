@@ -1,3 +1,3 @@
-## ValueSet [(ValueSet)](http://hl7.org/fhir/R4/valueset.html)
+## ValueSet [(ValueSet)](https://hl7.org/fhir/R4/valueset.html)
 
 ---

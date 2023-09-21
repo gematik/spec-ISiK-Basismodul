@@ -4,7 +4,7 @@
 
 **Bedeutung:** Indikator "Patientdatensatz ist in aktiver Benutzung"
 
-**Hinweise:** Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/R4/patient-definitions.html#Patient.active)
+**Hinweise:** Siehe Beschreibung in der [FHIR Kernspezifikation](https://hl7.org/fhir/R4/patient-definitions.html#Patient.active)
 
 ### `Patient.identifier:versichertenId_GKV`
 
