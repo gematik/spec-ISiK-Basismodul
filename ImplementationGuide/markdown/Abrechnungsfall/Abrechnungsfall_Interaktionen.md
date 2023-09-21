@@ -16,7 +16,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Account?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456```
+    ```GET [base]/Account?identifier=https://test.krankenhaus.de/fhir/sid/fallnr|123456```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Account.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -32,7 +32,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Account?type=http://terminology.hl7.org/CodeSystem/v3-ActCode|AMB```
+    ```GET [base]/Account?type=https://terminology.hl7.org/CodeSystem/v3-ActCode|AMB```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Account.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 

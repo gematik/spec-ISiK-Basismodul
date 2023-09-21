@@ -16,7 +16,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/ValueSet?url=http://example.org/fhir/ValueSet/test```
+    ```GET [base]/ValueSet?url=https://example.org/fhir/ValueSet/test```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.url" finden sich in der [FHIR-Basisspezifikation - Abschnitt "uri"](https://www.hl7.org/fhir/search.html#uri).
 
@@ -49,7 +49,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
+    ```GET [base]/ValueSet?context-type-value=https://terminology.hl7.org/CodeSystem/usage-context-type|focus$https://hl7.org/fhir/resource-types|Encounter```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.useContext" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Composite Search Parameters"](https://www.hl7.org/fhir/search.html#composite).
 
