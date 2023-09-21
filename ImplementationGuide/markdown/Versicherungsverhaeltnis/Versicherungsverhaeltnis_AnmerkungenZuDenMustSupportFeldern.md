@@ -17,7 +17,7 @@
 
 **Bedeutung:** Das Element type kennzeichnet die Art der Versicherung.
 
-**Hinweise:** Kennzeichnung als gesetzliche Versicherung, siehe [Beschreibung der deutschen Basisprofile](http://fhir.de/CodeSystem/versicherungsart-de-basis).
+**Hinweise:** Kennzeichnung als gesetzliche Versicherung, siehe [Beschreibung der deutschen Basisprofile](https://fhir.de/CodeSystem/versicherungsart-de-basis).
 
 ### `Coverage.beneficiary`
 
