@@ -10,9 +10,9 @@
 
 ### `Condition.code.coding`
 
-**Bedeutung:** Kodierte Diagnose. Die Kodierung KANN nach den Vorgaben des BfArM per [ICD-10GM](https://www.dimdi.de/dynamic/de/klassifikationen/icd/) kodiert werden. Weiterhin sind folgende Kodiersysteme u.a. auf Basis von Empfehlungen des BfArM zulässig:
+**Bedeutung:** Kodierte Diagnose. Die Kodierung KANN nach den Vorgaben des BfArM per [ICD-10GM](https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-GM/_node.html) kodiert werden. Weiterhin sind folgende Kodiersysteme u.a. auf Basis von Empfehlungen des BfArM zulässig:
  - [SNOMED CT](https://www.snomed.org)
- - [Alpha-ID](https://www.dimdi.de/dynamic/de/klassifikationen/icd/alpha-id/)
+ - [Alpha-ID](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/Alpha-ID-SE/_node.html)
  - [Orpha-Kennnummer](https://www.orpha.net/consor/cgi-bin/index.php?lng=DE)
 
 ### `Condition.code.text`
