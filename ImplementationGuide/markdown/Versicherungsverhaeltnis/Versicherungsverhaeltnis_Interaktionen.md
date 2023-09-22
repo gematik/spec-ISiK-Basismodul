@@ -12,7 +12,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    ```GET [base]/Coverage?_id=103270```
 
-   Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+   Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
 2. Der Suchparameter "identifier" zur Suche nach einer Krankenversicherten-ID MUSS unterstützt werden:
 
@@ -20,7 +20,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?identifier=http://fhir.de/CodeSystem/identifier-type-de-basis|0123456789```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 3. Der Suchparameter "status" MUSS unterstützt werden:
 
@@ -28,7 +28,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?status=active```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 4. Der Suchparameter "type" MUSS unterstützt werden:
 
@@ -36,7 +36,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|GKV```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 5. Der Suchparameter "beneficiary" MUSS unterstützt werden:
 
@@ -44,7 +44,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?beneficiary=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 6. Der Suchparameter "patient" MUSS unterstützt werden:
 
@@ -60,7 +60,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?payor:identifier=0123456789```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 8. Der Suchparameter  "_profile" KANN unterstützt werden:
 
@@ -68,7 +68,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?_profile=https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/search.html#all).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/R4/search.html#all).
 
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
@@ -78,7 +78,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    ```GET [base]/Coverage?_id=103270```
 
-   Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+   Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
 1. Der Suchparameter  "beneficiary" MUSS unterstützt werden:
 
@@ -86,7 +86,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?beneficiary=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.beneficiary" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter  "payor" MUSS unterstützt werden:
 
@@ -94,7 +94,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?payor=0123456789```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter  "subscriber" KANN unterstützt werden:
 
@@ -102,7 +102,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?subscriber=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.subscriber" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.subscriber" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter  "status" KANN unterstützt werden:
 
@@ -110,7 +110,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?status=active```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter  "type" KANN unterstützt werden:
 
@@ -118,7 +118,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|SEL```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter  "_profile" KANN unterstützt werden:
 
@@ -126,6 +126,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Coverage?_profile=https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/search.html#all).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/R4/search.html#all).
 
 ---

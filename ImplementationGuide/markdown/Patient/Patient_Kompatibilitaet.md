@@ -5,8 +5,8 @@ Dieses Profil basiert auf dem [Profil KBV_PR_Base_Patient der KBV Basisprofile](
 Instanzen, die gegen ISiKPatient valide sind, sind auch (mit wenigen Einschränkungen) valide gegen:
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.2.1](https://simplifier.net/base1x0/kbv_pr_base_patient)
   * hier ist zu beachten, dass die KBV im Patienten-Profil für Address.country ein "extensible"-Binding auf die DEÜV-Codes festlegt; dies weicht von der ISiK Verwendung von ISO-Codes ab
-* [Profil Patient im International Patient Summary (IPS) - STU-1](http://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
-* [Profil Patient der MI-Initiative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulperson/sdmiipersonpatient)
+* [Profil Patient im International Patient Summary (IPS) - STU-1](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
+* [Profil Patient der MI-Initiative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulperson/mii_pr_person_patient)
   * wenn in identifier:pid.assigner eine Referenz auf eine Organisation angegeben wurde
   * wenn in identifier:versichertenId_GKV.assigner die IK-NR der Krankenversicherung angegeben ist
 * [Profil Patient der KBV Archiv- und Wechselschnittstelle - v1.2.0](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbv_pr_aw_patient)

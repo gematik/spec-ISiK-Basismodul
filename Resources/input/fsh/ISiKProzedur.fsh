@@ -80,6 +80,6 @@ Severity: #error
 Expression: "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()"
 
 Invariant: proc-ISiK-3
-Description: "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
+Description: "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/R4/element.html - ele-1), ist explizit nicht erlaubt."
 Severity: #error
 Expression: "coding.exists().not() implies text.exists()"
