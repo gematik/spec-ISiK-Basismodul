@@ -1,6 +1,6 @@
 ## Must-Support-Flags
 
-Die Verwendung des [Must-Support-Flags](http://hl7.org/fhir/profiling.html#mustsupport) an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
+Die Verwendung des [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
 
 1. Im Kontext der Erstellung von FHIR-Ressourcen:
 

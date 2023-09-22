@@ -10,7 +10,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?_id=103270```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
 1. Der Suchparameter "url" MUSS unterstützt werden:
 
@@ -26,7 +26,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?name=TestValueSet```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.name" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](http://hl7.org/fhir/R4/search.html#string).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.name" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
@@ -34,7 +34,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?status=active```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search""](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search""](https://hl7.org/fhir/R4/search.html#token).
 
 
 1. Der Suchparameter "version" MUSS unterstützt werden:
@@ -43,7 +43,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?version=1.0.0```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.version" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.version" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter "context-type-value" MUSS unterstützt werden:
 

@@ -1,7 +1,7 @@
 ## Repräsentationsformate
 
-Der FHIR-Standard beschreibt drei verschiedene [Repräsentationsformate](http://hl7.org/fhir/formats.html#wire): XML, JSON und RDF (Turtle).
-Im Rahmen der ISiK-Spezifikation MÜSSEN bestätigungsrelevante Systeme (Server) die Formate [XML](http://hl7.org/fhir/xml.html) und [JSON](http://hl7.org/fhir/json.html) unterstützen.
+Der FHIR-Standard beschreibt drei verschiedene [Repräsentationsformate](https://hl7.org/fhir/R4/formats.html#wire): XML, JSON und RDF (Turtle).
+Im Rahmen der ISiK-Spezifikation MÜSSEN bestätigungsrelevante Systeme (Server) die Formate [XML](https://hl7.org/fhir/R4/xml.html) und [JSON](https://hl7.org/fhir/R4/json.html) unterstützen.
 
 Client-seitige Implementierungen haben die Wahl zwischen XML- und JSON-Repräsentation, müssen jedoch in den HTTP Accept- und Content-Type-Headern entsprechend ausweisen, welche Repräsentation gewählt wurde.
 
