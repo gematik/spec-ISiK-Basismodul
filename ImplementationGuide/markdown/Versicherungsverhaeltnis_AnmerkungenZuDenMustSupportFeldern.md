@@ -11,13 +11,13 @@
 
 **Bedeutung:** Der Status einer Instanz des Profils ISiKVersicherungsverhaeltnisGesetzlich.
 
-**Hinweise:** Das Element status macht deutlich, ob diese Instanz genutzt werden kann oder ob sie bspw. als ungültig oder falsch gekennzeichnet ist, siehe [FHIR Kernspezifikaton](http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.status).
+**Hinweise:** Das Element status macht deutlich, ob diese Instanz genutzt werden kann oder ob sie bspw. als ungültig oder falsch gekennzeichnet ist, siehe [FHIR Kernspezifikaton](https://hl7.org/fhir/R4/coverage-definitions.html#Coverage.status).
 
 ### `Coverage.type`
 
 **Bedeutung:** Das Element type kennzeichnet die Art der Versicherung.
 
-**Hinweise:** Kennzeichnung als gesetzliche Versicherung, siehe [Beschreibung der deutschen Basisprofile](http://fhir.de/CodeSystem/versicherungsart-de-basis).
+**Hinweise:** Kennzeichnung als gesetzliche Versicherung, siehe [Beschreibung der deutschen Basisprofile](https://fhir.de/CodeSystem/versicherungsart-de-basis).
 
 ### `Coverage.beneficiary`
 
