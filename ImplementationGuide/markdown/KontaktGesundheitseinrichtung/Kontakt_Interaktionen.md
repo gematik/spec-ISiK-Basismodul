@@ -50,7 +50,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?subject=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "patient" MUSS unterstützt werden:
 
@@ -58,7 +58,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?patient=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
@@ -70,7 +70,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?account:identifier=https://example.org/fhir/sid/abrechnungsfallnr|123456```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.account" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.account" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "date" MUSS unterstützt werden:
 
@@ -88,7 +88,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?location=Location/test```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.location" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.location" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "service-provider" KANN unterstützt werden:
 
@@ -96,7 +96,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?service-provider=Organization/test```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.serviceProvider" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.serviceProvider" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "_profile" KANN unterstützt werden:
 

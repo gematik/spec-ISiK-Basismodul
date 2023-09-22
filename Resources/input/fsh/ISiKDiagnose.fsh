@@ -135,6 +135,6 @@ Severity: #error
 Expression: "code.coding.exists() implies encounter.exists()"
 
 Invariant: icd-text-1
-Description: "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt."
+Description: "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/R4/element.html - ele-1), ist explizit nicht erlaubt."
 Severity: #error
 Expression: "coding.exists().not() implies text.exists()"

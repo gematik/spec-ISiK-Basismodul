@@ -6,16 +6,16 @@ Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mitte
 
    `POST [base]/` mit einer FHIR-Bundle Ressource im Request-Body.
 
-   Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der [FHIR-Basisspezifikation - Abschnitt "Document End-Points"](https://www.hl7.org/fhir/documents.html#bundle).
+   Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der [FHIR-Basisspezifikation - Abschnitt "Document End-Points"](https://www.hl7.org/fhir/R4/documents.html#bundle).
   
 Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren Entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
 
-Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/issue-type) verwendet werden.
+Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/R4/codesystem-issue-type.html) verwendet werden.
 
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
-Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 2](https://simplifier.net/guide/isik-dokumentenaustausch/ImplementationGuide-markdown-AkteureUndInteraktionen?version=current#ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten).
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 3](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Dokumentenaustausch-Stufe-3/ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten?version=current).
 
 ### Verarbeitung des Dokumentes
 
@@ -50,14 +50,14 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
   * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
-  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
+  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
     * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
 ### Persistierung der menschenlesbaren Repräsentation
 
 Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
-Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/documentreference-mappings.html#fhircomposition).
+Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/R4/documentreference-mappings.html#fhircomposition).
 
 Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
 
