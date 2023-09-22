@@ -17,7 +17,7 @@ Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes er
 
 ### `Procedure.code.coding`
 
-**Bedeutung:** Codierte Prozedur. Entweder kodiert per [OPS](https://www.dimdi.de/dynamic/de/klassifikationen/ops/) oder [SNOMED CT](http://www.snomed.org). Bei der Kodierung per SNOMED CT ist das ValueSet [ProzedurenCodes-SCT](https://simplifier.net/ISiK/ProzedurenCodes-SCT) zu beachten.
+**Bedeutung:** Codierte Prozedur. Entweder kodiert per [OPS](https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/OPS-ICHI/OPS/_node.html) oder [SNOMED CT](https://www.snomed.org). Bei der Kodierung per SNOMED CT ist das ValueSet [ProzedurenCodes-SCT](https://simplifier.net/ISiK/ProzedurenCodes-SCT) zu beachten.
 
 ### `Procedure.code.text`
 
