@@ -28,7 +28,7 @@ json
 }
 ```
 
-Eine weitere Differenzierung der Herkunft kann mittels ```Resource.meta.security``` kodiert werden. Hierzu KÖNNEN Codes aus dem ValueSet [SecurityIntegrityObservationValue](http://terminology.hl7.org/ValueSet/v3-SecurityIntegrityObservationValue) verwendet werden.
+Eine weitere Differenzierung der Herkunft kann mittels ```Resource.meta.security``` kodiert werden. Hierzu KÖNNEN Codes aus dem ValueSet [SecurityIntegrityObservationValue](https://terminology.hl7.org/ValueSet/v3-SecurityIntegrityObservationValue) verwendet werden.
 
 Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System übernommen werden, MUSS der entsprechende Tag in ```Patient.meta.tag``` entfernt werden. In diesem Falle MUSS die id der Ressource stabil bleiben und darf nicht verändert werden.
 

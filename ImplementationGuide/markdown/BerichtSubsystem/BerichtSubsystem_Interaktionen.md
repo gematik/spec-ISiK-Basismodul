@@ -10,7 +10,7 @@ Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mitte
   
 Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren Entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
 
-Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](http://hl7.org/fhir/issue-type) verwendet werden.
+Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/issue-type) verwendet werden.
 
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle, hybrid}}  
@@ -50,7 +50,7 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
   * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
-  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](http://hl7.org/fhir/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
+  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
     * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
