@@ -56,7 +56,7 @@ Im ISiK Kontext nehmen die bestätigungsrelevanten Systeme die Rolle der *Clinic
 * Procedures Option
 * Encounters Option
 
-alle weiteren Optionen liegen außerhalb des Abdeckungsbereiches von ISiK (Stufe 2).
+Alle weiteren Optionen liegen außerhalb des Abdeckungsbereiches von ISiK in Hinblick auf den Scope der aktuellen Veröffentlichung.
 
 Die Aufgabe der Clinical Data Source liegt in der Beantwortung der Anfragen nach Informationen durch die Rückgabe von FHIR-Ressourcen, die den gegebenen Suchparametern entsprechen.
 
