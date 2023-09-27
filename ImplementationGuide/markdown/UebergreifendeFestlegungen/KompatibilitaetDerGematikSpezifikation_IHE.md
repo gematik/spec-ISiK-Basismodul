@@ -13,7 +13,7 @@ berücksichtigen.
 Hierbei ist anzumerken, dass der Zusatz "for mobile" seitens IHE irreführend sein kann.
 Konkret fasst IHE unter diesem Begriff nicht nur Systeme zusammen, die "Plattform- und Ressourcenbeschränkt sind, wie z.B. Tablets, Smartphones und Embedded Devices, sondern auch größere Systeme in Umgebungen, in denen die Interoperabilitätsanforderungen einfach sind (z.B. Anzeige der aktuellen Übersicht eines Patienten)" (Quelle: IHE QEDm - Introduction)
 
-Die im Folgenden genannten IHE-Spezifikationen beschreiben lediglich Interaktionen zwischen den Systemen und machen verbindliche Vorgaben zum Ablauf, Format und zu den unterstützten Such-Parametern, jedoch keine inhaltlichen Vorgaben. So beschreibt PDQm beispielweise den Ablauf einer Suche nach Patientendaten, enthält aber keine Vereinbarungen, wie die zurückgelieferte Patientenressource konkret auszusehen hat (Pflichtfelder, Terminologien, Contraints).
+Die im Folgenden genannten IHE-Spezifikationen beschreiben lediglich Interaktionen zwischen den Systemen und machen verbindliche Vorgaben zum Ablauf, Format und zu den unterstützten Such-Parametern, jedoch keine inhaltlichen Vorgaben. So beschreibt PDQm beispielsweise den Ablauf einer Suche nach Patientendaten, enthält aber keine Vereinbarungen, wie die zurückgelieferte Patientenressource konkret auszusehen hat (Pflichtfelder, Terminologien, Constraints).
 
 Der Mehrwert der ISiK-Spezifikation besteht darin, dass die genannten IHE-Interaktionen um Festlegungen zu den auszutauschenden Inhalten ergänzt werden, die zugeschnitten sind auf die Anforderungen des Datenaustausches zwischen Systemen innerhalb einer Einrichtung, basierend auf den Deutschen Basisprofilen von HL7 Deutschland e.V. und abgeglichen mit den Festlegungen der KBV zu den Inhalten der elektronischen Patientenakte (MIOs) sowie den Spezifikationen der Medizininformatik-Initiative.
 
@@ -42,7 +42,7 @@ Suchparameter, die in PDQm obligatorisch sind, in ISiK jedoch optional, sind in 
 ### IHE QEDm
 
 #### Umfang
-QEDm unterstützt das Abfragen klinischer Informationen wie zum Beispiel Diagnosen, Beobachtungen (u.a. Vitalparamter), Messdaten und Allergien unter Verwendung des FHIR-Standards.
+QEDm unterstützt das Abfragen klinischer Informationen wie zum Beispiel Diagnosen, Beobachtungen (u.a. Vitalparameter), Messdaten und Allergien unter Verwendung des FHIR-Standards.
 Damit überlappt der Anwendungsfall von QEDm in großen Teilen mit den Festlegungen von ISiK.
 
 #### Akteure
@@ -56,7 +56,7 @@ Im ISiK Kontext nehmen die bestätigungsrelevanten Systeme die Rolle der *Clinic
 * Procedures Option
 * Encounters Option
 
-alle weiteren Optionen liegen außerhalb des Abdeckungsbereiches von ISiK (in Stufe 1).
+Alle weiteren Optionen liegen außerhalb des Abdeckungsbereiches von ISiK in Hinblick auf den Scope der aktuellen Veröffentlichung.
 
 Die Aufgabe der Clinical Data Source liegt in der Beantwortung der Anfragen nach Informationen durch die Rückgabe von FHIR-Ressourcen, die den gegebenen Suchparametern entsprechen.
 
