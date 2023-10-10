@@ -96,9 +96,9 @@ Die genauere Problemdefinition und Anforderungserhebung unter Einbeziehung der i
 
 Um die Regelungsbedarfe rund um den Patient merge genauer zu verstehen, ist die Analyse der Patient Journey, die möglichst viele Patientenattribute und die unterschiedlichen "Etappen" des Patienten durch das Krankenhaus erfasst, nicht zielführend (siehe dazu Annex I- tbd.), da zu feingranular.
 
-Vielmehr, so die Annahmen, sollte es zunächst darum gehen eine Sicht auf die Synchronisierungsbedarfe zu legen, die zwischen unterschiedlichen Systemen bei Manipulationen einer Patienten-Instanz bestehen (in diesem Sinne ist es präziser hier von einer Patient Data Journey als von einer Patient-Journey zu sprechen). Diese kann mittels folgendes, vereinfachenden Szenarios erfasst werden:
+Vielmehr, so die Annahmen, sollte es zunächst darum gehen eine Sicht auf die Synchronisierungsbedarfe zu legen, die zwischen unterschiedlichen Systemen bei Manipulationen einer Patienten-Instanz bestehen (in diesem Sinne ist es präziser hier von einer Patient Data Journey als von einer Patient Journey zu sprechen). Diese kann mittels folgendes, vereinfachenden Szenarios erfasst werden:
 
-Gegeben seien zwei Systeme, die beide Patientendaten speichern können - auch von denselben Patienten. Patientendaten bestehen nur aus einem Attribut X, logischer ID sowie einer Geschäfts-ID (PID), wobei nur die logische ID innerhalb eines Patientendatensatzes in beiden Systemen erforderlich ist. Beide Systeme verwenden ihre eigene logische ID, die niemals manuell eingegeben wird und daher immer von einem der Systeme zugewiesen wird. Nur ein System kann vom Krankenhauspersonal manuell geändert werden (System A), das andere nur vom Patienten (System B).
+Gegeben seien zwei Systeme, die beide Patientendaten speichern können - auch von denselben Patienten. Patientendaten bestehen nur aus einem Attribut X, logischer ID sowie einer Geschäfts-ID (PID), wobei nur die logische ID innerhalb eines Patientendatensatzes in beiden Systemen erforderlich ist. Beide Systeme verwenden ihre eigene logische ID, die niemals manuell eingegeben wird und daher immer von einem der Systeme zugewiesen wird. Nur ein System kann vom Krankenhauspersonal Eingaben empfangen (System A), das andere nur vom Patienten (System B).
 
 Basierend auf dem beschriebenen Szenario sind die möglichen Datenmanipulationen, die eine Synchronisation zwischen den beiden Systemen (System A und System B) erfordern würden (und damit ggf. auch einen Regelungsbedarf durch die ISiK Spezifikation):
 
@@ -125,7 +125,7 @@ Basierend auf dem beschriebenen Szenario sind die möglichen Datenmanipulationen
 
 Das Szenario kann um eine weitere Komponenten erweitert werden:
 
-Ein System C, kann weitere Daten zum Patienten bereitstellen Attribut Y (z.B. Vitalzeichen oder Labordaten), das aber lediglich von einer IT-Komponente automatisch befüllt wird. Sonst gelten auch für dieses System die obigen Restriktionen und Umstände. Zusätzliche Szenarien für das System C:
+Ein System C kann weitere Daten zum Patienten bereitstellen in Form eines Attribut Y (z.B. Vitalzeichen oder Labordaten), das aber lediglich von einer IT-Komponente automatisch befüllt wird. Sonst gelten auch für dieses System die obigen Restriktionen und Umstände. Zusätzliche Szenarien für das System C:
 
 11. Automatische Befüllung von Attribut Y (z.B. Vitalzeichen und Labordaten):
    - Da System C automatisch von einer IT-Komponente befüllt wird, müssen die übermittelten Daten Attribut Y (z.B. Vitalzeichen oder Labordaten) in regelmäßigen Abständen zwischen den Systemen synchronisiert werden, um sicherzustellen, dass alle relevanten Patienteninformationen aktuell und korrekt sind.
