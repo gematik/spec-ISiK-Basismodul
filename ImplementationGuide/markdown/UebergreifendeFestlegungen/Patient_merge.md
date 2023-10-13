@@ -292,7 +292,7 @@ Weitere UCs in Zusammenhang mit den FHIR Ressourcen Encounter und Abrechnung sin
 * bei der administrativen Aufnahme wird ein neuer Aufenthalt angelegt und einem in System bestehenden Patienten zugeordnet
 * bei der administrativen Aufnahme wird geprüft, ob zu dem Patienten noch ein offene Abrechnungsfall besteht, dem der Aufenthalt zugeordnet werden muss, oder ob ein neuer Abrechnungsfall anzulegen ist
 * bei der administrativen Aufnahme wird der neue Aufenthalt zu einem Abrechnungsfall zugeordnet
-* sofern das Haus FallAkten unterstützt oder seine Berechtigungen analog der OH KIS organisiert, wird ein Aufenthalt bei der medizinischen Aufnahme einem medizinischem Fall zugeordnet oder es wird ein neuer medizinischer Fall angelegt.
+* sofern das Haus Fallakten unterstützt oder seine Berechtigungen analog der OH KIS organisiert, wird ein Aufenthalt bei der medizinischen Aufnahme einem medizinischem Fall zugeordnet oder es wird ein neuer medizinischer Fall angelegt.
 
 Auch diesen UC Cases rund um derivierte/referenzierte/referenzierende Ressourcen zu Patient können erst in einem zweiten Schritt der Verfeinerung der Use Case Analyse genauer betrachtet werden.
 
