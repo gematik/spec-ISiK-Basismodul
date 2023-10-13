@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+package "ISIK Patient merge"{
+usecase (UC01: Patient-merge) as UC01 #palegreen;line:green;line.dashed;text:green
+usecase (UC02: Match) as UC02 #palegreen;line:green;line.dashed;text:green
+usecase (UC03: Inform about merge) as UC03 #palegreen;line:green;line.dashed;text:green
+usecase (UC04: Clearing) as UC04
+usecase (UC05: Datenbereinigung) as UC05
+usecase (UC06: Konfliktlösung) as UC06
+usecase UC07 as "UC07: Meldung von Dateninkonsistenzen"
+usecase UC08 as "UC08: Neu refrenzieren"
+    
+}
+
+:Mitarbeiterin:
+:Patient:
+
+usecase (UC0: Patienten-Instanz anlegen) as UC0
+
+usecase UC9 as "UC09: Datenvalidierung"
+usecase UC10 as "UC10: Historie verwalten (Audit-Trail)"
+usecase UC11 as "UC11: Fehlerbehandlung"
+usecase UC12 as "UC12: Datenschutz und Compliance"
+
+
+Mitarbeiterin -> UC0
+Mitarbeiterin -> UC01
+
+Patient -> UC0
+
+note "Patienten-Instanzen können sowohl in KIS,\nSubsystem oder externem System erzeugt werden \nund sind per se keine FHIR Patient Ressource" as NC0
+
+UC0 .. NC0
+@enduml
