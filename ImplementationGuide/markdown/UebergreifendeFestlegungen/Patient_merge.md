@@ -80,7 +80,8 @@ Um die Problemdefinition besser abzugrenzen, treffen wir folgende Annahmen:
 * Neben der Patient-Ressource sollte auch der Encounter für den merge-Prozess prioritär berücksichtigt werden
 
 Neben den genannten Standards, existieren auch relevante IHE-Standards - diese sind u.a.:
-- PIX (Patient Identifier Cross-referencing) - https://profiles.ihe.net/ITI/PIXm/index.html
+- PIX (Patient Identifier Cross-referencing) - https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html
+- PIXm (Patient Identifier Cross-referencing for mobile) https://profiles.ihe.net/ITI/PIXm/index.html
 - PAM (Patient Administration Management) - https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14
 - XCPD (Cross-Community Patient Discovery) - https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html#27
 - PDQ (Patient Demographics Query)
