@@ -1,27 +1,38 @@
 # Konzept Patient merge (WIP)
 ## Table of Contents
 
-1. [Motivation und Hintergrund](#motivation-und-hintergrund)
-2. [Ziele](#ziele)
-3. [Stakeholder und User](#stakeholder-und-user)
-4. [Randbedingungen](#randbedingungen)
-   - [Technische Randbedingungen](#technische-randbedingungen)
-   - [Organisatorische Randbedingungen](#organisatorische-randbedingungen)
-5. [Konventionen](#konventionen)
-6. [Kontextabgrenzung](#kontextabgrenzung)
-   - [User und Systeme](#user-und-systeme)
-   - [Kontext der Festlegung](#kontext-der-festlegung)
-   - [Patient Data Journey](#patient-data-journey)
-7. [Lösungsstrategie](#lösungsstrategie)
-   - [merge-inform](#merge-inform)
-   - [merge (und match)](#merge-und-match)
-8. [Use Cases](#use-cases)
-   - [User Stories - Business](#user-stories---business)
-   - [Use Cases - technisch](#use-cases---technisch)
-      - [UC-01 - Patient merge](#UC-01-patient-merge)
-9. [Priorisierte Liste weiterer Bedarfe an die Spezifikation](#priorisierte-liste-weiterer-bedarfe-an-die-spezifikation)
-9. [Annex I](#annex-i---patient-journey)
-9. [Annex II](#annex-ii---patient-data-journey)
+- [Konzept Patient merge (WIP)](#konzept-patient-merge-wip)
+  - [Table of Contents](#table-of-contents)
+  - [Motivation und Hintergrund](#motivation-und-hintergrund)
+  - [Ziele](#ziele)
+  - [Stakeholder und User](#stakeholder-und-user)
+  - [Randbedingungen](#randbedingungen)
+    - [Technische Randbedingungen](#technische-randbedingungen)
+    - [Organisatorische Randbedingungen](#organisatorische-randbedingungen)
+    - [Konventionen](#konventionen)
+  - [Kontextabgrenzung](#kontextabgrenzung)
+    - [User und Systeme](#user-und-systeme)
+    - [Kontext der Festlegung](#kontext-der-festlegung)
+    - [Patient Data Journey](#patient-data-journey)
+  - [Lösungsstrategie](#lösungsstrategie)
+    - [Bestehende Standards](#bestehende-standards)
+    - [merge (und match)](#merge-und-match)
+    - [merge-inform](#merge-inform)
+  - [User Stories und Use Cases](#user-stories-und-use-cases)
+    - [User Stories - Business](#user-stories---business)
+    - [US-01: Terminbuchung Patientenportal](#us-01-terminbuchung-patientenportal)
+    - [US-02 - händische Patientenaufnahme](#us-02---händische-patientenaufnahme)
+    - [US-03 - Anlegen in Subsystem](#us-03---anlegen-in-subsystem)
+    - [Fazit zu User Stories](#fazit-zu-user-stories)
+    - [Use Cases - Technisch](#use-cases---technisch)
+      - [UC-01 Patient-merge](#uc-01-patient-merge)
+      - [UC-02 - match (Patientendatenabgleich)](#uc-02---match-patientendatenabgleich)
+      - [UC-03 - Inform about merge](#uc-03---inform-about-merge)
+      - [UC-XY](#uc-xy)
+  - [Priorisierte Liste der Use Cases nach Bedarf](#priorisierte-liste-der-use-cases-nach-bedarf)
+  - [Priorisierte Liste weiterer Bedarfe an die Spezifikation](#priorisierte-liste-weiterer-bedarfe-an-die-spezifikation)
+  - [Annex I - Patient Journey](#annex-i---patient-journey)
+  - [Annex II - Patient Data Journey](#annex-ii---patient-data-journey)
 
 ## Motivation und Hintergrund
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. Ein Standard, der sich dem Austausch von Patientendaten innerhalb eines Krankenhauses verschreibt, sollte daher auch das Thema der Patientendatenzusammenführung (Patient merge) abdecken. Ziel ist es, dass externe Clients merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
@@ -155,7 +166,7 @@ Zum merge-Inform könnten Lösungsansätze sein:
 - (Topic-Based-)Subscription
 - passiv über Link-Element in REST-Ressource.
 
-## Use Cases
+## User Stories und Use Cases
 
 In folgendem wird zwischen User Stories (Business-Seite) und Use Cases (technisch) unterschieden.
 
@@ -222,15 +233,15 @@ In der Interaktion mit einem System, das Patientendaten verwaltet, lassen sich z
 
 Dabei darf die merge-Interaktion nur von KH-Mitarbeitern mit dedizierten Rechten durchgeführt werden (nie von Patienten selbst). Auch vollständig automatisierte merge-Vorgänge sind möglich, bestenfalls sind sie die Regel.
 
-An den beschriebenen Haupt-Use-Case grenzen weitere. Wobei nicht alle gelisteten Use Cases von einer technischen Festlegung betroffen sein sollten.
+An den beschriebenen zentralen Use-Case grenzen weitere. Wobei nicht alle gelisteten Use Cases von einer technischen Festlegung betroffen sein sollten.
 
 Besondere Beachtung sollten folgenden UCs erhalten:
 
 * **UC-00: Instanz anlegen**
-   * *Beschreibung:* Anlegen einer Patienteninstanz. Vorbedingung für den Haupt-Use-case
-   * *Akteure:* System (Server und eher kein Client?), Mitarbeiterin , Patienten (bei Portal)
+   * *Beschreibung:* Anlegen einer Patienteninstanz. Vorbedingung für den zentralen Use Case
+   * *Akteure:* System (meistens Server), Mitarbeiterin , Patienten (bei Portal)
 * **UC-01: Patient-merge**
-   * *Beschreibung:* Haupt-Use Case, der den Merge von Patientendaten im Krankenhauskontext darstellt.
+   * *Beschreibung:* Zentraler Use Case, der den Merge von Patientendaten im Krankenhauskontext darstellt.
    * *Akteure:* System, Mitarbeiterin
 * **UC-02: match (Patientendatenabgleich)**
    * *Beschreibung:* Identifikation von potenziell zusammenzuführenden Patientendaten.
@@ -307,27 +318,25 @@ Die folgende Liste der Use Cases entspricht der Priorisierung im Rahmen des Fest
 
 *Beschreibung (ausführlich):* 
 
-Dieser UC beinhaltet den (komplexen) Prozess der Zusammenführung von Patientenressourcen innerhalb des KIS eines Krankenhauses (inklusive angeschlossener Subsysteme), um kohärente Patientenakten sicherzustellen. Dieser Prozess beinhaltet die Bereinigung von doppelten oder fragmentierten Patientendaten.
+Dieser UC beinhaltet den (komplexen) Prozess der Zusammenführung von Patientenressourcen innerhalb des KIS eines Krankenhauses (inklusive angeschlossener Subsysteme), um kohärente Patientenidentifier sicherzustellen. Der zugrundenliegende Prozess im KIS beinhaltet auch die Bereinigung von doppelten oder fragmentierten Patientendaten.
 
-**REQ-001:** Ein bestätigungsrelevantes System (insbesondere KIS) muss sicherstellen, dass nach dem abgeschlossenen merge alle Instanzen über eine führende Referenz auffindbar sind.
+**REQ-001:** Ein bestätigungsrelevantes System (insbesondere KIS) muss sicherstellen, dass nach dem abgeschlossenen Patient merge alle Instanzen über eine führende Referenz auffindbar sind.
 
-Als kritisch und daher in einer Spezifikation abzudecken, ist der Sonderfall (UC noch anzulegen) für einen Patienteninstanz, die von einem Subsystem (besonders kritisch Patientenportal) erzeugt wird und einem KIS übergeben wird.
+Zur Illustration können erneut User Stories dienen: Eine Ärztin sucht in einem KIS nach möglichen anamnestischen Daten und Vitalparametern eines Patienten, wobei dieser doppelt im KIS aufgenommen worden war. Eine Patientin bucht über ein Patientenportal einen Termin bei einem Krankenhaus (s.o. US-01).
 
-Zur Illustration können erneut User Stories dienen:
-- Eine Patientin bucht über ein Patientenportal einen Termin bei einem Krankenhaus (s.o. US-01).
-- Eine Ärztin sucht in einem KIS nach möglichen anamnestischen Daten und Vitalparametern eines Patienten, wobei dieser doppelt im KIS aufgenommen worden war.
+Im Vergleich zum Standardfall des Auffindens bzw. Entdecken von Duplikaten ist der zweite Fall als kritisch zu betrachten, da hier das Subsystem, bspw. ein Patientenportal, regelmäßig neue Identifier erzeugt und dem KIS als Quelle dient.
 
-Entsprechend der User Story 1. ließe sich der Fall folgendermaßen weiterentwickeln:
+  
+**Beispiel-Sequenz:** Angenommen es ist ein weiteres Subsystem inklusive einer Schnittstelle (hier bspw. PDMS) beteiligt, so lässt sich eine exemplarische Sequenz für User Story 01 ableiten:
 * Eine Ärztin gibt über eine Suchanfrage in der Maske Vor- und Nachnamen des Patienten an (Max Mustermann). Es erscheinen zwei Patienteninstanzen mit identischen Stammdaten (bis auf einen offensichtlichen Tippfehler).
-* Die Ärztin führt die Patientendaten über einen Clearingmechanismus zusammen
-* Das KIS sendet über einen Kommunikationsserver eine PUSH-Nachricht (Hl7 v2) an alle Subsystem (inklusive PDMS), um den Update-Status der Patienten-Ressource und den geschehenen merge zu informieren.
-* Die Subsysteme verarbeiten die merge-informationen und updaten die entsprechende organisationsinterne Patienten-ID (PID)
+* Die Ärztin führt die Patientendaten über einen Clearingmechanismus zusammen.
+* Das KIS sendet über einen Kommunikationsserver eine PUSH-Nachricht (Hl7 v2) an alle Subsysteme (inklusive des PDMS), um den Update-Status der Patienten-Ressource und den geschehenen merge zu informieren.
+* Die Subsysteme verarbeiten die merge-informationen und updaten die entsprechende organisationsinterne Patienten-ID (PID).
+* Die Ärztin stellt eine Anfrage mit der nun bekannten Patientenintanz (oder über den Namen) für sämtliche Körpertemperaturmessungen der letzten Tage.
+* Das KIS leitet diese Anfrage über eine REST-Schnittstelle weiter an das PDMS (über Suchparameter "Patient" nach https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Vitalparameter-Stufe-3/ImplementationGuide-markdown-Interaktionen?version=current ) und gibt den entsprechenden Datensatz zurück.
 
-Nun kommt ein Subsystem als Komponente hinzu (PDMS):
-* Über eine Schnittstelle ruft die Ärztin sämtliche Körpertemperaturmessungen der letzten Tage des Patienten ab.
-* Das KIS fragt über eine REST-Schnittstelle die entsprechenden Vitaldaten beim PDMS ab (über  Suchparameter "Patient" nach https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Vitalparameter-Stufe-3/ImplementationGuide-markdown-Interaktionen?version=current )
 
-Die User Story 1. (s.o. US-01) erweitert das System um die Komponente Patientenportal, diese ist Konsument von ISiK-Ressourcen und Diensten:
+**Beispiel-Sequenz:** Angenommen es ist die Komponente Patientenportal inklusive einer Schnittstelle beteiligt, so lässt sich eine exemplarische Sequenz für User Story 01 ableiten:
 * Das Patientenportal erzeugt aufgrund der von der Patientin angegeben Fall- und Anamnese-Daten verschiedene FHIR-Ressourcen, die einer FHIR Patient Ressource (PatientMustermannPatientenportal) zugeordnet werden.
 * Nach dem Synchronisierungsprozess der Terminbuchung zwischen Patientenportal und KIS des KHs wird die FHIR-Instanz PatientMustermannPatientenportal mit der im KIS vorhandenen Instance PatientMustermannKH im Rahmen eines Clearing-Prozesses unter Beteiligung einer KH-Mitarbeitern im KIS zusammengeführt zu PatientMustermannMerge.
 * (extends) Die Referenzierten Ressourcen (FHIR Observations) werden (extrahiert und) und mit den zusammengeführten Daten von PatientMustermannMerge verknüpft
@@ -337,6 +346,10 @@ Die User Story 1. (s.o. US-01) erweitert das System um die Komponente Patientenp
 * Das Krankenhaus verfügt über ein funktionierendes Gesundheitsinformationssystem (KIS), das in der Lage ist, HL7-v2-Nachrichten und/oder FHIR-Operationen bzw. vergleichbare proprietäre Operationen zu verarbeiten.
 * Es wurden identifizierte doppelte oder fragmentierte Patientenakten festgestellt, die zusammengeführt werden müssen.
 
+*Annahmen:* 
+* Das KIS-System verfügt über die erforderlichen Funktionen zur Durchführung der Zusammenführung von Patientenakten.
+* Das Krankenhauspersonal, das die Zusammenführung initiiert oder tätigt, verfügt über die entsprechenden Berechtigungen und Schulungen.
+
 *Nachbedingungen:* 
 
 Die Patientenakten werden zusammengeführt, und eine vereinheitlichte, genaue Akte wird erstellt.
@@ -345,7 +358,7 @@ Die Patientenakten werden zusammengeführt, und eine vereinheitlichte, genaue Ak
 
 *Nutzungshäufigkeit:* Gelegentlich
 
-*Normaler Ablauf:*
+*Technischer Standardablauf:*
 * Das Krankenhauspersonal startet den Zusammenführungsprozess über das KIS (ggf. Über das KAS).
 * Das KIS ruft die für die Zusammenführung identifizierten Patientenakten ab.
 * Das System analysiert die Akten auf potenzielle Duplikate anhand von Übereinstimmungskriterien (z. B. Name, Geburtsdatum usw.).
@@ -363,22 +376,16 @@ Wenn keine identifizierten Duplikate vorhanden sind, benachrichtigt das System d
 Bei technischen Problemen, die den Zusammenführungsprozess verhindern, wird eine Fehlermeldung generiert, und der Prozess wird abgebrochen.
 
 *Includes (weitere UCs):* 
-* In einer Fallunterscheidung lassen sich unterscheiden:
    * vollautomatisiertes matching und merging
    * vollautomatisiertes matching mit manuellem merge
    * (halb)automatisiertes matching mit vollautomatisiertem merge
    * Notification über match/merge durch ein Subsystem
 
-*extends (weitere UCs):*
+*Extends (weitere UCs):*
 * tbd.
 
-
-*Annahmen:* 
-* Das KIS-System verfügt über die erforderlichen Funktionen zur Durchführung der Zusammenführung von Patientenakten.
-* Das Krankenhauspersonal, das die Zusammenführung initiiert oder tätigt, verfügt über die entsprechenden Berechtigungen und Schulungen.
-
 *Anmerkungen und Probleme:* 
-* Patient merges sollten protokolliert werden, um Verantwortlichkeit und Rückverfolgbarkeit zu gewährleisten.
+* Patient merges sollten protokolliert werden, um technische Verantwortlichkeit und Rückverfolgbarkeit zu gewährleisten.
 
 #### UC-02 - match (Patientendatenabgleich)
 
@@ -398,9 +405,16 @@ Bei technischen Problemen, die den Zusammenführungsprozess verhindern, wird ein
 
 *Akteur:* System
 
-*Beschreibung:* Dieser Anwendungsfall beinhaltet die Benachrichtigung angeschlossener Systeme über den erfolgreichen Merge.
+*Beschreibung:* Dieser Anwendungsfall beinhaltet die Benachrichtigung angeschlossener Systeme über den erfolgreichen Merge. Diese Benachrichtigung eines anderes Systems kann auf verschiedene Arten erfolgen.
 
-Siehe in FHIR https://build.fhir.org/patient-operation-merge.html#notification.
+Includes (weitere UCs):
+* Als direkte FHIR Message.
+* Als HLV7x2 Message durch einen Messageserver, z.B. nach Auslesen eines Flags.
+* Als direkter Aufruf einer Merge Operation im Fremdsystem
+* Im Rahmen einer allgemeinen Referesh Benachrichtigung
+* Im Rahmen eines Deketierungsevents einer zugehörigen Subscription 
+
+Siehe auch FHIR https://build.fhir.org/patient-operation-merge.html#notification.
 
 #### UC-XY
 Sollten weitere UCs genauer erörtert werden?
