@@ -80,15 +80,18 @@ Um die Problemdefinition besser abzugrenzen, treffen wir folgende Annahmen:
 * Neben der Patient-Ressource sollte auch der Encounter für den merge-Prozess prioritär berücksichtigt werden
 
 Neben den genannten Standards, existieren auch relevante IHE-Standards - diese sind u.a.:
-- PIX (Patient Identifier Cross-referencing) - https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html
-  - hier ggf. UC Multiple Identity Domains within a Single Facility - https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html#5.3.1 
-- PIXm (Patient Identifier Cross-referencing for mobile) https://profiles.ihe.net/ITI/PIXm/index.html
+- [PIX (Patient Identifier Cross-referencing)](https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html)
+  - hier ggf. Use Case [ Multiple Identity Domains within a Single Facility](https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html#5.3.1) 
+- [PIXm (Patient Identifier Cross-referencing for mobile](https://profiles.ihe.net/ITI/PIXm/index.html)
+   - insbesondere Use Case: [Resolve duplicate patient identity data in Multiple Identifier Domains](https://profiles.ihe.net/ITI/PIXm/volume-1.html#141423-resolve-duplicate-patient-identity-data-in-multiple-identifier-domains)
 - PAM (Patient Administration Management) - https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14
+- [Patient Identity Management [ITI-30] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-30.html)
+- [Patient Identity Feed [ITI-8] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html#3.8)
 - XCPD (Cross-Community Patient Discovery) - https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html#27
 - PDQ (Patient Demographics Query)
 - MHD (Mobile access to Health Documents)
 
-Insbesondere PIX ist für den gesamten Patient-merge-Prozess relevant, aber auch PAM - für Kontexte der provisorischen [Instanz-Erzeugung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2) und das [Kontakt-Management bzw. die Fachabteilungs-Überweisung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2.1). Für Aspekte des Patient matching ist insbesondere XCPD (Cross-Community Patient Discovery) relevant.
+Insbesondere PIX/PIXm ist für den gesamten Patient-merge-Prozess relevant, aber auch PAM - für Kontexte der provisorischen [Instanz-Erzeugung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2) und das [Kontakt-Management bzw. die Fachabteilungs-Überweisung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2.1). Für Aspekte des Patient matching ist insbesondere XCPD (Cross-Community Patient Discovery) relevant.
 
 ### Organisatorische Randbedingungen
 Es gelten die Fristen wie in anderen Modulen.
@@ -159,14 +162,22 @@ Im Kontext von Hl7 v2 sind zur Bereinigung von Duplikaten und Fehlzuordnungen fo
 - move patient/account/visit information: Verschieben eines Patienten zu einem anderen "Master-Patienten", Verschieben eines Abrechnungsfalls zu einem anderen Patienten bzw. Verschieben eines Aufenthalts zu einem anderen Abrechnungsfall etc.
 
 Hier sind auch die IHE Profile PIX, PAM und XCPD zu beachten.
+Insbesondere für 
+- merge : [Patient Identity Feed FHIR [ITI-104]](https://profiles.ihe.net/ITI/PIXm/ITI-104.html)
+- match: In PIXm - [Mobile Patient Identifier Cross-reference Query [ITI-83]](https://profiles.ihe.net/ITI/PIXm/ITI-83.html)
 
 ### merge-inform
 Sollte allein die Festlegung zum merge-inform als Zieldefinition konsentiert werden, sollten auch bestehenden Mechanismen aus HL7v2 berücksichtigt werden.
 
-Zum merge-Inform könnten Lösungsansätze sein:
+Zum merge-Inform könnten Lösungsansätze in FHIR sein:
 - FHIR-Messaging
 - (Topic-Based-)Subscription
 - passiv über Link-Element in REST-Ressource.
+- kombiniert, z.B.: Resolve Duplicate Patient(https://profiles.ihe.net/ITI/PIXm/ITI-104.html#2310442-resolve-duplicate-patient)
+
+Mittels HL7 ADT sind relevante Vorarbeiten:
+- - [Patient Identity Feed [ITI-8] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html#3.8) -  mit ADT^A40
+
 
 ## User Stories und Use Cases
 
@@ -413,10 +424,12 @@ Includes (weitere UCs):
 * Als direkte FHIR Message.
 * Als HLV7x2 Message durch einen Messageserver, z.B. nach Auslesen eines Flags.
 * Als direkter Aufruf einer Merge Operation im Fremdsystem
-* Im Rahmen einer allgemeinen Referesh Benachrichtigung
+* Im Rahmen einer allgemeinen Referesh-Benachrichtigung
 * Im Rahmen eines Deketierungsevents einer zugehörigen Subscription 
 
-Siehe auch FHIR https://build.fhir.org/patient-operation-merge.html#notification.
+Siehe auch:
+   - FHIR - https://build.fhir.org/patient-operation-merge.html#notification
+   - IHE PIXm -  https://profiles.ihe.net/ITI/PIXm/ITI-104.html#2310442-resolve-duplicate-patient
 
 #### UC-XY
 Sollten weitere UCs genauer erörtert werden?
