@@ -352,11 +352,11 @@ Im Vergleich zum Standardfall des Auffindens bzw. Entdecken von Duplikaten ist d
 **Beispiel-Sequenz:** Angenommen es ist die Komponente Patientenportal inklusive einer Schnittstelle beteiligt, so lässt sich eine exemplarische Sequenz für User Story 01 ableiten:
 * Das Patientenportal erzeugt aufgrund der von der Patientin angegeben Fall- und Anamnese-Daten verschiedene FHIR-Ressourcen, die einer FHIR Patient Ressource (PatientMustermannPatientenportal) zugeordnet werden.
 * Nach dem Synchronisierungsprozess der Terminbuchung zwischen Patientenportal und KIS des KHs wird die FHIR-Instanz PatientMustermannPatientenportal mit der im KIS vorhandenen Instance PatientMustermannKH im Rahmen eines Clearing-Prozesses unter Beteiligung einer KH-Mitarbeitern im KIS zusammengeführt zu PatientMustermannMerge.
-* (extends) Die Referenzierten Ressourcen (FHIR Observations) werden (extrahiert und) und mit den zusammengeführten Daten von PatientMustermannMerge verknüpft
+* (extends) Die Referenzierten Ressourcen (FHIR Observations) werden (extrahiert und) mit den zusammengeführten Daten von PatientMustermannMerge verknüpft
 * Das Patientenportal erkennt (query-getrieben) eine Änderung von Patienten-Ressource nach einem Patient-merge im KIS (dies wäre anzusiedeln bei **UC-03: Inform about merge**)
 
 *Voraussetzungen:* 
-* Das Krankenhaus verfügt über ein funktionierendes Gesundheitsinformationssystem (KIS), das in der Lage ist, HL7-v2-Nachrichten und/oder FHIR-Operationen bzw. vergleichbare proprietäre Operationen zu verarbeiten.
+* Das Krankenhaus verfügt über ein funktionierendes KIS, das in der Lage ist, HL7-v2-Nachrichten und/oder FHIR-Operationen bzw. vergleichbare proprietäre Operationen zu verarbeiten.
 * Es wurden identifizierte doppelte oder fragmentierte Patientenakten festgestellt, die zusammengeführt werden müssen.
 
 *Annahmen:* 
