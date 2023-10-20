@@ -1,47 +1,45 @@
 # Konzept Patient merge (WIP)
-## Table of Contents
 
-- [Konzept Patient merge (WIP)](#konzept-patient-merge-wip)
-  - [Table of Contents](#table-of-contents)
-  - [Motivation und Hintergrund](#motivation-und-hintergrund)
-  - [Ziele](#ziele)
-  - [Stakeholder und User](#stakeholder-und-user)
-  - [Randbedingungen](#randbedingungen)
-    - [Technische Randbedingungen](#technische-randbedingungen)
-    - [Organisatorische Randbedingungen](#organisatorische-randbedingungen)
-    - [Konventionen](#konventionen)
-  - [Kontextabgrenzung](#kontextabgrenzung)
-    - [User und Systeme](#user-und-systeme)
-    - [Kontext der Festlegung](#kontext-der-festlegung)
-    - [Patient Data Journey](#patient-data-journey)
-  - [Lösungsstrategie](#lösungsstrategie)
-    - [Bestehende Standards](#bestehende-standards)
-    - [merge (und match)](#merge-und-match)
-    - [merge-inform](#merge-inform)
-  - [User Stories und Use Cases](#user-stories-und-use-cases)
-    - [User Stories - Business](#user-stories---business)
-    - [US-01: Terminbuchung Patientenportal](#us-01-terminbuchung-patientenportal)
-    - [US-02 - händische Patientenaufnahme](#us-02---händische-patientenaufnahme)
-    - [US-03 - Anlegen in Subsystem](#us-03---anlegen-in-subsystem)
-    - [Fazit zu User Stories](#fazit-zu-user-stories)
-    - [Use Cases - Technisch](#use-cases---technisch)
-      - [UC-01 Patient-merge](#uc-01-patient-merge)
-      - [UC-02 - match (Patientendatenabgleich)](#uc-02---match-patientendatenabgleich)
-      - [UC-03 - Inform about merge](#uc-03---inform-about-merge)
-      - [UC-XY](#uc-xy)
-  - [Priorisierte Liste der Use Cases nach Bedarf](#priorisierte-liste-der-use-cases-nach-bedarf)
-  - [Priorisierte Liste weiterer Bedarfe an die Spezifikation](#priorisierte-liste-weiterer-bedarfe-an-die-spezifikation)
-  - [Annex I - Patient Journey](#annex-i---patient-journey)
-  - [Annex II - Patient Data Journey](#annex-ii---patient-data-journey)
+## Table of Contents <!-- omit from toc --> 
+- [1. Motivation und Hintergrund](#1-motivation-und-hintergrund)
+- [2. Ziele](#2-ziele)
+- [3. Stakeholder und User](#3-stakeholder-und-user)
+- [4. Randbedingungen](#4-randbedingungen)
+  - [4.1. Technische Randbedingungen](#41-technische-randbedingungen)
+  - [4.2. Organisatorische Randbedingungen](#42-organisatorische-randbedingungen)
+  - [4.3. Konventionen](#43-konventionen)
+- [5. Kontextabgrenzung](#5-kontextabgrenzung)
+  - [5.1. User und Systeme](#51-user-und-systeme)
+  - [5.2. Kontext der Festlegung](#52-kontext-der-festlegung)
+  - [5.3. Patient Data Journey](#53-patient-data-journey)
+- [6. Lösungsstrategie](#6-lösungsstrategie)
+  - [6.1. Bestehende Standards](#61-bestehende-standards)
+  - [6.2. merge (und match)](#62-merge-und-match)
+  - [6.3. merge-inform](#63-merge-inform)
+- [7. User Stories und Use Cases](#7-user-stories-und-use-cases)
+  - [7.1. User Stories - Business](#71-user-stories---business)
+  - [7.2. US-01: Terminbuchung Patientenportal](#72-us-01-terminbuchung-patientenportal)
+  - [7.3. US-02: händische Patientenaufnahme](#73-us-02-händische-patientenaufnahme)
+  - [7.4. US-03: Anlegen in Subsystem](#74-us-03-anlegen-in-subsystem)
+  - [7.5. Fazit zu User Stories](#75-fazit-zu-user-stories)
+  - [7.6. Use Cases - Technisch](#76-use-cases---technisch)
+    - [7.6.1. UC-01: Patient-merge](#761-uc-01-patient-merge)
+    - [7.6.2. UC-02: match (Patientendatenabgleich)](#762-uc-02-match-patientendatenabgleich)
+    - [7.6.3. UC-03: Inform about merge](#763-uc-03-inform-about-merge)
+    - [7.6.4. UC-XY](#764-uc-xy)
+- [8. Priorisierte Liste der Use Cases nach Bedarf](#8-priorisierte-liste-der-use-cases-nach-bedarf)
+- [9. Priorisierte Liste weiterer Bedarfe an die Spezifikation](#9-priorisierte-liste-weiterer-bedarfe-an-die-spezifikation)
+- [10. Annex I - Patient Journey](#10-annex-i---patient-journey)
+- [11. Annex II - Patient Data Journey](#11-annex-ii---patient-data-journey)
 
-## Motivation und Hintergrund
+## 1. Motivation und Hintergrund
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. Ein Standard, der sich dem Austausch von Patientendaten innerhalb eines Krankenhauses verschreibt, sollte daher auch das Thema der Patientendatenzusammenführung (Patient merge) abdecken. Ziel ist es, dass externe Clients merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
 
 Bisher trifft ISiK keine Festlegung zum Patient merge. Aus diesem Grund ist die AG 'Patient merge' etabliert worden, die sich dem beschriebenen Thema im Rahmen von ISiK annehmen soll.
 
 Dieses Dokument soll der Harmonisierung der Problemdefinition zum Patient merge in ISiK dienen. Änderungswünsche am Dokument per Pull Request sind willkommen. 
 
-## Ziele
+## 2. Ziele
 Ziel der Arbeiten im Rahmen der Ausbaustufe 4 ist:
 Die Schaffung eines modulübergreifenden Implementierungsleitfadens zum Vorgehen bei der Patientenzusammenführung.
 Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halbautomatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können.
@@ -53,13 +51,13 @@ Für die Implementierung ist dabei noch zu entscheiden, zu welchem Vorgang die S
 
 Die genauere Zielstellung sollte unter Einbeziehung der Stakeholder in der ersten Projektphase detailliert und festgelegt werden.
 
-## Stakeholder und User
+## 3. Stakeholder und User
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von KIS und Patientenportalen. Alle anderen Hersteller von ISiK-nahen Systemen sind auch eingeladen sich zu beteiligen, da ihre Prozesse potenziell betroffen sein werden.
 
 Es handelt sich um eine technische Spezifikation, zu der keine weiteren medizinischen Fachexperten zu Rate gezogen werden müssen.
 
-## Randbedingungen
-### Technische Randbedingungen
+## 4. Randbedingungen
+### 4.1. Technische Randbedingungen
 In den bisherigen ISiK Spezifikationen bestehen keine expliziten Festlegungen, wie mit dem Zusammenführen von Patientendaten umzugehen ist.
 
 Grundsätzlich stellt sich die Frage welche Vorgänge im Rahmen eines Patient merge Workflows Teil der Festlegung in einer zukünftigen Spezifikation sein sollten. Neben der in der Zielstellung beschriebenen Unterscheidung zwischen den merge-Workflows (merge) und der Kommunikation des merge-Prozesses (merge-inform), lassen sich weitere Aspekte anführen, die auch einzeln betrachtet werden können:
@@ -93,18 +91,18 @@ Neben den genannten Standards, existieren auch relevante IHE-Standards - diese s
 
 Insbesondere PIX/PIXm ist für den gesamten Patient-merge-Prozess relevant, aber auch PAM - für Kontexte der provisorischen [Instanz-Erzeugung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2) und das [Kontakt-Management bzw. die Fachabteilungs-Überweisung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2.1). Für Aspekte des Patient matching ist insbesondere XCPD (Cross-Community Patient Discovery) relevant.
 
-### Organisatorische Randbedingungen
+### 4.2. Organisatorische Randbedingungen
 Es gelten die Fristen wie in anderen Modulen.
 
 Die Konsentierung der Use Cases soll auch eine rein asynchrone Mitarbeit erlauben. Dies schließt eine asynchrone Entscheidungsfindung ein.
 
-### Konventionen
+### 4.3. Konventionen
 Die Draft-Dokumente werden auf github zur Diskussion gestellt.
 
 Pull Requests, die grundsätzliche Änderungen bewirken, sollten in der Regel im Rahmen der AG angekündigt und ggf. diskutiert werden.
 
-## Kontextabgrenzung
-### User und Systeme
+## 5. Kontextabgrenzung
+### 5.1. User und Systeme
 Zu berücksichtigende User sind
 * Krankenhausmitarbeiter (MFAs, Ärzte etc.)
 * Patienten (nur bei Nutzung Patientenportal, z.B. Terminplanung)
@@ -119,14 +117,14 @@ Zudem sind hervorzuheben als mögliche Clients, Subsysteme (oder ggf. Drittanbie
 
 Eine im Zuge des merges genutzte Komponenten ist ein Master Patient Index (MPI). Die Nutzung von MPIs in Krankenhäusern wird bei Use Cases (s.u.) mitbedacht.
 
-### Kontext der Festlegung
+### 5.2. Kontext der Festlegung
 Die Spezifikationsarbeit schließt die Festlegung oder Definition neuer Identifier (analog zu gID, eID etc.) aus. Es kann lediglich darum gehen, technische Verfahren und organisatorische Mechanismen aufzuzeigen und festzulegen, die mit gegebenen Patienten-Identifiers (PID) innerhalb einer Organisation operieren.
 
 Diese Verfahren oder Maßnahmen können nur für eine Institution gelten. Die Zusammenführung von Patientendaten zwischen unterschiedlichen Institutionen ist nicht im Scope der AG 'Patient merge' enthalten.
 
 Die genauere Problemdefinition und Anforderungserhebung unter Einbeziehung der interessierten Stakeholder ist selbst Teil der der Projektarbeit (erste Projektphase).
 
-### Patient Data Journey
+### 5.3. Patient Data Journey
 
 Um die Regelungsbedarfe rund um den Patient merge genauer zu verstehen, ist die Analyse der Patient Journey, die möglichst viele Patientenattribute und die unterschiedlichen "Etappen" des Patienten durch das Krankenhaus erfasst, zunächst nicht zielführend (siehe dazu [Annex I](#annex-i---patient-journey)), da zu abstrakt gegenüber dem technischen Regelungsbedarf.
 
@@ -138,17 +136,17 @@ Basierend auf dem beschriebenen Szenario sind die möglichen Datenmanipulationen
 
 Im Rahmen von ISiK ist es entscheidend Schnittstellen und Abläufe für einige aus diesem Szenario abgeleiteten Fälle festzulegen, um sicherzustellen, dass Patientendaten in allen Systemen konsistent bleiben. Dabei ist zunächst auszuwählen welche Szenarien anhand feingranularer Use Cases (siehe unten) genauer zu beachten sind.
 
-## Lösungsstrategie
+## 6. Lösungsstrategie
 Vor der Entwicklung einer Lösungsstrategie, die eine Auswahl konkreter Bedarfe benennt, müssen zunächst Ziel- und Problemdefinition besser ausgearbeitet werden. Dennoch lassen sich grundsätzliche Lösungsszenarien nennen.
 
 Zunächst sollte für jedes bestätigungsrelevante System der Umfang des Festzulegenden einzeln bestimmt werden.
 
 Allgemein sollte im Zuge des Patient merge auch eine Ablösungsstrategie zu Hl7 v2 festgehalten werden - zwar nicht als ein Ausschluss des bestehenden Standards - dieser wird vermutlich noch weitere Jahre produktiv sein -, zumindest aber als perspektivische Alternative zur Einbindung von externen Dienst im Sinne eines Best-of-Breed-Ansatzes auf FHIR-Basis - z.B. bei Patientenportalen (s.u.).
 
-### Bestehende Standards
+### 6.1. Bestehende Standards
 Neben geltenden Festlegungen in FHIR und HL7v2 sind bei der weiteren Problemdefinition auch die oben benannten IHE-Profile zu berücksichtigen
 
-### merge (und match)
+### 6.2. merge (und match)
 Eine erste Spezifikation zum Patient merge sollte nicht auf eine vollumfängliche Abdeckung der Workflows zum Patient merge zielen.
 
 Sollte die Festlegung eines merge-Verhaltens auf FHIR-Basis als Zieldefinition konsentiert werden, sollte auf bestehende Festlegungen im FHIR Kontext zurückgegriffen werden.
@@ -166,7 +164,7 @@ Insbesondere für
 - merge : [Patient Identity Feed FHIR [ITI-104]](https://profiles.ihe.net/ITI/PIXm/ITI-104.html)
 - match: In PIXm - [Mobile Patient Identifier Cross-reference Query [ITI-83]](https://profiles.ihe.net/ITI/PIXm/ITI-83.html)
 
-### merge-inform
+### 6.3. merge-inform
 Sollte allein die Festlegung zum merge-inform als Zieldefinition konsentiert werden, sollten auch bestehenden Mechanismen aus HL7v2 berücksichtigt werden.
 
 Zum merge-Inform könnten Lösungsansätze in FHIR sein:
@@ -179,7 +177,7 @@ Mittels HL7 ADT sind relevante Vorarbeiten:
 - - [Patient Identity Feed [ITI-8] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html#3.8) -  mit ADT^A40
 
 
-## User Stories und Use Cases
+## 7. User Stories und Use Cases
 
 In folgendem wird zwischen User Stories (Business-Seite) und Use Cases (technisch) unterschieden.
 
@@ -197,7 +195,7 @@ Die Präzisierung der Frage nach dem "Wo?" wäre daher: Was für ein spezifische
 
 Jenseits der komponentenzentrierten Sicht  wäre es zusätzlich möglich zur Identifikation weiterer User Stories die eigentliche Patient Journey (siehe Annex I) zu analysieren in Hinblick auf die Frage wo ein Patient merge wünschenswert wäre.
 
-### User Stories - Business
+### 7.1. User Stories - Business
 
 Zur Konkretisierung der Frage, lassen sich verschiedene User Stories erzählen, für die jeweils die Frage zu beantworten wäre: Was für ein spezifischer Bedarf an ein Patient merge ergibt sich in diesem Szenario?
 
@@ -212,7 +210,7 @@ Drei User Stories beschreiben exemplarisch die grundlegenden Kontexte, in denen 
 
 Für US-01 und US-02 sollte der Fall berücksichtigt werden, dass eine lokale Instanz eines Subsystems bei Update mit zusätzlichen Informationen auf den Status 'aktiv' überprüft wird. Dieser Fall sollte für alle UCs (s.u.) und alle Komponenten (Subsystem-Typen - ggf. aus ISiK) bedacht werden.
 
-### US-01: Terminbuchung Patientenportal
+### 7.2. US-01: Terminbuchung Patientenportal
 Bei US-01 kann man differenzieren zwischen Fällen, in denen ein externes Patientenportal angeschlossen ist und eine hausinterne Komponente verwendet wird. Weiterhin könnte man in diesem Sinne differenzieren zwischen fachspezifischen und internen Terminplanungs-Systeme, z.B. für OP-Planung oder Strahlentherapie-Planung.
 
 Eine Ablauf-Darstellung der Terminbuchung mit Patientenportal ist im folgenden [GITHUB Issue](https://github.com/gematik/spec-ISiK-Basismodul/issues/264#issuecomment-1553022809) vorgestellt worden. 
@@ -221,22 +219,22 @@ Bereits an dieser Stelle lässt sich eine erste funktionale Anforderung (REQ) fe
 
 **REQ-002**: "Ein Termin-Repository MUSS einen Benachrichtigungsmechanismus bereitstellen, der einen Termin-Requestor über erfolgte Patient merges informiert."
 
-### US-02 - händische Patientenaufnahme
+### 7.3. US-02: händische Patientenaufnahme
 Eine händische Aufnahme kommt vor, wenn z.B. ein Patient eine Karte vergessen hat.
 Auch ein Fall sind bereits gedruckte Etiketten (z.B. im Kontext von Labor-Informations-Systeme - LIS), sodass alle im Umlauf befindlichen IDs verfügbar sein müssen.
 Diese Story ist auch relevant für Patientenportale.
 
-### US-03 - Anlegen in Subsystem
+### 7.4. US-03: Anlegen in Subsystem
 Nach Praxiserfahrung kommt es durchaus vor, dass eine Instanz ad-hoc in einem PDMS angelegt wird (mit eigener ID), ohne dass ein merge mit einem KIS/Patientenführenden-System gewährleistet werden kann.
 
 Hier besteht womöglich der Bedarf nach einem vom KIS unabhängigen PDMS.
 
-### Fazit zu User Stories
+### 7.5. Fazit zu User Stories
 Wir nehmen an, dass für US-02 und US-03 es in der Regel dem KIS intern überlassen ist wie es einen Merge regelt oder nicht. Daher wären diese User Stories aus ISiK-Sicht nicht prioritär. Z.B. wenn im KIS händisch eine Aufnahme erfolgt, muss das System entscheiden, wie die Patient-Ressource erstellt wird. Wenn das KIS intern merged und direkt die richtige Ressource herausgibt, besteht keine Notwendigkeit für einen Merge oder ein Merge-Event.
 
 In diesem Sinne wäre US-01 für die folgende Entwicklung technischer Use Cases zum Patient merge zu priorisieren, wobei als externer Client nicht nur ein Patientenportal zu berücksichtigen ist, sondern auch sonstige Client-Systeme die auf ISiK-Schnittstellen zugreifen.
 
-### Use Cases - Technisch
+### 7.6. Use Cases - Technisch
 Aus einer Perspektive der Workflows lassen sich weitere Use Cases (UCs) ausdifferenzieren.
 
 In der Interaktion mit einem System, das Patientendaten verwaltet, lassen sich zunächst zwei UCs feststellen, die direkt Aspekte des Patientendatenzusammenführung betreffen:
@@ -322,7 +320,7 @@ Auch diesen UC Cases rund um derivierte/referenzierte/referenzierende Ressourcen
 
 Die folgende Liste der Use Cases entspricht der Priorisierung im Rahmen des Festlegungs-Vorhabens 'Patient merge'.
 
-#### UC-01 Patient-merge
+#### 7.6.1. UC-01: Patient-merge
 *Anwendungsfall-ID:* UC-01 
 
 *Anwendungsfall-Name:* Patient merge (Zusammenführung von Patientenressourcen)
@@ -400,7 +398,7 @@ Bei technischen Problemen, die den Zusammenführungsprozess verhindern, wird ein
 *Anmerkungen und Probleme:* 
 * Patient merges sollten protokolliert werden, um technische Verantwortlichkeit und Rückverfolgbarkeit zu gewährleisten.
 
-#### UC-02 - match (Patientendatenabgleich)
+#### 7.6.2. UC-02: match (Patientendatenabgleich)
 
 *Anwendungsfall-ID:* UC-02
 
@@ -410,7 +408,7 @@ Bei technischen Problemen, die den Zusammenführungsprozess verhindern, wird ein
 
 *Beschreibung:* Der Use Case umfasst den Abgleich von Patientendaten innerhalb des Gesundheitsinformationssystems (KIS) eines Krankenhauses. Dabei werden entweder adäquate HL7-v2-Nachrichten oder die FHIR ($match)-Operation oder vergleichbare proprietäre Operationen verwendet, um potenzielle Duplikate oder fragmentierte Datensätze zu identifizieren.
 
-#### UC-03 - Inform about merge
+#### 7.6.3. UC-03: Inform about merge
 
 *Anwendungsfall-ID:* UC-03
 
@@ -431,10 +429,10 @@ Siehe auch:
    - FHIR - https://build.fhir.org/patient-operation-merge.html#notification
    - IHE PIXm -  https://profiles.ihe.net/ITI/PIXm/ITI-104.html#2310442-resolve-duplicate-patient
 
-#### UC-XY
+#### 7.6.4. UC-XY
 Sollten weitere UCs genauer erörtert werden?
 
-## Priorisierte Liste der Use Cases nach Bedarf
+## 8. Priorisierte Liste der Use Cases nach Bedarf
 Hier werden die UCs priorisiert.
 Die Priorisierung entspricht Arbeitspaketen für die konzeptuelle Aufbereitung. Eine technische Umsetzung im Rahmen der Stufe 4 soll dabei explizit nicht für alle UCs angestrebt werden.
 
@@ -451,13 +449,13 @@ Weitere UCs in priorisierter Reihenfolge:
 1. **UC-02: match (Patientendatenabgleich)**
 
 
-## Priorisierte Liste weiterer Bedarfe an die Spezifikation
+## 9. Priorisierte Liste weiterer Bedarfe an die Spezifikation
 Hier werden Bedarfe an die Spezifikation vorgehalten, die nicht unmittelbar über die oben priorisierten UCs abgedeckt sind.
 
 1. Definition von Best-Practices für den Client im Falle eigener Datenhaltung
 1. ...
 
-## Annex I - Patient Journey
+## 10. Annex I - Patient Journey
 
 Zur Abbildung der Patient Journey durch ein Krankenhaus kann ein typischer Prozess wie folgt skizziert werden, indem für die einzelnen Prozessschritte die jeweils relevanten ISiK Ressourcen neben Patient benannten werden:
 
@@ -506,7 +504,7 @@ Zur Abbildung der Patient Journey durch ein Krankenhaus kann ein typischer Proze
     - 
 
 
-## Annex II - Patient Data Journey
+## 11. Annex II - Patient Data Journey
 
 Hier eine ausführliche Liste der Szenarien, aus dem in [Patient Data Journey](#patient-data-journey) geschilderten Modell.
 
