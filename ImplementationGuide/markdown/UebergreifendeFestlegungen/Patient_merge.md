@@ -426,7 +426,7 @@ Includes (weitere UCs):
 * Im Rahmen eines Deketierungsevents einer zugehörigen Subscription 
 
 Siehe auch:
-   - FHIR - https://build.fhir.org/patient-operation-merge.html#notification
+   - FHIR - https://hl7.org/fhir/patient-operation-merge.html#notification
    - IHE PIXm -  https://profiles.ihe.net/ITI/PIXm/ITI-104.html#2310442-resolve-duplicate-patient
 
 #### 7.6.4. UC-XY
