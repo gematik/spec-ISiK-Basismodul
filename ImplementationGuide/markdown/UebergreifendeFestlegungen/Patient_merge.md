@@ -1,6 +1,7 @@
 # Konzept Patient merge (WIP)
 
 ## Table of Contents <!-- omit from toc --> 
+- [Zusammenfassung](#zusammenfassung)
 - [1. Motivation und Hintergrund](#1-motivation-und-hintergrund)
 - [2. Ziele](#2-ziele)
 - [3. Stakeholder und User](#3-stakeholder-und-user)
@@ -31,6 +32,10 @@
 - [9. Priorisierte Liste weiterer Bedarfe an die Spezifikation](#9-priorisierte-liste-weiterer-bedarfe-an-die-spezifikation)
 - [10. Annex I - Patient Journey](#10-annex-i---patient-journey)
 - [11. Annex II - Patient Data Journey](#11-annex-ii---patient-data-journey)
+
+## Zusammenfassung
+Es besteht aus Sicht der befragten Stakeholder der Bedarf nach einer AG zum Patientendatenzusammenführung (Patient-merge) im Kontext von ISiK.
+Derzeitiges Umsetzungsziel der AG im Rahmen der ISIK Ausbaustufe 4 ist die fachliche Konsolidierung und Spezifikation zu einer Interaktion im FHIR Kontext, die über einen geschehenen Patient-merge informiert (zum benannten Umsetzungsziel siehe [7.6.3. UC-03: Inform about merge](#763-uc-03-inform-about-merge) und zur Priorisierung weiterer Bedarfe siehe [8. Priorisierte Liste der Use Cases nach Bedarf](#8-priorisierte-liste-der-use-cases-nach-bedarf)).
 
 ## 1. Motivation und Hintergrund
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. Ein Standard, der sich dem Austausch von Patientendaten innerhalb eines Krankenhauses verschreibt, sollte daher auch das Thema der Patientendatenzusammenführung (Patient merge) abdecken. Ziel ist es, dass externe Clients merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
@@ -86,8 +91,6 @@ Neben den genannten Standards, existieren auch relevante IHE-Standards - diese s
 - [Patient Identity Management [ITI-30] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-30.html)
 - [Patient Identity Feed [ITI-8] ](https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html#3.8)
 - XCPD (Cross-Community Patient Discovery) - https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html#27
-- PDQ (Patient Demographics Query)
-- MHD (Mobile access to Health Documents)
 
 Insbesondere PIX/PIXm ist für den gesamten Patient-merge-Prozess relevant, aber auch PAM - für Kontexte der provisorischen [Instanz-Erzeugung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2) und das [Kontakt-Management bzw. die Fachabteilungs-Überweisung](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html#14.2.1). Für Aspekte des Patient matching ist insbesondere XCPD (Cross-Community Patient Discovery) relevant.
 
@@ -416,16 +419,25 @@ Bei technischen Problemen, die den Zusammenführungsprozess verhindern, wird ein
 
 *Akteur:* System
 
-*Beschreibung:* Dieser Anwendungsfall beinhaltet die Benachrichtigung angeschlossener Systeme über den erfolgreichen Merge. Diese Benachrichtigung eines anderes Systems kann auf verschiedene Arten erfolgen.
+*Beschreibung:* Dieser Anwendungsfall beinhaltet die Benachrichtigung angeschlossener Systeme - KIS sowie Subsysteme - über den erfolgreichen Merge. Diese Benachrichtigung eines anderen Systems kann auf verschiedene Arten erfolgen. 
+Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem eine Patientenzusammenführung stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource verhindert und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit erreicht.
 
-Includes (weitere UCs):
+Zu klären bleibt ob im Rahmen der Spezifikation eine Bestätigungsrelevanz zu erlangen ist für:
+a) den Versand einer Information zu einer Patientenzusammenführung für das KIS
+b) den Empfang und die Verarbeitung einer Information zu einer Patientenzusammenführung für Subsysteme (nicht KIS)
+
+Weiter bleibt zu klären durch welche FHIR Lösungsalternativen (siehe [6.3. merge-inform](#63-merge-inform)) die Benachrichtigung konkret auszugestalten ist.
+
+Zudem ist zu klären, ob die Nutzung von FHIR-Mitteln eine optionale Bestätigung sein sollte, wenn das KIS / Subsysteme die besagte Funktionalität mittels HL7 V2.x bereitstellen.
+
+Weitere Lösungsalternativen und -kontexte:
 * Als direkte FHIR Message.
 * Als HLV7x2 Message durch einen Messageserver, z.B. nach Auslesen eines Flags.
 * Als direkter Aufruf einer Merge Operation im Fremdsystem
-* Im Rahmen einer allgemeinen Referesh-Benachrichtigung
-* Im Rahmen eines Deketierungsevents einer zugehörigen Subscription 
+* Im Rahmen einer allgemeinen Refresh-Benachrichtigung
+* Im Rahmen eines Detektierungs-Events einer zugehörigen Subscription 
 
-Siehe auch:
+Beachte auch Festlegungen:
    - FHIR - https://hl7.org/fhir/patient-operation-merge.html#notification
    - IHE PIXm -  https://profiles.ihe.net/ITI/PIXm/ITI-104.html#2310442-resolve-duplicate-patient
 
