@@ -293,7 +293,7 @@ Weiterhin sind relevant, sollten aber nicht teil einer normativen Spezifikations
    * *Beschreibung:* Sicherstellen, dass der Merge-Prozess den geltenden Datenschutzrichtlinien und -vorschriften entspricht, um die Privatsphäre und Sicherheit der Patientendaten zu schützen.
    * *Akteure:* Mitarbeiterin, System
 
-![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/gematik/spec-ISiK-Basismodul/Nachbereitung-AG/ImplementationGuide/markdown/UebergreifendeFestlegungen/Use-Case-Diagram.iuml)
+![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/gematik/spec-ISiK-Basismodul/Patient-merge/ImplementationGuide/markdown/UebergreifendeFestlegungen/Use-Case-Diagram.iuml)
 
 Die im UC Diagram grün gekennzeichneten UCs sind besonders zu priorisieren, daher in Folge eine schematische Analyse.
 
