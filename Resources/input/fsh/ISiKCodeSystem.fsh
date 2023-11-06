@@ -17,8 +17,8 @@ Description: "Dieses Profil beschreibt die maschinenlesbare Repräsentation von 
 Instance: CodeSystemExample
 InstanceOf: ISiKCodeSystem
 Usage: #example
+* insert MetaInstance
 * url = "http://example.org/fhir/CodeSystem/TestKatalog"
-* version = "2.0.2"
 * name = "TestKatalog"
 * status = #active
 * content = #complete
