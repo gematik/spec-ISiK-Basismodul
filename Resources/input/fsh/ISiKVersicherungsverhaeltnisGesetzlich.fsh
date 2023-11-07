@@ -54,9 +54,9 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
 Instance: CoverageGesetzlich
 InstanceOf: ISiKVersicherungsverhaeltnisGesetzlich
 Usage: #example
-* identifier.type = $identifier-type-de-basis#GKV
-* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier.value = "A234567890"
+* identifier[KrankenversichertenID]
+  * system = "http://fhir.de/sid/gkv/kvid-10"
+  * value = "A234567890"
 * status = #active
 * type = $versicherungsart-de-basis#GKV
 * beneficiary = Reference(PatientinMusterfrau)

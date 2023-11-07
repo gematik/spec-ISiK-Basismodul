@@ -1,21 +1,18 @@
 RuleSet: Meta
+* ^version = "3.0.0"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^date = "2023-07-01"
 
-RuleSet: Meta-CapabilityStatement
+RuleSet: MetaInstance
+* version = "3.0.0"
 * status = #active
 * experimental = false
-* version = "3.0.0"
 * publisher = "gematik GmbH"
 * date = "2023-07-01"
+
+RuleSet: Meta-CapabilityStatement
+* insert MetaInstance
 * implementationGuide = "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|3.0.0"
 * url = "https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server"
-
-RuleSet: MetaInstance
-* status = #active
-* experimental = false
-* version = "3.0.0"
-* publisher = "gematik GmbH"
-* date = "2023-07-01"

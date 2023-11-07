@@ -100,17 +100,17 @@ Usage: #example
 * identifier[=].system = "http://fhir.de/sid/bundesaerztekammer/efn"
 * identifier[=].value = "123456789123456"
 * active = true
-* name[0].use = #official
-* name[=].text = "Walter Arzt"
-* name[=].family = "Arzt"
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension.valueString = "Arzt"
-* name[=].given = "Walter"
-* name[+].use = #maiden
-* name[=].text = "Gross"
-* name[=].family = "Gross"
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension.valueString = "Gross"
+* name[Name]
+  * text = "Walter Arzt"
+  * family = "Arzt"
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension.valueString = "Arzt"
+  * given = "Walter"
+* name[Geburtsname]
+  * text = "Gross"
+  * family = "Gross"
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension.valueString = "Gross"
 * address.type = #both
 * address.line = "Schmiedegasse 16"
   * extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
