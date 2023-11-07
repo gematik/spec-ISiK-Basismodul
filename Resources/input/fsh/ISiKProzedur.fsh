@@ -56,9 +56,9 @@ Usage: #example
 * extension.valueDateTime = "2020-04-23"
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
-* code.coding[0] = $sct#80146002 "Excision of appendix (procedure)"
-* code.coding[+].version = "2020"
-* code.coding[=] = $ops#5-470 "Appendektomie"
+* code.coding[ProzedurSNOMED] = $sct#80146002 "Excision of appendix (procedure)"
+* code.coding[ProzedurOPS].version = "2020"
+* code.coding[ProzedurOPS] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
 * subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2020-04-23"

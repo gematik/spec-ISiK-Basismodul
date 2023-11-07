@@ -123,12 +123,12 @@ Usage: #example
 * active = true
 * name[Name]
   * family = "Fürstin von Musterfrau"
-    * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-    * extension[=].valueString = "Fürstin"
-    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-    * extension[=].valueString = "Musterfrau"
-    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-    * extension[=].valueString = "von"
+    * extension[Namenszusatz].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
+    * extension[Namenszusatz].valueString = "Fürstin"
+    * extension[Nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension[Nachname].valueString = "Musterfrau"
+    * extension[Name_Praefix].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
+    * extension[Name_Praefix].valueString = "von"
   * given = "Erika"
   * prefix = "Dr."
     * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
@@ -139,25 +139,25 @@ Usage: #example
     * extension.valueString = "Gabler"
 * gender = #female
 * birthDate = "1964-08-12"
-* address[0].type = #both
-* address[=].line[0] = "Musterweg 2"
-* address[=].line[+] = "3. Etage"
-* address[=].line[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[=].line[=].extension[=].valueString = "Musterweg"
-* address[=].line[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[=].line[=].extension[=].valueString = "2"
-* address[=].line[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"
-* address[=].line[=].extension.valueString = "3. Etage"
-* address[=].city = "Musterhausen"
-* address[=].postalCode = "98764"
-* address[=].country = "DE"
-* address[+].type = #postal
-* address[=].line = "Postfach 8 15"
+* address[Adresse].type = #both
+* address[Adresse].line[Strassenanschrift] = "Musterweg 2"
+* address[Adresse].line[Etage] = "3. Etage"
+* address[Adresse].line[Anschrift].extension[Strassenname].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[Adresse].line[Anschrift].extension[Strassenname].valueString = "Musterweg"
+* address[Adresse].line[Anschrift].extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[Adresse].line[Anschrift].extension[Hausnummer].valueString = "2"
+* address[Adresse].line[Ortsangabe_Zusatz].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"
+* address[Adresse].line[Ortsangabe_Zusatz].extension.valueString = "3. Etage"
+* address[Adresse].city = "Musterhausen"
+* address[Adresse].postalCode = "98764"
+* address[Adresse].country = "DE"
+* address[Postfach].type = #postal
+* address[Postfach].line = "Postfach 8 15"
   * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox"
   * extension.valueString = "Postfach 8 15"
-* address[=].city = "Musterhausen"
-* address[=].postalCode = "98764"
-* address[=].country = "DE"
+* address[Postfach].city = "Musterhausen"
+* address[Postfach].postalCode = "98764"
+* address[Postfach].country = "DE"
 
 
 Invariant: isik-pat-1

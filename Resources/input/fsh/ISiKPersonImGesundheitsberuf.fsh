@@ -93,12 +93,12 @@ Instance: PractitionerWalterArzt
 InstanceOf: ISiKPersonImGesundheitsberuf
 Usage: #example
 * meta.source = "http://krankenhaus.de"
-* identifier[0].type = $v2-0203#LANR
-* identifier[=].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
-* identifier[=].value = "123456789"
-* identifier[+].type = $v2-0203#DN
-* identifier[=].system = "http://fhir.de/sid/bundesaerztekammer/efn"
-* identifier[=].value = "123456789123456"
+* identifier[ArztnummerKBV].type = $v2-0203#LANR
+* identifier[ArztnummerKBV].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"
+* identifier[ArztnummerKBV].value = "123456789"
+* identifier[ArztnummerBAEK].type = $v2-0203#DN
+* identifier[ArztnummerBAEK].system = "http://fhir.de/sid/bundesaerztekammer/efn"
+* identifier[ArztnummerBAEK].value = "123456789123456"
 * active = true
 * name[Name]
   * text = "Walter Arzt"
@@ -113,10 +113,10 @@ Usage: #example
     * extension.valueString = "Gross"
 * address.type = #both
 * address.line = "Schmiedegasse 16"
-  * extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-  * extension[=].valueString = "16"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-  * extension[=].valueString = "Schmiedegasse"
+  * extension[Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+  * extension[Hausnummer].valueString = "16"
+  * extension[Strassenname].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+  * extension[Strassenname].valueString = "Schmiedegasse"
 * address.city = "Potsdam"
 * address.postalCode = "14469"
 * address.country = "DE"

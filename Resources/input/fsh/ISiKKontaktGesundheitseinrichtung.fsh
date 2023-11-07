@@ -134,12 +134,12 @@ Instance: Fachabteilungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
-* extension.extension[0].url = "ErsteUndZweiteStelle"
-* extension.extension[=].valueCoding = $AufnahmegrundErsteUndZweiteStelle#01 "Krankenhausbehandlung, vollstationär"
-* extension.extension[+].url = "DritteStelle"
-* extension.extension[=].valueCoding = $AufnahmegrundDritteStelle#0 "Anderes"
-* extension.extension[+].url = "VierteStelle"
-* extension.extension[=].valueCoding = $AufnahmegrundVierteStelle#1 "Normalfall"
+* extension.extension[Aufnahmegrund_Erste_Zweite].url = "ErsteUndZweiteStelle"
+* extension.extension[Aufnahmegrund_Erste_Zweite].valueCoding = $AufnahmegrundErsteUndZweiteStelle#01 "Krankenhausbehandlung, vollstationär"
+* extension.extension[Aufnahmegrund_Dritte].url = "DritteStelle"
+* extension.extension[Aufnahmegrund_Dritte].valueCoding = $AufnahmegrundDritteStelle#0 "Anderes"
+* extension.extension[Aufnahmegrund_Vierte].url = "VierteStelle"
+* extension.extension[Aufnahmegrund_Vierte].valueCoding = $AufnahmegrundVierteStelle#1 "Normalfall"
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
 * identifier.value = "0123456789"
@@ -157,10 +157,10 @@ Usage: #example
 * account.identifier.value = "XZY"
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
-* hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
-* hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
-* hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
-* hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
+* hospitalization.dischargeDisposition.extension.extension[Entlassungsstelle_Erste_Zweite].url = "ErsteUndZweiteStelle"
+* hospitalization.dischargeDisposition.extension.extension[Entlassungsstelle_Erste_Zweite].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
+* hospitalization.dischargeDisposition.extension.extension[Entlassungsstelle_Dritte].url = "DritteStelle"
+* hospitalization.dischargeDisposition.extension.extension[Entlassungsstelle_Dritte].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.physicalType = $LocationPhysicalType#bd "Bed"
 * location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
 * location.location.identifier.value = "123"
@@ -220,15 +220,15 @@ Usage: #definition
 * base = #Encounter
 * type = #date
 * expression = "Encounter.period.start"
-* comparator[0] = #eq
-* comparator[+] = #ne
-* comparator[+] = #gt
-* comparator[+] = #ge
-* comparator[+] = #lt
-* comparator[+] = #le
-* comparator[+] = #sa
-* comparator[+] = #eb
-* comparator[+] = #ap
+* comparator[EQ] = #eq
+* comparator[NE] = #ne
+* comparator[GT] = #gt
+* comparator[GE] = #ge
+* comparator[LT] = #lt
+* comparator[LE] = #le
+* comparator[SA] = #sa
+* comparator[EB] = #eb
+* comparator[AP] = #ap
 
 Instance: Encounter-end-date
 InstanceOf: SearchParameter
@@ -240,12 +240,12 @@ Usage: #definition
 * base = #Encounter
 * type = #date
 * expression = "Encounter.period.end"
-* comparator[0] = #eq
-* comparator[+] = #ne
-* comparator[+] = #gt
-* comparator[+] = #ge
-* comparator[+] = #lt
-* comparator[+] = #le
-* comparator[+] = #sa
-* comparator[+] = #eb
-* comparator[+] = #ap
+* comparator[EQ] = #eq
+* comparator[NE] = #ne
+* comparator[GT] = #gt
+* comparator[GE] = #ge
+* comparator[LT] = #lt
+* comparator[LE] = #le
+* comparator[SA] = #sa
+* comparator[EB] = #eb
+* comparator[AP] = #ap

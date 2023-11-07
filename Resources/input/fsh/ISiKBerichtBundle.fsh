@@ -26,29 +26,29 @@ InstanceOf: ISiKBerichtBundle
 Usage: #example
 Title: "Bundle-Beispiel-Blutdruck"
 Description: "Beispiel für ein Bundle mit Composition Blutdruck, das folgende User Story repräsentiert: Die Patientin von Musterfrau war vom 3. bis 5. Mai 2022 als stationärer Fall anlässlich einer geplanten Operation im Krankenhaus. Dabei wurde am 3. Mai der Blutdruck gemessen und das Ergebnis in einem Peripheriesystem vermerkt. Das Peripheriesystem sendet das Messergebnis an das KIS, so dass das KIS dieses in die Gesamtdokumentation zur Patientin aufnehmen kann."
-* identifier[0].type = $v2-0203#FILL
-* identifier[=].system = "https://fhir.krankenhaus.example/sid/subsystem-a/berichtbundlenummer"
-* identifier[=].value = "0123456789"
+* identifier[Bericht_Bundle_Nummer].type = $v2-0203#FILL
+* identifier[Bericht_Bundle_Nummer].system = "https://fhir.krankenhaus.example/sid/subsystem-a/berichtbundlenummer"
+* identifier[Bericht_Bundle_Nummer].value = "0123456789"
 * timestamp = "2022-05-03T17:57:34+01:00"
-* entry[0].resource = composition-blutdruck
-* entry[=].fullUrl = "urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002"
-* entry[+].resource = PatientinMusterfrauMinimal
-* entry[=].fullUrl = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
-* entry[+].resource = FachabteilungskontaktMinimal
-* entry[=].fullUrl = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
+* entry[Composition_Blutdruck].resource = composition-blutdruck
+* entry[Composition_Blutdruck].fullUrl = "urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002"
+* entry[Patient].resource = PatientinMusterfrauMinimal
+* entry[Patient].fullUrl = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
+* entry[Kontakt].resource = FachabteilungskontaktMinimal
+* entry[Kontakt].fullUrl = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 
 
 Instance: PatientinMusterfrauMinimal
 InstanceOf: Patient
 Usage: #example
 Description: "Minimalbeispiel für Patientin Musterfrau "
-* identifier[0].type = $v2-0203#MR
-* identifier[=].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[=].value = "TestPID"
-* name[0].use = #official
-* name[=].family = "Fürstin von Musterfrau"
-* name[=].given = "Erika"
-* name[=].prefix = "Dr."
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "TestPID"
+* name[Name].use = #official
+* name[Name].family = "Fürstin von Musterfrau"
+* name[Name].given = "Erika"
+* name[Name].prefix = "Dr."
 * gender = #female
 * birthDate = "1964-08-12"
 
@@ -60,8 +60,8 @@ Usage: #example
 * identifier.value = "0123456789"
 * status = #unknown
 * class = $v3-ActCode#IMP
-* type[0] = $Kontaktart-de#operation
-* type[+] = $Kontaktebene#abteilungskontakt
+* type[Kontaktart] = $Kontaktart-de#operation
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * period.start = "2022-05-03"
