@@ -145,8 +145,8 @@ Usage: #example
 * identifier.value = "0123456789"
 * status = #finished
 * class = $v3-ActCode#IMP
-* type[0] = $kontaktart-de#operation
-* type[+] = $Kontaktebene#abteilungskontakt
+* type[KontaktArt] = $kontaktart-de#operation
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject = Reference(PatientinMusterfrau)
 * period.start = "2021-02-12"

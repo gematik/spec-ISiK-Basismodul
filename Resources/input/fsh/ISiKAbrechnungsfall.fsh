@@ -33,9 +33,9 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 Instance: AbrechnungsfallAmbulant
 InstanceOf: ISiKAbrechnungsfall
 Usage: #example
-* identifier.type = $v2-0203#VN
-* identifier.system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
-* identifier.value = "0123456789"
+* identifier[Aufnahmenummer]
+  * system = "https://test.krankenhaus.de/fhir/sid/besuchsnummer"
+  * value = "0123456789"
 * status = #active
 * type = $v3-ActCode#AMB
 * subject = Reference(PatientinMusterfrau)
