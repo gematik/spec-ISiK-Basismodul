@@ -80,6 +80,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
@@ -90,9 +91,9 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -104,7 +105,6 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKPatient)
 
 Instance: PatientinMusterfrau

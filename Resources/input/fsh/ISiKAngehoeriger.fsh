@@ -19,6 +19,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
@@ -29,9 +30,9 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 * address[Strassenanschrift] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -43,7 +44,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
     * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 
 Instance: ISiKAngehoerigerMustermann
