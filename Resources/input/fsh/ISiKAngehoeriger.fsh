@@ -44,7 +44,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 
 Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger
