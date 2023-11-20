@@ -30,7 +30,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * ^constraint[1].source = Canonical(ISiKAngehoeriger)
 * address[Strassenanschrift] only AddressDeBasis
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
