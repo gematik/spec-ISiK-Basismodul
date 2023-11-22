@@ -91,7 +91,6 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
@@ -105,7 +104,6 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * ^constraint[1].source = Canonical(ISiKPatient)
 
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
