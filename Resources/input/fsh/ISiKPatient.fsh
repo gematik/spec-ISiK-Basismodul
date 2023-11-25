@@ -121,22 +121,23 @@ Usage: #example
 * identifier[Versichertennummer_PKV].value = "1234567890"
 * identifier[Versichertennummer_PKV].assigner.display = "Test PKV AG"
 * active = true
-* name[0].use = #official
-* name[=].family = "Fürstin von Musterfrau"
-  * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-  * extension[=].valueString = "Fürstin"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension[=].valueString = "Musterfrau"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-  * extension[=].valueString = "von"
-* name[=].given = "Erika"
-* name[=].prefix = "Dr."
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
-  * extension.valueCode = #AC
-* name[+].use = #maiden
-* name[=].family = "Gabler"
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension.valueString = "Gabler"
+* name[Name]
+  * family = "Fürstin von Musterfrau"
+    * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
+    * extension[=].valueString = "Fürstin"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension[=].valueString = "Musterfrau"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
+    * extension[=].valueString = "von"
+  * given = "Erika"
+  * prefix = "Dr."
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
+    * extension.valueCode = #AC
+* name[Geburtsname]
+  * use = #maiden
+  * family = "Gabler"
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension.valueString = "Gabler"
 * gender = #female
 * birthDate = "1964-08-12"
 * address[0].type = #both
