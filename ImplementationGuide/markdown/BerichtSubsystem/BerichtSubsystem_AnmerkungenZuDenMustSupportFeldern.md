@@ -63,7 +63,7 @@ Beispiel:
 
 **Bedeutung:** Patientenbezug des Dokumentes
 
-### `Composition.context`
+### `Composition.encounter`
 
 **Bedeutung:** Fallbezug des Dokumentes
 
