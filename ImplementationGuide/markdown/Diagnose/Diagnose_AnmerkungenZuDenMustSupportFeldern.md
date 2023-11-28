@@ -6,7 +6,7 @@
 
 **Hinweise:**
 
-[FHIRPath Constraints seitens der FHIR-Kernspezifikation](https://www.hl7.org/fhir/condition.html#invs) rund um Condition.clinicalStatus sind zu beachten.
+[FHIRPath Constraints seitens der FHIR-Kernspezifikation](https://www.hl7.org/fhir/R4/condition.html#invs) rund um Condition.clinicalStatus sind zu beachten.
 
 ### `Condition.code.coding`
 
