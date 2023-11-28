@@ -25,7 +25,8 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
     * ^slicing.rules = #open
   * coding contains VersicherungsArtDeBasis 1..1 MS
   * coding[VersicherungsArtDeBasis] = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV
-* subscriber only Reference(RelatedPerson) MS
+* subscriber MS
+* subscriber only Reference(RelatedPerson)
   * ^definition = "Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung"
   * identifier 1.. MS // Das MS Flag dient der Übernahme von 'identifier' aus der Patienten-Instanz.
   * identifier only IdentifierKvid10
