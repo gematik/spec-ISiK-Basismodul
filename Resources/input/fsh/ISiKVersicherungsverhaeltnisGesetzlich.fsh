@@ -32,7 +32,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
     * ^short = "VersichertenID (10-stellig) des Hauptversicherten"
     * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
   * display ^short = "Name des Hauptversicherten"
-* beneficiary MS
+* beneficiary 1..1 MS
   * ^definition = "Benennt die versicherte Person."
   * ^comment = "Die Angabe der Reference ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden."
   * reference 1.. MS
