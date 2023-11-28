@@ -28,7 +28,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Condition?patient=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
@@ -38,7 +38,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Condition?subject=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.subject" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "encounter" MUSS unterstützt werden:
 
@@ -46,7 +46,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Condition?encounter=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "recorded-date" MUSS unterstützt werden:
 
@@ -76,7 +76,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Condition?category=https://hl7.org/fhir/R4/ValueSet/condition-category|problem-list-item```
+    ```GET [base]/Condition?category=http://hl7.org/fhir/ValueSet/condition-category|problem-list-item```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
