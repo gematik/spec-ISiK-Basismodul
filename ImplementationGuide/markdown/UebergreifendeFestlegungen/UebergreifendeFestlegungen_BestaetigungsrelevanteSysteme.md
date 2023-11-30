@@ -48,6 +48,6 @@ ISiK-Modul Terminplanung [z.B. für die Umsetzung von KHZG Fördertatbestand 2]
 
 Hinweise und Rückfragen zu den bestätigungsrelevante Systemen können an die [DKG-Geschäftsstelle](https://www.dkgev.de/dkg/verband-auf-einen-blick/geschaeftsstelle/) gerichtet werden.
 
-## Weitere Festlegungen auf Profilebene im CapabilityStatement
+## Festlegungen auf Profilebene im CapabilityStatement
 
 Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md}} geführt.
