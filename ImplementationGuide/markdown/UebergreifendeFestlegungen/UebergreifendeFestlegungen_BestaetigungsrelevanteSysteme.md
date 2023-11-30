@@ -50,4 +50,4 @@ Hinweise und Rückfragen zu den bestätigungsrelevante Systemen können an die [
 
 ## Festlegungen auf Profilebene im CapabilityStatement
 
-Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md}} geführt.
+Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}} geführt.
