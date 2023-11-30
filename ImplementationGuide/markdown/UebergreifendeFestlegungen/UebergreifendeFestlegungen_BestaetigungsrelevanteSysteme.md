@@ -50,4 +50,4 @@ Hinweise und Rückfragen zu den bestätigungsrelevante Systemen können an die [
 
 ## Weitere Festlegungen auf Profilebene im CapabilityStatement
 
-Festlegungen zu Anforderungen auf Profilebene werden im [ISIKCapabilityStatement](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/ImplementationGuide-markdown-CapabilityStatement?version=current) geführt.
+Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md}} geführt.
