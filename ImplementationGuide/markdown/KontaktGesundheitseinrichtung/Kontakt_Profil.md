@@ -9,6 +9,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul
 **Bei Abbildung von Versorgungsstellenkontakten**
 
 Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes die eines Abteilungskontaktes übersteigt. Ein Beispiel hierfür: Ein Patient bleibt im Bett (Versorgungsstellenkontakt), aber ein Fachabteilungswechsel geschieht, da die Diagnose über eine Fachabteilung (Onkologie) läuft, dann aber der Wechsel zur Fachabteilung Chirurgie (neuer Abteilungskontakt) notwendig wird. 
+
 Für einen solchen Fall gilt: 
 
 Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN nicht in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System ein oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen. 
