@@ -2,7 +2,7 @@
 
 
 Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt - allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
-* [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.2.1](https://simplifier.net/packages/kbv.basis/1.2.1)
+* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)
   * hier ist zu beachten, dass die KBV im Patienten-Profil für Address.country ein "extensible"-Binding auf die DEÜV-Codes festlegt; dies weicht von der ISiK Verwendung von ISO-Codes ab
 * [Profil Patient im International Patient Summary (IPS) - STU-1](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
 * [Profil Patient der MI-Initiative - v2024.0.0](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
