@@ -1,6 +1,5 @@
 ### Kompatibilität
 
-Dieses Profil basierte ursprünglich auf dem [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://simplifier.net/base1x0/kbv_pr_base_patient) in der Version 1.2.1.
 
 Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt - allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile - v1.2.1](https://simplifier.net/packages/kbv.basis/1.2.1)
