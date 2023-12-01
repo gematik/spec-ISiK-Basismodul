@@ -35,15 +35,48 @@
           "rules": "open"
         },
         "short": "Primärer Identifier der Versicherung",
-        "definition": "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versichertennummer identifiziert werden. Ist diese nicht bekannt, so wird die 10-stellige VersichertenID statt dessen verwendet.",
+        "definition": "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versicherungsnummer identifiziert werden. Ist diese nicht bekannt, so kann die 10-stellige KrankenversichertenID statt dessen verwendet werden. Diese ist aber nur in Verbindung mit dem Payor eindeutig einem Versicherungsverhältnis zuordenbar",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.identifier:Versicherungsnummer",
+        "path": "Coverage.identifier",
+        "sliceName": "Versicherungsnummer",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "GKV",
+                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+              }
+            ]
+          },
+          "system": "http://fhir.de/sid/gkv/kvnr-30"
+        }
+      },
+      {
+        "id": "Coverage.identifier:Versicherungsnummer.type",
+        "path": "Coverage.identifier.type",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.identifier:Versicherungsnummer.system",
+        "path": "Coverage.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.identifier:Versicherungsnummer.value",
+        "path": "Coverage.identifier.value",
         "mustSupport": true
       },
       {
         "id": "Coverage.identifier:KrankenversichertenID",
         "path": "Coverage.identifier",
         "sliceName": "KrankenversichertenID",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -61,9 +94,9 @@
                 "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
               }
             ]
-          }
-        },
-        "mustSupport": true
+          },
+          "system": "http://fhir.de/sid/gkv/kvid-10"
+        }
       },
       {
         "id": "Coverage.identifier:KrankenversichertenID.type",
@@ -130,7 +163,8 @@
               "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Coverage.subscriber.identifier",
@@ -147,7 +181,8 @@
         ],
         "patternIdentifier": {
           "system": "http://fhir.de/sid/gkv/kvid-10"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Coverage.subscriber.display",
@@ -158,7 +193,7 @@
         "id": "Coverage.beneficiary",
         "path": "Coverage.beneficiary",
         "definition": "Benennt die versicherte Person.",
-        "comment": "Die Angabe der 10-stelligen Krankenversichertennummer ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden.",
+        "comment": "Die Angabe der Reference ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden.",
         "mustSupport": true
       },
       {
@@ -179,7 +214,7 @@
         "id": "Coverage.beneficiary.display",
         "path": "Coverage.beneficiary.display",
         "short": "Name der Versicherten Person",
-        "definition": "Die Angabe des Namens des Versicherten dient der geeigenten Darstellung für den Benutzer und hat keine technische Bedeutung."
+        "definition": "Die Angabe des Namens des Versicherten dient der geeigneten Darstellung für den Benutzer und hat keine technische Bedeutung."
       },
       {
         "id": "Coverage.payor",
