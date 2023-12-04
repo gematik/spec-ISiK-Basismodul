@@ -2,7 +2,7 @@
 
 #### Profil ISiKVersicherungsverhaeltnisGesetzlich
 
-Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-gkv). 
+Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem Profil [Coverage der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). 
 Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen
 * Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-gkv)
 
