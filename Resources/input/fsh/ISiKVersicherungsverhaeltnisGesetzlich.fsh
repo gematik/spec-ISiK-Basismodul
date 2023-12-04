@@ -9,7 +9,7 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
   * ^short = "Primärer Identifier der Versicherung"
-  * ^definition = "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versicherungsnummer identifiziert werden. Ist diese nicht bekannt, so kann die 10-stellige KrankenversichertenID statt dessen verwendet werden. Diese ist aber nur in Verbindung mit dem Payor eindeutig einem Versicherungsverhältnis zuordenbar"
+  * ^definition = "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versicherungsnummer identifiziert werden. Ist diese nicht bekannt, so kann die 10-stellige KrankenversichertenID stattdessen verwendet werden. Diese ist aber nur in Verbindung mit dem Payor eindeutig einem Versicherungsverhältnis zuordenbar"
 * identifier contains Versicherungsnummer ..1 and KrankenversichertenID ..1
 * identifier[Versicherungsnummer]
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
