@@ -1,8 +1,8 @@
 ### Kompatibilität
 
-Dieses Profil basiert auf dem Profil [KontaktGesundheitseinrichtung der Medizininformatik-Initiative](https://simplifier.net/medizininformatikinitiative-modulfall/kontaktgesundheitseinrichtung). 
+Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+* [Profil Kontakt mit einer Gesundheitseinrichtung der Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 
-Instanzen, die gegen ISiKKontaktGesundheitseinrichtung valide sind, sind auch valide gegen
-* [Profil KontaktGesundheitseinrichtung der Medizininformatik-Initiative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulfall/kontaktgesundheitseinrichtung)
+Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
 
 ---

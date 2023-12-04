@@ -3,24 +3,17 @@
 #### Profil ISiKVersicherungsverhaeltnisGesetzlich
 
 Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-gkv). 
-
 Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen
-* Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile - v1.0.0](https://fhir.de/StructureDefinition/coverage-de-gkv)
- 
-Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind **nicht** valide gegen:
-* Profil [KBV_PR_FOR_Coverage der Formularübergreifenden Vorgaben der KBV (eRezept/eAU) - v1.0.3](https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage)
+* Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-gkv)
 
-  Um die Kompatibilität herzustellen, sind folgende Schritte erforderlich:
-    * folgende Elemente MÜSSEN entfernt werden:
-      * `Coverage.identifier`
-      * `Coverage.status` MUSS den Wert `active` enthalten
-
+Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
 
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
-Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile - v1.0.0](https://fhir.de/StructureDefinition/coverage-de-sel).
-
+Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel).
 Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen
-* Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile - v1.0.0](https://fhir.de/StructureDefinition/coverage-de-sel)
+* Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel)
+
+Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
 
 ---
