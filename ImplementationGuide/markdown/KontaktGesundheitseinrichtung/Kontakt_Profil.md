@@ -12,7 +12,7 @@ Es ist ein üblicher Fall, dass die Dauer eines Versorgungsstellenkontaktes die 
 
 Für einen solchen Fall gilt: 
 
-Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN nicht in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System ein oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen. 
+Im Falle eines Fachabteilungswechsels legt ein System einen neuen Abteilungskontakt an. Bestehende Versorgungsstellenkontakt SOLLEN nicht in ihrer Relation (.partOf) zum Abteilungskontakt modifiziert werden. Hingegen SOLL das System einen oder mehrere Versorgungsstellenkontakte erzeugen und mit dem neu angelegten Abteilungskontakt in Verbindung setzen. 
 
 Hinweis: Ein Versorgungsstellenkontakt endet zugleich nicht notwendigerweise mit einem Fachabteilungswechsel.
 
