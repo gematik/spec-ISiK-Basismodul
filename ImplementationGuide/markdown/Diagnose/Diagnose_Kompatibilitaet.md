@@ -5,5 +5,5 @@ Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen an
 * [das Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
 * [das Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)
 
-Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 ---
