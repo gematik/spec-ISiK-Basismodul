@@ -6,4 +6,7 @@ Dazu werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) 
 Binary-Ressourcen werden von Attachment-Elementen verlinkt und damit in den Kontext anderer FHIR-Ressourcen
 (z.B. Patient und Encounter) gestellt.
 
+Das ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung des ISIK Basismoduls.
+Das Profil ist Teil des ISIK Basismoduls, da es als übergreifend genutzte Ressource sowohl im [Modul Terminplanung](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Terminplanung-Stufe-3/ImplementationGuide-markdown-Datenobjekte?version=current) als auch im [Modul Dokumentenaustausch](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Dokumentenaustausch-Stufe-3/ImplementationGuide-markdown-Datenobjekte?version=current) implementiert werden muss.  
+
 ---

@@ -1,10 +1,8 @@
 ### Kompatibilität
 
-Dieses Profil basiert auf dem [Profil "Prozedur" der Medizininformatik-Initative](https://simplifier.net/MedizininformatikInitiative-ModulProzeduren/~introduction). 
+Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:
+* [Profil "Prozedur" der Medizininformatik Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 
-Instanzen, die gegen ISiKProzedur valide sind, sind auch valide gegen:
-
-* [Profil "Prozedur" der Medizininformatik-Initative - v2.0.0](https://simplifier.net/medizininformatikinitiative-modulprozeduren/sd_mii_prozedur_procedure)
-    * wenn unter `Procedure.code.coding` mindestens eine codierte Darstellung der Prozedur angegeben wurde
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden..
 
 ---

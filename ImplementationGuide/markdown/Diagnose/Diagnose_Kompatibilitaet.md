@@ -1,18 +1,9 @@
 ### Kompatibilität
 
-Dieses Profil basiert auf dem [Profil "Diagnose" der Medizininformatik-Initative](https://simplifier.net/medizininformatikinitiative-moduldiagnosen/diagnose). 
 
-Instanzen, die gegen ISiKDiagnose valide sind, sind auch valide gegen:
+Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:
+* [das Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+* [das Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)
 
-* [das Profil ProfileConditionDiagnose der Medizininformatik-Initative - v2.0.0](https://simplifier.net/medizininformatikinitiative-moduldiagnosen/diagnose)
-  * wenn unter `Condition.code.coding` mindestens eine codierte Darstellung der Diagnose angegeben wurde
-
-* [das Profil KBV_PR_Base_Diagnosis der KBV - v1.2.1](https://simplifier.net/packages/kbv.basis/1.2.1)
-  * wenn unter `Condition.code.coding` mindestens eine codierte Darstellung der Diagnose angegeben wurde
-
-* [das Profil KBV_PR_EAU_Condition_ICD der KBV - v1.0.2](https://simplifier.net/packages/kbv.ita.eau/1.0.2)
-  * wenn unter `Condition.code.coding` mindestens eine ICD-10-codierte Darstellung der Diagnose angegeben wurde
-  * wenn unter `Condition.verificationStatus`  ein Wert angegeben wurde
-  * wenn unter `Condition.asserter` eine Referenz auf einen Practitioner angegeben werden.
-
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 ---
