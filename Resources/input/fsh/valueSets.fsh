@@ -17,7 +17,7 @@ ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 * insert Meta
-* SNOMED_CT#103693007 "Diagnostic procedure"
+* SNOMED_CT#165197003 "Diagnostic assessment"
 * SNOMED_CT#363679005 "Imaging"
 * SNOMED_CT#387713003 "Surgical procedure"
 * SNOMED_CT#18629005 "Administration of medicine"

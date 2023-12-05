@@ -80,6 +80,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * ^patternAddress.type = #postal
   * type 1.. MS
   * line 1.. MS
@@ -90,9 +91,8 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
-    * ^constraint[1].source = Canonical(ISiKPatient)
 * address[Strassenanschrift] only AddressDeBasis
+  * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
@@ -104,8 +104,6 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
-    * obeys address-cnt-2or3-char
-    * ^constraint[1].source = Canonical(ISiKPatient)
 
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
@@ -121,22 +119,22 @@ Usage: #example
 * identifier[Versichertennummer_PKV].value = "1234567890"
 * identifier[Versichertennummer_PKV].assigner.display = "Test PKV AG"
 * active = true
-* name[0].use = #official
-* name[=].family = "Fürstin von Musterfrau"
-  * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
-  * extension[=].valueString = "Fürstin"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension[=].valueString = "Musterfrau"
-  * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
-  * extension[=].valueString = "von"
-* name[=].given = "Erika"
-* name[=].prefix = "Dr."
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
-  * extension.valueCode = #AC
-* name[+].use = #maiden
-* name[=].family = "Gabler"
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-  * extension.valueString = "Gabler"
+* name[Name]
+  * family = "Fürstin von Musterfrau"
+    * extension[0].url = "http://fhir.de/StructureDefinition/humanname-namenszusatz"
+    * extension[=].valueString = "Fürstin"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension[=].valueString = "Musterfrau"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"
+    * extension[=].valueString = "von"
+  * given = "Erika"
+  * prefix = "Dr."
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
+    * extension.valueCode = #AC
+* name[Geburtsname]
+  * family = "Gabler"
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+    * extension.valueString = "Gabler"
 * gender = #female
 * birthDate = "1964-08-12"
 * address[0].type = #both

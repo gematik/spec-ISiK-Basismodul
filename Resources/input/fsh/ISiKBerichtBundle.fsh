@@ -60,7 +60,7 @@ Usage: #example
 * identifier.value = "0123456789"
 * status = #unknown
 * class = $v3-ActCode#IMP
-* type[0] = $kontaktart-de#operation
+* type[0] = $Kontaktart-de#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
 * subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"

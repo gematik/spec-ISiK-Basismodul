@@ -5,6 +5,23 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 3.0.1
+
+Datum: 05.12.2023
+
+* Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9
+* Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11
+* Invariante zur Strassenanschrift modifiziert - fix invariant context #330: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e
+  * hier auch Constraint bezüglich ISiKAngehoeriger aus Strassenanschrift entfernt
+* Anforderungen im CapabilityStatement zum Account entsprechend der textuellen Anforderungen angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/ac4d2c730bb94dd50cc4f5deea8c2b1344329d2c
+* Neue (klärende) Anforderung zum Versorgungsstellenkontakt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d7005923c4596f8a646468f20e1f9975f2489bef 
+* Öffnung der Festlegung einer Coverage-ID - fix identifier slices + add MS beneficiary + rm MS kvid: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/bd66cca38397b987581bece3d2e9f508813ff765
+* Zielstellung zur Interoperabilität der Profile angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/3130973de182a078208f181a64ff1cfd8783493a
+
+
+**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0...v.3.0.1
+
+----
 Version: 3.0.0
 
 Datum: 01.07.2023
