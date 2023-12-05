@@ -49,6 +49,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - [ ] Checkout the Branch (no need to merge it later).
   - [ ] Export from Simplifier via _-> Guides -> Expand the Modul ... -> Export_
   - [ ] Unpack the zip, remove the packages folder (because its kinda big), and move everything else to a (version coressponding) new folder in the branch folder structure.
+  - [ ] Update the file index.html and check rendering
   - [ ] committ the branch.
 
 
