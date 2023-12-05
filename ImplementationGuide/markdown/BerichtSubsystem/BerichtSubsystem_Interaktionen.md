@@ -6,7 +6,7 @@ Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mitte
 
    `POST [base]/` mit einer FHIR-Bundle Ressource im Request-Body.
 
-   Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der [FHIR-Basisspezifikation - Abschnitt "Document End-Points"](https://www.hl7.org/fhir/documents.html#bundle).
+   Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der [FHIR-Basisspezifikation - Abschnitt "Document End-Points"](https://www.hl7.org/fhir/R4/documents.html#bundle).
   
 Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren Entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
 
@@ -57,7 +57,7 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
 ### Persistierung der menschenlesbaren Repräsentation
 
 Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
-Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/documentreference-mappings.html#fhircomposition).
+Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/R4/documentreference-mappings.html#fhircomposition).
 
 Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
 

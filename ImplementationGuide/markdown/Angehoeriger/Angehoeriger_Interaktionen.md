@@ -18,7 +18,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/RelatedPerson?patient=Patient/123```  
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "RelatedPerson.patient" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "RelatedPerson.patient" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Die Suche nach einem beliebigen Bestandteil des Namens KANN unterstützt werden:
 
