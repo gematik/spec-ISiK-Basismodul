@@ -658,8 +658,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #composite
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Composition
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
 * rest.resource[+].extension.url = $capabilitystatement-expectation
