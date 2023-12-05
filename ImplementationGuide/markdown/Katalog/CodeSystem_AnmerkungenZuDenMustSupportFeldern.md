@@ -16,7 +16,7 @@
 
 **Bedeutung:** Maschinenlesbarer Name des CodeSystems
 
-**Hinweise:** Der Constraint [cps-0](https://www.hl7.org/fhir/codesystem.html#invs) ist hierbei zu beachten.
+**Hinweise:** Der Constraint [cps-0](https://www.hl7.org/fhir/R4/codesystem.html#invs) ist hierbei zu beachten.
 
 ### `CodeSystem.status`
 

@@ -16,7 +16,7 @@
 
 **Bedeutung:** Maschinenlesbarer Name des ValueSets
 
-**Hinweise:** Der Constraint [vsd-0](https://www.hl7.org/fhir/valueset.html#invs) ist hierbei zu beachten.
+**Hinweise:** Der Constraint [vsd-0](https://www.hl7.org/fhir/R4/valueset.html#invs) ist hierbei zu beachten.
 
 ### `ValueSet.status`
 
