@@ -5,6 +5,6 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 * [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
 * [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
 
-Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden..
 
 ---

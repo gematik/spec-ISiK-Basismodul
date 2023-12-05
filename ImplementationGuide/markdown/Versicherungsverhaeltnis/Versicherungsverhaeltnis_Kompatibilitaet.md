@@ -6,7 +6,7 @@ Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem Profil [Covera
 Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen
 * Profil ["Coverage, deutsches GKV Profil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-gkv)
 
-Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden..
 
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
@@ -14,6 +14,6 @@ Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem Profil ["Cov
 Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen
 * Profil ["Coverage, deutsches Selbstzahlerprofil" der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel)
 
-Hinweise zu Inkompatibilitäten können über die Portalseite gemeldet werden.
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden..
 
 ---
