@@ -51,6 +51,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - [ ] Unpack the zip, remove the packages folder (because its kinda big), and move everything else to a (version coressponding) new folder in the branch folder structure.
   - [ ] Update the file index.html and check rendering
   - [ ] committ the branch.
+- [ ] If ISiK Basismodul was updated all depending Modules should be updated  with a newed dependency to the incremented Basismodul version - possibly including and closing technical corrections
 
 
 ## Finished
