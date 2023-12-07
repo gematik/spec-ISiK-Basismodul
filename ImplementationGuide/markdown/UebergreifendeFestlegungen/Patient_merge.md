@@ -51,7 +51,7 @@ Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der B
 
 Für die Implementierung wurde gemeinsam mit den beteiligten Stakeholdern in der ersten Projektphase entschieden, zu welchem Vorgang die Spezifikation eine mögliche Festlegung treffen soll:
 1. Eine Festlegung zur Kommunikation eines stattgefundenen Patient merges gegenüber einem Subsystem oder einem externen Service wird festgelgt und dafür wir eine Lösung mit FHIR-subscriptions angestrebt.
-2. Vorgaben zum eigentlichn Patient-merge-Workflow werden im Rahmen der Ausbaustufe 4 nicht oder nur bedingt (auf Ebene einzelner, bereits bestehdner Profile) festgelegt. 
+2. Vorgaben zum eigentlichn Patient-merge-Workflow werden im Rahmen der Ausbaustufe 4 nicht oder nur bedingt festgelegt - mit einer Ausnahme, die für die Spec relevant ist: eine Änderung des Patient.link zur Kennzeichnung obsoleter und referenzierung einer neuen Patient-Ressource ist notwendig.
 
 
 ## 3. Stakeholder und User
