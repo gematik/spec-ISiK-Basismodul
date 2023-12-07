@@ -44,17 +44,15 @@ Bisher trifft ISiK keine Festlegung zum Patient merge. Aus diesem Grund ist die 
 
 Dieses Dokument soll der Harmonisierung der Problemdefinition zum Patient merge in ISiK dienen. Änderungswünsche am Dokument per Pull Request sind willkommen. 
 
-## 2. Ziele
+## 2. Ziele (Update 7.12.2023)
 Ziel der Arbeiten im Rahmen der Ausbaustufe 4 ist:
 Die Schaffung eines modulübergreifenden Implementierungsleitfadens zum Vorgehen bei der Patientenzusammenführung.
 Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halbautomatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können.
 
-Für die Implementierung ist dabei noch zu entscheiden, zu welchem Vorgang die Spezifikation eine mögliche Festlegung treffen sollte:
+Für die Implementierung wurde gemeinsam mit den beteiligten Stakeholdern in der ersten Projektphase entschieden, zu welchem Vorgang die Spezifikation eine mögliche Festlegung treffen soll:
+1. Eine Festlegung zur Kommunikation eines stattgefundenen Patient merges gegenüber einem Subsystem oder einem externen Service wird festgelgt und dafür wir eine Lösung mit FHIR-subscriptions angestrebt.
+2. Vorgaben zum eigentlichn Patient-merge-Workflow werden im Rahmen der Ausbaustufe 4 nicht oder nur bedingt (auf Ebene einzelner, bereits bestehdner Profile) festgelegt. 
 
-1. Eine Festlegung zum Patient merge-Prozess selbst unter Einbeziehung unterschiedlicher Systeme, oder
-2. Eine Festlegung zur Kommunikation eines stattgefundenen Patient merges gegenüber einem Subsystem oder einem externen Service.
-
-Die genauere Zielstellung sollte unter Einbeziehung der Stakeholder in der ersten Projektphase detailliert und festgelegt werden.
 
 ## 3. Stakeholder und User
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von KIS und Patientenportalen. Alle anderen Hersteller von ISiK-nahen Systemen sind auch eingeladen sich zu beteiligen, da ihre Prozesse potenziell betroffen sein werden.
