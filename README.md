@@ -5,5 +5,4 @@ Siehe [Basismodul Stufe 3](https://simplifier.net/isik-basis-v3)
 # ImplementationGuides
 
 Dieser Branch enthält .html Versionen der ImplementationGuides vorangegangener Versionen. 
-
-- Stufe 1: https://gematik.github.io/spec-ISiK-Basismodul/index.html
+Zur Übersicht der Versionen: https://gematik.github.io/spec-ISiK-Basismodul/index.html
