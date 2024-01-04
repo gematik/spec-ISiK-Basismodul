@@ -6,7 +6,7 @@ Version: Technical Correction 3.0.2
 Datum: 11.12.2023
 
 * Problem: Das Datenobjekt RelatedPerson sollte einen optionalen Suchparameter enthalten für .address, da das Element ein MS-Flag besitzt.
-  * Option A (ggf. mit Nennung der Risiken): Hinzufügen optionaler Suchparameter für die UCs:
+  * Option A: Hinzufügen optionaler Suchparameter für die UCs:
     * Suchabfragen von Angehörigen mit Hilfe der Adresse
     * Suchabfragen von Angehörigen mit Hilfe der Adresse unter Angabe der Stadt
     * Suchabfragen von Angehörigen mit Hilfe der Adresse unter Angabe des Ländercodes
