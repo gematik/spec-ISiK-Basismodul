@@ -7,7 +7,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 ----
 Version: 3.0.2
 
-Datum: WIP
+Datum: 09.01.2024
 
 * Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - https://github.com/gematik/spec-ISiK-Basismodul/pull/345/commits/beca71aaae70538f52f934a072928e93d23fd6fd
 
