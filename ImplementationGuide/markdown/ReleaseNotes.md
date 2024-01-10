@@ -5,6 +5,15 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 ----
+Version: 3.0.2
+
+Datum: 09.01.2024
+
+* Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - Feature/anfisk 146 search related person by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/346
+
+**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1...v.3.0.2
+
+----
 Version: 3.0.1
 
 Datum: 05.12.2023
