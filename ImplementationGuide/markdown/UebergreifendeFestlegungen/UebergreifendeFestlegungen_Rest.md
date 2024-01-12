@@ -39,7 +39,6 @@ Per Create-Interaktion erzeugte Ressourcen MÜSSEN im Falle einer erfolgreichen 
 
 Ressourcen, die zu einem entsprechenden ISiK-Profil nicht konform sind, MÜSSEN durch das bestätigungsrelevante System abgelehnt werden. Als Antwort MUSS ein HTTP Status-Code 400 - Bad Request mit einer ```OperationOutcome```-Ressource zurückgegeben werden, falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource handelt. Die ```OperationOutcome``` MUSS eine Auflistung aller Fehler in der übermittelten Ressource in kodierter Form vorweisen. Anderweitig (semantisch) invalide Ressourcen MÜSSEN ebenfalls mit einer entsprechenden OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLLTE der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden.
 
-Syntaktische Fehler in der Appointment-Ressource MUSS mit einem HTTP Status-Code 400 - Bad Request zurückgewiesen werden. 
 
 ## Update-Interaktionen
 Das Update einer Ressource KANN per HTTP PUT (vgl. [FHIR RESTful API - update](https://www.hl7.org/fhir/R4/http.html#update)) unterstützt werden. Es ist zu beachten, dass beim Update einer Ressource bestimmte dazugehörige [Metadaten](https://www.hl7.org/fhir/R4/resource.html#Meta) beibehalten werden SOLLTEN. Die gleichen Vorgaben für die Handhabung von invaliden Ressourcen wie beschrieben im Abschnitt "Create-Interaktionen", gelten auch für Update-Interaktionen.
