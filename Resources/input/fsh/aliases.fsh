@@ -36,3 +36,7 @@ Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/isik/v3/Basismodul/ValueSet
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $kvid10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30
+//Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
+//Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
+Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
+Alias: $identifier-bsnr = http://fhir.de/StructureDefinition/identifier-bsnr
