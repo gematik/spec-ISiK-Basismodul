@@ -6,7 +6,7 @@ Folgende Bedarfe, Anforderungen und Use Cases finden im Rahmen der Ausbaustufe 4
 
 1. Die (Raum- und Betten-)Belegung (interdisziplinär) sollte strukturiert erfolgen können.
 1. Im Rahmen des Terminmanagements sollten Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation (Fachbereiche etc.) und an bestimmte Standorte möglich sein.
-1. Im Rahmen der Versorgung sollte eine der folgenden Beispiel-Fragen beantworten werden können.:
+1. Im Rahmen der Versorgung sollte eine der folgenden Beispiel-Fragen beantworten werden können:
     - Handelt es sich um ein Isolationszimmer?
     - Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte
     - etc.

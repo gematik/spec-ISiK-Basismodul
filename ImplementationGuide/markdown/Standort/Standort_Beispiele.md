@@ -1,0 +1,5 @@
+### Beispiele
+
+Valides Minimalbeispiel Standort:
+
+
