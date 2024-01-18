@@ -47,13 +47,64 @@
       {
         "id": "Organization.identifier",
         "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 1,
         "mustSupport": true
       },
       {
+        "id": "Organization.identifier:IKNR",
+        "path": "Organization.identifier",
+        "sliceName": "IKNR",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-iknr"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:IKNR.type",
+        "path": "Organization.identifier.type",
+        "comment": "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information bereitgestellt wird. "
+      },
+      {
+        "id": "Organization.identifier:BSNR",
+        "path": "Organization.identifier",
+        "sliceName": "BSNR",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-bsnr"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:BSNR.type",
+        "path": "Organization.identifier.type",
+        "comment": "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information bereitgestellt wird. "
+      },
+      {
         "id": "Organization.active",
         "path": "Organization.active",
-        "comment": "Motivation: Ein System oder eine Person muss Prüfen können, ob eine Organisation aktiv ist oder nicht, sofern diese Information bereitgestellt wird.",
+        "comment": "Motivation: Ein System oder eine Person muss prüfen können, ob eine Organisation aktiv ist oder nicht, sofern diese Information bereitgestellt wird.",
         "mustSupport": true
       },
       {
