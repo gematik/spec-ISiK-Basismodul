@@ -11,7 +11,6 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * identifier contains 
   IKNR 0..1 MS and
   BSNR 0..1 MS 
-  KZVAbrechnungsnummer 0..1 MS
 
 /*
   KIMAdresse 0..1 MS and
