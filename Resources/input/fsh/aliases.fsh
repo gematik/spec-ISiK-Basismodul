@@ -41,3 +41,4 @@ Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefin
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
 Alias: $identifier-bsnr = http://fhir.de/StructureDefinition/identifier-bsnr
+Alias: $organization_type = http://terminology.hl7.org/CodeSystem/organization-type
