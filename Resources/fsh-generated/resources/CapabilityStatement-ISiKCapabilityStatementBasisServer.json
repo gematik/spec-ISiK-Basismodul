@@ -1723,6 +1723,91 @@
           "supportedProfile": [
             "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtBundle"
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
+              "valueCode": "SHALL",
+              "valueCanonical": "https://gematik.de/fhir/isik/v4/Basismodul/topic/patient-merge"
+            }
+          ],
+          "type": "Subscription",
+          "supportedProfile": [
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/patient-merge-subscription"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ]
+            }
+          ],
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "delete"
+            }
+          ],
+          "searchParam": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "url",
+              "definition": "http://hl7.org/fhir/SearchParameter/Subscription-url",
+              "type": "uri"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/Subscription-status",
+              "type": "token"
+            }
+          ]
         }
       ]
     }

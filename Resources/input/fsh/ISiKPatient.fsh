@@ -104,6 +104,9 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
+* link MS
+  * other MS
+  * type MS
 
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
@@ -156,6 +159,8 @@ Usage: #example
 * address[=].city = "Musterhausen"
 * address[=].postalCode = "98764"
 * address[=].country = "DE"
+
+
 
 
 Invariant: isik-pat-1
