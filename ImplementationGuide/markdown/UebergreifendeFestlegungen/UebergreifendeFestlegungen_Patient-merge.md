@@ -26,7 +26,7 @@ Wenn ein Patient merge geschieht, gelten für das patientenführende System folg
 
 ### Datenelemente der resultierenden Patienten-Ressource
 
-**REQ_BAS_PAT-MER-012**: Das patientenführende System KANN nach einem merge die Elemente der resultierende Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:
+**REQ_BAS_PAT-MER-012**: Das patientenführende System MUSS nach einem merge die Elemente der resultierende Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:
 - .link.other = Reference(auf “obsoleten” Patient)
 - .link.type = “replaced-by”
 
