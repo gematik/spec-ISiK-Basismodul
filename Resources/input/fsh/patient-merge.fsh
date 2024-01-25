@@ -1,4 +1,4 @@
-Instance: DorisDuplikat
+Instance: DorisQuelle
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
@@ -6,28 +6,15 @@ Usage: #example
 * identifier[VersichertenId-GKV].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "TestPID"
+* identifier[Patientennummer].value = "654321"
 * active = false
 * name[Name]
   * family = "Duplikat"
   * given = "Doris"
 * gender = #female
 * birthDate = "1964-08-12"
-* address[+].type = #both
-* address[=].line[+] = "Musterweg 2"
-* address[=].line[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[=].line[=].extension[=].valueString = "Musterweg"
-* address[=].line[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[=].line[=].extension[=].valueString = "2"
-* address[=].city = "Musterhausen"
-* address[=].postalCode = "98764"
-* address[=].country = "DE"
-* link
-  * other = Reference(DorisOriginal)
-  * type = #replaced-by
 
-
-Instance: DorisOriginal
+Instance: DorisZiel
 InstanceOf: ISiKPatient
 Usage: #example
 * identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
@@ -35,24 +22,51 @@ Usage: #example
 * identifier[VersichertenId-GKV].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "TestPID"
+* identifier[Patientennummer].value = "123456"
 * active = true
 * name[Name]
   * family = "Duplikat"
   * given = "Doris"
 * gender = #female
 * birthDate = "1964-08-12"
-* address[+].type = #both
-* address[=].line[+] = "Musterweg 2"
-* address[=].line[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[=].line[=].extension[=].valueString = "Musterweg"
-* address[=].line[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[=].line[=].extension[=].valueString = "2"
-* address[=].city = "Musterhausen"
-* address[=].postalCode = "98764"
-* address[=].country = "DE"
+
+Instance: DorisObsolet
+InstanceOf: ISiKPatient
+Usage: #example
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "654321"
+* active = false
+* name[Name]
+  * family = "Duplikat"
+  * given = "Doris"
+* gender = #female
+* birthDate = "1964-08-12"
 * link
-  * other = Reference(DorisDuplikat)
+  * other = Reference(DorisResultat)
+  * type = #replaced-by
+
+
+Instance: DorisResultat
+InstanceOf: ISiKPatient
+Usage: #example
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "123456"
+* active = true
+* name[Name]
+  * family = "Duplikat"
+  * given = "Doris"
+* gender = #female
+* birthDate = "1964-08-12"
+* link
+  * other = Reference(DorisObsolet)
   * type = #replaces
 
 Profile: PatientMergeSubscription
