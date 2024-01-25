@@ -1,7 +1,7 @@
 # Patient-merge Notification
 
 ## patient-merge
-Mergen von Patienten ist Aufgabe des zu bestätigenden Systems, ein externes Starten eines merge Prozesses, bspw. durch die $patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) ist nicht gefordert 
+Mergen von Patienten ist Aufgabe des zu bestätigenden Systems, ein externes Starten eines merge Prozesses, bspw. durch die [$patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) ist nicht gefordert 
 
 ## Gemergte Patienten Instanz
 
