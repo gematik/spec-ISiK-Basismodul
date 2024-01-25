@@ -31,7 +31,7 @@ Wenn ein Patient merge geschieht, gelten für das patientenführende System folg
 - .link.type = “replaced-by”
 
 ## Beispiele
-Die Patient merge Notification kann folgendermaßen illustriert werden: ex existieren fälschlicherweise zwei Instanzen, die sich lediglich hinsichtlich der organisationsspezfischen Patiente-ID unterscheiden.
+Die Patient merge Notification kann folgendermaßen illustriert werden: es existieren fälschlicherweise zwei Instanzen, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
 Diese sind: 
 
 "Quell" Patienten-Ressource:
@@ -42,7 +42,7 @@ und
 "Ziel" Patienten-Ressource:
 {{json:DorisZiel}}
 
-Mittel eines Patient merge vorgangs wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert:
+Mittels eines Patient-merge-Vorgangs wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert:
 
 Obsolete Patienten-Ressource:
 {{json:DorisObsolet}}
