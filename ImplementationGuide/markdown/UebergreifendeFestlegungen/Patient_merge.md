@@ -44,14 +44,19 @@ Bisher trifft ISiK keine Festlegung zum Patient merge. Aus diesem Grund ist die 
 
 Dieses Dokument soll der Harmonisierung der Problemdefinition zum Patient merge in ISiK dienen. Änderungswünsche am Dokument per Pull Request sind willkommen. 
 
-## 2. Ziele (Update 7.12.2023)
+## 2. Ziele (Update 29.01.2024)
 Ziel der Arbeiten im Rahmen der Ausbaustufe 4 ist:
 Die Schaffung eines modulübergreifenden Implementierungsleitfadens zum Vorgehen bei der Patientenzusammenführung.
 Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halbautomatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können.
 
 Für die Implementierung wurde gemeinsam mit den beteiligten Stakeholdern in der ersten Projektphase entschieden, zu welchem Vorgang die Spezifikation eine mögliche Festlegung treffen soll:
 1. Eine Festlegung zur Kommunikation eines stattgefundenen Patient merges gegenüber einem Subsystem oder einem externen Service wird festgelgt und dafür wir eine Lösung mit FHIR-subscriptions angestrebt.
-2. Vorgaben zum eigentlichn Patient-merge-Workflow werden im Rahmen der Ausbaustufe 4 nicht oder nur bedingt festgelegt - mit einer Ausnahme, die für die Spec relevant ist: eine Änderung des Patient.link zur Kennzeichnung obsoleter und referenzierung einer neuen Patient-Ressource ist notwendig.
+  - Eine Lösung mittels FHIR-Susbscriptions MUSS auf den in R5 definierten Lösungen aufbauen; eine Nutzung des R4 Subscription Profils genügt nicht.
+  - Die technische Lösung DARF NICHT auf einer Persisitierung obsoleter Ressourcen beruhen. Auch DARF (aus Gründen der Performance) in der resultierenden Ressource keine (vollständige) History obsoleter Ressourcen (z.B. über das .link-Element) geführt werden.
+1. Im Zuge des POC SOLLEN auch Sicherheitsaspekte umgesetzt werden (ggf. Autorisierung und Authentifizierung über SMART on FHIR / ISiK Connect).
+  - Subscriptions sollen nur von System gelesen werden können, das sie geschrieben hat.
+1. Es SOLL ein Recovery-Mechanimus eingeführt werden (dieser SOLL über den Business-Identifier umgesetzt werden), um den Fall einer fehlgeschlagenen Notification abzufangen.
+1. Vorgaben zum eigentlichen Patient-merge-Workflow werden im Rahmen der Ausbaustufe 4 nicht oder nur bedingt festgelegt.
 
 
 ## 3. Stakeholder und User
