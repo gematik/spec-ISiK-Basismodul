@@ -1,8 +1,4 @@
-# ISiK-Basismodul-Stufe-3
+Dies ist ein Branch rund um das Thema Patientendatenzusammenführung (Patient merge).
 
-Siehe [Basismodul Stufe 3](https://simplifier.net/isik-basis-v3)
+Ein Konzept zur genaueren Definition des Problems (WIP) wird unter [Patient merge](ImplementationGuide/markdown/UebergreifendeFestlegungen/Patient_merge.md) veröffentlicht und weiterentwickelt.
 
-# ImplementationGuides
-
-Dieser Branch enthält .html Versionen der ImplementationGuides vorangegangener Versionen. 
-Zur Übersicht der Versionen: https://gematik.github.io/spec-ISiK-Basismodul/index.html
