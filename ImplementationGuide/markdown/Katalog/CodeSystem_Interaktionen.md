@@ -18,7 +18,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/CodeSystem?url=http://example.org/fhir/CodeSystem/test```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.url" finden sich in der [FHIR-Basisspezifikation - Abschnitt "uri"](https://www.hl7.org/fhir/search.html#uri).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.url" finden sich in der [FHIR-Basisspezifikation - Abschnitt "uri"](https://www.hl7.org/fhir/R4/search.html#uri).
 
 1. Der Suchparameter "name" MUSS unterstützt werden:
 

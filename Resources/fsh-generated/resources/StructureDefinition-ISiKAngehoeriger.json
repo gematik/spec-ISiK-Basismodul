@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAngehoeriger",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger",
-  "version": "3.0.0",
+  "version": "4.0.0-rc",
   "name": "ISiKAngehoeriger",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2023-07-01",
+  "date": "2024-01-16",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -120,6 +120,15 @@
         "patternAddress": {
           "type": "both"
         },
+        "constraint": [
+          {
+            "key": "address-cnt-2or3-char",
+            "severity": "warning",
+            "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
+            "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
+            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -180,15 +189,6 @@
         "id": "RelatedPerson.address:Strassenanschrift.country",
         "path": "RelatedPerson.address.country",
         "min": 1,
-        "constraint": [
-          {
-            "key": "address-cnt-2or3-char",
-            "severity": "warning",
-            "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
-            "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
-            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger"
-          }
-        ],
         "mustSupport": true
       },
       {
@@ -208,6 +208,15 @@
         "patternAddress": {
           "type": "postal"
         },
+        "constraint": [
+          {
+            "key": "address-cnt-2or3-char",
+            "severity": "warning",
+            "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
+            "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
+            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger"
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -262,15 +271,6 @@
         "id": "RelatedPerson.address:Postfach.country",
         "path": "RelatedPerson.address.country",
         "min": 1,
-        "constraint": [
-          {
-            "key": "address-cnt-2or3-char",
-            "severity": "warning",
-            "human": "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2.",
-            "expression": "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))",
-            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger"
-          }
-        ],
         "mustSupport": true
       }
     ]

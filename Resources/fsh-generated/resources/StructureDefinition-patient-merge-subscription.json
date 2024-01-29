@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "patient-merge-subscription",
+  "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/patient-merge-subscription",
+  "name": "PatientMergeSubscription",
+  "title": "Patient Merge Subscription",
+  "status": "draft",
+  "description": "Patient Merge Subscription",
+  "fhirVersion": "4.3.0",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Subscription",
+  "baseDefinition": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Subscription.status",
+        "path": "Subscription.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria",
+        "path": "Subscription.criteria",
+        "patternString": "https://gematik.de/fhir/isik/v4/Basismodul/topic/patient-merge"
+      },
+      {
+        "id": "Subscription.criteria.extension:filterCriteria",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "filterCriteria",
+        "max": "0"
+      },
+      {
+        "id": "Subscription.channel.type",
+        "path": "Subscription.channel.type",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/RestAndWSSubscriptionChannel"
+        }
+      },
+      {
+        "id": "Subscription.channel.payload",
+        "path": "Subscription.channel.payload",
+        "patternCode": "application/fhir+json"
+      },
+      {
+        "id": "Subscription.channel.payload.extension:content",
+        "path": "Subscription.channel.payload.extension",
+        "sliceName": "content"
+      },
+      {
+        "id": "Subscription.channel.payload.extension:content.value[x]:valueCode",
+        "path": "Subscription.channel.payload.extension.value[x]",
+        "sliceName": "valueCode",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "patternCode": "id-only"
+      }
+    ]
+  }
+}

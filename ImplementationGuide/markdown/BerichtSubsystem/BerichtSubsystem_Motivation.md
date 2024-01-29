@@ -16,6 +16,6 @@ In weiteren Ausbaustufen von ISiK soll darüber hinaus eine Übernahme der struk
 
 Es obliegt dabei dem Ermessen des Herstellers, ob die Übernahme strukturierter Daten in das Primärsystem automatisch erfolgt, oder durch den Benutzer initiiert wird.
 
-Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressource vorgesehen](https://www.hl7.org/fhir/composition.html), in einem FHIR-Bundle versendet.
+Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressource vorgesehen](https://www.hl7.org/fhir/R4/composition.html), in einem FHIR-Bundle versendet.
 
 ---
