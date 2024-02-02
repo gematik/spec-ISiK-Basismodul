@@ -2,10 +2,9 @@
 
 #### Das Profil ISiKVersicherungsverhaeltnisGesetzlich
 
-### `Coverage.identifier:KrankenversichertenID`
+### `Coverage.identifier`
 
-**Bedeutung:** Der unveränderliche, 10-stellige Teil der Krankenversichertennummer zur Identifikation des Versicherten, die Krankenversicherten-ID.
-**Hinweise:** Dieser identifier ist zur eindeutigen Identifikation des gesetzlich Versicherten nötig, in den von diesem Profil unterstützten Anwendungsszenarien, siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/GesetzlicheKrankenversichertennummer10-stelligeKVID-Identifier.html).
+**Hinweise:** Grundsätzlich ist zu beachten, dass das Versicherungsverhältnis für die gesetzliche Versicherung durch die 30-stellige KVNR identifiziert wird. Die 10-stellige KVNR ist hingegen ein Identifier für das Datenobjekt Patient. Siehe {{pagelink:ImplementationGuide/markdown/Patient_Profil.md, text:Datenobjekt - Patient}}. Es wird in ISiK davon ausgegangen, dass die 30-stellige KVNR nicht in bestätigungrelevanten Systemen geführt wird, sodass diese nicht als zuverlässiger Identifier für das Versicherungsverhältnis verwendbar ist. Bei einer Suche nach einem Versicherungsverhältnis SOLLTE dieses per Chaining auf das Datenobjekt Patient ermittelt werden.
 
 ### `Coverage.status`
 
