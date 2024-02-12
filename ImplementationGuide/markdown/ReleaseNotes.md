@@ -8,7 +8,8 @@ Version: 3.0.4
 
 Datum: tbd
 
-* Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich - https://github.com/gematik/spec-ISiK-Basismodul/pull/362
+* Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: https://github.com/gematik/spec-ISiK-Basismodul/pull/362
+* Korrektur der Anforderung zur Encounter-Kontaktebene: https://github.com/gematik/spec-ISiK-Basismodul/pull/363
 
 ----
 Version: 3.0.3
