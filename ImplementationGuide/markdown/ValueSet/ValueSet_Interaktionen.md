@@ -51,6 +51,8 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
 
+    Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource Type ermittelt werden. Insbesondere im Kontext der [Terminvereinbarung durch einen Termin-Requestor wird die Abfrage genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
+
     Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.useContext" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Composite Search Parameters"](https://www.hl7.org/fhir/R4/search.html#composite).
 
 ---
