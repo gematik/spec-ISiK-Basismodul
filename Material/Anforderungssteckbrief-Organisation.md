@@ -4,7 +4,7 @@ Es wurden Bedarfe nach Abbildung sowohl der KH-Aufbauorganisation (FHIR Ressourc
 Folgende Bedarfe, Anforderungen und Use Cases finden im Rahmen der Ausbaustufe 4 von ISIK zwecks Festlegung im Implementierungsleitfaden und in Profilen Beachtung: 3
 
 1. Die (Raum- und Betten-)Belegung (interdisziplinär) sollte strukturiert erfolgen können.
-        - Frage: Wir gehen davon aus, dass die Raum- und Bettenbelegung Bestandteil der Funktionalität eines KIS ist. Was wären Use-Cases um diese Information über eine Schnittstelle zu kommunizieren?
+        - Frage - grundsätzlich: Wir gehen davon aus, dass die Raum- und Bettenbelegung Bestandteil der Funktionalität eines KIS ist. Was wären Use-Cases um diese Information über eine Schnittstelle zu kommunizieren?
 1. Im Rahmen des Terminmanagements sollten Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation (Fachbereiche etc.) und an bestimmte Standorte möglich sein.
         - Fragen: Welche Granularität an Standorten ist hier sinnvoll? Reichen z.B. als Standort-Typen: Klinik, Station, Raum?
 1. Im Rahmen der Versorgung sollte eine der folgenden Beispiel-Fragen beantworten werden können:
@@ -18,6 +18,16 @@ Folgende Bedarfe, Anforderungen und Use Cases finden im Rahmen der Ausbaustufe 4
 1. Ein Profil zur Organisation soll eine Fachabteilung abbilden können.
 1. Profil IOrganisation sollte sich möglichst an das entsprechende Profil der KBV orientieren.
         - siehe insbesondere .identifier
+
+Als Standorte für ISiK werden momentan in Betracht gezogen (WIP):
+- Station
+- Raum
+- Bett
+
+Zu bedenken:
+- Gebäude (z.B. verschiedene Gebäude im Pavillonsystem; ggf. auch Krankensäle im Kammsystem)
+    - ggf. abzugrenzen von Klinik?
+- Campus (vgl. Charité mit Campus 1) Mitte , 2) Virchow und 3) Benjamin Franklin)
 
 **Weitere Fragen - offen**
 1. Soll ein Profil zur Organisation auch ein Krankenhaus als ganzes abbilden können?
