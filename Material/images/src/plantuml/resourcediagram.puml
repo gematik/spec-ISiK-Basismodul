@@ -1,0 +1,199 @@
+@startuml dummy
+' package Dummy{
+' entity Entität01 {
+'    optionales Attribut
+'    **optionales fettes Attribut**
+'    * **vorgeschriebens fettes Attribut**
+' }
+' 
+' entity Entität01 {
+'    optionales Attribut : text
+'    **optionales fettes Attribut** nummer <<auto>>
+'    * **vorgeschriebens fettes Attribut**
+' }
+' Entität01 }|..|| Entität02
+' Entität03 }o..o| Entität04
+' Entität05 ||--o{ Entität06
+' Entität07 |o--|| Entität08
+' }
+@enduml
+
+
+' TODO:
+' Vervollständigen im Sinne  von: https://github.com/gematik/spec-ISiK-Medikation/blob/rc/main-stufe-4/Material/docs/Medikation%20Abgleich%20bestehende%20Spezifikationen.xlsx
+
+@startuml resourcediagram
+'verhindere Probleme mit gewinkelten Krähenfüßen
+'skinparam linetype ortho
+
+'Namespace enhancement
+set separator none
+
+'ISiK_Medikation.ISiKMedikationsListe::subject --> ISiK_Basis.ISiKPatient
+'ISiK_Medikation.ISiKMedikationTransaction --> R4_Core.Bundle
+'ISiK_Medikation.ISiKMedikationTransactionResponse --|> R4_Core.Bundle
+
+namespace ISiK_Basis {
+   class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/identifierabrechnungsnummer Identifier-Profil]] für die "Fallnummer"
+   }
+   'ISiKMedikation::itemReference --> ISiKMedikation
+
+   class ISiKAbrechnungsfall <Account><<(P,#8DA5C4)>>{
+      id
+      extension : **ExtensionAbrechnungsDiagnoseProzedur**
+      |_ AbrechnungsDiagnoseProzedur
+      identifier
+      |_ Abrechnungsnummer : **identifierAbrechnungsnummer**
+         |_ type : **ISiKAccountIdentifierType**
+         |_ system
+         |_ value
+      status : AccountStatus
+      type : **ISiKAccountType**
+      subject : Reference ( **Patient**)
+      coverage
+      |_ extension : **ExtensionAbrechnungsart**
+         |_ Abrechnungsart
+      |_ coverage
+   }
+
+   class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
+      patient : Reference ( **Patient**)
+      name : HumanName, deutsches Basisprofil
+      address	S Σ	0..*	Address
+         |_ Strassenanschrift	S Σ I	0..*	Adresse, deutsches BasisprofilPattern
+            |_ extension	I	0..*	Extension
+               |_ Stadtteil
+            |_ type	S Σ	1..1	codeBindingFixed Value
+            |_ line	S Σ	1..3	string
+               |_ extension	I	0..*	Extension
+               |_ Strasse	S I	0..1	Extension(string)
+               |_ Hausnummer	S I	0..1	Extension(string)
+               |_ Adresszusatz	S I	0..1	Extension(string)
+               |_ Postfach         
+            |_ city	S Σ	1..1	string
+            |_ district	Σ	0..0	string
+            |_ state	Σ	0..1	stringBinding
+            |_ postalCode	S Σ	1..1	string
+            |_ country	S Σ	1..1	stringBinding
+            |_ period	Σ I	0..1	Period
+         |_ Postfach	S Σ I	0..*	Adresse, deutsches BasisprofilPattern
+            |_ type	S Σ	1..1	codeBindingFixed Value
+            |_ line	S Σ	1..3	string
+               |_ extension	I	0..*	Extension
+               |_ Strasse	S I	0..1	Extension(string)
+               |_ Hausnummer	S I	0..1	Extension(string)
+               |_ Adresszusatz	S I	0..1	Extension(string)
+               |_ Postfach         
+            |_ city
+            |_ <s>district</s>
+            |_ postalCode
+            |_ country
+   }
+
+   namespace ValueSets {
+      class ISiKAccountIdentifierType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccountidentifiertype ISiK Account Identifier Type]]
+         Includes codes from the code System
+         [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80925 v2.0203]]
+         --
+         **AN** displays-as **Account Number**
+      }
+      class ISiKAccountType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccounttype ISiK Account Type]]
+         Includes codes from the code System
+         [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80998 v3.ActCode]]
+         --
+         **AMB** displays-as **ambulatory**
+         **IMP** displays-as **inpatient encounter**      
+      }
+   }
+}
+
+
+namespace DE_Basisprofile_R4 {
+   class Basisprofile_Modul <<(M,#FFAAAA)>>{
+      Dokumentation auf HL7 Org
+      [[https://simplifier.net/basisprofil-de-r4 Basisprofil DE (RE4)]]
+   }
+   
+   class ExtensionAbrechnungsDiagnoseProzedur <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656773 Fallbezogene Abrechnungsrelevanz \nvon Diagnosen und Prozeduren]]
+   }
+
+   class ExtensionAbrechnungsart <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656772 Abrechnungsart]]
+   }
+
+   class gender-amtlich-de <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+   }
+   
+   class gender-amtlich-de <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+   }
+   
+   class gender-amtlich-de <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+   }
+
+}
+
+namespace HL7_FHIR_R4_Core {
+   class Foundation_Modul <<(M,#FFAAAA)>>{
+      Dokumentation auf HL7 Org
+      [[https://hl7.org/fhir/R4/ HL7 FHIR R4 Core Foundation]]
+   }
+  class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/82308 Account Status]]
+      Includes all codes from the underlying code System
+      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/81890 Account Status]]
+   }
+}
+
+namespace ISiK_Basis {
+   class Basismodul_Stufe_3 <<(M,#FFDC36)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/~introduction ISiK Basis Stufe 3]]
+   }
+   class ISiKPatient <Patient><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikpatient ISiK Patient]]
+   }
+   class ISiKKontaktGesundheitseinrichtung <Encounter><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
+   }
+   class ISiKPractitioner <Practitioner><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
+   }
+   class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikangehoeriger ISiK Angehoeriger]]
+   }  
+}
+
+
+'namespace dummy {
+'   class Foo {
+'   + field1
+'   + field2
+'   }
+'   class Bar {
+'   + field3
+'   + field4
+'   }
+'   Foo::field1 --> Bar::field3 : foo
+'   Foo::field2 --> Bar::field4 : bar
+'}
+@enduml
