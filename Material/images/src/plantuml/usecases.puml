@@ -20,11 +20,38 @@ left to right direction
 'actor :FHIR Repository: as DB << Application >>
 actor :Heilberufler:
 actor :Versicherter:
-storage adverseUC as "Adverse Use Case" {
+:FHIR Repository: as FhirRepo << Technical User >>
+:Client: as Client << Technical User >>
+
+storage gnrlUC as "Allgemein" {
+    (Versorgung)
+    (Administration)
+    (Digitalisierung)
+    (Dokumentation)
+    (Abrechnung)
+    (Strukturierung)
+    (Organisationsstruktur)
+    (Archivierung)
+    (Delegation)
+    (Konsultation)
+    (Transparenz)
+    storage patientUC as "Patienten-Management"{
+        (Aufnahme) 
+        (Behandlungs-Journey)
+        (Entlassung)
+        (Überleitung)
+        (Information)
+        (Einbeziehung \nAngehöriger)
+        (Einsichtnahme)
+    }
+}
+
+storage adverseUC as "Adverse Use Cases" {
     storage (Verwechslung){
-        (Metainformationen)
-        (Zuordnung)
-        (Dokumenttyp)
+        (Patient)
+        (Fall)
+        (Diagnose)
+        (Ort-Zeit)
     }
     (Merhfachdokumentation)
     (Dokumentationslücken)
@@ -32,23 +59,22 @@ storage adverseUC as "Adverse Use Case" {
     (Verlust)
 }
 
-storage gnrlUC as "Allgemein" {
-    (Information)
-    (Erstellung)
-    (Aktualisierung)
-    (Digitalisierung)
-    (Strukturierung)
-    (Archivierung)
-    storage booKUC as "Dokumentenübermittlung"{
-        (Übernahme) 
-        (Verarbeitung)
-        (Einsicht)
-        (Prüfung)
-    }
+storage techUC as "Technical Use Case" {
+    (Synchronisation)
+    (Performance & \nDatensparsamkeit)
+    (Wechsel führendes System)
+    (Kommunikation)
+    (Eindeutigkeit)
+    (Grundlagen-Ressourcen)
 }
 
+
+
 Heilberufler --> gnrlUC
-Versicherter --> Information
+Versicherter --> patientUC
+
+FhirRepo --> techUC
+Client --> techUC
 
 'fncts --> adverseUC : mitigates
 'fncts --> gnrlUC : enables
