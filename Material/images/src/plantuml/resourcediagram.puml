@@ -60,36 +60,32 @@ namespace ISiK_Basis {
 
    class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
       patient : Reference ( **Patient**)
-      name : HumanName, deutsches Basisprofil
-      address	S Σ	0..*	Address
-         |_ Strassenanschrift	S Σ I	0..*	Adresse, deutsches BasisprofilPattern
-            |_ extension	I	0..*	Extension
-               |_ Stadtteil
-            |_ type	S Σ	1..1	codeBindingFixed Value
-            |_ line	S Σ	1..3	string
-               |_ extension	I	0..*	Extension
-               |_ Strasse	S I	0..1	Extension(string)
-               |_ Hausnummer	S I	0..1	Extension(string)
-               |_ Adresszusatz	S I	0..1	Extension(string)
-               |_ Postfach         
-            |_ city	S Σ	1..1	string
-            |_ district	Σ	0..0	string
-            |_ state	Σ	0..1	stringBinding
-            |_ postalCode	S Σ	1..1	string
-            |_ country	S Σ	1..1	stringBinding
-            |_ period	Σ I	0..1	Period
-         |_ Postfach	S Σ I	0..*	Adresse, deutsches BasisprofilPattern
-            |_ type	S Σ	1..1	codeBindingFixed Value
-            |_ line	S Σ	1..3	string
-               |_ extension	I	0..*	Extension
-               |_ Strasse	S I	0..1	Extension(string)
-               |_ Hausnummer	S I	0..1	Extension(string)
-               |_ Adresszusatz	S I	0..1	Extension(string)
-               |_ Postfach         
-            |_ city
-            |_ <s>district</s>
-            |_ postalCode
-            |_ country
+      name : HumanName // deutsches Basisprofil
+      address : Address
+      |_ Strassenanschrift	: Adresse // deutsches BasisprofilPattern
+         |_ extension
+            |_ Stadtteil
+         |_ type : AddressType.both
+         |_ line
+            |_ extension
+               |_ Strasse
+               |_ Hausnummer
+               |_ Adresszusatz
+               |_ <s>Postfach</s>
+         |_ city
+         |_ postalCode
+         |_ country
+      |_ Postfach	: Adresse // deutsches BasisprofilPattern
+         |_ type : AddressType.postal
+         |_ line
+            |_ extension
+               |_ <s>Strasse</s>
+               |_ <s>Hausnummer</s>
+               |_ <s>Adresszusatz</s>
+               |_ Postfach
+         |_ city
+         |_ postalCode
+         |_ country
    }
 
    namespace ValueSets {
@@ -135,14 +131,14 @@ namespace DE_Basisprofile_R4 {
       [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
    }
    
-   class gender-amtlich-de <<(E,#7A8495)>>{
+   class humanname-de-basis <<(E,#7A8495)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338720 HumanName, deutsches Basisprofil]]
    }
    
-   class gender-amtlich-de <<(E,#7A8495)>>{
+   class address-de-basis <<(E,#7A8495)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338610 Adresse, deutsches Basisprofil]]
    }
 
 }
@@ -161,7 +157,7 @@ namespace HL7_FHIR_R4_Core {
 }
 
 namespace ISiK_Basis {
-   class Basismodul_Stufe_3 <<(M,#FFDC36)>>{
+   class Basismodul_Stufe_4 <<(M,#FFDC36)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v3/~introduction ISiK Basis Stufe 3]]
    }
@@ -177,10 +173,6 @@ namespace ISiK_Basis {
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
    }
-   class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikangehoeriger ISiK Angehoeriger]]
-   }  
 }
 
 
