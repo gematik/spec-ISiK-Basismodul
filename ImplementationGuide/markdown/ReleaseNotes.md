@@ -11,6 +11,7 @@ Datum: tbd
 * Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: https://github.com/gematik/spec-ISiK-Basismodul/pull/362
 * Korrektur der Anforderung zur Encounter-Kontaktebene: https://github.com/gematik/spec-ISiK-Basismodul/pull/363
 * Hinweis zur Nutzung des Suchparameter "context-type-value" hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/364
+* Lockerung für Extension Kardinalität in Account zu ..* : 
 
 ----
 Version: 3.0.3
