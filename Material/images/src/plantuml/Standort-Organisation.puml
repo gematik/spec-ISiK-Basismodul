@@ -5,6 +5,7 @@ namespace ISiK_Basis {
     namespace ISiK_Basis_NEU_Standort_Organisation {
 
     class ISiKStandort <Location><<(P,#1dde23)>>
+    ' https://build.fhir.org/location.html
 
     class ISiKStandortRaum <Location><<(P,#1dde23)>>
 
@@ -14,7 +15,11 @@ namespace ISiK_Basis {
 
     ISiKStandort	<|-- ISiKStandortRaum
     ISiKStandort	<|-- ISiKStandortBett
-    ISiKStandortRaum o-- ISiKStandortBett : .partof
+    ISiKStandort o-- ISiKStandort : .partof 0..1
+
+    ' https://build.fhir.org/organization.html
+    class ISiKOrganisationFachbteilung <Schedule><<(P,#1dde23)>>
+    ISiKOrganisationFachbteilung o-- ISiKStandort : managingOrganization 0..1
 
     }
 
@@ -32,8 +37,8 @@ namespace ISiK_Terminplanung {
     class ISiKNachricht <Communication><<(P,#8DA5C4)>>
 }
 
-ISiK_Basis.ISiK_Basis_NEU_Standort_Organisation.ISiKStandort o-- ISiK_Terminplanung.ISiKKalender : .actor
-ISiK_Basis.ISiK_Basis_NEU_Standort_Organisation.ISiKOrganisationFachbteilung o-- ISiK_Terminplanung.ISiKMedizinischeBehandlungseinheit : .providedBy
+ISiK_Basis.ISiK_Basis_NEU_Standort_Organisation.ISiKStandort o-- ISiK_Terminplanung.ISiKKalender : .actor 1..*
+ISiK_Basis.ISiK_Basis_NEU_Standort_Organisation.ISiKOrganisationFachbteilung o-- ISiK_Terminplanung.ISiKMedizinischeBehandlungseinheit : .providedBy 0..1
 
 
 
