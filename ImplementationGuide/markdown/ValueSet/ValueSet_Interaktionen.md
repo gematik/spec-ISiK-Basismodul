@@ -58,7 +58,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Use Cases im Zusammenhang:
 
-    (A) Zur Entwicklungszeit können passende ValueSets von einem Server spezifisch für eine Ressource abgerufen werden. Dies dient dem Exponieren relevanter Kataloge und ist notwendig für die Vereinfachung der Integration, z.B. eines Patientenportals mit einem KIS. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
+    (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für eine Ressource abgerufen werden. Dies dient dem Exponieren relevanter Kataloge und ist notwendig für die Vereinfachung der Integration, z.B. eines Patientenportals mit einem KIS. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
 
     (B) Zur Laufzeit wird die dynamische Abfrage der genannten ValueSets ermöglicht, was für die Synchronisierung der ValueSets gegenüber einem Client notwendig ist.
 
