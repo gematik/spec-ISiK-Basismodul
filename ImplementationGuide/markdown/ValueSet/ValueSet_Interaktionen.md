@@ -51,11 +51,17 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
 
-    Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource Type ermittelt werden. Diese Informationen sind relevant im Kontext von:
--  Hausinternen Prozeduren/Diagnosen-Codes
--  Kodierung von Encounter-Informationen z.B. Wahlleistungen, Kodierung des Typs einer Location
 
-    Auch im Kontext der [Terminvereinbarung durch einen Termin-Requestor wird die Abfrage genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
+    Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Type ermittelt werden. Diese Informationen sind relevant im Kontext von:
+    -  Hausinternen Prozeduren/Diagnosen-Codes
+    -  Kodierung von Encounter-Informationen z.B. Wahlleistungen und Kodierung des Typs einer Location können in Form von ValueSets  abgerufen werden
+
+    Use Cases im Zusammenhang:
+
+    (A) Zur Entwicklungszeit können passende ValueSets von einem Server spezifisch für eine Ressource abgerufen werden. Dies dient dem Exponieren relevanter Kataloge und ist notwendig für die Vereinfachung der Integration, z.B. eines Patientenportals mit einem KIS. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
+
+    (B) Zur Laufzeit wird die dynamische Abfrage der genannten ValueSets ermöglicht, was für die Synchronisierung der ValueSets gegenüber einem Client notwendig ist.
+
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.useContext" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Composite Search Parameters"](https://www.hl7.org/fhir/R4/search.html#composite).
 
