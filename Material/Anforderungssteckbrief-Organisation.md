@@ -48,11 +48,10 @@ Zu bedenken:
 1. Soll das Profil auch explizit KIM und TIM Adressen als identifier führen? Siehe Analog: https://github.com/gematik/spec-E-Rezept-ServiceRequest/blob/master/Resources/input/fsh/profiles/8_Organization.fsh -> ja s.u.
 
 
-
 **Lösungswege- und Optionen** 
 
-- Profile zu den FHIR Ressourcen Organization und Location sollen spezifiziert werden
-- Auch ein Profil zur FHIR Ressource HealthCareService soll diskutiert werden
+- Profile zu den FHIR Ressourcen Organization und Location sollen spezifiziert werden (siehe bestehenden PR)
+- Auch ein Profil zur FHIR Ressource HealthCareService soll diskutiert werden (dies Bereits in Terminplanung)
 - Weitere Profile, die zu beachten sind hinsichtlich der Kompatibilität:
    - Medizin Informatik Initiative https://simplifier.net/MedizininformatikInitiative-ModulStrukturdaten/~introduction, bzw siehe hier unter Strukturdaten https://art-decor.org/art-decor/decor-datasets--mide-
         - hier werden Profile zu Organisation und Standort (Location) vorgelegt
