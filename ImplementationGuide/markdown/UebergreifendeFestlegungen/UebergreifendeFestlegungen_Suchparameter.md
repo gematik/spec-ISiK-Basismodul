@@ -89,7 +89,7 @@ Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.
 ``[base]/Patient?_has:Procedure:patient:encounter.identifier=12345``
 Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweisen und einen deren Procedure auf einen Encounter verweist z.B. mit der Aufnahmenummer '1234-5'.
 
-``[base]/Procedure?_has:Encounter:diagnosis:diagnosis:Condition.code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|F16.1``
+``[base]/Procedure?_has:Encounter:diagnosis:Condition.code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|F16.1``
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Encounter.diagnosis.condition` auf einen Encounter verweisen, der wiederrum mit einer Condition verlinkt ist mit dem ICD-10-GM Code 'F16.1'.
 
 ## Verpflichtende Suchparameter (Alle Datenobjekte)
@@ -109,7 +109,8 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 
 * ``_has``
 
-    - Siehe Abschnitt "Allgemeine Hinweise zu Suchparametern".
+    - Für Beispiele, siehe oben Abschnitt "Allgemeine Hinweise zu Suchparametern".
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_has" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reverse Chaining"](https://www.hl7.org/fhir/R4/search.html#has).
 
 * ``_count``
 
@@ -123,7 +124,7 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 * ``_include``
 
     - Beispiele: ``GET [base]/Encounter?_include=Patient:subject``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_include" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
     - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
     Der ```:iterate``` Modifier KANN unterstützt werden.
@@ -131,7 +132,7 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 * ``_revinclude``
 
     - Beispiele: ``GET [base]/Patient?_revinclude=Encounter:subject``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
+    - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
     - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
     Der ```:iterate``` Modifier KANN unterstützt werden.

@@ -6,6 +6,6 @@ Herausforderungen stellen dabei die Vielzahl der Schnittstellen von informations
 
 Im Folgenden leiten wir - die gematik GmbH - her, warum die bestehenden Integrationsansätze im Krankenhaus noch unzureichend sind und durch die im Bestätigungsverfahren „Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus“ (ISiK) spezifizierten Ansätze ergänzt werden, um die Vielzahl sinnvoller Integrationsszenarien effizient abzudecken.
 
-# Grafische Zusammenfassung des Implementations Guides
+# Grafische Zusammenfassung des Implementation Guides
 
 {{index:current}}
