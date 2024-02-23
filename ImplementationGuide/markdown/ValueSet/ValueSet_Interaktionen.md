@@ -52,16 +52,15 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter```
 
 
-    Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Type ermittelt werden. Diese Informationen sind relevant im Kontext von:
+    Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:
     -  Hausinternen Prozeduren/Diagnosen-Codes
-    -  Kodierung von Encounter-Informationen z.B. Wahlleistungen und Kodierung des Typs einer Location können in Form von ValueSets  abgerufen werden
+    -  Kodierung von Encounter-Informationen (z.B. Wahlleistungen,  Orttypen) 
 
     Use Cases im Zusammenhang:
 
-    (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für eine Ressource abgerufen werden. Dies dient dem Exponieren relevanter Kataloge und ist notwendig für die Vereinfachung der Integration, z.B. eines Patientenportals mit einem KIS. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
+    (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor genutzt](https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-Operations?version=current).
 
-    (B) Zur Laufzeit wird die dynamische Abfrage der genannten ValueSets ermöglicht, was für die Synchronisierung der ValueSets gegenüber einem Client notwendig ist.
-
+    (B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.   
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "CodeSystem.useContext" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Composite Search Parameters"](https://www.hl7.org/fhir/R4/search.html#composite).
 
