@@ -15,44 +15,47 @@ Ein externes Starten eines Patient merge - bspw. durch die [$patient-merge Opera
 ## Gemergte Patienten Instanz
 Wenn ein Patient merge geschieht, gelten für das patientenführende System folgende Anforderungen:
 
-**REQ_BAS_PAT-MER-010**: Das patientenführende System MUSS sicherstellen, dass ein externer Client, dem ein lesender Zugriff auf eine Patienten-Ressource erteilt wurde, auch nach einem Patient merge auf diese obsolete Ressource zugreifen kann, um eine Abfrage auf die resultierende Ressource mittels .link-Elements zu ermöglichen. Dies MUSS solange gelten, bis das patientenführende System sicherstellen kann - z.B. mittels eines vereinbarten Workflows -, dass alle Abfragen des Clients, die potentiell auf die obsolete Ressource zielen könnten, in Zukunft auf die resultierende Ressource zielen.
+**REQ_BAS_PAT-MER-010**: Das patientenführende System MUSS sicherstellen, dass alle auf die obsolete Ressource referenzierenden FHIR-Ressourcen nach dem merge auf die resultierende Ressource referenzieren. 
 
-### Datenelemente der obsoleten Patienten-Ressource
+### Die obsolete Patienten-Ressource
 
-**REQ_BAS_PAT-MER-011**: Das patientenführende System MUSS nach einem merge die Elemente der obsoleten Ressource folgendermaßen befüllen, um sicherzustellen, dass die obsolete Ressource auf die resultieren Ressource verweist und das die obsolete Ressource als inaktiv gekennzeichnet ist:
+**REQ_BAS_PAT-MER-011**: Das patientenführende System KANN die obsolete Patienten-Ressource weiter vorhalten. Ein Entfernen der obsoleten Ressource ist ebenfalls erlaubt.
+
+Soll die obsolete Ressource nach einem merge weiter vorgehalten werden MÜSSEN die Elemente der obsoleten Ressource folgendermaßen befüllt werden, um sicherzustellen, dass die obsolete Ressource auf die resultieren Ressource verweist und das die obsolete Ressource als inaktiv gekennzeichnet ist:
 - .active = false
 - .link.other = Reference(auf “resultierenden” Patient)
 - .link.type = “replaced-by”
 
-### Datenelemente der resultierenden Patienten-Ressource
-
-**REQ_BAS_PAT-MER-012**: Das patientenführende System MUSS nach einem merge die Elemente der resultierende Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:
-- .link.other = Reference(auf “obsoleten” Patient)
-- .link.type = “replaced-by”
-
 ## Beispiele
 Die Patient merge Notification kann folgendermaßen illustriert werden: es existieren fälschlicherweise zwei Instanzen, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
-Diese sind: 
+Diese sind:
 
-"Quell" Patienten-Ressource:
+"Quell" Patienten-Ressource:  
 {{json:DorisQuelle}}
 
 und
 
-"Ziel" Patienten-Ressource:
+"Ziel" Patienten-Ressource:  
 {{json:DorisZiel}}
 
 Mittels eines Patient-merge-Vorgangs wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert:
 
-Obsolete Patienten-Ressource:
-{{json:DorisObsolet}}
-
 Resultierende Patientin:
 {{json:DorisResultat}}
 
+### Datenelemente der resultierenden Patienten-Ressource
+
+**REQ_BAS_PAT-MER-012**: Das patientenführende System MUSS nach einem merge die Elemente der resultierenden Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:
+- .link.other = Reference.identifier (logische Referenz mittels Patientennummer Identifier auf “obsoleten” Patient)
+- .link.type = “replaces”
+
 ## Patient merge Notification
-**REQ_BAS_PAT-MER-020**: Das patientenführende System MUSS einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können.
+**REQ_BAS_PAT-MER-020**: Das patientenführende System MUSS einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können. Dieser Mechanismus basiert auf dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/channels.html) und nutzt das Konzept der "Topic-Based Subscription" aus FHIR R5.  
 
-Hier wird aktuell geklärt ob dies mittels r4 Subscription oder R5 backport topic-based Subscription erfolgen soll.
+Hierfür wurde das Subscription Topic: *https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge* definiert.
 
+Das patientenführende System MUSS den Support dieser Subscription inneralb des CapabilityStatements bekannt geben.
 
+## Client-System
+**REQ_BAS_PAT-MER-021**: Client-Systeme MÜSSEN den Status einer gecachten Patienteninstanz vor der Interaktion mit einem patientenführenden System per READ auf das Patientenobjekt überprüfen.
+Sollte das Patientenobjekt nicht mehr bereitstehen, oder hat den status `active=false` muss das Patientenobjekt mittels Suche auf einen bekannten & stabilen Identifier neu geladen werden.

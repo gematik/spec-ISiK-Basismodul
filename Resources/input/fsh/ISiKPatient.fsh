@@ -107,6 +107,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * link MS
   * ^comment = "Dieses und untergoerdnete Elemente MÜSSEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden."
   * other MS
+    * identifier MS
   * type MS
 
 Instance: PatientinMusterfrau

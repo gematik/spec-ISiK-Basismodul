@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "patient-merge-subscription",
-  "url": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/patient-merge-subscription",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/patient-merge-subscription",
   "name": "PatientMergeSubscription",
   "title": "Patient Merge Subscription",
   "status": "draft",
@@ -32,44 +32,38 @@
         "mustSupport": true
       },
       {
-        "id": "Subscription.criteria",
-        "path": "Subscription.criteria",
-        "patternString": "https://gematik.de/fhir/isik/v4/Basismodul/topic/patient-merge"
+        "id": "Subscription.reason",
+        "path": "Subscription.reason",
+        "mustSupport": true
       },
       {
-        "id": "Subscription.criteria.extension:filterCriteria",
-        "path": "Subscription.criteria.extension",
-        "sliceName": "filterCriteria",
-        "max": "0"
+        "id": "Subscription.criteria",
+        "path": "Subscription.criteria",
+        "patternString": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
       },
       {
         "id": "Subscription.channel.type",
         "path": "Subscription.channel.type",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/Basismodul/ValueSet/RestAndWSSubscriptionChannel"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/RestAndWSSubscriptionChannelType"
         }
       },
       {
         "id": "Subscription.channel.payload",
         "path": "Subscription.channel.payload",
-        "patternCode": "application/fhir+json"
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/FhirMimeTypeVS"
+        }
       },
       {
-        "id": "Subscription.channel.payload.extension:content",
-        "path": "Subscription.channel.payload.extension",
-        "sliceName": "content"
-      },
-      {
-        "id": "Subscription.channel.payload.extension:content.value[x]:valueCode",
-        "path": "Subscription.channel.payload.extension.value[x]",
-        "sliceName": "valueCode",
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "patternCode": "id-only"
+        "id": "Subscription.channel.header",
+        "path": "Subscription.channel.header",
+        "short": "Falls eine REST-Enpunkt einen Authorization-Header benötigt, kann dieser hier gesetzt werden",
+        "mustSupport": true
       }
     ]
   }

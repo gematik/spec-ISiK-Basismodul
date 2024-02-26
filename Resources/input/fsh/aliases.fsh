@@ -36,4 +36,4 @@ Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/isik/v3/Basismodul/ValueSet
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $kvid10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30
-Alias: $patient-merge-topic = https://gematik.de/fhir/isik/v4/Basismodul/topic/patient-merge
+Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge

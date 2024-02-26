@@ -3,7 +3,7 @@
   "id": "DorisResultat",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKPatient"
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
     ]
   },
   "identifier": [
@@ -20,6 +20,7 @@
       "value": "123456"
     },
     {
+      "system": "http://fhir.de/sid/gkv/kvid-10",
       "type": {
         "coding": [
           {
@@ -28,7 +29,6 @@
           }
         ]
       },
-      "system": "http://fhir.de/sid/gkv/kvid-10",
       "value": "A123456789"
     }
   ],
@@ -47,7 +47,10 @@
   "link": [
     {
       "other": {
-        "reference": "Patient/DorisObsolet"
+        "identifier": {
+          "system": "https://fhir.krankenhaus.example/sid/PID",
+          "value": "654321"
+        }
       },
       "type": "replaces"
     }
