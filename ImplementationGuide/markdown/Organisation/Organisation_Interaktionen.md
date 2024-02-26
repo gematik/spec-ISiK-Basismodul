@@ -7,7 +7,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
 
     Beispiele:
 
-    ```GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-iknr|260120196```
+    ```GET [base]/Organization?identifier=http://fhir.de/sid/arge-ik/iknr|260120196```
 
     ```GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-bsnr|345678975```
 
