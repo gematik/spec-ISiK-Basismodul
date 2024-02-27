@@ -100,18 +100,21 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
 * location[Zimmer]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
 * location[Bett]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
