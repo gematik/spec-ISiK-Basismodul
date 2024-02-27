@@ -7,7 +7,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
 
     Beispiele:
 
-    ```GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-iknr|260120196```
+    ```GET [base]/Organization?identifier=http://fhir.de/sid/arge-ik/iknr|260120196```
 
     ```GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-bsnr|345678975```
 
@@ -37,7 +37,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
 
     ```GET [base]/Organization?name=FA-Gynäkologie```
 
-    ```GET [base]/Organization?alias=GYN```
+    ```GET [base]/Organization?name=GYN```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.name" und "Oganization.alias" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
