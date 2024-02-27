@@ -73,7 +73,7 @@ Weitere (implizite) Anforderungen an die Festlegung zu Organisation und Standort
 
 1. Auswahl geeigneter Suchparameter muss getroffen werden
 1. Use Cases mit bestehenden Modulen auszuarbeiten - insbesondere Terminplanung (siehe auch Bedarf oben zur Bettenbelegung)
-1. Profil ISiKOrganisation sollte sich möglichst an das entsprechende Profil der KBV orientieren.
+1. Profil ISiKOrganisation sollte sich möglichst an das entsprechende Profil der FHIR-VZD der gematik / KBV orientieren.
     - siehe insbesondere .identifier
 
 
@@ -90,7 +90,7 @@ Fragen, die intern beantwortet wurde, jedoch gegenüber der Community validiert 
 ### Offene Fragen
 Weitere Fragen, die offen sind und mit Community diskutiert werden sollen.
 
-1. Wie soll die Modularisierung / Paketierung gegenüber Terminplanung erfolgen?
+1. Wie soll die Modularisierung / Paketierung gegenüber Terminplanung erfolgen (insbesondere HealthCareService)?
 1. Grundsatzfrage: Kodierung der unterschiedlichen Profile für 
   - ISIKOrganisation (Fachabteilung) - ggf. zu lösen mit Fachabteilungsschlüssel 
   ) https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656780 
