@@ -1,5 +1,13 @@
 # Decision Log
 
+Version Technical Correction 3.0.4
+
+* Problem: In der [Extension Abrechnungsart](http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur) ist eine eindeutige Zuweisung zwischen Use und Referenz nicht möglich aufgrund der Kardinalität von Use - (vergleiche ANFISK-206)
+  * Option zur Lösung:
+    * Die Extension sollte in ISiK auf 0..* gesetzt werden
+    * In den Basisprofilen sollte die Extension angepasst werden, sodass Use auf 0..1 gesetzt wird
+    * ggf. erneute Prüfung der Codes unter "Use" prüfen
+
 ----
 Version: Technical Correction 3.0.2
 
