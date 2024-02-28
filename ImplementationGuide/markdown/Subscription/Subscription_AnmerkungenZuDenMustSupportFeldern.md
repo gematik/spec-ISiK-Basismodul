@@ -2,7 +2,7 @@
 
 ### `Subscription.status`
 
-**Bedeutung:** Der Status der Subscription, der den Serverstatus der Subscription angibt. Neue Subscriptions werden immer mit dem Status `requested` an den Server übergeben. Der Server ändert im Anschluss den status auf `active` oder im Fehlerfall auf `error`.
+**Bedeutung:** Der Status der Subscription, der den Serverstatus der Subscription angibt. Neue Subscriptions werden immer mit dem Status `requested` an den Server übergeben. Der Server ändert im Anschluss den Status auf `active` oder im Fehlerfall auf `error`.
 
 **Hinweise:** Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)
 
