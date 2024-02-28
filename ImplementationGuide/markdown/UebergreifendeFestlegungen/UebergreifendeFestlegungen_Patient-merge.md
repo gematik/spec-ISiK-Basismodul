@@ -29,7 +29,7 @@ Das patientenführende System MUSS den Support dieser Subscription innerhalb des
 
 Zur Illustration der Patient merge Notification dient folgendes Diagramm:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/feat/pat-merge/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram 'Patient merge Notification'" width="90%"/ >
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/feat/pat-merge/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram 'Patient merge Notification'" width="90%"/>
 <!-- 
 TODO  
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/rc/main-stufe-4/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram" width="90%"/ >
