@@ -1,0 +1,16 @@
+@startuml
+
+participant "Client System" as ClientSystem
+participant "Server System" as ServerSystem
+
+activate ClientSystem
+activate ServerSystem
+ClientSystem -> ServerSystem: subscribe to Topic: http://hl7.org/SubscriptionTopic/patient-merge
+
+ServerSystem -> ClientSystem: Subscription Confirmed
+
+
+ServerSystem -> ServerSystem: $patient-merge with source and target patient
+ServerSystem -> ClientSystem: send Notification Bundle
+
+@enduml

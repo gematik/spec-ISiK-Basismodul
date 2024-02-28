@@ -35,7 +35,7 @@
 
 ## Zusammenfassung
 Es besteht aus Sicht der befragten Stakeholder der Bedarf nach einer AG zum Patientendatenzusammenführung (Patient merge) im Kontext von ISiK.
-Derzeitiges Umsetzungsziel der AG im Rahmen der ISIK Ausbaustufe 4 ist die fachliche Konsolidierung und Spezifikation zu einer Interaktion im FHIR Kontext, die über einen geschehenen Patient merge informiert (zum benannten Umsetzungsziel siehe [7.6.3. UC-03: Inform about merge](#763-uc-03-inform-about-merge) und zur Priorisierung weiterer Bedarfe siehe [8. Priorisierte Liste der Use Cases nach Bedarf](#8-priorisierte-liste-der-use-cases-nach-bedarf)).
+Derzeitiges Umsetzungsziel der AG im Rahmen der ISIK Ausbaustufe 4 ist die fachliche Konsolidierung und Spezifikation zu einer Interaktion im FHIR Kontext, die über einen geschehenen Patient merge informiert ('Patient merge Notification' - zum benannten Umsetzungsziel siehe [7.6.3. UC-03: Inform about merge](#763-uc-03-inform-about-merge) und zur Priorisierung weiterer Bedarfe siehe [8. Priorisierte Liste der Use Cases nach Bedarf](#8-priorisierte-liste-der-use-cases-nach-bedarf)).
 
 ## 1. Motivation und Hintergrund
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. Ein Standard, der sich dem Austausch von Patientendaten innerhalb eines Krankenhauses verschreibt, sollte daher auch das Thema der Patientendatenzusammenführung (Patient merge) abdecken. Ziel ist es, dass externe Clients merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
