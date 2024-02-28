@@ -27,6 +27,15 @@ Hierfür wurde das Subscription Topic: *https://gematik.de/fhir/isik/Subscriptio
 
 Das patientenführende System MUSS den Support dieser Subscription innerhalb des CapabilityStatements bekannt geben.
 
+Zur Illustration der Patient merge Notification dient folgendes Diagramm:
+
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/rc/pat-merge/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram 'Patient merge Notification'" width="90%"/ >
+<!-- 
+TODO  
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/rc/main-stufe-4/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram" width="90%"/ >
+--> 
+
+
 Zur Illustration der technischen Umsetzung für die Patient merge Notification dient ein [Prove of Concept (POC) mit Anleitung](https://github.com/gematik/poc-isik-patient-merge).
 
 ## Abgrenzung zu 'Patient merge'
