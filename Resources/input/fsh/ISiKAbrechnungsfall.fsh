@@ -51,5 +51,5 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * coverage
   * extension.url = "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart"
-  * extension.valueCoding = $Abrechnungsart#DRG "Diagnosebezogene Fallgruppen"
+  * extension.valueCoding = $Abrechnungsart#ASV "Ambulante Spezialfachärztliche Versorgung"
   * coverage = Reference(CoverageGesetzlich)
