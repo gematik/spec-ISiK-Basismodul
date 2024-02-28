@@ -4,7 +4,7 @@ Für die Ressource CodeSystem MUSS die REST-Interaktion "READ" implementiert wer
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
-1. Der Suchparameter "_id" SOLL unterstützt werden:
+1. Der Suchparameter "_id" MUSS unterstützt werden, falls die Resource CodeSystem umgesetzt wird:
 
     Beispiele:
 
