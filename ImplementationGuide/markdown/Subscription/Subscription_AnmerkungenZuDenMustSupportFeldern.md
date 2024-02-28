@@ -2,7 +2,7 @@
 
 ### `Subscription.status`
 
-**Bedeutung:** Der Status der Subscription, der den Serverstatus der Subscription angibt. Neue Subscriptions werden immer mit dem Status `requested` an den Server übergeben. Der Server ändert im Anschluss den status auf `active` oder im Fehlerfall auf `error`.
+**Bedeutung:** Der Status der Subscription, der den Serverstatus der Subscription angibt. Neue Subscriptions werden immer mit dem Status `requested` an den Server übergeben. Der Server ändert im Anschluss den Status auf `active` oder im Fehlerfall auf `error`.
 
 **Hinweise:** Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)
 
@@ -14,7 +14,7 @@
 
 ### `Subscription.category`
 
-**Bedeutung:** Canonical URL des Subscription-Topics, aktuell nur unterstützt: https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
+**Bedeutung:** Canonical URL des Subscription-Topics, aktuell wird nur folgendes SubscriptionTopic unterstützt: https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 
 **Hinweise:** Siehe [Subscriptions R5 Backport](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html)
 
