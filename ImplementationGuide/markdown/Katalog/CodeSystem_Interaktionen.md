@@ -1,6 +1,6 @@
 ### Interaktionen
 
-Für die Ressource CodeSystem SOLL die REST-Interaktion "READ" implementiert werden.
+Für die Ressource CodeSystem MUSS die REST-Interaktion "READ" implementiert werden, falls die Resource CodeSystem umgesetzt wird.
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
