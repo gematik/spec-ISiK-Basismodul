@@ -14,7 +14,7 @@
 
 ### `Subscription.category`
 
-**Bedeutung:** Canonical URL des Subscription-Topics, aktuell nur unterstützt: https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
+**Bedeutung:** Canonical URL des Subscription-Topics, aktuell wird nur folgendes SubscriptionTopic unterstützt: https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 
 **Hinweise:** Siehe [Subscriptions R5 Backport](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html)
 
