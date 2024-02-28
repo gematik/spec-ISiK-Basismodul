@@ -63,6 +63,8 @@ Allerdings SOLL das patientenführende System nach einem merge die Elemente der 
 - .link.other = Reference.identifier (logische Referenz mittels Patientennummer Identifier auf “obsoleten” Patient)
 - .link.type = “replaces”
 
+Siehe auch: {{pagelink:ImplementationGuide/markdown/Patient/Patient_Profil.md, text:Patienten Profil }}
+
 ## Hinweise zum Client-System
 
 ### Recovery Mechanismus
