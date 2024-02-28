@@ -5,12 +5,12 @@ participant "Server System" as ServerSystem
 
 activate ClientSystem
 activate ServerSystem
-ClientSystem -> ServerSystem: subscribe to Topic: http://hl7.org/SubscriptionTopic/patient-merge
+ClientSystem -> ServerSystem: subscribe to SubscriptionTopic: http://hl7.org/SubscriptionTopic/patient-merge
 
-ServerSystem -> ClientSystem: Subscription Confirmed
+ServerSystem -> ClientSystem: confirm subscription
 
 
 ServerSystem -> ServerSystem: $patient-merge with source and target patient
-ServerSystem -> ClientSystem: send Notification Bundle
+ServerSystem -> ClientSystem: send notification Bundle
 
 @enduml
