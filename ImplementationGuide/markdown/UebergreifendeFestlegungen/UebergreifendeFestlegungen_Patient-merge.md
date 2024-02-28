@@ -58,11 +58,11 @@ Das patientenführende System MUSS den Support dieser Subscription inneralb des 
 
 ## Client-System
 **REQ_BAS_PAT-MER-021**: Client-Systeme MÜSSEN den Status einer gecachten Patienteninstanz vor der Interaktion mit einem patientenführenden System per READ auf das Patientenobjekt überprüfen.
-Sollte das Patientenobjekt nicht mehr bereitstehen, oder hat den status `active=false` muss das Patientenobjekt mittels Suche auf einen bekannten & stabilen Identifier neu geladen werden.
+Sollte das Patientenobjekt nicht mehr bereitstehen, oder hat den status `active=false` kann das Patientenobjekt mittels Suche auf einen bekannten & stabilen Identifier neu geladen werden.
 
 ## Datensicherheit
 
-Die patient-merge Subscription-Notification kann personenbezogene Daten versenden falls man full-resource als content-code gewählt hat. Für den REST-Hook sollte daher stets ein https Endpunkt genutzt werden. Zusätzlich kann `Subscription.channel.header` genutzt werden um einen Authorization-Header an den Enpunkt zu übertragen.   
+Die "patient-merge Subscription-Notification" kann personenbezogene Daten versenden, falls man "full-resource" als Content-Code gewählt hat. Für den REST-Hook sollte daher stets ein HTTPS-Endpunkt genutzt werden. Zusätzlich kann Subscription.channel.header genutzt werden, um einen Autorisierungs-Header an den Endpunkt zu übertragen.   
 Siehe auch: [Safety and Security, Subscription Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html)
 
 ### Websocket

@@ -105,9 +105,10 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
 * link MS
-  * ^comment = "Dieses und untergoerdnete Elemente MÜSSEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden."
+  * ^comment = "Dieses und untergeordnete Elemente MÜSSEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden."
   * other MS
     * identifier MS
+      * ^comment = "Logischer Verweis auf Identifier[Patientennummer]"
   * type MS
 
 Instance: PatientinMusterfrau
