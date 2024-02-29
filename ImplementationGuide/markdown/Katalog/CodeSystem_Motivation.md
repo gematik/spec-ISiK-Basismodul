@@ -1,7 +1,7 @@
 ### Motivation
 
 #### Katalog
-ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/Systeminterne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt eine solche erweitere Kodierung. 
+ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/Systeminterne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Displaywerte. 
 
 Eine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients dazugehörige Anzeigetext und Definitionen zu verarbeiten.
 
