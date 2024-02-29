@@ -1,5 +1,14 @@
 # Decision Log
 
+
+Datum 27.02.
+* Problem: Die MUSS-Anforderungen im Kontext von ISIKKatalog scheinen zu umfassend zu sein.
+* Lösung: Schwächung der Anforderungen für das Profil als ganzes:
+  * Ressource ISIKKatalog als optional kennzeichnen (im Capability Statement). Alle anderen Suchparameter entfernen - genauso für IG. Nur für diese bleiben Test-Cases (optional) erhalten.
+  * Nur die Suchparameter "_id" Und "url" sind MUSS-Anforderungen (auch nur, wenn die Ressource optional unterstützt wird), da ein bekanntes Codesystem abrufbar sein sollte, wenn die Ressource an sich unterstützt wird.
+  *Anmerkungen und MUST-SUpport Felder bleiben unberührt (SOLL).
+
+----
 Version Technical Correction 3.0.4
 
 * Problem: In der [Extension Abrechnungsart](http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur) ist eine eindeutige Zuweisung zwischen Use und Referenz nicht möglich aufgrund der Kardinalität von Use - (vergleiche ANFISK-206)
@@ -7,6 +16,7 @@ Version Technical Correction 3.0.4
     * Die Extension sollte in ISiK auf 0..* gesetzt werden
     * In den Basisprofilen sollte die Extension angepasst werden, sodass Use auf 0..1 gesetzt wird
     * ggf. erneute Prüfung der Codes unter "Use" prüfen
+
 
 ----
 Version: Technical Correction 3.0.2
