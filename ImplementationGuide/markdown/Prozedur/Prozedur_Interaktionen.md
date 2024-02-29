@@ -72,12 +72,4 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.
 
-1. Der Suchparameter für "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Procedure?_profile=https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKDiagnose```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all)
-
 ---

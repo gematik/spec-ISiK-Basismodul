@@ -136,14 +136,6 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 
     Der ```:iterate``` Modifier KANN unterstützt werden.
 
-
-Folgende Suchparameter KÖNNEN für alle bestätigungsrelevante Datenojekte implementiert werden:
-
-* ``_profile``
-
-    - Beispiele: ``GET [base]/Patient?_profile=https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPatient``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-
 Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
 
 ## Best Practice Empfehlungen für Standard-Suchfilter
