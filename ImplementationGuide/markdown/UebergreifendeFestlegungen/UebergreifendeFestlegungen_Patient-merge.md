@@ -27,16 +27,15 @@ Hierfür wurde das Subscription Topic: *https://gematik.de/fhir/isik/Subscriptio
 
 Das patientenführende System MUSS den Support dieser Subscription innerhalb des CapabilityStatements bekannt geben.
 
-Zur Illustration der Patient merge Notification dient folgendes Diagramm:
+Weitere Informationen zum Subscription Workflow finden sich hier:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/feat/pat-merge/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram 'Patient merge Notification'" width="90%"/>
-<!-- 
-TODO  
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/rc/main-stufe-4/Material/images/diagrams/Sequence-Diagram-Patient-Merge-Notification.svg" alt="Sequence Diagram" width="90%"/ >
---> 
+[Subscription Workflow - Subscriptions R5 Backport](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/workflow.html)
 
+### Prove of Concept Implementierung
+Zur Illustration der technischen Umsetzung für die Patient merge Notification dient ein [Prove of Concept (POC) mit Anleitung](https://github.com/gematik/poc-isik-patient-merge). 
 
-Zur Illustration der technischen Umsetzung für die Patient merge Notification dient ein [Prove of Concept (POC) mit Anleitung](https://github.com/gematik/poc-isik-patient-merge).
+### Notification Channel Types
+Notifications über einen Patient-merge-Vorgang können per *rest-hook* oder *websocket* an das subscribende System versandt werden. Im *rest-hook* Fall postet das patientenführende System ein NotificationBundle an den in `Subscriptipn.channel.endpoint` definierten REST Endpunkt. Bei einer *websocket* Notification geschieht das über einen Websocket-Channel. Die Websocketurl, sowie ein Access Token können mittels [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html)  vom Server abgerufen werden.
 
 ## Abgrenzung zu 'Patient merge'
 Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 
@@ -75,7 +74,7 @@ Ein Recovery Mechanismus wird benötigt, damit im Falle einer ausgebliebenen Pat
 Folgender Hinweis dient der Einhaltung eines Recovery Mechanismus:
 
 Client-Systeme SOLLEN den Status einer gecachten Patienteninstanz vor der Interaktion mit einem patientenführenden System per READ auf das Patientenobjekt überprüfen.
-Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den status `active=false` haben, kann das Patientenobjekt mittels Suche auf einen bekannten und stabilen Identifier neu geladen werden.
+Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den status `active=false` haben, kann das Patientenobjekt mittels Suche auf einen bekannten und stabilen Identifier, bspw. die gesetzliche Krankenversichertennummer, neu geladen werden.
 
 
 ### Datensicherheit Client
