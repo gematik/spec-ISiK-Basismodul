@@ -114,13 +114,5 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Encounter.serviceProvider" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
-1. Der Suchparameter "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Encounter?_profile=https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-
 ---
     
