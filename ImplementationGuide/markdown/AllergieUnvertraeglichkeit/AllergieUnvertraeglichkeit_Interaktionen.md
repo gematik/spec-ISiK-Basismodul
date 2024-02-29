@@ -46,15 +46,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "AllergyIntolerance.recordedDate" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
 
-
-1. Der Suchparameter "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/AllergyIntolerance?_profile=https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-
 1. Der Suchparameter "category" KANN unterstützt werden:
 
     Beispiele:

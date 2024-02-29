@@ -3,7 +3,7 @@
 @```from
 	StructureDefinition
 where
-    url = 'https://gematik.de/fhir/isik/v4/Medikation/StructureDefinition/ISiKAllergieUnvertraeglichkeit'
+    url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit'
 for differential.element
 where mustSupport = true
   and short.exists()

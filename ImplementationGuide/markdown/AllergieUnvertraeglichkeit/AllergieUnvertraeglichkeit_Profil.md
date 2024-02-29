@@ -1,10 +1,10 @@
 ### Profil
 
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit, hybrid}}
 
 ---
 
@@ -12,7 +12,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit' )
 for differential.element
 select
 Path: path,
