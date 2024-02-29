@@ -66,6 +66,9 @@ Siehe auch: {{pagelink:ImplementationGuide/markdown/Patient/Patient_Profil.md, t
 
 Im Sinne der Datensparsamkeit und Performance KANN lediglich der zuletzt stattgefundene Patient merge persistiert werden, indem mittels Element .link auf die obsolete Ressource referenziert wird. 
 
+### Referenzen auf das Patientenobjekt
+Das patientenführende System muss im Rahmen des Patient merges alle auf den Patienten referenzierenden Ressourcen auf die resultierende Ressource referenzieren lassen.
+
 ## Hinweise zum Client-System
 
 ### Recovery Mechanismus
