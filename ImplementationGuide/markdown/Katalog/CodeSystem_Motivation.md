@@ -5,7 +5,7 @@ ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenha
 
 Eine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients dazugehörige Anzeigetext und Definitionen zu verarbeiten.
 
-Ein Codesystem eignet sich auch dazu, auf dessen Basis implizit definierte [ValueSets zu expandieren](https://hl7.org/fhir/R4/valueset-operation-expand.html).
+Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte [ValueSets zu expandieren](https://hl7.org/fhir/R4/valueset-operation-expand.html).
 Da ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.
 Darüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. 
 
