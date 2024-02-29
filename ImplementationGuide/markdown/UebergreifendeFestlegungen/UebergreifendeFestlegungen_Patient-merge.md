@@ -64,7 +64,7 @@ Allerdings SOLL das patientenführende System nach einem merge die Elemente der 
 
 Siehe auch: {{pagelink:ImplementationGuide/markdown/Patient/Patient_Profil.md, text:Patienten Profil }}
 
-Im Sinne der Datensparsamkeit und Performance KANN lediglich der zuletzt stattgefundene Patient merge persistiert werden, indem mittels Element .link auf die obsolete Ressource referenziert wird. 
+Im Sinne der Datensparsamkeit und Performance KANN lediglich der zuletzt stattgefundene Patient merge persistiert werden, indem im Element .link auf die obsolete Ressource mittels eines Patientennummer-Identifier referenziert wird. 
 
 ## Hinweise zum Client-System
 
