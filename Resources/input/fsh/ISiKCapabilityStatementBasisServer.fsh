@@ -60,11 +60,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "address"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address"
 * rest.resource[=].searchParam[=].type = #string
@@ -214,11 +209,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "service-provider"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Encounter-service-provider"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchInclude = "Encounter:patient"
 * rest.resource[=].searchInclude[=].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchInclude[=].extension.valueCode = #SHALL
@@ -283,11 +273,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 
 
 * rest.resource[+].extension.url = $capabilitystatement-expectation
@@ -335,11 +320,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "related"
 * rest.resource[=].searchParam[=].definition = "http://fhir.de/SearchParameter/Condition-related"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "category"
@@ -407,11 +387,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "date"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
 * rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchInclude = "Procedure:patient"
 * rest.resource[=].searchInclude[=].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchInclude[=].extension.valueCode = #SHALL
@@ -470,11 +445,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "subscriber"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Coverage-subscriber"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchInclude = "Coverage:subscriber"
 * rest.resource[=].searchInclude[=].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchInclude[=].extension.valueCode = #SHALL
@@ -512,11 +482,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "name"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/RelatedPerson-name"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "address"
@@ -586,11 +551,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "gender"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_profile"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "name"

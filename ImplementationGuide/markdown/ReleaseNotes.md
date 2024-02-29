@@ -53,7 +53,7 @@ Datum: 30.05.2023
 
 * Allgemein: Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert
   * update provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
-* ISiKCapabilityStatement: Read Shall für Composition entfernt
+* ISiKCapabilityStatementBasisServer: Read Shall für Composition entfernt
   * fix capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
 * ISiKAbrechnungsfall: 
   * Änderung des Codierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
