@@ -607,12 +607,12 @@ Usage: #definition
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #search-type
 * rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "_id"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "url"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
 * rest.resource[=].searchParam[=].type = #uri
