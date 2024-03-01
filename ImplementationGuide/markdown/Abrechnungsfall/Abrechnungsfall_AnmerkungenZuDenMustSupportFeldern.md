@@ -6,7 +6,7 @@
 
 ### `Account.identifier`
 
-**Bedeutung:** Der Account muss die Aufnahmenummer des dazugehörigen Encounters enthalten.
+**Bedeutung:** Der Account muss die Abrechnungsnummer des referenzierenden Kontaktes (Encounter) enthalten. Dies entspricht dem Wert des Elements Encounter.account.identifier.
 
 ### `Account.status`
 
