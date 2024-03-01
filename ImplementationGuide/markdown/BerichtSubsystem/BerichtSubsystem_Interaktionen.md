@@ -19,6 +19,8 @@ Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries fin
 
 ### Verarbeitung des Dokumentes
 
+**Hinweis:** Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. 'transaction') aufstellen.
+
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
 1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlich identifizieren Merkmalen

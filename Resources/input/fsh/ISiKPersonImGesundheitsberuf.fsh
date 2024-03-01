@@ -86,8 +86,9 @@ Description: "Dieses Profil erm√∂glicht die Nutzung von in Gesundheitsberufen t√
   * ^slicing.discriminator.path = "url"
   * ^slicing.rules = #open
 * birthDate.extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
-* qualification.code.coding 1..
-* qualification.code.coding from $KBV_VS_Base_Practitioner_Speciality (preferred)
+* qualification.code ^comment = "Zur Kodierung der Qualifikation ist das entsprechende [ValueSet der KBV](https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality) zu empfehlen."
+
+
 
 Instance: PractitionerWalterArzt
 InstanceOf: ISiKPersonImGesundheitsberuf
