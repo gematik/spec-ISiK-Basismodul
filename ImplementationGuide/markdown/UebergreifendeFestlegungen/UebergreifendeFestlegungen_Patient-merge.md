@@ -5,7 +5,7 @@ Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmä�
 
 Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).
 
-Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen Patient merge benachrichtigt (Patient merge Notification), damit der CLient weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer Patient merge Notification auf Basis von FHIR.
+Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen Patient merge benachrichtigt (Patient merge Notification), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer Patient merge Notification auf Basis von FHIR.
 
 ## Normativer Status 
 Alle hier getroffenen Festlegungen haben den normativen Status einer KANN-Anforderung. Werden allerdings die hier festgelegten Lösungen genutzt, so SOLLEN die hier angeführten Vorgaben (inklusive Profil-Ebene) eingehalten werden.
@@ -63,8 +63,6 @@ Allerdings SOLL das patientenführende System nach einem merge die Elemente der 
 - .link.type = “replaces”
 
 Siehe auch: {{pagelink:ImplementationGuide/markdown/Patient/Patient_Profil.md, text:Patienten Profil }}
-
-Im Sinne der Datensparsamkeit und Performance KANN lediglich der zuletzt stattgefundene Patient merge persistiert werden, indem im Element .link auf die obsolete Ressource mittels eines Patientennummer-Identifier referenziert wird. 
 
 ### Referenzen auf das Patientenobjekt
 Das patientenführende System muss im Rahmen des Patient merges alle auf den Patienten referenzierenden Ressourcen auf die resultierende Ressource referenzieren lassen.
