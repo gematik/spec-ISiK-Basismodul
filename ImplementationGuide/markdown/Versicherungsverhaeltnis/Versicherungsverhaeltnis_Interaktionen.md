@@ -62,14 +62,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.payor" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
-8. Der Suchparameter  "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Coverage?_profile=https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/R4/search.html#all).
-
 #### Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
 1. Der Suchparameter  "_id" MUSS unterstützt werden:
@@ -119,13 +111,5 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
     ```GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|SEL```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
-
-1. Der Suchparameter  "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Coverage?_profile=https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://www.hl7.org/fhir/R4/search.html#all).
 
 ---
