@@ -14,13 +14,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
-2. Der Suchparameter "identifier" zur Suche nach einer Krankenversicherten-ID MUSS unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Coverage?identifier=http://fhir.de/CodeSystem/identifier-type-de-basis|0123456789```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Coverage.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 3. Der Suchparameter "status" MUSS unterstützt werden:
 
