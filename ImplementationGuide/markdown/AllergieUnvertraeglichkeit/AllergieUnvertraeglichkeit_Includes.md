@@ -17,8 +17,4 @@ Die verketteten Suchparameter des Profils ```AllergyIntolerance``` hängen wie f
 
     Um einem Kontakt eindeutig als Ursprung einer {{pagelink:ImplementationGuide/markdown/Zusammenfassung/UseCases.md, text:Allergie-Diagnose}} zuordnen zu können.
 
-1. Der verkette Suchparameter ```Encounter:diagnosis``` unterstüzt den Anwendungsfall:
-
-    Um bei einer vorliegenden {{pagelink:ImplementationGuide/markdown/Zusammenfassung/UseCases.md, text:Allergie-Diagnose}} eines Patienten alle zugehörigen {{pagelink:ImplementationGuide/markdown/Zusammenfassung/UseCases.md, text:Kontakte}} zurodnen zu können.
-
 ---

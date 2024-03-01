@@ -343,7 +343,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #AllergyIntolerance
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -391,11 +391,8 @@ Usage: #definition
 * rest.resource[=].searchInclude[+] = "AllergyIntolerance:encounter"
 * rest.resource[=].searchInclude[=].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchInclude[=].extension.valueCode = #SHALL
-* rest.resource[=].searchRevInclude = "Encounter:diagnosis"
-* rest.resource[=].searchRevInclude[=].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchRevInclude[=].extension.valueCode = #SHALL
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
+//* rest.resource[+].extension.url = $capabilitystatement-expectation
+//* rest.resource[=].extension.valueCode = #SHALL
 
 * rest.resource[=].type = #Procedure
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur"
