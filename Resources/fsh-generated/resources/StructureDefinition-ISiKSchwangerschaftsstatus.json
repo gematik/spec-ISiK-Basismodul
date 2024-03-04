@@ -1,0 +1,138 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKSchwangerschaftsstatus",
+  "url": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftsstatus",
+  "version": "4.0.0-rc",
+  "name": "ISiKSchwangerschaftsstatus",
+  "title": "ISiK Schwangerschaftsstatus",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-01-16",
+  "publisher": "gematik GmbH",
+  "description": "Schwangerschaftsstatus einer Patientin",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "82810-3",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject.reference",
+        "path": "Observation.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/Basismodul/ValueSet/SchwangerschaftsstatusVS"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "Erwartetes Geburtsdatum",
+        "definition": "Eine Referenz auf die ErwartetesGeburtsdatum Observation",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarterterEntbindungstermin"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.hasMember.reference",
+        "path": "Observation.hasMember.reference",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}
