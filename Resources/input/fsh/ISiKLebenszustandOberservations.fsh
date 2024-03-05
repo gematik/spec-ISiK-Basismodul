@@ -11,7 +11,7 @@ Description: "Schwangerschaftsstatus einer Patientin"
 * effective[x] 1..1 MS
 * valueCodeableConcept MS
 * valueCodeableConcept from SchwangerschaftsstatusVS
-* hasMember only Reference(ISiKSchwangerschaftErwarterterEntbindungstermin)
+* hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember MS
 * hasMember ^short = "Erwartetes Geburtsdatum"
 * hasMember ^definition = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
@@ -25,12 +25,12 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA15173-0 "Pregnant"
-* hasMember = Reference(ISiKSchwangerschaftErwarterterEntbindungsterminBeispiel)
+* hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 
-Profile: ISiKSchwangerschaftErwarterterEntbindungstermin
+Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: Observation
-Id: ISiKSchwangerschaftErwarterterEntbindungstermin
-Title: "ISiK Schwangerschaft - erwarterter Entbindungstermin"
+Id: ISiKSchwangerschaftErwarteterEntbindungstermin
+Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
 * code MS
 * code from SchwangerschaftEtMethodeVS
@@ -40,10 +40,10 @@ Title: "ISiK Schwangerschaft - erwarterter Entbindungstermin"
 * valueDateTime only dateTime
 * valueDateTime MS
 
-Instance: ISiKSchwangerschaftErwarterterEntbindungsterminBeispiel
-InstanceOf: ISiKSchwangerschaftErwarterterEntbindungstermin
+Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
+InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
-Title: "ISiKSchwangerschaftErwarterterEntbindungsterminBeispiel"
+Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * code = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -55,6 +55,7 @@ Parent: Observation
 Id: ISiKAlkoholAbusus
 Title: "ISiK Alkohol Abusus"
 * insert Meta
+* category = ObservationCategoryCodes#social-history
 * code MS
 * code = $sct#15167005
 * subject 1.. MS
@@ -77,6 +78,7 @@ Parent: Observation
 Id: ISiKRaucherStatus
 Title: "ISiK Raucherstatus"
 * insert Meta
+* category = ObservationCategoryCodes#social-history
 * code MS
 * code = $sct#77176002
 * subject 1.. MS
