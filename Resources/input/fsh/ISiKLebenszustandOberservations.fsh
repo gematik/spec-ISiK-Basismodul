@@ -1,14 +1,24 @@
-Profile: ISiKSchwangerschaftsstatus
+Profile: LebensZustand
 Parent: Observation
+Id: LebensZustand
+Title: "LebensZustand"
+Description: "Basisprofil für Lebenszustand Observation"
+* insert Meta
+* status MS
+* code MS
+* subject 1.. MS
+  * reference 1.. MS
+* effective[x] 1..1 MS
+* effective[x] only dateTime or Period
+* value[x] MS
+
+
+Profile: ISiKSchwangerschaftsstatus
+Parent: LebensZustand
 Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
-* insert Meta
-* code MS
 * code = $loinc#82810-3
-* subject 1.. MS
-* subject.reference 1.. MS
-* effective[x] 1..1 MS
 * valueCodeableConcept MS
 * valueCodeableConcept from SchwangerschaftsstatusVS
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
@@ -28,16 +38,12 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
-Parent: Observation
+Parent: LebensZustand
 Id: ISiKSchwangerschaftErwarteterEntbindungstermin
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
-* code MS
 * code from SchwangerschaftEtMethodeVS
-* subject 1.. MS
-* subject.reference 1.. MS
-* effective[x] 1..1 MS
-* valueDateTime only dateTime
+* value[x] only dateTime
 * valueDateTime MS
 
 Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
@@ -51,16 +57,13 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * valueDateTime = "2024-08-01"
 
 Profile: ISiKAlkoholAbusus
-Parent: Observation
+Parent: LebensZustand
 Id: ISiKAlkoholAbusus
 Title: "ISiK Alkohol Abusus"
 * insert Meta
 * category = ObservationCategoryCodes#social-history
-* code MS
 * code = $sct#15167005
-* subject 1.. MS
-* subject.reference 1.. MS
-* effective[x] 1..1 MS
+* value[x] only boolean
 * valueBoolean 1.. MS
 
 Instance: ISiKAlkoholAbususBeispiel
@@ -74,16 +77,13 @@ Title: "ISiKAlkoholAbususBeispiel"
 * valueBoolean = false
 
 Profile: ISiKRaucherStatus
-Parent: Observation
+Parent: LebensZustand
 Id: ISiKRaucherStatus
 Title: "ISiK Raucherstatus"
 * insert Meta
 * category = ObservationCategoryCodes#social-history
-* code MS
 * code = $sct#77176002
-* subject 1.. MS
-* subject.reference 1.. MS
-* effective[x] 1..1 MS
+* value[x] only boolean
 * valueBoolean 1.. MS
 
 Instance: ISiKRaucherStatusBeispiel
