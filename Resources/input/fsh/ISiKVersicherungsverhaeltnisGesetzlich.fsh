@@ -4,25 +4,6 @@ Id: ISiKVersicherungsverhaeltnisGesetzlich
 Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien."
 * insert Meta
 * . ^definition = "Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland."
-* identifier MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  * ^short = "Primärer Identifier der Versicherung"
-  * ^definition = "Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versicherungsnummer identifiziert werden. Ist diese nicht bekannt, so kann die 10-stellige KrankenversichertenID stattdessen verwendet werden. Diese ist aber nur in Verbindung mit dem Payor eindeutig einem Versicherungsverhältnis zuordenbar"
-* identifier contains Versicherungsnummer ..1 and KrankenversichertenID ..1
-* identifier[Versicherungsnummer]
-  * ^patternIdentifier.type = $identifier-type-de-basis#GKV
-  * ^patternIdentifier.system = $kvnr30
-  * type 1.. MS
-  * system MS
-  * value MS
-* identifier[KrankenversichertenID] only IdentifierKvid10
-  * ^patternIdentifier.type = $identifier-type-de-basis#GKV
-  * ^patternIdentifier.system = $kvid10
-  * type 1.. MS
-  * system MS
-  * value MS
 * status MS
 * type MS
   * ^comment = "28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen."
@@ -62,9 +43,6 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
 Instance: CoverageGesetzlich
 InstanceOf: ISiKVersicherungsverhaeltnisGesetzlich
 Usage: #example
-* identifier[KrankenversichertenID]
-  * system = "http://fhir.de/sid/gkv/kvid-10"
-  * value = "A234567890"
 * status = #active
 * type = $versicherungsart-de-basis#GKV
 * beneficiary = Reference(PatientinMusterfrau)

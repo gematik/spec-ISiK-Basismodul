@@ -4,12 +4,15 @@ name: CI (FHIR Validation)
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
+    paths:
+    - 'Resources/**'
+    branches-ignore:
+    - 'main**'
   pull_request:
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches:
+    - 'main**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,7 +25,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         
       # Java and .NET are already installed on ubuntu-latest
         
@@ -44,6 +47,9 @@ jobs:
           EXPECTED_FAILS: VALIDATION_CONFORMANCE_DOTNET VALIDATION_CONFORMANCE_JAVA VALIDATION_EXAMPLES_JAVA
 
       - name: Add & Commit
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
+          committer_name: GitHub Actions Bot
+          committer_email: ActionBot@github.com
           add: 'Resources/fsh-generated/resources/'
+          message: auto-generated FHIR files by GitHub Actions (CI FSH to FHIR Validation)

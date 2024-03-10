@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKPersonImGesundheitsberuf",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf",
-  "version": "3.0.1",
+  "version": "3.0.4",
   "name": "ISiKPersonImGesundheitsberuf",
   "status": "active",
   "experimental": false,
-  "date": "2023-12-05",
+  "date": "2024-03-01",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -489,13 +489,9 @@
         "mustSupport": true
       },
       {
-        "id": "Practitioner.qualification.code.coding",
-        "path": "Practitioner.qualification.code.coding",
-        "min": 1,
-        "binding": {
-          "strength": "preferred",
-          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality"
-        }
+        "id": "Practitioner.qualification.code",
+        "path": "Practitioner.qualification.code",
+        "comment": "Zur Kodierung der Qualifikation ist das entsprechende [ValueSet der KBV](https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality) zu empfehlen."
       }
     ]
   }

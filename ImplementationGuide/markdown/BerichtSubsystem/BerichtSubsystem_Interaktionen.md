@@ -19,6 +19,8 @@ Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries fin
 
 ### Verarbeitung des Dokumentes
 
+**Hinweis:** Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. 'transaction') aufstellen.
+
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
 1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlich identifizieren Merkmalen
@@ -27,8 +29,9 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
 
-{{render:ImplementationGuide/Images/Composition-Bundle.png}}
-*Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.*
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/main-isik-stufe-3/Material/images/diagrams/Composition_Bundle.svg" alt="Composition Bundle" width="90%"/>
+
+Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.
 
 ### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
 
