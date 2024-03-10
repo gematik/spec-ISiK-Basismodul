@@ -15,3 +15,7 @@ Alkoholabusus:
 Raucherstatus:
 
 {{json:ISiKRaucherStatusBeispiel}}
+
+Stillstatus:
+
+{{json:ISiKStillstatusBeispiel}}

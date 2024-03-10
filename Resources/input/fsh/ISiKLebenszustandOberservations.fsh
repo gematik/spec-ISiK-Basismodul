@@ -95,3 +95,24 @@ Title: "ISiKRaucherStatusBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueBoolean = true
+
+Profile: ISiKStillstatus
+Parent: LebensZustand
+Id: ISiKStillstatus
+Title: "ISiKStillstatus"
+Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
+* insert Meta
+* code = $sct#1260078007
+* value[x] only boolean
+* valueBoolean 1.. MS
+
+Instance: ISiKStillstatusBeispiel
+InstanceOf: ISiKStillstatus
+Usage: #example
+Title: "ISiKStillstatusBeispiel"
+Description: "ISiKStillstatusBeispiel"
+* code = $sct#1260078007 "Maternal breastfeeding"
+* status = #final
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2024-01-01"
+* valueBoolean = true
