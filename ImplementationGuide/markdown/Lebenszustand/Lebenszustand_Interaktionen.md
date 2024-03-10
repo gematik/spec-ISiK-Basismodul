@@ -37,14 +37,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    Anwendungshinweise: Weitere Informationen zur Suche nach "Observation.category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "code" MUSS unterstützt werden:
-
-   Beispiele:
-
-   ```GET [base]/Observation?code=http://terminology.hl7.org/CodeSystem/observation-category|social-history```
-
-   Anwendungshinweise: Weitere Informationen zur Suche nach "Observation.category" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
-
 1. Der Suchparameter "patient" MUSS unterstützt werden:
 
    Beispiele:
@@ -95,5 +87,21 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
    ```GET [base]/Observation?component-code=http://loinc.org|85354-9```
 
    Anwendungshinweise: Weitere Informationen zur Suche nach "component-code" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token"](https://www.hl7.org/fhir/R4/search.html#token).
+
+1. Der Suchparameter "encounter" MUSS unterstützt werden:
+
+   Beispiel:
+
+   ```GET [base]/Observation?encounter=Encounter/234```
+
+   Anwendungshinweise: Weitere Informationen zur Suche nach "encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+
+1. Der Suchparameter "encounter" MUSS unterstützt werden:
+
+   Beispiel:
+
+   ```GET [base]/Observation?encounter=Encounter/234```
+
+   Anwendungshinweise: Weitere Informationen zur Suche nach "encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 ---

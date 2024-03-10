@@ -1,8 +1,8 @@
-Profile: LebensZustand
+Profile: ISiKLebensZustand
 Parent: Observation
-Id: LebensZustand
-Title: "LebensZustand"
-Description: "Basisprofil für Lebenszustand Observation"
+Id: ISiKLebensZustand
+Title: "ISiKLebensZustand"
+Description: "Basisprofil für ISiKLebensZustand Observation"
 * insert Meta
 * status MS
 * code MS
@@ -14,7 +14,7 @@ Description: "Basisprofil für Lebenszustand Observation"
 
 
 Profile: ISiKSchwangerschaftsstatus
-Parent: LebensZustand
+Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
@@ -38,7 +38,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
-Parent: LebensZustand
+Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftErwarteterEntbindungstermin
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
@@ -57,7 +57,7 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * valueDateTime = "2024-08-01"
 
 Profile: ISiKAlkoholAbusus
-Parent: LebensZustand
+Parent: ISiKLebensZustand
 Id: ISiKAlkoholAbusus
 Title: "ISiK Alkohol Abusus"
 * insert Meta
@@ -77,7 +77,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 * valueBoolean = false
 
 Profile: ISiKRaucherStatus
-Parent: LebensZustand
+Parent: ISiKLebensZustand
 Id: ISiKRaucherStatus
 Title: "ISiK Raucherstatus"
 * insert Meta
@@ -97,7 +97,7 @@ Title: "ISiKRaucherStatusBeispiel"
 * valueBoolean = true
 
 Profile: ISiKStillstatus
-Parent: LebensZustand
+Parent: ISiKLebensZustand
 Id: ISiKStillstatus
 Title: "ISiKStillstatus"
 Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
