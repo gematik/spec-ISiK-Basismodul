@@ -4,7 +4,7 @@
 from StructureDefinition where url = '3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf, hybrid}}
 
 ---
 
@@ -12,7 +12,7 @@ from StructureDefinition where url = '3/Basismodul/StructureDefinition/ISiKPerso
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -20,7 +20,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf' )
 for differential.element
 select
 Path: path,
