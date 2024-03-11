@@ -105,8 +105,8 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * postalCode 1.. MS
   * country 1.. MS
   * link MS 
-    * ^comment: "Im Falle einer weiteren (im KIS) persistierten Patientenressource, die mit der ISiKPatient-Instanz in einer Identitäts-Beziehung steht, muss diese hier referenziert werden, um der Redundanz der Instanzen und daraus folgenden Problemen entgegenzuwirken.
-Insbesondere spielt dies eine Rolle im Rahmen der Terminplanung oder anderer Kontexte, bei denen ein "Bleistift-Patient" (ohne ausreichende KVID etc.) angelegt wird - hierbei ist auch die Patient-merge-Subscription zu beachten.
+    * ^comment = "Im Falle einer weiteren (im KIS) persistierten Patientenressource, die mit der ISiKPatient-Instanz in einer Identitäts-Beziehung steht, muss diese hier referenziert werden, um der Redundanz der Instanzen und daraus folgenden Problemen entgegenzuwirken.
+Insbesondere spielt dies eine Rolle im Rahmen der Terminplanung oder anderer Kontexte, bei denen ein 'Bleistift-Patient' (ohne ausreichende KVID etc.) angelegt wird - hierbei ist auch die Patient-merge-Subscription zu beachten.
 Durch eine verpflichtende Referenzierung der Patientenressource wird z.B. ein Patientenportal in die Lage versetzt aus dem vorläufigen Patienten auf den verifizierten Patienten im KIS zu schließen und damit weitere Workflows durchzuführen."
 
 Instance: PatientinMusterfrau
