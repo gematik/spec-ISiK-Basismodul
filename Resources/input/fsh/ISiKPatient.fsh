@@ -17,7 +17,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
-  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonterkostenträger handelt."
+  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
   * type 1.. MS
   * system MS
   * value MS    
