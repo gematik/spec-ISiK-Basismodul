@@ -617,6 +617,12 @@
         "path": "Patient.address.country",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "Patient.link",
+        "path": "Patient.link",
+        "comment": "Im Falle einer weiteren (im KIS) persistierten Patientenressource, die mit der ISiKPatient-Instanz in einer Identitäts-Beziehung steht, muss diese hier referenziert werden, um der Redundanz der Instanzen und daraus folgenden Problemen entgegenzuwirken.\nInsbesondere spielt dies eine Rolle im Rahmen der Terminplanung oder anderer Kontexte, bei denen ein 'Bleistift-Patient' (ohne ausreichende KVID etc.) angelegt wird - hierbei ist auch die Patient-merge-Subscription zu beachten.\nDurch eine verpflichtende Referenzierung der Patientenressource wird z.B. ein Patientenportal in die Lage versetzt aus dem vorläufigen Patienten auf den verifizierten Patienten im KIS zu schließen und damit weitere Workflows durchzuführen.",
+        "mustSupport": true
       }
     ]
   }
