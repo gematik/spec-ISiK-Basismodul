@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKProzedur",
-  "url": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKProzedur",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
   "version": "4.0.0-rc",
   "name": "ISiKProzedur",
   "status": "draft",
@@ -48,14 +48,14 @@
             "severity": "error",
             "human": "Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden",
             "expression": "code.coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-2",
             "severity": "error",
             "human": "Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden",
             "expression": "code.coding.exists() implies category.coding.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
           }
         ]
       },
@@ -117,7 +117,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "preferred",
-          "valueSet": "https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ProzedurenKategorieSCT"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT"
         }
       },
       {
@@ -142,14 +142,14 @@
             "severity": "error",
             "human": "Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Liegt die Prozedur nicht kodiert vor SOLL Freitext angegeben werden.",
             "expression": "coding.exists() implies coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/bfarm/ops').exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
           },
           {
             "key": "proc-ISiK-3",
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKProzedur"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
           }
         ],
         "mustSupport": true
@@ -218,7 +218,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ProzedurenCodesSCT"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT"
         }
       },
       {

@@ -16,7 +16,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Patient
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -137,7 +137,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Encounter
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -192,12 +192,12 @@ Usage: #definition
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "date-start"
-* rest.resource[=].searchParam[=].definition = "https://gematik.de/fhir/isik/v3/Basismodul/SearchParameter/Encounter-date-start"
+* rest.resource[=].searchParam[=].definition = "https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start"
 * rest.resource[=].searchParam[=].type = #date
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
 * rest.resource[=].searchParam[=].name = "end-date"
-* rest.resource[=].searchParam[=].definition = "https://gematik.de/fhir/isik/v3/Basismodul/SearchParameter/Encounter-end-date"
+* rest.resource[=].searchParam[=].definition = "https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date"
 * rest.resource[=].searchParam[=].type = #date
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
@@ -241,7 +241,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Account
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAbrechnungsfall"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -278,7 +278,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Condition
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKDiagnose"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -343,7 +343,7 @@ Usage: #definition
 //* rest.resource[+].extension.url = $capabilitystatement-expectation
 //* rest.resource[=].extension.valueCode = #SHALL
 //* rest.resource[=].type = #AllergyIntolerance
-//* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
+//* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
 //* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 //* rest.resource[=].interaction[=].extension.valueCode = #SHALL
 //* rest.resource[=].interaction[=].code = #read
@@ -395,7 +395,7 @@ Usage: #definition
 ////* rest.resource[=].extension.valueCode = #SHALL
 
 * rest.resource[=].type = #Procedure
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -457,8 +457,8 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Coverage
-* rest.resource[=].supportedProfile[0] = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"
-* rest.resource[=].supportedProfile[+] = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
+* rest.resource[=].supportedProfile[0] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"
+* rest.resource[=].supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -515,7 +515,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #RelatedPerson
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAngehoeriger"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -569,7 +569,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Practitioner
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -614,7 +614,7 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #CodeSystem
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKCodeSystem"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #read
@@ -632,7 +632,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].type = #ValueSet
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKValueSet"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet"
 * rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -672,11 +672,11 @@ Usage: #definition
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Composition
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Bundle
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtBundle"
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
 
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
@@ -772,4 +772,4 @@ Usage: #definition
 * document.extension.url = $capabilitystatement-expectation
 * document.extension.valueCode = #SHALL
 * document.mode = #consumer
-* document.profile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtBundle"
+* document.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"

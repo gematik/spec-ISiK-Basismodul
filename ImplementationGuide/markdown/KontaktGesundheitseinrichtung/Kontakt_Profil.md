@@ -1,10 +1,10 @@
 ### Profil
 
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung, hybrid}}
 
 **Bei Abbildung von Versorgungsstellenkontakten**
 
@@ -22,7 +22,7 @@ Hinweis: Ein Versorgungsstellenkontakt endet zugleich nicht notwendigerweise mit
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung' for differential.element.constraint select key, severity, human, expression```
 
 Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Deutsche Basisprofile - Abschnitt Ambulanter/stationärer Fall / Kontakt (Encounter)](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-AmbulanterStationaererFall.html).
 
@@ -32,7 +32,7 @@ Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt find
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung' )
 for differential.element
 select
 Path: path,
