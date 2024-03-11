@@ -116,7 +116,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#KVZ10
 * identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[VersichertenId-GKV].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
