@@ -4,6 +4,17 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+
+
+Version: 4.0.0-rc
+
+Datum: 11.03.2024 (WIP)
+
+* Ersetzen des ISiK-spezifischen Profils für IdentifierAbrechnungsnummer mit Profil aus Basisprofil-DE https://github.com/gematik/spec-ISiK-Basismodul/pull/381
+* Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
+
+----
+
 Version: 3.0.4
 
 Datum: 1.3.2024

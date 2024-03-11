@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKSchwangerschaftErwarteterEntbindungstermin",
-  "url": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
   "version": "4.0.0-rc",
   "name": "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "title": "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
@@ -45,63 +45,26 @@
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
         "id": "Observation.code",
         "path": "Observation.code",
-        "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/Basismodul/ValueSet/SchwangerschaftEtMethodeVS"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftEtMethodeVS"
         }
-      },
-      {
-        "id": "Observation.subject",
-        "path": "Observation.subject",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.subject.reference",
-        "path": "Observation.subject.reference",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.effective[x]",
-        "path": "Observation.effective[x]",
-        "min": 1,
-        "mustSupport": true
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Observation.value[x]:valueDateTime",
-        "path": "Observation.value[x]",
-        "sliceName": "valueDateTime",
-        "min": 0,
-        "max": "1",
         "type": [
           {
             "code": "dateTime"
           }
-        ],
-        "mustSupport": true
+        ]
       }
     ]
   }
