@@ -1,5 +1,10 @@
 # Decision Log
 
+11.3.
+* Problem: Zum Kontext des Problems rund um spezifische Profile für Versicherten-IDs für GKV und PKV siehe https://chat.fhir.org/#narrow/stream/179183-german-.28d-a-ch.29/topic/Community-Feedback.20zum.20PKV-Identifier (bzw. PTData-718)
+VersichertenId-GKV
+* Lösung: siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/382
+
 
 Datum 27.02.
 * Problem: Die MUSS-Anforderungen im Kontext von ISIKKatalog scheinen zu umfassend zu sein.
