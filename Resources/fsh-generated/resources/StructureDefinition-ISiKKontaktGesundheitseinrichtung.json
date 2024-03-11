@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKKontaktGesundheitseinrichtung",
-  "url": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
   "version": "4.0.0-rc",
   "name": "ISiKKontaktGesundheitseinrichtung",
   "status": "draft",
@@ -48,56 +48,56 @@
             "severity": "error",
             "human": "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'finished' and class = 'AMB' implies period.start.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-2",
             "severity": "error",
             "human": "Abgeschlossene, stationäre Kontakte sollten einen Start- und End-Zeitpunkt angeben",
             "expression": "status = 'finished' and class = 'IMP' implies period.start.exists() and period.end.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-3",
             "severity": "error",
             "human": "Geplante Kontakte sollten keinen Start- oder End-Zeitpunkt angeben",
             "expression": "status = 'planned' implies period.exists().not()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-4",
             "severity": "warning",
             "human": "Geplante Kontakte sollten die Extensions für den geplanten Start- oder End-Zeitpunkt verwenden",
             "expression": "status = 'planned' implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate').exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-5",
             "severity": "error",
             "human": "In-Durchführung befindliche Kontakte sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'in-progress' implies period.start.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-6",
             "severity": "error",
             "human": "Kontakte mit Abwesenheitsstatus sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'onleave' implies period.start.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-7",
             "severity": "warning",
             "human": "Kontakte mit unbekannten Status sollten einen Start-Zeitpunkt angeben",
             "expression": "status = 'unknown' implies period.start.exists()",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           },
           {
             "key": "ISiK-enc-8",
             "severity": "error",
             "human": "Die Rolle der assoziierten Diagnose(n) darf nicht 'Billing' sein",
             "expression": "diagnosis.use.all(coding.code != 'billing')",
-            "source": "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           }
         ]
       },
@@ -570,7 +570,7 @@
         "path": "Encounter.location.physicalType",
         "binding": {
           "strength": "extensible",
-          "valueSet": "https://gematik.de/fhir/isik/Basismodul/ValueSet/ISiKLocationPhysicalType"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
         }
       },
       {
@@ -601,7 +601,7 @@
       {
         "id": "Encounter.location:Zimmer.physicalType",
         "path": "Encounter.location.physicalType",
-        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType",
+        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType",
         "min": 1,
         "patternCodeableConcept": {
           "coding": [
@@ -641,7 +641,7 @@
       {
         "id": "Encounter.location:Bett.physicalType",
         "path": "Encounter.location.physicalType",
-        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType",
+        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType",
         "min": 1,
         "patternCodeableConcept": {
           "coding": [
@@ -681,7 +681,7 @@
       {
         "id": "Encounter.location:Station.physicalType",
         "path": "Encounter.location.physicalType",
-        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType",
+        "comment": "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType",
         "min": 1,
         "patternCodeableConcept": {
           "coding": [
