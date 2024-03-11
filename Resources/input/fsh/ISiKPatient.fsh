@@ -11,11 +11,19 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
+    VersichertenId 0..1 MS and
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId-GKV] only IdentifierKvid10
+  * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
+  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonterkostenträger handelt."
+  * type 1.. MS
+  * system MS
+  * value MS    
+* identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
+  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt. Bitte den 'VersichertenId'-Slice verwenden."
   * type 1.. MS
   * system MS
   * value MS
