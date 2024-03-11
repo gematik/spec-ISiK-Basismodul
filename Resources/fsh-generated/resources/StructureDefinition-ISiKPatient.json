@@ -78,9 +78,53 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.identifier:VersichertenId",
+        "path": "Patient.identifier",
+        "sliceName": "VersichertenId",
+        "comment": "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonderkostenträger handelt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10"
+            ]
+          }
+        ],
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "KVZ10",
+                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:VersichertenId.type",
+        "path": "Patient.identifier.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:VersichertenId.system",
+        "path": "Patient.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:VersichertenId.value",
+        "path": "Patient.identifier.value",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.identifier:VersichertenId-GKV",
         "path": "Patient.identifier",
         "sliceName": "VersichertenId-GKV",
+        "comment": "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt. Bitte den 'VersichertenId'-Slice verwenden.",
         "min": 0,
         "max": "1",
         "type": [
