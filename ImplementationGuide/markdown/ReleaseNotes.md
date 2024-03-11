@@ -9,6 +9,7 @@ Version: 4.0.0-rc
 Datum: 11.03.2024 (WIP)
 
 * Ersetzen des ISiK-spezifischen Profils für IdentifierAbrechnungsnummer mit Profil aus Basisprofil-DE https://github.com/gematik/spec-ISiK-Basismodul/pull/381
+* Hinzufügen MustSupport für Patient.link https://github.com/gematik/spec-ISiK-Basismodul/pull/384
 
 
 Version: 3.0.4
