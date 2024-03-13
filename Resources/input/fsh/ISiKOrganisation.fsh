@@ -134,7 +134,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * endpoint MS
   * ^comment = "Motivation: Ein System muss den technischen Endpunt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 
-/*
+
 Instance: KrankenhausOrganisationBeispiel
 InstanceOf: ISiKOrganisation
 Usage: #example
@@ -143,7 +143,7 @@ Usage: #example
 * identifier[BSNR]
 * identifier[BSNR].value = $identifier-iknr#345678975
 * name = "Uniklinik Entenhausen"
-*/
+
 
 Instance: AbteilungAllgemeinchirurgieOrganisationBeispiel
 InstanceOf: ISiKOrganisationFachabteilung

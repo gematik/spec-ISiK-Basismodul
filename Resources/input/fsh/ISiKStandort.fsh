@@ -23,19 +23,19 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
 Profile: ISiKStandortRaum
 Parent: ISiKStandort
 Id: ISiKStandortRaum
-Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses"
+Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses."
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  //TODO: hier ggf. ein dezidiertes VS notwendig für Raumbelegung
-  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
-Profile: ISiKStandortBett
+Profile: ISiKStandortBettenstellplatz
 Parent: ISiKStandort
-Id: ISiKStandortBett
-Description: "Dieses Profil dient der strukturierten Erfassung von Betten (als Standorten) eines Krankenhauses"
-* physicalType = $LocationPhysicalType#bd "Bed"
+Id: ISiKStandortBettenstellplatz
+Description: "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) eines Krankenhauses"
+* physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
 * operationalStatus MS
 * operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
-  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettes zum Abruf bereitstellen, sofern diese Information verfügbar ist. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
+  * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
 
 
 Instance: RaumStandortBeispiel
@@ -44,8 +44,8 @@ Usage: #example
 * physicalType = $LocationPhysicalType#ro "Room"
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
 
-Instance: BettStandortBeispiel
-InstanceOf: ISiKStandortBett
+Instance: BettenstellplatzStandortBeispiel
+InstanceOf: ISiKStandortBettenstellplatz
 Usage: #example
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
 * partOf = Reference(RaumStandortBeispiel)

@@ -1,18 +1,43 @@
-### FHIR-Profil
-
-Die Implementierung des Profils ISiKStandort im Rahmen der Ausbaustufe 4 ist nicht verpflichtend (KANN-Anforderung).
+### FHIR-Profile
 
 Das Profil ISiKStandort soll auch ein Krankenhaus als ganzes abbilden können.
 
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/v4/Basismodul/StructureDefinition/ISiKStandort' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort' select Name: name, Canonical: url
 ```
-{{tree:https://gematik.de/fhir/isik/v4/Basismodul/StructureDefinition/ISiKStandort, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort, hybrid}}
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/v4/Basismodul/StructureDefinition/ISiKStandort' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
+Folgendes Profil dient der Abbildung eines Raums:
+
+@```
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum' select Name: name, Canonical: url
+```
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum, hybrid}}
+
+Folgende FHIRPath-Constraints sind im Profil zu beachten:
+
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort' for differential.element.constraint select key, severity, human, expression```
+
 ---
+
+Folgendes Profil dient der Abbildung eines Bettenstellplatzes :
+
+@```
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz' select Name: name, Canonical: url
+```
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz, hybrid}}
+
+Folgende FHIRPath-Constraints sind im Profil zu beachten:
+
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz' for differential.element.constraint select key, severity, human, expression```
+
+Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, das einen Bettenstellplatz referenziert.
+---
+
+
