@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKDiagnose",
-  "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKDiagnose",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
   "version": "4.0.0-rc",
   "name": "ISiKDiagnose",
   "status": "draft",
@@ -58,7 +58,7 @@
             "severity": "error",
             "human": "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte.",
             "expression": "code.coding.exists() implies encounter.exists()",
-            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKDiagnose"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
           }
         ]
       },
@@ -103,7 +103,7 @@
             "severity": "error",
             "human": "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
             "expression": "coding.exists().not() implies text.exists()",
-            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKDiagnose"
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
           }
         ],
         "mustSupport": true
