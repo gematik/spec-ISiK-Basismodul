@@ -1,9 +1,9 @@
 ### Interaktionen
 
-Für die Ressource Organization SOLL die REST-Interaktion "READ" implementiert werden.
-Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in einer künftigen Stufe auf "MUSS" gesetzt werden.
+Für die Ressource Organization KANN die REST-Interaktion "READ" implementiert werden.
+Außerdem gilt:
 
-1. Der Suchparameter "identifier" SOLL unterstützt werden:
+1. Der Suchparameter "identifier" KANN unterstützt werden:
 
     Beispiele:
 
@@ -23,7 +23,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "active" SOLL unterstützt werden:
+1. Der Suchparameter "type" KANN unterstützt werden:
 
     Beispiele:
 
@@ -31,7 +31,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "name" SOLL unterstützt werden (dies gilt auch für das Element .alias):
+1. Der Suchparameter "name" KANN unterstützt werden (dies gilt auch für das Element .alias):
 
     Beispiele:
 
@@ -76,7 +76,7 @@ Alle Anforderungen, die in Stufe 4 mit "SOLL" gekennzeichnet sind, sollen in ein
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.postalCode" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
-1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier SOLL unterstützt werden :
+1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier KANN unterstützt werden :
 
     Beispiele:
 
