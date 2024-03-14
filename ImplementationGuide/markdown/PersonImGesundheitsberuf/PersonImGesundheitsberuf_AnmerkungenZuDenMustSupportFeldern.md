@@ -28,8 +28,4 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
 
 **Bedeutung:** Geburtsdatum. Ist das Geburtsdatum des Arztes bekannt, MUSS es bereitgestellt werden.
 
-### `Practitioner.qualification`
-
-**Bedeutung:** Ärztliche Qualifikation(en). Es MÜSSEN die Qualifikationen des Arztes bereitgestellt werden, um nach Ärzten einer Qualifikation zu suchen oder sie bspw. in Dokumenten anzuzeigen.
-
 ---

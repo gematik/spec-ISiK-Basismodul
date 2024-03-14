@@ -64,14 +64,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
    Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.related" finden sich im [Leitfaden Basis DE (R4) - Abschnitt "Diagnosen (Condition) - Doppel-/Mehrfachkodierte ICD-Codes"](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-DiagnosenCondition.html).
 
-1. Der Suchparameter "_profile" KANN unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Condition?_profile=https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKDiagnose```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_profile" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-
 1. Der Suchparameter "category" KANN unterstützt werden:
 
     Beispiele:

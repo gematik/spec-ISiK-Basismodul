@@ -1,0 +1,384 @@
+@startuml dummy
+' package Dummy{
+' entity Entität01 {
+'    optionales Attribut
+'    **optionales fettes Attribut**
+'    * **vorgeschriebens fettes Attribut**
+' }
+' 
+' entity Entität01 {
+'    optionales Attribut : text
+'    **optionales fettes Attribut** nummer <<auto>>
+'    * **vorgeschriebens fettes Attribut**
+' }
+' Entität01 }|..|| Entität02
+' Entität03 }o..o| Entität04
+' Entität05 ||--o{ Entität06
+' Entität07 |o--|| Entität08
+' }
+@enduml
+
+
+' TODO:
+' Vervollständigen im Sinne  von: https://github.com/gematik/spec-ISiK-Medikation/blob/rc/main-stufe-4/Material/docs/Medikation%20Abgleich%20bestehende%20Spezifikationen.xlsx
+
+@startuml resourcediagram
+'verhindere Probleme mit gewinkelten Krähenfüßen
+'skinparam linetype ortho
+
+'Namespace enhancement
+set separator none
+
+'ISiK_Medikation.ISiKMedikationsListe::subject --> ISiK_Basis.ISiKPatient
+'ISiK_Medikation.ISiKMedikationTransaction --> R4_Core.Bundle
+'ISiK_Medikation.ISiKMedikationTransactionResponse --|> R4_Core.Bundle
+
+namespace ISiK_Basis {
+   'ISiKMedikation::itemReference --> ISiKMedikation
+
+   class ISiKAbrechnungsfall <Account><<(P,#8DA5C4)>>{
+      id
+      extension : **ExtensionAbrechnungsDiagnoseProzedur**
+      |_ AbrechnungsDiagnoseProzedur
+      identifier
+      |_ Abrechnungsnummer : **identifierAbrechnungsnummer**
+         |_ type : **ISiKAccountIdentifierType**
+         |_ system
+         |_ value
+      status : AccountStatus
+      type : **ISiKAccountType**
+      subject : Reference ( **Patient**)
+      coverage
+      |_ extension : **ExtensionAbrechnungsart**
+         |_ Abrechnungsart
+      |_ coverage
+   }
+
+   class ISiKAllergieUnvertraeglichkeit <AllergyIntolerance><<(P,#8DA5C4)>>{
+      clinicalStatus : **AllergyIntoleranceClinicalStatusCodes**
+      |_ coding
+         |_ system
+         |_ code
+      verificationStatus : **AllergyIntoleranceVerificationStatusCodes**
+      |_ coding
+         |_ system
+         |_ code
+      type : **AllergyIntoleranceType**
+      category : **AllergyIntoleranceCategory**
+      criticality : **AllergyIntoleranceCriticality**
+      code
+      |_ coding
+         |_ snomed-ct
+            |_ system : http://snomed.info/sct
+            |_ code
+            |_ display
+         |_ ask : http://fhir.de/StructureDefinition/**CodingASK**
+            |_ system
+            |_ code
+            |_ display
+         |_ atc : http://fhir.de/StructureDefinition/**CodingATC**
+            |_ system
+            |_ version
+            |_ code
+            |_ display      
+      |_ text
+      patient : Reference (**Patient**)
+      encounter : Reference (**Encounter**)
+      onset[x]
+      |_ onsetDateTime
+      |_ onsetAge
+      |_ onsetString
+      recordedDate : dateTime
+      recorder : Reference (**Practitioner** | PractitionerRole | \n**Patient** | RelatedPerson)
+      |_ reference
+      |_ display
+      asserter	: Reference (**Patient** | **RelatedPerson** | \n**Practitioner** | PractitionerRole)
+      |_ reference
+      |_ display      
+      note : Annotation
+      |_ author[x]
+         |_ reference
+         |_ display
+      |_ time
+      |_ text
+      reaction
+      |_ manifestation
+         |_ coding
+            |_ snomed-ct
+               |_ system : http://snomed.info/sct
+               |_ code
+         |_ text      
+      |_ severity	
+      |_ exposureRoute
+         |_ coding
+            |_ snomed-ct
+               |_ system : http://snomed.info/sct
+               |_ code
+         |_ text
+   }
+   
+   class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
+      patient : Reference ( **Patient**)
+      name : HumanName // deutsches Basisprofil
+      address : Address
+      |_ Strassenanschrift	: Adresse // deutsches BasisprofilPattern
+         |_ extension
+            |_ Stadtteil
+         |_ type : AddressType.both
+         |_ line
+            |_ extension
+               |_ Strasse
+               |_ Hausnummer
+               |_ Adresszusatz
+               |_ <s>Postfach</s>
+         |_ city
+         |_ postalCode
+         |_ country
+      |_ Postfach	: Adresse // deutsches BasisprofilPattern
+         |_ type : AddressType.postal
+         |_ line
+            |_ extension
+               |_ <s>Strasse</s>
+               |_ <s>Hausnummer</s>
+               |_ <s>Adresszusatz</s>
+               |_ Postfach
+         |_ city
+         |_ postalCode
+         |_ country
+   }
+
+   class ISiKBerichtBundle <Bundle><<(P,#8DA5C4)>>{
+      identifier
+      type : **document**
+      timestamp
+      entry
+      |_ fullUrl
+      |_ resource
+      |_ <s>search</s>
+      |_ <s>request</s>
+      |_ <s>response</s>
+      |_ Composition
+         |_ resource : **ISiKBerichtSubSysteme**
+   }
+
+   class ISiKBerichtSubSysteme <Bundle><<(P,#8DA5C4)>>{
+      
+   }
+
+   namespace Observations {
+
+      class ISiKLebensZustand <Observation><<(P,#8DA5C4)>>{
+         status : **ObservationStatus**
+         code
+         subject : Reference ( **Patient** | \nGroup | Device | Location)
+         |_ reference
+         effective[x]
+         value[x]
+      }
+
+      class ISiKAlkoholAbusus <Observation><<(P,#8DA5C4)>>{
+         category : secondary-finding **social-history**
+         code : snomed sct **15167005**
+         value[x]
+         |_ valueBoolean
+      }
+
+      class ISiKRaucherStatus <Observation><<(P,#8DA5C4)>>{
+         category : secondary-finding **social-history**
+         code : snomed sct **77176002**
+         value[x]
+         |_ valueBoolean
+      }
+
+      class ISiKSchwangerschaftErwarteterEntbindungstermin <Observation><<(P,#8DA5C4)>>{
+         code : **SchwangerschaftEtMethodeVS**
+         value[x]
+         |_ valueDateTime
+      }
+
+      class ISiKSchwangerschaftsstatus <Observation><<(P,#8DA5C4)>>{
+         code : loinc **82810-3**
+         value[x]
+         |_ valueCodeableConcept : **SchwangerschaftsstatusVS**
+         hasMember : Reference ( **ISiKSchwangerschaftErwarteterEntbindungstermin** )
+         |_ reference
+      }
+
+      class ISiKStillstatus <Observation><<(P,#8DA5C4)>>{
+         code : snomed sct **1260078007**
+         value[x]
+         |_ valueBoolean
+      }
+
+
+   }
+
+   namespace ValueSets {
+      class ISiKAccountIdentifierType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccountidentifiertype ISiK Account Identifier Type]]
+         Includes codes from the code System
+         [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80925 v2.0203]]
+         --
+         **AN** displays-as **Account Number**
+      }
+      class ISiKAccountType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccounttype ISiK Account Type]]
+         Includes codes from the code System
+         [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80998 v3.ActCode]]
+         --
+         **AMB** displays-as **ambulatory**
+         **IMP** displays-as **inpatient encounter**      
+      }
+
+      class SchwangerschaftEtMethodeVS <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v4/schwangerschaftetmethodevs Schwangerschaft Estimated Methode]]
+         Includes following codes from the code System
+         [[http://loinc.org LOINC]]
+         --
+         **11778-8** displays-as **Delivery date Estimated**
+         **11779-6** displays-as **Delivery date Estimated** \n** from last menstrual period**
+         **11780-4** displays-as **Delivery date Estimated** \n** from ovulation date**
+      }
+
+      class SchwangerschaftsstatusVS <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v4/schwangerschaftsstatusvs Schwangerschaft Status]]
+         Includes following codes from the code System
+         [[http://loinc.org LOINC]]
+         --
+         **LA15173-0** displays-as **Pregnant**
+         **LA26683-5** displays-as **Not pregnant**
+         **LA4489-6** displays-as **Unknown**
+      }
+   }
+}
+
+
+namespace DE_Basisprofile_R4 {
+   class Basisprofile_DE <<(M,#FFAAAA)>>{
+      Dokumentation auf HL7 Org
+      [[https://simplifier.net/basisprofil-de-r4 Basisprofil DE (RE4)]]
+   }
+
+   class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[http://fhir.de/StructureDefinition/identifier-abrechnungsnummer Identifier-Profil]] für die Abbildung \neiner Abrechnungsnummer ("Fallnummer")
+   }
+
+   class ExtensionAbrechnungsDiagnoseProzedur <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656773 Fallbezogene Abrechnungsrelevanz \nvon Diagnosen und Prozeduren]]
+   }
+
+   class ExtensionAbrechnungsart <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656772 Abrechnungsart]]
+   }
+
+   class gender-amtlich-de <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+   }
+   
+   class humanname-de-basis <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338720 HumanName, deutsches Basisprofil]]
+   }
+   
+   class address-de-basis <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338610 Adresse, deutsches Basisprofil]]
+   }
+
+}
+
+namespace HL7_FHIR_R4_Core {
+   class Foundation_Modul <<(M,#FFAAAA)>>{
+      Dokumentation auf HL7 Org
+      [[https://hl7.org/fhir/R4/ HL7 FHIR R4 Core Foundation]]
+   }
+
+   class LOINCCodes <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/observation-codes Observation Codes]]
+      Includes all codes from the underlying code system [[https://loinc.org/ LOINC]]
+   }
+
+   class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/82308 Account Status]]
+      Includes all codes from the underlying code System
+      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/81890 Account Status]]
+   }
+
+   class AllergyIntoleranceCriticality <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-allergy-intolerance-criticality.html Allergy Intolerance Criticality]]
+      Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://hl7.org/fhir/R4/codesystem-allergy-intolerance-criticality.html Code System of Criticality]]
+   }
+   class AllergyIntoleranceVerificationStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://www.hl7.org/fhir/R4/valueset-allergyintolerance-verification.html Allergy Intolerance Verification Status]]
+      Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://www.hl7.org/fhir/R4/codesystem-allergyintolerance-verification.html Code System of Verification Status]]
+   }
+   class AllergyIntoleranceClinicalStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://www.hl7.org/fhir/R4/valueset-allergyintolerance-clinical.html Allergy Intolerance Clinical Status]]
+      Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://www.hl7.org/fhir/R4/codesystem-allergyintolerance-clinical.html Code System of Clinical Status]]
+   }
+   class ReactionEventSeverity <ValueSet><<(V,#8DA5C4)>> {
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-reaction-event-severity.html Reaction Eventu Severity]]
+      Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://hl7.org/fhir/R4/codesystem-reaction-event-severity.html Code System of Severity]]
+   }
+
+   class ObservationCategory <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-observation-category.html Observation Category]]
+      Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://hl7.org/fhir/R4/codesystem-observation-category.html Code System of Observation Category]]
+   }
+
+   class ObservationStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-observation-status Observation Status]]
+      Includes all codes from the underlying code system 
+      [[https://hl7.org/fhir/R4/codesystem-observation-status.html Code System of Observation Status]]
+   }
+}
+
+namespace ISiK_Basis {
+   class Basismodul_Stufe_4 <<(M,#FFDC36)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/~introduction ISiK Basis Stufe 3]]
+   }
+   class ISiKPatient <Patient><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikpatient ISiK Patient]]
+   }
+   class ISiKKontaktGesundheitseinrichtung <Encounter><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
+   }
+   class ISiKPractitioner <Practitioner><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
+   }
+}
+
+
+'namespace dummy {
+'   class Foo {
+'   + field1
+'   + field2
+'   }
+'   class Bar {
+'   + field3
+'   + field4
+'   }
+'   Foo::field1 --> Bar::field3 : foo
+'   Foo::field2 --> Bar::field4 : bar
+'}
+@enduml
