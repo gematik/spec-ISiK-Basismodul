@@ -1,6 +1,6 @@
 ### FHIR-Profile
 
-Das Profil ISiKStandort soll auch ein Krankenhaus als ganzes abbilden können.
+Das Profil ISiKStandort soll auch den Standort eines Krankenhauses abbilden können.
 
 @```
 from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort' select Name: name, Canonical: url
@@ -37,7 +37,10 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz' for differential.element.constraint select key, severity, human, expression```
 
+
+
 Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, das einen Bettenstellplatz referenziert.
+
 ---
 
 
