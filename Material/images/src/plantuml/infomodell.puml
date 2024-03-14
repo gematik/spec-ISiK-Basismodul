@@ -19,9 +19,6 @@
 @enduml
 
 
-' TODO:
-' Vervollständigen im Sinne  von: https://github.com/gematik/spec-ISiK-Medikation/blob/rc/main-stufe-4/Material/docs/Medikation%20Abgleich%20bestehende%20Spezifikationen.xlsx
-
 @startuml infomodell
 'verhindere Probleme mit gewinkelten Krähenfüßen
 'skinparam linetype ortho
@@ -30,104 +27,258 @@
 'ISiK_Medikation.ISiKMedikationTransaction --> R4_Core.Bundle
 'ISiK_Medikation.ISiKMedikationTransactionResponse --|> R4_Core.Bundle
 
-'together ISiK_DokumentenAustausch {
-   class  ISiKDokumentenMetadaten <DocumentReference><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-dokumentenaustausch-v3/isikdokumentenmetadaten ISiK Dokumenten Metadaten]]
-   }
+   'ISiKMedikation::itemReference --> ISiKMedikation
 
-   class ISiKDokumentenSuchergebnisse <Bundle><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-dokumentenaustausch-v3/isikdokumentensuchergebnisse ISiK Dokumenten Suchergebnisse]]
-   }
-
-   class ISiKConfidentialityCodes <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-dokumentenaustausch-v3/ISiKConfidentialityCodes/ ISiK Confidentiality Codes]]
-   }
-'}
-
-'together DE_Basisprofile_R4 {
-   class IHEXDShealthcareFacilityTypeCode <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656621 IHEXDS Healthcare Facility Type Code]]
-   }
-   class IHEXDSpracticeSettingCode <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656622 IHEXDS Practice Setting Code]]
-   }
-   class IHEXDStypeCode <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656623 IHEXDS Type Code]]
-   }
-   class IHEXDSclassCode <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656617 IHEXDS Class Code]]
-   }
-   class IHEXDSeventCodeList <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656619 IHEXDS Event Code List]]
-   }
-   class IHEXDSformatCodeDE <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656620 IHEXDS Format Code]]
-   }
-'}
-
-
-class vsKDL as "valueset-kdl-2022" <ValueSet><<(V,#8DA5C4)>>{
+'AMTS related
+'together {
+class ISiKAllergieUnvertraeglichkeit <AllergyIntolerance><<(P,#8DA5C4)>>{
    Dokumentation auf Simplifier 
-   [[https://simplifier.net/packages/dvmd.kdl.r4.2022/2022.1.2/files/773899 Valueset KDL 2022]]
+   [[https://simplifier.net/isik-basis-v4/isikallergieunvertraeglichkeit ISiK AllergieUnvertraeglichkeit]]
+   ---
+   clinicalStatus : **AllergyIntoleranceClinicalStatusCodes**
+   |_ coding
+   verificationStatus : **AllergyIntoleranceVerificationStatusCodes**
+   |_ coding
+   type : **AllergyIntoleranceType**
+   category : **AllergyIntoleranceCategory**
+   criticality : **AllergyIntoleranceCriticality**
+   code
+   |_ coding
+   . . .
 }
 
-'together ISiK_Basis {
-   class ISiKPatient <Patient><<(P,#8DA5C4)>>{
+class ISiKLebensZustand <Observation><<(P,#8DA5C4)>>{
+   Dokumentation auf Simplifier 
+   [[https://simplifier.net/isik-basis-v4/isiklebenszustand ISiK LebensZustand]]
+   ---
+   status : **ObservationStatus**
+   code
+   subject : Reference ( **Patient** | \nGroup | Device | Location)
+   . . .
+}
+
+ 
+   class ISiKAlkoholAbusus <Observation><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikpatient ISiK Patient]]
+      [[https://simplifier.net/isik-basis-v4/isikalkoholabusus ISiK Alkohol Abusus]]
+      ---
+      code : snomed sct **15167005**
+      . . .
    }
-   class ISiKKontaktGesundheitseinrichtung <Encounter><<(P,#8DA5C4)>>{
+   class ISiKRaucherStatus <Observation><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
+      [[https://simplifier.net/isik-basis-v4/isikraucherstatus ISiK Raucherstatus]]
+      ---
+      code : snomed sct **77176002**
+      . . .
    }
-   class ISiKPractitioner <Practitioner><<(P,#8DA5C4)>>{
+'Oservation Childs    
+together Observations {
+
+   class ISiKSchwangerschaftErwarteterEntbindungstermin <Observation><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
+      [[https://simplifier.net/isik-basis-v4/isikschwangerschafterwarteterentbindungstermin ISiK Schwangerschaft - Erwarteter Entbindungstermin]]
+      ---
+      code : **SchwangerschaftEtMethodeVS**
+      . . .
    }
+   class ISiKSchwangerschaftsstatus <Observation><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikschwangerschaftsstatus ISiK Schwangerschaftsstatus]]
+      ---
+      code : loinc **82810-3**
+      . . .
+   }
+   
+   class SchwangerschaftsstatusVS <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/schwangerschaftsstatusvs Schwangerschaft Status]] from [[http://loinc.org LOINC]]
+   }
+
+   class ISiKStillstatus <Observation><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikstillstatus ISiK Stillstatus]]
+      ---
+      code : snomed sct **1260078007**
+      . . .
+   }
+}
+
+   
+' Weiteres Basis
+together {
+   class ISiKAbrechnungsfall <Account><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-labor-v4/isiklabrechnungsfall ISiK Abrechnungsfall]]
+      ---
+      extension : **ExtensionAbrechnungsDiagnoseProzedur**
+      |_ AbrechnungsDiagnoseProzedur
+      . . .
+   }
+
    class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikangehoeriger ISiK Angehoeriger]]
-   }  
-'}
+      [[https://simplifier.net/isik-basis-v4/isikangehoeriger ISiK Angehoeriger]]
+      ---
+      patient : Reference ( **Patient**)
+      name : HumanName
+      address : Address
+      |_ Strassenanschrift	: **Adresse**
+      |_ Postfach	: **Adresse**
+      . . .
+   }
 
-'Realtions
+   class ISiKBerichtBundle <Bundle><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikberichtbundle ISiK Bericht bundle]]
+      ---
+      type : **document**
+      entry
+      |_ Composition
+         |_ resource : **ISiKBerichtSubSysteme**
+      . . .
+   }
+
+   class ISiKBerichtSubSysteme <Bundle><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikberichtsubsysteme ISiK Bericht SubSysteme]]
+   }
+      
+}
+
+'Valuesets Observations
+
+   class LOINCCodes <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/observation-codes Observation Codes]] from [[https://loinc.org/ LOINC]]
+   }
+
+   class SchwangerschaftEtMethodeVS <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/schwangerschaftetmethodevs Schwangerschaft Estimated Methode]] from [[http://loinc.org LOINC]]
+   }
+
+' Weitere Value Sets
+together {
+
+   class ISiKAccountIdentifierType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccountidentifiertype ISiK Account Identifier Type]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80925 v2.0203]]
+   }
+
+      class ISiKAccountType <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v3/isikaccounttype ISiK Account Type]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80998 v3.ActCode]]   
+      }
+   class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[http://fhir.de/StructureDefinition/identifier-abrechnungsnummer Identifier-Profil]] für die Abbildung \neiner Abrechnungsnummer ("Fallnummer")
+   }
+
+   class ExtensionAbrechnungsDiagnoseProzedur <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656773 Fallbezogene Abrechnungsrelevanz \nvon Diagnosen und Prozeduren]]
+   }
+
+   class ExtensionAbrechnungsart <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656772 Abrechnungsart]]
+   }
+
+   class gender-amtlich-de <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
+   }
+   
+   class humanname-de-basis <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338720 HumanName, deutsches Basisprofil]]
+   }
+   
+   class address-de-basis <<(E,#7A8495)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338610 Adresse, deutsches Basisprofil]]
+   }
+
+}
+
+together {
+   class AllergyIntoleranceCriticality <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-allergy-intolerance-criticality.html Allergy Intolerance Criticality]] from [[https://hl7.org/fhir/R4/codesystem-allergy-intolerance-criticality.html HL7]]
+   }
+   class AllergyIntoleranceVerificationStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://www.hl7.org/fhir/R4/valueset-allergyintolerance-verification.html Allergy Intolerance Verification Status]] from [[https://www.hl7.org/fhir/R4/codesystem-allergyintolerance-verification.html HL7]]
+   }
+   class AllergyIntoleranceClinicalStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://www.hl7.org/fhir/R4/valueset-allergyintolerance-clinical.html Allergy Intolerance Clinical Status]] from [[https://www.hl7.org/fhir/R4/codesystem-allergyintolerance-clinical.html HL7]]
+   }
+   class AllergyIntoleranceType <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/allergy-intolerance-type Allergy Intolerance Type]] from [[http://hl7.org/fhir/allergy-intolerance-type Code System of Allergy Intolerance]]
+   }
+   class AllergyIntoleranceCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/allergyintolerance-code Substance/Product, Condition, NegationCodes]] from [[http://snomed.info/sct SNOMED CT]]
+   }
+   class ReactionEventSeverity <ValueSet><<(V,#8DA5C4)>> {
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-reaction-event-severity.html Reaction Eventu Severity]] from [[https://hl7.org/fhir/R4/codesystem-reaction-event-severity.html HL7]]
+   }
+}
+   class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/82308 Account Status]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/81890 Simplifier]]
+   }
+
+   
+
+   class ObservationCategory <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-observation-category.html Observation Category]] from [[https://hl7.org/fhir/R4/codesystem-observation-category.html HL7]]
+   }
+
+   class ObservationStatus <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[https://hl7.org/fhir/R4/valueset-observation-status Observation Status]] from [[https://hl7.org/fhir/R4/codesystem-observation-status.html HL7]]
+   }
+
+
+'Relations
 
 'diamonds
-together {
+'together {
 <> MultiRef_PracPatRel
 MultiRef_PracPatRel -- ISiKPractitioner
 MultiRef_PracPatRel -- ISiKPatient
 MultiRef_PracPatRel -- ISiKAngehoeriger
-<> MultiRef_KDLXDS
-MultiRef_KDLXDS -- vsKDL
-MultiRef_KDLXDS -- IHEXDStypeCode
-}
+<> MultiRef_AllergyDetails
+MultiRef_AllergyDetails -up- AllergyIntoleranceCriticality
+MultiRef_AllergyDetails -up- AllergyIntoleranceVerificationStatus
+MultiRef_AllergyDetails -up- AllergyIntoleranceClinicalStatus
+MultiRef_AllergyDetails -up- ReactionEventSeverity
+MultiRef_AllergyDetails -up- AllergyIntoleranceType
+MultiRef_AllergyDetails -up-> "  1..1  " AllergyIntoleranceCode
+'}
 
-'Relations
-ISiKDokumentenSuchergebnisse::DocumentReference -down- "  1..1  "   ISiKDokumentenMetadaten 
+'AMTS
+ISiKAllergieUnvertraeglichkeit::patient --> "  1..1  " ISiKPatient
+ISiKAllergieUnvertraeglichkeit::encounter --> "  0..1  " ISiKKontaktGesundheitseinrichtung
+ISiKAllergieUnvertraeglichkeit::recorder --> "  0..1  " MultiRef_PracPatRel
+ISiKAllergieUnvertraeglichkeit::recorder .up.  MultiRef_AllergyDetails
 
+'Specific Observations inherit from generic obseration
+ISiKLebensZustand <|-- ISiKAlkoholAbusus
+ISiKLebensZustand <|-- ISiKRaucherStatus
+ISiKLebensZustand <|-- ISiKSchwangerschaftsstatus
+ISiKLebensZustand <|-- ISiKSchwangerschaftErwarteterEntbindungstermin
+ISiKLebensZustand <|-- ISiKStillstatus
 
-ISiKDokumentenMetadaten::type -- "  1..1  " MultiRef_KDLXDS
-ISiKDokumentenMetadaten::category -- "  0..1  " IHEXDSclassCode
-
-ISiKDokumentenMetadaten::subject --> "  1..1  " ISiKPatient
-ISiKDokumentenMetadaten::author <--> "  0..1  " MultiRef_PracPatRel
-ISiKDokumentenMetadaten::securityLabel -up- "  1..*  "ISiKConfidentialityCodes  
-ISiKDokumentenMetadaten::content -- "  1..1  " IHEXDSformatCodeDE
-ISiKDokumentenMetadaten::encounter -- "  0..1  " ISiKKontaktGesundheitseinrichtung
-ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDSeventCodeList
-ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDShealthcareFacilityTypeCode
-ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDSpracticeSettingCode
-
+ISiKSchwangerschaftsstatus::hasMember -down-> "  0..1  " ISiKSchwangerschaftErwarteterEntbindungstermin
+ISiKSchwangerschaftsstatus::value ..> "  0..1  " SchwangerschaftsstatusVS
+ISiKSchwangerschaftErwarteterEntbindungstermin::code ..> "  1..1  " SchwangerschaftEtMethodeVS 
 
 ' namespace dummy {
 '    class Foo {
