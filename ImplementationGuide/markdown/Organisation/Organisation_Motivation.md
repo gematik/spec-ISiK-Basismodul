@@ -1,6 +1,6 @@
 ### Motivation
 
-Die Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Stationen, Fachabteilungen und -bereichen,) in strukturierter Form. 
+Die Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. 
 
 In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.
 
@@ -9,8 +9,9 @@ Die Erfassung der Organisation in strukturierter Form ermöglicht u.a.:
 - Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)
 
 Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
-Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als ganzes und die Fachabteilung als Organisation.
+Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.
 
+---
 
 #### Normativer Status und Bestätigung
 

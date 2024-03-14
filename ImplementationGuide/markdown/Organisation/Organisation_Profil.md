@@ -1,6 +1,6 @@
 ### FHIR-Profil
 
-Das Profil ISiKOrganisation soll auch ein Krankenhaus als ganzes abbilden können:
+Das Profil ISiKOrganisation soll auch ein Krankenhaus als Ganzes abbilden können:
 
 @```
 from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation' select Name: name, Canonical: url
@@ -24,6 +24,5 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung' for differential.element.constraint select key, severity, human, expression```
 
----
 
 ---
