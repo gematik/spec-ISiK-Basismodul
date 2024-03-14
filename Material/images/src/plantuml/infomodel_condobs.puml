@@ -19,7 +19,7 @@
 @enduml
 
 
-@startuml infomodell
+@startuml infomodel_condobs
 'verhindere Probleme mit gewinkelten Krähenfüßen
 'skinparam linetype ortho
 
@@ -107,6 +107,21 @@ together Observations {
    
 ' Weiteres Basis
 together {
+
+   class ISiKPatient <Patient><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikpatient ISiK Patient]]
+   }
+   
+   class ISiKPersonImGesundheitsberuf <Practitioner><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
+   }
+   class ISiKKontaktGesundheitseinrichtung <Encounter><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-basis-v4/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
+   } 
+   
    class ISiKAbrechnungsfall <Account><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-labor-v4/isiklabrechnungsfall ISiK Abrechnungsfall]]
@@ -158,49 +173,6 @@ together {
       [[https://simplifier.net/isik-basis-v4/schwangerschaftetmethodevs Schwangerschaft Estimated Methode]] from [[http://loinc.org LOINC]]
    }
 
-' Weitere Value Sets
-together {
-
-   class ISiKAccountIdentifierType <ValueSet><<(V,#8DA5C4)>>{
-         Dokumentation auf Simplifier 
-         [[https://simplifier.net/isik-basis-v3/isikaccountidentifiertype ISiK Account Identifier Type]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80925 v2.0203]]
-   }
-
-      class ISiKAccountType <ValueSet><<(V,#8DA5C4)>>{
-         Dokumentation auf Simplifier 
-         [[https://simplifier.net/isik-basis-v3/isikaccounttype ISiK Account Type]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80998 v3.ActCode]]   
-      }
-   class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[http://fhir.de/StructureDefinition/identifier-abrechnungsnummer Identifier-Profil]] für die Abbildung \neiner Abrechnungsnummer ("Fallnummer")
-   }
-
-   class ExtensionAbrechnungsDiagnoseProzedur <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656773 Fallbezogene Abrechnungsrelevanz \nvon Diagnosen und Prozeduren]]
-   }
-
-   class ExtensionAbrechnungsart <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656772 Abrechnungsart]]
-   }
-
-   class gender-amtlich-de <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656672 Administratives Geschlecht 'other']]
-   }
-   
-   class humanname-de-basis <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338720 HumanName, deutsches Basisprofil]]
-   }
-   
-   class address-de-basis <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/de.basisprofil.r4/1.5.0-alpha6/files/2338610 Adresse, deutsches Basisprofil]]
-   }
-
-}
 
 together {
    class AllergyIntoleranceCriticality <ValueSet><<(V,#8DA5C4)>>{
@@ -228,30 +200,14 @@ together {
       [[https://hl7.org/fhir/R4/valueset-reaction-event-severity.html Reaction Eventu Severity]] from [[https://hl7.org/fhir/R4/codesystem-reaction-event-severity.html HL7]]
    }
 }
-   class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/82308 Account Status]] from [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/81890 Simplifier]]
-   }
-
-   
-
-   class ObservationCategory <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf HL7 Org 
-      [[https://hl7.org/fhir/R4/valueset-observation-category.html Observation Category]] from [[https://hl7.org/fhir/R4/codesystem-observation-category.html HL7]]
-   }
-
-   class ObservationStatus <ValueSet><<(V,#8DA5C4)>>{
-      Dokumentation auf HL7 Org 
-      [[https://hl7.org/fhir/R4/valueset-observation-status Observation Status]] from [[https://hl7.org/fhir/R4/codesystem-observation-status.html HL7]]
-   }
 
 
-'Relations
+'Relations regarding basis AMTS
 
 'diamonds
 'together {
 <> MultiRef_PracPatRel
-MultiRef_PracPatRel -- ISiKPractitioner
+MultiRef_PracPatRel -- ISiKPersonImGesundheitsberuf
 MultiRef_PracPatRel -- ISiKPatient
 MultiRef_PracPatRel -- ISiKAngehoeriger
 <> MultiRef_AllergyDetails
