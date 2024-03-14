@@ -769,6 +769,94 @@ Usage: #definition
 * rest.resource[=].searchInclude[+] = "Observation:subject"
   * extension.url = $capabilitystatement-expectation
   *  extension.valueCode = #SHALL
+
+//AllergyIntolerance
+* rest.resource[+]
+  * extension
+    * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * valueCode = #SHALL
+  * type = #AllergyIntolerance
+  * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
+  * interaction[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * code = #create
+  * interaction[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * code = #read
+  * interaction[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * code = #update
+  * interaction[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * code = #search-type
+  * searchInclude[+] = "AllergyIntolerance:patient"
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * name = "_id"
+    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * type = #token
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * name = "clinical-status"
+    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status"
+    * type = #token
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * name = "patient"
+    * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+    * type = #reference
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * name = "onset"
+    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
+    * type = #date
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #SHALL
+    * name = "date"
+    * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
+    * type = #date
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #MAY
+    * name = "_profile"
+    * definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
+    * type = #token
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #MAY
+    * name = "category"
+    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category"
+    * type = #token
+  * searchParam[+]
+    * extension
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = #MAY
+    * name = "type"
+    * definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
+    * type = #token
 * document.extension.url = $capabilitystatement-expectation
 * document.extension.valueCode = #SHALL
 * document.mode = #consumer
