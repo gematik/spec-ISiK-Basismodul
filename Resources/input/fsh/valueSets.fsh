@@ -39,9 +39,18 @@ Title: "ISiKAccountType"
 * $v3-ActCode#AMB "ambulatory"
 * $v3-ActCode#IMP "inpatient encounter"
 
-ValueSet: ISiKAccountIdentifierType
-Id: ISiKAccountIdentifierType
-Title: "ISiKAccountIdentifierType"
+ValueSet: SchwangerschaftsstatusVS
+Id: SchwangerschaftsstatusVS
+Title: "Schwangerschaftsstatus Valueset"
 * insert Meta
-* $v2-0203#AN "Account number"
+* $loinc#LA15173-0 "Pregnant"
+* $loinc#LA26683-5 "Not pregnant"
+* $loinc#LA4489-6 "Unknown"
 
+ValueSet: SchwangerschaftEtMethodeVS
+Id: SchwangerschaftEtMethodeVS
+Title: "Schwangerschaft Erwarteter Entbindungstermin Methode"
+* insert Meta
+* $loinc#11778-8 "Delivery date Estimated"
+* $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* $loinc#11780-4 "Delivery date Estimated from ovulation date"
