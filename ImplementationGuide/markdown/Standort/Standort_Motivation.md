@@ -17,6 +17,8 @@ Die Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:
 
 Dafür werden Standort-Profile in unterschiedlicher Granularität definiert. 
 
+---
+
 #### Normativer Status und Bestätigung
 
 Diese Profile MÜSSEN im Rahmen der Bestätigung NICHT unterstützt werden. Falls ein Profil unterstützt wird, SOLLEN die hier definierten Festlegungen greifen.
