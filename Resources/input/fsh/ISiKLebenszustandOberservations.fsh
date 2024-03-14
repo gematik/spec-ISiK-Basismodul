@@ -5,12 +5,14 @@ Title: "ISiKLebensZustand"
 Description: "Basisprofil für ISiKLebensZustand Observation"
 * insert Meta
 * status MS
+* category MS
 * code MS
 * subject 1.. MS
   * reference 1.. MS
 * effective[x] 1..1 MS
 * effective[x] only dateTime or Period
 * value[x] MS
+* encounter MS
 
 
 Profile: ISiKSchwangerschaftsstatus
@@ -36,6 +38,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA15173-0 "Pregnant"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
+* encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: ISiKLebensZustand
@@ -55,6 +58,7 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueDateTime = "2024-08-01"
+* encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKAlkoholAbusus
 Parent: ISiKLebensZustand
@@ -75,6 +79,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueBoolean = false
+* encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKRaucherStatus
 Parent: ISiKLebensZustand
@@ -95,6 +100,7 @@ Title: "ISiKRaucherStatusBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueBoolean = true
+* encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKStillstatus
 Parent: ISiKLebensZustand
@@ -116,3 +122,4 @@ Description: "ISiKStillstatusBeispiel"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueBoolean = true
+* encounter = Reference(Fachabteilungskontakt)
