@@ -73,8 +73,7 @@ class ISiKLebensZustand <Observation><<(P,#8DA5C4)>>{
       . . .
    }
 'Oservation Childs    
-together Observations {
-
+together  {
    class ISiKSchwangerschaftErwarteterEntbindungstermin <Observation><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v4/isikschwangerschafterwarteterentbindungstermin ISiK Schwangerschaft - Erwarteter Entbindungstermin]]
@@ -107,7 +106,6 @@ together Observations {
    
 ' Weiteres Basis
 together {
-
    class ISiKPatient <Patient><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v4/isikpatient ISiK Patient]]
@@ -122,15 +120,6 @@ together {
       [[https://simplifier.net/isik-basis-v4/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
    } 
    
-   class ISiKAbrechnungsfall <Account><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-labor-v4/isiklabrechnungsfall ISiK Abrechnungsfall]]
-      ---
-      extension : **ExtensionAbrechnungsDiagnoseProzedur**
-      |_ AbrechnungsDiagnoseProzedur
-      . . .
-   }
-
    class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v4/isikangehoeriger ISiK Angehoeriger]]
@@ -141,22 +130,6 @@ together {
       |_ Strassenanschrift	: **Adresse**
       |_ Postfach	: **Adresse**
       . . .
-   }
-
-   class ISiKBerichtBundle <Bundle><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v4/isikberichtbundle ISiK Bericht bundle]]
-      ---
-      type : **document**
-      entry
-      |_ Composition
-         |_ resource : **ISiKBerichtSubSysteme**
-      . . .
-   }
-
-   class ISiKBerichtSubSysteme <Bundle><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v4/isikberichtsubsysteme ISiK Bericht SubSysteme]]
    }
       
 }
