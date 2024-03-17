@@ -1,6 +1,6 @@
 ### Interaktionen
 
-Für die Ressource Practitioner MUSS die REST-Interaktion "READ" implementiert werden.
+Für die Ressource Observation MUSS die REST-Interaktion "READ" implementiert werden.
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
@@ -87,14 +87,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
    ```GET [base]/Observation?component-code=http://loinc.org|85354-9```
 
    Anwendungshinweise: Weitere Informationen zur Suche nach "component-code" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token"](https://www.hl7.org/fhir/R4/search.html#token).
-
-1. Der Suchparameter "encounter" MUSS unterstützt werden:
-
-   Beispiel:
-
-   ```GET [base]/Observation?encounter=Encounter/234```
-
-   Anwendungshinweise: Weitere Informationen zur Suche nach "encounter" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 1. Der Suchparameter "encounter" MUSS unterstützt werden:
 

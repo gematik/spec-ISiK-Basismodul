@@ -11,11 +11,19 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
+    VersichertenId 0..1 MS and
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
+* identifier[VersichertenId] only IdentifierKvid10
+  * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
+  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
+  * type 1.. MS
+  * system MS
+  * value MS    
 * identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
+  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt. Bitte den 'VersichertenId'-Slice verwenden."
   * type 1.. MS
   * system MS
   * value MS
@@ -112,9 +120,9 @@ Durch eine verpflichtende Referenzierung der Patientenressource wird z.B. ein Pa
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].type = $identifier-type-de-basis#KVZ10
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "TestPID"
