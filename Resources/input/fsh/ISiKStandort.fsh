@@ -26,7 +26,8 @@ Parent: ISiKStandort
 Id: ISiKStandortRaum
 Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses."
 * physicalType = $LocationPhysicalType#ro "Room"
-* operationalStatus MS  //TODO: hier ggf. ein dezidiertes VS notwendig für Raumbelegung
+* operationalStatus MS  
+* operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
