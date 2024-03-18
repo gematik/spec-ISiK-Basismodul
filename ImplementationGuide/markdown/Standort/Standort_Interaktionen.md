@@ -73,7 +73,7 @@ tbd. hier https://build.fhir.org/searchparameter-registry.html
     Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums:
     ```GET [base]/Location?contains=KoordinatenBeispielGeoJSON```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Location.operational-status" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Location.contains" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 1. Der Suchparameter "near" KANN unterstützt werden:
 
