@@ -1,6 +1,6 @@
 ### Interaktionen
 
-Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion "READ" implementiert werden. Ebenso SOLL die REST-Interaktion "UPDATE" implementiert werden. Letztere dient insbesondere dem Synchronisieren des Status (.operationalStatus) der derivierten Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichung als "Frei", "Besetzt", "Kontaminiert", "Isoliert", in "Reinigung" etc.
+Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion "READ" implementiert werden. Ebenso SOLL die REST-Interaktion "UPDATE" implementiert werden. Letztere dient insbesondere dem Synchronisieren des Status (.operationalStatus) der derivierten Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichnung als "Frei", "Besetzt", "Kontaminiert", "Isoliert", in "Reinigung" etc.
 
 
 Interaktionen zum Standort werden derzeit für das Bestätigungsverfahren nicht festgelegt.
