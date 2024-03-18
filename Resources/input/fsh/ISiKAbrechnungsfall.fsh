@@ -40,14 +40,20 @@ Description: "Identifier-Profil für die Abbildung einer organisationsspezifisch
 * system 1..
 * value 1..
 
-Instance: AbrechnungsfallAmbulant
+Instance: AbrechnungsfallDRG
 InstanceOf: ISiKAbrechnungsfall
 Usage: #example
+* extension[+]
+  * url = "http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur"
+  * extension[+].url = "Use"
+  * extension[=].valueCoding = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#hospital-main-diagnosis "Krankenhaus Hauptdiagnose"
+  * extension[+].url = "Referenz"
+  * extension[=].valueReference = Reference(Condition/DiagnoseSelteneErkrankung)
 * identifier[Abrechnungsnummer]
   * system = "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer"
   * value = "0123456789"
 * status = #active
-* type = $v3-ActCode#AMB
+* type = $v3-ActCode#IMP
 * subject = Reference(PatientinMusterfrau)
 * coverage
   * extension.url = "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart"
