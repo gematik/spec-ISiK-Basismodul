@@ -1,9 +1,12 @@
 ### Interaktionen
 
-Für die Ressource Organization KANN die REST-Interaktion "READ" implementiert werden.
-Außerdem gilt:
+Sofern die Ressourcen zur Organisation unterstützt werden, SOLL die REST-Interaktion "READ" implementiert werden.
 
-1. Der Suchparameter "identifier" KANN unterstützt werden:
+Interaktionen zur Organisation werden derzeit für das Bestätigungsverfahren nicht festgelegt.
+
+Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN (in Einzelfällen KÖNNEN) implementiert werden, falls die oben genannten Ressourcen unterstützt werden:
+
+1. Der Suchparameter "identifier" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -15,7 +18,7 @@ Außerdem gilt:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.identifier" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "active" KANN unterstützt werden:
+1. Der Suchparameter "active" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -23,7 +26,7 @@ Außerdem gilt:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "type" KANN unterstützt werden:
+1. Der Suchparameter "type" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -31,7 +34,7 @@ Außerdem gilt:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "name" KANN unterstützt werden (dies gilt auch für das Element .alias):
+1. Der Suchparameter "name" SOLL unterstützt werden (dies gilt auch für das Element .alias):
 
     Beispiele:
 
@@ -41,7 +44,7 @@ Außerdem gilt:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.name" und "Oganization.alias" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "address" KANN unterstützt werden:
+1. Der Suchparameter "address" SOLL unterstützt werden:
 
     Beispiele
 
@@ -50,7 +53,7 @@ Außerdem gilt:
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
-1. Der Suchparameter "address-city" KANN unterstützt werden:
+1. Der Suchparameter "address-city" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -58,7 +61,7 @@ Außerdem gilt:
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.city" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
-1. Der Suchparameter "address-country" KANN unterstützt werden:
+1. Der Suchparameter "address-country" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -67,7 +70,7 @@ Außerdem gilt:
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.country" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
-1. Der Suchparameter "address-postalcode" KANN unterstützt werden:
+1. Der Suchparameter "address-postalcode" SOLL unterstützt werden:
 
     Beispiele:
 
@@ -76,7 +79,7 @@ Außerdem gilt:
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.postalCode" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
-1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier KANN unterstützt werden :
+1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier SOLL unterstützt werden :
 
     Beispiele:
 
