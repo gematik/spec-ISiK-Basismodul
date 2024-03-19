@@ -7,7 +7,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
 * name MS //Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
 * mode MS //Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
   * ^patternCodeableConcept.coding = $LocationMode#instance
-* type MS 
+* type MS
   * ^comment = "Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * address MS
 * address only AddressDeBasis
@@ -19,7 +19,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
 * partOf MS
   * ^comment = "Motivation: Ein System muss die organisationale Zugehörigkeit eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * hoursOfOperation MS
-// * ^comment = "Motivation: Ein System muss die Betriebszeiten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+  * ^comment = "Motivation: Ein System muss die Betriebszeiten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 
 Profile: ISiKStandortRaum
 Parent: ISiKStandort
