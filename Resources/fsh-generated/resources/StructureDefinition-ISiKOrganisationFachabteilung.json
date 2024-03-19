@@ -78,7 +78,7 @@
       {
         "id": "Organization.identifier:IKNR.type",
         "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
+        "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
       },
       {
         "id": "Organization.identifier:BSNR",
@@ -99,7 +99,24 @@
       {
         "id": "Organization.identifier:BSNR.type",
         "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
+        "comment": "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
+      },
+      {
+        "id": "Organization.identifier:TelematikID",
+        "path": "Organization.identifier",
+        "sliceName": "TelematikID",
+        "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ],
+        "mustSupport": true
       },
       {
         "id": "Organization.identifier:Abteilungsidentifikator",
@@ -157,9 +174,9 @@
         }
       },
       {
-        "id": "Organization.type:fachabteilungsschluessel",
+        "id": "Organization.type:ErweiterterFachabteilungsschluessel",
         "path": "Organization.type",
-        "sliceName": "fachabteilungsschluessel",
+        "sliceName": "ErweiterterFachabteilungsschluessel",
         "comment": "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann.",
         "min": 0,
         "max": "1",
@@ -170,13 +187,13 @@
         }
       },
       {
-        "id": "Organization.type:fachabteilungsschluessel.coding.system",
+        "id": "Organization.type:ErweiterterFachabteilungsschluessel.coding.system",
         "path": "Organization.type.coding.system",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Organization.type:fachabteilungsschluessel.coding.code",
+        "id": "Organization.type:ErweiterterFachabteilungsschluessel.coding.code",
         "path": "Organization.type.coding.code",
         "min": 1,
         "mustSupport": true
@@ -328,6 +345,12 @@
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung"
           }
         ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.address:Postfach.extension:Stadtteil",
+        "path": "Organization.address.extension",
+        "sliceName": "Stadtteil",
         "mustSupport": true
       },
       {
