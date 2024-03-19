@@ -1,5 +1,16 @@
 ### Anmerkungen zu Must-Support-Feldern
 
-Siehe zu den Must-Support-Feldern die entsprechenden Comments im Profil (ggf. für Subelemente).
+<fql output = "table" headers="true">
+
+        from 
+            StructureDefinition 
+        where 
+            url = %canonical
+        for 
+            differential.element 
+            where 
+                mustSupport = true 
+            select Feldname: id, Kurzbeschreibung: short, Hinweise: comment
+</fql>
 
 ---
