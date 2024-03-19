@@ -46,3 +46,4 @@ Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
 Alias: $identifier-bsnr = http://fhir.de/StructureDefinition/identifier-bsnr
 Alias: $identifer-TelematikID = http://fhir.de/StructureDefinition/identifier-telematik-id
 Alias: $organization_type = http://terminology.hl7.org/CodeSystem/organization-type
+Alias: $identifier-standortnummer-dkg = http://fhir.de/StructureDefinition/identifier-standortnummer
