@@ -94,7 +94,8 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
 * contact MS
   * ^comment = "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * endpoint MS
-  * ^comment = "Motivation: Ein System muss den technischen Endpunt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+  * ^comment = "Motivation: Ein System muss den technischen Endpunkt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+
 
 
 Profile: ISiKOrganisation
