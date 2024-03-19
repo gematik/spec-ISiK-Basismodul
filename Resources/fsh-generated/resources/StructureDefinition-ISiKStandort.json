@@ -32,6 +32,32 @@
       {
         "id": "Location.identifier",
         "path": "Location.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Location.identifier:standortnummer-dkg",
+        "path": "Location.identifier",
+        "sliceName": "standortnummer-dkg",
+        "comment": "Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/) ",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-standortnummer"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
