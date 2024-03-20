@@ -100,7 +100,7 @@
           {
             "code": "Coding",
             "profile": [
-              "http://fhir.de/StructureDefinition/CodingICD10GM"
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKICD10GMCoding"
             ]
           }
         ],
@@ -162,6 +162,14 @@
         "sliceName": "SNOMED-CT",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "patternCoding": {
           "system": "http://snomed.info/sct"
         },
@@ -170,18 +178,6 @@
           "strength": "required",
           "valueSet": "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT"
         }
-      },
-      {
-        "id": "Condition.code.coding:SNOMED-CT.system",
-        "path": "Condition.code.coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Condition.code.coding:SNOMED-CT.code",
-        "path": "Condition.code.coding.code",
-        "min": 1,
-        "mustSupport": true
       },
       {
         "id": "Condition.code.coding:Orphanet",
