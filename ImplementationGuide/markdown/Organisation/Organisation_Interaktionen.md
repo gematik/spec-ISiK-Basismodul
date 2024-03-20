@@ -53,32 +53,6 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
-1. Der Suchparameter "address-city" SOLL unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Organization?address-city=Berlin```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.city" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
-
-1. Der Suchparameter "address-country" SOLL unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Organization?address-country=DE```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.country" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
-
-
-1. Der Suchparameter "address-postalcode" SOLL unterstützt werden:
-
-    Beispiele:
-
-    ```GET [base]/Organization?address-postalcode=10117```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address.postalCode" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
-
-
 1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier SOLL unterstützt werden :
 
     Beispiele:

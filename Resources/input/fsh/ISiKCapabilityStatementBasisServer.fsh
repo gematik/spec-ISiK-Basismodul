@@ -770,7 +770,6 @@ Usage: #definition
   * extension.url = $capabilitystatement-expectation
   *  extension.valueCode = #SHALL
 
-
 // Standort (Location)
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
@@ -832,6 +831,60 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "near"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-near"
 * rest.resource[=].searchParam[=].type = #token
+
+//Organisation
+* rest.resource[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].extension.valueCode = #MAY
+* rest.resource[=].type = #Organization
+* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
+* rest.resource[=].interaction[=].extension.valueCode = #MAY
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].interaction[=].extension.valueCode = #MAY
+* rest.resource[=].interaction[=].code = #search-type
+* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "_id"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "identifier"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "active"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "type"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "name"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "address"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "partof"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
+* rest.resource[=].searchParam[=].name = "endpoint"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
+* rest.resource[=].searchParam[=].type = #reference
+
+
 
 
 * document.extension.url = $capabilitystatement-expectation
