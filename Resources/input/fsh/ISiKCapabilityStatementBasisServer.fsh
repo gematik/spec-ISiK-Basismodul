@@ -775,7 +775,7 @@ Usage: #definition
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Location
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
+* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #read
 * rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
