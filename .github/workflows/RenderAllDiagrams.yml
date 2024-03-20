@@ -5,6 +5,7 @@ on:
     paths:
     - '**/Material/images/src/**/*.puml'
     - '**/Material/images/src/**/*.drawio'
+    - '**/Material/images/src/**/*.bpmn'
     branches-ignore:
     - 'main**'
   
@@ -36,7 +37,8 @@ jobs:
       # Download plantUML jar 
       - name: Download plantuml file
         run: |
-          wget -O plantuml.jar "https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar" 
+          wget -O plantuml.jar "https://github.com/plantuml/plantuml/releases/download/v1.2024.2/plantuml.jar" 
+          
                                 
        # Clean Folder
       - name: Ensure and clean folder

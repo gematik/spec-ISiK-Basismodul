@@ -11,6 +11,7 @@ Version: 4.0.0-rc
 Datum: 11.03.2024 (WIP)
 
 * Ersetzen des ISiK-spezifischen Profils für IdentifierAbrechnungsnummer mit Profil aus Basisprofil-DE https://github.com/gematik/spec-ISiK-Basismodul/pull/381
+* Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/395
 * Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
 
 ----

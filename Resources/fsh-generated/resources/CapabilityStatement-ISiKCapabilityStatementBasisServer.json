@@ -1783,153 +1783,44 @@
               "valueCode": "MAY"
             }
           ],
-          "type": "Location",
+          "type": "Composition",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"
-          ],
-          "interaction": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "code": "read"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "code": "search-type"
-            }
-          ],
-          "searchParam": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "_id",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "identifier",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-identifier",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "address",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-address",
-              "type": "string"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "operational-status",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-operational-status",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "organization",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-organization",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "characteristic",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-characteristic",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-type",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "partof",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-partof",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "contains",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-contains",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "near",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-near",
-              "type": "token"
-            }
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
           ]
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "MAY"
+              "valueCode": "SHALL"
             }
           ],
-          "type": "Organization",
+          "type": "Bundle",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
+              "valueCode": "MAY",
+              "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+            }
+          ],
+          "type": "Subscription",
+          "supportedProfile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/patient-merge-subscription"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            }
           ],
           "interaction": [
             {
@@ -1948,10 +1839,28 @@
                   "valueCode": "MAY"
                 }
               ],
-              "code": "search-type"
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
             }
           ],
-          "searchParam": [
+          "operation": [
             {
               "extension": [
                 {
@@ -1959,86 +1868,8 @@
                   "valueCode": "MAY"
                 }
               ],
-              "name": "_id",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "identifier",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-identifier",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "active",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-active",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-type",
-              "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "name",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-name",
-              "type": "string"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "address",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-address",
-              "type": "string"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "partof",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-partof",
-              "type": "reference"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "endpoint",
-              "definition": "http://hl7.org/fhir/SearchParameter/Organization-endpoint",
-              "type": "reference"
+              "name": "$get-ws-binding-token",
+              "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
             }
           ]
         }
