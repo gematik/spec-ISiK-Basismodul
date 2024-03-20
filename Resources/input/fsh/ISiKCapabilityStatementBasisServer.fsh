@@ -780,7 +780,7 @@ Usage: #definition
 
 //TopicBased Subscription Backport (https://hl7.org/fhir/uv/subscriptions-backport/)
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].extension.url = Canonical(CapabilityStatementSubscriptionTopic)
 * rest.resource[=].extension.valueCanonical = $patient-merge-topic
 * rest.resource[=].type = #Subscription
