@@ -256,7 +256,7 @@
           ],
           "rules": "open"
         },
-        "comment": "In order to maintain the differntiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification.",
+        "comment": "In order to maintain the differentiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification.",
         "min": 1,
         "mustSupport": true
       },
@@ -633,6 +633,28 @@
         "id": "Patient.address:Postfach.country",
         "path": "Patient.address.country",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.link",
+        "path": "Patient.link",
+        "comment": "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden. Da das Element der Unterstützung der Patient merge Notification dient, MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4).",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.link.other",
+        "path": "Patient.link.other",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.link.other.identifier",
+        "path": "Patient.link.other.identifier",
+        "comment": "Logischer Verweis auf Identifier[Patientennummer]",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.link.type",
+        "path": "Patient.link.type",
         "mustSupport": true
       }
     ]
