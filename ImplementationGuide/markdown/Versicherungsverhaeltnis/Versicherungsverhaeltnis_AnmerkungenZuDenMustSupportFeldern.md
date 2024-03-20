@@ -4,7 +4,7 @@
 
 ### `Coverage.identifier`
 
-**Hinweise:** Grundsätzlich ist zu beachten, dass das Versicherungsverhältnis für die gesetzliche Versicherung durch die 30-stellige KVNR identifiziert wird. Die 10-stellige KVNR (gemeint ist der unveränderbare 10-stellige Teil zur Identifikation der Versicherten laut ITSG: https://www.itsg.de/produkte/vst-krankenversichertennummer) ist hingegen ein Identifier für das Datenobjekt Patient. Siehe {{pagelink:ImplementationGuide/markdown/Patient_Profil.md, text:Datenobjekt - Patient}}. Es wird in ISiK davon ausgegangen, dass die 30-stellige KVNR nicht in bestätigungrelevanten Systemen geführt wird, sodass diese nicht als zuverlässiger Identifier für das Versicherungsverhältnis verwendbar ist. Bei einer Suche nach einem Versicherungsverhältnis SOLLTE dieses per Chaining auf das Datenobjekt Patient ermittelt werden.
+**Hinweise:** Grundsätzlich ist zu beachten, dass das Versicherungsverhältnis für die gesetzliche Versicherung durch die 30-stellige KVNR identifiziert wird. Die 10-stellige KVNR (gemeint ist der unveränderbare 10-stellige Teil zur Identifikation der Versicherten laut ITSG: https://www.itsg.de/produkte/vst-krankenversichertennummer) ist hingegen ein Identifier für das Datenobjekt 'Patient'. Siehe {{pagelink:ImplementationGuide/markdown/Patient_Profil.md, text:Datenobjekt - Patient}}. Es wird in ISiK davon ausgegangen, dass die 30-stellige KVNR nicht in bestätigungrelevanten Systemen geführt wird, sodass diese nicht als zuverlässiger Identifier für das Versicherungsverhältnis verwendbar ist. Bei einer Suche nach einem Versicherungsverhältnis SOLLTE dieses per Chaining auf das Datenobjekt Patient ermittelt werden.
 
 ### `Coverage.status`
 
