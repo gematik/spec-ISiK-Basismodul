@@ -32,7 +32,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * system 1.. MS
     * code 1.. MS
   * coding[SNOMED-CT] from $diagnosesSCT (required)
-    * ^patternCoding.system = "http://snomed.info/sct"
+    * ^patternCoding.system = $sct
     * system 1.. MS
     * code 1.. MS
   * coding[Orphanet] ^patternCoding.system = "http://www.orpha.net"

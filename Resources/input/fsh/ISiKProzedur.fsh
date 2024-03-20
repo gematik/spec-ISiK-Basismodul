@@ -19,7 +19,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
   * coding contains SNOMED-CT 0..1 MS
   * coding[SNOMED-CT] from $ProzedurenKategorieSCT (preferred)
     * system 1.. MS
-    * system = "http://snomed.info/sct"
+    * system = $sct
     * code 1.. MS
 * code MS
   * obeys sct-ops-1 and proc-ISiK-3
@@ -39,7 +39,7 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * code MS
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * system 1.. MS
-    * system = "http://snomed.info/sct"
+    * system = $sct
     * code 1.. MS
   * text MS
 * subject MS
