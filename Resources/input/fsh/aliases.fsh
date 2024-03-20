@@ -1,5 +1,7 @@
 Alias: $loinc = http://loinc.org
 Alias: $sct = http://snomed.info/sct
+Alias: $atc = http://fhir.de/CodeSystem/bfarm/atc
+Alias: $ask = http://fhir.de/CodeSystem/ask
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $diagnosis-role = http://terminology.hl7.org/CodeSystem/diagnosis-role
