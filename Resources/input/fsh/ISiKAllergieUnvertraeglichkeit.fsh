@@ -31,7 +31,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
       atc 0..1 MS
   * coding[snomed-ct] MS
     * system MS
-    * system = "http://snomed.info/sct" (exactly)
+    * system = $sct (exactly)
     * code MS
     * display MS
   * coding[ask] MS
@@ -85,7 +85,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
         snomed-ct 0..1 MS
     * coding[snomed-ct] MS
       * system MS
-      * system = "http://snomed.info/sct" (exactly)
+      * system = $sct (exactly)
       * code MS
     * text MS
   * severity MS
@@ -100,7 +100,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
         snomed-ct 0..1 MS
     * coding[snomed-ct] MS
       * system MS
-      * system = "http://snomed.info/sct" (exactly)
+      * system = $sct (exactly)
       * code MS
     * text MS
 
