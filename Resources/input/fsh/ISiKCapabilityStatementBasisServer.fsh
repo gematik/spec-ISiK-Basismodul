@@ -832,14 +832,6 @@ Usage: #definition
   * searchInclude[+] = "AllergyIntolerance:asserter"
     * extension.url = $capabilitystatement-expectation
     * extension.valueCode = #SHALL
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Composition
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #Bundle
-* rest.resource[=].supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
 
 //TopicBased Subscription Backport (https://hl7.org/fhir/uv/subscriptions-backport/)
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
