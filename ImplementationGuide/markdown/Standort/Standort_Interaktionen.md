@@ -56,7 +56,7 @@ tbd. hier https://build.fhir.org/searchparameter-registry.html
 1. Der Suchparameter "type" KANN unterstützt werden:
 
     Beispiel zur Suche nach Typ eines Standorts:
-    ```GET [base]/Location?characteristic=bed```
+    ```GET [base]/Location?type=bed```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Location.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
