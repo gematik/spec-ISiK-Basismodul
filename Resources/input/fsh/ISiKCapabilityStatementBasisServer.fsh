@@ -136,6 +136,11 @@ Usage: #definition
 * rest.resource[=].searchRevInclude[+] = "AllergyIntolerance:patient"
 * rest.resource[=].searchRevInclude[=].extension.url = $capabilitystatement-expectation
 * rest.resource[=].searchRevInclude[=].extension.valueCode = #SHALL
+* rest.resource[=].searchRevInclude[+] = "Observation:patient"
+* rest.resource[=].searchRevInclude[=].extension.url = $capabilitystatement-expectation
+* rest.resource[=].searchRevInclude[=].extension.valueCode = #SHALL
+
+
 
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
@@ -713,9 +718,6 @@ Usage: #definition
   * extension.url = $capabilitystatement-expectation
   *  extension.valueCode = #SHALL
 * rest.resource[=].searchInclude[+] = "Observation:patient"
-  * extension.url = $capabilitystatement-expectation
-  *  extension.valueCode = #SHALL
-* rest.resource[=].searchInclude[+] = "Observation:subject"
   * extension.url = $capabilitystatement-expectation
   *  extension.valueCode = #SHALL
 
