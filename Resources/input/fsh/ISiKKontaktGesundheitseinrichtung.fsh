@@ -93,7 +93,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * location ^slicing.discriminator.type = #pattern
 * location ^slicing.discriminator.path = "physicalType"
 * location ^slicing.rules = #open
-* location contains  Zimmer 0..1 MS and Bett 0..1 MS and Station 0..1 MS
+* location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
     * identifier 1.. MS
@@ -108,7 +108,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
-* location[Bett]
+* location[Bettenstellplatz]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
@@ -167,7 +167,7 @@ Usage: #example
 * location.physicalType = $LocationPhysicalType#bd "Bed"
 * location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
 * location.location.identifier.value = "123"
-* location.location.display = "Bett 123"
+* location.location.display = "Bettenstellplatz 123"
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
