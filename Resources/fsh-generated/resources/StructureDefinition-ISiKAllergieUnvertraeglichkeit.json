@@ -99,7 +99,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -113,24 +113,14 @@
         "sliceName": "snomed-ct",
         "min": 1,
         "max": "1",
-        "patternCoding": {
-          "system": "http://snomed.info/sct"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.code.coding.system",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.code.coding.code",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.display",
-        "path": "AllergyIntolerance.code.coding.display",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -147,9 +137,6 @@
             ]
           }
         ],
-        "patternCoding": {
-          "system": "http://fhir.de/CodeSystem/ask"
-        },
         "mustSupport": true
       },
       {
@@ -181,9 +168,6 @@
             ]
           }
         ],
-        "patternCoding": {
-          "system": "http://fhir.de/CodeSystem/bfarm/atc"
-        },
         "mustSupport": true
       },
       {
@@ -376,7 +360,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -389,17 +373,14 @@
         "sliceName": "snomed-ct",
         "min": 0,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.reaction.manifestation.coding.system",
-        "fixedUri": "http://snomed.info/sct",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.reaction.manifestation.coding.code",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -426,7 +407,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -439,17 +420,14 @@
         "sliceName": "snomed-ct",
         "min": 0,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.exposureRoute.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.reaction.exposureRoute.coding.system",
-        "fixedUri": "http://snomed.info/sct",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.exposureRoute.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.reaction.exposureRoute.coding.code",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

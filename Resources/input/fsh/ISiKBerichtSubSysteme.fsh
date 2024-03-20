@@ -16,7 +16,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * type MS
 * type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
+  * ^slicing.discriminator.path = "system"
   * ^slicing.rules = #open
 * type.coding contains
     LOINC 0..1 MS and
@@ -24,7 +24,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
     IHE 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
   * system 1..
-  * system = "http://loinc.org" (exactly)
+  * system = $loinc
   * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
@@ -38,13 +38,13 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * category MS
 * category.coding MS
 * category.coding ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
+  * ^slicing.discriminator.path = "system"
   * ^slicing.rules = #open
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
 * category.coding[LOINC].system 1..
-* category.coding[LOINC].system = "http://loinc.org" (exactly)
+* category.coding[LOINC].system = $loinc
 * category.coding[LOINC].code 1..
 * category.coding[IHE].system 1..
 * category.coding[IHE].system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
