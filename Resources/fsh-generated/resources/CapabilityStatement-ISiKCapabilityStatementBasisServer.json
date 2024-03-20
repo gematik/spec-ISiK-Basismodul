@@ -236,9 +236,18 @@
             "Coverage:payor",
             "Account:subject",
             "Account:patient",
-            "AllergyIntolerance:patient"
+            "AllergyIntolerance:patient",
+            "Observation:patient"
           ],
           "_searchRevInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
             {
               "extension": [
                 {
@@ -1755,18 +1764,9 @@
           ],
           "searchInclude": [
             "Observation:encounter",
-            "Observation:patient",
-            "Observation:subject"
+            "Observation:patient"
           ],
           "_searchInclude": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
             {
               "extension": [
                 {
