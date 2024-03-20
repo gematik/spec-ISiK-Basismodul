@@ -30,17 +30,19 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
       ask 0..1 MS and
       atc 0..1 MS
   * coding[snomed-ct] MS
+    * ^patternCoding.system = $sct
     * system MS
-    * system = $sct (exactly)
     * code MS
     * display MS
   * coding[ask] MS
   * coding[ask] only CodingASK
+    * ^patternCoding.system = $ask
     * system MS
     * code MS
     * display MS
   * coding[atc] MS
   * coding[atc] only CodingATC
+    * ^patternCoding.system = $atc
     * system MS
     * version MS
     * code MS
