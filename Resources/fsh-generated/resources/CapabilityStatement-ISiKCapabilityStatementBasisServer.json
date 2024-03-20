@@ -235,9 +235,18 @@
             "Coverage:patient",
             "Coverage:payor",
             "Account:subject",
-            "Account:patient"
+            "Account:patient",
+            "AllergyIntolerance:patient"
           ],
           "_searchRevInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
             {
               "extension": [
                 {
@@ -1795,15 +1804,6 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "code": "create"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
               "code": "read"
             },
             {
@@ -1813,29 +1813,7 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "code": "update"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ],
               "code": "search-type"
-            }
-          ],
-          "searchInclude": [
-            "AllergyIntolerance:patient"
-          ],
-          "_searchInclude": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
             }
           ],
           "searchParam": [
@@ -1879,6 +1857,28 @@
                   "valueCode": "SHALL"
                 }
               ],
+              "name": "asserter",
+              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-asserter",
+              "type": "reference"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "recorder",
+              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-recorder",
+              "type": "reference"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
               "name": "onset",
               "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset",
               "type": "date"
@@ -1909,7 +1909,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ],
               "name": "category",
@@ -1920,12 +1920,74 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "criticality",
+              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality",
+              "type": "token"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
                 }
               ],
               "name": "type",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
               "type": "token"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "verification-status",
+              "definition": "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status",
+              "type": "token"
+            }
+          ],
+          "searchInclude": [
+            "AllergyIntolerance:patient",
+            "AllergyIntolerance:encounter",
+            "AllergyIntolerance:recorder",
+            "AllergyIntolerance:asserter"
+          ],
+          "_searchInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             }
           ]
         }
