@@ -24,7 +24,7 @@ Description: "Schwangerschaftsstatus einer Patientin"
 * valueCodeableConcept MS
 * valueCodeableConcept from SchwangerschaftsstatusVS
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
-* hasMember MS
+* hasMember 0..1 MS
 * hasMember ^short = "Erwartetes Geburtsdatum"
 * hasMember ^definition = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
 * hasMember.reference 1.. MS

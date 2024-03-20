@@ -156,7 +156,7 @@ Usage: #example
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
 * diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
-* account = Reference(AbrechnungsfallAmbulant)
+* account = Reference(AbrechnungsfallDRG)
 * account.identifier.value = "XZY"
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
