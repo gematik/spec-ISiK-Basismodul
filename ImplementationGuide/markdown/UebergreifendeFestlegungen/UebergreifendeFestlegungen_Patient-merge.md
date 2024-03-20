@@ -87,7 +87,7 @@ In jedem Fall sind auch Client-seitig die notwendigen Maßnahmen zu ergreifen, u
 
 ### Websocket
 
-Hier muss sich der Client per [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html) einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die expiration-Dauer, sowie der Websocketendpunkt enthalten.  
+Hier muss sich der Client per [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html) einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die Expiration-Dauer, sowie der Websocket-Endpunkt enthalten.  
 Siehe auch: [Subscriptions R5 Backport IG, Websocket](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#websockets)
 
 ## Beispiele
