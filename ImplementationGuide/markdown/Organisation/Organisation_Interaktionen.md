@@ -24,7 +24,9 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?active=true```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+    ```GET [base]/Organization?active=false```
+
+    Anwendungshinweise: Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. - erscheint es erforderlich nach inaktiven Ressourcen suchen zu können. Weitere Informationen zur Suche nach "Organization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter "type" SOLL unterstützt werden:
 
@@ -32,7 +34,7 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?type=dept```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.type" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter "name" SOLL unterstützt werden (dies gilt auch für das Element .alias):
 
@@ -42,15 +44,7 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?name=GYN```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.name" und "Oganization.alias" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
-
-1. Der Suchparameter "address" SOLL unterstützt werden:
-
-    Beispiele
-
-    ```GET [base]/Organization?address=Berlin```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.name" und "Organization.alias" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 
 1. Der Suchparameter "partof" in Kombination mit einem identifier-Modifier SOLL unterstützt werden :
@@ -59,7 +53,15 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?partof:identifier=260120196```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Oganization.name" und "Oganization.alias" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.partof" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://hl7.org/fhir/R4/search.html#reference).
+
+1. Der Suchparameter "address" KANN unterstützt werden:
+
+    Beispiele
+
+    ```GET [base]/Organization?address=Berlin```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.address" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
 
 1. Der Suchparameter "endpoint" in Kombination mit einem identifier-Modifier KANN unterstützt werden:
 
@@ -67,5 +69,5 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?endpoint:identifier=123456```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.endpoint" finden sich in der [FHIR-Basisspezifikation - Abschnitt "String Search"](https://hl7.org/fhir/R4/search.html#string).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "Organization.endpoint" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://hl7.org/fhir/R4/search.html#reference).
 
