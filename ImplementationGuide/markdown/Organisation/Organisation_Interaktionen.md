@@ -26,7 +26,7 @@ Auf folgende Suchparameter sei aufgrund der Relevanz hingewiesen - diese SOLLEN 
 
     ```GET [base]/Organization?active=false```
 
-    Anwendungshinweise: Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. - erscheint es erforderlich nach inaktiven Ressourcen suchen zu können. Weitere Informationen zur Suche nach "Organization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. - erscheint es erforderlich nach Ressourcen nicht aktiver Organisationseinheiten suchen zu können. Weitere Informationen zur Suche nach "Organization.active" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
 1. Der Suchparameter "type" SOLL unterstützt werden:
 
