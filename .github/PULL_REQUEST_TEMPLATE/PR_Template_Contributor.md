@@ -41,7 +41,7 @@
 - [ ] no content review needed
 - [ ] [cardinalities in profiles](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Umgang-mit-Kardinalit%C3%A4ten.page.md?version=current) are added with caution (specially 'max') and are thoroughly motivated in a comment
 - [ ] modifying-Elements are [highlighted](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Umgang-mit-Modifying-Elements.page.md?version=current)
-- [ ]  [metaprofile Elements](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Umgang-mit-Meta-Daten.page.md?version=current) not added or added with extreme caution
+- [ ]  [meta.profile Elements](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Umgang-mit-Meta-Daten.page.md?version=current) not added or added with extreme caution
 - [ ] [StructureDefinition.description](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Dokumentation-und-Nachvollziehbarkeit.page.md?version=current) is filled
 - [ ] [Constrained Elements](https://simplifier.net/guide/Best-Practice-bei-der-Implementierung-und-Spezifizierung-mit-HL7/%C3%9Cbersicht/Spezifikation/Profilierung/Dokumentation-und-Nachvollziehbarkeit.page.md?version=current) contain
     - [ ] naming in ElementDefinition.short 
