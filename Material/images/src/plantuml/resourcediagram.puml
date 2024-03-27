@@ -35,7 +35,7 @@ set separator none
 
 namespace ISiK_Basis {
    class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
+      Dokumentation auf Simplifier
       [[https://simplifier.net/isik-basis-v3/identifierabrechnungsnummer Identifier-Profil]] für die "Fallnummer"
    }
    'ISiKMedikation::itemReference --> ISiKMedikation
@@ -150,7 +150,7 @@ namespace ISiK_Basis {
                |_ code
          |_ text
    }
-   
+
    namespace ValueSets {
       class ISiKAccountIdentifierType <ValueSet><<(V,#8DA5C4)>>{
          Dokumentation auf Simplifier 
@@ -169,6 +169,28 @@ namespace ISiK_Basis {
          **AMB** displays-as **ambulatory**
          **IMP** displays-as **inpatient encounter**      
       }
+
+      class SchwangerschaftEtMethodeVS <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v4/schwangerschaftetmethodevs Schwangerschaft Estimated Methode]]
+         Includes following codes from the code System
+         [[http://loinc.org LOINC]]
+         --
+         **11778-8** displays-as **Delivery date Estimated**
+         **11779-6** displays-as **Delivery date Estimated** \n** from last menstrual period**
+         **11780-4** displays-as **Delivery date Estimated** \n** from ovulation date**
+      }
+
+      class SchwangerschaftsstatusVS <ValueSet><<(V,#8DA5C4)>>{
+         Dokumentation auf Simplifier 
+         [[https://simplifier.net/isik-basis-v4/schwangerschaftsstatusvs Schwangerschaft Status]]
+         Includes following codes from the code System
+         [[http://loinc.org LOINC]]
+         --
+         **LA15173-0** displays-as **Pregnant**
+         **LA26683-5** displays-as **Not pregnant**
+         **LA4489-6** displays-as **Unknown**
+      }
    }
 }
 
@@ -178,7 +200,12 @@ namespace DE_Basisprofile_R4 {
       Dokumentation auf HL7 Org
       [[https://simplifier.net/basisprofil-de-r4 Basisprofil DE (RE4)]]
    }
-   
+
+   class identifierAbrechnungsnummer <Identifier><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[http://fhir.de/StructureDefinition/identifier-abrechnungsnummer Identifier-Profil]] für die Abbildung \neiner Abrechnungsnummer ("Fallnummer")
+   }
+
    class ExtensionAbrechnungsDiagnoseProzedur <<(E,#7A8495)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656773 Fallbezogene Abrechnungsrelevanz \nvon Diagnosen und Prozeduren]]
@@ -211,7 +238,14 @@ namespace HL7_FHIR_R4_Core {
       Dokumentation auf HL7 Org
       [[https://hl7.org/fhir/R4/ HL7 FHIR R4 Core Foundation]]
    }
-  class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
+
+   class LOINCCodes <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/observation-codes Observation Codes]]
+      Includes all codes from the underlying code system [[https://loinc.org/ LOINC]]
+   }
+
+   class AccountStatus <ValueSet><<(V,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/82308 Account Status]]
       Includes all codes from the underlying code System
@@ -233,6 +267,21 @@ namespace HL7_FHIR_R4_Core {
       [[https://www.hl7.org/fhir/R4/valueset-allergyintolerance-clinical.html Allergy Intolerance Clinical Status]]
       Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://www.hl7.org/fhir/R4/codesystem-allergyintolerance-clinical.html Code System of Clinical Status]]
    }
+   class AllergyIntoleranceType <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/allergy-intolerance-type Allergy Intolerance Type]]
+       Includes all codes from the underlying code system 
+      [[http://hl7.org/fhir/allergy-intolerance-type Code System of Allergy Intolerance]]
+   }
+   class AllergyIntoleranceCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf HL7 Org 
+      [[http://hl7.org/fhir/ValueSet/allergyintolerance-code Substance/Product, Condition, NegationCodes]]
+       Includes various codes from the code System [[http://snomed.info/sct SNOMED CT]]
+      --
+      codes : **$CS-SCT** is-a **[[http://snomed.info/id/105590001 105590001]]**
+      codes : **$CS-SCT** is-a **[[http://snomed.info/id/1418038007 418038007]]**
+      . . .
+   }
    class ReactionEventSeverity <ValueSet><<(V,#8DA5C4)>> {
       Dokumentation auf HL7 Org 
       [[https://hl7.org/fhir/R4/valueset-reaction-event-severity.html Reaction Eventu Severity]]
@@ -243,23 +292,23 @@ namespace HL7_FHIR_R4_Core {
       [[https://hl7.org/fhir/R4/valueset-observation-category.html Observation Category]]
       Das entsprechende Standard-ValueSet beeinhatet das komplette \nCode System des zugehörigen [[https://hl7.org/fhir/R4/codesystem-observation-category.html Code System of Observation Category]]
    }
-}
+   }
 
 namespace ISiK_Basis {
    class Basismodul_Stufe_4 <<(M,#FFDC36)>>{
-      Dokumentation auf Simplifier 
+      Dokumentation auf Simplifier
       [[https://simplifier.net/isik-basis-v3/~introduction ISiK Basis Stufe 3]]
    }
    class ISiKPatient <Patient><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
+      Dokumentation auf Simplifier
       [[https://simplifier.net/isik-basis-v3/isikpatient ISiK Patient]]
    }
    class ISiKKontaktGesundheitseinrichtung <Encounter><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
+      Dokumentation auf Simplifier
       [[https://simplifier.net/isik-basis-v3/isikkontaktgesundheitseinrichtung ISiK Kontakt Gesundheitseinrichtung]]
    }
    class ISiKPractitioner <Practitioner><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
+      Dokumentation auf Simplifier
       [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
    }
 }

@@ -14,5 +14,5 @@ RuleSet: MetaInstance
 
 RuleSet: Meta-CapabilityStatement
 * insert MetaInstance
-* implementationGuide = "https://gematik.de/fhir/isik/v3/Basismodul/ImplementationGuide|4.0.0-rc"
-* url = "https://gematik.de/fhir/isik/v3/Basismodul/CapabilityStatement/basis-server"
+* implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer"

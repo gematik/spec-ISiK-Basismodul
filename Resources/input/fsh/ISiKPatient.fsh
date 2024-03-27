@@ -11,11 +11,19 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
+    VersichertenId 0..1 MS and
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
+* identifier[VersichertenId] only IdentifierKvid10
+  * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
+  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
+  * type 1.. MS
+  * system MS
+  * value MS    
 * identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
+  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt. Bitte den 'VersichertenId'-Slice verwenden."
   * type 1.. MS
   * system MS
   * value MS
@@ -39,7 +47,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "In order to maintain the differntiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
+  * ^comment = "In order to maintain the differentiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
 * name contains
     Name 1..1 MS and
     Geburtsname 0..1 MS
@@ -104,13 +112,19 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
+* link MS
+  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden. Da das Element der Unterstützung der Patient merge Notification dient, MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4)."
+  * other MS
+    * identifier MS
+      * ^comment = "Logischer Verweis auf Identifier[Patientennummer]"
+  * type MS
 
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].type = $identifier-type-de-basis#KVZ10
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "TestPID"

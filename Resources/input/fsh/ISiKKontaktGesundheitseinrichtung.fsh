@@ -93,28 +93,28 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * location ^slicing.discriminator.type = #pattern
 * location ^slicing.discriminator.path = "physicalType"
 * location ^slicing.rules = #open
-* location contains  Zimmer 0..1 MS and Bett 0..1 MS and Station 0..1 MS
+* location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
-    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
 * location[Zimmer]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
-    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
-* location[Bett]
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+* location[Bettenstellplatz]
   * location 1.. MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
-    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/v3/Basismodul/ValueSet/ISiKLocationPhysicalType"
+    * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
@@ -156,7 +156,7 @@ Usage: #example
 * period.end = "2021-02-13"
 * diagnosis.condition = Reference(BehandlungsDiagnoseFreitext)
 * diagnosis.use = http://fhir.de/CodeSystem/KontaktDiagnoseProzedur#treatment-diagnosis
-* account = Reference(AbrechnungsfallAmbulant)
+* account = Reference(AbrechnungsfallDRG)
 * account.identifier.value = "XZY"
 * hospitalization.admitSource = $Aufnahmeanlass#E
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
@@ -167,7 +167,7 @@ Usage: #example
 * location.physicalType = $LocationPhysicalType#bd "Bed"
 * location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
 * location.location.identifier.value = "123"
-* location.location.display = "Bett 123"
+* location.location.display = "Bettenstellplatz 123"
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "XYZ"
 * serviceProvider.display = "Fachabteilung XYZ"
