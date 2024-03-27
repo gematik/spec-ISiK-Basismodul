@@ -1,9 +1,9 @@
 {
   "resourceType": "Account",
-  "id": "AbrechnungsfallAmbulant",
+  "id": "AbrechnungsfallDRG",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKAbrechnungsfall"
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"
     ]
   },
   "identifier": [
@@ -20,11 +20,32 @@
       "value": "0123456789"
     }
   ],
+  "extension": [
+    {
+      "url": "http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur",
+      "extension": [
+        {
+          "url": "Use",
+          "valueCoding": {
+            "code": "hospital-main-diagnosis",
+            "system": "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur",
+            "display": "Krankenhaus Hauptdiagnose"
+          }
+        },
+        {
+          "url": "Referenz",
+          "valueReference": {
+            "reference": "Condition/DiagnoseSelteneErkrankung"
+          }
+        }
+      ]
+    }
+  ],
   "status": "active",
   "type": {
     "coding": [
       {
-        "code": "AMB",
+        "code": "IMP",
         "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
       }
     ]
