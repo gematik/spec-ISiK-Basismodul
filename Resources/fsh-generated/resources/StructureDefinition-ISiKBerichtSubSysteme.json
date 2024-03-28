@@ -10,33 +10,6 @@
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "workflow",
-      "uri": "http://hl7.org/fhir/workflow",
-      "name": "Workflow Pattern"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "cda",
-      "uri": "http://hl7.org/v3/cda",
-      "name": "CDA (R2)"
-    },
-    {
-      "identity": "fhirdocumentreference",
-      "uri": "http://hl7.org/fhir/documentreference",
-      "name": "FHIR DocumentReference"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Composition",
@@ -102,7 +75,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -126,7 +99,7 @@
         "id": "Composition.type.coding:LOINC.system",
         "path": "Composition.type.coding.system",
         "min": 1,
-        "fixedUri": "http://loinc.org"
+        "patternUri": "http://loinc.org"
       },
       {
         "id": "Composition.type.coding:LOINC.code",
@@ -198,7 +171,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -217,7 +190,7 @@
         "id": "Composition.category.coding:LOINC.system",
         "path": "Composition.category.coding.system",
         "min": 1,
-        "fixedUri": "http://loinc.org"
+        "patternUri": "http://loinc.org"
       },
       {
         "id": "Composition.category.coding:LOINC.code",
