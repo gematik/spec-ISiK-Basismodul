@@ -22,7 +22,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
       Alpha-ID 0..1 MS and
       SNOMED-CT 0..1 MS and
       Orphanet 0..1 MS
-  * coding[ICD-10-GM] only CodingICD10GM
+  * coding[ICD-10-GM] only ISiKICD10GMCoding
     * ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
@@ -31,10 +31,9 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
     * system 1.. MS
     * code 1.. MS
+  * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $diagnosesSCT (required)
-    * ^patternCoding.system = "http://snomed.info/sct"
-    * system 1.. MS
-    * code 1.. MS
+    * ^patternCoding.system = $sct
   * coding[Orphanet] ^patternCoding.system = "http://www.orpha.net"
     * system 1.. MS
     * code 1..

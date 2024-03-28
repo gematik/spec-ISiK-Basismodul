@@ -17,10 +17,8 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
   * coding contains SNOMED-CT 0..1 MS
+  * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenKategorieSCT (preferred)
-    * system 1.. MS
-    * system = "http://snomed.info/sct"
-    * code 1.. MS
 * code MS
   * obeys sct-ops-1 and proc-ISiK-3
   * ^constraint[1].source = Canonical(ISiKProzedur)
@@ -37,10 +35,8 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
     * system MS
     * version MS
     * code MS
+  * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
-    * system 1.. MS
-    * system = "http://snomed.info/sct"
-    * code 1.. MS
   * text MS
 * subject MS
   * reference 1.. MS
