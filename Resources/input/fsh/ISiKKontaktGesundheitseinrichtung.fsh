@@ -86,7 +86,7 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * admitSource 0..1 MS
   * admitSource from AufnahmeanlassVS (extensible)
   * dischargeDisposition MS
-    * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS
+    * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS and ExtensionISiKRehaEntlassung named RehaEntlassung 0..1 MS
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
 * location MS
   * physicalType from ISiKLocationPhysicalType (extensible)
@@ -132,6 +132,29 @@ Id: PlannedEndDate
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
+
+Extension: ExtensionISiKRehaEntlassung
+Id: ExtensionISiKRehaEntlassung
+Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht"
+Context: Encounter.hospitalization.dischargeDisposition
+* insert Meta
+* extension contains
+    Entlassform ..1 MS and
+    BesondereBehandlung ..1 MS and
+    BehandlungsergebnisReha .. 1 MS and
+    UnterbrechnungReha ..1 MS
+* extension[Entlassform]
+  * value[x] only Coding
+  * valueCoding from ISiKEntlassformReha (extensible)
+* extension[BesondereBehandlung]
+  * value[x] only Coding
+  * valueCoding from ISiKBesondereBehandlungsformReha (required)
+* extension[BehandlungsergebnisReha]
+  * value[x] only Coding
+  * valueCoding from ISiKBehandlungsergebnisReha (required)
+* extension[UnterbrechnungReha]
+  * value[x] only Coding
+  * valueCoding from ISiKUnterbrechnungReha (required)
 
 Instance: Fachabteilungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
