@@ -650,7 +650,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-version"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "context-type-value"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-context-type-value"
 * rest.resource[=].searchParam[=].type = #composite
