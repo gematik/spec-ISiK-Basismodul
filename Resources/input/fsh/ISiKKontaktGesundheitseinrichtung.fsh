@@ -141,7 +141,7 @@ Context: Encounter.hospitalization.dischargeDisposition
 * extension contains
     Entlassform ..1 MS and
     BesondereBehandlung ..1 MS and
-    BehandlungsergebnisReha .. 1 MS and
+    BehandlungsergebnisReha ..1 MS and
     UnterbrechnungReha ..1 MS
 * extension[Entlassform]
   * value[x] only Coding
