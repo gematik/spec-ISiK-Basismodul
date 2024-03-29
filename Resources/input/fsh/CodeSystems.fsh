@@ -38,8 +38,8 @@ Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung d
 * #17 "Wechsel von Phase D zu B"
 * #18 "Wechsel von Phase C zu B"
 * #19 "Entlassung vor Wiederaufnahme (für CIFolgetherapie)"
-* #90 "planmäßig (entspricht Zusammenfassung der Schlüssel 01 bis 03)"
-* #90 "nicht planmäßig (entspricht Zusammenfassung der Schlüssel 04 und 05)"
+// * #90 "planmäßig (entspricht Zusammenfassung der Schlüssel 01 bis 03)"
+// * #90 "nicht planmäßig (entspricht Zusammenfassung der Schlüssel 04 und 05)"
 
 CodeSystem: ISiKUnterbrechnungReha
 Id: ISiKUnterbrechnungRehaCS
