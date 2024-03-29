@@ -9,7 +9,7 @@ Description: "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. 
 * #9 "sonstige"
 
 CodeSystem: ISiKBehandlungsergebnisReha
-Id: ISiKDiagnoseBehandlungsergebnisRehaCS
+Id: ISiKBehandlungsergebnisRehaCS
 Description: "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis."
 * insert Meta
 * #0 "Ziff. 1-3 trifft nicht zu"
