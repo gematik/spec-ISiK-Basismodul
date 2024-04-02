@@ -18,4 +18,7 @@ Es obliegt dabei dem Ermessen des Herstellers, ob die Übernahme strukturierter 
 
 Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressource vorgesehen](https://www.hl7.org/fhir/R4/composition.html), in einem FHIR-Bundle versendet.
 
+Folgendes Diagramm bietet eine Übersicht zu den Profilen und ihren Zusammenhängen, die im ISiK-Kontext von einem Subsystem übermittelt werden können. 
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/rc/main-stufe-4/Material/images/diagrams/Vereinfachtes_Infomodell.svg" alt="Vereinfachtes Infomodell" width="90%"/>
+
 ---
