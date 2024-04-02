@@ -2,7 +2,7 @@
 
 #### Subscription
 
-{{json:PatientMergeSubscriptionExample}}
+{{json:Resources/fsh-generated/resources/Subscription-PatientMergeSubscriptionExample.json}}
 
 #### SubscriptionNotification-Bundle
 
