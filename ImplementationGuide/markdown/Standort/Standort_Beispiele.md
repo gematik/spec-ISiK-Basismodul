@@ -1,9 +1,9 @@
 ### Beispiele
 
-Valides Minimalbeispiel zum Standort Bettenstellplatz:
-{{json:BettStandortBeispiel}}
+Ein Minimalbeispiel zum Standort Bettenstellplatz:
+{{json:BettenstellplatzStandortBeispiel}}
 
 
-Valides Minimalbeispiel zum Standort Raum:
+Ein Minimalbeispiel zum Standort Raum:
 {{json:RaumStandortBeispiel}}
 

@@ -1,5 +1,5 @@
 #### Beispiele
 
-Valides Minimalbeispiel für das Profil ISiKKontaktGesundheitseinrichtung:
+Ein Beispiel für das Profil ISiKKontaktGesundheitseinrichtung:
 
-{{json:versorgungsstellenkontakt}}
+{{json:Resources/fsh-generated/resources/Encounter-Fachabteilungskontakt.json}}
