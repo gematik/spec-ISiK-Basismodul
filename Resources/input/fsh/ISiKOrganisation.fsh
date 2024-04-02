@@ -5,8 +5,8 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
 * insert Meta
 * id MS
 * identifier 1..* MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "system"
   * ^slicing.rules = #open
 * identifier contains 
   IKNR 0..1 MS and //Die Kardinalitätsfestlegung entspricht der Profil-Festlegung der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2
@@ -149,7 +149,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type contains
   organisationstyp 0..1 MS and
   ErweiterterFachabteilungsschluessel 0..1 MS
-* type[organisationstyp] from $organization_type (extensible)
+* type[organisationstyp] from $organization_type (required)
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
