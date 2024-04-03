@@ -5,8 +5,8 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
 * insert Meta
 * id MS
 * identifier 1..* MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "system"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains 
   IKNR 0..1 MS and //Die Kardinalitätsfestlegung entspricht der Profil-Festlegung der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2
@@ -17,15 +17,22 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
   KIMAdresse 0..1 MS and
   TIMAdresse 0..1 MS and
 */
+* identifier[IKNR] MS
 * identifier[IKNR] only $identifier-iknr
-* identifier[IKNR].type 0..1
+  * ^patternIdentifier.system = $identifier-iknr-system  
   * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
+* identifier[BSNR] MS
 * identifier[BSNR] only $identifier-bsnr
-* identifier[BSNR].type 0..1
+  * ^patternIdentifier.system = $identifier-bsnr-system
   * ^comment = "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
+* identifier[TelematikID] MS
 * identifier[TelematikID] only $identifer-TelematikID
+  * ^patternIdentifier.system = $identifer-TelematikID-system
   * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist."
-* identifier[Abteilungsidentifikator].system 1.. MS
+* identifier[Abteilungsidentifikator] MS
+  * system 1.. MS
+  * value 1.. MS
+  * ^patternIdentifier.type = $sct#225746001 // Ward
   * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung."
 /* TODO s.o.
 * identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
@@ -120,15 +127,20 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   KIMAdresse 0..1 MS and
   TIMAdresse 0..1 MS and
 */
+* identifier[IKNR] MS
 * identifier[IKNR] only $identifier-iknr
-* identifier[IKNR].type 0..1
+  * ^patternIdentifier.system = $identifier-iknr-system 
   * ^comment = "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
+* identifier[BSNR] MS 
 * identifier[BSNR] only $identifier-bsnr
-* identifier[BSNR].type 0..1
+  * ^patternIdentifier.system = $identifier-bsnr-system 
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
-* identifier[OrganisationseinheitenID].system 1.. MS
+* identifier[OrganisationseinheitenID] MS
+  * ^patternIdentifier.type = $sct#43741000 // Site of care
+  * system 1.. MS
+  * value 1.. MS
   * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein."
-* identifier[OrganisationseinheitenID].value 1.. MS
+
 /*
 * identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
 * identifier[KIMAdresse].type 0..1
@@ -206,18 +218,17 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 Instance: KrankenhausOrganisationBeispiel
 InstanceOf: ISiKOrganisation
 Usage: #example
-* identifier[IKNR]
-* identifier[IKNR].value = $identifier-iknr#260120196
-* identifier[BSNR]
-* identifier[BSNR].value = $identifier-iknr#345678975
+* identifier[IKNR].value = "260120196"
+* identifier[BSNR].value = "345678975"
 * name = "Uniklinik Entenhausen"
 
 
 Instance: AbteilungAllgemeinchirurgieOrganisationBeispiel
 InstanceOf: ISiKOrganisationFachabteilung
 Usage: #example
-* identifier[Abteilungsidentifikator].system = "https://fhir.krankenhaus.example/sid/OrgaID"
-* identifier[Abteilungsidentifikator].value = "123456"
+* identifier[Abteilungsidentifikator]
+  * system = "https://fhir.krankenhaus.example/sid/OrgaID"
+  * value = "123456"
 * name = "Allgemeinchirurgie"
 * type[organisationstyp].coding = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
