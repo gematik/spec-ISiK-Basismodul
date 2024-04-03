@@ -1,11 +1,11 @@
 # Übersicht
-Im Folgenden wird ein grafischer Überblick über möglichst in diesem Modul abgedeckten Anwednungsfälle gegeben.
-Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
-* Allgemeine und intuitiv verständliche Use Cases.
-* * Kombinationen und weitere Details sind möglich.
-* * Übergreifende Use Cases und und ihre Sub Use Cases können in einem separaten Diagram auf den entsprechenden Seiten gefunden werden.
-* Allgemeine und intuitiv Adverse Use Cases. Diese gilt es zu vermeiden.
-* In den Funktionen werde triviale Suchen einer Ressoruce anhand ihrer eigenen Properties nicht dargestelt, z.B. Suche einer Ressoruce anhand der ID, Name, Code usw.
+Im Folgenden wird ein grafischer Überblick über Anwendungsfälle gegeben, die mittels ISiK abgedeckt werden können.
+Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Cases und dafür hinreichende Funktionen dargestellt:
+* Allgemeine und intuitiv verständliche Use Cases
+  * Kombinationen und weitere Details sind möglich.
+  * Übergreifende Use Cases und ihre Sub-Use-Cases können in einem separaten Diagram auf den entsprechenden Seiten gefunden werden.
+* Allgemeine und intuitiv Adverse Use Cases (diese gilt es zu vermeiden)
+* In den Funktionen werde triviale Suchen einer Ressource anhand ihrer eigenen Properties nicht dargestellt, z.B. Suche einer Ressource anhand der ID, Name, Code usw.
 
 
 ## Use Case Diagramm

@@ -35,7 +35,7 @@ Weitere Informationen zum Subscription Workflow finden sich hier:
 Zur Illustration der technischen Umsetzung für die Patient merge Notification dient ein [Prove of Concept (POC) mit Anleitung](https://github.com/gematik/poc-isik-patient-merge). 
 
 ### Notification Channel Types
-Notifications über einen Patient-merge-Vorgang können per *rest-hook* oder *websocket* an das subscribende System versandt werden. Im *rest-hook* Fall postet das patientenführende System ein NotificationBundle an den in `Subscriptipn.channel.endpoint` definierten REST Endpunkt. Bei einer *websocket* Notification geschieht das über einen Websocket-Channel. Die Websocketurl, sowie ein Access Token können mittels [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html)  vom Server abgerufen werden.
+Notifications über einen Patient-merge-Vorgang können per *rest-hook* oder *websocket* an das subscribende System versandt werden. Im *rest-hook* Fall postet das patientenführende System ein NotificationBundle an den in `Subscription.channel.endpoint` definierten REST Endpunkt. Bei einer *websocket* Notification geschieht das über einen Websocket-Channel. Die Websocket URL, sowie ein Access Token können mittels [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html)  vom Server abgerufen werden.
 
 ## Abgrenzung zu 'Patient merge'
 Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 
@@ -44,9 +44,7 @@ Ein externes Starten eines Patient merge - bspw. durch die [$patient-merge Opera
 **Hinweis**: Die Patienten-Ressource, die nicht weiter verwendet werden soll, nennen wir im Folgenden die "obsolete Ressource". Die Ressource, die erhalten bleiben soll, nennen wir "resultierende Ressource".
 
 ### Obsolete Patienten-Ressource
-Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISiKPatient Profilanforderungen hinaus.
-
-Es gilt allerdings folgende Annahme: Das patientenführende System SOLL sicherstellen, dass alle auf die obsolete Ressource referenzierenden FHIR-Ressourcen nach dem Patient merge auf die resultierende Ressource referenzieren. 
+Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISiKPatient Profilanforderungen hinaus. 
 
 Allerdings KANN das patientenführende System die obsolete Patienten-Ressource weiter vorhalten. Ein Entfernen der obsoleten Ressource ist ebenfalls erlaubt.
 
@@ -65,7 +63,7 @@ Allerdings SOLL das patientenführende System nach einem merge die Elemente der 
 Siehe auch: {{pagelink:ImplementationGuide/markdown/Patient/Patient_Profil.md, text:Patienten Profil }}
 
 ### Referenzen auf das Patientenobjekt
-Das patientenführende System muss im Rahmen des Patient merges alle auf den Patienten referenzierenden Ressourcen auf die resultierende Ressource referenzieren lassen.
+Es gilt folgende Annahme: Das patientenführende System SOLL sicherstellen, dass alle auf die obsolete Ressource referenzierenden FHIR-Ressourcen nach dem Patient merge auf die resultierende Ressource referenzieren.
 
 ## Hinweise zum Client-System
 
