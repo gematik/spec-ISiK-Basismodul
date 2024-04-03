@@ -14,6 +14,8 @@ Datum: 11.03.2024 (WIP)
 * Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359
 * Ersetzen des ISiK-spezifischen Profils für IdentifierAbrechnungsnummer mit Profil aus Basisprofil-DE https://github.com/gematik/spec-ISiK-Basismodul/pull/381
 * Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
+* Neue Profile für Lebenszustände https://github.com/gematik/spec-ISiK-Basismodul/pull/378
+* Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369
 
 ----
 
