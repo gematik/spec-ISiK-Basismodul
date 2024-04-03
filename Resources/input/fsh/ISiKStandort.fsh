@@ -10,6 +10,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
 * identifier contains 
   standortnummer-dkg 0..1 MS
 * identifier[standortnummer-dkg] only $identifier-standortnummer-dkg
+  * ^patternIdentifier.system = $identifier-standortnummer-dkg-system
   * ^comment = "Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/) "
 * name MS //Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
 * mode MS //Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
