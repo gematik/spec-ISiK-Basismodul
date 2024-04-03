@@ -54,7 +54,7 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
 * type contains
   organisationstyp 1..1 MS and
   ErweiterterFachabteilungsschluessel 0..1 MS
-* type[organisationstyp].coding = $organization_type#dept
+* type[organisationstyp] = $organization_type#dept
   * ^comment = "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden."
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
   * ^comment = "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann."
