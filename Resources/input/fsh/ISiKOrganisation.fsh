@@ -230,6 +230,6 @@ Usage: #example
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
   * value = "123456"
 * name = "Allgemeinchirurgie"
-* type[organisationstyp].coding = $organization_type#dept
+* type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
