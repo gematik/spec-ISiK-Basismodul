@@ -4,20 +4,18 @@ Die ISiK-Spezifikationen werden basierend auf folgenden IHE-Profilen entwickelt:
 * [PDQm (Patient Demographic Query for mobile)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
 * [QEDm (Query for Existing Data for mobile)](https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QEDm.pdf)
 
-künftige Ausbaustufen werden auch die Profile
+Das [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-UebergreifendeFestlegungen-Kompatibilitaet?version=current) basiert zudem auf:
 * [MHD (Mobile access to Health Documents)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)
-* [mXDE (Mobile Cross-EnterpriseDocument Data Element Extraction)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mXDE.pdf)
-
-berücksichtigen.
 
 Hierbei ist anzumerken, dass der Zusatz "for mobile" seitens IHE irreführend sein kann.
 Konkret fasst IHE unter diesem Begriff nicht nur Systeme zusammen, die "Plattform- und Ressourcenbeschränkt sind, wie z.B. Tablets, Smartphones und Embedded Devices, sondern auch größere Systeme in Umgebungen, in denen die Interoperabilitätsanforderungen einfach sind (z.B. Anzeige der aktuellen Übersicht eines Patienten)" (Quelle: IHE QEDm - Introduction)
 
 Die im Folgenden genannten IHE-Spezifikationen beschreiben lediglich Interaktionen zwischen den Systemen und machen verbindliche Vorgaben zum Ablauf, Format und zu den unterstützten Such-Parametern, jedoch keine inhaltlichen Vorgaben. So beschreibt PDQm beispielsweise den Ablauf einer Suche nach Patientendaten, enthält aber keine Vereinbarungen, wie die zurückgelieferte Patientenressource konkret auszusehen hat (Pflichtfelder, Terminologien, Constraints).
 
-Der Mehrwert der ISiK-Spezifikation besteht darin, dass die genannten IHE-Interaktionen um Festlegungen zu den auszutauschenden Inhalten ergänzt werden, die zugeschnitten sind auf die Anforderungen des Datenaustausches zwischen Systemen innerhalb einer Einrichtung, basierend auf den Deutschen Basisprofilen von HL7 Deutschland e.V. und abgeglichen mit den Festlegungen der KBV zu den Inhalten der elektronischen Patientenakte (MIOs) sowie den Spezifikationen der Medizininformatik-Initiative.
+Der Mehrwert der ISiK-Spezifikation besteht darin, dass die genannten IHE-Interaktionen um Festlegungen zu den auszutauschenden Inhalten ergänzt werden, die zugeschnitten sind auf die Anforderungen des Datenaustausches zwischen Systemen innerhalb einer Einrichtung, basierend auf den Deutschen Basisprofilen von HL7 Deutschland e.V. Zudem wird ein beständiger Abgleich mit den Festlegungen der KBV zu den Inhalten der elektronischen Patientenakte (MIOs) sowie den Spezifikationen der Medizininformatik-Initiative angestrebt.
 
-Die Darstellungen der in diesen IHE-Profilen festgelegten Interaktionen und UseCases sind den oben verlinkten Dokumenten zu entnehmen.
+
+Die Darstellungen der in diesen IHE-Profilen festgelegten Interaktionen und Use Cases sind den oben verlinkten Dokumenten zu entnehmen.
 
 ### IHE PDQm
 

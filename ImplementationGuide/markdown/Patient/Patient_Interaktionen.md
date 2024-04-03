@@ -4,7 +4,7 @@ Für die Ressource Patient MUSS die REST-Interaktion "READ" implementiert werden
 
 Für die Ressource Patient KANN die REST-Interaktion "POST" implementiert werden. Diese Interaktion dient für die Vorabübermittelung von (unverifizierten und/oder unvollständigen) Patientenstammdaten.
 
-* Das bestätigungsrelevante System SOLLTE die übermittelte ```Patient```-Ressource löschen oder als inaktiv kennzeichnen, insoweit Geschäftsregeln oder andere Gründe dazu führen, dass die ```Patient```-Ressource nicht permanent im System angelegt wird (z.B. keine Bestätigung durch die Anwender\*in des Systems oder keine Aufnahme der Patient\*in).
+* Das bestätigungsrelevante System SOLL die übermittelte ```Patient```-Ressource löschen oder als inaktiv kennzeichnen, insoweit Geschäftsregeln oder andere Gründe dazu führen, dass die ```Patient```-Ressource nicht permanent im System angelegt wird (z.B. keine Bestätigung durch die Anwender\*in des Systems oder keine Aufnahme der Patient\*in).
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 

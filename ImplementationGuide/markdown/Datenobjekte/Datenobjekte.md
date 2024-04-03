@@ -1,3 +1,3 @@
 # Datenobjekte
 
-In den folgenden Unterkapiteln werden die ISiK-Datenobjekte, die in dem vereinfachten Informationsmodell dargestellt sind, und ihre FHIR-Spezifikation beschrieben.
+In den folgenden Unterkapiteln werden die ISiK-Datenobjekte und ihre FHIR-Spezifikation beschrieben.
