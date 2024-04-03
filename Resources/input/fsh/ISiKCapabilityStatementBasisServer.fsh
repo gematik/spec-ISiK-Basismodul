@@ -631,7 +631,6 @@ Usage: #definition
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Bundle
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
-
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Observation
@@ -1013,18 +1012,10 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "endpoint"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
 * rest.resource[=].searchParam[=].type = #reference
-
-
-
 * rest.resource[+].extension.url = $capabilitystatement-expectation
 * rest.resource[=].extension.valueCode = #MAY
 * rest.resource[=].type = #Composition
 * rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #Bundle
-* rest.resource[=].supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
-
 //AllergyIntolerance
 * rest.resource[+]
   * extension
@@ -1164,7 +1155,6 @@ Usage: #definition
 * rest.resource[=].operation[=].extension.valueCode = #MAY
 * rest.resource[=].operation[=].name = "$get-ws-binding-token"
 * rest.resource[=].operation[=].definition = "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
-
 * document.extension.url = $capabilitystatement-expectation
 * document.extension.valueCode = #SHALL
 * document.mode = #consumer

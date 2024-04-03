@@ -41,6 +41,7 @@
         "id": "Organization.identifier:IKNR",
         "path": "Organization.identifier",
         "sliceName": "IKNR",
+        "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. ",
         "min": 0,
         "max": "1",
         "type": [
@@ -51,17 +52,16 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "system": "http://fhir.de/sid/arge-ik/iknr"
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:IKNR.type",
-        "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
       },
       {
         "id": "Organization.identifier:BSNR",
         "path": "Organization.identifier",
         "sliceName": "BSNR",
+        "comment": "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist.",
         "min": 0,
         "max": "1",
         "type": [
@@ -72,12 +72,10 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:BSNR.type",
-        "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
       },
       {
         "id": "Organization.identifier:TelematikID",
@@ -94,20 +92,39 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "system": "https://gematik.de/fhir/sid/telematik-id"
+        },
         "mustSupport": true
       },
       {
         "id": "Organization.identifier:Abteilungsidentifikator",
         "path": "Organization.identifier",
         "sliceName": "Abteilungsidentifikator",
+        "comment": "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung.",
         "min": 1,
         "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "225746001",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        },
         "mustSupport": true
       },
       {
         "id": "Organization.identifier:Abteilungsidentifikator.system",
         "path": "Organization.identifier.system",
-        "comment": "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:Abteilungsidentifikator.value",
+        "path": "Organization.identifier.value",
         "min": 1,
         "mustSupport": true
       },
@@ -138,18 +155,18 @@
         "id": "Organization.type:organisationstyp",
         "path": "Organization.type",
         "sliceName": "organisationstyp",
+        "comment": "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden.",
         "min": 1,
         "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "dept",
+              "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+            }
+          ]
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Organization.type:organisationstyp.coding",
-        "path": "Organization.type.coding",
-        "comment": "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden.",
-        "patternCoding": {
-          "code": "dept",
-          "system": "http://terminology.hl7.org/CodeSystem/organization-type"
-        }
       },
       {
         "id": "Organization.type:ErweiterterFachabteilungsschluessel",
