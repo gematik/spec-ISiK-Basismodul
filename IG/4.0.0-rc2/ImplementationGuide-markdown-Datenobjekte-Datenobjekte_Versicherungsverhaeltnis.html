@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1da86817a344100" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Zusammenfassung <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Zusammenfassung.html">
+                                            Zusammenfassung
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Zusammenfassung-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Zusammenfassung-InteraktionenUndSearchTypes.html">
+                                            Interaktionen Und SearchTypes
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Patient-merge.html">
+                                            Patient-Merge
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Lebenszustand (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Observation.html">
+                                            Observation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+        <div class="col-md-6">
+            <ul class="nav nav-pills nav-stacked affix-top">
+                    <li>
+                        <a title="Motivation" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Motivation">Motivation</a>
+                    </li>
+                    <li>
+                        <a title="Kompatibilit&#xE4;t" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Kompatibilitaet">Kompatibilit&#xE4;t</a>
+                    </li>
+                    <li>
+                        <a title="Profil" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Profil">Profil</a>
+                    </li>
+                    <li>
+                        <a title="Anmerkungen" href="#Versicherungsverhaeltnis_AnmerkungenZuDenMustSupportFeldern">Anmerkungen</a>
+                    </li>
+                    <li>
+                        <a title="Interaktionen" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Interaktionen">Interaktionen</a>
+                    </li>
+                    <li>
+                        <a title="Verkettete Suchparameter" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Includes">Verkettete Suchparameter</a>
+                    </li>
+                    <li>
+                        <a title="Beispiele" href="#markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Beispiele">Beispiele</a>
+                    </li>
+            </ul>
+        </div>
+
+    <div class="col-md-18">
+
+        <div id="preview-content">
+
+            <h2 id="versicherungsverhaltnis-coverage">Versicherungsverhältnis <a href="https://hl7.org/fhir/R4/coverage.html">(Coverage)</a></h2>
+<hr />
+
+
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Motivation">
+                        <h3 id="motivation">Motivation</h3>
+<p>ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden. In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.</p>
+<p>In FHIR werden Versicherungsverhältnisse mit der <a href="https://hl7.org/fhir/R4/coverage.html"><code>Coverage</code></a>-Ressource repräsentiert.</p>
+<hr />
+
+                    </div>
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Kompatibilitaet">
+                        <h3 id="kompatibilitat">Kompatibilität</h3>
+<h4 id="profil-isikversicherungsverhaeltnisgesetzlich">Profil ISiKVersicherungsverhaeltnisGesetzlich</h4>
+<p>Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem Profil <a href="http://fhir.de/StructureDefinition/coverage-de-basis">Coverage der deutschen Basisprofile</a>.
+Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen</p>
+<ul>
+<li>Profil <a href="https://fhir.de/StructureDefinition/coverage-de-gkv">&quot;Coverage, deutsches GKV Profil&quot; der deutschen Basisprofile</a></li>
+</ul>
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden..</p>
+<h4 id="profil-isikversicherungsverhaeltnisselbstzahler">Profil ISiKVersicherungsverhaeltnisSelbstzahler</h4>
+<p>Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem Profil <a href="https://fhir.de/StructureDefinition/coverage-de-sel">&quot;Coverage, deutsches Selbstzahlerprofil&quot; der deutschen Basisprofile</a>.
+Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen</p>
+<ul>
+<li>Profil <a href="https://fhir.de/StructureDefinition/coverage-de-sel">&quot;Coverage, deutsches Selbstzahlerprofil&quot; der deutschen Basisprofile</a></li>
+</ul>
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden..</p>
+<hr />
+
+                    </div>
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Profil">
+                        <h3 id="profil">Profil</h3>
+<h4 id="profil-isikversicherungsverhaeltnisgesetzlich">Profil ISiKVersicherungsverhaeltnisGesetzlich</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>Name</th><th>Canonical</th></tr></thead><tbody><tr><td>ISiKVersicherungsverhaeltnisGesetzlich</td><td><a target='_blank' href='https://simplifier.net/resolve?canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich&scope=isik-basis-v4@current'>https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</a></td></tr>
+</tbody></table>
+<p><div class="stu3-treetable" id="9f7511c9583440729f58f384441cad70" data-level="1"><div class="treetable-wrapper hybrid"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed" data-id="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span>Coverage</span></td><td class="profile"></td><td></td><td class="profile"><a title="Coverage
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coverage.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coverage.json" >Coverage</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage</pre></p></div><span><b>Definition </b></span><div class="markdown"><p>Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland.</p>
+</div><span><b>Data type </b></span><p><a title="Coverage
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coverage.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coverage.json" >Coverage</a></p></td></tr><tr id="Coverage.status" data-id="468438f1a4e44dd7b28ac8b8a0ec4cf8" data-parentId="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>status</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.status</pre></p></div></td></tr><tr class="collapsed" id="Coverage.type" data-id="0298e3bb75fb401eb7c669778beebf63" data-parentId="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>type</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.type</pre></p></div><span><b>Comments </b></span><div class="markdown"><p>28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen.</p>
+</div></td></tr><tr class="collapsed sliced" id="Coverage.type.coding" data-id="d8f68eaeae2a4e2489f325c9de8da154" data-parentId="0298e3bb75fb401eb7c669778beebf63"><td class="profile"><span class="baseIcon slice" title="Sliced"></span><span>coding</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.type.coding</pre></p></div><span><b>Sliced: </b></span><p><span>Unordered, Open, by $this(Pattern)</span></p></td></tr><tr id="Coverage.type.coding:VersicherungsArtDeBasis" data-id="737252e320b348d98939f3dfb100b1de" data-parentId="d8f68eaeae2a4e2489f325c9de8da154"><td class="profile"><span class="baseIcon individualSlice" title="Slice"></span><span>VersicherungsArtDeBasis</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><span class="fixed-label">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.type.coding:VersicherungsArtDeBasis</pre></p></div><span><b>Pattern </b></span><div><p><pre>{
+  &quot;system&quot;: &quot;http://fhir.de/CodeSystem/versicherungsart-de-basis&quot;,
+  &quot;code&quot;: &quot;GKV&quot;
+}</pre></p></div></td></tr><tr class="collapsed" id="Coverage.subscriber" data-id="ec9a2470f16946fb9a6cf015d21fb697" data-parentId="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>subscriber</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="RelatedPerson
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-RelatedPerson.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-RelatedPerson.json" >RelatedPerson</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.subscriber</pre></p></div><span><b>Definition </b></span><div class="markdown"><p>Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung</p>
+</div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="RelatedPerson
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-RelatedPerson.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-RelatedPerson.json" >RelatedPerson</a><span>)</span></p></td></tr><tr id="Coverage.subscriber.identifier" data-id="794d3076c984432aa4022952fedc8b7a" data-parentId="ec9a2470f16946fb9a6cf015d21fb697"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>identifier</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"><span>http://fhir.de/StructureDefinition/identifier-kvid-10</span><span class="fixed-label">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.subscriber.identifier</pre></p></div><span><b>Short description </b></span><p><span>VersichertenID (10-stellig) des Hauptversicherten</span></p><span><b>Data type </b></span><p><span>http://fhir.de/StructureDefinition/identifier-kvid-10</span></p><span><b>Pattern </b></span><div><p><pre>{
+  &quot;system&quot;: &quot;http://fhir.de/sid/gkv/kvid-10&quot;
+}</pre></p></div></td></tr><tr id="Coverage.subscriber.display" data-id="c7a6e43f159948228fc781ad203337ec" data-parentId="ec9a2470f16946fb9a6cf015d21fb697"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.subscriber.display</pre></p></div><span><b>Short description </b></span><p><span>Name des Hauptversicherten</span></p></td></tr><tr class="collapsed" id="Coverage.beneficiary" data-id="4ff2d90b4d5f4c428218d3a53cb46b4f" data-parentId="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>beneficiary</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary</pre></p></div><span><b>Definition </b></span><div class="markdown"><p>Benennt die versicherte Person.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Die Angabe der Reference ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden.</p>
+</div></td></tr><tr id="Coverage.beneficiary.reference" data-id="790067c3f99741f5a432827c04843fa1" data-parentId="4ff2d90b4d5f4c428218d3a53cb46b4f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>reference</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary.reference</pre></p></div></td></tr><tr id="Coverage.beneficiary.identifier" data-id="4be9f4798b7e4140902a278c087df5e8" data-parentId="4ff2d90b4d5f4c428218d3a53cb46b4f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>identifier</span></td><td class="profile"></td><td></td><td class="profile"><span class="fixed-label">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary.identifier</pre></p></div><span><b>Short description </b></span><p><span>Identifier der versicherten Person</span></p><span><b>Pattern </b></span><div><p><pre>{
+  &quot;system&quot;: &quot;http://fhir.de/sid/gkv/kvid-10&quot;
+}</pre></p></div></td></tr><tr id="Coverage.beneficiary.display" data-id="fda38be97830454f8a5c69b1184f5ccd" data-parentId="4ff2d90b4d5f4c428218d3a53cb46b4f"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary.display</pre></p></div><span><b>Short description </b></span><p><span>Name der Versicherten Person</span></p><span><b>Definition </b></span><div class="markdown"><p>Die Angabe des Namens des Versicherten dient der geeigneten Darstellung für den Benutzer und hat keine technische Bedeutung.</p>
+</div></td></tr><tr class="collapsed" id="Coverage.payor" data-id="71d08848a63244398c723a5aa789645d" data-parentId="9236ef7d55dc4b7bbf80b217a3f44d0f"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>payor</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span></span><span>..</span><span>1</span></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor</pre></p></div><span><b>Definition </b></span><div class="markdown"><p>Gibt den Kostenträger des Versicherten an. Die Angabe der IK-Nummer als logische Referenz sowie des Namens als Display ist zwingend erforderlich.
+Die Referenz auf eine Resource vom Typ Organization, die weitere Details zur Versicherung enthalten kann (z.B. Adresse, Kontaktdaten) ist optional.
+Sofern eine zweite Referenz auf einen Kostenträger existiert, so handelt es sich hierbei um den abrechnenden Kostenträger</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Die Angabe der IK-Nummer des Versicherers in payor.identifier ist verpflichtend. Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird.</p>
+</div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></p></td></tr><tr class="collapsed" id="Coverage.payor.identifier" data-id="8f21e422b50442b794b4ddf2d943d928" data-parentId="71d08848a63244398c723a5aa789645d"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>identifier</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"><span>http://fhir.de/StructureDefinition/identifier-iknr</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor.identifier</pre></p></div><span><b>Data type </b></span><p><span>http://fhir.de/StructureDefinition/identifier-iknr</span></p></td></tr><tr id="Coverage.payor.identifier.type" data-id="668e039cee1f4ff4ba90e7d6047a84c0" data-parentId="8f21e422b50442b794b4ddf2d943d928"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>type</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor.identifier.type</pre></p></div></td></tr><tr id="Coverage.payor.identifier.system" data-id="bcbb141982154841bbf89eb91c063398" data-parentId="8f21e422b50442b794b4ddf2d943d928"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>system</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor.identifier.system</pre></p></div></td></tr><tr id="Coverage.payor.identifier.value" data-id="18350102f1f74464bd908c28df20f714" data-parentId="8f21e422b50442b794b4ddf2d943d928"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>value</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor.identifier.value</pre></p></div></td></tr><tr id="Coverage.payor.display" data-id="1b4600d7e5e544079e01de43cbb34b52" data-parentId="71d08848a63244398c723a5aa789645d"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor.display</pre></p></div></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable9f7511c9583440729f58f384441cad70 = new Stu3TreeTable(false);
+resourceTreeTable9f7511c9583440729f58f384441cad70.init("9f7511c9583440729f58f384441cad70");
+}
+})();
+</script></p>
+<hr />
+<h4 id="profil-isikversicherungsverhaeltnisselbstzahler">Profil ISiKVersicherungsverhaeltnisSelbstzahler</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>Name</th><th>Canonical</th></tr></thead><tbody><tr><td>ISiKVersicherungsverhaeltnisSelbstzahler</td><td><a target='_blank' href='https://simplifier.net/resolve?canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler&scope=isik-basis-v4@current'>https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler</a></td></tr>
+</tbody></table>
+<p><div class="stu3-treetable" id="7924e6d45b5544c28a6c15e78680ba0f" data-level="1"><div class="treetable-wrapper hybrid"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed" data-id="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span>Coverage</span></td><td class="profile"></td><td></td><td class="profile"><a title="Coverage
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coverage.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coverage.json" >Coverage</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data type </b></span><p><a title="Coverage
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coverage.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coverage.json" >Coverage</a></p></td></tr><tr id="Coverage.status" data-id="0bbd8f2db10144f488993db360f25356" data-parentId="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>status</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.status</pre></p></div></td></tr><tr id="Coverage.type" data-id="902a7b94f6c64a719017d516d29eb04e" data-parentId="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>type</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.type</pre></p></div></td></tr><tr class="collapsed" id="Coverage.subscriber" data-id="87df4a9c561649a4bb2dbcd7dfc624b4" data-parentId="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>subscriber</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.subscriber</pre></p></div></td></tr><tr id="Coverage.subscriber.display" data-id="c9836b10962244bd96ac4cc679a3573b" data-parentId="87df4a9c561649a4bb2dbcd7dfc624b4"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.subscriber.display</pre></p></div></td></tr><tr class="collapsed" id="Coverage.beneficiary" data-id="e6f5248bb45d4b448e36bd888de857c9" data-parentId="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>beneficiary</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary</pre></p></div></td></tr><tr id="Coverage.beneficiary.reference" data-id="f58490afe4334aab9c9e33baabfc96a4" data-parentId="e6f5248bb45d4b448e36bd888de857c9"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>reference</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span></span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.beneficiary.reference</pre></p></div></td></tr><tr id="Coverage.payor" data-id="ebc95a66424b47a28838ab4ff8b03ab3" data-parentId="86bb2f4b792f4239b7768ed661a1a7e5"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>payor</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Patient
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Patient.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Patient.json" >Patient</a><span> | </span><a title="RelatedPerson
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-RelatedPerson.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-RelatedPerson.json" >RelatedPerson</a><span> | </span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Coverage.payor</pre></p></div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Patient
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Patient.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Patient.json" >Patient</a><span> | </span><a title="RelatedPerson
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-RelatedPerson.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-RelatedPerson.json" >RelatedPerson</a><span> | </span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></p></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable7924e6d45b5544c28a6c15e78680ba0f = new Stu3TreeTable(false);
+resourceTreeTable7924e6d45b5544c28a6c15e78680ba0f.init("7924e6d45b5544c28a6c15e78680ba0f");
+}
+})();
+</script></p>
+<hr />
+
+                    </div>
+                    <div id="Versicherungsverhaeltnis_AnmerkungenZuDenMustSupportFeldern">
+                        <h3 id="anmerkungen-zu-den-must-support-feldern">Anmerkungen zu den Must-Support Feldern</h3>
+<h4 id="das-profil-isikversicherungsverhaeltnisgesetzlich">Das Profil ISiKVersicherungsverhaeltnisGesetzlich</h4>
+<h3 id="coverage.identifier"><code>Coverage.identifier</code></h3>
+<p><strong>Hinweise:</strong> Grundsätzlich ist zu beachten, dass das Versicherungsverhältnis für die gesetzliche Versicherung durch die 30-stellige KVNR identifiziert wird. Die 10-stellige KVNR ist hingegen ein Identifier für das Datenobjekt Patient. Siehe <a href="ImplementationGuide-markdown-Patient-Patient_Profil.html" title='ImplementationGuide/markdown/Patient/Patient_Profil.md'>Datenobjekt - Patient</a>. Es wird in ISiK davon ausgegangen, dass die 30-stellige KVNR nicht in bestätigungrelevanten Systemen geführt wird, sodass diese nicht als zuverlässiger Identifier für das Versicherungsverhältnis verwendbar ist. Bei einer Suche nach einem Versicherungsverhältnis SOLLTE dieses per Chaining auf das Datenobjekt Patient ermittelt werden.</p>
+<h3 id="coverage.status"><code>Coverage.status</code></h3>
+<p><strong>Bedeutung:</strong> Der Status einer Instanz des Profils ISiKVersicherungsverhaeltnisGesetzlich.</p>
+<p><strong>Hinweise:</strong> Das Element status macht deutlich, ob diese Instanz genutzt werden kann oder ob sie bspw. als ungültig oder falsch gekennzeichnet ist, siehe <a href="https://hl7.org/fhir/R4/coverage-definitions.html#Coverage.status">FHIR Kernspezifikaton</a>.</p>
+<h3 id="coverage.type"><code>Coverage.type</code></h3>
+<p><strong>Bedeutung:</strong> Das Element type kennzeichnet die Art der Versicherung.</p>
+<p><strong>Hinweise:</strong> Kennzeichnung als gesetzliche Versicherung, siehe <a href="https://fhir.de/CodeSystem/versicherungsart-de-basis">Beschreibung der deutschen Basisprofile</a>.</p>
+<h3 id="coverage.beneficiary"><code>Coverage.beneficiary</code></h3>
+<p><strong>Bedeutung:</strong> Das Element beneficiary benennt die versicherte Person, auf die sich die Kostenübernahme durch die Versicherung bezieht.</p>
+<p><strong>Hinweise:</strong> Für ISiK MUSS beneficiary ein Patient nach dem Profil ISiKPatient sein.</p>
+<h3 id="coverage.payor"><code>Coverage.payor</code></h3>
+<p><strong>Bedeutung:</strong> Der Kostenträger des Versicherten.</p>
+<p><strong>Hinweise:</strong> Der Kostenträger der gesetzlichen Versicherung wird durch ein Institutskennzeichen in Coverage.payor.identifier identifiziert.</p>
+<hr />
+<h4 id="das-profil-isikversicherungsverhaeltnisselbstzahler">Das Profil ISiKVersicherungsverhaeltnisSelbstzahler</h4>
+<h3 id="coverage.subscriber"><code>Coverage.subscriber</code></h3>
+<p><strong>Bedeutung:</strong> Der Inhaber der Versicherungspolice.</p>
+<p><strong>Hinweise:</strong> Kann entweder der Patient selbst oder ein Hauptversicherter nach dem Profil ISiKHauptversicherter sein.</p>
+<h3 id="coverage.beneficiary-1"><code>Coverage.beneficiary</code></h3>
+<p>Siehe entsprechenden Eintrag zum Profil ISiKVersicherungsverhaeltnisGesetzlich oben.</p>
+<h3 id="coverage.payor-1"><code>Coverage.payor</code></h3>
+<p><strong>Bedeutung:</strong> Der Rechnungsempfänger.</p>
+<p><strong>Hinweise:</strong> Der Rechnungsempfänger für Selbstzahler ist entweder der Patient selbst, Hauptversicherte oder eine andere Partei.</p>
+<hr />
+
+                    </div>
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Interaktionen">
+                        <h3 id="interaktionen">Interaktionen</h3>
+<p>Für die Ressource Coverage MUSS die REST-Interaktion &quot;READ&quot; implementiert werden.</p>
+<p>Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:</p>
+<h4 id="profil-isikversicherungsverhaeltnisgesetzlich">Profil ISiKVersicherungsverhaeltnisGesetzlich</h4>
+<ol>
+<li><p>Der Suchparameter &quot;_id&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?_id=103270</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;_id&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#all">FHIR-Basisspezifikation - Abschnitt &quot;Parameters for all resources&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;status&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?status=active</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.status&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;type&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|GKV</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.type&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;beneficiary&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?beneficiary=Patient/123</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.beneficiary&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;patient&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?patient=Patient/123</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.beneficiary&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;payor&quot; in Kombination mit einem identifier-Modifier MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?payor:identifier=0123456789</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.payor&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+</ol>
+<h4 id="profil-isikversicherungsverhaeltnisselbstzahler">Profil ISiKVersicherungsverhaeltnisSelbstzahler</h4>
+<ol>
+<li><p>Der Suchparameter  &quot;_id&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?_id=103270</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;_id&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#all">FHIR-Basisspezifikation - Abschnitt &quot;Parameters for all resources&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter  &quot;beneficiary&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?beneficiary=Patient/123</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.beneficiary&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter  &quot;payor&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?payor=0123456789</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.payor&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter  &quot;subscriber&quot; KANN unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?subscriber=Patient/123</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.subscriber&quot; finden sich in der <a href="https://www.hl7.org/fhir/R4/search.html#reference">FHIR-Basisspezifikation - Abschnitt &quot;Reference Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter  &quot;status&quot; KANN unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?status=active</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.status&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter  &quot;type&quot; KANN unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|SEL</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;Coverage.type&quot; finden sich in der <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+</ol>
+<hr />
+
+                    </div>
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Includes">
+                        <h3 id="verkettete-suchparameter-chaining-und-reverse-chaining">Verkettete Suchparameter (Chaining und Reverse Chaining)</h3>
+<p>Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für <a href="https://hl7.org/fhir/R4/search.html#chaining">Chaining</a> und <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a> verpflichtend implementiert werden. Chaining und Reverse Chaining MUSS für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.</p>
+<p>Alle zu unterstützenden verketteten Suchparameter auf den entsprechenden Referenzen sind im CapabilityStatement unter <code>CapabilityStatement.rest.resource.searchInclude</code> bzw. <code>CapabilityStatement.rest.resource.searchRevInclude</code> angegeben. Siehe <a href="ImplementationGuide-markdown-CapabilityStatement.html" title='ImplementationGuide/markdown/CapabilityStatement.md'>CapabilityStatement</a></p>
+<p>Weitere Informationen und Beispiele zur Suche nach verketteten Parametern finden sich in <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html" title='ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Suchparameter.md'>diesem IG unter Suchparameter</a> und in der FHIR-Basisspezifikation im <a href="https://hl7.org/fhir/R4/search.html#chaining">Abschnitt &quot;Chained Parameters&quot;</a> und im <a href="https://hl7.org/fhir/R4/search.html#has">Abschnitt &quot;Reverse Chaining&quot;</a>.</p>
+<p>Die verketteten Suchparameter des Profils <code>Coverage</code> hängen wie folgt mit den festgelegten <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Anwendungsfällen (Use Cases)</a>  zusammen:</p>
+<ol>
+<li><p>Der verkette Suchparameter <code>Coverage:subscriber</code> unterstüzt den Anwendungsfall:</p>
+<p>Um bei einer anwesenden <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Person</a> alle zugehörigen <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Versicherungsverhältnisse</a> zuordnen zu können, auch für Eltern mit Familienversicherung der Kinder.</p>
+</li>
+<li><p>Der verkette Suchparameter <code>Coverage:patient</code> unterstüzt den Anwendungsfall:</p>
+<p>Um bei einem <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Patienten</a> alle zugehörigen <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Versicherungsverhältnisse</a> zuordnen zu können.</p>
+</li>
+<li><p>Der verkette Suchparameter <code>Coverage:payor</code> unterstüzt den Anwendungsfall:</p>
+<p>Um bei einer existierenden Gesellschaft alle übernommenen <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Versicherungsverhältnisse</a> zuordnen zu können, z.B. bei einer betrieblichen Krankenzusatzversicherung durch den Arbeitgeber.</p>
+</li>
+<li><p>Der verkette Suchparameter <code>Coverage:beneficiary</code> unterstüzt den Anwendungsfall:</p>
+<p>Um für eine versicherte <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Person</a> alle zugehörigen <a href="ImplementationGuide-markdown-Zusammenfassung-UseCases.html" title='ImplementationGuide/markdown/Zusammenfassung/UseCases.md'>Versicherungsverhältnisse</a> zuordnen zu können, z.B. für die Familienversicherung der GKV für Kinder.</p>
+</li>
+</ol>
+<hr />
+
+                    </div>
+                    <div id="markdown-Versicherungsverhaeltnis-Versicherungsverhaeltnis_Beispiele">
+                        <h3 id="beispiele">Beispiele</h3>
+<p>Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisGesetzlich:</p>
+<p><pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coverage</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CoverageGesetzlich</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">GKV</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/versicherungsart-de-basis</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">payor</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                        <span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">XX</span><span class="string">&quot;</span>
+                        <span class="brace">}</span>
+                    <span class="brace">]</span>
+                <span class="brace">}</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/arge-ik/iknr</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">260326822</span><span class="string">&quot;</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Eine Gesundheitskasse</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">beneficiary</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre></p>
+<p>Valides Minimalbeispiel für das Profil ISiKVersicherungsverhaeltnisSelbstzahler:</p>
+<p><pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coverage</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CoveragePrivat</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/versicherungsart-de-basis</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">SEL</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">beneficiary</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">payor</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre></p>
+
+                    </div>
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
