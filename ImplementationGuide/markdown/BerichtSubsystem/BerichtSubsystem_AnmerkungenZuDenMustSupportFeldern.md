@@ -36,7 +36,7 @@ Dazu ein Beispiel für einen Identifier eines Sub-System-Berichts:
     <value value="0123456789" />
 </identifier>
 ```
-Die Verwendung von OIDs ist möglich, wird jedoch nicht empfohlen. Für die Verwendnung von OIDs KANN folgendes Format verwendet werden:
+Die Verwendung von OIDs ist möglich, wird jedoch nicht empfohlen. Für die Verwendung von OIDs KANN folgendes Format verwendet werden:
 
 * Das Feld `system` enthält den festen Wert "urn:ietf:rfc:3986"
 * Das Feld `value` enthält die OID mit dem Präfix "urn:oid:"
