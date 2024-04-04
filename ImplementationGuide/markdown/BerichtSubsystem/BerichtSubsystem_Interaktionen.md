@@ -54,7 +54,7 @@ Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus 
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
   * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
-    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
+    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammengefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
 ### Persistierung der menschenlesbaren Repräsentation

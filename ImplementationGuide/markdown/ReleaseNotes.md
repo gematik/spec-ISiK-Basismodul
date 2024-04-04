@@ -82,7 +82,7 @@ Datum: 30.05.2023
 * ISiKCapabilityStatementBasisServer: Read Shall für Composition entfernt
   * fix capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
 * ISiKAbrechnungsfall: 
-  * Änderung des Codierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
+  * Änderung des Kodierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
     * Enhancement/account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
     * Update/identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
   * Änderung der falschen Kardinalität
