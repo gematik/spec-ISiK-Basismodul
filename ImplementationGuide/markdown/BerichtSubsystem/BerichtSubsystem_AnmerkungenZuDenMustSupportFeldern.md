@@ -75,7 +75,7 @@ Beispiel:
 
 **Bedeutung:** Autor des Dokumentes (Person, Subsystem)
 
-**Hinweise:** In der aktuellen Ausbaustufe von ISiK ist die Verwendung der textuellen Repräsentation (display) von Autor und Subsystem ausreichend. Die darüber hinaus gehende Verlinkung auf Practitioner bzw. Device-Ressourcen KANN implementiert werden.
+**Hinweise:** In der aktuellen Ausbaustufe von ISiK ist die Verwendung der textuellen Repräsentation (display) von Autor und Subsystem ausreichend. Die darüber hinausgehende Verlinkung auf Practitioner bzw. Device-Ressourcen KANN implementiert werden.
 
 ### `Composition.title`
 

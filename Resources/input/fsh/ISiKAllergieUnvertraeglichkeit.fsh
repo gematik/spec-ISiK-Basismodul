@@ -46,7 +46,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
 * patient MS
   * ^short = "Patient (Referenz)"
 * encounter MS
-  * ^short = "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt!)"
+  * ^short = "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt)"
 * onset[x] MS
   * ^short = "Beginn-Zeitpunkt"
 * onsetDateTime MS

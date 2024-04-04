@@ -45,7 +45,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "ValueSet.version" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
-1. Der Suchparameter "context-type-value" MUSS unterstützt werden:
+1. Der Suchparameter "context-type-value" KANN unterstützt werden:
 
     Beispiele:
 
