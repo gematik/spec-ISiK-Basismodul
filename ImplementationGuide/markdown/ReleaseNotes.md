@@ -16,7 +16,7 @@ Datum: 11.03.2024 (WIP)
 * Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
 * Neue Profile für Lebenszustände https://github.com/gematik/spec-ISiK-Basismodul/pull/378
 * Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369
-
+* Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet zu "KANN"
 ----
 
 Version: 3.0.4

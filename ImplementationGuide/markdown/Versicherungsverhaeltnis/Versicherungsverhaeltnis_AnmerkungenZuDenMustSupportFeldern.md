@@ -30,6 +30,8 @@
 
 **Hinweise:** Der Kostenträger der gesetzlichen Versicherung wird durch ein Institutskennzeichen in Coverage.payor.identifier identifiziert.
 
+---
+
 #### Das Profil ISiKVersicherungsverhaeltnisSelbstzahler
 
 ### `Coverage.subscriber`

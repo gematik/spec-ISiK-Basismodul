@@ -36,7 +36,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23Z+02:00```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "AllergyIntolerance.onset[x]" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "AllergyIntolerance.onset\[x]" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
 
 1. Der Suchparameter "date" MUSS unterstützt werden:
 

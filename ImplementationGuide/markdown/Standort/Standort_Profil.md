@@ -69,9 +69,9 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz' for differential.element.constraint select key, severity, human, expression```
 
+---
 
-
-Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, das einen Bettenstellplatz referenziert.
+**Hinweis:**  Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, das einen Bettenstellplatz referenziert.
 
 **Terminology Bindings**
 

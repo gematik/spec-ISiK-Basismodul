@@ -8,7 +8,7 @@
 
 ### `RelatedPerson.patient`
 
-**Bedeutung:** Referenz zum verwandten Patient
+**Bedeutung:** Referenz zum verwandten Patienten
 
 ### `RelatedPerson.address.type`
 
