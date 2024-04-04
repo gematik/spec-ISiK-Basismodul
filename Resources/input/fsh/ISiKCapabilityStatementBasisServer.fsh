@@ -1012,8 +1012,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "endpoint"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
 //AllergyIntolerance
 * rest.resource[+]
   * extension
