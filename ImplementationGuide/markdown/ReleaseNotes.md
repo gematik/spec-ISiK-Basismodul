@@ -6,9 +6,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 
 
-Version: 4.0.0-rc
+Version: 4.0.0-rc2
 
-Datum: 11.03.2024 (WIP)
+Datum: 4.4.2024
 
 * Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358 
 * Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359
