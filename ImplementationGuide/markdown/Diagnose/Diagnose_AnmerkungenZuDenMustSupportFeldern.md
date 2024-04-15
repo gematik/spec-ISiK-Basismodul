@@ -45,7 +45,7 @@ Die Freitextdiagnose darf nur alleinstehend angegeben werden, solange keine kodi
 
 **Hinweise:**
 
-Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLLTE auf die Ebene des Einrichtungskontaktes erfolgen, falls die Kontaktebene (Encounter.type) kodiert wird.
+Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLL auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen.
 Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen mit identischen Aufnahmenummer-Identifiern existieren können (Abbildung Vor- und nachstationäre Kontakte).
 
 ### `Condition.recordedDate`

@@ -10,6 +10,7 @@ Datum: 15.4.2024
 
 * Änderung der Anforderung zu KANN für Profil ISIKKatalog
 * Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet
+* Korrektur der Anforderung zur Encounter-Kontaktebene: Referenz auf Abteilungskontakt und nicht Einrichtungskontakt
 
 ----
 Version: 2.0.5
