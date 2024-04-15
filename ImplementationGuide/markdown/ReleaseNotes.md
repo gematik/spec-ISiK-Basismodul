@@ -6,6 +6,13 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 2.0.5
 
+Datum: 15.4.2024
+
+* Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet
+
+----
+Version: 2.0.5
+
 Datum: 24.03.2023
 
 - Änderungen am IG
