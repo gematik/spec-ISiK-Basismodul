@@ -3,9 +3,11 @@ Id: DiagnosesSCT
 Description: "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes"
 * insert Meta
 * include codes from system SNOMED_CT
-    where concept is-a #404684003 and
-    concept is-a #272379006 and
-    concept is-a #243796009
+    where concept is-a #404684003
+* include codes from system SNOMED_CT
+    where concept is-a #272379006
+* include codes from system SNOMED_CT
+    where concept is-a #243796009
 
 ValueSet: ProzedurenCodesSCT
 Id: ProzedurenCodesSCT
