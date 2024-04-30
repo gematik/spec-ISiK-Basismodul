@@ -8,6 +8,8 @@ on:
         - 'TC-*'
         - 'TC_*'
 
+
+# setup python and run script 
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -23,8 +25,14 @@ jobs:
           - name: install python packages
             run: |
               python -m pip install --upgrade pip
-              pip install -r requirements.txt
+              pip install pyyaml
     
           - name: execute py script # run main.py
-            run: python /scripts/release_publish.py -b
-          
+            run: python ./scripts/release_publish.py -b
+
+          - name: Add & Commit
+            uses: EndBug/add-and-commit@v9
+            with:
+              committer_name: GitHub Actions Bot
+              committer_email: ActionBot@github.com
+              message: auto-generated FHIR files by GitHub Actions (CI FSH to FHIR Validation)
