@@ -30,3 +30,4 @@
 - [ ] My code follows the code style of this IG / specification.
 - [ ] My change requires a change to the documentation or narrative (intend) of the IG.
 - [ ] I have already updated the documentation / narrative (intend) accordingly.
+- [ ] ReleaseNotes for feature/fix are updated in releaseNotes.md
