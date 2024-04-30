@@ -6,9 +6,10 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version 3.0.5
 
-Datum: XX.XX.2024
+Datum: 30.04.2024
 
 * Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet: https://github.com/gematik/spec-ISiK-Basismodul/pull/392
+* Fix des ValueSets für SNOMED-CT-Diagnosen https://github.com/gematik/spec-ISiK-Basismodul/pull/398
 
 ----
 
