@@ -8,8 +8,9 @@ Version 3.0.5
 
 Datum: 30.04.2024
 
-* Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet: https://github.com/gematik/spec-ISiK-Basismodul/pull/392
+* Lockerung der Anforderung für den Suchparameter "context-type-value" für ISiKValueSet- -> KANN https://github.com/gematik/spec-ISiK-Basismodul/pull/392
 * Fix des ValueSets für SNOMED-CT-Diagnosen https://github.com/gematik/spec-ISiK-Basismodul/pull/398
+* Änderung des Beispiels zum Abrechnungsfall https://github.com/gematik/spec-ISiK-Basismodul/pull/387
 
 ----
 
