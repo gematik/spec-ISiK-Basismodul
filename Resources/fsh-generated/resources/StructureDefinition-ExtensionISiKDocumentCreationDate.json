@@ -1,0 +1,47 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ExtensionISiKDocumentCreationDate",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKDocumentCreationDate",
+  "version": "4.0.0-rc2",
+  "name": "ExtensionISiKDocumentCreationDate",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-04-04",
+  "publisher": "gematik GmbH",
+  "description": "Mit dieser Extension soll die Möglichkeit geboten werden, ein Erstelldatum an einer Composition zu hinterlegen.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Composition.date"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKDocumentCreationDate"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      }
+    ]
+  }
+}
