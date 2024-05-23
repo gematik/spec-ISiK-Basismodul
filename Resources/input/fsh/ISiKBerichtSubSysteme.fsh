@@ -54,6 +54,8 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * reference 1.. MS
 * encounter MS
 * date MS
+* date.extension contains ExtensionISiKDocumentCreationDate named Erstelldatum ..1
+* date.extension[Erstelldatum].valueDateTime 1.. MS
 * author MS
 * author only Reference(PractitionerRole or Device or Organization or RelatedPerson or Patient or Practitioner)
   * display 1.. MS
@@ -86,3 +88,11 @@ Invariant: kdl-1
 Description: "KDL-Code ungültig"
 Severity: #warning
 Expression: "matches('^[A-Z]{2}[0-9]{6}$')"
+
+Extension: ExtensionISiKDocumentCreationDate
+Id: ExtensionISiKDocumentCreationDate
+Description: "Mit dieser Extension soll die Möglichkeit geboten werden, ein Erstelldatum an einer Composition zu hinterlegen."
+* insert Meta
+* ^context.type = #element
+* ^context.expression = "Composition.date"
+* value[x] only dateTime
