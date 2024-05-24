@@ -24,6 +24,8 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * subject only Reference(Patient)
 * subject 1..1 MS
 * coverage MS
+  * priority MS
+    * ^comment = "Motivation: Wenn ein Primärsystem am Account.coverage mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist."
   * extension 1..1 MS
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
