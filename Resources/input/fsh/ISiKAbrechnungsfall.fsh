@@ -25,7 +25,9 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * subject 1..1 MS
 * coverage MS
   * priority MS
-    * ^comment = "Motivation: Wenn ein Primärsystem am Account.coverage mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist."
+    * ^comment = "Motivation: Wenn ein Primärsystem mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. 
+    
+    Dies SOLL über dieses Element abgebildet werden. Wobei der Hauptkostenträger mit '1' auszuweisen ist und alle anderen mit '2'."
   * extension 1..1 MS
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
