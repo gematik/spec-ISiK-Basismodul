@@ -91,30 +91,39 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
 * location MS
   * physicalType from ISiKLocationPhysicalType (extensible)
 * location ^slicing.discriminator.type = #pattern
-* location ^slicing.discriminator.path = "physicalType"
+* location ^slicing.discriminator.path = "$this"
 * location ^slicing.rules = #open
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * location[Zimmer]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * location[Bettenstellplatz]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
@@ -188,6 +197,7 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.physicalType = $LocationPhysicalType#bd "Bed"
+* location.status = #active
 * location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
 * location.location.identifier.value = "123"
 * location.location.display = "Bettenstellplatz 123"
