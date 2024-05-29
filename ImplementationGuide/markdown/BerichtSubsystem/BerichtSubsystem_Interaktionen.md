@@ -15,16 +15,16 @@ Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-R
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
-Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch - Abgrenzung zu ISiK Stufe 2](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Modul-Dokumentenaustausch-Stufe-3/ImplementationGuide-markdown-AkteureUndInteraktionen?version=current#ImplementationGuide-markdown-AkteureUndInteraktionen-ErzeugenVonMetadaten).
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/AkteureUndInteraktionen-AkteureUndInteraktionen-ErzeugenVonMetadaten?version=current).
 
 ### Verarbeitung des Dokumentes
 
-**Hinweis:** Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. 'transaction') aufstellen.
+**Hinweis:** Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles, die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. 'transaction') aufstellen.
 
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
 1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlich identifizieren Merkmalen
-2. Extraktion der Encounter.Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer ('Encounter.account.identifier') oder ähnlich identifizieren Merkmalen
+2. Extraktion der Encounter-Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer ('Encounter.account.identifier') oder ähnlich identifizieren Merkmalen
 3. Extraktion der Composition-Ressource aus dem Bundle und Auslesen der mit 'mustSupport' gekennzeichneten Meta-Daten, sowie der menschenlesbaren Repräsentation des Dokumentes ('Composition.text', 'Composition.section.text', 'Composition.section.section.text')
 4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
@@ -40,7 +40,7 @@ Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammen
 
 ### Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle
 
-Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
+Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
 
 * Die aufzulösende Referenz ist eine URN (immer absolut, z. B. "urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12"):
   * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
@@ -54,7 +54,7 @@ Folgende Fälle sind zu beachten um eine Patient-/ und Encounter-Ressource aus d
 
 * Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
   * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
-    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammenangefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
+    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammengefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
 ### Persistierung der menschenlesbaren Repräsentation

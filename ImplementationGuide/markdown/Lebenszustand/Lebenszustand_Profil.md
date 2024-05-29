@@ -1,10 +1,12 @@
 ### Profil
 
+#### ISiKSchwangerschaftsstatus
+
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftsstatus' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftsstatus, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus, hybrid}}
 
 ---
 
@@ -12,7 +14,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/St
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftsstatus' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -20,7 +22,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftsstatus' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus' )
 for differential.element
 select
 Path: path,
@@ -31,11 +33,16 @@ join binding.where(valueSet.exists())
   URL: valueSet
 }
 ```
+
+----
+
+#### ISiKSchwangerschaftErwarteterEntbindungstermin
+
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin, hybrid}}
 
 ---
 
@@ -43,7 +50,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/St
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -51,7 +58,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin' )
 for differential.element
 select
 Path: path,
@@ -62,11 +69,18 @@ join binding.where(valueSet.exists())
   URL: valueSet
 }
 ```
+
+----
+
+
+#### ISiKAlkoholAbusus
+
+
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKAlkoholAbusus' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKAlkoholAbusus, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus, hybrid}}
 
 ---
 
@@ -74,7 +88,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/St
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKAlkoholAbusus' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -82,7 +96,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKAlkoholAbusus' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus' )
 for differential.element
 select
 Path: path,
@@ -93,11 +107,17 @@ join binding.where(valueSet.exists())
   URL: valueSet
 }
 ```
+
+
+----
+
+#### ISiKRaucherStatus
+
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKRaucherStatus' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKRaucherStatus, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus, hybrid}}
 
 ---
 
@@ -105,7 +125,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/St
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKRaucherStatus' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -113,7 +133,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKRaucherStatus' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus' )
 for differential.element
 select
 Path: path,
@@ -124,11 +144,16 @@ join binding.where(valueSet.exists())
   URL: valueSet
 }
 ```
+
+----
+
+#### ISiKStillstatus
+
 @```
-from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKStillstatus' select Name: name, Canonical: url
+from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus' select Name: name, Canonical: url
 ```
 
-{{tree:https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKStillstatus, hybrid}}
+{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus, hybrid}}
 
 ---
 
@@ -136,7 +161,7 @@ from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/St
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
-@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKStillstatus' for differential.element.constraint select key, severity, human, expression```
+@``` from StructureDefinition where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus' for differential.element.constraint select key, severity, human, expression```
 
 ---
 
@@ -144,7 +169,7 @@ Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
 @```
 from StructureDefinition
-where url in ('https://gematik.de/fhir/isik/Basismodul/StructureDefinition/ISiKStillstatus' )
+where url in ('https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus' )
 for differential.element
 select
 Path: path,

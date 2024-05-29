@@ -46,8 +46,8 @@ Description: "FHIR Mime Types"
 Instance: DorisQuelle
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "654321"
 * active = false
@@ -60,8 +60,8 @@ Usage: #example
 Instance: DorisZiel
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
 * active = true
@@ -74,8 +74,8 @@ Usage: #example
 Instance: DorisResultat
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "123456"
 * active = true

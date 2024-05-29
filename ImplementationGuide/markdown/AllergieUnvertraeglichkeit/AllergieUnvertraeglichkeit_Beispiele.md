@@ -2,4 +2,4 @@
 
 Valides Beispiel Allergie/Unverträglichkeit:
 
-{{json:ISiKAllergieUnvertraeglichkeitBeispiel1}}
+{{json:Resources/fsh-generated/resources/AllergyIntolerance-ISiKAllergieUnvertraeglichkeitBeispiel1.json}}

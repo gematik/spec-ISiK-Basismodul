@@ -23,17 +23,14 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
   * ^short = "Benennung der Allergie/Unverträglichkeit"
   * coding MS
     * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "$this"
+    * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
   * coding contains
       snomed-ct 1..1 MS and
       ask 0..1 MS and
       atc 0..1 MS
   * coding[snomed-ct] MS
-    * system MS
-    * system = "http://snomed.info/sct" (exactly)
-    * code MS
-    * display MS
+  * coding[snomed-ct] only ISiKSnomedCTCoding
   * coding[ask] MS
   * coding[ask] only CodingASK
     * system MS
@@ -49,7 +46,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
 * patient MS
   * ^short = "Patient (Referenz)"
 * encounter MS
-  * ^short = "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt!)"
+  * ^short = "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt)"
 * onset[x] MS
   * ^short = "Beginn-Zeitpunkt"
 * onsetDateTime MS
@@ -79,14 +76,12 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
     * ^short = "Manifestation der Reaktion"
     * coding MS
       * ^slicing.discriminator.type = #pattern
-      * ^slicing.discriminator.path = "$this"
+      * ^slicing.discriminator.path = "system"
       * ^slicing.rules = #open
     * coding contains
         snomed-ct 0..1 MS
     * coding[snomed-ct] MS
-      * system MS
-      * system = "http://snomed.info/sct" (exactly)
-      * code MS
+    * coding[snomed-ct] only ISiKSnomedCTCoding
     * text MS
   * severity MS
     * ^short = "Schweregrad der Reaktion"
@@ -94,14 +89,12 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
     * ^short = "Expositionsweg"
     * coding MS
       * ^slicing.discriminator.type = #pattern
-      * ^slicing.discriminator.path = "$this"
+      * ^slicing.discriminator.path = "system"
       * ^slicing.rules = #open
     * coding contains
         snomed-ct 0..1 MS
     * coding[snomed-ct] MS
-      * system MS
-      * system = "http://snomed.info/sct" (exactly)
-      * code MS
+    * coding[snomed-ct] only ISiKSnomedCTCoding
     * text MS
 
 Instance: ISiKAllergieUnvertraeglichkeitBeispiel1

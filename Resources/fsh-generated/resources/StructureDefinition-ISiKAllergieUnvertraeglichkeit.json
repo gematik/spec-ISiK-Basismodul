@@ -2,31 +2,14 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAllergieUnvertraeglichkeit",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
-  "version": "4.0.0-rc",
+  "version": "4.0.0-rc2",
   "name": "ISiKAllergieUnvertraeglichkeit",
   "status": "draft",
   "experimental": false,
-  "date": "2024-01-16",
+  "date": "2024-04-04",
   "publisher": "gematik GmbH",
   "description": "Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    },
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "AllergyIntolerance",
@@ -116,7 +99,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -130,22 +113,14 @@
         "sliceName": "snomed-ct",
         "min": 1,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.code.coding.system",
-        "fixedUri": "http://snomed.info/sct",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.code.coding.code",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:snomed-ct.display",
-        "path": "AllergyIntolerance.code.coding.display",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -229,7 +204,7 @@
       {
         "id": "AllergyIntolerance.encounter",
         "path": "AllergyIntolerance.encounter",
-        "short": "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt!)",
+        "short": "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt)",
         "mustSupport": true
       },
       {
@@ -385,7 +360,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -398,17 +373,14 @@
         "sliceName": "snomed-ct",
         "min": 0,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.reaction.manifestation.coding.system",
-        "fixedUri": "http://snomed.info/sct",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.reaction.manifestation.coding.code",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -435,7 +407,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "system"
             }
           ],
           "rules": "open"
@@ -448,17 +420,14 @@
         "sliceName": "snomed-ct",
         "min": 0,
         "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.exposureRoute.coding:snomed-ct.system",
-        "path": "AllergyIntolerance.reaction.exposureRoute.coding.system",
-        "fixedUri": "http://snomed.info/sct",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.reaction.exposureRoute.coding:snomed-ct.code",
-        "path": "AllergyIntolerance.reaction.exposureRoute.coding.code",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

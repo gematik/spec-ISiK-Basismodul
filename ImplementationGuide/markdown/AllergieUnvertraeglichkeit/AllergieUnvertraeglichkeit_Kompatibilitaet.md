@@ -7,4 +7,5 @@ Für das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit fol
 * [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
+
 ---

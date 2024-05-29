@@ -7,6 +7,15 @@ Description: "Basisprofil für ISiKLebensZustand Observation"
 * status MS
 * category MS
 * code MS
+  * coding 1.. MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "system"
+    * ^slicing.rules = #open
+  * coding contains
+      snomed-ct 0..* MS and
+      loinc 0..* MS
+  * coding[snomed-ct] only ISiKSnomedCTCoding
+  * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
   * reference 1.. MS
 * effective[x] 1..1 MS
@@ -33,10 +42,13 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
+* code = $loinc#82810-3 "Pregnancy status"
+  * coding.version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA15173-0 "Pregnant"
+  * coding.version = "2.77"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
 
@@ -53,7 +65,8 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* code.coding[loinc] = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+  * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
@@ -75,6 +88,7 @@ InstanceOf: ISiKAlkoholAbusus
 Usage: #example
 Title: "ISiKAlkoholAbususBeispiel"
 * code = $sct#15167005 "Schädlicher Gebrauch von Alkohol"
+  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
@@ -96,6 +110,7 @@ InstanceOf: ISiKRaucherStatus
 Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
 * code = $sct#77176002 "Smoker"
+  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
@@ -118,6 +133,7 @@ Usage: #example
 Title: "ISiKStillstatusBeispiel"
 Description: "ISiKStillstatusBeispiel"
 * code = $sct#1260078007 "Maternal breastfeeding"
+  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"

@@ -2,36 +2,14 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKOrganisation",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation",
-  "version": "4.0.0-rc",
+  "version": "4.0.0-rc2",
   "name": "ISiKOrganisation",
   "status": "draft",
   "experimental": false,
-  "date": "2024-01-16",
+  "date": "2024-04-04",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien.",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "servd",
-      "uri": "http://www.omg.org/spec/ServD/1.0/",
-      "name": "ServD"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Organization",
@@ -63,6 +41,7 @@
         "id": "Organization.identifier:IKNR",
         "path": "Organization.identifier",
         "sliceName": "IKNR",
+        "comment": "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. ",
         "min": 0,
         "max": "1",
         "type": [
@@ -73,17 +52,16 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "system": "http://fhir.de/sid/arge-ik/iknr"
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:IKNR.type",
-        "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
       },
       {
         "id": "Organization.identifier:BSNR",
         "path": "Organization.identifier",
         "sliceName": "BSNR",
+        "comment": "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist.",
         "min": 0,
         "max": "1",
         "type": [
@@ -94,25 +72,33 @@
             ]
           }
         ],
+        "patternIdentifier": {
+          "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
+        },
         "mustSupport": true
-      },
-      {
-        "id": "Organization.identifier:BSNR.type",
-        "path": "Organization.identifier.type",
-        "comment": "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
       },
       {
         "id": "Organization.identifier:OrganisationseinheitenID",
         "path": "Organization.identifier",
         "sliceName": "OrganisationseinheitenID",
+        "comment": "Motivation: Für IDs, die Krankhausintern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein.",
         "min": 0,
         "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "43741000",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        },
         "mustSupport": true
       },
       {
         "id": "Organization.identifier:OrganisationseinheitenID.system",
         "path": "Organization.identifier.system",
-        "comment": "Motivation: Für IDs, die Krankhausintern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein.",
         "min": 1,
         "mustSupport": true
       },
@@ -152,7 +138,7 @@
         "max": "1",
         "mustSupport": true,
         "binding": {
-          "strength": "extensible",
+          "strength": "required",
           "valueSet": "http://terminology.hl7.org/CodeSystem/organization-type"
         }
       },
