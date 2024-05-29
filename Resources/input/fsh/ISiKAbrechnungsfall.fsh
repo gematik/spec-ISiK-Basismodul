@@ -27,7 +27,7 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
   * priority MS
     * ^comment = "Motivation: Wenn ein Primärsystem mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. 
     
-    Dies SOLL über dieses Element abgebildet werden. Wobei der Hauptkostenträger mit '1' auszuweisen ist und alle anderen mit '2'."
+Diskussionstand der ISIK-Arbeitsgruppe vom 28.5.: Die Abbildung über einen Integer ist wünschenswert. Eine binäre Einteilung in Hauptkostenträger (1) und alle anderen (2) wird der Komplexität der Priorisierung zur Kostenträgerschaft nicht gerecht. Eine Ausdifferenzierung ist wünschenswert und sollte angestrebt werden."
   * extension 1..1 MS
   * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsart named Abrechnungsart 1..1 MS
   * coverage MS
