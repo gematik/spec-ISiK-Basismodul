@@ -1,11 +1,11 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/main-isik-stufe-3/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 4.0.0-rc
+Version: 4.0.0-rc2
 
-Datum: 16.01.2024
+Datum: 04.04.2024
 
-Status: Draft
+Status: Draft (Kommentierung)
 
 Realm: Deutschland
 

@@ -28,7 +28,7 @@
 
 **Bedeutung:** Vollständiger Name
 
-**Hinweise:** Wenn kein Name vorliegt, SOLLTE die [data-absent-reasons](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html)-Extension eingesetzt werden. Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Name)
+**Hinweise:** Wenn kein Name vorliegt, SOLLTE die [data-absent-reason](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html)-Extension eingesetzt werden. Siehe [Beschreibung der Deutschen Basisprofile](https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-Patient.html#Ressourcen-Patient-Name)
 
 ### `Patient.name:geburtsname` 
 
@@ -62,6 +62,6 @@
 
 ### Stornierung von Patienten
 
-Im Rahmen des ISiK Basismoduls SOLLTE die Stornierung eines Patienten entweder durch das Löschen der Patienten-Ressource oder der Verwendung des Feldes `Patient.active` abgebildet werden. Dies ist abhängig davon, wie die Stornierung im bestätigungsrelevanten System umgesetzt ist. Im letzteren Fall wird die Stornierung durch das Setzen von `Patient.active` auf `false` gekennzeichnet.
+Im Rahmen des ISiK Basismoduls SOLL die Stornierung eines Patienten entweder durch das Löschen der Patienten-Ressource oder der Verwendung des Feldes `Patient.active` abgebildet werden. Dies ist abhängig davon, wie die Stornierung im bestätigungsrelevanten System umgesetzt ist. Im letzteren Fall wird die Stornierung durch das Setzen von `Patient.active` auf `false` gekennzeichnet.
 
 ---

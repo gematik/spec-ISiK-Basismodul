@@ -26,7 +26,7 @@
 
 ### `Subscription.endpoint`
 
-**Bedeutung:** Adresse des Kommunikationskanals/ Endpunkts an den Subscription-Benachrichtigungen gesendet werden sollen. Dies ist nur für rest-hook Subscriptions relevant.
+**Bedeutung:** Adresse des Kommunikationskanals/ Endpunkts, an den Subscription-Benachrichtigungen gesendet werden sollen. Dies ist nur für rest-hook Subscriptions relevant.
 
 **Hinweise:** Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)
 
@@ -38,7 +38,7 @@
 
 ### `Subscription.payload.extension[content]`
 
-**Bedeutung:** Welcher Ressourceninhalt in der Nutzlast der Benachrichtigung geliefert werden soll. Zur Auswahl stehen eine leere Nutzlast (`empty`), nur die Ressourcenid (`id-only`) oder der gesamte Inhalt der Ressource (`full-resource`).
+**Bedeutung:** Welcher Ressourceninhalt in der Nutzlast der Benachrichtigung geliefert werden soll. Zur Auswahl stehen eine leere Nutzlast (`empty`), nur die Ressourcen-id (`id-only`) oder der gesamte Inhalt der Ressource (`full-resource`).
 
 **Hinweise:** Siehe [Extension: Backport R5 Subscription Payload Content Information](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-payload-content.html)
 

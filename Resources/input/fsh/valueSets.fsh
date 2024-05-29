@@ -31,7 +31,6 @@ Id: ISiKLocationPhysicalType
 * LocationType#ro "Room"
 * LocationType#wa "Ward"
 
-
 ValueSet: ISiKAccountType
 Id: ISiKAccountType
 Title: "ISiKAccountType"
@@ -54,3 +53,27 @@ Title: "Schwangerschaft Erwarteter Entbindungstermin Methode"
 * $loinc#11778-8 "Delivery date Estimated"
 * $loinc#11779-6 "Delivery date Estimated from last menstrual period"
 * $loinc#11780-4 "Delivery date Estimated from ovulation date"
+
+ValueSet: ISiKBesondereBehandlungsformReha
+Id: ISiKBesondereBehandlungsformReha
+Description: "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen."
+* insert Meta
+* include codes from system ISiKBesondereBehandlungsformRehaCS
+
+ValueSet: ISiKBehandlungsergebnisReha
+Id: ISiKBehandlungsergebnisReha
+Description: "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis."
+* insert Meta
+* include codes from system ISiKBehandlungsergebnisRehaCS
+
+ValueSet: ISiKEntlassformReha
+Id: ISiKEntlassformReha
+Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform."
+* insert Meta
+* include codes from system ISiKEntlassformRehaCS
+
+ValueSet: ISiKUnterbrechnungReha
+Id: ISiKUnterbrechnungReha
+Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
+* insert Meta
+* include codes from system ISiKUnterbrechnungRehaCS

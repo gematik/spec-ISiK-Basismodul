@@ -2,47 +2,15 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKLebensZustand",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand",
-  "version": "4.0.0-rc",
+  "version": "4.0.0-rc2",
   "name": "ISiKLebensZustand",
   "title": "ISiKLebensZustand",
   "status": "draft",
   "experimental": false,
-  "date": "2024-01-16",
+  "date": "2024-04-04",
   "publisher": "gematik GmbH",
   "description": "Basisprofil für ISiKLebensZustand Observation",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "workflow",
-      "uri": "http://hl7.org/fhir/workflow",
-      "name": "Workflow Pattern"
-    },
-    {
-      "identity": "sct-concept",
-      "uri": "http://snomed.info/conceptdomain",
-      "name": "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    },
-    {
-      "identity": "sct-attr",
-      "uri": "http://snomed.org/attributebinding",
-      "name": "SNOMED CT Attribute Binding"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -63,6 +31,53 @@
       {
         "id": "Observation.code",
         "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:snomed-ct",
+        "path": "Observation.code.coding",
+        "sliceName": "snomed-ct",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKLoincCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
