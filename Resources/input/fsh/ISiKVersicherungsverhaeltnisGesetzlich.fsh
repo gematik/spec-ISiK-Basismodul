@@ -16,6 +16,8 @@ Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versi
 * subscriber MS
 * subscriber only Reference(RelatedPerson)
   * ^definition = "Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung"
+  * reference MS
+    * ^comment = "Motivation für MS: Da ein ISIK-Profil besteht, sollte dies ggf. referenziert werden."
   * identifier 1.. MS // Das MS Flag dient der Übernahme von 'identifier' aus der Patienten-Instanz.
   * identifier only IdentifierKvid10
     * ^short = "VersichertenID (10-stellig) des Hauptversicherten"
