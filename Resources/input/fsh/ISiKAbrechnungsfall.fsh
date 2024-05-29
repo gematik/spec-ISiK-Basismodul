@@ -25,7 +25,7 @@ Description: "Dieses Profil beschreibt die Gruppierung von medizinischen Leistun
 * subject 1..1 MS
 * coverage MS
   * priority MS
-    * ^comment = "Motivation: Wenn ein Primärsystem mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. 
+    * ^comment = "Motivation des MS: Wenn ein Primärsystem mehrere Kostenträger angibt, sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. 
     
 Diskussionstand der ISIK-Arbeitsgruppe vom 28.5.: Die Abbildung über einen Integer ist wünschenswert. Eine binäre Einteilung in Hauptkostenträger (1) und alle anderen (2) wird der Komplexität der Priorisierung zur Kostenträgerschaft nicht gerecht. Eine Ausdifferenzierung ist wünschenswert und sollte angestrebt werden."
   * extension 1..1 MS
