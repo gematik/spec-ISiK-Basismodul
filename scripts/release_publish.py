@@ -29,8 +29,10 @@ def get_new_release_version_from_branch_name() -> str:
 
 
 def modify_TC_branch_name_to_version(git_branch): 
-    version = git_branch.lstrip('TC-')
-    version = git_branch.lstrip('TC_')
+    if git_branch.startswith('TC-'):
+        version = git_branch.lstrip('TC-')
+    elif git_branch.startswith('TC_'):
+        version = git_branch.lstrip('TC_')
     return version
 
 def create_files_to_update_list(config):
