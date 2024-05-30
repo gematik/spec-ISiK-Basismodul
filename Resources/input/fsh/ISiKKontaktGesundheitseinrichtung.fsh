@@ -90,8 +90,10 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
 * location MS
   * physicalType from ISiKLocationPhysicalType (extensible)
-* location ^slicing.discriminator.type = #pattern
-* location ^slicing.discriminator.path = "$this"
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "physicalType"
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "status"
 * location ^slicing.rules = #open
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
