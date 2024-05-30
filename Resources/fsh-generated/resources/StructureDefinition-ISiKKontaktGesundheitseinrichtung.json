@@ -552,7 +552,11 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "$this"
+              "path": "physicalType"
+            },
+            {
+              "type": "pattern",
+              "path": "status"
             }
           ],
           "rules": "open"
@@ -600,6 +604,7 @@
       {
         "id": "Encounter.location:Zimmer.status",
         "path": "Encounter.location.status",
+        "min": 1,
         "patternCode": "active",
         "mustSupport": true
       },
@@ -651,6 +656,7 @@
       {
         "id": "Encounter.location:Bettenstellplatz.status",
         "path": "Encounter.location.status",
+        "min": 1,
         "patternCode": "active",
         "mustSupport": true
       },
@@ -702,6 +708,7 @@
       {
         "id": "Encounter.location:Station.status",
         "path": "Encounter.location.status",
+        "min": 1,
         "patternCode": "active",
         "mustSupport": true
       },
