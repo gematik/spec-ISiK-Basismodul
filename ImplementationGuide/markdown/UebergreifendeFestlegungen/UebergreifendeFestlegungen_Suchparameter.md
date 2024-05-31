@@ -1,8 +1,9 @@
 ## Allgemeine Hinweise zu Suchparametern
+Originäre ISIK Use Cases sind versorgungsorientiert und gehen daher in der Regel von einem bekannten Patienten oder ISiKKontaktGesundheitseinrichtung (Encounter) aus. Insofern sind die Ressourcen-Typen zentral zur Formulierung von Suchabfragen. Eine grundsätzliche Design-Entscheidung diesbezüglich geht davon aus, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sein sollen.
 
 Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
-Es MUSS sichergestellt werden, dass nicht unterstützte oder leere Suchparameter **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/R4/search.html#errors). Alle unterstützten und verwendeten Suchparameter sind im Self-Link des Suchbundles korrekt anzugeben.
+Es MUSS sichergestellt werden, dass nicht unterstützte oder leere Suchparameter **nicht** zu einem Fehler führen. Siehe [FHIR RESTful Search - Handling Errors](https://www.hl7.org/fhir/R4/search.html#errors). Alle unterstützten und verwendeten Suchparameter sind im Self-Link des Such-Bundles korrekt anzugeben.
 
 Alle Suchparameter in FHIR entsprechen einem von neun definierten [Such-Parameter-Typen](https://hl7.org/fhir/R4/search.html):
 
@@ -22,7 +23,7 @@ Für die im Rahmen dieses Leitfadens relevanten Typen gelten folgende allgemeine
 
 ### Date/DateTime
 
-Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` MÜSSEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
+Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` KÖNNEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
 
 **Beispiele**:
 
@@ -34,9 +35,11 @@ Suche nach allen Patienten mit einem Geburtsdatum von 2000-01-01T00:00 bis (aber
 
 Es ist zu beachten, dass jedes Datum einen impliziten Werte-Bereich besitzt. Siehe https://hl7.org/fhir/R4/search.html#date.
 
+Im Kontext der Beispielsuchanfrage sollte beachtet werden, dass hiermit potentiell große Datenmengen übermittelt werden können. Solche und vergleichbare Massenabfragen auf eine Patientengruppe werden im Bestätigungsverfahren nicht getestet.
+
 ### String
 
-Der Modifier `:contains` MUSS für alle spezifizierten Suchparameter vom Typ 'String' unterstützt werden.
+Der Modifier `:contains` KANN für alle spezifizierten Suchparameter vom Typ 'String' unterstützt werden.
 
 **Beispiele**:
 
@@ -45,9 +48,9 @@ Diese Suchanfrage gibt alle Patienten zurück zum Client, welche in einem Adress
 
 ### Token
 
-Der Modifier `:not` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
+Der Modifier `:not` KANN für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
 
-Der Modifier `:text` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "Coding" oder "CodeableConcept" verwendet werden.
+Der Modifier `:text` KANN für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "Coding" oder "CodeableConcept" verwendet werden.
 
 **Beispiele**:
 
@@ -59,9 +62,9 @@ Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb 
 
 ### Reference
 
-Der Modifier `:identifier` MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+Der Modifier `:identifier` KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
-Der [type] Modifier MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+Der [type] KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
 **Beispiele**:
 
@@ -73,7 +76,7 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend implementiert werden. Chaining und Reverse Chaining MUSS für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
+Für Suchparameter vom Typ 'Reference' KÖNNEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden. Chaining und Reverse Chaining KANN für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
 
 **Beispiele**:
 
