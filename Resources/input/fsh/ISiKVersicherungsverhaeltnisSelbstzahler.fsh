@@ -7,6 +7,8 @@ Description: "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK."
 * type MS
 * subscriber MS
   * display 1.. MS
+  * reference MS
+    * ^comment = "Motivation für MS: Da ein ISIK-Profil besteht, sollte dies ggf. referenziert werden."
 * beneficiary only Reference(Patient)
 * beneficiary MS
   * reference 1.. MS
