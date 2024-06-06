@@ -1,7 +1,7 @@
 ### Verkettete Suchparameter (Chaining und Reverse Chaining)
 
 Für Suchparameter vom Typ 'Reference' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend implementiert werden. 
-Für das vorliegende Profil betrifft das das Elemente:
+Für das vorliegende Profil betrifft dies das Element:
 * .patient
 
 Chaining und Reverse Chaining KANN für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
