@@ -24,6 +24,6 @@ Die verketteten Suchparameter des Profils ```AllergyIntolerance``` hängen wie f
 
 1. Der verkette Suchparameter ```AllergyIntolerance:encounter``` unterstützt den Anwendungsfall:
 
-    Um einem Kontakt eindeutig als Ursprung einer {{pagelink:ImplementationGuide/markdown/UseCasesAnwendung/UseCases.md, text:Allergie-Diagnose}} zuordnen zu können.
+    Um einen Kontakt eindeutig als Ursprung einer {{pagelink:ImplementationGuide/markdown/UseCasesAnwendung/UseCases.md, text:Allergie-Diagnose}} zuordnen zu können.
 
 ---
