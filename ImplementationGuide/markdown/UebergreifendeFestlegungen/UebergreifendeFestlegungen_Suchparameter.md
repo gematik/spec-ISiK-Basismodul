@@ -23,7 +23,13 @@ Für die im Rahmen dieses Leitfadens relevanten Typen gelten folgende allgemeine
 
 ### Date/DateTime
 
-Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` KÖNNEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
+Die Präfixe `lt`,`gt`, MÜSSEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
+
+Begründung: Die Funktionalität datums-eingeschränkt suchen zu können ist essentiell.
+Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgegen, da sich sonst Suchen zwangsläufig über den gesamten Zeitraum erstrecken würden.
+
+ Die Präfixe `le`,`ge`,`eq` KÖNNEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
+
 
 **Beispiele**:
 
@@ -39,7 +45,7 @@ Im Kontext der Beispielsuchanfrage sollte beachtet werden, dass hiermit potentie
 
 ### String
 
-Der Modifier `:contains` KANN für alle spezifizierten Suchparameter vom Typ 'String' unterstützt werden.
+Der Modifier `:contains` MUSS für alle spezifizierten Suchparameter vom Typ 'String' unterstützt werden.
 
 **Beispiele**:
 
@@ -64,7 +70,13 @@ Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb 
 
 Der Modifier `:identifier` KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
-Der [type] KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+Der Modifier :identifier MUSS implementiert werden, wenn die entsprechende Reference eine 1..1-Kardinalität auf Reference.identifier hat
+
+Dies gilt insbesondere für für Encounter.account - also die Referenz zwischen ISiKKontaktGesundheitseinrichtung und ISiKAbrechnungsfall. Encounter MÜSSEN anhand der Fallnummer gesucht werden können, ohne dass Clients Zugriffsberechtigungen auf Accounts haben müssen, bzw. ohne dass Account zwingend implementiert/referenziert werden muss. Der Suchabruf erfolgt entsprechend dann nur über die Logische Referenz.
+
+Der [type] MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
+
+Begründung: Die Unterstützung des Suchparameters ist essentiell für Abfragen mit [Chaining](https://build.fhir.org/search.html#chaining). Dies ermöglicht z.B. einem Client Diagnosen eines spezifischen Patienten abzurufen.
 
 **Beispiele**:
 
