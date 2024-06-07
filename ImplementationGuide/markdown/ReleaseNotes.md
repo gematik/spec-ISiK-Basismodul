@@ -13,6 +13,7 @@ Datum: tbd.
 * Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408
 * Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399
 * Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung
+* Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Basismodul/pull/413
 
 ----
 
