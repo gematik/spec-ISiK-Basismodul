@@ -3,7 +3,6 @@ Parent: Organization
 Id: ISiKOrganisationFachabteilung
 Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses."
 * insert Meta
-* id MS
 * identifier 1..* MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -114,7 +113,6 @@ Parent: Organization
 Id: ISiKOrganisation
 Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien."
 * insert Meta
-* id MS
 * identifier 1..* MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
