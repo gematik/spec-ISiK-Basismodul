@@ -19,26 +19,35 @@
   "differential": {
     "element": [
       {
-        "id": "Observation.code",
-        "path": "Observation.code",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "1260078007",
-              "system": "http://snomed.info/sct"
-            }
-          ]
+        "id": "Observation.code.coding:snomed-ct",
+        "path": "Observation.code.coding",
+        "sliceName": "snomed-ct",
+        "patternCoding": {
+          "code": "413712001",
+          "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "patternCoding": {
+          "code": "63895-7",
+          "system": "http://loinc.org"
         }
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "min": 1,
         "type": [
           {
-            "code": "boolean"
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/StillstatusVS"
+        }
       }
     ]
   }
