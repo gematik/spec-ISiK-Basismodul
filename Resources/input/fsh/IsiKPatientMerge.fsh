@@ -71,8 +71,8 @@ Usage: #example
 * gender = #female
 * birthDate = "1964-08-12"
 
-/*
-This ressource should not be continously generated, since assigning identical IDs is a problem.
+
+/*This ressource should not be continously generated, since assigning identical IDs is a problem.
 ID was changed directly in JSON in order to be conformant to merge-behaviour as requested in FHIR R5 $merge.
 Instance: DorisResultat
 InstanceOf: ISiKPatient
@@ -92,7 +92,7 @@ Usage: #example
     * system = "https://fhir.krankenhaus.example/sid/PID"
     * value = "654321"
   * type = #replaces
-*/
+*/ 
 
 Instance: SubscriptionNotificationBundleExample
 InstanceOf: Bundle
