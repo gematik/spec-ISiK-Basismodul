@@ -51,6 +51,14 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * ^sliceName = "onsetDateTime"
 * recordedDate 1.. MS
 * note MS
+* bodySite MS
+* bodySite.coding MS
+* bodySite.coding ^slicing.discriminator.type = #pattern
+* bodySite.coding ^slicing.discriminator.path = "system"
+* bodySite.coding ^slicing.rules = #open
+* bodySite.coding contains
+    snomed-ct 0..1 MS
+* bodySite.coding[snomed-ct] only ISiKSnomedCTCoding
 
 Instance: Example-condition-ausrufezeichen-primaer
 InstanceOf: ISiKDiagnose
@@ -106,6 +114,8 @@ Usage: #example
 * encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
+* bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
 
 Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose

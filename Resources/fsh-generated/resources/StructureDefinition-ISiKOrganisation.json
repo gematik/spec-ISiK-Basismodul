@@ -104,6 +104,26 @@
         "mustSupport": true
       },
       {
+        "id": "Organization.identifier:TelematikID",
+        "path": "Organization.identifier",
+        "sliceName": "TelematikID",
+        "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-telematik-id"
+            ]
+          }
+        ],
+        "patternIdentifier": {
+          "system": "https://gematik.de/fhir/sid/telematik-id"
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Organization.active",
         "path": "Organization.active",
         "comment": "Motivation: Ein System muss prüfen können, ob eine Organisation aktiv ist oder nicht, sofern diese Information verfügbar ist.",
