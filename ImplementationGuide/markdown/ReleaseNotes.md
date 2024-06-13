@@ -14,6 +14,7 @@ Datum: tbd.
 * Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399
 * Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung
 * Entfernen der MS-Flag für .id, da irreführend https://github.com/gematik/spec-ISiK-Basismodul/pull/414
+* Fix Beispiel DorisResultat für patient-merge https://github.com/gematik/spec-ISiK-Basismodul/pull/415
 * ISiKAngehoeriger: hinzufügen von MS auf .relation & .telecom, entfernen der gender extension
 * ISiKDiagnose: hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung
 * ISiKOrganisation: identifier:TelematikId hinzugefügt
