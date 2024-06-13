@@ -24,14 +24,6 @@ Description: "Data Type profile for LOINC Codings in ISiK"
 * system = $loinc
 * version MS
 
-Profile: ISiKWG14Coding
-Parent: ISiKCoding
-Id: ISiKWG14Coding
-Title: "ISiKWG14Coding"
-Description: "Data Type profile for WG14 Codings in ISiK"
-* system = $cs-wg14
-
-
 // Profile die von den dt. Basisprofilen erben
 //
 
