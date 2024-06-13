@@ -31,6 +31,16 @@ Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes er
 
 **Bedeutung:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
 
+### `Procedure.encounter`
+
+**Bedeutung:** Der Fallbezug einer Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.
+
+**Hinweise:**
+
+Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLL auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen. 
+Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen mit identischen Aufnahmenummer-Identifiern existieren können (Abbildung Vor- und nachstationäre Kontakte).
+
+
 ### `Procedure.note`
 
 **Bedeutung:** Weitere optionale Freitext-Notizen bezogen auf die durchgeführte Prozedur.
