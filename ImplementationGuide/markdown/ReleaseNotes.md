@@ -15,9 +15,10 @@ Datum: tbd.
 * Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung
 * Entfernen der MS-Flag für .id, da irreführend https://github.com/gematik/spec-ISiK-Basismodul/pull/414
 * Fix Beispiel DorisResultat für patient-merge https://github.com/gematik/spec-ISiK-Basismodul/pull/415
-* ISiKAngehoeriger: hinzufügen von MS auf .relation & .telecom, entfernen der gender extension
-* ISiKDiagnose: hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung
-* ISiKOrganisation: identifier:TelematikId hinzugefügt
+* SnomedCT Coding.version muss auf die German Edition zeigen https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKAngehoeriger: hinzufügen von MS auf .relation & .telecom, entfernen der gender extension https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKDiagnose: hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKOrganisation: identifier:TelematikId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/417
 
 ----
 
