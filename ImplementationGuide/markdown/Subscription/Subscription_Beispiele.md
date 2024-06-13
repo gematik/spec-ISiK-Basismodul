@@ -9,17 +9,7 @@
 {{json:SubscriptionNotificationBundleExample}}
 
 #### Patientenobjekte
-"Quell" Patienten-Ressource:  
-{{json:DorisQuelle}}
 
-und
-
-"Ziel" Patienten-Ressource:  
-{{json:DorisZiel}}
-
-Mittels eines Patient-merge-Vorgangs wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert:
-
-Resultierende Patientin:
-{{json:DorisResultat}}
+Zum Beispiel für den Merge auf Ebene der Patient-Instanzen siehe {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Patient-merge.md, text:Übergreifende Festlegungen Patient-merge}}
 
 ---
