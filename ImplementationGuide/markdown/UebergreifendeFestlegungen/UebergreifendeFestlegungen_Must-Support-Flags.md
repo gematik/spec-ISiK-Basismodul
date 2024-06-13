@@ -1,18 +1,31 @@
 ## Must-Support-Flags
 
-Die Verwendung des [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
+Das [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der profile -, als auch für die Verarbeitung - d.h. den Umgang beim Ausgang von extern - greifen die MS-Flag Festlegungen. 
+Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
 
 1. Im Kontext der Erstellung von FHIR-Ressourcen:
 
-    Wenn die entsprechende Information im erstellendem System bekannt ist, dann MUSS das Feld in der erstellten Ressource gefüllt sein. Ist die Information nicht bekannt, KANN es leer bleiben.
-    Im Einzelfall können MS-Flags auf Element-Ebene spezifischer ausgestaltet werden (siehe Feld 'comment'), um besonderen kontextuellen Anforderungen gerecht zu werden.
+    Elemente, die mit MS gekennzeichnet sind, MÜSSEN vom erstellenden System implementiert werden. Dies bedeutet:
+    - Systeme MÜSSEN die entsprechenden Elemente in der eigenen Persistenz-Ebene vorhalten können. 
+    - Systeme MÜSSEN die entsprechenden Elemente in den entsprechenden Profil-Instanzen bei Abfrage über eine FHIR-Schnittstelle befüllen und ausgeben können.
+    - Systeme MÜSSEN die entsprechenden Elemente zur Anzeige bringen können (ausgenommen davon sind Systeme mit reiner Middleware-Funktion, die über keine grafische Nutzeroberfläche verfügen).
+    -  MS-Elemente, die als optional gekennzeichnet sind (0..-Kardinalität) KÖNNEN bei der Erstellung einer FHIR-Instanz fehlen, wenn die entsprechende Information im Einzelfall unbekannt, nicht zutreffend ist oder (noch) nicht erhoben wurde.
+    - Wenn MS-Elemente fehlen, SOLLEN Systeme über den Grund des Fehlens Informationen bereitstellen.
 
-    Weitere Hinweise zu Testszenarien im Rahmen des Bestätigungsverfahrens: 
-    - Mit MS-Flag gekennzeichnete Elemente, die einem System nicht bekannt sind, können dennoch eine Implementierung erfordern, sofern die Information in einer Testvorbedingung übergeben wird.
-    - Eine [Data Absent Reason](https://hl7.org/fhir/r4/extension-data-absent-reason.html) KANN verwendet werden, um im Testfall nicht zwingend geforderte Informationen als fehlend zu kennzeichnen 
+    Eine **Ausnahme** stellen implizit vorhandene Informationen dar, die nicht aus der Persistenz-Ebene sondern nur aus dem Kontext des erstellenden Systems entnommen werden können. Beispiel: In einem System werden stets nur Informationen aktiver Patienten vorgehalten (inaktive Patienten werden verschoben/archiviert/gelöscht). Der Status eines Patienten wird daher nicht explizit angezeigt und in der Persistenz-Ebene gespeichert, sondern ergibt sich allein aus der Existenz des Datensatzes in diesem System. In solchen Fällen gilt:
+    - Bei lediglich implizit vorhandenen Informationen KANN der Inhalt eines MS-Elementes in der Schnittstelle hartkodiert werden (sofern gesichert ist, dass der entsprechende Wert des Elementes ausnahmslos auf alle Instanzen zutrifft, die dieses System erstellt).
+
+    Insbesondere für solche implizit vorhandene Informationen, können in den Profilen auf der Ebene einzelner, mit MS-Flag versehener Elemente konkretere Hinweise zur Implementierung enthalten sein, die die übergreifende Definition zu Must-Support für den Einzelfall konkretisieren (zum Beispiel zur Klarstellung wo und unter welchen Umständen hartkodierte Werte erlaubt sind).
+
+    Hinweis: Bei den Testszenarien von READ-Interaktionen im Rahmen des Bestätigungsverfahrens werden für MS-Elemente Informationen vorgegeben, die in den Systemen erfasst und über die FHIR-Schnittstelle reproduziert werden MÜSSEN, unabhängig von der angegebenen Kardinalität.
 
 2. Im Kontext der Verarbeitung von FHIR-Ressourcen:
 
-    Wenn die entsprechende Information in einer Ressource vorhanden ist, so MUSS diese vom verarbeitenden System ausgewertet, persistiert und dem Anwender dargestellt werden können. Bei schreibenden Operationen (create, update) KANN ein Server nicht medizinisch-fachliche Inhalte (z.B. Metadaten) ändern, sofern dies keine Auswirkungen auf die fachlichen Informationen hat.
+    Elemente, die mit MS gekennzeichnet sind, MÜSSEN vom empfangenden System verarbeitet werden. Dies bedeutet:
+    - Das System MUSS zumindest in der Lage sein, diese Elemente in der eigenen Persistenz-Ebene zu speichern
+    - Das System MUSS bei einer erneuten Abfrage der Information über die FHIR-Schnittstelle in der Lage sein diese Information zu reproduzieren (dies ggf. hinreichend bei Middleware)
+    - Systeme MÜSSEN die entsprechenden Elemente zur Anzeige bringen können (ausgenommen davon sind Systeme mit reiner Middleware-Funktion, die über keine grafische Nutzeroberfläche verfügen).
+    - Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden. 
+    - MS-Elemente, die als optional gekennzeichnet sind (0..-Kardinalität) KÖNNEN bei der Übermittlung einer Instanz fehlen, wenn die entsprechende Information im sendenden System unbekannt, nicht zutreffend ist oder (noch) nicht erhoben wurde. Das Fehlen optionaler MS-Elemente DARF bei der Verarbeitung NICHT zu einem Fehler führen.
 
-    Sollte ein Hersteller den Bedarf an einer Änderung der Must-Support Vorgaben der ISiK Profile haben, MUSS er von den Profilen ableiten, auf denen die ISiK Profile basieren. Angaben dazu finden sich für jedes Datenobjekt im Kapitel Kompatibilität. In diesem Fall MUSS der Hersteller auch dafür sorgen, dass seine abgeleiteten Profile weiterhin kompatibel mit den ISiK Profilen bleiben.
+    Hinweis: Bei den Testszenarien von WRITE/UPDATE-Interaktionen im Rahmen des Bestätigungsverfahrens werden Instanzen an das zu testende System übermittelt, in denen alle MS-Elemente, unabhängig von Ihrer Kardinalität, gegeben sind. Diese MÜSSEN von den getesteten Systemen in einer anschließenden READ-Interaktion vollständig über die FHIR-Schnittstelle reproduziert werden können.
