@@ -20,7 +20,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
 * address MS
 * address only AddressDeBasis
 * physicalType 1..1 MS //Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
-  * ^comment = "test"
+  * ^comment = "Motivation: Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen."
 * position MS 
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * managingOrganization 1..1 MS //Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
