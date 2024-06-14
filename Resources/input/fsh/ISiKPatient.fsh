@@ -42,8 +42,8 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     * identifier.value MS
     * display MS
 * active MS
-  * ^definition = "Einschränkung der Übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Pateinten-Ressource, so MUSS dieses System die Information NICHT abbilden. Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz (Patient.active auf 'true').
-  
+  * ^definition = "Einschränkung der Übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource, so MUSS dieses System die Information NICHT abbilden. Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz (Patient.active auf 'true').
+
 Hinweis: Im Bestätigungsverfahren wird dieses MS-Element entsprechend nur Optional getestet."
 * name MS
   * ^slicing.discriminator.type = #pattern
