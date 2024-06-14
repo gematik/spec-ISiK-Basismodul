@@ -87,24 +87,15 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' KÖNNEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
+Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend zu implementieren. Dies wird für jedes Datenobjekt separat dokumentiert. 
 
 **Beispiele**:
 
 ``[base]/Procedure?subject.name=Test``
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweist mit dem Namen "Test".
 
-``[base]/Condition?encounter.subject.name=Test``
-Diese Suche gibt alle Diagnosen zurück zum Client, welche eine Encounter Reference besitzen und innerhalb `Encounter.subject` auf einen Patienten verweist mit dem Namen "Test".
-
-``[base]/Patient?_has:Procedure:patient:code=1234-5``
-Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweisen und einen Code mit dem Wert '1234-5' in `Procedure.code` enthalten.
-
-``[base]/Patient?_has:Procedure:patient:encounter.identifier=12345``
-Diese Suche gibt alle Patienten zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweisen und deren Procedure auf einen Encounter verweist z.B. mit der Aufnahmenummer '1234-5'.
-
-``[base]/Procedure?encounter:_has:diagnosis:code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|F16.1``
-Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Encounter.diagnosis.condition` auf einen Encounter verweisen, der wiederrum mit einer Condition verlinkt ist mit dem ICD-10-GM Code 'F16.1'.
+``[base]/Condition?_has:Encounter:encounter:identifier=https://example.org/fhir/sid/aufnahmenummer|1234``
+Diese Suche gibt alle Diagnosen zurück die im Kontext des Konktakts mit der Aufnahmenummer '1234' dokumentiert wurden sind.
 
 ## Verpflichtende Suchparameter (Alle Datenobjekte)
 
