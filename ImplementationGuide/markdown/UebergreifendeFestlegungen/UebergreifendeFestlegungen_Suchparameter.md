@@ -34,15 +34,13 @@ Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgeg
 
 **Beispiele**:
 
-```[base]/Patient?birthDate=ge2000-01-01``` <br>
-Suche nach allen Patienten mit einem Geburtsdatum 2000-01-01T00:00 oder später.
+```[base]/Encounter?date=ge2024-01-01&patient=Patient/Test``` <br>
+Suche nach allen Kontakten mit einem Datum ab 2000-01-01T00:00 oder später im Patientenkontext "Test".
 
-```[base]/Patient?birthDate=eq2000-01-01``` <br>
-Suche nach allen Patienten mit einem Geburtsdatum von 2000-01-01T00:00 bis (aber nicht einschließlich) 2000-02-01T00:00
+```[base]/Condition?recorded-date=eq2024-01-01&patient=Patient/Test``` <br>
+Suche nach allen Diagnosen mit einem Dokumentationsdatum von 2024-01-01T00:00 bis (aber nicht einschließlich) 2024-02-01T00:00 im Patientenkontext "Test".
 
 Es ist zu beachten, dass jedes Datum einen impliziten Werte-Bereich besitzt. Siehe https://hl7.org/fhir/R4/search.html#date.
-
-Im Kontext der Beispielsuchanfrage sollte beachtet werden, dass hiermit potentiell große Datenmengen übermittelt werden können. Solche und vergleichbare Massenabfragen auf eine Patientengruppe werden im Bestätigungsverfahren nicht getestet.
 
 ### String
 
@@ -77,7 +75,7 @@ Dies gilt insbesondere für für Encounter.account - also die Referenz zwischen 
 
 Der [type] MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
-Begründung: Die Unterstützung des Suchparameters ist essentiell für Abfragen mit [Chaining](https://build.fhir.org/search.html#chaining). Dies ermöglicht z.B. einem Client Diagnosen eines spezifischen Patienten abzurufen.
+Begründung: Die Unterstützung dieser Suchparameter-Typen ist essentiell für Abfragen mit [Chaining](https://hl7.org/fhir/r4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/r4/search.html#has). Innerhalb der Spezifikation ist für jedes Datenobjekt spezifiziert weshalb eine solche Abfrage versorgungsrelevant ist.
 
 **Beispiele**:
 
@@ -89,7 +87,7 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' KÖNNEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden. Chaining und Reverse Chaining KANN für alle Suchparameter über alle Ebenen und Datenobjekte hinweg (potentiell in Kombination) unterstützt werden.
+Für Suchparameter vom Typ 'Reference' KÖNNEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
 
 **Beispiele**:
 
@@ -122,11 +120,6 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
 
     - Beispiele: ``GET [base]/Patient?_tag=https://example.org/codes|needs-review``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all) und [FHIR-Basisspezifikation - Abschnitt "Tags"](https://www.hl7.org/fhir/R4/resource.html#simple-tags).
-
-* ``_has``
-
-    - Für Beispiele, siehe oben Abschnitt "Allgemeine Hinweise zu Suchparametern".
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_has" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reverse Chaining"](https://www.hl7.org/fhir/R4/search.html#has).
 
 * ``_count``
 
