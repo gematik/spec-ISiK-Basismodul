@@ -42,7 +42,9 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * postalCode 1.. MS
   * country 1.. MS
 * relationship MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * telecom MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 
 Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger

@@ -199,6 +199,7 @@
       {
         "id": "Condition.bodySite",
         "path": "Condition.bodySite",
+        "comment": "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)",
         "mustSupport": true
       },
       {
@@ -257,7 +258,8 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "ordered": false,
+          "rules": "open"
         },
         "type": [
           {
@@ -311,14 +313,45 @@
         ]
       },
       {
-        "id": "Condition.onset[x]:onsetDateTime",
-        "path": "Condition.onset[x]",
-        "sliceName": "onsetDateTime",
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "comment": "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementAge",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "dateTime"
+            "code": "Age"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+        "path": "Condition.abatement[x].extension",
+        "sliceName": "Lebensphase-Ende",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
           }
         ]
       },

@@ -14,6 +14,7 @@ Description: "Basisprofil für ISiKLebensZustand Observation"
   * coding contains
       snomed-ct 0..* MS and
       loinc 1..* MS
+    * ^comment = "Motivation: Jede Lebenszustanduntersuchung MUSS einen LOINC Code enthalten, SnomedCT ist optional"
   * coding[snomed-ct] only ISiKSnomedCTCoding
   * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
@@ -21,6 +22,7 @@ Description: "Basisprofil für ISiKLebensZustand Observation"
 * effective[x] 1..1 MS
 * effective[x] only dateTime or Period
 * value[x] 1.. MS
+  * ^comment = "Motivation: Ein Lebenszustand benötigt immer einen Wert"
 * encounter MS
 
 
@@ -31,6 +33,7 @@ Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
 * code = $loinc#82810-3
 * valueCodeableConcept 1.. MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * valueCodeableConcept from SchwangerschaftsstatusVS
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
@@ -60,6 +63,7 @@ Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * code from SchwangerschaftEtMethodeVS
 * value[x] only dateTime
 * valueDateTime 1.. MS
+  * ^comment = "Motivation: Eine Observation MUSS immer einen Wert enthalten"
 
 Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin

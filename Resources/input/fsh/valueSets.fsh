@@ -51,8 +51,13 @@ Id: SchwangerschaftEtMethodeVS
 Title: "Schwangerschaft Erwarteter Entbindungstermin Methode"
 * insert Meta
 * $loinc#11778-8 "Delivery date Estimated"
-* $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* $loinc#53692-0 "Delivery date Estimated from conception date"
 * $loinc#11780-4 "Delivery date Estimated from ovulation date"
+* $loinc#57063-0 "Delivery date Estimated from quickening date"
+* $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* $loinc#11781-2 "Delivery date US composite estimate"
+* $loinc#57064-8 "Delivery date Estimated from date fundal height reaches umb"
+* $loinc#90368-2 "Delivery date Estimated from physical exam"
 
 ValueSet: StillstatusVS
 Id: StillstatusVS

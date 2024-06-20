@@ -40,18 +40,17 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * reference 1.. MS
 * encounter MS
 * onset[x] only dateTime or Period
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #closed
-* onsetPeriod only Period
-  * ^sliceName = "onsetPeriod"
+* onsetPeriod 
   * start.extension contains ExtensionLebensphase named Lebensphase-Start 0..1
   * end.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
-* onsetDateTime only dateTime
-  * ^sliceName = "onsetDateTime"
+* abatement[x] MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)"
+* abatementAge  
+  * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
 * recordedDate 1.. MS
 * note MS
 * bodySite MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)"
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern
 * bodySite.coding ^slicing.discriminator.path = "system"
