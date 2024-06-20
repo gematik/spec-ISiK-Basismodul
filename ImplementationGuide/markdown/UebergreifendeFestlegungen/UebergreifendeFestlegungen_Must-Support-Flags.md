@@ -1,6 +1,6 @@
 ## Must-Support-Flags
 
-Das [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der profile -, als auch für die Verarbeitung - d.h. den Umgang beim Ausgang von extern - greifen die MS-Flag Festlegungen. 
+Das [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der Profile -, als auch für die Verarbeitung - d.h. den Umgang beim Ausgang von extern - greifen die MS-Flag Festlegungen. 
 Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
 
 1. Im Kontext der Erstellung von FHIR-Ressourcen:
