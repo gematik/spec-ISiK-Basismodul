@@ -1,6 +1,6 @@
 ## Must-Support-Flags
 
-Das [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der Profile -, als auch für die Verarbeitung - d.h. den Umgang beim Ausgang von extern - greifen die MS-Flag Festlegungen. 
+Das [Must-Support-Flags](https://hl7.org/fhir/R4/profiling.html#mustsupport) (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der Ressource -, als auch für die Verarbeitung - d.h. den Umgang beim Eingang von extern - greifen die MS-Flag Festlegungen. 
 Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:
 
 1. Im Kontext der Erstellung von FHIR-Ressourcen:
@@ -23,8 +23,8 @@ Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens 
 2. Im Kontext der Verarbeitung von FHIR-Ressourcen:
 
     Elemente, die mit MS gekennzeichnet sind, MÜSSEN vom empfangenden System verarbeitet werden. Dies bedeutet:
-    - Das System MUSS zumindest in der Lage sein, diese Elemente in der eigenen Persistenz-Ebene zu speichern
-    - Das System MUSS bei einer erneuten Abfrage der Information über die FHIR-Schnittstelle in der Lage sein diese Information zu reproduzieren (dies ggf. hinreichend bei Middleware)
+    - Das System MUSS in der Lage sein, diese Elemente in der eigenen Persistenz-Ebene zu speichern
+    - Das System MUSS bei einer erneuten Abfrage der Information über die FHIR-Schnittstelle in der Lage sein diese Information zu reproduzieren.
     - Systeme MÜSSEN die entsprechenden Elemente zur Anzeige bringen können (ausgenommen davon sind Systeme mit reiner Middleware-Funktion, die über keine grafische Nutzeroberfläche verfügen).
     - Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden. 
     - MS-Elemente, die als optional gekennzeichnet sind (0..-Kardinalität) KÖNNEN bei der Übermittlung einer Instanz fehlen, wenn die entsprechende Information im sendenden System unbekannt, nicht zutreffend ist oder (noch) nicht erhoben wurde. Das Fehlen optionaler MS-Elemente DARF bei der Verarbeitung NICHT zu einem Fehler führen.
