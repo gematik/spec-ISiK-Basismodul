@@ -60,7 +60,8 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type[Fachrichtung] from $organization_type (required)
   * ^comment = "Das ValueSet dient der Kompatibilität u.a. mit den Profilen des ISiK Moduls Terminplanung (Kalender, Termin und HealthCareService). Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) abgestimmt (Stand:13.6.2024)."
 * name  MS
-  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.."
+  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+
 * alias MS
   * ^comment = "Hinweis: unter Umstaänden können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * telecom MS
