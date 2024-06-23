@@ -73,8 +73,6 @@ Der Modifier :identifier MUSS implementiert werden, wenn die entsprechende Refer
 
 Dies gilt insbesondere für für Encounter.account - also die Referenz zwischen ISiKKontaktGesundheitseinrichtung und ISiKAbrechnungsfall. Encounter MÜSSEN anhand der Fallnummer gesucht werden können, ohne dass Clients Zugriffsberechtigungen auf Accounts haben müssen, bzw. ohne dass Account zwingend implementiert/referenziert werden muss. Der Suchabruf erfolgt entsprechend dann nur über die Logische Referenz.
 
-Der [type] MUSS für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
-
 Begründung: Die Unterstützung dieser Suchparameter-Typen ist essentiell für Abfragen mit [Chaining](https://hl7.org/fhir/r4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/r4/search.html#has). Innerhalb der Spezifikation ist für jedes Datenobjekt spezifiziert weshalb eine solche Abfrage versorgungsrelevant ist.
 
 **Beispiele**:
