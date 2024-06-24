@@ -53,5 +53,6 @@ Alias: $identifier-bsnr-system = https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BS
 Alias: $identifer-TelematikID = http://fhir.de/StructureDefinition/identifier-telematik-id
 Alias: $identifer-TelematikID-system = https://gematik.de/fhir/sid/telematik-id
 Alias: $organization_type = http://terminology.hl7.org/CodeSystem/organization-type
+Alias: $IHEXDSFacilityType = http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode
 Alias: $identifier-standortnummer-dkg = http://fhir.de/StructureDefinition/identifier-standortnummer
 Alias: $identifier-standortnummer-dkg-system = http://fhir.de/sid/dkgev/standortnummer

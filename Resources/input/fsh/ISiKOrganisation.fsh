@@ -158,6 +158,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type ^slicing.ordered = false
 * type contains
   organisationstyp 0..1 MS and
+  EinrichtungsArt 0..1 and
   ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_type (required)
 * type[organisationstyp].coding.system 1.. MS
@@ -165,6 +166,9 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
+* type[organisationstyp] from $IHEXDSFacilityType (required)
+* type[organisationstyp].coding.system 1.. MS
+* type[organisationstyp].coding.code 1.. MS
 * name  MS
   * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.."
 * alias MS
