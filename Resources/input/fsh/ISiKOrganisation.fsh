@@ -57,7 +57,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * ^comment = "  Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
-* type[Fachrichtung] from $organization_type (required)
+* type[Fachrichtung] from $IHEpracticeSettingVS (required)
   * ^comment = "Das ValueSet dient der Kompatibilität u.a. mit den Profilen des ISiK Moduls Terminplanung (Kalender, Termin und HealthCareService). Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) abgestimmt (Stand:13.6.2024)."
 * name  MS
   * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."

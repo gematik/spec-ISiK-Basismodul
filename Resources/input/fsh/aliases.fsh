@@ -43,6 +43,8 @@ Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+Alias: $IHEpracticeSettingVS = http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode 
+Alias: $IHEAerztlicheFachrichtungen = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen
 
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
