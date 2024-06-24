@@ -48,20 +48,19 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type ^slicing.ordered = false
 * type contains
   organisationstyp 0..1 MS and
-  ErweiterterFachabteilungsschluessel 0..1 MS and
-  Fachrichtung 0..1
+  EinrichtungsArt 0..1 and
+  ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_type (required)
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
-  * ^comment = "  Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
-* type[Fachrichtung] from $IHEpracticeSettingVS (required)
-  * ^comment = "Das ValueSet dient der Kompatibilität u.a. mit den Profilen des ISiK Moduls Terminplanung (Kalender, Termin und HealthCareService). Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) abgestimmt (Stand:13.6.2024)."
+* type[organisationstyp] from $IHEXDSFacilityType (required)
+* type[organisationstyp].coding.system 1.. MS
+* type[organisationstyp].coding.code 1.. MS
 * name  MS
-  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-
+  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.."
 * alias MS
   * ^comment = "Hinweis: unter Umstaänden können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * telecom MS
