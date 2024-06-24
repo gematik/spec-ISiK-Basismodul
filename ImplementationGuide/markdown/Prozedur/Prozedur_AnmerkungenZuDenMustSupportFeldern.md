@@ -37,7 +37,7 @@ Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes er
 
 **Hinweise:**
 
-Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLL auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen. 
+Eine Verlinkung der Referenz auf den dazugehörigen Kontakt MUSS auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen. 
 Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen mit identischen Aufnahmenummer-Identifiern existieren können (Abbildung Vor- und nachstationäre Kontakte).
 
 
