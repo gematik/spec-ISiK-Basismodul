@@ -1,6 +1,6 @@
 ## Allgemeine Hinweise zu Suchparametern
-Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) wo möglich gefordert wird. Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind explizit nicht im Fokus von ISiK. Entsprechend sind Abfragen durch Clients auf Basis von bekannten Informationen aus einer Patient- und/oder Encounter-Ressource zu begrenzen.
-Auf Basis dieser grundsätzliche Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Dies begründet sich vorallem dadurch, dass durch diese Angaben die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext erfolgt, sowie zudem alle für den jeweiligen Kontext relevanten Informationen zur Interpretation der Dokumentation und Sicherstellung einer Datenintegrität vorliegen. 
+Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) wo möglich gefordert wird. Entsprechend sind Abfragen durch Clients auf Basis von bekannten Informationen aus einer Patient- und/oder Encounter-Ressource zu begrenzen (abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK).
+Auf Basis dieser grundsätzliche Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
 
 Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:ImplementationGuide/markdown/Datenobjekte/Datenobjekte.md}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
@@ -35,8 +35,8 @@ Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgeg
 
 **Beispiele**:
 
-```[base]/Encounter?date=ge2024-01-01&patient=Patient/Test``` <br>
-Suche nach allen Kontakten mit einem Datum ab 2000-01-01T00:00 oder später im Patientenkontext "Test".
+```[base]/Encounter?date=eq2024-01-01&patient=Patient/Test``` <br>
+Suche nach allen Kontakten mit einem Datum am 2000-01-01T00:00 im Patientenkontext "Test".
 
 ```[base]/Condition?recorded-date=eq2024-01-01&patient=Patient/Test``` <br>
 Suche nach allen Diagnosen mit einem Dokumentationsdatum von 2024-01-01T00:00 bis (aber nicht einschließlich) 2024-02-01T00:00 im Patientenkontext "Test".
@@ -70,7 +70,7 @@ Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb 
 
 Der Modifier `:identifier` KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
-Der Modifier :identifier MUSS implementiert werden, wenn die entsprechende Reference eine 1..1-Kardinalität auf Reference.identifier hat.
+Der Modifier :identifier MUSS implementiert werden, wenn die entsprechende Reference eine 1..1-Kardinalität oder ein MS-Flag auf Reference.identifier hat.
 
 Dies gilt insbesondere für für Encounter.account - also die Referenz zwischen ISiKKontaktGesundheitseinrichtung und ISiKAbrechnungsfall. Encounter MÜSSEN anhand der Fallnummer gesucht werden können, ohne dass Clients Zugriffsberechtigungen auf Accounts haben müssen, bzw. ohne dass Account zwingend implementiert/referenziert werden muss. Der Suchabruf erfolgt entsprechend dann nur über die logische Referenz.
 
@@ -86,7 +86,7 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend zu implementieren. Dies wird für jedes Datenobjekt separat dokumentiert. 
+Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend zu implementieren.
 
 **Beispiele**:
 
@@ -120,6 +120,25 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
     Für die URIs in den Link-Relationen "first", "last", "next", sowie "prev" MUSS sichergestellt werden, dass NICHT die ursprünglich verwendeten Suchparameter, sowie anderweitig sensitive Informationen enthalten, welche in der Suchanfrage an das bestätigungsrelevante System versendet wurden.
     Der "self"-Link innerhalb des Such-Bundles MUSS entsprechend der Vorgaben aus [FHIR Kernspezifikation - 3.1.1.6 - Server Conformance](https://www.hl7.org/fhir/R4/search.html#conformance) strukturiert sein.
 
+    Der ```:iterate``` Modifier KANN unterstützt werden.
+
+Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
+
+## Verkettete Suchparameter (Fokus auf Patient und Encounter)
+
+Für Suchparameter vom Typ 'Patient' und 'Encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden.
+
+    - Beispiel für Chaining mit Referenz auf einen Patienten:  ``GET [base]/Observation?subject.name=peter``
+    - Beispiel für Chaining mit Referenz auf einen Patienten:  ``GET [base]/Encounter?patient.identifier=1234``
+    - Hinweis: Die Patient-Instanz ist für die Abfrage zentral, weshalb diese Form der Suchabfrage hier notwendig erscheint (siehe einleitenden Absatz dieses Abschnitts). Analog gilt dies für den Fallkontakt (Encounter).
+
+Für Suchparameter vom Typ 'Patient' und 'Encounter' KÖNNEN die Festlegungen für [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
+
+    - Beispiel für Reverse Chaining mit Referenz auf einen Patienten aus einem Observation-Kontext:GET [base]/Patient?_has:Observation:patient:code=1234-5
+    - Hinweis: Diese Form der Suchanfrage dient im Wesentlichen dem Auffinden von Patienten (z.B. unter angabe einer BEsondern Diagnose, beobachtung Prozedur etc.) oder Fallkontakten (z.B. zum Ermitteln des Kontextes einer Prozedur)
+
+Folgende Suchparameter MÜSSEN für nur verpflichtend für Suchparameter implementiert werden, für die auch Chaining erforderlich ist:
+
 * ``_include``
 
     - Beispiele: ``GET [base]/Encounter?_include=Patient:subject``
@@ -134,9 +153,10 @@ Folgende Suchparameter MÜSSEN für alle bestätigungsrelevante Datenojekte impl
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
     - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _revinclude-Parameter implementiert werden. Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
-    Der ```:iterate``` Modifier KANN unterstützt werden.
+Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden wo notwendig weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
 
-Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
+Mehrfach-Chaining ist generell nicht gefordert, es sei denn es wird in einem Modul für einzelne Parameter explizit verlangt.
+
 
 ## Best-Practice-Empfehlungen für Standard-Suchfilter
 
