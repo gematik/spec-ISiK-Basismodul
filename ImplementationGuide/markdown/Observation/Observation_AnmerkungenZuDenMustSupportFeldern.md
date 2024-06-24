@@ -21,7 +21,7 @@ Es ist möglich, dass einzelne Systeme nur Werte vom Status `final` bereitstelle
 
 **Hinweise:**
 
-Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLL auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen.
+Eine Verlinkung der Referenz auf den dazugehörigen Kontakt MUSS auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen.
 Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen mit identischen Aufnahmenummer-Identifiern existieren können (Abbildung Vor- und nachstationäre Kontakte).
 
 ### `Observation.effective[x]`
