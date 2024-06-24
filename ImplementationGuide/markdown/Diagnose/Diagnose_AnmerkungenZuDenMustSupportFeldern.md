@@ -2,7 +2,7 @@
 
 ### `Condition.clinicalStatus`
 
-**Bedeutung:** Kodierter klinischer Status der Diagnose. MUSS angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist. Alle in einem System möglichen Clinical-Status-Werte müssen über FHIR korrekt repräsentiert werden, können mindestens jedoch die Status-Werte "active" und "inactive" unterstützen. Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.
+**Bedeutung:** Der kodierte klinische Status der Diagnose MUSS, sofern vorhanden, angegeben werden, da die Interpretation der Diagnose davon abhängt ob diese 'aktiv' ist oder einen anderen Status aufweist. Alle in einem System möglichen Clinical-Status-Werte MÜSSEN, sofern vorhanden, über FHIR korrekt repräsentiert werden, können mindestens jedoch die Status-Werte "active" und "inactive" unterstützen.
 
 **Hinweise:**
 
@@ -45,7 +45,7 @@ Die Freitextdiagnose darf nur alleinstehend angegeben werden, solange keine kodi
 
 **Hinweise:**
 
-Eine Verlinkung der Referenz auf den dazugehörigen Kontakt SOLL auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen. 
+Eine Verlinkung der Referenz auf den dazugehörigen Kontakt MUSS auf die Ebene des Abteilungskontaktes (entsprechend ISiKKontaktGesundheitseinrichtung) erfolgen. 
 Bei der Auswahl des Kontaktes ist zu beachten, dass mehrere Encounter-Ressourcen mit identischen Aufnahmenummer-Identifiern existieren können (Abbildung Vor- und nachstationäre Kontakte).
 
 ### `Condition.recordedDate`
