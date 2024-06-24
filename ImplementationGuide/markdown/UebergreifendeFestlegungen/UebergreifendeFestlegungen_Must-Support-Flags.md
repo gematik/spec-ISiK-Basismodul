@@ -30,4 +30,4 @@ Ob für ein MS-Flag konkrete Ausnahmen gelten, in denen ein impliziter Wert hart
 
     Hinweis: Bei den Testszenarien von WRITE/UPDATE-Interaktionen im Rahmen des Bestätigungsverfahrens werden Instanzen an das zu testende System übermittelt, in denen alle MS-Elemente, unabhängig von Ihrer Kardinalität, gegeben sind. Diese MÜSSEN von den getesteten Systemen in einer anschließenden READ-Interaktion vollständig über die FHIR-Schnittstelle reproduziert werden können.
 
-Sollte ein Hersteller den Bedarf an einer Änderung der Must-Support Vorgaben der ISiK Profile haben, MUSS er von den Profilen ableiten, auf denen die ISiK Profile basieren. Angaben dazu finden sich für jedes Datenobjekt im Kapitel Kompatibilität. In diesem Fall MUSS der Hersteller auch dafür sorgen, dass seine abgeleiteten Profile weiterhin kompatibel mit den ISiK Profilen bleiben.
+Wenn ein Hersteller neben den in ISiK geforderten Elementen die Verarbeitung *weiterer* Elemente unterstützt, so sollte dies durch abgeleitete Profile, in denen die zusätzlichen Elemente ebenfalls als MS gekennzeichnet sind, dokumentiert und im Rahmen der Schnittstellendokumentation publiziert werden.
