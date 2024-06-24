@@ -71,21 +71,17 @@ Der Modifier `:identifier` KANN für alle spezifizierten Suchparameter vom Typ '
 
 Der Modifier :identifier MUSS implementiert werden, wenn die entsprechende Reference eine 1..1-Kardinalität oder ein MS-Flag auf Reference.identifier hat.
 
-Dies gilt insbesondere für Encounter.account - also die Referenz zwischen ISiKKontaktGesundheitseinrichtung und ISiKAbrechnungsfall. Encounter MÜSSEN anhand der Fallnummer gesucht werden können, ohne dass Clients Zugriffsberechtigungen auf Accounts haben müssen, bzw. ohne dass Account zwingend implementiert/referenziert werden muss. Der Suchabruf erfolgt entsprechend dann nur über die logische Referenz.
+Dies gilt beispielsweise für Encounter.account - also die Referenz zwischen ISiKKontaktGesundheitseinrichtung und ISiKAbrechnungsfall. Encounter MÜSSEN anhand der Fallnummer gesucht werden können, ohne dass Clients Zugriffsberechtigungen auf Accounts haben müssen, bzw. ohne dass Account zwingend implementiert/referenziert werden muss. Der Suchabruf erfolgt entsprechend dann nur über die logische Referenz.
 
 Begründung: Die Unterstützung dieser Suchparameter-Typen ist essentiell für Abfragen mit [Chaining](https://hl7.org/fhir/r4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/r4/search.html#has). Innerhalb der Spezifikation ist für jedes Datenobjekt spezifiziert weshalb eine solche Abfrage versorgungsrelevant ist.
 
-**Beispiele**:
-
-``[base]/Procedure?subject:Patient=Test``
-Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweist mit der ID "Test". Hierdurch werden Referenzen auf den Ressourcentyp "Group" in der Suche ausgeschlossen.
 
 **Beispiele**:
 
 ```[base]/Coverage?Payor:identifier=http://fhir.de/sid/arge-ik/iknr|123456``` <br>
 Diese Suche gibt alle Coverage-Ressourcen zurück zum Client, welche innerhalb `Coverage.payor` eine logische Referenz auf den Versicherer mit der IK-Nummer "123456" enthält.
 
-Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend zu implementieren.
+Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) verpflichtend zu implementieren (siehe "Verkettete Suchparameter").
 
 **Beispiele**:
 
@@ -125,22 +121,21 @@ Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das Capab
 
 ## Verkettete Suchparameter (Fokus auf Patient und Encounter)
 
-Für Suchparameter vom Typ 'Patient' und 'Encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden.
+Für Suchparameter namens 'patient' und 'encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden.
 
-    - Beispiel für Chaining mit Referenz auf einen Patienten:  ``GET [base]/Observation?subject.name=peter``
     - Beispiel für Chaining mit Referenz auf einen Patienten:  ``GET [base]/Encounter?patient.identifier=1234``
     - Hinweis: Die Patient-Instanz ist für die Abfrage zentral, weshalb diese Form der Suchabfrage hier notwendig erscheint (siehe einleitenden Absatz dieses Abschnitts). Analog gilt dies für den Fallkontakt (Encounter).
 
-Für Suchparameter vom Typ 'Patient' und 'Encounter' KÖNNEN die Festlegungen für [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
+Für Suchparameter KÖNNEN die Festlegungen für [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
 
     - Beispiel für Reverse Chaining mit Referenz auf einen Patienten aus einem Observation-Kontext:GET [base]/Patient?_has:Observation:patient:code=1234-5
     - Hinweis: Diese Form der Suchanfrage dient im Wesentlichen dem Auffinden von Patienten (z.B. unter angabe einer BEsondern Diagnose, beobachtung Prozedur etc.) oder Fallkontakten (z.B. zum Ermitteln des Kontextes einer Prozedur)
 
-Folgende Suchparameter MÜSSEN für nur verpflichtend für Suchparameter implementiert werden, für die auch Chaining erforderlich ist:
+Folgende Suchparameter MÜSSEN verpflichtend für Suchparameter implementiert werden, für die auch Chaining erforderlich ist ('patient' und 'encounter'):
 
 * ``_include``
 
-    - Beispiele: ``GET [base]/Encounter?_include=Patient:subject``
+    - Beispiele: ``GET [base]/Encounter?_include=Encounter:patient``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_include" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
     - Alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
@@ -152,7 +147,7 @@ Folgende Suchparameter MÜSSEN für nur verpflichtend für Suchparameter impleme
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
     - Alle Referenzen für die ein Chaining unterstützt wird MUSS auch der _revinclude-Parameter implementiert werden. Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}.
 
-Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden wo notwendig weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
+Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden - wo notwendig - weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
 
 Mehrfach-Chaining ist generell nicht gefordert, es sei denn es wird in einem Modul für einzelne Parameter explizit verlangt.
 
