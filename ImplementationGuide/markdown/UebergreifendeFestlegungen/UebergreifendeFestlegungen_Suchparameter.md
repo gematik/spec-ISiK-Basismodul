@@ -30,7 +30,6 @@ Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` MÜSSEN für jeden Suchparameter vom Typ '
 Begründung: Die Funktionalität datums-eingeschränkt suchen zu können ist essentiell.
 Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgegen, da sich sonst Suchen zwangsläufig über den gesamten Zeitraum erstrecken würden.
 
- Die Präfixe `le`,`ge` KÖNNEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
 
 
 **Beispiele**:
