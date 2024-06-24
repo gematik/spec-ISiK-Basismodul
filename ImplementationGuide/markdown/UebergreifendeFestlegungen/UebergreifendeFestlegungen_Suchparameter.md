@@ -54,7 +54,7 @@ Diese Suchanfrage gibt alle Patienten zurück zum Client, welche in einem Adress
 
 ### Token
 
-Der Modifier `:not` KANN für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
+Der Modifier `:not` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
 
 Der Modifier `:text` KANN für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "Coding" oder "CodeableConcept" verwendet werden.
 
