@@ -45,6 +45,7 @@ Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSyst
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $IHEpracticeSettingVS = http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode 
 Alias: $IHEAerztlicheFachrichtungen = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen
+Alias: $IHEXDSFacilityType = http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode
 
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
