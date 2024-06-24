@@ -1,5 +1,10 @@
 # Decision Log
 
+
+7.6.2024
+* Problem: Die Übergreifende Definition der Suchparameter ist problematisch, da nur im Kontext des Tests definiert
+* Lösung: Anpassung der Definition in Bezug auf bestätigungsrelevantes System. Inklusive Vorgabe zu spezifischen MS-Definitionen . Weitere Klärung in Bezug auf Testszenarien mit Erläuterung zu: 1) Implikationen für MS-Flags, 2) Nutzung von data-absent-reason. Die Data-Absent-Reason soll nicht allgemein genutzt werden können, um Testfällen aufzuweichen.
+
 18.03.2024
 * Problem: Auswahl der Suchparameter für Organisation und Standort
 *Lösung: Die Suchparameter Liste wurde geprüft in Hinblick auf naheligende Suchabfragen rund um Organisation und Standort (Location). In Bezug auf Standort wurden vorerst nicht berücksichtigt die Suchparameter: "endpoint", konkrete "address"-Paramter - z.B. address-city etc. -, "mode" und "name"
