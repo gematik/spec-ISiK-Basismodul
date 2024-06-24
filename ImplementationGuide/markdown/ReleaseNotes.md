@@ -8,6 +8,7 @@ Version: 4.0.0-rc3
 
 Datum: tbd.
 
+* Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/411
 * Added MS for Account.coverage.priority https://github.com/gematik/spec-ISiK-Basismodul/pull/405 and https://github.com/gematik/spec-ISiK-Basismodul/pull/406 
 * Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380
 * Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408
