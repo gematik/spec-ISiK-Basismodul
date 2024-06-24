@@ -15,7 +15,7 @@ Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens 
     - Bei lediglich implizit vorhandenen Informationen KANN der Inhalt eines MS-Elementes in der Schnittstelle hartkodiert werden (sofern gesichert ist, dass der entsprechende Wert des Elementes ausnahmslos auf alle Instanzen zutrifft, die dieses System erstellt).
 
     Insbesondere für solche implizit vorhandene Informationen, können in den Profilen auf der Ebene einzelner, mit MS-Flag versehener Elemente konkretere Hinweise zur Implementierung enthalten sein, die die übergreifende Definition zu Must-Support für den Einzelfall konkretisieren, zum Beispiel zur Klarstellung wo und unter welchen Umständen hartkodierte Werte erlaubt sind.
-    MS-Flags, die nur unter bestimmten **Bedingungen** gelten, werden in Folge als 'Conditional Must Support' an entsprechender Stelle ausgewiesen (in der Spezifikation werden die MS-Definitions-Überschreibungen im Feld  'Definition' eines entsprechend mit MS-Flag versehenen Elements vorgehalten).
+Ob für ein MS-Flag konkrete Ausnahmen gelten, in denen ein impliziter Wert hartcodiert gesetzt werden darf oder das MS-Flag nur unter bestimmten Bedingungen gilt, ist der Definition des jeweiligen Elementes zu entnehmen.
 
     Hinweis: Bei den Testszenarien von READ-Interaktionen im Rahmen des Bestätigungsverfahrens werden für MS-Elemente Informationen vorgegeben, die in den Systemen erfasst und über die FHIR-Schnittstelle reproduziert werden MÜSSEN, unabhängig von der angegebenen Kardinalität.
 
