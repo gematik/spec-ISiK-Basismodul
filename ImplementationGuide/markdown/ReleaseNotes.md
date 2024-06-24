@@ -21,6 +21,7 @@ Datum: tbd.
 * Anforderung zu Procedure.Encounter hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/419
 * Änderung der MS-Definition für Patient.active https://github.com/gematik/spec-ISiK-Basismodul/pull/421
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
+* Slice und ValueSet hinzu für Organisation im Zuge der Konsolidierung des Moduls Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418
 
 ----
 
@@ -29,7 +30,7 @@ Version: 4.0.0-rc2
 Datum: 4.4.2024
 
 * Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359
-* Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358 
+* Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358
 * Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369
 * Neue Profile für Lebenszustände - Schwangerschaftsstatus, SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378
   * Hinzugefügt Lebenszustand markdown descriptions  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/379
