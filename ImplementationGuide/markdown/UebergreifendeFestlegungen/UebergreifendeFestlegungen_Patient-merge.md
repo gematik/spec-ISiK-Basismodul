@@ -103,7 +103,7 @@ und
 {{json:DorisZiel}}
 
 Mittels eines Patient merge wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert. Daraus entsteht die resultierende Patienten-Instanz:
-{{json:DorisResultat}}
+{{json:Resources/static/Patient-DorisResultat.json}}
 
 Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (http://hl7.org/SubscriptionTopic/patient-merge) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.
 

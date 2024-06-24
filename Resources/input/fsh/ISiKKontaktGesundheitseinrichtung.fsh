@@ -4,7 +4,6 @@ Id: ISiKKontaktGesundheitseinrichtung
 Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welcher in der Mehrheit der ISiK Szenarien im Krankenhaus essentiell ist."
 * insert Meta
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
-* id 0..1 MS
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
@@ -90,31 +89,42 @@ Description: "Dieses Profil ermöglicht die Herstellung eines Fallbezuges welche
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
 * location MS
   * physicalType from ISiKLocationPhysicalType (extensible)
-* location ^slicing.discriminator.type = #pattern
-* location ^slicing.discriminator.path = "physicalType"
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "physicalType"
+* location ^slicing.discriminator[+].type = #pattern
+* location ^slicing.discriminator[=].path = "status"
 * location ^slicing.rules = #open
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * location[Zimmer]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * location[Bettenstellplatz]
   * location 1.. MS
+    * reference MS
     * identifier 1.. MS
     * display 1.. MS
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
+  * status MS
+  * status = #active
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
@@ -188,6 +198,7 @@ Usage: #example
 * hospitalization.dischargeDisposition.extension.extension[+].url = "DritteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundDritteStelle#1 "arbeitsfähig entlassen"
 * location.physicalType = $LocationPhysicalType#bd "Bed"
+* location.status = #active
 * location.location.identifier.system = "https://test.krankenhaus.de/fhir/sid/locationid"
 * location.location.identifier.value = "123"
 * location.location.display = "Bettenstellplatz 123"
