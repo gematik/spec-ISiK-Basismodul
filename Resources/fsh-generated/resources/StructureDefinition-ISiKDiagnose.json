@@ -199,6 +199,42 @@
         "min": 1
       },
       {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "comment": "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite.coding",
+        "path": "Condition.bodySite.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite.coding:snomed-ct",
+        "path": "Condition.bodySite.coding",
+        "sliceName": "snomed-ct",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Condition.subject",
         "path": "Condition.subject",
         "mustSupport": true
@@ -224,7 +260,8 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "ordered": false,
+          "rules": "open"
         },
         "type": [
           {
@@ -278,14 +315,46 @@
         ]
       },
       {
-        "id": "Condition.onset[x]:onsetDateTime",
-        "path": "Condition.onset[x]",
-        "sliceName": "onsetDateTime",
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "definition": "Einschränkung der übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Abklingzeitraums oder Zeitpunkts, so MUSS dieses System die Information NICHT abbilden. Das System MUSS jedoch den Status kodieren in der Diagnose, sofern die Information verfügbar ist.",
+        "comment": "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis) - Hintergrund zur Motivation der MS-Definition: Auch in Stufe 4 sind keine (Client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen (siehe CapabilityStatement). Das heißt entweder führen KISe entsprechende Informationen und exponieren diese, oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. Da viele KIS-Hersteller im analogen Fall eine Befüllung von Condition.clinicalStatus NICHT unterstützen, erscheint das MS nach übergreifender Definition auch an dieser Stelle nicht angemessen.",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementAge",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "dateTime"
+            "code": "Age"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+        "path": "Condition.abatement[x].extension",
+        "sliceName": "Lebensphase-Ende",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
           }
         ]
       },

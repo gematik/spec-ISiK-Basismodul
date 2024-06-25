@@ -8,8 +8,6 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * reference 1..
 * name 1..1 MS
 * name only HumannameDeBasis
-* gender.extension contains GenderOtherDE named Geschlecht-Administrativ 0..*
-* gender.extension[Geschlecht-Administrativ] ^mustSupport = false
 * address MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -43,6 +41,10 @@ Description: "Dieses Profil ermöglicht die Nutzung von Angehörigen in ISiK Sze
   * city 1.. MS
   * postalCode 1.. MS
   * country 1.. MS
+* relationship MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
+* telecom MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 
 Instance: ISiKAngehoerigerMustermann
 InstanceOf: ISiKAngehoeriger
@@ -55,6 +57,7 @@ Usage: #example
 * address.city = "Beispielstadt"
 * address.postalCode = "78143"
 * address.country = "DE"
+* relationship = RoleCode#DAUC
 
 Invariant: relatedp-de-1
 Description: "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden"

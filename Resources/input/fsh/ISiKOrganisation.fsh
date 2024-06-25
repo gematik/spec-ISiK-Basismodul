@@ -126,7 +126,8 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * identifier contains 
   IKNR 0..1 MS and
   BSNR 0..1 MS and
-  OrganisationseinheitenID 0..1 MS
+  OrganisationseinheitenID 0..1 MS and
+  TelematikID 0..1 MS
 /*
   KIMAdresse 0..1 MS and
   TIMAdresse 0..1 MS and
@@ -144,7 +145,10 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * system 1.. MS
   * value 1.. MS
   * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein."
-
+* identifier[TelematikID] MS
+* identifier[TelematikID] only $identifer-TelematikID
+  * ^patternIdentifier.system = $identifer-TelematikID-system
+  * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist."
 /*
 * identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
 * identifier[KIMAdresse].type 0..1
@@ -231,6 +235,7 @@ InstanceOf: ISiKOrganisation
 Usage: #example
 * identifier[IKNR].value = "260120196"
 * identifier[BSNR].value = "345678975"
+* identifier[TelematikID].value = "1234567890"
 * name = "Uniklinik Entenhausen"
 
 
@@ -240,6 +245,7 @@ Usage: #example
 * identifier[Abteilungsidentifikator]
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
   * value = "123456"
+* identifier[TelematikID].value = "1234567890"
 * name = "Allgemeinchirurgie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"

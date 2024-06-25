@@ -14,6 +14,7 @@ Title: "ISiKSnomedCTCoding"
 Description: "Data Type profile for Snomed-CT Codings in ISiK"
 * system = $sct
 * version MS
+* version obeys sct-version-de
 
 Profile: ISiKLoincCoding
 Parent: ISiKCoding
@@ -22,14 +23,6 @@ Title: "ISiKLoincCoding"
 Description: "Data Type profile for LOINC Codings in ISiK"
 * system = $loinc
 * version MS
-
-Profile: ISiKWG14Coding
-Parent: ISiKCoding
-Id: ISiKWG14Coding
-Title: "ISiKWG14Coding"
-Description: "Data Type profile for WG14 Codings in ISiK"
-* system = $cs-wg14
-
 
 // Profile die von den dt. Basisprofilen erben
 //
@@ -70,3 +63,8 @@ Description: "Data Type profile for ATC Codings in ISiK"
 * system 1.. MS
 * code 1.. MS
 * display MS
+
+Invariant: sct-version-de
+Description: "Die SnomedCT-Version muss einer deutschen Edition entsprechen"
+Severity: #error
+Expression: "startsWith('http://snomed.info/sct/11000274103')"

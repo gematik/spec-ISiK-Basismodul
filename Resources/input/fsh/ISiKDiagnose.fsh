@@ -42,17 +42,25 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * reference 1.. MS
 * encounter MS
 * onset[x] only dateTime or Period
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #closed
-* onsetPeriod only Period
-  * ^sliceName = "onsetPeriod"
+* onsetPeriod 
   * start.extension contains ExtensionLebensphase named Lebensphase-Start 0..1
   * end.extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
-* onsetDateTime only dateTime
-  * ^sliceName = "onsetDateTime"
+* abatement[x] MS
+  * ^definition = "Einschränkung der übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Abklingzeitraums oder Zeitpunkts, so MUSS dieses System die Information NICHT abbilden. Das System MUSS jedoch den Status kodieren in der Diagnose, sofern die Information verfügbar ist."
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis) - Hintergrund zur Motivation der MS-Definition: Auch in Stufe 4 sind keine (Client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen (siehe CapabilityStatement). Das heißt entweder führen KISe entsprechende Informationen und exponieren diese, oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. Da viele KIS-Hersteller im analogen Fall eine Befüllung von Condition.clinicalStatus NICHT unterstützen, erscheint das MS nach übergreifender Definition auch an dieser Stelle nicht angemessen."
+* abatementAge  
+  * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
 * recordedDate 1.. MS
 * note MS
+* bodySite MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_Condition_Diagnosis)"
+* bodySite.coding MS
+* bodySite.coding ^slicing.discriminator.type = #pattern
+* bodySite.coding ^slicing.discriminator.path = "system"
+* bodySite.coding ^slicing.rules = #open
+* bodySite.coding contains
+    snomed-ct 0..1 MS
+* bodySite.coding[snomed-ct] only ISiKSnomedCTCoding
 
 Instance: Example-condition-ausrufezeichen-primaer
 InstanceOf: ISiKDiagnose
@@ -108,6 +116,8 @@ Usage: #example
 * encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
+* bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
 
 Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
