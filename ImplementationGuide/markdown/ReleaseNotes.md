@@ -23,6 +23,7 @@ Datum: tbd.
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422
 * Harmonisierung mit Anforderung mit Kontakt/Fall-Seite https://github.com/gematik/spec-ISiK-Basismodul/pull/424
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
+* Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398 
 
 ----
 
@@ -44,7 +45,6 @@ Datum: 4.4.2024
 * Feature/ptdata 671 // MS für coding.version  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/390
 * Feature: added Allergyintollerance to CapStatement by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/385
 * Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet zu "KANN"
-* Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398 
 
 ----
 
