@@ -36,7 +36,7 @@ Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgeg
 **Beispiele**:
 
 ```[base]/Encounter?date=eq2024-01-01&patient=Patient/Test``` <br>
-Suche nach allen Kontakten mit einem Datum am 2000-01-01T00:00 im Patientenkontext "Test".
+Suche nach allen Kontakten mit einem Datum am 2024-01-01T00:00 im Patientenkontext "Test".
 
 ```[base]/Condition?recorded-date=eq2024-01-01&patient=Patient/Test``` <br>
 Suche nach allen Diagnosen mit einem Dokumentationsdatum von 2024-01-01T00:00 bis (aber nicht einschließlich) 2024-01-02T00:00 im Patientenkontext "Test".
