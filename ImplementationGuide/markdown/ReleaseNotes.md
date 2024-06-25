@@ -44,6 +44,8 @@ Datum: 4.4.2024
 * Feature/ptdata 671 // MS für coding.version  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/390
 * Feature: added Allergyintollerance to CapStatement by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/385
 * Lockerung der Anforderung für den Suchparameter "context-type-value" definiert für ISiKValueSet zu "KANN"
+* Fix des ValueSets für SNOMED-CT-Diagnosen (entspreicht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398 
+
 ----
 
 Version: 3.0.4
