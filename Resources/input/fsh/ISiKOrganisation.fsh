@@ -52,13 +52,19 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
 * type ^slicing.ordered = false
 * type contains
   organisationstyp 1..1 MS and
-  ErweiterterFachabteilungsschluessel 0..1 MS
+  ErweiterterFachabteilungsschluessel 0..1 MS and
+  Fachbereich 0..1 MS
 * type[organisationstyp] = $organization_type#dept
   * ^comment = "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden."
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
-  * ^comment = "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann."
+  * ^comment = "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann. 
+  
+  Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
+* type[Fachbereich] from $IHEpracticeSettingVS (required)
+* type[Fachbereich].coding.system 1.. MS
+* type[Fachbereich].coding.code 1.. MS
 * name  MS
   * ^comment = "Motivation: Einer Organisation oder Organisationseinheit muss ein Name zugewiesen werden."
 * alias MS
@@ -158,6 +164,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type ^slicing.ordered = false
 * type contains
   organisationstyp 0..1 MS and
+  EinrichtungsArt 0..1 and
   ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_type (required)
 * type[organisationstyp].coding.system 1.. MS
@@ -165,6 +172,9 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
+* type[EinrichtungsArt] from $IHEXDSFacilityType (required)
+* type[EinrichtungsArt].coding.system 1.. MS
+* type[EinrichtungsArt].coding.code 1.. MS
 * name  MS
   * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.."
 * alias MS
@@ -211,6 +221,9 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * ^comment = "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * endpoint MS
   * ^comment = "Motivation: Ein System muss den technischen Endpunt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+
+
+
 
 
 Instance: KrankenhausOrganisationBeispiel
