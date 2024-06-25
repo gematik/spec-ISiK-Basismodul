@@ -21,6 +21,10 @@ Datum: tbd.
 * Anforderung zu Procedure.Encounter hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/419
 * Änderung der MS-Definition für Patient.active https://github.com/gematik/spec-ISiK-Basismodul/pull/421
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422
+* SnomedCT Coding.version muss auf die German Edition zeigen https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKAngehoeriger: hinzufügen von MS auf .relation & .telecom, entfernen der gender extension https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKDiagnose: hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung https://github.com/gematik/spec-ISiK-Basismodul/pull/417
+* ISiKOrganisation: identifier:TelematikId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/417
 * Harmonisierung mit Anforderung mit Kontakt/Fall-Seite https://github.com/gematik/spec-ISiK-Basismodul/pull/424
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
 * Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418

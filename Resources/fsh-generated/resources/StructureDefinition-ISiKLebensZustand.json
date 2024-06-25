@@ -45,6 +45,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Motivation: Jede Lebenszustanduntersuchung MUSS einen LOINC Code enthalten, SnomedCT ist optional",
         "min": 1,
         "mustSupport": true
       },
@@ -68,7 +69,7 @@
         "id": "Observation.code.coding:loinc",
         "path": "Observation.code.coding",
         "sliceName": "loinc",
-        "min": 0,
+        "min": 1,
         "max": "*",
         "type": [
           {
@@ -114,6 +115,8 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "comment": "Motivation: Ein Lebenszustand benötigt immer einen Wert",
+        "min": 1,
         "mustSupport": true
       }
     ]

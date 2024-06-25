@@ -13,14 +13,16 @@ Description: "Basisprofil für ISiKLebensZustand Observation"
     * ^slicing.rules = #open
   * coding contains
       snomed-ct 0..* MS and
-      loinc 0..* MS
+      loinc 1..* MS
+    * ^comment = "Motivation: Jede Lebenszustanduntersuchung MUSS einen LOINC Code enthalten, SnomedCT ist optional"
   * coding[snomed-ct] only ISiKSnomedCTCoding
   * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
   * reference 1.. MS
 * effective[x] 1..1 MS
 * effective[x] only dateTime or Period
-* value[x] MS
+* value[x] 1.. MS
+  * ^comment = "Motivation: Ein Lebenszustand benötigt immer einen Wert"
 * encounter MS
 
 
@@ -30,7 +32,8 @@ Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
 * code = $loinc#82810-3
-* valueCodeableConcept MS
+* valueCodeableConcept 1.. MS
+  * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * valueCodeableConcept from SchwangerschaftsstatusVS
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
@@ -59,7 +62,8 @@ Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
 * code from SchwangerschaftEtMethodeVS
 * value[x] only dateTime
-* valueDateTime MS
+* valueDateTime 1.. MS
+  * ^comment = "Motivation: Eine Observation MUSS immer einen Wert enthalten"
 
 Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
@@ -79,20 +83,24 @@ Id: ISiKAlkoholAbusus
 Title: "ISiK Alkohol Abusus"
 * insert Meta
 * category = ObservationCategoryCodes#social-history
-* code = $sct#15167005
-* value[x] only boolean
-* valueBoolean 1.. MS
+* code.coding[snomed-ct] = $sct#15167005
+* code.coding[loinc] = $loinc#74043-1
+* value[x] only CodeableConcept
+* valueCodeableConcept 1.. MS
+* valueCodeableConcept from YesNoUnknownNotAsked
 
 Instance: ISiKAlkoholAbususBeispiel
 InstanceOf: ISiKAlkoholAbusus
 Usage: #example
 Title: "ISiKAlkoholAbususBeispiel"
-* code = $sct#15167005 "Schädlicher Gebrauch von Alkohol"
-  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[snomed-ct] = $sct#15167005 "Schädlicher Gebrauch von Alkohol"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[loinc] = $loinc#74043-1 "Alcohol use disorder"
+  * version = "2.77"  
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueBoolean = false
+* valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
 * encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKRaucherStatus
@@ -101,20 +109,26 @@ Id: ISiKRaucherStatus
 Title: "ISiK Raucherstatus"
 * insert Meta
 * category = ObservationCategoryCodes#social-history
-* code = $sct#77176002
-* value[x] only boolean
-* valueBoolean 1.. MS
+* code.coding[snomed-ct] = $sct#77176002
+* code.coding[loinc] = $loinc#72166-2
+* value[x] only CodeableConcept
+* valueCodeableConcept 1.. MS
+* valueCodeableConcept from CurrentSmokingStatusUvIps
+  
 
 Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
 Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
-* code = $sct#77176002 "Smoker"
-  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[snomed-ct] = $sct#77176002 "Smoker"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[loinc] = $loinc#72166-2 "Tobacco smoking status"
+  * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueBoolean = true
+* valueCodeableConcept = LOINC#LA15920-4 "Former smoker"
+  * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
 
 Profile: ISiKStillstatus
@@ -123,19 +137,23 @@ Id: ISiKStillstatus
 Title: "ISiKStillstatus"
 Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
 * insert Meta
-* code = $sct#1260078007
-* value[x] only boolean
-* valueBoolean 1.. MS
+* code.coding[snomed-ct] = $sct#413712001
+* code.coding[loinc] = $loinc#63895-7
+* value[x] only CodeableConcept
+* valueCodeableConcept 1.. MS
+* valueCodeableConcept from StillstatusVS
 
 Instance: ISiKStillstatusBeispiel
 InstanceOf: ISiKStillstatus
 Usage: #example
 Title: "ISiKStillstatusBeispiel"
 Description: "ISiKStillstatusBeispiel"
-* code = $sct#1260078007 "Maternal breastfeeding"
-  * coding.version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[snomed-ct] = $sct#413712001 "Breastfeeding (mother)"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[loinc] = $loinc#63895-7 "Breastfeeding status"
+  * version = "2.77" 
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueBoolean = true
+* valueCodeableConcept = $loinc#LA29252-6 "Currently breastfeeding"
 * encounter = Reference(Fachabteilungskontakt)

@@ -30,26 +30,35 @@
         }
       },
       {
-        "id": "Observation.code",
-        "path": "Observation.code",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "15167005",
-              "system": "http://snomed.info/sct"
-            }
-          ]
+        "id": "Observation.code.coding:snomed-ct",
+        "path": "Observation.code.coding",
+        "sliceName": "snomed-ct",
+        "patternCoding": {
+          "code": "15167005",
+          "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "patternCoding": {
+          "code": "74043-1",
+          "system": "http://loinc.org"
         }
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "min": 1,
         "type": [
           {
-            "code": "boolean"
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked"
+        }
       }
     ]
   }
