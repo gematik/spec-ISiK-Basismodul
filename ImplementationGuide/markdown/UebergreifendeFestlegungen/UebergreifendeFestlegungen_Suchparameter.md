@@ -90,7 +90,7 @@ Für Suchparameter vom Typ 'Reference' sind nur teilweise die Festlegungen für 
 Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure.subject` auf einen Patienten verweist mit dem Namen "Test".
 
 ``[base]/Condition?_has:Encounter:diagnosis:identifier=https://example.org/fhir/sid/aufnahmenummer|1234``
-Diese Suche gibt alle Diagnosen zurück, die im Kontext des Kontakts mit der Aufnahmenummer '1234' dokumentiert wurden sind.
+Diese Suche gibt alle Diagnosen zurück, die im Kontext des Kontakts mit der Aufnahmenummer '1234' dokumentiert worden sind.
 
 ## Verpflichtende Suchparameter (Alle Datenobjekte)
 
