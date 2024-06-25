@@ -4,7 +4,7 @@ Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Ges
 
 # **Definition Bestätigungsrelevante Systeme**
 # **Allgemein**
-Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für informationstechnische Systeme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach.** 
+Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für informationstechnische Systeme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach. 
 Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten IT-Systeme anhand definierter Akteure getroffen.
 
 Bei bestätigungsrelevanten IT-Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem *primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten*, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.
