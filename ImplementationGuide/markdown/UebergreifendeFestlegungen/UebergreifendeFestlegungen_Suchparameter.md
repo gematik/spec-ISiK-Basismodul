@@ -124,10 +124,14 @@ Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das Capab
 
 Für Suchparameter namens 'patient' und 'encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden.
 
+* ``Chaining``
+
     - Beispiel für Chaining mit Referenz auf einen Patienten:  ``GET [base]/Encounter?patient.identifier=1234``
     - Hinweis: Die Patient-Instanz ist für die Abfrage zentral, weshalb diese Form der Suchabfrage hier notwendig erscheint (siehe einleitenden Absatz dieses Abschnitts). Analog gilt dies für den Fallkontakt (Encounter).
 
 Für Suchparameter KÖNNEN die Festlegungen für [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) implementiert werden.
+
+* ``Reverse Chaining``
 
     - Beispiel für Reverse Chaining mit Referenz auf einen Patienten aus einem Observation-Kontext:GET [base]/Patient?_has:Observation:patient:code=1234-5
     - Hinweis: Diese Form der Suchanfrage dient im Wesentlichen dem Auffinden von Patienten (z.B. unter angabe einer BEsondern Diagnose, beobachtung Prozedur etc.) oder Fallkontakten (z.B. zum Ermitteln des Kontextes einer Prozedur)
