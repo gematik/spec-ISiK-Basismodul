@@ -10,7 +10,7 @@ Version: 2.0.7
 Datum: t.b.d
 
 * Lockerung der Anforderung für MS-Definition und Suchparameter zu Condition.clinicalStatus https://github.com/gematik/spec-ISiK-Basismodul/pull/427
-* Fix des ValueSets für SNOMED-CT-Diagnosen 
+* Fix des ValueSets für SNOMED-CT-Diagnosen https://github.com/gematik/spec-ISiK-Basismodul/pull/429/commits/52833ff1bd0f8a4c71a19b7a3c50c3cfa2d95e32
 
 ----
 
