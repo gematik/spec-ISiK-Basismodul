@@ -8,7 +8,7 @@ Version: 3.0.6
 
 Datum: t.b.d
 
-* Lockerung der Anforderung für MS-Definition und Suchparameter zu Condition.clinicalStatus
+* Lockerung der Anforderung für MS-Definition und Suchparameter zu Condition.clinicalStatus https://github.com/gematik/spec-ISiK-Basismodul/pull/428
 
 ----
 
