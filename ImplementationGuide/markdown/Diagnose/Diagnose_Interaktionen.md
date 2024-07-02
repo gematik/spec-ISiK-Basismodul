@@ -12,7 +12,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
-1. Der Suchparameter "clinical-status" MUSS unterstützt werden:
+1. Der Suchparameter "clinical-status" MUSS unterstützt werden, sofern das Element implementiert wird (siehe in der Profilstruktur Festlegung zu bedingtem Must Support):
 
     Beispiele:
 
