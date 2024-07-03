@@ -11,6 +11,8 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
   * ^slicing.rules = #open
 * extension contains $condition-related named related 0..1 MS
 * clinicalStatus MS
+  * ^definition = "Einschränkung der übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. Das System MUSS jedoch den Status kodieren in der Diagnose, sofern die Information verfügbar ist."
+  * ^comment = "Hintergrund zur Motivation der MS-Definition: Auch in Stufe 3 sind keine (Client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen (siehe CapabilityStatement). Das heißt entweder führen KISe entsprechende Informationen und exponieren diese, oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen."
 * code 1.. MS
   * obeys icd-text-1
   * coding MS
