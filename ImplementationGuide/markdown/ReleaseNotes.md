@@ -7,7 +7,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 2.0.7
 
-Datum: t.b.d
+Datum: 4.7.2024
 
 * Lockerung der Anforderung für MS-Definition und Suchparameter zu Condition.clinicalStatus https://github.com/gematik/spec-ISiK-Basismodul/pull/427
 * Fix des ValueSets für SNOMED-CT-Diagnosen https://github.com/gematik/spec-ISiK-Basismodul/pull/429/commits/52833ff1bd0f8a4c71a19b7a3c50c3cfa2d95e32
