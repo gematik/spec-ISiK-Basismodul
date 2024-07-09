@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dad0fdbc947080" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Patient-merge.html">
+                                            Patient-Merge
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Observation.html">
+                                            Observation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="bestatigungsrelevante-systeme">Bestätigungsrelevante Systeme</h1>
+<p>Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Gesundheitswesen (KIG) gegenwärtig die Definition der bestätigungsrelevanten Systeme fest.</p>
+<h1 id="definition-bestatigungsrelevante-systeme"><strong>Definition Bestätigungsrelevante Systeme</strong></h1>
+<h1 id="allgemein"><strong>Allgemein</strong></h1>
+<p>Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für informationstechnische Systeme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach.
+Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten IT-Systeme anhand definierter Akteure getroffen.</p>
+<p>Bei bestätigungsrelevanten IT-Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem <em>primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten</em>, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.</p>
+<p>Versorgungsrelevante Daten sind administrative Daten (z.B. Alter des Patienten, Name der Einrichtung, Arztnummer usw.) sowie Daten zu klinischen Verfahren (z.B. Prozeduren-Codes), Diagnostik (z.B. Laborbefunde), Medikation (z.B. Medikamenten-Verordnung) und Abrechnung (z.B. Versicherungsverhältnis).</p>
+<p>Es wird eine Kategorisierung der bestätigungsrelevanten Subsysteme entlang von definierten Akteuren und des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten <strong>Definitionen</strong> als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der <strong>Geltungsbereich</strong> konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der <strong>normative Status</strong> wird schließlich tabellarisch unter den entsprechenden Abschnitten zur <strong>Bestätigungsrelevanz</strong> aufgeführt.</p>
+<p>Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) CapabilityStatement.</p>
+<p>An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreffen:</p>
+<ul>
+<li>Basismodul</li>
+<li>Dokumentenaustausch</li>
+<li>Vitalparameter und Körpermaße</li>
+<li>Terminplanung</li>
+<li>Medikation</li>
+</ul>
+<p>Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bestätigungsrelevant sein können, ist als Modul selbst jedoch nicht bestätigungsrelevant.</p>
+<p>+++++++++++++++++++++++++++++</p>
+<h1 id="basismodul"><strong>Basismodul</strong></h1>
+<h2 id="akteur-basis-server"><strong>Akteur: Basis-Server</strong></h2>
+<h3 id="definition"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Basis-Server&quot; im Sinne des ISiK-Moduls &quot;Basis&quot; ist ein System, das versorgungsrelevante Daten für andere Applikationen (Akteur: Basis-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung bereitstellt.</p>
+<p>Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs <em>Patient Demographics Supplier</em> und im IHE-QEDm-Kontext die Rolle des Akteurs <em>Clinical Data Source</em> ein*.*</p>
+<h3 id="geltungsbereich"><strong>Geltungsbereich</strong></h3>
+<p>Als Basis-Server gelten in diesem Kontext Systeme, die strukturierte, versorgungsrelevante Daten über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Daten während der Patientenversorgung im Krankenhaus dienen.</p>
+<p>Dies betrifft u.a.:</p>
+<ul>
+<li>KIS-Systeme</li>
+<li>Clinical Data Repository</li>
+<li>Abrechnungssysteme, sofern diese als führende Systeme für die Speicherung und Verwaltung versorgungsrelevanter Daten genutzt werden</li>
+</ul>
+<h2 id="akteur-basis-client"><strong>Akteur: Basis-Client</strong></h2>
+<h3 id="definition-1"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Basis-Client&quot; im Sinne des ISiK-Moduls &quot;Basis&quot; ist ein System, das versorgungsrelevante Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozesse zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet &quot;Basis-Clients&quot;.</p>
+<p>Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokumentes an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen.</p>
+<p>Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Basis-Client nimmt im IHE-PDQm-Kontext die Rolle des Akteurs <em>Patient Demographics Consumer</em> und im IHE-QEDm-Kontext die Rolle des Akteurs <em>Clinical Data Consumer</em> ein*.*</p>
+<h3 id="geltungsbereich-1"><strong>Geltungsbereich</strong></h3>
+<p>Als Basis-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten von anderen Systemen abfragen. Basis-Clients gelten <em>nicht</em> als primärer, dauerhafter Speicherort für die abgefragten Daten.</p>
+<p>Dies betrifft u.a. :</p>
+<ul>
+<li>Systeme, die Patientenstammdaten nicht über eine HL7 V2-Datenstrom empfangen, sondern diese bei Bedarf im patientenführenden System abfragen möchten</li>
+<li>Systeme, die versorgungsrelevante Daten in anderen Systemen abfragen möchten, um redundante Datenerfassung zu verhindern</li>
+<li>Systeme, die Daten aus anderen Systemen abfragen möchten, um sie Anwendern oder Prozessen bedarfsgerecht zur Verfügung zu stellen zu können, ohne diese redundant speichern zu müssen</li>
+</ul>
+<h2 id="bestatigungsrelevanz"><strong>Bestätigungsrelevanz</strong></h2>
+<p>Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Akteur</strong></th>
+<th style="text-align: center;"><strong>konkrete Anforderungen</strong></th>
+<th style="text-align: center;"><strong>bestätigungsrelevant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Basis-Server</td>
+<td style="text-align: center;"><a href="https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-CapabilityStatement?version=current">https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-CapabilityStatement?version=current</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">Basis-Client</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+</tbody>
+</table>
+<h1 id="dokumentenaustausch"><strong>Dokumentenaustausch</strong></h1>
+<h2 id="akteur-dokumenten-server"><strong>Akteur: Dokumenten-Server</strong></h2>
+<h3 id="definition-2"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Dokumenten-Server&quot; im Sinne des ISiK-Moduls &quot;Dokumentenaustausch&quot; ist ein System, das (potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISIK von anderen Applikationen (Akteur: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur Abfrage und Weiternutzung zur Verfügung stellt.</p>
+<p>Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Dokumenten-Server nimmt im Kontext der <a href="https://profiles.ihe.net/ITI/MHD/index.html">Spezifikation IHE ITI Mobile access to Health Documents (MHD)</a> die Rollen der Akteure <a href="https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133113-document-recipient">Document Recipient</a> und <a href="https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133114-document-responder">Document Responder</a> ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.0</p>
+<ul>
+<li>Simplified Publish [ITI-105] (verpflichtend)</li>
+<li>Generate Metadata [ITI-106] (optional)</li>
+<li>Find Document References [ITI-67] (verpflichtend)</li>
+<li>Retrieve Document [ITI-68] (verpflichtend)</li>
+</ul>
+<h3 id="geltungsbereich-2"><strong>Geltungsbereich</strong></h3>
+<p>Als Dokumenten-Server gelten in diesem Kontext alle Systeme, die strukturierte und/ oder unstrukturierte versorgungsrelevante Dokumente über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Dokumente dienen.</p>
+<p>Dies betrifft u.a.:</p>
+<ul>
+<li>KIS-Systeme mit integrierter Dokumentenverwaltung</li>
+<li>Archivsysteme, sofern diese nicht ausschließlich zur Umsetzung einer Backup-Lösung genutzt werden</li>
+<li>Dokumentenverwaltungssysteme (DMS), sofern diese zur Speicherung von versorgungsrelevante Dokumenten (s.o. zu versorgungsrelevante Daten) verwendet werden</li>
+</ul>
+<h2 id="akteur-dokumenten-client"><strong>Akteur: Dokumenten-Client</strong></h2>
+<h3 id="definition-3"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Dokumenten-Client&quot; im Sinne des ISiK-Moduls &quot;Dokumentenaustausch&quot; ist ein System, das Dokumente von einem Dokumenten-Server abfragt, um sie z.B. einem Anwender anzuzeigen. Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Dokumenten-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Dokumenten-Clients neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumenten-Server übermitteln. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten bereitstellen. Sowohl die Implementierung der Interaktion &quot;Dokumentenabfrage&quot; als auch &quot;Dokumentenbereitstellung&quot; sind für Dokumenten-Clients optional.</p>
+<p>Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Dokumenten-Client nimmt agiert IHE-MHD-Kontext als Akteur <a href="https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133111-document-source">Document Source</a> und <a href="https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133112-document-consumer">Document Consumer</a> ein und implementiert die IHE-MHD-Interaktionen</p>
+<ul>
+<li>Simplified Publish [ITI-105] (optional)</li>
+<li>Generate Metadata [ITI-106] (optional)</li>
+<li>Find Document References [ITI-67] (optional)</li>
+<li>Retrieve Document [ITI-68] (optional)</li>
+</ul>
+<h3 id="geltungsbereich-3"><strong>Geltungsbereich</strong></h3>
+<p>Als Dokumenten-Clients gelten in diesem Kontext alle Systeme, die strukturierte und/oder unstrukturierte versorgungsrelevante Dokumente erstellen und über Schnittstellen kommunizieren oder solche Dokumente von Dokumenten-Servern abfragen. Dokumenten-Clients gelten <em>nicht</em> als primärer, dauerhafter Speicherort für die erstellten oder abgefragten Dokumente.</p>
+<p>Dies betrifft u.a.:</p>
+<ul>
+<li>Anwendersysteme, die medizinischem Personal den bedarfsgerechten Zugang zu versorgungsrelevanten, andernorts gespeicherten Dokumenten ermöglichen</li>
+<li>Telekonsil-System gemäß § 31a BMV-Ä die Dokumente von Dokumenten-Servern abfragen und zur Verwendung in Telekonsilien bereitstellen</li>
+<li>KIM-Client-Anwendungssoftware, die Dokumente aus Anhängen an KIM-Nachrichten zur Speicherung an Dokumenten-Server übermitteln und/oder Dokumente von Dokumenten-Servern abfragen, um sie im Anhang an KIM-Nachrichten zu versenden</li>
+</ul>
+<h2 id="bestatigungsrelevanz-1"><strong>Bestätigungsrelevanz</strong></h2>
+<p>Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Akteur</strong></th>
+<th style="text-align: center;"><strong>konkrete Anforderungen</strong></th>
+<th style="text-align: center;"><strong>bestätigungsrelevant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Dokumenten-Server</td>
+<td style="text-align: center;"><a href="https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte-CapabilityStatement?version=current">https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte-CapabilityStatement?version=current</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">Dokumenten-Client</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+</tbody>
+</table>
+<h1 id="vitalparameter-und-korpermae"><strong>Vitalparameter und Körpermaße</strong></h1>
+<h2 id="akteur-vitalparameter-server"><strong>Akteur: Vitalparameter-Server</strong></h2>
+<h3 id="definition-4"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Vitalparameter-Server&quot; im Sinne des ISiK-Moduls &quot;Vitalparametern und Körpermaße&quot; ist ein System, das versorgungsrelevante Daten für andere Applikationen (Akteur: Vitalparameter-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.</p>
+<p>Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend analog zu IHE QEDm '<em>Clinical Data Source'</em> zu betrachten.</p>
+<h3 id="geltungsbereich-4"><strong>Geltungsbereich</strong></h3>
+<p>Als Vitalparameter-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.</p>
+<p>Systeme, die als Vitalparameter-Server agieren sind u.a.:</p>
+<ul>
+<li>KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul</li>
+<li>Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]</li>
+<li>Clinical Data Repository</li>
+<li>Elektronische Kurve [z.B. für die Verwendung auf Normal-Stationen]</li>
+</ul>
+<h2 id="akteur-vitalparameter-client"><strong>Akteur: Vitalparameter-Client</strong></h2>
+<h3 id="definition-5"><strong>Definition</strong></h3>
+<p>Im Kontext des Moduls Vitalparameter und Körpermaße fragen Vitalparameter-Clients versorgungsrelevante Daten von einem Vitalparameter-Server ab (entspricht weitgehend einem IHE QEDm Akteur  <em>Clinical Data Consumer)</em>, um sie z.B. einem Anwender anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Vitalparameter-Clients sind nicht verpflichtet, alle von den Vitalparameter-Servern geforderten Suchkriterien zu unterstützen.</p>
+<h3 id="geltungsbereich-5"><strong>Geltungsbereich</strong></h3>
+<p>Als Vitalparameter-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstelle abfragen oder kommunizieren. Vitalparameter-Clients gelten <em>nicht</em> als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.</p>
+<p>Vitalparameter-Clients sind zum Beispiel:</p>
+<ul>
+<li>Elektronische Kurve [z.B. für die Verwendung auf Normal-Stationen]</li>
+</ul>
+<p>Dabei ist zu beachten, dass auch Systeme, die oben als Akteur 'Vitalparameter-Server' gelistet sind, zusätzlich als Akteur 'Vitalparameter-Client' agieren können. Insbesondere für die Unterstützung zwischen Überleitungs-Workflows gilt dies für:</p>
+<ul>
+<li>KIS</li>
+<li>PDMS</li>
+</ul>
+<h2 id="bestatigungsrelevanz-2"><strong>Bestätigungsrelevanz</strong></h2>
+<p>Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zu klinischen Vitalparametern und Körpermaßen verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt ), ist der &quot;Vitalparameter-Server&quot; bestätigungsrelevant (für dieses eine Profil).</p>
+<p>Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Akteur</strong></th>
+<th style="text-align: center;"><strong>konkrete Anforderungen</strong></th>
+<th style="text-align: center;"><strong>bestätigungsrelevant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Vitalparameter-Server</td>
+<td style="text-align: center;"><a href="https://simplifier.net/guide/isik-vitalparameter-v4?version=current">https://simplifier.net/guide/isik-vitalparameter-v4?version=current</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">Vitalparameter-Client</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+</tbody>
+</table>
+<h1 id="terminplanung"><strong>Terminplanung</strong></h1>
+<h2 id="akteur-termin-repository"><strong>Akteur: Termin-Repository</strong></h2>
+<h3 id="definition-6"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Termin-Repository&quot; im Sinne des ISiK-Moduls &quot;Terminplanung&quot; ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z.B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhalten und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein patientenführendes System zu verstehen.</p>
+<h3 id="geltungsbereich-6"><strong>Geltungsbereich</strong></h3>
+<p>Systeme, die als Termin-Repository agieren sind u.a.:</p>
+<ul>
+<li>Patietenportal im Falle, dass das System selbst terminführend ist</li>
+<li>terminführenden Systeme, z.B. KIS oder auch Klinische Arbeitsplatz-Systeme (KAS) inkl. Terminverwaltung</li>
+<li>PDMS, die Termine verwalten</li>
+</ul>
+<h2 id="akteur-termin-requestor-termin-source"><strong>Akteur: Termin-Requestor (Termin-Source)</strong></h2>
+<h3 id="definition-7"><strong>Definition</strong></h3>
+<p>Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin-Source zu bezeichnen) werden alle Client-Systeme definiert, die mittels Schnittstellenanfrage zur Erhebung und Veränderung von Termininformationen dienen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe per FHIR R4 REST API nach ISiK, um einen Termin zu buchen. Das Termin-Requestor allein gilt <em>nicht</em> als autoritative Quelle zur Verwaltung von Termindaten., d.h. sofern der Termin-Requestor Termindaten von einem Termin-Repository synchronisiert und speichert/cached, sollten diese Termindaten nicht als solche verbindlich für einen mögliche Weiterverbreitung gelten, es muss vielmehr sichergestellt werden, dass die Daten mit denen des Quellsystems (Termin-Repository) übereinstimmen.</p>
+<h3 id="geltungsbereich-7"><strong>Geltungsbereich</strong></h3>
+<p>Systeme, die als Termin-Requestor agieren sind u.a.:</p>
+<ul>
+<li>Mobile Apps zur Verwaltung von Terminen</li>
+<li>Patientenportal bei der Synchronisierung mit einem weiteren Termin-Repository</li>
+<li>KIS / KAS bei der Synchronisierung mit einem weiteren Termin-Repository</li>
+</ul>
+<h2 id="termin-consumer"><strong>Termin-Consumer</strong></h2>
+<h3 id="definition-8"><strong>Definition</strong></h3>
+<p>Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.</p>
+<h3 id="geltungsbereich-8"><strong>Geltungsbereich</strong></h3>
+<p>Systeme, die als Termin-Consumer agieren sind u.a.:</p>
+<ul>
+<li>Apps zum Anzeigen eines Kalenders</li>
+<li>Systeme zum Versenden von Benachrichtigungen im Kontext eines Termins</li>
+<li>Ressourcen-Managementsoftware</li>
+</ul>
+<h2 id="bestatigungsrelevanz-3"><strong>Bestätigungsrelevanz</strong></h2>
+<p>Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Aktuere:</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Akteur</strong></th>
+<th style="text-align: center;"><strong>konkrete Anforderungen</strong></th>
+<th style="text-align: center;"><strong>bestätigungsrelevant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Termin-Repository</td>
+<td style="text-align: center;"><a href="https://simplifier.net/isik-terminplanung-v3/%7Eguides">https://simplifier.net/isik-terminplanung-v4/~guides</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">Termin-Requestor</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+<tr>
+<td style="text-align: center;">Termin-Consumer</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+</tbody>
+</table>
+<h1 id="medikation"><strong>Medikation</strong></h1>
+<p>Das Modul &quot;Medikation&quot; unterscheidet die im Folgenden definierten Akteure.</p>
+<h2 id="akteur-medikations-server"><strong>Akteur: Medikations-Server</strong></h2>
+<h3 id="definition-9"><strong>Definition</strong></h3>
+<p>Der Akteur &quot;Medikations-Server&quot; im Sinne des ISiK-Moduls &quot;Medikation&quot; ist ein System, das Informationen über Verordnung, Abgabe und Verabreichung von Medikamenten für andere Applikationen (Akteur: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.</p>
+<h3 id="geltungsbereich-9"><strong>Geltungsbereich</strong></h3>
+<p>Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist &quot;die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [<a href="https://wiki.gematik.de/pages/createpage.action?spaceKey=IOPAK&amp;title=...">...</a>] Sie ist die konkrete Ausführung der Pharmakotherapie.&quot; (<a href="https://flexikon.doccheck.com/de/Medikation">https://flexikon.doccheck.com/de/Medikation</a>)</p>
+<p>Systeme, die als Medikations-Server agieren können, sind u.a.:</p>
+<ul>
+<li>KIS mit Funktion Medikationsdatenverwaltung bzw. entsprechendes KIS-Modul</li>
+<li>Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche] (Anwendungsfallbeispiel: Medikationsdaten in das KIS übertragen bei Verlegung vom Intensivbereich auf Normal-Station)</li>
+<li>Software für digitales Medikationsmanagement (z.B. für die Umsetzung von KHZG Fördertatbestand 5)</li>
+<li>E-Therapieplan-System für Zytostatika-Behandlung mit Verarbeitung von Verordnungs- und Medikationsinformationen
+(gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)</li>
+<li>Herstellungssystem mit Verarbeitung von Verordnungs- und Medikationsinformationen
+(gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)</li>
+</ul>
+<h2 id="akteur-amts-data-provider"><strong>Akteur: AMTS Data Provider</strong></h2>
+<h3 id="definition-10"><strong>Definition</strong></h3>
+<p>Der Akteur AMTS Data Provider im Sinne des ISiK-Moduls &quot;Medikation&quot; ist ein System, das AMTS relevante Informationen für andere Applikationen (Akteur: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert. Beispiele für ATMS-relevante Informationen sind z.B. der Stillstatus, Schwangerschafts- und Raucherstatus.</p>
+<p>Es geht hier nicht um ein System das AMTS-Resultate bereitstellt - daher wurde die Bezeichnung AMTS Data Provider gegenüber AMTS-Server hier bevorzugt.</p>
+<h3 id="geltungsbereich-10"><strong>Geltungsbereich</strong></h3>
+<p>Als AMTS data provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte klinische Daten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.</p>
+<p>Systeme, die als AMTS data provider agieren können sind u.a.:</p>
+<ul>
+<li>KIS</li>
+<li>Laborinformationssysteme (LIS)</li>
+<li>PDMS (Anwendungsfallbeispiel: Abrufen von AMTS relevanten Zusatzinformationen)</li>
+</ul>
+<h2 id="akteur-medikations-client"><strong>Akteur: Medikations-Client</strong></h2>
+<h3 id="definition-11"><strong>Definition</strong></h3>
+<p>Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante Daten von einem Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.</p>
+<h3 id="geltungsbereich-11"><strong>Geltungsbereich</strong></h3>
+<p>Als Medikations-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten zur Medikation über eine Schnittstelle abfragen oder kommunizieren. Medikations-Clients gelten <em>nicht</em> als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.</p>
+<p>Medikations-Clients sind zum Beispiel:</p>
+<ul>
+<li>AMTS Systeme</li>
+</ul>
+<p>Dabei ist zu beachten, dass auch Systeme, die oben als Medikations-Server gelistet sind, zusätzlich als Akteur 'Medikations-Client' agieren können. Insbesondere für die Unterstützung eines Überleitungs-Workflows gilt dies für:</p>
+<ul>
+<li>KIS</li>
+<li>PDMS</li>
+</ul>
+<h2 id="bestatigungsrelevanz-4"><strong>Bestätigungsrelevanz</strong></h2>
+<p>Bestätigungsrelevant im Kontext des Moduls Medikation sind alle Systeme, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zu Medikationsinformationen verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt ), ist das System bestätigungsrelevant (für dieses eine Profil).</p>
+<p>Bestandteile des Support Moduls Labor sind im Kontext des Medikationsmoduls bestätigungsrelevant, insbesondere für die Anwendungsfälle rund um AMTS.</p>
+<p>Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Akteur</strong></th>
+<th style="text-align: center;"><strong>konkrete Anforderungen</strong></th>
+<th style="text-align: center;"><strong>bestätigungsrelevant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Medikations-Server</td>
+<td style="text-align: center;"><a href="https://simplifier.net/guide/isik-medikation-v4?version=current">https://simplifier.net/guide/isik-medikation-v4?version=current</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">AMTS Data Provider</td>
+<td style="text-align: center;"><a href="https://simplifier.net/guide/isik-basis-v4?version=current">https://simplifier.net/guide/isik-basis-v4?version=current</a><br><a href="https://simplifier.net/guide/isik-labor-v4?version=current">https://simplifier.net/guide/isik-labor-v4?version=current</a></td>
+<td style="text-align: center;">ja</td>
+</tr>
+<tr>
+<td style="text-align: center;">Medikations-Client</td>
+<td style="text-align: center;">keine</td>
+<td style="text-align: center;">nein</td>
+</tr>
+</tbody>
+</table>
+<h1 id="festlegungen-auf-profilebene-im-capabilitystatement">Festlegungen auf Profilebene im CapabilityStatement</h1>
+<p>Festlegungen zu Anforderungen auf Profilebene werden unter <a href="ImplementationGuide-markdown-CapabilityStatement.html" title='ImplementationGuide/markdown/CapabilityStatement.md'>CapabilityStatement</a> geführt.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

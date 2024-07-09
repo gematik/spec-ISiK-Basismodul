@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dad0fdbc947080" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Patient-merge.html">
+                                            Patient-Merge
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Observation.html">
+                                            Observation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="profil">Profil</h2>
+<table class='table table-bordered scrollbar '><thead><tr><th>Name</th><th>Canonical</th></tr></thead><tbody><tr><td>PatientMergeSubscription</td><td><a target='_blank' href='https://simplifier.net/resolve?canonical=https://gematik.de/fhir/isik/StructureDefinition/patient-merge-subscription&scope=isik-basis-v4@current'>https://gematik.de/fhir/isik/StructureDefinition/patient-merge-subscription</a></td></tr>
+</tbody></table>
+<p><div class="stu3-treetable" id="af62b3bb87b84b319438998f4ec9c33b" data-level="1"><div class="treetable-wrapper hybrid"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed constraints" data-id="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span class="constraints">Subscription</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td></td><td class="profile"><a title="Subscription
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Subscription.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Subscription.json" >Subscription</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription</pre></p></div><span><b>Short description </b></span><p><span>Server push subscription criteria</span></p><span><b>Alternate names </b></span><p><span>WebHook</span><span>, </span><span>Hook</span><span>, </span><span>Routing Rule</span></p><span><b>Definition </b></span><div class="markdown"><p>The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</p>
+</div><span><b>Data type </b></span><p><a title="Subscription
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Subscription.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Subscription.json" >Subscription</a></p><span><b>Constraints</b></span><div><ul><li><b>dom-2: </b>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br><code>contained.contained.empty()</code></li><li><b>dom-4: </b>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br><code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code></li><li><b>dom-3: </b>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br><code>contained.where(((&#39;#&#39;+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists()).not()).trace(&#39;unmatched&#39;, id).empty()</code></li><li><b>dom-6: </b>A resource should have narrative for robust management<br><code>text.`div`.exists()</code></li><li><b>dom-5: </b>If a resource is contained in another resource, it SHALL NOT have a security label<br><code>contained.meta.security.empty()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.id" data-id="39080298dd014e82a8257a0153201191" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.id</pre></p></div><span><b>Short description </b></span><p><span>Logical id of this artifact</span></p><span><b>Definition </b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p></td></tr><tr class="common" id="Subscription.meta" data-id="aeb5102cbba04926b9e82a47b46c849f" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>meta</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" >Meta</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.meta</pre></p></div><span><b>Short description </b></span><p><span>Metadata about the resource</span></p><span><b>Definition </b></span><div class="markdown"><p>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.</p>
+</div><span><b>Data type </b></span><p><a title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" >Meta</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.implicitRules" data-id="84d8ddbad1e34756806148c1c274b6d3" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>implicitRules</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.implicitRules</pre></p></div><span><b>Short description </b></span><p><span>A set of rules under which this content was created</span></p><span><b>Definition </b></span><div class="markdown"><p>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.</p>
+</div><span><b>Data type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.language" data-id="32d3ef564127433d9d62cb772c770e8f" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.language</pre></p></div><span><b>Short description </b></span><p><span>Language of the resource content</span></p><span><b>Definition </b></span><div class="markdown"><p>The base language in which the resource is written.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>A human language.</p>
+</div><a title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-languages.json" >CommonLanguages</a><span> (</span><a title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant." href="http://hl7.org/fhir/r4/terminologies.html#preferred" >preferred</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.text" data-id="496c82afeb0a4ddaaa41b4d12140b110" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>text</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" >Narrative</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.text</pre></p></div><span><b>Short description </b></span><p><span>Text summary of the resource, for human interpretation</span></p><span><b>Alternate names </b></span><p><span>narrative</span><span>, </span><span>html</span><span>, </span><span>xhtml</span><span>, </span><span>display</span></p><span><b>Definition </b></span><div class="markdown"><p>A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a &quot;text blob&quot; or where text is additionally entered raw or narrated and encoded information is added later.</p>
+</div><span><b>Data type </b></span><p><a title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" >Narrative</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li><li><b>rim: </b>Act.text?</li></ul></td></tr><tr class="common" id="Subscription.contained" data-id="c0542879d57a4f95912e8cdafccbac36" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>contained</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" >Resource</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.contained</pre></p></div><span><b>Short description </b></span><p><span>Contained, inline Resources</span></p><span><b>Alternate names </b></span><p><span>inline resources</span><span>, </span><span>anonymous resources</span><span>, </span><span>contained resources</span></p><span><b>Definition </b></span><div class="markdown"><p>These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.</p>
+</div><span><b>Data type </b></span><p><a title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" >Resource</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common sliced" id="Subscription.extension" data-id="1caff62a5cb04f78adf899347a6494a4" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common sliced" id="Subscription.modifierExtension" data-id="a556b622e6704965acbe4cd3135b85ee" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is a modifying element">?!</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.modifierExtension</pre></p></div><span><b>Short description </b></span><p><span>Extensions that cannot be ignored</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="constraints" id="Subscription.status" data-id="6268ae8ac1f14ab09a8b97f5862537c6" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">status</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.status</pre></p></div><span><b>Short description </b></span><p><span>requested | active | error | off</span></p><span><b>Definition </b></span><div class="markdown"><p>The status of the subscription, which marks the server state for managing the subscription.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.</p>
+<p>This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>The status of a subscription.</p>
+</div><a title="SubscriptionStatus
+hl7.fhir.r4.core 4.0.1
+ValueSet-subscription-status.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-subscription-status.json" >SubscriptionStatus</a><span> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>w5: </b>FiveWs.status</li></ul></td></tr><tr id="Subscription.contact" data-id="2376420654f04da784889ef272d331a3" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>contact</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="ContactPoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactPoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ContactPoint.json" >ContactPoint</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.contact</pre></p></div><span><b>Short description </b></span><p><span>Contact details for source (e.g. troubleshooting)</span></p><span><b>Definition </b></span><div class="markdown"><p>Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.</p>
+</div><span><b>Data type </b></span><p><a title="ContactPoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactPoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ContactPoint.json" >ContactPoint</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>cpt-2: </b>A system is required if a value is provided.<br><code>value.empty() or system.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>XTN</li><li><b>rim: </b>TEL</li><li><b>servd: </b>ContactPoint</li><li><b>w5: </b>FiveWs.subject[x]</li><li><b>w5: </b>FiveWs.subject</li></ul></td></tr><tr id="Subscription.end" data-id="dd1a28319a064507a6652c75c443fabf" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>end</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" >instant</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.end</pre></p></div><span><b>Short description </b></span><p><span>When to automatically delete the subscription</span></p><span><b>Definition </b></span><div class="markdown"><p>The time for the server to turn the subscription off.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The server is permitted to deviate from this time but should observe it.</p>
+</div><span><b>Data type </b></span><p><a title="instant
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-instant.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-instant.json" >instant</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>w5: </b>FiveWs.done[x]</li></ul></td></tr><tr class="constraints" id="Subscription.reason" data-id="b00ae924412b4873bcd7ffba59c19fb1" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">reason</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.reason</pre></p></div><span><b>Short description </b></span><p><span>Description of why this subscription was created</span></p><span><b>Definition </b></span><div class="markdown"><p>A description of why this subscription is defined.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>w5: </b>FiveWs.why[x]</li></ul></td></tr><tr class="collapsed constraints" id="Subscription.criteria" data-id="bebbac7365e640ad8760e32c7c993777" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">criteria</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a><span class="fixed-label constraints">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Subscription.criteria</pre></p></div><span><b>Short description </b></span><p><span>Canonical URL for the topic used to generate events</span></p><span><b>Definition </b></span><div class="markdown"><p>When using topic-based subscriptions, the primary criteria is always the topic, indicated by its canonical URL.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The rules are search criteria (without the [base] part). Like Bundle.entry.request.url, it has no leading &quot;/&quot;.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span class="constraints"><b>Pattern </b></span><div><p><pre class="constraints">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</pre></p></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.criteria.id" data-id="2dd53cfcccda4af5a42a9ee846e771fb" data-parentId="bebbac7365e640ad8760e32c7c993777"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.criteria.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed sliced" id="Subscription.criteria.extension" data-id="91f095bc55e94b809de7cbdb77c5939b" data-parentId="bebbac7365e640ad8760e32c7c993777"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.criteria.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.criteria.extension:filterCriteria" data-id="aac7ffb559604c8ba78a1436fb1c22aa" data-parentId="91f095bc55e94b809de7cbdb77c5939b"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">filterCriteria</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.criteria.extension:filterCriteria</pre></p></div><span><b>Short description </b></span><p><span>Filtering critiera applied to events</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>Search-style filters to be applied to narrow the subscription topic stream. Keys can be either search parameters appropriate to the filtering resource or keys defined within the subscription topic.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>When multiple filters are applied, evaluates to true if all the conditions are met; otherwise it returns false. (i.e., logical AND).</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-filter-criteria.json" target="Backported R5 FilterBy Criteria
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-filter-criteria.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.criteria.value" data-id="6e6dc1a96e164a10a6f98f59563bc142" data-parentId="bebbac7365e640ad8760e32c7c993777"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>value</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><span title="True primitive, so no extensions or ids allowed">System.String</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.criteria.value</pre></p></div><span><b>Short description </b></span><p><span>Primitive value for string</span></p><span><b>Definition </b></span><div class="markdown"><p>Primitive value for string</p>
+</div><span><b>Data type </b></span><p><span title="True primitive, so no extensions or ids allowed">System.String</span></p><span><b>Maximum string length</b></span><div><p>1048576</p></div></td></tr><tr id="Subscription.error" data-id="cb86e96f23434518b0a95122f7a0d504" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>error</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.error</pre></p></div><span><b>Short description </b></span><p><span>Latest error note</span></p><span><b>Definition </b></span><div class="markdown"><p>A record of the last error that occurred when the server processed a notification.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed constraints" id="Subscription.channel" data-id="769c9a773b8f4b1f9eab509c6f19c89c" data-parentId="422b32159ea94ff78ffa9dabd78d2963"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span class="constraints">channel</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel</pre></p></div><span><b>Short description </b></span><p><span>The channel on which to report matches to the criteria</span></p><span><b>Definition </b></span><div class="markdown"><p>Details where to send notifications when resources are received that meet the criteria.</p>
+</div><span><b>Data type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.channel.id" data-id="c5613d972e76402196612b7f6ab76793" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed sliced" id="Subscription.channel.extension" data-id="f98cf94baefa4018aa6ed22122ee5ceb" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.channel.extension:heartbeatPeriod" data-id="adde3627f0084f34ac115890cce31aa3" data-parentId="f98cf94baefa4018aa6ed22122ee5ceb"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">heartbeatPeriod</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" >unsignedInt</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.extension:heartbeatPeriod</pre></p></div><span><b>Short description </b></span><p><span>Interval in seconds to send &#39;heartbeat&#39; notification</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>If present, a 'hearbeat' notification (keepalive) is sent via this channel with an the interval period equal to this elements integer value in seconds. If not present, a heartbeat notification is not sent.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" >unsignedInt</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-heartbeat-period.json" target="Backport R5 Subscription Heartbeat Period
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-heartbeat-period.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.channel.extension:timeout" data-id="21e1b03dc13b4a86aebf21eba49a0ed0" data-parentId="f98cf94baefa4018aa6ed22122ee5ceb"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">timeout</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" >unsignedInt</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.extension:timeout</pre></p></div><span><b>Short description </b></span><p><span>Timeout in seconds to attempt notification delivery</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>If present, the maximum amount of time a server will allow before failing a notification attempt.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-unsignedInt.json" >unsignedInt</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-timeout.json" target="Backport R5 Subscription Timeout
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-timeout.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.channel.extension:maxCount" data-id="742e01e7302f4a5ea4e65e17adbedda1" data-parentId="f98cf94baefa4018aa6ed22122ee5ceb"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">maxCount</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="positiveInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-positiveInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-positiveInt.json" >positiveInt</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.extension:maxCount</pre></p></div><span><b>Short description </b></span><p><span>Maximum number of triggering resources included in notification bundles</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>If present, the maximum number of triggering resources that will be included in a notification bundle (e.g., a server will not include more than this number of trigger resources in a single notification). Note that this is not a strict limit on the number of entries in a bundle, as dependent resources can be included.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="positiveInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-positiveInt.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-positiveInt.json" >positiveInt</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-max-count.json" target="Backported R5 Subscription MaxCount
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-max-count.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.channel.modifierExtension" data-id="842e31efad494b2caa330faf73e38261" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.modifierExtension</pre></p></div><span><b>Short description </b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="collapsed constraints" id="Subscription.channel.type" data-id="87e3b8c7089748428df65e5f46ac0f7e" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">type</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label constraints">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Subscription.channel.type</pre></p></div><span><b>Short description </b></span><p><span>rest-hook | websocket | email | sms | message</span></p><span><b>Definition </b></span><div class="markdown"><p>The type of channel to send notifications on.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span class="constraints"><b>Binding </b></span><p><div class="markdown constraints"><p>The type of method used to execute a subscription.</p>
+</div><a title="Subscription Channel Type for ISiK" href="artifacts/Resources/fsh-generated/resources/ValueSet-RestAndWSSubscriptionChannelType.json"  class="constraints">RestAndWSSubscriptionChannelType</a><span class="constraints"> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required"  class="constraints">required</a><span class="constraints">)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.channel.type.id" data-id="5475e2c2b19e4200a5dcddcd1dba16e5" data-parentId="87e3b8c7089748428df65e5f46ac0f7e"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.type.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed sliced" id="Subscription.channel.type.extension" data-id="b38dbd0609b24cd381337338dc57a080" data-parentId="87e3b8c7089748428df65e5f46ac0f7e"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.type.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.channel.type.extension:customChannelType" data-id="f001d7e07d28411b8812705d394f5afb" data-parentId="b38dbd0609b24cd381337338dc57a080"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">customChannelType</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json" >Coding</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.type.extension:customChannelType</pre></p></div><span><b>Short description </b></span><p><span>Extended channel type for notifications</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>The type of channel to send notifications on.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This extension allows for the use of additional channel types that were not defined in the FHIR R4 subscription definition.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json" >Coding</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-channel-type.json" target="Backported R5 Additional Channel Types
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-channel-type.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-channel-type</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.channel.type.value" data-id="2cc3f5640ddd42fd9e8da86fa2e74340" data-parentId="87e3b8c7089748428df65e5f46ac0f7e"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>value</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><span title="True primitive, so no extensions or ids allowed">System.String</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.type.value</pre></p></div><span><b>Short description </b></span><p><span>Primitive value for code</span></p><span><b>Definition </b></span><div class="markdown"><p>Primitive value for code</p>
+</div><span><b>Data type </b></span><p><span title="True primitive, so no extensions or ids allowed">System.String</span></p><span><b>Maximum string length</b></span><div><p>1048576</p></div></td></tr><tr class="constraints" id="Subscription.channel.endpoint" data-id="659d737b4f9744f0a51f6813f6be0099" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">endpoint</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="url
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-url.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-url.json" >url</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.endpoint</pre></p></div><span><b>Short description </b></span><p><span>Where the channel points to</span></p><span><b>Definition </b></span><div class="markdown"><p>The url that describes the actual end-point to send messages to.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).</p>
+</div><span><b>Data type </b></span><p><a title="url
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-url.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-url.json" >url</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed constraints" id="Subscription.channel.payload" data-id="49f47fc91fd04eee9f6bcb26c6490254" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">payload</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label constraints">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Subscription.channel.payload</pre></p></div><span><b>Short description </b></span><p><span>MIME type to send, or omit for no payload</span></p><span><b>Definition </b></span><div class="markdown"><p>The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification. The mime type &quot;text/plain&quot; may also be used for Email and SMS subscriptions.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Sending the payload has obvious security implications. The server is responsible for ensuring that the content is appropriately secured.</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span class="constraints"><b>Binding </b></span><p><div class="markdown constraints"><p>The mime type of an attachment. Any valid mime type is allowed.</p>
+</div><a title="FHIR Mime Types" href="artifacts/Resources/fsh-generated/resources/ValueSet-FhirMimeTypeVS.json"  class="constraints">FhirMimeTypeVS</a><span class="constraints"> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required"  class="constraints">required</a><span class="constraints">)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Subscription.channel.payload.id" data-id="535e97ef35d442ce858aa8472123dd38" data-parentId="49f47fc91fd04eee9f6bcb26c6490254"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.payload.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="collapsed sliced" id="Subscription.channel.payload.extension" data-id="99fb1a94925e4675bad69b431585a910" data-parentId="49f47fc91fd04eee9f6bcb26c6490254"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>1</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.payload.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Subscription.channel.payload.extension:content" data-id="b81b93c795644dfead2cf509979b0dc9" data-parentId="99fb1a94925e4675bad69b431585a910"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span title="Follow the Extension URL link in the description for more details">content</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.payload.extension:content</pre></p></div><span><b>Short description </b></span><p><span>Notification content level</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>How much of the resource content to deliver in the notification payload. The choices are an empty payload, only the resource id, or the full resource content.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Sending the payload has obvious security implications. The server is responsible for ensuring that the content is appropriately secured.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a><span>(</span><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span>)</span></p><span><b>Extension URL </b></span><p><a  href="https://simplifier.net/resolve?scope=hl7.fhir.uv.subscriptions-backport@1.1.0&filepath=package/StructureDefinition-backport-payload-content.json" target="Backport R5 Subscription Payload Content Information
+hl7.fhir.uv.subscriptions-backport 1.1.0
+StructureDefinition-backport-payload-content.json">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Subscription.channel.payload.value" data-id="d57cd84a8d4a4b57ab08d26f16472253" data-parentId="49f47fc91fd04eee9f6bcb26c6490254"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>value</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><span title="True primitive, so no extensions or ids allowed">System.String</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Subscription.channel.payload.value</pre></p></div><span><b>Short description </b></span><p><span>Primitive value for code</span></p><span><b>Definition </b></span><div class="markdown"><p>Primitive value for code</p>
+</div><span><b>Data type </b></span><p><span title="True primitive, so no extensions or ids allowed">System.String</span></p><span><b>Maximum string length</b></span><div><p>1048576</p></div></td></tr><tr class="constraints" id="Subscription.channel.header" data-id="2a4b7eb8f9cc47e2aaa73e23818f283e" data-parentId="769c9a773b8f4b1f9eab509c6f19c89c"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">header</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Subscription.channel.header</pre></p></div><span class="constraints"><b>Short description </b></span><p><span class="constraints">Falls eine REST-Enpunkt einen Authorization-Header ben&#246;tigt, kann dieser hier gesetzt werden</span></p><span><b>Definition </b></span><div class="markdown"><p>Additional headers / information to send as part of the notification.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTableaf62b3bb87b84b319438998f4ec9c33b = new Stu3TreeTable(false);
+resourceTreeTableaf62b3bb87b84b319438998f4ec9c33b.init("af62b3bb87b84b319438998f4ec9c33b");
+}
+})();
+</script></p>
+<hr />
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
