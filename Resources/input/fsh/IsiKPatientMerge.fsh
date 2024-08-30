@@ -4,6 +4,7 @@ Parent: BackportSubscription
 Id: patient-merge-subscription
 Title: "Patient Merge Subscription"
 Description: "Patient Merge Subscription"
+* insert Meta
 * status MS
 * reason MS
 * criteria = $patient-merge-topic
@@ -33,6 +34,7 @@ ValueSet: RestAndWSSubscriptionChannelType
 Id: RestAndWSSubscriptionChannelType
 Title: "RestAndWSSubscriptionChannelType"
 Description: "Subscription Channel Type for ISiK"
+* insert Meta
 * SubscriptionChannelType#rest-hook
 * SubscriptionChannelType#websocket
 
@@ -40,6 +42,7 @@ ValueSet: FhirMimeTypeVS
 Id: FhirMimeTypeVS
 Title: "FhirMimeTypeVS"
 Description: "FHIR Mime Types"
+* insert Meta
 * urn:ietf:bcp:13#application/fhir+json
 * urn:ietf:bcp:13#application/fhir+xml
 

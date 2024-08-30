@@ -35,6 +35,7 @@ Profile: ISiKStandortRaum
 Parent: ISiKStandort
 Id: ISiKStandortRaum
 Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses."
+* insert Meta
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
 * operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
@@ -44,6 +45,7 @@ Profile: ISiKStandortBettenstellplatz
 Parent: ISiKStandort
 Id: ISiKStandortBettenstellplatz
 Description: "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) eines Krankenhauses"
+* insert Meta
 * physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
 * operationalStatus MS
 * operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
