@@ -3,6 +3,7 @@ Parent: Coding
 Id: ISiKCoding
 Title: "ISiKCoding"
 Description: "Data Type profile for Codings in ISiK"
+* insert Meta
 * system 1.. MS
 * code 1.. MS
 * display MS
@@ -12,6 +13,7 @@ Parent: ISiKCoding
 Id: ISiKSnomedCTCoding
 Title: "ISiKSnomedCTCoding"
 Description: "Data Type profile for Snomed-CT Codings in ISiK"
+* insert Meta
 * system = $sct
 * version MS
 * version obeys sct-version-de
@@ -21,6 +23,7 @@ Parent: ISiKCoding
 Id: ISiKLoincCoding
 Title: "ISiKLoincCoding"
 Description: "Data Type profile for LOINC Codings in ISiK"
+* insert Meta
 * system = $loinc
 * version MS
 
@@ -32,6 +35,7 @@ Parent: CodingICD10GM
 Id: ISiKICD10GMCoding
 Title: "ISiKICD10GMCoding"
 Description: "Data Type profile for ICD10-GM Codings in ISiK"
+* insert Meta
 * system 1.. MS
 * code 1.. MS
 * display MS
@@ -42,6 +46,7 @@ Parent: CodingASK
 Id: ISiKASKCoding
 Title: "ISiKASKCoding"
 Description: "Data Type profile for ASK Codings in ISiK"
+* insert Meta
 * system 1.. MS
 * code 1.. MS
 * display MS
@@ -51,6 +56,7 @@ Parent: CodingATC
 Id: ISiKATCCoding
 Title: "ISiKATCCoding"
 Description: "Data Type profile for ATC Codings in ISiK"
+* insert Meta
 * system 1.. MS
 * code 1.. MS
 * display MS
@@ -60,6 +66,7 @@ Parent: CodingPZN
 Id: ISiKPZNCoding
 Title: "ISiKPZNCoding"
 Description: "Data Type profile for ATC Codings in ISiK"
+* insert Meta
 * system 1.. MS
 * code 1.. MS
 * display MS
