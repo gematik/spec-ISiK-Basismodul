@@ -16,3 +16,7 @@ RuleSet: Meta-CapabilityStatement
 * insert MetaInstance
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer"
+
+RuleSet: Expectation (expectation)
+* extension.url = $capabilitystatement-expectation
+* extension.valueCode = {expectation}
