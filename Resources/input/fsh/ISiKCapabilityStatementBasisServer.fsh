@@ -591,7 +591,7 @@ Usage: #definition
         `GET [base]/Procedure?category=http://snomed.info/sct|387713003`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
-        * searchParam[+]
+    * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "code"
       * definition = "http://hl7.org/fhir/SearchParameter/Procedure-code"
