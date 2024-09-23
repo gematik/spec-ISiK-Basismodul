@@ -598,7 +598,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470"`    
+        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
     * searchParam[+]
