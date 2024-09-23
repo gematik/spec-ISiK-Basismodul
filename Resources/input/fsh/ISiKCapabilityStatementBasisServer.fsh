@@ -736,10 +736,10 @@ Usage: #definition
     * type = #RelatedPerson
     * insert Expectation(#SHALL)
     * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"
-    * interaction[=]
+    * interaction[+]
       * code = #read
       * insert Expectation(#SHALL)
-    * interaction[=]
+    * interaction[+]
       * code = #search-type
       * insert Expectation(#SHALL)
     * searchParam[+]
@@ -910,10 +910,10 @@ Usage: #definition
     * interaction[+]
       * code = #read
       * insert Expectation(#MAY)
-    * interaction[=]
+    * interaction[+]
       * code = #search-type
       * insert Expectation(#MAY)
-    * searchParam[=]
+    * searchParam[+]
       * name = "_id"
       * insert Expectation(#MAY)
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
@@ -1551,7 +1551,7 @@ Usage: #definition
 /*     * extension
       * url = Canonical(CapabilityStatementSubscriptionTopic)
       * valueCanonical = $patient-merge-topic */
-    * operation[=]
+    * operation[+]
       * name = "$get-ws-binding-token"
       * insert Expectation(#MAY)  
       * definition = "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
