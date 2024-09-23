@@ -406,7 +406,7 @@ Usage: #definition
         "**Beispiel:**    
         `GET [base]/Account?_id=103270`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -467,7 +467,7 @@ Usage: #definition
         "**Beispiel:**    
         `GET [base]/Condition?_id=test`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "clinical-status"
@@ -570,7 +570,7 @@ Usage: #definition
         "**Beispiel:**    
         `GET [base]/Procedure?_id=test`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -598,7 +598,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`    
+        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470"`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
     * searchParam[+]
@@ -671,7 +671,7 @@ Usage: #definition
         "**Beispiel:**    
         `GET [base]/Coverage?_id=103270`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -732,692 +732,832 @@ Usage: #definition
     * searchInclude[+] = "Coverage:beneficiary"
       * insert Expectation(#SHALL)
 
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #RelatedPerson
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "patient"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/RelatedPerson-patient"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/RelatedPerson-name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address-city"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address-city"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address-country"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address-country"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address-postalcode"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address-postalcode"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchInclude = "RelatedPerson:patient"
-* rest.resource[=].searchInclude[=].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchInclude[=].extension.valueCode = #SHALL
-* rest.resource[=].searchRevInclude = "Coverage:subscriber"
-* rest.resource[=].searchRevInclude[=].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchRevInclude[=].extension.valueCode = #SHALL
-* rest.resource[=].searchRevInclude[+] = "Coverage:payor"
-* rest.resource[=].searchRevInclude[=].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchRevInclude[=].extension.valueCode = #SHALL
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #Practitioner
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "family"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-family"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "given"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-given"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "gender"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #CodeSystem
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "url"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
-* rest.resource[=].searchParam[=].type = #uri
-* rest.resource[=].type = #ValueSet
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "url"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
-* rest.resource[=].searchParam[=].type = #uri
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "status"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-status"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "version"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-version"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "context-type-value"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/conformance-context-type-value"
-* rest.resource[=].searchParam[=].type = #composite
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Composition
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #Bundle
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].type = #Observation
-* rest.resource[=].supportedProfile = Canonical(ISiKLebensZustand)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = Canonical(ISiKSchwangerschaftsstatus)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = Canonical(ISiKSchwangerschaftErwarteterEntbindungstermin)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = Canonical(ISiKAlkoholAbusus)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = Canonical(ISiKRaucherStatus)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = Canonical(ISiKStillstatus)
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = #SHALL
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "status"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-status"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "category"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-category"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "code"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "patient"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "subject"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-subject"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "date"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
-* rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "combo-code"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "combo-code-value-quantity"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity"
-* rest.resource[=].searchParam[=].type = #composite
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "component-code"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Observation-component-code"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "encounter"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchInclude[+] = "Observation:encounter"
-  * extension.url = $capabilitystatement-expectation
-  *  extension.valueCode = #SHALL
-* rest.resource[=].searchInclude[+] = "Observation:patient"
-  * extension.url = $capabilitystatement-expectation
-  *  extension.valueCode = #SHALL
-* rest.resource[=].searchInclude[+] = "Observation:subject"
-  * extension.url = $capabilitystatement-expectation
-  *  extension.valueCode = #SHALL
+  * resource[+]
+    * type = #RelatedPerson
+    * insert Expectation(#SHALL)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"
+    * interaction[=]
+      * code = #read
+      * insert Expectation(#SHALL)
+    * interaction[=]
+      * code = #search-type
+      * insert Expectation(#SHALL)
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?_id=103270`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/RelatedPerson-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?patient=Patient/123`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "name"
+      * definition = "http://hl7.org/fhir/SearchParameter/RelatedPerson-name"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?name=Heidi`  
+        `GET [base]/RelatedPerson?name=Alpenzauber`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-address"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?address=Berlin`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address-city"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-city"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?address-city=Berlin`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address-country"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-country"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?address-country=DE`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address-postalcode"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-postalcode"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/RelatedPerson?address-postalcode=10117`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchInclude[+] = "RelatedPerson:patient"
+      * insert Expectation(#SHALL)
+    * searchRevInclude = "Coverage:subscriber"
+      * insert Expectation(#SHALL)
+    * searchRevInclude[+] = "Coverage:payor"
+      * insert Expectation(#SHALL)
+
+
+  * resource[+]
+    * type = #Practitioner
+    * insert Expectation(#SHALL)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?_id=1234567890`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Practitioner-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?identifier=42`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "family"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-family"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?family=Alpenzauber`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "given"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-given"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?given=Heidi`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "name"
+      * definition = "http://hl7.org/fhir/SearchParameter/Practitioner-name"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?name=Heidi`
+        `GET [base]/Practitioner?name=Alpenzauber`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "        
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-address"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?address=Berlin`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "gender"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?gender=female`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+
+  * resource[+]
+    * type = #CodeSystem
+    * insert Expectation(#MAY)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem"
+    * interaction[+]
+      * code = #read
+      * insert Expectation(#MAY)
+    * interaction[=]
+      * code = #search-type
+      * insert Expectation(#MAY)
+    * searchParam[=]
+      * name = "_id"
+      * insert Expectation(#MAY)
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/CodeSystem?_id=103270`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "url"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
+      * type = #uri
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/CodeSystem?url=http://example.org/fhir/CodeSystem/test`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#uri).  "
+
+  * resource[+]
+    * type = #ValueSet
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet"
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type   
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?_id=103270`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "url"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-url"
+      * type = #uri
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?url=http://example.org/fhir/ValueSet/test`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#uri).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "name"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-name"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?name=TestValueSet`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "status"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-status"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?status=active`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "version"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-version"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?version=1.0.0`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "context-type-value"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-context-type-value"
+      * type = #composite
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter`    
+        **Anwendungshinweis:**  
+        Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:  
+        * Hausinternen Prozeduren/Diagnosen-Codes
+        * Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)  
+        Use Cases im Zusammenhang:    
+        (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet 
+        bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte-Operations?version=current) genutzt.  
+        (B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.  
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
+
+
+  * resource[+]
+    * type = #Composition
+    * insert Expectation(#MAY)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
+
+  * resource[+]
+    * type = #Bundle
+    * insert Expectation(#MAY)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+
+  * resource[+]
+    * type = #Observation
+    * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKLebensZustand)
+      * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKSchwangerschaftsstatus)
+      * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKSchwangerschaftErwarteterEntbindungstermin)
+      * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKAlkoholAbusus)
+      * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKRaucherStatus)
+      * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKStillstatus)
+      * insert Expectation(#SHALL)
+
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type   
+
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?_id=1234567890`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "status"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-status"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?status=http://hl7.org/fhir/observation-status|final`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "category"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-category"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|social-history`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "code"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?code=http://loinc.org|82810-3`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?patient=Patient/123`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "subject"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-subject"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?subject=Patient/123`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "date"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
+      * type = #date
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?date=ge2013-01-14&date=le2021-12-31`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "combo-code"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?combo-code=85354-9`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "combo-code-value-quantity"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity"
+      * type = #composite
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$120|http://unitsofmeasure.org|mm[Hg]`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "component-code"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-component-code"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?component-code=http://loinc.org|85354-9`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "encounter"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?encounter=Encounter/234`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchInclude[+] = "Observation:encounter"
+      * insert Expectation(#SHALL)
+    * searchInclude[+] = "Observation:patient"
+      * insert Expectation(#SHALL)
+    * searchInclude[+] = "Observation:subject"
+      * insert Expectation(#SHALL)
+
 
 // Standort (Location)
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Location
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "operational-status"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-operational-status"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "organization"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-organization"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "characteristic"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-characteristic"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "type"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "partof"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "contains"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-contains"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "near"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-near"
-* rest.resource[=].searchParam[=].type = #token
 
-// ISiKStandortRaum (Location)
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Location
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum"
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "operational-status"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-operational-status"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "organization"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-organization"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "characteristic"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-characteristic"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "type"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "partof"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "contains"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-contains"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "near"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-near"
-* rest.resource[=].searchParam[=].type = #token
+  * resource[+]
+    * type = #Location
+    * insert Expectation(#MAY)
+    * supportedProfile[+] = Canonical(ISiKStandort)
+      * insert Expectation(#MAY)
+    * supportedProfile[+] = Canonical(ISiKStandortRaum)
+      * insert Expectation(#MAY)
+    * supportedProfile[+] = Canonical(ISiKStandortBettenstellplatz)
+      * insert Expectation(#MAY)
 
-// ISiKStandortBettenstellplatz (Location)
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Location
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz"
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "operational-status"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-operational-status"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "organization"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-organization"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "characteristic"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-characteristic"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "type"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "partof"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "contains"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-contains"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "near"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Location-near"
-* rest.resource[=].searchParam[=].type = #token
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #search-type   
+
+    * searchParam[+]
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?_id=1234`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?identifier=http://fhir.krankenhaus.example|260120196`  
+        `GET [base]/Location?identifier=345678975`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-address"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?address=Berlin`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "operational-status"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-operational-status"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?operational-status=Unoccupied`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "organization"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-organization"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?organization=AbteilungAllgemeinchirurgieOrganisationBeispiel`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+
+//Warum ist "characteristic" ein Suchparameter!? Das Element gibt es nicht mal in der Ressourcen-Definition!!
+/*     * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "characteristic"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-characteristic"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?component-code=http://loinc.org|85354-9`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
+
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "type"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-type"
+      * type = #token
+      * documentation = 
+        "**Beispiel zur Suche nach Typ eines Standorts: **    
+        `GET [base]/Location?type=bed`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "partof"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
+      * type = #reference
+      * documentation = 
+        "**Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums (Zu welcher Abteilung gehört dieser Raum?): **    
+        `[base]/Location?partof=RaumStandortBeispiel`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "contains"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-contains"
+      * type = #reference
+      * documentation = 
+        "**Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums:**    
+        `GET [base]/Location?contains=KoordinatenBeispielGeoJSON`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "near"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-near"
+      * type = #token
+      * documentation = 
+        "**Beispiel zur Suche nach Standort nahe (100m) Koordinaten: **    
+        `GET [base]/Location?contains=52.525851|13.37774|100|m`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#special).  "
+
+
 
 //Organisation
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Organization
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "active"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "type"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "partof"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "endpoint"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
-* rest.resource[=].searchParam[=].type = #reference
 
-//OrganisationFachabteilung
-* rest.resource[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].type = #Organization
-* rest.resource[=].supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung"
-* rest.resource[=].interaction[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #search-type
-* rest.resource[=].searchParam[0].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "active"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "type"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "name"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "address"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "partof"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].extension.url = $capabilitystatement-expectation
-* rest.resource[=].searchParam[=].extension.valueCode = #MAY
-* rest.resource[=].searchParam[=].name = "endpoint"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
-* rest.resource[=].searchParam[=].type = #reference
+  * resource[+]
+    * type = #Organisation
+    * insert Expectation(#MAY)
+    * supportedProfile[+] = Canonical(ISiKOrganisation)
+      * insert Expectation(#MAY)
+    * supportedProfile[+] = Canonical(ISiKOrganisationFachabteilung)
+      * insert Expectation(#MAY)
+
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #search-type   
+
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+        "**Beispiel zur Suche nach Typ eines Standorts: **    
+        `GET [base]/Organization?_id=12345`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Organization?identifier=http://fhir.de/sid/arge-ik/iknr|260120196` 
+        `GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-bsnr|345678975` 
+        `GET [base]/Organization?identifier=345678975`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "active"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
+      * type = #token
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?active=true` 
+        `GET [base]/Organization?active=false`    
+        **Anwendungshinweis:**   
+        Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. - 
+        erscheint es erforderlich nach Ressourcen nicht aktiver Organisationseinheiten suchen zu können.
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "type"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
+      * type = #token
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?type=dept`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "name"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
+      * type = #string
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?name=FA-Gynäkologie`  
+        `GET [base]/Organization?name=GYN`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "address"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
+      * type = #string
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?address=Berlin`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "partof"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
+      * type = #reference
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?partof:identifier=260120196`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "endpoint"
+      * definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
+      * type = #reference
+      * documentation = 
+        "**Beispiel: **    
+        `GET [base]/Organization?endpoint:identifier=123456`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+
 //AllergyIntolerance
-* rest.resource[+]
-  * extension
-    * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * valueCode = #SHALL
-  * type = #AllergyIntolerance
-  * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
-  * interaction[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * code = #read
-  * interaction[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * code = #search-type
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "_id"
-    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "clinical-status"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "patient"
-    * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-    * type = #reference
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "asserter"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-asserter"
-    * type = #reference
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "recorder"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-recorder"
-    * type = #reference
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "onset"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
-    * type = #date
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "date"
-    * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
-    * type = #date
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #MAY
-    * name = "_profile"
-    * definition = "http://hl7.org/fhir/SearchParameter/Resource-profile"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "category"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "criticality"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "type"
-    * definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
-    * type = #token
-  * searchParam[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * name = "verification-status"
-    * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status"
-    * type = #token
-  * searchInclude[+] = "AllergyIntolerance:patient"
-    * extension.url = $capabilitystatement-expectation
-    * extension.valueCode = #SHALL
-  * searchInclude[+] = "AllergyIntolerance:encounter"
-    * extension.url = $capabilitystatement-expectation
-    * extension.valueCode = #SHALL
-  * searchInclude[+] = "AllergyIntolerance:recorder"
-    * extension.url = $capabilitystatement-expectation
-    * extension.valueCode = #SHALL
-  * searchInclude[+] = "AllergyIntolerance:asserter"
-    * extension.url = $capabilitystatement-expectation
-    * extension.valueCode = #SHALL
+  * resource[+]
+    * insert Expectation(#SHALL)
+    * type = #AllergyIntolerance
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "_id"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?_id=test`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "clinical-status"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?clinical-status=active`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?patient=Patient/123`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+  //wird im IG nicht genannt
+  /*   * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "asserter"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-asserter"
+      * type = #reference
+      * documentation = 
+          "**Beispiel: **    
+          `ToDo`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " */
+  
+  //wird im IG nicht genannt
+  /*   * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "recorder"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-recorder"
+      * type = #reference
+      * documentation = 
+          "**Beispiel: **    
+          `ToDo`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " */
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "onset"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
+      * type = #date
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23Z+02:00`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "date"
+      * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
+      * type = #date
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?date=2015-01-01T12:00:23Z+02:00`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "category"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?category=environment`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+  //wird im IG nicht genannt
+  /*   * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "criticality"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/Organization?type=dept`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "type"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/AllergyIntolerance?type=allergy`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+  //wird im IG nicht genannt
+  /*   * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "verification-status"
+      * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status"
+      * type = #token
+      * documentation = 
+          "**Beispiel: **    
+          `GET [base]/Organization?type=dept`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
+    * searchInclude[+] = "AllergyIntolerance:patient"
+      * insert Expectation(#SHALL)    
+    * searchInclude[+] = "AllergyIntolerance:encounter"
+      * insert Expectation(#SHALL)    
+    * searchInclude[+] = "AllergyIntolerance:recorder"
+      * insert Expectation(#SHALL)    
+    * searchInclude[+] = "AllergyIntolerance:asserter"
+        
 
 //TopicBased Subscription Backport (https://hl7.org/fhir/uv/subscriptions-backport/)
-* rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension.valueCode = #MAY
-* rest.resource[=].extension.url = Canonical(CapabilityStatementSubscriptionTopic)
-* rest.resource[=].extension.valueCanonical = $patient-merge-topic
-* rest.resource[=].type = #Subscription
-* rest.resource[=].supportedProfile = Canonical(PatientMergeSubscription)
-* rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile.extension.valueCode = #MAY
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #create
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #update
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #MAY
-* rest.resource[=].interaction[=].code = #delete
-* rest.resource[=].operation[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].operation[=].extension.valueCode = #MAY
-* rest.resource[=].operation[=].name = "$get-ws-binding-token"
-* rest.resource[=].operation[=].definition = "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
-* document.extension.url = $capabilitystatement-expectation
-* document.extension.valueCode = #SHALL
-* document.mode = #consumer
-* document.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
+* rest
+  * resource[+]
+    * insert Expectation(#MAY)
+    * type = #Subscription
+    * supportedProfile = Canonical(PatientMergeSubscription)
+      * insert Expectation(#MAY)
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #create
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #update
+    * interaction[+]
+      * insert Expectation(#MAY)
+      * code = #delete
+
+//Diese Extension wird nirgends gerendert, was war hier der Plan?
+/*     * extension
+      * url = Canonical(CapabilityStatementSubscriptionTopic)
+      * valueCanonical = $patient-merge-topic */
+    * operation[=]
+      * name = "$get-ws-binding-token"
+      * insert Expectation(#MAY)  
+      * definition = "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
+
+
+* document
+  * insert Expectation(#SHALL)  
+  * mode = #consumer
+  * profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"
