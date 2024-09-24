@@ -24,18 +24,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Patient?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
-
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "identifier"
@@ -183,31 +172,31 @@ Usage: #definition
     * searchRevInclude = "Composition:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Composition:subject"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Composition:author"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Condition:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Condition:subject"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Procedure:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Procedure:subject"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Encounter:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Encounter:subject"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Coverage:beneficiary"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Coverage:subscriber"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Coverage:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Coverage:payor"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Account:subject"
-      * insert Expectation (#SHALL)
+      * insert Expectation (#MAY)
     * searchRevInclude[+] = "Account:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "AllergyIntolerance:patient"
@@ -226,16 +215,7 @@ Usage: #definition
       * code = #search-type
       * insert Expectation (#SHALL)
 
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Encounter?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -316,7 +296,7 @@ Usage: #definition
       * type = #date
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Encounter?_id=103270`    
+        `GET [base]/Encounter?date=lt2020-26-10`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  
         Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der 
@@ -370,15 +350,15 @@ Usage: #definition
     * searchInclude[+] = "Encounter:patient"
       * insert Expectation(#SHALL)
     * searchInclude[+] = "Encounter:subject"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Encounter:part-of"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Encounter:diagnosis"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Encounter:account"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchRevInclude = "Encounter:part-of"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchRevInclude[+] = "Condition:encounter"
       * insert Expectation(#SHALL)
     * searchRevInclude[+] = "Composition:encounter"
@@ -397,16 +377,7 @@ Usage: #definition
       * code = #search-type
       * insert Expectation(#SHALL)
 
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Account?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -458,16 +429,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Condition?_id=test`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "clinical-status"
@@ -545,11 +507,11 @@ Usage: #definition
     * searchInclude[+] = "Condition:patient"
       * insert Expectation(#SHALL)
     * searchInclude[+] = "Condition:subject"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Condition:encounter"
       * insert Expectation(#SHALL)
     * searchRevInclude[+] = "Encounter:diagnosis"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
 
   * resource[+]
     * type = #Procedure
@@ -561,16 +523,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Procedure?_id=test`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -644,11 +597,11 @@ Usage: #definition
     * searchInclude = "Procedure:patient"
       * insert Expectation(#SHALL)
     * searchInclude[+] = "Procedure:subject"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Procedure:encounter"
       * insert Expectation(#SHALL)
     * searchRevInclude = "Encounter:diagnosis"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
 
 
   * resource[+]
@@ -662,16 +615,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Coverage?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -724,13 +668,13 @@ Usage: #definition
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
 
     * searchInclude[+] = "Coverage:subscriber"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Coverage:patient"
       * insert Expectation(#SHALL)
     * searchInclude[+] = "Coverage:payor"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchInclude[+] = "Coverage:beneficiary"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
 
   * resource[+]
     * type = #RelatedPerson
@@ -742,16 +686,7 @@ Usage: #definition
     * interaction[+]
       * code = #search-type
       * insert Expectation(#SHALL)
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/RelatedPerson?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "patient"
@@ -816,9 +751,9 @@ Usage: #definition
     * searchInclude[+] = "RelatedPerson:patient"
       * insert Expectation(#SHALL)
     * searchRevInclude = "Coverage:subscriber"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
     * searchRevInclude[+] = "Coverage:payor"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
 
 
   * resource[+]
@@ -831,16 +766,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Practitioner?_id=1234567890`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -913,16 +839,7 @@ Usage: #definition
     * interaction[+]
       * code = #search-type
       * insert Expectation(#MAY)
-    * searchParam[+]
-      * name = "_id"
-      * insert Expectation(#MAY)
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/CodeSystem?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "url"
@@ -943,16 +860,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type   
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/ValueSet?_id=103270`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "url"
@@ -1045,16 +953,7 @@ Usage: #definition
       * insert Expectation(#SHALL)
       * code = #search-type   
 
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Observation?_id=1234567890`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -1160,7 +1059,7 @@ Usage: #definition
     * searchInclude[+] = "Observation:patient"
       * insert Expectation(#SHALL)
     * searchInclude[+] = "Observation:subject"
-      * insert Expectation(#SHALL)
+      * insert Expectation(#MAY)
 
 
 // Standort (Location)
@@ -1182,15 +1081,7 @@ Usage: #definition
       * insert Expectation(#MAY)
       * code = #search-type   
 
-    * searchParam[+]
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Location?_id=1234`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "identifier"
@@ -1305,16 +1196,7 @@ Usage: #definition
       * insert Expectation(#MAY)
       * code = #search-type   
 
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-        "**Beispiel zur Suche nach Typ eines Standorts:**    
-        `GET [base]/Organization?_id=12345`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
@@ -1403,16 +1285,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-      * documentation = 
-          "**Beispiel:**    
-          `GET [base]/AllergyIntolerance?_id=test`    
-          **Anwendungshinweis:**   
-          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
+    * insert CommonSearchParameters
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "clinical-status"
@@ -1523,8 +1396,9 @@ Usage: #definition
     * searchInclude[+] = "AllergyIntolerance:encounter"
       * insert Expectation(#SHALL)    
     * searchInclude[+] = "AllergyIntolerance:recorder"
-      * insert Expectation(#SHALL)    
+      * insert Expectation(#MAY)    
     * searchInclude[+] = "AllergyIntolerance:asserter"
+      * insert Expectation(#MAY) 
         
 
 //TopicBased Subscription Backport (https://hl7.org/fhir/uv/subscriptions-backport/)
