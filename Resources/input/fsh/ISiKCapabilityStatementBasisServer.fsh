@@ -1547,10 +1547,9 @@ Usage: #definition
       * insert Expectation(#MAY)
       * code = #delete
 
-//Diese Extension wird nirgends gerendert, was war hier der Plan?
-/*     * extension
+    * extension
       * url = Canonical(CapabilityStatementSubscriptionTopic)
-      * valueCanonical = $patient-merge-topic */
+      * valueCanonical = $patient-merge-topic 
     * operation[+]
       * name = "$get-ws-binding-token"
       * insert Expectation(#MAY)  
