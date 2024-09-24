@@ -1251,7 +1251,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Location-type"
       * type = #token
       * documentation = 
-        "**Beispiel zur Suche nach Typ eines Standorts: **    
+        "**Beispiel zur Suche nach Typ eines Standorts:**    
         `GET [base]/Location?type=bed`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
@@ -1261,7 +1261,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Location-partof"
       * type = #reference
       * documentation = 
-        "**Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums (Zu welcher Abteilung gehört dieser Raum?): **    
+        "**Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums (Zu welcher Abteilung gehört dieser Raum?):**    
         `[base]/Location?partof=RaumStandortBeispiel`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
@@ -1281,7 +1281,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Location-near"
       * type = #token
       * documentation = 
-        "**Beispiel zur Suche nach Standort nahe (100m) Koordinaten: **    
+        "**Beispiel zur Suche nach Standort nahe (100m) Koordinaten:**    
         `GET [base]/Location?contains=52.525851|13.37774|100|m`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#special).  "
@@ -1311,7 +1311,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
       * type = #token
       * documentation = 
-        "**Beispiel zur Suche nach Typ eines Standorts: **    
+        "**Beispiel zur Suche nach Typ eines Standorts:**    
         `GET [base]/Organization?_id=12345`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
@@ -1333,7 +1333,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
       * type = #token
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?active=true` 
         `GET [base]/Organization?active=false`    
         **Anwendungshinweis:**   
@@ -1346,7 +1346,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
       * type = #token
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?type=dept`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
@@ -1356,7 +1356,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
       * type = #string
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?name=FA-Gynäkologie`  
         `GET [base]/Organization?name=GYN`    
         **Anwendungshinweis:**   
@@ -1367,7 +1367,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-address"
       * type = #string
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?address=Berlin`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
@@ -1377,7 +1377,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
       * type = #reference
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?partof:identifier=260120196`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
@@ -1387,7 +1387,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-endpoint"
       * type = #reference
       * documentation = 
-        "**Beispiel: **    
+        "**Beispiel:**    
         `GET [base]/Organization?endpoint:identifier=123456`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
@@ -1409,7 +1409,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?_id=test`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all).  "
@@ -1419,7 +1419,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?clinical-status=active`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
@@ -1429,7 +1429,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?patient=Patient/123`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
@@ -1440,7 +1440,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-asserter"
       * type = #reference
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `ToDo`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " */
@@ -1452,7 +1452,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-recorder"
       * type = #reference
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `ToDo`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " */
@@ -1462,7 +1462,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset"
       * type = #date
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23Z+02:00`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
@@ -1472,7 +1472,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
       * type = #date
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?date=2015-01-01T12:00:23Z+02:00`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
@@ -1482,7 +1482,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?category=environment`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
@@ -1493,7 +1493,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-criticality"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/Organization?type=dept`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
@@ -1503,7 +1503,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/AllergyIntolerance?type=allergy`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
@@ -1514,7 +1514,7 @@ Usage: #definition
       * definition = "http://hl7.org/fhir/SearchParameter/AllergyIntolerance-verification-status"
       * type = #token
       * documentation = 
-          "**Beispiel: **    
+          "**Beispiel:**    
           `GET [base]/Organization?type=dept`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
