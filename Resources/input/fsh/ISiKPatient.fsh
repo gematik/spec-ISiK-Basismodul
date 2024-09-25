@@ -1,7 +1,22 @@
 Profile: ISiKPatient
 Parent: Patient
 Id: ISiKPatient
-Description: "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien."
+Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.
+### Motivation  
+Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  
+In FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  
+Die Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, 
+die Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  
+
+### Kompatibilität
+Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+
+* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)
+* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
+* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)  
+
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+
 * insert Meta
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
@@ -16,43 +31,101 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#KVZ10
-  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer gilt für alle Krankenversichertennummern, unabhängig, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
+  * ^short = "Lebenslange Krankenversichertennummer"
+  * ^comment = "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, 
+    unveränderbare Teil der Versichertennummer, 
+    der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
+    Er gilt für alle Krankenversichertennummern, 
+    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
   * type 1.. MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "Hier ist stets der Code `KVZ10` 
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
   * system MS
-  * value MS    
+    * ^short = "Namensraum der Versichertennummer"
+    * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben."
+  * value MS 
+    * ^short = "Lebenslange Krankenversichertennummer"
+    * ^comment = "Der 10-stellige, unveränderbare Teil der Versichertennummer."  
 * identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
-  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt. Bitte den 'VersichertenId'-Slice verwenden."
+  * ^short = "Gesetzliche Krankenversichertennummer"
+  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,
+  da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. 
+  Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden."
   * type 1.. MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "Hier ist stets der Code `KVZ10` 
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
   * system MS
   * value MS
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
+  * ^short = "Organisationsinterner Patienten-Identifier (PID)"
+  * ^comment = "Organisationsintere Patienten-Identifier werden von z.B. von KIS-Systemen vergeben 
+  und dienen innerhalb einer Einreichtung meist als primäres Identifikationsmerkmal für Patienten, 
+  u.A. in der HL7 V2-Kommunikation. "
   * type MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "Hier ist stets der Code `MR` 
+    aus dem CodeSystem `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben."
   * system MS
+    * ^short = "Namensraum des Identifiers"
+    * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben."
   * value MS
 * identifier[Versichertennummer_PKV] only IdentifierPkv
   * ^patternIdentifier.type = $identifier-type-de-basis#PKV
   * ^mustSupport = false
+  * ^short = "Private Krankenversichertennummer"
+  * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
+  können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
+  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,
+  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben."
   * use MS
+    * ^short = "Verwendungszeck des Identifiers"
+    * ^comment = "Hier ist stets der Wert `secondary` anzugeben."
   * type 1.. MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "Hier ist stets der Code `PKV` 
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
   * value MS
+    * ^short = "Private Krankenversichertennummer"
   * assigner MS
     * identifier.system MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/arge-ik/iknr` anzugeben."
     * identifier.value MS
+      * ^short = "IK-Nummer des Kostenträgers"
+      * ^comment = "IK-Nummer des Kostenträgers, aus dessen Nummernkreis die PKV-Nummer stammt."
     * display MS
+      * ^short = "Name des Kostenträgers"
+      * ^comment = "Name des Kostenträgers, aus dessen Nummernkreis die PKV-Nummer stammt."
 * active MS
-  * ^definition = "Einschränkung der Übergreifenden MS-Definition: Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource, so MUSS dieses System die Information NICHT abbilden. Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz (Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven Patient-Ressource interagieren."
+  * ^short = "Status des Datensatzes"
+  * ^comment = "
+  `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  
+  `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
+  **Einschränkung der Übergreifenden MS-Definition:**  
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource, 
+  so MUSS dieses System die Information NICHT abbilden. 
+  Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz 
+  (Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven 
+  Patient-Ressource interagieren."
 * name MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "In order to maintain the differentiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
+  //* ^comment = "In order to maintain the differentiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis\r\nThis is however not required within the scope of this specification."
 * name contains
     Name 1..1 MS and
     Geburtsname 0..1 MS
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
+  * ^short = "Offizieller Name"
+  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherung"
   * use 1.. MS
   * family 1.. MS
     * extension[namenszusatz] 0..1 MS
