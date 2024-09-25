@@ -30,7 +30,12 @@ RuleSet: CommonSearchParameters
   * documentation = 
         "**Beispiel:**    
         `GET [base]/[Resourcetype]?_id=103270`    
-        **Anwendungshinweis:**   
+        **Anwendungshinweis:**  
+        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource 
+        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,
+        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:    
+        `GET [base]/Encounter?_id=103270&_include=Encounter:patient` 
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).  
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 * searchParam[+]
@@ -58,7 +63,9 @@ RuleSet: CommonSearchParameters
   * name = "_has"
   * type = #string
   * documentation = 
-        "**Beispiel:**    
+        "**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben   
         `GET [base]/Patient?_has:Observation:patient:code=1234-5`    
+        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde     
+        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`  
         **Anwendungshinweis:**   
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
