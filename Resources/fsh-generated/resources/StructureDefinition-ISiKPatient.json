@@ -290,7 +290,7 @@
         "path": "Patient.name",
         "sliceName": "Name",
         "short": "Offizieller Name",
-        "comment": "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherung",
+        "comment": "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint",
         "min": 1,
         "max": "1",
         "type": [
@@ -309,12 +309,16 @@
       {
         "id": "Patient.name:Name.use",
         "path": "Patient.name.use",
+        "short": "Verwendungszweck",
+        "comment": "Hier ist stets der Wert `official` anzugeben.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family",
         "path": "Patient.name.family",
+        "short": "Nachname",
+        "comment": "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.",
         "min": 1,
         "mustSupport": true
       },
@@ -322,29 +326,37 @@
         "id": "Patient.name:Name.family.extension:namenszusatz",
         "path": "Patient.name.family.extension",
         "sliceName": "namenszusatz",
+        "short": "Namenszusatz",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family.extension:nachname",
         "path": "Patient.name.family.extension",
         "sliceName": "nachname",
+        "short": "Nachname",
+        "comment": "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family.extension:vorsatzwort",
         "path": "Patient.name.family.extension",
         "sliceName": "vorsatzwort",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.given",
         "path": "Patient.name.given",
+        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittelinitialen abzubilden",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.prefix",
         "path": "Patient.name.prefix",
+        "short": "Präfix",
+        "comment": "Präfix, z.B. akademischer Titel od. militärischer Rang",
         "mustSupport": true
       },
       {
@@ -356,12 +368,16 @@
       {
         "id": "Patient.name:Name.prefix.extension:prefix-qualifier.value[x]",
         "path": "Patient.name.prefix.extension.value[x]",
+        "short": "Extension, um das Präfix als akademischen Titel zu qualifizieren",
+        "comment": "Hier ist stets der Wert `AC` anzugeben.",
         "fixedCode": "AC"
       },
       {
         "id": "Patient.name:Geburtsname",
         "path": "Patient.name",
         "sliceName": "Geburtsname",
+        "short": "Geburtsname",
+        "comment": "Familienname zum Zeitpunkt der Geburt, sofern abweichend vom offiziellen Namen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -380,12 +396,16 @@
       {
         "id": "Patient.name:Geburtsname.use",
         "path": "Patient.name.use",
+        "short": "Verwendungszweck",
+        "comment": "Hier ist stets der Wert `maiden` anzugeben.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family",
         "path": "Patient.name.family",
+        "short": "Nachname",
+        "comment": "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.",
         "min": 1,
         "mustSupport": true
       },
@@ -393,18 +413,23 @@
         "id": "Patient.name:Geburtsname.family.extension:namenszusatz",
         "path": "Patient.name.family.extension",
         "sliceName": "namenszusatz",
+        "short": "Namenszusatz",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family.extension:nachname",
         "path": "Patient.name.family.extension",
         "sliceName": "nachname",
+        "short": "Nachname",
+        "comment": "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family.extension:vorsatzwort",
         "path": "Patient.name.family.extension",
         "sliceName": "vorsatzwort",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
