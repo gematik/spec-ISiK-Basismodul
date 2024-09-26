@@ -125,23 +125,51 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
   * ^short = "Offizieller Name"
-  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherung"
+  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint"
   * use 1.. MS
+    * ^short = "Verwendungszweck"
+    * ^comment = "Hier ist stets der Wert `official` anzugeben."
   * family 1.. MS
+    * ^short = "Nachname"
+    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
     * extension[namenszusatz] 0..1 MS
+      * ^short = "Namenszusatz"
+      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."
     * extension[nachname] 0..1 MS
+      * ^short = "Nachname"
+      * ^comment = "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
     * extension[vorsatzwort] 0..1 MS
+      * ^short = "Vorsatzwort"
+      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
   * given 1.. MS
+    * ^short = "Vorname"
+    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittelinitialen abzubilden"   
   * prefix MS
+    * ^short = "Präfix"
+    * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
     * extension[prefix-qualifier] 0..1 MS
     * extension[prefix-qualifier].value[x] = #AC (exactly)
+      * ^short = "Extension, um das Präfix als akademischen Titel zu qualifizieren"
+      * ^comment = "Hier ist stets der Wert `AC` anzugeben." 
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
+  * ^short = "Geburtsname"
+  * ^comment = "Familienname zum Zeitpunkt der Geburt, sofern abweichend vom offiziellen Namen."
   * use 1.. MS
+    * ^short = "Verwendungszweck"
+    * ^comment = "Hier ist stets der Wert `maiden` anzugeben."
   * family 1.. MS
+    * ^short = "Nachname"
+    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
     * extension[namenszusatz] 0..1 MS
+      * ^short = "Namenszusatz"
+      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."
     * extension[nachname] 0..1 MS
+      * ^short = "Nachname"
+      * ^comment = "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
     * extension[vorsatzwort] 0..1 MS
+      * ^short = "Vorsatzwort"
+      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
   * given ..0
   * prefix ..0
 * telecom.system 1..
