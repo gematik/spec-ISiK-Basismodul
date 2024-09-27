@@ -169,7 +169,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."    
   * given 1.. MS
-    * ^short = "Vorname"
+    * ^short = "Vorname "
     * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
       **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * prefix MS
