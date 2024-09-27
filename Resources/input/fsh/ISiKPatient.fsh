@@ -215,7 +215,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **Begründung Pflichtfeld:** Die Geschlechtsangabe ist für viele Versorgungsprozesse unerlässlich, z.B.  
 * Bettendisposition
 * Ermittlung von Referenzwerten
-* korrekte Anrede des Patienten
+* korrekte Anrede des Patienten  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht)"
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
   * extension[Geschlecht-Administrativ]
@@ -310,7 +310,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^short = "Hausnummer"
       * ^comment = "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). 
         Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,
-        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. 
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[Adresszusatz] 0..1 MS
       * ^short = "Adresszusatz"
