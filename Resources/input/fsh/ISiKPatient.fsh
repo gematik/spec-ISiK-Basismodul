@@ -209,7 +209,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * telecom.system 1..
 * telecom.value 1..
 * gender 1.. MS
+  * ^short = "administratives Geschlecht" 
+  * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
+    Zur weiteren Differenzierung kann dann die Extension `Geschlecht-Admnistrativ` verwendet werden.
+    **Begründung Pflichtfeld:** Die Geschlechtsangabe ist für viele Versorgungsprozesse unerlässlich, z.B.  
+    * Bettendisposition
+    * Ermittlung von Referenzwerten
+    * korrekte Anrede des Patienten
+    **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht)"
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
+    * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens `other`"
+    * ^comment = "Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen `other` verwendet werden
+      und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen `D` (divers) und `X`(unbestimmt)"
 * birthDate 1.. MS
   * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
   * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
