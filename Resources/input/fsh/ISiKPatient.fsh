@@ -1,3 +1,4 @@
+
 Profile: ISiKPatient
 Parent: Patient
 Id: ISiKPatient
@@ -36,46 +37,61 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     unveränderbare Teil der Versichertennummer, 
     der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
     Er gilt für alle Krankenversichertennummern, 
-    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt."
+    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.  
+    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)"
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `KVZ10` 
-    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
+    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"  
   * system MS
     * ^short = "Namensraum der Versichertennummer"
-    * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben."
+    * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
   * value MS 
     * ^short = "Lebenslange Krankenversichertennummer"
     * ^comment = "Der 10-stellige, unveränderbare Teil der Versichertennummer."  
 * identifier[VersichertenId-GKV] only IdentifierKvid10
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
   * ^short = "Gesetzliche Krankenversichertennummer"
-  * ^comment = "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,
+  * ^comment = "**WARNUNG**: Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,
   da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. 
   Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden."
   * type 1.. MS
     * ^short = "Art des Identifiers"
-    * ^comment = "Hier ist stets der Code `KVZ10` 
-    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
+    * ^comment = "Hier ist stets der Code `GKV` 
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
+    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"
   * system MS
+    * ^short = "Namensraum der Versichertennummer"
+    * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
   * value MS
+    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
   * ^short = "Organisationsinterner Patienten-Identifier (PID)"
   * ^comment = "Organisationsintere Patienten-Identifier werden von z.B. von KIS-Systemen vergeben 
   und dienen innerhalb einer Einreichtung meist als primäres Identifikationsmerkmal für Patienten, 
-  u.A. in der HL7 V2-Kommunikation. "
+  u.A. in der HL7 V2-Kommunikation.  
+  **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-OrganisationsinternerPatienten-Identifier?version=current)"
   * type MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `MR` 
-    aus dem CodeSystem `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben."
+    aus dem CodeSystem `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben.  
+    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"
   * system MS
     * ^short = "Namensraum des Identifiers"
     * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
     aus dem der Identifier stammt. 
     Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben."
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
   * value MS
+    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+
 * identifier[Versichertennummer_PKV] only IdentifierPkv
   * ^patternIdentifier.type = $identifier-type-de-basis#PKV
   * ^mustSupport = false
@@ -83,16 +99,20 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
   können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
   Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,
-  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben."
+  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.  
+  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)"
   * use MS
     * ^short = "Verwendungszeck des Identifiers"
     * ^comment = "Hier ist stets der Wert `secondary` anzugeben."
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `PKV` 
-    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben."
+    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
+    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"
   * value MS
     * ^short = "Private Krankenversichertennummer"
+    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."  
   * assigner MS
     * identifier.system MS
       * ^short = "Namensraum des Identifiers"
@@ -125,7 +145,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
   * ^short = "Offizieller Name"
-  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint"
+  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.
+  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen."
   * use 1.. MS
     * ^short = "Verwendungszweck"
     * ^comment = "Hier ist stets der Wert `official` anzugeben."
