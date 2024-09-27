@@ -128,7 +128,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "
   `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  
   `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
-  **Einschränkung der Übergreifenden MS-Definition:**  
+  **Einschränkung der übergreifenden MS-Definition:**  
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource, 
   so MUSS dieses System die Information NICHT abbilden. 
   Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz 
@@ -145,11 +145,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
   * ^short = "Offizieller Name"
-  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.
-  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen."
+  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.  
+  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen.  
+  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)"
   * use 1.. MS
     * ^short = "Verwendungszweck"
-    * ^comment = "Hier ist stets der Wert `official` anzugeben."
+    * ^comment = "Hier ist stets der Wert `official` anzugeben.  
+      **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * family 1.. MS
     * ^short = "Nachname"
     * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
@@ -171,26 +173,31 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[prefix-qualifier] 0..1 MS
     * extension[prefix-qualifier].value[x] = #AC (exactly)
       * ^short = "Extension, um das Präfix als akademischen Titel zu qualifizieren"
-      * ^comment = "Hier ist stets der Wert `AC` anzugeben." 
+      * ^comment = "Hier ist stets der Wert `AC` anzugeben.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
   * ^short = "Geburtsname"
   * ^comment = "Familienname zum Zeitpunkt der Geburt, sofern abweichend vom offiziellen Namen."
   * use 1.. MS
     * ^short = "Verwendungszweck"
-    * ^comment = "Hier ist stets der Wert `maiden` anzugeben."
+    * ^comment = "Hier ist stets der Wert `maiden` anzugeben.  
+      **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * family 1.. MS
     * ^short = "Nachname"
     * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
-      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."
+      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[nachname] 0..1 MS
       * ^short = "Nachname"
-      * ^comment = "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
+      * ^comment = "Nachname ohne Vor- und Zusätze.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
       * ^short = "Vorsatzwort"
-      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
+      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
   * prefix ..0
 * telecom.system 1..
@@ -213,6 +220,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * obeys address-cnt-2or3-char
   * ^patternAddress.type = #postal
   * type 1.. MS
+    * ^short = "Adresstyp"
+    * ^comment = "Hier ist stets der Wert `postal` anzugeben.  
+    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * line 1.. MS
     * extension[Strasse] 0..0 
     * extension[Hausnummer] 0..0 
@@ -226,16 +236,59 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
   * type 1.. MS
+    * ^short = "Adresstyp"
+    * ^comment = "Hier ist stets der Wert `postal` anzugeben.  
+    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * line 1.. MS
+    * ^short = "Adresszeile"
+    * ^comment = "Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, Postfach, c/o 
+    sowie weitere Zustellungshinweise enthalten. 
+    Die Informationen können in mehrere line-Komponenten aufgeteilt werden. 
+    Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln, 
+    müssen diese Informationen stets vollständig auch in der line-Komponente, 
+    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, 
+    auf diese Informationen zugreifen zu können.  
+    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  
+    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der 
+    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt."
     * extension[Strasse] 0..1 MS
+      * ^short = "Strassenname"
+      * ^comment = "Strassenname (ohne Hausnummer).
+        Bei Angabe einer Strasse in dieser Extension muss diese auch in Address.line angegeben werden,
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[Hausnummer] 0..1 MS
+      * ^short = "Hausnummer"
+      * ^comment = "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). 
+        Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. 
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[Adresszusatz] 0..1 MS
+      * ^short = "Adresszusatz"
+      * ^comment = "Zusätzliche Informationen, wie z.B. '3. Etage', 'Appartment C'.
+        Bei Angabe einer Zusatzinformation in dieser Extension muss diese auch in Address.line angegeben werden,
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[Postfach] 0..0
+      * ^short = "Postfachnummer"
+      * ^comment = "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. 
+        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
   * city 1.. MS
+    * ^short = "Stadt"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * postalCode 1.. MS
+    * ^short = "Postleitzahl"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * country 1.. MS
+    * ^short = "Land"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
 * link MS
-  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen im Implementation Guide befüllt werden. Da das Element der Unterstützung der Patient merge Notification dient, MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4)."
+  * ^short = "Link"
+  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter {{pagelink:Patient-merge}} befüllt werden. 
+  Da das Element der Unterstützung der Patient merge Notification dient, 
+  MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4)."
   * other MS
     * identifier MS
       * ^comment = "Logischer Verweis auf Identifier[Patientennummer]"
