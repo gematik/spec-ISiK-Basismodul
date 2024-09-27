@@ -371,8 +371,13 @@
         "path": "Patient.name.prefix.extension",
         "sliceName": "prefix-qualifier",
         "short": "Extension, um das Präfix als akademischen Titel zu qualifizieren",
-        "comment": "Hier ist stets der Wert `AC` anzugeben.  \n    * extension[prefix-qualifier].value[x] = #AC (exactly)\n\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
+        "comment": "Hier ist stets der Wert `AC` anzugeben.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
         "mustSupport": true
+      },
+      {
+        "id": "Patient.name:Name.prefix.extension:prefix-qualifier.value[x]",
+        "path": "Patient.name.prefix.extension.value[x]",
+        "fixedCode": "AC"
       },
       {
         "id": "Patient.name:Geburtsname",
@@ -467,7 +472,7 @@
         "id": "Patient.gender.extension:Geschlecht-Administrativ",
         "path": "Patient.gender.extension",
         "sliceName": "Geschlecht-Administrativ",
-        "short": "Extension zur Differenzierung des Geschlechtskennzeichens `other` ",
+        "short": "Extension zur Differenzierung des Geschlechtskennzeichens ",
         "comment": "Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen `other` verwendet werden\n      und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen `D` (divers) und `X`(unbestimmt)",
         "min": 0,
         "max": "1",
@@ -583,7 +588,7 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Strasse",
         "path": "Patient.address.line.extension",
         "sliceName": "Strasse",
-        "short": "Strassenname",
+        "short": "Strassenname ",
         "comment": "Strassenname (ohne Hausnummer).\n        Bei Angabe einer Strasse in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
         "mustSupport": true
       },
@@ -591,6 +596,7 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Hausnummer",
         "path": "Patient.address.line.extension",
         "sliceName": "Hausnummer",
+        "short": "Hausnummer ",
         "comment": "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). \n        Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.   \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
         "mustSupport": true
       },
@@ -598,6 +604,7 @@
         "id": "Patient.address:Strassenanschrift.line.extension:Adresszusatz",
         "path": "Patient.address.line.extension",
         "sliceName": "Adresszusatz",
+        "short": "Adresszusatz ",
         "comment": "Zusätzliche Informationen, wie z.B. '3. Etage', 'Appartment C'.\n        Bei Angabe einer Zusatzinformation in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
         "mustSupport": true
       },
@@ -620,6 +627,7 @@
       {
         "id": "Patient.address:Strassenanschrift.postalCode",
         "path": "Patient.address.postalCode",
+        "short": "Postleitzahl ",
         "comment": "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.",
         "min": 1,
         "mustSupport": true
@@ -715,6 +723,7 @@
       {
         "id": "Patient.address:Postfach.postalCode",
         "path": "Patient.address.postalCode",
+        "short": "Postleitzahl ",
         "comment": "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.",
         "min": 1,
         "mustSupport": true
