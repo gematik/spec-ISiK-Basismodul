@@ -274,7 +274,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Stadt"
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * postalCode 1.. MS
-    * ^short = "Postleitzahl"
+    * ^short = "Postleitzahl "
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * country 1.. MS
     * ^short = "Land"
@@ -329,7 +329,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Stadt"
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * postalCode 1.. MS
-    * ^short = "Postleitzahl"
+    * ^short = "Postleitzahl "
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * country 1.. MS
     * ^short = "Land"
