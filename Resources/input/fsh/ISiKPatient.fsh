@@ -145,8 +145,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
   * ^short = "Offizieller Name"
-  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.  
-  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen.  
+  * ^comment = "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint. 
+  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen.
+  Wenn kein Name vorliegt, MUSS die [data-absent-reason-Extension](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html) eingesetzt werden.   
   **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)"
   * use 1.. MS
     * ^short = "Verwendungszweck"
