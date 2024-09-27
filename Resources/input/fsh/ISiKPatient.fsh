@@ -225,7 +225,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
   * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
   * extension[Data-Absent-Reason].value[x] MS
-  * ^short = "Geburstdatum"
+  * ^short = "Geburtsdatum"
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
