@@ -230,13 +230,33 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "Hier ist stets der Wert `postal` anzugeben.  
     **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * line 1.. MS
+    * ^short = "Adresszeile"
+    * ^comment = "Diese Komponente enthält die Postfachadresse als String der Form 'Postfach: 12345'.
+    Bei Verwendung der Postfach-Extension, um die Postfachnummer strukturiert zu übermitteln, 
+    müssen diese Informationen stets vollständig auch in der line-Komponente, 
+    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, 
+    auf diese Informationen zugreifen zu können.  
+    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  
+    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der 
+    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt."
     * extension[Strasse] 0..0 
     * extension[Hausnummer] 0..0 
     * extension[Adresszusatz] 0..0 
     * extension[Postfach] 0..1 MS
+      * ^short = "Postfachnummer"
+      * ^comment = "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. 
+        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
   * city 1.. MS
+    * ^short = "Stadt"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * postalCode 1.. MS
+    * ^short = "Postleitzahl"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
   * country 1.. MS
+    * ^short = "Land"
+    * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
 * address[Strassenanschrift] only AddressDeBasis
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
@@ -247,7 +267,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * line 1.. MS
     * ^short = "Adresszeile"
-    * ^comment = "Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, Postfach, c/o 
+    * ^comment = "Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, c/o 
     sowie weitere Zustellungshinweise enthalten. 
     Die Informationen können in mehrere line-Komponenten aufgeteilt werden. 
     Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln, 
