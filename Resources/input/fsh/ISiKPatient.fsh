@@ -165,7 +165,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^comment = "Nachname ohne Vor- und Zusätze.  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
-      * ^short = "Vorsatzwort"
+      * ^short = "Vorsatzwort "
       * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."    
   * given 1.. MS
@@ -176,9 +176,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Präfix"
     * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
     * extension[prefix-qualifier] 0..1 MS
-    * extension[prefix-qualifier].value[x] = #AC (exactly)
       * ^short = "Extension, um das Präfix als akademischen Titel zu qualifizieren"
       * ^comment = "Hier ist stets der Wert `AC` anzugeben.  
+    * extension[prefix-qualifier].value[x] = #AC (exactly)
+
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
@@ -201,7 +202,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^comment = "Nachname ohne Vor- und Zusätze.  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
-      * ^short = "Vorsatzwort"
+      * ^short = "Vorsatzwort "
       * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
@@ -209,7 +210,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * telecom.system 1..
 * telecom.value 1..
 * gender 1.. MS
-  * ^short = "administratives Geschlecht" 
+  * ^short = "Administratives Geschlecht " 
   * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
     Zur weiteren Differenzierung kann dann die Extension `Geschlecht-Admnistrativ` verwendet werden.
     **Begründung Pflichtfeld:** Die Geschlechtsangabe ist für viele Versorgungsprozesse unerlässlich, z.B.  
@@ -219,7 +220,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht)"
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
   * extension[Geschlecht-Administrativ]
-    * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens `other`"
+    * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens `other` "
     * ^comment = "Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen `other` verwendet werden
       und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen `D` (divers) und `X`(unbestimmt)"
 * birthDate 1.. MS
@@ -229,7 +230,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "ToDo"
     * value[x] = #unknown (exactly)
     * value[x] MS
-  * ^short = "Geburtsdatum"
+  * ^short = "Geburtsdatum "
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
