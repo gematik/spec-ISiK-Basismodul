@@ -50,7 +50,7 @@
         "path": "Patient.identifier",
         "sliceName": "VersichertenId",
         "short": "Lebenslange Krankenversichertennummer",
-        "comment": "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, \n    unveränderbare Teil der Versichertennummer, \n    der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.\n    Er gilt für alle Krankenversichertennummern, \n    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.",
+        "comment": "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, \n    unveränderbare Teil der Versichertennummer, \n    der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.\n    Er gilt für alle Krankenversichertennummern, \n    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.  \n    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)",
         "min": 0,
         "max": "1",
         "type": [
@@ -77,7 +77,7 @@
         "id": "Patient.identifier:VersichertenId.type",
         "path": "Patient.identifier.type",
         "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `KVZ10` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.",
+        "comment": "Hier ist stets der Code `KVZ10` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
         "min": 1,
         "mustSupport": true
       },
@@ -85,7 +85,7 @@
         "id": "Patient.identifier:VersichertenId.system",
         "path": "Patient.identifier.system",
         "short": "Namensraum der Versichertennummer",
-        "comment": "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.",
+        "comment": "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
         "mustSupport": true
       },
       {
@@ -100,7 +100,7 @@
         "path": "Patient.identifier",
         "sliceName": "VersichertenId-GKV",
         "short": "Gesetzliche Krankenversichertennummer",
-        "comment": "Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,\n  da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. \n  Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden.",
+        "comment": "**WARNUNG**: Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,\n  da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. \n  Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -127,18 +127,21 @@
         "id": "Patient.identifier:VersichertenId-GKV.type",
         "path": "Patient.identifier.type",
         "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `KVZ10` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.",
+        "comment": "Hier ist stets der Code `GKV` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.identifier:VersichertenId-GKV.system",
         "path": "Patient.identifier.system",
+        "short": "Namensraum der Versichertennummer",
+        "comment": "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
         "mustSupport": true
       },
       {
         "id": "Patient.identifier:VersichertenId-GKV.value",
         "path": "Patient.identifier.value",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
         "mustSupport": true
       },
       {
@@ -146,7 +149,7 @@
         "path": "Patient.identifier",
         "sliceName": "Patientennummer",
         "short": "Organisationsinterner Patienten-Identifier (PID)",
-        "comment": "Organisationsintere Patienten-Identifier werden von z.B. von KIS-Systemen vergeben \n  und dienen innerhalb einer Einreichtung meist als primäres Identifikationsmerkmal für Patienten, \n  u.A. in der HL7 V2-Kommunikation. ",
+        "comment": "Organisationsintere Patienten-Identifier werden von z.B. von KIS-Systemen vergeben \n  und dienen innerhalb einer Einreichtung meist als primäres Identifikationsmerkmal für Patienten, \n  u.A. in der HL7 V2-Kommunikation.  \n  **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-OrganisationsinternerPatienten-Identifier?version=current)",
         "min": 1,
         "max": "*",
         "type": [
@@ -173,19 +176,20 @@
         "id": "Patient.identifier:Patientennummer.type",
         "path": "Patient.identifier.type",
         "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `MR` \n    aus dem CodeSystem `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben.",
+        "comment": "Hier ist stets der Code `MR` \n    aus dem CodeSystem `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
         "mustSupport": true
       },
       {
         "id": "Patient.identifier:Patientennummer.system",
         "path": "Patient.identifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
         "mustSupport": true
       },
       {
         "id": "Patient.identifier:Patientennummer.value",
         "path": "Patient.identifier.value",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
         "mustSupport": true
       },
       {
@@ -193,7 +197,7 @@
         "path": "Patient.identifier",
         "sliceName": "Versichertennummer_PKV",
         "short": "Private Krankenversichertennummer",
-        "comment": "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,\n  können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. \n  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,\n  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.",
+        "comment": "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,\n  können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. \n  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,\n  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.  \n  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)",
         "min": 0,
         "max": "1",
         "type": [
@@ -227,7 +231,7 @@
         "id": "Patient.identifier:Versichertennummer_PKV.type",
         "path": "Patient.identifier.type",
         "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `PKV` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.",
+        "comment": "Hier ist stets der Code `PKV` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
         "min": 1,
         "mustSupport": true
       },
@@ -235,6 +239,7 @@
         "id": "Patient.identifier:Versichertennummer_PKV.value",
         "path": "Patient.identifier.value",
         "short": "Private Krankenversichertennummer",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
         "mustSupport": true
       },
       {
@@ -290,7 +295,7 @@
         "path": "Patient.name",
         "sliceName": "Name",
         "short": "Offizieller Name",
-        "comment": "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherung",
+        "comment": "Offizieller Name des Patienten, wie er z.B. in Ausweis oder Versicherungsdokumenten erscheint.\n  **Begründung Pflichtfeld:** Der offizielle Name des Patienten ist unerlässlich, um Verwechlungen zu vermeiden und den Patienten im Versorgungskontext korrekt anzusprechen.",
         "min": 1,
         "max": "1",
         "type": [
@@ -309,12 +314,16 @@
       {
         "id": "Patient.name:Name.use",
         "path": "Patient.name.use",
+        "short": "Verwendungszweck",
+        "comment": "Hier ist stets der Wert `official` anzugeben.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family",
         "path": "Patient.name.family",
+        "short": "Nachname",
+        "comment": "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.",
         "min": 1,
         "mustSupport": true
       },
@@ -322,29 +331,37 @@
         "id": "Patient.name:Name.family.extension:namenszusatz",
         "path": "Patient.name.family.extension",
         "sliceName": "namenszusatz",
+        "short": "Namenszusatz",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family.extension:nachname",
         "path": "Patient.name.family.extension",
         "sliceName": "nachname",
+        "short": "Nachname",
+        "comment": "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.family.extension:vorsatzwort",
         "path": "Patient.name.family.extension",
         "sliceName": "vorsatzwort",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.given",
         "path": "Patient.name.given",
+        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittelinitialen abzubilden",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Name.prefix",
         "path": "Patient.name.prefix",
+        "short": "Präfix",
+        "comment": "Präfix, z.B. akademischer Titel od. militärischer Rang",
         "mustSupport": true
       },
       {
@@ -356,12 +373,16 @@
       {
         "id": "Patient.name:Name.prefix.extension:prefix-qualifier.value[x]",
         "path": "Patient.name.prefix.extension.value[x]",
+        "short": "Extension, um das Präfix als akademischen Titel zu qualifizieren",
+        "comment": "Hier ist stets der Wert `AC` anzugeben.",
         "fixedCode": "AC"
       },
       {
         "id": "Patient.name:Geburtsname",
         "path": "Patient.name",
         "sliceName": "Geburtsname",
+        "short": "Geburtsname",
+        "comment": "Familienname zum Zeitpunkt der Geburt, sofern abweichend vom offiziellen Namen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -380,12 +401,16 @@
       {
         "id": "Patient.name:Geburtsname.use",
         "path": "Patient.name.use",
+        "short": "Verwendungszweck",
+        "comment": "Hier ist stets der Wert `maiden` anzugeben.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family",
         "path": "Patient.name.family",
+        "short": "Nachname",
+        "comment": "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.",
         "min": 1,
         "mustSupport": true
       },
@@ -393,18 +418,23 @@
         "id": "Patient.name:Geburtsname.family.extension:namenszusatz",
         "path": "Patient.name.family.extension",
         "sliceName": "namenszusatz",
+        "short": "Namenszusatz",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family.extension:nachname",
         "path": "Patient.name.family.extension",
         "sliceName": "nachname",
+        "short": "Nachname",
+        "comment": "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
         "id": "Patient.name:Geburtsname.family.extension:vorsatzwort",
         "path": "Patient.name.family.extension",
         "sliceName": "vorsatzwort",
+        "comment": "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden.",
         "mustSupport": true
       },
       {
