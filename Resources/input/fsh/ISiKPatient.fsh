@@ -154,19 +154,24 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * family 1.. MS
     * ^short = "Nachname"
-    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
+    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.  
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
-      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."
+      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[nachname] 0..1 MS
       * ^short = "Nachname"
-      * ^comment = "Nachname ohne Vor- und Zusätze. Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
+      * ^comment = "Nachname ohne Vor- und Zusätze.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
       * ^short = "Vorsatzwort"
-      * ^comment = "Kann verwendet werden, um den entsprechenden Feldinhalt des VSDM-Datensatzes abzubilden."   
+      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."    
   * given 1.. MS
     * ^short = "Vorname"
-    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittelinitialen abzubilden"   
+    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * prefix MS
     * ^short = "Präfix"
     * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
@@ -185,7 +190,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * family 1.. MS
     * ^short = "Nachname"
-    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze."
+    * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.  
+      **Begründung Pflichtfeld: Ist der Nachname zum Zeitpunkt der Geburt nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
       * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...
