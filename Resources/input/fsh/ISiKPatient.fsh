@@ -158,7 +158,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
-      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...
+      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[nachname] 0..1 MS
       * ^short = "Nachname"
@@ -166,7 +166,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
       * ^short = "Vorsatzwort"
-      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...
+      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."    
   * given 1.. MS
     * ^short = "Vorname"
@@ -194,7 +194,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       **Begründung Pflichtfeld: Ist der Nachname zum Zeitpunkt der Geburt nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
-      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...
+      * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[nachname] 0..1 MS
       * ^short = "Nachname"
@@ -202,7 +202,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
     * extension[vorsatzwort] 0..1 MS
       * ^short = "Vorsatzwort"
-      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...
+      * ^comment = "Enthält Vorsätze, die vor dem Nachnamen stehen, z.B. 'von', 'van', 'zu'...  
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
   * prefix ..0
