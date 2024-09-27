@@ -191,7 +191,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * family 1.. MS
     * ^short = "Nachname"
     * ^comment = "Vollständiger Nachname bzw. Familienname des Patienten, einschließlich Vor- und Zusätze.  
-      **Begründung Pflichtfeld: Ist der Nachname zum Zeitpunkt der Geburt nicht bekannt, sollte der gesamte Slice weggelassen werden."
+      **Begründung Pflichtfeld:** Ist der Nachname zum Zeitpunkt der Geburt nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * extension[namenszusatz] 0..1 MS
       * ^short = "Namenszusatz"
       * ^comment = "Enthält ehem. Adelstitel wie z.B. 'Graf', 'Baronesse', 'Freiherr'...  
@@ -213,9 +213,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
     Zur weiteren Differenzierung kann dann die Extension `Geschlecht-Admnistrativ` verwendet werden.
     **Begründung Pflichtfeld:** Die Geschlechtsangabe ist für viele Versorgungsprozesse unerlässlich, z.B.  
-    * Bettendisposition
-    * Ermittlung von Referenzwerten
-    * korrekte Anrede des Patienten
+* Bettendisposition
+* Ermittlung von Referenzwerten
+* korrekte Anrede des Patienten
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht)"
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
     * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens `other`"
