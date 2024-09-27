@@ -178,9 +178,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[prefix-qualifier] 0..1 MS
       * ^short = "Extension, um das Präfix als akademischen Titel zu qualifizieren"
       * ^comment = "Hier ist stets der Wert `AC` anzugeben.  
+        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."    
     * extension[prefix-qualifier].value[x] = #AC (exactly)
-
-        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
   * ^short = "Geburtsname"
