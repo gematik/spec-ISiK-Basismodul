@@ -310,7 +310,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^short = "Hausnummer"
       * ^comment = "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). 
         Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,
-        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  
+        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.   
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
     * extension[Adresszusatz] 0..1 MS
       * ^short = "Adresszusatz"
