@@ -242,6 +242,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * ^short = "Postfachadresse"
+  * ^comment = "Adresse, die nur für postalische Zustellung genutzt werden kann."
   * obeys address-cnt-2or3-char
   * ^patternAddress.type = #postal
   * type 1.. MS
@@ -277,6 +279,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Land"
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
 * address[Strassenanschrift] only AddressDeBasis
+  * ^short = "Straßenanschrift"
+  * ^comment = "Wohn- oder Aufenthaltsort des Patienten"
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
