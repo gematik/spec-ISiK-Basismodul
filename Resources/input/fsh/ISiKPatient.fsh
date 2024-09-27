@@ -218,13 +218,17 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * korrekte Anrede des Patienten
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geschlecht)"
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
+  * extension[Geschlecht-Administrativ]
     * ^short = "Extension zur Differenzierung des Geschlechtskennzeichens `other`"
     * ^comment = "Diese Extension darf nur in Verbindung mit dem Geschlechtskennzeichen `other` verwendet werden
       und dient der Differenzierung zwischen den in Deutschland möglichen Geschlechtskennzeichen `D` (divers) und `X`(unbestimmt)"
 * birthDate 1.. MS
   * extension contains $data-absent-reason named Data-Absent-Reason 0..1 MS
-  * extension[Data-Absent-Reason].value[x] = #unknown (exactly)
-  * extension[Data-Absent-Reason].value[x] MS
+  * extension[Data-Absent-Reason]
+    * ^short = "Begründung für fehlende Information"
+    * ^comment = "ToDo"
+    * value[x] = #unknown (exactly)
+    * value[x] MS
   * ^short = "Geburtsdatum"
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
