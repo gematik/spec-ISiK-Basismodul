@@ -1,0 +1,24 @@
+name: Push File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes main.yml to Terminplanung repo
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: '.github/workflows/main.yml'
+        destination_repo: 'gematik/spec-ISiK-Terminplanung'
+        destination_branch: 'update-main_yml-Stufe-4'
+        destination_folder: '.github/workflows'
+        user_email: 'francois.peverali@gematik.de'
+        user_name: 'f-peverali'
+        commit_message: 'main.yml pushed to Terminplanung repo'
+
