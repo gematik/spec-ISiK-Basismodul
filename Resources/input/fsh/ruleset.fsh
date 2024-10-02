@@ -18,8 +18,9 @@ RuleSet: Meta-CapabilityStatement
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer"
 
 RuleSet: Expectation (expectation)
-* extension.url = $capabilitystatement-expectation
-* extension.valueCode = {expectation}
+* extension[+]
+  * url = $capabilitystatement-expectation
+  * valueCode = {expectation}
 
 RuleSet: CommonSearchParameters
 * searchParam[+]
