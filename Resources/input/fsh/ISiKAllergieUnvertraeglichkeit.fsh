@@ -53,7 +53,7 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
 * onsetAge MS
 * onsetString MS
 * recordedDate MS
-  * ^short = ""
+  * ^short = "Datum an dem die Allergie/Unverträglichkeit aufgezeichnet wurde"
 * recorder MS
   * ^short = "Person/Rolle, die die Information dokumentiert"
   * reference MS

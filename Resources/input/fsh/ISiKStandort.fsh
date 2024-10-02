@@ -14,7 +14,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Standortangab
   * ^comment = "Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/) "
 * name MS //Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
 * mode MS //Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location
-  * ^patternCodeableConcept.coding = $LocationMode#instance
+* mode = #instance
 * type MS
   * ^comment = "Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * address MS
@@ -38,7 +38,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als 
 * insert Meta
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
-* operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
+* operationalStatus from $v2-0116-BedStatus
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
@@ -48,7 +48,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Bettenstellpl
 * insert Meta
 * physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
 * operationalStatus MS
-* operationalStatus from http://terminology.hl7.org/CodeSystem/v2-0116 (required)
+* operationalStatus from $v2-0116-BedStatus
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
 
 
