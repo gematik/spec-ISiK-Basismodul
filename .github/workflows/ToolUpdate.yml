@@ -38,6 +38,8 @@ jobs:
         sed -i "s|uses: FirelyTeam/firely-terminal-pipeline@.*|uses: FirelyTeam/firely-terminal-pipeline@$LATEST_VERSION|" .github/workflows/main.yml
 
     - name: Commit changes
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       run: |
         # Commit the changes
         git config --global user.name 'github-actions[bot]'
@@ -45,4 +47,20 @@ jobs:
         git checkout -b update-dependency-$LATEST_VERSION || git checkout update-dependency-$LATEST_VERSION
         git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md .github/workflows/main.yml
         git commit -m "Update dependency to version $LATEST_VERSION"
-        git push origin update-dependency-$LATEST_VERSION
+        git push https://x-access-token:${API_TOKEN_GITHUB}@github.com/${{ github.repository }}.git update-dependency-$LATEST_VERSION
+
+    - name: Create Pull Request
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const latestVersion = process.env.LATEST_VERSION;
+          const { data: pullRequest } = await github.rest.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Update dependency to version ${latestVersion}`,
+            head: `update-dependency-${latestVersion}`,
+            base: context.ref.replace('refs/heads/', ''),
+            body: `This PR updates the dependency to version ${latestVersion}.`,
+            maintainer_can_modify: true,
+          });
+          console.log(`Created pull request: ${pullRequest.html_url}`);
