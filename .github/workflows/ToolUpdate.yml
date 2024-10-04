@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  workflows: write
 
 jobs:
   update-dependency:
@@ -39,10 +38,19 @@ jobs:
 
     - name: Commit changes
       run: |
-        # Commit and push the changes to a new branch
+        # Commit the changes
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git checkout -b update-dependency-$LATEST_VERSION || git checkout update-dependency-$LATEST_VERSION
         git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md .github/workflows/main.yml
         git commit -m "Update dependency to version $LATEST_VERSION"
-        git push -f origin update-dependency-$LATEST_VERSION
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        commit-message: "Update dependency to version $LATEST_VERSION"
+        branch: update-dependency-$LATEST_VERSION
+        title: "Update dependency to version $LATEST_VERSION"
+        body: "This PR updates the dependency to version $LATEST_VERSION."
+        labels: |
+          automated pr
