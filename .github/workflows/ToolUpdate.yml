@@ -28,20 +28,17 @@ jobs:
         # Update the version in PR_Template_VersionUpgrade.md
         sed -i "s/Version:.*/Version: $LATEST_VERSION/" .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
 
+    - name: Update main.yml
+      run: |
+        # Update the main.yml file with the new version
+        sed -i "s|uses: FirelyTeam/firely-terminal-pipeline@.*|uses: FirelyTeam/firely-terminal-pipeline@$LATEST_VERSION|" main.yml
+
     - name: Commit changes
       run: |
         # Commit and push the changes to a new branch
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git checkout -b update-dependency-$LATEST_VERSION
-        git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
-        git commit -m "Update PR template to version $LATEST_VERSION"
-        git push origin update-dependency-$LATEST_VERSION
-
-    - name: Update main.yml
-      run: |
-        # Update the main.yml file with the new version and commit the changes
-        sed -i "s/version: .*/version: $LATEST_VERSION/" .github/workflows/main.yml
-        git add .github/workflows/main.yml
-        git commit -m "Update main.yml to version $LATEST_VERSION"
+        git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md main.yml
+        git commit -m "Update dependency to version $LATEST_VERSION"
         git push origin update-dependency-$LATEST_VERSION
