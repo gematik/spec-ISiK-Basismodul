@@ -23,11 +23,6 @@ jobs:
         LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
         echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
 
-    - name: Update dependency version
-      run: |
-        # Update the dependency in requirements.txt
-        sed -i "s/dependency-name==.*/dependency-name==$LATEST_VERSION/" requirements.txt
-
     - name: Update PR template version
       run: |
         # Update the version in PR_Template_VersionUpgrade.md
@@ -39,8 +34,8 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git checkout -b update-dependency-$LATEST_VERSION
-        git add requirements.txt .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
-        git commit -m "Update dependency to version $LATEST_VERSION"
+        git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
+        git commit -m "Update PR template to version $LATEST_VERSION"
         git push origin update-dependency-$LATEST_VERSION
 
     - name: Update main.yml
