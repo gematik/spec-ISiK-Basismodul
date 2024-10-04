@@ -39,7 +39,7 @@ jobs:
 
     - name: Commit changes
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        WORKFLOW_PERMISSION_GITHUB: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
       run: |
         # Commit the changes
         git config --global user.name 'github-actions[bot]'
@@ -47,7 +47,7 @@ jobs:
         git checkout -b update-dependency-$LATEST_VERSION || git checkout update-dependency-$LATEST_VERSION
         git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md .github/workflows/main.yml
         git commit -m "Update dependency to version $LATEST_VERSION"
-        git push https://x-access-token:${API_TOKEN_GITHUB}@github.com/${{ github.repository }}.git update-dependency-$LATEST_VERSION
+        git push https://x-access-token:${WORKFLOW_PERMISSION_GITHUB}@github.com/${{ github.repository }}.git update-dependency-$LATEST_VERSION
 
     - name: Create Pull Request
       uses: actions/github-script@v6
