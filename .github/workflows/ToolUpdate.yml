@@ -1,0 +1,52 @@
+name: Update Dependency
+
+on:
+  push:
+    branches:
+      - '**' # Trigger on commits to any branch
+
+jobs:
+  update-dependency:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up jq
+      run: sudo apt-get install jq
+
+    - name: Fetch latest version of dependency
+      id: fetch_version
+      run: |
+        # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
+
+    - name: Update dependency version
+      run: |
+        # Update the dependency in requirements.txt
+        sed -i "s/dependency-name==.*/dependency-name==$LATEST_VERSION/" requirements.txt
+
+    - name: Update PR template version
+      run: |
+        # Update the version in PR_Template_VersionUpgrade.md
+        sed -i "s/Version:.*/Version: $LATEST_VERSION/" .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
+
+    - name: Commit changes
+      run: |
+        # Commit and push the changes to a new branch
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git checkout -b update-dependency-$LATEST_VERSION
+        git add requirements.txt .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md
+        git commit -m "Update dependency to version $LATEST_VERSION"
+        git push origin update-dependency-$LATEST_VERSION
+
+    - name: Update main.yml
+      run: |
+        # Update the main.yml file with the new version and commit the changes
+        sed -i "s/version: .*/version: $LATEST_VERSION/" .github/workflows/main.yml
+        git add .github/workflows/main.yml
+        git commit -m "Update main.yml to version $LATEST_VERSION"
+        git push origin update-dependency-$LATEST_VERSION
