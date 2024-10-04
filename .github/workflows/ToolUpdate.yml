@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-dependency:
@@ -26,9 +27,6 @@ jobs:
         LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
         echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
 
-    - name: Debug LATEST_VERSION
-      run: echo "LATEST_VERSION is $LATEST_VERSION"
-
     - name: Update PR template version
       run: |
         # Update the version in PR_Template_VersionUpgrade.md
@@ -47,13 +45,20 @@ jobs:
         git checkout -b update-dependency-$LATEST_VERSION || git checkout update-dependency-$LATEST_VERSION
         git add .github/PULL_REQUEST_TEMPLATE/PR_Template_VersionUpgrade.md .github/workflows/main.yml
         git commit -m "Update dependency to version $LATEST_VERSION"
+        git push origin update-dependency-$LATEST_VERSION
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
+      uses: actions/github-script@v6
       with:
-        commit-message: "Update dependency to version $LATEST_VERSION"
-        branch: update-dependency-${{ env.LATEST_VERSION }}
-        title: "Update dependency to version $LATEST_VERSION"
-        body: "This PR updates the dependency to version $LATEST_VERSION."
-        labels: |
-          automated pr
+        script: |
+          const latestVersion = process.env.LATEST_VERSION;
+          const { data: pullRequest } = await github.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Update dependency to version ${latestVersion}`,
+            head: `update-dependency-${latestVersion}`,
+            base: context.payload.ref,
+            body: `This PR updates the dependency to version ${latestVersion}.`,
+            maintainer_can_modify: true,
+          });
+          console.log(`Created pull request: ${pullRequest.html_url}`);
