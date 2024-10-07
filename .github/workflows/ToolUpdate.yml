@@ -1,7 +1,10 @@
 name: Update Dependency
 
-on: # Trigger on  manual trigger
+on: # Trigger on commits to any branch and manual trigger
     workflow_dispatch: # Allows manual trigger  
+    push:
+        branches:
+        - '**' # Trigger on commits to any branch
 
 permissions:
   contents: write
@@ -13,6 +16,8 @@ jobs:
 
     steps:
     - name: Checkout repository
+      env:
+        WORKFLOW_PERMISSION_GITHUB: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }} # Personal access token with workflow permissions
       uses: actions/checkout@v2
 
     - name: Set up jq
