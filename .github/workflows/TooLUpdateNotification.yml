@@ -1,0 +1,43 @@
+name: Update Dependency
+
+on: # Trigger on commits to any branch and manual trigger
+    workflow_dispatch: # Allows manual trigger  
+    push:
+        branches:
+        - '**' # Trigger on commits to any branch
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-dependency:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up jq
+      run: sudo apt-get install jq
+
+    - name: Fetch latest version of dependency
+      id: fetch_version
+      run: |
+        # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
+
+    - name: Check difference with main.yml
+      run: |
+        # Check if the main.yml file needs to be updated
+        CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml) 
+        # if they differ, print the current version in the main.yml file and rompare it with current version in repository.
+        if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
+          echo "Current version in main.yml: $CURRENT_VERSION"
+          echo "Latest version in repository: $LATEST_VERSION"
+        else
+          echo "Current version in main.yml is up-to-date"
+          exit 1
+        fi
+

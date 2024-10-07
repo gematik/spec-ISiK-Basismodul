@@ -1,9 +1,7 @@
 name: Update Dependency
 
-on:
-  push:
-    branches:
-      - '**' # Trigger on commits to any branch
+on: # Trigger only manually within github page
+    workflow_dispatch:          # Allows manual trigger
 
 permissions:
   contents: write
@@ -34,7 +32,7 @@ jobs:
 
     - name: Commit changes
       env:
-        WORKFLOW_PERMISSION_GITHUB: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
+        WORKFLOW_PERMISSION_GITHUB: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }} # Personal access token with workflow permissions
       run: |
         # Commit the changes
         git config --global user.name 'github-actions[bot]'
