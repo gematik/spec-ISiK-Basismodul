@@ -42,7 +42,7 @@ jobs:
             fi
         
         - name: Run some step if the version is up-to-date (aims at throwing "Skipped" whenever the version is not up-to-date)   
-          if: ${{ steps.fetch_version.outputs.LATEST_VERSION == steps.check_difference.outputs.CURRENT_VERSION }}
-          run: echo "Version is up to date"
+          run: echo "Version ist up-to-date"
+          if: steps.check_difference.outputs.CURRENT_VERSION == steps.fetch_version.outputs.LATEST_VERSION 
         
 
