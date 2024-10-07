@@ -1,3 +1,4 @@
+### This script updates the main.yml file with the latest versions of firely-terminal and sushi and can be used locally
 import requests
 import os
 
