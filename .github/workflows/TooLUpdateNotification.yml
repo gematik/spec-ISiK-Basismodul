@@ -28,16 +28,15 @@ jobs:
         LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
         echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
 
-    - name: Check difference with main.yml
+    - name: Check difference with main.yml, throw a warning within console and github action if the version is not up-to-date
       run: |
-        # Check if the main.yml file needs to be updated
-        CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml) 
-        # if they differ, print the current version in the main.yml file and rompare it with current version in repository.
+        CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml)
+
+        # If they differ, print the current version in the main.yml file and compare it with the latest version in the repository.
         if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
-          echo "Current version in main.yml: $CURRENT_VERSION"
-          echo "Latest version in repository: $LATEST_VERSION"
+          echo "::warning::Current version in main.yml: $CURRENT_VERSION"
+          echo "::warning::Latest version in repository: $LATEST_VERSION"
         else
           echo "Current version in main.yml is up-to-date"
-          exit 1
         fi
 
