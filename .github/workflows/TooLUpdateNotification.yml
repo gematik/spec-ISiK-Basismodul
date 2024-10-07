@@ -13,30 +13,29 @@ permissions:
 jobs:
   update-dependency:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up jq
-      run: sudo apt-get install jq
-
-    - name: Fetch latest version of dependency
-      id: fetch_version
-      run: |
-        # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
-        echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
-
-    - name: Check difference with main.yml, throw a warning within console and github action if the version is not up-to-date
-      run: |
-        CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml)
-
-        # If they differ, print the current version in the main.yml file and compare it with the latest version in the repository.
-        if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
-          echo "::warning::Current version of Firely Terminal in main.yml: $CURRENT_VERSION"
-          echo "::warning::Latest version of Firely Terminal in repository: $LATEST_VERSION"
-          echo "::warning::The version in main.yml is not up-to-date. Please update it."
-        else
-          echo "Current version in main.yml is up-to-date"
+        - name: Checkout repository
+          uses: actions/checkout@v2
+    
+        - name: Set up jq
+          run: sudo apt-get install jq
+    
+        - name: Fetch latest version of dependency
+          id: fetch_version
+          run: |
+            # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
+            LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
+            echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
+    
+        - name: Check difference with main.yml, throw a warning within console and github action if the version is not up-to-date
+          run: |
+            CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml)
+            # If they differ, print the current version in the main.yml file and compare it with the latest version in the repository.
+            if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
+              echo "::warning::Current version of Firely Terminal in main.yml: $CURRENT_VERSION"
+              echo "::warning::Latest version of Firely Terminal in repository: $LATEST_VERSION"
+              echo "::warning::The version in main.yml is not up-to-date. Please update it."
+            else
+              echo "Current version in main.yml is up-to-date"
+            fi
 
