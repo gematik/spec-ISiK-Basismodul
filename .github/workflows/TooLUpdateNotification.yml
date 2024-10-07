@@ -28,8 +28,10 @@ jobs:
             echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
     
         - name: Check difference with main.yml, throw a warning within console and github action if the version is not up-to-date
+          id: check_difference
           run: |
             CURRENT_VERSION=$(grep -oP '(?<=uses: FirelyTeam/firely-terminal-pipeline@).*$' .github/workflows/main.yml)
+            echo "CURRENT_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
             # If they differ, print the current version in the main.yml file and compare it with the latest version in the repository.
             if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
               echo "::warning::Current version of Firely Terminal in main.yml: $CURRENT_VERSION"
@@ -38,4 +40,9 @@ jobs:
             else
               echo "Current version in main.yml is up-to-date"
             fi
+        
+        - name: Run some step if the version is up-to-date (aims at throwing "Skipped" whenever the version is not up-to-date)   
+          if: ${{ steps.fetch_version.outputs.LATEST_VERSION == steps.check_difference.outputs.CURRENT_VERSION }}
+          run: echo "Version is up to date"
+        
 
