@@ -1,0 +1,60 @@
+name: Unzip and Process
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - IG/isik-*.zip  # Trigger auf das Hinzufügen einer ZIP-Datei im IG-Ordner
+
+jobs:
+  unzip-and-process:
+    runs-on: ubuntu-latest  # Verwende die neueste Ubuntu-Umgebung
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Klone das Repository, um auf den Code zuzugreifen
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Installiere die neueste Python-Version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4  # Installiere die Abhängigkeit für HTML-Verarbeitung
+
+      - name: Unzip file
+        id: unzip
+        run: |
+          # Bestimme die ZIP-Datei und lese die Versionsnummer aus der HTML-Datei
+          ZIP_FILE=$(ls IG/isik-*.zip)
+          VERSION=$(unzip -p "$ZIP_FILE" ImplementationGuide-markdown-Einfuehrung.html | \
+            grep -oP '(?<=Version: )[^<]+' | head -n 1)
+          unzip "$ZIP_FILE" -d "$VERSION"  # Entpacke die ZIP-Datei in den Versionsordner
+          echo "VERSION=$VERSION" >> $GITHUB_ENV  # Setze die Versionsnummer als Umgebungsvariable
+
+      - name: Remove packages folder
+        run: |
+          rm -rf "$VERSION/packages"  # Entferne den packages-Ordner aus dem Versionsordner
+
+      - name: Run Python script
+        run: |
+          python your_script.py  # Führe das benutzerdefinierte Python-Skript aus
+
+      - name: Commit changes
+        run: |
+          # Konfiguriere Git-Benutzerinformationen für den Commit
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add "$VERSION"  # Füge den Versionsordner zu den Änderungen hinzu
+          git commit -m "Processed ZIP file: $ZIP_FILE"  # Erstelle den Commit
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: 'Update from IG folder'  # Titel des Pull-Requests
+          body: 'Automated PR: Processed new ZIP file.'  # Beschreibung des Pull-Requests
+          base: gh-pages  # Ziel-Branch für den Pull-Request
+          branch: update-from-zip  # Erstelle einen neuen Branch für die Änderungen
