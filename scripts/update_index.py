@@ -24,6 +24,12 @@ def create_new_row(version, current_date):
         </tr>
     """
 
+# Determine the position to insert the new row in the index.html file
+
+def get_insert_position(content, version):
+    # TODO 
+    return insert_position
+
 # Function to update the index.html file
 def update_index_html(version=None):
     project_root = os.path.dirname(os.path.dirname(__file__))
@@ -61,6 +67,7 @@ def update_index_html(version=None):
         if match.group(1) < version:
             insert_position = match.start()
             break
+
 
     if insert_position is None:
         print("No suitable position found to insert the new version.")
