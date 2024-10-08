@@ -6,85 +6,70 @@ import sys
 import re
 import datetime
 
-#get the current date
-current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-# format the current date to the german format using double digits for days and month, e.g. 30.01.2022  
-current_date = datetime.datetime.now().strftime("%d.%m.%Y")
+# Constants
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+INDEX_FILE_PATH = os.path.join(PROJECT_ROOT, "index.html")
+HTML_TEMPLATE = """
+    <tr>
+    <td>{current_date}</td> 
+    <td>
+        <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/{version}/ImplementationGuide-markdown-Einfuehrung.html">{version}</a>
+    </td>
+    <td>Technical Correction {version}</td>
+    <td>{version}</td>
+    </tr>
+"""
+VERSION_PATTERN = re.compile(
+    r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>'
+)
 
-#define new content as a html table row
-def create_new_row(version, current_date):
-    return f"""
-        <tr>
-        <td>{current_date}</td> 
-        <td>
-            <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/{version}/ImplementationGuide-markdown-Einfuehrung.html">{version}</a>
-        </td>
-        <td>Technical Correction {version}</td>
-        <td>{version}</td>
-        </tr>
-    """
+def get_current_date_str():
+    return datetime.datetime.now().strftime("%Y-%m-%d")
 
-# Determine the position to insert the new row in the index.html file
+def create_new_row(version, current_date_str):
+    return HTML_TEMPLATE.format(current_date=current_date_str, version=version)
 
-def get_insert_position(content, version):
-    # TODO 
-    return insert_position
+def read_index_html():
+    with open(INDEX_FILE_PATH, 'r', encoding='utf-8') as file:
+        return file.read()
 
-# Function to update the index.html file
-def update_index_html(version=None):
-    project_root = os.path.dirname(os.path.dirname(__file__))
-    index_file_path = os.path.join(project_root, "index.html")
+def write_index_html(content):
+    with open(INDEX_FILE_PATH, 'w', encoding='utf-8') as file:
+        file.write(content)
 
-    # Determine the version to use
+def validate_version(version):
     if version is None:
         print("No Version provided. Please provide a version as an argument, e.g. 4.0.5 or 4.0.0-rc2 (release candidate)")
         sys.exit(1)
 
-
-    # Read the current index.html content
-    with open(index_file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-
-    # Update the content with the new version
-    new_row = create_new_row(version, current_date)
-
-    # Find the specific line in the HTML table based on the previous version, for instance for an input like 4.0.4 ist should find the html tbody section with the 4.0.3 version, and add the new row above that.
-    # This is done to keep the table sorted in descending order.
-    # The regex pattern is used to find the tbody section with the previous version.
-    # The regex includes the version by matching the previous version number by decreasing the last digit by 1, e.g. when input is 3.0.5, the regex will match 3.0.4.  
-    version_pattern = re.compile(r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>')
-    # Find all matches in the content
-    matches = list(version_pattern.finditer(content))
-
+def find_insert_position(content, version):
+    matches = list(VERSION_PATTERN.finditer(content))
     if not matches:
         print("No previous version found in index.html")
         sys.exit(1)
 
-    # Insert the new row above the row where the pattern matched
-    insert_position = None
-
     for match in matches:
-        if match.group(1) < version:
-            insert_position = match.start()
-            break
+        if match and match.group(1) < version:
+            return match.start()
 
+    print("No suitable position found to insert the new version.")
+    sys.exit(1)
 
-    if insert_position is None:
-        print("No suitable position found to insert the new version.")
-        sys.exit(1)
+def update_content(content, new_row, insert_position):
+    return content[:insert_position] + new_row + content[insert_position:]
 
-    updated_content = content[:insert_position] + new_row + content[insert_position:]
+def update_index_html(version=None):
+    validate_version(version)
+    current_date_str = get_current_date_str()
+    new_row = create_new_row(version, current_date_str)
+    content = read_index_html()
+    insert_position = find_insert_position(content, version)
+    updated_content = update_content(content, new_row, insert_position)
+    write_index_html(updated_content)
 
-    # Write the updated content back to index.html
-    with open(index_file_path, 'w', encoding='utf-8') as file:
-        file.write(updated_content)
-
-    print(f"index.html updated to version {version}")
-
-
-# Main execution
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        update_index_html(sys.argv[1])
+        version = sys.argv[1]
     else:
-        update_index_html()
+        version = None
+    update_index_html(version)
