@@ -1,3 +1,4 @@
+# This script works only for Technical correction updates, e.g. augmenting from 4.0.1 to 4.0.2. For Major or Minor updates, the script needs to be adjusted to handle the versioning correctly or it should be done manually.
 # This script update the index.html file with the latest data from IG-folder Version added to the IG Folder. Alternatively a Version for the update can be provided as an argument.
 
 import os
@@ -42,7 +43,8 @@ def update_index_html(version=None):
     # Find the specific line in the HTML table based on the previous version, for instance for an input like 4.0.4 ist should find the html tbody section with the 4.0.3 version, and add the new row above that.
     # This is done to keep the table sorted in descending order.
     # The regex pattern is used to find the tbody section with the previous version.
-    version_pattern = re.compile(r'<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>')
+    # The regex includes the version by matching the previous version number by decreasing the last digit by 1, e.g. when input is 3.0.5, the regex will match 3.0.4.  
+    version_pattern = re.compile(r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>')
     # Find all matches in the content
     matches = list(version_pattern.finditer(content))
 
@@ -50,9 +52,19 @@ def update_index_html(version=None):
         print("No previous version found in index.html")
         sys.exit(1)
 
-    # Insert the new row above the first match (most recent version)
-    first_match = matches[0]
-    updated_content = content[:first_match.start()] + new_row + content[first_match.start():]
+    # Insert the new row above the row where the pattern matched
+    insert_position = None
+
+    for match in matches:
+        if match.group(1) < version:
+            insert_position = match.start()
+            break
+
+    if insert_position is None:
+        print("No suitable position found to insert the new version.")
+        sys.exit(1)
+
+    updated_content = content[:insert_position] + new_row + content[insert_position:]
 
     # Write the updated content back to index.html
     with open(index_file_path, 'w', encoding='utf-8') as file:
