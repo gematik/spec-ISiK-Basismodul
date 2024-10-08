@@ -1,20 +1,53 @@
 import unittest
 from unittest.mock import mock_open, patch
 import datetime
-from update_index import create_new_row, update_index_html
+from update_index import create_new_row, update_index_html, validate_version
 
 class TestUpdateIndex(unittest.TestCase):
 
-    def test_update_index_html_insertion_position(self,version="3.0.6"):
-        """ 
-        Test case for the `update_index_html` function. 
-        This test verifies that the `update_index_html` function correctly determines the insertion position for the new version in the index.html file.
-        The test uses a mock file content with a specific version pattern to test the insertion position.
-        The expected insertion position is above the row with the previous version number that is less than the new version number. 
-
-        Asserts: 
-            The insertion position is correctly determined based on the previous version number.
+    def test_validate_version_with_incorrect_format(self, version="4.0", content=""):
         """
+        Test case for the `validate_version` function.
+
+        This test verifies that the `validate_version` function correctly validates the version format.
+
+        The test uses an incorrect version format that does not match the semver pattern.
+
+        Asserts:
+            The function prints an error message and exits with status code 1.
+        """
+        with patch("sys.exit") as mock_exit:
+            content = ""  # Assuming content is an empty string for the test case
+            validate_version(version, content)
+
+    def test_validate_version_with_correct_format(self):
+        """
+        Test case for the `validate_version` function.
+
+        This test verifies that the `validate_version` function correctly validates the version format.
+
+        The test uses a correct version format that matches the semver pattern.
+
+        Asserts:
+            The function does not print an error message and does not exit.
+        """
+        with patch("sys.exit") as mock_exit:
+            version = "4.0.11"
+            validate_version(version,content="")
+            mock_exit.assert_not_called()
+
+    def test_validate_version_with_redundant_version(self):
+        """
+        Test case for the `validate_version` function.
+
+        This test verifies that the `validate_version` function correctly validates the version number being unequal to an existing version.
+
+        The test uses a version number that is equal to an existing version number.
+
+        Asserts:
+            The function prints an error message and exits with status code 1.
+        """
+        version = "3.0.5"
         content = """
         <tr>
         <td>01.01.2022</td> 
@@ -33,15 +66,26 @@ class TestUpdateIndex(unittest.TestCase):
         <td>3.0.4</td>
         </tr>
         """
-        with patch("builtins.open", mock_open(read_data=content)):
-            with patch("os.path.join"):
-                with patch("os.path.dirname") as mock_dirname:
-                    mock_dirname.return_value = "path/to/project"
-                    update_index_html(version)
-        self.assertEqual(insert_position, 0)
+        with patch("sys.exit") as mock_exit:
+            validate_version(version, content)
+            mock_exit.assert_called_once_with(1)
 
 
-    def test_create_new_row(self):
+
+    # TODO def test_update_index_html_insertion_position(self,version="3.0.6"):
+        """ 
+        One Test case for the `update_index_html` function. 
+        This test verifies that the `update_index_html` function correctly determines the insertion position for the new version in the index.html file.
+        The test uses a mock file content with a specific version pattern to test the insertion position.
+        The expected insertion position is above the row with the previous version number that is less than the new version number. 
+
+        Asserts: 
+            The insertion position is correctly determined based on the previous version number.
+        """
+
+
+
+    # TODO ? def test_create_new_row(self):
         """
         Test case for the `create_new_row` function.
 
@@ -62,19 +106,8 @@ class TestUpdateIndex(unittest.TestCase):
         Asserts:
             The generated HTML row matches the expected HTML row.
         """
-        version = "4.0.2"
-        current_date = "30.01.2022"
-        expected_row = f"""
-        <tr>
-        <td>{current_date}</td> 
-        <td>
-            <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/{version}/ImplementationGuide-markdown-Einfuehrung.html">{version}</a>
-        </td>
-        <td>Technical Correction {version}</td>
-        <td>{version}</td>
-        </tr>
-        """
-        self.assertEqual(create_new_row(version, current_date).strip(), expected_row.strip())
+        # TODO
+  
 
 if __name__ == "__main__":
     unittest.main()

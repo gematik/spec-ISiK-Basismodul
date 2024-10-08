@@ -1,5 +1,5 @@
 # This script works only for Technical correction updates, e.g. augmenting from 4.0.1 to 4.0.2. For Major or Minor updates, the script needs to be adjusted to handle the versioning correctly or it should be done manually.
-# This script update the index.html file with the latest data from IG-folder Version added to the IG Folder. Alternatively a Version for the update can be provided as an argument.
+# TODO This script update the index.html file with the latest data from IG-folder Version added to the IG Folder. Alternatively a Version for the update can be provided as an argument.
 
 import os
 import sys
@@ -37,10 +37,21 @@ def write_index_html(content):
     with open(INDEX_FILE_PATH, 'w', encoding='utf-8') as file:
         file.write(content)
 
-def validate_version(version):
+def validate_version(version, content):
     if version is None:
         print("No Version provided. Please provide a version as an argument, e.g. 4.0.5 or 4.0.0-rc2 (release candidate)")
         sys.exit(1)
+    # Check if the version is in the correct format
+    semver_pattern = re.compile(r'^\d+\.\d+\.\d+(-\w+)?$')
+    if not semver_pattern.match(version):
+        print("Invalid version format. Please provide a version in the format X.Y.Z or X.Y.Z-rcN (e.g., 4.0.5 or 4.0.0-rc2).")
+        sys.exit(1)
+    # Check if the version already exists in the index.html file
+    #TODO
+    if re.search(r'ImplementationGuide-markdown-Einfuehrung.html">' + re.escape(version), content) is not None:
+        print(f"Version {version} already exists in the index.html file.")
+        sys.exit(1)
+    
 
 def find_insert_position(content, version):
     matches = list(VERSION_PATTERN.finditer(content))
