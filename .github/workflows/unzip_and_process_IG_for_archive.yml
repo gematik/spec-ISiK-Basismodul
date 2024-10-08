@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python your_script.py  # Führe das benutzerdefinierte Python-Skript aus
+          python scripts/update_index.py "$VERSION"  # Führe das benutzerdefinierte Python-Skript mit der Versionsnummer als Argument aus
 
       - name: Commit changes
         run: |
@@ -55,6 +55,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           title: 'Update from IG folder'  # Titel des Pull-Requests
-          body: 'Automated PR: Processed new ZIP file.'  # Beschreibung des Pull-Requests
+          body: 'Automated PR: Processed new IG-ZIP file.'  # Beschreibung des Pull-Requests
           base: gh-pages  # Ziel-Branch für den Pull-Request
           branch: update-from-zip  # Erstelle einen neuen Branch für die Änderungen
