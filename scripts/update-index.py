@@ -8,6 +8,8 @@ import datetime
 
 #get the current date
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+# format the current date to the german format using double digits for days and month, e.g. 30.01.2022  
+current_date = datetime.datetime.now().strftime("%d.%m.%Y")
 
 #define new content as a html table row
 def create_new_row(version, current_date):
