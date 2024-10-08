@@ -1,13 +1,14 @@
 name: Unzip and Process
 
 on:
+    workflow_dispatch:  # Ermöglicht die manuelle Auslösung des Workflows
     push:
         branches:
             - gh-pages
             - feature/automated-gh*
         paths:
             - IG/isik-*.zip  # Trigger auf das Hinzufügen einer ZIP-Datei im IG-Ordner
-    workflow_dispatch:  # Ermöglicht die manuelle Auslösung des Workflows
+    
 
 jobs:
   unzip-and-process:
