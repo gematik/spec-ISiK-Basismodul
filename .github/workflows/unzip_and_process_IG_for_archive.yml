@@ -60,7 +60,8 @@ jobs:
           # Konfiguriere Git-Benutzerinformationen für den Commit
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add "$VERSION"  # Füge den Versionsordner zu den Änderungen hinzu
+          # Füge alle Änderungen hinzu
+          git add .
           git commit -m "Processed ZIP file: $ZIP_FILE"  # Erstelle den Commit
 
       - name: Create Pull Request
