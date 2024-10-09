@@ -37,6 +37,8 @@ jobs:
             grep -oP '(?<=Version: )[^<]+' | head -n 1)
           unzip "$ZIP_FILE" -d "$VERSION"  # Entpacke die ZIP-Datei in den Versionsordner
           echo "VERSION=$VERSION" >> $GITHUB_ENV  # Setze die Versionsnummer als Umgebungsvariable
+          # Gib die Versionsnummer und den Dateinamen der ZIP-Datei aus
+          echo "Version: $VERSION, ZIP file: $ZIP_FILE"
 
       - name: Remove packages folder
         run: |
@@ -44,7 +46,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/update_index.py "$VERSION"  # Führe das benutzerdefinierte Python-Skript mit der Versionsnummer als Argument aus
+          python scripts/update_index.py "${{ env.VERSION }}"  # Führe das benutzerdefinierte Python-Skript mit der Versionsnummer als Argument aus
 
       - name: Commit changes
         run: |
