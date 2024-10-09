@@ -1,4 +1,4 @@
-var BaseTreeTable = (function () {
+var BaseTreeTable = /** @class */ (function () {
     function BaseTreeTable() {
         this.eventHandlerDictionary = [];
         this.parentContainerId = "";

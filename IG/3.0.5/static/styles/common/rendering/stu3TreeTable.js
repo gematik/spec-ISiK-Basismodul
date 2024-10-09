@@ -24,13 +24,13 @@ var Cookies;
     }
     Cookies.get = get;
 })(Cookies || (Cookies = {}));
-var TreeSettings = (function () {
+var TreeSettings = /** @class */ (function () {
     function TreeSettings() {
     }
     TreeSettings.ShowCommonResourceElements = "ShowCommonResourceElements";
     return TreeSettings;
 }());
-var Stu3TreeTable = (function () {
+var Stu3TreeTable = /** @class */ (function () {
     function Stu3TreeTable(isRootCollapsible) {
         this.TreeFlavourCookie = "tree";
         this.TreeSettingsCookie = "tree-settings";
@@ -53,7 +53,7 @@ var Stu3TreeTable = (function () {
         var settings = this.getTreeRenderingSettings();
         this.initSettingButtons(settings);
         if (this.hasFlavourButtons() === true) {
-            var buttonElement = this.getContext().querySelectorAll("[data-mode='" + mode + "']")[0];
+            var buttonElement = this.getContext().querySelectorAll("[data-mode='".concat(mode, "']"))[0];
             this.switchTreeMode(buttonElement);
         }
         else {
@@ -89,7 +89,7 @@ var Stu3TreeTable = (function () {
     Stu3TreeTable.prototype.renderTree = function (mode, settings) {
         this.cleanPreviousMode();
         var tree = this.getContext().querySelector(".treetable-wrapper");
-        tree.className = "treetable-wrapper " + mode;
+        tree.className = "treetable-wrapper ".concat(mode);
         switch (mode) {
             case "snapshot":
                 this.renderSnapshotMode(settings);
@@ -408,16 +408,16 @@ var Stu3TreeTable = (function () {
             if (event.target instanceof HTMLAnchorElement)
                 return;
             switch (event.keyCode) {
-                case 40:// arrow down
+                case 40: // arrow down
                     event.preventDefault();
                     selectNextNode();
                     break;
-                case 38:// arrow up
+                case 38: // arrow up
                     event.preventDefault();
                     selectPreviousNode();
                     break;
                 case 32: // space
-                case 13:// enter
+                case 13: // enter
                     event.preventDefault();
                     toggleCurrentNode();
                     break;
@@ -771,7 +771,7 @@ var Stu3TreeTable = (function () {
     };
     return Stu3TreeTable;
 }());
-var InstanceTree = (function () {
+var InstanceTree = /** @class */ (function () {
     function InstanceTree() {
         this.eventHandlerDictionary = [];
         this.parentContainerId = "";
@@ -868,16 +868,16 @@ var InstanceTree = (function () {
             if (event.target instanceof HTMLAnchorElement)
                 return;
             switch (event.keyCode) {
-                case 40:// arrow down
+                case 40: // arrow down
                     event.preventDefault();
                     selectNextNode();
                     break;
-                case 38:// arrow up
+                case 38: // arrow up
                     event.preventDefault();
                     selectPreviousNode();
                     break;
                 case 32: // space
-                case 13:// enter
+                case 13: // enter
                     event.preventDefault();
                     toggleCurrentNode();
                     break;
@@ -1071,12 +1071,12 @@ var InstanceTree = (function () {
     };
     return InstanceTree;
 }());
-var InstanceTreeNode = (function () {
+var InstanceTreeNode = /** @class */ (function () {
     function InstanceTreeNode() {
     }
     return InstanceTreeNode;
 }());
-var InMemoryNodeResolver = (function () {
+var InMemoryNodeResolver = /** @class */ (function () {
     function InMemoryNodeResolver() {
         this.allNodes = [];
     }
