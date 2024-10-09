@@ -67,7 +67,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          title: 'Update from IG folder'  # Titel des Pull-Requests
-          body: 'Automated PR: Processed new IG-ZIP file.'  # Beschreibung des Pull-Requests
+          title: 'Update from IG folder for TC Version: $VERSION'  # Titel des Pull-Requests
+          body: 'Automated PR: Processed new IG-ZIP file for Version: $VERSION.'  # Beschreibung des Pull-Requests
           base: gh-pages  # Ziel-Branch für den Pull-Request
-          branch: update-from-zip  # Erstelle einen neuen Branch für die Änderungen
+          branch: update-from-zip-$VERSION  # Erstelle einen neuen Branch für die Änderungen mit Angabe der Version
