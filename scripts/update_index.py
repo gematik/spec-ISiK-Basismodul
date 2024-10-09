@@ -70,10 +70,10 @@ def update_content(content, new_row, insert_position):
     return content[:insert_position] + new_row + content[insert_position:]
 
 def update_index_html(version=None):
-    validate_version(version)
+    content = read_index_html()
+    validate_version(version, content)
     current_date_str = get_current_date_str()
     new_row = create_new_row(version, current_date_str)
-    content = read_index_html()
     insert_position = find_insert_position(content, version)
     updated_content = update_content(content, new_row, insert_position)
     write_index_html(updated_content)
