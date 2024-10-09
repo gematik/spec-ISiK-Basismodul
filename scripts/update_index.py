@@ -9,6 +9,7 @@ import datetime
 # Constants
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 INDEX_FILE_PATH = os.path.join(PROJECT_ROOT, "index.html")
+#TODO Add a pattern for different Projects
 HTML_TEMPLATE = """
     <tr>
     <td>{current_date}</td> 
@@ -22,6 +23,7 @@ HTML_TEMPLATE = """
 VERSION_PATTERN = re.compile(
     r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>'
 )
+#TODO Add a pattern for different Projects
 
 def get_current_date_str():
     return datetime.datetime.now().strftime("%Y-%m-%d")
