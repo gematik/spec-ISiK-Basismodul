@@ -45,7 +45,8 @@ jobs:
           fi
           echo "Unzipped version: $VERSION"
           # Setze die Versionsnummer als Variable, die später für den python argument input verwendet wird
-            echo "VERSION=$VERSION"  >> "$GITHUB_OUTPUT"
+            echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Remove packages folder
         run: |
