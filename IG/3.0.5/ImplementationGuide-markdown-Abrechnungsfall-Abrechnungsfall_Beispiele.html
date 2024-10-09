@@ -14,12 +14,12 @@
 
     <link rel="stylesheet" href="static/styles/common/main.min.css" />
     <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
 
     <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
     <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
 
-    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1da9b05fb0e2580" />
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dacd57e04f6380" />
 
 </head>
 
@@ -228,7 +228,7 @@
 <p>Valides Minimalbeispiel für das Profil ISiKAbrechnungsfall:</p>
 <p><pre class="resource-validation-xml"><pre><span class="brace">{</span>
     <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Account</span><span class="string">&quot;</span><span class="symbol">,</span>
-    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AbrechnungsfallAmbulant</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AbrechnungsfallDRG</span><span class="string">&quot;</span><span class="symbol">,</span>
     <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
         <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
             <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKAbrechnungsfall</span><span class="string">&quot;</span>
@@ -248,11 +248,32 @@
             <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0123456789</span><span class="string">&quot;</span>
         <span class="brace">}</span>
     <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Use</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">valueCoding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">hospital-main-diagnosis</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/KontaktDiagnoseProzedur</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Krankenhaus Hauptdiagnose</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">}</span><span class="symbol">,</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Referenz</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">valueReference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition/DiagnoseSelteneErkrankung</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">}</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
     <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
     <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
         <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
             <span class="brace">{</span>
-                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AMB</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">IMP</span><span class="string">&quot;</span><span class="symbol">,</span>
                 <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-ActCode</span><span class="string">&quot;</span>
             <span class="brace">}</span>
         <span class="brace">]</span>
