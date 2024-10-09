@@ -31,14 +31,21 @@ jobs:
       - name: Unzip file
         id: unzip
         run: |
-          # Bestimme die ZIP-Datei und lese die Versionsnummer aus der HTML-Datei
+          # Bestimme die ZIP-Datei und enpacke sie in einen Versionsordner namens new-IG
           ZIP_FILE=$(ls IG/isik-*.zip)
-          VERSION=$(unzip -p "$ZIP_FILE" ImplementationGuide-markdown-Einfuehrung.html | \
-            grep -oP '(?<=Version: )[^<]+' | head -n 1)
-          unzip "$ZIP_FILE" -d "$VERSION"  # Entpacke die ZIP-Datei in den Versionsordner
-          echo "VERSION=$VERSION" >> $GITHUB_ENV  # Setze die Versionsnummer als Umgebungsvariable
-          # Gib die Versionsnummer und den Dateinamen der ZIP-Datei aus
-          echo "Version: $VERSION, ZIP file: $ZIP_FILE"
+          unzip "$ZIP_FILE" -d new-IG
+          #lese die Versionsnummer aus der HTML-Datei "ImplementationGuide-markdown-Einfuehrung.html" im neuen Ordner
+          VERSION=$(grep -oP '(?<=Version: )\d+\.\d+\.\d+' new-IG/ImplementationGuide-markdown-Einfuehrung.html)
+          #benenne den Ordner um in die Versionsnummer und gib die Versionsnummer aus
+          mv new-IG "$VERSION"
+          #falls die Versionsnummer nicht gefunden wird, gebe eine Fehlermeldung aus und exitiere
+          if [ -z "$VERSION" ]; then
+            echo "Version number not found in ImplementationGuide-markdown-Einfuehrung.html"
+            exit 1
+          fi
+          echo "Unzipped version: $VERSION"
+          # Setze die Versionsnummer als Variable, die später für den python argument input verwendet wird
+          echo "::set-env name=VERSION::$VERSION"
 
       - name: Remove packages folder
         run: |
