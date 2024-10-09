@@ -45,7 +45,7 @@ jobs:
           fi
           echo "Unzipped version: $VERSION"
           # Setze die Versionsnummer als Variable, die später für den python argument input verwendet wird
-          echo "::set-env name=VERSION::$VERSION"
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Remove packages folder
         run: |
@@ -53,7 +53,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/update_index.py "${{ env.VERSION }}"  # Führe das benutzerdefinierte Python-Skript mit der Versionsnummer als Argument aus
+          python scripts/update_index.py "$VERSION"  # Führe das benutzerdefinierte Python-Skript mit der Versionsnummer als Argument aus
 
       - name: Commit changes
         run: |
