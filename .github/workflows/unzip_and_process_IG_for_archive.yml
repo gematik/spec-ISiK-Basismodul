@@ -35,7 +35,7 @@ jobs:
           ZIP_FILE=$(ls IG/isik-*.zip)
           unzip "$ZIP_FILE" -d new-IG
           #lese die Versionsnummer aus der HTML-Datei "ImplementationGuide-markdown-Einfuehrung.html" im neuen Ordner
-          VERSION=$(grep -oP '(?<=Version: )\d+\.\d+\.\d+' new-IG/ImplementationGuide-markdown-Einfuehrung.html)
+          VERSION=$(grep -oP '(?<=Version: )\d+\.\d+\.\d+' IG/new-IG/ImplementationGuide-markdown-Einfuehrung.html)
           #benenne den Ordner um in die Versionsnummer und gib die Versionsnummer aus
           mv new-IG "$VERSION"
           #falls die Versionsnummer nicht gefunden wird, gebe eine Fehlermeldung aus und exitiere
