@@ -5,6 +5,24 @@ from update_index import create_new_row, update_index_html, validate_version
 
 class TestUpdateIndex(unittest.TestCase):
 
+#TODO currently thes modify index.html file, so we need to mock the file content and test the functions 
+
+    def test_update_index_with_redundant_version(self):
+        """
+        Test case for the `update_index_html` function.
+
+        This test verifies that the `update_index_html` function correctly handles a redundant version.
+
+        The test uses a version number that is equal to an existing version number.
+
+        Asserts:
+            The function prints an error message and exits with status code 1.
+        """
+        version = "3.0.5"
+        with patch("sys.exit") as mock_exit:
+            update_index_html(version)
+            mock_exit.assert_called_once_with(1)
+
     def test_validate_version_with_incorrect_format(self, version="4.0", content=""):
         """
         Test case for the `validate_version` function.
