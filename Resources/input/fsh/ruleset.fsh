@@ -70,3 +70,18 @@ RuleSet: CommonSearchParameters
         `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`  
         **Anwendungshinweis:**   
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+
+RuleSet: PatientRef
+* subject MS
+* ^short = "Patientenbezug"
+* reference 1.. MS
+  * ^short = "Patienten-Link"
+  * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+
+RuleSet: FachabteilungsRef
+* encounter MS
+* encounter only (Fachabteilungskontakt)
+  * ^short = "Aufenthaltsbezug"
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."

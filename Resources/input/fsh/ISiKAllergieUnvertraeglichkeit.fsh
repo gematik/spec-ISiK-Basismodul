@@ -44,9 +44,18 @@ Description: "Diese Profil ermöglicht die Dokumentation von Allergien und Unver
     * display MS
   * text MS
 * patient MS
-  * ^short = "Patient (Referenz)"
+  * ^short = "Patientenbezug"
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
+    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * encounter MS
-  * ^short = "Aufenthalt, bei dem die Allergie/Unverträglichkeit festgestellt wurde (nicht notwendigerweise der aktuelle Aufenthalt)"
+  * ^short = "Aufenthaltsbezug"
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+
 * onset[x] MS
   * ^short = "Beginn-Zeitpunkt"
 * onsetDateTime MS
