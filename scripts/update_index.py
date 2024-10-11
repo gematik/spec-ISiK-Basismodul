@@ -1,5 +1,5 @@
 # This script works only for Technical correction updates, e.g. augmenting from 4.0.1 to 4.0.2. For Major or Minor updates, the script needs to be adjusted to handle the versioning correctly or it should be done manually.
-# TODO This script update the index.html file with the latest data from IG-folder Version added to the IG Folder. Alternatively a Version for the update can be provided as an argument.
+# This script is used in an action to update the index.html file with the latest data from IG-folder Version added to the IG Folder. Alternatively a Version for the update can be provided as an argument.
 
 import os
 import sys
