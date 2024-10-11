@@ -62,3 +62,7 @@
 ### automated review steps:
 - [ ] no formal review needed
 - [ ] check IG-pages for broken links (possibly using plug-in)
+- [ ] 
+
+### For reviewers
+You migh use this: https://conventionalcomments.org/
