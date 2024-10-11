@@ -48,10 +48,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding contains SNOMED-CT 0..1 MS
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenKategorieSCT (preferred)
-* code MS
+* code 1.. MS
   * ^short = "Prozeduren-Code"
   * ^comment = "Prozeduren SOLLEN mindestens entweder mit einem OPS-Code oder einem SNOMED-Code aus dem angegebenen ValueSet codiert werden. 
-  Ist keine Codierung möglich, SOLL statt dessen eine textuelle Beschreibung der Prozedur angegeben werden."
+  Ist keine Codierung möglich, MUSS statt dessen eine textuelle Beschreibung der Prozedur angegeben werden.  
+  **Begründung Pflichtfeld:** Ist *weder* eine Codierung *noch* eine textuelle Beschreibung vorhanden, besitzt diese Ressource keine medizinische Aussagefähigkeit."
   * obeys sct-ops-1 and proc-ISiK-3
   * ^constraint[1].source = Canonical(ISiKProzedur)
   * coding MS
@@ -101,7 +102,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * performed[x] only dateTime or Period
 * note MS
   * ^short = "Notizen"
-  * ^comment = "Ergänzende Hinweise und Anmerkungen zur Prozedur."
+  * ^comment = "Ergänzende Hinweise und Anmerkungen zur Prozedur"
 
 Instance: Appendektomie
 InstanceOf: ISiKProzedur
