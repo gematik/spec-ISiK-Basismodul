@@ -189,7 +189,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
 
-    * searchRevInclude = "Composition:patient"
+    * searchRevInclude[+] = "Composition:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Composition:subject"
       * insert Expectation (#MAY)
