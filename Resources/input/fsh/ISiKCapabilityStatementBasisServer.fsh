@@ -1190,7 +1190,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
       * insert Expectation(#MAY)
       * name = "near"
       * definition = "http://hl7.org/fhir/SearchParameter/Location-near"
-      * type = #token
+      * type = #special
       * documentation = 
         "**Beispiel zur Suche nach Standort nahe (100m) Koordinaten:**    
         `GET [base]/Location?contains=52.525851|13.37774|100|m`    
@@ -1202,7 +1202,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 //Organisation
 
   * resource[+]
-    * type = #Organisation
+    * type = #Organization
     * insert Expectation(#MAY)
     * supportedProfile[+] = Canonical(ISiKOrganisation)
       * insert Expectation(#MAY)
@@ -1441,7 +1441,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
       * insert Expectation(#MAY)
       * code = #delete
 
-    * extension
+    * extension[+]
       * url = Canonical(CapabilityStatementSubscriptionTopic)
       * valueCanonical = $patient-merge-topic 
     * operation[+]

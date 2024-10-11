@@ -3,14 +3,14 @@ RuleSet: Meta
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2024-09-27"
+* ^date = "2024-10-09"
 
 RuleSet: MetaInstance
 * version = "4.0.1"
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2024-09-27"
+* date = "2024-10-09"
 
 RuleSet: Meta-CapabilityStatement
 * insert MetaInstance
@@ -18,8 +18,9 @@ RuleSet: Meta-CapabilityStatement
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer"
 
 RuleSet: Expectation (expectation)
-* extension.url = $capabilitystatement-expectation
-* extension.valueCode = {expectation}
+* extension[+]
+  * url = $capabilitystatement-expectation
+  * valueCode = {expectation}
 
 RuleSet: CommonSearchParameters
 * searchParam[+]

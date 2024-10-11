@@ -83,7 +83,7 @@ Parent: ISiKLebensZustand
 Id: ISiKAlkoholAbusus
 Title: "ISiK Alkohol Abusus"
 * insert Meta
-* category = ObservationCategoryCodes#social-history
+* category = $observation-category#social-history
 * code.coding[snomed-ct] = $sct#15167005
 * code.coding[loinc] = $loinc#74043-1
 * value[x] only CodeableConcept
@@ -109,7 +109,7 @@ Parent: ISiKLebensZustand
 Id: ISiKRaucherStatus
 Title: "ISiK Raucherstatus"
 * insert Meta
-* category = ObservationCategoryCodes#social-history
+* category = $observation-category#social-history
 * code.coding[snomed-ct] = $sct#77176002
 * code.coding[loinc] = $loinc#72166-2
 * value[x] only CodeableConcept
