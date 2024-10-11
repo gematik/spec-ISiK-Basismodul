@@ -89,4 +89,4 @@ RuleSet: FachabteilungsRef
     und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  
     Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Encounter}}) erfolgen. 
     Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Besuchen.)
+    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Besuchen.)"
