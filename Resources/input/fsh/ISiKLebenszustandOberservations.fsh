@@ -18,12 +18,22 @@ Description: "Basisprofil für ISiKLebensZustand Observation"
   * coding[snomed-ct] only ISiKSnomedCTCoding
   * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
+  * ^short = "Patientenbezug"
   * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
+    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+* encounter MS
+  * ^short = "Aufenthaltsbezug"
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * effective[x] 1..1 MS
 * effective[x] only dateTime or Period
 * value[x] 1.. MS
   * ^comment = "Motivation: Ein Lebenszustand benötigt immer einen Wert"
-* encounter MS
+
 
 
 Profile: ISiKSchwangerschaftsstatus

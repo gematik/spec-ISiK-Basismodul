@@ -39,8 +39,17 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
     * system 1.. MS
     * code 1..
 * subject MS
+  * ^short = "Patientenbezug"
   * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
+    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * encounter MS
+  * ^short = "Aufenthaltsbezug"
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * onset[x] only dateTime or Period
 * onsetPeriod 
   * start.extension contains ExtensionLebensphase named Lebensphase-Start 0..1
