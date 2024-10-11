@@ -76,7 +76,8 @@ RuleSet: PatientRef
 * ^short = "Patientenbezug"
 * reference 1.. MS
   * ^short = "Patienten-Link"
-  * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
+  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 
 RuleSet: FachabteilungsRef
 * encounter MS
@@ -84,4 +85,8 @@ RuleSet: FachabteilungsRef
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  
+    Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Encounter}}) erfolgen. 
+    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
+    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Besuchen.)

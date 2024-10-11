@@ -95,8 +95,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Encounter-Link"
     * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * performed[x] 1.. MS
+  * ^short = "Durchführungsdatum oder -Zeitraum"
+  * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.
+  **Begründung Pflichtfeld:** Die zeitliche Einordnung einer Prozedur ist in vielen Fällen maßgeblich für deren medizinische Relevanz."
 * performed[x] only dateTime or Period
 * note MS
+  * ^short = "Notizen"
+  * ^comment = "Ergänzende Hinweise und Anmerkungen zur Prozedur."
 
 Instance: Appendektomie
 InstanceOf: ISiKProzedur
