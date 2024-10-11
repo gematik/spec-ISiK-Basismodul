@@ -12,12 +12,14 @@ INDEX_FILE_PATH = os.path.join(PROJECT_ROOT, "index.html")
 #TODO Add a pattern for different Projects
 HTML_TEMPLATE = """
     <tr>
-    <td>{current_date}</td> 
-    <td>
-        <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/{version}/ImplementationGuide-markdown-Einfuehrung.html">{version}</a>
-    </td>
-    <td>Technical Correction {version}</td>
-    <td>{version}</td>
+        <td>{current_date}</td>
+        <td>
+            <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/{version}/ImplementationGuide-markdown-Einfuehrung.html">
+                {version}
+            </a>
+        </td>
+        <td>Technical Correction {version}</td>
+        <td>{version}</td>
     </tr>
 """
 VERSION_PATTERN = re.compile(
@@ -26,7 +28,7 @@ VERSION_PATTERN = re.compile(
 #TODO Add a pattern for different Projects
 
 def get_current_date_str():
-    return datetime.datetime.now().strftime("%Y-%m-%d")
+    return datetime.datetime.now().strftime("%d.%m.%Y")
 
 def create_new_row(version, current_date_str):
     return HTML_TEMPLATE.format(current_date=current_date_str, version=version)
@@ -49,9 +51,8 @@ def validate_version(version, content):
         print("Invalid version format. Please provide a version in the format X.Y.Z or X.Y.Z-rcN (e.g., 4.0.5 or 4.0.0-rc2).")
         sys.exit(1)
     # Check if the version already exists in the index.html file
-    #TODO
-    if re.search(r'ImplementationGuide-markdown-Einfuehrung.html">' + re.escape(version), content) is not None:
-        print(f"Version {version} already exists in the index.html file.")
+    if VERSION_PATTERN.search(content) and version in content:
+        print(f"Version {version} already exists in index.html.")
         sys.exit(1)
     
 
@@ -62,8 +63,9 @@ def find_insert_position(content, version):
         sys.exit(1)
 
     for match in matches:
-        if match and match.group(1) < version:
-            return match.start()
+        existing_version = match.group(1)
+        if existing_version < version:
+            return match.end()
 
     print("No suitable position found to insert the new version.")
     sys.exit(1)
