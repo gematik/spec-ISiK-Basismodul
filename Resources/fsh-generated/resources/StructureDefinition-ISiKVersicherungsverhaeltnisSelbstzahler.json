@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKVersicherungsverhaeltnisSelbstzahler",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler",
+  "version": "4.0.1",
+  "name": "ISiKVersicherungsverhaeltnisSelbstzahler",
+  "status": "active",
+  "experimental": false,
+  "date": "2024-10-11",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil ermöglicht Selbstzahler Szenarien in ISiK.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-sel",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber",
+        "path": "Coverage.subscriber",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.reference",
+        "path": "Coverage.subscriber.reference",
+        "comment": "Motivation für MS: Da ein ISIK-Profil besteht, sollte dies ggf. referenziert werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.display",
+        "path": "Coverage.subscriber.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary.reference",
+        "path": "Coverage.beneficiary.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
