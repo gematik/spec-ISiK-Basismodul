@@ -23,9 +23,8 @@ HTML_TEMPLATE = """
     </tr>
 """
 VERSION_PATTERN = re.compile(
-    r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\1</a>\s*</td>'
+    r'<tr>\s*<td>\d{2}\.\d{2}\.\d{4}</td>\s*<td>\s*<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/(\d+\.\d+\.\d+(-\w+)?)/ImplementationGuide-markdown-Einfuehrung.html">\s*\1\s*</a>\s*</td>'
 )
-#TODO Add a pattern for different Projects
 
 def get_current_date_str():
     return datetime.datetime.now().strftime("%d.%m.%Y")
@@ -43,44 +42,45 @@ def write_index_html(content):
 
 def validate_version(version, content):
     if version is None:
-        print("No Version provided. Please provide a version as an argument, e.g. 4.0.5 or 4.0.0-rc2 (release candidate)")
-        sys.exit(1)
+        return(False, "No Version provided. Please provide a version as an argument, e.g. 4.0.5 or 4.0.0-rc2 (release candidate)")
     # Check if the version is in the correct format
     semver_pattern = re.compile(r'^\d+\.\d+\.\d+(-\w+)?$')
     if not semver_pattern.match(version):
-        print("Invalid version format. Please provide a version in the format X.Y.Z or X.Y.Z-rcN (e.g., 4.0.5 or 4.0.0-rc2).")
-        sys.exit(1)
+        return(False, "Invalid version format. Please provide a version in the format X.Y.Z or X.Y.Z-rcN (e.g., 4.0.5 or 4.0.0-rc2).")
     # Check if the version already exists in the index.html file
     if VERSION_PATTERN.search(content) and version in content:
-        print(f"Version {version} already exists in index.html.")
-        sys.exit(1)
+        return(False, f"Version {version} already exists in index.html.")
+    return(True, "Version has no obvious issues.")
     
 
 def find_insert_position(content, version):
     matches = list(VERSION_PATTERN.finditer(content))
     if not matches:
-        print("No previous version found in index.html")
-        sys.exit(1)
+        return (False, "No previous version found in index.html")
 
     for match in matches:
-        existing_version = match.group(1)
-        if existing_version < version:
-            return match.end()
-
-    print("No suitable position found to insert the new version.")
-    sys.exit(1)
+        if version > match.group(1):
+            return (match.start(), f"Inserting new version {version} before version {match.group(1)}")
 
 def update_content(content, new_row, insert_position):
     return content[:insert_position] + new_row + content[insert_position:]
 
 def update_index_html(version=None):
     content = read_index_html()
-    validate_version(version, content)
+    is_valid, message = validate_version(version, content)
+    if not is_valid:
+        print(message)
+        return False
+    print(message)
     current_date_str = get_current_date_str()
     new_row = create_new_row(version, current_date_str)
-    insert_position = find_insert_position(content, version)
-    updated_content = update_content(content, new_row, insert_position)
+    position_found, message_position = find_insert_position(content, version)
+    if position_found is False:
+        print(message_position)
+        return False
+    updated_content = update_content(content, new_row, position_found)
     write_index_html(updated_content)
+    print(f"Successfully updated index.html with version {version}")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

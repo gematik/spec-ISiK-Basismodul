@@ -206,7 +206,7 @@ class TestUpdateIndex(unittest.TestCase):
     <tr>"""
         position_result, message = find_insert_position(mock_file_content, version)
         self.assertEqual(position_result, 968 ) 
-        # 968 is the length before "<tr>
+        # 968 is the string length before "<tr>
         # <td>30.04.2024</td> [...]", which is date for 3.0.5 element.'''
         #TODO not working correclty - fix issue in code
 
