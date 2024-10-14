@@ -106,7 +106,7 @@ class TestUpdateIndex(unittest.TestCase):
 
 
     # TODO fix test
-    '''def test_update_index_html_insertion_position(self):
+    def test_update_index_html_insertion_position(self):
         """
         Test case for the `update_index_html` function.
 
@@ -158,11 +158,11 @@ class TestUpdateIndex(unittest.TestCase):
         expected_position = mock_file_content.find('<tr>\n<tr>\n<td>30.04.2024</td><tr>\n<td>01.01.2022</td> \n<td>\n<a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/3.0.5/ImplementationGuide-markdown-Einfuehrung.html">3.0.5</a>')
 
         with patch("builtins.open", mock_open(read_data=mock_file_content)), patch("sys.exit") as mock_exit:
-            content = read_index_html()
+            content = mock_file_content
             insert_position = find_insert_position(content, version)
             self.assertEqual(insert_position, expected_position)
             mock_exit.assert_not_called()
-    '''
+    
   
 
 if __name__ == "__main__":
