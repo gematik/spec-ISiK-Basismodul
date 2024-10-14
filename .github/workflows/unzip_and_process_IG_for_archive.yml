@@ -31,20 +31,32 @@ jobs:
       - name: Unzip file
         id: unzip
         run: |
-          # Bestimme die ZIP-Datei und enpacke sie in einen Versionsordner namens new-IG
+          # Bestimme die ZIP-Datei und 
           ZIP_FILE=$(ls IG/isik-*.zip)
+          # wenn keine Datei gefunden wurde dann brech ab und gibt eine Fehlermdelung aus
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No ZIP file found in IG directory"
+            exit 1
+          fi
+          # prüfe ob mehr als eine Datei dem Schema folgt, falls ja, gib eine Fehlermdelung aus
+          if [ $(ls IG/isik-*.zip | wc -l) -gt 1 ]; then
+          echo "Multiple ZIP files found in IG directory"
+          exit 1
+          fi
+          # Entpacke die zip-Datei in einen Versionsordner namens new-IG
           unzip "$ZIP_FILE" -d IG/new-IG
           # Entferne die ZIP-Datei, um Konflikte zu vermeiden
           rm "$ZIP_FILE"
           #lese die Versionsnummer aus der HTML-Datei "ImplementationGuide-markdown-Einfuehrung.html" im neuen Ordner
           VERSION=$(grep -oP '(?<=Version: )\d+\.\d+\.\d+' IG/new-IG/ImplementationGuide-markdown-Einfuehrung.html)
-          #benenne den Ordner um in die Versionsnummer und gib die Versionsnummer aus
-          mv IG/new-IG IG/"$VERSION"
           #falls die Versionsnummer nicht gefunden wird, gebe eine Fehlermeldung aus und exitiere
-          if [ -z IG/"$VERSION" ]; then
-            echo "Version number not found in ImplementationGuide-markdown-Einfuehrung.html"
+          if [ -z "$VERSION" ]; then
+            echo "Version number not found in HTML file"
             exit 1
           fi
+          #benenne den Ordner um in die Versionsnummer und gib die Versionsnummer aus
+          mv IG/new-IG IG/"$VERSION"
+
           echo "Unzipped version: $VERSION"
           # Setze die Versionsnummer als Variable, die später für den python argument input verwendet wird
             echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
@@ -62,15 +74,15 @@ jobs:
         run: |
           # Konfiguriere Git-Benutzerinformationen für den Commit
           git config --local user.name "github-actions"
-          git config --local user.email "github-actions@github.com"
+          git config --local user.email "ga-ptdata@gematik.de"
           # Füge alle Änderungen hinzu
           git add .
-          git commit -m "Processed ZIP file: $ZIP_FILE"  # Erstelle den Commit
+          git commit -m "AUTOCOMMIT: Processed ZIP file: $ZIP_FILE"  # Erstelle den Commit
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-            title: 'Update from IG folder for TC Version: ${{ steps.unzip.outputs.VERSION }}'  # Titel des Pull-Requests
-            body: 'Automated PR: Processed new IG-ZIP file for Version: ${{ steps.unzip.outputs.VERSION }}.'  # Beschreibung des Pull-Requests
+            title: 'AUTOPULLREQUEST: Update from IG folder for TC Version: ${{ steps.unzip.outputs.VERSION }}'  # Titel des Pull-Requests
+            body: 'Automated PULL REQUEST Processed new IG-ZIP file for Version: ${{ steps.unzip.outputs.VERSION }}.'  # Beschreibung des Pull-Requests
             base: gh-pages  # Ziel-Branch für den Pull-Request
             branch: update-from-zip-${{ steps.unzip.outputs.VERSION }}  # Erstelle einen neuen Branch für die Änderungen mit Angabe der Version
