@@ -74,7 +74,7 @@ def update_index_html(version=None):
     print(message)
     current_date_str = get_current_date_str()
     new_row = create_new_row(version, current_date_str)
-    position_found, message_position = find_insert_position(content, version)
+    position_found, message_position = find_insert_position(content, version) # TODO # ISSUE insertion position not determined correctly for second automatic update
     if position_found is False:
         print(message_position)
         return False
