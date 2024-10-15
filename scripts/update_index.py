@@ -65,8 +65,9 @@ def find_insert_position(content, version):
 def update_content(content, new_row, insert_position):
     return content[:insert_position] + new_row + content[insert_position:]
 
-def update_index_html(version=None):
-    content = read_index_html()
+def update_index_html(version=None, content=None):
+    if content is None:
+        content = read_index_html()
     is_valid, message = validate_version(version, content)
     if not is_valid:
         print(message)
@@ -79,12 +80,14 @@ def update_index_html(version=None):
         print(message_position)
         return False
     updated_content = update_content(content, new_row, position_found)
-    write_index_html(updated_content)
-    print(f"Successfully updated index.html with version {version}")
+    return(updated_content)
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         version = sys.argv[1]
     else:
         version = None
-    update_index_html(version)
+    updated_content = update_index_html(version)
+    write_index_html(updated_content)
+    print(f"Successfully updated index.html with version {version}")
