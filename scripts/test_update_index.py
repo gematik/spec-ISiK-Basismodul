@@ -38,9 +38,6 @@ class TestUpdateIndex(unittest.TestCase):
         validation_result = validate_version(version, mock_file_content)
         self.assertEqual(validation_result, (False, f"Version {version} already exists in index.html."))
 
-        
-
-
     def test_validate_version_with_incorrect_format(self, version="4.0", content=""):
         """
         Test case for the `validate_version` function.
@@ -71,6 +68,8 @@ class TestUpdateIndex(unittest.TestCase):
             version = "4.0.11"
             validation_result = validate_version(version,content="")
             self.assertEqual(validation_result, (True, "Version has no obvious issues."))
+
+    # TODO add test for validate_version with correct version format for e.g. release candidate like 4.0.0-rc2
 
     def test_validate_version_with_redundant_version(self):
         """
@@ -155,7 +154,6 @@ class TestUpdateIndex(unittest.TestCase):
         self.assertEqual(position_result, 10)
 
 
-    #TODO fix behaviour (not test)
     def test_run_update_html_twice_and_determine_insertion_position(self):
         """
         Test case for the `update_index_html` function.
