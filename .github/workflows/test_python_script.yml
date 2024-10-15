@@ -37,6 +37,6 @@ jobs:
       - name: Generate coverage report
         run: |
           pip install coverage
-          coverage run -m unittest discover -s tests -p '*.py'
+          coverage run -m unittest discover -s scripts -p 'test*.py'
           coverage xml -o coverage/coverage.xml
           coverage report
