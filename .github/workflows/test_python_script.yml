@@ -1,0 +1,37 @@
+# This action executes the Python test 'test_update_index.py' and outputs the test results whenever a change to the file 'update_index.py' in the 'scripts' folder is pushed to the repository.
+
+name: Test Python Script for index update
+
+on:
+  push:
+    paths:
+      - 'scripts/update_index.py'
+  pull_request:
+    paths:
+      - 'scripts/update_index.py'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "requirements.txt not found"; fi
+
+      - name: Run tests
+        id: run_tests
+        run: |
+            python -m unittest discover -s scripts -p 'test_update_index.py'
+        continue-on-error: true
+
+      
