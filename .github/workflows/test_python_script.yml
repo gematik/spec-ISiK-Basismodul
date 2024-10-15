@@ -40,20 +40,6 @@ jobs:
           coverage run -m unittest discover -s scripts -p 'test_update_index.py'
           coverage xml -o coverage/coverage.xml
           coverage report
+          #print the coverage report to the console
+          cat coverage/coverage.xml
         continue-on-error: true
-
-      - name: Post test results as comment
-        if: always()
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const fs = require('fs');
-            const results = fs.readFileSync('coverage/coverage.xml', 'utf8');
-            const comment = `## Test Results\n\n\`\`\`xml\n${results}\n\`\`\``;
-            const issue_number = context.payload.pull_request ? context.payload.pull_request.number : context.issue.number;
-            github.rest.issues.createComment({
-              issue_number: issue_number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
