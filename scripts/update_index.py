@@ -91,5 +91,8 @@ if __name__ == "__main__":
     else:
         version = None
     updated_content = update_index_html(version)
+    if updated_content is False:
+        print("Failed to update index.html")
+        sys.exit(1)
     write_index_html(updated_content)
     print(f"Successfully updated index.html with version {version}")

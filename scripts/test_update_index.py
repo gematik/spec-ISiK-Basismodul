@@ -1,3 +1,6 @@
+import os
+import shutil
+import subprocess
 import unittest
 from unittest.mock import mock_open, patch
 import datetime
@@ -197,8 +200,113 @@ class TestUpdateIndex(unittest.TestCase):
         self.assertIn(version2, mock_file_content)
         self.assertLess(mock_file_content.index(version2), mock_file_content.index(version1)) # version2 (3.0.7) should occur before version1 (3.0.6), since order is descending
 
+    def test_run_update_index_with_redundant_version(self):
+        """
+        Test case for the `update_index_html` function.
 
-  
+        This test verifies that the `update_index_html` function correctly handles a redundant version.
 
-if __name__ == "__main__":
-    unittest.main()
+        The test uses a version number that is equal to an existing version number.
+
+        Asserts:
+            The function prints an error message and does not update the index.html content.
+        """
+        version = "3.0.5"
+        updated_content = update_index_html(version)
+        self.assertFalse(updated_content)
+
+
+    def test_run_update_content_with_redundant_version_without_content_alteration(self):
+        """
+        Test case for the `update_index_html` function.
+
+        This test verifies that the `update_index_html` function correctly handles a redundant version.
+
+        The test uses a version number that is equal to an existing version number.
+
+        Asserts:
+            The function prints an error message and does not update the index.html content.
+        """
+
+        version = "3.0.5"
+        mock_file_content = """<body>
+<div id="page-bg">
+<div class="wrapper">
+<div class="shadow-left">
+<div class="shadow-right">
+<div class="main-page">
+<div class="main-page2">
+<div class="main-page3">
+<div class="main-page4">
+<div class="vcard"> 
+  <div class="vcard-header">
+  <a href="https://hl7.de/">
+  <img src="./files/Gematik_Logo_Flag.jpg" style="float: right; max-height: 80px; max-width: 240px;"> 
+  </a>
+  <h1 class="title">ISiK Implementierungsleitfäden</h1><h1>
+  </div>
+<!-- Begin Main Content Area -->
+</div>
+<div class="vcard-text">
+<div class="thecontent"><table border="0" cellpadding="4" style="height: 400px;">	<thead>
+	<tr align="left">
+	<th width="10%">Datum</th>
+	<th width="10%">Name</th>
+	<th width="70%">Beschreibung</th>
+	<th width="10%">Version</th>
+	</tr>
+	</thead>
+  <tbody>
+    </tr>
+        <td colspan="4" style="background-color: #dddddd;">
+          <strong>Basismodul Stufe 4</strong></td>
+    </tr>
+    <tr>
+      <tr>
+        <td>25.06.2024</td>
+        <td>
+          <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/4.0.0-rc3/ImplementationGuide-markdown-Einfuehrung.html">4.0.0-rc3</a>
+        </td>
+        <td>Release Candidate Benehmensherstellung 4.0.0-rc3</td>
+        <td>4.0.0-rc3</td>
+      </tr>
+      <tr>
+        <td>04.04.2024</td>
+        <td>
+          <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/4.0.0-rc2/ImplementationGuide-markdown-Einfuehrung.html">4.0.0-rc2</a>
+        </td>
+        <td>Release Candidate Kommentierung 4.0.0-rc2</td>
+        <td>4.0.0-rc2</td>
+      </tr>
+      <tr>
+    </tr>
+        <td colspan="4" style="background-color: #dddddd;">
+          <strong>Basismodul Stufe 3</strong></td>
+    </tr>
+    <tr>
+      <tr>
+        <td>30.04.2024</td>
+        <td>
+          <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/3.0.5/ImplementationGuide-markdown-Einfuehrung.html">3.0.5</a>
+        </td>
+        <td>Technical Correction 3.0.5</td>
+        <td>3.0.5</td>
+      </tr>
+      <tr>
+    <tr>
+      <tr>
+        <td>03.04.2024</td>
+        <td>
+          <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/3.0.4/ImplementationGuide-markdown-Einfuehrung.html">3.0.4</a>
+        </td>
+        <td>Technical Correction 3.0.4</td>
+        <td>3.0.4</td>
+      </tr>           """
+        updated_content = update_index_html(version, mock_file_content)
+        self.assertFalse(updated_content)
+
+
+
+
+        
+
