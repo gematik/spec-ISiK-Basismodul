@@ -44,7 +44,7 @@ jobs:
       run: |
         # Update the main.yml file with the new versions of Firely and Sushi
         sed -i "s|uses: FirelyTeam/firely-terminal-pipeline@.*|uses: FirelyTeam/firely-terminal-pipeline@$LATEST_VERSION|" .github/workflows/main.yml
-        sed -i "s|uses: FHIR/sushi
+        sed -i "s|uses: FHIR/sushi@.*|uses: FHIR/sushi@$LATEST_VERSION_SUSHI|" .github/workflows/main.yml
 
     - name: Commit changes
       env:
