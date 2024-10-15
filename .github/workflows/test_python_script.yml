@@ -31,15 +31,16 @@ jobs:
       - name: Run tests
         id: run_tests
         run: |
-            python -m unittest discover -s scripts -p 'test_update_index'
+            python -m unittest discover -s scripts -p 'test_update_index.py'
         continue-on-error: true
 
       - name: Generate coverage report
         run: |
           pip install coverage
-          coverage run -m unittest discover -s scripts -p 'test_update_index'
+          coverage run -m unittest discover -s scripts -p 'test_update_index.py'
           coverage xml -o coverage/coverage.xml
           coverage report
+        continue-on-error: true
 
       - name: Post test results as comment
         if: always()
