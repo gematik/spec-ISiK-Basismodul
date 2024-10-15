@@ -38,7 +38,7 @@ jobs:
         run: |
           pip install coverage
           coverage run -m unittest discover -s tests -p '*.py'
-          coverage xml
+          coverage xml -o coverage/coverage.xml
           coverage report
 
       - name: Post test results as comment
@@ -47,7 +47,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const results = fs.readFileSync('coverage.xml', 'utf8');
+            const results = fs.readFileSync('coverage/coverage.xml', 'utf8');
             const comment = `## Test Results\n\n\`\`\`xml\n${results}\n\`\`\``;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
