@@ -34,12 +34,4 @@ jobs:
             python -m unittest discover -s scripts -p 'test_update_index.py'
         continue-on-error: true
 
-      - name: Generate coverage report
-        run: |
-          pip install coverage
-          coverage run -m unittest discover -s scripts -p 'test_update_index.py'
-          coverage xml -o coverage/coverage.xml
-          coverage report
-          #print the coverage report to the console
-          cat coverage/coverage.xml
-        continue-on-error: true
+      
