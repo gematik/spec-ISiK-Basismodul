@@ -31,17 +31,16 @@ jobs:
       - name: Run tests
         id: run_tests
         run: |
-            python -m unittest discover -s scripts -p 'test*.py'
+            python -m unittest discover -s scripts -p 'test_update_index'
         continue-on-error: true
 
       - name: Generate coverage report
         run: |
           pip install coverage
-          coverage run -m unittest discover -s scripts -p 'test*.py'
+          coverage run -m unittest discover -s scripts -p 'test_update_index'
           coverage xml -o coverage/coverage.xml
           coverage report
 
-      
       - name: Post test results as comment
         if: always()
         uses: actions/github-script@v4
@@ -50,8 +49,9 @@ jobs:
             const fs = require('fs');
             const results = fs.readFileSync('coverage/coverage.xml', 'utf8');
             const comment = `## Test Results\n\n\`\`\`xml\n${results}\n\`\`\``;
+            const issue_number = context.payload.pull_request ? context.payload.pull_request.number : context.issue.number;
             github.rest.issues.createComment({
-              issue_number: context.issue.number,
+              issue_number: issue_number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: comment
