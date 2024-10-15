@@ -206,13 +206,54 @@ class TestUpdateIndex(unittest.TestCase):
     <tr>"""
         position_result, message = find_insert_position(mock_file_content, version)
         self.assertEqual(position_result, 968 ) 
-        # 968 is the string length before "<tr>
-        # <td>30.04.2024</td> [...]", which is date for 3.0.5 element.'''
+        # 968 is the string length before "<tr>      <td>30.04.2024</td> [...]", which is date for 3.0.5 element.'''
         #TODO not working correclty - fix issue in code
 
 
+    #TODO fix test and behaviour
+    def test_run_update_html_twice_and_determine_insertion_position(self):
+        """
+        Test case for the `update_index_html` function.
 
-        
+        This test verifies that the `update_index_html` function correctly determines the insertion position for the second automatic update.
+
+        The test uses a mock file content with a previous version.
+
+        Asserts:
+            The function confirms that the string 3.0.6 is occurring before 3.0.7.
+        """
+        version1= "3.0.6"
+        version2= "3.0.7"
+        #open index-html as mock file without hard inline content
+        #TODO
+        mock_file_content = """<tr>
+        <td>01.01.2022</td> 
+        <td>
+            <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/3.0.5/ImplementationGuide-markdown-Einfuehrung.html">3.0.5</a>
+        </td>
+        <td>Technical Correction 3.0.5</td>
+        <td>3.0.5</td>
+        </tr>
+        <tr>
+        <td>01.01.2022</td> 
+        <td>
+            <a href="https://gematik.github.io/spec-ISiK-Basismodul/IG/3.0.4/ImplementationGuide-markdown-Einfuehrung.html">3.0.4</a>
+        </td>
+        <td>Technical Correction 3.0.4</td>
+        <td>3.0.4</td>
+        </tr>"""
+
+        # First update
+        with patch("builtins.open", mock_open(read_data="mock_file_content")):
+            mock_file_content = update_index_html(version1, mock_file_content)
+            # Second update
+            mock_file_content = update_index_html(version2, mock_file_content)
+
+        # Check order of both versions in the mock file content
+        self.assertIn(version1, mock_file_content)
+        self.assertIn(version2, mock_file_content)
+        self.assertLess(mock_file_content.index(version1), mock_file_content.index(version2))
+
 
   
 
