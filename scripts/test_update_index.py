@@ -195,7 +195,6 @@ class TestUpdateIndex(unittest.TestCase):
         # Check order of both versions in the mock file content
         self.assertIn(version1, mock_file_content)
         self.assertIn(version2, mock_file_content)
-        print(mock_file_content)
         self.assertLess(mock_file_content.index(version2), mock_file_content.index(version1)) # version2 (3.0.7) should occur before version1 (3.0.6), since order is descending
 
 
