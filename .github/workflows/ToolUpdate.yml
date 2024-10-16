@@ -24,18 +24,29 @@ jobs:
       run: sudo apt-get install jq
 
     - name: Fetch latest version of firely terminal dependency
-      id: fetch_version
+      id: fetch_version_firely
       run: |
         # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
-        echo "LATEST_VERSION=$LATEST_VERSION" >> $GITHUB_ENV
+        LATEST_VERSION_FIRELY=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION_FIRELY=$LATEST_VERSION_FIRELY" >> $GITHUB_ENV
+        echo $LATEST_VERSION_FIRELY 
+
+    - name: Fetch latest version of Sushi dependency
+      id: fetch_version_sushi
+      run: |
+        # Fetch the latest version from the fhir/sushi GitHub repository
+        LATEST_VERSION_SUSHI=$(curl -s https://api.github.com/repos/FHIR/sushi/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION_SUSHI=$LATEST_VERSION_SUSHI" >> $GITHUB_ENV
+        echo $LATEST_VERSION_SUSHI
+
     
     # TODO add an if statement to prevent the workflow from running if the version is the same as the one in the main.yml file
 
-    - name: Update main.yml
+    - name: Update main.yml for Firely and Sushi
       run: |
-        # Update the main.yml file with the new version
-        sed -i "s|uses: FirelyTeam/firely-terminal-pipeline@.*|uses: FirelyTeam/firely-terminal-pipeline@$LATEST_VERSION|" .github/workflows/main.yml
+        # Update the main.yml file with the new versions of Firely and Sushi
+        sed -i "s|uses: FirelyTeam/firely-terminal-pipeline@.*|uses: FirelyTeam/firely-terminal-pipeline@$LATEST_VERSION_FIRELY|" .github/workflows/main.yml
+        sed -i "s|SUSHI_VERSION: .*|SUSHI_VERSION: $LATEST_VERSION_SUSHI|" .github/workflows/main.yml
 
     - name: Commit changes
       env:
@@ -44,23 +55,30 @@ jobs:
         # Commit the changes
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git checkout -b update-dependency-$LATEST_VERSION || git checkout update-dependency-$LATEST_VERSION
+        git checkout -b update-dependency-${LATEST_VERSION_FIRELY}-${LATEST_VERSION_SUSHI} || git checkout update-dependency-${LATEST_VERSION_FIRELY}-${LATEST_VERSION_SUSHI}
         git add .github/workflows/main.yml
-        git commit -m "Update dependency to version $LATEST_VERSION"
-        git push https://x-access-token:${{ secrets.WORKFLOW_PERMISSION_GITHUB }}@github.com/${{ github.repository }}.git update-dependency-$LATEST_VERSION
+        git commit -m "Update dependencies to versions Firely: ${LATEST_VERSION_FIRELY}, Sushi: ${LATEST_VERSION_SUSHI}"
+        git push https://x-access-token:${{ secrets.WORKFLOW_PERMISSION_GITHUB }}@github.com/${{ github.repository }}.git update-dependency-${LATEST_VERSION_FIRELY}-${LATEST_VERSION_SUSHI}
 
     - name: Create Pull Request
       uses: actions/github-script@v6
       with:
         script: |
-          const latestVersion = process.env.LATEST_VERSION;
-          const { data: pullRequest } = await github.rest.pulls.create({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            title: `Update dependency to version ${latestVersion}`,
-            head: `update-dependency-${latestVersion}`,
-            base: context.ref.replace('refs/heads/', ''),
-            body: `This PR updates the dependency to version ${latestVersion}.`,
-            maintainer_can_modify: true,
-          });
-          console.log(`Created pull request: ${pullRequest.html_url}`);
+            const latestVersionFirely = process.env.LATEST_VERSION_FIRELY;
+            const latestVersionSushi = process.env.LATEST_VERSION_SUSHI;
+            if (!latestVersionFirely || !latestVersionSushi) {
+              throw new Error('Versions are not defined');
+            }
+            const prTitle = `Update dependencies to versions Firely: ${latestVersionFirely}, Sushi: ${latestVersionSushi}`;
+            const prHead = `update-dependency-${latestVersionFirely}-${latestVersionSushi}`;
+            const prBody = `This PR updates the dependencies to versions Firely: ${latestVersionFirely} and Sushi: ${latestVersionSushi}.`;
+            const { data: pullRequest } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: prTitle,
+              head: prHead,
+              base: context.ref.replace('refs/heads/', ''),
+              body: prBody,
+              maintainer_can_modify: true,
+            });
+            console.log(`Created pull request: ${pullRequest.html_url}`);
