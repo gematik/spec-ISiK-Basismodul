@@ -35,7 +35,7 @@ jobs:
       id: fetch_version_sushi
       run: |
         # Fetch the latest version from the fhir/sushi GitHub repository
-        LATEST_VERSION_SUSHI=$(curl -s https://api.github.com/repos/FHIR/sushi/releases/latest | jq -r .tag_name)
+        LATEST_VERSION_SUSHI=$(curl -s https://api.github.com/repos/FHIR/sushi/releases/latest | jq -r .tag_name | sed 's/^v//')
         echo "LATEST_VERSION_SUSHI=$LATEST_VERSION_SUSHI" >> $GITHUB_ENV
         echo $LATEST_VERSION_SUSHI
 
