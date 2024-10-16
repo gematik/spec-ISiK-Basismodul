@@ -27,15 +27,17 @@ jobs:
       id: fetch_version_firely
       run: |
         # Fetch the latest version from the FirelyTeam/firely-terminal-pipeline GitHub repository
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
-        echo "LATEST_VERSION=$LATEST_VERSION_FIRELY" >> $GITHUB_ENV
+        LATEST_VERSION_FIRELY=$(curl -s https://api.github.com/repos/FirelyTeam/firely-terminal-pipeline/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION_FIRELY=$LATEST_VERSION_FIRELY" >> $GITHUB_ENV
+        echo "LATEST_VERSION_FIRELY" 
 
     - name: Fetch latest version of Sushi dependency
       id: fetch_version_sushi
       run: |
         # Fetch the latest version from the fhir/sushi GitHub repository
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/FHIR/sushi/releases/latest | jq -r .tag_name)
-        echo "LATEST_VERSION=$LATEST_VERSION_SUSHI" >> $GITHUB_ENV
+        LATEST_VERSION_SUSHI=$(curl -s https://api.github.com/repos/FHIR/sushi/releases/latest | jq -r .tag_name)
+        echo "LATEST_VERSION_SUSHI=$LATEST_VERSION_SUSHI" >> $GITHUB_ENV
+        echo "LATEST_VERSION_SUSHI"
 
     
     # TODO add an if statement to prevent the workflow from running if the version is the same as the one in the main.yml file
