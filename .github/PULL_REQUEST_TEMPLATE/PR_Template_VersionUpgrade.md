@@ -15,13 +15,8 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 <!--- Lets check everything before we continue. -->
 - [ ] This PR refers to a versioned Branch with a name and a version number in the form of N.n.n, e.g. "TC_3.2.1".
 - [ ] This PR has a clean meaningful commit history. Minor commits or commits without description have been squashed, at the latest now.
-- [ ] The _./github/workflows/main.yml_ refers to the correct Firely Terminal and SUSHI Version. 
-    > **_Firely Terminal Pipeline_**  0.4.0.
-
-    > **_SUSHI Versions_**  3.5.0.
-- [ ] By running the _Release_Publish.py_ script, release version and date was updated accordingly. The script ran without errors.
-- [ ] Eventually, increase the dependency of to newer Basis Modul (package and sushi-config)
-- [ ] New Release Notes were created, alined to the commit history and cleaned. In Github, go to 
+- [ ] Eventually, increase the dependency of to newer Basis Modul and Basispofil-de and possibly others (package and sushi-config)
+- [ ] New Release Notes were created, alined to the commit history. Possibly, if you want to check the release notes for completeness, check against automatic relesase note generation in GitHub. In Github, go to 
   - [ ]  _-> Releases_ then _-> Draft a new release_ with the _Modul Name and Version_, then
   - [ ] _-> Target the main-Branch_ and _->enter a new Tag according to the Version_, then click.
   - [ ] Click _-> Generate Release notes_ , _->Adjust them if necessary_ and _-> Copy/Paste the Details in the RealeaseNotes.md_ of the very Branch you want to merge.
