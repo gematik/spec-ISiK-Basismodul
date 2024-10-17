@@ -28,7 +28,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * extension contains $condition-related named related 0..1 MS
 * extension[related]
   * ^short = "Verknüpfte Diagnose"
-  * ^comment = " Die Deutschen Kodierrichtlinien und die 'German MOdification' ermöglichen es teilweise, 
+  * ^comment = " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, 
   ICD-10-Codierte Diagnosen miteinander zu verknüpfen (&quot;Kreuz-Stern-Ausrufezeichen-Notation&quot;), 
   diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.
   Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.
@@ -36,16 +36,17 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Die Sekundärdiagnose verweist jeweils auf die Primärdiagnose."
 * clinicalStatus MS
   * ^short = "klinischer Status"
-  * ^comment = "**Begründung MS:** Auch in Stufe 4 sind keine (Client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen 
-  (siehe CapabilityStatement). Das heißt entweder führen KISe entsprechende Informationen und exponieren diese, 
+  * ^comment = "**Begründung MS:** Auch in Stufe 4 sind keine (client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen 
+  (siehe CapabilityStatement). Das heißt, entweder führen KISe entsprechende Informationen und exponieren diese, 
   oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. 
   Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, 
   erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen.  
   **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur 
   zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. 
-  Das System MUSS jedoch den Status kodieren in der Diagnose, sofern die Information verfügbar ist."
-  
-
+  Das System MUSS jedoch `clinicalStatus` befüllen, sofern die entsprechende Information verfügbar ist.  
+  **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem 
+  [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.
+  Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
