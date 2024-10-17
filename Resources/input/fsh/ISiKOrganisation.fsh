@@ -56,7 +56,7 @@ Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung in
   Fachbereich 0..1 MS
 * type[organisationstyp] = $organization_type#dept
   * ^comment = "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden."
-* type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
+* type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS
   * ^comment = "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann. 
   
   Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
@@ -170,10 +170,10 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   organisationstyp 0..1 MS and
   EinrichtungsArt 0..1 and
   ErweiterterFachabteilungsschluessel 0..1 MS
-* type[organisationstyp] from $organization_type (required)
+* type[organisationstyp] from $organization_typeVS (required)
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
-* type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertCS (required)
+* type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
 * type[EinrichtungsArt] from $IHEXDSFacilityType (required)
