@@ -18,7 +18,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * status MS
   * ^short = "Status"
   * ^comment = "Zeigt den aktuellen Status der Ressource an.     
-  **WICHTIGER Hinweis für Implementierer:  
+  **WICHTIGER Hinweis für Implementierer:**    
   * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, 
   die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch den Wert `active`.
   * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, 
@@ -29,7 +29,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Die Angabe der Versicherungsart `GKV` dient der Kennzeichnung dieser Coverage-Ressource als gesetzliches Versicherungsverhältnis.  
   **Begründung Pflichtfeld:** Die Angabe der Versicherungsart dient der Unterscheidung, wenn zu einem Patienten mehrere Coverage-Ressourcen hinterlegt sind, 
   z.B. gesetzliche Versicherung + Selbszahlerverhältnis und als Suchkriterium, um gezielt nach der in einem konkreten Kontext relevanten Coverage suchen zu können.  
-  **Historie:**28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standard definierten preferred bindings, da die dortigen Codes nicht passen."
+  **Historie:**  
+  28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standard definierten preferred bindings, da die dortigen Codes nicht passen."
   * coding MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
@@ -75,7 +76,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "**Begründung MS:** Da das die Versichertennummer nicht zur Darstellung für den Anwender geeignet ist, 
     sollte ergänzend der Name des Versicherten angegeben werden."
 * beneficiary MS
-  * ^definition = "Versicherte Person"
+  * ^short = "Versicherte Person"
   * ^comment = "Hier handelt es ich konkret um den Patienten, der unter diesem Versicherungsverhältnis behandelt wird."
   * reference 1.. MS
     * ^short = "Patienten-Link"
