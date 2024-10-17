@@ -42,11 +42,25 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
-* extension[Aufnahmegrund].extension[ErsteUndZweiteStelle] MS
-* extension[Aufnahmegrund].extension[DritteStelle] MS
-* extension[Aufnahmegrund].extension[VierteStelle] MS
+* extension[Aufnahmegrund]
+  * ^short = "Aufnahmegrund"
+  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V."
+  * extension[ErsteUndZweiteStelle] MS
+    * ^short = "Aufnahmegrund: 1. & 2. Stelle"
+    * ^comment = "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+  * extension[DritteStelle] MS
+    * ^short = "Aufnahmegrund: 3. Stelle"
+    * ^comment = "3. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+  * extension[VierteStelle] MS
+    * ^short = "Aufnahmegrund: 4. Stelle"
+    * ^comment = "4. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
+ 
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
+* extension[plannedStartDate]
+  * ^short = "geplantes Aufnahmedatum"
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate named plannedEndDate 0..1 MS
+* extension[plannedEndDate]
+  * ^short = "geplantes Entlassdatum"
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -59,11 +73,25 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       * ^slicing.discriminator.path = "$this"
       * ^slicing.rules = #open
     * coding contains vn-type 1..1 MS
-    * coding[vn-type] = $v2-0203#VN
+    * coding[vn-type] = $v2-0203#VN 
+      * ^short = "Codierte Darstellung des Identifier-Typs"
       * system 1.. MS
+        * ^short = "Codier-Schema"
+        * ^comment = "Hier ist stets der Wert `http://terminology.hl7.org/CodeSystem/v2-0203` anzugeben." 
       * code 1.. MS
-  * system 1..
-  * value 1..
+        * ^short = "Code"
+        * ^comment = "Hier ist stets der Wert `VN` anzugeben."
+  * system MS
+    * ^short = "Namensraum des Identifiers"
+    * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
+  * value MS
+    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+
 * status MS
 * status from EncounterStatusDe (required)
   * ^short = "Status"
