@@ -26,6 +26,6 @@
 
 ### `Account.coverage`
 
-**Bedeutung:** Pro referenzierter Coverage SOLL, falls bekannt, angegeben werden, in welcher Abrechnungsart die Abrechnung erfolgt.
+**Bedeutung:** Unter `Account.coverage` SOLL der Kostenträger referenziert werden, über den der Fall abgerechnet wird. Falls bekannt, SOLL angegeben werden, in welcher Abrechnungsart die Abrechnung erfolgt.
 
 ---
