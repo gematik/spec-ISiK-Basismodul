@@ -60,7 +60,7 @@
         "path": "Account.identifier",
         "sliceName": "Abrechnungsnummer",
         "short": "Abrechnungsfallnummer",
-        "comment": "Im DRG-Kontext werden häufig sämtliche Besuche (`Encounter`), die unter einen gemeinsamen Abrechnungskontext zusammengefasst werden, \n  unter einer &quot;Fallnummer&quot; geführt. In dieser Konstellation sind die Begriffe &quot;Fallnummer&quot; und &quot;Abrechnungsfallnummer&quot; gleichbedeutend.  \n  Dies ist insbesondere im Kontext des Mappings zwischen HL7 V2 und HL7 FHIR zu beachten, da es in V2 Usus ist, \n  die Fallnummer (eigentlich Identifier des Abrechnungsfalles) im `PV1`-Segment (Patient Visit) zu übermitteln. \n  Es handelt sich dabei jedoch *nicht* um den Identifier des Besuchs (`Encounter`) sondern den des Abrechnungsfalles (`Account`), \n  da der Identifier oft für die Gruppierung mehrerer Besuche (z.B. vorstationär + stationär + nachstationär) mit gemeinsamem (DRG)-Kontext verwendet wird.",
+        "comment": "Im DRG-Kontext werden häufig sämtliche Besuche (`Encounter`), die unter einen gemeinsamen Abrechnungskontext zusammengefasst werden, \n  unter einer &quot;Fallnummer&quot; geführt. In dieser Konstellation sind die Begriffe &quot;Fallnummer&quot; und &quot;Abrechnungsfallnummer&quot; gleichbedeutend.  \n  Dies ist insbesondere im Kontext des Mappings zwischen HL7 V2 und HL7 FHIR zu beachten, da es in V2 Usus ist, \n  die Fallnummer (eigentlich Identifier des Abrechnungsfalles) im `PV1`-Segment (Patient Visit) zu übermitteln. \n  Es handelt sich dabei jedoch *nicht* um den Identifier des Besuchs (`Encounter`) sondern den des Abrechnungsfalles (`Account`), \n  da der Identifier oft für die Gruppierung mehrerer Besuche (z.B. vorstationär + stationär + nachstationär) mit gemeinsamem (DRG)-Kontext verwendet wird.  \n  Die Abrechnungsfallnummer in `Account.identifier` muss identisch sein mit dem Identifier, \n  der bei den Encountern, die unter diesem Account gruppiert werden, unter `Encounter.account.identifier` angegeben ist.",
         "min": 1,
         "max": "1",
         "type": [
@@ -126,7 +126,7 @@
         "id": "Account.status",
         "path": "Account.status",
         "short": "Status",
-        "comment": "Zeigt den aktuellen Status der Ressource an.     \n  **WICHTIGER Hinweis für Implementierer:**    \n  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, \n  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `active`.\n  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, \n  beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.",
+        "comment": "Zeigt den aktuellen Status der Ressource an.     \n  **WICHTIGER Hinweis für Implementierer:**    \n  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, \n  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `active` und `inactive`.\n  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, \n  beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.",
         "mustSupport": true
       },
       {
