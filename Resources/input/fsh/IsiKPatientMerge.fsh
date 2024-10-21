@@ -103,10 +103,14 @@ Usage: #example
 * type = #history
 * entry[+].fullUrl = "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0"
 * entry[=].resource = SubscriptionNotification
-* entry[+].fullUrl = "http://example.com/fhir/Patient/DorisQuelle/_history/2"
+* entry[=].request.method = #GET
+* entry[=].request.url = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
+* entry[=].response.status = "200"
+* entry[+].fullUrl = "http://example.org/fhir/Patient/DorisQuelle"
 * entry[=].resource = DorisQuelle
 * entry[=].request.method = #PUT
-* entry[=].request.url = "Patient/DorisQuelle"
+* entry[=].request.url = "Patient"
+* entry[=].response.status = "201"
 
 Instance: SubscriptionNotification
 InstanceOf: Parameters
@@ -126,7 +130,7 @@ Usage: #inline
 * parameter[=].part[0].name = "event-number"
 * parameter[=].part[=].valueString = "1"
 * parameter[=].part[+].name = "timestamp"
-* parameter[=].part[=].valueDate = "2024-02-22"
+* parameter[=].part[=].valueInstant = "2024-02-22T18:30:05+01:00"
 * parameter[=].part[+].name = "focus"
 * parameter[=].part[=].valueReference = Reference(DorisQuelle)
 
