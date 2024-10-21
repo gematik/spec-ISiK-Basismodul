@@ -190,9 +190,20 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
 * diagnosis MS
+  * ^short = "Falldiagnosen/-prozeduren"
+  * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. &quot;Aufnahmediagnose&quot;   
+  **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element 
+  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von Encounter auf Condition/Procedure wird *nur dann* verwendet, 
+  wenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose)" 
   * condition MS
+    * ^short = "Verweis auf Diagnose/Prozedur"
     * reference 1.. MS
+      * ^short = "Condition/Procedure-Link"
+      * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf die Condition/Procedure-Ressource dient der technischen Zuordnung des Encounters zur Condition/Precedure 
+  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
   * use 1.. MS 
+    * ^short = "Bedeutung der Diagnose/Prozedur"
+    * ^comment = "Bedeutung der Diagnose/Prozedur im Encounter-Kontext"
     * coding 1.. MS
       * ^slicing.discriminator.type = #pattern
       * ^slicing.discriminator.path = "$this"
@@ -201,7 +212,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       Diagnosetyp 1..1 MS and 
       DiagnosesubTyp 0.. MS
     * coding[Diagnosetyp] from http://fhir.de/ValueSet/DiagnoseTyp (required)
+      * ^short = "Diagnosetyp"
+      * ^comment = "International standardisierte, grobgranulare Unterscheidung zwischen extern gestellten Diagnosen (`referral-diagnosis`) und intern gestellten Diagnosen (`treatment-diagnosis`)"
     * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
+      * ^short = "Diagnosesubtyp"
+      * ^comment = "An deutschen Kodierrichtlinien orientierte, feingranulare Unterscheidung von Diagnose-Rollen, 
+      z.B. &quot;Fachabteilungshauptdiagnose&quot;, &quot;Todesursache&quot; etc."
   * rank MS
 * account 0.. MS
   * ^short = "Abrechnungskontext"
@@ -234,11 +250,26 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "**Begründung MS:** Die Verlinkung auf eine Account-Ressource dient der technischen Zuordnung des Besuchs zu einem Abrechnungskontext 
   und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
 * hospitalization ..1 MS
+  * ^short = "Details zum Aufenthalt"
+  * ^comment = "Details zu einem stationären Aufenthalt"
   * admitSource 0..1 MS
   * admitSource from AufnahmeanlassVS (extensible)
+    * ^short = "Aufnahmeanlass"
+    * ^comment = "Anlass der stationären Aufnahme, z.B. &quot;Einweisung&quot;, &quot;Notfall&quot; etc."
   * dischargeDisposition MS
+    * ^short = "Entlassungsart bzw. -grund"
     * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS and ExtensionISiKRehaEntlassung named RehaEntlassung 0..1 MS
+    * extension[Entlassungsgrund]
+      * ^short = "Entlassungsgrund"
+      * ^comment = "Entlassungsgrund nach § 301 Abs. 3 SGB V"
+    * extension[RehaEntlassung]
+      * ^short = "Entlassungsgrund Reha"
+      * ^comment = "Entlassungsgrund nach §301 (Abs. 4 und 4a) SGB V"
   * extension contains $WahlleistungExtension named Wahlleistung 0.. MS
+  * extension[Wahlleistung]
+    * ^short = "Wahlleistung"
+    * ^comment = "**Begründung MS:**  Vom Patienten gebuchte Wahlleistungen (z.B. Chefarztbehandlung, Einzelzimmer) 
+    sind häufig system- und abteilungsübergreifend zu beachten und sollten daher über die Schnittstelle kommuniziert werden können."  
 * location MS
   * physicalType from ISiKLocationPhysicalType (extensible)
 * location ^slicing.discriminator[+].type = #pattern
@@ -252,6 +283,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * location[Station]
   * location 1.. MS
     * ^short = "Aufenthaltsort"
+    * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
     * reference MS
       * ^short = "Location-Link"
       * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
