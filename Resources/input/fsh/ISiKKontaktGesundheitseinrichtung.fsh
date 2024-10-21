@@ -193,8 +193,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. &quot;Aufnahmediagnose&quot;   
   **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element 
-  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von Encounter auf Condition/Procedure wird *nur dann* verwendet, 
-  wenn einer Diagnose bzw. Prozedur im Kontext eines Aufenthaltes eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose)" 
+  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von `Encounter.diagnosis` auf Condition/Procedure wird *nur dann* verwendet, 
+  wenn einer Diagnose bzw. Prozedur *im Kontext eines Aufenthaltes* eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).  
+  Hier werden Diagnosen und Prozeduren nur nach ihrer *medizinschen* Relevanz bezüglich eines Aufenthaltes qualifiziert. 
+  Die Qualifikation von Diagnosen und Prozeduren im Kontext der *Abrechnung* erfolgt in der `Account`-Ressource!" 
   * condition MS
     * ^short = "Verweis auf Diagnose/Prozedur"
     * reference 1.. MS
