@@ -39,7 +39,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Dies ist insbesondere im Kontext des Mappings zwischen HL7 V2 und HL7 FHIR zu beachten, da es in V2 Usus ist, 
   die Fallnummer (eigentlich Identifier des Abrechnungsfalles) im `PV1`-Segment (Patient Visit) zu übermitteln. 
   Es handelt sich dabei jedoch *nicht* um den Identifier des Besuchs (`Encounter`) sondern den des Abrechnungsfalles (`Account`), 
-  da der Identifier oft für die Gruppierung mehrerer Besuche (z.B. vorstationär + stationär + nachstationär) mit gemeinsamem (DRG)-Kontext verwendet wird."
+  da der Identifier oft für die Gruppierung mehrerer Besuche (z.B. vorstationär + stationär + nachstationär) mit gemeinsamem (DRG)-Kontext verwendet wird.  
+  Die Abrechnungsfallnummer in `Account.identifier` muss identisch sein mit dem Identifier, 
+  der bei den Encountern, die unter diesem Account gruppiert werden, unter `Encounter.account.identifier` angegeben ist."
   * ^patternIdentifier.type = $v2-0203#AN
   * type MS
     * coding
@@ -66,7 +68,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Zeigt den aktuellen Status der Ressource an.     
   **WICHTIGER Hinweis für Implementierer:**    
   * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, 
-  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `active`.
+  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `active` und `inactive`.
   * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, 
   beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben."
 
