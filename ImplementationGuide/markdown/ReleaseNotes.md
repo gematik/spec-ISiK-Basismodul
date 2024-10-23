@@ -9,6 +9,7 @@ Version: 2.0.8
 Datum: t.b.d
 
 * Schwächung der Anforderungen für Suchparameter https://github.com/gematik/spec-ISiK-Basismodul/pull/452
+* Schwächung der Anforderungen für die Übernahme fremder Ressourcen (+ Konkretisierung bei Ablehnung) https://github.com/gematik/spec-ISiK-Basismodul/pull/471
 
 ---
 
