@@ -48,4 +48,4 @@ Das Update einer Ressource KANN per HTTP PUT (vgl. [FHIR RESTful API - update](h
 Alle REST-Interaktionen müssen sowohl mittels HTTP als auch HTTPS (TLS-Verschlüsselung) unterstützt werden. Vorgaben zur TLS-Verschlüsselung sind dem nachfolgenden Link für die FHIR Security Check List zu entnehmen.
 Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 
-Diese sind in Stufe 1 des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
+Diese sind in dieser Stufe des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
