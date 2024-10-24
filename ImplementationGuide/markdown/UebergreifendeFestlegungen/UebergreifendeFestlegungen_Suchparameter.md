@@ -31,7 +31,7 @@ Für die im Rahmen dieses Leitfadens relevanten Typen gelten folgende allgemeine
 Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` MÜSSEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
 
 
-Hinweis: Die Abfragemöglichkeit arbeitet ungewollten Massendatenabfragen entgegen, da sich sonst Suchen zwangsläufig über den gesamten Zeitraum erstrecken würden.
+Begründung: Die Abfragemöglichkeit mittels Präfix arbeitet ungewollten Massendatenabfragen entgegen, da sich sonst Suchen zwangsläufig über den gesamten Zeitraum erstrecken würden.
 
 
 
