@@ -96,7 +96,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     ```GET [base]/Encounter?end-date=lt2020-26-10```
 
-    Anwendungshinweise: Bei diesem custom Suchparameter handelt es sich um eine Lösung, die aus einer [abweichenden FHIR-Version (R5)](https://hl7.org/fhir/R5/SearchParameter/Encounter-end-date) stammt. Weitere Informationen zur Suche nach "Encounter.period" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
+    Anwendungshinweise: Bei diesem custom Suchparameter handelt es sich um eine Lösung, die aus einer [abweichenden FHIR-Version (R5)](https://hl7.org/fhir/R5/encounter-search.html#8.11.26) stammt. Weitere Informationen zur Suche nach "Encounter.period" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
 
 1. Der Suchparameter "location" KANN unterstützt werden:
 
