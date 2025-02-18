@@ -246,7 +246,7 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.version = "2024"
 * code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
-* code.coding[+] = $alpha-id#I14432 "Altersbedingte Kreislaufstörung"
+* code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"
