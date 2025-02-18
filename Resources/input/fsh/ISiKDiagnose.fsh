@@ -68,7 +68,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
-    * ^patternCoding.system = $alphaId
+    * ^patternCoding.system = $alphaid-cs
     * system 1.. MS
     * code 1.. MS
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
