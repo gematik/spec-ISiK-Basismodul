@@ -14,14 +14,6 @@ on:
   pull_request:
     branches:
     - 'main**'
-  workflow_call:
-    secrets:
-      SIMPLIFIER_USERNAME:
-        required: true
-      SIMPLIFIER_PASSWORD:
-        required: true
-      WORKFLOW_PERMISSION_GITHUB:
-        required: true
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,11 +21,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  # Validate all resources using Firely Terminal 
+  # Validate all resources using Firely Terminal
   CI_FHIR_VALIDATION:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code (PR)
@@ -41,13 +33,16 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-      
+
       - name: Checkout code (Main)
         uses: actions/checkout@v4
         if: github.event_name != 'pull_request'
-        
-      # Java and .NET are already installed on ubuntu-latest
-        
+
+      - name: Validate Resource Status
+        uses: patrick-werner/fhir-resource-status-check@1.1.0
+        with:
+          folder: './Resources/fsh-generated/resources/'
+
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.8
         with:
@@ -61,59 +56,17 @@ jobs:
           SUSHI_OPTIONS: Resources/
           EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
 
-      - name: Convert validation report to Markdown
-        run: |
-          sudo apt-get install -y pandoc
-
-          # Remove only the first table using <table class="grid"> and </table>
-          awk '
-            BEGIN {skip=0; table_removed=0}
-
-            # Detect the start of the first table
-            /<table class="grid">/ {
-                if (table_removed == 0) {
-                    skip=1  # Start skipping
-                    next    # Skip this line
-                }
-            }
-
-            # Detect the end of the first table
-            skip && /<\/table>/ {
-                if (table_removed == 0) {
-                    skip=0  # Stop skipping
-                    table_removed=1  # Ensure only the first table is removed
-                    next  # Skip this line
-                }
-            }
-
-            # Skip lines if inside the table
-            skip {next}
-
-            # Print everything else
-            {print}
-          ' validation.html | pandoc -f html -t markdown_strict | awk '
-            # Reduce heading size: ## -> ####
-            /^## / {gsub(/^## /, "#### ")}
-
-            # Remove all <strong> and </strong> tags (works for inline and block-level)
-            {gsub(/<strong>/, ""); gsub(/<\/strong>/, "")}  
-
-            # Replace "Severity" column values with emojis
-            /error/ {gsub("error", "❌ error")}
-            /warning/ {gsub("warning", "⚠️ warning")}
-            /information/ {gsub("information", "ℹ️ information")}
-            /hint/ {gsub("hint", "ℹ️ hint")}
-            /Process Info/ {gsub("Process Info", "🔹 Process Info")}
-            /Slicing Information/ {gsub("Slicing Information", "✂️ Slicing Info")}
-
-            # Print final output
-            {print}
-          ' >> $GITHUB_STEP_SUMMARY
+      - name: Convert Validation Report
+        uses: patrick-werner/fhir-html-validation-to-markdown@1.0.0-alpha2
+        with:
+          input_file: 'validation.html'
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9
         with:
           committer_name: GitHub Actions Bot
           committer_email: ActionBot@github.com
-          add: 'Resources/fsh-generated/resources/'
+          add: |
+            Resources/fsh-generated/resources/
+            validation.html
           message: auto-generated FHIR files by GitHub Actions (CI FSH to FHIR Validation)
