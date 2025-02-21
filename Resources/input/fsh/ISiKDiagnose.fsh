@@ -24,19 +24,19 @@ Description: "Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenar
       SNOMED-CT 0..1 MS and
       Orphanet 0..1 MS
   * coding[ICD-10-GM] only CodingICD10GM
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+    * ^patternCoding.system = $icd-10-gm
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
+    * ^patternCoding.system = $alphaid-cs
     * system 1.. MS
     * code 1.. MS
   * coding[SNOMED-CT] from $diagnosesSCT (required)
-    * ^patternCoding.system = "http://snomed.info/sct"
+    * ^patternCoding.system = $sct
     * system 1.. MS
     * code 1.. MS
-  * coding[Orphanet] ^patternCoding.system = "http://www.orpha.net"
+  * coding[Orphanet] ^patternCoding.system = $orphaNet
     * system 1.. MS
     * code 1..
 * subject MS
@@ -127,6 +127,18 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.text = "Behandlungsdiagnose"
 * subject = Reference(PatientinMusterfrau)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
+
+Instance: AltersbedingteKreislaufstoerung
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
+* code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"
 * recordedDate = "2021-01-01"
 
