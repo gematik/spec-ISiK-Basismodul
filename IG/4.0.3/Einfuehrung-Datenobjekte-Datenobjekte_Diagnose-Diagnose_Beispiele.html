@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<p>Beispiel einer Diagnose</p>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#202898e4-9d07-4a26-a81f-1bd2da098e7d" aria-controls="202898e4-9d07-4a26-a81f-1bd2da098e7d" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#3b18a1f4-6355-4fad-b5fd-57680f5d11b4" aria-controls="3b18a1f4-6355-4fad-b5fd-57680f5d11b4" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#1444f23c-0f4a-4d8b-8359-97502b837246" aria-controls="1444f23c-0f4a-4d8b-8359-97502b837246" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#c1782e3a-d43e-40a5-bb13-0ddab2de48e5" aria-controls="c1782e3a-d43e-40a5-bb13-0ddab2de48e5" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="202898e4-9d07-4a26-a81f-1bd2da098e7d">
+    <div class="stu3-treetable" id="9248dffd97424566a00cf7ad2d23cb14" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>Condition</b></td></tr><tr class="collapsed" data-id="04fa15d2067b46ea928b788f359ec0be" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>Example-condition-kreuz-stern-primaer</span></td></tr>
+<tr class="collapsed" data-id="31dd93ed43374206a1d241f56fc72d86" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="aace0bf5dbf1461aa874797f831c6a6e" data-parentId="31dd93ed43374206a1d241f56fc72d86"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose</span></td></tr>
+
+<tr class="collapsed" data-id="4b4c47bbe12748c4996f6725b351f1fa" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>clinicalStatus</b></td></tr><tr class="collapsed" data-id="9fc9053c058d41df85693bf1163305df" data-parentId="4b4c47bbe12748c4996f6725b351f1fa"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b4708afab4ef4d49986bf60a1621d865" data-parentId="9fc9053c058d41df85693bf1163305df"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/condition-clinical</span></td></tr>
+<tr class="collapsed" data-id="71c1a557f3794c6f808825fd6d3d9b1b" data-parentId="9fc9053c058d41df85693bf1163305df"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>recurrence</span></td></tr>
+
+
+<tr class="collapsed" data-id="579b4f9044e34a8ea88f9d6e8206a86c" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="976b67d55bf34e0984e449b8a1d79321" data-parentId="579b4f9044e34a8ea88f9d6e8206a86c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="a41f18f5c7bd43f6894b0b0239260fee" data-parentId="976b67d55bf34e0984e449b8a1d79321"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="9d9fa570a2ec42a38ecb1b4aaeaa1ff5" data-parentId="a41f18f5c7bd43f6894b0b0239260fee"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen</span></td></tr>
+<tr class="collapsed" data-id="cf6cf7af7f9c496e95271418885aed63" data-parentId="a41f18f5c7bd43f6894b0b0239260fee"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="5476e5360c2d4d7fbbfd179817d4aa8e" data-parentId="cf6cf7af7f9c496e95271418885aed63"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen</span></td></tr>
+<tr class="collapsed" data-id="1d313c5657c64a12a9edad61cfb069c2" data-parentId="cf6cf7af7f9c496e95271418885aed63"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2021</span></td></tr>
+<tr class="collapsed" data-id="afbc0e9f66154d0aa0f1faf80376f149" data-parentId="cf6cf7af7f9c496e95271418885aed63"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>†</span></td></tr>
+
+
+<tr class="collapsed" data-id="8062fc3f36274a4ca84a9a4db0f18d06" data-parentId="976b67d55bf34e0984e449b8a1d79321"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/bfarm/icd-10-gm</span></td></tr>
+<tr class="collapsed" data-id="3bf72510b7b44e0291c30e47cb009831" data-parentId="976b67d55bf34e0984e449b8a1d79321"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2019</span></td></tr>
+<tr class="collapsed" data-id="f62665826eb24234be36c579f7390cd8" data-parentId="976b67d55bf34e0984e449b8a1d79321"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>E10.30</span></td></tr>
+<tr class="collapsed" data-id="34554361755747e59218d0a43ec5e3ca" data-parentId="976b67d55bf34e0984e449b8a1d79321"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Diabetes mellitus</span></td></tr>
+
+
+<tr class="collapsed" data-id="73f41e09e2c648c1bad008b23045fb1d" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="a01e853aa0174c41b27da68c9aa15b1f" data-parentId="73f41e09e2c648c1bad008b23045fb1d"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr>
+
+<tr class="collapsed" data-id="e6416afd9d514800845a4587eb0ac4bf" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>encounter</b></td></tr><tr class="collapsed" data-id="7907680120ea4d58bcb5772b58c79e4c" data-parentId="e6416afd9d514800845a4587eb0ac4bf"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr>
+
+<tr class="collapsed" data-id="a9fa6bf4bc51497fbe016ff309c740b3" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>recordedDate : </b><span>2021-05-24</span></td></tr>
+<tr class="collapsed" data-id="a670e5d7882c4dd2925b19aa78b79bcf" data-parentId="bb0aabfb06864518b79dd87b2e5bd8bf"><td class="instance"><span class="baseIcon primitive"></span><b>note</b></td></tr><tr class="collapsed" data-id="5a632908818c47008f2bbc5597808702" data-parentId="a670e5d7882c4dd2925b19aa78b79bcf"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Beispiel f&#252;r eine Anmerkung</span></td></tr>
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable9248dffd97424566a00cf7ad2d23cb14 = new InstanceTree();
+resourceTreeTable9248dffd97424566a00cf7ad2d23cb14.init("9248dffd97424566a00cf7ad2d23cb14");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="3b18a1f4-6355-4fad-b5fd-57680f5d11b4">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition" >Condition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Example-condition-kreuz-stern-primaer</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.clinicalStatus" >clinicalStatus</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.clinicalStatus.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.clinicalStatus.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/condition-clinical</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.clinicalStatus.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">recurrence</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">clinicalStatus</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code" >code</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.extension.value" >valueCoding</a></span><span class="brace">&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.extension.value.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.extension.value.version" >version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.extension.value.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">†</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/icd-10-gm</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.version" >version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2019</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">E10.30</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.code.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Diabetes mellitus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.subject" >subject</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.subject.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.encounter" >encounter</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.encounter.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">encounter</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.recordedDate" >recordedDate</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-05-24</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.note" >note</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKDiagnose
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKDiagnose.json" href="artifacts/package/StructureDefinition-ISiKDiagnose.json#Condition.note.text" >text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Beispiel f&amp;#252;r eine Anmerkung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">note</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">Condition</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="1444f23c-0f4a-4d8b-8359-97502b837246">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Example-condition-kreuz-stern-primaer</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">clinicalStatus</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">recurrence</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/condition-clinical</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">valueCoding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">†</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen</span><span class="string">&quot;</span>
+                        <span class="brace">}</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2019</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">E10.30</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/icd-10-gm</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Diabetes mellitus</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">subject</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">encounter</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">recordedDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-05-24</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">note</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">text</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Beispiel f&#252;r eine Anmerkung</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="c1782e3a-d43e-40a5-bb13-0ddab2de48e5">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/Condition-Example-condition-kreuz-stern-primaer.json'>Diabetes mellitus</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

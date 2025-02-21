@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="beispiele">Beispiele</h2>
+<p>Beispiel Allergie/Unverträglichkeit:</p>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#6682ddff-7c9b-4eca-8c5d-d3577b22ea0d" aria-controls="6682ddff-7c9b-4eca-8c5d-d3577b22ea0d" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#49d8138c-687d-4a89-b539-fd4d52a53b3a" aria-controls="49d8138c-687d-4a89-b539-fd4d52a53b3a" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#3f9bde11-03d7-4208-82f9-d5131118d252" aria-controls="3f9bde11-03d7-4208-82f9-d5131118d252" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#21de5d19-3958-4815-ae12-200456033c95" aria-controls="21de5d19-3958-4815-ae12-200456033c95" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="6682ddff-7c9b-4eca-8c5d-d3577b22ea0d">
+    <div class="stu3-treetable" id="5a99c313f193495a947f3f8e0ac4e3fc" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>AllergyIntolerance</b></td></tr><tr class="collapsed" data-id="9bd7154695b044bc99f6a3090072bde5" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKAllergieUnvertraeglichkeitBeispiel1</span></td></tr>
+<tr class="collapsed" data-id="ee9d6b9d87bf4911a0b941a8cf461e0d" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="bbbb360d57394c1eabef03089c3023a7" data-parentId="ee9d6b9d87bf4911a0b941a8cf461e0d"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit</span></td></tr>
+
+<tr class="collapsed" data-id="b18512a8733b4ec2b1bdf4161bf7ca4c" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>clinicalStatus</b></td></tr><tr class="collapsed" data-id="f22963ad0829442bad75c3616b7ba751" data-parentId="b18512a8733b4ec2b1bdf4161bf7ca4c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d7d70f129a764145ba229348390651b1" data-parentId="f22963ad0829442bad75c3616b7ba751"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical</span></td></tr>
+<tr class="collapsed" data-id="2fc7318a75dd4b6ca063fab9f43a3ade" data-parentId="f22963ad0829442bad75c3616b7ba751"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>active</span></td></tr>
+
+
+<tr class="collapsed" data-id="15c59873b658482aa965ffa684214f3a" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>verificationStatus</b></td></tr><tr class="collapsed" data-id="0faa51121358411aa6c0a21928a5ac97" data-parentId="15c59873b658482aa965ffa684214f3a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="be93532ac0f04b51a8fbcf348a910bc9" data-parentId="0faa51121358411aa6c0a21928a5ac97"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/allergyintolerance-verification</span></td></tr>
+<tr class="collapsed" data-id="9b280ca135954bacb09f2f0376705494" data-parentId="0faa51121358411aa6c0a21928a5ac97"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>confirmed</span></td></tr>
+
+
+<tr class="collapsed" data-id="e9ddfec3c098469f90d9480ab4e068d9" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>allergy</span></td></tr>
+<tr class="collapsed" data-id="1c9bf1973f3d4dc188ed44f6c65e4ecc" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>category : </b><span>environment</span></td></tr>
+<tr class="collapsed" data-id="aa741cbae106401a8663f7e925f7b026" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>criticality : </b><span>low</span></td></tr>
+<tr class="collapsed" data-id="560b220a9904431fbeb3fcf52366f9e1" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="9503d2e081794889bd4a6394308c93d0" data-parentId="560b220a9904431fbeb3fcf52366f9e1"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="ce1cb938f4174b129107cb4793fb4110" data-parentId="9503d2e081794889bd4a6394308c93d0"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr>
+<tr class="collapsed" data-id="e0f9cb1c2ca541dbbba0f359cfc30506" data-parentId="9503d2e081794889bd4a6394308c93d0"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>256262001</span></td></tr>
+<tr class="collapsed" data-id="2bc7c59123aa4396a6d604f45b554005" data-parentId="9503d2e081794889bd4a6394308c93d0"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Betula pendula pollen</span></td></tr>
+
+
+<tr class="collapsed" data-id="a5b36282500a40b69a8ffa17de1d30fa" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>patient</b></td></tr><tr class="collapsed" data-id="ad61a82de0b94d50bc1a5a850742431e" data-parentId="a5b36282500a40b69a8ffa17de1d30fa"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr>
+
+<tr class="collapsed" data-id="e719baa9c974433b8ac30d0d79ed1d73" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>onset : </b><span>1987</span></td></tr>
+<tr class="collapsed" data-id="694b00d3fbbd4c5fa317928cf86e9d2e" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>recordedDate : </b><span>2011-05-12</span></td></tr>
+<tr class="collapsed" data-id="43b1f67d1408437e873381518a862428" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>recorder</b></td></tr><tr class="collapsed" data-id="ecb3f508c01d4ad8a183da3ead8c64f1" data-parentId="43b1f67d1408437e873381518a862428"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Dr. Martin Mustermann</span></td></tr>
+
+<tr class="collapsed" data-id="eedc289f0c074278b450dabe6c036153" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>asserter</b></td></tr><tr class="collapsed" data-id="8f7b7d3c4bec41bba398f14133981109" data-parentId="eedc289f0c074278b450dabe6c036153"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Dr. Berta Beispiel</span></td></tr>
+
+<tr class="collapsed" data-id="74165d461dc24e2a8f5d24d68312fb76" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>note</b></td></tr><tr class="collapsed" data-id="6eb56516d87242638ab54baa4ec20f99" data-parentId="74165d461dc24e2a8f5d24d68312fb76"><td class="instance"><span class="baseIcon primitive"></span><b>author</b></td></tr><tr class="collapsed" data-id="285ce503ac5649f8b6fcb6827aac6107" data-parentId="6eb56516d87242638ab54baa4ec20f99"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Practitioner/PractitionerWalterArzt</span></td></tr>
+
+<tr class="collapsed" data-id="ca55053b4dd049a0ab1c5f404456456e" data-parentId="74165d461dc24e2a8f5d24d68312fb76"><td class="instance"><span class="baseIcon primitive"></span><b>time : </b><span>2024-02-20T14:34:12+01:00</span></td></tr>
+<tr class="collapsed" data-id="5edcead0442045eea118d675f91b5f0c" data-parentId="74165d461dc24e2a8f5d24d68312fb76"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren.</span></td></tr>
+
+<tr class="collapsed" data-id="8375d78931fa483a9cbcb221ba095775" data-parentId="dcda2a79a1e0448f8a419df29ac1e34c"><td class="instance"><span class="baseIcon primitive"></span><b>reaction</b></td></tr><tr class="collapsed" data-id="4ec668d81754410cb523b3b121453133" data-parentId="8375d78931fa483a9cbcb221ba095775"><td class="instance"><span class="baseIcon primitive"></span><b>manifestation</b></td></tr><tr class="collapsed" data-id="c21cfde779c04093926dadff63453f20" data-parentId="4ec668d81754410cb523b3b121453133"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="b56352ea3c554626a6d362273bf7bf79" data-parentId="c21cfde779c04093926dadff63453f20"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr>
+<tr class="collapsed" data-id="e59dc235794d4fcaa830119462cd8d86" data-parentId="c21cfde779c04093926dadff63453f20"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>162367006</span></td></tr>
+<tr class="collapsed" data-id="649fd5c0f8c0430eba062f4278ad8dcd" data-parentId="c21cfde779c04093926dadff63453f20"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Sneezing symptom</span></td></tr>
+
+
+<tr class="collapsed" data-id="ab91060d606a4631a07ff5bf92233613" data-parentId="8375d78931fa483a9cbcb221ba095775"><td class="instance"><span class="baseIcon primitive"></span><b>severity : </b><span>moderate</span></td></tr>
+<tr class="collapsed" data-id="e31d78735c3f4099be3ce5c844e73400" data-parentId="8375d78931fa483a9cbcb221ba095775"><td class="instance"><span class="baseIcon primitive"></span><b>exposureRoute</b></td></tr><tr class="collapsed" data-id="40ed2bb8c59241229bb27cb26f334890" data-parentId="e31d78735c3f4099be3ce5c844e73400"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="f53c16ece6264ea993ff74fff664b7bc" data-parentId="40ed2bb8c59241229bb27cb26f334890"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr>
+<tr class="collapsed" data-id="56d934fcee8d42ebaf4451f493401ab0" data-parentId="40ed2bb8c59241229bb27cb26f334890"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>14910006</span></td></tr>
+<tr class="collapsed" data-id="0b1ef6fb9a7e4be399ae0c466e011273" data-parentId="40ed2bb8c59241229bb27cb26f334890"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Inspiration</span></td></tr>
+
+
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable5a99c313f193495a947f3f8e0ac4e3fc = new InstanceTree();
+resourceTreeTable5a99c313f193495a947f3f8e0ac4e3fc.init("5a99c313f193495a947f3f8e0ac4e3fc");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="49d8138c-687d-4a89-b539-fd4d52a53b3a">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance" >AllergyIntolerance</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKAllergieUnvertraeglichkeitBeispiel1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.clinicalStatus" >clinicalStatus</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.clinicalStatus.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.clinicalStatus.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.clinicalStatus.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">clinicalStatus</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.verificationStatus" >verificationStatus</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.verificationStatus.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.verificationStatus.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/allergyintolerance-verification</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.verificationStatus.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">confirmed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">verificationStatus</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">allergy</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.category" >category</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">environment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.criticality" >criticality</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">low</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.code" >code</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.code.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.code.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.code.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">256262001</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.code.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Betula pendula pollen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.patient" >patient</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.patient.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">patient</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.onset" >onsetDateTime</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1987</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.recordedDate" >recordedDate</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2011-05-12</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.recorder" >recorder</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.recorder.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dr. Martin Mustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">recorder</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.asserter" >asserter</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.asserter.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dr. Berta Beispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">asserter</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.note" >note</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.note.author" >authorReference</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.note.author.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">authorReference</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.note.time" >time</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024-02-20T14:34:12+01:00</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.note.text" >text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">note</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction" >reaction</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.manifestation" >manifestation</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.manifestation.coding" >coding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.manifestation.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.manifestation.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">162367006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.manifestation.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Sneezing symptom</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">manifestation</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.severity" >severity</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">moderate</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.exposureRoute" >exposureRoute</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.exposureRoute.coding" >coding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.exposureRoute.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.exposureRoute.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">14910006</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKAllergieUnvertraeglichkeit
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAllergieUnvertraeglichkeit.json" href="artifacts/package/StructureDefinition-ISiKAllergieUnvertraeglichkeit.json#AllergyIntolerance.reaction.exposureRoute.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Inspiration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">exposureRoute</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">reaction</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">AllergyIntolerance</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="3f9bde11-03d7-4208-82f9-d5131118d252">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AllergyIntolerance</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKAllergieUnvertraeglichkeitBeispiel1</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">clinicalStatus</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">verificationStatus</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">confirmed</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/allergyintolerance-verification</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">allergy</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">category</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="string">&quot;</span><span class="string">environment</span><span class="string">&quot;</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">criticality</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">low</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">256262001</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Betula pendula pollen</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">patient</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">onsetDateTime</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1987</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">recordedDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2011-05-12</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">recorder</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dr. Martin Mustermann</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">asserter</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dr. Berta Beispiel</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">note</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">authorReference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner/PractitionerWalterArzt</span><span class="string">&quot;</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">time</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024-02-20T14:34:12+01:00</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">text</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren.</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">reaction</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">manifestation</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                        <span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">162367006</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Sneezing symptom</span><span class="string">&quot;</span>
+                        <span class="brace">}</span>
+                    <span class="brace">]</span>
+                <span class="brace">}</span>
+            <span class="brace">]</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">severity</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">moderate</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">exposureRoute</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">14910006</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Inspiration</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="21de5d19-3958-4815-ae12-200456033c95">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/AllergyIntolerance-ISiKAllergieUnvertraeglichkeitBeispiel1.json'>ISiKAllergieUnvertraeglichkeitBeispiel1</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

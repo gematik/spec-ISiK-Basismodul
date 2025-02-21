@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-Wahlleistung.json'>package/StructureDefinition-Wahlleistung.json</a></h2>
+<p>Dokumentation von gewünschten Wahlleistungen (Unterkunft und Ärztliche Wahlleistungen) während eines Kontaktes mit einer Gesundheitseinrichtung</p>
+<h3 id="metadaten">Metadaten</h3>
+<table class='table table-bordered scrollbar '><tbody><tr><th>CanonicalURL</th><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://fhir.de/StructureDefinition/Wahlleistung'>http://fhir.de/StructureDefinition/Wahlleistung</a></td></tr><tr><th>Kontext</th><td>Encounter.hospitalization</td></tr><tr><th>Status</th><td>active</td></tr><tr><th>Version</th><td>1.5.2</td></tr><tr><th>Herausgeber</th><td>HL7 Deutschland e.V. (Technisches Komitee FHIR)</td></tr></tbody></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#c2f6d47d-702c-41ef-8ce9-94e02d9e2922" aria-controls="c2f6d47d-702c-41ef-8ce9-94e02d9e2922" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#a0edd3fb-125a-4649-b063-a6c5e2d03874" aria-controls="a0edd3fb-125a-4649-b063-a6c5e2d03874" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#daae0623-04f5-49b9-a535-00c7a7996fa0" aria-controls="daae0623-04f5-49b9-a535-00c7a7996fa0" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#f5359898-0f5c-4295-bc09-568bcaf9a434" aria-controls="f5359898-0f5c-4295-bc09-568bcaf9a434" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="c2f6d47d-702c-41ef-8ce9-94e02d9e2922">
+    <div class="stu3-treetable" id="44133e8f5f094e4382fe1b32e4979390" data-level="2"><div class="treetable-wrapper snapshot"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed constraints" data-id="8b5f329c101a4018977f85d9fb7b0e1a"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span class="constraints" title="ExtensionWahlleistung is the name of the resource
+Extension is the type of the resource
+Extension is the name of the parent resource"><b>ExtensionWahlleistung</b><span class="constraints"> (</span><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json"  class="constraints">Extension</a><span class="constraints">)</span></span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension</pre></p></div><span><b>Short description </b></span><p><span>Optional Extensions Element</span></p><span><b>Definition </b></span><div class="markdown"><p>Optional Extension Element - found in all resources.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Extension.id" data-id="922b61af67a84745898a3cd86fa10c16" data-parentId="8b5f329c101a4018977f85d9fb7b0e1a"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="striped sliced constraints" id="Extension.extension" data-id="9cc5db9421f54fae8441f45f8d8d341f" data-parentId="8b5f329c101a4018977f85d9fb7b0e1a"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span class="constraints">extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span class="constraints">..</span><span class="constraints">0</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="constraints" id="Extension.url" data-id="f589236de49845c796cf4923bbe8447f" data-parentId="8b5f329c101a4018977f85d9fb7b0e1a"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">url</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a><span class="fixed-label constraints">Fixed Value</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Extension.url</pre></p></div><span><b>Short description </b></span><p><span>identifies the meaning of the extension</span></p><span><b>Definition </b></span><div class="markdown"><p>Source of the definition for the extension code - a logical name or a URL.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
+</div><span><b>Data type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></p><span class="constraints"><b>Fixed value </b></span><div><p><pre class="constraints">http://fhir.de/StructureDefinition/Wahlleistung</pre></p></div><span><b>Mappings</b></span><ul><li><b>rim: </b>N/A</li></ul></td></tr><tr class="collapsed constraints" id="Extension.value[x]" data-id="c8beeaccfb3c4067bbfdf25b174e527f" data-parentId="8b5f329c101a4018977f85d9fb7b0e1a"><td class="profile"><span class="baseIcon valueX" title="Choice of Types"></span><span class="constraints">value[x]</span></td><td class="profile"></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><span class="binding-label constraints">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Extension.value[x]</pre></p></div><span><b>Short description </b></span><p><span>Value of extension</span></p><span><b>Definition </b></span><div class="markdown"><p>Value of extension - must be one of a constrained set of the data types (see <a href="extensibility.html">Extensibility</a> for a list).</p>
+</div><span class="constraints"><b>Binding </b></span><p><a title="package/ValueSet-wahlleistungen-de.json
+de.basisprofil.r4 1.5.2
+ValueSet-wahlleistungen-de.json" href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/ValueSet-wahlleistungen-de.json"  class="constraints">Wahlleistungen</a><span class="constraints"> (</span><a title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant." href="http://hl7.org/fhir/r4/terminologies.html#preferred"  class="constraints">preferred</a><span class="constraints">)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="collapsed constraints" id="Extension.valueCoding" data-id="0d44510f55104202977e1cb66c2b84bd" data-parentId="c8beeaccfb3c4067bbfdf25b174e527f"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span class="constraints">valueCoding</span></td><td class="profile"></td><td></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json"  class="constraints">Coding</a></td><td class="details hidden"><span class="pin-control"></span><span class="constraints"><b>Data type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json"  class="constraints">Coding</a></p></td></tr><tr class="common" id="Extension.value[x].id" data-id="1258af236e3643179743ab86b4a87210" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common sliced" id="Extension.value[x].extension" data-id="eb467aaf7cf14cdd972f018e7188d6d3" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="constraints" id="Extension.value[x].system" data-id="551d6901b943411dad19769645efe976" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">system</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].system</pre></p></div><span><b>Short description </b></span><p><span>Identity of the terminology system</span></p><span><b>Definition </b></span><div class="markdown"><p>The identification of the code system that defines the meaning of the symbol in the code.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Need to be unambiguous about the source of the definition of the symbol.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.</p>
+</div><span><b>Data type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>C*E.3</li><li><b>rim: </b>./codeSystem</li><li><b>orim: </b>fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem</li></ul></td></tr><tr id="Extension.value[x].version" data-id="d26666239c244b778d10aa0d08a0151f" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>version</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].version</pre></p></div><span><b>Short description </b></span><p><span>Version of the system - if relevant</span></p><span><b>Definition </b></span><div class="markdown"><p>The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>C*E.7</li><li><b>rim: </b>./codeSystemVersion</li><li><b>orim: </b>fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion</li></ul></td></tr><tr class="constraints" id="Extension.value[x].code" data-id="a6fdb53e918745a298647e4114a5d788" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span class="constraints">code</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].code</pre></p></div><span><b>Short description </b></span><p><span>Symbol in syntax defined by the system</span></p><span><b>Definition </b></span><div class="markdown"><p>A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Need to refer to a particular code in the system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>C*E.1</li><li><b>rim: </b>./code</li><li><b>orim: </b>fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code</li></ul></td></tr><tr id="Extension.value[x].display" data-id="9b298c94fe37493884b719a781e13f3e" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>display</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].display</pre></p></div><span><b>Short description </b></span><p><span>Representation defined by the system</span></p><span><b>Definition </b></span><div class="markdown"><p>A representation of the meaning of the code in the system, following the rules of the system.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>C*E.2 - but note this is not well followed</li><li><b>rim: </b>CV.displayName</li><li><b>orim: </b>fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName</li></ul></td></tr><tr id="Extension.value[x].userSelected" data-id="99acb0a5c0454cce913cfe6b3fc28e3b" data-parentId="0d44510f55104202977e1cb66c2b84bd"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>userSelected</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Extension.value[x].userSelected</pre></p></div><span><b>Short description </b></span><p><span>If this coding was chosen directly by the user</span></p><span><b>Definition </b></span><div class="markdown"><p>Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.</p>
+</div><span><b>Data type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>Sometimes implied by being first</li><li><b>rim: </b>CD.codingRationale</li><li><b>orim: </b>fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]</li></ul></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable44133e8f5f094e4382fe1b32e4979390 = new Stu3TreeTable(false);
+resourceTreeTable44133e8f5f094e4382fe1b32e4979390.init("44133e8f5f094e4382fe1b32e4979390");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="a0edd3fb-125a-4649-b063-a6c5e2d03874">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition" >StructureDefinition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Wahlleistung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" >url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/Wahlleistung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" >version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1.5.2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" >name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExtensionWahlleistung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" >status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" >experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" >date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-01-30</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" >publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">HL7 Deutschland e.V. (Technisches Komitee FHIR)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.contact" >contact</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.contact.telecom" >telecom</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.contact.telecom.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">url</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.contact.telecom.value" >value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.de/technische-komitees/fhir/</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">telecom</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">contact</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" >description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dokumentation von gew&amp;#252;nschten Wahlleistungen (Unterkunft und &amp;#196;rztliche Wahlleistungen) w&amp;#228;hrend eines Kontaktes mit einer Gesundheitseinrichtung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.copyright" >copyright</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">HL7 Deutschland e.V.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" >fhirVersion</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.0.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" >kind</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">complex-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" >abstract</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.context" >context</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.context.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">element</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.context.expression" >expression</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter.hospitalization</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">context</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" >baseDefinition</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Extension</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" >derivation</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">constraint</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" >differential</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.extension</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.extension</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.max" >max</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.url</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.url</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.fixed" >fixedUri</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/StructureDefinition/Wahlleistung</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x]</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x]</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" >min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.type" >type</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.type.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Coding</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding" >binding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding.strength" >strength</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">preferred</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding.valueSet" >valueSet</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/ValueSet/wahlleistungen-de</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">binding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x].system</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x].system</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" >min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x].code</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Extension.value[x].code</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.min" >min</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">differential</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">StructureDefinition</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="daae0623-04f5-49b9-a535-00c7a7996fa0">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">StructureDefinition</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Wahlleistung</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/Wahlleistung</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.5.2</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExtensionWahlleistung</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">experimental</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">date</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-01-30</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">publisher</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">HL7 Deutschland e.V. (Technisches Komitee FHIR)</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">contact</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">telecom</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">url</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.de/technische-komitees/fhir/</span><span class="string">&quot;</span>
+                <span class="brace">}</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">description</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dokumentation von gew&#252;nschten Wahlleistungen (Unterkunft und &#196;rztliche Wahlleistungen) w&#228;hrend eines Kontaktes mit einer Gesundheitseinrichtung</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">copyright</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">HL7 Deutschland e.V.</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">fhirVersion</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.0.1</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">kind</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">complex-type</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">abstract</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">context</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">element</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">expression</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter.hospitalization</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">baseDefinition</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/Extension</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">derivation</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">constraint</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">differential</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">element</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.extension</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.extension</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">max</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0</span><span class="string">&quot;</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.url</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.url</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">fixedUri</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/StructureDefinition/Wahlleistung</span><span class="string">&quot;</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x]</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x]</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">min</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coding</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">binding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">strength</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">preferred</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">valueSet</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/ValueSet/wahlleistungen-de</span><span class="string">&quot;</span>
+                <span class="brace">}</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x].system</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x].system</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">min</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x].code</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Extension.value[x].code</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">min</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="f5359898-0f5c-4295-bc09-568bcaf9a434">
+    <a  href='https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-Wahlleistung.json'>package/StructureDefinition-Wahlleistung.json</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

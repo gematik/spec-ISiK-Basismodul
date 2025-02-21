@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="minimalbeispiel-zum-standort-bettenstellplatz">Minimalbeispiel zum Standort Bettenstellplatz</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#1a07a98d-917c-4efb-a4fc-4361036d4388" aria-controls="1a07a98d-917c-4efb-a4fc-4361036d4388" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#18ba3bea-0a6b-4cd9-a0ce-19c4ad7be594" aria-controls="18ba3bea-0a6b-4cd9-a0ce-19c4ad7be594" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#a58ce9ff-cdbc-4157-b296-9129cf3e7a47" aria-controls="a58ce9ff-cdbc-4157-b296-9129cf3e7a47" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#87f91486-73aa-411c-bf27-b773bb131371" aria-controls="87f91486-73aa-411c-bf27-b773bb131371" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="1a07a98d-917c-4efb-a4fc-4361036d4388">
+    <div class="stu3-treetable" id="1fbb3a3737994745a7debc74d3336618" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>Location</b></td></tr><tr class="collapsed" data-id="048fc9fb2ba345518cf66e1156dc6345" data-parentId="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>BettenstellplatzStandortBeispiel</span></td></tr>
+<tr class="collapsed" data-id="3f85a129bf57444fbe30d0c8761f1e60" data-parentId="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="3034d961de694aeeac23b5c0c3c0ceea" data-parentId="3f85a129bf57444fbe30d0c8761f1e60"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz</span></td></tr>
+
+<tr class="collapsed" data-id="c360a4cf90ba4086aaa05a8a394ddf4c" data-parentId="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>physicalType</b></td></tr><tr class="collapsed" data-id="a3642e6123c14f658108b1b0120aefc7" data-parentId="c360a4cf90ba4086aaa05a8a394ddf4c"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="00e9ca27191d4d5c8a2d5629bd57baea" data-parentId="a3642e6123c14f658108b1b0120aefc7"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/location-physical-type</span></td></tr>
+<tr class="collapsed" data-id="16c4d97f34a6425d958d7a4623e259dd" data-parentId="a3642e6123c14f658108b1b0120aefc7"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>bd</span></td></tr>
+<tr class="collapsed" data-id="91c9cad5d55744bfaaf1a420df69b31a" data-parentId="a3642e6123c14f658108b1b0120aefc7"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Bed</span></td></tr>
+
+
+<tr class="collapsed" data-id="bd25717b1376497ca2e96dee8f68c1af" data-parentId="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>managingOrganization</b></td></tr><tr class="collapsed" data-id="8b7beef2f1914e308123eb32432397b3" data-parentId="bd25717b1376497ca2e96dee8f68c1af"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span></td></tr>
+
+<tr class="collapsed" data-id="eefb97282b0041dab612fd3e6cc61e21" data-parentId="dafd34376b8e464c9add77fee50ad247"><td class="instance"><span class="baseIcon primitive"></span><b>partOf</b></td></tr><tr class="collapsed" data-id="05f28542a9e8455790fe80bb8a5e1116" data-parentId="eefb97282b0041dab612fd3e6cc61e21"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Location/RaumStandortBeispiel</span></td></tr>
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable1fbb3a3737994745a7debc74d3336618 = new InstanceTree();
+resourceTreeTable1fbb3a3737994745a7debc74d3336618.init("1fbb3a3737994745a7debc74d3336618");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="18ba3bea-0a6b-4cd9-a0ce-19c4ad7be594">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location" >Location</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">BettenstellplatzStandortBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.physicalType" >physicalType</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.physicalType.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.physicalType.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.physicalType.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">bd</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.physicalType.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Bed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">physicalType</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.managingOrganization" >managingOrganization</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.managingOrganization.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">managingOrganization</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.partOf" >partOf</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortBettenstellplatz
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortBettenstellplatz.json" href="artifacts/package/StructureDefinition-ISiKStandortBettenstellplatz.json#Location.partOf.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location/RaumStandortBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">partOf</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">Location</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="a58ce9ff-cdbc-4157-b296-9129cf3e7a47">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">BettenstellplatzStandortBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">physicalType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">bd</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bed</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">managingOrganization</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">partOf</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location/RaumStandortBeispiel</span><span class="string">&quot;</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="87f91486-73aa-411c-bf27-b773bb131371">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/Location-BettenstellplatzStandortBeispiel.json'>BettenstellplatzStandortBeispiel</a>
+</div>
+  </div>
+</div>
+<h3 id="minimalbeispiel-zum-standort-raum">Minimalbeispiel zum Standort Raum</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#703be12d-657d-47e0-b8c2-bfb09a04ef56" aria-controls="703be12d-657d-47e0-b8c2-bfb09a04ef56" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#49179864-2562-405a-8dc2-d89dec09d964" aria-controls="49179864-2562-405a-8dc2-d89dec09d964" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#8a328681-cec2-46e8-874a-eccd8f848399" aria-controls="8a328681-cec2-46e8-874a-eccd8f848399" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#4923a443-6aff-4efb-9c8b-1b43bccf8727" aria-controls="4923a443-6aff-4efb-9c8b-1b43bccf8727" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="703be12d-657d-47e0-b8c2-bfb09a04ef56">
+    <div class="stu3-treetable" id="121fb86a59a84078ba4f281160ac2d87" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="43310225c2b743c3a71efa4ac2ec25d0"><td class="instance"><span class="baseIcon primitive"></span><b>Location</b></td></tr><tr class="collapsed" data-id="699157cddd98402f9002fef722146989" data-parentId="43310225c2b743c3a71efa4ac2ec25d0"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>RaumStandortBeispiel</span></td></tr>
+<tr class="collapsed" data-id="76bd0d79d5fd451898ead80e1b241e52" data-parentId="43310225c2b743c3a71efa4ac2ec25d0"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="95b08b2f66264d38b6d888dc93cf2d72" data-parentId="76bd0d79d5fd451898ead80e1b241e52"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</span></td></tr>
+
+<tr class="collapsed" data-id="1dbb829f473e46bdbe1bb0ba3fc5276b" data-parentId="43310225c2b743c3a71efa4ac2ec25d0"><td class="instance"><span class="baseIcon primitive"></span><b>physicalType</b></td></tr><tr class="collapsed" data-id="2f41778c067a4507911d29879fa55cac" data-parentId="1dbb829f473e46bdbe1bb0ba3fc5276b"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="fb8107fe6a2c44458487e28361a73ea0" data-parentId="2f41778c067a4507911d29879fa55cac"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/location-physical-type</span></td></tr>
+<tr class="collapsed" data-id="5e847b806dca468c95beb0de27dd2608" data-parentId="2f41778c067a4507911d29879fa55cac"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>ro</span></td></tr>
+<tr class="collapsed" data-id="769e75520f8046b4aac2946363947d3b" data-parentId="2f41778c067a4507911d29879fa55cac"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Room</span></td></tr>
+
+
+<tr class="collapsed" data-id="2bba9b25b3bb4596aa163c1666f4a835" data-parentId="43310225c2b743c3a71efa4ac2ec25d0"><td class="instance"><span class="baseIcon primitive"></span><b>managingOrganization</b></td></tr><tr class="collapsed" data-id="0f3773fcc4404f41be41b80d8ff86161" data-parentId="2bba9b25b3bb4596aa163c1666f4a835"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span></td></tr>
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable121fb86a59a84078ba4f281160ac2d87 = new InstanceTree();
+resourceTreeTable121fb86a59a84078ba4f281160ac2d87.init("121fb86a59a84078ba4f281160ac2d87");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="49179864-2562-405a-8dc2-d89dec09d964">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location" >Location</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">RaumStandortBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.physicalType" >physicalType</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.physicalType.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.physicalType.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.physicalType.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ro</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.physicalType.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Room</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">physicalType</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.managingOrganization" >managingOrganization</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKStandortRaum
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandortRaum.json" href="artifacts/package/StructureDefinition-ISiKStandortRaum.json#Location.managingOrganization.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">managingOrganization</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">Location</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="8a328681-cec2-46e8-874a-eccd8f848399">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">RaumStandortBeispiel</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">physicalType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ro</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Room</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">managingOrganization</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel</span><span class="string">&quot;</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="4923a443-6aff-4efb-9c8b-1b43bccf8727">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/Location-RaumStandortBeispiel.json'>RaumStandortBeispiel</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

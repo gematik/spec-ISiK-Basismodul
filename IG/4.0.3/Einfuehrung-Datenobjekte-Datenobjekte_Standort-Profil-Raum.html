@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='artifacts/package/StructureDefinition-ISiKStandortRaum.json'>ISiKStandortRaum</a></h2>
+<p>Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses.</p>
+<h3 id="bestatigungsrelevanz">Bestätigungsrelevanz</h3>
+<table class='table table-bordered scrollbar '><tbody><tr><th>Verbindlichkeit</th><td>MAY</td></tr></tbody></table>
+<h3 id="metadaten">Metadaten</h3>
+<table class='table table-bordered scrollbar '><tbody><tr><th>Canonical</th><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</a></td></tr><tr><th>Status</th><td>active</td></tr><tr><th>Version</th><td>4.0.3</td></tr><tr><th>Basis</th><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort</a></td></tr></tbody></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#b4a9316a-1e81-46cd-8880-8fa29ee60d80" aria-controls="b4a9316a-1e81-46cd-8880-8fa29ee60d80" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#3d4ea5ec-6566-4d4a-9744-2bae2d4df204" aria-controls="3d4ea5ec-6566-4d4a-9744-2bae2d4df204" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#3aeac98b-6085-4c27-af61-8edf1aac82ba" aria-controls="3aeac98b-6085-4c27-af61-8edf1aac82ba" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#fd635144-513a-46bb-be7f-174e0f061596" aria-controls="fd635144-513a-46bb-be7f-174e0f061596" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="b4a9316a-1e81-46cd-8880-8fa29ee60d80">
+    <div class="stu3-treetable" id="41e668c2f5a440e7b4e014722f223619" data-level="1"><div class="treetable-buttons"><div class="tree-control"><button class="tree-button" title="Show changes compared to parent resource" data-mode="diff">diff</button><button class="tree-button" title="Show combination of diff and snap" data-mode="hybrid">hybrid</button><button class="tree-button active" title="Show available resource elements" data-mode="snapshot">snap</button></div><div class="tree-settings"><button class="tree-button" id="ShowCommonResourceElements" title="Show common resource elements" data-settings="ShowCommonResourceElements">show common</button></div></div><div class="treetable-wrapper snapshot"><div class="treetable-left-panel"><table class="treetable"><tr class="collapsed constraints" data-id="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon resource" title="Resource"></span><span class="constraints" title="ISiKStandortRaum is the name of the resource
+Location is the type of the resource
+ISiKStandort is the name of the parent resource"><b>ISiKStandortRaum</b><span class="constraints"> (</span><a title="Location
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Location.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Location.json"  class="constraints">Location</a><span class="constraints">)</span></span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td></td><td class="profile"><a title="ISiKStandort
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandort.json" href="artifacts/package/StructureDefinition-ISiKStandort.json" >ISiKStandort</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location</pre></p></div><span><b>Short description </b></span><p><span>Details and position information for a physical place</span></p><span><b>Definition </b></span><div class="markdown"><p>Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</p>
+</div><span><b>Data type </b></span><p><a title="ISiKStandort
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKStandort.json" href="artifacts/package/StructureDefinition-ISiKStandort.json" >ISiKStandort</a></p><span><b>Constraints</b></span><div><ul><li><b>dom-2: </b>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br><code>contained.contained.empty()</code></li><li><b>dom-4: </b>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br><code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code></li><li><b>dom-3: </b>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br><code>contained.where(((&#39;#&#39;+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists() or descendants().where(as(canonical) = &#39;#&#39;).exists()).not()).trace(&#39;unmatched&#39;, id).empty()</code></li><li><b>dom-6: </b>A resource should have narrative for robust management<br><code>text.`div`.exists()</code></li><li><b>dom-5: </b>If a resource is contained in another resource, it SHALL NOT have a security label<br><code>contained.meta.security.empty()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>rim: </b>.Role[classCode=SDLC]</li></ul></td></tr><tr class="common" id="Location.id" data-id="061a41302cb442cc91cedb6a79fd0a17" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.id</pre></p></div><span><b>Short description </b></span><p><span>Logical id of this artifact</span></p><span><b>Definition </b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p></td></tr><tr class="common" id="Location.meta" data-id="bd1456b8ca07466082a2613d474115f2" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>meta</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" >Meta</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.meta</pre></p></div><span><b>Short description </b></span><p><span>Metadata about the resource</span></p><span><b>Definition </b></span><div class="markdown"><p>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.</p>
+</div><span><b>Data type </b></span><p><a title="Meta
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Meta.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Meta.json" >Meta</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Location.implicitRules" data-id="92628d1c33e64f64a0c0c7026d61e66d" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>implicitRules</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.implicitRules</pre></p></div><span><b>Short description </b></span><p><span>A set of rules under which this content was created</span></p><span><b>Definition </b></span><div class="markdown"><p>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.</p>
+</div><span><b>Data type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Location.language" data-id="f2f4734f59c64ebe9390064e1efeb1dc" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.language</pre></p></div><span><b>Short description </b></span><p><span>Language of the resource content</span></p><span><b>Definition </b></span><div class="markdown"><p>The base language in which the resource is written.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>A human language.</p>
+</div><a title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-languages.json" >CommonLanguages</a><span> (</span><a title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant." href="http://hl7.org/fhir/r4/terminologies.html#preferred" >preferred</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common" id="Location.text" data-id="55f59947882043648e87784296b29326" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>text</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" >Narrative</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.text</pre></p></div><span><b>Short description </b></span><p><span>Text summary of the resource, for human interpretation</span></p><span><b>Alternate names </b></span><p><span>narrative</span><span>, </span><span>html</span><span>, </span><span>xhtml</span><span>, </span><span>display</span></p><span><b>Definition </b></span><div class="markdown"><p>A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a &quot;text blob&quot; or where text is additionally entered raw or narrated and encoded information is added later.</p>
+</div><span><b>Data type </b></span><p><a title="Narrative
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Narrative.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Narrative.json" >Narrative</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li><li><b>rim: </b>Act.text?</li></ul></td></tr><tr class="common" id="Location.contained" data-id="7099151ee40942d393bc41c2a2f56107" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>contained</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" >Resource</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.contained</pre></p></div><span><b>Short description </b></span><p><span>Contained, inline Resources</span></p><span><b>Alternate names </b></span><p><span>inline resources</span><span>, </span><span>anonymous resources</span><span>, </span><span>contained resources</span></p><span><b>Definition </b></span><div class="markdown"><p>These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.</p>
+</div><span><b>Data type </b></span><p><a title="Resource
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Resource.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Resource.json" >Resource</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>Entity. Role, or Act</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common sliced" id="Location.extension" data-id="33b417b6b16145dcbf0a5f2a4ac9dc25" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common sliced" id="Location.modifierExtension" data-id="2f2120cccf5b41a3bb4bb6c4a7efdca0" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is a modifying element">?!</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.modifierExtension</pre></p></div><span><b>Short description </b></span><p><span>Extensions that cannot be ignored</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="collapsed sliced" id="Location.identifier" data-id="efff15b429244a2dba7c5cc385b403b3" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon slice" title="Sliced"></span><span>identifier</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" >Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.identifier</pre></p></div><span><b>Short description </b></span><p><span>Unique code or number identifying the location to its users</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique code or number identifying the location to its users.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Organization label locations in registries, need to keep track of those.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location</p>
+</div><span><b>Data type </b></span><p><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Identifier.json" >Identifier</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by $this(Pattern)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>CX / EI (occasionally, more often EI maps to a resource id or a URL)</li><li><b>rim: </b>II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]</li><li><b>servd: </b>Identifier</li><li><b>w5: </b>FiveWs.identifier</li><li><b>rim: </b>.id</li></ul></td></tr><tr id="Location.identifier:standortnummer-dkg" data-id="f07a35c361a14313b5a703e564341123" data-parentId="efff15b429244a2dba7c5cc385b403b3"><td class="profile"><span class="baseIcon individualSlice" title="Slice"></span><span>standortnummer-dkg</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="package/StructureDefinition-identifier-standortnummer.json
+de.basisprofil.r4 1.5.2
+StructureDefinition-identifier-standortnummer.json" href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-identifier-standortnummer.json" >IdentifierStandortnummer</a><span class="fixed-label">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.identifier:standortnummer-dkg</pre></p></div><span><b>Short description </b></span><p><span>An identifier intended for computation</span></p><span><b>Definition </b></span><div class="markdown"><p>An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Organization label locations in registries, need to keep track of those.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/)</p>
+</div><span><b>Data type </b></span><p><a title="package/StructureDefinition-identifier-standortnummer.json
+de.basisprofil.r4 1.5.2
+StructureDefinition-identifier-standortnummer.json" href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-identifier-standortnummer.json" >IdentifierStandortnummer</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Pattern </b></span><div><p><pre>{
+  &quot;system&quot;: &quot;http://fhir.de/sid/dkgev/standortnummer&quot;
+}</pre></p></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>CX / EI (occasionally, more often EI maps to a resource id or a URL)</li><li><b>rim: </b>II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]</li><li><b>servd: </b>Identifier</li><li><b>w5: </b>FiveWs.identifier</li><li><b>rim: </b>.id</li></ul></td></tr><tr id="Location.status" data-id="61311a5a22204f4a8ffdf68d710d29fc" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>status</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.status</pre></p></div><span><b>Short description </b></span><p><span>active | suspended | inactive</span></p><span><b>Definition </b></span><div class="markdown"><p>The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>Indicates whether the location is still in use.</p>
+</div><a title="LocationStatus
+hl7.fhir.r4.core 4.0.1
+ValueSet-location-status.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-location-status.json" >LocationStatus</a><span> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>w5: </b>FiveWs.status</li><li><b>rim: </b>.statusCode</li></ul></td></tr><tr class="constraints" id="Location.operationalStatus" data-id="d46ea10a5c5f45719885636b51958915" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span class="constraints">operationalStatus</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json" >Coding</a><span class="binding-label constraints">Binding</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Location.operationalStatus</pre></p></div><span><b>Short description </b></span><p><span>The operational status of the location (typically only for a bed/room)</span></p><span><b>Definition </b></span><div class="markdown"><p>The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.</p>
+</div><span class="constraints"><b>Comments </b></span><div class="markdown constraints"><p>Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'.</p>
+</div><span><b>Data type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Coding.json" >Coding</a></p><span class="constraints"><b>Binding </b></span><p><div class="markdown constraints"><p>The operational status if the location (where typically a bed/room).</p>
+</div><a title="v2.0116
+hl7.fhir.r4.core 4.0.1
+ValueSet-v2-0116.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-v2-0116.json"  class="constraints">v2.0116</a><span class="constraints"> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required"  class="constraints">required</a><span class="constraints">)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</li><li><b>rim: </b>CV</li><li><b>orim: </b>fhir:Coding rdfs:subClassOf dt:CDCoding</li><li><b>w5: </b>FiveWs.status</li></ul></td></tr><tr id="Location.name" data-id="51590ee022e648c9a736876e9b5099c0" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>name</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.name</pre></p></div><span><b>Short description </b></span><p><span>Name of the location as used by humans</span></p><span><b>Definition </b></span><div class="markdown"><p>Name of the location as used by humans. Does not need to be unique.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.name</li></ul></td></tr><tr id="Location.alias" data-id="43b3762852454fb4b81b6c0d7c369c4e" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>alias</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.alias</pre></p></div><span><b>Short description </b></span><p><span>A list of alternate names that the location is known as, or was known as, in the past</span></p><span><b>Definition </b></span><div class="markdown"><p>A list of alternate names that the location is known as, or was known as, in the past.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Over time locations and organizations go through many changes and can be known by different names.</p>
+<p>For searching knowing previous names that the location was known by can be very useful.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.name</li></ul></td></tr><tr id="Location.description" data-id="4817e5bd0dcc4a439321185895680269" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>description</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.description</pre></p></div><span><b>Short description </b></span><p><span>Additional details about the location that could be displayed as further information to identify the location beyond its name</span></p><span><b>Definition </b></span><div class="markdown"><p>Description of the Location, which helps in finding or referencing the place.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Humans need additional information to verify a correct location has been identified.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.playingEntity[classCode=PLC determinerCode=INSTANCE].desc</li></ul></td></tr><tr id="Location.mode" data-id="7f8ebfafdcd94905a54275204a80b1ee" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>mode</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span><span class="fixed-label">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.mode</pre></p></div><span><b>Short description </b></span><p><span>instance | kind</span></p><span><b>Definition </b></span><div class="markdown"><p>Indicates whether a resource instance represents a specific location or a class of locations.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>When using a Location resource for scheduling or orders, we need to be able to refer to a class of Locations instead of a specific Location.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Die Einschränkung auf &quot;instance&quot; erfolgt, da im  ISiK-Kontext ausschließlich konkrete Standorte übertragen werden sollen. Hiermit wird zusätzlich die Kompatibilität zur MII-Spezifikation eines Standortes gewahrt https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>Indicates whether a resource instance represents a specific location or a class of locations.</p>
+</div><a title="LocationMode
+hl7.fhir.r4.core 4.0.1
+ValueSet-location-mode.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-location-mode.json" >LocationMode</a><span> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Pattern </b></span><div><p><pre>instance</pre></p></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>w5: </b>FiveWs.class</li><li><b>rim: </b>.playingEntity[classCode=PLC].determinerCode</li></ul></td></tr><tr id="Location.type" data-id="7555a61c5759455d96f09f3096aa1731" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>type</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" >CodeableConcept</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.type</pre></p></div><span><b>Short description </b></span><p><span>Type of function performed</span></p><span><b>Definition </b></span><div class="markdown"><p>Indicates the type of function performed at the location.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist.</p>
+</div><span><b>Data type </b></span><p><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" >CodeableConcept</a></p><span><b>Binding </b></span><p><div class="markdown"><p>Indicates the type of function performed at the location.</p>
+</div><a title="v3.ServiceDeliveryLocationRoleType
+hl7.fhir.r4.core 4.0.1
+ValueSet-v3-ServiceDeliveryLocationRoleType.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-v3-ServiceDeliveryLocationRoleType.json" >v3.ServiceDeliveryLocationRoleType</a><span> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>CE/CNE/CWE</li><li><b>rim: </b>CD</li><li><b>orim: </b>fhir:CodeableConcept rdfs:subClassOf dt:CD</li><li><b>w5: </b>FiveWs.class</li><li><b>rim: </b>.code</li></ul></td></tr><tr id="Location.telecom" data-id="4b2b100e469f4f9abf85c37655523629" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>telecom</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="ContactPoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactPoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ContactPoint.json" >ContactPoint</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.telecom</pre></p></div><span><b>Short description </b></span><p><span>Contact details of the location</span></p><span><b>Definition </b></span><div class="markdown"><p>The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.</p>
+</div><span><b>Data type </b></span><p><a title="ContactPoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactPoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-ContactPoint.json" >ContactPoint</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>cpt-2: </b>A system is required if a value is provided.<br><code>value.empty() or system.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>XTN</li><li><b>rim: </b>TEL</li><li><b>servd: </b>ContactPoint</li><li><b>rim: </b>.telecom</li></ul></td></tr><tr id="Location.address" data-id="12a47d95f22c4ed28853c5030561add1" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span>address</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="package/StructureDefinition-address-de-basis.json
+de.basisprofil.r4 1.5.2
+StructureDefinition-address-de-basis.json" href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-address-de-basis.json" >AddressDeBasis</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.address</pre></p></div><span><b>Short description </b></span><p><span>Eine Adresse gem&#228;&#223; postalischer Konventionen</span></p><span><b>Definition </b></span><div class="markdown"><p>Eine Adresse gemäß postalischer Konventionen (im Gegensatz zu bspw. GPS-Koordinaten). Die Adresse kann sowohl zur Zustellung von Postsendungen oder zum Aufsuchen von Orten, die keine gültige Postadresse haben, verwendet werden.</p>
+<p>Die verwendeten Extensions in diesem Profil bilden die Struktur der Adresse ab, wie sie im VSDM-Format der elektronischen Versichertenkarte verwendet wird.</p>
+<p>Insbesondere bei ausländischen Adresse oder Adressen, die nicht durch Einlesen einer elektronischen Versichertenkarte erfasst wurden, sind abweichende Strukturen möglich. Die Verwendung der Extensions ist nicht verpflichtend.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>If locations can be visited, we need to keep track of their address.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Bei Verfügbarkeit einer Adresse muss ein System diese Information bereitstellen. Darüber hinaus muss das abrufende System diese Information verarbeiten können.</p>
+</div><span><b>Data type </b></span><p><a title="package/StructureDefinition-address-de-basis.json
+de.basisprofil.r4 1.5.2
+StructureDefinition-address-de-basis.json" href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&filepath=package/StructureDefinition-address-de-basis.json" >AddressDeBasis</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>add-1: </b>Wenn die Extension &#39;Hausnummer&#39; verwendet wird, muss auch Address.line gef&#252;llt werden<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&#39;).empty() or $this.hasValue())</code></li><li><b>add-2: </b>Wenn die Extension &#39;Strasse&#39; verwendet wird, muss auch Address.line gef&#252;llt werden<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&#39;).empty() or $this.hasValue())</code></li><li><b>add-3: </b>Wenn die Extension &#39;Postfach&#39; verwendet wird, muss auch Address.line gef&#252;llt werden<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox&#39;).empty() or $this.hasValue())</code></li><li><b>add-4: </b>Eine Postfach-Adresse darf nicht vom Type &quot;physical&quot; oder &quot;both&quot; sein.<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox&#39;).empty() or $this.hasValue()) or type=&#39;postal&#39; or type.empty()</code></li><li><b>add-5: </b>Wenn die Extension &#39;Adresszusatz&#39; verwendet wird, muss auch Address.line gef&#252;llt werden<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator&#39;).empty() or $this.hasValue())</code></li><li><b>add-6: </b>Wenn die Extension &#39;Postfach&#39; verwendet wird, d&#252;rfen die Extensions &#39;Strasse&#39; und &#39;Hausnummer&#39; nicht verwendet werden<br><code>line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox&#39;).empty() or ($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&#39;).empty() and $this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&#39;).empty()))</code></li><li><b>add-7: </b>Wenn die Extension &#39;Precinct&#39; (Stadtteil) verwendet wird, dann muss diese Information auch als separates line-item abgebildet sein.<br><code>extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct&#39;).empty() or all(line contains extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct&#39;).value.ofType(string))</code></li></ul></div><span><b>Examples </b></span><div><span>Beispiel f&#252;r einfache Adresse</span><p><pre>{
+  &quot;use&quot;: &quot;home&quot;,
+  &quot;type&quot;: &quot;postal&quot;,
+  &quot;line&quot;: [
+    &quot;Musterweg 42&quot;
+  ],
+  &quot;city&quot;: &quot;Musterhausen&quot;,
+  &quot;postalCode&quot;: &quot;99999&quot;
+}</pre></p></div><br><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>XAD</li><li><b>rim: </b>AD</li><li><b>servd: </b>Address</li><li><b>rim: </b>.addr</li></ul></td></tr><tr class="constraints" id="Location.physicalType" data-id="e756e664e7f042199253ef0577006f38" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon datatype" title="Data Type"></span><span class="constraints">physicalType</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" >CodeableConcept</a><span class="fixed-label constraints">Pattern</span></td><td class="details hidden"><span class="pin-control"></span><span><b>Element id</b></span><div><p><pre>Location.physicalType</pre></p></div><span><b>Short description </b></span><p><span>Physical form of the location</span></p><span><b>Definition </b></span><div class="markdown"><p>Physical form of the location, e.g. building, room, vehicle, road.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>For purposes of showing relevant locations in queries, we need to categorize locations.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist.</p>
+</div><span><b>Data type </b></span><p><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeableConcept.json" >CodeableConcept</a></p><span><b>Binding </b></span><p><div class="markdown"><p>Physical form of the location.</p>
+</div><a title="LocationType
+hl7.fhir.r4.core 4.0.1
+ValueSet-location-physical-type.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-location-physical-type.json" >LocationType</a><span> (</span><a title="Instances are not expected or even encouraged to draw from the specified value set. The value set merely provides examples of the types of concepts intended to be included." href="http://hl7.org/fhir/r4/terminologies.html#example" >example</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span class="constraints"><b>Pattern </b></span><div><p><pre class="constraints">{
+  &quot;coding&quot;: [
+    {
+      &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/location-physical-type&quot;,
+      &quot;code&quot;: &quot;ro&quot;,
+      &quot;display&quot;: &quot;Room&quot;
+    }
+  ]
+}</pre></p></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>v2: </b>CE/CNE/CWE</li><li><b>rim: </b>CD</li><li><b>orim: </b>fhir:CodeableConcept rdfs:subClassOf dt:CD</li><li><b>w5: </b>FiveWs.class</li><li><b>rim: </b>.playingEntity [classCode=PLC].code</li></ul></td></tr><tr class="collapsed" id="Location.position" data-id="a1cca5916d034dd3b282e35d2e94b186" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span>position</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position</pre></p></div><span><b>Short description </b></span><p><span>The absolute geographic location</span></p><span><b>Definition </b></span><div class="markdown"><p>The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>For mobile applications and automated route-finding knowing the exact location of the Location is required.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist.</p>
+</div><span><b>Data type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.playingEntity [classCode=PLC determinerCode=INSTANCE].positionText</li></ul></td></tr><tr class="common" id="Location.position.id" data-id="ff6d3d3195564d429d5a750f4308196f" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common sliced" id="Location.position.extension" data-id="3042ed64c97945ada3ce8838b86da11e" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Location.position.modifierExtension" data-id="595e5270bb69415c818bf21ad69f6671" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.modifierExtension</pre></p></div><span><b>Short description </b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Location.position.longitude" data-id="4a0afe8692804076bd8a6a69466bf0f4" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>longitude</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.longitude</pre></p></div><span><b>Short description </b></span><p><span>Longitude with WGS84 datum</span></p><span><b>Definition </b></span><div class="markdown"><p>Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Do not use an IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)</p>
+</div><span><b>Data type </b></span><p><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</li></ul></td></tr><tr id="Location.position.latitude" data-id="c56b1cfa76ab47298e301c1046677ac4" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>latitude</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.latitude</pre></p></div><span><b>Short description </b></span><p><span>Latitude with WGS84 datum</span></p><span><b>Definition </b></span><div class="markdown"><p>Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Do not use an IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)</p>
+</div><span><b>Data type </b></span><p><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</li></ul></td></tr><tr id="Location.position.altitude" data-id="0859fa9f18d84933aaf851cc9e6eece1" data-parentId="a1cca5916d034dd3b282e35d2e94b186"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>altitude</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.position.altitude</pre></p></div><span><b>Short description </b></span><p><span>Altitude with WGS84 datum</span></p><span><b>Definition </b></span><div class="markdown"><p>Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Do not use an IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)</p>
+</div><span><b>Data type </b></span><p><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-decimal.json" >decimal</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</li></ul></td></tr><tr id="Location.managingOrganization" data-id="07cef26c36cf431ba2186bd18ae69b1d" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>managingOrganization</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.managingOrganization</pre></p></div><span><b>Short description </b></span><p><span>Organization responsible for provisioning and upkeep</span></p><span><b>Definition </b></span><div class="markdown"><p>The organization responsible for the provisioning and upkeep of the location.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Need to know who manages the location.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location</p>
+</div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Organization
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Organization.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Organization.json" >Organization</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ref-1: </b>SHALL have a contained resource if a local reference is provided<br><code>reference.startsWith(&#39;#&#39;).not() or (reference.substring(1).trace(&#39;url&#39;) in %rootResource.contained.id.trace(&#39;ids&#39;))</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>The target of a resource reference is a RIM entry point (Act, Role, or Entity)</li><li><b>rim: </b>.scopingEntity[classCode=ORG determinerKind=INSTANCE]</li></ul></td></tr><tr id="Location.partOf" data-id="0cd70afb4876434e9f4baa881b5d4ced" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>partOf</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Location
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Location.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Location.json" >Location</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.partOf</pre></p></div><span><b>Short description </b></span><p><span>Another Location this one is physically a part of</span></p><span><b>Definition </b></span><div class="markdown"><p>Another Location of which this Location is physically a part of.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>For purposes of location, display and identification, knowing which locations are located within other locations is important.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Ein System muss die organisationale Zugehörigkeit eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist.</p>
+</div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Location
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Location.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Location.json" >Location</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ref-1: </b>SHALL have a contained resource if a local reference is provided<br><code>reference.startsWith(&#39;#&#39;).not() or (reference.substring(1).trace(&#39;url&#39;) in %rootResource.contained.id.trace(&#39;ids&#39;))</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>The target of a resource reference is a RIM entry point (Act, Role, or Entity)</li><li><b>rim: </b>.inboundLink[typeCode=PART].source[classCode=SDLC]</li></ul></td></tr><tr class="collapsed" id="Location.hoursOfOperation" data-id="742b1a1a7d2c4b3a8799ac2bf31b8028" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon backboneElement" title="Element"></span><span>hoursOfOperation</span></td><td class="profile"><span class="mustsupport" title="This element is an element that must be supported">S</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation</pre></p></div><span><b>Short description </b></span><p><span>What days/times during a week is this location usually open</span></p><span><b>Definition </b></span><div class="markdown"><p>What days/times during a week is this location usually open.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Motivation: Ein System muss die Betriebszeiten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist.</p>
+</div><span><b>Data type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-BackboneElement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.effectiveTime</li></ul></td></tr><tr class="common" id="Location.hoursOfOperation.id" data-id="62441a80f7dc49d288d5649b7b26370e" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>id</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.id</pre></p></div><span><b>Short description </b></span><p><span>Unique id for inter-element referencing</span></p><span><b>Definition </b></span><div class="markdown"><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr class="common sliced" id="Location.hoursOfOperation.extension" data-id="afaf96d2abf1460ab7b9717c4840ac4c" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon extension" title="Extension"></span><span>extension</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.extension</pre></p></div><span><b>Short description </b></span><p><span>Additional content defined by implementations</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Sliced: </b></span><p><span>Unordered, Open, by url(Value)</span></p><div><span>Extensions are always sliced by (at least) url</span></div><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr class="common" id="Location.hoursOfOperation.modifierExtension" data-id="d996c1906b4445b1a267a34a4ff2e5ec" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon modifierExtension" title="Modifier Extension"></span><span>modifierExtension</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.modifierExtension</pre></p></div><span><b>Short description </b></span><p><span>Extensions that cannot be ignored even if unrecognized</span></p><span><b>Alternate names </b></span><p><span>extensions</span><span>, </span><span>user content</span><span>, </span><span>modifiers</span></p><span><b>Definition </b></span><div class="markdown"><p>May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+<p>Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Modifier extensions allow for extensions that <em>cannot</em> be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the <a href="extensibility.html#modifierExtension">definition of modifier extensions</a>.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</div><span><b>Data type </b></span><p><a title="Extension
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Extension.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Extension.json" >Extension</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ext-1: </b>Must have either extensions or value[x], not both<br><code>extension.exists() != value.exists()</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>N/A</li></ul></td></tr><tr id="Location.hoursOfOperation.daysOfWeek" data-id="c0956176b6a549da9f9281074c753705" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>daysOfWeek</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.daysOfWeek</pre></p></div><span><b>Short description </b></span><p><span>mon | tue | wed | thu | fri | sat | sun</span></p><span><b>Definition </b></span><div class="markdown"><p>Indicates which days of the week are available between the start and end Times.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-code.json" >code</a></p><span><b>Binding </b></span><p><div class="markdown"><p>The days of the week.</p>
+</div><a title="DaysOfWeek
+hl7.fhir.r4.core 4.0.1
+ValueSet-days-of-week.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/ValueSet-days-of-week.json" >DaysOfWeek</a><span> (</span><a title="To be conformant, the concept in this element SHALL be from the specified value set." href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.effectiveTime</li></ul></td></tr><tr id="Location.hoursOfOperation.allDay" data-id="54490c0c314b428091c2b21f68801344" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>allDay</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.allDay</pre></p></div><span><b>Short description </b></span><p><span>The Location is open all day</span></p><span><b>Definition </b></span><div class="markdown"><p>The Location is open all day.</p>
+</div><span><b>Data type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.effectiveTime</li></ul></td></tr><tr id="Location.hoursOfOperation.openingTime" data-id="b3ca6d3a59f14e4aa2bdf4b80bac6dc3" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>openingTime</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="time
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-time.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-time.json" >time</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.openingTime</pre></p></div><span><b>Short description </b></span><p><span>Time that the Location opens</span></p><span><b>Definition </b></span><div class="markdown"><p>Time that the Location opens.</p>
+</div><span><b>Data type </b></span><p><a title="time
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-time.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-time.json" >time</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.effectiveTime</li></ul></td></tr><tr id="Location.hoursOfOperation.closingTime" data-id="3b654d929ce24dad821c9a78f73fd4ed" data-parentId="742b1a1a7d2c4b3a8799ac2bf31b8028"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>closingTime</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="time
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-time.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-time.json" >time</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.hoursOfOperation.closingTime</pre></p></div><span><b>Short description </b></span><p><span>Time that the Location closes</span></p><span><b>Definition </b></span><div class="markdown"><p>Time that the Location closes.</p>
+</div><span><b>Data type </b></span><p><a title="time
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-time.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-time.json" >time</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>.effectiveTime</li></ul></td></tr><tr id="Location.availabilityExceptions" data-id="91510fabf14743d89ba110f56e21ea6f" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon primitive" title="Primitive Data Type"></span><span>availabilityExceptions</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.availabilityExceptions</pre></p></div><span><b>Short description </b></span><p><span>Description of availability exceptions</span></p><span><b>Definition </b></span><div class="markdown"><p>A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li></ul></td></tr><tr id="Location.endpoint" data-id="8005d296463948408a82af90e485c9d8" data-parentId="58c8e504f67249f29348a5a4eec6c421"><td class="profile"><span class="baseIcon reference" title="Reference to another Resource"></span><span>endpoint</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Endpoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Endpoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Endpoint.json" >Endpoint</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element id</b></span><div><p><pre>Location.endpoint</pre></p></div><span><b>Short description </b></span><p><span>Technical endpoints providing access to services operated for the location</span></p><span><b>Definition </b></span><div class="markdown"><p>Technical endpoints providing access to services operated for the location.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Organizations may have different systems at different locations that provide various services and need to be able to define the technical connection details for how to connect to them, and for what purpose.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.</p>
+</div><span><b>Data type </b></span><p><a title="Reference
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Reference.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Reference.json" >Reference</a><span>(</span><a title="Endpoint
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Endpoint.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-Endpoint.json" >Endpoint</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li><b>ele-1: </b>All FHIR elements must have a @value or children<br><code>hasValue() or (children().count() &gt; id.count())</code></li><li><b>ref-1: </b>SHALL have a contained resource if a local reference is provided<br><code>reference.startsWith(&#39;#&#39;).not() or (reference.substring(1).trace(&#39;url&#39;) in %rootResource.contained.id.trace(&#39;ids&#39;))</code></li></ul></div><span><b>Mappings</b></span><ul><li><b>rim: </b>n/a</li><li><b>rim: </b>The target of a resource reference is a RIM entry point (Act, Role, or Entity)</li></ul></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable41e668c2f5a440e7b4e014722f223619 = new Stu3TreeTable(false);
+resourceTreeTable41e668c2f5a440e7b4e014722f223619.init("41e668c2f5a440e7b4e014722f223619");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="3d4ea5ec-6566-4d4a-9744-2bae2d4df204">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition" >StructureDefinition</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKStandortRaum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.url" >url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.version" >version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.0.3</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.name" >name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKStandortRaum</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.status" >status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.experimental" >experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.date" >date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-02-19</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.publisher" >publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.description" >description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Dieses Profil dient der strukturierten Erfassung von R&amp;#228;umen (als Standorten) eines Krankenhauses.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.fhirVersion" >fhirVersion</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.0.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.kind" >kind</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">resource</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.abstract" >abstract</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.baseDefinition" >baseDefinition</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.derivation" >derivation</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">constraint</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential" >differential</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location.operationalStatus</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location.operationalStatus</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.comment" >comment</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verf&amp;#252;gbar ist. Dies dient z.B. der Markierung als &amp;#39;Isoliert&amp;#39;.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.mustSupport" >mustSupport</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding" >binding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding.strength" >strength</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">required</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.binding.valueSet" >valueSet</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/ValueSet/v2-0116</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">binding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element" >element</a></span> <span class="attr">id</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location.physicalType</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.path" >path</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Location.physicalType</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.pattern" >patternCodeableConcept</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.pattern.coding" >coding</a></span><span class="brace">&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.pattern.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.pattern.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ro</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                    <span class="brace">&lt;</span><span class="element"><a title="StructureDefinition
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-StructureDefinition.json" href="https://simplifier.net/resolve?scope=hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-StructureDefinition.json#StructureDefinition.differential.element.pattern.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Room</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">patternCodeableConcept</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">element</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">differential</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">StructureDefinition</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="3aeac98b-6085-4c27-af61-8edf1aac82ba">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">StructureDefinition</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKStandortRaum</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.0.3</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKStandortRaum</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">experimental</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">date</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-02-19</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">publisher</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">description</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dieses Profil dient der strukturierten Erfassung von R&#228;umen (als Standorten) eines Krankenhauses.</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">fhirVersion</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.0.1</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">kind</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">resource</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">abstract</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">baseDefinition</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">derivation</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">constraint</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">differential</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">element</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location.operationalStatus</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location.operationalStatus</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">comment</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verf&#252;gbar ist. Dies dient z.B. der Markierung als &#39;Isoliert&#39;.</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">mustSupport</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">binding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">strength</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">required</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">valueSet</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/ValueSet/v2-0116</span><span class="string">&quot;</span>
+                <span class="brace">}</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location.physicalType</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">path</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Location.physicalType</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">patternCodeableConcept</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                        <span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ro</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/location-physical-type</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Room</span><span class="string">&quot;</span>
+                        <span class="brace">}</span>
+                    <span class="brace">]</span>
+                <span class="brace">}</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="fd635144-513a-46bb-be7f-174e0f061596">
+    <a  href='artifacts/package/StructureDefinition-ISiKStandortRaum.json'>ISiKStandortRaum</a>
+</div>
+  </div>
+</div>
+<h3 id="constraintsinvarianten">Constraints/Invarianten</h3>
+<h3 id="terminology-bindings">Terminology-Bindings</h3>
+<table class='table table-bordered scrollbar '><thead><tr><th>Element</th><th>Staerke</th><th>ValueSet</th></tr></thead><tbody><tr><td>Location.operationalStatus</td><td>required</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://terminology.hl7.org/ValueSet/v2-0116'>http://terminology.hl7.org/ValueSet/v2-0116</a></td></tr>
+</tbody></table>
+<!--### Mappings
+
+-->
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
