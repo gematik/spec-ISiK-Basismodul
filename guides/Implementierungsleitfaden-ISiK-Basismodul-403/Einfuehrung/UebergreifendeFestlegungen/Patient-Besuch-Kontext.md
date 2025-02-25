@@ -1,6 +1,8 @@
 ## Herstellung von Patient- und Encounterkontext
 
-Vor der Bereitstellung von patientenbezogenen Ressourcen, wie sie u.a. von den Modulen Vitalparameter, Dokumentenaustausch oder Medikation beschrieben werden, muss ein Client einen Patienten- und Encounterkontext herstellen, damit diese serverseitig dem richtigen Patienten und Besuch zugeordnet werden können. Aus diesem Grund sind Hersteller, die serverseitige Akteure dieser Module implementieren, stets verpflichtet, die in diesem Leitfaden spezifizierten Interaktionen zum Suchen und Abrufen von Patienten- und Encounter-Ressourcen ebenfalls zu implementieren.
+Vor der Bereitstellung von patientenbezogenen Ressourcen, wie sie u.a. von den Modulen Vitalparameter, Dokumentenaustausch oder Medikation beschrieben werden, muss ein Client einen Patienten- und Encounterkontext herstellen, damit diese serverseitig dem richtigen Patienten und Besuch zugeordnet werden können.
+
+Aus diesem Grund MÜSSEN Hersteller, die serverseitige Akteure dieser Module implementieren, die in diesem Leitfaden spezifizierten Interaktionen zum Suchen und Abrufen von Patienten- und Encounter-Ressourcen ebenfalls implementieren.
 
 ### Serverseitige Implementierungsvarianten
 
