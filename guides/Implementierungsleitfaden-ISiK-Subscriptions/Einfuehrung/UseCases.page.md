@@ -7,6 +7,8 @@ Die folgenden Anwendungsfälle stellen eine Auswahl möglicher Einsatzszenarien 
 abschließend. Je nach Bedarf und Systemlandschaft können weitere Subscriptions für spezifische
 Anforderungen definiert werden.
 
+{{render:Material/Subscription/images/diagrams/use-cases-subscription.png}}
+
 ## 1. Patient oder Fall Merge
 
 * **Zusammenführung von Patientendaten:** Wenn zwei Patientenakten aufgrund einer fehlerhaften
