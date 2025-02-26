@@ -63,18 +63,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       SNOMED-CT 0..1 MS and
       Orphanet 0..1 MS
   * coding[ICD-10-GM] only ISiKICD10GMCoding
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+    * ^patternCoding.system = $icd-10-gm
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
+    * ^patternCoding.system = $alphaid-cs
     * system 1.. MS
     * code 1.. MS
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $diagnosesSCT (required)
     * ^patternCoding.system = $sct
-  * coding[Orphanet] ^patternCoding.system = "http://www.orpha.net"
+  * coding[Orphanet] ^patternCoding.system = $orphaNet
     * system 1.. MS
     * code 1..
 * subject MS
@@ -244,6 +244,17 @@ Usage: #example
 * recordedDate = "2024-10-21"
 * note.text = "Patientin mit primärer Gonarthrose beidseitig (ICD M17.0), seit mehreren Jahren bestehend, in Remission seit 01.01.2025"
 
+Instance: AltersbedingteKreislaufstoerung
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
+* code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
 
 
 Invariant: isik-con1

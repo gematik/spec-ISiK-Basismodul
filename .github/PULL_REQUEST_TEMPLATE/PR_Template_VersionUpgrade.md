@@ -50,7 +50,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - [ ]  Publish via Simplifier GUI (set to overwritable)
 
 
-## Obsolete
+## Archive IG
 
 -  Provide / Archive the IG in the corresponding _gh-pages_ branch of the GitHub project.
   - Checkout the Branch (no need to merge it later). 
