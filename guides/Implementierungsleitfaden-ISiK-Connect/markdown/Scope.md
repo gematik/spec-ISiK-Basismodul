@@ -2,7 +2,7 @@
 
 ## 1. Zielsetzung
 
-Dieser Implementation Guide (IG) definiert aktuell eine standardisierte Methode zur Autorisierung von Systemen und Benutzern im Krankenhausumfeld. In der kommenden Version soll ebenfalls das Thema Authentifizierung als wichtiger Bestandteil aufgenommen werden. Ziel ist es, eine sichere und interoperable Lösung für die Identitäts- und Zugriffskontrolle bereitzustellen.
+Dieser Leitfaden beschreibt eine standardisierte Methode zur Autorisierung von Systemen und Benutzern im Krankenhausumfeld. Zusätzlich kann auch das Thema Authentifizierung als wichtiger Bestandteil betrachtet werden. Das Ziel besteht darin, eine sichere und interoperable Lösung für die Identitäts- und Zugriffskontrolle zu ermöglichen.
 
 Im Rahmen dieses Implementation Guide (IG) wird zunächst der Schwerpunkt auf die Integration von Patientenportalen gelegt. Insbesondere sollen folgende Anwendungsfälle adressiert werden:
 
