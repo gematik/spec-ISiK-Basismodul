@@ -8,9 +8,9 @@ Die sichere und eindeutige Verknüpfung von Nutzern eines Patientenportals mit d
 
 In der Praxis führt dies zu erheblichen Problemen:
 
-    Patienten registrieren sich in einem Portal, doch ohne eine zuverlässige Verknüpfung mit ihrer Patientenakte im Krankenhausinformationssystem (KIS) oder anderen medizinischen Systemen bleibt unklar, ob sie tatsächlich berechtigt sind, auf die entsprechenden Daten zuzugreifen.
-    Unterschiedliche Identitätsanbieter (IdPs) verwenden verschiedene Mechanismen zur Authentifizierung, was eine nahtlose Integration in bestehende Systeme erschwert.
-    Fehlende Standardisierung in der Begriffsverwendung und den zugrunde liegenden Protokollen führt zu Interoperabilitätsproblemen zwischen Systemen verschiedener Hersteller.
+* Patienten registrieren sich in einem Portal, doch ohne eine zuverlässige Verknüpfung mit ihrer Patientenakte im Krankenhausinformationssystem (KIS) oder anderen medizinischen Systemen bleibt unklar, ob sie tatsächlich berechtigt sind, auf die entsprechenden Daten zuzugreifen.
+* Unterschiedliche Identitätsanbieter (IdPs) verwenden verschiedene Mechanismen zur Authentifizierung, was eine nahtlose Integration in bestehende Systeme erschwert.
+* Fehlende Standardisierung in der Begriffsverwendung und den zugrunde liegenden Protokollen führt zu Interoperabilitätsproblemen zwischen Systemen verschiedener Hersteller.
 
 Um eine sichere, interoperable und datenschutzkonforme Lösung für den Zugriff auf medizinische Daten zu schaffen, ist ein standardisierter Ansatz für die Identitäts- und Zugriffskontrolle erforderlich.
 
@@ -32,18 +32,18 @@ Nach erfolgreicher Authentifizierung soll ein Patient über das Portal auf seine
 
 Um eine sichere und interoperable Lösung zu ermöglichen, werden folgende Aspekte berücksichtigt:
 
-    - Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.
-    - Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.
-    - Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.
-    - Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcenserver, um Missverständnisse zu - vermeiden und eine einheitliche Kommunikation zu ermöglichen.
+* Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.
+* Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.
+* Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.
+- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcenserver, um Missverständnisse zu - vermeiden und eine einheitliche Kommunikation zu ermöglichen.
 
 ## Technischer Rahmen
 
 Der IG baut auf bestehenden Standards auf, insbesondere:
 
-    - SMART on FHIR: Nutzung der Konzepte aus dem SMART on FHIR IG, insbesondere für OAuth2-basierte Autorisierung und OpenID Connect zur Authentifizierung.
-    - FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.
-    - OAuth2 & OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.
+* SMART on FHIR: Nutzung der Konzepte aus dem SMART on FHIR IG, insbesondere für OAuth2-basierte Autorisierung und OpenID Connect zur Authentifizierung.
+* FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.
+* OAuth2 & OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.
 
 ## Bedeutung für das Gesundheitswesen
 
