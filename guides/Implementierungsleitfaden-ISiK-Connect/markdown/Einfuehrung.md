@@ -2,9 +2,9 @@
 
 ----
 
-Version: 3.0.0
+Version: 5.0.0 (draft)
 
-Datum: 01.07.2023
+Datum: (TBD)
 
 Status: Aktiv
 
