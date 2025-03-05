@@ -20,7 +20,17 @@ Anforderungen definiert werden.
   zusammengeführt werden, erhalten nachgelagerte Systeme eine Benachrichtigung, um Abrechnungen und
   medizinische Dokumentationen korrekt zu aktualisieren.
 
-## 2. Benachrichtigung bei Korrektur von Daten
+## 2. Terminplanung
+
+* **Statusänderung bei Terminen:** Wenn ein Termin (Appointment) verschoben oder abgesagt wird,
+  erhält das Patientenportal eine automatische Benachrichtigung. Patientinnen und Patienten werden
+  daraufhin per E-Mail, App-Push-Nachricht oder SMS informiert.
+* **Freigewordener Terminslot** Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
+eine Benachrichtigung. Dadurch können Patienten auf der Warteliste oder mit entsprechender Präferenz gezielt
+über die neue Verfügbarkeit informiert werden. Dies ermöglicht eine effiziente Nachbesetzung freier Termine
+und reduziert ungenutzte Kapazitäten.
+
+## 3. Benachrichtigung bei Korrektur von Daten
 
 * **Laborbefunde:** Falls ein bereits übermittelter Laborbefund korrigiert oder aktualisiert wird,
   informiert die Subscription automatisch alle betroffenen Systeme (z. B. KIS, PDMS,
@@ -30,15 +40,6 @@ Anforderungen definiert werden.
 * **Diagnose- oder Medikationsänderungen:** Wird eine Diagnose oder Medikation geändert oder
   zurückgezogen, erhalten relevante Systeme eine Benachrichtigung, um Entscheidungen in der
   Patientenversorgung auf Basis der korrekten Daten zu treffen.
-
-## 3. Benachrichtigung im Patientenportal
-
-* **Statusänderung bei Terminen:** Wenn ein Termin (Appointment) verschoben oder abgesagt wird,
-  erhält das Patientenportal eine automatische Benachrichtigung. Patientinnen und Patienten werden
-  daraufhin per E-Mail, App-Push-Nachricht oder SMS informiert.
-* **Neue Dokumente:** Sobald ein Entlassbrief (DocumentReference) oder ein Laborbericht vorliegt,
-  werden Subscriptions getriggert und das Portal kann gezielt den Patienten informieren und das
-  Dokument zur Verfügung stellen.
 
 ## 4. Integration mit externen Services
 
