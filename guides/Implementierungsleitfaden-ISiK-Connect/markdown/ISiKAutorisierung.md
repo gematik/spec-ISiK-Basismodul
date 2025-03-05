@@ -1,6 +1,6 @@
 # ISiK-Sicherheit: Autorisierung
 
-ISiK-Sicherheit konkretisiert in der aktuellen Stufe 3 von ISiK die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Sicherheitsthemen wie z. B. Protokollierung und Authentisierung spezifiziert. 
+ISiK-Sicherheit konkretisiert in der aktuellen Stufe 5 von ISiK die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Sicherheitsthemen wie z. B. Protokollierung und Authentisierung spezifiziert. 
 
 # Zugriffsrechte und Compartments
 
