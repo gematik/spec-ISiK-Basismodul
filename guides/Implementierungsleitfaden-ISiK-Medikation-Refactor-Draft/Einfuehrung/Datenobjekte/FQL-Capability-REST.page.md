@@ -5,11 +5,11 @@ topic: FQL-Capability-REST
 from
     CapabilityStatement
 where
-    url = %capability-1
+    url = %capability1
 or
-    url = %capability-2
+    url = %capability2
 or
-    url = %capability-3
+    url = %capability3
 for rest.resource.where(%canonical in supportedProfile)
 select
 {
@@ -21,11 +21,11 @@ select
 from
     CapabilityStatement
 where
-    url = %capability-1
+    url = %capability1
 or
-    url = %capability-2
+    url = %capability2
 or
-    url = %capability-3
+    url = %capability3
 for rest.resource.where(%canonical in supportedProfile).interaction
 select
 {
