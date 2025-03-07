@@ -40,7 +40,7 @@ SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einte
 Autorisierungen in einem _SMART on FHIR_ _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs').
 
 ### Ressourcetyp und Operationen
-Es MÜSSEN alle in ISiK Stufe 3 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 3 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden:
+Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 5 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden:
 
 |Berechtigung|FHIR-Operation auf System-Ebene|FHIR-Operation auf Typ-Ebene|FHIR-Operation auf Instanz-Ebene|
 |:-----------|:------------------------------|:---------------------------|--------------------------------|
@@ -55,7 +55,7 @@ Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') ange
 Die Möglichkeit von [_Wildcard-Scopes_](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden.
 
 ### Filter
-Alle in ISiK Stufe 3 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden.
+Alle in ISiK Stufe 5 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden.
 
 ### Beispiele
 
