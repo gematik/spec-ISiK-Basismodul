@@ -27,7 +27,9 @@ or
     url = %capability3
 for rest.resource.where(%canonical in supportedProfile)
 select
-    'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
+    Name: name, 
+    join for rest.resource.where(%canonical in supportedProfile) 
+    select 'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 </fql>
 
 ### Metadaten
