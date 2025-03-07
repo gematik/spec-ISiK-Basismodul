@@ -21,7 +21,7 @@ Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patienten "123" ge�
 
 ISiK-konforme Ressourcenservern MÜSSEN die beim Aufruf eines RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können.
 
-ISiK-Sicherheit macht in der ISiK Stufe 3 keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
+ISiK-Sicherheit macht in der ISiK Stufe 5 keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
 
 ## _Compartments_
 
