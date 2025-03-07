@@ -20,7 +20,11 @@ with
 from
     CapabilityStatement
 where
-    url = %capability
+    url = %capability-1
+or
+    url = %capability-2
+or
+    url = %capability-3
 for rest.resource.where(%canonical in supportedProfile)
 select
     'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
