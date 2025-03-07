@@ -22,13 +22,13 @@ with
 
 <tabs>
     <tab title="Interaktionen"> 
-        {{page:FQL-Capability-REST}}
+        {{page:FQL-Capability-REST-multics}}
     </tab>
     <tab title="Suchparameter">
-        {{page:FQL-Capability-Search}}
+        {{page:FQL-Capability-Search-multics}}
     </tab>
     <tab title="Operationen">
-        {{page:FQL-Capability-Operations}}
+        {{page:FQL-Capability-Operations-multics}}
     </tab>
     <tab title="Link">
         {{pagelink:CapabilityStatement}}
