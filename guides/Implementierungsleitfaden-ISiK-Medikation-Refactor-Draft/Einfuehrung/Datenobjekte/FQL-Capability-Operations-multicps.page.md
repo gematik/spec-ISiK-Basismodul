@@ -1,5 +1,5 @@
 ---
-topic: FQL-Capability-Operations-multics
+topic: FQL-Capability-Operations-multicps
 ---
 
 <fql>
