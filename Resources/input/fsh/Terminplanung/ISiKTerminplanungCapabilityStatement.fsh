@@ -2,7 +2,7 @@ Instance: ISiKCapabilityStatementTerminplanungServer
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert MetaInstance
-* insert Meta-CapabilityStatement
+* insert Meta-CapabilityStatement-Terminplanung
 * name = "ISiKCapabilityStatementTerminplanungServer"
 * title = "ISiK CapabilityStatement Terminplanung Server"
 * contact.telecom.system = #url
