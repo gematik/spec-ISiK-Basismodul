@@ -35,7 +35,7 @@ Da es sich um eine Zusammenfassung handelt, gelten Bedingungen für die gezeigte
 
 ## Zusammenhang zu den Use Cases
 
-Jeder Include oder Reverse Include Parameter ist mit mindestens einem Anwendungsfall begründet. Diese Details sie auf der Seite der jeweiligen Ressource unter {{pagelink:Datenobjekte, text:Datenobjekte}} zu finden. 
+Jeder Include oder Reverse Include Parameter ist mit mindestens einem Anwendungsfall begründet. Diese Details sie auf der Seite der jeweiligen Ressource unter {{pagelink:Einfuehrung/Datenobjekte, text:Datenobjekte}} zu finden. 
 Im Folgenden sollen für die Lesart des Diagramms zwei Beispiele gegeben werden:
 * **Beispiel für einen Include Zusammenhang:** Eine Applikation muss in der Lage sein ein _ISiK Medikament_ anhand der Eigenschaften von _ingredient_ suchen zu können, um den (Adverse) Use Case einer _Wechelwirkung_ zu vermeiden.
 * **Beispiel für einen Reverse Include Zusammenhang:** Eine Applikation muss in der Lage sein zu einem _ISiK Patient_ alle _Encounter_ anhand der Zugehörigkeit via _subject_ suchen zu können, um den Anwendungsfall der vollständigen _Dokumentation_ gewährleisten zu können.
