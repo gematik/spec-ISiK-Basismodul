@@ -25,7 +25,8 @@ or
     url = %capability2
 or
     url = %capability3
-for rest.resource.where(%canonical in supportedProfile)
+or
+    url = %capability4
 select
     Name: name, 
     join for rest.resource.where(%canonical in supportedProfile) 
