@@ -12,7 +12,7 @@ Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_
 
 ## EHR Launch
 
-Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten. Im Kontext der derzeitig eingeloggten Benutzer:in wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/SmartAppLaunch.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
+Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten. ([ANF-CON-009](Anforderungsuebersicht.md)) Im Kontext der derzeitig eingeloggten Benutzer:in wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/SmartAppLaunch.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
 Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Mit diesem beliebig gewählten Parameter (z.B. eine UUID) kann der Client das Access Token mit dem Kontext, aus dem der Client gestartet worden ist, verknüpfen. Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten, welcher dem Anwender zuvor präsentiert wurde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen, welche die zuvor genannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:ImplementationGuide/markdown/Schritt4AustauschAutorisierungscodesZugangstoken.md, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann spezifische Kontextparameter anfragen. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientenkontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
 
@@ -26,7 +26,7 @@ Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client 
 
 ## Parameter Autorisierungsanfrage
 
-Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten. Insbesondere gilt dies für die Unterstützung von HTTP POST-basierten Autorisierungsanfragen und der Unterstützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
+Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten. Insbesondere gilt dies für die Unterstützung von HTTP POST-basierten Autorisierungsanfragen und der Unterstützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636). ([ANF-CON-010](Anforderungsuebersicht.md))
 
 Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichend von RFC6749 verpflichtend ist.
 
@@ -34,19 +34,19 @@ Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichen
 
 ## TLS
 
-Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest?version=current).
+Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. ([ANF-CON-011](Anforderungsuebersicht.md)) Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest?version=current).
 
 ----
 
 ## Abruf SMART Configuration
 
-Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR Endpunktes bekannt gegeben werden. Anschließend erfolgt eine Abfrage des ".well-known/smart-configuration" Dokumentes, welche durch den FHIR Endpunkt bereitgestellt werden MUSS. Vorgaben zum Format sind dem Abschnitt {{pagelink:ImplementationGuide/markdown/ConformanceSmartCapabilities.md, text:SMART Capabilities}} zu entnehmen. Hierdurch erhält der Client dynamisch die Adresse des Autorisierungsservers inkl. "authorize" und "token" Endpunkt. Falls durch das bestätigungsrelevante System OAuth 2.0 Endpunkte optional über das CapabilityStatement des FHIR-Endpunktes zur Verfügung gestellt werden, MÜSSEN diese Inhalte identisch zu den Inhalten des ".well-known/smart-configuration" Dokumentes sein.
+Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR Endpunktes bekannt gegeben werden. ([ANF-CON-012](Anforderungsuebersicht.md)) Anschließend erfolgt eine Abfrage des ".well-known/smart-configuration" Dokumentes, welche durch den FHIR Endpunkt bereitgestellt werden MUSS. ([ANF-CON-013](Anforderungsuebersicht.md)) Vorgaben zum Format sind dem Abschnitt {{pagelink:ImplementationGuide/markdown/ConformanceSmartCapabilities.md, text:SMART Capabilities}} zu entnehmen. Hierdurch erhält der Client dynamisch die Adresse des Autorisierungsservers inkl. "authorize" und "token" Endpunkt. Falls durch das bestätigungsrelevante System OAuth 2.0 Endpunkte optional über das CapabilityStatement des FHIR-Endpunktes zur Verfügung gestellt werden, MÜSSEN diese Inhalte identisch zu den Inhalten des ".well-known/smart-configuration" Dokumentes sein. ([ANF-CON-014](Anforderungsuebersicht.md))
 
 ----
 
 ## Hinweise zu Identity Scopes
 
-Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. EHR MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden.  
+Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. EHR MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. ([ANF-CON-015](Anforderungsuebersicht.md)) Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden.  
 
 ----
 
@@ -56,7 +56,7 @@ Innerhalb des Scope Parameters, welcher als Teil der Autorisierungsanfrage verse
 
 Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repräsentieren, die an den anfragenden Client delegiert werden dürfen. Somit können generell bestimmte Rechte ausgeschlossen werden. Eine Anfrage an den FHIR-REST-API-Endpunkt kann jedoch trotz validem Token mit den spezifizierten Scopes abgelehnt werden, falls während der Evaluierung der Anfrage seitens des Servers festgestellt wird, dass der Benutzer die gewünschten Ressourcen nicht verarbeiten darf.
 
-Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen.
+Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen. ([ANF-CON-016](Anforderungsuebersicht.md))
 
 
 ----
