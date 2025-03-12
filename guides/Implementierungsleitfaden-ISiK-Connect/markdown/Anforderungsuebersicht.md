@@ -1,30 +1,41 @@
 | ID | Anforderung |
 |--------|------|
-| 1  | [IHE IUA - Abschnitt 34.1.1.3 Resource Server](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
-| 2  | [IHE IUA - Abschnitt 3.103.2.1 Resource Server](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
-| 3  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
-| 4  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
-| 6  | [ISiK-Ressourcenserver - Verarbeitung von Autorisierungen](ISiKAutorisierung.md) |
-| 7  | [FHIR-Ressourcenserver - Bestätigung von Scopes](ISiKAutorisierung.md) |
-| 8  | [Autorisierungsserver - Client-Id Vergabe](ISiKundSMART/Schritt1RegistrierungClient.md) |
-| 9  | [EHR-Client-Start durch externen Kontextaufruf](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 10 | [SMART App Launch - EHR Launch Parameter](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 11 | [Autorisierungsendpunkte per HTTPS erreichbar](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 12 | [Standalone Launch - URL des FHIR-Endpunkts](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 13 | [Abfrage des `.well-known/smart-configuration` Dokuments](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 14 | [OAuth 2.0 Endpunkte im CapabilityStatement](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 15 | [Scopes for requesting identity data](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 16 | [Konfiguration der erlaubten Scopes pro Client](ISiKundSMART/Schritt2ClientAutorisierung.md) |
-| 17 | [Confidential Clients - Authentifizierung am Token-Endpunkt](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
-| 18 | [SMART App Launch - Obtain access token](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
-| 19 | [Unterstützung verpflichtender SMART App Launch Details](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
-| 21 | [Begrenzte Gültigkeitsdauer des Access Tokens (RFC6819)](ISiKundSMART/Schritt6RefreshToken.md) |
-| 22 | [Unterstützung von Refresh Tokens](ISiKundSMART/Schritt6RefreshToken.md) |
-| 23 | [SMART App Launch - Refresh access token](ISiKundSMART/Schritt6RefreshToken.md) |
-| 24 | [OAuth 2.0 Token Revocation (RFC7009)](ISiKundSMART/Schritt6RefreshToken.md) |
-| 25 | [Sicherstellung der sofortigen Token-Invalidierung](ISiKundSMART/Schritt6RefreshToken.md) |
-| 26 | [ISiK-Ressourcenserver - Unterstützung von Scopes](Conformance.md) |
-| 27 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md) |
-| 28 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
-| 29 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
-| 30 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-001  | [IHE IUA - Abschnitt 34.1.1.3 Resource Server](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
+| ANF-CON-002 | [IHE IUA - Abschnitt 3.103.2.1 Resource Server](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
+| ANF-CON-003  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
+| ANF-CON-004  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md) |
+| ANF-CON-005  | [ISiK-Ressourcenserver - Verarbeitung von Autorisierungen](ISiKAutorisierung.md) | // Das hier zu 6. machen
+| ANF-CON-006  | [FHIR-Ressourcenserver - Mindestunterstützung Compartment Definition](ISiKAutorisierung.md) |
+| ANF-CON-007  | [FHIR-Ressourcenserver - Bestätigung von Scopes](ISiKAutorisierung.md) |
+| ANF-CON-008  | [Autorisierungsserver - Client-Id Vergabe](ISiKundSMART/Schritt1RegistrierungClient.md) |
+| ANF-CON-009  | [EHR-Client-Start durch externen Kontextaufruf](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-010 | [SMART App Launch - EHR Launch Parameter](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-011 | [Autorisierungsendpunkte per HTTPS erreichbar](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-012 | [Standalone Launch - URL des FHIR-Endpunkts](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-013 | [Abfrage des `.well-known/smart-configuration` Dokuments](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-014 | [OAuth 2.0 Endpunkte im CapabilityStatement](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-015 | [Scopes for requesting identity data](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-016 | [Konfiguration der erlaubten Scopes pro Client](ISiKundSMART/Schritt2ClientAutorisierung.md) |
+| ANF-CON-017 | [Confidential Clients - Authentifizierung am Token-Endpunkt](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
+| ANF-CON-018 | [SMART App Launch - Obtain access token](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
+| ANF-CON-019 | [Unterstützung verpflichtender SMART App Launch Details](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
+| ANF-CON-020 | [Begrenzte Gültigkeitsdauer des Access Tokens (RFC6819)](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-021 | [Unterstützung von Refresh Tokens](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-022 | [SMART App Launch - Refresh access token](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-023 | [OAuth 2.0 Token Revocation (RFC7009)](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-024 | [Sicherstellung der sofortigen Token-Invalidierung](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-025 | [ISiK-Ressourcenserver - Unterstützung von Scopes](Conformance.md) |
+| ANF-CON-026 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md) |
+| ANF-CON-027 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
+| ANF-CON-028 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-029 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | --> Ab hier nochmal prüfen. Läuft irgendwie auseinander
+| ANF-CON-030 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-031 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-032 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-033 | [Optionale Unterstützung weiterer CompartmentDefinitionen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-034 | [Keine eigenen CompartmentDefinitionen durch ISiK-Ressourcenserver](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-035 | [Berechtigungen auf Ressourcentypen in der SMA Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-036 | [Kategorien von SMART-on-FHIR-Berechtigungen auf Ressourcen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-037 | [Verpflichtende Umsetzung der ISiK-Connect-Vorgaben](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-038 | [Integration von API-Gateways oder Reverse Proxies](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-039 | [Sicherstellung der Zugriffssteuerung durch ISiK-Ressourcenserver](Conformance/ConformanceScopesKontexte.md) |

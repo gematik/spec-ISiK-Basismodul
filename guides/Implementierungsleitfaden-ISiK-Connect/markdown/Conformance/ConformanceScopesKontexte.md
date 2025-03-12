@@ -1,12 +1,12 @@
 # Conformance: Scopes und Kontexte
 
-Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können.
+Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können. ([ANF-CON-028](Anforderungsuebersicht.md))
 
 ## Kontexte 
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann. 
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann. ([ANF-CON-029](Anforderungsuebersicht.md))
 
-Es MÜSSEN mindestens die Kontexte "patient" und "encounter" unterstützt werden.  
+Es MÜSSEN mindestens die Kontexte "patient" und "encounter" unterstützt werden. ([ANF-CON-030](Anforderungsuebersicht.md)) 
 
 Beispiele: 
 
@@ -16,9 +16,8 @@ Beispiele:
 
 ## Compartments
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen. Sie KÖNNEN weitere der von HL7 definierten _CompartmentDefinitionen_ unterstützen.
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen. ([ANF-CON-031](Anforderungsuebersicht.md))  
 
-Bestätigungstelevante Systeme in der Rolle eines ISiK-Ressourcenserver DÜRFEN KEINE eigenen _CompartmentDefinitionen_ definieren, da eine Definition von _Compartments_ alleinig durch HL7 erfolgen darf. 
 
 Die Unterstützung eines _Compartments_ umfasst, dass die Festlegungen in der _CompartmentDefinition_ die Gruppierung von über _Scopes_ angegebenen Berechtigungen zu der als Kontext angegebenen Ressource bestimmen. Im _"patient"-Level Scope_ (s.u.) bestimmt das [_Patient Compartment_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) die maximal zulässigen Berechtigungen eines Zugriffs auf die den angegebenen Kontext darstellende Ressource.
 
