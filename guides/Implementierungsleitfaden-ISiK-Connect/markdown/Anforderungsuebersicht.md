@@ -29,13 +29,12 @@
 | ANF-CON-027 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
 | ANF-CON-028 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
 | ANF-CON-029 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | --> Ab hier nochmal prüfen. Läuft irgendwie auseinander
-| ANF-CON-030 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-031 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-032 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-033 | [Optionale Unterstützung weiterer CompartmentDefinitionen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-034 | [Keine eigenen CompartmentDefinitionen durch ISiK-Ressourcenserver](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-035 | [Berechtigungen auf Ressourcentypen in der SMA Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-036 | [Kategorien von SMART-on-FHIR-Berechtigungen auf Ressourcen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-037 | [Verpflichtende Umsetzung der ISiK-Connect-Vorgaben](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-038 | [Integration von API-Gateways oder Reverse Proxies](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-039 | [Sicherstellung der Zugriffssteuerung durch ISiK-Ressourcenserver](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-030 | [Unterstützung der Kontexte "patient" und "encounter"](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-031 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-032 | [Berechtigungen auf Ressourcentypen in der SMART Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-033 | [Kategorien von SMART-on-FHIR-Berechtigungen auf Ressourcen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-034 | [Autorisierungen ohne Compartment-Definition auf "user"- oder "system"-Level Scope](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-035 | [Verpflichtende Umsetzung der ISiK-Connect-Vorgaben](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-036 | [Berechtigungen im Scope in der Reihenfolge 'cruds' angeben](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-037 | [Wildcard-Scopes](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-037 | [Unterstützung von Suchparametern](Conformance/ConformanceScopesKontexte.md) |

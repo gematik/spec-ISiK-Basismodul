@@ -25,21 +25,21 @@ Beispiel: Der gegebene Kontext ist der Patient "123". Die über einen _Scope_ an
 
 ## Berechtigungen auf Ressourcentypen
 
-Berechtigungen auf Ressourcentypen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden:
+Berechtigungen auf Ressourcentypen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden ([ANF-CON-032](Anforderungsuebersicht.md)):  
 
-```(patient | user | system) \/ (_Ressourcetyp_ | \*) \. c?r?u?d?s? (\? (_param_\=_value_) (\& _param_\=_value_)* )?```
+```(patient | user | system) \/ (_Ressourcetyp_ | \*) \. c?r?u?d?s? (\? (_param_\=_value_) (\& _param_\=_value_)* )?```  
 
 ### Scope-Level
-SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen, die alle durch ISiK-konforme Ressourcenserver unterstützt werden MÜSSEN:
+SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen, die alle durch ISiK-konforme Ressourcenserver unterstützt werden MÜSSEN ([ANF-CON-033](Anforderungsuebersicht.md)):
 
 * ["patient"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen im gewählten _Patient Compartment_ an den Client delegiert werden bzw. werden sollen.  
 * ["user"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#user-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen durch den Benutzer an den Client delegiert werden bzw. werden sollen.
 * ["system"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#system-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen an einen (technischen) Client delegiert werden bzw. werden sollen, unabhängig davon welcher Benutzer hiermit interagiert.
 
-Autorisierungen in einem _SMART on FHIR_ _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs').
+Autorisierungen in einem _SMART on FHIR_ _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs'). ([ANF-CON-034](Anforderungsuebersicht.md))
 
 ### Ressourcetyp und Operationen
-Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 5 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden:
+Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 5 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden ([ANF-CON-035](Anforderungsuebersicht.md)):
 
 |Berechtigung|FHIR-Operation auf System-Ebene|FHIR-Operation auf Typ-Ebene|FHIR-Operation auf Instanz-Ebene|
 |:-----------|:------------------------------|:---------------------------|--------------------------------|
@@ -49,12 +49,12 @@ Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden
 |d           |                               |                            |delete                          |
 |s           |search, history                |search, history             |                                |
 
-Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben (vgl. https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#clinical-scope-syntax). Bei einer falschen Reihenfolge SOLL der ISiK-Ressourcenserver einen Zugriffsfehler auslösen.
+Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben (vgl. https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#clinical-scope-syntax). Bei einer falschen Reihenfolge SOLL der ISiK-Ressourcenserver einen Zugriffsfehler auslösen. ([ANF-CON-036](Anforderungsuebersicht.md))
 
-Die Möglichkeit von [_Wildcard-Scopes_](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden.
+Die Möglichkeit von [_Wildcard-Scopes_](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden. ([ANF-CON-037](Anforderungsuebersicht.md))
 
 ### Filter
-Alle in ISiK Stufe 5 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden.
+Alle in ISiK Stufe 5 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden. ([ANF-CON-038](Anforderungsuebersicht.md))
 
 ### Beispiele
 
