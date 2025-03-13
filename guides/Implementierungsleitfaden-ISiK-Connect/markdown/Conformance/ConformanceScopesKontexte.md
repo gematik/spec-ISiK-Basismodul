@@ -1,12 +1,12 @@
 # Conformance: Scopes und Kontexte
 
-Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können. ([ANF-CON-028](Anforderungsuebersicht.md))
+Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können. ([ANF-CON-029](Anforderungsuebersicht.md))
 
 ## Kontexte 
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann. ([ANF-CON-029](Anforderungsuebersicht.md))
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann. ([ANF-CON-030](Anforderungsuebersicht.md))
 
-Es MÜSSEN mindestens die Kontexte "patient" und "encounter" unterstützt werden. ([ANF-CON-030](Anforderungsuebersicht.md)) 
+Es MÜSSEN mindestens die Kontexte "patient" und "encounter" unterstützt werden. ([ANF-CON-031](Anforderungsuebersicht.md)) 
 
 Beispiele: 
 
@@ -16,7 +16,7 @@ Beispiele:
 
 ## Compartments
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen. ([ANF-CON-031](Anforderungsuebersicht.md))  
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen. ([ANF-CON-032](Anforderungsuebersicht.md))  
 
 
 Die Unterstützung eines _Compartments_ umfasst, dass die Festlegungen in der _CompartmentDefinition_ die Gruppierung von über _Scopes_ angegebenen Berechtigungen zu der als Kontext angegebenen Ressource bestimmen. Im _"patient"-Level Scope_ (s.u.) bestimmt das [_Patient Compartment_]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) die maximal zulässigen Berechtigungen eines Zugriffs auf die den angegebenen Kontext darstellende Ressource.
@@ -25,21 +25,21 @@ Beispiel: Der gegebene Kontext ist der Patient "123". Die über einen _Scope_ an
 
 ## Berechtigungen auf Ressourcentypen
 
-Berechtigungen auf Ressourcentypen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden ([ANF-CON-032](Anforderungsuebersicht.md)):  
+Berechtigungen auf Ressourcentypen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden ([ANF-CON-033](Anforderungsuebersicht.md)):  
 
 ```(patient | user | system) \/ (_Ressourcetyp_ | \*) \. c?r?u?d?s? (\? (_param_\=_value_) (\& _param_\=_value_)* )?```  
 
 ### Scope-Level
-SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen, die alle durch ISiK-konforme Ressourcenserver unterstützt werden MÜSSEN ([ANF-CON-033](Anforderungsuebersicht.md)):
+SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen, die alle durch ISiK-konforme Ressourcenserver unterstützt werden MÜSSEN ([ANF-CON-034](Anforderungsuebersicht.md)):
 
 * ["patient"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen im gewählten _Patient Compartment_ an den Client delegiert werden bzw. werden sollen.  
 * ["user"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#user-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen durch den Benutzer an den Client delegiert werden bzw. werden sollen.
 * ["system"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#system-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen an einen (technischen) Client delegiert werden bzw. werden sollen, unabhängig davon welcher Benutzer hiermit interagiert.
 
-Autorisierungen in einem _SMART on FHIR_ _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs'). ([ANF-CON-034](Anforderungsuebersicht.md))
+Autorisierungen in einem _SMART on FHIR_ _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs'). ([ANF-CON-035](Anforderungsuebersicht.md))
 
 ### Ressourcetyp und Operationen
-Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 5 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden ([ANF-CON-035](Anforderungsuebersicht.md)):
+Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK Stufe 5 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden ([ANF-CON-036](Anforderungsuebersicht.md)):
 
 |Berechtigung|FHIR-Operation auf System-Ebene|FHIR-Operation auf Typ-Ebene|FHIR-Operation auf Instanz-Ebene|
 |:-----------|:------------------------------|:---------------------------|--------------------------------|
@@ -49,12 +49,12 @@ Es MÜSSEN alle in ISiK Stufe 5 profilierten Ressourcentypen unterstützt werden
 |d           |                               |                            |delete                          |
 |s           |search, history                |search, history             |                                |
 
-Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben (vgl. https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#clinical-scope-syntax). Bei einer falschen Reihenfolge SOLL der ISiK-Ressourcenserver einen Zugriffsfehler auslösen. ([ANF-CON-036](Anforderungsuebersicht.md))
+Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben (vgl. https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#clinical-scope-syntax). Bei einer falschen Reihenfolge SOLL der ISiK-Ressourcenserver einen Zugriffsfehler auslösen. ([ANF-CON-037](Anforderungsuebersicht.md))
 
-Die Möglichkeit von [_Wildcard-Scopes_](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden. ([ANF-CON-037](Anforderungsuebersicht.md))
+Die Möglichkeit von [_Wildcard-Scopes_](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden. ([ANF-CON-038](Anforderungsuebersicht.md))
 
 ### Filter
-Alle in ISiK Stufe 5 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden. ([ANF-CON-038](Anforderungsuebersicht.md))
+Alle in ISiK Stufe 5 für den Ressourcetyp unterstützten Suchparameter inkl. _Modifier_ und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden. ([ANF-CON-039](Anforderungsuebersicht.md))
 
 ### Beispiele
 
