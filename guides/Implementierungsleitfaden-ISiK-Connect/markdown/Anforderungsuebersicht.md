@@ -19,22 +19,23 @@
 | ANF-CON-017 | [Confidential Clients - Authentifizierung am Token-Endpunkt](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
 | ANF-CON-018 | [SMART App Launch - Obtain access token](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
 | ANF-CON-019 | [Unterstützung verpflichtender SMART App Launch Details](ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md) |
-| ANF-CON-020 | [Begrenzte Gültigkeitsdauer des Access Tokens (RFC6819)](ISiKundSMART/Schritt6RefreshToken.md) |
-| ANF-CON-021 | [Unterstützung von Refresh Tokens](ISiKundSMART/Schritt6RefreshToken.md) |
-| ANF-CON-022 | [SMART App Launch - Refresh access token](ISiKundSMART/Schritt6RefreshToken.md) |
-| ANF-CON-023 | [OAuth 2.0 Token Revocation (RFC7009)](ISiKundSMART/Schritt6RefreshToken.md) |
-| ANF-CON-024 | [Sicherstellung der sofortigen Token-Invalidierung](ISiKundSMART/Schritt6RefreshToken.md) |
-| ANF-CON-025 | [ISiK-Ressourcenserver - Unterstützung von Scopes](Conformance.md) |
-| ANF-CON-026 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md) |
-| ANF-CON-027 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
-| ANF-CON-028 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-029 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | --> Ab hier nochmal prüfen. Läuft irgendwie auseinander
-| ANF-CON-030 | [Unterstützung der Kontexte "patient" und "encounter"](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-031 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-032 | [Berechtigungen auf Ressourcentypen in der SMART Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-033 | [Kategorien von SMART-on-FHIR-Berechtigungen auf Ressourcen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-034 | [Autorisierungen ohne Compartment-Definition auf "user"- oder "system"-Level Scope](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-035 | [Verpflichtende Umsetzung der ISiK-Connect-Vorgaben](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-036 | [Berechtigungen im Scope in der Reihenfolge 'cruds' angeben](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-037 | [Wildcard-Scopes](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-037 | [Unterstützung von Suchparametern](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-020 | [Verarbeitung des Access Tokens - Validierungsschritte](ISiKundSMART/Schritt5FHIRRestInteraktion.md) |
+| ANF-CON-021 | [Begrenzte Gültigkeitsdauer des Access Tokens (RFC6819)](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-022 | [Unterstützung von Refresh Tokens](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-023 | [SMART App Launch - Refresh access token](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-024 | [OAuth 2.0 Token Revocation (RFC7009)](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-025 | [Sicherstellung der sofortigen Token-Invalidierung](ISiKundSMART/Schritt6RefreshToken.md) |
+| ANF-CON-026 | [ISiK-Ressourcenserver - Unterstützung von Scopes](Conformance.md) |
+| ANF-CON-027 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md) |
+| ANF-CON-028 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
+| ANF-CON-029 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-030 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | --> Ab hier nochmal prüfen. Läuft irgendwie auseinander
+| ANF-CON-031 | [Unterstützung der Kontexte "patient" und "encounter"](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-032 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-033 | [Berechtigungen auf Ressourcentypen in der SMART Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-034 | [Kategorien von SMART-on-FHIR-Berechtigungen auf Ressourcen](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-035 | [Autorisierungen ohne Compartment-Definition auf "user"- oder "system"-Level Scope](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-036 | [Verpflichtende Umsetzung der ISiK-Connect-Vorgaben](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-037 | [Berechtigungen im Scope in der Reihenfolge 'cruds' angeben](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-038 | [Wildcard-Scopes](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-039 | [Unterstützung von Suchparametern](Conformance/ConformanceScopesKontexte.md) |
