@@ -1,4 +1,4 @@
-Instance: PatientinMusterfrau
+Instance: PatientinDokMusterfrau
 InstanceOf: Patient
 Usage: #example
 * identifier[0].type = $identifier-type-de-basis#GKV
@@ -68,7 +68,7 @@ Usage: #example
 * type[0] = $kontaktart-de#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
-* subject = Reference(PatientinMusterfrau)
+* subject = Reference(PatientinDokMusterfrau)
 * period.start = "2021-02-12"
 * period.end = "2021-02-13"
 * account = Reference(AbrechnungsfallAmbulant)
