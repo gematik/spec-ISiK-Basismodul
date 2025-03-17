@@ -6,14 +6,19 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $ver-statu = http://terminology.hl7.org/CodeSystem/condition-ver-statu
+Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $v2-0116-BedStatus = http://terminology.hl7.org/ValueSet/v2-0116
+Alias: $v2-0131 = http://terminology.hl7.org/CodeSystem/v2-0131
+Alias: $v2-0116 = http://terminology.hl7.org/CodeSystem/v2-0116
 Alias: $diagnosis-role = http://terminology.hl7.org/CodeSystem/diagnosis-role
 Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $Priority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $DiagnosisRole = http://terminology.hl7.org/CodeSystem/diagnosis-role
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
 Alias: $LocationMode = http://hl7.org/fhir/location-mode
-
 Alias: $icd-10-gm = http://fhir.de/CodeSystem/bfarm/icd-10-gm
 Alias: $icd-10-gm-mehrfachcodierungs-kennzeichen-cs = http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen
 Alias: $icd-10-gm-mehrfachcodierungs-kennzeichen-sd = http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen
@@ -34,7 +39,6 @@ Alias: $FachabteilungsschluesselCS = http://fhir.de/CodeSystem/dkgev/Fachabteilu
 Alias: $FachabteilungsschluesselVS = http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel
 Alias: $FachabteilungsschluesselErweitertCS = http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert
 Alias: $FachabteilungsschluesselErweitertVS = http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert
-
 Alias: $versicherungsart-de-basis = http://fhir.de/CodeSystem/versicherungsart-de-basis
 Alias: $WahlleistungExtension = http://fhir.de/StructureDefinition/Wahlleistung
 Alias: $Abrechnungsart = http://fhir.de/CodeSystem/dkgev/Abrechnungsart

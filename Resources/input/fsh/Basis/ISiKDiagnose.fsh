@@ -63,18 +63,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       SNOMED-CT 0..1 MS and
       Orphanet 0..1 MS
   * coding[ICD-10-GM] only ISiKICD10GMCoding
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+    * ^patternCoding.system = $icd-10-gm
     * extension[Mehrfachcodierungs-Kennzeichen] MS
     * extension[Seitenlokalisation] MS
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
-    * ^patternCoding.system = "http://fhir.de/CodeSystem/alpha-id"
+    * ^patternCoding.system = $alphaid-cs
     * system 1.. MS
     * code 1.. MS
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $diagnosesSCT (required)
     * ^patternCoding.system = $sct
-  * coding[Orphanet] ^patternCoding.system = "http://www.orpha.net"
+  * coding[Orphanet] ^patternCoding.system = $orphaNet
     * system 1.. MS
     * code 1..
 * subject MS
@@ -95,31 +95,33 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
     unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
 * onset[x] MS 
-* onset[x] only dateTime or Age
   * ^short = "Erkrankungsbeginn"
   * ^comment = "Datum oder Alter/Lebensphase des Erkrankungsbeginns
   **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  
   **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,
   so MUSS dieses System die Information NICHT abbilden. 
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
-* onsetAge  
+* onset[x] only dateTime or Age
+* onsetDateTime MS
+* onsetAge MS 
   * extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
   * extension[Lebensphase-Beginn]
     * ^short = "Lebensphase des Erkrankungsbeginns"
     * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
 * abatement[x] MS 
 * abatement[x] only dateTime or Age
-  * ^short = "Erkrankungsende"
-  * ^comment = "Datum oder Alter/Lebensphase des Erkrankungsendes  
+  * ^short = "Klinische relevanter Zeitraum Ende"
+  * ^comment = "Ende des klinisch relevanten Zeitraums der Diagnose  
   **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  
   **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,
   so MUSS dieses System die Information NICHT abbilden. 
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
-* abatementAge  
+* abatementAge MS
   * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
   * extension[Lebensphase-Ende]
     * ^short = "Lebensphase des Erkrankungsendes"
     * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
+* abatementDateTime MS
 * recordedDate 1.. MS
   * ^short = "Dokumentationsdatum"
   * ^comment = "Datum, an dem die Diagnose dokumentiert wurde.   
@@ -215,6 +217,45 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * onsetDateTime = "2019-09-02"
 * recordedDate = "2021-01-01"
+
+
+Instance: PrimaereGonarthroseMinimal
+InstanceOf: ISiKDiagnose
+Usage: #example
+* code.coding = $icd-10-gm#M17.0 "Primäre Gonarthrose"
+  * version = "2025"
+* subject = Reference(PatientinNormal)
+* recordedDate = "2024-10-21"
+* encounter = Reference(FachabteilungskontaktNormal)
+
+Instance: PrimaereGonarthroseNormal
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#remission
+* code.coding[0].system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+* code.coding[0].version = "2025"
+* code.coding[0].code = #M17.0 
+* code.coding[0].display = "Primäre Gonarthrose" 
+* bodySite.coding[snomed-ct] = $sct#49076000
+* subject = Reference(PatientinNormal)
+* encounter = Reference(FachabteilungskontaktNormal)
+* onsetDateTime = "2020-09-02"
+* abatementDateTime = "2025-01-01"
+* recordedDate = "2024-10-21"
+* note.text = "Patientin mit primärer Gonarthrose beidseitig (ICD M17.0), seit mehreren Jahren bestehend, in Remission seit 01.01.2025"
+
+Instance: AltersbedingteKreislaufstoerung
+InstanceOf: ISiKDiagnose
+Usage: #example
+* clinicalStatus = $condition-clinical#active
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
+* code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* onsetDateTime = "2019-09-02"
+* recordedDate = "2021-01-01"
+
 
 Invariant: isik-con1
 Description: "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte."
