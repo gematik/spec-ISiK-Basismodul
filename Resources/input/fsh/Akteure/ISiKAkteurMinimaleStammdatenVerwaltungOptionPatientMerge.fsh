@@ -39,7 +39,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
   * resource[+]
     * insert Expectation(#SHALL)
     * type = #Subscription
-    * supportedProfile = Canonical(PatientMergeSubscription)
+    * supportedProfile = Canonical(ISiKSubscription)
       * insert Expectation(#SHALL)
     * interaction[+]
       * insert Expectation(#SHALL)
