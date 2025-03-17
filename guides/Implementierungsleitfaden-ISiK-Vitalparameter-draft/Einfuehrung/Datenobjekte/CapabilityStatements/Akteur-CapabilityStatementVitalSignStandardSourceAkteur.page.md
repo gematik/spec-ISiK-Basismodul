@@ -13,6 +13,14 @@ select
 	Beschreibung:description
 </fql>
 
+<fql>
+from
+    CapabilityStatement
+where
+    url = %canonical
+select 'Rollen, die implementiert werden MÜSSEN': imports
+</fql>
+
 <fql output="transpose" headers="true">
 from
 	CapabilityStatement
