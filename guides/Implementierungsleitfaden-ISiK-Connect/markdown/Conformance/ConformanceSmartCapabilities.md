@@ -4,9 +4,9 @@ Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN
 
 ISiK-Ressourcenserver MÜSSEN dieses JSON-Dokument unter der URL bereitstellen, der durch Anhängen von ```/.well-known/smart-configuration``` an ihre Basis-URL gebildet wird. Die Kodierung der _SMART Capabilities_ MUSS den Vorgaben aus [SMART App Launch - 8.2 - FHIR Authorization Endpoint and Capabilities Discovery using a Well-Known Uniform Resource Identifiers (URIs)](https://hl7.org/fhir/smart-app-launch/STU2/conformance.html#using-well-known) entsprechen. 
 
-## Normative Vorgaben für ISiK-Sicherheit in ISiK Stufe 3
+## Normative Vorgaben für ISiK-Sicherheit in ISiK Stufe 5
 
-Im Rahmen des Bestätigungsverfahrens für ISiK-Sicherheit in ISiK Stufe 3 werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
+Im Rahmen des Bestätigungsverfahrens für ISiK-Sicherheit in ISiK Stufe 5 werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
 
 * ```authorization_endpoint```: Es MUSS die URL des Autorisierungs-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein ISiK-Client eine Autorisierungsanfrage stellen kann.
 * ```grant_types_supported```: Die _OAuth2 Grant Types_ ```authorization_code``` (Authorization Code Flow mit PKCE) UND ```client_credentials``` (Client Credentials) MÜSSEN unterstützt werden.  
