@@ -20,16 +20,10 @@ with
 from
     CapabilityStatement
 where
-    url = %capability1
-or
-    url = %capability2
-or
-    url = %capability3
+    url = %capability
+for rest.resource.where(%canonical in supportedProfile)
 select
-    Name: name,
-    join for rest.resource.where(%canonical in supportedProfile)
-    select
-        'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
+    'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 </fql>
 
 ### Metadaten
