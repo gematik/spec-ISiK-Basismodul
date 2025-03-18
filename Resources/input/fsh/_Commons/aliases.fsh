@@ -3,6 +3,7 @@ Alias: $sct = http://snomed.info/sct
 Alias: $atc = http://fhir.de/CodeSystem/bfarm/atc
 Alias: $ask = http://fhir.de/CodeSystem/ask
 Alias: $unitsofmeasure = http://unitsofmeasure.org
+Alias: $alphaid-cs = http://fhir.de/CodeSystem/bfarm/alpha-id
 
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
