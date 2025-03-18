@@ -17,7 +17,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 - This PR has a clean meaningful commit history. Minor commits or commits without description have been squashed, at the latest now.
 - The GitHub Actions "TC version update" and "CI (FHIR Validation)" finished successfully; release version and date was updated accordingly by release_publish.py (triggered by action)
 - Eventually, increase the dependency of to newer Basis Modul and Basispofil-de and possibly others (package json and sushi-config)
-- [ ] All release note items have been annotated as `test modifiying` OR `test stable` (the annotation should already take place within tickets for tracking reasons) 
+- [ ] Update IG folder name to current verion (e.g. guide\Implementierungsleitfaden-...-4.0.3)
 - [ ] the release notes were reviewed with a person responsible for testing
 - [ ] New Release Notes were created, alined to the commit history. Possibly, if you want to check the release notes for completeness, check against automatic relesase note generation in GitHub. In Github, go to 
   - _-> Releases_ then _-> Draft a new release_ with the _Modul Name and Version_, then
@@ -49,8 +49,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - [ ]  Set URL key to isik-[module-name]-version (version without dots)
   - [ ]  Publish via Simplifier GUI (set to overwritable)
 
-
-## Obsolete
+## Archive IG
 
 -  Provide / Archive the IG in the corresponding _gh-pages_ branch of the GitHub project.
   - Checkout the Branch (no need to merge it later). 

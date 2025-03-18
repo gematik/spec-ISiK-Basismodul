@@ -67,13 +67,16 @@ Parent: BackportSubscriptionStatusR4
 Id: ISiKSubscriptionStatus
 Title: "ISiK Subscription Status"
 Description: "ISiK Subscription Status"
+* insert Meta
+* ^fhirVersion = #4.0.1
 
 Profile: ISiKSubscriptionNotification
 Parent: BackportSubscriptionNotificationR4
 Id: ISiKSubscriptionNotification
 Title: "ISiKSubscriptionNotification"
 Description: "ISiKSubscriptionNotification"
-
+* insert Meta
+* ^fhirVersion = #4.0.1
 
 
 /* TODO: für folgende Felder gab es im IG Beschreibungen, hier aber keine Elemente:
