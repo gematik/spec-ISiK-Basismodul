@@ -271,7 +271,7 @@
         "path": "Practitioner.address",
         "sliceName": "Strassenanschrift",
         "short": "Straßenanschrift",
-        "comment": "Ist die Adresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.",
+        "comment": "Ist die Adresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -352,7 +352,7 @@
         "path": "Practitioner.address",
         "sliceName": "Postfach",
         "short": "Postfachanschrift",
-        "comment": "Ist die Postfachadresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden.",
+        "comment": "Ist die Postfachadresse bekannt, unter der ein Arzt erreichbar ist, MUSS sie bereitgestellt werden. Diese kann zur Unterscheidung von Personen herangezogen werden. Die Ausdifferenzierung der Adresse in die Adressbestandteile erfolgt in Hinblick auf eine einheitliche Verwendung von Adressen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -425,22 +425,8 @@
       {
         "id": "Practitioner.gender",
         "path": "Practitioner.gender",
-        "short": "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden.",
+        "short": "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden.",
         "mustSupport": true
-      },
-      {
-        "id": "Practitioner.gender.extension",
-        "path": "Practitioner.gender.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
       },
       {
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ",
@@ -461,22 +447,6 @@
       {
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ.value[x]",
         "path": "Practitioner.gender.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "Practitioner.birthDate.extension:Data-Absent-Reason",
-        "path": "Practitioner.birthDate.extension",
-        "sliceName": "Data-Absent-Reason",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
