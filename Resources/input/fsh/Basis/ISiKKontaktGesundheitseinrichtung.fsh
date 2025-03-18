@@ -508,7 +508,6 @@ Usage: #example
 * account.identifier.value = "1234"
 * account.identifier.system = "https://test.krankenhaus.de/fhir/sid/fallnummer"
 * hospitalization.admitSource = $Aufnahmeanlass#E
-* hospitalization.dischargeDisposition = $Entlassungsgrund#home
 * hospitalization.dischargeDisposition.extension.url = "http://fhir.de/StructureDefinition/Entlassungsgrund"
 * hospitalization.dischargeDisposition.extension.extension[0].url = "ErsteUndZweiteStelle"
 * hospitalization.dischargeDisposition.extension.extension[=].valueCoding = $EntlassungsgrundErsteUndZweiteStelle#01 "Behandlung regulär beendet"
