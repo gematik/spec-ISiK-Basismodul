@@ -29,7 +29,7 @@
 | ANF-CON-027 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md) |
 | ANF-CON-028 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md) |
 | ANF-CON-029 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md) |
-| ANF-CON-030 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | --> Ab hier nochmal prüfen. Läuft irgendwie auseinander
+| ANF-CON-030 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) | 
 | ANF-CON-031 | [Unterstützung der Kontexte "patient" und "encounter"](Conformance/ConformanceScopesKontexte.md) |
 | ANF-CON-032 | [Durchsetzung von Autorisierungen gemäß Compartment Patient](Conformance/ConformanceScopesKontexte.md) |
 | ANF-CON-033 | [Berechtigungen auf Ressourcentypen in der SMART Datei und Capabilities](Conformance/ConformanceScopesKontexte.md) |
