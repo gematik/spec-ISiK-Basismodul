@@ -108,14 +108,6 @@ Description: "Rest Subscription Channel Type for ISiK"
 * insert Meta
 * SubscriptionChannelType#rest-hook
 
-ValueSet: FhirMimeTypeVS
-Id: FhirMimeTypeVS
-Title: "FhirMimeTypeVS"
-Description: "FHIR Mime Types"
-* insert Meta
-* urn:ietf:bcp:13#application/fhir+json
-* urn:ietf:bcp:13#application/fhir+xml
-
 Instance: DorisQuelle
 InstanceOf: ISiKPatient
 Usage: #example
