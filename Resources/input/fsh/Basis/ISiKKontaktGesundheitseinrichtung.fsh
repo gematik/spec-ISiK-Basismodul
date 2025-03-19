@@ -430,7 +430,7 @@ Context: Encounter.hospitalization.dischargeDisposition
 Instance: Fachabteilungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
-* extension.url[0] = "http://fhir.de/StructureDefinition/Aufnahmegrund"
+* extension.url = "http://fhir.de/StructureDefinition/Aufnahmegrund"
 * extension.extension[0].url = "ErsteUndZweiteStelle"
 * extension.extension[=].valueCoding = $AufnahmegrundErsteUndZweiteStelle#01 "Krankenhausbehandlung, vollstationär"
 * extension.extension[+].url = "DritteStelle"
