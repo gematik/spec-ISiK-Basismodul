@@ -6,6 +6,37 @@
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"
     ]
   },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "AN",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer",
+      "value": "0123456789"
+    }
+  ],
+  "coverage": [
+    {
+      "extension": [
+        {
+          "url": "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart",
+          "valueCoding": {
+            "code": "DRG",
+            "system": "http://fhir.de/CodeSystem/dkgev/Abrechnungsart",
+            "display": "Diagnosebezogene Fallgruppen"
+          }
+        }
+      ],
+      "coverage": {
+        "reference": "Coverage/CoverageGesetzlich"
+      }
+    }
+  ],
   "extension": [
     {
       "url": "http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur",
@@ -39,13 +70,6 @@
   "subject": [
     {
       "reference": "Patient/PatientinMusterfrau"
-    }
-  ],
-  "coverage": [
-    {
-      "coverage": {
-        "reference": "Coverage/CoverageGesetzlich"
-      }
     }
   ]
 }
