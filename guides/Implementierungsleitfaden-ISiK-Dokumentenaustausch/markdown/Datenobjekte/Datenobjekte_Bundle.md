@@ -1,1 +1,0 @@
-## Bundle für Suchergebnisse
