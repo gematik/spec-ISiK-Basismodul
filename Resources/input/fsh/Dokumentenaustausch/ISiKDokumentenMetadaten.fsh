@@ -230,7 +230,7 @@ Title: "dok-beispiel"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
-* context.encounter = Reference(BeispielBesuch)
+* context.encounter = Reference(FachabteilungskontaktNormal)
 
 Instance: dok-beispiel-client-with-binary-pdf-example-short
 InstanceOf: ISiKDokumentenMetadaten
@@ -251,7 +251,7 @@ Title: "dok-beispiel"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
-* context.encounter = Reference(BeispielBesuch)
+* context.encounter = Reference(FachabteilungskontaktNormal)
 
 Instance: dok-beispiel-client-with-binary-jpeg-example-short
 InstanceOf: ISiKDokumentenMetadaten
@@ -272,7 +272,7 @@ Title: "dok-beispiel"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
-* context.encounter = Reference(BeispielBesuch)
+* context.encounter = Reference(FachabteilungskontaktNormal)
 
 Instance: dok-beispiel-client-with-binary-jpeg-example
 InstanceOf: ISiKDokumentenMetadaten
@@ -293,7 +293,7 @@ Title: "dok-beispiel"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
-* context.encounter = Reference(BeispielBesuch)
+* context.encounter = Reference(FachabteilungskontaktNormal)
 
 Instance: dok-beispiel-client-with-binary-pdf-example
 InstanceOf: ISiKDokumentenMetadaten
@@ -314,4 +314,4 @@ Title: "dok-beispiel"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
-* context.encounter = Reference(BeispielBesuch)
+* context.encounter = Reference(FachabteilungskontaktNormal)
