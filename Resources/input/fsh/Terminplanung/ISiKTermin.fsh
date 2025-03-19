@@ -1,6 +1,7 @@
 Profile: ISiKTermin
 Parent: Appointment
 Id: ISiKTermin
+Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag."
 * obeys ISiK-app-1
 * meta MS
   * tag 0..* MS
@@ -23,10 +24,10 @@ Id: ISiKTermin
 * cancelationReason MS
   * ^comment = "Begründung zu Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, einen Grund für die Absage eines Termins zu hinterlegen."
 * cancelationReason from ISiKTerminCancelationReason (required)
-* start 1..1 MS
-  * ^comment = "Begründung zu Kardinalität und Must Support: Der Startzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher ist dieses Feld verpflichtend (1..1) und muss unterstützt werden (MS)."
-* end 1..1 MS
-  * ^comment = "Begründung zu Kardinalität und Must Support: Der Endzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher ist dieses Feld verpflichtend (1..1) und muss unterstützt werden (MS)."
+* start MS
+  * ^comment = "Begründung zu Kardinalität und Must Support: Der Startzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert."
+* end MS
+  * ^comment = "Begründung zu Kardinalität und Must Support: Der Endzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert."
 * slot MS
   * reference 1.. MS
 * slot ^comment = "Begründung zu Kardinalität und Must Support: Die Kardinalität der slot-Eigenschaft bleibt 0..*, sodass ein Termin-Requestor bei der Terminbuchung nur einen Termin und ein Verweis auf ein ISiKKalender übergeben kann. Es ist dann die Aufgabe des Termin-Repositories in Abhängigkeit der gebuchten Dienstleistung freie Terminblöcke zu finden. Diese sind im Appointment zu referenzieren."
@@ -60,18 +61,18 @@ Es gilt weiterhin der Hinweis der FHIR Kernspezifikation:
 * participant ^comment = "Hinweis: Die Kardinalität von actor.display und das MS-Flag von .status wird an die Slices vererbt und diese sind entsprechend zu implementieren.
 
 Begründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS)."
-* participant contains AkteurPatient 1.. MS
+* participant contains AkteurPatient 0.. MS
 * participant[AkteurPatient].actor only Reference(Patient)
 * participant[AkteurPatient].actor MS
 * participant[AkteurPatient].actor.reference 1..1 MS
-* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient) des Basismoduls sein.
+* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.
 
-Begründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher ist dieses Feld verpflichtend (1..*) und muss unterstützt werden (MS)."
+Begründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Hingegen kann die Patienten-Referenz separat in der $book-Operation übergeben werden, sodass hier keine verpflichtende Kardinaltiät gewählt werden kann."
 * participant contains AkteurPersonImGesundheitsberuf 0.. MS
 * participant[AkteurPersonImGesundheitsberuf].actor only Reference(Practitioner)
 * participant[AkteurPersonImGesundheitsberuf].actor MS
 * participant[AkteurPersonImGesundheitsberuf].actor.reference 1..1 MS
-* participant[AkteurPersonImGesundheitsberuf] ^comment = "Im ISIK-Kontext MUSS die referenzierte Practitioner-Ressource konform zum [ISiKPersonImGesundheitsberuf](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPersonImGesundheitsberuf) des Basismoduls sein.
+* participant[AkteurPersonImGesundheitsberuf] ^comment = "Im ISIK-Kontext MUSS die referenzierte Practitioner-Ressource konform zum [ISiKPersonImGesundheitsberuf](https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf) des Basismoduls sein.
 
 Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit einem Gesundheitsberuf eines Termins sind entscheidend und müssen daher implementiert werden (MS), allerdings sind sie nicht zwingend erforderlich (0..*), da die Übernahme auch durch eine Behandlungseinheit erfolgen kann."
 * participant contains AkteurMedizinischeBehandlungseinheit 0.. MS
@@ -153,7 +154,7 @@ Usage: #example
 * specialty = $IHEAerztlicheFachrichtungen#ALLG
 * participant
   * actor.display = "Test Patient"
-  * actor.reference = "Patient/example"
+  * actor.reference = "Patient/ISiKPatientTest"
   * status = #accepted
 
 Instance: ISiKTerminExampleExtendedICU
@@ -173,5 +174,12 @@ Usage: #example
 * specialty.coding[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600
 * participant
   * actor.display = "Test Patient"
-  * actor.reference = "Patient/example"
+  * actor.reference = "Patient/ISiKPatientTest"
   * status = #accepted
+
+Instance: ISiKPatientTest
+InstanceOf: Patient
+Usage: #example
+* active = true
+* name[+].family = "Patient"
+* name[=].given[0] = "Test"
