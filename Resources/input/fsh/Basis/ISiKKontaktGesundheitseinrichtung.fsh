@@ -407,6 +407,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedStartDate
 Id: PlannedStartDate
+Context: Encounter
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
@@ -414,6 +415,7 @@ Id: PlannedStartDate
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedEndDate
 Id: PlannedEndDate
+Context: Encounter
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
