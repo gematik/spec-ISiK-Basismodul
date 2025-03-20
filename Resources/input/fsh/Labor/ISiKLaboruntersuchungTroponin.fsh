@@ -1,0 +1,23 @@
+Profile: ISiKLaboruntersuchungTroponin
+Parent: ISiKLaboruntersuchung
+Id: ISiKLaboruntersuchungTroponin
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Troponin eines Patienten in ISiK Szenarien."
+* insert Meta
+* code.coding[loinc] from ObservationCodesTroponin
+* code.coding[snomed] = $sct#105000003
+* valueQuantity from ObservationUnitsTroponin
+* referenceRange MS
+  * low from ObservationUnitsTroponin
+  * high from ObservationUnitsTroponin
+
+Instance: ExampleISiKLaboruntersuchungTroponin1
+InstanceOf: ISiKLaboruntersuchungTroponin
+Usage: #example
+* status = #final
+* subject.reference = "Patient/PatientinMusterfrau"
+* code.coding[loinc] = $loinc#42757-5
+* code.coding[snomed] = $sct#105000003 "Troponin measurement"
+* valueQuantity = 0.1 $cs-ucum#ug/L
+* referenceRange
+  * high = 0.4 $cs-ucum#ug/L
+* insert EffectiveAndPerformer
