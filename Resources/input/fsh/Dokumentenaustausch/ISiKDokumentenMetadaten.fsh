@@ -22,9 +22,8 @@ Elemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf 
 * masterIdentifier 1.. MS
   * ^short = "Versionsspezifische OID des Dokumentes"
   * system 1..1 MS
-  * system = "urn:ietf:rfc:3986"
     * ^short = "Namensraum des Identifiers"
-    * ^comment = "Fix: `urn:ietf:rfc:3986`"
+    * ^comment = "Bei OIDs und UUIDs ist hier stets der Wert `urn:ietf:rfc:3986` anzugeben. Weitere Hinweise zur AbbildungVerwendung von MasterIdentifiern und deren Abbildung auf FHIR sind [in IHE-ITI](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types) zu finden."
   * value 1..1 MS
     * ^short = "Wert des Identifiers"
     * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;. Es sei darauf hingewiesen, dass OIDs auf Basis von UUIDs generiert werden können, ohne einen eigenen Namesraum zu beantragen. Zunächst müssen hierzu alle 128 Bit der UUID in einen Integer-Wert umgerechnet werden. Das Ergebnis muss ohne Bindestriche an die Root-OID '2.25' angehängt werden. Siehe [IHE International - Creating Unique IDs - OID and UUID](https://wiki.ihe.net/index.php/Creating_Unique_IDs_-_OID_and_UUID)."
