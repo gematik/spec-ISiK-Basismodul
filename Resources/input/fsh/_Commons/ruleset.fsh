@@ -206,3 +206,7 @@ RuleSet: Observation-category-VSCat-MS
 * category[VSCat] MS
   * ^comment = "Motivation MS: Die Kategorie 'vital-signs' dient der Kategorisierung von Vitalparametern"
   * ^short = "Vitalparameterkategorie"
+
+RuleSet: EffectiveAndPerformer
+* performer.reference = "Practitioner/DrMedMusterarzt"
+* effectiveDateTime = 2021-09-01T12:00:00Z
