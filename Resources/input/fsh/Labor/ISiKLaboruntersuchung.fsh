@@ -13,7 +13,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * ^short = "Status der Laboruntersuchung"
 * category 1.. MS
   * ^short = "Kategorie der Laboruntersuchung"
-* category = $ObservationCategory#laboratory 
+* category = $cs-observation-category#laboratory 
 * code MS
   * ^short = "Gegenstand der Untersuchung (Laborparameter)"  
   * coding
