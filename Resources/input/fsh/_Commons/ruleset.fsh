@@ -29,6 +29,10 @@ RuleSet: Expectation (expectation)
   * url = $capabilitystatement-expectation
   * valueCode = {expectation}
 
+RuleSet: CapabilityStatementExpectationExt(expectation)
+* extension.url = $capabilitystatement-expectation
+* extension.valueCode = #{expectation}
+
 RuleSet: CommonSearchParameters
 * searchParam[+]
   * insert Expectation (#SHALL)
