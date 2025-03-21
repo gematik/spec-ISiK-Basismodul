@@ -251,6 +251,7 @@ Usage: #example
 * code.coding.version = "2024"
 * code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
 * code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* code.coding[1].version = "2024"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"
