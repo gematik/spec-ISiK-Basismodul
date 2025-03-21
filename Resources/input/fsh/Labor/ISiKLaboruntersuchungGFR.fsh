@@ -15,6 +15,7 @@ InstanceOf: ISiKLaboruntersuchungGFR
 Usage: #example
 * status = #final
 * subject.reference = "Patient/PatientinMusterfrau"
+* category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#98980-6
 * code.coding[snomed] = $sct#80274001 "Glomerular filtration rate"
 * valueQuantity = 100 $cs-ucum#mL/min/(1.73) "milliliter pro Minute pro Körperoberfläche von 1,73 m2"

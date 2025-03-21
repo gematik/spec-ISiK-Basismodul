@@ -15,6 +15,7 @@ InstanceOf: ISiKLaboruntersuchungCRP
 Usage: #example
 * status = #final
 * subject.reference = "Patient/PatientinMusterfrau"
+* category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#1988-5 "C-reaktives Protein [Masse/Volumen] in Serum oder Plasma"
 * code.coding[snomed] = $sct#55235003 "C-reactive protein measurement"
 * valueQuantity = 7.4 $cs-ucum#mg/L
