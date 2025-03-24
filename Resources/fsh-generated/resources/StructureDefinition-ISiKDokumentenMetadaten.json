@@ -42,9 +42,8 @@
         "id": "DocumentReference.masterIdentifier.system",
         "path": "DocumentReference.masterIdentifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Fix: `urn:ietf:rfc:3986`",
+        "comment": "Bei OIDs und UUIDs ist hier stets der Wert `urn:ietf:rfc:3986` anzugeben. Weitere Hinweise zur AbbildungVerwendung von MasterIdentifiern und deren Abbildung auf FHIR sind [in IHE-ITI](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types) zu finden.",
         "min": 1,
-        "patternUri": "urn:ietf:rfc:3986",
         "mustSupport": true
       },
       {
@@ -293,7 +292,25 @@
         "id": "DocumentReference.subject.reference",
         "path": "DocumentReference.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Bedingtes Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc. Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  \n    Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject.identifier",
+        "path": "DocumentReference.subject.identifier",
+        "short": "Patienten-Link (logische Referenz)",
+        "comment": "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject.identifier.system",
+        "path": "DocumentReference.subject.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject.identifier.value",
+        "path": "DocumentReference.subject.identifier.value",
         "min": 1,
         "mustSupport": true
       },
