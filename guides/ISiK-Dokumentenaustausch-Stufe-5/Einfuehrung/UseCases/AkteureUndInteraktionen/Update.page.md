@@ -16,7 +16,7 @@ Für den ISiK Use Case als maßgeblich relevant und unkritisch in Bezug auf die 
 
 Ebenso erlaubt diese Operation, vorläufige Dokumente durch ein Update von docStatus zu *löschen* (`preliminary` -> `entered-in-error` ). Server MÜSSEN bei einem Update auf den Status `entered-in-error` auch den Code in `DocumentReference.status` auf  `entered-in-error` setzen und dafür Sorge tragen, dass diese Dokumente bei Suchanfragen nicht mehr als Ergebnisse zurückgegeben werden (siehe [Search Related Safety Checks](https://hl7.org/fhir/R4/safety.html)), es sei denn der Client sucht *explizit* nach gelöschten Dokumenten (z.B. `/DocumentReference?status=entered-in-error`). 
 
-Sobald ein Dokument den Status `final` erreicht hat, muss ein Server  keine Metadaten-Änderungen mehr zulassen. Finale Dokumente können nur noch mit MHD-konformen Methoden aktualisiert bzw. gelöscht werden, indem sie durch eine neue bzw. leere Version ersetzt werden. Konkret muss in diesem Fall eine erneute Dokumentenbereitstellung durchgeführt werden, mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo.target` und dem Code `replaces` in `DocumantReference.relatesTo.code`.
+Sobald ein Dokument den Status `final` erreicht hat, muss ein Server  keine Metadaten-Änderungen mehr zulassen. Finale Dokumente können nur noch mit MHD-konformen Methoden aktualisiert bzw. gelöscht werden, indem sie durch eine neue bzw. leere Version ersetzt werden. Konkret muss in diesem Fall eine erneute Dokumentenbereitstellung durchgeführt werden, mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo.target` und dem Code `replaces` in `DocumentReference.relatesTo.code`.
 
 | Hinweis | Experimentelle Funktion |
 |---------|---------------------|
