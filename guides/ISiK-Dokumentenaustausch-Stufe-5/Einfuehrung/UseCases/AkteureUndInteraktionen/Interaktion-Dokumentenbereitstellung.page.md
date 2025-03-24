@@ -70,10 +70,32 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 2. **Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus PV1.#19). Der Client sucht den Encounter im Patienten-führenden System anhand der Fallnummer (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. 
 3. **Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuell auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!) und etabliert den Kontext, nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
 4. **Manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient?version=current#ImplementationGuide-markdown-Patient-Patient-Interaktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client, mithilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt?version=current#I-markdown-KontaktGesundheitseinrichtung-Kontakt-Interaktionen), die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand von `Encounter.period`, `Encounter.class` und/oder `Encounter.status` gefiltert werden). Der Anwender wählt den zutreffenden Encounter aus.
-
 | Hinweis | Gefahr fehlerhafter Zuordnung!|
 |---------|---------------------|
-| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+|  |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+
+5. Zuordnung über logische Referenz (experimentell!)
+Der Client übermittelt in `DocumentReference.subject.identifier` einen Identifier, über den im Dokumentensystem ein eindeutiger Bezug hergestellt werden kann (z.B. eine einrichtungsinterne PID oder eine Krankenversichertenummer). Das Dokumentensystem (Server) muss dann bei der Verarbeitung den Identifier (unter Berücksichtigung von `system` und `value`) auflösen und durch eine Referenz auf die entsprechende lokale Patienten-Ressource substituieren. 
+Typische UseCases hierfür sind u.A.:
+* die Konvertierung von HL7 V2 MDM-Nachrichten in eine FHIR-REST-Interaktion
+* die Übernahme von Patienten über die kommende REST-basierte Möglichkeit, Dokumente aus der ePA eines Patienten abzurufen (auch hier werden voraussichtlich ausschließlich DocumentReference-Ressourcen mit der Versichertennummer als logischer Referenz auf den Patienten bereitgestellt)
+
+Server, die eine Zuordnung von Dokumenten mittels logischer Referenz erlauben, MÜSSEN dies im `CapabilityStatement` für den Ressourcentyp  `DocumentReference` unter CapabilityStatement.rest.resource.referencePolicy` kenntlich machen:
+
+* Der Code `resolves` ist zu verwenden wenn logical Identifier erlaubt sind, aber stets auflösbar sein müssen (Trifft ein Identifier aus einen oder mehrere Patienten zu, stellt dies einen Fehlerzustand dar.)
+* Der Code `logical` ist *zusätzlich* anzugeben, wenn der Server auch DocumentReferences akzeptiert, denen kein Patient zugeordnet werden kann (z.B. in Erwartung, dass dieser zu einem späteren Zeitpunkt ergänzt wird).
+* Clients sind verpflichtet *vor* der Verwendung von DocumentReferences mit logischen Referenzen anhand des CapabilityStatements zu überprüfen, ob deein konkreter Server diese Funktionalität unterstützt.
+
+Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
+
+
+| Hinweis | Experimentelle Funktion |
+|---------|---------------------|
+| {{render:Material/_commons/icons/dragon.png}} | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
+
+
+
+
 
 ### Änderungen zu ISiK Stufe 2
 

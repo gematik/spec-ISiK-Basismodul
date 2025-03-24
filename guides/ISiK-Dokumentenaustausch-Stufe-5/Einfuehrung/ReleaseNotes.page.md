@@ -10,7 +10,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
 Version: 5.0.0
-* `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Identifier.
+* `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Identifier. https://github.com/gematik/spec-ISiK-Basismodul/pull/582
 
 * `fixed`: Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
