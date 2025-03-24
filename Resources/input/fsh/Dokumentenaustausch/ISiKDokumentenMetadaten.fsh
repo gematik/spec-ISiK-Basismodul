@@ -43,7 +43,8 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Die Verwendung von docStatus bleibt jedoch optional,
   da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dokumentenserver müssen jedoch in der Lage sein, den Dokumentenstatus
  (sofern vorhanden) zu persistieren, anzuzeigen und zu reproduzieren.
-  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]"
+  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021].
+  Dokumentenserver KÖNNEN die Änderung von docStatus mittel der Operation {{pagelink:UpdateMetadata text:$updateMetadata}} erlauben."
 * type 1.. MS
   * ^short = "Dokumententyp"
   * ^comment = "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich und ein Server MUSS beide Kodierungen bereitstellen - trotz der Kardinalität DocumentReference.type.coding:XDS 0..1 -, jedoch ist der IHE-XDS-Type-Code bei Übermittlung für Clients nicht verpflichtend (s.u. zu XDS).
