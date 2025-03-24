@@ -1,10 +1,10 @@
-Instance: ISiKAkteurMinimaleStammdatenVerwaltungOptionErweiterteSuche
+Instance: ISiKCapabilityStatementErweiterteStammdatenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKAkteurMinimaleStammdatenVerwaltungOptionErweiterteSuche"
-* name = "ISiKAkteurMinimaleStammdatenVerwaltungOptionErweiterteSuche"
-* title = "Option &quot;Erweiterte Suche&quot; für Akteur &quot;Minimale Stammdaten-Verwaltung&quot;"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle"
+* name = "ISiKCapabilityStatementErweiterteStammdatenRolle"
+* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * imports = Canonical(ISiKAkteurMinimaleStammdatenVerwaltung)
 
