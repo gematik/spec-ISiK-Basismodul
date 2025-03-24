@@ -1,12 +1,12 @@
-Instance: ISiKCapabilityStatementErweiterteStammdatenRolle
+Instance: ISiKCapabilityStatementLeistungserbringerRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle"
-* name = "ISiKCapabilityStatementErweiterteStammdatenRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle"
+* name = "ISiKCapabilityStatementLeistungserbringerRolle"
+* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementLeistungserbringerRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* imports = Canonical(ISiKAkteurMinimaleStammdatenVerwaltung)
+
 
 * description = 
   "Dieses CapabilityStatement beschreibt alle *zusätzlichen* Interaktionen, 
@@ -34,103 +34,77 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 * rest
   * mode = #server
   * resource[+]
-    * type = #Patient
-    * insert Expectation (#SHALL)
-    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+    * type = #Practitioner
+    * insert Expectation(#SHALL)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf"
     * interaction[+]
-      * insert Expectation (#SHALL)
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
       * code = #search-type
-
+    * insert CommonSearchParameters
     * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "name"
-      * definition = "http://hl7.org/fhir/SearchParameter/Patient-name"
+      * insert Expectation(#SHALL)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Practitioner-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?identifier=42`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "family"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-family"
       * type = #string
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Patient?name=Erika`    
-        `GET [base]/Patient?name=Erika`    
+        `GET [base]/Practitioner?family=Alpenzauber`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  " 
-
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
     * searchParam[+]
-      * insert Expectation (#SHALL)
+      * insert Expectation(#SHALL)
+      * name = "given"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-given"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?given=Heidi`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "name"
+      * definition = "http://hl7.org/fhir/SearchParameter/Practitioner-name"
+      * type = #string
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Practitioner?name=Heidi`
+        `GET [base]/Practitioner?name=Alpenzauber`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "        
+    * searchParam[+]
+      * insert Expectation(#MAY)
       * name = "address"
       * definition = "http://hl7.org/fhir/SearchParameter/individual-address"
       * type = #string
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Patient?address=Berlin`    
+        `GET [base]/Practitioner?address=Berlin`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."  
-
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
     * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "address-city"
-      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-city"
-      * type = #string
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Patient?address-city=Berlin`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-
-    * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "address-country"
-      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-country"
-      * type = #string
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Patient?address-country=DE`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-
-    * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "address-postalcode"
-      * definition = "http://hl7.org/fhir/SearchParameter/individual-address-postalcode"
-      * type = #string
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Patient?address-postalcode=10117`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-
-    * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "active"
-      * definition = "http://hl7.org/fhir/SearchParameter/Patient-active"
+      * insert Expectation(#MAY)
+      * name = "gender"
+      * definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Patient?active=true`    
+        `GET [base]/Practitioner?gender=female`    
         **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-
-    * searchParam[+]
-      * insert Expectation (#SHALL)
-      * name = "telecom"
-      * definition = "http://hl7.org/fhir/SearchParameter/individual-telecom"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Patient?telecom=phone|+49152236898`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-      * insert Expectation (#SHALL)
-    * searchRevInclude[+] = "Encounter:patient"
-      * insert Expectation (#SHALL)
-    * searchRevInclude[+] = "Encounter:subject"
-      * insert Expectation (#SHALL)
-
-  * resource[+]
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
     * type = #Encounter
     * insert Expectation (#SHALL)
     * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"

@@ -6,7 +6,7 @@ Usage: #definition
 * name = "ISiKCapabilityStatementErweiterteStammdatenRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* imports = Canonical(ISiKAkteurMinimaleStammdatenVerwaltung)
+
 
 * description = 
   "Dieses CapabilityStatement beschreibt alle *zusätzlichen* Interaktionen, 
