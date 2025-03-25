@@ -6,7 +6,7 @@ Usage: #definition
 * name = "ISiKAkteurMinimaleStammdatenVerwaltungOptionPatientMerge"
 * title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;Minimale Stammdaten-Verwaltung&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* imports = Canonical(ISiKCapabilityStatementBasisStammdatenRolle)
+* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 
 * description = 
   "Dieses CapabilityStatement beschreibt alle *zusätzlichen* Interaktionen, 
