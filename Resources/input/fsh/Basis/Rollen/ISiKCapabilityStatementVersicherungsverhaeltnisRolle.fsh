@@ -1,10 +1,10 @@
-Instance: ISiKCapabilityStatementVersicherungsverhältnisRolle
+Instance: ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhältnisRolle"
-* name = "ISiKCapabilityStatementVersicherungsverhältnisRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhältnisRolle&quot;"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
+* name = "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
+* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 
 
