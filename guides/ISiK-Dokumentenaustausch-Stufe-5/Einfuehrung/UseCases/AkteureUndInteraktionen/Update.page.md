@@ -18,7 +18,10 @@ Ebenso erlaubt diese Operation, vorläufige Dokumente durch ein Update von docSt
 
 Wenn Dokumenten-Server $update-metadata unterstützen, dann MÜSSEN Dokumenten-Server das *Löschen* von vorläufigen Dokumenten unterstützen, d.h. dann MÜSSEN Server bei einem Update auf den Status `entered-in-error` auch den Code in `DocumentReference.status` auf  `entered-in-error` setzen und dafür Sorge tragen, dass diese Dokumente bei Suchanfragen nicht mehr als Ergebnisse zurückgegeben werden (siehe [Search Related Safety Checks](https://hl7.org/fhir/R4/safety.html)), es sei denn der Client sucht *explizit* nach gelöschten Dokumenten (z.B. `/DocumentReference?status=entered-in-error`). 
 
-Sobald ein Dokument den Status `final` erreicht hat, muss ein Server  keine Metadaten-Änderungen mehr zulassen. Finale Dokumente können nur noch mit MHD-konformen Methoden aktualisiert bzw. gelöscht werden, indem sie durch eine neue bzw. leere Version ersetzt werden. Konkret muss in diesem Fall eine erneute Dokumentenbereitstellung durchgeführt werden, mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo.target` und dem Code `replaces` in `DocumentReference.relatesTo.code`.
+Sobald ein Dokument den Status `final` erreicht hat, MUSS ein Server  die Änderungen von Metadaten NICHT mehr zulassen (d.h. ein Server KANN in diesem Fall die Löschung finaler Dokumente erlauben, MUSS es aber nicht. Der Server KANN in diesem Fall auch eine Fehlermeldung ausgeben).
+
+Finale Dokumente SOLLEN nur noch mit MHD-konformen Methoden aktualisiert bzw. gelöscht werden von Servern und Clients), indem sie durch eine neue bzw. leere Version ersetzt werden. 
+Ein Client SOLL in diesem Fall eine erneute Dokumentenbereitstellung durchführen, mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo.target` und dem Code `replaces` in `DocumentReference.relatesTo.code`.
 
 | Hinweis | Experimentelle Funktion |
 |---------|---------------------|
