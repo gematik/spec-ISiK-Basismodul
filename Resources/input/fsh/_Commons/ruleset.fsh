@@ -167,3 +167,9 @@ RuleSet: Observation-category-VSCat-MS
 RuleSet: EffectiveAndPerformer
 * performer.reference = "Practitioner/DrMedMusterarzt"
 * effectiveDateTime = 2021-09-01T12:00:00Z
+
+
+// ruleset for ICU-Normalstation Workflow IG
+RuleSet: MII_SpecificIEEE-11073Slice
+* coding contains 
+  specific-IEEE-11073 0..1 MS
