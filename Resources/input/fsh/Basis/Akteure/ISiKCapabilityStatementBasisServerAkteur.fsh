@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementErweiterteStammdatenRolle)
-* imports = Canonical(AufbaustrukturRolle)
+* imports = Canonical(ISiKCapabilityStatementAufbaustrukturRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
 * imports = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
 * imports = Canonical(ISiKCapabilityStatementKlinischeRolle)
