@@ -6,7 +6,7 @@ Usage: #definition
 * name = "ISiKCapabilityStatementDokumentenaustauschServer"
 * title = "ISiK CapabilityStatement Dokumentenaustausch Server"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-* imports = Canonical(ISiKCapabilityStatementBasisStammdatenRolle)
+* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 
 * description =
   "Dieses CapabilityStatement beschreibt alle Interaktionen, die ein ISiK-konformes System unterstützen MUSS bzw. KANN,

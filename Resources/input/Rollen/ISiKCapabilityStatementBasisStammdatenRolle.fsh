@@ -1,4 +1,4 @@
-Instance: ISiKCapabilityStatementBasisStammdatenRolle
+Instance: ISiKCapabilityStatementStammdatenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
