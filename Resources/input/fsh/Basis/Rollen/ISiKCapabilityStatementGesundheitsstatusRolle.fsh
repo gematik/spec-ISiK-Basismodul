@@ -50,11 +50,11 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
       * insert Expectation(#SHALL)
 
     * interaction[+]
-        * insert Expectation(#SHALL)
-        * code = #read
-      * interaction[+]
-        * insert Expectation(#SHALL)
-        * code = #search-type       
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type       
     
     * insert CommonSearchParameters
     * searchParam[+]
