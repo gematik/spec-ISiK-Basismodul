@@ -1,6 +1,14 @@
 ---
 topic: UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme
 ---
+
+
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
+
+**Work in Progress**: Dieser Abschnitt entspricht dem Stand der ISiK Stufe 4. Eine Neudefinition für die Stufe 5 ist in Arbeit.
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
+
+
 # Bestätigungsrelevante Systeme
 
 Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Gesundheitswesen (KIG) gegenwärtig die Definition der bestätigungsrelevanten Systeme fest. 
