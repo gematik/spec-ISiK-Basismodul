@@ -9,7 +9,7 @@ Usage: #definition
 
 
 * description = 
-  "Dieses CapabilityStatement beschreibt alle *zusätzlichen* Interaktionen, 
+  "Dieses CapabilityStatement beschreibt alle Interaktionen, 
   die ein System unterstützen MUSS, das die Rolle &quot;VersicherungsverhältnisRolle&quot; implementiert.   
 
   Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
