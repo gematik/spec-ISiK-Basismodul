@@ -29,6 +29,10 @@ RuleSet: Expectation (expectation)
   * url = $capabilitystatement-expectation
   * valueCode = {expectation}
 
+RuleSet: SupportedProfileCapExpectationExt(canonical, expectation)
+* supportedProfile[+] = Canonical({canonical})
+  * insert CapabilityStatementExpectationExt({expectation})
+
 RuleSet: CapabilityStatementExpectationExt(expectation)
 * extension.url = $capabilitystatement-expectation
 * extension.valueCode = #{expectation}
