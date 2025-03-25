@@ -1,7 +1,7 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "ISiKCapabilityStatementLaborMinimalRolle",
-  "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle",
+  "id": "ISiKCapabilityStatementVitalSignStandardSourceRolle",
+  "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceRolle",
   "version": "5.0.0-rc",
   "status": "active",
   "experimental": false,
@@ -34,9 +34,9 @@
     "application/fhir+xml",
     "application/fhir+json"
   ],
-  "name": "ISiKCapabilityStatementLaborMinimalRolle",
-  "title": "ISiK CapabilityStatement Labor Minimal Rolle",
-  "description": "Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Labordaten exponiert.\n\n**HISTORIE**\n\n*Historie*: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).\n\n\n\n",
+  "name": "ISiKCapabilityStatementVitalSignStandardSource Rolle",
+  "title": "ISiK CapabilityStatement VitalSign Standard Source Rolle",
+  "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren für das Modul Vitalparameter zu bestehen.\n  \n**HISTORIE:**    \n\n*Historie*: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).\n\n\n**Version 4.0.1**\n\n* `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   \n* `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  \n\n",
   "rest": [
     {
       "mode": "server",
@@ -50,14 +50,16 @@
             }
           ],
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungSerumkreatinin",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTroponin",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungGFR",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungThrombozyten",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTSH"
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG"
           ],
           "_supportedProfile": [
             {
@@ -121,6 +123,22 @@
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
                 }
               ]
             }
