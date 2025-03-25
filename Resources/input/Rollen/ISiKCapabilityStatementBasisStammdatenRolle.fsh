@@ -2,14 +2,14 @@ Instance: ISiKCapabilityStatementBasisStammdatenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisStammdatenRolle"
-* name = "ISiKCapabilityStatementBasisStammdatenRolle"
-* title = "CapabilityStatement für Rolle &quot;Stammdaten-Verwaltung&quot;"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"
+* name = "ISiKCapabilityStatementStammdatenRolle"
+* title = "CapabilityStatement für Rolle &quot;StammdatenRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 
 * description = 
   "Dieses CapabilityStatement beschreibt alle Interaktionen, 
-  die ein System unterstützen MUSS, das die Rolle &quot; Stammdaten-Verwaltung&quot; implementiert.   
+  die ein System unterstützen MUSS, das die Rolle &quot;StammdatenRolle&quot; implementiert.   
 
   Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
 Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. 

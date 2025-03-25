@@ -9,8 +9,8 @@ Usage: #definition
 
 
 * description = 
-  "Dieses CapabilityStatement beschreibt alle *zusätzlichen* Interaktionen, 
-  die ein System unterstützen MUSS, das den Akteur &quot;Minimale Stammdaten-Verwaltung&quot; mit der Option &quot;Erweiterte Suche&quot; implementiert.   
+  "Dieses CapabilityStatement beschreibt alle Interaktionen, 
+  die ein System unterstützen MUSS, das die Rolle &quot;ErweiterteStammdatenRolle&quot; implementiert.   
 
   Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
 Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. 
