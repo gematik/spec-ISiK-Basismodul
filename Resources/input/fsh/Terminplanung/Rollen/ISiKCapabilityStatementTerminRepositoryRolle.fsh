@@ -8,7 +8,7 @@ Usage: #definition
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = 
-  "Dieses CapabilityStatement repräsentiert die Anforderungen an ein Termin-Repository.
+  "Dieses CapabilityStatement repräsentiert die Anforderungen an die Rolle eines Termin-Repository.
   
   Dieses CapabilityStatement beschreibt alle Interaktionen, 
   die ein ISiK-konformes System unterstützen MUSS bzw. KANN,

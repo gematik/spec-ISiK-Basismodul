@@ -25,7 +25,7 @@ Das Termin-Repository kann intern in ein Repository für die Termine und ein sep
 * KIS / KAS inkl. Terminverwaltung 
 
 **Festlegungen'**
-In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagelink: ISiKCapabilityStatementTerminRepository, text=Capability Statement}.
+In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagelink: CapabilityStatementsTermin, text=Capability Statement}.
 
 ### Termin-Requestor / Termin Source
 
