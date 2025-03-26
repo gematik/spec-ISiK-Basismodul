@@ -2,9 +2,9 @@ Instance: ISiKCapabilityStatementBasisServerAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiK-CapabilityStatementBasisServerAkteur"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur"
 * name = "ISiK-CapabilityStatementBasisServerAkteur"
-* title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;ISiK-CapabilityStatementBasisServerAkteur&quot;"
+* title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementErweiterteStammdatenRolle)
