@@ -1,13 +1,13 @@
 RuleSet: Meta
 * ^version = "5.0.0-rc"
-* ^status = #active
+* ^status = #draft
 * ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^date = "2024-11-25"
 
 RuleSet: MetaInstance
 * version = "5.0.0-rc"
-* status = #active
+* status = #draft
 * experimental = false
 * publisher = "gematik GmbH"
 * date = "2024-11-25"
@@ -178,37 +178,21 @@ RuleSet: MII_SpecificIEEE-11073Slice
 // rulesets Medikation
 
 RuleSet: Meta-CapabilityStatementInformation
-* status = #active
-* experimental = false
-* version = $version
-* publisher = "gematik GmbH"
-* date = "2025-03-26"
+* insert Meta-CapabilityStatement
 * implementationGuide = "https://gematik.de/fhir/Medikation/ImplementationGuide/ISiK-Medikation"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformation"
 
 RuleSet: Meta-CapabilityStatementAMTS
-* status = #active
-* experimental = false
-* version = $version
-* publisher = "gematik GmbH"
-* date = "2025-03-26"
+* insert Meta-CapabilityStatement
 * implementationGuide = "https://gematik.de/fhir/Medikation/ImplementationGuide/ISiK-Medikation"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationAMTS"
 
 RuleSet: Meta-CapabilityStatementVerordnung
-* status = #active
-* experimental = false
-* version = $version
-* publisher = "gematik GmbH"
-* date = "2025-03-26"
+* insert Meta-CapabilityStatement
 * implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Medikation"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnung"
 
 RuleSet: Meta-CapabilityStatementVerabreichung
-* status = #active
-* experimental = false
-* version = $version
-* publisher = "gematik GmbH"
-* date = "2025-03-26"
+* insert Meta-CapabilityStatement
 * implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Medikation"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichung"
