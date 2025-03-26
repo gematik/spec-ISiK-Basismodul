@@ -1,4 +1,4 @@
-Instance: ISiK-CapabilityStatementBasisServerAkteur
+Instance: ISiKCapabilityStatementBasisServerAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
