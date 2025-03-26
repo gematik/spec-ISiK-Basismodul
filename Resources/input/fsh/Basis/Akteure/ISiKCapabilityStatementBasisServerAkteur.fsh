@@ -7,23 +7,23 @@ Usage: #definition
 * title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementErweiterteStammdatenRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementAufbaustrukturRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementKlinischeRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementTerminologieRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementVersicherungsverhaeltnisRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementCompositionKonsumentenRolle)
-  * insert ExpectationImports(SHALL)
+  * insert ExpectationImports(#SHALL)
 
 * description = 
   "Dieses CapabilityStatement beschreibt alle Interaktionen, 
