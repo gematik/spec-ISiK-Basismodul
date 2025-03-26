@@ -7,13 +7,15 @@ topic: Akteure
 
 Innerhalb des ISiK Moduls Terminplanung kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben innerhalb der im Abschnitt {{pagelink:ImplementationGuide/markdown/UseCases/Interaktionen.md}} definierten Arbeitsabläufe übernehmen. Im Weiteren werden diese Rollen mithilfe der Definition von Akteuren formalisiert, sodass eine Zuordnung von relevanten Interaktionen zum jeweiligen Akteur erfolgen kann.
 
+Allein für den Akteur Termin-Repository gelten normative Festlegungen für die Implementierung einer Schnittstelle.
+
 Grundsätzlich wird als Terminblock eine für einen Termin buchbare Zeiteinheit verstanden, in der bestimmte Ressourcen (z.B. Fachabteilungen, Personen im Gesundheitswesen, Geräte, Räume) zur Verfügung stehen. Übergreifend über ein oder mehrere Terminblöcke hinweg kann für diese Ressourcen anschließend ein Termin vereinbart werden.
 
 ### Termin-Repository
 
 **Definition:**
 
-Als Termin-Repository werden alle Systeme definiert, die Informationen zu verfügbaren Termineinheiten von Ressourcen (vgl. zuvor genannte Definition) vorhalten und die dafür vereinbarten Termine als führendes System verwalten.
+Als Termin-Repository werden alle Systeme definiert, die Informationen zu verfügbaren Termineinheiten von Ressourcen (vgl. zuvor genannte Definition) vorhalten und die dafür vereinbarten Termine als führendes System verwalten. In diesem Sinne ist ein Termin-Repository als ein zentraler Terminplanung-Server zu verstehen.
 
 Das Termin-Repository kann intern in ein Repository für die Termine und ein separates Repository für die buchbaren Terminblöcke (Terminblock Repository) geteilt werden.
 
@@ -21,6 +23,9 @@ Das Termin-Repository kann intern in ein Repository für die Termine und ein sep
 
 * Patientenportal im Falle, dass das System selbst terminführend ist
 * KIS / KAS inkl. Terminverwaltung 
+
+**Festlegungen'**
+In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagelink: ISiKCapabilityStatementTerminRepository, text=Capability Statement}.
 
 ### Termin-Requestor / Termin Source
 

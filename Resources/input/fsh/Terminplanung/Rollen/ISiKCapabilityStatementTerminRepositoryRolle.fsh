@@ -1,10 +1,10 @@
-Instance: ISiKCapabilityStatementTerminplanungServer
+Instance: ISiKCapabilityStatementTerminRepositoryRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert MetaInstance
 * insert Meta-CapabilityStatement
-* name = "ISiKCapabilityStatementTerminplanungServer"
-* title = "ISiK CapabilityStatement Terminplanung Server"
+* name = "ISiKCapabilityStatementTerminRepository"
+* title = "ISiK CapabilityStatement  Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = 
@@ -36,7 +36,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 //Das CS instantiiert sich selbst !?!?
-//* instantiates = Canonical(ISiKCapabilityStatementTerminplanungServer)
+//* instantiates = Canonical(ISiKCapabilityStatementTerminRepository)
 * rest
   * mode = #server
   * resource[+]
