@@ -4,7 +4,7 @@
 ### Informativ
 ---
 
-SMART Backend Services gelten, wie in der Einleitung beschrieben, als Systeme, die Interaktionen ohne menschliche Anwender durchführen. Diese Interaktionen sind nicht an ein spezifisches Benutzerprofil gekoppelt und erfolgen ohne Authentifizierung über einen Login. Durch die Hinterlegung Schlüsselinformationen aus Schritt 2 sichert der Ressourcenserver ein Vertrauensverhältnis zwischen Backend Service und Ressourcenserver zu. Dies bedeutet, dass ein Client ohne weiteren Zwischenschritt ein Access Token für den Ressourcenserver am Autorisierungsserver anfragen kann. Dies erfolgt per [RFC6749 - Abschnitt 4.4 Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4).
+SMART Backend Services gelten, wie in der Einleitung beschrieben, als Systeme, die Interaktionen ohne menschliche Anwender durchführen. Diese Interaktionen sind nicht an ein spezifisches Benutzerprofil gekoppelt und erfolgen ohne Authentifizierung über einen Login. Durch die Hinterlegung von Schlüsselinformationen aus Schritt 2 sichert der Ressourcenserver ein Vertrauensverhältnis zwischen Backend Service und Ressourcenserver zu. Dies bedeutet, dass ein Client ohne weiteren Zwischenschritt ein Access Token für den Ressourcenserver am Autorisierungsserver anfragen kann. Dies erfolgt per [RFC6749 - Abschnitt 4.4 Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4).
 
 ----
 
