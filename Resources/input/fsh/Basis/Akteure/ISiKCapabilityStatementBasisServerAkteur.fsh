@@ -4,7 +4,7 @@ Usage: #definition
 * insert Meta-CapabilityStatement
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur"
 * name = "ISiK-CapabilityStatementBasisServerAkteur"
-* title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
+* title = "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
@@ -37,14 +37,16 @@ Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jen
 wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.  
 
 Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen 
-und die Versionsnummer angeben. 
-Darüber hinaus MUSS in `CapabilityStatement.instantiates` die Canonical URL des nachfolgenden CapabilityStatements angegeben werden.  
+und die Versionsnummer angeben.   
+Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.
 
 Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement mit `SHALL` gekennzeichnet sind. 
 Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, 
 sofern diese in der Instanz implementiert wurden.  
 
 Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
+
+* rest.mode = #server
 
 
 
