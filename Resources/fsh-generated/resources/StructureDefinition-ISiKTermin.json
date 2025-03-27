@@ -301,7 +301,7 @@
         "id": "Appointment.participant:AkteurPersonImGesundheitsberuf",
         "path": "Appointment.participant",
         "sliceName": "AkteurPersonImGesundheitsberuf",
-        "comment": "Im ISIK-Kontext MUSS die referenzierte Practitioner-Ressource konform zum [ISiKPersonImGesundheitsberuf](https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf) des Basismoduls sein.\n\nBegründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit einem Gesundheitsberuf eines Termins sind entscheidend und müssen daher implementiert werden (MS), allerdings sind sie nicht zwingend erforderlich (0..*), da die Übernahme auch durch eine Behandlungseinheit erfolgen kann.",
+        "comment": "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.\n\nBegründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen die durch einen Angehörigen gebucht/verwaltet werden ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann.",
         "min": 0,
         "max": "*",
         "mustSupport": true
@@ -346,6 +346,32 @@
       },
       {
         "id": "Appointment.participant:AkteurMedizinischeBehandlungseinheit.actor.reference",
+        "path": "Appointment.participant.actor.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:Angehoeriger",
+        "path": "Appointment.participant",
+        "sliceName": "Angehoeriger",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Appointment.participant:Angehoeriger.actor",
+        "path": "Appointment.participant.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Appointment.participant:Angehoeriger.actor.reference",
         "path": "Appointment.participant.actor.reference",
         "min": 1,
         "mustSupport": true
