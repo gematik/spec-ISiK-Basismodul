@@ -1,6 +1,6 @@
 ---
-topic: ISiKCapabilityStatementTerminplanungServer
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminplanungServer
+topic: ISiKCapabilityStatementTerminRepositoryRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle
 ---
 ## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 

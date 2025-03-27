@@ -1,14 +1,16 @@
-Instance: ISiKCapabilityStatementTerminplanungServer
+Instance: ISiKCapabilityStatementTerminRepositoryRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert MetaInstance
 * insert Meta-CapabilityStatement
-* name = "ISiKCapabilityStatementTerminplanungServer"
-* title = "ISiK CapabilityStatement Terminplanung Server"
+* name = "ISiKCapabilityStatementTerminRepositoryRolle"
+* title = "ISiK CapabilityStatement Termin-Repository Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = 
-  "Dieses CapabilityStatement beschreibt alle Interaktionen 
+  "Dieses CapabilityStatement repräsentiert die Anforderungen an die Rolle eines Termin-Repository.
+  
+  Dieses CapabilityStatement beschreibt alle Interaktionen, 
   die ein ISiK-konformes System unterstützen MUSS bzw. KANN,
   um das Bestätigungsverfahren für dieses Modul zu bestehen.   
 
@@ -27,16 +29,14 @@ Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die i
 Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, 
 sofern diese in der Instanz implementiert wurden.  
 
-Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.
-
-Dieses CapabilityStatement repräsentiert die Anforderungen an ein Termin-Repository."
+Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 //Das CS instantiiert sich selbst !?!?
-//* instantiates = Canonical(ISiKCapabilityStatementTerminplanungServer)
+//* instantiates = Canonical(ISiKCapabilityStatementTerminRepository)
 * rest
   * mode = #server
   * resource[+]
