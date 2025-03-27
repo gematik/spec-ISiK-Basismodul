@@ -28,9 +28,10 @@ Usage: #definition
 
 // Vitalparameter
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignStandardSourceRolle)
-
+  * insert ExpectationImports(#SHALL)
 // Administative Daten
 * imports[+] = Canonical(ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle)
-
+  * insert ExpectationImports(#SHALL)
 //Support fuer Laborprofile
 * imports[+] = Canonical(ISiKCapabilityStatementLaborMinimalRolle)
+  * insert ExpectationImports(#SHALL)
