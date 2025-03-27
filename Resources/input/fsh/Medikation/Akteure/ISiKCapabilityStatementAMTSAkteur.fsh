@@ -20,6 +20,8 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
+* rest.mode = #server
+
 * imports = Canonical(ISiKCapabilityStatementAMTSRolle)
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
