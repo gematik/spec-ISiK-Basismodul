@@ -18,5 +18,5 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
-* imports = Canonical(SiKCapabilityStatementStammdatenRolle)
+* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)

@@ -21,7 +21,7 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * imports = Canonical(ISiKCapabilityStatementAMTSRolle)
-* imports = Canonical(SiKCapabilityStatementStammdatenRolle)
+* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
 * imports = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
 //* imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
