@@ -6,7 +6,7 @@ Usage: #definition
 * name = "ISiKCapabilityStatementDokumentenServerAkteur"
 * title = "ISiK CapabilityStatement Dokumenten Server Akteur"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-* imports[+] = Canonical(ISiKCapabilityStatementDokumentenverwaltungsRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementDokumentenverwaltungRolle)
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMetadatenErzeugenRolle)
   * insert ExpectationImports(#MAY)
