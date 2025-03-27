@@ -1,12 +1,12 @@
-Instance: ISiKCapabilityStatementMedikationInformation
+Instance: ISiKCapabilityStatementMedikationVerabreichungRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatementInformation
-* name = "ISiKCapabilityStatementMedikationInformation"
-* title = "ISiK CapabilityStatement Medikation Server - Medikationsinformation"
+* insert Meta-CapabilityStatementVerabreichung
+* name = "ISiKCapabilityStatementMedikationVerabreichungRolle"
+* title = "ISiK CapabilityStatement Medikationsverabreichung Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsinformation' zu bestehen.
+* description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverabreichung' zu bestehen.
   
 **HISTORIE:**    
 
@@ -18,15 +18,15 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* instantiates = Canonical(ISiKCapabilityStatementMedikationInformation)
+* instantiates = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
 * rest
   * mode = #server
   * resource[0]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
       * valueCode = #SHALL
-    * type = #MedicationStatement
-    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"
+    * type = #MedicationAdministration
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung"
     * interaction[0]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -47,15 +47,19 @@ Usage: #definition
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
       * code = #search-type
-    * searchInclude[0] = "MedicationStatement:medication"
+    * searchInclude[0] = "MedicationAdministration:medication"
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchInclude[+] = "MedicationStatement:patient"
+    * searchInclude[+] = "MedicationAdministration:patient"
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-    * searchInclude[+] = "MedicationStatement:context"
+    * searchInclude[+] = "MedicationAdministration:context"
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+    * searchInclude[+] = "MedicationAdministration:performer"
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
@@ -78,14 +82,14 @@ Usage: #definition
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
       * name = "context"
-      * definition = "http://hl7.org/fhir/SearchParameter/MedicationStatement-context"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-context"
       * type = #reference
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * name = "effective"
-      * definition = "http://hl7.org/fhir/SearchParameter/MedicationStatement-effective"
+      * name = "effective-time"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-effective-time"
       * type = #date
     * searchParam[+]
       * extension
@@ -98,15 +102,15 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * name = "part-of"
-      * definition = "http://hl7.org/fhir/SearchParameter/MedicationStatement-part-of"
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * name = "patient"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * name = "performer"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-performer"
       * type = #reference
     * searchParam[+]
       * extension
@@ -114,93 +118,6 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-status"
-      * type = #token
-  * resource[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * type = #List
-    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe"
-    * interaction[0]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #search-type
-    * searchInclude[0] = "List:patient"
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-    * searchInclude[+] = "List:encounter"
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-    * searchInclude[+] = "List:item"
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-    * searchParam[0]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "_id"
-      * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-      * type = #token
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "code"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
-      * type = #token
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "date"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
-      * type = #date
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "encounter"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
-      * type = #reference
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "item"
-      * definition = "http://hl7.org/fhir/SearchParameter/List-item"
-      * type = #reference
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "patient"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-      * type = #reference
-    * searchParam[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * name = "status"
-      * definition = "http://hl7.org/fhir/SearchParameter/List-status"
       * type = #token
   * resource[+]
     * extension
