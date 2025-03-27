@@ -69,14 +69,6 @@ In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"
     ]
   },
-  "extension": [
-    {
-      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKNachrichtExtension",
-      "valueReference": {
-        "reference": "Communication/ISiKNachrichtExample"
-      }
-    }
-  ],
   "status": "proposed",
   "start": "2022-12-10T09:00:00Z",
   "end": "2022-12-10T09:30:00Z",
@@ -149,14 +141,6 @@ Antwort des Termin-Repository:
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"
     ]
   },
-  "extension": [
-    {
-      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKNachrichtExtension",
-      "valueReference": {
-        "reference": "Communication/ISiKNachrichtExample"
-      }
-    }
-  ],
   "status": "booked",
   "start": "2022-12-10T09:00:00Z",
   "end": "2022-12-10T09:30:00Z",
