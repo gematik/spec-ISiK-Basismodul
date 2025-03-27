@@ -4,7 +4,7 @@ Die Vorgaben von ISiK-Connect betreffen aktuell ausschließlich Systeme in der R
 
 ## Kontexte 
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann ([ANF-CON-03](Anforderungsuebersicht.md)). 
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN im ["patient"-Level Scope](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) (s.u.) KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann ([ANF-CON-030](Anforderungsuebersicht.md)). 
 
 Es MÜSSEN mindestens die Kontexte "patient" und "encounter" unterstützt werden ([ANF-CON-031](Anforderungsuebersicht.md)).  
 
