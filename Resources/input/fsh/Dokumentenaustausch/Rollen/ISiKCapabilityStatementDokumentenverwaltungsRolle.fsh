@@ -1,12 +1,12 @@
-Instance: ISiKAkteurDokumentenverwaltung
+Instance: ISiKCapabilityStatementDokumentenverwaltungRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKAkteurDokumentenverwaltung"
-* name = "ISiKCapabilityStatementDokumentenaustauschServer"
-* title = "ISiK CapabilityStatement Dokumentenaustausch Server"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenverwaltungRolle"
+* name = "ISiKCapabilityStatementDokumentenverwaltungRolle"
+* title = "ISiK CapabilityStatement Dokumentenverwaltung Rolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+
 
 * description =
   "Dieses CapabilityStatement beschreibt alle Interaktionen, die ein ISiK-konformes System unterstützen MUSS bzw. KANN,
@@ -21,7 +21,7 @@ wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/ext
 
 Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen
 und die Versionsnummer angeben.
-Darüber hinaus MUSS in `CapabilityStatement.instantiates` die Canonical URL des nachfolgenden CapabilityStatements angegeben werden.
+Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.
 
 Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement mit `SHALL` gekennzeichnet sind.
 Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten,
