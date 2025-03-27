@@ -305,7 +305,5 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  " 
     * searchInclude[+] = "Schedule:actor"
       * insert Expectation (#MAY)  
-    * searchInclude[+] = "Communication:recipient"
-      * insert Expectation (#MAY)   
     * searchInclude[+] = "Appointment:actor"
       * insert Expectation (#MAY)
