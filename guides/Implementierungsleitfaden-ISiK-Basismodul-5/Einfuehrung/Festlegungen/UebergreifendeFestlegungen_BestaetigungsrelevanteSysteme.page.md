@@ -177,7 +177,7 @@ Systeme, die als Termin-Requestor agieren sind u.a.:
 - KIS / KAS bei der Synchronisierung mit einem weiteren Termin-Repository
 ## **Termin-Consumer**
 ### **Definition**
-Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.
+Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin-Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.
 ### **Geltungsbereich**
 Systeme, die als Termin-Consumer agieren sind u.a.:
 
