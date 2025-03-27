@@ -3,8 +3,8 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * insert MetaInstance
 * insert Meta-CapabilityStatement
-* name = "ISiKCapabilityStatementTerminRepository"
-* title = "ISiK CapabilityStatement  Rolle"
+* name = "ISiKCapabilityStatementTerminRepositoryRolle"
+* title = "ISiK CapabilityStatement Termin-Repository Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * description = 
