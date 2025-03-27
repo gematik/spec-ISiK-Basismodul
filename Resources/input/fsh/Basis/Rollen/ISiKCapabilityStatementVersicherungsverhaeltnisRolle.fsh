@@ -38,6 +38,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
     * insert Expectation(#SHALL)
     * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"
     * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
+    * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige"
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #read
