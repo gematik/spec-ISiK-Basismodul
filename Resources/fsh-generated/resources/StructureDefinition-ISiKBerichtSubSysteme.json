@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme",
   "version": "5.0.0-rc",
   "name": "ISiKBerichtSubSysteme",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "date": "2024-11-25",
   "publisher": "gematik GmbH",
@@ -79,7 +79,7 @@
           "discriminator": [
             {
               "type": "pattern",
-              "path": "system"
+              "path": "$this"
             }
           ],
           "rules": "open"
@@ -102,8 +102,7 @@
       {
         "id": "Composition.type.coding:LOINC.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "patternUri": "http://loinc.org"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:LOINC.code",
@@ -124,8 +123,7 @@
       {
         "id": "Composition.type.coding:KDL.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:KDL.code",
@@ -155,8 +153,7 @@
       {
         "id": "Composition.type.coding:IHE.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:IHE.code",
