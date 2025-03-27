@@ -13,10 +13,6 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
   * tag[Source] from http://fhir.de/ValueSet/common-meta-tag-de (required)
 * insert Meta
 * extension MS
-* extension contains ISiKNachrichtExtension named Nachricht 0..* MS
-  * ^comment = "Einschränkung der übergreifenden MS-Definition: Falls ein bestätigungsrelevantes System das ISiK-Profil ISiKNachricht implementiert, MUSS das System auch dieses Element unterstützten. Andernfalls KANN das System dieses Element unterstützen. 
-  
-  Begründung zum Must Support: Nachrichten die für diesen Termin verfasst wurden können somit direkt abgerufen werden."
 * extension contains AppointmentReplaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
 * status MS
@@ -108,12 +104,6 @@ Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit ei
   * ^comment = "Hinweis: In R5 ist die Priority ein CodeableConcept. 
   
   Begründung zu Must Support: Dieses Element ist optional (0..1), muss jedoch implementiert werden (MS), um besonders einen Notfall als solchen ausweisen zu können."
-
-Extension: ISiKNachrichtExtension
-Id: ISiKNachrichtExtension
-Context: Appointment
-* insert Meta
-* value[x] only Reference(ISiKNachricht)
 
 Extension: ISiKTerminPriorityExtension
 Id: ISiKTerminPriorityExtension
