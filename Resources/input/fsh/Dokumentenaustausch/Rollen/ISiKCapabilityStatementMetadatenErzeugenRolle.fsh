@@ -1,13 +1,12 @@
-Instance: ISiKAkteurDokumentenverwaltungOptionMetadatenUpdate
+Instance: ISiKCapabilityStatementMetadatenErzeugenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-
 * insert Meta-CapabilityStatement
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKAkteurDokumentenverwaltungOptionMetadatenUpdate"
-* name = "ISiKCapabilityStatementDokumentenaustauschServer"
-* title = "ISiK CapabilityStatement Dokumentenaustausch Server"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMetadatenErzeugenRolle"
+* name = "ISiKCapabilityStatementMetadatenErzeugenRolle"
+* title = "ISiK CapabilityStatement Metadaten Erzeugen Rolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-* imports[+] = Canonical(ISiKAkteurDokumentenverwaltung)
+
 
 * description =
   "Dieses CapabilityStatement beschreibt alle Interaktionen, die ein ISiK-konformes System unterstützen MUSS bzw. KANN,
@@ -22,7 +21,7 @@ wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/ext
 
 Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen
 und die Versionsnummer angeben.
-Darüber hinaus MUSS in `CapabilityStatement.instantiates` die Canonical URL des nachfolgenden CapabilityStatements angegeben werden.
+Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.
 
 Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement mit `SHALL` gekennzeichnet sind.
 Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten,
@@ -31,11 +30,13 @@ sofern diese in der Instanz implementiert wurden.
 Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
 
 
+
 * rest.mode = #server
 * rest.resource[+]
   * insert Expectation (#SHALL)
   * type = #DocumentReference
   * operation[+]
     * insert Expectation (#SHALL)
-    * name = #update-metadata
-    * definition = Canonical(UpdateMetadata)
+    * name = #generate-metadata
+    * definition = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
+
