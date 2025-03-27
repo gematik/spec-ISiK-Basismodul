@@ -1,6 +1,6 @@
 ---
-topic: ISiKCapabilityStatementMedikationVerordnungRolle
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationAMTSRolle
+topic: ISiKCapabilityStatementMedikationVerordnungAkteur
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
 ---
 ## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
