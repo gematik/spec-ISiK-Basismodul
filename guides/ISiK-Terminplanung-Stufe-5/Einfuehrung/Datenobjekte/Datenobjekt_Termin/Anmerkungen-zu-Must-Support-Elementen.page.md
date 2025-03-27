@@ -20,7 +20,7 @@ select
 
 **Bedeutung:** Herkunft der Termins
 
-**Hinweis:** Angabe, ob der Termin durch einen externen Termin Requestor eingestellt wurde. Falls das Datenobjekt dauerhaft in das Termin Repository gespeichert wird, KANN der Tag entfernt werden. Für die weitere Prozesssteuerung kann eine Unterscheidung, ob es sich um einen intern oder extern erstellten Termin handelt, notwendig sein, sodass aus Gründen der Nachvollziehbarkeit der Tag bestehen bleiben sollte. Des Weiteren gelten die Vorgaben des ISiK Basismoduls zur [CREATE-Interaktion](https://simplifier.net/guide/isik-basis-v4/markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest?version=current).
+**Hinweis:** Angabe, ob der Termin durch einen externen Termin-Requestor eingestellt wurde. Falls das Datenobjekt dauerhaft in das Termin-Repository gespeichert wird, KANN der Tag entfernt werden. Für die weitere Prozesssteuerung kann eine Unterscheidung, ob es sich um einen intern oder extern erstellten Termin handelt, notwendig sein, sodass aus Gründen der Nachvollziehbarkeit der Tag bestehen bleiben sollte. Des Weiteren gelten die Vorgaben des ISiK Basismoduls zur [CREATE-Interaktion](https://simplifier.net/guide/isik-basis-v4/markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest?version=current).
 
 ### `Appointment.extension:Nachricht`
 
@@ -38,7 +38,7 @@ select
 
 **Bedeutung:** Differenzierung zwischen Terminwunsch und gebuchten Termin
 
-**Hinweis:** Ein Termin Requestor kann im Status entsprechend wählen, sodass der Termin als Terminwunsch zu interpretieren ist. Nachdem der Termin bestätigt wurde, ist der Terminstatus durch das Termin-Repository anzupassen.
+**Hinweis:** Ein Termin-Requestor kann im Status entsprechend wählen, sodass der Termin als Terminwunsch zu interpretieren ist. Nachdem der Termin bestätigt wurde, ist der Terminstatus durch das Termin-Repository anzupassen.
 
 Alle Statuswerte MÜSSEN durch ein bestätigungsrelevantes System unterstützt werden, insbesondere der Status "proposed" und "booked". 
 

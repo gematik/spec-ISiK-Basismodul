@@ -25,7 +25,7 @@ Folgendes BPMN-Diagramm gibt eine Übersicht zu einer Terminbuchung durch einen 
 
 {{render:Material/images/diagrams/buchung-termin-portal.drawio.png}}
 
-Folgendes Sequenzdiagramm detailliert den Ablauf unter Berücksichtigung der Akteure Termin Requestor (z.B. Patientenportal) und Termin Repository (z.B. KIS); 
+Folgendes Sequenzdiagramm detailliert den Ablauf unter Berücksichtigung der Akteure Termin-Requestor (z.B. Patientenportal) und Termin-Repository (z.B. KIS); 
 offen bleibt hier allerdings noch der Ablauf zum Austausch von Patientendaten zwischen den Systemen:
  
 {{render:Material/images/diagrams/patient-buchung-sequenz.png}}
