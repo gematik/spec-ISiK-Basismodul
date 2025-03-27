@@ -86,7 +86,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
 * type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "system"
+  * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
     LOINC 0..1 MS and
@@ -94,16 +94,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     IHE 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
   * system 1..
-  * system = $loinc
   * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
-  * system = "http://dvmd.de/fhir/CodeSystem/kdl" (exactly)
   * code 1..
     * obeys kdl-1
 * type.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
   * system 1..
-  * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
 * category MS
   * ^short = "Dokument-Kategorie"
