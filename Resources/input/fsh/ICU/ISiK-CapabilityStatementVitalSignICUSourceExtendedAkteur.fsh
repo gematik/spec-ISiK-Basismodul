@@ -25,16 +25,16 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 
 // Administative Daten
 * imports[+] = Canonical(ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle)
-
+  * insert ExpectationImports(#SHALL)
 // MII-ICU backport profiles minimal (übergreifend)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceMinimalRolle)
-
+  * insert ExpectationImports(#SHALL)
 // MII-ICU backport profiles extended (e.g for PDMS)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceExtendedRolle)
-
+  * insert ExpectationImports(#SHALL)
 //Support für Laborprofile
 * imports[+] = Canonical(ISiKCapabilityStatementLaborMinimalRolle)
-
+  * insert ExpectationImports(#SHALL)
 //Support für generische Vitalparameter (wie Körpergewicht, Größe etc.)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignStandardSourceRolle)
-
+  * insert ExpectationImports(#SHALL)
