@@ -10,7 +10,10 @@ Usage: #definition
   
 **HISTORIE:**    
 
-* 5.0.0 - Erzeugung des Akteurs-CapabilityStatement zur Bündelung der Rollen.
+* 5.0.0 
+  * Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
+  * Erzeugung des Akteurs-CapabilityStatement zur Bündelung der Rollen.
+
 "
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
 * kind = #requirements
@@ -18,3 +21,8 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * imports = Canonical(ISiKCapabilityStatementAMTSRolle)
+* imports = Canonical(SiKCapabilityStatementStammdatenRolle)
+* imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+* imports = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
+//* imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
+//* imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
