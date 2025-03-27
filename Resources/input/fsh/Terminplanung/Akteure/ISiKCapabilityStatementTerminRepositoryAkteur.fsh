@@ -35,4 +35,6 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
+* rest.mode = #server
 * imports = Canonical(ISiKCapabilityStatementTerminologieRolle)
+* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
