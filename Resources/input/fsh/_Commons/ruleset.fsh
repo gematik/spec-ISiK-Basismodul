@@ -1,13 +1,13 @@
 RuleSet: Meta
 * ^version = "5.0.0-rc"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^date = "2024-11-25"
 
 RuleSet: MetaInstance
 * version = "5.0.0-rc"
-* status = #draft
+* status = #active
 * experimental = false
 * publisher = "gematik GmbH"
 * date = "2024-11-25"
