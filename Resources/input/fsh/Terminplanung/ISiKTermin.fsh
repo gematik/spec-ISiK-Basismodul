@@ -85,6 +85,13 @@ Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit ei
   Begründung zu Kardinalität und Must Support: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.
   Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.
   "
+* participant contains Angehoeriger 0.. MS
+* participant[Angehoeriger].actor only Reference(RelatedPerson)
+* participant[Angehoeriger].actor MS
+* participant[Angehoeriger].actor.reference 1..1 MS
+* participant[AkteurPersonImGesundheitsberuf] ^comment = "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.
+
+Begründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen die durch einen Angehörigen gebucht/verwaltet werden ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann."
 * specialty.coding 1..* MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
