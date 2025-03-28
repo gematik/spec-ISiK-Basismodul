@@ -8,7 +8,7 @@ Version: 5.0.0-rc
 
 Datum: t.b.d.
 
-* `improve`Überarbeitung von Akteuren und Rollen, dabei Procedure Interaktionen für Akteur im Kontext von AMTS eingeführt https://github.com/gematik/spec-ISiK-Basismodul/pull/597
+* `improve`Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt https://github.com/gematik/spec-ISiK-Basismodul/pull/597
 
 ---
 
