@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2024-11-25",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\r\n\r\nHinweis zur Auswahl des Profils: \r\nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\r\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.",
+  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\n\nHinweis zur Auswahl des Profils: \nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -27,7 +27,7 @@
         "path": "MedicationStatement.extension",
         "sliceName": "acceptedRisk",
         "short": "akzeptiertes (in Kauf genommenes) Risiko",
-        "comment": "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein\r\n\r\n  Hinweis: Hier kann ein im Rahmen der Medikation festgestelltes, aber in Kauf genommenes Risiko dokumentiert werden, speziell auch die Begründung und ggf. erforderliche Begleitmaßnahmen.",
+        "comment": "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein\n\n  Hinweis: Hier kann ein im Rahmen der Medikation festgestelltes, aber in Kauf genommenes Risiko dokumentiert werden, speziell auch die Begründung und ggf. erforderliche Begleitmaßnahmen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -50,7 +50,7 @@
         "path": "MedicationStatement.extension",
         "sliceName": "medikationsart",
         "short": "Therapieart der Medikation",
-        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\r\n\r\n  Hinweis: Angabe Akut- oder Dauermedikation.",
+        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Angabe Akut- oder Dauermedikation.",
         "min": 0,
         "max": "1",
         "type": [
@@ -83,7 +83,7 @@
         "path": "MedicationStatement.extension",
         "sliceName": "selbstmedikation",
         "short": "Selbstmedikation",
-        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\r\n\r\n  Hinweis: Flag zur Selbstmedikation.",
+        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Flag zur Selbstmedikation.",
         "min": 0,
         "max": "1",
         "type": [
@@ -106,7 +106,7 @@
         "path": "MedicationStatement.extension",
         "sliceName": "behandlungsziel",
         "short": "Behandlungsziel (textuell)",
-        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\r\n\r\n  Hinweis: Freitext-Beschreibung des Behandlungsziels.",
+        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Freitext-Beschreibung des Behandlungsziels.",
         "min": 0,
         "max": "1",
         "type": [
@@ -129,7 +129,7 @@
         "path": "MedicationStatement.extension",
         "sliceName": "medicationStatementReplaces",
         "short": "Welche Medikationsinformation wird ersetzt?",
-        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit\r\n\r\n  Hinweis: Welche Medikationsinformation wird ersetzt?",
+        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit\n\n  Hinweis: Welche Medikationsinformation wird ersetzt?",
         "min": 0,
         "max": "1",
         "type": [
@@ -185,7 +185,7 @@
         "path": "MedicationStatement.medication[x]",
         "sliceName": "medicationCodeableConcept",
         "short": "Medikament in codierter Form oder ggf. als Freitext",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n\r\n  Hinweis: kann verwendet werden, wenn keine detaillierten Informationen zum Medikament (z.B. Rezepturen) existieren.",
+        "comment": "Begründung des Must-Support: Basisinformation\n\n  Hinweis: kann verwendet werden, wenn keine detaillierten Informationen zum Medikament (z.B. Rezepturen) existieren.",
         "min": 0,
         "max": "1",
         "type": [
@@ -276,7 +276,7 @@
         "path": "MedicationStatement.medication[x]",
         "sliceName": "medicationReference",
         "short": "Referenz auf das Medikament (Medication-Ressource)",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n\r\n  Hinweis: wird verwendet, wenn detaillierte Informationen zum Medikament vorliegen",
+        "comment": "Begründung des Must-Support: Basisinformation\n\n  Hinweis: wird verwendet, wenn detaillierte Informationen zum Medikament vorliegen",
         "min": 0,
         "max": "1",
         "type": [
@@ -352,7 +352,7 @@
         "path": "MedicationStatement.effective[x]",
         "sliceName": "effectiveDateTime",
         "short": "Zeitpunkt (Datum oder Datum + Uhrzeit)",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n  \r\n  Festlegung zur Nutzung: \r\n  An dieser Stelle KANN eine lediglich Datums-genaue Angabe (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime) seitens eines bestätigungsrelevanten Systems unterstützt werden. Es KANN auch eine Uhrzeit angegeben werden.\r\n  Für sekunden-genaue Angaben zur Verabreichung eines Medikaments an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. \r\n  ",
+        "comment": "Begründung des Must-Support: Basisinformation\n  \n  Festlegung zur Nutzung: \n  An dieser Stelle KANN eine lediglich Datums-genaue Angabe (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime) seitens eines bestätigungsrelevanten Systems unterstützt werden. Es KANN auch eine Uhrzeit angegeben werden.\n  Für sekunden-genaue Angaben zur Verabreichung eines Medikaments an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. \n  ",
         "min": 0,
         "max": "1",
         "type": [
@@ -367,7 +367,7 @@
         "path": "MedicationStatement.effective[x]",
         "sliceName": "effectivePeriod",
         "short": "Zeitraum",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n  \r\n  Festlegung zur Nutzung: \r\n  An dieser Stelle KANN eine lediglich Datums-genaue Angabe (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime) seitens eines bestätigungsrelevanten Systems unterstützt werden. Es KANN auch eine Uhrzeit angegeben werden.\r\n  Für sekunden-genaue Angaben zur Verabreichung eines Medikaments an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. \r\n  ",
+        "comment": "Begründung des Must-Support: Basisinformation\n  \n  Festlegung zur Nutzung: \n  An dieser Stelle KANN eine lediglich Datums-genaue Angabe (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime) seitens eines bestätigungsrelevanten Systems unterstützt werden. Es KANN auch eine Uhrzeit angegeben werden.\n  Für sekunden-genaue Angaben zur Verabreichung eines Medikaments an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. \n  ",
         "min": 0,
         "max": "1",
         "type": [
@@ -398,7 +398,7 @@
         "id": "MedicationStatement.reasonCode",
         "path": "MedicationStatement.reasonCode",
         "short": "Grund der Medikation (codiert)",
-        "comment": "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\r\n  \r\n  Begründung zu Must-Support: Konsolidierung mit MII.",
+        "comment": "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  \n  Begründung zu Must-Support: Konsolidierung mit MII.",
         "mustSupport": true
       },
       {
@@ -432,7 +432,7 @@
         "id": "MedicationStatement.reasonReference",
         "path": "MedicationStatement.reasonReference",
         "short": "Grund der Medikation (Referenz)",
-        "comment": "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\r\n  \r\n  Begründung zu Must-Support: Konsolidierung mit MII.",
+        "comment": "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  \n  Begründung zu Must-Support: Konsolidierung mit MII.",
         "mustSupport": true
       },
       {
@@ -464,7 +464,7 @@
         "id": "MedicationStatement.dosage.text",
         "path": "MedicationStatement.dosage.text",
         "short": "Freitext-Dosierungsanweisungen",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\r\n        \r\n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\r\n    \r\n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-401/Einfuehrung/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\r\n    \r\n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.\r\n",
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-401/Einfuehrung/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.\n",
         "mustSupport": true
       },
       {

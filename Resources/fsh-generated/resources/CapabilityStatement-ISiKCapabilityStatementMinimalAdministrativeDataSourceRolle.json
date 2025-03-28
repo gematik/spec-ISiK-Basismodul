@@ -2,7 +2,7 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle",
-  "description": "Das vorliegende CapabilityStatement beschreibt grundlegende Interaktionen die ein ISiK-konformes System oder eine Systemkomponenten in der Rolle 'Administrative Data Source' unterstützen muss.\r\n\r\nDie Interaktionen ermöglichen das Abfragen von Patienten- und Fallkontaktdaten (Encounter), die typische administrative Daten sind. Diese Daten werden z.B. in einem KIS erfasst und verwaltet.\r\n\r\n\r\n**HISTORIE:**    \r\n\r\n*Historie*: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).\r\n\r\n*Historie*: mit der Version 4.0.1 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement überarbeitet.\r\n\r\n*Version 4.0.0*  \r\n* `change` Initialisierung des CapabilityStatements.   ",
+  "description": "Das vorliegende CapabilityStatement beschreibt grundlegende Interaktionen die ein ISiK-konformes System oder eine Systemkomponenten in der Rolle 'Administrative Data Source' unterstützen muss.\n\nDie Interaktionen ermöglichen das Abfragen von Patienten- und Fallkontaktdaten (Encounter), die typische administrative Daten sind. Diese Daten werden z.B. in einem KIS erfasst und verwaltet.\n\n\n**HISTORIE:**    \n\n*Historie*: mit der Version 4.0.2 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement im Sinne einer eigenständigen Rolle extrahiert (die Funktionalität bleibt dabei unverändert).\n\n*Historie*: mit der Version 4.0.1 des IG ICU-Normalstation-Workflow wurde das vorliegende CapabilityStatement überarbeitet.\n\n*Version 4.0.0*  \n* `change` Initialisierung des CapabilityStatements.   ",
   "version": "5.0.0-rc",
   "status": "active",
   "experimental": false,
@@ -93,7 +93,7 @@
               "name": "_id",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
               "type": "token",
-              "documentation": "**Beispiel:**\r\n        `GET [base]/[Resourcetype]?_id=103270`\r\n        **Anwendungshinweis:**\r\n        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource\r\n        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,\r\n        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,\r\n        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:\r\n        `GET [base]/Encounter?_id=103270&_include=Encounter:patient`\r\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).\r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_id=103270`\n        **Anwendungshinweis:**\n        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource\n        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,\n        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,\n        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:\n        `GET [base]/Encounter?_id=103270&_include=Encounter:patient`\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -105,7 +105,7 @@
               "name": "_tag",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
               "type": "token",
-              "documentation": "**Beispiel:**\r\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\r\n        **Anwendungshinweis:**\r\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\r\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
             },
             {
               "extension": [
@@ -116,7 +116,7 @@
               ],
               "name": "_count",
               "type": "number",
-              "documentation": "**Beispiel:**\r\n        `GET [base]/[Resourcetype]?_count=100`\r\n        **Anwendungshinweis:**\r\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_count=100`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "
             },
             {
               "extension": [
@@ -127,7 +127,7 @@
               ],
               "name": "_has",
               "type": "string",
-              "documentation": "**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben\r\n        `GET [base]/Patient?_has:Observation:patient:code=1234-5`\r\n        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde\r\n        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`\r\n        **Anwendungshinweis:**\r\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+              "documentation": "**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben\n        `GET [base]/Patient?_has:Observation:patient:code=1234-5`\n        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde\n        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
             },
             {
               "extension": [
@@ -139,7 +139,7 @@
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/Patient-identifier",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?identifier=http://fhir.krankenhaus.example|1032702`    \r\n        `GET [base]/Patient?identifier=1032702`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?identifier=http://fhir.krankenhaus.example|1032702`    \n        `GET [base]/Patient?identifier=1032702`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -151,7 +151,7 @@
               "name": "family",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-family",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?family=Musterfrau`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?family=Musterfrau`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -163,7 +163,7 @@
               "name": "given",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-given",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?given=Erika`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?given=Erika`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -175,7 +175,7 @@
               "name": "birthdate",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-birthdate",
               "type": "date",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?birthdate=1964-12-08`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date)."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?birthdate=1964-12-08`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date)."
             },
             {
               "extension": [
@@ -187,7 +187,7 @@
               "name": "gender",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-gender",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?birthdate=1964-12-08`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?birthdate=1964-12-08`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -199,7 +199,7 @@
               "name": "name",
               "definition": "http://hl7.org/fhir/SearchParameter/Patient-name",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?name=Erika`    \r\n        `GET [base]/Patient?name=Erika`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?name=Erika`    \n        `GET [base]/Patient?name=Erika`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
             },
             {
               "extension": [
@@ -211,7 +211,7 @@
               "name": "address",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-address",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?address=Berlin`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?address=Berlin`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -223,7 +223,7 @@
               "name": "address-city",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-address-city",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?address-city=Berlin`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?address-city=Berlin`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -235,7 +235,7 @@
               "name": "address-country",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-address-country",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?address-country=DE`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?address-country=DE`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -247,7 +247,7 @@
               "name": "address-postalcode",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-address-postalcode",
               "type": "string",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?address-postalcode=10117`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?address-postalcode=10117`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -259,7 +259,7 @@
               "name": "active",
               "definition": "http://hl7.org/fhir/SearchParameter/Patient-active",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?active=true`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?active=true`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             },
             {
               "extension": [
@@ -271,7 +271,7 @@
               "name": "telecom",
               "definition": "http://hl7.org/fhir/SearchParameter/individual-telecom",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Patient?telecom=phone|+49152236898`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Patient?telecom=phone|+49152236898`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  \n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
             }
           ],
           "searchRevInclude": [
@@ -339,7 +339,7 @@
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -351,7 +351,7 @@
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-status",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?status=finished`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?status=finished`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -363,7 +363,7 @@
               "name": "class",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-class",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?class=IMP`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?class=IMP`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -375,7 +375,7 @@
               "name": "type",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-type",
               "type": "token",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?type=http://fhir.de/CodeSystem/kontaktart-de|stationaer`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?type=http://fhir.de/CodeSystem/kontaktart-de|stationaer`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [
@@ -387,7 +387,7 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?patient=Patient/123`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  \r\n        Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?patient=Patient/123`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  \n        Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend."
             },
             {
               "extension": [
@@ -399,7 +399,7 @@
               "name": "subject",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-subject",
               "type": "reference",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?subject=Patient/123`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?subject=Patient/123`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -411,7 +411,7 @@
               "name": "account",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-account",
               "type": "reference",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?account=Account/123`    \r\n        `GET [base]/Encounter?account:identifier=123456`    \r\n        `GET [base]/Encounter?account:identifier=https://example.org/fhir/sid/abrechnungsfallnr|123456`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?account=Account/123`    \n        `GET [base]/Encounter?account:identifier=123456`    \n        `GET [base]/Encounter?account:identifier=https://example.org/fhir/sid/abrechnungsfallnr|123456`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -423,7 +423,7 @@
               "name": "date",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-date",
               "type": "date",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?date=lt2020-26-10`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \r\n        Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der \r\n        [Such-Prefixe](https://hl7.org/fhir/R4/search.html#prefix)\r\n        - und hier insbesondere die Unterschiede zwischen `lt` und `eb` bzw. `gt` und `sa` - beachtet werden."
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?date=lt2020-26-10`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \n        Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der \n        [Such-Prefixe](https://hl7.org/fhir/R4/search.html#prefix)\n        - und hier insbesondere die Unterschiede zwischen `lt` und `eb` bzw. `gt` und `sa` - beachtet werden."
             },
             {
               "extension": [
@@ -435,7 +435,7 @@
               "name": "date-start",
               "definition": "https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start",
               "type": "date",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?end-date=lt2020-26-10`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \r\n        Bei diesem Suchparameter handelt es sich um eine Präadoption \r\n        [eines Suchparameters, der in FHIR R5 hinzugefügt wurde](https://hl7.org/fhir/R5/SearchParameter/Encounter-date-start). "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?end-date=lt2020-26-10`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \n        Bei diesem Suchparameter handelt es sich um eine Präadoption \n        [eines Suchparameters, der in FHIR R5 hinzugefügt wurde](https://hl7.org/fhir/R5/SearchParameter/Encounter-date-start). "
             },
             {
               "extension": [
@@ -447,7 +447,7 @@
               "name": "end-date",
               "definition": "https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date",
               "type": "date",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?end-date=lt2020-26-10`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \r\n        Bei diesem Suchparameter handelt es sich um eine Präadoption \r\n        [eines Suchparameters, der in FHIR R5 hinzugefügt wurde](https://hl7.org/fhir/R5/SearchParameter/Encounter-end-date). "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?end-date=lt2020-26-10`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  \n        Bei diesem Suchparameter handelt es sich um eine Präadoption \n        [eines Suchparameters, der in FHIR R5 hinzugefügt wurde](https://hl7.org/fhir/R5/SearchParameter/Encounter-end-date). "
             },
             {
               "extension": [
@@ -459,7 +459,7 @@
               "name": "location",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-location",
               "type": "reference",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?location=Location/test`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?location=Location/test`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -471,7 +471,7 @@
               "name": "service-provider",
               "definition": "http://hl7.org/fhir/SearchParameter/Encounter-service-provider",
               "type": "reference",
-              "documentation": "**Beispiel:**    \r\n        `GET [base]/Encounter?service-provider=Organization/test`    \r\n        **Anwendungshinweis:**   \r\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Encounter?service-provider=Organization/test`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             }
           ],
           "searchInclude": [
