@@ -1,8 +1,15 @@
 ---
-topic: ISiKCapabilityStatementTerminplanungServer
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminplanungServer
+topic: ISiKCapabilityStatementMetadatenErzeugenRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMetadatenErzeugenRolle
 ---
-## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
+##  <fql output="inline" headers="false">
+from
+    CapabilityStatement
+where
+    url = %canonical
+select
+    Artefakt:title
+</fql> - Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
 <fql>
 from

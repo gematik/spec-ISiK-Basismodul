@@ -1,13 +1,13 @@
 RuleSet: Meta
 * ^version = "5.0.0-rc"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^date = "2024-11-25"
 
 RuleSet: MetaInstance
 * version = "5.0.0-rc"
-* status = #draft
+* status = #active
 * experimental = false
 * publisher = "gematik GmbH"
 * date = "2024-11-25"
@@ -27,6 +27,11 @@ RuleSet: Meta-CapabilityStatement
 RuleSet: Expectation (expectation)
 * extension[+]
   * url = $capabilitystatement-expectation
+  * valueCode = {expectation}
+
+RuleSet: ExpectationImports (expectation)
+* extension[+]
+  * url = Canonical(ExtensionISiKCapabilityStatementImportsExpectation)
   * valueCode = {expectation}
 
 RuleSet: SupportedProfileCapExpectationExt(canonical, expectation)
