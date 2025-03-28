@@ -1,6 +1,6 @@
 ---
-topic: CapabilityStatement
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenaustauschServer
+topic: ISiKCapabilityStatementTerminRepositoryRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle
 ---
 ## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
@@ -36,6 +36,7 @@ select
 order by type
 </fql>
 
+
 #### Interaktionen
 <fql>
 from
@@ -45,20 +46,32 @@ where
 for rest.resource
 select
 {
-     Ressourcentyp: type,
-     Profile: supportedProfile,
-     Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
-     READ: interaction.where(code = 'read').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
-     SEARCH: interaction.where(code = 'search-type').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
-     CREATE: interaction.where(code = 'create').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
-     UPDATE: interaction.where(code = 'update').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
-     DELETE: interaction.where(code = 'delete').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
-
-
+    Ressourcentyp: type,
+    Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    READ: interaction.where(code = 'read').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    SEARCH: interaction.where(code = 'search-type').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    CREATE: interaction.where(code = 'create').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    UPDATE: interaction.where(code = 'update').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    DELETE: interaction.where(code = 'delete').extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 }
-order by type
+order by Ressourcentyp
 </fql>
 
+#### Profile
+<fql>
+from
+    CapabilityStatement
+where
+    url = %canonical    
+for rest.resource
+select
+{
+    Ressourcentyp: type,
+    join for supportedProfile select {Profile: %context, Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value}
+    
+}
+order by Ressourcentyp
+</fql>
 
 #### Ressourcentyp-spezifische Operations 
 
@@ -79,7 +92,7 @@ join operation
 }
 </fql> 
 
-<!--#### Globale Operations 
+#### Globale Operations 
 
 <fql>
 from
@@ -93,9 +106,9 @@ select
      Spezifikation: definition,
      Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 }
-</fql>-->
+</fql>
 
-<!--#### Dokumenten-Endpunkt
+#### Dokumenten-Endpunkt
 <fql>
 from
 	CapabilityStatement
@@ -103,8 +116,9 @@ where
 	url = %canonical
 for document
 select
-	Modus: mode, Profil: profile, Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
-</fql>-->
+	Modus: mode, Verbindlichkeit: extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value,
+    Dokumentation: documentation, Profil: profile
+</fql>
 
 #### Suchparameter
 <fql>
@@ -135,10 +149,12 @@ for rest.resource
 select
 {
      RessourcenTyp: type,
-     Include: searchInclude,
-     ReverseInclude: searchRevInclude
+     for searchInclude select Include: %context + ' (' + extension.value + ')',
+     for searchRevInclude select RevInclude: %context + ' (' + extension.value + ')'
 }
+
 </fql>
+
 
 
 

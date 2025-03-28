@@ -29,6 +29,11 @@ RuleSet: Expectation (expectation)
   * url = $capabilitystatement-expectation
   * valueCode = {expectation}
 
+RuleSet: ExpectationImports (expectation)
+* extension[+]
+  * url = Canonical(ExtensionISiKCapabilityStatementImportsExpectation)
+  * valueCode = {expectation}
+
 RuleSet: SupportedProfileCapExpectationExt(canonical, expectation)
 * supportedProfile[+] = Canonical({canonical})
   * insert CapabilityStatementExpectationExt({expectation})
