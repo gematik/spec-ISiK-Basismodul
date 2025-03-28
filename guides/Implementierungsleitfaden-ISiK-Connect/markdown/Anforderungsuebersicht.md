@@ -44,3 +44,4 @@
 | ANF-CON-042 | [Patient- / User-level Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
 | ANF-CON-043 | [Zurückweisung Scopes Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
 | ANF-CON-044 | [Scope-Parameter Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-045 | [Launch Scopes Access Token Response](SmartBackendServices/Schritt3AbrufAccessToken.md) |

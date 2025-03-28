@@ -20,7 +20,7 @@ Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Pa
 
 ## Standalone Launch Sequence
 
-Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten- und/oder Kontakt/Fall-Kontext angefordert werden. Die Kodierung der Scopes ist im normativen Teil von ISiK-Connect auf der Seite {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:Scopes und Compartments}} beschrieben. 
+Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN ([ANF-CON-045](Anforderungsuebersicht.md)). Beispielsweise kann, äquivalent zum EHR Launch, der Patienten- und/oder Kontakt/Fall-Kontext angefordert werden. Die Kodierung der Scopes ist im normativen Teil von ISiK-Connect auf der Seite {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:Scopes und Compartments}} beschrieben. 
 
 ----
 
@@ -34,7 +34,7 @@ Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichen
 
 ## TLS
 
-Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein ([ANF-CON-011](Anforderungsuebersicht.md)). Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest?version=current).
+Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest?version=current) ([ANF-CON-011](Anforderungsuebersicht.md)).
 
 ----
 
