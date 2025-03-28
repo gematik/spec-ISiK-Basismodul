@@ -39,3 +39,9 @@
 | ANF-CON-037 | [Berechtigungen im Scope in der Reihenfolge 'cruds' angeben](Conformance/ConformanceScopesKontexte.md) |
 | ANF-CON-038 | [Wildcard-Scopes](Conformance/ConformanceScopesKontexte.md) |
 | ANF-CON-039 | [Unterstützung von Suchparametern](Conformance/ConformanceScopesKontexte.md) |
+| ANF-CON-040 | [exp-Parameter für Backend Service Tokens](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-041 | [Validierung JWT Client Assertion](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-042 | [Patient- / User-level Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-043 | [Zurückweisung Scopes Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-044 | [Scope-Parameter Backend Service](SmartBackendServices/Schritt3AbrufAccessToken.md) |
+| ANF-CON-045 | [Launch Scopes Access Token Response](SmartBackendServices/Schritt3AbrufAccessToken.md) |
