@@ -8,6 +8,7 @@ Version 5.0.0.
 
 Datum: t.b.d.
 
+* `changed` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
 * `improve` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
 
