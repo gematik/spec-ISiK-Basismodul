@@ -133,7 +133,6 @@ InstanceOf: ISiKTermin
 Usage: #example
 * meta
   * tag = http://fhir.de/CodeSystem/common-meta-tag-de#external
-* extension[ISiKNachrichtExtension].valueReference = Reference(ISiKNachrichtExample)
 * status = $appointmentStatus#proposed
 * start = "2022-12-10T09:00:00Z"
 * end = "2022-12-10T11:00:00Z"
@@ -152,7 +151,6 @@ InstanceOf: ISiKTermin
 Usage: #example
 * meta
   * tag = http://fhir.de/CodeSystem/common-meta-tag-de#external
-* extension[ISiKNachrichtExtension].valueReference = Reference(ISiKNachrichtExample)
 * status = $appointmentStatus#proposed
 * start = "2022-12-10T09:00:00Z"
 * end = "2022-12-10T09:30:00Z"
