@@ -1,12 +1,12 @@
-# ISiK-Sicherheit: Autorisierung
+# ISiK-Connect: Autorisierung
 
-ISiK-Sicherheit konkretisiert in der aktuellen Stufe 5 von ISiK die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Sicherheitsthemen wie z. B. Protokollierung und Authentisierung spezifiziert. 
+ISiK-Connect konkretisiert in der aktuellen Stufe die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Themen der Konnektivität wie z. B. Protokollierung und Authentisierung spezifiziert. 
 
 # Zugriffsrechte und Compartments
 
-ISiK-Sicherheit schreibt Mechanismen für den Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. "Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen."). Autorisierungen werden in dem ISiK-Sicherheit zugrunde liegenden Bild einer IT-Sicherheitsinfrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus generellen Sicherheitsregeln des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen _Policy Administration Point_.  
+ISiK-Connect schreibt Mechanismen für den Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. "Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen."). Autorisierungen werden in dem ISiK-Connect zugrunde liegenden Bild einer IT-Infrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus generellen Sicherheitsregeln des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen _Policy Administration Point_.  
 
-ISiK-Sicherheit nutzt für die Kodierung und Durchsetzung von Autorisierungen drei Konzepte aus FHIR bzw. _SMART on FHIR_:
+ISiK-Connect nutzt für die Kodierung und Durchsetzung von Autorisierungen drei Konzepte aus FHIR bzw. _SMART on FHIR_:
 * Kontext
 * _Compartment_ 
 * _Scope_
@@ -19,17 +19,17 @@ Jeder Zugriff auf eine geschützte Ressource erfolgt im Kontext eines Patienten,
 
 Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patienten "123" geöffnet und möchte nun Daten zu diesem Patienten verarbeiten, zu deren Abruf eine Autorisierung erforderlich ist. Der Zugriffskontext der Autorisierung ist der Patient "123". Alle anwendbaren Zugriffsrechte (s.u.) beziehen sich auf den Patienten "123". Das _Patient_-Compartment beschreibt, wie der ISiK-Ressourcenserver validieren kann, dass eine Ressource (z. B. eine _Observation_) im Kontext des Patienten "123" steht.
 
-ISiK-konforme Ressourcenservern MÜSSEN die beim Aufruf eines RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können. ([ANF-CON-005](Anforderungsuebersicht.md))
+ISiK-konforme Ressourcenservern MÜSSEN die beim Aufruf eines RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können ([ANF-CON-005](Anforderungsuebersicht.md)).
 
-ISiK-Sicherheit macht in der ISiK Stufe 5 keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
+ISiK-Connect macht derzeitig keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
 
 ## _Compartments_
 
-Autorisierungen können in FHIR an eine 'Fokus'-Ressource gebunden werden, z. B. eine 'Patient'-Ressource ("Zugriff auf Daten zum Patienten 123"). Um die 'Fokus'-Ressource herum gruppieren sich weitere Ressourcen, die mit dieser in einer Beziehung stehen, z. B. im Fall der 'Patient'-Ressource die dem Patienten zugeordneten Beobachtungen, Diagosen/Probleme, Termine, Behandlungspläne, etc. In FHIR werden diese Gruppierungen über Ressourcen vom Ressourcentyp [_CompartmentDefinition_]https://hl7.org/fhir/R4/compartmentdefinition.html) festgelegt. Diese definiert die Elemente einer Ressource, die die Bindung zu der 'Fokus'-Ressource herstellen. 
+Autorisierungen können in FHIR an eine 'Fokus'-Ressource gebunden werden, z. B. eine 'Patient'-Ressource ("Zugriff auf Daten zum Patienten 123"). Um die 'Fokus'-Ressource herum gruppieren sich weitere Ressourcen, die mit dieser in einer Beziehung stehen, z. B. im Fall der 'Patient'-Ressource die dem Patienten zugeordneten Beobachtungen, Diagosen/Probleme, Termine, Behandlungspläne, etc. In FHIR werden diese Gruppierungen über Ressourcen vom Ressourcentyp [_CompartmentDefinition_](https://hl7.org/fhir/R4/compartmentdefinition.html) festgelegt. Diese definiert die Elemente einer Ressource, die die Bindung zu der 'Fokus'-Ressource herstellen. 
 
-Beispiel: Für den Ressourcentyp [_Condition_]https://hl7.org/fhir/R4/condition.html) legt die [_CompartmentDefinition_ der _Patient_-Ressource]https://hl7.org/fhir/R4/compartmentdefinition-patient.html) die Elemente 'Condition.patient' und 'Condition.participant-actor' als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Patientendaten im Kontext des Patienten "123" umfasst damit grundsätzlich nur 'Condition'-Ressourcen, deren 'subject'- oder 'participant-actor'-Element auf den Patienten "123" verweist.  
+Beispiel: Für den Ressourcentyp [_Condition_](https://hl7.org/fhir/R4/condition.html) legt die [_CompartmentDefinition_ der _Patient_-Ressource](https://hl7.org/fhir/R4/compartmentdefinition-patient.html) die Elemente 'Condition.patient' und 'Condition.participant-actor' als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Patientendaten im Kontext des Patienten "123" umfasst damit grundsätzlich nur 'Condition'-Ressourcen, deren 'subject'- oder 'participant-actor'-Element auf den Patienten "123" verweist.  
 
-ISiK-Ressourcenserver MÜSSEN zumindest Autorisierungen mit Bezug zu der in FHIR definierten _Compartment_-Definition für 'Patient'-Ressourcen verarbeiten können. ([ANF-CON-006](Anforderungsuebersicht.md))
+ISiK-Ressourcenserver MÜSSEN zumindest Autorisierungen mit Bezug zu der in FHIR definierten _Compartment_-Definition für 'Patient'-Ressourcen verarbeiten können ([ANF-CON-006](Anforderungsuebersicht.md)).
 
 ## Zugriffsrechte auf Ressourcen
 
@@ -37,7 +37,7 @@ In dem von _SMART on FHIR_ profilierten _OAuth2_-Standard legen sog. _Scopes_ di
 
 _Scopes_ werden vom API-Anbieter - im Fall von ISiK dem ISiK-Ressourcenserver - definiert und von dem zugreifenden Client während des Autorisierungsprozesses über den Autorisierungsserver angefordert. Sofern die Auswertung der anwendbaren Berechtigungsregeln durch den Autorisierungsserver die angeforderten _Scopes_ bestätigt, wird dem Client ein Zugriffstoken (_Access Token_) ausgestellt, das die anwendbaren _Scopes_ enthält. Der Client kann anschließend das Zugriffstoken verwenden, um für den berechtigten Nutzer im Rahmen der durch die _Scopes_ bestätigten Rechtedelegation auf die geschützten Ressourcen eines ISiK-Ressourcenservers zuzugreifen. 
 
-FHIR-Ressourcenservern MÜSSEN (ggf. im Zusammenspiel mit vorgelagerten _API Gateways_ oder _Reverse Proxies_) die in SMART-on-FHIR definierte Syntax für die Bestätigung von _Scopes_ verarbeiten und die mit den _Scopes_ ausgedrücken Berechtigungsdelegationen zur Absicherung ihrer RESTful-Schnittstellen anwenden können. ([ANF-CON-007](Anforderungsuebersicht.md))
+FHIR-Ressourcenservern MÜSSEN (ggf. im Zusammenspiel mit vorgelagerten _API Gateways_ oder _Reverse Proxies_) die in SMART-on-FHIR definierte Syntax für die Bestätigung von _Scopes_ verarbeiten und die mit den _Scopes_ ausgedrücken Berechtigungsdelegationen zur Absicherung ihrer RESTful-Schnittstellen anwenden können ([ANF-CON-007](Anforderungsuebersicht.md)).
 
 ## Zusammenspiel von Kontexten, _Compartments_ und Zugriffsrechten auf Ressourcen
 

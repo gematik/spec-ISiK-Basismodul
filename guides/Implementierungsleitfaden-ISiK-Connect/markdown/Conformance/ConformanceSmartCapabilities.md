@@ -4,9 +4,9 @@ Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN
 
 ISiK-Ressourcenserver MÜSSEN dieses JSON-Dokument unter der URL bereitstellen, der durch Anhängen von ```/.well-known/smart-configuration``` an ihre Basis-URL gebildet wird. Die Kodierung der _SMART Capabilities_ MUSS den Vorgaben aus [SMART App Launch - 8.2 - FHIR Authorization Endpoint and Capabilities Discovery using a Well-Known Uniform Resource Identifiers (URIs)](https://hl7.org/fhir/smart-app-launch/STU2/conformance.html#using-well-known) entsprechen. 
 
-## Normative Vorgaben für ISiK-Sicherheit in ISiK Stufe 5
+## Normative Vorgaben für ISiK-Connect
 
-Im Rahmen des Bestätigungsverfahrens für ISiK-Sicherheit in ISiK Stufe 5 werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
+Im Rahmen des Bestätigungsverfahrens für ISiK-Connect werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
 
 * ```authorization_endpoint```: Es MUSS die URL des Autorisierungs-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein ISiK-Client eine Autorisierungsanfrage stellen kann.
 * ```grant_types_supported```: Die _OAuth2 Grant Types_ ```authorization_code``` (Authorization Code Flow mit PKCE) UND ```client_credentials``` (Client Credentials) MÜSSEN unterstützt werden.  
@@ -21,20 +21,20 @@ Im Rahmen des Bestätigungsverfahrens für ISiK-Sicherheit in ISiK Stufe 5 werde
 
 ``` 
 GET /.well-known/smart-configuration HTTP/1.1
-Host: fhirapi.cdr.krankenhaus.de
+Host: fhir.cdr.example.com
 ```
 
 ## Beispiel für eine SMART Capabilities Datei
 
 ``` JSON
 {
-  "authorization_endpoint": "https://auth0.krankenhaus.de/auth/authorize",
-  "token_endpoint": "https://auth0.krankenhaus.de/auth/token",
+  "authorization_endpoint": "https://auth0.example.com/auth/authorize",
+  "token_endpoint": "https://auth0.example.com/auth/token",
   "grant_types_supported": [    "authorization_code", "client_credentials"  ],
   "scopes_supported": [ "patient/Patient.rs", "patient/Observation.rs", "patient/Condition.rs" ],
   "response_types_supported": ["code"],
-  "introspection_endpoint": "https://auth0.krankenhaus.de/user/introspect",
-  "revocation_endpoint": "https://auth0.krankenhaus.de/user/revoke",
+  "introspection_endpoint": "https://auth0.example.com/user/introspect",
+  "revocation_endpoint": "https://auth0.example.com/user/revoke",
   "code_challenge_methods_supported": ["S256"],
   "capabilities": [ "permission-v2" ]
 }
