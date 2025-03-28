@@ -26,5 +26,6 @@ Usage: #definition
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
 * imports = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
-//* imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
-//* imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
+* imports = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
+// * imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle) // unklar, da hier einzelne Interaktionen ggf. nur optional
+// * imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle) // unklar, da hier einzelne Interaktionen ggf. nur optional
