@@ -11,9 +11,11 @@ Datum: t.b.d.
 * `changed` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
 * `improve` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
-* `changed` ISiKKalender enthielt ein Binding auf ein VS welches auf ein `fragement`CodeSystem
+* `changed` ISiKKalender enthielt ein required Binding auf ein VS welches auf ein `fragement`
+  CodeSystem
   referenziert (Schedule.specialty.coding:ErweiterterFachabteilungsschluessel). Dies wurde durch ein
-  Pattern auf .system ersetzt. https://github.com/gematik/spec-ISiK-Basismodul/pull/613
+  extensible Binding und ein Pattern auf .system ersetzt um die Validierbarkeit des Feldes zu
+  ermöglichen. https://github.com/gematik/spec-ISiK-Basismodul/pull/613
 
 ---
 

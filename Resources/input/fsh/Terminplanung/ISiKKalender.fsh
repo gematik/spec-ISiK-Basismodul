@@ -27,7 +27,7 @@ Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für
   ErweiterterFachabteilungsschluessel 0..1
 * specialty.coding[Fachrichtung] from $IHEpracticeSettingVS (required)
   * ^comment = "Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) sowie mit der KBV abgestimmt (Stand:13.6.2024)."
-* specialty.coding[ErweiterterFachabteilungsschluessel]
+* specialty.coding[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (extensible)
   * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
   * ^comment = "Dieses CodeSystem KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
 * actor MS
