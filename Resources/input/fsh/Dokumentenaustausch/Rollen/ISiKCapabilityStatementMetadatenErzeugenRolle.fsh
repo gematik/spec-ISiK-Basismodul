@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementMetadatenErzeugenRolle&quot;.
-Diese Rolle ist in der Lage, Metadaten für Dokumente zu erzeugen.
+Diese Rolle beschreibt verpflichtende Interaktionen zur Erzeugung von Metadaten für Dokumente.
 "
 * rest.mode = #server
 * rest.resource[+]

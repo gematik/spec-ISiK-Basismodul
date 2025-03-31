@@ -13,6 +13,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
+* purpose = "Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Termin-Repository-Daten exponiert."
 //Das CS instantiiert sich selbst !?!?
 //* instantiates = Canonical(ISiKCapabilityStatementTerminRepository)
 * rest

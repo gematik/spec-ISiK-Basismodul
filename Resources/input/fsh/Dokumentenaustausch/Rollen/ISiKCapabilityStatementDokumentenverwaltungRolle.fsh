@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementDokumentenverwaltungRolle&quot;.
-Diese Rolle ist in der Lage, Dokumente zu erstellen, abzurufen und zu aktualisieren.
+Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf und der Aktualisierung von Dokumenten.
 "
 
 * rest.mode = #server

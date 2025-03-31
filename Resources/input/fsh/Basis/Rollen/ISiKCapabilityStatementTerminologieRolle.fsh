@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;.
-Diese Rolle ist in der Lage, Terminologie-Ressourcen zu abzurufen und zu verarbeiten.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von Terminologie-Ressourcen.
 "
 * rest
   * mode = #server

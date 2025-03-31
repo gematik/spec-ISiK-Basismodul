@@ -9,7 +9,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementMetadatenUpdateRolle&quot;.
-Diese Rolle ist in der Lage, Metadaten für Dokumente zu aktualisieren.
+Diese Rolle beschreibt verpflichtende Interaktionen zur Aktualisierung von Metadaten für Dokumente.
 "
 * rest.mode = #server
 * rest.resource[+]

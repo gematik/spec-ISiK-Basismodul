@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementStammdatenRolle&quot;.
-Diese Rolle ist in der Lage grundlegende Stammdaten abzufragen und zu verarbeiten.
+Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegender Stammdaten.
 "
 * rest
   * mode = #server
