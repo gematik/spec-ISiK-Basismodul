@@ -9,13 +9,13 @@ Die Terminvereinbarung ist durchführbar durch die Patientinnen und Patienten od
 
 Dies umfasst:
 
-- Abbildung von verfügbaren teil- und voll- stationäre Behandlungen
+- Abbildung von verfügbaren teil- und voll- stationären Behandlungen
 - Abfrage von verfügbaren Terminen
 - Buchungsmanagement von verfügbaren Terminen (Zusage, Absage, Temporäre Buchung, Wiederholende Termine)
 - Benachrichtigungen bei Terminänderungen
 - Anlage eines neues Patienten im KIS
 
-Darüber hinaus gelten in diesem Modul Festlegungen:
+Darüber hinaus gelten in diesem Modul folgende Festlegungen:
 
 {{index:current}}
 
