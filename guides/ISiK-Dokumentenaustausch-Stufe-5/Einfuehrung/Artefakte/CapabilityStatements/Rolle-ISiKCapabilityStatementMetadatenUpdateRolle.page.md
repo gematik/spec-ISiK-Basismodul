@@ -1,6 +1,6 @@
 ---
-topic: ISiKCapabilityStatementAufbaustrukturRolle
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle
+topic: ISiKCapabilityStatementMetadatenUpdateRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMetadatenUpdateRolle
 ---
 ##  <fql output="inline" headers="false">
 from

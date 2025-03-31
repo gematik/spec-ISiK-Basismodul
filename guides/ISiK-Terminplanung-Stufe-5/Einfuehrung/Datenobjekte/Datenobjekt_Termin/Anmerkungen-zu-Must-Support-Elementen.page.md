@@ -22,12 +22,6 @@ select
 
 **Hinweis:** Angabe, ob der Termin durch einen externen Termin-Requestor eingestellt wurde. Falls das Datenobjekt dauerhaft in das Termin-Repository gespeichert wird, KANN der Tag entfernt werden. Für die weitere Prozesssteuerung kann eine Unterscheidung, ob es sich um einen intern oder extern erstellten Termin handelt, notwendig sein, sodass aus Gründen der Nachvollziehbarkeit der Tag bestehen bleiben sollte. Des Weiteren gelten die Vorgaben des ISiK Basismoduls zur [CREATE-Interaktion](https://simplifier.net/guide/isik-basis-v4/markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest?version=current).
 
-### `Appointment.extension:Nachricht`
-
-**Bedeutung:** Kommunikation mit dem Patienten
-
-**Hinweis:** Für die Kommunikation mit dem Patienten sind Communication-Ressourcen zu verwenden. Für den Termin relevante Kommentare oder Anhänge MÜSSEN angegeben werden. Zudem kann die Communication-Ressource auch für die Kommunikation zwischen Leistungserbringer verwendet werden. Es ist zu beachten, dass in diesem Fall Kommentare vor der Herausgabe an die Patient:in gefiltert werden sollten.
-
 ### `Appointment.extension:replaces`
 
 **Bedeutung:** Angabe eines abgesagten / verschobenen Termins

@@ -1,6 +1,6 @@
 ---
-topic: CapabilityStatement
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenaustauschServer
+topic: ISiKCapabilityStatementDokumentenServerAkteur
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenServerAkteur
 ---
 ## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
@@ -20,6 +20,18 @@ where
 	url = %canonical
 select
 	CanonicalURL: url, Intention: kind, Status: status, Version: version
+</fql>
+
+### Zu importierende Rollen
+<fql>
+from
+    CapabilityStatement
+where
+    url = %canonical
+select 
+    'SHALL Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHALL'),
+    'SHOULD Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHOULD'),
+    'MAY Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'MAY')
 </fql>
 
 ### Anforderungen an die FHIR-API

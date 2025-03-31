@@ -15,4 +15,4 @@ Der Use Case rund um die Benachrichtigung, im Folgenden "Kommunikation" genannt,
     - Administrative Hinweise zum Termin: z.B. Anfahrtsskizze -> ISiK, Appointment.supportingInformation
 1. Externe Kommunikation von Patient an Krankenhaus/Arzt:
     - Antworten auf Fragebögen / Formulare -> ISiK, QuestionnaireResponse
-    - Fragen und Hinweise zum Termin -> Über ISiK möglich, ISiKNachricht (Communication) u.a. in Communication.inResponseTo für bidirektionale Kommunikation
+    - Fragen und Hinweise zum Termin -> Über ISiK möglich (?)
