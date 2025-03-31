@@ -8,8 +8,7 @@ Version: 5.0.0-rc
 
 Datum: t.b.d.
 
-* Mit der Stufe 5 werden alle Änderungen der untergeordneten Stufen verbindlich.
-* `feature` INREVIEW Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich + Umarbeitung der Akteure und Rollen für die CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/597
+* `improve` `feature` Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt und List-Interaktionen sowie Interaktionen auf ISiKSchwangerschaftErwarteterEntbindungstermin für AMTS eingeführt + Refactoring Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/597
 
 ---
 
