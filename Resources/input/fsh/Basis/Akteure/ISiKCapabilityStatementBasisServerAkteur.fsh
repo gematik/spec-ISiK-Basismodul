@@ -6,6 +6,10 @@ Usage: #definition
 * name = "ISiK-CapabilityStatementBasisServerAkteur"
 * title = "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
+* purpose = """   
+  CapabilityStatement für den Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;.
+  Dieser Akteur aggregiert die Rollen zur Abfrage von Stammdaten, Erweiterte Stammdaten, Aufbau-Struktur, Terminologie, klinischen Daten, Abrechnungsinformationen und Gesundheitsstatus.
+  """
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementErweiterteStammdatenRolle)
