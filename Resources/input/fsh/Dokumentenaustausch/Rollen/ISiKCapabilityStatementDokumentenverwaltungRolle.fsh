@@ -6,7 +6,10 @@ Usage: #definition
 * name = "ISiKCapabilityStatementDokumentenverwaltungRolle"
 * title = "ISiK CapabilityStatement Dokumentenverwaltung Rolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementDokumentenverwaltungRolle&quot;.
+Diese Rolle ist in der Lage, Dokumente zu erstellen, abzurufen und zu aktualisieren.
+"
 
 * rest.mode = #server
 * rest.resource[+]

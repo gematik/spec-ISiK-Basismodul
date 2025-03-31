@@ -7,8 +7,10 @@ Usage: #definition
 * name = "ISiKCapabilityStatementMetadatenUpdateRolle"
 * title = "ISiK CapabilityStatement Metadaten Update Rolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
-
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementMetadatenUpdateRolle&quot;.
+Diese Rolle ist in der Lage, Metadaten für Dokumente zu aktualisieren.
+"
 * rest.mode = #server
 * rest.resource[+]
   * insert Expectation (#SHALL)
