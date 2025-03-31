@@ -2,7 +2,7 @@ Instance: ISiKCapabilityStatementMedikamentRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement
-* insert Meta-CapabilityStatementRolle
+* insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementMedikamentRolle"
 * title = "ISiK CapabilityStatement MedikamentRolle"
 * contact.telecom.system = #url
@@ -18,7 +18,8 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* rest. mode = #server
+* rest
+  * mode = #server
   * resource[0]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
