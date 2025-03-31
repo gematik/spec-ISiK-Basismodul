@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementGesundheitsstatusRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle"
 * name = "ISiKCapabilityStatementGesundheitsstatusRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;"

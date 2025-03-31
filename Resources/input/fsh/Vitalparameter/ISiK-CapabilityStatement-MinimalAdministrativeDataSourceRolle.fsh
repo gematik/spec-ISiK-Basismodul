@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle"
 * title = "ISiK CapabilityStatement Minimal Administrative Data Source Rolle"
 * contact.telecom.system = #url

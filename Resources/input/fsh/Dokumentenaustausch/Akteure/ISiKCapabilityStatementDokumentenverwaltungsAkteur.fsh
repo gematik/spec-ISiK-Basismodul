@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementDokumentenServerAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-actor
+* insert Meta-CapabilityStatement-Akteur
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenServerAkteur"
 * name = "ISiKCapabilityStatementDokumentenServerAkteur"
 * title = "ISiK CapabilityStatement Dokumenten Server Akteur"

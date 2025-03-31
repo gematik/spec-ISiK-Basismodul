@@ -2,7 +2,7 @@ Instance: ISiKCapabilityStatementMetadatenUpdateRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMetadatenUpdateRolle"
 * name = "ISiKCapabilityStatementMetadatenUpdateRolle"
 * title = "ISiK CapabilityStatement Metadaten Update Rolle"

@@ -2,7 +2,7 @@ Instance: ISiKCapabilityStatementTerminRepositoryAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert MetaInstance
-* insert Meta-CapabilityStatement-actor
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementTerminRepositoryAkteur"
 * title = "ISiK CapabilityStatement Termin-Repository Akteur"
 * contact.telecom.system = #url

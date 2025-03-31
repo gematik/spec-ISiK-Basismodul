@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-actor
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur"
 * title = "ISiK CapabilityStatement Vitalparameter Server Extended"
 * contact.telecom.system = #url

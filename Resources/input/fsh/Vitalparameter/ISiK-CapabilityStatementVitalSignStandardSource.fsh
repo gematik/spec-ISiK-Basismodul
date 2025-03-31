@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementVitalSignStandardSourceRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementVitalSignStandardSource Rolle"
 * title = "ISiK CapabilityStatement VitalSign Standard Source Rolle"
 * contact.telecom.system = #url

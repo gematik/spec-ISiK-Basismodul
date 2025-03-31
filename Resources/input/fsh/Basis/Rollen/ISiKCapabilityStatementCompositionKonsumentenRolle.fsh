@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementCompositionKonsumentenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle"
 * name = "ISiKCapabilityStatementCompositionKonsumentenRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;"

@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementDokumentenverwaltungRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenverwaltungRolle"
 * name = "ISiKCapabilityStatementDokumentenverwaltungRolle"
 * title = "ISiK CapabilityStatement Dokumentenverwaltung Rolle"

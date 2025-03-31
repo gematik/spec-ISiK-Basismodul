@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementMetadatenErzeugenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMetadatenErzeugenRolle"
 * name = "ISiKCapabilityStatementMetadatenErzeugenRolle"
 * title = "ISiK CapabilityStatement Metadaten Erzeugen Rolle"

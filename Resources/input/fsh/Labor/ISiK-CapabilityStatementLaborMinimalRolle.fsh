@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementLaborMinimalRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-role
+* insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementLaborMinimalRolle"
 * title = "ISiK CapabilityStatement Labor Minimal Rolle"
 * contact.telecom.system = #url

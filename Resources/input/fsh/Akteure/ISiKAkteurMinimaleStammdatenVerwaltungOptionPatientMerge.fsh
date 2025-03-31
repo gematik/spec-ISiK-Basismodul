@@ -1,7 +1,7 @@
 Instance: ISiKAkteurMinimaleStammdatenVerwaltungOptionPatientMerge
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-actor
+* insert Meta-CapabilityStatement-Akteur
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKAkteurMinimaleStammdatenVerwaltungOptionPatientMerge"
 * name = "ISiKAkteurMinimaleStammdatenVerwaltungOptionPatientMerge"
 * title = "Option &quot;OptionPatientMerge&quot; für Akteur &quot;Minimale Stammdaten-Verwaltung&quot;"
