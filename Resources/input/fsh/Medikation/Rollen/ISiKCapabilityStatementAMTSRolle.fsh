@@ -18,7 +18,6 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* instantiates = Canonical(ISiKCapabilityStatementAMTSRolle)
 * rest
   * mode = #server
   * resource[+]
@@ -191,10 +190,6 @@ Usage: #definition
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
       * valueCode = #SHALL
     * type = #Observation
-    * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus"
-    * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus"
-    * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus"
-    * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus"
     * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht"
     * supportedProfile[+] = "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse"
     * interaction[+]

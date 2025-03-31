@@ -22,3 +22,4 @@ Usage: #definition
 * imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+* imports = Canonical(ISiKCapabilityStatementMedikamentRolle)
