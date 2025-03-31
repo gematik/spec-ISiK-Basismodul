@@ -8,12 +8,12 @@ Die vorliegende Spezifikation orientiert sich teilweise an bereits vorhandenen (
 
 ## Kompatibilität zum KBV eTerminService
 
-Bei folgenden FHIR-Ressourcen existiert zum Zeitpunkt der Veröffentlichung eine inhatliche Überschneidung mit dem [eTerminService der KBV](https://simplifier.net/eTerminservice-R4/~introduction):
+Bei folgenden FHIR-Ressourcen wurde zum Zeitpunkt der Erstveröffentlichung eine inhaltliche Überschneidung mit dem [eTerminService der KBV](https://simplifier.net/eTerminservice-R4/~introduction) erreicht, die auch weiter angestrebt wird. Erforderliche Maßnahmen zur Kompatibilitätswahrung sind:
 
-* [Patient](https://simplifier.net/eterminservice-r4/patientets) - Jede ISiK "Patient"-Instanz ist auch valide gegen das entsprechende KBV ETS Profil falls:
+* [Patient](https://simplifier.net/eterminservice-r4/patientets) - Die Validität der ISiK "Patient"-Instanz gegen das entsprechende KBV ETS Profil, kann erreicht werden, wenn zumindest:
   * Elemente, die auf eine Kardinalität von 0..0 beschränkt sind, entfernt werden
 
-* [Appointment](https://simplifier.net/eterminservice-r4/appointmentets-duplicate-2) - Jede ISiK "Appointment"-Instanz ist auch valide gegen das entsprechende KBV ETS Profil falls:
+* [Appointment](https://simplifier.net/eterminservice-r4/appointmentets-duplicate-2) - Die Validität von ISiK "Appointment"-Instanz gegen das entsprechende KBV ETS Profil, kann erreicht werden, wenn zumindest:
   * Elemente, die auf eine Kardinalität von 0..0 beschränkt sind, entfernt werden
   * Eine PractitionerRole Referenz als Akteur angegeben wird
 
