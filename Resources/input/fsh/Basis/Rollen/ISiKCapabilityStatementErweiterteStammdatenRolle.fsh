@@ -6,7 +6,10 @@ Usage: #definition
 * name = "ISiKCapabilityStatementErweiterteStammdatenRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;.
+Diese Rolle stellt erweiterte Interaktionen zur Abfrage von Stammdaten bereit.
+"
 * rest
   * mode = #server
   * resource[+]

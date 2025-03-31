@@ -6,7 +6,10 @@ Usage: #definition
 * name = "ISiKCapabilityStatementCompositionKonsumentenRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;.
+Diese Rolle ist in der Lage, ISiKBerichtBundles zu abzurufen und zu verarbeiten.
+"
 
 * document
   * insert Expectation(#SHALL)  

@@ -6,7 +6,8 @@ Usage: #definition
 * name = "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-
+* purpose = "CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;.
+Diese rolle ist in der Lage, ISiKVersicherungsverhaeltnis-Ressourcen abzurufen."
 * rest
   * mode = #server
   * resource[+]

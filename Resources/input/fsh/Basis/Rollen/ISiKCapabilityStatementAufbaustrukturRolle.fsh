@@ -6,7 +6,11 @@ Usage: #definition
 * name = "ISiKCapabilityStatementAufbaustrukturRolle"
 * title = "CapabilityStatement für Rolle &quot;AufbaustrukturRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementAufbaustrukturRolle&quot;.
+Diese Rolle stellt Interaktionen zur Abfrage von Informationen zur Aufbaustruktur bereit.
+Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuordnungen.
+"
 * rest
   * mode = #server
   * resource[+]

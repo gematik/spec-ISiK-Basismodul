@@ -6,7 +6,10 @@ Usage: #definition
 * name = "ISiKCapabilityStatementGesundheitsstatusRolle"
 * title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-
+* purpose = "
+CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;.
+Diese Rolle ist in der Lage, ISiKObservation-Ressourcen abzurufen und zu verarbeiten.
+"
 
 * rest
   * mode = #server
