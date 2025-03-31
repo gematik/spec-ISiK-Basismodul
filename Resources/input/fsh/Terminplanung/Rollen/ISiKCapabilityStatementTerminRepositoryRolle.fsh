@@ -252,73 +252,6 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
     * searchInclude[+] = "Appointment:actor"
       * insert Expectation (#MAY)
 
-
-  * resource[+]
-    * type = #Communication
-    * insert Expectation (#MAY)
-    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKNachricht"
-    * interaction[+]
-      * insert Expectation (#SHALL)
-      * code = #read
-    * interaction[+]
-      * insert Expectation (#SHALL)
-      * code = #create
-    * interaction[+]
-      * insert Expectation (#SHALL)
-      * code = #update
-    * interaction[+]
-      * insert Expectation (#SHALL)
-      * code = #search-type
-    * insert CommonSearchParameters  
-    * searchParam[+]
-      * insert Expectation (#MAY) 
-      * name = "subject"
-      * definition = "http://hl7.org/fhir/SearchParameter/Communication-subject"
-      * type = #reference
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Communication?subject=Patient/ISiKPatientExample`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " 
-    * searchParam[+]
-      * insert Expectation (#SHALL) 
-      * name = "patient"
-      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-      * type = #reference
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Communication?patient=Patient/ISiKPatientExample`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "    
-    * searchParam[+]
-      * insert Expectation (#SHALL) 
-      * name = "recipient"
-      * definition = "http://hl7.org/fhir/SearchParameter/Communication-recipient"
-      * type = #reference
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Communication?recipient=Practitioner/ISiKPractitionerExample`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " 
-    * searchParam[+]
-      * insert Expectation (#SHALL) 
-      * name = "sender"
-      * definition = "http://hl7.org/fhir/SearchParameter/Communication-sender"
-      * type = #reference
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Communication?sender=Practitioner/ISiKPractitionerExample`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  " 
-
-    * searchInclude[+] = "Communication:recipient"
-      * insert Expectation (#MAY)
-    * searchInclude[+] = "Communication:sender"
-      * insert Expectation (#MAY)
-    * searchInclude[+] = "Communication:subject"
-      * insert Expectation (#MAY)            
-
-
   * resource[+]
     * type = #HealthcareService
     * insert Expectation (#SHALL)
@@ -372,18 +305,5 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  " 
     * searchInclude[+] = "Schedule:actor"
       * insert Expectation (#MAY)  
-    * searchInclude[+] = "Communication:recipient"
-      * insert Expectation (#MAY)   
     * searchInclude[+] = "Appointment:actor"
-      * insert Expectation (#MAY)                
-
-  * resource[+]
-    * insert Expectation (#MAY) 
-    * type = #Binary
-    * supportedProfile = Canonical(ISiKBinary)
-    * interaction[+]
-      * insert Expectation (#SHALL) 
-      * code = #read
-    * interaction[+]
-      * insert Expectation (#SHALL) 
-      * code = #create
+      * insert Expectation (#MAY)
