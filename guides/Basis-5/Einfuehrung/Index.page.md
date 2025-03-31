@@ -14,7 +14,7 @@ Realm: Deutschland
 
 
 
-Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter: https://gematik.github.io/spec-ISiK-Basismodul/index.html
+Historische oder Abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie unter: https://gematik.github.io/spec-ISiK-Basismodul/index.html
 
 
 ----

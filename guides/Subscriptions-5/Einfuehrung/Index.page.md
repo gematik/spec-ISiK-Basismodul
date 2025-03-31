@@ -12,7 +12,7 @@ Status: Draft
 
 Realm: Deutschland
 
-Abgekündigte Versionen oder Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie
+Historische oder Abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden finden Sie
 unter: TBD
 
 
