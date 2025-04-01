@@ -23,12 +23,22 @@ Usage: #definition
 * rest.mode = #server
 
 * imports = Canonical(ISiKCapabilityStatementAMTSRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle) 
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementMedikamentRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementLaborMinimalRolle) 
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
+  * insert ExpectationImports(#SHALL)
