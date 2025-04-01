@@ -71,9 +71,6 @@ Es müssen zusätzliche Kriterien, wie z.B. Zeitraum(`Encounter.period`), Fallar
 ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primäres Suchkriterium verwendet wird; auch von Systemen, die rein der medizinischen Versorgung dienen und keine Abrechnungsfunktionen implementieren. 
 Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.
 
-| Hinweis | Änderung gegenüber ISiK-Basis-Modul Stufe 1!|
-|---------|---------------------|
-| {{render:Material/Images/IG_Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren. Der Encounter kann weiterhin einen von der Abrechnungsfallnummer unabhängigen Identifier enthalten (z.B. "Aufnahmenummer", Bewegungsnummer). Dieser identifiziert eineindeutig den jeweiligen Kontakt.|
 
 {{render:Material/Images/Encounter/Encounter-Modell-Fallnummer.png}}
 
