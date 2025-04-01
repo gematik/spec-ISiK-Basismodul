@@ -1,12 +1,12 @@
 Instance: ISiKCapabilityStatementAMTSAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatementAMTS
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementAMTSAkteur"
 * title = "ISiK CapabilityStatement AMTS Akteur"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
+* purpose = "Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
   
 **HISTORIE:**    
 
