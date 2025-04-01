@@ -92,7 +92,7 @@ Termine können sowohl durch den Termin-Requestor als Client oder durch das Term
 
 In diesem Kontext kann der Termin-Requestor zudem Zusatzinformationen (z.B. Einwilligungen) an das Termin-Repository übermitteln.
 
-Siehe {{pagelink:pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
 
 ---
 
@@ -100,4 +100,4 @@ Siehe {{pagelink:pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md
 
 Der Termin-Requestor oder Termin-Consumer kann einen, mehrere oder alle Termine eines Termin Repositories abfragen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_Termin/Profil.page.md, text: ISiKTermin (Appointment) - Interaktionen}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen}} für die technische Umsetzung.
