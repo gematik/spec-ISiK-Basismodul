@@ -2,6 +2,7 @@ Instance: ISiKCapabilityStatementMedikationVerordnungAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur"
 * name = "ISiKCapabilityStatementMedikationVerordnungAkteur"
 * title = "ISiK CapabilityStatement Medikationsverordnung Server Akteur"
 * contact.telecom.system = #url
