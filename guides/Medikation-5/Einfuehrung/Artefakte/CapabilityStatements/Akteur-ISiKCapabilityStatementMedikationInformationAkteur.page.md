@@ -2,7 +2,14 @@
 topic: ISiKCapabilityStatementMedikationInformationAkteur
 canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationAkteur
 ---
-## Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
+##  <fql output="inline" headers="false">
+from
+    CapabilityStatement
+where
+    url = %canonical
+select
+    Artefakt:title
+</fql> - Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
 <fql>
 from
