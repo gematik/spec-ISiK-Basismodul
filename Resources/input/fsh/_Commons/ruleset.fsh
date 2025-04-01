@@ -209,25 +209,3 @@ RuleSet: MII_SpecificIEEE-11073Slice
 * coding contains 
   specific-IEEE-11073 0..1 MS
 
-
-// rulesets Medikation
-
-RuleSet: Meta-CapabilityStatementInformation
-* insert Meta-CapabilityStatement
-* implementationGuide = "https://gematik.de/fhir/Medikation/ImplementationGuide/ISiK-Medikation"
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationRolle"
-
-RuleSet: Meta-CapabilityStatementAMTS
-* insert Meta-CapabilityStatement
-* implementationGuide = "https://gematik.de/fhir/Medikation/ImplementationGuide/ISiK-Medikation"
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationAMTS"
-
-RuleSet: Meta-CapabilityStatementVerordnung
-* insert Meta-CapabilityStatement
-* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Medikation"
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungRolle"
-
-RuleSet: Meta-CapabilityStatementVerabreichung
-* insert Meta-CapabilityStatement
-* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Medikation"
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungRolle"

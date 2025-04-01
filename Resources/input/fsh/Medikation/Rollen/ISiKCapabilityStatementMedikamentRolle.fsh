@@ -1,7 +1,6 @@
 Instance: ISiKCapabilityStatementMedikamentRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement
 * insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementMedikamentRolle"
 * title = "ISiK CapabilityStatement MedikamentRolle"
