@@ -14,7 +14,7 @@ Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer G
 
 * **Abrechnungsfall (Account):**
 Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die [Ressource Account](https://hl7.org/fhir/R4/account.html) repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
-{{render:Material/Images/Encounter/Encounter-Modell-Abrechnung.png}}
+{{render:Material\Basis\images\Encounter\Encounter-Modell-Abrechnung.png}}
 
 * **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
