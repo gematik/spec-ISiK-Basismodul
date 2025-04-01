@@ -4,7 +4,7 @@ Id: ISiKVersicherungsverhaeltnisSonstige
 Description: "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  
 ### Motivation
 ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, 
-bei denen es sich *weder* um gesetzliche Versicherungen noch Slebstzahlerverhältnisse handelt.
+bei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.
 In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  
 In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.
 
