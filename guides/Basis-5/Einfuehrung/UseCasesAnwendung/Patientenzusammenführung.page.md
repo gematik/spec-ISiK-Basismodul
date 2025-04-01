@@ -8,21 +8,21 @@ Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmä�
 
 Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer Krankenhaus-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).
 
-Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen Patient merge benachrichtigt (Patient merge Notification), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer Patient merge Notification auf Basis von FHIR.
+Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen *Patient merge* benachrichtigt (Patient merge Notification), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer *Patient merge* Notification auf Basis von FHIR.
 
 ## Normativer Status 
 Alle hier getroffenen Festlegungen haben den normativen Status einer KANN-Anforderung. Werden allerdings die hier festgelegten Lösungen genutzt, so SOLLEN die hier angeführten Vorgaben (inklusive Profil-Ebene) eingehalten werden.
 
-Eine Prüfung im Rahmen des Bestätigungsverfahrens zur Patient merge Notification ist in der jetzigen Entwicklungsstufe nicht vorgesehen.
+Eine Prüfung im Rahmen des Bestätigungsverfahrens zur *Patient merge Notification* ist in der jetzigen Entwicklungsstufe nicht vorgesehen.
 
 ## Zweck und Definition 'Patient merge Notification'
 Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
-Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen Patient merges (Patient merge Notification) gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
+Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* (Patient merge Notification) gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
 
-**Definition**: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen Patient merge. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein Patient merge stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.
+**Definition**: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen *Patient merge*. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein *Patient merge* stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.
 
 ## Festlegungen zu 'Patient merge Notification'
-Falls eine Patient merge Notification im Rahmen von ISIK bereitgestellt wird, gelten folgende Festlegungen:
+Falls eine *Patient merge Notification* im Rahmen von ISIK bereitgestellt wird, gelten folgende Festlegungen:
 
 Das patientenführende System SOLL einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können. Dieser Mechanismus basiert auf dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/channels.html) und nutzt das Konzept der "Topic-Based Subscription" aus FHIR R5.  
 
