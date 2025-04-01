@@ -6,7 +6,7 @@ expand: 5
 ### Szenario
 * minderjähriges Kind
 * familienversichert über Mutter
-* Selbstzahlerverhältnis mit abw. Rechnungsempfänger
+* Selbstzahlerverhältnis mit abweichendem Rechnungsempfänger
 * vorstationärer, stationärer und nachstationärer Besuch
 * Abrechnung als DRG-Fall 
 * stationärer Aufenthalt mit Wahlleistung Begleitperson (keine Kassenleistung, wird selbst bezahlt)
