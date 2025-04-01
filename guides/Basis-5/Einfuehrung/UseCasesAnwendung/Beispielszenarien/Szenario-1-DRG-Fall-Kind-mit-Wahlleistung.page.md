@@ -13,7 +13,7 @@ expand: 5
 
 ### Ressourcen-Graph
 
-{{render:Material/images/Szenarien/Szenario1-BundleViewer.png}}
+{{render:Material/Basis/images/Szenarien/Szenario1-BundleViewer.png}}
 
 ### Instanzen: Personen
 <tabs>
