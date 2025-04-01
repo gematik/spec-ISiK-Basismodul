@@ -28,7 +28,7 @@ Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine syn
 In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide-backup/EinfachesAufbaumodell?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
 * **Einrichtungskontakt:**
-Als Kontakt eines Patienten mit einer Einrichtung (z.B: Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.
+Als Kontakt eines Patienten mit einer Einrichtung (z.B. Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.
 
 * **Abteilungskontakt:**
 Als Kontakt des Patienten mit einer Fachabteilung eines Krankenhauses (z.B. einer Ambulanz oder einer stationären Fachabteilung).
@@ -73,7 +73,7 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
 
 | Hinweis | Änderung gegenüber ISiK-Basis-Modul Stufe 1!|
 |---------|---------------------|
-| {{render:Material/Images/IG_Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren. Der Encounter kann weiterhin einen von der Abrechnungsfallnummer unabhängigen Identifier enthalten (z.B. "Aufnahmenummer", Bewegungsnummer). Dieser identifiziert eineindeutig den jeweiligen Kontakt.|
+| {{render:Material/Basis/Images/IG_Warning}} | Die Abbildung der Fallnummer als Identifier des Accounts ist abweichend von der im Basismodul Stufe 1 festgelegten Abbildung der Fallnummer als Identifier des Encounters. Diese Änderung ist erforderlich, da die Fallnummer nicht geeignet ist, einen Encounter eindeutig zu identifizieren. Der Encounter kann weiterhin einen von der Abrechnungsfallnummer unabhängigen Identifier enthalten (z.B. "Aufnahmenummer", Bewegungsnummer). Dieser identifiziert eineindeutig den jeweiligen Kontakt.|
 
 {{render:Material/Basis/images/Encounter/Encounter-Modell-Fallnummer.png}}
 
