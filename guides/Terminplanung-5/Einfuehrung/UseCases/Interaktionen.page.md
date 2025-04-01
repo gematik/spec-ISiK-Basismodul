@@ -23,7 +23,7 @@ Für die Auswahl eines verfügbaren Terminblocks kann es notwendig sein, dass da
 
 Gleichermaßen können Informationen zum Patienten vorab übermittelt werden, sodass gewisse Basisangaben bereits im Terminrepository vorliegen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Anlage einer Patient-Ressource}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Anlage einer Patient-Ressource}} für die technische Umsetzung.
 
 ---
 
@@ -31,7 +31,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:An
 
 Als Einstiegspunkt in die Terminvereinbarung können durch den Termin Requestor alle verfügbaren Behandlungsleistungen (HealthcareServices) abgerufen werden, für die das Termin-Repository Informationen zu notwendigen Ressourcen (Räume, Personen, Geräte, etc.) bereitstellt.
 
-Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_MedizinischeBehandlungseinheit/Interaktionen.page.md, text: ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen}} für die technische Umsetzung. Es sind die Hinweise zum Abruf der ValueSets für die Kodierung der Medizinischen Behandlungseinheit zu beachten.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_MedizinischeBehandlungseinheit/Interaktionen.page.md, text: ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen}} für die technische Umsetzung. Es sind die Hinweise zum Abruf der ValueSets für die Kodierung der Medizinischen Behandlungseinheit zu beachten.
 
 ---
 
@@ -39,7 +39,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_MedizinischeBehand
 
 Der Termin-Requestor kann nach der Auswahl einer Behandlungsleistung verfügbare Terminlisten (Schedules) für diese im Termin-Repository abrufen. Die Terminlisten repräsentieren somit den "Kalender", in dem Termine gebucht werden können.
 
-Siehe {{pagelink: guides/Terminplanung-5/Artefakte/Datenobjekt_Kalender/Interaktionen.page.md, text: ISiKKalender (Schedule) - Interaktionen}} für die technische Umsetzung.
+Siehe {{pagelink: guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalender/Interaktionen.page.md, text: ISiKKalender (Schedule) - Interaktionen}} für die technische Umsetzung.
 
 ---
 
@@ -47,7 +47,7 @@ Siehe {{pagelink: guides/Terminplanung-5/Artefakte/Datenobjekt_Kalender/Interakt
 
 Für einen jeweiligen Kalender kann der Termin-Requestor die darin definierten Terminblöcke abfragen. Diese können entsprechend eines Zeitraums und/oder Status (verfügbar, belegt) gefiltert werden.
 
-Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_Terminblock/Interaktionen.page.md, text: ISiKTerminblock (Slot) - Interaktionen}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Terminblock/Interaktionen.page.md, text: ISiKTerminblock (Slot) - Interaktionen}} für die technische Umsetzung.
 
 ---
 
@@ -59,7 +59,7 @@ Es ist zu beachten, dass innerhalb dieser Aktion ein terminführendes Termin-Rep
 
 In diesem Kontext kann das Termin-Repsoitory zudem Zusatzinformationen (z.B. Lagepläne) an den Termin-Requestor übermitteln.
 
-Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
 
 ---
 
@@ -70,7 +70,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Bu
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System abgesagt werden.
 
-Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
 
 ---
 
@@ -80,7 +80,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Ak
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
 
 ---
 
@@ -92,7 +92,7 @@ Termine können sowohl durch den Termin-Requestor als Client oder durch das Term
 
 In diesem Kontext kann der Termin-Requestor zudem Zusatzinformationen (z.B. Einwilligungen) an das Termin-Repository übermitteln.
 
-Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
 
 ---
 
@@ -100,4 +100,4 @@ Siehe {{pagelink:guides/Terminplanung-5/Festlegungen/Operations.page.md, text:Ak
 
 Der Termin-Requestor oder Termin-Consumer kann einen, mehrere oder alle Termine eines Termin Repositories abfragen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen}} für die technische Umsetzung.
