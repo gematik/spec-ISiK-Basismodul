@@ -1,12 +1,12 @@
 Instance: ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur"
 * title = "ISiK CapabilityStatement Vitalparameter Server Extended"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'VitalSign ICU Source Extended' zur Unterstützung des ICU-Normalstation-Workflows implementieren muss
+* purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'VitalSign ICU Source Extended' zur Unterstützung des ICU-Normalstation-Workflows implementieren muss
 
 Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden Rollen (siehe 'imports' in der CapabilityStatement-Ressource) zu beachten.
 

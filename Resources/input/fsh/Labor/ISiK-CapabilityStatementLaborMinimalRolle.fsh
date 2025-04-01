@@ -1,12 +1,12 @@
 Instance: ISiKCapabilityStatementLaborMinimalRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement
+* insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementLaborMinimalRolle"
 * title = "ISiK CapabilityStatement Labor Minimal Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Labordaten exponiert.
+* purpose = "Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Labordaten exponiert.
 
 **HISTORIE**
 
