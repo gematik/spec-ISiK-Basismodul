@@ -1,12 +1,12 @@
 Instance: ISiKCapabilityStatementMedikationInformationAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatementInformation
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementMedikationInformationAkteur"
 * title = "ISiK CapabilityStatement Medikationsinformation Server Akteur"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsinformation' zu bestehen.
+* purpose = "Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsinformation' zu bestehen.
   
 **HISTORIE:**    
 
