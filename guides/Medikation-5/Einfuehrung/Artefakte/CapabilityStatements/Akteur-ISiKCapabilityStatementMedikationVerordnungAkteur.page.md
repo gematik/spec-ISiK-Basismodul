@@ -2,6 +2,7 @@
 topic: ISiKCapabilityStatementMedikationVerordnungAkteur
 canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
 ---
+
 ##  <fql output="inline" headers="false">
 from
     CapabilityStatement
