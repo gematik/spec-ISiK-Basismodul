@@ -1,6 +1,6 @@
 ---
 topic: ImplementationGuide-markdown-UseCasesAnwendung
 ---
-# Use Cases und Anwendungszusammenhänge
+# Kontext zu Anwendungszusammenhängen und Use Cases 
 
 {{index:current}}
