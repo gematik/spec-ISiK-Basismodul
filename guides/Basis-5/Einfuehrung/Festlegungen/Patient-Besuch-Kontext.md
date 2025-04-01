@@ -4,7 +4,7 @@ Vor der Bereitstellung von patientenbezogenen Ressourcen, wie sie u.a. von den M
 
 Aus diesem Grund MÜSSEN Hersteller, die serverseitige Akteure dieser Module implementieren, die in diesem Leitfaden spezifizierten Interaktionen zum Suchen und Abrufen von Patienten- und Encounter-Ressourcen ebenfalls implementieren.
 
-### Serverseitige Implementierungsvarianten
+### Server-seitige Implementierungsvarianten
 
 #### Stand Alone Implementierung
 Dabei ist es den Herstellern von nicht-patientenführenden Systemen ("Subsystemen") freigestellt, ob sie dauerhaft eine vollständige Kopie der relevanten Patienten- und Besuchsdaten des patientenführenden Systems vorhalten wollen. 
@@ -17,7 +17,7 @@ Dies kann zum Beispiel über folgende Mechanismen erfolgen:
 Alternativ können Subsysteme die benötigten Informationen ad hoc aus dem Primärsystem beziehen, wenn sie von einem Client angefragt werden. In diesem Fall kann das Subsystem die Suchanfrage eines Clients nach Patienten- oder Encounter-Ressourcen an das patientenführende System delegieren und dem Client die gelieferten Antworten durchreichen. Suchtreffer können in der Datenbank des Subystems gecached oder erneut abgerufen und persistiert werden, wenn ein Client eine Interaktion mit Bezug zu einer dieser Ressourcen ausführen möchte (z.B. durch POSTen einer patientenbezogenen Ressource (Observation, DocumentReference) mit Referenz auf den Patienten bzw. Encounter).
 Besondere Vorsicht ist hierbei auf den Umgang mit URLs geboten. Je nach Architektur können die Suchergebnisse des patientenführenden Systems nicht unverändert an den Client übergeben werden. Ggf. müssen die Referenzen des patientenführenden Systems an den Endpunkt des Subsystems angeglichen und/oder Ressourcen-IDs des Primärsystems mit den vom Client verwendeten IDs ersetzt werden.
 
-### clientseitige Implementierungsvarianten
+### Client-seitige Implementierungsvarianten
 Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets eines oder mehrere der folgenden Verfahren zur Herstellung des Patienten-und Besuchs-Kontextes nutzen:
 
 1. **SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-v4/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte?version=current)). 
