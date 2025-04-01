@@ -6,7 +6,7 @@ topic: Patient-merge
 ## Motivation
 Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen. 
 
-Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).
+Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer Krankenhaus-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).
 
 Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen Patient merge benachrichtigt (Patient merge Notification), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer Patient merge Notification auf Basis von FHIR.
 
