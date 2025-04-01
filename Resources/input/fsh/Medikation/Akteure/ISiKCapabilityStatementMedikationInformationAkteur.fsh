@@ -20,6 +20,10 @@ Usage: #definition
 * rest.mode = #server
 
 * imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+  * insert ExpectationImports(#SHALL)
 * imports = Canonical(ISiKCapabilityStatementMedikamentRolle)
+  * insert ExpectationImports(#SHALL)
