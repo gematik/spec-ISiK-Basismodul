@@ -1,5 +1,5 @@
 ---
-topic: ISiKCapabilityStatementMedikationVerordnungAkteur
+topic: ISiKCapabilityStatementAMTSAkteur
 canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
 ---
 ##  <fql output="inline" headers="false">
