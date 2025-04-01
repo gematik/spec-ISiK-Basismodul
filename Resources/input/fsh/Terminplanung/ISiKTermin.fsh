@@ -126,6 +126,7 @@ Extension: AppointmentReplaces
 Id: AppointmentReplaces
 Context: Appointment
 * insert Meta
+* publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
 * value[x] only Reference(Appointment)
 * valueReference 0..1
