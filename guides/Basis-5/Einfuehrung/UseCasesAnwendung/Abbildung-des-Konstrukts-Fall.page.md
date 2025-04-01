@@ -10,15 +10,15 @@ topic: Fall
 Der Begriff "Fall" gruppiert im Sprachgebrauch verschiedene Konzepte, die in FHIR durch unterschiedliche Ressourcen repräsentiert werden:
 
 * **Aufenthalt/Besuch/Kontakt (Encounter):**
-Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer Gesundheitseinrichtung wird in FHIR durch die Ressource Encounter abgebildet.
+Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer Gesundheitseinrichtung wird in FHIR durch die [Ressource Encounter](https://hl7.org/fhir/R4/encounter.html) abgebildet.
 
 * **Abrechnungsfall (Account):**
-Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die Ressource Account repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
-{{render:Material/Images/Encounter/Encounter-Modell-Abrechnung.png}}
+Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die [Ressource Account](https://hl7.org/fhir/R4/account.html) repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
+{{render:Material/Basis/images/Encounter/Encounter-Modell-Abrechnung.png}}
 
 * **Medizinischer Fall (EpisodeOfCare):**
-Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die EpisodeOfCare dargestellt.
-{{render:Material/Images/Encounter/Encounter-Modell-Medizinisch.png}}
+Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
+{{render:Material/Basis/images/Encounter/Encounter-Modell-Medizinisch.png}}
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind. 
 
@@ -28,7 +28,7 @@ Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine syn
 In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide-backup/EinfachesAufbaumodell?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
 * **Einrichtungskontakt:**
-Als Kontakt eines Patienten mit einer Einrichtung (z.B: Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.
+Als Kontakt eines Patienten mit einer Einrichtung (z.B. Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.
 
 * **Abteilungskontakt:**
 Als Kontakt des Patienten mit einer Fachabteilung eines Krankenhauses (z.B. einer Ambulanz oder einer stationären Fachabteilung).
@@ -38,7 +38,7 @@ Als Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder
 
 Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
 
-{{render:Material/Images/Encounter/Encounter-Modell-MII.png}}
+{{render:Material/Basis/images/Encounter/Encounter-Modell-MII.png}}
 
 ---
 
@@ -46,7 +46,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
 
-{{render:Material/Images/Encounter/Encounter-Modelle.png}}
+{{render:Material/Basis/images/Encounter/Encounter-Modelle.png}}
 
 Verpflichtend umzusetzen ist für die bestätigungsrelevanten Systeme der Account, im Sinne der Gruppierung einzelner Besuche, zu einem gemeinsamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
 
@@ -56,7 +56,7 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
 
 * Encounter im ISiK-Kontext sind stets als "Abteilungskontakte", im Sinne der MI-I mit dem entsprechenden `Encounter.type`-Code, zu kennzeichnen.
 * Jegliche im ISiK-Basis-Modul, als auch in anderen ISiK-Modulen definierte Ressourcen, die über einen Encounter-Kontext verfügen, müssen auf einen ISiK-Encounter (Abteilungskontakt) referenzieren.
-{{render:Material/Images/Encounter/Encounter-Modell-ISiK.png}}
+{{render:Material/Basis/images/Encounter/Encounter-Modell-ISiK.png}}
 
 ---
 
@@ -72,6 +72,6 @@ ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primär
 Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.
 
 
-{{render:Material/Images/Encounter/Encounter-Modell-Fallnummer.png}}
+{{render:Material/Basis/images/Encounter/Encounter-Modell-Fallnummer.png}}
 
 ---

@@ -1,11 +1,11 @@
 ---
-topic: Anforderungen
+topic: Artefakte
 ---
 
 ## {{page-title}}
 
 ## Anforderungen
 
-Es gelten zur Umsetzung des Use Cases die Anforderungen entsprechend der folgenden Unterseiten.
+Es gelten zur Umsetzung des Use Cases die Festlegungen entsprechend der folgenden Unterseiten.
 
 {{index:current}}
