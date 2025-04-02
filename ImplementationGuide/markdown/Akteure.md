@@ -17,7 +17,3 @@ Akteur: Der ISiK Ressourcenserver stellt die ISiK-spezifischen FHIR-Ressourcen b
 
 ## Client
 Akteur: Ein Client ist eine Anwendung, die auf FHIR-Ressourcen zugreift, um Gesundheitsdaten zu lesen oder zu schreiben. Dies kann beispielsweise eine mobile Gesundheits-App oder ein klinisches Entscheidungshilfesystem sein.
-
-# Festlegung zur Implementierung der Akteure
-
-Die Implementierung der Akteure ist optional, da der Implementation Guides nicht normativ ist.
