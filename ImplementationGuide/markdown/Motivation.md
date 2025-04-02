@@ -35,7 +35,7 @@ Um eine sichere und interoperable Lösung zu ermöglichen, werden folgende Aspek
 * Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.
 * Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.
 * Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.
-- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcenserver, um Missverständnisse zu vermeiden und eine einheitliche Kommunikation zu ermöglichen.
+- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcen-Server, um Missverständnisse zu vermeiden und eine einheitliche Kommunikation zu ermöglichen.
 
 ## Technischer Rahmen
 
@@ -47,7 +47,7 @@ Der IG baut auf bestehenden Standards auf, insbesondere:
 
 ## Bedeutung für das Gesundheitswesen
 
-Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 5 Anforderungen an die Autorisierung für über ISiK-Ressourcenserver bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
+Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 5 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
 
 ISiK-Connect schafft eine einheitliche Grundlage für die Absicherung von FHIR-Schnittstellen und den darüber zugreifbaren Daten, sodass die Schutzziele Vertraulichkeit und Integrität in einer standardisierten Weise gewährleistet werden können. Dabei gibt das Modul selbst keine festen Berechtigungen vor, sondern fokussiert auf den interoperablen Austausch relevanter Autorisierungsinformationen. Dies ermöglicht es Krankenhäusern, bestehende Rollen- und Rechtekonzepte ISiK-konform weiterzuverwenden und nahtlos in ihre bestehenden IT-Strukturen zu integrieren.
 
