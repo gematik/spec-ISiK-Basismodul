@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;.
-Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und und der Verarbeitung von ISiKObservation-Ressourcen.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKObservation-Ressourcen.
 "
 
 * rest
