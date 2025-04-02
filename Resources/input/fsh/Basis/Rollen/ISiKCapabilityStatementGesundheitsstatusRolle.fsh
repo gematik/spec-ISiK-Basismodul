@@ -145,8 +145,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * insert Expectation(#MAY)
 
   * resource[+]
-    * insert Expectation(#SHALL)
     * type = #AllergyIntolerance
+    * insert Expectation(#SHALL)
     * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
     * interaction[+]
       * insert Expectation(#SHALL)
