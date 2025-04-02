@@ -4,14 +4,10 @@ topic: ReleaseNotes
 
 ## {{page-title}}
 
+Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-<!-- Publizierte Versionen mit den relevanten Änderungen und Link auf das jeweilige Package-->
+Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-### Version 0.0.1 <!-- Major Version-->
+Version 5.0.0-rc 
 
-<!--#### Package \<name\> \<version\> 
-
-* `fixed` ein Fehler wurde behoben
-* `changed` eine Änderung wurde durchgeführt 
-* `added` ein neues Feature/artefakt wurde hinzugefügt
--->
+- Initialer Release
