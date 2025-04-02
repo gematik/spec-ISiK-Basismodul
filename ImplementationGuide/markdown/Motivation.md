@@ -35,7 +35,7 @@ Um eine sichere und interoperable Lösung zu ermöglichen, werden folgende Aspek
 * Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.
 * Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.
 * Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.
-- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcenserver, um Missverständnisse zu - vermeiden und eine einheitliche Kommunikation zu ermöglichen.
+- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcenserver, um Missverständnisse zu vermeiden und eine einheitliche Kommunikation zu ermöglichen.
 
 ## Technischer Rahmen
 
