@@ -1,6 +1,7 @@
 ---
 topic: Stillstatus-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 ## {{link}}
 

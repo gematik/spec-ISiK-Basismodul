@@ -1,6 +1,7 @@
 ---
 topic: Coverage-Sonstige-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ## {{link}}
 

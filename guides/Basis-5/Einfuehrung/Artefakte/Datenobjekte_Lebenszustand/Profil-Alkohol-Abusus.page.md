@@ -1,6 +1,7 @@
 ---
 topic: AlkoholAbusus-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 ## {{link}}
 

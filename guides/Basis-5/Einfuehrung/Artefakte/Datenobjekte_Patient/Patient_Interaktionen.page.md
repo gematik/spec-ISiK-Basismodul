@@ -1,6 +1,8 @@
 ---
 topic: Patient_Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle
+capability2: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle
 ---
 ### Interaktionen
 
@@ -18,16 +20,16 @@ with
 
 <tabs>
     <tab title="Interaktionen"> 
-        {{page:FQL-Capability-REST}}
+        {{page:FQL-Capability-REST-multicps-2}}
     </tab>
     <tab title="Suchparameter">
-        {{page:FQL-Capability-Search}}
+        {{page:FQL-Capability-Search-multicps-2}}
     </tab>
     <tab title="Operationen">
-        {{page:FQL-Capability-Operations}}
+        {{page:FQL-Capability-Operations-multicps-2}}
     </tab>
     <tab title="Link">
-        {{pagelink:CapabilityStatement}}
+        {{pagelink:CapabilityStatement-multicps-2}}
     </tab>
 </tabs>
 
