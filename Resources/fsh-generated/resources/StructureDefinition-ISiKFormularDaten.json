@@ -1,0 +1,185 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKFormularDaten",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+  "version": "5.0.0-rc",
+  "name": "ISiKFormularDaten",
+  "title": "Ausgefülltes ISiK-Formular",
+  "status": "active",
+  "experimental": false,
+  "date": "2024-11-25",
+  "publisher": "gematik GmbH",
+  "description": "ToDo",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse",
+        "path": "QuestionnaireResponse",
+        "constraint": [
+          {
+            "key": "sdcqr-1",
+            "human": "Subject SHOULD be present (searching is difficult without subject).  Almost all QuestionnaireResponses should be with respect to some sort of subject.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+            "severity": "warning",
+            "expression": "subject.exists()",
+            "xpath": "exists(f:subject)",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              }
+            ]
+          },
+          {
+            "key": "sdcqr-2",
+            "human": "When repeats=true for a group, it'll be represented with multiple items with the same linkId in the QuestionnaireResponse.  For a question, it'll be represented by a single item with that linkId with multiple answers.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+            "severity": "error",
+            "expression": "(QuestionnaireResponse|repeat(answer|item)).select(item.where(answer.value.exists()).linkId.isDistinct()).allTrue()",
+            "xpath": "not(exists(for $item in descendant::f:item[f:answer] return $item/preceding-sibling::f:item[f:linkId/@value=$item/f:linkId/@value]))",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension",
+        "path": "QuestionnaireResponse.modifierExtension",
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant",
+        "path": "QuestionnaireResponse.modifierExtension",
+        "sliceName": "MDR-Relevant",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant.value[x]",
+        "path": "QuestionnaireResponse.modifierExtension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.identifier",
+        "path": "QuestionnaireResponse.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire",
+        "path": "QuestionnaireResponse.questionnaire",
+        "min": 1,
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension:questionnaireDisplay",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "sliceName": "questionnaireDisplay",
+        "comment": "This SHALL be the title of the Questionnaire at the time the QuestionnaireResponse was originally authored.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/display"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.status",
+        "path": "QuestionnaireResponse.status",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.subject",
+        "path": "QuestionnaireResponse.subject",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.authored",
+        "path": "QuestionnaireResponse.authored",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.author",
+        "path": "QuestionnaireResponse.author",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item",
+        "path": "QuestionnaireResponse.item",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.text",
+        "path": "QuestionnaireResponse.item.text",
+        "short": "Frage, die beantwortet wurde",
+        "comment": "Die QuestionnaireResponse Instanz sollte pro Antwort-Item auch die Frage mitführen, damit bei der Anzeige einer QuestionnaireResponse nicht der zugrunde liegende Questionnaire zur Verfügung stehen muss, um die Antworten interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer",
+        "path": "QuestionnaireResponse.item.answer",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.value[x]",
+        "path": "QuestionnaireResponse.item.answer.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.item",
+        "path": "QuestionnaireResponse.item.answer.item",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item.item",
+        "path": "QuestionnaireResponse.item.item",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item",
+        "mustSupport": true
+      }
+    ]
+  }
+}
