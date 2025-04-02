@@ -61,7 +61,7 @@ Begründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind
 * participant[AkteurPatient].actor only Reference(Patient)
 * participant[AkteurPatient].actor MS
 * participant[AkteurPatient].actor.reference 1..1 MS
-* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.
+* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten, über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.
 
 Begründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Hingegen kann die Patienten-Referenz separat in der $book-Operation übergeben werden, sodass hier keine verpflichtende Kardinaltiät gewählt werden kann."
 * participant contains AkteurPersonImGesundheitsberuf 0.. MS
@@ -126,6 +126,7 @@ Extension: AppointmentReplaces
 Id: AppointmentReplaces
 Context: Appointment
 * insert Meta
+* ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
 * value[x] only Reference(Appointment)
 * valueReference 0..1

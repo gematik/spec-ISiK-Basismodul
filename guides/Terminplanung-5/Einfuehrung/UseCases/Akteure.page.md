@@ -5,7 +5,7 @@ topic: Akteure
 
 ## {{page-title}}
 
-Innerhalb des ISiK Moduls Terminplanung kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben innerhalb der im Abschnitt {{pagelink:ImplementationGuide/markdown/UseCases/Interaktionen.md}} definierten Arbeitsabläufe übernehmen. Im Weiteren werden diese Rollen mithilfe der Definition von Akteuren formalisiert, sodass eine Zuordnung von relevanten Interaktionen zum jeweiligen Akteur erfolgen kann.
+Innerhalb des ISiK Moduls Terminplanung kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben innerhalb der im Abschnitt {{pagelink:guides/Terminplanung-5/Einfuehrung/UseCases/Interaktionen.md}} definierten Arbeitsabläufe übernehmen. Im Weiteren werden diese Rollen mithilfe der Definition von Akteuren formalisiert, sodass eine Zuordnung von relevanten Interaktionen zum jeweiligen Akteur erfolgen kann.
 
 Allein für den Akteur Termin-Repository gelten normative Festlegungen für die Implementierung einer Schnittstelle.
 
@@ -15,7 +15,7 @@ Grundsätzlich wird als Terminblock eine für einen Termin buchbare Zeiteinheit 
 
 **Definition:**
 
-Als Termin-Repository werden alle Systeme definiert, die Informationen zu verfügbaren Termineinheiten von Ressourcen (vgl. zuvor genannte Definition) vorhalten und die dafür vereinbarten Termine als führendes System verwalten. In diesem Sinne ist ein Termin-Repository als ein zentraler Terminplanung-Server zu verstehen.
+Als Termin-Repository werden alle Systeme definiert, die Informationen zu verfügbaren Termineinheiten von Ressourcen (vgl. zuvor genannte Definition) vorhalten und die dafür vereinbarten Termine als führendes System verwalten. In diesem Sinne ist ein Termin-Repository als ein zentraler Terminplanungs-Server zu verstehen.
 
 Das Termin-Repository kann intern in ein Repository für die Termine und ein separates Repository für die buchbaren Terminblöcke (Terminblock Repository) geteilt werden.
 
@@ -25,7 +25,7 @@ Das Termin-Repository kann intern in ein Repository für die Termine und ein sep
 * KIS / KAS inkl. Terminverwaltung 
 
 **Festlegungen'**
-In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagelink: CapabilityStatementsTermin, text=Capability Statement}.
+In diesem Modul gilt für den Akteur Termin-Repository das entsprechende {{pagelink: guides/Artefakte/CapabilityStatementsCapabilityStatementsTermin, text=Capability Statement}}. // TODO: richtigs CpS verlinken
 
 ### Termin-Requestor / Termin Source
 
@@ -57,6 +57,7 @@ Es sei zu beachten, dass in vielen Fällen ein Terminmangementsystem aus untersc
 3. Ein Termin-Consumer um eine Übersicht der vereinbarten Termine anzuzeigen
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/main-stufe-3/Material/images/diagrams/akteure_1.svg" alt="Übersicht Termin Akteure 1" width="90%"/>
+
 
 Darüber hinaus kann auch der Fall eintreten, dass ein Termin-Repository als Termin-Requestor interagiert. In diesem Fall ist das Termin-Repository (z.B. ein Patientenportal) das terminführende System und übermittelt die vereinbarten Termine einem weiteren (internen) Termin-Repository zur Synchronisation.
 

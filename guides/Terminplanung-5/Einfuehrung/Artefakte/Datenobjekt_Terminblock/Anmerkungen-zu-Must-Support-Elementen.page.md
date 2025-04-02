@@ -26,7 +26,7 @@ select
 
 **Bedeutung:** Indikator ob ein Slot verwendbar ist für die Buchung eines Appointments.
 
-**Hinweise:** Inbesondere eine Differenzierung des Status "busy" ermöglicht es einem Termin-Requestor passende Termine einem Benutzer zur Verfügung zu stellen. Durch entsprechende Kombinationen können somit Termine in einer passenden Länge gebucht werden.
+**Hinweise:** Insbesondere eine Differenzierung des Status ‚busy‘ ermöglicht es einem Termin-Requestor, einem Benutzer passende Termine zur Verfügung zu stellen. Durch entsprechende Kombinationen können somit Termine in einer passenden Länge gebucht werden.
 
 ### `Slot.start`
 
@@ -38,4 +38,4 @@ select
 
 **Bedeutung:** Enddatum des Slots (sekundengenau).
 
-**Hinweise:** Falls sich ein Appoinment über mehrere Slots erstreckt, kann mit Hilfe des Enddatums der Slot gefunden werden, welcher als nächste innerhalb einer Reihe gebucht werden muss, sodass das Appointment eine gewünschte Länge erreicht.
+**Hinweise:** Falls sich ein Appointment über mehrere Slots erstreckt, kann mithilfe des Enddatums der Slot gefunden werden, der als nächster innerhalb einer Reihe gebucht werden muss, sodass das Appointment die gewünschte Länge erreicht.
