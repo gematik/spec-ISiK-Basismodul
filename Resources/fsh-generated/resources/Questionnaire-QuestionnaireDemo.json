@@ -1,0 +1,294 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "QuestionnaireDemo",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patientenkontext"
+        }
+      ]
+    }
+  ],
+  "status": "draft",
+  "title": "Questionnaire Feature Demo",
+  "description": "Beispiel-Questionnaire zur Demonstration diverser SDC Funktionalitäten, z.B. Prepopulation & Extraction",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/Demo",
+  "item": [
+    {
+      "type": "group",
+      "required": true,
+      "linkId": "1",
+      "text": "Angaben zur Person",
+      "item": [
+        {
+          "type": "string",
+          "linkId": "1.1",
+          "text": "Vorname:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.name[0].given[0]",
+                "description": "erster Vorname im ersten Namen des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "linkId": "1.2",
+          "text": "Nachname:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.name[0].family",
+                "description": "Nachname im ersten Namen des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "linkId": "1.3",
+          "text": "Geschlecht:",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "male",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "männlich"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "female",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "weiblich"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%questionnaire.repeat(item).where(linkId='1.3').answerOption.value.where(code=%patient.gender)",
+                "description": "Geschlecht des Patienten, gemappt von Code auf Coding der Antwortoptionen"
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "linkId": "1.4",
+          "text": "Versichertennummer:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/regex",
+              "valueString": "/^[A-Z][0-9]{9}$/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "linkId": "2",
+      "text": "Fragen mit EnableWhen-Bedingung",
+      "item": [
+        {
+          "type": "choice",
+          "linkId": "2.1",
+          "text": "Wie geht's?",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "gut."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "geht."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "muss."
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "linkId": "2.2",
+          "text": "Was ist denn los?",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Nix."
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Frag nicht!"
+              }
+            }
+          ],
+          "enableWhen": [
+            {
+              "question": "2.1",
+              "operator": "=",
+              "answerCoding": {
+                "display": "muss."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": true,
+      "linkId": "3",
+      "text": "Pflegegrad",
+      "item": [
+        {
+          "type": "choice",
+          "linkId": "3.1",
+          "text": "Bitte geben Sie den Pflegegrad an:",
+          "code": [
+            {
+              "code": "80391-6",
+              "system": "http://loinc.org"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod",
+              "valueDuration": {
+                "value": 1,
+                "code": "a",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ],
+          "answerValueSet": "#valueset-pflegegrad-de"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "4",
+      "text": "Körpermaße",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "kg",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod",
+              "valueDuration": {
+                "value": 1,
+                "code": "m",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueDecimal": 300
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueDecimal": 20
+            }
+          ],
+          "linkId": "4.1",
+          "text": "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)",
+          "type": "decimal"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "m",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+              "valueString": "x.xx"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod",
+              "valueDuration": {
+                "value": 1,
+                "code": "a",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+              "valueDecimal": 2.5
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+              "valueDecimal": 1
+            }
+          ],
+          "linkId": "4.2",
+          "text": "Körpergröße in m (muss zwischen 1 und 2.50 liegen)",
+          "type": "decimal"
+        }
+      ]
+    }
+  ]
+}

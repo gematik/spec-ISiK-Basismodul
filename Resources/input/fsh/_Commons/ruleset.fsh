@@ -1,12 +1,14 @@
+Alias: $ISIKVersion = 5.0.0-rc
+
 RuleSet: Meta
-* ^version = "5.0.0-rc"
+* ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
 * ^date = "2024-11-25"
 
 RuleSet: MetaInstance
-* version = "5.0.0-rc"
+* version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
