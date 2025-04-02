@@ -17,19 +17,19 @@ Es gelten die allgemeinen Vorgaben der FHIR-Kernspezifikation für die Ausführu
 
 Folgende Schritte KÖNNEN notwendig sein, sodass ein Termin durch einen Termin-Requestor innerhalb eines Termin-Repository eingestellt wird. Es ist zu beachten, dass für spezielle Implementierungen nicht alle Schritte hiervon relevant sind und übersprungen werden können.
 
-Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Sicherheit'](https://simplifier.net/guide/isik-sicherheit-v3?version=current) verwiesen.
+Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://simplifier.net/guide/isik-connect-stufe-5?version=current) verwiesen.
 
 User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Patientenportal einen Termin in der allgemeinmedizinischen Ambulanz eines Krankenhauses. Da der Patient seit Tagen Bauchschmerzen hat, die in den letzten Stunden stärker werden, wählt er die Priorität "Notfall".
 
 1. Abfrage aller Kodierungen der angebotenen gesundheitlichen Dienstleistungen durch den Termin-Requestor: `GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|HealthcareService` bzw. `GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|Schedule`
 
-Das Termin-Repository MUSS alle CodeSysteme exponieren, welche für die Kodierung einer verfügbaren gesundheitlichen Dienstleistungen relevant sind. Die Anfrage ist nicht auf HealthcareService beschränkt, weitere Ressourcen-Kontexte können hierfür relevant sein. Beispielsweise erfolgt die Kodierung der Leistungen für einen Behandler im Kontext eines Schedules (vgl. {{pagelink:ImplementationGuide/markdown/Datenobjekte/ISiKKalenderSchedule.md, text:Schedule.serviceType}}). Alle verwendeten CodeSysteme MÜSSEN exponiert werden, insoweit diese sich als CodeSystem-Ressourcen ausdrücken lassen.
+Das Termin-Repository MUSS alle CodeSysteme exponieren, welche für die Kodierung einer verfügbaren gesundheitlichen Dienstleistungen relevant sind. Die Anfrage ist nicht auf HealthcareService beschränkt. Weitere Ressourcen-Kontexte können hierfür relevant sein. Beispielsweise erfolgt die Kodierung der Leistungen für einen Behandler im Kontext eines Schedules (vgl. {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalender/Profil.page.md, text:Schedule.serviceType}}). Alle verwendeten CodeSysteme MÜSSEN exponiert werden, insoweit diese sich als CodeSystem-Ressourcen ausdrücken lassen.
 
 Hinweis: Diese Abfrage ist für eine Initialisierung des Termin-Requestors gedacht. Es ist davon auszugehen, dass diese Auswahlliste nicht dynamisch angepasst wird durch das Termin-Repository und nicht bei jeder Terminbuchung erneut abgefragt werden muss.
 
 2. Abfrage aller verfügbaren Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Schedule` bzw. `GET https://example.org/fhir/Schedule?actor=Practitioner/ISiKPractitionerExample`
 
-Der Termin-Requestor KANN durch die Abfrage aller verfügbaren Kalender aller Ressourcen abfragen, für die eine Terminbuchung zur Verfügung stehen. Diese Abfrage kann auf ein oder mehrere Akteure eingeschränkt werden.
+Der Termin-Requestor KANN durch die Abfrage aller verfügbaren Kalender alle Ressourcen abfragen, für die eine Terminbuchung zur Verfügung steht. Diese Abfrage kann auf ein oder mehrere Akteure eingeschränkt werden.
 
 3. Abfrage aller verfügbaren Slots für einen Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Slot?schedule=<Schedule/ISiKKalenderExample>&status=free`
 
@@ -214,7 +214,7 @@ Folgende Elemente DÜRFEN NICHT durch ein Update der Ressourcen verändert werde
 - Appointment.end
 - Appointment.participant.actor.where(resolve() is Patient)
 
-**Hinweis:** Ein Termin-Repository MUSS einen Termin ablehnen, falls der Termin auf einen nicht vorhandenen (gelöscht oder inkativ) Patienten referenziert. Dies gilt insbesondere auch nachträglich für vorläufig angelegte Patienten-Ressourcen.
+**Hinweis:** Ein Termin-Repository MUSS einen Termin ablehnen, falls der Termin auf einen nicht vorhandenen (gelöscht oder inaktiv) Patienten referenziert. Dies gilt insbesondere auch nachträglich für vorläufig angelegte Patienten-Ressourcen.
 
 Sollte die PATCH-Parameter-Ressource eins dieser Elemente verändern, MUSS die Operation mit einem Status Code "HTTP 400 - Bad Request" zurückgewiesen werden. Eine OperationOutcome Ressource MUSS zurückgegeben werden, die in kodierter Form den entsprechenden Fehler beschreibt.
 
@@ -251,11 +251,11 @@ Ein Termin-Repository SOLL die Anlage (Create-Interaktion) einer Patient-Ressour
 Ein Termin-Repository MUSS die Übergabe einer Patienten-Instanz mittels des entsprechenden Parameters in der $book-operation unterstützen (s.u.). 
 ### Asynchrone Ausführung $book
 
-Die Operation zur Buchung eines Termin MUSS ebenfalls asynchron ausgeführt werden können, für den Fall, dass ein Termin-Repository keine Zusagen zu Antwortzeiten machen kann und so dass Problem besteht, dass der Client in einen Timeout läuft. Beispielsweise kann dies der Fall sein, wenn die Buchungsanfrage im Termin-Repository asynchrone Anfragen an andere Systeme auslöst und der Termin erst bestätigt werden kann, wenn diese durchgelaufen sind. Es gelten die Regeln der [FHIR Kernspezifikation - Abschnitt 3.2.0.7 Executing an Operation Asynchronously](https://www.hl7.org/fhir/r4/operations.html):
+Die Operation zur Buchung eines Termins MUSS ebenfalls asynchron ausgeführt werden können, falls ein Termin-Repository keine Zusagen zu Antwortzeiten machen kann und somit das Problem besteht, dass der Client in einen Timeout läuft. Beispielsweise kann dies der Fall sein, wenn die Buchungsanfrage im Termin-Repository asynchrone Anfragen an andere Systeme auslöst und der Termin erst bestätigt werden kann, wenn diese durchgelaufen sind. Es gelten die Regeln der [FHIR Kernspezifikation - Abschnitt 3.2.0.7 Executing an Operation Asynchronously](https://www.hl7.org/fhir/r4/operations.html):
 
 - Der Aufruf der $book-Operation erfolgte auch im asynchronen Fall durch einen POST-Request
 - Ein HTTP-Header mit dem Namen "Prefer" und dem Inhalt "respond-async" MUSS im Aufruf der Operation enthalten sein
-- Als HTTP-Status-Code MUSS das Termin-Repository 202 - Accepted zurückgeben
+- Als HTTP-Status-Code MUSS das Termin-Repository "202 - Accepted" zurückgeben
 - Im Fehlerfall MUSS ein 4XX- oder 5XX-HTTP-Status-Code zurückgeben werden
-- Zudem MUSS das Termin-Repository einen "Content-Location"-Header zurückliefern indem eine valide absolute URL enthalten ist unter welcher die oben beschriebene Appointment- bzw OperationOutcome-Ressource als Antwort auf die Buchung des Termins abgerufen werden kann
+- Zudem MUSS das Termin-Repository einen ‚Content-Location‘-Header zurückliefern, in dem eine valide absolute URL enthalten ist, unter der die oben beschriebene Appointment- bzw. OperationOutcome-Ressource als Antwort auf die Buchung des Termins abgerufen werden kann
 

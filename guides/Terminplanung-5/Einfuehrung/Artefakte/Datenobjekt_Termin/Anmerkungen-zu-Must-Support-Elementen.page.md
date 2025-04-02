@@ -77,9 +77,9 @@ Insbesondere ist die Kodierung der Fachrichtung des Termins notwendig im Kontext
 
 **Bedeutung:** Referenzierung der Slots für die Verknüpfung des Termins mit einem Schedule
 
-**Hinweis:** Die Referenzierung des Schedules kann durch einen oder mehrere Slots erfolgen. Es kann keine Reihenfolge durch die Angabe der Slots abgeleitet werden.
+**Hinweis:** Die Referenzierung des Schedules KANN durch einen oder mehrere Slots erfolgen. Es kann keine Reihenfolge durch die Angabe der Slots abgeleitet werden.
 
-**Hinweis:** In der Vergangenheit liegende Slots, welche nicht verknüpft wurden, dürfen nicht mehr abrufbar sein. Jegliche andere Slots müssen auch per id, herausgegeben werden. Sobald die id einmalig per Search herausgeben wurde, müssen diese gleichbleibend abrufbar sein.
+**Hinweis:** In der Vergangenheit liegende Slots, welche nicht verknüpft wurden, DÜRFEN NICHT mehr abrufbar sein. Jegliche andere Slots müssen auch per id, herausgegeben werden. Sobald die id einmalig per Search herausgeben wurde, müssen diese gleichbleibend abrufbar sein.
 
 ### `Appointment.patientInstruction`
 
