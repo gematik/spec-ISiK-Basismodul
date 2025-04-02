@@ -15,5 +15,7 @@ Akteur: Der Autorisierungs-Server ist verantwortlich für die Authentifizierung 
 ## Ressourcen-Server
 Akteur: Der ISiK Ressourcenserver stellt die ISiK-spezifischen FHIR-Ressourcen bereit und ermöglicht autorisierten Clients den Zugriff auf Gesundheitsdaten gemäß den ISiK-Connect-Spezifikationen.
 
+Für den Ressourcen-Server gelten die Festlegungen im abschnitt [ISiK-Konformität](https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance?version=current).
+
 ## Client
 Akteur: Ein Client ist eine Anwendung, die auf FHIR-Ressourcen zugreift, um Gesundheitsdaten zu lesen oder zu schreiben. Dies kann beispielsweise eine mobile Gesundheits-App oder ein klinisches Entscheidungshilfesystem sein.
