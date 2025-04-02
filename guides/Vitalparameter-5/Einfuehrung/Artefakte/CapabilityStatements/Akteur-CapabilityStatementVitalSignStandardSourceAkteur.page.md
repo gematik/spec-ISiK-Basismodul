@@ -15,6 +15,15 @@ select
 
 <fql>
 from
+	CapabilityStatement
+where
+	url = %canonical
+select
+	Zweck:purpose
+</fql>
+
+<fql>
+from
     CapabilityStatement
 where
     url = %canonical
