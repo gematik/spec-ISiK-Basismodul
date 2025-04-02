@@ -7,13 +7,13 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     paths:
-    - 'Resources/**'
-    - '.github/workflows/**'
+      - 'Resources/**'
+      - '.github/workflows/**'
     branches-ignore:
-    - 'main**'
+      - 'main**'
   pull_request:
     branches:
-    - 'main**'
+      - 'main**'
   workflow_call:
     secrets:
       SIMPLIFIER_USERNAME:
@@ -65,7 +65,7 @@ jobs:
           input_file: 'validation.html'
 
       - name: Validate Resource Status
-        uses: patrick-werner/fhir-resource-status-check@1.1.0
+        uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:
           folder: './Resources/fsh-generated/resources/'
 

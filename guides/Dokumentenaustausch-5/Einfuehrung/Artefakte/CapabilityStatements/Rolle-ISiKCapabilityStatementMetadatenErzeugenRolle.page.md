@@ -20,6 +20,15 @@ select
 	Beschreibung:description
 </fql>
 
+<fql>
+from
+	CapabilityStatement
+where
+	url = %canonical
+select
+	Zweck:purpose
+</fql>
+
 <fql output="transpose" headers="true">
 from
 	CapabilityStatement
