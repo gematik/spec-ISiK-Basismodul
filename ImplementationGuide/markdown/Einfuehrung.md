@@ -2,11 +2,11 @@
 
 ----
 
-Version: 5.0.0 (draft)
+Version: 5.0.0-rc (draft)
 
-Datum: (TBD)
+Datum: 08.04.2025
 
-Status: Aktiv
+Status: Draft (Kommentierung)
 
 Realm: Deutschland
 
