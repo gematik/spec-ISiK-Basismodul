@@ -11,7 +11,7 @@ Daher wird diese Funktion bereits in dieser Stufe als *potentielle* Interaktion 
 
 Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von {{pagelink:FormularRenderer}} implementiert und beschränkt sich auf die Methode der [Observation based extraction](https://build.fhir.org/ig/HL7/sdc/extraction.html#observation-based-extraction).
 
-Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe relevant. Auf {{pagelink:Extensions}} sind mehr Informationen dazu zu finden.
+Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe relevant. Unter {{pagelink:Extensions}} sind mehr Informationen dazu zu finden.
 
 - [Launch Contexts](StructureDefinition-sdc-questionnaire-launchContext.html)
 - [Extract Observation](StructureDefinition-sdc-questionnaire-observationExtract.html)
