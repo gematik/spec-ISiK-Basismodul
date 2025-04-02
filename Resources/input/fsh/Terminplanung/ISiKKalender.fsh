@@ -59,7 +59,7 @@ Extension: ScheduleName
 Id: ScheduleName
 Context: Schedule
 * insert Meta
-* publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
+* ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Schedule.name"
 * value[x] only string
 * valueString 0..1
