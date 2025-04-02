@@ -1,11 +1,11 @@
 ---
-topic: Anforderungen
+topic: Artefakte
 ---
 
 ## {{page-title}}
 
-## Anforderungen
+## Festlegungen
 
-Es gelten zur Umsetzung des Use Cases die Anforderungen entsprechend der folgenden Unterseiten.
+Es gelten zur Umsetzung der basalen Funktionalität und weiterer Use Cases in ISiK die Festlegungen zu CapabilityStatements (Akteure und Rollen) sowie Datenstrukturen entsprechend der folgenden Unterseiten.
 
 {{index:current}}

@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementStammdatenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement-Akteur
+* insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"
 * name = "ISiKCapabilityStatementStammdatenRolle"
 * title = "CapabilityStatement für Rolle &quot;StammdatenRolle&quot;"

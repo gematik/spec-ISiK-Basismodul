@@ -36,7 +36,7 @@ Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumente
 
 Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/R4/codesystem-issue-type.html) verwendet werden.
 
-Das Bundle muss folgendem Profil entsprechen:
+Das Bundle MUSS folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
 Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-401/Einfuehrung/UseCases/AkteureUndInteraktionen/ErzeugenVonMetadaten.page.md?version=current).
@@ -47,8 +47,8 @@ Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries fin
 
 In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:
 
-1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlich identifizieren Merkmalen
-2. Extraktion der Encounter-Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer ('Encounter.account.identifier') oder ähnlich identifizieren Merkmalen
+1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers ('Patient.identifier') oder ähnlichen identifizierenden Merkmalen
+2. Extraktion der Encounter-Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer ('Encounter.account.identifier') oder ähnlichen identifizierenden Merkmalen
 3. Extraktion der Composition-Ressource aus dem Bundle und Auslesen der mit 'mustSupport' gekennzeichneten Meta-Daten, sowie der menschenlesbaren Repräsentation des Dokumentes ('Composition.text', 'Composition.section.text', 'Composition.section.section.text')
 4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten

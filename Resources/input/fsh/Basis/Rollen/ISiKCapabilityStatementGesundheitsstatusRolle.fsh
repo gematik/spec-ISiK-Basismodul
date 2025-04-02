@@ -8,7 +8,7 @@ Usage: #definition
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;.
-Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und und der Verarbeitung von ISiKObservation-Ressourcen.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKObservation-Ressourcen.
 "
 
 * rest
@@ -145,8 +145,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und und der Verarb
       * insert Expectation(#MAY)
 
   * resource[+]
-    * insert Expectation(#SHALL)
     * type = #AllergyIntolerance
+    * insert Expectation(#SHALL)
     * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"
     * interaction[+]
       * insert Expectation(#SHALL)
