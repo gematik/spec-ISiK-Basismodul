@@ -14,7 +14,7 @@ Confidential Clients MÜSSEN sich gegenüber dem "Token"-Endpunkt des Autorisier
 
 ### JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
 
-Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu müs sen folgende Schritte untersützt werden:
+Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu MÜSSEN folgende Schritte unterstützt werden:
 
 1. Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder [RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)](https://datatracker.ietf.org/doc/html/rfc8017) oder [ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))](https://datatracker.ietf.org/doc/html/rfc6979) als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) eingebettet in einem [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) übermittelt. Angaben zur Schlüssellänge sind den Abschnitten [RFC7518 - Abschnitt 3.3 - Digital Signature with RSASSA-PKCS1-v1_](https://datatracker.ietf.org/doc/html/rfc7518#section-3.3) und [RFC7518 - Abschnitt 3.4 - Digital Signature with ECDSA](https://datatracker.ietf.org/doc/html/rfc7518#section-3.4) zu entnehmen.
 
