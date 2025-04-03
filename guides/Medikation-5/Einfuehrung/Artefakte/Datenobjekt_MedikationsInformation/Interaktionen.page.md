@@ -31,7 +31,7 @@ with
         {{page:FQL-Capability-Operations}}
     </tab>
     <tab title="Link">
-        {{pagelink:Einfuehrung/Datenobjekte/CapabilityStatements}}
+        {{pagelink:Einfuehrung/Artefakte/CapabilityStatements}}
     </tab>
 </tabs>
 

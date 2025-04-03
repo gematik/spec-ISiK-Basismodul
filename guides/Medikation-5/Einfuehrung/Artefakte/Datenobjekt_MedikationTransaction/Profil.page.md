@@ -4,7 +4,7 @@ canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransa
 ---
 ## {{link}}
 
-Hinweis: Die Regeln aus dem Modul [ISiK Basis Stufe 4](https://simplifier.net/guide/isik-basis-v4) für die Verarbeitung Document-Bundles, treffen hier nicht zu, da es sich um den Bundle-Typ Transaction handelt.
+Hinweis: Die Regeln aus dem Modul [ISiK Basis Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung) für die Verarbeitung Document-Bundles, treffen hier nicht zu, da es sich um den Bundle-Typ Transaction handelt.
 
 <fql output="inline">
 from
