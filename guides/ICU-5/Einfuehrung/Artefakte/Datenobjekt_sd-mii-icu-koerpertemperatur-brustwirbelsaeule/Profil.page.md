@@ -23,10 +23,7 @@ from
 where
     url = %capability
 select
-    Name: name,
-    for rest.resource.where(%canonical in supportedProfile)
-    select
-        'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
+    'Bitte aus dem CpS entnehmen': url
 </fql>
 
 ### Metadaten
