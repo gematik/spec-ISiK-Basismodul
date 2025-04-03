@@ -27,7 +27,7 @@ Die Folge sind lange Latenzen, bis die Formulare den Anwendern zur Verfügung st
 und redundante Datenerfassung aufgrund der fehlenden Verknüpfungen zu den bereits vorhandenen Daten. 
 Aufgrund uneinheitlicher Modellierung der Formulare, sind die erhobenen Daten häufig nicht wiederverwendbar.
 
-Der FHIR-Standard bietet mit dem internationalen Implementierungsleitfaden "Structured Data Capture (SDC)" //ToDo Link rein?! eine Lösung für schnelles Deployment von standardisierten Formularen im Versorgungskontext. 
+Der FHIR-Standard bietet mit dem internationalen Implementierungsleitfaden ["Structured Data Capture (SDC)"](https://build.fhir.org/ig/HL7/sdc/) eine Lösung für schnelles Deployment von standardisierten Formularen im Versorgungskontext. 
 Die Ermittung von relevanten Informationen über die FHIR-Restful-API ermöglicht die automatische Vorbefüllung der Formulare und verhindert eine redundante Datenerfassung.
 Die Extraktion der {{pagelink:FormularDaten}} in dedizierte FHIR-Ressourcen ermöglicht die Wiederverwendung der erhobenen Daten und erleichtert deren Auffindbarkeit.
 Die vielfältigen Möglichkeiten der Datenvalidierung im FHIR-Kontext stellen die Vergleichbarkeit und Qualität der erhobenen Daten sicher.
