@@ -1,4 +1,4 @@
-# ISiK-Konformität
+# Connect Festlegungen
 
 Die Vorgaben von ISiK-Connect betreffen in ISiK Connect ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers:
 * Bestätigungsrelevante ISiK-Ressourcen-Server MÜSSEN ausgewählte der in _SMART on FHIR_ definierten _Scopes_ unterstützen. Diese _Scopes_ legen Syntax und Semantik für die an den Client delegierten Zugriffsrechte auf FHIR-Ressourcen fest ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-26}}).
