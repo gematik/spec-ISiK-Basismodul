@@ -12,8 +12,8 @@ topic: Akteure
 ## Autorisierungs-Server
 Akteur: Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Autorisierung von SMART-Clients, die auf FHIR-Ressourcen zugreifen möchten. Er stellt sicher, dass nur berechtigte Anwendungen und Benutzer Zugriff auf sensible Gesundheitsdaten erhalten.
 
-## Ressourcen-Server
-Akteur: Der ISiK Ressourcen-Server stellt die ISiK-spezifischen FHIR-Ressourcen bereit und ermöglicht autorisierten Clients den Zugriff auf Gesundheitsdaten gemäß den ISiK-Connect-Spezifikationen.
+## ISiK-Ressourcen-Server
+Akteur: Der ISiK-Ressourcen-Server stellt die ISiK-spezifischen FHIR-Ressourcen bereit und ermöglicht autorisierten Clients den Zugriff auf Gesundheitsdaten gemäß den ISiK-Connect-Spezifikationen.
 
 Für den Ressourcen-Server gelten die Festlegungen im abschnitt {{pagelink:ImplementationGuide/markdown/Conformance.md, text:ISiK-Konformität}}.
 
