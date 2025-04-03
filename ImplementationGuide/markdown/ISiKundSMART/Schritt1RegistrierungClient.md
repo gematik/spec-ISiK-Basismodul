@@ -6,15 +6,15 @@
 
 Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann, muss der Client beim Autorisierungsserver des EHR registriert werden. Per Abschnitt [SMART App Launch - 2.0.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-1-register) ist ihm freigestellt, wie diese Registrierung durchgeführt wird.
 
-Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#request) unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt [7.  Receiving the Authorization Response in a Native App](https://datatracker.ietf.org/doc/html/rfc8252#section-7) hingewiesen. Für Redirect Uris sind folgende Schemata zu unterstützen:
+Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#request) unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt [7.  Receiving the Authorization Response in a Native App](https://datatracker.ietf.org/doc/html/rfc8252#section-7) hingewiesen. Für Redirect URIs sind folgende Schemata zu unterstützen:
 
 - Private-Use URI Scheme Redirection
 - Claimed "https" Scheme URI Redirection
 - Loopback Interface Redirection
 
-Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
+Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect URLs (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
 
-Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client-Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access-Token-Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text: [ANF-CON-008] }})
+Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client-Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access-Token-Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-008}})
 
 Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen. Es wird hier die Verwendung des [Protected Dynamic Client Registration Prozesses](https://datatracker.ietf.org/doc/html/rfc7591#appendix-A.1.2) empfohlen, um ein unkontrolliertes Registrieren von Clients zu verhindern. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
 
