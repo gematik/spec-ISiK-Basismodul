@@ -1,6 +1,9 @@
 ## {{page-title}}
 
 ## Verwendete Extensions
+
+{{index:current}}
+<!--
 <fql>
 from StructureDefinition
 
@@ -10,4 +13,5 @@ where type.code = 'Extension'
 select Pfad:id, Extension: type.profile
 
 </fql>
+-->
 
