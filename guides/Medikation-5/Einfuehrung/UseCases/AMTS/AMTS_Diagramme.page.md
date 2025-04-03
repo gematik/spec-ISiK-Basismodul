@@ -13,6 +13,7 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg" alt="AMTS Use Cases" width="90%"/>
 
+
 **Anwendungsfälle AMTS**
 
 
