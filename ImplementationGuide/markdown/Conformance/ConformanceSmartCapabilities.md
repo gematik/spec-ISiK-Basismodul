@@ -8,7 +8,7 @@ ISiK-Ressourcen-Server MÜSSEN dieses JSON-Dokument unter der URL bereitstellen,
 
 Im Rahmen des Bestätigungsverfahrens für ISiK-Connect werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
 
-* ```authorization_endpoint```: Es MUSS die URL des Autorisierungs-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein ISiK-Client eine Autorisierungsanfrage stellen kann.
+* ```authorization_endpoint```: Es MUSS die URL des Autorisierungs-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein ISiK-Client eine Autorisierungsanfrage stellen kann (ANF-CON-IRS-001).
 * ```grant_types_supported```: Die _OAuth2 Grant Types_ ```authorization_code``` (Authorization Code Flow mit PKCE) UND ```client_credentials``` (Client Credentials) MÜSSEN unterstützt werden.  
   * Der _Grant Type_ ```refresh_token``` SOLL unterstützt werden. Wenn dieser _Grant Type_ angegeben ist, MUSS eine Erneuerung des _Access Token_ über ein _Refresh Token_ möglich sein.
 * ```token_endpoint```: Es MUSS die URL des Token-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein Zugriffstoken zur Bestätigung einer Autorisierung zum Zugriff auf geschützte Ressourcen des ISiK-Ressourcenservers abgerufen werden kann.
