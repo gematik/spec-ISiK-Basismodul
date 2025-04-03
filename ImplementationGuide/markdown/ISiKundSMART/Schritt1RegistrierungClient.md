@@ -12,7 +12,7 @@ Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch
 - Claimed "https" Scheme URI Redirection
 - Loopback Interface Redirection
 
-Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
+Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect URLs (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
 
 Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client-Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access-Token-Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-008}})
 
