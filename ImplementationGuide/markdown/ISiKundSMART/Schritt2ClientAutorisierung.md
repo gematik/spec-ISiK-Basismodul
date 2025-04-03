@@ -6,7 +6,7 @@
 
 Im nachfolgenden Schritt wird durch den Client an dem "authorize"-Endpunkt des Autorisierungsservers ein Autorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
-Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe ['ISiK-Connect: Autorisierung'](ISiKAutorisierung.md)) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
+Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text: ['ISiK-Connect: Autorisierung'] }}) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
 
 ----
 

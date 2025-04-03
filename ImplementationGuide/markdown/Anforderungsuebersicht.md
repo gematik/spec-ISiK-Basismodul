@@ -4,9 +4,9 @@
 | ANF-CON-002 | [IHE IUA - Abschnitt 3.103.2.1 Resource Server](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md)
 | ANF-CON-003  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md)
 | ANF-CON-004  | [IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type](UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md)
-| ANF-CON-005  | [ISiK-Ressourcen-Server - Verarbeitung von Autorisierungen](ISiKAutorisierung.md)
-| ANF-CON-006  | [FHIR-Ressourcen-Server - Mindestunterstützung Compartment Definition](ISiKAutorisierung.md)
-| ANF-CON-007  | [FHIR-Ressourcen-Server - Bestätigung von Scopes](ISiKAutorisierung.md)
+| ANF-CON-005  | {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text: [ISiK-Ressourcen-Server - Verarbeitung von Autorisierungen] }}
+| ANF-CON-006  | {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text: [FHIR-Ressourcen-Server - Mindestunterstützung Compartment Definition] }}
+| ANF-CON-007  | {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text: [FHIR-Ressourcen-Server - Bestätigung von Scopes] }}
 | ANF-CON-008  | [Autorisierungsserver - Client-Id Vergabe](ISiKundSMART/Schritt1RegistrierungClient.md)
 | ANF-CON-009  | [EHR-Client-Start durch externen Kontextaufruf](ISiKundSMART/Schritt2ClientAutorisierung.md)
 | ANF-CON-010 | [SMART App Launch - EHR Launch Parameter](ISiKundSMART/Schritt2ClientAutorisierung.md)
@@ -25,9 +25,9 @@
 | ANF-CON-023 | [SMART App Launch - Refresh access token](ISiKundSMART/Schritt6RefreshToken.md)
 | ANF-CON-024 | [OAuth 2.0 Token Revocation (RFC7009)](ISiKundSMART/Schritt6RefreshToken.md)
 | ANF-CON-025 | [Sicherstellung der sofortigen Token-Invalidierung](ISiKundSMART/Schritt6RefreshToken.md)
-| ANF-CON-026 | [ISiK-Ressourcen-Server - Unterstützung von Scopes](Conformance.md)
-| ANF-CON-027 | [`.well-known`-Dokument über unterstützte Scopes](Conformance.md)
-| ANF-CON-028 | [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway](Conformance.md)
+| ANF-CON-026 | {{pagelink:ImplementationGuide/markdown/Conformance.md, text: [ISiK-Ressourcen-Server - Unterstützung von Scopes] }}
+| ANF-CON-027 | {{pagelink:ImplementationGuide/markdown/Conformance.md, text: [`.well-known`-Dokument über unterstützte Scopes] }}
+| ANF-CON-028 | {{pagelink:ImplementationGuide/markdown/Conformance.md, text: [ISiK-Funktionalitäten durch Reverse Proxy/API Gateway] }}
 | ANF-CON-029 | [Verarbeitung von Autorisierungsinformationen](Conformance/ConformanceScopesKontexte.md)
 | ANF-CON-030 | [Keine Zugriffstoken ohne Kontextangabe akzeptieren](Conformance/ConformanceScopesKontexte.md) 
 | ANF-CON-031 | [Unterstützung der Kontexte "patient" und "encounter"](Conformance/ConformanceScopesKontexte.md)
