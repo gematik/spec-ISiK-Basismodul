@@ -3,6 +3,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle"
 * title = "ISiK CapabilityStatement Minimal Administrative Data Source Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"

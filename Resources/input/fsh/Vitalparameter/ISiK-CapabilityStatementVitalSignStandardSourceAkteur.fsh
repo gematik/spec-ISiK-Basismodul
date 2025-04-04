@@ -4,6 +4,7 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementVitalSignStandardSourceAkteur"
 * title = "ISiK CapabilityStatement Vital Sign Standard Source Akteur"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren für das Modul Vitalparameter zu bestehen.
