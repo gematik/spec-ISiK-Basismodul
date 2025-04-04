@@ -1,5 +1,5 @@
 ---
-topic: FQL-Capability-REST-multicps-multicps-3
+topic: FQL-Capability-REST-multicps-3
 ---
 <fql output="inline">
 from

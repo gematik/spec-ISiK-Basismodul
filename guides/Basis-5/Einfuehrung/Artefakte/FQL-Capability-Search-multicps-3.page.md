@@ -1,5 +1,5 @@
 ---
-topic: FQL-Capability-Search-multicps-multicps-3
+topic: FQL-Capability-Search-multicps-3
 ---
 
 <fql>
