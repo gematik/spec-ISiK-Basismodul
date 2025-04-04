@@ -1,5 +1,3 @@
-//TODO: Das Profil verwendet als einziges nicht das ISIK-Präfix im Namen. Anpassen?
-//Abweichende ID (und folglich Canonical) entspricht ebenfalls nicht dem Usus!!
 Profile: ISiKSubscription
 Parent: BackportSubscription
 Id: ISiKSubscription
@@ -29,6 +27,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Grund der Subscription"
   * ^comment = "**Bedeutung:** Beschreibung wieso diese Subscription erstellt wurde."
 * criteria MS
+* criteria from ISiKSubscriptionTopicVS (extensible)
   * ^short = "Canonical URL des SubscriptionTopic welches man abonnieren möchte."
   * ^comment = "Enthält eines der in ISiK vereinbarten Subsription Topics."
   * extension[filterCriteria] MS
@@ -63,7 +62,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **Hinweise:** ACHTUNG: dieses Datenfeld muss bei READ-Interaktionen maskiert werden! Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)"
 
 Profile: ISiKSubscriptionStatus
-Parent: BackportSubscriptionStatusR4
+Parent: BackportSubscriptionStatusR4Fixed
 Id: ISiKSubscriptionStatus
 Title: "ISiK Subscription Status"
 Description: "ISiK Subscription Status"
@@ -71,7 +70,7 @@ Description: "ISiK Subscription Status"
 * ^fhirVersion = #4.0.1
 
 Profile: ISiKSubscriptionNotification
-Parent: BackportSubscriptionNotificationR4
+Parent: BackportSubscriptionNotificationR4Fixed
 Id: ISiKSubscriptionNotification
 Title: "ISiKSubscriptionNotification"
 Description: "ISiKSubscriptionNotification"
@@ -111,63 +110,12 @@ Description: "Rest Subscription Channel Type for ISiK"
 * insert Meta
 * SubscriptionChannelType#rest-hook
 
-Instance: DorisQuelle
-InstanceOf: ISiKPatient
-Usage: #example
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A123456789"
-* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "654321"
-* active = false
-* name[Name]
-  * family = "Duplikat"
-  * given = "Doris"
-* gender = #female
-* birthDate = "1964-08-12"
-
-Instance: DorisZiel
-InstanceOf: ISiKPatient
-Usage: #example
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A123456789"
-* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "123456"
-* active = true
-* name[Name]
-  * family = "Duplikat"
-  * given = "Doris"
-* gender = #female
-* birthDate = "1964-08-12"
-
-
-/*This ressource should not be continously generated, since assigning identical IDs is a problem.
-ID was changed directly in JSON in order to be conformant to merge-behaviour as requested in FHIR R5 $merge.
-Instance: DorisResultat
-InstanceOf: ISiKPatient
-Usage: #example
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A123456789"
-* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "123456"
-* active = true
-* name[Name]
-  * family = "Duplikat"
-  * given = "Doris"
-* gender = #female
-* birthDate = "1964-08-12"
-* link
-  * other.identifier
-    * system = "https://fhir.krankenhaus.example/sid/PID"
-    * value = "654321"
-  * type = #replaces
-*/ 
-
 Instance: SubscriptionNotificationBundleExample
-InstanceOf: Bundle
+InstanceOf: ISiKSubscriptionNotification
 Usage: #example
 * type = #history
 * entry[+].fullUrl = "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0"
-* entry[=].resource = SubscriptionNotification
+* entry[=].resource = ISiKSubscriptionStatusExample
 * entry[=].request.method = #GET
 * entry[=].request.url = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
 * entry[=].response.status = "200"
@@ -177,10 +125,9 @@ Usage: #example
 * entry[=].request.url = "Patient"
 * entry[=].response.status = "201"
 
-Instance: SubscriptionNotification
-InstanceOf: BackportSubscriptionStatusR4
+Instance: ISiKSubscriptionStatusExample
+InstanceOf: ISiKSubscriptionStatus
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
 * parameter[subscription].valueReference = Reference(Subscription/1)
 * parameter[topic].valueCanonical = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
 * parameter[status].valueCode = #active
