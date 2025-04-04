@@ -1,7 +1,7 @@
 ## {{page-title}}
 
 {{index:current}}
-
+<!--
 ## Verwendete ValueSets
 Übersicht aller ValueSets, für die in diesem Modul ein ensprechendes Binding spezifiziert ist.
 <fql>
@@ -29,3 +29,4 @@ from CodeSystem
 select Name:name, Beschreibung:description,  Konzepte:concept.select('</br>' + code + ' "' + display + '"'), Canonical:url
 
 </fql>
+-->

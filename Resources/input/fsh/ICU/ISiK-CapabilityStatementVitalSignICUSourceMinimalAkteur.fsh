@@ -30,7 +30,7 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 * rest.mode = #server
 
 // Administative Daten
-* imports[+] = Canonical(ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
 // MII-ICU backport profiles for kis
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceMinimalRolle)

@@ -10,5 +10,5 @@ Die Methode, wie Autoren {{pagelink:FormularDefinition}}en publizieren, ist in d
 
 Funktionell ist der Akteur "FormularDefinitionsErsteller" out-of-scope für diese Ausbaustufe, jedoch richten sich die {{pagelink:BestPractice}}-Empfehlungen für die Erstellung von {{pagelink:FormularDefinition}}en an alle Personen und SoftwareSysteme, die die Rolle eines Autors einnehmen.
 
-Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (FSH) ISiK-konforme Questionnaire-Ressourcen modellieren als auch  Hersteller von Software-Lösungen die eine UI-gestützte Erstellung ISiK-konformer Questionnaires anbieten möchten.
+Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (FSH) ISiK-konforme Questionnaire-Ressourcen modellieren als auch  Hersteller von Software-Lösungen, die eine UI-gestützte Erstellung ISiK-konformer Questionnaires anbieten möchten.
 
