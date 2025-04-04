@@ -14,8 +14,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd.
 * `add` Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/602
-
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
+* `fixed` Fix Pattern auf Composition.type https://github.com/gematik/spec-ISiK-Basismodul/pull/598
 * `fixed` Fix Pattern auf patternCoding.system für AlphaID + Beispiel AlphaID hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/556
 * `improve` Hinweis zur Repräsentation einer PKV-VersichertenId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/587
 
