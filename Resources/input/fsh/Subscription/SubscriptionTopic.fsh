@@ -38,4 +38,5 @@ ValueSet: ISiKSubscriptionTopicVS
 Id: ISiKSubscriptionTopicVS
 Title: "ISiKSubscriptionTopic ValueSet"
 Description: "ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält"
+* insert Meta
 * include codes from system ISiKSubscriptionTopic

@@ -40,7 +40,6 @@ Description: "The type of notification represented by the status message."
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.1.1524"
 * ^version = "4.3.0"
-* ^status = #draft
 * ^experimental = false
 * ^date = "2021-01-05T10:01:24+11:00"
 * ^contact.telecom[0].system = #url

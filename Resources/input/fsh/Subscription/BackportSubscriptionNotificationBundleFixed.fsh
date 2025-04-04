@@ -2,7 +2,7 @@ Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
 Profile: BackportSubscriptionNotificationR4Fixed
 Parent: Bundle
-Id: backport-subscription-notification-r4
+Id: BackportSubscriptionNotificationR4Fixed
 Title: "R4 Topic-Based Subscription Notification Bundle"
 Description: """Profil auf der FHIR-R4-Resource Bundle, um R5-ähnliche, themenbasierte Subscription-Benachrichtigungen in FHIR R4 zu ermöglichen.
 
@@ -10,9 +10,9 @@ Dieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions
 Die Version 1.1.0 des offiziellen Profils enthält jedoch technische Fehler. Daher wurde dieses Profil lokal als temporärer Workaround nachgebildet.
 Es wird durch das offizielle `backport-subscription-notification-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.
 """
+* insert Meta
 * ^version = "1.1.0"
 * ^date = "2023-01-11T15:35:36+11:00"
-* ^publisher = "HL7 FHIR Infrastructure WG"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "https://hl7.org/Special/committees/fiwg"

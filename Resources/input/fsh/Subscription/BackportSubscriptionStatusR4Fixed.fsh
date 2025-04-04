@@ -2,7 +2,7 @@ Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
 Profile: BackportSubscriptionStatusR4Fixed
 Parent: Parameters
-Id: backport-subscription-status-r4
+Id: BackportSubscriptionStatusR4Fixed
 Title: "R4 Backported R5 SubscriptionStatus"
 Description: """Profil auf der FHIR-R4-Resource Parameters zur Unterstützung themenbasierter Subscription-Benachrichtigungen in R4.
 
@@ -10,9 +10,9 @@ Dieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions
 Die Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Daher wurde es hier als Workaround erneut implementiert.
 Diese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.
 """
+* insert Meta
 * ^version = "1.1.0"
 * ^date = "2023-01-11T15:34:32+11:00"
-* ^publisher = "HL7 FHIR Infrastructure WG"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "https://hl7.org/Special/committees/fiwg"
