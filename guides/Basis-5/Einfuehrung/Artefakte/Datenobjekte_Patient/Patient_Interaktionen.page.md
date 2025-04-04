@@ -32,9 +32,6 @@ with
     <tab title="Operationen">
         {{page:FQL-Capability-Operations-multicps-2}}
     </tab>
-    <tab title="Link">
-        {{pagelink:CapabilityStatement-multicps-2}}
-    </tab>
 </tabs>
 
 
