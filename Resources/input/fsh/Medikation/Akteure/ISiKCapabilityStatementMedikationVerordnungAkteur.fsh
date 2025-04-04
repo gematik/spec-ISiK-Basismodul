@@ -2,6 +2,7 @@ Instance: ISiKCapabilityStatementMedikationVerordnungAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur"
 * name = "ISiKCapabilityStatementMedikationVerordnungAkteur"
 * title = "ISiK CapabilityStatement Medikationsverordnung Server Akteur"
 * contact.telecom.system = #url
@@ -20,11 +21,11 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest.mode = #server
 
-* imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementMedikamentRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikamentRolle)
   * insert ExpectationImports(#SHALL)

@@ -2,6 +2,7 @@ Instance: ISiKCapabilityStatementAMTSAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur"
 * name = "ISiKCapabilityStatementAMTSAkteur"
 * title = "ISiK CapabilityStatement AMTS Akteur"
 * contact.telecom.system = #url
@@ -22,23 +23,23 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest.mode = #server
 
-* imports = Canonical(ISiKCapabilityStatementAMTSRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementAMTSRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementLeistungserbringerRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
+* imports[+] = Canonical(ISiKCapabilityStatementKlinischeRolle) //Hinzufügen von Interaktionen für die Prozedur für den AMTS-Bereich.
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementMedikationInformationRolle) 
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationInformationRolle) 
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementMedikamentRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikamentRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementLaborMinimalRolle) 
+* imports[+] = Canonical(ISiKCapabilityStatementLaborMinimalRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
   * insert ExpectationImports(#SHALL)

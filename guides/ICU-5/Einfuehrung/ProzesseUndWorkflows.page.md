@@ -11,12 +11,12 @@ Zur Abbildung des bidirektionalen Überleitungsprozesses zwischen einer Intensiv
 
 ### Diagramme
 
-Der Workflow dient im Wesentlichen der Darstellung zu verschiedenen Möglichkeiten der Nutzung der REST-Schnittstelle zur Unterstützung des Workflows durch abfrage-basierte Kommunikation von Daten.
+Der Workflow dient im Wesentlichen dazu, verschiedene Nutzungsmöglichkeiten der REST-Schnittstelle zur abfragebasierten Datenkommunikation im Rahmen der Workflow-Unterstützung darzustellen.
 
 Für Festlegungen zu REST-Abfragen siehe den [Abschnitt zur REST-API im Basismodul](https://simplifier.net/guide/isik-basis-403/Einfuehrung/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Rest).
 
 #### Abfrage zeitlich folgend 
-Folgende Diagramme illustrieren Die Fälle, bei denen Daten zeitlich nach der Überleitung abgefragt werden (mittels HTTP GET).
+Folgende Diagramme illustrieren die Fälle, bei denen Daten zeitlich nach der Überleitung abgefragt werden (mittels HTTP GET).
 
 Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-001** als BPMN-Prozess:
 

@@ -18,7 +18,7 @@ ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 ### Annotation für die Vorbelegung
 
 * Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profiles repräsentiert werden können, müssen *zwingend* für die automatische Vorbelegung annotiert werden.
-* Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen zwingen in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.
+* Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen *zwingend* in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.
 
 ### Annotation für die Extraktion
 
@@ -27,9 +27,7 @@ ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 
 ### Vorbereitung für Definition-Based Extraction und Prepopulation
 
-Obgleich die Definition-Based extraction und prepopulation derzeit noch nicht verbindlich ist, sollten sich die Autoren 
-von Formulardefinitionen mit den entsprechenden Prinzipien vertraut machen und eine potentielle künftige Funktionalität bei der Modellierung berücksichtigen.
-...oder anders formuliert: Formulare sollen bereits jetzt so strukturiert werden, dass in Zukunft eine Extraktion in geeignete FHIR-Ressourcen möglich ist.
+Obwohl die Definition-Based Extraction und Prepopulation derzeit nicht verbindlich sind, sollten Autoren von Formulardefinitionen die zugrunde liegenden Prinzipien berücksichtigen und ihre Modelle so strukturieren, dass eine zukünftige Extraktion in geeignete FHIR-Ressourcen ermöglicht wird.
 
 ### Launch-Kontext
 

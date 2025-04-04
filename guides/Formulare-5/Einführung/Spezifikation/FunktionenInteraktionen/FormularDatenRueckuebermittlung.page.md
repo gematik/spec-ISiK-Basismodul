@@ -10,7 +10,7 @@ Die Rückübermittlung von {{pagelink:FormularDaten}} erfolgt gemäß den Festle
 @startuml
 FormularDatenSender -> FormularDatenEmpfänger : POST (DocumentBundle)
 @enduml
-</plantuml>
+</plantuml>   
 
 | **Work in Progress** | **Fehlendes Artefakt** |
 |-|-|

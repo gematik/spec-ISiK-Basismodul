@@ -61,6 +61,8 @@
         "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant",
         "path": "QuestionnaireResponse.modifierExtension",
         "sliceName": "MDR-Relevant",
+        "short": "MPG-Relevanz der Formulardaten",
+        "comment": "**Begründung MS:**   \n  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz",
         "min": 1,
         "max": "1",
         "type": [
@@ -81,20 +83,16 @@
       {
         "id": "QuestionnaireResponse.identifier",
         "path": "QuestionnaireResponse.identifier",
+        "short": "eindeutiger Identifier der FormularDaten",
+        "comment": "**Begründung MS:**\n  Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.questionnaire",
         "path": "QuestionnaireResponse.questionnaire",
+        "short": "Bezug zur FormularDefinition",
+        "comment": "**Begründung MS:** \n  Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein.",
         "min": 1,
-        "type": [
-          {
-            "code": "canonical",
-            "targetProfile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {
@@ -106,7 +104,8 @@
         "id": "QuestionnaireResponse.questionnaire.extension:questionnaireDisplay",
         "path": "QuestionnaireResponse.questionnaire.extension",
         "sliceName": "questionnaireDisplay",
-        "comment": "This SHALL be the title of the Questionnaire at the time the QuestionnaireResponse was originally authored.",
+        "short": "Titel/Überschrift der zugrunde liegenden FormularDefinition",
+        "comment": "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt.",
         "min": 1,
         "max": "1",
         "type": [
@@ -127,12 +126,16 @@
       {
         "id": "QuestionnaireResponse.subject",
         "path": "QuestionnaireResponse.subject",
+        "short": "Subject (Patient), über das in diesem Formular berichtet wird.",
+        "comment": "**Begründung Pflichtfeld:**  \n  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  \n  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.authored",
         "path": "QuestionnaireResponse.authored",
+        "short": "Datum der FormularDaten",
+        "comment": "**Begründung Pflichtfeld:** \n  Relevant für die Suche und zeitliche Einordnung der FormularDaten",
         "min": 1,
         "mustSupport": true
       },
@@ -155,7 +158,7 @@
         "id": "QuestionnaireResponse.item.text",
         "path": "QuestionnaireResponse.item.text",
         "short": "Frage, die beantwortet wurde",
-        "comment": "Die QuestionnaireResponse Instanz sollte pro Antwort-Item auch die Frage mitführen, damit bei der Anzeige einer QuestionnaireResponse nicht der zugrunde liegende Questionnaire zur Verfügung stehen muss, um die Antworten interpretieren zu können.",
+        "comment": "**Begründung Pflichtfeld:**  \n    Die FormularDaten sollte pro Antwort auch die Fragestellung mitführen, \n    damit die Daten auch von Systemen/Anwendern interpretiert werden können, \n    die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben.",
         "mustSupport": true
       },
       {
@@ -171,13 +174,15 @@
       {
         "id": "QuestionnaireResponse.item.answer.item",
         "path": "QuestionnaireResponse.item.answer.item",
-        "contentReference": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item",
+        "short": "Untergeordnetes Item",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.item",
         "path": "QuestionnaireResponse.item.item",
-        "contentReference": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item",
+        "short": "Untergeordnetes Item",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
         "mustSupport": true
       }
     ]
