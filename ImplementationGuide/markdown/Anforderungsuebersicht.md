@@ -63,4 +63,4 @@ Die normativen Festlegungen des Moduls ISiK Connect  sind im Wesentlichen der Se
 | ANF-CON-049 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:code_challenge_methods_supported}}
 | ANF-CON-050 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:scopes_supported}}
 | ANF-CON-051 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:capabilitites: permission-v2}}
-| ANF-CON-52 | {{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:KEINE eigenen _CompartmentDefinitionen_}}
+| ANF-CON-052 | {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:KEINE eigenen _CompartmentDefinitionen_}}
