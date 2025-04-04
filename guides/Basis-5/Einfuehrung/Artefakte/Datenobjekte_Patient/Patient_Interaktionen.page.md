@@ -10,10 +10,14 @@ capability2: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStat
 from
     CapabilityStatement
 where
-    url = %capability
-for rest.resource.where(%canonical in supportedProfile)
+    url = %capability1
+or 
+    url = %capability2
 select
-    documentation
+    Name: name,
+    join for rest.resource.where(%canonical in supportedProfile)
+    select
+        documentation
 with
     no header
 </fql>
