@@ -10,6 +10,7 @@ Version: 5.0.0
 Datum: (TBD)
 
 * `changed` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
+* `feature` Abschnitt zu BAckend-Services hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459
 
 ----
 Version: 3.0.0
