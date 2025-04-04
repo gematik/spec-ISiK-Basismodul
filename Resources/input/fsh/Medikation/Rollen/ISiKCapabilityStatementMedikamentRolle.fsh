@@ -2,6 +2,7 @@ Instance: ISiKCapabilityStatementMedikamentRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle"
 * name = "ISiKCapabilityStatementMedikamentRolle"
 * title = "ISiK CapabilityStatement MedikamentRolle"
 * contact.telecom.system = #url
