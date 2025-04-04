@@ -27,7 +27,7 @@ with
         {{page:FQL-Capability-Operations}}
     </tab>
     <tab title="Link">
-        {{pagelink:CapabilityStatement}}
+        {{pagelink:CapabilityStatements}}
     </tab>
 </tabs>
 

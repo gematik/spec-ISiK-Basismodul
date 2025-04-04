@@ -3,7 +3,7 @@ topic: FormularRenderer
 ---
 ## {{page-title}}
 
-Der Formular-Renderer ist die zentrale Komponente zur Anzeige, Be- und Verarbeitung von Formularen auf Basis von Questionnaires. Er übernimmt sowohl die logische als auch visuelle Umsetzung der FormularDefinition und interagiert mit anderen Akteuren, um eine Integration ISiK-konforme Integration zu ermöglichen.
+Der Formular-Renderer ist die zentrale Komponente zur Anzeige, Be- und Verarbeitung von Formularen auf Basis von Questionnaires. Er übernimmt sowohl die logische als auch visuelle Umsetzung der FormularDefinition und interagiert mit anderen Akteuren, um eine ISiK-konforme Integration zu ermöglichen.
 
 Unter einem Formular-Renderer ist in diesem Modul eine Software zu verstehen, das folgende Funktionen und Interaktionen implementiert:
 * {{pagelink:Launch, text:Fremdaufruf}} in der Rolle "Client"
@@ -21,7 +21,7 @@ Gemäß diesem Modul übernimmt der FormularRenderer insbesondere folgende Aufga
 
 * Darstellung der FormularDefinition auf Basis der darin enthaltenen Extensions und Strukturangaben
 * Ermöglichung des Ausfüllens des Formulars
-* Vorbelegung der Formulardaten durch Datenabruf aus der {{pagelink:FormularDatenQuelle}}(FormularDatenQuelle)
+* Vorbelegung der Formulardaten durch Datenabruf aus der {{pagelink:FormularDatenQuelle}}
 * Validierung der eingegebenen Daten auf Grundlage der Definition und enthaltener Constraints. Hierbei ist die Interaktion {{pagelink:FormularDatenValidierung}} relevant
 * Extraktion strukturierter FHIR-Ressourcen aus validierten Eingaben
 * Rückübermittlung der ausgefüllten Formulare und extrahierter Daten über die Interaktion {{pagelink:FormularDatenRueckuebermittlung}}
