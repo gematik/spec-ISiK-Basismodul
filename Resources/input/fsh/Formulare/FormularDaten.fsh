@@ -10,27 +10,55 @@ Description: "ToDo"
 * obeys sdcqr-1 and sdcqr-2
 * modifierExtension contains
   ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
+* modifierExtension[MDR-Relevant]
+  * ^short = "MPG-Relevanz der Formulardaten"
+  * ^comment = "**Begründung MS:**   
+  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
 * modifierExtension[MDR-Relevant].valueCoding MS
 * identifier MS
+  * ^short = "eindeutiger Identifier der FormularDaten"
+  * ^comment = "**Begründung MS:**
+  Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen."
 * questionnaire 1.. MS
-* questionnaire only Canonical(ISiKFormularDefinition)
+  * ^short = "Bezug zur FormularDefinition"
+  * ^comment = "**Begründung MS:** 
+  Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein."
+//* questionnaire only Canonical(ISiKFormularDefinition) 
   * extension contains DisplayName named questionnaireDisplay 1..1 MS
-  * extension[questionnaireDisplay] ^comment = "This SHALL be the title of the Questionnaire at the time the QuestionnaireResponse was originally authored."
+  * extension[questionnaireDisplay] 
+    * ^short = "Titel/Überschrift der zugrunde liegenden FormularDefinition"
+    * ^comment = "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt."
 * status MS
 * subject 1..1 MS
+  * ^short = "Subject (Patient), über das in diesem Formular berichtet wird."
+  * ^comment = "**Begründung Pflichtfeld:**  
+  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
+  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
 * authored 1.. MS
+  * ^short = "Datum der FormularDaten"
+  * ^comment = "**Begründung Pflichtfeld:** 
+  Relevant für die Suche und zeitliche Einordnung der FormularDaten"
 * author MS
 * item MS
   * linkId MS
   * text MS
     * ^short = "Frage, die beantwortet wurde"
-    * ^comment = "Die QuestionnaireResponse Instanz sollte pro Antwort-Item auch die Frage mitführen, damit bei der Anzeige einer QuestionnaireResponse nicht der zugrunde liegende Questionnaire zur Verfügung stehen muss, um die Antworten interpretieren zu können."
+    * ^comment = "**Begründung Pflichtfeld:**  
+    Die FormularDaten sollte pro Antwort auch die Fragestellung mitführen, 
+    damit die Daten auch von Systemen/Anwendern interpretiert werden können, 
+    die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben."
   * answer MS
     * value[x] MS
     * item MS
-      * ^contentReference = "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item"
+      * ^short = "Untergeordnetes Item"
+      * ^comment = "**Begründung MS:**  
+   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren."
   * item MS
-    * ^contentReference = "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse#QuestionnaireResponse.item"
+    * ^short = "Untergeordnetes Item"
+    * ^comment = "**Begründung MS:**  
+   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren."
+
+
 
 Invariant: sdcqr-1
 Description: "Subject SHOULD be present (searching is difficult without subject).  Almost all QuestionnaireResponses should be with respect to some sort of subject."

@@ -98,7 +98,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * system 1.. MS
       * ^comment = "Begründung des Must-Support und Kardinalität: Ein Coding Element benötigt immer ein System um die Bedeutung des Codes zu definieren."
     * code 1.. MS
-      * ^comment = "Begründung des Must-Support und Kardinalität: Ein Coding Element benötigt immer ein Code um die Bedeutung des Codes zu definieren."
+      * ^comment = "Begründung des Must-Support und Kardinalität: Ein Coding Element benötigt immer einen Code um die Bedeutung des Codes zu definieren."
     * display MS
       * ^comment = "Begründung des Must-Support: Ein Display Element ist für die Lesbarkeit der Information notwendig."
   * text MS
