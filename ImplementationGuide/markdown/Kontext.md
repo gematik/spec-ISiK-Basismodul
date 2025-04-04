@@ -19,6 +19,8 @@ Technische Systeme können in einer SMART-on-FHIR-konformen Umsetzung eines Auto
 
 Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispielsweise kann ein KIS selbst Ressourcen bereitstellen ("Ressourcen-Server"), Ressourcen von spezialisierten Subsystemen abrufen ("Client"), die Autorisierung von Nutzern durchführen ("Autorisierungsserver") und weitere Anwendungen aus dem aktuellen Nutzer- und/oder Patientenkontext heraus starten ("App-Launcher"). Durch eine solche Integration verschiedener Rollen kann ein KIS einen _Electronic Health Record_ im Sinne von _SMART on FHIR_ darstellen und damit als Plattform für wiederverwendbare, austauschbare und dynamisch startbare Anwendungen (_SMART Apps_) fungieren. 
 
+Die {{pagelink: ImplementationGuide/markdown/Akteure.md, text:Akteure}} im Modul ISiK Connect werden gesondert geführt.
+
 ### SMART App Launch
 
 ISiK-Connect soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten [HL7 Implementierungsleitfadens _Smart App Launch_](https://hl7.org/fhir/smart-app-launch/STU2/index.html) ermöglichen. Für ISiK Connect werden jedoch keine normativen Festlegungen getroffen, die andere Profile auf dem _OAuth2_-Standard wie z. B. _IHE IUA_ grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der OH KIS) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind. 
