@@ -5,7 +5,6 @@
 | ANF-CON-048 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:refresh_token}} | ISiK-Ressourcen-Server
 | ANF-CON-049 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:code_challenge_methods_supported}} | ISiK-Ressourcen-Server
 | ANF-CON-050 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:scopes_supported}} | ISiK-Ressourcen-Server
-| ANF-CON-051 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:authorization_endpoint}} | ISiK-Ressourcen-Server
 | ANF-CON-051 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:capabilitites: permission-v2}} | ISiK-Ressourcen-Server
 | ANF-CON-001  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 34.1.1.3 Resource Server}}
 | ANF-CON-002 | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.103.2.1 Resource Server}}
