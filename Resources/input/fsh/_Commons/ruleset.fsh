@@ -163,7 +163,7 @@ RuleSet: Quantity-MS
   * ^comment = "Motivation MS: Eine Quantity soll eine Einheit enthalten"
   * ^short = "Einheit"
 * valueQuantity.system MS
-  * ^comment = "Motivation MS: Eine Quantity soll ein System mit dem die Einheit kodiert wird enthalten"
+  * ^comment = "Motivation MS: Eine Quantity soll ein System, mit dem die Einheit kodiert wird, enthalten"
   * ^short = "CodeSystem aus dem die Einheit stammt"
 * valueQuantity.code MS
   * ^comment = "Motivation MS: Eine Quantity soll einen Code der die Einheit kodiert enthalten"
