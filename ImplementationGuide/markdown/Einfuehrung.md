@@ -57,6 +57,8 @@ Der IG baut auf bestehenden Standards auf, insbesondere:
 * FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.
 * OAuth2 & OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.
 
+Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den {{pagelink: ImplementationGuide/markdown/Conformance.md, text:Festlegungen für Connect}} zu entnehmen.
+
 ## Bedeutung für das Gesundheitswesen
 
 Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 5 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
