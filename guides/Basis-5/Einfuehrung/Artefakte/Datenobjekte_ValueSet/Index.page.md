@@ -1,6 +1,7 @@
 ---
 topic: ImplementationGuide-markdown-Datenobjekte-Datenobjekte-ValueSet
 ---
+{{index:current}}
 <!-- ## ValueSet [(ValueSet)](https://hl7.org/fhir/R4/valueset.html)
 
 ### Übersicht aller *verbindlicher* ValueSet-Bindings in diesem Modul
