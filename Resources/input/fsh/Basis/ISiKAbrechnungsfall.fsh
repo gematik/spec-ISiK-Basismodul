@@ -2,6 +2,8 @@ Profile: ISiKAbrechnungsfall
 Parent: Account
 Id: ISiKAbrechnungsfall
 Description: "Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.  
+Zugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde *nicht* primär zum Zweck der Abbildung von Abrechnungsprozessen definiert. 
+
 ### Motivation
 Komplementär zum Datenobjekt &quot;Kontakt - Encounter&quot; können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen 
 innerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.
