@@ -1,7 +1,7 @@
 Profile: ISiKMedizinischeBehandlungseinheit
 Parent: HealthcareService
 Id: ISiKMedizinischeBehandlungseinheit
-Description: "Unter einer medizinischen Behandlungseinheit wird hier im weiten Sinne eine Dienstleistung (diagnostisch, therapeutisch, im weiten Sinne gesundheitsfördernd etc.) zum Zweck einer Terminbuchung verstanden. Hierfür können von der Fachabteilung (Organization) unabhängige Kalender gepflegt werden. Im Kontext der Terminplanung können somit angebotene Leistungen (z.B. CT/MRT-Untersuchungen, chirurgische Eingriffe, Beratungsstunden zur Geburt etc.) abgebildet werden.
+Description: "Unter einer medizinischen Behandlungseinheit wird hier im weiteren Sinne eine Dienstleistung (diagnostisch, therapeutisch, im weiten Sinne gesundheitsfördernd etc.) zum Zweck einer Terminbuchung verstanden. Hierfür können von der Fachabteilung (Organization) unabhängige Kalender gepflegt werden. Im Kontext der Terminplanung können somit angebotene Leistungen (z.B. CT/MRT-Untersuchungen, chirurgische Eingriffe, Beratungsstunden zur Geburt etc.) abgebildet werden.
 
 Der Kontext zu diesem Profil wird mit folgender User Story veranschaulicht: 
 
@@ -20,20 +20,20 @@ Hintergrund: Die Suche nach verfügbaren Terminenblöcken (Slot) unter Einbezieh
 
 **Hinweis:** Diese Klassifikation SOLL stets auch in Appointment.serviceType und Schedule.serviceType angegeben werden. Seitens der aktuellen Spezifikation werden keine Vorgaben bezüglich der zu verwendenden Terminologie gemacht. Entsprechend verwendete Kataloge müssen als CodeSystem- und ValueSet-Ressourcen exponiert werden. Siehe [Suchparameter 'context-type-value' in ISiK Basis - Datenobjekt ValueSet](https://simplifier.net/resolve?&scope=isik-basis-v4@current&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet).
 
-**Begründung Kardinalität:** Eine Behandlungseinheit muss mindestens einen Typ haben, sodass im Rahmen der Terminplanung ermittelt werden kann welcher Akteur für die Durchführung eines Termins zur Verfügung steht."
+**Begründung Kardinalität:** Eine Behandlungseinheit muss mindestens einen Typ haben, sodass im Rahmen der Terminplanung ermittelt werden kann, welcher Akteur für die Durchführung eines Termins zur Verfügung steht."
 * specialty 1.. MS
   * ^comment = "**Bedeutung:** Fachrichtung der Behandlungsleistung welche durch den HealthcareService erbracht wird
 
 **Hinweis:** Diese Fachrichtung SOLL stets auch in Appointment.specialty und Schedule.specialty angegeben werden.
   
-**Begründung Kardinalität:** Eine Behandlungseinheit kann multiprofessionell sein und mehere Fachbereiche abdecken. Sie muss jedoch mindestens einem Fachbereich zugeordnet sein, sodass die Behandlungseinheit während der Terminplanung als Akteur miteinbezogen werden für passende Termine."
+**Begründung Kardinalität:** Eine Behandlungseinheit kann multiprofessionell sein und mehere Fachbereiche abdecken. Sie muss jedoch mindestens einem Fachbereich zugeordnet sein, sodass die Behandlungseinheit während der Terminplanung als Akteur für passende Termine miteinbezogen wird."
 * specialty.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-  * ^comment = "Begründung Kardinalität Fachrichtung: Die Kardinalität der Fachrichtung-Eigenschaft wird auf 1..1 festgelegt, um sicherzustellen, dass genau eine Fachrichtung per IHE-XDS-Kodierung vorhanden ist. Dies ist notwendig, um die Spezialisierung der Behandlungseinheit eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.
+  * ^comment = "**Begründung Kardinalität Fachrichtung:** Die Kardinalität der Fachrichtung-Eigenschaft wird auf 1..1 festgelegt, um sicherzustellen, dass genau eine Fachrichtung per IHE-XDS-Kodierung vorhanden ist. Dies ist notwendig, um die Spezialisierung der Behandlungseinheit eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.
   
-  Begründung Kardinalität ErweiterterFachabteilungsschluessel: Die Kardinalität der ErweiterterFachabteilungsschluessel-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass optional ein erweiterter Fachabteilungsschlüssel vorhanden sein kann."
+  **Begründung Kardinalität ErweiterterFachabteilungsschluessel:** Die Kardinalität der ErweiterterFachabteilungsschluessel-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass optional ein erweiterter Fachabteilungsschlüssel vorhanden sein kann."
 * specialty.coding contains 
   Fachrichtung 1..1 MS and
   ErweiterterFachabteilungsschluessel 0..1

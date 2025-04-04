@@ -1,12 +1,12 @@
 Instance: ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-CapabilityStatement
+* insert Meta-CapabilityStatement-Akteur
 * name = "ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur"
 * title = "ISiK CapabilityStatement VitalSign ICU Source Minimal Akteur"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* description = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'VitalSign ICU Source Minimal' zur Unterstützung des ICU-Normalstation-Workflows implementieren muss.
+* purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'VitalSign ICU Source Minimal' zur Unterstützung des ICU-Normalstation-Workflows implementieren muss.
 
 Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden Rollen (siehe 'imports' in der CapabilityStatement-Ressource) zu beachten.
   
@@ -30,13 +30,14 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 * rest.mode = #server
 
 // Administative Daten
-* imports[+] = Canonical(ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle)
-
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
+  * insert ExpectationImports(#SHALL)
 // MII-ICU backport profiles for kis
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceMinimalRolle)
-
+  * insert ExpectationImports(#SHALL)
 //Support fuer Laborprofile
 * imports[+] = Canonical(ISiKCapabilityStatementLaborMinimalRolle)
-
+  * insert ExpectationImports(#SHALL)
 //Support für generische Vitalparameter (wie Körpergewicht, Größe etc.)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignStandardSourceRolle)
+  * insert ExpectationImports(#SHALL)

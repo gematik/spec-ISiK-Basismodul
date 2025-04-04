@@ -13,10 +13,6 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
   * tag[Source] from http://fhir.de/ValueSet/common-meta-tag-de (required)
 * insert Meta
 * extension MS
-* extension contains ISiKNachrichtExtension named Nachricht 0..* MS
-  * ^comment = "Einschränkung der übergreifenden MS-Definition: Falls ein bestätigungsrelevantes System das ISiK-Profil ISiKNachricht implementiert, MUSS das System auch dieses Element unterstützten. Andernfalls KANN das System dieses Element unterstützen. 
-  
-  Begründung zum Must Support: Nachrichten die für diesen Termin verfasst wurden können somit direkt abgerufen werden."
 * extension contains AppointmentReplaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
 * status MS
@@ -65,7 +61,7 @@ Begründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind
 * participant[AkteurPatient].actor only Reference(Patient)
 * participant[AkteurPatient].actor MS
 * participant[AkteurPatient].actor.reference 1..1 MS
-* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.
+* participant[AkteurPatient] ^comment = "Hinweis: Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) des Basismoduls sein. Ein Sonderfall sind Patienten, über die ein Termin-Requestor oder Termin-Repository nur rudimentäre Informationen verfügt. Diese Patienten-Ressourcen sind bis zur Vervollständigung nur gegen den Kernstandard valide.
 
 Begründung zu Kardinalität und Must Support: Die teilnehmenden Patienten eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Hingegen kann die Patienten-Referenz separat in der $book-Operation übergeben werden, sodass hier keine verpflichtende Kardinaltiät gewählt werden kann."
 * participant contains AkteurPersonImGesundheitsberuf 0.. MS
@@ -85,6 +81,13 @@ Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit ei
   Begründung zu Kardinalität und Must Support: KANN auch anhand des Kalenders, in dem ein Termin gebucht wird, ermittelt werden.
   Die Angabe der Fachbereiche ist optional (0..*), muss jedoch implementiert werden (MS), um die Spezialisierung hinsichtlich der zugeordneten Behandlungseinheit des Termins eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.
   "
+* participant contains Angehoeriger 0.. MS
+* participant[Angehoeriger].actor only Reference(RelatedPerson)
+* participant[Angehoeriger].actor MS
+* participant[Angehoeriger].actor.reference 1..1 MS
+* participant[AkteurPersonImGesundheitsberuf] ^comment = "Im ISIK-Kontext MUSS die referenzierte RelatedPerson-Ressource konform zum [ISiKAngehoeriger](https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger) des Basismoduls sein.
+
+Begründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist optional, da in vielen Fällen die Referenzierung des Patienten ausreichend ist. Bei Terminen, die durch einen Angehörigen gebucht/verwaltet werden, ist es jedoch wichtig, dass diese Information an das Termin-Repository übermittelt werden kann."
 * specialty.coding 1..* MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -109,12 +112,6 @@ Begründung zu Kardinalität und Must Support: Die teilnehmenden Personen mit ei
   
   Begründung zu Must Support: Dieses Element ist optional (0..1), muss jedoch implementiert werden (MS), um besonders einen Notfall als solchen ausweisen zu können."
 
-Extension: ISiKNachrichtExtension
-Id: ISiKNachrichtExtension
-Context: Appointment
-* insert Meta
-* value[x] only Reference(ISiKNachricht)
-
 Extension: ISiKTerminPriorityExtension
 Id: ISiKTerminPriorityExtension
 Context: Appointment.priority
@@ -129,6 +126,7 @@ Extension: AppointmentReplaces
 Id: AppointmentReplaces
 Context: Appointment
 * insert Meta
+* ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
 * value[x] only Reference(Appointment)
 * valueReference 0..1
@@ -143,7 +141,6 @@ InstanceOf: ISiKTermin
 Usage: #example
 * meta
   * tag = http://fhir.de/CodeSystem/common-meta-tag-de#external
-* extension[ISiKNachrichtExtension].valueReference = Reference(ISiKNachrichtExample)
 * status = $appointmentStatus#proposed
 * start = "2022-12-10T09:00:00Z"
 * end = "2022-12-10T11:00:00Z"
@@ -162,7 +159,6 @@ InstanceOf: ISiKTermin
 Usage: #example
 * meta
   * tag = http://fhir.de/CodeSystem/common-meta-tag-de#external
-* extension[ISiKNachrichtExtension].valueReference = Reference(ISiKNachrichtExample)
 * status = $appointmentStatus#proposed
 * start = "2022-12-10T09:00:00Z"
 * end = "2022-12-10T09:30:00Z"

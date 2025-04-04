@@ -178,24 +178,15 @@ Usage: #example
 * entry[=].response.status = "201"
 
 Instance: SubscriptionNotification
-InstanceOf: Parameters
-Usage: #inline
+InstanceOf: BackportSubscriptionStatusR4
+Usage: #example
 * meta.profile = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
-* parameter[+].name = "subscription"
-* parameter[=].valueReference = Reference(Subscription/1)
-* parameter[+].name = "topic"
-* parameter[=].valueCanonical = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
-* parameter[+].name = "status"
-* parameter[=].valueCode = #active
-* parameter[+].name = "type"
-* parameter[=].valueCode = #event-notification
-* parameter[+].name = "events-since-subscription-start"
-* parameter[=].valueString = "1"
-* parameter[+].name = "notification-event"
-* parameter[=].part[0].name = "event-number"
-* parameter[=].part[=].valueString = "1"
-* parameter[=].part[+].name = "timestamp"
-* parameter[=].part[=].valueInstant = "2024-02-22T18:30:05+01:00"
-* parameter[=].part[+].name = "focus"
-* parameter[=].part[=].valueReference = Reference(DorisQuelle)
+* parameter[subscription].valueReference = Reference(Subscription/1)
+* parameter[topic].valueCanonical = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+* parameter[status].valueCode = #active
+* parameter[type].valueCode = #event-notification
+* parameter[eventsSinceSubscriptionStart].valueString = "1"
+* parameter[notificationEvent].part[eventNumber].valueString = "1"
+* parameter[notificationEvent].part[eventTimestamp].valueInstant = "2024-02-22T18:30:05+01:00"
+* parameter[notificationEvent].part[eventFocus].valueReference = Reference(DorisQuelle)
 
