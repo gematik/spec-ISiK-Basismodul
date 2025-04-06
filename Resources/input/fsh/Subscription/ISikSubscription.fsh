@@ -44,7 +44,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * type MS
     * ^short = "Typ des Kommunikationskanals"
     * ^comment = "**Bedeutung:** Der Typ des Kommunikationskanals, über den Subscription-Benachrichtigungen gesendet werden sollen.  
-    In ISiK MUSS der Wert `rest-hook` unterstützt werden, weitere Werte KÖNNEN unterstützt werden."    
+    In ISiK MUSS der Wert `rest-hook` unterstützt werden, weitere Werte KÖNNEN unterstützt werden."
+    * extension[customChannelType] 0..0
+      * ^short = "Custom Channel Type"
+      * ^comment = "**Bedeutung:** Custom Channel Type welcher in ISiK aktuell nicht unterstützt wird."
+      * valueCode MS
   * endpoint MS
     * ^short = "Endpunkt"
     * ^comment = "**Bedeutung:** Adresse des Kommunikationskanals/ Endpunkts, an den Subscription-Benachrichtigungen gesendet werden sollen. Dies ist nur für rest-hook Subscriptions relevant."

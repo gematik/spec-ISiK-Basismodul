@@ -9,5 +9,6 @@ Usage: #definition
 * purpose = """   
   CapabilityStatement für den Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;.
   """
+* rest.mode = #server
 * imports[+] = Canonical(ISiKCapabilityStatementSubscriptionRolle)
   * insert ExpectationImports(#SHALL)
