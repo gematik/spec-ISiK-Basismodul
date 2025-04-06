@@ -14,7 +14,8 @@ Anforderungen definiert werden.
 * **Zusammenführung von Patientendaten:** Wenn zwei Patientenakten aufgrund einer fehlerhaften
   doppelten Erfassung zusammengeführt werden, können relevante Systeme (z. B. KIS,
   Abrechnungssysteme, Labor) automatisch über die Änderung informiert werden. Dies verhindert
-  Dateninkonsistenzen und ermöglicht eine einheitliche Patientenhistorie.
+  Dateninkonsistenzen und ermöglicht eine einheitliche Patientenhistorie.    
+  Siehe auch: {{pagelink:Patient-merge, text:Patient merge und Notification }}
 
 * **Fall-Zusammenführung:** Falls mehrere Krankenhausaufenthalte eines Patienten in einem Fall
   zusammengeführt werden, erhalten nachgelagerte Systeme eine Benachrichtigung, um Abrechnungen und
