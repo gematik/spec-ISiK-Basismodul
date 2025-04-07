@@ -246,7 +246,7 @@ Beispiel: Absage eines Termins
 Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten Elemente zur Folge hat, z.B. aufgrund einer zeitlichen Verschiebung des Termins, so kann die Appointment-Ressource erneut unter Beibehaltung der id an die $book-Operation übergeben werden. Das Termin-Repository kann so feststellen, ob der Termin in abgeänderter Form verfügbar ist.
 ### Anlage einer Patient-Ressource
 
-Ein Termin-Repository SOLL die Anlage (Create-Interaktion) einer Patient-Ressource entsprechend der Vorgaben des [ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-v4/markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest?version=current) unterstützen.
+Ein Termin-Repository SOLL die Anlage (Create-Interaktion) einer Patient-Ressource entsprechend der Vorgaben des [ISiK-Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md?version=current) unterstützen.
 
 Ein Termin-Repository MUSS die Übergabe einer Patienten-Instanz mittels des entsprechenden Parameters in der $book-operation unterstützen (s.u.). 
 ### Asynchrone Ausführung $book
