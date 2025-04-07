@@ -3,7 +3,8 @@
 ----
 Version: 5.0.0-rc
 
-Datum: tbd.
+Datum: 07.0.4.2025
+
 
 Status: Draft
 
