@@ -1,6 +1,7 @@
 ---
 topic: StandortRaum-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle
 ---
 ## {{link}}
 

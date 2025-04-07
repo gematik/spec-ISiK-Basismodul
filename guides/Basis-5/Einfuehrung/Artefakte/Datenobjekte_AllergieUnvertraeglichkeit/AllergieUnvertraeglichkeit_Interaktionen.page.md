@@ -1,6 +1,7 @@
 ---
 topic: AllergyIntolerance-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 
 ### Interaktionen

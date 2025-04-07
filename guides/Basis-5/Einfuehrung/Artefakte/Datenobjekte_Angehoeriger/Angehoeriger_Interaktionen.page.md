@@ -1,6 +1,7 @@
 ---
 topic: RelatedPerson-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ### Interaktionen
 

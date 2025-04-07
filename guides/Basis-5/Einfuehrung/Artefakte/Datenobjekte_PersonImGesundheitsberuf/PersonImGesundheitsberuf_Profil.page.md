@@ -1,6 +1,7 @@
 ---
 topic: PersonImGesundheitsberuf-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle
 ---
 ## {{link}}
 

@@ -1,6 +1,7 @@
 ---
 topic: Coverage-GKV
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ## {{link}}
 

@@ -1,6 +1,7 @@
 ---
 topic: Coverage-SEL-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ### Interaktionen
 

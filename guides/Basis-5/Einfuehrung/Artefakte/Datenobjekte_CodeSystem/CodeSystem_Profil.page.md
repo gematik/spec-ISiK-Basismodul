@@ -1,6 +1,7 @@
 ---
 topic: CodeSystem-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle
 ---
 
 ## {{link}}

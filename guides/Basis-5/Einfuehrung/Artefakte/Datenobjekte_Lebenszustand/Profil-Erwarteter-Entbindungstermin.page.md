@@ -1,6 +1,7 @@
 ---
 topic: ErwarteterEntbindungstermin-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 ## {{link}}
 

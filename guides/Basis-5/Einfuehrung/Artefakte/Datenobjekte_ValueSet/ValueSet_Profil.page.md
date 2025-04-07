@@ -1,6 +1,7 @@
 ---
 topic: ValueSet-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle
 ---
 
 ## {{link}}

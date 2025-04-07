@@ -1,6 +1,7 @@
 ---
 topic: StandortBettenstellpletz-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle
 ---
 ## {{link}}
 
