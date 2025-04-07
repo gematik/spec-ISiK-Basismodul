@@ -49,14 +49,27 @@ def create_files_to_update_list(config):
             )
     return files_to_update
 
-
+# since there are files that are distibuted in different folders (e.g. Index.page.md), method should make sure that all files (with the same name) are located. 
 def locate_files_in_current_project(files: list):
     located_files = []
     for current_file in files:
-        file_location = find_file(current_file.filename, ".")
-        if file_location is not None:
-            current_file.set_file_location(file_location)
-            located_files.append(current_file)
+        file_locations = []
+        for root, dirs, file_list in os.walk("."):
+            if current_file.filename in file_list:
+                file_location = os.path.join(root, current_file.filename)
+                file_locations.append(file_location)
+                print(f"Info: Found '{current_file.filename}' in {root}.")
+        
+        if file_locations:
+            for location in file_locations:
+                new_file_instance = FileTypeCombinationToUpdate(
+                    current_file.filename,
+                    current_file.content_type,
+                    current_file.regex_list,
+                    current_file.format
+                )
+                new_file_instance.set_file_location(location)
+                located_files.append(new_file_instance)
         else:
             print(f"Warning: File '{current_file.filename}' not found.")
     return located_files
