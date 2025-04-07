@@ -47,7 +47,7 @@ Datum: 26.02.2025
 * `improve` `documentation` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
 * `improve` `documentation` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
 * `improve` `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` `documentation` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-Datenobjekte-CapabilityStatement?version=current
+* `improve` `documentation` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 https://simplifier.net/guide/isik-medikation-v4/Einfuehrung/Datenobjekte/CapabilityStatements?version=current
 
 ----
 

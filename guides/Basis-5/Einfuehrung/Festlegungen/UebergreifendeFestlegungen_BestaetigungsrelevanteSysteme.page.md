@@ -72,7 +72,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Basis-Server|<https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-CapabilityStatement?version=current>|ja|
+|Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementBasisServerAkteur.page.md?version=current>|ja|
 |Basis-Client|keine|nein|
 # **Dokumentenaustausch**
 ## **Akteur: Dokumenten-Server**
@@ -116,7 +116,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Dokumenten-Server|<https://simplifier.net/guide/isik-dokumentenaustausch-401/Einfuehrung/Datenobjekte/CapabilityStatement.page.md?version=current>|ja|
+|Dokumenten-Server|<https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?version=current#ISiKCapabilityStatementDokumentenServerAkteur>|ja|
 |Dokumenten-Client|keine|nein|
 # **Vitalparameter und Körpermaße**
 ## **Akteur: Vitalparameter-Server**
