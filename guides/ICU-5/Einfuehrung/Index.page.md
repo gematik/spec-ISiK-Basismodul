@@ -1,4 +1,3 @@
-
 ---
 topic: ImplementationGuide-markdown-Einfuehrung
 ---
