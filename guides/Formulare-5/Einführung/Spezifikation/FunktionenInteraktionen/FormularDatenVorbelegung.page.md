@@ -17,6 +17,6 @@ FormularRenderer -> FormularDatenBereitsteller : SEARCH Observation
 
 Die folgenden Core und SDC Extensions sind für die Vorbelegung in dieser Stufe relevant. Unter {{pagelink:Extensions}} sind mehr Informationen dazu zu finden.
 
-- [Launch Contexts](StructureDefinition-sdc-questionnaire-launchContext.html)
-- [Initial Expression](StructureDefinition-sdc-questionnaire-initialExpression.html)
-- [Obervation link period](StructureDefinition-sdc-questionnaire-observationLinkPeriod.html)
+- [Launch Contexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)
+- [Initial Expression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)
+- [Obervation link period](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html)

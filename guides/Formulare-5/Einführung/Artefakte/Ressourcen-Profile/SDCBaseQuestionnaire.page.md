@@ -1,6 +1,6 @@
 ---
 canonical: https://gematik.de/fhir/isik//StructureDefinition/ISiKFormular
-capability: https://gematik.de/fhir/isik//CapabilityStatement/ISiKFormularClient
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKFormularClient
 resType: Questionnaire
 expand: 1
 ---
