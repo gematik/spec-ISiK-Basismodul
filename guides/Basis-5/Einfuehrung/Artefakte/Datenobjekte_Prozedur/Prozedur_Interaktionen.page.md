@@ -1,6 +1,7 @@
 ---
 topic: Procedure_Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle
 ---
 ### Interaktionen
 

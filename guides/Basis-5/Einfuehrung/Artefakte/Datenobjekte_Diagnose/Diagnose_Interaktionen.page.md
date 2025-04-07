@@ -1,6 +1,7 @@
 ---
 topic: Condition-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle
 ---
 ### Interaktionen
 

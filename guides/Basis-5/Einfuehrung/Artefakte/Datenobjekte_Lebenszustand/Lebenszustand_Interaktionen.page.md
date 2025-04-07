@@ -1,6 +1,7 @@
 ---
 topic: LebensZustand-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 
 ### Interaktionen

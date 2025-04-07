@@ -1,6 +1,7 @@
 ---
 topic: Coverage-Sonstige-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ### Interaktionen
 
