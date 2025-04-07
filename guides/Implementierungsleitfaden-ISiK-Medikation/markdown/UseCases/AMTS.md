@@ -1,1 +1,0 @@
-# Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS

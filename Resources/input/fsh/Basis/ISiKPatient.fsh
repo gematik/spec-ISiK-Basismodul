@@ -99,7 +99,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
   können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
   Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,
-  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.  
+  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.
+  **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden. 
   **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)"
   * use MS
     * ^short = "Verwendungszeck des Identifiers"

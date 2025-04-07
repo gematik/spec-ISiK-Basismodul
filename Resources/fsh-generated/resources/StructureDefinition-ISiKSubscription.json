@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKSubscription",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription",
-  "version": "4.0.1",
+  "version": "5.0.0-rc",
   "name": "ISiKSubscription",
   "title": "ISiK Subscription",
   "status": "active",
@@ -36,7 +36,11 @@
         "id": "Subscription.criteria",
         "path": "Subscription.criteria",
         "short": "Canonical URL des SubscriptionTopic welches man abonnieren möchte.",
-        "comment": "Enthält eines der in ISiK vereinbarten Subsription Topics."
+        "comment": "Enthält eines der in ISiK vereinbarten Subsription Topics.",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKSubscriptionTopicVS"
+        }
       },
       {
         "id": "Subscription.criteria.extension:filterCriteria",
@@ -76,6 +80,14 @@
         "short": "Typ des Kommunikationskanals",
         "comment": "**Bedeutung:** Der Typ des Kommunikationskanals, über den Subscription-Benachrichtigungen gesendet werden sollen.  \n    In ISiK MUSS der Wert `rest-hook` unterstützt werden, weitere Werte KÖNNEN unterstützt werden.",
         "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel.type.extension:customChannelType",
+        "path": "Subscription.channel.type.extension",
+        "sliceName": "customChannelType",
+        "short": "Custom Channel Type",
+        "comment": "**Bedeutung:** Custom Channel Type welcher in ISiK aktuell nicht unterstützt wird.",
+        "max": "0"
       },
       {
         "id": "Subscription.channel.endpoint",

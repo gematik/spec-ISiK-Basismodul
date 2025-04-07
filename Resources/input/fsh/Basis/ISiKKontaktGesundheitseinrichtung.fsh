@@ -46,7 +46,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund]
   * ^short = "Aufnahmegrund"
-  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V."
+  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
+nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLLTE am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLLTE dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
   * extension[ErsteUndZweiteStelle] MS
     * ^short = "Aufnahmegrund: 1. & 2. Stelle"
     * ^comment = "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
@@ -403,6 +404,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * serviceProvider MS
   * identifier 1.. MS
   * display 1.. MS
+* appointment MS
+* appointment  ^comment = "
+  
+**Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. 
+
+Die Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario der Dokumentenübertragung zwischen Patientenportal und krankenhaus-internem Primärsystem (z.B. KIS) im Kontext einer Terminbuchung: Dokumente liegen bei Terminbuchung erst im Patientenportal (im Appointment) vor und werden erst mit Anlage des Encounters in das KIS (etc.) übermittelt. Dazu SOLL ein Primärsystem zu Beginn des Termins das Appointment mit dem neu angelegten Encounter verknüpfen, um die Dokumente aus dem Patientenportal darüber vermittelt zuordnen zu können (ausgenommen hiervon sind Termine, die nicht stattfinden, da für diese in der Regel keine Encounter angelegt werden).
+
+Über die Referenz auf Appointment KÖNNEN Patientenportale den Fallbezug aus dem Termin ermitteln und Dokumente an ein KIS senden.
+
+Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.
+
+**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5) zu beachten."
 
 // This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
 Extension: PlannedStartDate
