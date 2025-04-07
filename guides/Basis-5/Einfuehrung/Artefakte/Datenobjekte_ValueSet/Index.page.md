@@ -1,7 +1,8 @@
 ---
 topic: ImplementationGuide-markdown-Datenobjekte-Datenobjekte-ValueSet
 ---
-## ValueSet [(ValueSet)](https://hl7.org/fhir/R4/valueset.html)
+{{index:current}}
+<!-- ## ValueSet [(ValueSet)](https://hl7.org/fhir/R4/valueset.html)
 
 ### Übersicht aller *verbindlicher* ValueSet-Bindings in diesem Modul
 <fql>
@@ -23,5 +24,5 @@ for differential.element
 where binding.exists() and binding.strength != 'required'
 select Pfad:id, Staerke:binding.strength, ValueSet:binding.valueSet
 
-</fql>
+</fql>-->
 
