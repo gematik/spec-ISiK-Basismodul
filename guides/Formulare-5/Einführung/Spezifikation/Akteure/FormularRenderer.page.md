@@ -39,7 +39,7 @@ Dies bedeutet:
 
 ### Erstellung eines Narrativs für menschenlesbare Darstellung
 
-Im Rahmen der Rückübermittlung SOL der Formular-Renderer zusätzlich zur strukturierten `QuestionnaireResponse` auch ein menschenlesbares **Narrative** erzeugen, das die Inhalte des ausgefüllten Formulars in übersichtlicher, interpretierbarer Form darstellt.
+Im Rahmen der Rückübermittlung SOLL der Formular-Renderer zusätzlich zur strukturierten `QuestionnaireResponse` auch ein menschenlesbares **Narrative** erzeugen, das die Inhalte des ausgefüllten Formulars in übersichtlicher, interpretierbarer Form darstellt.
 
 Dieses Narrative SOLL Bestandteil der Rückübermittlung sein – entweder:
 
