@@ -3,7 +3,7 @@ topic: ImplementationGuide-markdown-Datenobjekte
 ---
 # Datenobjekte
 
-Folgende Datenobjekte aus dem Modul [ISiK Basis Stufe 4](https://simplifier.net/guide/isik-basis-stufe-5) werden in diesem Modul verwendet: 
+Folgende Datenobjekte aus dem Modul [ISiK Basis](https://simplifier.net/guide/isik-basis-stufe-5) werden in diesem Modul verwendet: 
 * [Patient](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient)
 * [Kontakt/Fall (Encounter)](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Kontakt)
 * [Binary](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary)
