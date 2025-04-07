@@ -18,7 +18,7 @@ Beispiele:
 
 ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_](https://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-032}}). Sie KÖNNEN weitere der von HL7 definierten _CompartmentDefinitionen_ unterstützen.
 
-ISiK-Ressourcen-Server DÜRFEN KEINE eigenen _CompartmentDefinitionen_ definieren, da eine Definition von _Compartments_ alleinig durch HL7 erfolgen darf. 
+ISiK-Ressourcen-Server DÜRFEN KEINE eigenen _CompartmentDefinitionen_ definieren, da eine Definition von _Compartments_ alleinig durch HL7 erfolgen darf ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-052}}). 
 
 Die Unterstützung eines _Compartments_ umfasst, dass die Festlegungen in der _CompartmentDefinition_ die Gruppierung von über _Scopes_ angegebenen Berechtigungen zu der als Kontext angegebenen Ressource bestimmen. Im _"patient"-Level Scope_ (s.u.) bestimmt das [_Patient Compartment_](https://hl7.org/fhir/R4/compartmentdefinition-patient.html) die maximal zulässigen Berechtigungen eines Zugriffs auf die den angegebenen Kontext darstellende Ressource.
 
