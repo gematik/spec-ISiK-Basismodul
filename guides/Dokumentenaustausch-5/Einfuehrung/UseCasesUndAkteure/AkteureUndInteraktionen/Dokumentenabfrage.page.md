@@ -92,7 +92,7 @@ Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben kön
 
 Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](https://hl7.org/fhir/R4/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
 
-* Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als [Binary-Ressource im angeforderten Format](https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary?version=current) zurückgegeben werden.
+* Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als [Binary-Ressource im angeforderten Format](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary?version=current) zurückgegeben werden.
 * Wenn der Zugriff mit einem *anderen* Accept-Header als `application/fhir+xml` oder `application/fhir+json` erfolgt, so soll das Dokument im angeforderten Format zurückgegeben werden,
 z.B. MUSS bei Zugriffen mit Accept-Header `application/pdf` das Dokument unmittelbar als PDF zurückgegeben werden, sofern dies dem Content-Type der Binary-Ressource entspricht.
 

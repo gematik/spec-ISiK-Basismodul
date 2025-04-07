@@ -154,7 +154,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Vitalparameter-Server|<https://simplifier.net/guide/isik-vitalparameter-v4?version=current>|ja|
+|Vitalparameter-Server|<https://simplifier.net/guide/isik-vitalparameter-stufe-5?version=current>|ja|
 |Vitalparameter-Client|keine|nein|
 # **Terminplanung**
 ## **Akteur: Termin-Repository**
@@ -189,7 +189,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Termin-Repository|[https://simplifier.net/isik-terminplanung-v4/~guides](https://simplifier.net/isik-terminplanung-v3/~guides)|ja|
+|Termin-Repository|[Guide Terminplanung](https://simplifier.net/guide/isik-terminplanung-stufe-5?version=current)|ja|
 |Termin-Requestor|keine|nein|
 |Termin-Consumer|keine|nein|
 # **Medikation**
@@ -246,11 +246,11 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Medikations-Server|<https://simplifier.net/guide/isik-medikation-v4?version=current>|ja|
-|AMTS Data Provider|<https://simplifier.net/guide/isik-basis-v4?version=current><br><https://simplifier.net/guide/isik-labor-v4?version=current>|ja|
+|Medikations-Server|<https://simplifier.net/guide/isik-medikation-stufe-5?version=current>|ja|
+|AMTS Data Provider|<https://simplifier.net/guide/isik-basis-stufe-5?version=current><br><https://simplifier.net/guide/isik-labor-stufe-5?version=current>|ja|
 |Medikations-Client|keine|nein|
 
 
 # Festlegungen auf Profilebene im CapabilityStatement
 
-Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:guides\Implementierungsleitfaden-ISiK-Basismodul-401\Einfuehrung\Datenobjekte\CapabilityStatement.page.md}} geführt.
+Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:guides\Basis-5\Einfuehrung\Artefakte\CapabilityStatements\Index.page.md}} geführt.
