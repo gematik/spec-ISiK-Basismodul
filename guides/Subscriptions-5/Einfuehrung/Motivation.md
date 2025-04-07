@@ -16,7 +16,7 @@ keine neuen Daten vorhanden sind. Dies führt zu unnötigem Netzwerkverkehr und 
 Subscriptions können Systeme stattdessen gezielt über relevante Änderungen informiert werden,
 wodurch Ressourcen geschont und die Reaktionszeiten verbessert werden.
 
-Die Verwendung des [Subscription Backport Implementation Guides](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/components.html) ermöglicht die Nutzung moderner FHIR
+Die Verwendung des [Subscription Backport Implementation Guides](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/components.html) ermöglicht die Nutzung neuerer FHIR
 R5-Subscription-Features bereits in FHIR R4-Umgebungen. Während FHIR R4 nur eine grundlegende
 Subscription-Funktionalität bietet, führt FHIR R5 erweiterte Konzepte wie SubscriptionTopics ein,
 die eine gezieltere und flexiblere Steuerung der Benachrichtigungen ermöglichen. Zusätzlich bieten
