@@ -49,7 +49,7 @@ def create_files_to_update_list(config):
             )
     return files_to_update
 
-# since there are files that are distibuted in different folders , method should make sure that all files (with the same name) are located, but only consider files located in Folder "Einfuehrung" for the file named "Index.page.md" 
+# since there are files that are distributed in different folders, the method should make sure that all files (with the same name) are located, but only consider files located in Folder "Einfuehrung" for the file named "Index.page.md"
 def locate_files_in_current_project(files: list):
     located_files = []
     for current_file in files:
@@ -57,9 +57,10 @@ def locate_files_in_current_project(files: list):
         for root, dirs, file_list in os.walk("."):
             if current_file.filename in file_list:
                 file_location = os.path.join(root, current_file.filename)
-                # Only consider files in "Einfuehrung" folder for "Index.page.md"
-                if current_file.filename == "Index.page.md" and "Einfuehrung" not in root:
-                    continue
+                # Only consider "Index.page.md" if it is directly in folder "Einfuehrung" (no recursive inclusion)
+                if current_file.filename == "Index.page.md":
+                    if os.path.basename(root) != "Einfuehrung":
+                        continue
                 file_locations.append(file_location)
                 print(f"Info: Found '{current_file.filename}' in {root}.")
         
