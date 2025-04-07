@@ -15,17 +15,6 @@ with
   no header
 </fql>
 
-### Bestätigungsrelevanz
-<fql output="transpose">
-from
-    CapabilityStatement
-where
-    url = %capability
-for rest.resource.where(%canonical in supportedProfile)
-select
-    'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
-</fql>
-
 ### Metadaten
 
 <fql output="transpose" headers="true">
