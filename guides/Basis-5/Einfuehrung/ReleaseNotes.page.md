@@ -14,6 +14,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd.
 
+* `change` Auslagern der Subscription Profile und UseCases in ein eigenes Modul
+  Subscription https://github.com/gematik/spec-ISiK-Basismodul/pull/645
 * `improve` Klarstellung zum Zweck des Account Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/632
 * `add` Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/602
 * `improve` Hinweise zur Abbildung des Aufnahmegrunds im Encounter hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/647
