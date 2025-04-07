@@ -3,4 +3,4 @@ topic: ImplementationGuide-markdown-Festlegungen
 ---
 # Festlegungen
 
-Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 4](https://simplifier.net/guide/isik-basis-403/Einfuehrung/UebergreifendeFestlegungen).
+Es gelten die Festlegungen aus dem Modul [ISiK Basis](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
