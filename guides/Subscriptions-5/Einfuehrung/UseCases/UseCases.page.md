@@ -7,11 +7,9 @@ Die folgenden Anwendungsfälle stellen eine Auswahl möglicher Einsatzszenarien 
 abschließend. Je nach Bedarf und Systemlandschaft können weitere Subscriptions für spezifische
 Anforderungen definiert werden.
 
-{{render:Material/Subscription/images/diagrams/use-cases-subscription.png}}
-
 ## 1. Patient oder Fall Merge
 
-* **Zusammenführung von Patientendaten:** Wenn zwei Patientenakten aufgrund einer fehlerhaften
+* **Zusammenführung von Patientendaten:** Wenn zwei Patientenakten aufgrund einer fehlerhaft
   doppelten Erfassung zusammengeführt werden, können relevante Systeme (z. B. KIS,
   Abrechnungssysteme, Labor) automatisch über die Änderung informiert werden. Dies verhindert
   Dateninkonsistenzen und ermöglicht eine einheitliche Patientenhistorie.    
@@ -26,7 +24,7 @@ Anforderungen definiert werden.
 * **Statusänderung bei Terminen:** Wenn ein Termin (Appointment) verschoben oder abgesagt wird,
   erhält das Patientenportal eine automatische Benachrichtigung. Patientinnen und Patienten werden
   daraufhin per E-Mail, App-Push-Nachricht oder SMS informiert.
-* **Freigewordener Terminslot** Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
+* **Frei gewordener Terminslot** Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
 eine Benachrichtigung. Dadurch können Patienten auf der Warteliste oder mit entsprechender Präferenz gezielt
 über die neue Verfügbarkeit informiert werden. Dies ermöglicht eine effiziente Nachbesetzung freier Termine
 und reduziert ungenutzte Kapazitäten.
