@@ -1,6 +1,7 @@
 ---
 topic: Organisation-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle
 ---
 ## {{link}}
 

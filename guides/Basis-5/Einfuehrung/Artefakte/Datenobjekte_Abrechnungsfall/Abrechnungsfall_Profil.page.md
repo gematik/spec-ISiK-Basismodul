@@ -1,6 +1,7 @@
 ---
 topic: Account-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 
 ## {{link}}

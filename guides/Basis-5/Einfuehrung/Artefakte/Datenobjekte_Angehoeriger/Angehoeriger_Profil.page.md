@@ -1,6 +1,7 @@
 ---
 topic: RelatedPerson-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ## {{link}}
 
