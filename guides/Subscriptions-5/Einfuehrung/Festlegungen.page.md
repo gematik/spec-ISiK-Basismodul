@@ -5,7 +5,7 @@ topic: Festlegungen
 # Übergreifende Festlegungen
 
 Es gelten alle übergreifenden Festlegungen entsprechend
-dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen?version=current).
+dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
 
 Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Artefakte, text: Artefakten}}.
 
