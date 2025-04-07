@@ -37,6 +37,3 @@ Ein Client SOLL in diesem Fall eine erneute Dokumentenbereitstellung durchführe
     [base]/DocumentReference/example/$update-metadata?docStatus=final
 
 
-| Hinweis | Work in Progress!|
-|---------|---------------------|
-| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge, insbesondere Use Cases für das Update weiterer Metadaten-Elemente bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
