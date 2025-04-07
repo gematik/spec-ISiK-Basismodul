@@ -46,7 +46,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
 * extension[Aufnahmegrund]
   * ^short = "Aufnahmegrund"
-  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinische Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
+  * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
 nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLLTE am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLLTE dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
   * extension[ErsteUndZweiteStelle] MS
     * ^short = "Aufnahmegrund: 1. & 2. Stelle"
