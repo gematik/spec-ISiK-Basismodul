@@ -3,19 +3,20 @@ topic: ISiKSubscription-Beispiele
 expand: 4
 ---
 ### Beispiele
-
+
+
 
 <tabs>
     <tab title="Übersicht">      
-        {{render:PatientMergeSubscriptionExample}}
+        {{render:Resources/fsh-generated/resources/Subscription-PatientMergeSubscriptionExample.json}}
     </tab>
     <tab title="XML">      
-        {{xml:PatientMergeSubscriptionExample}}
+        {{xml:Resources/fsh-generated/resources/Subscription-PatientMergeSubscriptionExample.json}}
     </tab>
     <tab title="JSON">
-        {{json:PatientMergeSubscriptionExample}}
+        {{json:Resources/fsh-generated/resources/Subscription-PatientMergeSubscriptionExample.json}}
     </tab>
     <tab title="Link">
-        {{link:PatientMergeSubscriptionExample}}
+        {{link:Resources/fsh-generated/resources/Subscription-PatientMergeSubscriptionExample.json}}
     </tab>
 </tabs>
