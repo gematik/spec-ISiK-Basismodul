@@ -7,8 +7,6 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc (Kommentierung)
 
-Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
-
 Datum: 09.04.2025
 
 * `changed` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
