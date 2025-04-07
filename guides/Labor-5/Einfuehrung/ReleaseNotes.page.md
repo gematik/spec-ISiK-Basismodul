@@ -6,10 +6,15 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
----
-Version: 4.0.0-rc2
+## Version 5.0.0-rc (Kommentierung)
 
-Datum: tbd
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
+
+---
+## Version: 4.0.0-rc
+
 
 - Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Labor/pull/6
 - `fix` "C-reaktives Protein [Mol/Volumen] in Serum oder Plasma mittels Hochsensitivitätsmethode" loinc code war falsch. War: 78486-0 , wurde korrigiert auf: 76486-0 https://github.com/gematik/spec-ISiK-Labor/pull/8
