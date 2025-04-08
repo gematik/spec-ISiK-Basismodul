@@ -13,6 +13,6 @@ Die Datenextraktion wird in dieser Stufe zunächst ausschließlich von {{pagelin
 
 Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe relevant. Unter {{pagelink:Extensions}} sind mehr Informationen dazu zu finden.
 
-- [Launch Contexts](StructureDefinition-sdc-questionnaire-launchContext.html)
-- [Extract Observation](StructureDefinition-sdc-questionnaire-observationExtract.html)
-- [Extract Observation - Category](StructureDefinition-sdc-questionnaire-observation-extract-category.html)
+- [Launch Contexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)
+- [Extract Observation](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html)
+- [Extract Observation - Category](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observation-extract-category.html)

@@ -38,7 +38,7 @@ Weitere Informationen zum Subscription Workflow finden sich hier:
 Zur Illustration der technischen Umsetzung für die *Patient merge Notification* dient ein [Prove of Concept (POC) mit Anleitung](https://github.com/gematik/poc-isik-patient-merge). 
 
 ### Notification Channel Types
-Notifications über einen Patient-merge-Vorgang können per *rest-hook* oder *websocket* an das subscribende System versandt werden. Im *rest-hook* Fall postet das patientenführende System ein NotificationBundle an den in `Subscription.channel.endpoint` definierten REST Endpunkt. Bei einer *websocket* Notification geschieht das über einen Websocket-Channel. Die Websocket URL, sowie ein Access Token können mittels [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html)  vom Server abgerufen werden.
+Notifications über einen Patient-merge-Vorgang SOLLEN per *rest-hook* an das subscribende System versandt werden. Im *rest-hook* Fall postet das patientenführende System ein NotificationBundle an den in `Subscription.channel.endpoint` definierten REST Endpunkt.
 
 ## Abgrenzung zu *Patient merge*
 Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 

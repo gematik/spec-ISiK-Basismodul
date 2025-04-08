@@ -4,9 +4,11 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-Version: 5.0.0-rc
+## Version 5.0.0-rc (Kommentierung)
 
-Datum: t.b.d.
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
 
 * `improve` `feature` Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt und List-Interaktionen sowie Interaktionen auf ISiKSchwangerschaftErwarteterEntbindungstermin für AMTS eingeführt + Refactoring Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/597
 
@@ -47,7 +49,7 @@ Datum: 26.02.2025
 * `improve` `documentation` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
 * `improve` `documentation` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
 * `improve` `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` `documentation` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-Datenobjekte-CapabilityStatement?version=current
+* `improve` `documentation` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 
 
 ----
 
