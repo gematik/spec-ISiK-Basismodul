@@ -78,14 +78,14 @@ Server, die eine Zuordnung von Dokumenten mittels logischer Referenz erlauben, M
 
 * Der Code `resolves` ist zu verwenden wenn logical Identifier erlaubt sind, aber stets auflösbar sein müssen (Trifft ein Identifier aus einen oder mehrere Patienten zu, stellt dies einen Fehlerzustand dar.)
 * Der Code `logical` ist *zusätzlich* anzugeben, wenn der Server auch DocumentReferences akzeptiert, denen kein Patient zugeordnet werden kann (z.B. in Erwartung, dass dieser zu einem späteren Zeitpunkt ergänzt wird).
-* Clients sind verpflichtet *vor* der Verwendung von DocumentReferences mit logischen Referenzen anhand des CapabilityStatements zu überprüfen, ob deein konkreter Server diese Funktionalität unterstützt.
+* Clients sind verpflichtet *vor* der Verwendung von DocumentReferences mit logischen Referenzen anhand des CapabilityStatements zu überprüfen, ob ein konkreter Server diese Funktionalität unterstützt.
 
 Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
 
 
 | Hinweis | Experimentelle Funktion |
 |---------|---------------------|
-| {{render:Material/_commons/icons/dragon.png}} | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
+| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
 
 
 
