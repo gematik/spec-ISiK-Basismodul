@@ -14,9 +14,9 @@ Datum: 09.04.2025
 
 ---
 
-Version: 4.0.3 (draft)
+Version: 4.0.3 (nur IG ohne Package)
 
-Datum: t.b.d.
+Datum: 17.03.2025
 
 * `improve` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Medikation/pull/171
 
