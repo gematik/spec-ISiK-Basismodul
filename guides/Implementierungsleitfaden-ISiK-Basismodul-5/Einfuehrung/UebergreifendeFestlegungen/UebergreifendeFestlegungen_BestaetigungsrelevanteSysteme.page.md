@@ -22,12 +22,16 @@ Neben den bestätigungsrelevanten System werden auch korrespondierende Systeme a
 
 An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreffen:
 
-- Basismodul
-- Dokumentenaustausch
-- Vitalparameter und Körpermaße
-- Terminplanung
-- Medikation
-- ICU-Normalstation-Workflow
+1. Basismodul
+1. Dokumentenaustausch
+1. Vitalparameter und Körpermaße
+1. Terminplanung
+1. Medikation
+1. Connect
+1. ICU-Normalstation-Workflow
+1. Formular
+1. Subscription
+1. Labor
 
 Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bestätigungsrelevant sein können, ist als Modul selbst jedoch nicht bestätigungsrelevant.
 
