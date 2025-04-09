@@ -31,7 +31,7 @@ An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreff
 
 Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bestätigungsrelevant sein können, ist als Modul selbst jedoch nicht bestätigungsrelevant.
 
-+++++++++++++++++++++++++++++
+---
 # **Basismodul**
 ## **Bestätigungsrelevantes System: Basis-Server**
 ### **Definition**
