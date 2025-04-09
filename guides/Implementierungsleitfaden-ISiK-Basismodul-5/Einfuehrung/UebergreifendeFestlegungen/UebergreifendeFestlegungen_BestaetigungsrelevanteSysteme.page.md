@@ -245,6 +245,73 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 |AMTS Data Provider|<https://simplifier.net/guide/isik-basis-v4?version=current><br><https://simplifier.net/guide/isik-labor-v4?version=current>|ja|
 |Medikations-Client|keine|nein|
 
+# Connect
+
+Das Modul "Connect" unterscheidet die im Folgenden definierten Akteure.
+
+## Bestätigungsrelevantes System: Ressourcen-Server
+
+### Definition
+IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.
+
+### Geltungsbereich
+Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die im Basismodul als Akteur Basis-Server fungieren.
+
+## Akteur: Autorisierungs-Server
+
+### Definition
+Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Autorisierung von SMART-Clients, die auf FHIR-Ressourcen zugreifen möchten. Er stellt sicher, dass nur berechtigte Anwendungen und Benutzer Zugriff auf sensible Gesundheitsdaten erhalten.
+
+IT-Systeme in dieser Rolle stellen Sicherheits-Token aus, die einen Zugang zu auf Ressourcen-Servern verwalteten FHIR Ressourcen autorisieren.
+
+
+### Geltungsbereich
+Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die als Ressourcen-Server agieren. Die genauen Anforderungen unterscheiden sich allerdings je nachdem ob ein System gleichzeitig als App-Launcher agiert oder nicht.
+
+## Electronic Health Record (EHR)
+
+### Definition
+Ein Electronic Health Record (EHR) bündelt einen Ressourcen-Server, Autorisierungs-Server und SMART App Launcher (und ggf. weitere Systeme).
+
+Im Sinne von Smart on FHIR ist der EHR das primäre Zielsystem für den Client.
+
+### **Geltungsbereich**
+
+Ein Electronic Health Record (EHR) umfasst Systeme, die als zentrale Plattform für die Speicherung, Verwaltung und den Austausch von Gesundheitsdaten dienen. Im Kontext von ISiK wird ein EHR als Kombination aus Ressourcen-Server, Autorisierungs-Server und App Launcher betrachtet. Es kann zusätzlich weitere Funktionen wie die Integration von SMART Apps bereitstellen.
+
+Systeme, die als EHR agieren, sind u.a.:
+
+- Krankenhausinformationssysteme (KIS) mit integrierter Patientenakte
+- Plattformen für die sektorenübergreifende Versorgung, die Daten aus verschiedenen Quellen bündeln und bereitstellen
+- Systeme, die als zentrale Datenplattform für klinische Studien fungieren
+
+## Akteur: App Launcher
+
+### Definition
+Ein App-Launcher interagiert zwischen Autorisierungs-Server und ISiK-Ressourcen-Server und bietet einem Client einen Anwendungskontext. Der Kontext kann ein Patient oder Behandlungsfall aus dem EHR sein.
+
+### Geltungsbereich
+Als App Launcher agieren KIS (bisher wurde eine entsprechende Funktionalität über "Fremdaufrufe" bereitgestellt).
+
+## Akteur: SMART App (Client)
+
+### Definition
+Ein Client ist eine Anwendung, die auf FHIR-Ressourcen zugreift, um Gesundheitsdaten zu lesen oder zu schreiben. Dies kann beispielsweise eine mobile Gesundheits-App oder ein klinisches Entscheidungshilfesystem sein.
+
+### Geltungsbereich
+Alle End-User-Anwendungen, insbesondere ohne eigene Datenhaltung, gelten als SMART-App, sofern sie im vorgesehenen Kontext und in Folge eines App Launch Workflows ausgeführt werden.
+
+## Bestätigungsrelevanz
+
+Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Rollen:
+
+|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
+|----------------------|------------------------|----------------------|
+| Ressourcen-Server (Basis-Server) | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | ja |
+| Autorisierungs-Server | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
+| App Launcher          | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
+| SMART App             | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
+
 
 # Festlegungen auf Profilebene im CapabilityStatement
 
