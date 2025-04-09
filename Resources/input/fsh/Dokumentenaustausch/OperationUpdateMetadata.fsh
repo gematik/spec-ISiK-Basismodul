@@ -34,7 +34,7 @@ Title: "update-metadata"
 
 Instance: ParametersExampleUpdateMetadata
 InstanceOf: Parameters
-* description = "Example of an input parameter for the request body for the update-metadata operation" 
 Usage: #example
+Description: "Example of an input parameter for the request body for the update-metadata operation" 
 * parameter.name = "docStatus"
 * parameter.valueCode = #final
