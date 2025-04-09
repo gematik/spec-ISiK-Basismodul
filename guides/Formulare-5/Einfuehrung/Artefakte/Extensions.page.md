@@ -6,7 +6,7 @@ topic: Extensions
 
 ## Questionnaire Extensions
 
-Für die verschiednen Interaktionen unterstützen verschiedene Extensions. Im Folgenden pro Interaktion aufgelistet alle Extensions, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
+Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
 
 ### Core Extensions (Questionnaire)
 
@@ -21,14 +21,14 @@ Für die verschiednen Interaktionen unterstützen verschiedene Extensions. Im Fo
 | FormularRendering | [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert minimale Vorkommen eines Items | SOLL |
 | FormularRendering | [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html) | Questionnaire.item, Questionnaire.item.item | Definiert die Einheit für numerische Werte | SOLL |
 | FormularDatenValidierung | [regex](https://hl7.org/fhir/R4/extension-regex.html) | Questionnaire.item | Fügt reguläre Ausdrücke für Validierung hinzu | SOLL |
-| FormularRendering | {{link:https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension}} | QuestionnaireResponse, Questionnaire | Mit der Extension wird die Medizinprodukt-relevanz angegeben. Im defaut dürfen von Systemen nur Questionnaires verarbeitet werden, die hier ein 'none' als Code enthalten haben. | SOLL |
+| FormularRendering | {{link:https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension}} | QuestionnaireResponse, Questionnaire | Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Im default dürfen von Systemen nur Questionnaires verarbeitet werden, die hier ein 'none' als Code enthalten haben. | SOLL |
 
 ### Core Extensions (QuestionnaireResponse)
 
 | Rolle | Extension Name | Context | Beschreibung | Relevanz |
 |--------|--------|---------|------------------|---|
 | FormularRendering | (Name des Questionnaire)[http://hl7.org/fhir/StructureDefinition/display] | QuestionnaireResponse.questionnaire | Gibt den Namen des Questionnaire an, damit dieser im Falle des fehlenden Zugriff auf die Questionnaire Ressource mit angegeben werden kann | SOLL |
-| FormularRendering | Medizin-produkt Kontext | QuestionnaireResponse, Questionnaire | Mit der Extension wird die Medizinprodukt-relevanz angegeben. Im defaut dürfen von Systemen nur Questionnaires verarbeitet werden, die hier ein 'none' als Code enthalten haben. | SOLL |
+| FormularRendering | Medizin-produkt Kontext | QuestionnaireResponse, Questionnaire | Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Im default dürfen von Systemen nur Questionnaires verarbeitet werden, die hier ein 'none' als Code enthalten haben. | SOLL |
 
 ### SDC Extensions (Questionnaire)
 
