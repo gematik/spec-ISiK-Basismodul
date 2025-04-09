@@ -8,7 +8,7 @@ topic: Einfuehrung
 ----
 Version: 5.0.0-rc
 
-Datum: 19.02.2025
+Datum: 09.04.2025
 
 Status: Active
 
