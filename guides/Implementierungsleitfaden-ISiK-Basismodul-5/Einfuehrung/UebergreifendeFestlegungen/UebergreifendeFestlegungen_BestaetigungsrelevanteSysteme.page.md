@@ -67,7 +67,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Basis-Server|<https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-CapabilityStatement?version=current>|ja|
+|Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Basis-Client|keine|nein|
 # **Dokumentenaustausch**
 ## **System: Dokumenten-Server**
@@ -111,7 +111,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Dokumenten-Server|<https://simplifier.net/guide/isik-dokumentenaustausch-401/Einfuehrung/Datenobjekte/CapabilityStatement.page.md?version=current>|ja|
+|Dokumenten-Server| Dokumenten Server Akteur <https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Dokumenten-Client|keine|nein|
 # **Vitalparameter und Körpermaße**
 ## **Bestätigungsrelevantes System: Vitalparameter-Server**
@@ -149,7 +149,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Vitalparameter-Server|<https://simplifier.net/guide/isik-vitalparameter-v4?version=current>|ja|
+|Vitalparameter-Server| Vital Sign Standard Source Akteur <https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Vitalparameter-Client|keine|nein|
 # **Terminplanung**
 ## **Bestätigungsrelevantes System: Termin-Repository**
@@ -184,7 +184,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Termin-Repository|[https://simplifier.net/isik-terminplanung-v4/~guides](https://simplifier.net/isik-terminplanung-v3/~guides)|ja|
+|Termin-Repository|https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
 |Termin-Requestor|keine|nein|
 |Termin-Consumer|keine|nein|
 # **Medikation**
@@ -241,42 +241,40 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Medikations-Server|<https://simplifier.net/guide/isik-medikation-v4?version=current>|ja|
-|AMTS Data Provider|<https://simplifier.net/guide/isik-basis-v4?version=current><br><https://simplifier.net/guide/isik-labor-v4?version=current>|ja|
+|AMTS Data Provider|AMTSAkteur <https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
+|Medikations-Server|https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
 |Medikations-Client|keine|nein|
 
-# Connect
+# **Connect**
 
 Das Modul "Connect" unterscheidet die im Folgenden definierten Akteure.
 
-## Bestätigungsrelevantes System: Ressourcen-Server
+## **Bestätigungsrelevantes System: Ressourcen-Server**
 
-### Definition
+### **Definition**
 IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.
 
-### Geltungsbereich
+### **Geltungsbereich**
 Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die im Basismodul als Akteur Basis-Server fungieren.
 
-## Akteur: Autorisierungs-Server
+## **Akteur: Autorisierungs-Server**
 
-### Definition
+### **Definition**
 Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Autorisierung von SMART-Clients, die auf FHIR-Ressourcen zugreifen möchten. Er stellt sicher, dass nur berechtigte Anwendungen und Benutzer Zugriff auf sensible Gesundheitsdaten erhalten.
 
-IT-Systeme in dieser Rolle stellen Sicherheits-Token aus, die einen Zugang zu auf Ressourcen-Servern verwalteten FHIR Ressourcen autorisieren.
+IT-Systeme in dieser Rolle stellen Sicherheits-Token aus, die einen Zugang zu auf Ressourcen-Servern verwalteten FHIR-Ressourcen autorisieren.
 
+### **Geltungsbereich**
+Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die als Ressourcen-Server agieren. Die genauen Anforderungen unterscheiden sich allerdings je nachdem, ob ein System gleichzeitig als App-Launcher agiert oder nicht.
 
-### Geltungsbereich
-Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die als Ressourcen-Server agieren. Die genauen Anforderungen unterscheiden sich allerdings je nachdem ob ein System gleichzeitig als App-Launcher agiert oder nicht.
+## **Electronic Health Record (EHR)**
 
-## Electronic Health Record (EHR)
-
-### Definition
+### **Definition**
 Ein Electronic Health Record (EHR) bündelt einen Ressourcen-Server, Autorisierungs-Server und SMART App Launcher (und ggf. weitere Systeme).
 
 Im Sinne von Smart on FHIR ist der EHR das primäre Zielsystem für den Client.
 
 ### **Geltungsbereich**
-
 Ein Electronic Health Record (EHR) umfasst Systeme, die als zentrale Plattform für die Speicherung, Verwaltung und den Austausch von Gesundheitsdaten dienen. Im Kontext von ISiK wird ein EHR als Kombination aus Ressourcen-Server, Autorisierungs-Server und App Launcher betrachtet. Es kann zusätzlich weitere Funktionen wie die Integration von SMART Apps bereitstellen.
 
 Systeme, die als EHR agieren, sind u.a.:
@@ -285,32 +283,32 @@ Systeme, die als EHR agieren, sind u.a.:
 - Plattformen für die sektorenübergreifende Versorgung, die Daten aus verschiedenen Quellen bündeln und bereitstellen
 - Systeme, die als zentrale Datenplattform für klinische Studien fungieren
 
-## Akteur: App Launcher
+## **Akteur: App Launcher**
 
-### Definition
+### **Definition**
 Ein App-Launcher interagiert zwischen Autorisierungs-Server und ISiK-Ressourcen-Server und bietet einem Client einen Anwendungskontext. Der Kontext kann ein Patient oder Behandlungsfall aus dem EHR sein.
 
-### Geltungsbereich
+### **Geltungsbereich**
 Als App Launcher agieren KIS (bisher wurde eine entsprechende Funktionalität über "Fremdaufrufe" bereitgestellt).
 
-## Akteur: SMART App (Client)
+## **Akteur: SMART App (Client)**
 
-### Definition
+### **Definition**
 Ein Client ist eine Anwendung, die auf FHIR-Ressourcen zugreift, um Gesundheitsdaten zu lesen oder zu schreiben. Dies kann beispielsweise eine mobile Gesundheits-App oder ein klinisches Entscheidungshilfesystem sein.
 
-### Geltungsbereich
+### **Geltungsbereich**
 Alle End-User-Anwendungen, insbesondere ohne eigene Datenhaltung, gelten als SMART-App, sofern sie im vorgesehenen Kontext und in Folge eines App Launch Workflows ausgeführt werden.
 
-## Bestätigungsrelevanz
+## **Bestätigungsrelevanz**
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Rollen:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-|----------------------|------------------------|----------------------|
-| Ressourcen-Server (Basis-Server) | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | ja |
-| Autorisierungs-Server | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
-| App Launcher          | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
-| SMART App             | letztgültige Version des IGs Connect - https://simplifier.net/isik-connect-v4 | nein |
+| **System**               | **konkrete Anforderungen**                                   | **bestätigungsrelevant** |
+|---------------------------|-------------------------------------------------------------|--------------------------|
+| Ressourcen-Server (Basis-Server) | letztgültige Version des IGs Connect - relevanter Passus - <https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance> | ja                      |
+| Autorisierungs-Server     | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
+| App Launcher              | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
+| SMART App                 | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
 
 
 # Festlegungen auf Profilebene im CapabilityStatement
