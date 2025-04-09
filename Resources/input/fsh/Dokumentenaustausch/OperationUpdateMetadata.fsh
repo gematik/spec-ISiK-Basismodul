@@ -30,3 +30,11 @@ Title: "update-metadata"
   * binding 
     * strength = #required 
     * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
+
+
+Instance: ParametersExampleUpdateMetadata
+InstanceOf: Parameters
+* description = "Example of an input parameter for the request body for the update-metadata operation" 
+Usage: #example
+* parameter.name = "docStatus"
+* parameter.valueCode = #final
