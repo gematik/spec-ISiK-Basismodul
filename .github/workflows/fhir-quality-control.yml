@@ -1,40 +1,35 @@
 name: Check FHIR Quality Control
-# This workflow checks quality of the fhir profile according to the FHIR quality control tool in the script folder by running the script quality-control.js
 
-# It is triggered on pull requests and can be run manually from the Actions tab.
 on:
-    pull_request:
-        # Trigger the workflow on any pull request targeting any branch.
-        branches:
-        - '*'
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
+  pull_request:
+    branches:
+      - '*'
+  workflow_dispatch:
 
-# setup javascript and run script from folder scripts\QualityAssuranceAutomation
 jobs:
-    quality-check:
-            runs-on: ubuntu-latest
+  quality-check:
+    runs-on: ubuntu-latest
 
-            steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                node-version: '16'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-            - name: Install dependencies
-              run: npm install
-              working-directory: scripts/QualityAssuranceAutomation
+      - name: Install dependencies
+        run: npm install
+        working-directory: scripts/QualityAssuranceAutomation
 
-            - name: Run FHIR quality control
-              run: |
-                node quality-control.js
-              working-directory: scripts/QualityAssuranceAutomation
+      - name: Run FHIR quality control
+        run: |
+          node quality-control.js
+        working-directory: scripts/QualityAssuranceAutomation
 
-            - name: Upload log file
-              uses: actions/upload-artifact@v3
-              with:
-                name: fhir-quality-control-log
-                path: scripts/QualityAssuranceAutomation/log/validation.*.log
+      - name: Upload log file
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-quality-control-log
+          path: scripts/QualityAssuranceAutomation/log/validation.*.log
