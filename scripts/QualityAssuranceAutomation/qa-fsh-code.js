@@ -87,7 +87,7 @@ jsonFiles.forEach((filePath) => {
 
     // Skip alles außer StructureDefinition
     if (profile.resourceType !== 'StructureDefinition') {
-      log(`ℹ️ Datei ${filePath} ist kein StructureDefinition (gefunden: ${profile.resourceType}) – übersprungen.`);
+    // TODO print message that a file was skipped but not in log
       return;
     }
 
