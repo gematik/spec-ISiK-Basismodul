@@ -7,38 +7,41 @@ const path = require('path');
  * - Vorhandensein von 'short' UND 'comment'
  */
 function checkMustSupportDescriptions(profile, filePath) {
-  const issues = [];
-
-  if (!profile.snapshot || !Array.isArray(profile.snapshot.element)) {
-    issues.push(`⚠️ Profil ${filePath} hat keine Snapshot-Elemente.`);
-    return issues;
-  }
-
-  const elements = profile.snapshot.element;
-
-  for (const el of elements) {
-    const pathParts = el.path.split('.');
-
-    if (pathParts.length === 2 && el.mustSupport) {
-      const missingFields = [];
-
-      if (!el.short || el.short.trim() === '') {
-        missingFields.push('short');
-      }
-      if (!el.comment || el.comment.trim() === '') {
-        missingFields.push('comment');
-      }
-
-      if (missingFields.length > 0) {
-        issues.push(
-          `❌ ${filePath}: Fehlende ${missingFields.join(' und ')} für MustSupport-Element '${el.path}'`
-        );
+    const issues = [];
+  
+    if (!profile.differential || !Array.isArray(profile.differential.element)) {
+      issues.push(`⚠️ Profil ${filePath} hat keine Differential-Elemente.`);
+      return issues;
+    }
+  
+    const elements = profile.differential.element;
+  
+    for (const el of elements) {
+      const pathParts = el.path.split('.');
+  
+      // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
+      if (pathParts.length === 2 && el.mustSupport) {
+        const missingFields = [];
+  
+        if (!el.short || el.short.trim() === '') {
+          missingFields.push('short');
+        }
+        if (!el.comment || el.comment.trim() === '') {
+          missingFields.push('comment');
+        }
+  
+        if (missingFields.length > 0) {
+          issues.push(
+            `❌ ${filePath}: Fehlende ${missingFields.join(' und ')} für MustSupport-Element '${el.path}'`
+          );
+        }
       }
     }
+  
+    return issues;
   }
+  
 
-  return issues;
-}
 
 /**
  * Liest alle JSON-Dateien rekursiv aus einem Verzeichnis
