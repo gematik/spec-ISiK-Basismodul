@@ -20,8 +20,10 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install --omit=optional
-        working-directory: scripts/QualityAssuranceAutomation
+        run: |
+            cd scripts/QualityAssuranceAutomation
+            npm ci
+        
         
 
       - name: Run FHIR quality control
