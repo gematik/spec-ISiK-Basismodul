@@ -8,17 +8,17 @@ Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Ges
 # **Definition Bestätigungsrelevante Systeme**
 # **Allgemein**
 Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für informationstechnische Systeme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach. 
-Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten Systeme.
+Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten Systeme getroffen.
 
-Bei bestätigungsrelevanten Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem *primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten*, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.
+Bei bestätigungsrelevanten Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem *primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten*, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.
 
-Versorgungsrelevante Daten sind administrative Daten (z.B. Alter des Patienten, Name der Einrichtung, Arztnummer usw.) sowie Daten zu klinischen Verfahren (z.B. Prozeduren-Codes), Diagnostik (z.B. Laborbefunde), Medikation (z.B. Medikamenten-Verordnung) und Abrechnung (z.B. Versicherungsverhältnis).
+Versorgungsrelevante Daten sind administrative Daten (z. B. Alter des Patienten, Name der Einrichtung, Arztnummer usw.) sowie Daten zu klinischen Verfahren (z. B. Prozeduren-Codes), Diagnostik (z. B. Laborbefunde), Medikation (z. B. Medikamenten-Verordnung) und Abrechnung (z. B. Versicherungsverhältnis).
 
-Es wird eine Kategorisierung der **bestätigungsrelevanten Subsysteme** entlang des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten **Definitionen** als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der **Geltungsbereich** konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der **normative Status** wird schließlich tabellarisch unter den entsprechenden Abschnitten zur **Bestätigungsrelevanz** aufgeführt. 
+Es wird eine Kategorisierung der **bestätigungsrelevanten Subsysteme** entlang des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten **Definitionen** als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der **Geltungsbereich** konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der **normative Status** wird schließlich tabellarisch unter den entsprechenden Abschnitten zur **Bestätigungsrelevanz** aufgeführt. 
 
 Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) CapabilityStatement, das einem Akteur entspricht; in diesem Zusammenhang wird einem bestätigungsrelevanten System ein oder mehrere Akteure zugeordnet.
 
-Neben den bestätigungsrelevanten System werden auch korrespondierende Systeme als Clients Definiert.
+Neben den bestätigungsrelevanten Systemen werden auch korrespondierende Systeme als Clients definiert.
 
 An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreffen:
 
@@ -39,32 +39,32 @@ Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bes
 # **Basismodul**
 ## **Bestätigungsrelevantes System: Basis-Server**
 ### **Definition**
-Das Bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung bereitstellt.
+Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung bereitstellt.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs *Patient Demographics Supplier* und im IHE-QEDm-Kontext die Rolle des Akteurs *Clinical Data Source* ein*.*
+Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs *Patient Demographics Supplier* und im IHE-QEDm-Kontext die Rolle des Akteurs *Clinical Data Source* ein.
 ### **Geltungsbereich**
 Als Basis-Server gelten in diesem Kontext Systeme, die strukturierte, versorgungsrelevante Daten über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Daten während der Patientenversorgung im Krankenhaus dienen.
 
-Dies betrifft u.a.:
+Dies betrifft u. a.:
 
 - KIS-Systeme
 - Clinical Data Repository
 - Abrechnungssysteme, sofern diese als führende Systeme für die Speicherung und Verwaltung versorgungsrelevanter Daten genutzt werden
 ## **System: Basis-Client**
 ### **Definition**
-Das System "Basis-Client" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozesse zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet "Basis-Clients".
+Das System "Basis-Client" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist, sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozessen zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet "Basis-Clients".
 
-Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokumentes an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen. 
+Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokuments an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen. 
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Basis-Client nimmt im IHE-PDQm-Kontext die Rolle des *Patient Demographics Consumer* und im IHE-QEDm-Kontext die Rolle des *Clinical Data Consumer* ein*.*
+Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Client nimmt im IHE-PDQm-Kontext die Rolle des *Patient Demographics Consumer* und im IHE-QEDm-Kontext die Rolle des *Clinical Data Consumer* ein.
 ### **Geltungsbereich**
-Als Basis-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten von anderen Systemen abfragen. Basis-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die abgefragten Daten.
+Als Basis-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten von anderen Systemen abfragen. Basis-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die abgefragten Daten.
 
-Dies betrifft u.a. :
+Dies betrifft u. a.:
 
-- Systeme, die Patientenstammdaten nicht über eine HL7 V2-Datenstrom empfangen, sondern diese bei Bedarf im patientenführenden System abfragen möchten
+- Systeme, die Patientenstammdaten nicht über einen HL7 V2-Datenstrom empfangen, sondern diese bei Bedarf im patientenführenden System abfragen möchten
 - Systeme, die versorgungsrelevante Daten in anderen Systemen abfragen möchten, um redundante Datenerfassung zu verhindern
-- Systeme, die Daten aus anderen Systemen abfragen möchten, um sie Anwendern oder Prozessen bedarfsgerecht zur Verfügung zu stellen zu können, ohne diese redundant speichern zu müssen
+- Systeme, die Daten aus anderen Systemen abfragen möchten, um sie Anwendern oder Prozessen bedarfsgerecht zur Verfügung zu stellen, ohne diese redundant speichern zu müssen
 
 ## **Bestätigungsrelevanz**
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
@@ -73,6 +73,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 | :-: | :-: | :-: |
 |Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Basis-Client|keine|nein|
+
 # **Dokumentenaustausch**
 ## **System: Dokumenten-Server**
 ### **Definition**
