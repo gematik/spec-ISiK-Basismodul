@@ -6,11 +6,11 @@ const path = require('path');
  * - MustSupport-Elemente auf Ebene 1
  * - Vorhandensein von 'short' UND 'comment'
  */
-function checkMustSupportDescriptions(profile) {
+function checkMustSupportDescriptions(profile, filePath) {
   const issues = [];
 
   if (!profile.snapshot || !Array.isArray(profile.snapshot.element)) {
-    issues.push(`Profil ${profile.url || profile.id} hat keine Snapshot-Elemente.`);
+    issues.push(`⚠️ Profil ${filePath} hat keine Snapshot-Elemente.`);
     return issues;
   }
 
@@ -18,8 +18,7 @@ function checkMustSupportDescriptions(profile) {
 
   for (const el of elements) {
     const pathParts = el.path.split('.');
-    
-    // Nur Ebene-1 Elemente (z. B. Patient.name)
+
     if (pathParts.length === 2 && el.mustSupport) {
       const missingFields = [];
 
@@ -32,7 +31,7 @@ function checkMustSupportDescriptions(profile) {
 
       if (missingFields.length > 0) {
         issues.push(
-          `Fehlende ${missingFields.join(' und ')} für MustSupport-Element: ${el.path}`
+          `❌ ${filePath}: Fehlende ${missingFields.join(' und ')} für MustSupport-Element '${el.path}'`
         );
       }
     }
@@ -41,16 +40,44 @@ function checkMustSupportDescriptions(profile) {
   return issues;
 }
 
-// Beispielhafter Aufruf mit lokalem JSON
-const filePath = 'output/StructureDefinition-my-profile.json';
-const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+/**
+ * Liest alle JSON-Dateien rekursiv aus einem Verzeichnis
+ */
+function getAllJsonFiles(dirPath, arrayOfFiles = []) {
+  const files = fs.readdirSync(dirPath);
 
-const result = checkMustSupportDescriptions(profile);
+  files.forEach((file) => {
+    const fullPath = path.join(dirPath, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      getAllJsonFiles(fullPath, arrayOfFiles);
+    } else if (file.endsWith('.json')) {
+      arrayOfFiles.push(fullPath);
+    }
+  });
+  // console.log(`📂 ${dirPath} hat ${files.length} Dateien`);
+  return arrayOfFiles;
+}
 
-if (result.length > 0) {
-  console.error('Validierungsfehler gefunden:\n' + result.join('\n'));
+// 🔍 Einstiegspunkt
+const baseDir = '../../Resources/fsh-generated/resources';
+console.log(baseDir);
+const jsonFiles = getAllJsonFiles(baseDir);
+
+let allIssues = [];
+
+jsonFiles.forEach((filePath) => {
+  try {
+    const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    const issues = checkMustSupportDescriptions(profile, filePath);
+    allIssues.push(...issues);
+  } catch (err) {
+    console.error(`❗ Fehler beim Parsen von ${filePath}:`, err.message);
+  }
+});
+
+if (allIssues.length > 0) {
+  console.error('\n🚫 Validierungsfehler gefunden:\n' + allIssues.join('\n'));
   process.exit(1);
 } else {
-  console.log('✅ Alle MustSupport-Elemente auf Ebene 1 haben short UND comment.');
+  console.log('✅ Alle MustSupport-Elemente haben short UND comment.');
 }
- 
