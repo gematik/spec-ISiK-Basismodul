@@ -52,7 +52,7 @@ jobs:
     - name: Check if Sushi version is up-to-date
       id: check_sushi_version
       run: |
-        CURRENT_VERSION_SUSHI=$(grep -oP 'SUSHI_VERSION: \K[^"]+' .github/workflows/main.yml)
+        CURRENT_VERSION_SUSHI=$(grep -oP 'SUSHI_VERSION: \K[^"]+' .github/workflows/main.yml || true)
         UPDATE_NEEDED_STATE="${UPDATE_NEEDED:-false}"
         
         if [ -z "$CURRENT_VERSION_SUSHI" ]; then
