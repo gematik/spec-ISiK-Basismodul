@@ -308,7 +308,16 @@ Das Modul "Connect" unterscheidet die im Folgenden definierten Akteure.
 IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.
 
 ### **Geltungsbereich**
-Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die im Basismodul als Akteur Basis-Server fungieren.
+Im Kontext von ISiK trifft diese Definition u.a. auf folgende bestätigungsrelevante Systeme zu:
+
+- Basis-Server
+- Dokumenten-Server
+- Vitalparameter-Server
+- ICU Source Minimal
+- ICU Source Extended
+- Termin-Repository
+- AMTS Data Provider
+- Medikations-Server
 
 ## **Akteur: Autorisierungs-Server**
 
@@ -318,7 +327,7 @@ Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Auto
 IT-Systeme in dieser Rolle stellen Sicherheits-Token aus, die einen Zugang zu auf Ressourcen-Servern verwalteten FHIR-Ressourcen autorisieren.
 
 ### **Geltungsbereich**
-Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die als Ressourcen-Server agieren. Die genauen Anforderungen unterscheiden sich allerdings je nachdem, ob ein System gleichzeitig als App-Launcher agiert oder nicht.
+Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die an einen Ressourcen-Server angebunden sind, um ein Sicherheits-Token für eine SMART App (Client) auszustellen. Die genauen Anforderungen unterscheiden sich allerdings je nachdem, ob ein System gleichzeitig als App-Launcher agiert oder nicht.
 
 ## **Electronic Health Record (EHR)**
 
