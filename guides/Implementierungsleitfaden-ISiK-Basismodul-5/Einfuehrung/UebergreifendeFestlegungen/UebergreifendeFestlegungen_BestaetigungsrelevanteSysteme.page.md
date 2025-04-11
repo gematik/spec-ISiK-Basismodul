@@ -207,7 +207,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # **Terminplanung**
 ## **Bestätigungsrelevantes System: Termin-Repository**
 ### **Definition**
-Das bestätigungsrelevantes System  "Termin-Repository" im Sinne des ISiK-Moduls "Terminplanung" ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z.B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhalten und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein patientenführendes System zu verstehen.
+Das bestätigungsrelevantes System  "Termin-Repository" im Sinne des ISiK-Moduls "Terminplanung" ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z.B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhalten und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein terminführendes System zu verstehen.
 ### **Geltungsbereich**
 Systeme, die als Termin-Repository agieren sind u.a.:
 
