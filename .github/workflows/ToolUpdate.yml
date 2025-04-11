@@ -53,10 +53,16 @@ jobs:
       id: check_sushi_version
       run: |
         CURRENT_VERSION_SUSHI=$(grep -oP 'SUSHI_VERSION: \K[^"]+' .github/workflows/main.yml)
-        if [ "$CURRENT_VERSION_SUSHI" = "$LATEST_VERSION_SUSHI" ]; then
+        UPDATE_NEEDED_STATE="${UPDATE_NEEDED:-false}"
+        
+        if [ -z "$CURRENT_VERSION_SUSHI" ]; then
+          echo "Could not detect current Sushi version from workflow file."
+          echo "UPDATE_NEEDED=$UPDATE_NEEDED_STATE" >> $GITHUB_ENV
+        elif [ "$CURRENT_VERSION_SUSHI" = "$LATEST_VERSION_SUSHI" ]; then
           echo "Sushi version is up-to-date"
           echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
         else
+          echo "Sushi version is outdated"
           echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
         fi
 
