@@ -168,7 +168,7 @@ Primärer Anwendungskontext für das System ICU Source Minimal ist die Bereitste
 ### **Geltungsbereich**
 Als ICU Source Minimal gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
-Systeme, die als ICU Source Minimal agieren sind u.a.:
+Systeme, die als ICU Source Minimal agieren sind u.a.: 
 
 - KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
