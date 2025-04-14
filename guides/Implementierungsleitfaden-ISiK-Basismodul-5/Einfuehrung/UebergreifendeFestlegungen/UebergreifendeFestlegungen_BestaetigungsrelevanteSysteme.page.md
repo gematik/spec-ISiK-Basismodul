@@ -161,7 +161,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # **ICU Normalstation Workflow**
 ## **Bestätigungsrelevantes System: ICU Source Minimal**
 ### **Definition**
-Das Bestätigungsrelevante System "ICU Source Minimal " im Sinne des ISiK-Moduls "ICU Normalstation Workflow" ist ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
+Das bestätigungsrelevante System "ICU Source Minimal " im Sinne des ISiK-Moduls "ICU Normalstation Workflow" ist ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
 Primärer Anwendungskontext für das System ICU Source Minimal ist die Bereitstellung von Vitalparameter-Daten durch Systeme auf Normalstationen. Diese Daten sind typischerweise in KIS-Systemen vorgehalten und werden dann z. B. nach einer Überleitung auf die Intensivstation von Systemen der Intensivstation übernommen.
 
