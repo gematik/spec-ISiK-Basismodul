@@ -39,7 +39,7 @@ Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bes
 # **Basismodul**
 ## **Bestätigungsrelevantes System: Basis-Server**
 ### **Definition**
-Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung bereitstellt.
+Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante administrative und klinische Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API gemäß ISiK zur Abfrage und Weiternutzung bereitstellt.
 
 Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs *Patient Demographics Supplier* und im IHE-QEDm-Kontext die Rolle des Akteurs *Clinical Data Source* ein.
 ### **Geltungsbereich**
@@ -71,7 +71,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
+|Basis-Server| Basis Server Akteur <https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Basis-Client|keine|nein|
 
 # **Dokumentenaustausch**
