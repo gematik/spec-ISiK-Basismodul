@@ -69,8 +69,6 @@ jobs:
         fi
 
     - name: Update main.yml for Firely and Sushi # Stop if no update is needed;
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
       run: |
         if [[ "$UPDATE_NEEDED" == "false" ]]; then
           echo "No update needed. Exiting."
