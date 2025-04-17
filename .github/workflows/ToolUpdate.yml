@@ -5,13 +5,12 @@ on: # Trigger on commits to any branch and manual trigger
   schedule:
     - cron: '0 0 * * *' # Runs at 00:00 UTC every day
 
-permissions:
-  contents: write
-  pull-requests: write
-  actions: write
-
 jobs:
   update-dependency:
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
     runs-on: ubuntu-latest
 
     steps:
