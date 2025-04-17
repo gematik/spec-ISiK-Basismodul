@@ -2,13 +2,12 @@ name: Update Dependency
 
 on: # Trigger on commits to any branch and manual trigger
   workflow_dispatch: # Allows manual trigger
-    schedule:
-      - cron: '0 0 * * *' # Runs at 00:00 UTC every day
+  schedule:
+    - cron: '0 0 * * *' # Runs at 00:00 UTC every day
 
 permissions:
   contents: write
   pull-requests: write
-  workflows: write
 
 jobs:
   update-dependency:
