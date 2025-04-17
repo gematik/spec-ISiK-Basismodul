@@ -1,22 +1,24 @@
 name: Update Dependency
 
-on: # Trigger on commits to any branch and manual trigger
+on:
   workflow_dispatch: # Allows manual trigger
   schedule:
     - cron: '0 0 * * *' # Runs at 00:00 UTC every day
 
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
 jobs:
   update-dependency:
-    permissions:
-      contents: write
-      pull-requests: write
-      actions: write
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
+        token: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
         ref: 'main-stufe-5'
 
     - name: Set up jq
