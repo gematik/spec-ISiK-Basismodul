@@ -372,6 +372,82 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 | App Launcher              | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
 | SMART App                 | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
 
+# **Formular**
+
+Das Modul "Formular" unterscheidet die im Folgenden definierten Systeme.
+
+## **Bestätigungsrelevantes System: FormularLauncher**
+
+### **Definition**
+
+Das bestätigungsrelevante System FormularLauncher im Sinne des ISiK-Moduls "Formular" ist ein klinisches Arbeitsplatzsystem, welches eine externe (oder interne) Darstellung von Formularen der Rolle FormularRenderer im Patient\*innen- oder Fallkontext aufruft.
+
+### **Geltungsbereich**
+Als FormularLauncher gelten in diesem Kontext alle Systeme, die als klinische Arbeitsplatzsysteme in der täglichen von Anwender\*innen im Krankenhaus eine Oberfläche bereitstellen. Und, sobald ein Patient\*innen- oder Fallkontext herstellbar ist.
+
+Systeme, die als FormularLauncher agieren können, sind u.a.:
+
+- KIS bzw. entsprechendes KIS-Modul
+- Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
+- Notaufnahmesoftware
+- Prozess-Steuerungssoftware
+
+## **Bestätigungsrelevantes System: FormularDaten-Quelle**
+
+### **Definition**
+
+Das bestätigungsrelevante System FormularDaten-Quelle im Sinne des ISiK-Moduls "Formular" stellt einen FHIR-Server oder -Fassade dar, über dessen Endpunkte Daten zur Vorbefüllung von Formularen bereitgestellt, sowie extrahierte Daten aus ausgefüllten Formularen engegengenommen werden.
+
+### **Geltungsbereich**
+Als FormularDaten-Quelle gelten in diesem Kontext alle Systeme, die ISiK-konform FHIR-Ressourcen bereitstellen oder entgegennehmen. Ebenfalls alle Systeme, die als FHIR-fähiges Clinical Data Repository (CDR) im Einsatz sind.
+
+Systeme, die als FormularDaten-Quelle agieren können sind u.a.:
+
+- KIS bzw. entsprechendes KIS-Modul
+- Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
+- Clinical Data Repository (CDR)
+
+## **Bestätigungsrelevantes System: FormularDefinitions-Ersteller**
+
+### **Definition**
+
+Das bestätigungsrelevante System FormularDefinitions-Ersteller im Sinne des ISiK-Moduls "Formular" stellt eine Software dar, mit der es möglich ist, ISiK-Modul "Formular" konforme Questionnaire-Definitionen zu erstellen oder zu bearbeiten.
+
+### **Geltungsbereich**
+Als FormularDefinitions-Ersteller gelten in diesem Kontext alle Systeme, die ISiK-Modul "Formular" konforme Questionnaire Instanzen (Formulare) erstellen.
+
+Systeme, die als FormularDefinitions-Ersteller agieren können sind u.a.:
+
+- KIS bzw. entsprechendes KIS-Modul
+
+## **Bestätigungsrelevantes System: FormularRenderer (aktuell inkl. Akteur FormularDefinitions-Verwalter)**
+
+### **Definition**
+
+Das bestätigungsrelevante System FormularRenderer im Sinne des ISiK-Moduls "Formular" stellt eine Software dar, welche eine Oberfläche bietet, um Formulare auf Basis eines Questionnaire (ISiK-Moduls "Formular" konform) darzustellen, auszufüllen, bzw. zu bearbeiten und zu speichern.
+
+### **Geltungsbereich**
+Als FormularRenderer gelten in diesem Kontext alle Systeme, die ISiK-Modul "Formular" konforme Questionnaire Definitionen ausfüllbar darstellen können.
+
+Systeme, die als FormularRenderer agieren können sind u.a.:
+
+- KIS bzw. entsprechendes KIS-Modul
+- Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
+- Notaufnahmesoftware
+- Prozess-Steuerungssoftware
+
+## **Bestätigungsrelevanz**
+
+Das ISiK Modul "Formular" ist in dieser Stufe informativ und 
+
+Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
+
+|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
+| :-: | :-: | :-: |
+|FormularLauncher|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein|
+|FormularDaten-Quelle|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein|
+|FormularDefinitions-Ersteller|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein| 
+|FormularRenderer (aktuell inkl. Akteur FormularDefinitions-Verwalter)|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein| 
 
 # Festlegungen auf Profilebene im CapabilityStatement
 
