@@ -1,6 +1,7 @@
 ---
 topic: BerichtSubsystem-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle
 ---
 
 ## {{link}}
@@ -22,7 +23,7 @@ from
     CapabilityStatement
 where
     url = %capability
-for rest.resource.where(%canonical in supportedProfile)
+for document
 select
     'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 </fql>
