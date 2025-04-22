@@ -250,6 +250,14 @@ Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls 
 System, das Informationen über Verordnung, Abgabe und Verabreichung von Medikamenten für andere
 Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und
 Weiternutzung zur Verfügung stellt und persistiert.
+
+Im ISiK-Modul Medikation lassen sich drei Funktionen unterscheiden, die ein Medikations-Server
+übernehmen kann:
+
+- "Medikations-Information" bildet den aktuellen Medikationsstatus ab (z. B. Dauer- oder
+  Selbstmedikation)
+- "Medikations-Verordnung" beschreibt ärztliche Verordnungen im Behandlungsprozess
+- "Medikations-Verabreichungen" dokumentiert tatsächlich verabreichte Medikamente
 ### **Geltungsbereich**
 Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist "die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [[...](https://wiki.gematik.de/pages/createpage.action?spaceKey=IOPAK&title=...)] Sie ist die konkrete Ausführung der Pharmakotherapie." (<https://flexikon.doccheck.com/de/Medikation>)
 
@@ -271,6 +279,11 @@ Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante
 Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter
 Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht
 verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.
+
+Ein Medikations-Client kann im ISiK-Modul Medikation zwei Funktionen übernehmen:
+
+- Consumer: ruft Medikationsinformationen vom Medikations-Server ab
+- Provider: erzeugt Medikationsinformationen welche an den Medikations-Server übermittelt werden
 
 ### **Geltungsbereich**
 
