@@ -235,11 +235,11 @@ Systeme, die als Termin-Consumer agieren sind u.a.:
 ## **Bestätigungsrelevanz**
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Aktuere:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|Termin-Repository|https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
-|Termin-Requestor|keine|nein|
-|Termin-Consumer|keine|nein|
+|    **System**     |                                     **konkrete Anforderungen**                                     | **bestätigungsrelevant** |
+|:-----------------:|:--------------------------------------------------------------------------------------------------:|:------------------------:|
+| Termin-Repository | https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements |            ja            |
+| Termin-Requestor  |                                               keine                                                |           nein           |
+|  Termin-Consumer  |                                               keine                                                |           nein           |
 # **Medikation**
 Das Modul "Medikation" unterscheidet die im Folgenden definierten Systeme.
 ## **Bestätigungsrelevantes System: Medikations-Server**
@@ -376,3 +376,65 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # Festlegungen auf Profilebene im CapabilityStatement
 
 Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:guides\Implementierungsleitfaden-ISiK-Basismodul-401\Einfuehrung\Datenobjekte\CapabilityStatement.page.md}} geführt.
+
+# **Subscription**
+
+## **Bestätigungsrelevantes System: Subscription-Server**
+
+### **Definition**
+
+Das bestätigungsrelevante System "Subscription-Server" im Sinne des ISiK‑Moduls "Subscription"
+ist ein System, das
+
+- über eine FHIR‑REST‑API gemäß ISiK neue Subscription‑Registrierungen annimmt,
+- bei Eintreten der in den Subscriptions definierten Ereignisse (z. B. Erstellen, Ändern oder
+  Löschen von Ressourcen) automatische Benachrichtigungen erzeugt und verteilt.
+
+### **Geltungsbereich**
+
+Als Subscription‑Server gelten in diesem Kontext alle Systeme, die
+
+1. strukturierte Subscription‑Anfragen über FHIR‑Subscriptions entgegennehmen,
+2. Events auf Basis dieser Subscriptions erkennen und verarbeiten,
+3. Benachrichtigungen über definierte Kanäle (REST‑Hook) versenden.
+
+Beispiele:
+
+- KIS-Systeme mit implementiertem Subscription‑Modul
+- PDMS (Patientendatenmanagement‑Systeme) mit implementiertem Subscription‑Modul
+- LIS (Laborinformations‑Systeme) mit implementiertem Subscription‑Modul
+
+## **System: Subscription-Client**
+
+### **Definition**
+
+Das System "Subscription‑Client" im Sinne des ISiK‑Moduls "Subscription" ist ein System, das
+
+- Subscription‑Benachrichtigungen von einem Subscription‑Server empfängt,
+- die empfangene Notifications auswertet,
+- und die erhaltenen klinischen Ereignisdaten einem Anwender anzeigt oder in
+  nachgelagerte Prozesse (z. B. CDS, Alarm‑ und Monitoring‑Workflows) einspeist.
+
+### **Geltungsbereich**
+
+Als Subscription‑Clients gelten in diesem Kontext alle Systeme, die
+
+1. via FHIR‑REST Subscription‑Nachrichten empfangen und verarbeiten.
+
+Beispiele:
+
+- Middleware‑Komponenten, die Stammdaten zwischen Systemen (z.B. KIS, LIS, PDMS und weiteren)
+  synchronisieren und stets aktuell halten
+- Alarm‑ und Alert‑Systeme (z. B. für kritische Labor‑ oder Vitalparameter)
+- Mobile Health‑Apps mit Push‑Notifications
+- Patientenportale, die Subscription‑Nachrichten empfangen und Patienten über Befund‑ oder
+  Termin‑Updates informieren
+
+## **Bestätigungsrelevanz**
+
+Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
+
+|     **System**      |                                                  **konkrete Anforderungen**                                                   | **bestätigungsrelevant** |
+|:-------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
+| Subscription-Server | Subscription Server Akteur https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Artefakte/CapabilityStatements> |            ja            |
+| Subscription-Client |                                                             keine                                                             |           nein           |
