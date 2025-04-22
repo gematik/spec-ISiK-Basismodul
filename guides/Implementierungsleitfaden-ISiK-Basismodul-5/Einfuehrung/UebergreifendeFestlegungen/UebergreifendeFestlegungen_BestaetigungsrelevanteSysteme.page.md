@@ -246,7 +246,7 @@ Das Modul "Medikation" unterscheidet die im Folgenden definierten Systeme.
 ### **Definition**
 
 Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls "Medikation" ist ein
-System, das Informationen über Verordnung, Abgabe und Verabreichung von Medikamenten für andere
+System, das Informationen über Verordnung, Abgabe und/oder Verabreichung von Medikamenten für andere
 Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und
 Weiternutzung zur Verfügung stellt und persistiert.
 
