@@ -320,7 +320,7 @@ Als AMTS Data Provider gelten in diesem Kontext alle Systeme, die AMTS relevante
 klinische Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter
 Speicherort dieser Daten dienen.
 
-Systeme, die als AMTS data provider agieren können sind u.a.:
+Systeme, die als AMTS Data Provider agieren können sind u.a.:
 
 - KIS
 - Laborinformationssysteme (LIS)
