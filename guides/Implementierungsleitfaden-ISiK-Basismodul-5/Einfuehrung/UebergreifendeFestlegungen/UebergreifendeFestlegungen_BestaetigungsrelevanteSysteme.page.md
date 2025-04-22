@@ -159,16 +159,16 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 |Vitalparameter-Client|keine|nein|
 
 # **ICU Normalstation Workflow**
-## **Bestätigungsrelevantes System: ICU Source Minimal **
+## **Bestätigungsrelevantes System: ICU Source Minimal**
 ### **Definition**
-Das Bestätigungsrelevantes System "ICU Source Minimal " im Sinne des ISiK-Moduls "ICU Normalstation Workflow" ist ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
+Das bestätigungsrelevante System "ICU Source Minimal " im Sinne des ISiK-Moduls "ICU Normalstation Workflow" ist ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
 Primärer Anwendungskontext für das System ICU Source Minimal ist die Bereitstellung von Vitalparameter-Daten durch Systeme auf Normalstationen. Diese Daten sind typischerweise in KIS-Systemen vorgehalten und werden dann z. B. nach einer Überleitung auf die Intensivstation von Systemen der Intensivstation übernommen.
 
 ### **Geltungsbereich**
-Als ICU Source Minimal gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
+Als ICU Source Minimal gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
-Systeme, die als ICU Source Minimal agieren sind u.a.:
+Systeme, die als ICU Source Minimal agieren sind u.a.: 
 
 - KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
@@ -180,14 +180,14 @@ Systeme, die als ICU Source Minimal agieren sind u.a.:
 ### **Definition**
 Als bestätigungsrelevantes System "ICU Source Extended" im Sinne des ISiK-Moduls "ICU Normalstation Workflow" gilt ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
-Primärer Anwendungskontext für das System ICU Source Extended sind Intensivstationen. Das System stellt die Daten aus der Intensivstation dann über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung auf Normalstation zur Verfügung. 
+Primärer Anwendungskontext für das System ICU Source Extended sind Intensivstationen. Das System stellt die Daten aus der Intensivstation dann über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung auf Normalstation zur Verfügung. 
 
-Im Gegensatz zum Bestätigungsrelevanten System "ICU Source Minimal" ist das bestätigungsrelevante System "ICU Source Extended" in der Lage, auch sehr spezifische Vitalparameter-Daten zu verarbeiten, die nicht in den ISiK-Profilen definiert sind. Diese Daten stammen aus der Intensivmedizinischen Versorgung und sind im Wesentlichen für die Behandlung von Patienten auf Intensivstationen von Bedeutung. Diese Daten sind typischerweise in PDMS vorgehalten.
+Im Gegensatz zum bestätigungsrelevanten System "ICU Source Minimal" ist das bestätigungsrelevante System "ICU Source Extended" in der Lage, auch sehr spezifische Vitalparameter-Daten zu verarbeiten, die nicht in den ISiK-Profilen definiert sind. Diese Daten stammen aus der Intensivmedizinischen Versorgung und sind im Wesentlichen für die Behandlung von Patienten auf Intensivstationen von Bedeutung. Diese Daten sind typischerweise in PDMS vorgehalten.
 
-Die Profile für die Intensivversorgung entstammen der Zusammenarbeit dem Kerndatensatz ICU der Medizinischen Informatik Initiative (MII) und dem ISiK-Projekt. Die Profile sind in der Simplifier-Instanz des ISiK-Projektes hinterlegt und werden dort auch weiterentwickelt.
+Die Profile für die Intensivversorgung entstammen der Zusammenarbeit mit dem Kerndatensatz ICU der Medizinischen Informatik Initiative (MII) und dem ISiK-Projekt. Die Profile sind in der Simplifier-Instanz des ISiK-Projektes hinterlegt und werden dort auch weiterentwickelt.
 
 ### **Geltungsbereich**
-Als ICU Source Extended gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
+Als ICU Source Extended gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
 Systeme, die als ICU Source Minimal agieren sind u.a.:
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
@@ -195,14 +195,14 @@ Systeme, die als ICU Source Minimal agieren sind u.a.:
 
 
 ## **Bestätigungsrelevanz**
-Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zur Intensivversrogung verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt ), sind die beschriebenen Systeme bestätigungsrelevant (für dieses eine Profil).
+Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zur Intensivversrogung verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt), sind die beschriebenen Systeme bestätigungsrelevant (für dieses eine Profil).
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
 |ICU Source Extended| ICU Source Extended Akteur <https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|ICU Source Minimal| ICU Source Minima Akteur <https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
+|ICU Source Minimal| ICU Source Minimal Akteur <https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 
 # **Terminplanung**
 ## **Bestätigungsrelevantes System: Termin-Repository**
