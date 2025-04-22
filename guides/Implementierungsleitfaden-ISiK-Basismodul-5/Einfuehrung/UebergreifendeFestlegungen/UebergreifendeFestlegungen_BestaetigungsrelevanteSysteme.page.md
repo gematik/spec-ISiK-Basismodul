@@ -122,11 +122,11 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # **Vitalparameter und Körpermaße**
 ## **Bestätigungsrelevantes System: Vitalparameter-Server**
 ### **Definition**
-Das bestätigungsrelevante System "Vitalparameter-Server" im Sinne des ISiK-Moduls "Vitalparameter und Körpermaße" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Vitalparameter-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
+Das bestätigungsrelevante System "Vitalparameter-Server" im Sinne des ISiK-Moduls "Vitalparameter und Körpermaße" ist ein System, das versorgungsrelevante Daten zu Vitalparametern (wie Herzfrequenz, Blutdruck etc.) sowie Körpermaßen (Größenangaben und Gewicht) für andere Applikationen (System: Vitalparameter-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
 Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend analog zu IHE QEDm '*Clinical Data Source'* zu betrachten.
 ### **Geltungsbereich**
-Als Vitalparameter-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
+Als Vitalparameter-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten zu Vitalparametern (wie Herzfrequenz, Blutdruck etc.) sowie Körpermaßen (Größenangaben und Gewicht) über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
 Systeme, die als Vitalparameter-Server agieren sind u.a.:
 
