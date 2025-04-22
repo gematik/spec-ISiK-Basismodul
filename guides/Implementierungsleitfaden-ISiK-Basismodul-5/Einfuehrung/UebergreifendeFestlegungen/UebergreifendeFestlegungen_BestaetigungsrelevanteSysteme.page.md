@@ -240,11 +240,16 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 |Termin-Repository|https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
 |Termin-Requestor|keine|nein|
 |Termin-Consumer|keine|nein|
+
 # **Medikation**
 Das Modul "Medikation" unterscheidet die im Folgenden definierten Systeme.
 ## **Bestätigungsrelevantes System: Medikations-Server**
 ### **Definition**
-Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls "Medikation" ist ein System, das Informationen über Verordnung, Abgabe und Verabreichung von Medikamenten für andere Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
+
+Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls "Medikation" ist ein
+System, das Informationen über Verordnung, Abgabe und Verabreichung von Medikamenten für andere
+Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und
+Weiternutzung zur Verfügung stellt und persistiert.
 ### **Geltungsbereich**
 Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist "die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [[...](https://wiki.gematik.de/pages/createpage.action?spaceKey=IOPAK&title=...)] Sie ist die konkrete Ausführung der Pharmakotherapie." (<https://flexikon.doccheck.com/de/Medikation>)
 
@@ -257,46 +262,78 @@ Systeme, die als Medikations-Server agieren können, sind u.a.:
   (gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)
 - Herstellungssystem mit Verarbeitung von Verordnungs- und Medikationsinformationen
   (gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)
+
+## **System: Medikations-Client**
+
+### **Definition**
+
+Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante Daten von einem
+Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter
+Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht
+verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.
+
+### **Geltungsbereich**
+
+Als Medikations-Clients gelten in diesem Kontext alle Systeme, die strukturierte
+versorgungsrelevante Daten zur Medikation über eine Schnittstelle abfragen oder kommunizieren.
+Medikations-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die
+versorgungsrelevante Daten.
+
+Medikations-Clients sind zum Beispiel:
+
+- Pflegemanagement-Systeme
+- AMTS Systeme
+
+Dabei ist zu beachten, dass auch Systeme, die oben als Medikations-Server gelistet sind, zusätzlich
+als System 'Medikations-Client' agieren können. Insbesondere für die Unterstützung eines
+Überleitungs-Workflows gilt dies für:
+
+- KIS
+- PDMS
+
 ## **Bestätigungsrelevantes System: AMTS Data Provider**
 ### **Definition**
-Das Bestätigungsrelevante System AMTS Data Provider im Sinne des ISiK-Moduls "Medikation" ist ein System, das AMTS relevante Informationen für andere Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert. Beispiele für ATMS-relevante Informationen sind z.B. der Stillstatus, Schwangerschafts- und Raucherstatus.
+
+Das Bestätigungsrelevante System AMTS Data Provider im Sinne des ISiK-Moduls "Medikation" ist ein
+System, das AMTS relevante Informationen für andere Applikationen (System: Medikations-Client) über
+eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
+Beispiele für ATMS-relevante Informationen sind z.B. der Stillstatus, Schwangerschafts- und
+Raucherstatus, Laborparameter und Informationen über die aktuelle Medikation eines Patienten.
 
 Es geht hier nicht um ein System das AMTS-Resultate bereitstellt - daher wurde die Bezeichnung AMTS Data Provider gegenüber AMTS-Server hier bevorzugt.
 ### **Geltungsbereich**
-Als AMTS data provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte klinische Daten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
+
+Als AMTS data provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte
+klinische Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter
+Speicherort dieser Daten dienen.
 
 Systeme, die als AMTS data provider agieren können sind u.a.:
 
 - KIS
 - Laborinformationssysteme (LIS)
 - PDMS (Anwendungsfallbeispiel: Abrufen von AMTS relevanten Zusatzinformationen)
-## **System: Medikations-Client**
-### **Definition**
-Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante Daten von einem Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.
-### **Geltungsbereich**
-Als Medikations-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten zur Medikation über eine Schnittstelle abfragen oder kommunizieren. Medikations-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.
 
-Medikations-Clients sind zum Beispiel:
-
-- AMTS Systeme
-
-Dabei ist zu beachten, dass auch Systeme, die oben als Medikations-Server gelistet sind, zusätzlich als System 'Medikations-Client' agieren können. Insbesondere für die Unterstützung eines Überleitungs-Workflows gilt dies für:
-
-- KIS
-- PDMS
 ## **Bestätigungsrelevanz**
 
-Bestätigungsrelevant im Kontext des Moduls Medikation sind alle Systeme, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zu Medikationsinformationen verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt ), ist das System bestätigungsrelevant (für dieses eine Profil).
+Bestätigungsrelevant im Kontext des Moduls Medikation sind alle Systeme, die eine Teilmenge der in
+diesem Modul in Form von FHIR-Profilen definierten Daten zu Medikationsinformationen verarbeiten und
+dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata
+erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im
+hypothetischen Falle, dass ein System nur dieses unterstützt), ist das System
+bestätigungsrelevant (für dieses eine Profil).
 
-Bestandteile des Support Moduls Labor sind im Kontext des Medikationsmoduls bestätigungsrelevant, insbesondere für die Anwendungsfälle rund um AMTS.
+Bestandteile des Support-Moduls Labor und des Moduls Vitalparameter sind ausschließlich im Kontext
+von AMTS-Anwendungsfällen im Rahmen des Medikationsmoduls bestätigungsrelevant (AMTS Data Provider).
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|AMTS Data Provider|AMTSAkteur <https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|Medikations-Server|https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
-|Medikations-Client|keine|nein|
+|     **System**     |                                                                                     **konkrete Anforderungen**                                                                                     | **bestätigungsrelevant** |
+|:------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
+| Medikations-Server |    Medikationsverordnung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerordnungAkteur    |            ja            |
+| Medikations-Server |   Medikationsinformation Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationInformationAkteur   |            ja            |
+| Medikations-Server | Medikationsverabreichung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerabreichungAkteur |            ja            |
+| AMTS Data Provider |                        AMTS Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementAMTSAkteur                        |            ja            |
+| Medikations-Client |                                                                                               keine                                                                                                |           nein           |
 
 # **Connect**
 
