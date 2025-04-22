@@ -316,7 +316,7 @@ Raucherstatus, Laborparameter und Informationen über die aktuelle Medikation ei
 Es geht hier nicht um ein System das AMTS-Resultate bereitstellt - daher wurde die Bezeichnung AMTS Data Provider gegenüber AMTS-Server hier bevorzugt.
 ### **Geltungsbereich**
 
-Als AMTS data provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte
+Als AMTS Data Provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte
 klinische Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter
 Speicherort dieser Daten dienen.
 
