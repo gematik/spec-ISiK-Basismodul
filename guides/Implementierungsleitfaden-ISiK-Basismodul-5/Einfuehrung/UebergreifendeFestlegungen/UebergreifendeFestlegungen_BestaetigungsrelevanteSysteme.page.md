@@ -257,6 +257,7 @@ Im ISiK-Modul Medikation lassen sich drei Funktionen unterscheiden, die ein Medi
   Selbstmedikation)
 - "Medikations-Verordnung" beschreibt ärztliche Verordnungen im Behandlungsprozess
 - "Medikations-Verabreichungen" dokumentiert tatsächlich verabreichte Medikamente
+
 ### **Geltungsbereich**
 Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist "die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [[...](https://wiki.gematik.de/pages/createpage.action?spaceKey=IOPAK&title=...)] Sie ist die konkrete Ausführung der Pharmakotherapie." (<https://flexikon.doccheck.com/de/Medikation>)
 
