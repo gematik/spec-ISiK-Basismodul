@@ -39,7 +39,7 @@ Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bes
 # **Basismodul**
 ## **Bestätigungsrelevantes System: Basis-Server**
 ### **Definition**
-Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung bereitstellt.
+Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante administrative und klinische Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API gemäß ISiK zur Abfrage und Weiternutzung bereitstellt.
 
 Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs *Patient Demographics Supplier* und im IHE-QEDm-Kontext die Rolle des Akteurs *Clinical Data Source* ein.
 ### **Geltungsbereich**
@@ -52,7 +52,7 @@ Dies betrifft u. a.:
 - Abrechnungssysteme, sofern diese als führende Systeme für die Speicherung und Verwaltung versorgungsrelevanter Daten genutzt werden
 ## **System: Basis-Client**
 ### **Definition**
-Das System "Basis-Client" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist, sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozessen zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet "Basis-Clients".
+Das System "Basis-Client" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante administrative und klinische Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist, sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozessen zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet "Basis-Clients".
 
 Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokuments an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen. 
 
@@ -71,7 +71,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
+|Basis-Server| Basis Server Akteur <https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Basis-Client|keine|nein|
 
 # **Dokumentenaustausch**
