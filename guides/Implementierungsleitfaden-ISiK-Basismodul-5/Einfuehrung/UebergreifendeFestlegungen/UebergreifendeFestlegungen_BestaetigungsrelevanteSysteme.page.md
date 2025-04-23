@@ -380,11 +380,11 @@ Das Modul "Formular" unterscheidet die im Folgenden definierten Systeme.
 
 ### **Definition**
 
-Das bestätigungsrelevante System **FormularLauncher** im Sinne des ISiK-Moduls "Formular" ist ein klinisches Arbeitsplatzsystem, das eine externe (oder interne) Darstellung von Formularen durch die Rolle **FormularRenderer** im Patient*innen- oder Fallkontext aufruft.
+Das bestätigungsrelevante System "FormularLauncher" im Sinne des ISiK-Moduls "Formular" ist ein klinisches Arbeitsplatzsystem, das eine externe (oder interne) Darstellung von Formularen durch die Rolle "FormularRenderer" im Patient*innen- oder Fallkontext aufruft.
 
 ### **Geltungsbereich**
 
-Als **FormularLauncher** gelten in diesem Kontext alle Systeme, die als klinische Arbeitsplatzsysteme im Krankenhaus eine Oberfläche für Anwender\*innen im täglichen Betrieb bereitstellen – **sobald** ein Patient\*innen- oder Fallkontext herstellbar ist.
+Als "FormularLauncher" gelten in diesem Kontext alle Systeme, die im klinischen Alltag eine Benutzeroberfläche bereitstellen und die gezielte Anzeige oder Befüllung von Formularen im Kontext eines konkreten Patienten- oder Fallbezugs ermöglichen.
 
 Systeme, die als FormularLauncher agieren können, sind unter anderem:
 
@@ -397,11 +397,11 @@ Systeme, die als FormularLauncher agieren können, sind unter anderem:
 
 ### **Definition**
 
-Das bestätigungsrelevante System **FormularDaten-Quelle** im Sinne des ISiK-Moduls "Formular" stellt einen FHIR-Server oder eine -Fassade dar, über deren Endpunkte Daten zur Vorbefüllung von Formularen bereitgestellt **und** extrahierte Daten aus ausgefüllten Formularen entgegengenommen werden.
+Das bestätigungsrelevante System "FormularDaten-Quelle" im Sinne des ISiK-Moduls "Formular" ist ein FHIR-Endpunkt, über den Daten zur Vorbefüllung von Formularen bereitgestellt und extrahierte Daten aus ausgefüllten Formularen entgegengenommen werden. Unter einer FormularDaten-Quelle wird in diesem Modul eine Software verstanden, die mindestens eine der folgenden Interaktionen implementiert: FormularDatenVorbelegung in der Rolle "Datenbereitsteller" oder FormularDatenRückübermittlung in der Rolle "Empfänger".
 
 ### **Geltungsbereich**
 
-Als **FormularDaten-Quelle** gelten in diesem Kontext alle Systeme, die ISiK-konform FHIR-Ressourcen bereitstellen oder empfangen – einschließlich aller Systeme, die als FHIR-fähiges Clinical Data Repository (CDR) eingesetzt werden.
+Als "FormularDaten-Quelle" gelten in diesem Kontext alle Systeme, die ISiK-konform FHIR-Ressourcen bereitstellen oder empfangen – einschließlich aller Systeme, die als FHIR-fähiges Clinical Data Repository (CDR) eingesetzt werden.
 
 Systeme, die als FormularDaten-Quelle agieren können, sind unter anderem:
 
@@ -413,25 +413,26 @@ Systeme, die als FormularDaten-Quelle agieren können, sind unter anderem:
 
 ### **Definition**
 
-Das bestätigungsrelevante System **FormularDefinitions-Ersteller** im Sinne des ISiK-Moduls "Formular" ist eine Software, mit der ISiK-konforme Questionnaire-Definitionen erstellt oder bearbeitet werden können.
+Das bestätigungsrelevante System "FormularDefinitions-Ersteller" im Sinne des ISiK-Moduls "Formular" ist eine Software, mit der ISiK-konforme Questionnaire-Instanzen (Formulare) erstellt oder bearbeitet werden können.
 
 ### **Geltungsbereich**
 
-Als **FormularDefinitions-Ersteller** gelten in diesem Kontext alle Systeme, die Questionnaire-Instanzen (Formulare) gemäß dem ISiK-Modul "Formular" erstellen können.
+Als "FormularDefinitions-Ersteller" gelten in diesem Kontext alle Systeme, die Questionnaire-Instanzen (Formulare) gemäß dem ISiK-Modul "Formular" erstellen können.
 
 Systeme, die als FormularDefinitions-Ersteller agieren können, sind unter anderem:
 
 - KIS bzw. entsprechendes KIS-Modul  
+- FHIR Questionnaire Editoren
 
 ## **Bestätigungsrelevantes System: FormularRenderer (inkl. aktuell: FormularDefinitions-Verwalter)**
 
 ### **Definition**
 
-Das bestätigungsrelevante System **FormularRenderer** im Sinne des ISiK-Moduls "Formular" ist eine Software, die eine Oberfläche zur Verfügung stellt, um Formulare auf Basis eines Questionnaire (konform zum ISiK-Modul "Formular") darzustellen, auszufüllen, zu bearbeiten und zu speichern.
+Das bestätigungsrelevante System "FormularRenderer" im Sinne des ISiK-Moduls "Formular" ist eine Software, die eine Oberfläche zur Verfügung stellt, um Formulare auf Basis eines ISiK-konformen Questionnaires darzustellen, auszufüllen, zu bearbeiten und zu speichern.
 
 ### **Geltungsbereich**
 
-Als **FormularRenderer** gelten in diesem Kontext alle Systeme, die Questionnaire-Definitionen gemäß dem ISiK-Modul "Formular" ausfüllbar darstellen können.
+Als "FormularRenderer" gelten in diesem Kontext alle Systeme, die Questionnaire-Definitionen gemäß dem ISiK-Modul "Formular" zur ausfüllbaren Darstellung bringen können.
 
 Systeme, die als FormularRenderer agieren können, sind unter anderem:
 
@@ -448,10 +449,10 @@ Die folgende Tabelle listet die Bestätigungsrelevanz in Bezug auf die zuvor def
 
 |**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|FormularLauncher|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein|
-|FormularDaten-Quelle|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein|
-|FormularDefinitions-Ersteller|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein| 
-|FormularRenderer (aktuell inkl. Akteur FormularDefinitions-Verwalter)|letztgültige Version des IGs Formular - <https://simplifier.net/guide/isik-formular-stufe-5>|nein| 
+|FormularLauncher|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularLauncher>|nein|
+|FormularDaten-Quelle|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDatenQuelle>|nein|
+|FormularDefinitions-Ersteller|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDefinitionsErsteller>|nein| 
+|FormularRenderer|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularRenderer>|nein| 
 
 # Festlegungen auf Profilebene im CapabilityStatement
 
