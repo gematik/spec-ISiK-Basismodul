@@ -77,9 +77,19 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # **Dokumentenaustausch**
 ## **System: Dokumenten-Server**
 ### **Definition**
-Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISIK von anderen Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur Abfrage und Weiternutzung zur Verfügung stellt.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Dokumenten-Server nimmt im Kontext der [Spezifikation IHE ITI Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html) die Rollen der [Document Recipient](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133113-document-recipient) und [Document Responder](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133114-document-responder) ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.0
+Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (
+potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISiK von anderen
+Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur
+Abfrage und Weiternutzung zur Verfügung stellt.
+
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
+Guides): Der Dokumenten-Server nimmt im Kontext
+der [Spezifikation IHE ITI Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)
+die Rollen
+der [Document Recipient](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133113-document-recipient)
+und [Document Responder](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133114-document-responder)
+ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.2
 
 - Simplified Publish [ITI-105] (verpflichtend)
 - Generate Metadata [ITI-106] (optional)
@@ -97,7 +107,11 @@ Dies betrifft u.a.:
 ### **Definition**
 Das System "Dokumenten-Client" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das Dokumente von einem Dokumenten-Server abfragt, um sie z.B. einem Anwender anzuzeigen. Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Dokumenten-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Dokumenten-Clients neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumenten-Server übermitteln. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten bereitstellen. Sowohl die Implementierung der Interaktion "Dokumentenabfrage" als auch "Dokumentenbereitstellung" sind für Dokumenten-Clients optional.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Der Dokumenten-Client nimmt agiert IHE-MHD-Kontext als System [Document Source](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133111-document-source) und [Document Consumer](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133112-document-consumer) ein und implementiert die IHE-MHD-Interaktionen
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
+Guides): Der Dokumenten-Client agiert im IHE-MHD-Kontext als
+System [Document Source](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133111-document-source)
+und [Document Consumer](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133112-document-consumer)
+ein und implementiert die IHE-MHD-Interaktionen
 
 - Simplified Publish [ITI-105] (optional)
 - Generate Metadata [ITI-106] (optional)
@@ -109,22 +123,25 @@ Als Dokumenten-Clients gelten in diesem Kontext alle Systeme, die strukturierte 
 Dies betrifft u.a.:
 
 - Anwendersysteme, die medizinischem Personal den bedarfsgerechten Zugang zu versorgungsrelevanten, andernorts gespeicherten Dokumenten ermöglichen
-- Telekonsil-System gemäß § 31a BMV-Ä die Dokumente von Dokumenten-Servern abfragen und zur Verwendung in Telekonsilien bereitstellen
+- Telekonsil-System gemäß § 31a BMV-Ä die Dokumente von Dokumenten-Servern abfragen und zur
+  Verwendung in Telekonsilen bereitstellen
 - KIM-Client-Anwendungssoftware, die Dokumente aus Anhängen an KIM-Nachrichten zur Speicherung an Dokumenten-Server übermitteln und/oder Dokumente von Dokumenten-Servern abfragen, um sie im Anhang an KIM-Nachrichten zu versenden
 ## **Bestätigungsrelevanz**
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|Dokumenten-Server| Dokumenten Server Akteur <https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|Dokumenten-Client|keine|nein|
+|    **System**     |                                                     **konkrete Anforderungen**                                                      | **bestätigungsrelevant** |
+|:-----------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
+| Dokumenten-Server | Dokumenten Server Akteur <https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements> |            ja            |
+| Dokumenten-Client |                                                                keine                                                                |           nein           |
 
 # **Vitalparameter und Körpermaße**
 ## **Bestätigungsrelevantes System: Vitalparameter-Server**
 ### **Definition**
 Das Bestätigungsrelevantes System "Vitalparameter-Server" im Sinne des ISiK-Moduls "Vitalparametern und Körpermaße" ist ein System, das versorgungsrelevante Daten für andere Applikationen (System: Vitalparameter-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISIK Implementation Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend analog zu IHE QEDm '*Clinical Data Source'* zu betrachten.
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
+Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend
+analog zu IHE QEDm '*Clinical Data Source'* zu betrachten.
 ### **Geltungsbereich**
 Als Vitalparameter-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
@@ -266,10 +283,11 @@ Systeme, die als Medikations-Server agieren können, sind u.a.:
 - KIS mit Funktion Medikationsdatenverwaltung bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche] (Anwendungsfallbeispiel: Medikationsdaten in das KIS übertragen bei Verlegung vom Intensivbereich auf Normal-Station)
 - Software für digitales Medikationsmanagement (z.B. für die Umsetzung von KHZG Fördertatbestand 5)
-- E-Therapieplan-System für Zytostatika-Behandlung mit Verarbeitung von Verordnungs- und Medikationsinformationen 
-  (gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)
+- E-Therapieplan-System für Zytostatika-Behandlung mit Verarbeitung von Verordnungs- und
+  Medikationsinformationen
+  (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts MedikationsVerabreichung notwendig)
 - Herstellungssystem mit Verarbeitung von Verordnungs- und Medikationsinformationen
-  (gemäß Festlegungen keine Umsetzung des ISIK-Datenobjekts MedikationsVerabreichung notwendig)
+  (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts MedikationsVerabreichung notwendig)
 
 ## **System: Medikations-Client**
 
