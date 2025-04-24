@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenMetadaten",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "5.0.0-rc",
+  "version": "5.0.0",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
@@ -373,13 +373,7 @@
       {
         "id": "DocumentReference.description",
         "path": "DocumentReference.description",
-        "comment": "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen.",
-        "mapping": [
-          {
-            "identity": "CompositionDocumentReferenceMapping",
-            "map": "Composition.title"
-          }
-        ]
+        "comment": "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen."
       },
       {
         "id": "DocumentReference.securityLabel",
@@ -461,7 +455,13 @@
         "short": "Bezeichnung des Dokuments",
         "comment": "Menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen, z.B. als Titel in einer Dokumentenliste ('Lungenfunktionstest vom 18.02.2022').\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.",
         "min": 1,
-        "mustSupport": true
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Composition.title"
+          }
+        ]
       },
       {
         "id": "DocumentReference.content.attachment.creation",
