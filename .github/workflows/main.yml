@@ -70,6 +70,15 @@ jobs:
           include: errors
       #          filters: "VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|"
 
+      - name: Upload validation artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: fhir-validation-results
+          path: |
+            validation.json
+            validation.html
+          retention-days: 1
+
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:
