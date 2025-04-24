@@ -16,7 +16,7 @@ Usage: #definition
 * rest.mode = #server
 
 * purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'Termin-Repository' zur Unterstützung des Termin-Workflows implementieren muss."
-* imports = Canonical(ISiKCapabilityStatementTerminologieRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementTerminologieRolle)
   * insert ExpectationImports(#SHALL)
-* imports = Canonical(ISiKCapabilityStatementStammdatenRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
