@@ -527,10 +527,6 @@ Die folgende Tabelle listet die Bestätigungsrelevanz in Bezug auf die zuvor def
 |FormularDefinitions-Ersteller|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDefinitionsErsteller>|nein| 
 |FormularRenderer|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularRenderer>|nein| 
 
-# Festlegungen auf Profilebene im CapabilityStatement
-
-Festlegungen zu Anforderungen auf Profilebene werden unter {{pagelink:guides\Implementierungsleitfaden-ISiK-Basismodul-401\Einfuehrung\Datenobjekte\CapabilityStatement.page.md}} geführt.
-
 # **Subscription**
 
 ## **Bestätigungsrelevantes System: Subscription-Server**
@@ -592,3 +588,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 |:-------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
 | Subscription-Server | Subscription Server Akteur https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Artefakte/CapabilityStatements> |            ja            |
 | Subscription-Client |                                                             keine                                                             |           nein           |
+
+# Festlegungen auf Profilebene im CapabilityStatement
+
+Die Anforderungen auf Profilebene sind den verlinkten CapabilityStatements zu entnehmen.
