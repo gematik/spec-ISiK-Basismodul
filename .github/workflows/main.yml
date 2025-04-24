@@ -63,14 +63,12 @@ jobs:
           SUSHI_OPTIONS: Resources/
           EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
 
-      - name: Debug, show first few bytes of validation.json
-        run: head -n 5 validation.json | sed 'l'
-
       - name: Convert Validation Report
         uses: patrick-werner/validation-outcome-markdown-renderer@0.1.4
         with:
           bundle-file: validation.json
           include: errors
+          filters: "VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|"
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
