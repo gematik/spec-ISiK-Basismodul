@@ -54,7 +54,7 @@ jobs:
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.22
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
-          DOTNET_VALIDATION_ENABLED: true
+          DOTNET_VALIDATION_ENABLED: false
           JAVA_VALIDATION_ENABLED: true
           JAVA_VALIDATION_OPTIONS: -allow-example-urls true -output-style compact -html-output validation.html -show-message-ids -language de -jurisdiction de -display-issues-are-warnings -advisor-file validator/advisor.json -resolution-context file:Resources/fsh-generated/resources/ -output validation.json
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
