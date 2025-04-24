@@ -224,41 +224,44 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 # **Terminplanung**
 ## **Bestätigungsrelevantes System: Termin-Repository**
 ### **Definition**
-Das bestätigungsrelevante System "Termin-Repository" im Sinne des ISiK-Moduls "Terminplanung" ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z.B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhält und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein terminführendes System zu verstehen.
+Das bestätigungsrelevante System "Termin-Repository" im Sinne des ISiK-Moduls "Terminplanung" ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z. B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhält und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein terminführendes System zu verstehen.
 
 ### **Geltungsbereich**
-Systeme, die als Termin-Repository agieren sind u.a.:
+Systeme, die als Termin-Repository agieren sind u. a.:
 
 - Patientenportal im Falle, dass das System selbst terminführend ist
-- terminführenden Systeme, z.B. KIS oder auch Klinische Arbeitsplatz-Systeme (KAS) inkl. Terminverwaltung
+- terminführenden Systeme, z. B. KIS oder auch Klinische Arbeitsplatz-Systeme (KAS) inkl. Terminverwaltung
 - PDMS, die Termine verwalten
 
-## **Bestätigungsrelevante System: Termin-Requestor (Termin-Source)**
+## **System: Termin-Requestor (Termin-Source)**
 ### **Definition**
-Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin-Source zu bezeichnen) werden alle Client-Systeme definiert, die mittels Schnittstellenanfrage zur Erhebung und Veränderung von Termininformationen dienen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe per FHIR R4 REST API nach ISiK, um einen Termin zu buchen. Das Termin-Requestor allein gilt *nicht* als autoritative Quelle zur Verwaltung von Termindaten., d.h. sofern der Termin-Requestor Termindaten von einem Termin-Repository synchronisiert und speichert/cached, sollten diese Termindaten nicht als solche verbindlich für einen mögliche Weiterverbreitung gelten, es muss vielmehr sichergestellt werden, dass die Daten mit denen des Quellsystems (Termin-Repository) übereinstimmen.
+Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin-Source zu bezeichnen) werden alle Client-Systeme definiert, die mittels Schnittstellenanfrage zur Erhebung und Veränderung von Termininformationen dienen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe per FHIR R4 REST API nach ISiK, um einen Termin zu buchen. Das Termin-Requestor allein gilt *nicht* als autoritative Quelle zur Verwaltung von Termindaten., d. h. sofern der Termin-Requestor Termindaten von einem Termin-Repository synchronisiert und speichert/cached, sollten diese Termindaten nicht als solche verbindlich für einen mögliche Weiterverbreitung gelten, es muss vielmehr sichergestellt werden, dass die Daten mit denen des Quellsystems (Termin-Repository) übereinstimmen.
+
 ### **Geltungsbereich**
-Systeme, die als Termin-Requestor agieren sind u.a.:
+Systeme, die als Termin-Requestor agieren sind u. a.:
 
 - Mobile Apps zur Verwaltung von Terminen
 - Patientenportal bei der Synchronisierung mit einem weiteren Termin-Repository
 - KIS / KAS bei der Synchronisierung mit einem weiteren Termin-Repository
-## **Termin-Consumer**
+
+## **System: Termin-Consumer**
 ### **Definition**
 Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.
 ### **Geltungsbereich**
-Systeme, die als Termin-Consumer agieren sind u.a.:
+Systeme, die als Termin-Consumer agieren sind u. a.:
 
 - Apps zum Anzeigen eines Kalenders
 - Systeme zum Versenden von Benachrichtigungen im Kontext eines Termins
 - Ressourcen-Managementsoftware
 ## **Bestätigungsrelevanz**
-Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Aktuere:
+Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:
 
 |    **System**     |                                     **konkrete Anforderungen**                                     | **bestätigungsrelevant** |
 |:-----------------:|:--------------------------------------------------------------------------------------------------:|:------------------------:|
 | Termin-Repository | https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements |            ja            |
 | Termin-Requestor  |                                               keine                                                |           nein           |
 |  Termin-Consumer  |                                               keine                                                |           nein           |
+
 # **Medikation**
 Das Modul "Medikation" unterscheidet die im Folgenden definierten Systeme.
 ## **Bestätigungsrelevantes System: Medikations-Server**
