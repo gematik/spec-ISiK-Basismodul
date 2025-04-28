@@ -35,19 +35,21 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
 * category MS
+  * ^short = "Dokument-Kategorie"
+  * ^comment = "Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden. " 
 * category.coding MS
-* category.coding ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
-* category.coding[LOINC].system 1..
-* category.coding[LOINC].system = "http://loinc.org" (exactly)
-* category.coding[LOINC].code 1..
-* category.coding[IHE].system 1..
-* category.coding[IHE].system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
-* category.coding[IHE].code 1..
+* category.coding[LOINC] ^patternCoding.system = $loinc
+  * system 1..
+  * code 1..
+* category.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+  * system 1..
+  * code 1..
 * subject 1.. MS
 * subject only Reference(Patient)
   * reference 1.. MS
