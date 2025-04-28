@@ -13,6 +13,12 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * status = #final (exactly)
 * status MS
 * type MS
+  * ^short = "Dokumenttyp"
+  * ^comment = "Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden."
+  * text 1.. MS
+    * ^short = "Dokumenttyp (Freitext)"
+    * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
 * type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -23,16 +29,13 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
     IHE 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
   * system 1..
-  * system = "http://loinc.org" (exactly)
   * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
-  * system = "http://dvmd.de/fhir/CodeSystem/kdl" (exactly)
   * code 1..
     * obeys kdl-1
 * type.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
   * system 1..
-  * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
 * category MS
   * ^short = "Dokument-Kategorie"
