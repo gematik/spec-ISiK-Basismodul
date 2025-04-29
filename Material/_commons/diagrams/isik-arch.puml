@@ -1,0 +1,65 @@
+@startuml
+left to right direction
+
+title ISiK Architektur – CDR als Reverse Proxy
+
+package "ISiK-bestätigungsrelevante Systeme" {
+
+     package "KIS und Module" {
+  [Krankenhausinformationssystem (KIS)] as KIS
+    [Termin-Repository (KIS-Modul)] as TerminKIS
+    } 
+
+  [Patientendatenmanagementsystem (PDMS)] as PDMS
+  [Dokumentenmanagementsystem (DMS)] as DMS
+  [Medikationssystem]
+
+}
+
+package "Zentrale Infrastruktur" {
+  [Clinical Data Repository (CDR)] as CDR
+  [Termin-Repository (Zentral)] as TerminRepoZentral
+}
+
+[Laborinformationssystem (LIS)] as LIS
+
+
+package "ISiK-Infrastruktur Systeme" {
+  [Subscription-Service]
+  [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
+  [Formularmanagementsystem]
+}
+
+package "Zentrale Infrastruktur" {
+  [Clinical Data Repository (CDR)] as CDR
+}
+
+package "Clients" {
+  [Mobile App]
+  [Web-Portal]
+  [Termin-Requestor]
+}
+
+' Schnittstellen zwischen CDR und externen Clients
+[Mobile App] --> [CDR] : FHIR API
+[Web-Portal] --> [CDR] : FHIR API
+[Termin-Requestor] --> [TerminRepoZentral] : FHIR API (Appointment)
+
+' Schnittstellen zwischen CDR und ISiK-Systemen
+[CDR] -- [KIS] : FHIR API (Patient, Encounter)
+[CDR] -- [PDMS] : FHIR API (Vitalparameter)
+[CDR] -- [DMS] : FHIR API (Dokumente)
+[Termin-Requestor] --> [CDR] : FHIR API Forwarding (Appointments)
+[CDR] -- [Termin-Repository-KIS] : FHIR API (Appointments)
+[CDR] -- [Medikationssystem] : FHIR API (Medikationsdaten)
+[CDR] -- [Autorisierungsserver] : FHIR API (Authorization) 
+[CDR] -- [Formularmanagementsystem] : FHIR API (Formulare)
+[CDR] -- [Subscription-Service] : FHIR API (Events)
+
+' Direkte Schnittstellen zwischen ISiK-Systemen
+[LIS] --> [KIS] : FHIR API (Laborbefunde)
+[Termin-Requestor] --> [TerminKIS] : FHIR API (Appointments)
+
+
+
+@enduml
