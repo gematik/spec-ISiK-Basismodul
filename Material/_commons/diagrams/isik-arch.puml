@@ -3,12 +3,17 @@ left to right direction
 
 title ISiK Architektur – CDR als Reverse Proxy
 
-package "ISiK-bestätigungsrelevante Systeme" {
+node "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
 
-     package "KIS und Module" {
-  [Krankenhausinformationssystem (KIS)] as KIS
+component KIS  {
+  component "Terminplanung" {
     [Termin-Repository (KIS-Modul)] as TerminKIS
+    portin iBookAppointments
     } 
+  ' component "PDMS-Modul" as PDMSKISMODUL
+  ' component "weiteres KIS-Modul" as KISMODUL
+
+  }
 
   [Patientendatenmanagementsystem (PDMS)] as PDMS
   [Dokumentenmanagementsystem (DMS)] as DMS
@@ -17,20 +22,23 @@ package "ISiK-bestätigungsrelevante Systeme" {
 
 }
 
+
 package "Zentrale Infrastruktur" {
   [Clinical Data Repository (CDR)] as CDR
 
-  interface iCentralizeFHIR
-  interface  iSubscribeToo
+  portin iCentralizeFHIR
+  portin iSubscribeToo
+  portin iBookAppointmentsToo
 
-  package "Nicht-normative ISiK-Infrastruktur" {
+  cloud "Nicht-normative ISiK-Infrastruktur" {
   
   [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
   [Formularmanagementsystem]
 
-  package "Subscription Management (nicht normativ)" {
-    interface  iSubscribe
+  component "Subscription Management (nicht normativ)" {
+    portin  iSubscribe
   }
+
 
   }
 }
@@ -41,18 +49,29 @@ package "Zentrale Infrastruktur" {
 
 
 
-package "Clients" {
+cloud "Clients" {
   [Mobile App]
   [Web-Portal]
   [Termin-Requestor]
+
 }
 
 ' Schnittstellen zwischen CDR und externen Clients
 iCentralizeFHIR - [CDR]  : provides
+iBookAppointmentsToo - [CDR] : provides
 [Mobile App] --( iCentralizeFHIR : uses
 [Web-Portal] --( iCentralizeFHIR : uses
 [Termin-Requestor] --( iCentralizeFHIR : "uses for $book Appointment"
+[Termin-Requestor] -( iBookAppointmentsToo : uses
 
+' Direkte Schnittstellen zwischen ISiK-Systemen
+[KIS] -- [PDMS] : FHIR API ICU
+[LIS] ..> [KIS] :  API Labordaten
+[LIS] ..> [PDMS] :  API Labordaten
+[LIS] ..> [Medikationssystem] :  API Labordaten
+
+' Direkte Schnittstellen zwischen externen Clients und ISiK-Systemen
+[Termin-Requestor] -( iBookAppointments : uses
 
 ' FHIR Schnittstellen zwischen CDR und ISiK-Systemen
 
@@ -63,13 +82,8 @@ iCentralizeFHIR - [CDR]  : provides
 [CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) 
 [CDR] -- [Formularmanagementsystem] : FHIR API (Formulare)
 
-' weitere Schnittstellen zwischen CDR und ISiK-Systemen
-[KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
-'etc. für alle Systeme, die HL7 v2 unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
 
-' Direkte Schnittstellen zwischen ISiK-Systemen
-[LIS] --> [KIS] : FHIR API (Laborbefunde)
-[Termin-Requestor] --> [TerminKIS] : FHIR API (Appointments)
+
 
 ' CDR Subscription Management zu subsystemen 
 [CDR] --( iSubscribe : uses 
@@ -82,7 +96,10 @@ iCentralizeFHIR - [CDR]  : provides
 iSubscribeToo -- [CDR] : provides 
 [Mobile App] -( iSubscribeToo : uses 
 [Web-Portal] -( iSubscribeToo : uses 
-[Termin-Requestor] -( iSubscribeToo : uses
+
+' weitere Schnittstellen zwischen CDR und ISiK-Systemen
+[KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
+'etc. für alle Systeme, die HL7 v2 unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
 
 
 
