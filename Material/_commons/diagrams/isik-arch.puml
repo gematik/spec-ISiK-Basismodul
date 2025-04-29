@@ -14,25 +14,33 @@ package "ISiK-bestätigungsrelevante Systeme" {
   [Dokumentenmanagementsystem (DMS)] as DMS
   [Medikationssystem]
 
+
 }
 
 package "Zentrale Infrastruktur" {
   [Clinical Data Repository (CDR)] as CDR
   [Termin-Repository (Zentral)] as TerminRepoZentral
+
+  interface iCentralizeFHIR
+  interface  iSubscribeToo
+
+  package "Nicht-normative ISiK-Infrastruktur" {
+  
+  [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
+  [Formularmanagementsystem]
+
+  package "Subscription Management (nicht normativ)" {
+    interface  iSubscribe
+  }
+
+  }
 }
+
+  
 
 [Laborinformationssystem (LIS)] as LIS
 
 
-package "ISiK-Infrastruktur Systeme" {
-  [Subscription-Service]
-  [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
-  [Formularmanagementsystem]
-}
-
-package "Zentrale Infrastruktur" {
-  [Clinical Data Repository (CDR)] as CDR
-}
 
 package "Clients" {
   [Mobile App]
@@ -41,24 +49,42 @@ package "Clients" {
 }
 
 ' Schnittstellen zwischen CDR und externen Clients
-[Mobile App] --> [CDR] : FHIR API
-[Web-Portal] --> [CDR] : FHIR API
-[Termin-Requestor] --> [TerminRepoZentral] : FHIR API (Appointment)
+iCentralizeFHIR - [CDR]  : provides
+[Mobile App] --( iCentralizeFHIR : uses
+[Web-Portal] --( iCentralizeFHIR : uses
+[Termin-Requestor] --( iCentralizeFHIR : "uses for $book Appointment"
 
-' Schnittstellen zwischen CDR und ISiK-Systemen
-[CDR] -- [KIS] : FHIR API (Patient, Encounter)
-[CDR] -- [PDMS] : FHIR API (Vitalparameter)
-[CDR] -- [DMS] : FHIR API (Dokumente)
-[Termin-Requestor] --> [CDR] : FHIR API Forwarding (Appointments)
-[CDR] -- [Termin-Repository-KIS] : FHIR API (Appointments)
-[CDR] -- [Medikationssystem] : FHIR API (Medikationsdaten)
-[CDR] -- [Autorisierungsserver] : FHIR API (Authorization) 
+
+' FHIR Schnittstellen zwischen CDR und ISiK-Systemen
+
+[CDR] -- [KIS] :  FHIR API (Patient, Encounter etc.) 
+[CDR] -- [PDMS] : Read-only FHIR API für generische Vitalparameter und ICU 
+[CDR] -- [DMS] : FHIR API (Dokumente))
+[CDR] -- [Medikationssystem] : CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
+[CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) 
 [CDR] -- [Formularmanagementsystem] : FHIR API (Formulare)
-[CDR] -- [Subscription-Service] : FHIR API (Events)
+
+' weitere Schnittstellen zwischen CDR und ISiK-Systemen
+[KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
+'etc. für alle Systeme, die HL7 v2 unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
 
 ' Direkte Schnittstellen zwischen ISiK-Systemen
 [LIS] --> [KIS] : FHIR API (Laborbefunde)
 [Termin-Requestor] --> [TerminKIS] : FHIR API (Appointments)
+
+' CDR Subscription Management zu subsystemen 
+[CDR] --( iSubscribe : uses 
+'iSubscribe - [KIS] : provides
+'iSubscribe - [PDMS] : provides
+'iSubscribe - [Medikationssystem] : provides
+' etc. für alle Systeme, die Subscription Management unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
+
+' Client-Subscription-Management
+iSubscribeToo -- [CDR] : provides 
+[Mobile App] -( iSubscribeToo : uses 
+[Web-Portal] -( iSubscribeToo : uses 
+[Termin-Requestor] -( iSubscribeToo : uses
+
 
 
 
