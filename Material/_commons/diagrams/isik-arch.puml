@@ -61,11 +61,11 @@ iCentralizeFHIR - [CDR]  : provides
 iBookAppointmentsToo - [CDR] : provides
 [Mobile App] --( iCentralizeFHIR : uses
 [Web-Portal] --( iCentralizeFHIR : uses
-[Termin-Requestor] --( iCentralizeFHIR : "uses for $book Appointment"
 [Termin-Requestor] -( iBookAppointmentsToo : uses
 
 ' Direkte Schnittstellen zwischen ISiK-Systemen
-[KIS] -- [PDMS] : FHIR API ICU
+[KIS] <--> [PDMS] : FHIR API ICU 
+' TODO lollipop notation for ICU in both directions
 [LIS] ..> [KIS] :  API Labordaten
 [LIS] ..> [PDMS] :  API Labordaten
 [LIS] ..> [Medikationssystem] :  API Labordaten
@@ -76,7 +76,7 @@ iBookAppointmentsToo - [CDR] : provides
 ' FHIR Schnittstellen zwischen CDR und ISiK-Systemen
 
 [CDR] -- [KIS] :  FHIR API (Patient, Encounter etc.) 
-[CDR] -- [PDMS] : Read-only FHIR API für generische Vitalparameter und ICU 
+[CDR] <-- [PDMS] : Read-only FHIR API für generische Vitalparameter und ICU 
 [CDR] -- [DMS] : FHIR API (Dokumente))
 [CDR] -- [Medikationssystem] : CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
 [CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) 
@@ -94,8 +94,9 @@ iBookAppointmentsToo - [CDR] : provides
 
 ' Client-Subscription-Management
 iSubscribeToo -- [CDR] : provides 
-[Mobile App] -( iSubscribeToo : uses 
-[Web-Portal] -( iSubscribeToo : uses 
+[Mobile App] -( iSubscribeToo : "(optional) uses" 
+[Web-Portal] -( iSubscribeToo : "(optional) uses"  
+[Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
 
 ' weitere Schnittstellen zwischen CDR und ISiK-Systemen
 [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
