@@ -1,7 +1,7 @@
 @startuml
-left to right direction
+'left to right direction
 
-title ISiK Architektur – CDR als Reverse Proxy
+title ISiK Zielarchitektur – CDR und API Gateway
 
 node "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
 
@@ -13,9 +13,26 @@ component KIS  {
   ' component "PDMS-Modul" as PDMSKISMODUL
   ' component "weiteres KIS-Modul" as KISMODUL
 
+  component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeStammdaten
+
+    ' etc. aus Übersichtlichkeit unterlassen
+    }
+
   }
 
-  [Patientendatenmanagementsystem (PDMS)] as PDMS
+' TODO subscription component für alle Ressourcen-Server
+' TODO FHIR Interface für alle Ressourcen-Server
+' TODO hl7v2 und weitere ent-gesteuerte Schnittstele beachten
+
+  component "Patientendatenmanagementsystem (PDMS)" as PDMS {
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionPDMS {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeVitalSigns
+    }
+  }
+
   [Dokumentenmanagementsystem (DMS)] as DMS
   [Medikationssystem]
 
@@ -23,8 +40,16 @@ component KIS  {
 }
 
 
-package "Zentrale Infrastruktur" {
-  [Clinical Data Repository (CDR)] as CDR
+package "Zentrale ISiK Infrastruktur" {
+  component "Clinical Data Repository (CDR)" as CDR {
+      component "Znetrales Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionCDR {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribe
+  }
+  portin iAggregateInternalFHIR
+  }
+
+  [API Gateway] as APIGateway
 
   portin iCentralizeFHIR
   portin iSubscribeToo
@@ -35,9 +60,7 @@ package "Zentrale Infrastruktur" {
   [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
   [Formularmanagementsystem]
 
-  component "Subscription Management (nicht normativ)" {
-    portin  iSubscribe
-  }
+
 
 
   }
@@ -56,50 +79,58 @@ cloud "Clients" {
 
 }
 
-' Schnittstellen zwischen CDR und externen Clients
-iCentralizeFHIR - [CDR]  : provides
-iBookAppointmentsToo - [CDR] : provides
+' Schnittstellen zwischen zentraler Infrastruktur und externen Clients
+iCentralizeFHIR - APIGateway  : provides
+iBookAppointmentsToo - APIGateway : provides
 [Mobile App] --( iCentralizeFHIR : uses
 [Web-Portal] --( iCentralizeFHIR : uses
 [Termin-Requestor] -( iBookAppointmentsToo : uses
+APIGateway --( iAggregateInternalFHIR : uses 
 
 ' Direkte Schnittstellen zwischen ISiK-Systemen
 [KIS] <--> [PDMS] : FHIR API ICU 
+' ggf. ist hier aufgrund der MARKTSITUATION die Integration zwischen PDMS und KIS nicht zielführend, sondern die Aggregation der Daten im CDR sinnvoller
+
 ' TODO lollipop notation for ICU in both directions
 [LIS] ..> [KIS] :  API Labordaten
 [LIS] ..> [PDMS] :  API Labordaten
 [LIS] ..> [Medikationssystem] :  API Labordaten
 
-' Direkte Schnittstellen zwischen externen Clients und ISiK-Systemen
-[Termin-Requestor] -( iBookAppointments : uses
 
-' FHIR Schnittstellen zwischen CDR und ISiK-Systemen
+' FHIR Schnittstellen zwischen zentraler Infrastruktur und ISiK-Systemen
+APIGateway -( iBookAppointments : uses
+
+' API Gateway fungiert hier als statisch konfigurierter Reverse Proxy für alle FHIR-Schnittstellen
+APIGateway --> [KIS] : Forwarding an FHIR API (Patient, Encounter etc.)
+APIGateway --> [PDMS] : Forwarding an  FHIR API (Blutdruck, Herzfrequenz etc.)
+APIGateway --> [DMS] : Forwarding an  FHIR API (Dokumente)
+APIGateway --> [Medikationssystem] : Forwarding an FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
+' TODO lollipop notation for FHIR in both directions
 
 [CDR] -- [KIS] :  FHIR API (Patient, Encounter etc.) 
 [CDR] <-- [PDMS] : Read-only FHIR API für generische Vitalparameter und ICU 
 [CDR] -- [DMS] : FHIR API (Dokumente))
 [CDR] -- [Medikationssystem] : CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
-[CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) 
+[CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) ???
+APIGateway -- [Autorisierungsserver] : SMART on FHIR API (Authorization)  ???
 [CDR] -- [Formularmanagementsystem] : FHIR API (Formulare)
 
 
-
-
-' CDR Subscription Management zu subsystemen 
-[CDR] --( iSubscribe : uses 
+' Zentrales Alerting und Notification Management (mittels Subscription) zu subsystemen 
+APIGateway --( iSubscribe : uses 
 'iSubscribe - [KIS] : provides
 'iSubscribe - [PDMS] : provides
 'iSubscribe - [Medikationssystem] : provides
 ' etc. für alle Systeme, die Subscription Management unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
 
 ' Client-Subscription-Management
-iSubscribeToo -- [CDR] : provides 
+iSubscribeToo -- APIGateway : provides 
 [Mobile App] -( iSubscribeToo : "(optional) uses" 
 [Web-Portal] -( iSubscribeToo : "(optional) uses"  
 [Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
 
 ' weitere Schnittstellen zwischen CDR und ISiK-Systemen
-[KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
+' so etwas sollte hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
 'etc. für alle Systeme, die HL7 v2 unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
 
 
