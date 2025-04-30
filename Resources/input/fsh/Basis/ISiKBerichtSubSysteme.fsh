@@ -104,7 +104,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * code 1..
 * category MS
   * ^short = "Dokument-Kategorie"
-  * ^comment = "Begründung zu Must Support: Die Klassifizierung kann Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden." 
+  * ^comment = "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden." 
 * category.coding MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
