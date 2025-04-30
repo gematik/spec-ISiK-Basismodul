@@ -40,7 +40,7 @@ Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Sc
 
 ### HTTP Basic Authentication:
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistierungClient.md, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.
+Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistrierungClient.md, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 
