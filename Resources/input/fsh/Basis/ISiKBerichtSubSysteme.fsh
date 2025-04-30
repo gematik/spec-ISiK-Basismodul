@@ -104,21 +104,19 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * code 1..
 * category MS
   * ^short = "Dokument-Kategorie"
-  * ^comment = "Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden. " 
+  * ^comment = "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden." 
 * category.coding MS
-* category.coding ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "system"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
-* category.coding[LOINC]
+* category.coding[LOINC] ^patternCoding.system = $loinc
   * system 1..
-  * system = $loinc
   * code 1..
-* category.coding[IHE]
+* category.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
   * system 1..
-  * system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
   * code 1..
 * subject 1.. MS
   * ^short = "Patientenbezug"
