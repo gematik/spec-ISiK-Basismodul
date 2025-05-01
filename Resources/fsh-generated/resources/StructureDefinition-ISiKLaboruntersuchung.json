@@ -56,24 +56,28 @@
           ],
           "rules": "open"
         },
+        "short": "Kodierung des Laborparameters",
         "min": 2,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.system",
         "path": "Observation.code.coding.system",
+        "short": "System, aus dem der Code für den Laborparameter stammt (z. B. LOINC)",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
+        "short": "Code des Laborparameters entsprechend dem verwendeten System",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.display",
         "path": "Observation.code.coding.display",
+        "short": "Anzeige-/Bezeichnungstext für den Laborparameter-Code",
         "mustSupport": true
       },
       {
@@ -100,6 +104,7 @@
       {
         "id": "Observation.code.text",
         "path": "Observation.code.text",
+        "short": "Freitextbeschreibung des Laborparameters",
         "mustSupport": true
       },
       {
@@ -170,6 +175,7 @@
         "id": "Observation.value[x]:valueQuantity",
         "path": "Observation.value[x]",
         "sliceName": "valueQuantity",
+        "short": "Messwert in quantitativer Form",
         "min": 0,
         "max": "1",
         "type": [
@@ -182,17 +188,20 @@
       {
         "id": "Observation.value[x]:valueQuantity.value",
         "path": "Observation.value[x].value",
+        "short": "Der numerische Messwert",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity.unit",
         "path": "Observation.value[x].unit",
+        "short": "Einheit des Messwertes (z. B. mg/dL)",
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity.system",
         "path": "Observation.value[x].system",
+        "short": "Kodiersystem für die Einheit (UCUM)",
         "min": 1,
         "patternUri": "http://unitsofmeasure.org",
         "mustSupport": true
@@ -200,32 +209,38 @@
       {
         "id": "Observation.value[x]:valueQuantity.code",
         "path": "Observation.value[x].code",
+        "short": "UCUM-Code der Einheit",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
+        "short": "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt",
         "mustSupport": true
       },
       {
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
+        "short": "Interpretation oder Bewertung des Messergebnisses (z. B. „hoch“, „niedrig“, „normal“)",
         "mustSupport": true
       },
       {
         "id": "Observation.note",
         "path": "Observation.note",
+        "short": "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)",
         "mustSupport": true
       },
       {
         "id": "Observation.method",
         "path": "Observation.method",
+        "short": "Verwendete Methode oder Technik zur Durchführung der Untersuchung",
         "mustSupport": true
       },
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
+        "short": "Referenz auf die entnommene Probe",
         "mustSupport": true
       },
       {
@@ -253,16 +268,19 @@
       {
         "id": "Observation.device",
         "path": "Observation.device",
+        "short": "Verwendetes Gerät oder Instrument zur Durchführung der Untersuchung",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange",
         "path": "Observation.referenceRange",
+        "short": "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange.low",
         "path": "Observation.referenceRange.low",
+        "short": "Untergrenze des Referenzbereichs",
         "mustSupport": true
       },
       {
@@ -292,6 +310,7 @@
       {
         "id": "Observation.referenceRange.high",
         "path": "Observation.referenceRange.high",
+        "short": "Obergrenze des Referenzbereichs",
         "mustSupport": true
       },
       {
@@ -321,6 +340,7 @@
       {
         "id": "Observation.referenceRange.type",
         "path": "Observation.referenceRange.type",
+        "short": "Art des Referenzbereichs (z. B. normal, kritisch)",
         "mustSupport": true
       },
       {
@@ -353,11 +373,13 @@
       {
         "id": "Observation.referenceRange.appliesTo",
         "path": "Observation.referenceRange.appliesTo",
+        "short": "Für wen der Referenzbereich gilt (z. B. Geschlecht, Alter)",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange.appliesTo.coding",
         "path": "Observation.referenceRange.appliesTo.coding",
+        "short": "Kodierte Angabe zur Zielgruppe",
         "mustSupport": true
       },
       {
@@ -385,6 +407,7 @@
       {
         "id": "Observation.referenceRange.age",
         "path": "Observation.referenceRange.age",
+        "short": "Altersbereich, für den der Referenzbereich gilt",
         "mustSupport": true
       },
       {
@@ -400,6 +423,7 @@
       {
         "id": "Observation.referenceRange.text",
         "path": "Observation.referenceRange.text",
+        "short": "Freitextbeschreibung des Referenzbereichs",
         "mustSupport": true
       }
     ]
