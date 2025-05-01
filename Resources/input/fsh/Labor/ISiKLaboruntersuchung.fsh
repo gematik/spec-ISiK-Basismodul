@@ -21,10 +21,15 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding 1.. MS
+    * ^short = "Kodierung des Laborparameters"
     * system 1.. MS
+      * ^short = "System, aus dem der Code für den Laborparameter stammt (z. B. LOINC)"
     * code 1.. MS
+      * ^short = "Code des Laborparameters entsprechend dem verwendeten System"
     * display MS
+      * ^short = "Anzeige-/Bezeichnungstext für den Laborparameter-Code"
   * text MS
+    * ^short = "Freitextbeschreibung des Laborparameters"
   * coding contains loinc 1.. MS and snomed 1..1
   * coding[loinc] ^patternCoding.system = $loinc
   * coding[snomed] ^patternCoding.system = $sct
@@ -40,47 +45,66 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * value[x] MS
   * ^short = "Festgestellter (Mess)Wert für den Laborparameter"
 * valueQuantity MS
+  * ^short = "Messwert in quantitativer Form"
   * value 1.. MS
+    * ^short = "Der numerische Messwert"
   * unit MS
+    * ^short = "Einheit des Messwertes (z. B. mg/dL)"
   * system 1.. MS
+    * ^short = "Kodiersystem für die Einheit (UCUM)"
   * system = $cs-ucum
   * code 1.. MS
+    * ^short = "UCUM-Code der Einheit"
 * dataAbsentReason MS
+  * ^short = "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt"
 * interpretation MS
+  * ^short = "Interpretation oder Bewertung des Messergebnisses (z. B. „hoch“, „niedrig“, „normal“)"
 * note MS
+  * ^short = "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)"
 * method MS
+  * ^short = "Verwendete Methode oder Technik zur Durchführung der Untersuchung"
 * specimen MS
+  * ^short = "Referenz auf die entnommene Probe"
   * reference MS
   * identifier MS
     * system 1.. MS
     * value 1.. MS
 * device MS
+  * ^short = "Verwendetes Gerät oder Instrument zur Durchführung der Untersuchung"
 * referenceRange MS
+  * ^short = "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)"
   * low MS
+    * ^short = "Untergrenze des Referenzbereichs"
     * value 1.. MS
     * unit MS
     * system 1.. MS
     * system = $cs-ucum
     * code 1.. MS
   * high MS
+    * ^short = "Obergrenze des Referenzbereichs"
     * value 1.. MS
     * unit MS
     * system 1.. MS
     * system = $cs-ucum
     * code 1.. MS
   * type MS
+    * ^short = "Art des Referenzbereichs (z. B. normal, kritisch)"
     * coding MS
       * system 1.. MS
       * code 1.. MS
       * display MS
     * text MS
   * appliesTo MS
+    * ^short = "Für wen der Referenzbereich gilt (z. B. Geschlecht, Alter)"
     * coding MS
+      * ^short = "Kodierte Angabe zur Zielgruppe"
       * system 1.. MS
       * code 1.. MS
       * display MS
     * text MS
   * age MS
+    * ^short = "Altersbereich, für den der Referenzbereich gilt"
     * low MS
     * high MS
   * text MS
+    * ^short = "Freitextbeschreibung des Referenzbereichs"
