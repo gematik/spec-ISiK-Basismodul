@@ -11,11 +11,18 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * insert Meta
 * status MS
   * ^short = "Status der Laboruntersuchung"
+  * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  
+  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, 
+  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `final` und `unknown`.
+  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, 
+  beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Untersuchungen, die noch nicht stattgefunden haben, o.ä."
 * category 1.. MS
   * ^short = "Kategorie der Laboruntersuchung"
+  * ^comment = "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z. B. LOINC-Kategorie „laboratory“) zu befüllen."
 * category = $cs-observation-category#laboratory 
 * code MS
-  * ^short = "Gegenstand der Untersuchung (Laborparameter)"  
+  * ^short = "Gegenstand der Untersuchung (Laborparameter)"
+  * ^comment = "**Begründung MS**: Der Code identifiziert, was gemessen wurde, und ist damit das zentrale Element der Observation. Ohne code ist kein klinischer Kontext herstellbar."  
   * coding
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
@@ -35,17 +42,29 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding[snomed] ^patternCoding.system = $sct
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
+  * ^comment = "**Begründung MS**: Die Verknüpfung zur Patientin oder zum Patienten ist zwingend notwendig für jegliche klinische Verwertbarkeit."
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
+  * ^comment = "**Begründung MS**: Dient der Einordnung in den klinischen Verlauf und ermöglicht Kontextinformationen wie Aufnahmediagnose oder behandelnde Abteilung."
 * effective[x] MS
   * ^short = "Zeitpunkt der Untersuchung"
+  * ^comment = "**Begründung Must Support**:
+Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:
+
+* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),
+* Verlaufsauswertungen und Trendanalysen,
+* zeitlich abhängige Entscheidungsunterstützung,
+* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts."
 * effectiveDateTime MS
 * issued MS
   * ^short = "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses"
+  * ^comment = "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte."
 * value[x] MS
   * ^short = "Festgestellter (Mess)Wert für den Laborparameter"
+  * ^comment = "**Begründung MS**: Der gemessene Wert stellt die zentrale Aussage der Observation dar. Ohne value besitzt die Observation keine medizinische Relevanz."
 * valueQuantity MS
   * ^short = "Messwert in quantitativer Form"
+  * ^comment = "**Begründung MS**: Standardisierte, codierte Einheiten sind für Vergleichbarkeit, Umrechnung und automatische Plausibilisierung erforderlich."
   * value 1.. MS
     * ^short = "Der numerische Messwert"
   * unit MS
@@ -57,22 +76,31 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
     * ^short = "UCUM-Code der Einheit"
 * dataAbsentReason MS
   * ^short = "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt"
+  * ^comment = "**Begründung Must Support**:
+Nicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlich ein Ergebnis. In solchen Fällen ist es wichtig, nicht nur auf das Fehlen eines Wertes zu reagieren, sondern den Grund strukturiert anzugeben. dataAbsentReason ermöglicht diese präzise Aussage und verhindert Fehlinterpretationen"
 * interpretation MS
-  * ^short = "Interpretation oder Bewertung des Messergebnisses (z. B. „hoch“, „niedrig“, „normal“)"
+  * ^short = "Interpretation oder Bewertung des Messergebnisses (z.B. „hoch“, „niedrig“, „normal“)"
+  * ^comment = "Begründung MS: Unterstützt die klinische Interpretation, insbesondere bei komplexen Parametern und automatisierten Auswertungen."
 * note MS
   * ^short = "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)"
+  * ^comment = "**Begründung MS**: Dient zur Dokumentation abweichender Umstände, Freitextbefundung oder ergänzender Laborkommentare."
 * method MS
   * ^short = "Verwendete Methode oder Technik zur Durchführung der Untersuchung"
+  * ^comment = "**Begründung MS**: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist für Transparenz und Vergleichbarkeit entscheidend."
 * specimen MS
   * ^short = "Referenz auf die entnommene Probe"
+  * ^comment = "**Begründung MS**: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend."
   * reference MS
   * identifier MS
     * system 1.. MS
     * value 1.. MS
 * device MS
   * ^short = "Verwendetes Gerät oder Instrument zur Durchführung der Untersuchung"
+  * ^comment = "**Begründung Must Support**:
+Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf die Genauigkeit, Validität und Vergleichbarkeit von Untersuchungsergebnissen haben."
 * referenceRange MS
   * ^short = "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)"
+  * ^comment = "**Begründung MS**: Referenzbereiche erlauben die sofortige klinische Bewertung eines Wertes"
   * low MS
     * ^short = "Untergrenze des Referenzbereichs"
     * value 1.. MS
