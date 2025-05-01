@@ -1,11 +1,7 @@
 
-# ISiK Sicherheit und SMART on FHIR
+# ISiK Connect und SMART on FHIR
 
----
-### Informativ
----
-
-ISiK-Sicherheit setzt auf dem HL7-Standard _SMART on FHIR_ auf, der u. a. das Zusammenspiel der Standards FHIR und OAuth2 für die Weitergabe von Zugriffskontexten zum sicheren Zugriff auf FHIR-Ressourcen beschreibt. Wie in der {{pagelink:ImplementationGuide/markdown/Motivation.md, text: Motivation }} beschrieben, umfassen die normativen Vorgaben von ISiK-Sicherheit jedoch nur eine Untermenge des SMART-on-FHIR-API. 
+ISiK-Connect setzt auf dem HL7-Standard _SMART on FHIR_ auf, der u. a. das Zusammenspiel der Standards FHIR und OAuth2 für die Weitergabe von Zugriffskontexten zum sicheren Zugriff auf FHIR-Ressourcen beschreibt. Wie in der {{pagelink:ImplementationGuide/markdown/Motivation.md, text: Motivation }} beschrieben, umfassen die normativen Vorgaben von ISiK-Connect jedoch nur eine Untermenge des SMART-on-FHIR-API. 
 
 Ergänzend zu den normativen Abschnitten {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text:ISiK-Sicherheit: Autorisierung}} und {{pagelink:ImplementationGuide/markdown/Conformance.md, text: ISiK-Konformität }} wird in diesem und den untergeordneten Abschnittem skizziert, wie eine vollständige Umsetzung des SMART-on-FHIR-Standards im Kontext von ISiK aussehen kann. **Dieser Abschnitt ist informativ, d. h. in ISiK Stufe 5 nicht Gegenstand des Konformitätsfeststellungsverfahrens.**
 
