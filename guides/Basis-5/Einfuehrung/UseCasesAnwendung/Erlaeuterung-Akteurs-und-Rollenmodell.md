@@ -24,7 +24,7 @@ Die Zusammenstellung erfolgt zielgerichtet: Akteure aggregieren Rollen, indem si
 
 Dieses Modell ermöglicht eine **strukturierte, modulare und nachvollziehbare Definition** von Systemfähigkeiten. Es fördert die **Wiederverwendbarkeit** normativer Vorgaben, **vermeidet Duplikate** in den CapabilityStatements und unterstützt die klare **Zuordnung von Funktionalitäten zu konkreten Systemen**.
 
-## Beispielhafte Darstellung unserer definierten rollen und Akteure
+## Beispielhafte Darstellung unserer definierten Rollen und Akteure
 
 Zur Verdeutlichung der Abhängigkeiten zwischen Rollen und Akteuren steht das unten dargestellte Diagramm zur Verfügung. Es handelt sich um einen Ausschnitt der Akteure und Rollen aus den Modulen Vitalparameter-, Basis- und Medikationsmodul und stellt diese graphisch dar: 
 
