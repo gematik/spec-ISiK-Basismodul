@@ -4,20 +4,31 @@ left to right direction
 
 package "Vitalparameter Modul" {
   node "ISiK Vital Sign Standard Source Akteur" as el_1
-  component "ISiK Labor Minimal Rolle" as el_2
+  
   component "ISiK VitalSign  Standard Source Rolle" as el_3
 }
+
+package "Supportmodul Labor" {
+  component "ISiK Labor Minimal Rolle" as el_2
+  }
+
 package "Basismodul" {
   node "ISiK Basis Server Akteur" as el_4
   component "ISiK Aufbaustruktur-Rolle" as el_5
   component "ISiK Composition Konsumenten Rolle" as el_6
   component "ISiK Erweiterte Stammdaten Rolle" as el_7
-  component "IsiK Klinische Rolle" as el_8
-  component "ISiK Gesundheitsstatus Rolle" as el_9
-  component "IsiK Leistungserbringer Rolle" as el_10
-  component "IsiK Stammdaten Rolle" as el_11
+
+
+
+  
   component "IsiK Terminologie Rolle" as el_12
   component "IsiK Versicherungsverhältnis Rolle" as el_13
+  cloud "Geteilte Basis Rollen" {
+    component "IsiK Klinische Rolle" as el_8
+    component "ISiK Gesundheitsstatus Rolle" as el_9
+    component "IsiK Stammdaten Rolle" as el_11
+    component "IsiK Leistungserbringer Rolle" as el_10
+  }
 }
 package "Medikationsmodul" {
   node "ISiK Medikationsverordnungs Akteur" as el_14
