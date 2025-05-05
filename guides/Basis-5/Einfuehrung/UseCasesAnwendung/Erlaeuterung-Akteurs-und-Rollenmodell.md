@@ -16,7 +16,7 @@ Das trägt zu einer sauberen Trennung von Verantwortlichkeiten bei und unterstü
 
 ## Akteure: Zusammensetzung für konkrete Anwendungsfälle
 
-**Akteure** stellen **konkrete Systemrollen** oder Systeme dar, die für bestimmte **Use-Cases** relevante Funktionalitäten bereitstellen. Ein Akteur ist dabei eine **Gruppe von Rollen**, die zusammen die Anforderungen eines bestimmten Anwendungskontexts abdecken.
+**Akteure** stellen System-Typen dar, die für bestimmte **Use-Cases** relevante Funktionalitäten bereitstellen und bündeln. Ein Akteur ist dabei eine **Bündelung von Rollen**, wobei die Rollen zusammen die Anforderungen eines bestimmten Anwendungskontexts abdecken.
 
 Die Zusammenstellung erfolgt zielgerichtet: Akteure „implementieren“ Rollen, indem sie in seinem CapabilityStatement **importiert** (bzw. referenziert) werden. Diese `CapabilityStatement.import`-Elemente geben an, welche Rollen ein Akteur erfüllen muss.
 
