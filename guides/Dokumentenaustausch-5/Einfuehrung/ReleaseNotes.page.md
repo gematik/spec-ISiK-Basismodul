@@ -9,6 +9,14 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Version 5.0.0-rc1 (Post-Kommentierung)
+
+Datum: tbd.
+
+* `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
+  erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
+  nicht benötigt werden
+
 
 ## Version 5.0.0-rc (Kommentierung)
 
@@ -19,7 +27,7 @@ Datum: 09.04.2025
 * `added`: Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
 * `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582
     * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen
-* `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für diese Modul nicht benötigt werden
+
 * `fixed`: Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
 https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F
