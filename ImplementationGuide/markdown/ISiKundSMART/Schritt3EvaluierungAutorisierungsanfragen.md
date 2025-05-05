@@ -1,9 +1,5 @@
 # Schritt 3: EHR evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer
 
----
-### Informativ
----
-
 Um die Entscheidung zu treffen, ob eine Autorisierungsanfrage eines Clients zu akzeptieren oder abzulehnen ist, kann der Autorisierungsserver eine Authentifizierung der Benutzer verlangen.
 Sowohl die Smart App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden, legen keine Vorgaben diesbezüglich fest. Es ist darauf zu achten, dass bei einer fehlgeschlagenen Authentifizierung dem Endnutzer ein eindeutiger Fehlerhinweis angezeigt wird. Ein Redirect zum Client mit einem entsprechenden Fehlercode ist optional. 
 
