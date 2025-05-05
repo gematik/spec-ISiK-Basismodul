@@ -18,7 +18,7 @@ Das trägt zu einer sauberen Trennung von Verantwortlichkeiten bei und unterstü
 
 **Akteure** stellen System-Typen dar, die für bestimmte **Use-Cases** relevante Funktionalitäten bereitstellen und bündeln. Ein Akteur ist dabei eine **Bündelung von Rollen**, wobei die Rollen zusammen die Anforderungen eines bestimmten Anwendungskontexts abdecken.
 
-Die Zusammenstellung erfolgt zielgerichtet: Akteure „implementieren“ Rollen, indem sie in seinem CapabilityStatement **importiert** (bzw. referenziert) werden. Diese `CapabilityStatement.import`-Elemente geben an, welche Rollen ein Akteur erfüllen muss.
+Die Zusammenstellung erfolgt zielgerichtet: Akteure aggregieren Rollen, indem sie in seinem CapabilityStatement **importiert** (bzw. referenziert) werden. Diese `CapabilityStatement.import`-Elemente geben an, welche Rollen ein Akteur erfüllen muss.
 
 ## Zielsetzung des Modells
 
