@@ -28,6 +28,7 @@ on:
 
 permissions:
   actions: write
+  contents: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,7 +51,7 @@ jobs:
         if: github.event_name != 'pull_request'
 
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.6.19
+        uses: FirelyTeam/firely-terminal-pipeline@v0.6.22
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: true
