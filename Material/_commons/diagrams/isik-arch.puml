@@ -33,6 +33,7 @@ component KIS  {
     }
   portin iProvideDocuments
   }
+  note right of DMS : Frage: Sollen Update Operationen (z.B. \n  für Dokumente) über Weiterleitung und das CDR erfolgen?
 
   component "Medikationssystem" as Medikationssystem {
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionMedikationssystem {
@@ -43,6 +44,7 @@ component KIS  {
 }
 note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboprationen (CREATE) vorgesehen. \n  Frage: Sollen diese Operationen über Weiterleitung und das CDR erfolgen?
 
+note right of TerminKIS : Frage: WIe sollen die Terminbuchungen \n bzw. relevante Daten im CDR aggregiert werden?
 
 }
 
@@ -83,7 +85,7 @@ package "Zentrale ISiK Infrastruktur" {
   
 
 [Laborinformationssystem (LIS)] as LIS
-
+note right of LIS : Frage: Sollen die LIS-Daten \n  über das CDR aggregiert werden?
 
 
 cloud "Clients" {
@@ -99,10 +101,13 @@ iBookAppointmentsToo - APIGateway : provides
 [Mobile App] --( iCentralizeFHIR : uses
 [Web-Portal] --( iCentralizeFHIR : uses
 [Termin-Requestor] -( iBookAppointmentsToo : uses
+
 APIGateway --( iAggregateInternalFHIR : uses 
 
 ' Direkte Schnittstellen zwischen ISiK-Systemen
-[KIS] <--> [PDMS] : FHIR API ICU 
+KIS --( iProvideVitalSigns : FHIR API ICU 
+PDMS --( iProvideBasicData : FHIR API generische Vitalparameter für ICU
+note right of PDMS : Frage: weiterhin direkte Zugriffe zwischen PDMS und KIS empfehlen?
 ' ggf. ist hier aufgrund der MARKTSITUATION die Integration zwischen PDMS und KIS nicht zielführend, sondern die Aggregation der Daten im CDR sinnvoller
 
 ' TODO lollipop notation for ICU in both directions
