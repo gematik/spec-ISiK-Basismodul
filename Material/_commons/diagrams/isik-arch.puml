@@ -1,9 +1,9 @@
 @startuml
-'left to right direction
+left to right direction
 
 title ISiK Zielarchitektur – CDR und API Gateway
 
-node "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
+cloud "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
 
 component KIS  {
   component "Terminplanung" {
@@ -12,52 +12,59 @@ component KIS  {
     } 
   ' component "PDMS-Modul" as PDMSKISMODUL
   ' component "weiteres KIS-Modul" as KISMODUL
-
   component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribeStammdaten
-
-    ' etc. aus Übersichtlichkeit unterlassen
     }
-
+  portin iProvideBasicData
   }
-
-' TODO subscription component für alle Ressourcen-Server
-' TODO FHIR Interface für alle Ressourcen-Server
-' TODO hl7v2 und weitere ent-gesteuerte Schnittstele beachten
 
   component "Patientendatenmanagementsystem (PDMS)" as PDMS {
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionPDMS {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribeVitalSigns
     }
+    portin iProvideVitalSigns
   }
 
-  [Dokumentenmanagementsystem (DMS)] as DMS
-  [Medikationssystem]
+  component "Dokumentenmanagementsystem (DMS)" as DMS {
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionDMS {
+    portin  iSubscribeDocuments
+    }
+  portin iProvideDocuments
+  }
+
+  component "Medikationssystem" as Medikationssystem {
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionMedikationssystem {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeMedication
+    }
+    portin iProvideMedication
+}
+note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboprationen (CREATE) vorgesehen. \n  Frage: Sollen diese Operationen über Weiterleitung und das CDR erfolgen?
 
 
 }
 
 
 package "Zentrale ISiK Infrastruktur" {
-
-  
     component "Clinical Data Repository (CDR)" as CDR {
-      component "Znetrales Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionCDR {
+      component "Zentrales Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionCDR {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribe
   }
   portin iAggregateInternalFHIR
   }
 
+  note right of CDR : Das CDR ist ein Aggregator und stellt zentralisiert die Daten aus den Subsystemen über eine \n  FHIR-Schnittstellen für Clients bereit. \n  Es ist kein Automatismus , dass die Subsysteme direkt auf das CDR zugreifen.
+
   [API Gateway] as APIGateway
   ' erlaubt lose Kopplung der Clients und der KH-(Sub-)Systeme
+  note right of APIGateway : Für jeden Client, der angeschlossen wird, \n  muss von Seiten von IT-Verantwortlichen für das Krankenhaus eine Entscheidung zum Routing der FHIR Anfragen und Operationen sowie eine entsprechende Konfiguration des API Gateways erfolgen.
 
   ' cloud "Orchestration Layer" {  }
   ' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
   
-
   portin iCentralizeFHIR
   portin iSubscribeToo
   portin iBookAppointmentsToo
@@ -105,30 +112,39 @@ APIGateway --( iAggregateInternalFHIR : uses
 
 
 ' FHIR Schnittstellen zwischen zentraler Infrastruktur und ISiK-Systemen
+
+' alle Standardabfragen werden über den API Gateway geroutet an das CDR, das Subsysteme aggregiert
+CDR --( iProvideBasicData : uses FHIR API (Patient, Encounter etc.) 
+CDR --( iProvideVitalSigns : uses - Read-only FHIR API für generische Vitalparameter und ICU 
+CDR --( iProvideDocuments : uses - FHIR API (Dokumente))
+CDR --( iProvideMedication : uses - CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Information)
+CDR -- [Autorisierungsserver] : SMART on FHIR API (Authorization) ???
+APIGateway -- [Autorisierungsserver] : SMART on FHIR API (Authorization)  ???
+CDR -- [Formularmanagementsystem] : FHIR API (Formulare)
+
+' Die Terminplanung wird direkt weitergeleitet an das die dedizierte Terminplanungsschnittstelle (ggf. des KIS)
 APIGateway -( iBookAppointments : uses
+APIGateway --( iProvideMedication :  uses ???
+
+
 
 ' API Gateway fungiert hier als statisch konfigurierter Reverse Proxy für alle FHIR-Schnittstellen
-APIGateway --> [KIS] : Forwarding an FHIR API (Patient, Encounter etc.)
-APIGateway --> [PDMS] : Forwarding an  FHIR API (Blutdruck, Herzfrequenz etc.)
-APIGateway --> [DMS] : Forwarding an  FHIR API (Dokumente)
-APIGateway --> [Medikationssystem] : Forwarding an FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
-' TODO lollipop notation for FHIR in both directions
-
-[CDR] -- [KIS] :  FHIR API (Patient, Encounter etc.) 
-[CDR] <-- [PDMS] : Read-only FHIR API für generische Vitalparameter und ICU 
-[CDR] -- [DMS] : FHIR API (Dokumente))
-[CDR] -- [Medikationssystem] : CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation)
-[CDR] -- [Autorisierungsserver] : SMART on FHIR API (Authorization) ???
-APIGateway -- [Autorisierungsserver] : SMART on FHIR API (Authorization)  ???
-[CDR] -- [Formularmanagementsystem] : FHIR API (Formulare)
+' APIGateway --> [KIS] : Forwarding an FHIR API (Patient, Encounter etc.) ' auskommentiert da nicht beste Option
+' APIGateway --> [PDMS] : Forwarding an  FHIR API (Blutdruck, Herzfrequenz etc.) ' auskommentiert da nicht beste Option
+' APIGateway --> [DMS] : Forwarding an  FHIR API (Dokumente) ' auskommentiert da nicht beste Option ' auskommentiert da nicht beste Option
+' APIGateway --> [Medikationssystem] : Forwarding an FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation) ' auskommentiert da nicht beste Option
 
 
-' Zentrales Alerting und Notification Management (mittels Subscription) zu subsystemen 
+
+' Zentralisiertes Alerting und Notification Management (mittels Subscription) zu subsystemen 
 APIGateway --( iSubscribe : uses 
-'iSubscribe - [KIS] : provides
-'iSubscribe - [PDMS] : provides
-'iSubscribe - [Medikationssystem] : provides
-' etc. für alle Systeme, die Subscription Management unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
+
+' Eng gekoppeltes Alerting und Notification Management (mittels Subscription) zu subsystemen 
+CDR --( iSubscribeStammdaten : uses
+CDR --( iSubscribeVitalSigns : uses
+CDR --( iSubscribeDocuments : uses
+CDR --( iSubscribeMedication : uses
+
 
 ' Client-Subscription-Management
 iSubscribeToo -- APIGateway : provides 
@@ -136,11 +152,6 @@ iSubscribeToo -- APIGateway : provides
 [Web-Portal] -( iSubscribeToo : "(optional) uses"  
 [Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
 
-' weitere Schnittstellen zwischen CDR und ISiK-Systemen
-' so etwas sollte hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
-'etc. für alle Systeme, die HL7 v2 unterstützen; hier nicht gerendert im Sinne der Übersichtlichkeit
-
-
-
+' weitere Schnittstellen zwischen CDR und ISiK-Systemen sollten hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
 
 @enduml
