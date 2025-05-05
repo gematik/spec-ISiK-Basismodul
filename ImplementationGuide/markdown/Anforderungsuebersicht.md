@@ -7,8 +7,7 @@ Die normativen Festlegungen des Moduls ISiK Connect  sind im Wesentlichen der Se
 
 ## Anforderungsübersicht 
 
- **Work in Progress** <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>: Dieser Abschnitt fasst einen laufenden Arbeitsstand zusammen. Hier soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden, die zum Teil nur informativen Charakter haben. Es kann nicht ausgeschlossen werden, dass sich die IDs im Laufe von Anpassungen ändern.
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
+In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden. Teilweise haben diese Anforderungen jedoch nur informativen Charakter.
 
 | ID | Anforderung 
 |--------|------ 
