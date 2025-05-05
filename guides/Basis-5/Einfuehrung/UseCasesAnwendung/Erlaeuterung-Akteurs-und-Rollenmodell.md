@@ -4,7 +4,7 @@ topic: Akteurs- und Rollenmodell
 
 # Erläuterung des Rollen- und Akteursmodells
 
-Das hier dargestellte Modell unterscheidet zwischen **Rollen** und **Akteuren** als zentrale Konzepte zur modularen Beschreibung von Funktionalitäten in einem ISiK.
+Das hier dargestellte Modell unterscheidet zwischen **Rollen** und **Akteuren** als zentrale Konzepte zur modularen Beschreibung von Funktionalitäten in einem ISiK-Modul.
 
 ## Rollen: Wiederverwendbare Funktionseinheiten
 
