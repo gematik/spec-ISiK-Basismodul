@@ -1,4 +1,4 @@
-Alias: $ISIKVersion = 5.0.0
+Alias: $ISIKVersion = 5.0.0-rc
 
 RuleSet: Meta
 * ^version = $ISIKVersion
