@@ -41,7 +41,9 @@ component KIS  {
 
 
 package "Zentrale ISiK Infrastruktur" {
-  component "Clinical Data Repository (CDR)" as CDR {
+
+  
+    component "Clinical Data Repository (CDR)" as CDR {
       component "Znetrales Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionCDR {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribe
@@ -50,6 +52,11 @@ package "Zentrale ISiK Infrastruktur" {
   }
 
   [API Gateway] as APIGateway
+  ' erlaubt lose Kopplung der Clients und der KH-(Sub-)Systeme
+
+  ' cloud "Orchestration Layer" {  }
+  ' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
+  
 
   portin iCentralizeFHIR
   portin iSubscribeToo
