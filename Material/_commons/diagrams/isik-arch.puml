@@ -33,7 +33,6 @@ component KIS  {
     }
   portin iProvideDocuments
   }
-  note right of DMS : Frage: Sollen Update Operationen (z.B. \n  für Dokumente) über Weiterleitung und das CDR erfolgen?
 
   component "Medikationssystem" as Medikationssystem {
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionMedikationssystem {
@@ -42,11 +41,11 @@ component KIS  {
     }
     portin iProvideMedication
 }
-note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboprationen (CREATE) vorgesehen. \n  Frage: Sollen diese Operationen über Weiterleitung und das CDR erfolgen?
-
-note right of TerminKIS : Frage: WIe sollen die Terminbuchungen \n bzw. relevante Daten im CDR aggregiert werden?
+note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboperationen (CREATE) vorgesehen.
 
 }
+
+
 
 
 package "Zentrale ISiK Infrastruktur" {
@@ -64,9 +63,7 @@ package "Zentrale ISiK Infrastruktur" {
   ' erlaubt lose Kopplung der Clients und der KH-(Sub-)Systeme
   note right of APIGateway : Für jeden Client, der angeschlossen wird, \n  muss von Seiten von IT-Verantwortlichen für das Krankenhaus eine Entscheidung zum Routing der FHIR Anfragen und Operationen sowie eine entsprechende Konfiguration des API Gateways erfolgen.
 
-  ' cloud "Orchestration Layer" {  }
-  ' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
-  
+    
   portin iCentralizeFHIR
   portin iSubscribeToo
   portin iBookAppointmentsToo
@@ -85,7 +82,6 @@ package "Zentrale ISiK Infrastruktur" {
   
 
 [Laborinformationssystem (LIS)] as LIS
-note right of LIS : Frage: Sollen die LIS-Daten \n  über das CDR aggregiert werden?
 
 
 cloud "Clients" {
@@ -94,6 +90,13 @@ cloud "Clients" {
   [Termin-Requestor]
 
 }
+
+cloud "Orchestration Layer (Optional)" as OrchLayer { 
+  component "Workflow Engine"
+  component "Process Modeller"
+  }
+' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
+hide OrchLayer
 
 ' Schnittstellen zwischen zentraler Infrastruktur und externen Clients
 iCentralizeFHIR - APIGateway  : provides
@@ -107,7 +110,6 @@ APIGateway --( iAggregateInternalFHIR : uses
 ' Direkte Schnittstellen zwischen ISiK-Systemen
 KIS --( iProvideVitalSigns : FHIR API ICU 
 PDMS --( iProvideBasicData : FHIR API generische Vitalparameter für ICU
-note right of PDMS : Frage: weiterhin direkte Zugriffe zwischen PDMS und KIS empfehlen?
 ' ggf. ist hier aufgrund der MARKTSITUATION die Integration zwischen PDMS und KIS nicht zielführend, sondern die Aggregation der Daten im CDR sinnvoller
 
 ' TODO lollipop notation for ICU in both directions
@@ -139,8 +141,6 @@ APIGateway --( iProvideMedication :  uses ???
 ' APIGateway --> [DMS] : Forwarding an  FHIR API (Dokumente) ' auskommentiert da nicht beste Option ' auskommentiert da nicht beste Option
 ' APIGateway --> [Medikationssystem] : Forwarding an FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation) ' auskommentiert da nicht beste Option
 
-
-
 ' Zentralisiertes Alerting und Notification Management (mittels Subscription) zu subsystemen 
 APIGateway --( iSubscribe : uses 
 
@@ -156,6 +156,11 @@ iSubscribeToo -- APIGateway : provides
 [Mobile App] -( iSubscribeToo : "(optional) uses" 
 [Web-Portal] -( iSubscribeToo : "(optional) uses"  
 [Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
+
+' Weitere Schichten (z.B. Orchestration Layer) 
+OrchLayer --( iSubscribeToo : uses
+OrchLayer --( iCentralizeFHIR : uses
+Clients -->OrchLayer : uses
 
 ' weitere Schnittstellen zwischen CDR und ISiK-Systemen sollten hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
 
