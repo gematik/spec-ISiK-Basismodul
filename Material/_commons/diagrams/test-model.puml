@@ -1,0 +1,21 @@
+' Define the desired detail level before @startuml
+' For example, set in command line or file: !define DETAIL_HIGH
+
+@startuml
+
+!define DETAIL_MEDIUM
+!define DETAIL_HIGH
+
+!ifdef DETAIL_HIGH
+  !include isik-arch.puml
+!endif
+
+!ifdef DETAIL_MEDIUM
+  [Service A] --> [API Gateway]
+!endif
+
+!ifdef DETAIL_LOW
+  [System Boundary] --> [Customer Interface]
+!endif
+
+@enduml

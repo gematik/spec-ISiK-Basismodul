@@ -1,11 +1,17 @@
 @startuml
 left to right direction
 
+!define DETAIL_MEDIUM
+!define DETAIL_HIGH
+' !define ADD_OPTIONAL
+
 title ISiK Zielarchitektur – CDR und API Gateway
 
 cloud "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
 
+!ifdef DETAIL_MEDIUM
 component KIS  {
+  !ifdef DETAIL_HIGH
   component "Terminplanung" {
     [Termin-Repository (KIS-Modul)] as TerminKIS
     portin iBookAppointments
@@ -17,35 +23,45 @@ component KIS  {
     portin  iSubscribeStammdaten
     }
   portin iProvideBasicData
+  !endif
   }
 
   component "Patientendatenmanagementsystem (PDMS)" as PDMS {
+    !ifdef DETAIL_HIGH
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionPDMS {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribeVitalSigns
     }
     portin iProvideVitalSigns
+    !endif
   }
 
   component "Dokumentenmanagementsystem (DMS)" as DMS {
+    !ifdef DETAIL_HIGH
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionDMS {
     portin  iSubscribeDocuments
     }
-  portin iProvideDocuments
+    portin iProvideDocuments
+    !endif
   }
 
   component "Medikationssystem" as Medikationssystem {
+  
+  !ifdef DETAIL_HIGH
     component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionMedikationssystem {
     ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
     portin  iSubscribeMedication
     }
     portin iProvideMedication
+  !endif
+
+  }
+
+
+
 }
+
 note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboperationen (CREATE) vorgesehen.
-
-}
-
-
 
 
 package "Zentrale ISiK Infrastruktur" {
@@ -91,12 +107,13 @@ cloud "Clients" {
 
 }
 
+!ifdef ADD_OPTIONAL
 cloud "Orchestration Layer (Optional)" as OrchLayer { 
   component "Workflow Engine"
   component "Process Modeller"
   }
 ' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
-hide OrchLayer
+!endif
 
 ' Schnittstellen zwischen zentraler Infrastruktur und externen Clients
 iCentralizeFHIR - APIGateway  : provides
@@ -158,9 +175,12 @@ iSubscribeToo -- APIGateway : provides
 [Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
 
 ' Weitere Schichten (z.B. Orchestration Layer) 
-OrchLayer --( iSubscribeToo : uses
-OrchLayer --( iCentralizeFHIR : uses
-Clients -->OrchLayer : uses
+!ifdef ADD_OPTIONAL
+  OrchLayer --( iSubscribeToo : uses
+  OrchLayer --( iCentralizeFHIR : uses
+  Clients -->OrchLayer : uses
+!endif
+
 
 ' weitere Schnittstellen zwischen CDR und ISiK-Systemen sollten hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
 
