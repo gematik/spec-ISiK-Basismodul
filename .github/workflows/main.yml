@@ -91,19 +91,28 @@ jobs:
           retention-days: 1
 
       - name: Convert Validation Report
-        uses: patrick-werner/validation-outcome-markdown-renderer@0.3.1
+        uses: patrick-werner/validation-outcome-markdown-renderer@0.3.3
         with:
           bundle-file: validation.json
           include: errors
           filters: |
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Linksatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Linksventrikulaerer-Druck.json|Validation_VAL_Profile_Minimum|*minimum required = 1*|Observation
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Linksventrikulaerer-Druck.json|Validation_VAL_Profile_Minimum_SLICE|*matching slice is required*|Observation
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Linksventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Pulmonalarterieller-Blutdruck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Rechtsatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            # Error because of wrong magic loinc code/bug in java validator
             Observation-Rechtsventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            # Error because of the java validator not supporting version "*"
             Procedure-Appendektomie.json||*"http://fhir.de/CodeSystem/bfarm/ops"*|Procedure.code.coding[1].version
+            # Error caused by a bug in the java validator
             StructureDefinition-ISiKKontaktGesundheitseinrichtung.json|Unknown_Code_in_Version||StructureDefinition.differential.element[24].pattern.ofType(CodeableConcept).coding[0].code
             Erklärung
 
