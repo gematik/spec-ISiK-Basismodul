@@ -9,11 +9,13 @@
 ' if no parameter is set, the minimal model is shown
 '----------------------------------------
 
-' !define SHOW_COMMENTS
-' !define DETAIL_HIGH
-' !define SHOW_LIS
-' !define SHOW_AUTORIZATION
+
+'!define SHOW_AUTHORIZATION
+'!define DETAIL_HIGH
+'TODO show Subscirption-Management in detail
+'!define SHOW_LIS
 '!define ADD_OPTIONAL
+'!define SHOW_COMMENTS /* TODO debug - show comments in the diagram */
 
 '!include test-model.puml
 
@@ -115,7 +117,7 @@ package "Zentrale ISiK Infrastruktur" {
   !endif
 
   
-  !ifdef SHOW_AUTORIZATION
+  !ifdef SHOW_AUTHORIZATION
   [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
   !endif
 
@@ -183,7 +185,7 @@ CDR --( iProvideBasicData : uses FHIR API (Patient, Encounter etc.)
 CDR --( iProvideVitalSigns : uses - Read-only FHIR API für generische Vitalparameter und ICU 
 CDR --( iProvideDocuments : uses - FHIR API (Dokumente))
 CDR --( iProvideMedication : uses - CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Information)
-!ifdef SHOW_AUTORIZATION
+!ifdef SHOW_AUTHORIZATION
 CDR -- [Autorisierungsserver] : SMART on FHIR API (Authorization) ???
 APIGateway -- [Autorisierungsserver] : SMART on FHIR API (Authorization)  ???
 !endif
