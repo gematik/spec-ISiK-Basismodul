@@ -1,9 +1,5 @@
 # Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken
 
----
-### Informativ
----
-
 Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet, um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.
 
 ----

@@ -12,6 +12,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 ## Version 5.0.0 (Final)
 
 * `fixed` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
+* `add` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
 
 ## Version 5.0.0-rc (Kommentierung)
 
