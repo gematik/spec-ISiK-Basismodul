@@ -51,10 +51,10 @@ jobs:
         if: github.event_name != 'pull_request'
 
       # can be deleted after https://github.com/hapifhir/org.hl7.fhir.core/pull/1990 is merged (adding json5 support)
-      - name: Clean advisor.json5 in-place
+      - name: Clean advisor.json in-place
         run: |
-          # remove all // Kommentare und leere Zeilen direkt in validator/advisor.json5
-          sed -i -E 's://.*$::g; /^[[:space:]]*$/d' validator/advisor.json5      
+          # remove all // Kommentare und leere Zeilen direkt in validator/advisor.json
+          sed -i -E 's://.*$::g; /^[[:space:]]*$/d' validator/advisor.json      
 
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.22
@@ -70,7 +70,7 @@ jobs:
             -language de
             -jurisdiction de
             -display-issues-are-warnings
-            -advisor-file validator/advisor.json5
+            -advisor-file validator/advisor.json
             -resolution-context file:Resources/fsh-generated/resources/
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
