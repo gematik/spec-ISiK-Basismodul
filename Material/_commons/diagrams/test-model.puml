@@ -3,19 +3,25 @@
 
 @startuml
 
-!define DETAIL_MEDIUM
-!define DETAIL_HIGH
+[APIGateway]  as APIGateway
+component KIS  {
 
-!ifdef DETAIL_HIGH
-  !include isik-arch.puml
-!endif
+  Component "TEST KOMPONENTE" as TEST
 
-!ifdef DETAIL_MEDIUM
-  [Service A] --> [API Gateway]
-!endif
+  component "Terminplanung" {
+    [Termin-Repository (KIS-Modul)] as TerminKIS
+    portin iBookAppointments
+    } 
+  ' component "PDMS-Modul" as PDMSKISMODUL
+  ' component "weiteres KIS-Modul" as KISMODUL
+  component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeStammdaten
+    }
 
-!ifdef DETAIL_LOW
-  [System Boundary] --> [Customer Interface]
-!endif
+  portin iProvideBasicData
+  }
+
+TEST --> APIGateway : test
 
 @enduml
