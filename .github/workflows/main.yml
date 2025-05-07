@@ -95,7 +95,17 @@ jobs:
         with:
           bundle-file: validation.json
           include: errors
-      #          filters: "VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|"
+          filters: |
+            Observation-Linksatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            Observation-Linksventrikulaerer-Druck.json|Validation_VAL_Profile_Minimum|*minimum required = 1*|Observation
+            Observation-Linksventrikulaerer-Druck.json|Validation_VAL_Profile_Minimum_SLICE|*matching slice is required*|Observation
+            Observation-Linksventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            Observation-Pulmonalarterieller-Blutdruck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            Observation-Rechtsatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            Observation-Rechtsventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
+            Procedure-Appendektomie.json||*"http://fhir.de/CodeSystem/bfarm/ops"*|Procedure.code.coding[1].version
+            StructureDefinition-ISiKKontaktGesundheitseinrichtung.json|Unknown_Code_in_Version||StructureDefinition.differential.element[24].pattern.ofType(CodeableConcept).coding[0].code
+            Erklärung
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
