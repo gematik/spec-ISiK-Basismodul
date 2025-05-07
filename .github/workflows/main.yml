@@ -51,10 +51,13 @@ jobs:
         if: github.event_name != 'pull_request'
 
       # can be deleted after https://github.com/hapifhir/org.hl7.fhir.core/pull/1990 is merged (adding json5 support)
-      - name: Clean advisor.json in-place
+      - name: Strip pure comment lines
         run: |
-          # remove all // Kommentare und leere Zeilen direkt in validator/advisor.json
-          sed -i -E 's://.*$::g; /^[[:space:]]*$/d' validator/advisor.json      
+          # nur Zeilen löschen, die mit optionalem Whitespace und dann // anfangen
+          sed -i '/^[[:space:]]*\/\//d' validator/advisor.json
+          # leere Zeilen aufräumen
+          sed -i '/^[[:space:]]*$/d' validator/advisor.json
+          cat validator/advisor.json
 
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.22
