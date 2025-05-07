@@ -50,13 +50,28 @@ jobs:
         uses: actions/checkout@v4
         if: github.event_name != 'pull_request'
 
+      # can be deleted after https://github.com/hapifhir/org.hl7.fhir.core/pull/1990 is merged (adding json5 support)
+      - name: Clean advisor.json5 in-place
+        run: |
+          # remove all // Kommentare und leere Zeilen direkt in validator/advisor.json5
+          sed -i -E 's://.*$::g; /^[[:space:]]*$/d' validator/advisor.json5      
+
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.22
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: false
           JAVA_VALIDATION_ENABLED: true
-          JAVA_VALIDATION_OPTIONS: -allow-example-urls true -html-output validation.html -show-message-ids -language de -jurisdiction de -display-issues-are-warnings -advisor-file validator/advisor.json -resolution-context file:Resources/fsh-generated/resources/ -output validation.json
+          JAVA_VALIDATION_OPTIONS: >
+            -allow-example-urls true
+            -output validation.json
+            -html-output validation.html
+            -show-message-ids
+            -language de
+            -jurisdiction de
+            -display-issues-are-warnings
+            -advisor-file validator/advisor.json5
+            -resolution-context file:Resources/fsh-generated/resources/
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
           SUSHI_ENABLED: true
