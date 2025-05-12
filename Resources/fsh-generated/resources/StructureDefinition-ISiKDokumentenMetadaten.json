@@ -373,15 +373,7 @@
       {
         "id": "DocumentReference.description",
         "path": "DocumentReference.description",
-        "comment": "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;",
-        "min": 1,
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "CompositionDocumentReferenceMapping",
-            "map": "Composition.title"
-          }
-        ]
+        "comment": "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen."
       },
       {
         "id": "DocumentReference.securityLabel",
@@ -441,7 +433,7 @@
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
         "short": "Base64-codierte Binärdaten",
-        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden.\n\nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
         "mustSupport": true
       },
       {
@@ -454,6 +446,20 @@
           {
             "identity": "CompositionDocumentReferenceMapping",
             "map": "vom Server festgelegter Speicherort des Bundles/Narratives"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.content.attachment.title",
+        "path": "DocumentReference.content.attachment.title",
+        "short": "Bezeichnung des Dokuments",
+        "comment": "Menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen, z.B. als Titel in einer Dokumentenliste ('Lungenfunktionstest vom 18.02.2022').\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.",
+        "min": 1,
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Composition.title"
           }
         ]
       },

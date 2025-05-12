@@ -9,6 +9,23 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Version 5.0.0-rc1 (Post-Kommentierung)
+
+Datum: tbd.
+
+* `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
+  erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
+  nicht benötigt werden
+* `changed`: Für die menschenlesbare Bezeichnung des Dokuments ist das Element
+  `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description`
+  entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen
+  sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title`
+  angeben. https://github.com/gematik/spec-ISiK-Basismodul/pull/686
+    * `content.attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen.
+    * `DocumentReference.description` wurde auf 0..1 MS gesetzt, und kann weiterhin verwendet werden,
+      um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare
+      bereitzustellen.
+
 
 ## Version 5.0.0-rc (Kommentierung)
 
@@ -19,12 +36,14 @@ Datum: 09.04.2025
 * `added`: Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
 * `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582
     * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen
-* `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für diese Modul nicht benötigt werden
+
 * `fixed`: Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
 https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F
 
-Version: 4.0.2
+----
+
+## Version: 4.0.2
 
 Datum: 19.3.2025
 
@@ -32,7 +51,7 @@ Datum: 19.3.2025
 
 ----
 
-Version: 4.0.1
+## Version: 4.0.1
 
 Datum: 24.01.2025
 
@@ -55,7 +74,7 @@ https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
 
 ----
 
-Version: 4.0.0
+## Version: 4.0.0
 
 Datum: 09.09.2024
 
@@ -65,7 +84,7 @@ Datum: 09.09.2024
 
 ----
 
-Version: 4.0.0-rc
+## Version: 4.0.0-rc
 
 Datum: 03.04.2024
 
@@ -76,13 +95,13 @@ Datum: 03.04.2024
 
 ----
 
-Version: 3.0.3
+## Version: 3.0.3
 
 Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 (4.0.0-rc2) eingebracht sind.
 
 ----
 
-Version: 3.0.2
+## Version: 3.0.2
 
 Datum: 27.03.2024
 
@@ -99,7 +118,8 @@ Datum: 27.03.2024
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/compare/v3.0.1...v.3.0.2
 
 ----
-Version: 3.0.1
+
+## Version: 3.0.1
 
 Datum: 05.01.2024
 
@@ -110,36 +130,39 @@ Datum: 05.01.2024
 
 
 ----
-Version: 3.0.0
+
+## Version: 3.0.0
 
 Datum: 01.07.2023
 
 * Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
 
 ----
-Version: 3.0.0-rc4
+
+## Version: 3.0.0-rc4
 
 Datum: 31.05.2023
 
 * Dokumentenmetadaten (DocumentReference): Kardinalität korrigiert zur Harmonisierung mit MHD
   * update cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
 
-
-Version: 3.0.0-rc3
+## Version: 3.0.0-rc3
 
 Datum: 04.04.2023
 
 * Update der Dependency auf Basismodul 3.0.0-rc2
 
 ---
-Version: 3.0.0-rc2
+
+## Version: 3.0.0-rc2
 
 Datum: 31.01.2023
 - Status-Korrektur: "draft"
 - Dependency update auf ISiK Basis-Version 2.0.4
 - weitere Änderungen an Implementierungsleitfaden (informativ)
 ---
-Version: 3.0.0-rc1
+
+## Version: 3.0.0-rc1
 
 Datum: 04.01.2023
 - Interaktion Dokumentenbereitstellung: Ersetzen der Operation $submit-document mit IHE ITI-105
@@ -152,14 +175,16 @@ Datum: 04.01.2023
 - Update KDL Dependency -> 2022.1.2
 - Beispieldaten an Änderungen in den Interaktionen angepasst
 ----
-Version: 2.0.1
+
+## Version: 2.0.1
 
 Datum: 31.10.2022
 
 - Update Basismodul Dependency -> 2.0.2
 
 ----
-Version: 2.0.0
+
+## Version: 2.0.0
 
 Datum: 30.06.2022
 

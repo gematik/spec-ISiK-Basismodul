@@ -14,7 +14,6 @@ Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische 
 
 
 ## Akteur - VitalSign ICU Source Minimal
-* Zur genauen Beschreibung und Liste der Interaktionen siehe 
 * Profile: Profile MI-I
 * Interaction: READ, SEARCH
 
