@@ -20,3 +20,6 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementTerminRepositoryRolle)
+  * insert ExpectationImports(#SHALL)
+  
