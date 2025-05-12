@@ -1,9 +1,5 @@
 # Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken
 
----
-### Informativ
----
-
 Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet, um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.
 
 ----
@@ -40,7 +36,7 @@ Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Sc
 
 ### HTTP Basic Authentication:
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistierungClient.md, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.
+Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistrierungClient.md, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 

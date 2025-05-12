@@ -1,6 +1,7 @@
 ---
 topic: RaucherStatus-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 ## {{link}}
 

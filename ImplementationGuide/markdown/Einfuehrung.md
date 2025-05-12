@@ -2,9 +2,9 @@
 
 ----
 
-Version: 5.0.0-rc (draft)
+Version: 5.0.0-rc
 
-Datum: 08.04.2025
+Datum: 09.04.2025
 
 Status: Draft (Kommentierung)
 
@@ -57,6 +57,8 @@ Der IG baut auf bestehenden Standards auf, insbesondere:
 * FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.
 * OAuth2 & OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.
 
+Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den {{pagelink: ImplementationGuide/markdown/Conformance.md, text:Festlegungen für Connect}} zu entnehmen.
+
 ## Bedeutung für das Gesundheitswesen
 
 Die sichere und standardisierte Autorisierung von Zugriffen auf medizinische Daten ist essenziell für die digitale Vernetzung im Krankenhausumfeld. Eine zentrale Rolle spielt dabei das ISiK-Modul Connect (ISiK-Connect), das in ISiK Stufe 5 Anforderungen an die Autorisierung für über ISiK-Ressourcen-Server bereitgestellte FHIR-Endpunkte definiert. Dadurch wird es Krankenhäusern ermöglicht, die Zugriffsrechte eines Benutzers gezielt an verschiedene Clients zu delegieren – sei es an klinische Subsysteme, Patientenportale, Terminverwaltungssysteme oder mobile Anwendungen zur Erfassung von Gesundheitsdaten.
@@ -72,7 +74,7 @@ Dieser Implementation Guide baut auf diesen Prinzipien auf und erweitert sie gez
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. 
-Für diesen Zweck wurden [FHIR-Profile](https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Einfuehrung) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
+Für diesen Zweck wurden [FHIR-Profile](https://simplifier.net/guide/isik-basis-stufe-5/einfuehrung?version=current) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
 
 Weitere Informationen siehe [§ 373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
 

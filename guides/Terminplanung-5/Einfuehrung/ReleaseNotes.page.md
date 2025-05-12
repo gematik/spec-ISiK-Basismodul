@@ -4,9 +4,11 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-Version 5.0.0.
+## Version 5.0.0-rc (Kommentierung)
 
-Datum: t.b.d.
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
 
 * `changed` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
@@ -21,7 +23,7 @@ Datum: t.b.d.
 
 Version 4.0.3
 
-Datum: t.b.d.
+Datum: 08.04.2025
 
 * `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
 * `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c

@@ -1,9 +1,5 @@
 # Schritt 2: App bittet um Autorisierung
 
----
-### Informativ
----
-
 Im nachfolgenden Schritt wird durch den Client an dem "authorize"-Endpunkt des Autorisierungsservers ein Autorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
 Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text:'ISiK-Connect: Autorisierung'}}) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
@@ -12,7 +8,7 @@ Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_
 
 ## EHR Launch
 
-Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-009}}). Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/Uebersicht.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
+Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-009}}). Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/Kontext.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
 Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Mit diesem beliebig gewählten Parameter (z.B. eine UUID) kann der Client das Access Token mit dem Kontext verknüpfen, aus dem der Client gestartet worden ist. Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten, welcher dem Anwender zuvor präsentiert wurde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen, welche die zuvor genannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann spezifische Kontextparameter anfragen. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientenkontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
 
@@ -34,7 +30,7 @@ Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichen
 
 ## TLS
 
-Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest?version=current) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-011}}).
+Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md?version=current) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-011}}).
 
 ----
 

@@ -4,9 +4,11 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-Version: 5.0.0-rc
+## Version 5.0.0-rc (Kommentierung)
 
-Datum: tbd.
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
 
 * RelatedPerson als optionalen Akteur in ISiKTermin hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/606 
 
@@ -16,7 +18,7 @@ Datum: tbd.
 
 Version: 4.0.2
 
-Datum: tbd.
+Datum: 18.03.2025
 
 * Update der CapabilityStatements
 * `improve` `change` feat: added ISiK-KoerperkernTemperatur Profile
@@ -71,12 +73,12 @@ Version: 4.0.0-rc
 Datum: 4.4.2024
 
 * Klärung datenuebernahme pdms kis by @patrick-werner in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154
-* Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung?version=current 
-* Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 ; siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-MII_Intensiv_Normal?version=current 
+* Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
+* Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 
 * Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * Hinzufügen von MS für einzelne Components : https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138
-* Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile?version=current
+* Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile
 * Fix CpS rendering by @alexzautke in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161 
 
 ----

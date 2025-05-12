@@ -5,14 +5,14 @@ RuleSet: Meta
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2024-11-25"
+* ^date = "2025-04-09"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2024-11-25"
+* date = "2025-04-09"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -131,19 +131,19 @@ RuleSet: ISiKVitalsignCommons
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * ^comment = """**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  
-**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene "Abteilungskontakt" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes "Fall") erfolgen.  
+**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene "Abteilungskontakt" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes "Fall") erfolgen.  
 Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"""
 * effective[x] MS
   * ^comment = "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Datum und Uhrzeit der Untersuchung"
 * performer MS
-  * ^comment = "Motivation MS: Dieses Feld stellt eine präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Untersuchender"
 * method MS
-  * ^comment = "Motivation MS: Dieses Feld stellt eine präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Untersuchungsmethode"
 * device MS
-  * ^comment = "Motivation MS: Dieses Feld stellt eine präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Gerät"
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
@@ -163,7 +163,7 @@ RuleSet: Quantity-MS
   * ^comment = "Motivation MS: Eine Quantity soll eine Einheit enthalten"
   * ^short = "Einheit"
 * valueQuantity.system MS
-  * ^comment = "Motivation MS: Eine Quantity soll ein System mit dem die Einheit kodiert wird enthalten"
+  * ^comment = "Motivation MS: Eine Quantity soll ein System, mit dem die Einheit kodiert wird, enthalten"
   * ^short = "CodeSystem aus dem die Einheit stammt"
 * valueQuantity.code MS
   * ^comment = "Motivation MS: Eine Quantity soll einen Code der die Einheit kodiert enthalten"

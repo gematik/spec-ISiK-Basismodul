@@ -60,26 +60,42 @@ Die Vereinbarungen gelten uneingeschränkt.
 Es gelten die Vereinbarungen gemäß {{pagelink:CapabilityStatement}}
 
 ### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/isik-sicherheit-v3)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
 
 ### Herstellung von Patient- und Encounterkontext
 Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
-Zur Herstellung des Kontextes sind folgende Verfahren möglich:
+Zur Herstellung des Kontextes sind die in ISiK Basis beschriebenen  Verfahren möglich:
+https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Patient-Besuch-Kontext  
 
-1. **SMARTApp Launch**: Wenn der Aufruf der App im Rahmen des SMART-Frameworks erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext die App. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Sicherheit - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-v4/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte?version=current)). 
-2. **Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus PV1.#19). Der Client sucht den Encounter im Patienten-führenden System anhand der Fallnummer (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. 
-3. **Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuell auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!) und etabliert den Kontext, nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
-4. **Manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient?version=current#ImplementationGuide-markdown-Patient-Patient-Interaktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client, mithilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-v4/ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt?version=current#I-markdown-KontaktGesundheitseinrichtung-Kontakt-Interaktionen), die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand von `Encounter.period`, `Encounter.class` und/oder `Encounter.status` gefiltert werden). Der Anwender wählt den zutreffenden Encounter aus.
+Zusätzlich kann der Bezug mit Hilfe einer Logischen Referenz hergestellt werden. Dieses Verfahren ist experimentell und derzeit nur auf die Herstellung des Patientenkontextes begrenzt: 
 
-| Hinweis | Gefahr fehlerhafter Zuordnung!|
+Der Client übermittelt in `DocumentReference.subject.identifier` einen Identifier, über den im Dokumentensystem ein eindeutiger Bezug hergestellt werden kann (z.B. eine einrichtungsinterne PID oder eine Krankenversichertenummer). Das Dokumentensystem (Server) muss dann bei der Verarbeitung den Identifier (unter Berücksichtigung von `system` und `value`) auflösen und durch eine Referenz auf die entsprechende lokale Patienten-Ressource substituieren. 
+Typische UseCases hierfür sind u.A.:
+* die Konvertierung von HL7 V2 MDM-Nachrichten in eine FHIR-REST-Interaktion
+* die Übernahme von Patienten über die kommende REST-basierte Möglichkeit, Dokumente aus der ePA eines Patienten abzurufen (auch hier werden voraussichtlich ausschließlich DocumentReference-Ressourcen mit der Versichertennummer als logischer Referenz auf den Patienten bereitgestellt)
+
+Server, die eine Zuordnung von Dokumenten mittels logischer Referenz erlauben, MÜSSEN dies im `CapabilityStatement` für den Ressourcentyp  `DocumentReference` unter CapabilityStatement.rest.resource.referencePolicy` kenntlich machen:
+
+* Der Code `resolves` ist zu verwenden wenn logical Identifier erlaubt sind, aber stets auflösbar sein müssen (Trifft ein Identifier aus einen oder mehrere Patienten zu, stellt dies einen Fehlerzustand dar.)
+* Der Code `logical` ist *zusätzlich* anzugeben, wenn der Server auch DocumentReferences akzeptiert, denen kein Patient zugeordnet werden kann (z.B. in Erwartung, dass dieser zu einem späteren Zeitpunkt ergänzt wird).
+* Clients sind verpflichtet *vor* der Verwendung von DocumentReferences mit logischen Referenzen anhand des CapabilityStatements zu überprüfen, ob ein konkreter Server diese Funktionalität unterstützt.
+
+Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
+
+
+| Hinweis | Experimentelle Funktion |
 |---------|---------------------|
-| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
 
-### Änderungen zu ISiK Stufe 2
+
+
+
+
+### Änderungen zwischen ISiK Stufe 2 und ISiK Stufe 3
 
 | Hinweis | Breaking Change!|
 |---------|---------------------|
-| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die in der Stufe 3 erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
+| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/>  |  Die in der Stufe 3 erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
 
 #### Maßgebliche Änderungen gegenüber Stufe 2 für den Client
 * Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.contentType` adäquat setzen

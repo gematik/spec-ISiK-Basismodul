@@ -1,6 +1,7 @@
 ---
 topic: Account_Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle
 ---
 ### Interaktionen
 

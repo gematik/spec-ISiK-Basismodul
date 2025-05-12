@@ -1,5 +1,16 @@
+# Festlegungen und Anforderungsübersicht
+
+
+## Normative Festlegungen
+
+Die normativen Festlegungen des Moduls ISiK Connect  sind im Wesentlichen der Seite zu den {{pagelink: ImplementationGuide/markdown/Conformance.md, text:Festlegungen für Connect}} zu entnehmen.
+
+## Anforderungsübersicht 
+
+In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden. Teilweise haben diese Anforderungen jedoch nur informativen Charakter.
+
 | ID | Anforderung 
-|--------|------
+|--------|------ 
 | ANF-CON-001  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 34.1.1.3 Resource Server}}
 | ANF-CON-002 | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.103.2.1 Resource Server}}
 | ANF-CON-003  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type}}
@@ -45,3 +56,10 @@
 | ANF-CON-043 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Zurückweisung Scopes Backend Service}}
 | ANF-CON-044 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Scope-Parameter Backend Service}}
 | ANF-CON-045 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Launch Scopes Access Token Response}}
+| ANF-CON-046 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:authorization_endpoint}}
+| ANF-CON-047 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:grant_types_supported}}
+| ANF-CON-048 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:refresh_token}}
+| ANF-CON-049 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:code_challenge_methods_supported}}
+| ANF-CON-050 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:scopes_supported}}
+| ANF-CON-051 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:capabilitites: permission-v2}}
+| ANF-CON-052 | {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:KEINE eigenen _CompartmentDefinitionen_}}

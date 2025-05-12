@@ -1,13 +1,14 @@
 name: Update Dependency
 
-on: # Trigger on commits to any branch and manual trigger
+on:
   workflow_dispatch: # Allows manual trigger
-    schedule:
-      - cron: '0 0 * * *' # Runs at 00:00 UTC every day
+  schedule:
+    - cron: '0 0 * * *' # Runs at 00:00 UTC every day
 
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 
 jobs:
   update-dependency:
@@ -17,7 +18,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }} # Personal access token with workflow permissions
+        token: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
+        ref: 'main-stufe-5'
 
     - name: Set up jq
       run: sudo apt-get install jq
@@ -52,17 +54,21 @@ jobs:
     - name: Check if Sushi version is up-to-date
       id: check_sushi_version
       run: |
-        CURRENT_VERSION_SUSHI=$(grep -oP 'SUSHI_VERSION: \K[^"]+' .github/workflows/main.yml)
-        if [ "$CURRENT_VERSION_SUSHI" = "$LATEST_VERSION_SUSHI" ]; then
+        CURRENT_VERSION_SUSHI=$(grep -oP 'SUSHI_VERSION: \K[^"]+' .github/workflows/main.yml || true)
+        UPDATE_NEEDED_STATE="${UPDATE_NEEDED:-false}"
+        
+        if [ -z "$CURRENT_VERSION_SUSHI" ]; then
+          echo "Could not detect current Sushi version from workflow file."
+          echo "UPDATE_NEEDED=$UPDATE_NEEDED_STATE" >> $GITHUB_ENV
+        elif [ "$CURRENT_VERSION_SUSHI" = "$LATEST_VERSION_SUSHI" ]; then
           echo "Sushi version is up-to-date"
           echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
         else
+          echo "Sushi version is outdated"
           echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
         fi
 
     - name: Update main.yml for Firely and Sushi # Stop if no update is needed;
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
       run: |
         if [[ "$UPDATE_NEEDED" == "false" ]]; then
           echo "No update needed. Exiting."
@@ -81,16 +87,17 @@ jobs:
         git push https://x-access-token:${{ secrets.WORKFLOW_PERMISSION_GITHUB }}@github.com/${{ github.repository }}.git update-dependency-${LATEST_VERSION_FIRELY}-${LATEST_VERSION_SUSHI}
 
     - name: Create Pull Request
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
+        github-token: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
         script: |
             const latestVersionFirely = process.env.LATEST_VERSION_FIRELY;
             const latestVersionSushi = process.env.LATEST_VERSION_SUSHI;
-          const updateNeeded = process.env.UPDATE_NEEDED;
-          if (updateNeeded === 'false') {
-            console.log('No update needed. Exiting.');
-            return;
-          }
+            const updateNeeded = process.env.UPDATE_NEEDED;
+            if (updateNeeded === 'false') {
+              console.log('No update needed. Exiting.');
+              return;
+            }
             if (!latestVersionFirely || !latestVersionSushi) {
               throw new Error('Versions are not defined');
             }

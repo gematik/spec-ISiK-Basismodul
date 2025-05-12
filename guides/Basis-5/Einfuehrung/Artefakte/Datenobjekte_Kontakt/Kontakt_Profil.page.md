@@ -1,6 +1,9 @@
 ---
 topic: Encounter-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle
+capability2: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle
+capability3: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle
 ---
 ## {{link}}
 
@@ -20,10 +23,16 @@ with
 from
     CapabilityStatement
 where
-    url = %capability
-for rest.resource.where(%canonical in supportedProfile)
+    url = %capability1
+or
+    url = %capability2
+or
+    url = %capability3
 select
-    'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
+    Name: name,
+    join for rest.resource.where(%canonical in supportedProfile)
+    select
+        'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
 </fql>
 
 ### Metadaten

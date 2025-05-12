@@ -1,6 +1,7 @@
 ---
 topic: Schwangerschaftsstatus-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle
 ---
 ## {{link}}
 
