@@ -94,34 +94,6 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ``[base]/Condition?_has:Encounter:diagnosis:identifier=https://example.org/fhir/sid/aufnahmenummer|1234``
 Diese Suche gibt alle Diagnosen zurück, die im Kontext des Kontakts mit der Aufnahmenummer '1234' dokumentiert worden sind.
 
-## Verpflichtende Suchparameter (Alle Datenobjekte)
-
-Folgende Suchparameter MÜSSEN für alle bestätigungsrelevanten Datenobjekte implementiert werden:
-
-* ``_id``
-
-    - Beispiele: ``GET [base]/Patient?_id=103270``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-    - Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.
-
-* ``_tag``
-
-    - Beispiele: ``GET [base]/Patient?_tag=https://example.org/codes|needs-review``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all) und [FHIR-Basisspezifikation - Abschnitt "Tags"](https://www.hl7.org/fhir/R4/resource.html#simple-tags).
-
-* ``_count``
-
-    - Beispiele: ``GET [base]/Patient?_count=100``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_count" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Page Count"](https://www.hl7.org/fhir/R4/search.html#count).
-
-    Hieraus ergibt sich, dass durch [Paging entsprechend der FHIR-Kernspezifikation](https://www.hl7.org/fhir/R4/http.html#paging) unterstützt werden MUSS.
-    Für die URIs in den Link-Relationen "first", "last", "next", sowie "prev" MUSS sichergestellt werden, dass NICHT die ursprünglich verwendeten Suchparameter, sowie anderweitig sensitive Informationen enthalten, welche in der Suchanfrage an das bestätigungsrelevante System versendet wurden.
-    Der "self"-Link innerhalb des Such-Bundles MUSS entsprechend der Vorgaben aus [FHIR Kernspezifikation - 3.1.1.6 - Server Conformance](https://www.hl7.org/fhir/R4/search.html#conformance) strukturiert sein.
-
-    Der ```:iterate``` Modifier KANN unterstützt werden.
-
-Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
-
 ## Verkettete Suchparameter (Fokus auf Patient und Encounter)
 
 Für Suchparameter namens 'patient' und 'encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden. Eine Verkettung über die Chaining-Parameter (Multi-Chaining) KANN implementiert werden.
