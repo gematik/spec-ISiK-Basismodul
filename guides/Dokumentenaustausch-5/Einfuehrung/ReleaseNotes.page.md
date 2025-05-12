@@ -12,7 +12,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 ## Version 5.0.0-rc1 (Post-Kommentierung)
 
 Datum: tbd.
-
+* `added`: Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
 * `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
   erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
   nicht benötigt werden
