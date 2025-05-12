@@ -1,3 +1,12 @@
+/*
+This script automates the validation of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
+- Ensuring that MustSupport elements have both 'short' and 'comment' descriptions.
+- Ensuring that elements (at least in first level, e.g. Appointment.status) with constrained cardinality are set to must support as well.
+
+- #TODO StructureDefinition.description is filled
+
+*/
+
 const fs = require('fs');
 const path = require('path');
 
@@ -51,6 +60,17 @@ function checkMustSupportDescriptions(profile, filePath) {
         );
       }
     }
+
+    // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz): Wenn eine Kardinalität gesetzt ist, dann muss das Element auch als mustSupport markiert sein.
+    if (pathParts.length === 2) { // ggf. ausweiten auf weitere Ebenen #TODO
+      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) {
+        const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
+        issues.push(
+          `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
+        );
+      }
+    }
+
   }
 
   return issues;
