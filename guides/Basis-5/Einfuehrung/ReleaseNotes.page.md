@@ -74,6 +74,7 @@ https://github.com/gematik/spec-ISiK-Basismodul/issues/436
 * `improved` Formulierung zur Verwendung des Versorgungsstellenkontaktes https://github.com/gematik/spec-ISiK-Basismodul/pull/488
 * `add``example`Beispiel Station hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/546/files
 * `improved` Harmonisierung von Encounter.type und Account.type https://github.com/gematik/spec-ISiK-Basismodul/pull/441
+* `improved` Änderung der Kardinalität von Composition.type.text auf 1..1 https://github.com/gematik/spec-ISiK-Basismodul/pull/441
 
 ## Version: 4.0.0
 
@@ -101,6 +102,7 @@ Datum: 30.8.2024
 * Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
 * Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418
 * Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398 
+
 
 ----
 
