@@ -2,6 +2,8 @@
 
 # ISiK-Basis
 
+The ISiK Basis Stufe 5 branch contains all ISiK modules that were maintained in single repositories before.
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -18,7 +20,7 @@
 
 ## About The Project
 
-For full information and details, see [Simplifier Project Page for ISiK Basis Stufe](https://simplifier.net/isik-basis-stufe-5)
+For full information and details, see [Simplifier Project Page for ISiK Stufe 5 - all modules](https://simplifier.net/isik-stufe-5/~introduction)
 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.
