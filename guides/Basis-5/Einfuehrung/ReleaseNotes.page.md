@@ -13,6 +13,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 * `fixed` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
 * `add` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
+* `improve` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
 
 ## Version 5.0.0-rc (Kommentierung)
 
