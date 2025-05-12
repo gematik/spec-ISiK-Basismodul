@@ -25,6 +25,14 @@ For full information and details, see [Simplifier Project Page for ISiK Stufe 5 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.
 
+## Tooling
+
+Zum build der Profile und für anderen Routinen werden Action eingesetzt (in .github/workflows).
+
+Weitere Tools zur Unterstützung der Entwicklung, die lokal ausführbar sein sollen oder von den o.g. Github Actions aufgerufen werden, sind im Ordner *scripts* abgelegt.
+
+Beschreibungen und Dokumentation zur Nutzung zu den einzelnen Scripts und actions sollen ggf. in den entsprechenden README Dateien der entsprechenden Ordner angelegt werden.
+
 ## License
  
 Copyright 2024 gematik GmbH
