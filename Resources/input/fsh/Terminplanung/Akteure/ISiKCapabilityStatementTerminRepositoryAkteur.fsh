@@ -13,7 +13,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* rest.mode = #server
+
 * purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'Termin-Repository' zur Unterstützung des Termin-Workflows implementieren muss."
 * imports[+] = Canonical(ISiKCapabilityStatementTerminologieRolle)
   * insert ExpectationImports(#SHALL)
@@ -21,4 +21,6 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementTerminRepositoryRolle)
   * insert ExpectationImports(#SHALL)
+
+* rest.mode = #server
   
