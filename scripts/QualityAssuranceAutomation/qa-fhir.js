@@ -2,8 +2,19 @@
 This script automates the certain quality assurance checks (derived from best practices) of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
 - Ensuring that MustSupport elements have both 'short' and 'comment' descriptions.
 - Ensuring that elements (at least in first level, e.g. Appointment.status) with constrained cardinality are set to must support as well.
-
 - StructureDefinition.description is filled
+
+Features
+- The script differentiates between errors and warning_
+  - The following is an error 
+  - The following is warning only_
+    - A missing "short" element 
+    - A missing description
+- Deklaration zu unterdrückender dezidierter Elemente bzw. von in Profilen über eine Konfig-Datei
+
+    
+
+
 
 */
 
@@ -28,18 +39,22 @@ function log(message) {
 /**
  * Validiert ein FHIR-Profil (StructureDefinition-JSON) auf:
  * - MustSupport-Elemente auf Ebene 1
- * - Vorhandensein von 'short' UND 'comment'
+ * - Vorhandensein von 'short' (Warning) UND 'comment' (Error)
+ * - Vorhandensein von 'description' im Profil (Warning)
  */
 function checkMustSupportDescriptions(profile, filePath) {
-  const issues = [];
+  const issues = {
+    warnings: [],
+    errors: []
+  };
 
   // Prüfe, ob description vorhanden und nicht leer ist
   if (!profile.description || profile.description.trim() === '') {
-    issues.push(`❌ ${filePath}: StructureDefinition.description ist nicht ausgefüllt`);
+    issues.warnings.push(`⚠️ ${filePath}: StructureDefinition.description ist nicht ausgefüllt`);
   }
 
   if (!profile.differential || !Array.isArray(profile.differential.element)) {
-    issues.push(`⚠️ Profil ${filePath} hat keine Differential-Elemente.`);
+    issues.warnings.push(`⚠️ Profil ${filePath} hat keine Differential-Elemente.`);
     return issues;
   }
 
@@ -50,52 +65,39 @@ function checkMustSupportDescriptions(profile, filePath) {
 
     // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
     if (pathParts.length === 2 && el.mustSupport) {
-      const missingFields = [];
-
       if (!el.short || el.short.trim() === '') {
-        missingFields.push('short');
+        issues.warnings.push(`⚠️ ${filePath}: Fehlendes short für MustSupport-Element '${el.path}'`);
       }
       if (!el.comment || el.comment.trim() === '') {
-        missingFields.push('comment');
-      }
-
-      if (missingFields.length > 0) {
-        issues.push(
-          `❌ ${filePath}: Fehlende ${missingFields.join(' und ')} für MustSupport-Element '${el.path}'`
-        );
+        issues.errors.push(`❌ ${filePath}: Fehlendes comment für MustSupport-Element '${el.path}'`);
       }
     }
 
-   
-    if (pathParts.length === 2) { // ggf. ausweiten auf weitere Ebenen #TODO
-      // Wenn eine Kardinalität gesetzt ist, dann muss das Element auch als mustSupport markiert sein; Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
-      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) 
-        // Ausnahme: Wenn max = 0, dann soll auch kein MustSupport Flag gesetzt sein 
+    if (pathParts.length === 2) {
+      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) {
         if (el.max === '0') {
           if (el.hasOwnProperty('mustSupport')) {
-            issues.push(
+            issues.errors.push(
               `❌ ${filePath}: Element '${el.path}' mit Kardinalität '0..0' sollte kein mustSupport-Attribut haben.`
             );
           }
-        }
-        else {
-        const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
-          // Ausnahme: wenn nur max numerisch gesetzt, dann muss kein MustSupport gesetzt werden
+        } else {
+          const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
           if (el.max && !isNaN(el.max)) {
-          continue; // Skip if only max is set numerically
+            continue;
+          } else {
+            issues.errors.push(
+              `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
+            );
           }
-          else {          
-          issues.push(
-            `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
-          );
-          }
-       }
+        }
+      }
     }
-
   }
 
   return issues;
 }
+
 
 /**
  * Liest alle JSON-Dateien rekursiv aus einem Verzeichnis
@@ -119,21 +121,25 @@ function getAllJsonFiles(dirPath, arrayOfFiles = []) {
 const baseDir = '../../Resources/fsh-generated/resources';
 log(`Starte Prüfung in: ${baseDir}`);
 
+// Anpassung der Hauptlogik für die neue Struktur
 const jsonFiles = getAllJsonFiles(baseDir);
-let allIssues = [];
+
+let allIssues = {
+  warnings: [],
+  errors: []
+};
 
 jsonFiles.forEach((filePath) => {
   try {
     const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-    // Skip alles außer StructureDefinition
     if (profile.resourceType !== 'StructureDefinition') {
-    // TODO print message that a file was skipped but not in log
       return;
     }
 
     const issues = checkMustSupportDescriptions(profile, filePath);
-    allIssues.push(...issues);
+    allIssues.warnings.push(...issues.warnings);
+    allIssues.errors.push(...issues.errors);
 
   } catch (err) {
     log(`❗ Fehler beim Parsen von ${filePath}: ${err.message}`);
@@ -141,33 +147,45 @@ jsonFiles.forEach((filePath) => {
 });
 
 // Ergebnis ausgeben und sauber beenden
-if (allIssues.length > 0) {
-  // Übersicht der Best Practice Verstöße pro Ressource - als counter 
-  const resourceErrorCount = {};
-  allIssues.forEach(issue => {
-    // Extrahiere den Pfad zur JSON-Datei aus der Fehlermeldung (bis zum ersten ':')
+if (allIssues.warnings.length > 0 || allIssues.errors.length > 0) {
+  // Übersicht der Best Practice Verstöße pro Ressource
+  const resourceIssueCount = {};
+  
+  [...allIssues.warnings, ...allIssues.errors].forEach(issue => {
     const match = issue.match(/([^\:]+):/);
     if (match) {
       const resourcePath = match[1].trim();
-      if (!resourceErrorCount[resourcePath]) {
-        resourceErrorCount[resourcePath] = 0;
+      if (!resourceIssueCount[resourcePath]) {
+        resourceIssueCount[resourcePath] = { warnings: 0, errors: 0 };
       }
-      resourceErrorCount[resourcePath]++;
+      if (issue.includes('⚠️')) {
+        resourceIssueCount[resourcePath].warnings++;
+      } else if (issue.includes('❌')) {
+        resourceIssueCount[resourcePath].errors++;
+      }
     }
   });
 
   log('\n🧾 Übersicht der Best Practice Verstöße pro Ressource:');
-  Object.entries(resourceErrorCount).forEach(([resource, count]) => {
-    log(`  ${resource}: ${count}`);
+  Object.entries(resourceIssueCount).forEach(([resource, counts]) => {
+    log(`  ${resource}: ${counts.errors} Fehler, ${counts.warnings} Warnungen`);
   });
 
-  // Einzelne er Best Practice Verstöße
-  log('\n🚫 Best Practice Verstöße gefunden:\n' + allIssues.join('\n'));
+  if (allIssues.errors.length > 0) {
+    log('\n🚫 Fehler:');
+    allIssues.errors.forEach(error => log(error));
+  }
+
+  if (allIssues.warnings.length > 0) {
+    log('\n⚠️ Warnungen:');
+    allIssues.warnings.forEach(warning => log(warning));
+  }
 } else {
-  log('✅ Alle MustSupport-Elemente haben short UND comment.');
+  log('✅ Alle Prüfungen erfolgreich bestanden.');
 }
 
 log(`\n🔖 Log-Datei erstellt unter: ${logFilePath}`);
 logStream.end(() => {
-  process.exit(allIssues.length > 0 ? 1 : 0);
+  // Exit mit Fehlercode nur bei Errors, nicht bei Warnings
+  process.exit(allIssues.errors.length > 0 ? 1 : 0);
 });
