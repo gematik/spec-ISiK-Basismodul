@@ -3,7 +3,7 @@ This script automates the certain quality assurance checks (derived from best pr
 - Ensuring that MustSupport elements have both 'short' and 'comment' descriptions.
 - Ensuring that elements (at least in first level, e.g. Appointment.status) with constrained cardinality are set to must support as well.
 
-- #TODO StructureDefinition.description is filled
+- StructureDefinition.description is filled
 
 */
 
@@ -32,6 +32,11 @@ function log(message) {
  */
 function checkMustSupportDescriptions(profile, filePath) {
   const issues = [];
+
+  // Prüfe, ob description vorhanden und nicht leer ist
+  if (!profile.description || profile.description.trim() === '') {
+    issues.push(`❌ ${filePath}: StructureDefinition.description ist nicht ausgefüllt`);
+  }
 
   if (!profile.differential || !Array.isArray(profile.differential.element)) {
     issues.push(`⚠️ Profil ${filePath} hat keine Differential-Elemente.`);
@@ -137,7 +142,27 @@ jsonFiles.forEach((filePath) => {
 
 // Ergebnis ausgeben und sauber beenden
 if (allIssues.length > 0) {
-  log('\n🚫 Validierungsfehler gefunden:\n' + allIssues.join('\n'));
+  // Übersicht der Best Practice Verstöße pro Ressource - als counter 
+  const resourceErrorCount = {};
+  allIssues.forEach(issue => {
+    // Extrahiere den Pfad zur JSON-Datei aus der Fehlermeldung (bis zum ersten ':')
+    const match = issue.match(/([^\:]+):/);
+    if (match) {
+      const resourcePath = match[1].trim();
+      if (!resourceErrorCount[resourcePath]) {
+        resourceErrorCount[resourcePath] = 0;
+      }
+      resourceErrorCount[resourcePath]++;
+    }
+  });
+
+  log('\n🧾 Übersicht der Best Practice Verstöße pro Ressource:');
+  Object.entries(resourceErrorCount).forEach(([resource, count]) => {
+    log(`  ${resource}: ${count}`);
+  });
+
+  // Einzelne er Best Practice Verstöße
+  log('\n🚫 Best Practice Verstöße gefunden:\n' + allIssues.join('\n'));
 } else {
   log('✅ Alle MustSupport-Elemente haben short UND comment.');
 }
