@@ -61,14 +61,24 @@ function checkMustSupportDescriptions(profile, filePath) {
       }
     }
 
-    // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz): Wenn eine Kardinalität gesetzt ist, dann muss das Element auch als mustSupport markiert sein.
+   
     if (pathParts.length === 2) { // ggf. ausweiten auf weitere Ebenen #TODO
-      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) {
+      // Wenn eine Kardinalität gesetzt ist, dann muss das Element auch als mustSupport markiert sein; Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
+      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) 
+        // Ausnahme: Wenn max = 0, dann soll auch kein MustSupport Flag gesetzt sein 
+        if (el.max === '0') {
+          if (el.hasOwnProperty('mustSupport')) {
+            issues.push(
+              `❌ ${filePath}: Element '${el.path}' mit Kardinalität '0..0' sollte kein mustSupport-Attribut haben.`
+            );
+          }
+        }
+        else {
         const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
         issues.push(
           `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
         );
-      }
+       }
     }
 
   }
