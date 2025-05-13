@@ -85,6 +85,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
         `GET [base]/Practitioner?gender=female`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+  * resource[+]  
     * type = #Encounter
     * insert Expectation (#SHALL)
     * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
