@@ -9,9 +9,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.0.0-rc1 (Post-Kommentierung)
+## Version 5.0.0-rc1
 
-Datum: tbd.
+Datum: 13.05.2025
 
 * `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
   erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
