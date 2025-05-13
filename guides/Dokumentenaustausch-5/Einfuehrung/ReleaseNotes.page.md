@@ -9,7 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.0.0-rc1 (Post-Kommentierung)
+## Version 5.0.0-rc1
 
 Datum: tbd.
 
@@ -31,7 +31,7 @@ Datum: tbd.
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
-Datum: 09.04.2025
+Datum: 13.05.2025
 
 * `added`: Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
 * `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582
