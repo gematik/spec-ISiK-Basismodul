@@ -75,9 +75,15 @@ function checkMustSupportDescriptions(profile, filePath) {
         }
         else {
         const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
-        issues.push(
-          `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
-        );
+          // Ausnahme: wenn nur max numerisch gesetzt, dann muss kein MustSupport gesetzt werden
+          if (el.max && !isNaN(el.max)) {
+          continue; // Skip if only max is set numerically
+          }
+          else {          
+          issues.push(
+            `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
+          );
+          }
        }
     }
 

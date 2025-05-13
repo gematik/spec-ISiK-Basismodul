@@ -141,6 +141,8 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^short = "Identifier"
+  * ^comment = "Motivation Kardinalität und Must Support: Jede Organisation muss über einen Business Identifier eindeutig identifiziert werden können."
 * identifier contains 
   IKNR 0..1 MS and
   BSNR 0..1 MS and
@@ -152,21 +154,29 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 */
 * identifier[IKNR] MS
 * identifier[IKNR] only $identifier-iknr
+  * ^short = "IKNR"
+  * ^comment = "Motivation Must Support: Jede Organisation, die über eine IKNR verfügt, soll dadurch eindeutig identifiziert werden können."
   * ^patternIdentifier.system = $identifier-iknr-system 
   * ^comment = "Motivation: Entsprechend der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
 * identifier[BSNR] MS 
 * identifier[BSNR] only $identifier-bsnr
+  * ^short = "BSNR"
+  * ^comment = "Motivation Must Support: Jede Organisation, die über eine BSNR verfügt, soll dadurch eindeutig identifiziert werden können."
   * ^patternIdentifier.system = $identifier-bsnr-system 
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
 * identifier[OrganisationseinheitenID] MS
+  * ^short = "OrganisationseinheitenID"
   * ^patternIdentifier.type = $sct#43741000 // Site of care
   * system 1.. MS
   * value 1.. MS
-  * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein."
+  * ^comment = "Hinweis: Für IDs, die krankenhaus-intern spezifischen Organisationseinheiten wie Abteilungen oder Stationen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung. Da auch Stationen im Identifier-System inkludiert werden könnten, sollte hier das Identifier generisch Organisationseinheiten abbilden und nicht Abteilungen allein.
+  
+  Motivation Must Support: Jede Organisation, die über eine Organisationseinheiten-ID verfügt, soll dadurch eindeutig identifiziert werden können."
 * identifier[TelematikID] MS
 * identifier[TelematikID] only $identifer-TelematikID
+  * ^short = "Telematik-ID"
   * ^patternIdentifier.system = $identifer-TelematikID-system
-  * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist."
+  * ^comment = "Motivation Must Support: Jede Organisation, die über eine Telematik-ID verfügt, soll dadurch eindeutig identifiziert werden können."
 /*
 * identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
 * identifier[KIMAdresse].type 0..1
@@ -178,6 +188,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * active MS
   * ^comment = "Motivation: Ein System muss prüfen können, ob eine Organisation aktiv ist oder nicht, sofern diese Information verfügbar ist."
 * type MS
+  * ^short = "Typ der Organisation"
   * ^comment = "Motivation: Ein System muss den Typ einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist. 
   Die Festlegung einer endlichen Menge von Organisations-Formen in verbindlicher weise, ist zum Zeitpunkt der Festlegung nicht möglich."
 * type ^slicing.discriminator.type = #pattern

@@ -20,6 +20,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys relatedp-de-1
 * patient 1..1 MS
   * ^short = "Patientenbezug"
+  * ^comment = "Motivation Kardinalität und Must-Support: Referenz auf den Patienten, zu dem diese angehörige Person in Beziehung steht. Diese Verlinkung ist essentiell für die Dokumentation der Beziehung zwischen Patient und Angehörigem."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Information zu einem Patienten 
