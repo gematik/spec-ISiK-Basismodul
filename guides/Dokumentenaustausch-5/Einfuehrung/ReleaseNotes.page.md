@@ -11,7 +11,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 ## Version 5.0.0-rc1
 
-Datum: tbd.
+Datum: 13.05.2025
 
 * `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
   erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
@@ -31,7 +31,7 @@ Datum: tbd.
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
-Datum: 13.05.2025
+Datum: 09.04.2025
 
 * `added`: Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
 * `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582

@@ -11,6 +11,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc1
 
+Datum: 13.05.2025
+
 * `fixed` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
 * `add` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
 * `improve` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
@@ -19,7 +21,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
-Datum: 13.05.2025
+Datum: 09.04.2025
 
 * `change` Auslagern der Subscription Profile und UseCases in ein eigenes Modul
   Subscription https://github.com/gematik/spec-ISiK-Basismodul/pull/645
