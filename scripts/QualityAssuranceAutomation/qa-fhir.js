@@ -1,5 +1,5 @@
 /*
-This script automates the validation of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
+This script automates the certain quality assurance checks (derived from best practices) of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
 - Ensuring that MustSupport elements have both 'short' and 'comment' descriptions.
 - Ensuring that elements (at least in first level, e.g. Appointment.status) with constrained cardinality are set to must support as well.
 
