@@ -4,7 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-Version 5.0.0-rc1
+## Version 5.0.0-rc1
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
@@ -14,7 +14,7 @@ Datum: 09.04.2025
 
 ---
 
-Version: 4.0.3 
+## Version: 4.0.3 
 
 Datum: 08.04.2025
 
@@ -22,7 +22,7 @@ Datum: 08.04.2025
 
 ----
 
-Version: 4.0.2 
+## Version: 4.0.2 
 
 Datum: 06.03.2025
 
@@ -31,7 +31,7 @@ Datum: 06.03.2025
 
 ----
 
-Version: 4.0.1
+## Version: 4.0.1
 
 Datum: 26.02.2025
 
@@ -53,7 +53,7 @@ Datum: 26.02.2025
 
 ----
 
-Version: 4.0.0
+## Version: 4.0.0
 
 Datum: 15.10.2024
 
@@ -61,7 +61,7 @@ Datum: 15.10.2024
 
 ----
 
-Version: 4.0.0-rc2
+## Version: 4.0.0-rc2
 
 Datum: 26.06.2024
 
@@ -94,7 +94,7 @@ Datum: 04.04.2024
 * Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern
 
 ----
-Version: 3.0.1
+## Version: 3.0.1
 
 Datum: 08.01.2024
 
@@ -102,48 +102,48 @@ Datum: 08.01.2024
 * Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
 * update sentence on ISIKBasis Ressource usage by @f-peverali in https://github.com/gematik/spec-ISiK-Medikation/pull/103
 ----
-Version: 3.0.0
+## Version: 3.0.0
 
 Datum: 01.07.2023
 
 * Mit dem Release der Stufe 3.0.0 wird werden die unten gelisteten Änderungen normativ festgesetzt - im Wesentlichen ein Update auf die Dependency des ISiK Basismoduls 3.0.0.
 
 ----
-Version: 3.0.0-rc2
+## Version: 3.0.0-rc2
 
 Datum: 30.05.2023
 
 * Update der Dependency auf das aktuelle ISiK Basismoduls (3.0.0-rc3)
 
 ----
-Version: 3.0.0-rc
+## Version: 3.0.0-rc
 
 Datum: 11.04.2023
 
 * Ausschließlich update der Dependency Packages für ISiK Basismodul und MII-Package
 
 ----
-Version: 2.0.2
+## Version: 2.0.2
 
 Datum: 31.01.2023
 
 - Update Basismodul Dependency -> 2.0.4
 - weitere Änderungen an Implementierungsleitfaden (informativ)
 ----
-Version: 2.0.1
+## Version: 2.0.1
 
 Datum: 31.10.2022
 
 - Update Basismodul Dependency -> 2.0.2
 ----
-Version: 2.0.0
+## Version: 2.0.0
 
 Datum: 30.06.2022
 
 - Initialer Release
 
 ----
-Version: 2.0.0-ballot
+## Version: 2.0.0-ballot
 
 Datum: 08.04.2022
 
