@@ -150,25 +150,30 @@ jsonFiles.forEach((filePath) => {
 if (allIssues.warnings.length > 0 || allIssues.errors.length > 0) {
   // Übersicht der Best Practice Verstöße pro Ressource
   const resourceIssueCount = {};
-  
-  [...allIssues.warnings, ...allIssues.errors].forEach(issue => {
+
+  // Zähle Fehler pro Ressource und gib jede Ressource nur einmal aus
+  //opt TODO - WARNINGS ausgeben
+  allIssues.errors.forEach(issue => {
     const match = issue.match(/([^\:]+):/);
     if (match) {
       const resourcePath = match[1].trim();
       if (!resourceIssueCount[resourcePath]) {
-        resourceIssueCount[resourcePath] = { warnings: 0, errors: 0 };
+        resourceIssueCount[resourcePath] = { errors: 0 };
       }
-      if (issue.includes('⚠️')) {
-        resourceIssueCount[resourcePath].warnings++;
-      } else if (issue.includes('❌')) {
-        resourceIssueCount[resourcePath].errors++;
-      }
+      resourceIssueCount[resourcePath].errors++;
     }
   });
 
-  log('\n🧾 Übersicht der Best Practice Verstöße pro Ressource:');
+  log('\n🧾 Übersicht der Best Practice Fehler pro Ressource:');
   Object.entries(resourceIssueCount).forEach(([resource, counts]) => {
-    log(`  ${resource}: ${counts.errors} Fehler, ${counts.warnings} Warnungen`);
+    // Wenn Fehler existieren, Fehler-Symbol, sonst OK
+    let symbol;
+    if (counts.errors > 0) {
+      symbol = '❌';
+    } else {
+      symbol = '✅';
+    }
+    log(`  ${symbol} ${resource}: ${counts.errors} Fehler`);
   });
 
   if (allIssues.errors.length > 0) {
