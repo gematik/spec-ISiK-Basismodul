@@ -10,16 +10,42 @@ Features
   - The following is warning only_
     - A missing "short" element 
     - A missing description
-- Deklaration zu unterdrückender dezidierter Elemente bzw. von in Profilen über eine Konfig-Datei
-
+- Deklaration zu unterdrückender Profilen über eine Konfig-Datei; die Profile werden dann nicht geprüft, aber explizit in der Log-Datei als unterdrückte Elemente ausgegeben
+  - Die Datei heißt 'suppression.config.json' und liegt im gleichen Verzeichnis wie das Skript; Profilnamen werden gelistet
+  - unterdrücken einzelner, dezidierter Elemente von Ressourcen
     
-
-
 
 */
 
 const fs = require('fs');
 const path = require('path');
+
+// === Suppression Config Feature ===
+// Load suppression config if present. The config file should be named 'suppression.config.json' and placed in the same directory as this script.
+
+const suppressionConfigPath = path.join(__dirname, 'suppression.config.json');
+let suppressionConfig = {
+  suppressProfiles: [],
+  suppressElements: {}
+};
+if (fs.existsSync(suppressionConfigPath)) {
+  try {
+    suppressionConfig = JSON.parse(fs.readFileSync(suppressionConfigPath, 'utf-8'));
+  } catch (e) {
+    console.error(`⚠️ Fehler beim Laden der suppression.config.json: ${e.message}`);
+    // Continue with empty suppression config
+  }
+}
+// Anpassung: suppressProfiles ist jetzt ein Array von Objekten
+const suppressedProfilesMap = new Map();
+(suppressionConfig.suppressProfiles || []).forEach(obj => {
+  if (typeof obj === 'string') {
+    suppressedProfilesMap.set(obj, undefined);
+  } else if (obj && obj.profile) {
+    suppressedProfilesMap.set(obj.profile, obj.comment);
+  }
+});
+const suppressedElementsMap = suppressionConfig.suppressElements || {};
 
 // 📂 Log-Verzeichnis vorbereiten
 const logDir = './logs';
@@ -41,8 +67,10 @@ function log(message) {
  * - MustSupport-Elemente auf Ebene 1
  * - Vorhandensein von 'short' (Warning) UND 'comment' (Error)
  * - Vorhandensein von 'description' im Profil (Warning)
+ * 
+ * Berücksichtigt unterdrückte Elemente (Suppression).
  */
-function checkMustSupportDescriptions(profile, filePath) {
+function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths = []) {
   const issues = {
     warnings: [],
     errors: []
@@ -62,6 +90,11 @@ function checkMustSupportDescriptions(profile, filePath) {
 
   for (const el of elements) {
     const pathParts = el.path.split('.');
+
+    // Suppression: skip suppressed elements for this file
+    if (suppressedElementPaths.includes(el.id || el.path)) {
+      continue;
+    }
 
     // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
     if (pathParts.length === 2 && el.mustSupport) {
@@ -129,7 +162,17 @@ let allIssues = {
   errors: []
 };
 
+let suppressedProfilesFound = [];
+let suppressedElementsFound = {};
+
 jsonFiles.forEach((filePath) => {
+  const fileName = path.basename(filePath);
+  // Suppression: skip suppressed profiles
+  if (suppressedProfilesMap.has(fileName)) {
+    suppressedProfilesFound.push({ profile: fileName, comment: suppressedProfilesMap.get(fileName) });
+    return;
+  }
+
   try {
     const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
@@ -137,7 +180,14 @@ jsonFiles.forEach((filePath) => {
       return;
     }
 
-    const issues = checkMustSupportDescriptions(profile, filePath);
+    // Suppression: get suppressed elements for this profile, if any
+    const suppressedElementPaths = suppressedElementsMap[fileName] || [];
+    if (suppressedElementPaths.length > 0) {
+      if (!suppressedElementsFound[fileName]) suppressedElementsFound[fileName] = [];
+      suppressedElementsFound[fileName].push(...suppressedElementPaths);
+    }
+
+    const issues = checkMustSupportDescriptions(profile, filePath, suppressedElementPaths);
     allIssues.warnings.push(...issues.warnings);
     allIssues.errors.push(...issues.errors);
 
@@ -147,6 +197,36 @@ jsonFiles.forEach((filePath) => {
 });
 
 // Ergebnis ausgeben und sauber beenden
+
+// Log suppressed profiles and elements
+if (suppressedProfilesFound.length > 0) {
+  log('\n🚫 Unterdrückte Profile (nicht geprüft):');
+  suppressedProfilesFound.forEach(p => {
+    if (p.comment) {
+      log(`  - ${p.profile}  // ${p.comment}`);
+    } else {
+      log(`  - ${p.profile}`);
+    }
+  });
+}
+if (Object.keys(suppressedElementsFound).length > 0) {
+  log('\n🚫 Unterdrückte Elemente (nicht geprüft):');
+  Object.entries(suppressedElementsFound).forEach(([profile, elements]) => {
+    log(`  - ${profile}:`);
+    elements.forEach(el => {
+      if (typeof el === 'object' && el.element) {
+        if (el.comment) {
+          log(`      * ${el.element}  // ${el.comment}`);
+        } else {
+          log(`      * ${el.element}`);
+        }
+      } else {
+        log(`      * ${el}`);
+      }
+    });
+  });
+}
+
 if (allIssues.warnings.length > 0 || allIssues.errors.length > 0) {
   // Übersicht der Best Practice Verstöße pro Ressource
   const resourceIssueCount = {};
