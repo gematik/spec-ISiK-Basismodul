@@ -4,7 +4,9 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-# Version 5.0.0 (Final)
+## Version 5.0.0-rc1
+
+Datum: 13.05.2025
 
 * `improve` Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt https://github.com/gematik/spec-ISiK-Basismodul/pull/696
 
