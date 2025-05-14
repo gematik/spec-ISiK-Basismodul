@@ -9,8 +9,16 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.0.0-rc1
+## Version 5.0.0-rc2
 
+Datum: tbd.
+
+* `added`: Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
+
+
+----
+
+## Version 5.0.0-rc1
 Datum: 13.05.2025
 
 * `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
