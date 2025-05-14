@@ -100,28 +100,38 @@ def replace_content_in_files(files: list, new_release_version: str, new_date: da
 
 
 def replace_version_in_file(file: FileTypeCombinationToUpdate, new_release_version: str):
-    with open(file.location, 'r') as input_file:
+    with open(file.location, 'r', encoding='utf-8') as input_file:  # Specify encoding
         input_text = input_file.read()
 
     for regex in file.regex_list:
-        input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text)
+        if file.filename == "ReleaseNotes.page.md":
+            # Replace only the first occurrence
+            input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text, count=1)
+        else:
+            # Replace all occurrences
+            input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text)
 
     print(f"Info: Replaced version with '{new_release_version}' in file '{file.location}'.")
 
-    with open(file.location, 'w') as output_file:
+    with open(file.location, 'w', encoding='utf-8') as output_file:  # Specify encoding
         output_file.write(input_text)
 
 
 def replace_date_in_file(file: FileTypeCombinationToUpdate, new_date: datetime):
-    with open(file.location, 'r') as input_file:
+    with open(file.location, 'r', encoding='utf-8') as input_file:  # Specify encoding
         input_text = input_file.read()
 
     for regex in file.regex_list:
-        input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text)
+        if file.filename == "ReleaseNotes.page.md":
+            # Replace only the first occurrence
+            input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text, count=1)
+        else:
+            # Replace all occurrences
+            input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text)
 
     print(f"Info: Replaced date with '{new_date.strftime(file.format)}' in file '{file.location}'.")
 
-    with open(file.location, 'w') as output_file:
+    with open(file.location, 'w', encoding='utf-8') as output_file:  # Specify encoding
         output_file.write(input_text)
 
 def output_commit_messages_since_last_release():
