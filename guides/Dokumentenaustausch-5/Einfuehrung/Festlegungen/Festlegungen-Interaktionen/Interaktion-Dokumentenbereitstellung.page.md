@@ -5,11 +5,11 @@ topic: Dokumentenbereitstellung
 
 ## Interaktion: Dokumentenbereitstellung
 
-### Dokumentenübermittlung (IHE MHD ITI-105 (Simplified Publish))
+### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
 
-Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
+Die Dokumentenbereitstellung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
-Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt. Es gelten die Vorgaben der FHIR-Kernspezifikation für den Rückgabewert der Create-Interaktion, siehe [Managing Return Content](https://www.hl7.org/fhir/R4/http.html#return).
+Die Bereitstellung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt. Es gelten die Vorgaben der FHIR-Kernspezifikation für den Rückgabewert der Create-Interaktion, siehe [Managing Return Content](https://www.hl7.org/fhir/R4/http.html#return).
 
 ### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
 Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
@@ -20,7 +20,7 @@ Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die i
 Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.105.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105412-message-semantics)
-* Die übermittelte Ressource muss nur gegen das Profil "ISiKDokumentenMetadaten" valide sein, nicht gegen die IHE-DocumentReference-Profile, da die Übermittlung des Elementes `DocumentReference.docStatus` im ISiK-Kontext erlaubt, im IHE-Kontext jedoch verboten ist.
+* Die übermittelte Ressource muss nur gegen das Profil "ISiKDokumentenMetadaten" valide sein, nicht gegen die IHE-DocumentReference-Profile, da die Bereitstellung des Elementes `DocumentReference.docStatus` im ISiK-Kontext erlaubt, im IHE-Kontext jedoch verboten ist.
 * Für Clients ist es ausreichend, das Dokument mit Hilfe eines KDL-Codes in DocumentReference.type zu klassifizieren. Die entsprechenden XDS-Class- und -Type-Codes müssen vom Server bei der Verarbeitung ergänzt werden. DocumentReference.category kann bei der Dokumentenbereitstellung leer bleiben.
 
 ##### [2:3.105.4.1.2.1 DocumentReference Resources](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054121-documentreference-resources)
@@ -40,7 +40,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 * Die Erzeugung einer SubmissionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
 * Der Server muss ggf. fehlende XDS-Class- und -Type-Codes anhand des übermittelten KDL-Codes ergänzen und in DocumentReference.type bzw. DocumentReference.category zurückliefern.
 Die XDS-Codes können über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden. 
-Die XDS-Codes werden für den einrichtungsübergreifenden Dokumentenaustausch über IHE XDS, bzw. MHD oder für die Übermittlung der Dokumente an die ePA des Patienten benötigt.
+Die XDS-Codes werden für den einrichtungsübergreifenden Dokumentenaustausch über IHE XDS, bzw. MHD oder für die Bereitstellung der Dokumente an die ePA des Patienten benötigt.
 
 ##### [2:3.105.4.1.3.1 Grouping with Actors in other Document Sharing Profiles](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054131-grouping-with-actors-in-other-document-sharing-profiles)
 Das Kapitel ist für den ISiK-Kontext nicht relevant.
@@ -87,27 +87,6 @@ Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
 |---------|---------------------|
 | <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
 
-
-
-
-
-### Änderungen zwischen ISiK Stufe 2 und ISiK Stufe 3
-
-| Hinweis | Breaking Change!|
-|---------|---------------------|
-| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/>  |  Die in der Stufe 3 erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
-
-#### Maßgebliche Änderungen gegenüber Stufe 2 für den Client
-* Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.contentType` adäquat setzen
-* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
-* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary in eine Parameters-Ressource zu wrappen, entfällt damit.
-* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
-
-#### Maßgebliche Änderungen gegenüber Stufe 2 für den Server
-* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary aus der Parameters-Ressource zu extrahieren, entfällt damit.
-* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
-* Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
-* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
 ### Beispiel
 
