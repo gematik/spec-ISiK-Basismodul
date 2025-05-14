@@ -9,5 +9,6 @@ Anforderungen als Ausdruck normativer Festlegungen werden durch die dem [RFC2119
 
 SHALL/MUSS drückt in ISiK entsprechend eine notwendig zu erfüllende Anforderung aus. Die Anforderung wird über einen oder mehrere Tests abgedeckt, sodass ein System für das betreffende Modul nicht zertifiziert werden kann, wenn ein System einen Test zur Anforderungsabdeckung nicht erfolgreich durchläuft.
 
-Bei MAY/KANN ist die Anforderung optional, sie wird jedoch in der Regel über einen Test abgedeckt, der bei bestehen in einem Testbericht erscheint
+MAY/KANN drückt in ISiK eine freiwillig zu erfüllende Anforderung aus. Die Anforderung wird über einen Test abgedeckt, dessen Ergebnis ist jedoch nicht maßgeblich für die Zertifizierung eines Systems gegen das betreffende Modul.
+Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung, erscheint das Ergebnis im Testbericht.
 
