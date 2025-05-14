@@ -43,6 +43,15 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
         Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Clients und Server verpflichend."
   * searchParam[+]
     * insert Expectation (#SHALL)
+    * name = "identifier"
+    * definition = "http://hl7.org/fhir/SearchParameter/clinical-identifier"
+    * type = #token
+    * documentation = "**Beispiel:**
+    `GET [base]/DocumenReference?identifier=urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340`  
+    **Anwendungshinweis:
+    Durchsucht die Elemente `DocumentReference.identifier` und `DocumentReference.masterIdentifier` nach übereinstimmenden Dokumenten."
+  * searchParam[+]
+    * insert Expectation (#SHALL)
     * name = "patient"
     * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
     * type = #reference
