@@ -1,5 +1,5 @@
 /*
-This script automates the certain quality assurance checks (derived from best practices) of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
+This script automates certain quality assurance checks (derived from best practices) of FHIR profiles (StructureDefinition JSON files) for based on recommended best practices, such as:
 - Ensuring that MustSupport elements have both 'short' and 'comment' descriptions.
 - Ensuring that elements (at least in first level, e.g. Appointment.status) with constrained cardinality are set to must support as well.
 - StructureDefinition.description is filled
@@ -36,7 +36,7 @@ if (fs.existsSync(suppressionConfigPath)) {
     // Continue with empty suppression config
   }
 }
-// Anpassung: suppressProfiles ist jetzt ein Array von Objekten
+
 const suppressedProfilesMap = new Map();
 (suppressionConfig.suppressProfiles || []).forEach(obj => {
   if (typeof obj === 'string') {
@@ -107,23 +107,19 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
     }
 
     if (pathParts.length === 2) {
-      if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) {
-        if (el.max === '0') {
-          if (el.hasOwnProperty('mustSupport')) {
-            issues.errors.push(
-              `❌ ${filePath}: Element '${el.path}' mit Kardinalität '0..0' sollte kein mustSupport-Attribut haben.`
-            );
-          }
-        } else {
-          const cardinality = (el.min !== undefined ? el.min : '0') + '..' + (el.max !== undefined ? el.max : '*');
-          if (el.max && !isNaN(el.max)) {
-            continue;
-          } else {
-            issues.errors.push(
-              `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${cardinality}' hat kein mustSupport-Attribut.`
-            );
-          }
+      // Wenn Element auf Kardinalität 0..0 gesetzt ist, darf kein mustSupport-Attribut vorhanden sein
+      if (el.max === '0') {
+        if (el.hasOwnProperty('mustSupport')) {
+          issues.errors.push(
+            `❌ ${filePath}: Element '${el.path}' mit Kardinalität '0..0' sollte kein mustSupport-Attribut haben.`
+          );
         }
+      }
+      // Wenn Kardinalität angepasst wurde, muss ein MustSupport-Attribut vorhanden sein
+      else if ((el.hasOwnProperty('min') || el.hasOwnProperty('max')) && !el.hasOwnProperty('mustSupport')) {
+        issues.errors.push(
+          `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${(el.min === undefined)? "": el.min}..${(el.max ===undefined )?"":el.max}' hat kein mustSupport-Attribut.`
+        );
       }
     }
   }
