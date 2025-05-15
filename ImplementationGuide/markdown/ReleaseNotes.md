@@ -8,7 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.8
 
-Datum: tbd.
+Datum: 15.05.2025
 
 * `fixes` Coverage.identifier als SHALL Suchparameter entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/562 entsprechend und in Konsequenz der Änderung hier https://github.com/gematik/spec-ISiK-Basismodul/pull/362
 
