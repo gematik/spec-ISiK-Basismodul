@@ -1,6 +1,6 @@
 ---
-topic: ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSourceRolle
+topic: ISiKCapabilityStatementStammdatenRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle
 ---
 ##  <fql output="inline" headers="false">
 from
