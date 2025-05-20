@@ -286,6 +286,23 @@ Usage: #example
     * system = $cs-ucum
     * code = #1
 
+Instance: ExampleISiKMedikationsVerordnungStandard
+InstanceOf: ISiKMedikationsVerordnung
+Usage: #example
+* status = #active
+* intent = #order
+* medicationReference.reference = "Medication/ExampleISiKMedikamentpantoprazol20mg"
+* subject.reference = "Patient/PatientinMusterfrau"
+* reasonReference.reference = "Condition/BehandlungsDiagnoseFreitext"
+* dosageInstruction
+  * timing.repeat
+    * when[0] = #MORN
+  * doseAndRate.doseQuantity
+    * value = 1
+    * unit = "Brausetablette"
+    * system = $cs-ucum
+    * code = #1    
+
 Instance: ExampleISiKMedikationsVerordnung2
 InstanceOf: ISiKMedikationsVerordnung
 Usage: #example

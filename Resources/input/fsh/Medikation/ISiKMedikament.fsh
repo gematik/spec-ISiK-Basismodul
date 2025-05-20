@@ -168,6 +168,20 @@ Usage: #example
   * display = "Pantozol® 40 mg 98 St."
 * status = #active
 
+
+Instance: ExampleISiKMedikamentpantoprazol20mg
+InstanceOf: Medication
+Usage: #example
+* code = $cs-atc-de#A02BC02 "Pantoprazol"
+* code.text = "Pantoprazol 20mg"
+* form = $cs-sct#385055001 "Gastro-resistant tablet"
+* form.text = "Tablet"
+* ingredient.itemCodeableConcept = $cs-atc-de#A02BC02 "Pantoprazol"
+* ingredient.itemCodeableConcept.text = "Pantoprazole"
+* ingredient.strength.numerator = 20 'mg' "mg"
+* ingredient.strength.denominator = 1 '1' "tablet"
+* status = #active
+
 Instance: ExampleISiKMedikament4
 InstanceOf: ISiKMedikament
 Usage: #example
