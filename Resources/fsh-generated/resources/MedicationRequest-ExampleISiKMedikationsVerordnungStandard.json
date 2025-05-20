@@ -1,0 +1,43 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "ExampleISiKMedikationsVerordnungStandard",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"
+    ]
+  },
+  "dosageInstruction": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "system": "http://unitsofmeasure.org",
+            "value": 1,
+            "unit": "Brausetablette",
+            "code": "1"
+          }
+        }
+      ],
+      "timing": {
+        "repeat": {
+          "when": [
+            "MORN"
+          ]
+        }
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/ExampleISiKMedikamentpantoprazol20mg"
+  },
+  "subject": {
+    "reference": "Patient/PatientinMusterfrau"
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/BehandlungsDiagnoseFreitext"
+    }
+  ]
+}
