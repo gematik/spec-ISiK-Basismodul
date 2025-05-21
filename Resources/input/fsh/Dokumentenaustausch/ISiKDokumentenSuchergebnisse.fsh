@@ -10,6 +10,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * total 1..
   * ^short = "Gesamtzahl der Suchtreffer"
   * ^comment = "Gesamtzahl der Suchtreffer auf dem Server, unabhängig vom Page-Size des aktuellen Bundles"
+* entry MS  
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[0].path = "resource"
 * entry ^slicing.rules = #open
