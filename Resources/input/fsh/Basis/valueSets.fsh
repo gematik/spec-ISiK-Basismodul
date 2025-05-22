@@ -112,11 +112,11 @@ Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung d
 * insert Meta
 * include codes from system ISiKEntlassformRehaCS
 
-ValueSet: ISiKUnterbrechnungRehaVS
-Id: ISiKUnterbrechnungReha
+ValueSet: ISiKUnterbrechungRehaVS
+Id: ISiKUnterbrechungReha
 Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
 * insert Meta
-* include codes from system ISiKUnterbrechnungRehaCS
+* include codes from system ISiKUnterbrechungRehaCS
 
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
