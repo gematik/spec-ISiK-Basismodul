@@ -454,7 +454,7 @@ Context: Encounter.hospitalization.dischargeDisposition
   * valueCoding from ISiKBehandlungsergebnisRehaVS (required)
 * extension[UnterbrechnungReha]
   * value[x] only Coding
-  * valueCoding from ISiKUnterbrechnungRehaVS (required)
+  * valueCoding from ISiKUnterbrechungRehaVS (required)
 
 Instance: Fachabteilungskontakt
 InstanceOf: ISiKKontaktGesundheitseinrichtung
