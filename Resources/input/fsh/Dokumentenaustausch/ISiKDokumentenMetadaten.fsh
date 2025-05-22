@@ -130,8 +130,6 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Pro
   * ^comment = "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend.
   Eine darüber hinaus gehende Verlinkung auf einen Practitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich."
   * display MS
-* custodian ..0
-  * ^comment = "Einschränkung der Kardinalität analog MHD V4.0.1"
 // Anpassung erfolgte nach Dikussion auf Zulip: https://chat.fhir.org/#narrow/channel/179223-ihe/topic/XDS-.3EMHD.20Mapping.20for.20DocumentReference.2Edescription
 * description 0..1
 
