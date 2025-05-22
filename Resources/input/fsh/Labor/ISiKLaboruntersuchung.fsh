@@ -28,6 +28,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding contains loinc 1.. MS and snomed 1..1
   * coding[loinc] ^patternCoding.system = $loinc
   * coding[snomed] ^patternCoding.system = $sct
+* subject only Reference(Patient)  
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
 * encounter MS
