@@ -9,7 +9,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: tbd
 
 * `improve` Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
-  ePA/eMP und präzisere Darstellung der enthaltenen Informationen (MedicationStatements).
+  ePA/eMP und präzisere Darstellung der enthaltenen Informationen (
+  MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
 
 ## Version 5.0.0-rc (Kommentierung)
 
