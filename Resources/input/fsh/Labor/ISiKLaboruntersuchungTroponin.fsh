@@ -3,6 +3,7 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungTroponin
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Troponin eines Patienten in ISiK Szenarien."
 * insert Meta
+* code.coding contains snomed 0..1
 * code.coding[loinc] from ObservationCodesTroponin
 * code.coding[snomed] = $sct#105000003
 * valueQuantity from ObservationUnitsTroponin
