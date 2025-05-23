@@ -2,7 +2,11 @@ Profile: ISiKMedikationsListe
 Parent: List
 Id: ISiKMedikationsListe
 Title: "ISiK Medikationsliste"
-Description: "Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien."
+Description: """Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.
+
+Die MedicationList enthält MedicationStatement-Ressourcen und bildet alle Medikamente ab, die ein Patient aktuell einnimmt, im Krankenhaus verabreicht bekommt oder die aus anderen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe. 
+Im Unterschied zum elektronischen Medikationsplan (eMP) der ePA handelt es sich bei der ISiKMedikationsListe um eine dynamisch generierbare und systemseitig aktualisierbare Darstellung der Medikation im klinischen Kontext.
+"""
 * insert Meta
 * status MS
   * ^short = "(Aktualitäts-)Status der Liste"
