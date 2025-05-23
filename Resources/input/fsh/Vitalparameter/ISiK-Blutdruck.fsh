@@ -12,6 +12,7 @@ Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolische
 ### Kompatibilität
 Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation."
 * insert ISiKVitalsignCommons
+// should not contain ISiKVitalsignCommonsValue since it is not used in this profile
 * insert Observation-category-VSCat-MS
 * code
   * coding contains IEEE11073 0..1
