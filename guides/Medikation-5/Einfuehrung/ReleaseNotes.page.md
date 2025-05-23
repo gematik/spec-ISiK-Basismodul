@@ -8,7 +8,10 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 09.04.2025
 
-* `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer Therapien nur in sehr seltenen Spezialfällen Anwendung findet. 
+* `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
+  boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
+  Therapien nur in sehr seltenen Spezialfällen Anwendung
+  findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
 
 ---
 
