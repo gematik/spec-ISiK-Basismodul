@@ -57,7 +57,7 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
     * ^short = "Grund für fehlendes Untersuchungsergebniss"
 * component[meanBP] MS
   * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
-  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer Patienten-Ressource, 
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des mittleren Blutdrucks, 
   so MUSS dieses System die Information NICHT abbilden.
 
   Motivation zum eingeschränkten MS: Kodierung des mittleren arteriellen Drucks. Von einem medizinischen Experten im Workshop zur ISiK Kommentierung Stufe 5 wurde erläutert, dass .meanBP relevant in der Normalversorgung und üblich in bekannten Systemen sei (allein Diastole und Systole entspricht nicht mehr medizinischem Stand der Praxis). Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.
