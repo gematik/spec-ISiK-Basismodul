@@ -10,6 +10,7 @@ In FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.
 ### Kompatibilität
 Das Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation."
 * insert ISiKVitalsignCommons
+* insert ISiKVitalsignCommonsValue
 * insert Quantity-MS
 * insert Observation-category-VSCat-MS
 * code

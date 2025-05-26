@@ -4,17 +4,32 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.0-rc2 
+
+## Version 5.0.0-rc2 (Benehmensherstellung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: tbd
 
 * `improve` Öffnung der Kardinalität für ATC und PZN Kodierung, sodass nun eine Mehrfachkordierung möglich ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/737
+* `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
+  boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
+  Therapien nur in sehr seltenen Spezialfällen Anwendung
+  findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
 
 ---
 
 ## Version 5.0.0-rc1
+
+Datum: tbd
+
+* `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
+  in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
+  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
+
+---
+
+## Version 5.0.0-rc (Kommentierung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
