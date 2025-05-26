@@ -10,6 +10,7 @@ In FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezi
 ### Kompatibilität
 Das Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet."
 * insert ISiKVitalsignCommons
+// should not contain ISiKVitalsignCommonsValue since it is not used in this profile
 * component MS
   * insert Component-MS
 * component[ekgLeads] MS
