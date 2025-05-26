@@ -10,7 +10,8 @@ Datum: tbd
 
 * `improve` Das Element MedicationAdministration.request im Profil ISiKMedikationsVerabreichung
   wurde als eingeschränktes Must-Support gekennzeichnet, da die Angabe der zugrunde liegenden
-  Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell abbildbar.
+  Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell
+  abbildbar. https://github.com/gematik/spec-ISiK-Basismodul/pull/734
 
 ## Version 5.0.0-rc (Kommentierung)
 
