@@ -55,7 +55,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
    die Information NICHT abbilden. 
    
    Motivation zum eingeschränkten MS: Die Probe einer Laboruntersuchung ist eine relevante medizinische Information. 
-   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird"
+   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird."
 * specimen MS
   * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System
