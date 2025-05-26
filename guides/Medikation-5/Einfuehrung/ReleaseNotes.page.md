@@ -4,13 +4,22 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.0-rc1 (Benehmensherstellung)
+## Version 5.0.0-rc2 (Benehmensherstellung)
 
-Datum: tbd
+Datum: tbd.
 
+* `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
+  boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
+  Therapien nur in sehr seltenen Spezialfällen Anwendung
+  findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
 * `improve` Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
-  ePA/eMP und präzisere Darstellung der enthaltenen Informationen (
-  MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
+    ePA/eMP und präzisere Darstellung der enthaltenen Informationen (
+    MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
+* `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
+  in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
+  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
+* 
+---
 
 ## Version 5.0.0-rc (Kommentierung)
 
