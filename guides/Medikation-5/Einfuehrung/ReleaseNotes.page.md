@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
-Datum: 09.04.2025
+Datum: tbd.
 
 * `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
   boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
