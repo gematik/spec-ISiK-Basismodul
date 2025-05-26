@@ -111,11 +111,50 @@
         "mustSupport": true
       },
       {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Mehrfachcodierungs-Kennzeichen",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Seitenlokalisation",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Diagnosesicherheit",
+        "mustSupport": true
+      },
+      {
         "id": "Condition.code.coding:Alpha-ID",
         "path": "Condition.code.coding",
         "sliceName": "Alpha-ID",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "http://fhir.de/StructureDefinition/CodingAlphaID"
+            ]
+          }
+        ],
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/bfarm/alpha-id"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:Alpha-ID.system",
+        "path": "Condition.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:Alpha-ID.code",
+        "path": "Condition.code.coding.code",
         "mustSupport": true
       },
       {
@@ -124,7 +163,22 @@
         "sliceName": "SNOMED-CT",
         "min": 0,
         "max": "1",
-        "mustSupport": true
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "patternCoding": {
+          "system": "http://snomed.info/sct"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT"
+        }
       },
       {
         "id": "Condition.code.coding:Orphanet",
@@ -132,9 +186,239 @@
         "sliceName": "Orphanet",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "http://www.orpha.net"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:Orphanet.system",
+        "path": "Condition.code.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:Orphanet.code",
+        "path": "Condition.code.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "comment": "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite.coding",
+        "path": "Condition.bodySite.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite.coding:snomed-ct",
+        "path": "Condition.bodySite.coding",
+        "sliceName": "snomed-ct",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "short": "Patientenbezug",
+        "comment": "**Begründung Must-Support:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject.reference",
+        "path": "Condition.subject.reference",
+        "short": "Patienten-Link",
+        "comment": "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation \n    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "short": "Aufenthaltsbezug",
+        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.encounter.reference",
+        "path": "Condition.encounter.reference",
+        "short": "Encounter-Link",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt \n    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    \n    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. \n    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) \n    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.onset[x]",
+        "path": "Condition.onset[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Erkrankungsbeginn",
+        "comment": "Datum oder Alter/Lebensphase des Erkrankungsbeginns\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.onset[x]:onsetDateTime",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetDateTime",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.onset[x]:onsetAge",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetAge",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn",
+        "path": "Condition.onset[x].extension",
+        "sliceName": "Lebensphase-Beginn",
+        "short": "Lebensphase des Erkrankungsbeginns",
+        "comment": "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Klinische relevanter Zeitraum Ende",
+        "comment": "Ende des klinisch relevanten Zeitraums der Diagnose  \n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementAge",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+        "path": "Condition.abatement[x].extension",
+        "sliceName": "Lebensphase-Ende",
+        "short": "Lebensphase des Erkrankungsendes",
+        "comment": "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/lebensphase"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementDateTime",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementDateTime",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "short": "Dokumentationsdatum",
+        "comment": "Datum, an dem die Diagnose dokumentiert wurde.   \n  **Begründung Pflichtfeld:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, \n  nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.  \n  **Hinweis:** Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.note",
+        "path": "Condition.note",
+        "short": "Notizen",
+        "comment": "Ergänzende Hinweise und Anmerkungen zur Diagnose",
         "mustSupport": true
       }
     ]
-  },
-  "inProgress": true
+  }
 }
