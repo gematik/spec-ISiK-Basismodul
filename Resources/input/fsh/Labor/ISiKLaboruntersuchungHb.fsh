@@ -3,8 +3,8 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungHb
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien."
 * insert Meta
-* code.coding contains snomed 0..1
 * code.coding[loinc] from ObservationCodesHb
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#416125006
 * valueQuantity from ObservationUnitsHb
 * referenceRange MS

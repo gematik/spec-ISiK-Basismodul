@@ -3,8 +3,8 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungGFR
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien."
 * insert Meta
-* code.coding contains snomed 0..1
 * code.coding[loinc] from ObservationCodesGFR
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#80274001
 * valueQuantity from ObservationUnitsGFR
 * referenceRange MS
