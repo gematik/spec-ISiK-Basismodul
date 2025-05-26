@@ -10,6 +10,7 @@ In FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.
 ### Kompatibilität
 Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation."
 * insert ISiKVitalsignCommons
+* insert ISiKVitalsignCommonsValue
 * insert Quantity-MS
 * insert Observation-category-VSCat-MS
 * code
