@@ -6,6 +6,16 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc1
 
+Datum: tbd
+
+* `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
+  in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
+  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
+
+---
+
+## Version 5.0.0-rc (Kommentierung)
+
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
