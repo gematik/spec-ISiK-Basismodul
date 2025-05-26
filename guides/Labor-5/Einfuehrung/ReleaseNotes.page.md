@@ -13,7 +13,7 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 Datum: tbd
 
 - `improve`: Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
-- `improve`: Einschränkung des MS-Flag auf specimen und method für alle Profile aus dem Labormodul  
+- `improve`: Einschränkung des MS-Flag auf specimen und method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
 
 ---
 
