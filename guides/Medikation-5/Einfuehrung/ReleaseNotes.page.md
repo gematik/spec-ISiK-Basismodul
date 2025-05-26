@@ -19,8 +19,8 @@ Datum: tbd.
   ePA/eMP und präzisere Darstellung der enthaltenen Informationen
   (MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
 * `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
-    in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
-    sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
+  in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
+  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
 
 ---
 
