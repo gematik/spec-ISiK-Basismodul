@@ -18,6 +18,7 @@ Datum: tbd.
 * `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
   in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
   sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
+* `improve` ValueSet für Medikament-Kodierung übernommen aus ePA-Medication statt SNOMED-all 
 
 ---
 

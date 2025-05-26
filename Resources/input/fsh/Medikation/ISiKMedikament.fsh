@@ -21,6 +21,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
   * coding[SCT] only ISiKSnomedCTCoding
+  * coding[SCT] from $vs-ti-medication-snomed-ct (extensible)
     * ^patternCoding.system = $cs-sct
   * text MS
     * ^comment = "Begründung des Must-Support: Falls eine Kodierung nicht möglich ist kann das Medikament alternativ per Freitext erfasst werden"
