@@ -106,7 +106,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "medicationRequestReplaces",
         "short": "Welche Medikationsverordnung wird ersetzt?",
-        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit\n\n  Hinweis: Welche Medikationsverordnung wird ersetzt?",
+        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.\n\n    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.\n    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung.",
         "min": 0,
         "max": "1",
         "type": [
@@ -374,7 +374,7 @@
         "id": "MedicationRequest.reasonReference",
         "path": "MedicationRequest.reasonReference",
         "short": "Grund der Medikation (Referenz)",
-        "comment": "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  Begründung zu Must-Support: Konsolidierung mit MII.",
+        "comment": "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  Begründung zu Must-Support: Konsolidierung mit MII.",
         "mustSupport": true
       },
       {
@@ -1108,6 +1108,12 @@
           }
         ],
         "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.priorPrescription",
+        "path": "MedicationRequest.priorPrescription",
+        "short": "Vorherige Verordnung bei fortgesetzter Therapie",
+        "comment": "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.\n\n  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
       }
     ]
   }
