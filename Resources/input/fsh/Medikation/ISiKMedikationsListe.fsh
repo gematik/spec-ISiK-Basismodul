@@ -4,8 +4,9 @@ Id: ISiKMedikationsListe
 Title: "ISiK Medikationsliste"
 Description: """Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.
 
-Die MedicationList enthält MedicationStatement-Ressourcen und bildet alle Medikamente ab, die ein Patient aktuell einnimmt, im Krankenhaus verabreicht bekommt oder die aus anderen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe. 
-Im Unterschied zum elektronischen Medikationsplan (eMP) der ePA handelt es sich bei der ISiKMedikationsListe um eine dynamisch generierbare und systemseitig aktualisierbare Darstellung der Medikation im klinischen Kontext.
+Die MedicationList enthält MedicationStatement-Ressourcen und bildet Medikamente ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden- etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.
+Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden – sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).
+Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
 """
 * insert Meta
 * status MS
