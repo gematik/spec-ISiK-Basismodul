@@ -12,6 +12,7 @@ Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolische
 ### Kompatibilität
 Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation."
 * insert ISiKVitalsignCommons
+// should not contain ISiKVitalsignCommonsValue since it is not used in this profile
 * insert Observation-category-VSCat-MS
 * code
   * coding contains IEEE11073 0..1
@@ -55,7 +56,13 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
     * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
     * ^short = "Grund für fehlendes Untersuchungsergebniss"
 * component[meanBP] MS
-  * ^comment = "Motivation MS: Kodierung des mittleren arteriellen Drucks."
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des mittleren Blutdrucks, 
+  so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Kodierung des mittleren arteriellen Drucks. Von einem medizinischen Experten im Workshop zur ISiK Kommentierung Stufe 5 wurde erläutert, dass .meanBP relevant in der Normalversorgung und üblich in bekannten Systemen sei (allein Diastole und Systole entspricht nicht mehr medizinischem Stand der Praxis). Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.
+  In der ISiK wird die Angabe des mittleren arteriellen Drucks als eingeschränktes Must Support definiert, um eine einheitliche Implementierung zu fördern.
+  "
   * ^short = "Mittlerer arterieller Druck"
   * insert Quantity-MS
   * insert Component-Slice-MS

@@ -12,6 +12,7 @@ Das Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefiniti
 * insert Meta
 * insert Quantity-MS
 * insert ISiKVitalsignCommons
+* insert ISiKVitalsignCommonsValue
 * category[survey] MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Sortierung und Abfrage anhand der Kategorie der Untersuchung"
   * ^short = "Untersuchungskategorie"

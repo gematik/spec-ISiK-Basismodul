@@ -100,6 +100,13 @@ RuleSet: supportedLaborProfile
   * extension.url = $capabilitystatement-expectation
   * extension.valueCode = #SHALL
 
+RuleSet: ISiKVitalsignCommonsValue
+// ISiK Vitalsign Commons Value is needed for the ISiK Vitalsign Profiles since some of them are not using the value[x] element (e.g. ISiKBlutdruck is using component).
+* insert Meta
+* value[x] MS
+  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
+  * ^short = "Untersuchungsergebnis"
+
 RuleSet: ISiKVitalsignCommons
 * insert Meta
 * status MS
@@ -155,9 +162,7 @@ Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hi
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
   * ^short = "Grund für fehlende Untersuchungsergebnisse"
-* value[x] MS
-  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
-  * ^short = "Untersuchungsergebnis"
+
 
 RuleSet: Quantity-MS
 * valueQuantity MS
