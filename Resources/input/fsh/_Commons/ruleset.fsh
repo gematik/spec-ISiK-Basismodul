@@ -141,7 +141,8 @@ Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"
   * ^short = "Untersuchender"
 * method MS
   * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
-  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Untersuchungsmethode zur Erhebung des Parameters, so MUSS dieses System die Information NICHT abbilden.
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden
+
 
   Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Untersuchungsmethode"
