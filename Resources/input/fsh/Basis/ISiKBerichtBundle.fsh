@@ -20,6 +20,10 @@ Description: "A document style representation of the receipt (complete, self-con
   * ^slicing.rules = #open
 * entry contains Composition 1..1 MS
 * entry[Composition].resource only ISiKBerichtSubSysteme
+* entry contains Patient 1..1 MS
+* entry[Patient].resource only Patient
+* entry contains Encounter 0..1 MS
+* entry[Encounter].resource only Encounter
 
 Instance: ISiKBundle-Example
 InstanceOf: ISiKBerichtBundle
