@@ -22,7 +22,7 @@ Datum: tbd.
 
 ---
 
-## Version 5.0.0-rc1
+## Version 5.0.0-rc (Kommentierung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
