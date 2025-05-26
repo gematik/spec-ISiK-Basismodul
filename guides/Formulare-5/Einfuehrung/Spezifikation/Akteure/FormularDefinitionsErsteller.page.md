@@ -14,7 +14,7 @@ Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (F
 
 ### Versionierung
 
-Bei der Erstellung und späteren Bearbeitung MUSS eine entsprechens Versionsincrement mit sich ziehen. Hierbei sollte zwischen technischen und inhaltlichen Änderungen unterschieden werden. Im Folgenden ist ein zu nutzenden SemVer Verfahren beschreiben, welches im Rahmen von ISiK Kompatiblen FormularDefinitionen als Grundlage dienen soll:
+Bei der Erstellung und späteren Bearbeitung einer Formulardefinition ist es wichtig, dass jede Änderung eine entsprechende Versionserhöhung (Inkrement) zur Folge hat. Dabei wird zwischen technischen und inhaltlichen Änderungen unterschieden, um die Auswirkungen auf die Kompatibilität und Funktionalität des Formulars korrekt zu kommunizieren. Das folgende SemVer-Verfahren dient als Grundlage für die Versionierung von Formulardefinitionen im Rahmen von ISiK-kompatiblen Formularen.
 
 #### Inkrement der Major Nummer 
 
