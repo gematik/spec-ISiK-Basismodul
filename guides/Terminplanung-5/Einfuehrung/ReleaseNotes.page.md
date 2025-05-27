@@ -9,7 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd.
 
-* `improve` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst
+* `improve` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745
 
 
 ## Version 5.0.0-rc
