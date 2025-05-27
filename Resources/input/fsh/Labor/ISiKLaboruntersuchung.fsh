@@ -40,6 +40,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding contains loinc 1.. MS and snomed 1..1
   * coding[loinc] ^patternCoding.system = $loinc
   * coding[snomed] ^patternCoding.system = $sct
+* subject only Reference(Patient)  
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
   * ^comment = "**Begründung MS**: Die Verknüpfung zur Patientin oder zum Patienten ist zwingend notwendig für jegliche klinische Verwertbarkeit."
@@ -85,11 +86,19 @@ Nicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlic
   * ^short = "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)"
   * ^comment = "**Begründung MS**: Dient zur Dokumentation abweichender Umstände, Freitextbefundung oder ergänzender Laborkommentare."
 * method MS
-  * ^short = "Verwendete Methode oder Technik zur Durchführung der Untersuchung"
-  * ^comment = "**Begründung MS**: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist für Transparenz und Vergleichbarkeit entscheidend."
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System
+   die Information NICHT abbilden. 
+   
+   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist daher für Transparenz und Vergleichbarkeit entscheidend.
+   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird."
 * specimen MS
-  * ^short = "Referenz auf die entnommene Probe"
-  * ^comment = "**Begründung MS**: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend."
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System
+   die Information NICHT abbilden. 
+   
+   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.
+   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird"
   * reference MS
   * identifier MS
     * system 1.. MS

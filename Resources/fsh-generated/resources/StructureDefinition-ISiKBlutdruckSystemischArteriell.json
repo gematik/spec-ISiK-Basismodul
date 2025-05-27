@@ -6,7 +6,7 @@
   "name": "ISiKBlutdruckSystemischArteriell",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-05-13",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).\n### Motivation\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n### Kompatibilität\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
   "fhirVersion": "4.0.1",
@@ -114,13 +114,6 @@
         "path": "Observation.performer",
         "short": "Untersuchender",
         "comment": "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "short": "Untersuchungsergebnis",
-        "comment": "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung",
         "mustSupport": true
       },
       {
@@ -398,7 +391,7 @@
         "path": "Observation.component",
         "sliceName": "meanBP",
         "short": "Mittlerer arterieller Druck",
-        "comment": "Motivation MS: Kodierung des mittleren arteriellen Drucks.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des mittleren Blutdrucks, \n  so MUSS dieses System die Information NICHT abbilden.\n\n  Motivation zum eingeschränkten MS: Kodierung des mittleren arteriellen Drucks. Von einem medizinischen Experten im Workshop zur ISiK Kommentierung Stufe 5 wurde erläutert, dass .meanBP relevant in der Normalversorgung und üblich in bekannten Systemen sei (allein Diastole und Systole entspricht nicht mehr medizinischem Stand der Praxis). Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.\n  In der ISiK wird die Angabe des mittleren arteriellen Drucks als eingeschränktes Must Support definiert, um eine einheitliche Implementierung zu fördern.\n  ",
         "mustSupport": true
       },
       {
