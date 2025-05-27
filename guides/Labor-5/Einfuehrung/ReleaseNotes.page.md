@@ -6,7 +6,18 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
-## Version 5.0.0-rc (Kommentierung)
+## Version 5.0.0-rc1 (Benehmensherstellung)
+
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: tbd
+
+- `improve`: Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
+- `improve`: Einschränkung des MS-Flag auf specimen und method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
+
+---
+
+## Version 5.0.0-rc
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 

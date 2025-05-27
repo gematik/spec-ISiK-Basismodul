@@ -5,14 +5,14 @@ RuleSet: Meta
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-04-09"
+* ^date = "2025-05-13"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-04-09"
+* date = "2025-05-13"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -100,6 +100,13 @@ RuleSet: supportedLaborProfile
   * extension.url = $capabilitystatement-expectation
   * extension.valueCode = #SHALL
 
+RuleSet: ISiKVitalsignCommonsValue
+// ISiK Vitalsign Commons Value is needed for the ISiK Vitalsign Profiles since some of them are not using the value[x] element (e.g. ISiKBlutdruck is using component).
+* insert Meta
+* value[x] MS
+  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
+  * ^short = "Untersuchungsergebnis"
+
 RuleSet: ISiKVitalsignCommons
 * insert Meta
 * status MS
@@ -148,9 +155,7 @@ Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
   * ^short = "Grund für fehlende Untersuchungsergebnisse"
-* value[x] MS
-  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
-  * ^short = "Untersuchungsergebnis"
+
 
 RuleSet: Quantity-MS
 * valueQuantity MS

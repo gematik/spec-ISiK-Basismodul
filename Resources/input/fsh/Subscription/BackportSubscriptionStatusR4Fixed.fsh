@@ -66,7 +66,7 @@ Diese lokale Definition wird durch das offizielle `backport-subscription-status-
 * parameter[type].name ^short = "Slice discriminator: the type of event for this notification"
 * parameter[type].value[x] 1.. MS
 * parameter[type].value[x] only code
-* parameter[type].value[x] from SubscriptionNotificationType (required)
+* parameter[type].value[x] from SubscriptionNotificationTypeVS (required)
 * parameter[type].value[x] ^short = "The type of event being conveyed with this notificaiton."
 * parameter[eventsSinceSubscriptionStart] ^short = "Parameter containing the number of events since this subscription started"
 * parameter[eventsSinceSubscriptionStart].name = "events-since-subscription-start" (exactly)

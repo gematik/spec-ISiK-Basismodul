@@ -7,7 +7,7 @@
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-05-13",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.  \n\n  ### Motivation\nDie Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.\n\n  ### Kompatibilität\nDieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) (Version 4.2.0) von IHE International.\n\n  #### Abweichungen vom IHE-Profil\n- Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.\n- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion {{pagelink: Dokumentenbereitstellung}} wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.\n- `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden\n\n#### Einschränkungen des IHE-Profils\nElemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt.",
   "fhirVersion": "4.0.1",
@@ -338,12 +338,6 @@
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.custodian",
-        "path": "DocumentReference.custodian",
-        "comment": "Einschränkung der Kardinalität analog MHD V4.0.1",
-        "max": "0"
-      },
-      {
         "id": "DocumentReference.relatesTo",
         "path": "DocumentReference.relatesTo",
         "comment": "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden.",
@@ -373,15 +367,7 @@
       {
         "id": "DocumentReference.description",
         "path": "DocumentReference.description",
-        "comment": "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;",
-        "min": 1,
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "CompositionDocumentReferenceMapping",
-            "map": "Composition.title"
-          }
-        ]
+        "comment": "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen."
       },
       {
         "id": "DocumentReference.securityLabel",
@@ -441,7 +427,7 @@
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
         "short": "Base64-codierte Binärdaten",
-        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden.\n\nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
         "mustSupport": true
       },
       {
@@ -454,6 +440,20 @@
           {
             "identity": "CompositionDocumentReferenceMapping",
             "map": "vom Server festgelegter Speicherort des Bundles/Narratives"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.content.attachment.title",
+        "path": "DocumentReference.content.attachment.title",
+        "short": "Bezeichnung des Dokuments",
+        "comment": "Menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen, z.B. als Titel in einer Dokumentenliste ('Lungenfunktionstest vom 18.02.2022').\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.",
+        "min": 1,
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Composition.title"
           }
         ]
       },

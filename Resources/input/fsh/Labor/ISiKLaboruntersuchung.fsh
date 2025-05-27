@@ -28,6 +28,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * coding contains loinc 1.. MS and snomed 1..1
   * coding[loinc] ^patternCoding.system = $loinc
   * coding[snomed] ^patternCoding.system = $sct
+* subject only Reference(Patient)  
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
 * encounter MS
@@ -49,7 +50,19 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * interpretation MS
 * note MS
 * method MS
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System
+   die Information NICHT abbilden. 
+   
+   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information. 
+   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird."
 * specimen MS
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** 
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System
+   die Information NICHT abbilden. 
+   
+   Motivation zum eingeschränkten MS: Die Probe einer Laboruntersuchung ist eine relevante medizinische Information. 
+   Da die Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird"
   * reference MS
   * identifier MS
     * system 1.. MS
