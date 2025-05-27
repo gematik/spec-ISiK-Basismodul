@@ -88,7 +88,7 @@ Für die Implementierung der Interaktion "Dokumentenzugriff" gelten die in IHE M
 Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.68.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368412-message-semantics)
-Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN, ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht.
+Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN, ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht. Das bedeutet: Wenn das Dokument auf dem Server z. B. als PDF gespeichert ist, muss der Server nur dann antworten, wenn der Client explizit PDF akzeptiert. Der Server ist nicht verpflichtet, das Dokument in ein anderes Format wie z. B. JPEG zu konvertieren, nur weil der Client diesen Typ bevorzugen würde.
 
 Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](https://hl7.org/fhir/R4/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
 
