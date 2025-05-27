@@ -76,7 +76,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 Eine Verschiebeoperation kann im Normalfall als eine Neubuchung mit geändertem Zeitfenster ausgeführt werden (siehe Interaktion 5, bzw. {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.)
 
-Bei eine Verschiebung kann allerdings auch eine Absage und Neubuchung eines Termins notwendig werden, wenn ursprüngliche Ressourcen nicht mehr verfügbar sind für den neu zu belegenden Slot:
+Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Termins notwendig werden, wenn ursprüngliche Ressourcen nicht mehr verfügbar sind für den neu zu belegenden Slot:
 
 {{render:Material/Terminplanung/images/Interaktionen/7.1 Termin verschieben (ausgehend vom Client).png}}
 
