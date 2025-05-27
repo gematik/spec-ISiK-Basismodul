@@ -16,13 +16,9 @@ Datum: tbd
   boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
   Therapien nur in sehr seltenen Spezialfällen Anwendung
   findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
-
----
-
-## Version 5.0.0-rc1
-
-Datum: tbd
-
+* `improve` Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
+  ePA/eMP und präzisere Darstellung der enthaltenen Informationen
+  (MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
 * `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
   in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
   sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
