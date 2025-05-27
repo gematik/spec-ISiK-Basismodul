@@ -23,7 +23,7 @@ ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 ### Annotation für die Extraktion
 
 * Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten für die Extraktion annotiert werden.
-* Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf eine geeignetes Observation-Profil für die Extraktion verweisen.
+* Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf ein geeignetes nationales oder internationales Observation-Profil für die Extraktion verweisen.
 
 ### Vorbereitung für Definition-Based Extraction und Prepopulation
 
