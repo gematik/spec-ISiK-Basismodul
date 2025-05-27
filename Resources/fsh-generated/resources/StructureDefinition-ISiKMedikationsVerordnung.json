@@ -196,8 +196,9 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:PZN",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "PZN",
+        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Coding",
@@ -215,8 +216,9 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:ATC-DE",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "ATC-DE",
+        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Coding",
@@ -485,82 +487,6 @@
       {
         "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration.code",
         "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
-        "sliceName": "boundsRange",
-        "short": "Bereich für die Begrenzung",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low",
-        "patternQuantity": {
-          "system": "http://unitsofmeasure.org"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.value",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.value",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.unit",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.unit",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.system",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.code",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high",
-        "patternQuantity": {
-          "system": "http://unitsofmeasure.org"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.value",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.value",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.unit",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.unit",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.system",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.code",
-        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.code",
         "min": 1,
         "mustSupport": true
       },

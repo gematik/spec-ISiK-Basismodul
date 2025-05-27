@@ -58,13 +58,15 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-      PZN 0..1 MS and
-      ATC-DE 0..1 MS and
+      PZN 0..* MS and
+      ATC-DE 0..* MS and
       SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen."
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
   * text MS
@@ -140,20 +142,6 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * unit MS
         * system 1..1 MS
         * code 1..1 MS
-      * boundsRange MS
-        * ^short = "Bereich für die Begrenzung"
-        * low MS
-          * ^patternQuantity.system = $cs-ucum
-          * value 1..1 MS
-          * unit MS
-          * system 1..1 MS
-          * code 1..1 MS
-        * high MS
-          * ^patternQuantity.system = $cs-ucum
-          * value 1..1 MS
-          * unit MS
-          * system 1..1 MS
-          * code 1..1 MS
       * boundsPeriod MS
         * ^short = "begrenzender Zeitraum"
         * start MS
