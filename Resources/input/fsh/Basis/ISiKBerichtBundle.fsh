@@ -24,7 +24,7 @@ Description: "A document style representation of the receipt (complete, self-con
   * ^short = "Slice zur Hinterlegung einer Patienten-Instanz"
   * ^comment = "Dieses Slice wir explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten ist.
   Die FHIR-Core Specification besagt für Document-Bundles bereits,
-  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört auch die Patient-Instanz."
+  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz."
 * entry[Patient].resource only Patient
 * entry contains Encounter 0..1 MS
   * ^short = "Slice zur Hinterlegung einer Encounter-Instanz"
