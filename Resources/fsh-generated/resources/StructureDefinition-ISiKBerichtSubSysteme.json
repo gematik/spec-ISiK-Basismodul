@@ -61,6 +61,8 @@
       {
         "id": "Composition.type",
         "path": "Composition.type",
+        "short": "Dokumenttyp",
+        "comment": "Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  \n  Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden.",
         "mustSupport": true
       },
       {
@@ -93,8 +95,7 @@
       {
         "id": "Composition.type.coding:LOINC.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://loinc.org"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:LOINC.code",
@@ -115,8 +116,7 @@
       {
         "id": "Composition.type.coding:KDL.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:KDL.code",
@@ -146,8 +146,7 @@
       {
         "id": "Composition.type.coding:IHE.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:IHE.code",
@@ -155,8 +154,17 @@
         "min": 1
       },
       {
+        "id": "Composition.type.text",
+        "path": "Composition.type.text",
+        "short": "Dokumenttyp (Freitext)",
+        "comment": "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps.",
+        "mustSupport": true
+      },
+      {
         "id": "Composition.category",
         "path": "Composition.category",
+        "short": "Dokument-Kategorie",
+        "comment": "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden.",
         "mustSupport": true
       },
       {
@@ -179,13 +187,15 @@
         "sliceName": "LOINC",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "http://loinc.org"
+        },
         "mustSupport": true
       },
       {
         "id": "Composition.category.coding:LOINC.system",
         "path": "Composition.category.coding.system",
-        "min": 1,
-        "fixedUri": "http://loinc.org"
+        "min": 1
       },
       {
         "id": "Composition.category.coding:LOINC.code",
@@ -198,13 +208,15 @@
         "sliceName": "IHE",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        },
         "mustSupport": true
       },
       {
         "id": "Composition.category.coding:IHE.system",
         "path": "Composition.category.coding.system",
-        "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        "min": 1
       },
       {
         "id": "Composition.category.coding:IHE.code",
