@@ -11,8 +11,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc2 Benehmensherstellung
 
-Datum: 
-
+* `fixed` affectsState-Attribut der $update-Operation auf `true` gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert. 
 * `fixed` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha gefixt https://github.com/gematik/spec-ISiK-Basismodul/pull/726 
 
 
