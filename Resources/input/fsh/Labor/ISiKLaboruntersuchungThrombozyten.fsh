@@ -4,6 +4,7 @@ Id: ISiKLaboruntersuchungThrombozyten
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien."
 * insert Meta
 * code.coding[loinc] from ObservationCodesThrombozyten
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#365632008
 * valueQuantity from ObservationUnitsThrombozyten
 * referenceRange MS

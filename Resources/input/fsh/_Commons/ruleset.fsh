@@ -147,10 +147,17 @@ Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"
   * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Untersuchender"
 * method MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden
+
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Untersuchungsmethode"
 * device MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Gerät"
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
