@@ -16,6 +16,9 @@ Datum: tbd
   boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
   Therapien nur in sehr seltenen Spezialfällen Anwendung
   findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
+* `improve` Das Element MedicationAdministration.request im Profil ISiKMedikationsVerabreichung
+  wurde als eingeschränktes Must-Support gekennzeichnet, da die Angabe der zugrunde liegenden
+  Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell abbildbar. https://github.com/gematik/spec-ISiK-Basismodul/pull/734
 * `improve` Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
   ePA/eMP und präzisere Darstellung der enthaltenen Informationen
   (MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
