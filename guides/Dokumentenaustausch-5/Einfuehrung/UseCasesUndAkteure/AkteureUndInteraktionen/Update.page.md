@@ -33,7 +33,23 @@ Ein Client SOLL in diesem Fall eine erneute Dokumentenbereitstellung durchführe
 {{render:https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata}}
 
 ### Beispiel 
+URL:  
+    HTTP POST [base]/DocumentReference/example/$update-metadata
 
-    [base]/DocumentReference/example/$update-metadata?docStatus=final
+BODY:  
+<tabs>
+    <tab title="Übersicht">      
+        {{render:ParametersExampleUpdateMetadata}}
+    </tab>
+    <tab title="XML">      
+        {{xml:ParametersExampleUpdateMetadata}}
+    </tab>
+    <tab title="JSON">
+        {{json:ParametersExampleUpdateMetadata}}
+    </tab>
+    <tab title="Link">
+        {{link:ParametersExampleUpdateMetadata}}
+    </tab>
+</tabs>
 
 
