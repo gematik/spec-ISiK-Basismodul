@@ -9,6 +9,7 @@ Title: "update-metadata"
 * name = "UpdateMetadata"
 * description = "Update selected, uncritical document metadata in a safe and controlled manner without having to replace the whole document"
 * code = #update-metadata
+* affectsState = true
 * comment = "
     Expected behaviour:
 * Servers SHALL update the DocumentReference.docStatus with the submitted values
