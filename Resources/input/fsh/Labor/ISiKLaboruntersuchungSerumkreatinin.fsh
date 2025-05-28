@@ -4,6 +4,7 @@ Id: ISiKLaboruntersuchungSerumkreatinin
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumkreatinin eines Patienten in ISiK Szenarien."
 * insert Meta
 * code.coding[loinc] from ObservationCodesSerumkreatinin
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#70901006
 * valueQuantity from ObservationUnitsSerumkreatinin
 * referenceRange MS

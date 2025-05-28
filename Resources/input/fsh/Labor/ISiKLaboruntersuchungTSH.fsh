@@ -4,6 +4,7 @@ Id: ISiKLaboruntersuchungTSH
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien."
 * insert Meta
 * code.coding[loinc] from ObservationCodesTSH
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#61167004
 * valueQuantity from ObservationUnitsTSH
 * referenceRange MS
