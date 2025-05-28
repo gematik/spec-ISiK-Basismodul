@@ -5,14 +5,14 @@ RuleSet: Meta
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-04-09"
+* ^date = "2025-05-13"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-04-09"
+* date = "2025-05-13"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -100,6 +100,13 @@ RuleSet: supportedLaborProfile
   * extension.url = $capabilitystatement-expectation
   * extension.valueCode = #SHALL
 
+RuleSet: ISiKVitalsignCommonsValue
+// ISiK Vitalsign Commons Value is needed for the ISiK Vitalsign Profiles since some of them are not using the value[x] element (e.g. ISiKBlutdruck is using component).
+* insert Meta
+* value[x] MS
+  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
+  * ^short = "Untersuchungsergebnis"
+
 RuleSet: ISiKVitalsignCommons
 * insert Meta
 * status MS
@@ -140,17 +147,22 @@ Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"
   * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Untersuchender"
 * method MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden
+
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Untersuchungsmethode"
 * device MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Gerät"
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
   * ^short = "Grund für fehlende Untersuchungsergebnisse"
-* value[x] MS
-  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
-  * ^short = "Untersuchungsergebnis"
+
 
 RuleSet: Quantity-MS
 * valueQuantity MS

@@ -1,5 +1,9 @@
 # Conformance: Scopes und Kontexte
 
+---
+### Normativ
+---
+
 Die Vorgaben von ISiK-Connect betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-029}}).
 
 ## Kontexte 

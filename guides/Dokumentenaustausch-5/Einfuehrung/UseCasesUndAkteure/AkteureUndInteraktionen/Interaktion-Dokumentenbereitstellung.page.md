@@ -28,8 +28,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 * Die Verwendung von Contained-Ressourcen ist im ISiK-Kontext nicht erlaubt
 
 ##### [2:3.105.4.1.2.2 Patient Identity](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054122-patient-identity)
-* Der Client MUSS eine der im  Kapitel "Herstellung von Patient- und Enocunterkontext" beschriebenen Optionen verwenden, um den Patienten- und Encounter-Kontext zu etablieren.
-* Logische Referenzen für Patient und Encounter sind im ISiK-Kontext nicht erlaubt
+* Der Client KANN eine der im  Kapitel "Herstellung von Patient- und Enocunterkontext" beschriebenen Optionen verwenden, um den Patienten- und Encounter-Kontext zu etablieren.
 * `DocumentReference.sourcePatientInfo` wird im ISiK-Kontext nicht verwendet
 ##### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
 Die Vereinbarungen gelten uneingeschränkt.

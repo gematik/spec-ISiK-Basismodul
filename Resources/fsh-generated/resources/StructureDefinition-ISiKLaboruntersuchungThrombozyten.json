@@ -6,7 +6,7 @@
   "name": "ISiKLaboruntersuchungThrombozyten",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-05-13",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -30,6 +30,10 @@
         "id": "Observation.code.coding:snomed",
         "path": "Observation.code.coding",
         "sliceName": "snomed",
+        "short": "Primärer SNOMED CT-Code ohne Methodenbezug",
+        "comment": "Motivation 0..1 Kardinalität: Abstrakter SNOMED CT-Code ohne Methodenbezug. Weitere (SCT) Codings mit Methodenbezug sind durch das offene Slicing möglich.",
+        "min": 0,
+        "max": "1",
         "patternCoding": {
           "code": "365632008",
           "system": "http://snomed.info/sct"
