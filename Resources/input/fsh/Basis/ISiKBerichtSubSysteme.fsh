@@ -79,7 +79,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * status MS
 * type MS
   * ^short = "Dokumenttyp"
-  * ^comment = "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Entsprechend MUSS der vorgegebene LOINC-Code verwenden werden. Das Dokument KANN z.B. mittels weiteren LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  * ^comment = "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Entsprechend SOLLTE der vorgegebene LOINC-Code verwenden werden. Das Dokument KANN z.B. mittels weiteren LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
   Neben der vorgegebenen LOINC-Kodierung KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden."
   * text MS
     * ^short = "Dokumenttyp (Freitext)"
@@ -89,7 +89,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 1..1 MS and
+    LOINC 0..1 MS and
     KDL 0..1 MS and
     IHE 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
