@@ -84,7 +84,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * text MS
     * ^short = "Dokumenttyp (Freitext)"
     * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
-* type.coding 1.. MS
+* type.coding 0.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
