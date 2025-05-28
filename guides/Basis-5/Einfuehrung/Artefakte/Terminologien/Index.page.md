@@ -1,6 +1,6 @@
 ## {{page-title}}
 
-{{index:current}}
+
 <!--
 ## Verwendete ValueSets
 Übersicht aller ValueSets, für die in diesem Modul ein ensprechendes Binding spezifiziert ist.
