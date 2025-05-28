@@ -79,7 +79,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * status MS
 * type MS
   * ^short = "Dokumenttyp"
-  * ^comment = "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Entsprechend SOLLTE der vorgegebene LOINC-Code verwenden werden. Das Dokument KANN z.B. mittels weiteren LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  * ^comment = "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
   Neben der vorgegebenen LOINC-Kodierung KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden."
   * text MS
     * ^short = "Dokumenttyp (Freitext)"
