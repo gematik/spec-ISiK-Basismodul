@@ -50,6 +50,11 @@ Parent: Questionnaire
     * ^short = "innerhalb dieses Formulars eindeutige ID dieses Feldes"
     * ^comment = "**Begründung Pflichtfeld:**  
     Erforderlich für die Verlinkung der Antworten in der QuestionnaireRespons mit der Definition des Formularfeldes."
+  * code MS
+    * ^short = "Code für dieses Formularfeld"
+    * ^comment = "**Begründung MS:**  
+    Zur eindeutigen Identifikation des Formularfeldes. Ohne Code ist Observation-based-extraction nicht möglich.
+    Wenn kein Code zur Verfügung steht, besteht weiterhin die Möglichkeit ein Item ohne Code zu definieren."  
   * prefix MS
   * text MS
     * ^short = "Text"
