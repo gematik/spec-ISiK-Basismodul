@@ -59,6 +59,8 @@ Es ist zu beachten, dass innerhalb dieser Aktion ein terminführendes Termin-Rep
 
 In diesem Kontext kann das Termin-Repsoitory zudem Zusatzinformationen (z.B. Lagepläne) an den Termin-Requestor übermitteln.
 
+Die Buchung eines Termins kann auch eine Aktualisierung eines Termins darstellen, indem für einen bestehenden Termin ein oder mehrere neu ausgewählte Terminblöcke an das Terminrepository übergeben werden.
+
 Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
 
 ---
