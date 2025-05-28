@@ -69,7 +69,7 @@
         "id": "Composition.type",
         "path": "Composition.type",
         "short": "Dokumenttyp",
-        "comment": "Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  \n  Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden.",
+        "comment": "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Entsprechend SOLLTE der vorgegebene LOINC-Code verwenden werden. Das Dokument KANN z.B. mittels weiteren LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  \n  Neben der vorgegebenen LOINC-Kodierung KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.",
         "mustSupport": true
       },
       {
@@ -84,13 +84,13 @@
           ],
           "rules": "open"
         },
-        "min": 1,
         "mustSupport": true
       },
       {
         "id": "Composition.type.coding:LOINC",
         "path": "Composition.type.coding",
         "sliceName": "LOINC",
+        "comment": "Hinweis: Die Verwendung des fixen LOINC-Codes schließt nicht aus, dass weitere LOINC-Codes zur genaueren Klassifizierung verwendet werden KÖNNEN.",
         "min": 0,
         "max": "1",
         "patternCoding": {
@@ -165,7 +165,6 @@
         "path": "Composition.type.text",
         "short": "Dokumenttyp (Freitext)",
         "comment": "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps.",
-        "min": 1,
         "mustSupport": true
       },
       {
