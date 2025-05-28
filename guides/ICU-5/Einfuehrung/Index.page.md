@@ -32,9 +32,8 @@ Dieser Implementierungsleitfaden beschreibt eine bidirektionale Überleitung zwi
 ###  Stakeholder
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von KIS und PDMS.
 
-Es handelt sich um eine technische Spezifikation, zu der keine weiteren medizinischen Fachexperten zu Rate gezogen werden. 
-
-Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html), einer medizinischen Validierung unterzogen worden.
+Es handelt sich um eine technische Spezifikation. 
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. Die Profile werden mit den Kooperationspartnern der MII weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
 
 Das zugrundeliegende Informationsmodell der MII wurde vom Vorstand der DIVI (Deutsche Interdiziplinäre Vereinigung für Intensiv- und Notfallmedizin) freigegeben. Alle Universitätskliniken (im Rahmen der MII und des Netzwerks Universitätsmedizin (NUM)) haben die hier gelisteten Profile in allen Gremien bestätigt und sich auf deren Verwendung verpflichtet (z. B. Beschluss des nationalen Steuerungsgremiums (NSG) der MII 12/2024).
 
