@@ -2,7 +2,6 @@
 
 ## Verwendete Extensions
 
-{{index:current}}
 <!--
 <fql>
 from StructureDefinition
