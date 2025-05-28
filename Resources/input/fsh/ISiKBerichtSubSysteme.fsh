@@ -16,7 +16,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * ^short = "Dokumenttyp"
   * ^comment = "Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
   Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden."
-  * text 1.. MS
+  * text MS
     * ^short = "Dokumenttyp (Freitext)"
     * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
 * type.coding 1.. MS
