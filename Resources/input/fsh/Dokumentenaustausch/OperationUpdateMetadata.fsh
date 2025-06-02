@@ -9,6 +9,7 @@ Title: "update-metadata"
 * name = "UpdateMetadata"
 * description = "Update selected, uncritical document metadata in a safe and controlled manner without having to replace the whole document"
 * code = #update-metadata
+* affectsState = true
 * comment = "
     Expected behaviour:
 * Servers SHALL update the DocumentReference.docStatus with the submitted values
@@ -30,3 +31,11 @@ Title: "update-metadata"
   * binding 
     * strength = #required 
     * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
+
+
+Instance: ParametersExampleUpdateMetadata
+InstanceOf: Parameters
+Usage: #example
+Description: "Example of an input parameter for the request body for the update-metadata operation" 
+* parameter.name = "docStatus"
+* parameter.valueCode = #final
