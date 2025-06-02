@@ -14,6 +14,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 * `fixed` affectsState-Attribut der $update-Operation auf `true` gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert. 
 * `fixed` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha gefixt https://github.com/gematik/spec-ISiK-Basismodul/pull/726 
 * `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzugefügt, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/738 
+* `improve` Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type https://github.com/gematik/spec-ISiK-Basismodul/pull/749
 
 
 ## Version 5.0.0-rc1
