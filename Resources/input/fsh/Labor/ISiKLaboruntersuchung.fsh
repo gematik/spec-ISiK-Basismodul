@@ -22,7 +22,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * category = $cs-observation-category#laboratory 
 * code MS
   * ^short = "Gegenstand der Untersuchung (Laborparameter)"
-  * ^comment = "**Begründung MS**: Der Code identifiziert, was gemessen wurde, und ist damit das zentrale Element der Observation. Ohne code ist kein klinischer Kontext herstellbar."  
+  * ^comment = "**Begründung MS**: Der Code identifiziert, was gemessen wurde, und ist damit das zentrale Element der Observation. Ohne .code ist kein eindeutiger sowie maschinell auswertbarer klinischer Kontext  dokumentiert."  
   * coding
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
