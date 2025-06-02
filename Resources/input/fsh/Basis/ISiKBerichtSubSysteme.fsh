@@ -79,8 +79,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * status MS
 * type MS
   * ^short = "Dokumenttyp"
-  * ^comment = "Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
-  Neben der vorgegebenen LOINC-Kodierung KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden."
+  * ^comment = "Begründung zu Must Support: Der Dokumenttyp ist für die Identifikation des Berichtes und die Zuordnung zu einem Subsystem für die weitere Verarbeitung erforderlich.
+
+  *Hinweis für Implementierer:* 
+  Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  Es KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.
+  
+  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,
+  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.
+  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)
+  aus dem KDL-Code ermittelt werden.
+  Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.  
+  "
   * text MS
     * ^short = "Dokumenttyp (Freitext)"
     * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
@@ -89,16 +99,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 0..1 MS and
     KDL 0..1 MS and
-    IHE 0..1 MS
+    XDS 0..1 MS
   * system 1..
   * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
   * code 1..
     * obeys kdl-1
-* type.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+* type.coding[XDS] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
   * system 1..
   * code 1..
 * category MS
