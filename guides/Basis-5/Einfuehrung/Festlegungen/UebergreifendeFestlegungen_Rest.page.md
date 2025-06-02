@@ -46,7 +46,11 @@ Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System üb
 
 Per Create-Interaktion erzeugte Ressourcen MÜSSEN im Falle einer erfolgreichen Übermittlung direkt über die READ- und SEARCH-Interaktionen zur Verfügung gestellt werden.
 
-Ressourcen, die zu einem entsprechenden ISiK-Profil nicht konform sind, MÜSSEN durch das bestätigungsrelevante System NICHT angenommen werden. Als Antwort KANN ein HTTP Status-Code 400 - Bad Request mit einer ```OperationOutcome```-Ressource zurückgegeben werden, falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource handelt. Die ```OperationOutcome``` MUSS eine Auflistung aller Fehler in der übermittelten Ressource in kodierter Form vorweisen. Anderweitig (semantisch) invalide Ressourcen KÖNNEN ebenfalls mit einer entsprechenden OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden.
+Ressourcen, die zu einem entsprechenden ISiK-Profil nicht konform sind, KÖNNEN durch das bestätigungsrelevante System abgewiesen werden.  Falls diese abgewiesenen Ressourcen syntaktisch korrekt sind, dann SOLL der Server als Antwort ein HTTP Status-Code 422 - Unprocessable Entity mit einer ```OperationOutcome```-Ressource zurückgeben.
+
+Falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource handelt, dann SOLL als Antwort ein HTTP Status-Code 400 - Bad Request mit einer ```OperationOutcome```-Ressource zurückgegeben werden. Die ```OperationOutcome``` SOLL eine Auflistung aller Fehler in der übermittelten Ressource in kodierter Form vorweisen. Anderweitig (semantisch) invalide Ressourcen KÖNNEN ebenfalls mit einer entsprechenden OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden.
+
+**Hintergrund:** Bei diesen Festlegungen wurden die Vorgaben der [Kernspezifikation](https://hl7.org/fhir/http.html#create) übernommen.
 
 Systeme SOLLEN die [Hinweise zum korrekten Umgang mit Validierung beachten](https://hl7.org/fhir/R4/validation.html#correct-use) und dem [Robustheitsgrundsatz](https://de.wikipedia.org/wiki/Robustheitsgrundsatz) folgen:  "Eine Implementierung sollte in ihrem Sendeverhalten konservativ und in ihrem Empfangsverhalten liberal sein."
 
