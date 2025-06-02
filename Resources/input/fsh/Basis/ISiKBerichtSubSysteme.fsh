@@ -92,7 +92,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     LOINC 0..1 MS and
     KDL 0..1 MS and
     IHE 0..1 MS
-* type.coding[LOINC] = $loinc#55112-7
   * ^comment = "Hinweis: Die Verwendung des hier vorgegebenen LOINC-Codes schließt nicht aus, dass weitere LOINC-Codes zur genaueren Klassifizierung verwendet werden KÖNNEN."
   * system 1..
   * code 1..
