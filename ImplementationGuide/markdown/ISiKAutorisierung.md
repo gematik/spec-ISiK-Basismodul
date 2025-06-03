@@ -1,6 +1,15 @@
 # ISiK-Connect: Autorisierung
 
+---
+### Normativ
+---
+
 ISiK-Connect konkretisiert in der aktuellen Stufe die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcen-Server, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcen-Server'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Themen der Konnektivität wie z. B. Protokollierung und Authentisierung spezifiziert. 
+
+|  | |
+|---------|---------------------|
+| **Hinweis an IT-Verantwortliche**
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" width="75"/> |  **ISiK-Ressourcen-Server kein Standalone:** Die beschriebenen Autorisierungsszenarien funktionieren nur, wenn der ISiK-Ressourcenserver entweder gleichzeitig die Anforderungen eines ISiK-Autorisierungsservers erfüllt oder an einen Autorisierungsserver gekoppelt ist, der ISiK-Anforderungen erfüllt (Rolle ISiK-Autorisierungsserver). Dies ist bei der Integration von lokalen Systemen (z.B. eines zentralen Autorisierungsservers zu beachten).|
 
 # Zugriffsrechte und Compartments
 
@@ -73,3 +82,11 @@ Nach der Dekodierung werden die im Token gekapselten Autorisierungsinformationen
 ```
 
 Das Zugriffstoken in dem Beispiel gewährt Lese- und Such-Zugriffe auf die 'Patient'-Ressource und 'Observation'-Ressourcen des Patienten mit der _id_ '87a339d0-8cae-418e-89c7-8651e6aab3c6'. Das Token wurde am 14. April 2023 10:00 Uhr (Mitteleuropäische Sommerzeit) ausgestellt und ist ab diesem Zeitpunkt 10 Minuten lang gültig.
+
+## Implementierungshinweise für ISiK-Ressourcenserver
+
+Die oben genannten Anforderungen für einen ISiK-Ressourcenserver bedeuten nicht zwangsläufig, dass ein solcher Server stets einen eigenen Autorisierungsserver als Teil des Gesamtsystems besitzen muss. Es ist auch möglich, die Gültigkeit eines Tokens sowie die Informationen über die erlaubten Scopes und verwendeten Kontexte über [OAuth 2.0 Token Introspection, per RFC 7662](https://datatracker.ietf.org/doc/html/rfc7662) zu erlangen. Auf Basis der Antwort des Autorisierungsservers kann der ISiK-Ressourcenserver über die Herausgabe von FHIR-Ressourcen an einen Client entscheiden. Dies impliziert, dass es möglich ist, einen ISiK-Ressourcenserver an einen (im Krankenhaus) zentralen Autorisierungsserver anzubinden.
+
+Für Implementierungsdetails siehe [SMART App Launch - Token Introspection](https://hl7.org/fhir/smart-app-launch/STU2/token-introspection.html). Um die Anforderungen `{{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-005}}` und `{{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-007}}` umzusetzen, können ISiK-Ressourcenserver für jeden abgesicherten FHIR REST API-Aufruf die Token-Informationen an den Token Introspection Endpunkt weiterleiten, um die Validität des Tokens zu überprüfen sowie gleichzeitig die relevanten dekodierten Informationen zur Durchsetzung der Autorisierungseinschränkungen zu erhalten. Es sei darauf hingewiesen, dass diese Variante die einzige ist, um Tokens sofort benutzerseitig invalidieren zu können.
+
+Für den Fall, dass ein Autorisierungsserver ein JSON Web Token (JWT) ausstellt, kann ein Ressourcenserver die Gültigkeit des Tokens mittels der öffentlichen Schlüssel, welche durch den Autorisierungsserver in einem `.well-known/openid-configuration` Dokument via einer JWKS URI bereitgestellt werden, überprüfen. Siehe [RFC 8414 – Authorization Server Metadata](https://datatracker.ietf.org/doc/html/rfc8414#section-2).
