@@ -56,8 +56,9 @@
         "id": "Medication.code.coding:PZN",
         "path": "Medication.code.coding",
         "sliceName": "PZN",
+        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Coding",
@@ -75,8 +76,9 @@
         "id": "Medication.code.coding:ATC-DE",
         "path": "Medication.code.coding",
         "sliceName": "ATC-DE",
+        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Coding",
@@ -107,7 +109,11 @@
         "patternCoding": {
           "system": "http://snomed.info/sct"
         },
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs"
+        }
       },
       {
         "id": "Medication.code.text",

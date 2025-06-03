@@ -21,13 +21,15 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-      PZN 0..1 MS and
-      ATC-DE 0..1 MS and
+      PZN 0..* MS and
+      ATC-DE 0..* MS and
       SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen."
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
 * medicationReference MS
@@ -74,6 +76,17 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
   * ^short = "Grund der Medikation (Referenz)"
   * ^comment = "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können."
   * reference 1..1 MS
+* request MS
+  * ^short = "Referenz auf die Verordnung"
+  * ^comment = """**Einschränkung der übergreifenden MS-Definition:**
+  Verfügt ein bestätigungsrelevantes System nicht über die Möglichkeit zur Abbildung der zugrunde liegenden Verordnung einer Verabreichung, 
+  so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Die referenzierte Verordnung (`MedicationRequest`) bildet in der Regel die Grundlage einer Verabreichung (`MedicationAdministration`). 
+  Aus fachlicher Sicht ist die Verknüpfung beider Ressourcen wesentlich, da sie die Nachvollziehbarkeit der therapeutischen Maßnahme unterstützt. 
+  Allerdings existieren in der Versorgungspraxis auch Systeme, die keine strukturierte Erfassung oder Referenzierung einer zugrundeliegenden Verordnung vorsehen. 
+  Daher wird `MedicationAdministration.request` in ISiK als eingeschränktes Must Support definiert, um eine einheitliche  Implementierung zu fördern.
+  """
 * note MS
   * text MS
     * ^short = "Freitext-Notiz"

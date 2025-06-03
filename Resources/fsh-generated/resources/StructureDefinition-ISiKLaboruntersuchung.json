@@ -56,7 +56,7 @@
           ],
           "rules": "open"
         },
-        "min": 2,
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -88,16 +88,6 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:snomed",
-        "path": "Observation.code.coding",
-        "sliceName": "snomed",
-        "min": 1,
-        "max": "1",
-        "patternCoding": {
-          "system": "http://snomed.info/sct"
-        }
-      },
-      {
         "id": "Observation.code.text",
         "path": "Observation.code.text",
         "mustSupport": true
@@ -107,6 +97,14 @@
         "path": "Observation.subject",
         "short": "Referenz auf den Patienten",
         "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -221,11 +219,13 @@
       {
         "id": "Observation.method",
         "path": "Observation.method",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information. \n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
         "mustSupport": true
       },
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe einer Laboruntersuchung ist eine relevante medizinische Information. \n   Da die Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
         "mustSupport": true
       },
       {

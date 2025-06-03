@@ -9,11 +9,15 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.0.0-rc2
+## Version 5.0.0-rc2 (Behnehmensherstellung)
 
 Datum: tbd.
 
 * `added`: Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
+* `improved` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im IsiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718
+* `added`: Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
+* `improve`: Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
+* `improve`: Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739
 
 
 ----
