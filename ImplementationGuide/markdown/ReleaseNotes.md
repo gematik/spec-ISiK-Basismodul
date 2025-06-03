@@ -9,6 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: tbd.
 
 * `improve` Implementierungshinweise für ISiK-Ressourcenserver hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/697
+* `improve` Update SMART 2.0 -> 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files
 
 
 ## Version 5.0.0-rc1
