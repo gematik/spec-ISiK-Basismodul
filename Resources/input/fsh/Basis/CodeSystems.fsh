@@ -44,8 +44,8 @@ Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung d
 // * #90 "planmäßig (entspricht Zusammenfassung der Schlüssel 01 bis 03)"
 // * #90 "nicht planmäßig (entspricht Zusammenfassung der Schlüssel 04 und 05)"
 
-CodeSystem: ISiKUnterbrechnungReha
-Id: ISiKUnterbrechnungRehaCS
+CodeSystem: ISiKUnterbrechungReha
+Id: ISiKUnterbrechungRehaCS
 Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
 * insert Meta
 * ^caseSensitive = false
