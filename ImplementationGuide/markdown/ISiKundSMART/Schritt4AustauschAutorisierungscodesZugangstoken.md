@@ -24,7 +24,7 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
     - Für einen öffentlichen RSA Web Key: "n" (Modulus) Parameter, "e" (Exponent) Parameter (Siehe [RFC7518 - 6.3 Parameters for RSA Keys](https://datatracker.ietf.org/doc/html/rfc7518#section-6.3))
     - Für einen öffentlichen Elliptic Curve Web Key: "crv" (Curve) Parameter, "x" (X Coordinate) Parameter, "y" (Y Coordinate) Parameter (Siehe [RFC7518 - 6.2 Parameters for RSA Keys](https://datatracker.ietf.org/doc/html/rfc7518#section-6.2))
 
-2. Ein Austausch des JSON Web Key muss durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in [SMART App Launch - 5 - Client Authentication: Asymmetric (public key)](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key) aufgeführten Vorteile empfohlen.
+2. Ein Austausch des JSON Web Key muss durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in [SMART App Launch - 4.1 - Client Authentication: Asymmetric (public key)](https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key) aufgeführten Vorteile empfohlen.
 
 (1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver soll prüfen, dass diese URL mit dem ["jku" Parameter](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2) der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token übereinstimmt.
 
@@ -32,7 +32,7 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 
 Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.
 
-3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART App Launch - 5.0.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) definierten Vorgaben und verwendet dies als "client_assertion".
+3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART App Launch - 4.1.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) definierten Vorgaben und verwendet dies als "client_assertion".
 
 ### HTTP Basic Authentication:
 
@@ -42,9 +42,9 @@ Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGu
 
 ## Austausch des Autorisierungscodes für ein Zugangstoken
 
-In Abschnitt [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token) werden alle notwendigen Parameter definiert, durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" unterstützt werden MÜSSEN ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-018}}). Ein id_token muss ausgestellt werden, wenn der Client einen "openid fhirUser" Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im EHR nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
+In Abschnitt [SMART App Launch - 2.1.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token) werden alle notwendigen Parameter definiert, durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" unterstützt werden MÜSSEN ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-018}}). Ein id_token muss ausgestellt werden, wenn der Client einen "openid fhirUser" Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im EHR nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
 
-Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token) MÜSSEN durch den Autorisierungsserver unterstützt werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-019}}).
+Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.1.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token) MÜSSEN durch den Autorisierungsserver unterstützt werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-019}}).
 
 Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen, um einen Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt6RefreshToken.md, text:Schritt 6: Refresh Token & Revocation}}.
 
