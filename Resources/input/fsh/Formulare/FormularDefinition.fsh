@@ -16,7 +16,7 @@ Parent: Questionnaire
   * ^comment = "Weltweit eindeutiger Name des Formulars.
   **Begründung Pflichtfeld:**
   Wird für eindeutige Bezugnahme von FormularDaten auf FormularDefinition benötigt."
-* version MS
+* version 1.. MS
   * ^short = "Version"
   * ^comment = "Versionsnummer des Formulars. Sollte gem. semVer-Regeln inkrementiert werden, je nach Schweregrad der Änderungen.
   **Begründung MS:**  

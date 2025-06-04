@@ -14,6 +14,7 @@ Datum: tbd
 
 - `improve` Anpassung des Satzes zur Verwendung von Observation Profilen in item.definition https://github.com/gematik/spec-ISiK-Basismodul/pull/740
 - `add` MS-Flag auf Questionnaire.item.code https://github.com/gematik/spec-ISiK-Basismodul/pull/740
+- `add` Questionnaire.version wird 1..1 und Angabe der Version des Questionnaires ist bei Referenzierung verpflichtend anzugeben. Zusätzlich wird der Umgang mit Versionen im SemVer Format textuell erläutert https://github.com/gematik/spec-ISiK-Basismodul/pull/743
 
 --------
 

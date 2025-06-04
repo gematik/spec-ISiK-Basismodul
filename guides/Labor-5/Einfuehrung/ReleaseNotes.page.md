@@ -17,6 +17,7 @@ Datum: tbd
   reduziert. Das Pattern auf code.coding[snomed].system wurde entfernt um Mehrfachkodierungen in
   SnomedCT nicht zu verhindern. https://github.com/gematik/spec-ISiK-Basismodul/pull/730
 - `improve`: Einschränkung des MS-Flag auf specimen und method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
+- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil - https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files 
 
 
 ---
