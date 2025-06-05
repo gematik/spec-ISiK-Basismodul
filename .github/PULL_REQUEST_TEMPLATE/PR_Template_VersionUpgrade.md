@@ -16,7 +16,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 - This PR refers to a versioned Branch with a name and a version number in the form of N.n.n, e.g. "TC_3.2.1".
 - This PR has a clean meaningful commit history. Minor commits or commits without description have been squashed, at the latest now.
 - [ ] The GitHub Actions "TC version update" and "CI (FHIR Validation)" finished successfully; release version and date was updated accordingly by release_publish.py (triggered by action)
-- [ ] Eventually, increase the dependency of  Basispofil-de and possibly others (package json and sushi-config) (update to newer Basismodul not needed anymore)
+- [ ] Eventually, increase the dependency of  Basispofil-de and possibly others (package.json and sushi-config) (update to newer Basismodul not needed anymore)
 - [ ] the release notes were reviewed with a person responsible for testing
 - [ ] New Release Notes were created, aligned to the commit history. Possibly, if you want to check the release notes for completeness, check against automatic release note generation in GitHub. In Github, go to 
   - _-> Releases_ then _-> Draft a new release_ with the _Modul Name and Version_, then
