@@ -7,7 +7,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
-Datum: tbd
+Datum: 5.6.2025
 
 * `improve` Anpassung der MS-Definitionen, um klarzustellen, dass bestimmte Systeme keine Angaben zu Methode und Gerät machen müssen, wenn ihnen die entsprechende Datenstruktur fehlt https://github.com/gematik/spec-ISiK-Basismodul/pull/732
 * Entfernen unnötiger value[x]-Elemente und Schwächung der Must-Support-Anforderungen für Blutdruck .meanBP https://github.com/gematik/spec-ISiK-Basismodul/pull/731
