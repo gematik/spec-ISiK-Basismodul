@@ -7,13 +7,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
-Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
-
-Datum: tbd
+Datum: 5.6.2025
 
 * `improve` Öffnung der Kardinalität für ATC und PZN Kodierung, sodass nun eine Mehrfachkordierung möglich ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/737
 * `change` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
-  boundsRange wurde als Must Support entfernt, da er in der praktischen Verordnung medizinischer
+  boundsRange wurde als Must-Support entfernt, da er in der praktischen Verordnung medizinischer
   Therapien nur in sehr seltenen Spezialfällen Anwendung
   findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
 * `improve` Das Element MedicationAdministration.request im Profil ISiKMedikationsVerabreichung
