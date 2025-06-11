@@ -33,6 +33,7 @@ offen bleibt hier allerdings noch der Ablauf zum Austausch von Patientendaten zw
 
 Einzelne Interaktionen, die in diesem Sequenzdiagramm skizziert werden und für die der vorliegende Implementierungsleitfaden spezifischere Festlegungen trifft, sind unter {{pagelink:Interaktionen, text:Interaktionen}} gelistet.
 
+
 **Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin buchen können.
 Der Anteil an Buchungen durch Dritte ist relevant und kann in bestimmten Versorgungs-Settings sogar die Regel darstellen. Entsprechend sollten auch die Registrierungs-, Authentifizierungs und die Patientendatenübermittlung gestaltet werden.
 
@@ -49,5 +50,17 @@ Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im 
 Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren:
 
 {{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz.png}}
+
+**Hinweis zur Abfolge von Terminbuchung und Registrierung:**
+Explizit soll eine Registrierung erst bei tatsächlicher Buchung erfolgen – nicht bereits zur Anzeige verfügbarer Termine. So ist es möglich Absprungraten zu senken, die digitale Zugänglichkeit zu steigern sowie die Nutzerakzeptanz allgemein zu verbessern. Auch der Vorsatz der Datenminimierung kann besser eingehalten werden.
+Es muss angenommen werden, dass viele Termine durch Dritte gebucht werden – etwa Angehörige, Eltern oder gesetzlich betreuende Personen. Eine sofortige Registrierung erschwert diese unterstützenden Prozesse und schränkt die barrierearme Nutzung deutlich ein, vor allem bei einmaliger oder sporadischer Inanspruchnahme.
+Zudem ist naheliegend, dass Patienten sich zunächst unverbindlich orientieren möchten, ob passende Termine oder Leistungen angeboten werden. Eine Registrierung als Einstieg widerspräche etablierten UX-Prinzipien („erst Wert zeigen, dann Verpflichtung“) und erhöht die Nutzungshürde ohne erkennbaren Mehrwert.
+
+Dennoch kann dru
+
+Zudem sollte hier gelten:
+- Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
+- Die Terminbuchung selbst sollte die Identität der zu behandelnden Person erfassen – also des tatsächlichen Patienten. Diese Patientendaten (z. B. Name, Geburtsdatum, KVNR) sind mit dem gebuchten Termin zu verknüpfen und müssen korrekt an nachgelagerte Systeme (z. B. Termin-Repository, Basis-Server) übergeben werden.
+- Bei Bedarf (z. B. für die Slot-Suche) kann bereits vor der Buchung eine (minimale) strukturierte Abfrage von Patientendaten erfolgen, ohne dabei eine Registrierung zu erzwingen.
 
 Die Abfragen von Patientendaten gegenüber dem Basis-Server dienen anknüpfenden Workflows (z.B. zur Bereitstellung von Dokumenten, Vitaldaten etc.). Das Zugriffsmanagement bleibt bei dieser Skizze jedoch noch offen.
