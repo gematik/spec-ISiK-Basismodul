@@ -24,9 +24,6 @@ Note right of TR: Termin im Frontend geblockt, aber weder gebucht,  noch mit Pat
 Buchende-->>TR: ggf. Schnelleingabe Patienten Identität (z.B. gID, KVNR)
 TR-->>IDP: ggf. Identify Patient Request (z. B. gID, KVNR)
 IDP-->>TR: ggf. Identify Patient (validierte Identität, KVNR)
-
-TR-->>Buchende: ggf. Zeige dem Buchenden nach der Identifikation an, ob und welche Daten bereits vorliegen, \n und biete die Möglichkeit zur Korrektur/Ergänzung.
-Buchende-->>TR: ggf. Korrektur/Ergänzung der Patientendaten
 Note right of TR: ggf. Identität verifiziert
 
 Buchende->>TR: ggf. Registrierung mit Name, Geburtsdatum, Adresse, Versicherung \n (kann entfallen bei Schnelleingabe - s.o. - , bzw bei Gastzugang)
@@ -41,13 +38,16 @@ MPI -> TR: Patientendaten zurückliefern
 TR -> BS: GET Patientendaten 
 BS -> TR: Rückgabe Patientendaten - als ISiK konformes Profil
 
+TR-->>Buchende: ggf. Zeige dem Buchenden nach der Identifikation an, ob und welche Daten bereits vorliegen, \n und biete die Möglichkeit zur Korrektur/Ergänzung.
+Buchende-->>TR: ggf. Korrektur/Ergänzung der Patientendaten
+
 TR -> TR: Verknüpfung des Termins mit Patientendaten - als ISiK konformes Profil
 
 TR -> TRP: Erstellen des Termins inklusive ISiKPatient - $book (vorläufig)
 
 TRP -> TR: Buchungsbestätigung
 
-note right of TRP: Termin ist angelegt, Patient verifiziert
+note right of TRP: Termin ist angelegt
 
 
 
