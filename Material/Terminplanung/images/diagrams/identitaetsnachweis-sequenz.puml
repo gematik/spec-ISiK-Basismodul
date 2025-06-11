@@ -17,11 +17,9 @@ TR -> Buchende: Visualisierung der verfügbaren Termine
 
 Buchende->>TR: Auswahl eines Termins
 
-TR -> TRP: Erstellen des Termins (vorläufig)
-
-TRP -> TR: Buchungsbestätigung
+TR -> TR: Erstellen des Termins (vorläufig)
 TR -> Buchende: Bestätigung im Portal (ggf. per E-Mail/SMS)
-Note right of TR: Termin gebucht, aber noch nicht mit Patientendaten verknüpft
+Note right of TR: Termin im Frontend geblockt, aber weder gebucht,  noch mit Patientendaten verknüpft
 
 Buchende-->>TR: ggf. Schnelleingabe Patienten Identität (z.B. gID, KVNR)
 TR-->>IDP: ggf. Identify Patient Request (z. B. gID, KVNR)
@@ -31,21 +29,26 @@ TR-->>Buchende: ggf. Zeige dem Buchenden nach der Identifikation an, ob und welc
 Buchende-->>TR: ggf. Korrektur/Ergänzung der Patientendaten
 Note right of TR: ggf. Identität verifiziert
 
-
-TR -> MPI: Lookup Patient (basierend auf KVNR)
-MPI -> MPI: Match Patient
-MPI -> TR: Patientendaten zurückliefern
-
 Buchende->>TR: ggf. Registrierung mit Name, Geburtsdatum, Adresse, Versicherung \n (kann entfallen bei Schnelleingabe - s.o. - , bzw bei Gastzugang)
 Buchende-->>TR: (Falls Buchende nicht Patient ist: Angaben zum Patienten)
 
-
-note right of TRP: Termin ist angelegt, Patient verifiziert
-TR -> MPI: GET Patientendaten zur Verknüpfung
+TR -> MPI: Lookup / GET Patientendaten zur Verknüpfung (basierend auf KVNR)
+MPI -> MPI: Match Patient
 MPI -> BS: GET Patientendaten
 BS -> MPI: Rückgabe Patientendaten
-MPI -> TR: Patientendaten zurückgeben
-TR -> TRP: Verknüpfung des Termins mit Patientendaten
+MPI -> TR: Patientendaten zurückliefern
+
+TR -> BS: GET Patientendaten
+BS -> TR: Rückgabe Patientendaten
+
+TR -> TR: Verknüpfung des Termins mit Patientendaten
+
+TR -> TRP: Erstellen des Termins inklusive Patientendaten - $book (vorläufig)
+
+TRP -> TR: Buchungsbestätigung
+
+note right of TRP: Termin ist angelegt, Patient verifiziert
+
 
 
 
