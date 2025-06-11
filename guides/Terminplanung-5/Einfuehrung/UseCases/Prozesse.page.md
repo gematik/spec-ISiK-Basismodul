@@ -33,7 +33,7 @@ offen bleibt hier allerdings noch der Ablauf zum Austausch von Patientendaten zw
 
 Einzelne Interaktionen, die in diesem Sequenzdiagramm skizziert werden und für die der vorliegende Implementierungsleitfaden spezifischere Festlegungen trifft, sind unter {{pagelink:Interaktionen, text:Interaktionen}} gelistet.
 
-**Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin bucht.
+**Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin buchen können.
 Der Anteil an Buchungen durch Dritte ist relevant und kann in bestimmten Versorgungs-Settings sogar die Regel darstellen. Entsprechend sollten auch die Registrierungs-, Authentifizierungs und die Patientendatenübermittlung gestaltet werden.
 
 
