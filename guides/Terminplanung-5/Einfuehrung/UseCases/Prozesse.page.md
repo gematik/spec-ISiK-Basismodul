@@ -61,11 +61,11 @@ Explizit soll eine Registrierung erst bei tatsächlicher Buchung erfolgen – ni
 Es muss angenommen werden, dass viele Termine durch Dritte gebucht werden – etwa Angehörige, Eltern oder gesetzlich betreuende Personen. Eine sofortige Registrierung erschwert diese unterstützenden Prozesse und schränkt die barrierearme Nutzung deutlich ein, vor allem bei einmaliger oder sporadischer Inanspruchnahme.
 Zudem ist naheliegend, dass Patienten sich zunächst unverbindlich orientieren möchten, ob passende Termine oder Leistungen angeboten werden. Eine Registrierung als Einstieg widerspräche etablierten UX-Prinzipien („erst Wert zeigen, dann Verpflichtung“) und erhöht die Nutzungshürde ohne erkennbaren Mehrwert.
 
-zur Darstellung des Sachverahlts eines Komplexeren Buchungsvorgangs kann folgendes Diagramm dienen:
+Zur Darstellung des Sachverhalts eines Komplexeren Buchungsvorgangs kann folgendes Diagramm dienen:
 
 {{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-complex.png}}
 
-In diesem Kontext sollte  gelten:
+In diesem Kontext sollte gelten:
 - Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
 - Die Terminbuchung selbst sollte die Identität der zu behandelnden Person erfassen – also des tatsächlichen Patienten. Diese Patientendaten (z. B. Name, Geburtsdatum, KVNR) sind mit dem gebuchten Termin zu verknüpfen und müssen korrekt an nachgelagerte Systeme (z. B. Termin-Repository, Basis-Server) übergeben werden.
 - Bei Bedarf (z. B. für die Slot-Suche) kann bereits vor der Buchung eine (minimale) strukturierte Abfrage von Patientendaten erfolgen, ohne dabei eine Registrierung zu erzwingen.
