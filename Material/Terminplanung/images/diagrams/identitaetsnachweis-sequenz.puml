@@ -32,18 +32,18 @@ Note right of TR: ggf. Identität verifiziert
 Buchende->>TR: ggf. Registrierung mit Name, Geburtsdatum, Adresse, Versicherung \n (kann entfallen bei Schnelleingabe - s.o. - , bzw bei Gastzugang)
 Buchende-->>TR: (Falls Buchende nicht Patient ist: Angaben zum Patienten)
 
-TR -> MPI: Lookup / GET Patientendaten zur Verknüpfung (basierend auf KVNR)
+TR -> MPI: Lookup / GET Patientendaten zur Verknüpfung (basierend auf KVNR)- ggf. nur als Referenz
 MPI -> MPI: Match Patient
 MPI -> BS: GET Patientendaten
 BS -> MPI: Rückgabe Patientendaten
 MPI -> TR: Patientendaten zurückliefern
 
-TR -> BS: GET Patientendaten
-BS -> TR: Rückgabe Patientendaten
+TR -> BS: GET Patientendaten 
+BS -> TR: Rückgabe Patientendaten - als ISiK konformes Profil
 
-TR -> TR: Verknüpfung des Termins mit Patientendaten
+TR -> TR: Verknüpfung des Termins mit Patientendaten - als ISiK konformes Profil
 
-TR -> TRP: Erstellen des Termins inklusive Patientendaten - $book (vorläufig)
+TR -> TRP: Erstellen des Termins inklusive ISiKPatient - $book (vorläufig)
 
 TRP -> TR: Buchungsbestätigung
 
