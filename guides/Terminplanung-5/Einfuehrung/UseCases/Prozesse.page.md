@@ -52,16 +52,20 @@ Folgende Alternativen zur Erbringung eines Identitätsnachweises können schemat
 Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im Patientenportal soll hier ein Workflow vorgestellt werden, der einem künftigen Happy Path zur Terminbuchung samt Datenaustausch über eine validierte Patienten-Identität und zugehöriger Daten (in Portal und KIS) entspricht. 
 Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren:
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz.png}}
+{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-happy-path.png}}
 
 **Hinweis zur Abfolge von Terminbuchung und Registrierung:**
 Explizit soll eine Registrierung erst bei tatsächlicher Buchung erfolgen – nicht bereits zur Anzeige verfügbarer Termine. So ist es möglich Absprungraten zu senken, die digitale Zugänglichkeit zu steigern sowie die Nutzerakzeptanz allgemein zu verbessern. Auch der Vorsatz der Datenminimierung kann besser eingehalten werden.
+
+
 Es muss angenommen werden, dass viele Termine durch Dritte gebucht werden – etwa Angehörige, Eltern oder gesetzlich betreuende Personen. Eine sofortige Registrierung erschwert diese unterstützenden Prozesse und schränkt die barrierearme Nutzung deutlich ein, vor allem bei einmaliger oder sporadischer Inanspruchnahme.
 Zudem ist naheliegend, dass Patienten sich zunächst unverbindlich orientieren möchten, ob passende Termine oder Leistungen angeboten werden. Eine Registrierung als Einstieg widerspräche etablierten UX-Prinzipien („erst Wert zeigen, dann Verpflichtung“) und erhöht die Nutzungshürde ohne erkennbaren Mehrwert.
 
-Dennoch kann dru
+zur Darstellung des Sachverahlts eines Komplexeren Buchungsvorgangs kann folgendes Diagramm dienen:
 
-Zudem sollte hier gelten:
+{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-complex.png}}
+
+In diesem Kontext sollte  gelten:
 - Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
 - Die Terminbuchung selbst sollte die Identität der zu behandelnden Person erfassen – also des tatsächlichen Patienten. Diese Patientendaten (z. B. Name, Geburtsdatum, KVNR) sind mit dem gebuchten Termin zu verknüpfen und müssen korrekt an nachgelagerte Systeme (z. B. Termin-Repository, Basis-Server) übergeben werden.
 - Bei Bedarf (z. B. für die Slot-Suche) kann bereits vor der Buchung eine (minimale) strukturierte Abfrage von Patientendaten erfolgen, ohne dabei eine Registrierung zu erzwingen.
