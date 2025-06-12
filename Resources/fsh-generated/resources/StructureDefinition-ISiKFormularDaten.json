@@ -121,6 +121,8 @@
       {
         "id": "QuestionnaireResponse.status",
         "path": "QuestionnaireResponse.status",
+        "short": "Status",
+        "comment": "**Begründung Pflichtfeld:**\n  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden.",
         "mustSupport": true
       },
       {
@@ -142,6 +144,8 @@
       {
         "id": "QuestionnaireResponse.author",
         "path": "QuestionnaireResponse.author",
+        "short": "Ersteller des Fromulars",
+        "comment": "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.\n  **Begründung MS:**\n  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat.",
         "mustSupport": true
       },
       {
@@ -152,6 +156,8 @@
       {
         "id": "QuestionnaireResponse.item.linkId",
         "path": "QuestionnaireResponse.item.linkId",
+        "short": "Eindeutige ID des Formularelement",
+        "comment": "**Begründung Pflichtfeld:**\n    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig.",
         "mustSupport": true
       },
       {
@@ -164,11 +170,15 @@
       {
         "id": "QuestionnaireResponse.item.answer",
         "path": "QuestionnaireResponse.item.answer",
+        "short": "Antwort",
+        "comment": "**Begründung MS:**\n    Die erfasste Antwort MUSS stehts vorhanden sein.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.answer.value[x]",
         "path": "QuestionnaireResponse.item.answer.value[x]",
+        "short": "Inhalt der Antwort",
+        "comment": "**Begründung MS:**\n      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein.",
         "mustSupport": true
       },
       {

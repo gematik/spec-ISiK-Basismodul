@@ -43,12 +43,12 @@ Parent: Questionnaire
   identisch ist, mit dem Patient, der im Launch-Kontext übergeben wird. 
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
 * description 1..1 MS 
-  * ^short = "Beschreibung"
+  * ^short = "Formularbeschreibung"
   * ^comment = "**Begründung Pflichtfeld:**  
-  Ausführliche Beschreibung des Formulars zur Verbesserung der Auffindbarkeit"
+  Ausführliche Beschreibung des Formulars zur Verbesserung der Auffindbarkeit und Interpretation der Nutzung"
 * item MS
   * ^short = "Formularfeld"
-  * ^comment = "Formularfeld, Anzeigetext oder Gruppe von Formularfeldern"
+  * ^comment = "Formularfeld oder Einstiegspunkt für eine Gruppe von Formularfeldern"
 //  * obeys sdc-1
   * linkId MS
     * ^short = "innerhalb dieses Formulars eindeutige ID dieses Feldes"
@@ -60,8 +60,11 @@ Parent: Questionnaire
     Zur eindeutigen Identifikation des Formularfeldes. Ohne Code ist Observation-based-extraction nicht möglich.
     Wenn kein Code zur Verfügung steht, besteht weiterhin die Möglichkeit ein Item ohne Code zu definieren."  
   * prefix MS
+    * ^short = "Feld für bspw. Nummerierung von Elementen"
+    * ^comment = "**Begründung MS:**
+    Falls bspw. eine Gruppierung oder Nummerierung nicht über die Verschachtelung von Items erfolgt, kann über das Prefix eine solche erfolgen. Aus dem Grund MUSS es in der Darstellung beim Rendern mit verarbeitet werden."
   * text MS
-    * ^short = "Text"
+    * ^short = "Fragestellung, Anzeigetext oder Gruppenname"
     * ^comment = "**Begründung MS:**  
     Je nach 'type' des items: Fragestellung, Anzeigetext oder Gruppenname"
   * type MS
