@@ -1,11 +1,11 @@
 {
   "resourceType": "OperationDefinition",
   "id": "UpdateMetadata",
-  "version": "5.0.0-rc",
+  "version": "5.0.0-rc2",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-05-13",
+  "date": "2025-06-05",
   "contact": [
     {
       "telecom": [
@@ -33,6 +33,7 @@
   "name": "UpdateMetadata",
   "description": "Update selected, uncritical document metadata in a safe and controlled manner without having to replace the whole document",
   "code": "update-metadata",
+  "affectsState": true,
   "comment": "\n    Expected behaviour:\n* Servers SHALL update the DocumentReference.docStatus with the submitted values\n* Servers SHALL ensure that DocumentReference.text reflects this change\n",
   "resource": [
     "DocumentReference"

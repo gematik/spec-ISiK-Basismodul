@@ -20,8 +20,9 @@ Description: "ToDo"
   * ^comment = "**Begründung MS:**
   Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen."
 * questionnaire 1.. MS
-  * ^short = "Bezug zur FormularDefinition"
-  * ^comment = "**Begründung MS:** 
+  * ^short = "Bezug zur FormularDefinition inkl. Version"
+  * ^comment = "Bei der Angabe der Canonical, sollte die Version der FormularDefinition, welche bei der Erstellung die Grundlage gebildet hat, angegeben sein.
+  **Begründung MS:** 
   Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein."
 //* questionnaire only Canonical(ISiKFormularDefinition) 
   * extension contains DisplayName named questionnaireDisplay 1..1 MS
