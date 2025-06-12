@@ -51,7 +51,7 @@ Folgende Alternativen zur Erbringung eines Identitätsnachweises können schemat
 Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im Patientenportal soll hier ein Workflow vorgestellt werden, der einem künftigen Happy Path zur Terminbuchung samt Datenaustausch über eine validierte Patienten-Identität und zugehöriger Daten (in Portal und KIS) entspricht. 
 Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren (Annahme: Patientendaten liegen bereits intern im Basis-Server vor, da Patient bereits Kontakt mit dem Krankenhaus hatte):
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-happy-path.png}}
+{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-happy-path-patient.png}}
 
 **Hinweis zur Abfolge von Terminbuchung und Registrierung:**
 Explizit soll eine Registrierung erst bei tatsächlicher Buchung erfolgen – nicht bereits zur Anzeige verfügbarer Termine. So ist es möglich Absprungraten zu senken, die digitale Zugänglichkeit zu steigern sowie die Nutzerakzeptanz allgemein zu verbessern. Auch der Vorsatz der Datenminimierung kann besser eingehalten werden.
@@ -60,7 +60,7 @@ Zudem ist naheliegend, dass Patienten sich zunächst unverbindlich orientieren m
 
 Zur Darstellung des Sachverhalts einer Buchung durch Angehörige kann folgendes Diagramm dienen:
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-complex.png}}
+{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-angehoeriger.png}}
 
 In diesem Kontext sollte gelten:
 - Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
