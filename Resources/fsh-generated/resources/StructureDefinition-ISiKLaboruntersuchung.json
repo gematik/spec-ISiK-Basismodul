@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKLaboruntersuchung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung",
-  "version": "5.0.0-rc",
+  "version": "5.0.0-rc2",
   "name": "ISiKLaboruntersuchung",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-13",
+  "date": "2025-06-05",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UseCases-AMTS?version=current).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
   "fhirVersion": "4.0.1",
@@ -21,12 +21,14 @@
         "id": "Observation.status",
         "path": "Observation.status",
         "short": "Status der Laboruntersuchung",
+        "comment": "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  \n  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, \n  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `final` und `unknown`.\n  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, \n  beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Untersuchungen, die noch nicht stattgefunden haben, o.ä.",
         "mustSupport": true
       },
       {
         "id": "Observation.category",
         "path": "Observation.category",
         "short": "Kategorie der Laboruntersuchung",
+        "comment": "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z. B. LOINC-Kategorie „laboratory“) zu befüllen.",
         "min": 1,
         "patternCodeableConcept": {
           "coding": [
@@ -42,6 +44,7 @@
         "id": "Observation.code",
         "path": "Observation.code",
         "short": "Gegenstand der Untersuchung (Laborparameter)",
+        "comment": "**Begründung MS**: Der Code identifiziert, was gemessen wurde, und ist damit das zentrale Element der Observation. Ohne .code ist kein eindeutiger sowie maschinell auswertbarer klinischer Kontext  dokumentiert.",
         "mustSupport": true
       },
       {
@@ -56,24 +59,28 @@
           ],
           "rules": "open"
         },
+        "short": "Kodierung des Laborparameters",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.system",
         "path": "Observation.code.coding.system",
+        "short": "System, aus dem der Code für den Laborparameter stammt (z. B. LOINC)",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
+        "short": "Code des Laborparameters entsprechend dem verwendeten System",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.code.coding.display",
         "path": "Observation.code.coding.display",
+        "short": "Anzeige-/Bezeichnungstext für den Laborparameter-Code",
         "mustSupport": true
       },
       {
@@ -96,6 +103,7 @@
         "id": "Observation.subject",
         "path": "Observation.subject",
         "short": "Referenz auf den Patienten",
+        "comment": "**Begründung MS**: Die Verknüpfung zur Patientin oder zum Patienten ist zwingend notwendig für jegliche klinische Verwertbarkeit.",
         "min": 1,
         "type": [
           {
@@ -111,6 +119,7 @@
         "id": "Observation.encounter",
         "path": "Observation.encounter",
         "short": "Referenz auf den Abteilungskontakt",
+        "comment": "**Begründung MS**: Dient der Einordnung in den klinischen Verlauf und ermöglicht Kontextinformationen wie Aufnahmediagnose oder behandelnde Abteilung.",
         "mustSupport": true
       },
       {
@@ -127,6 +136,7 @@
           "rules": "open"
         },
         "short": "Zeitpunkt der Untersuchung",
+        "comment": "**Begründung Must Support**:\nDas Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:\n\n* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),\n* Verlaufsauswertungen und Trendanalysen,\n* zeitlich abhängige Entscheidungsunterstützung,\n* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts.",
         "mustSupport": true
       },
       {
@@ -146,6 +156,7 @@
         "id": "Observation.issued",
         "path": "Observation.issued",
         "short": "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses",
+        "comment": "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte.",
         "mustSupport": true
       },
       {
@@ -162,12 +173,15 @@
           "rules": "open"
         },
         "short": "Festgestellter (Mess)Wert für den Laborparameter",
+        "comment": "**Begründung MS**: Der gemessene Wert stellt die zentrale Aussage der Observation dar. Ohne value besitzt die Observation keine medizinische Relevanz.",
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity",
         "path": "Observation.value[x]",
         "sliceName": "valueQuantity",
+        "short": "Messwert in quantitativer Form",
+        "comment": "**Begründung MS**: Standardisierte, codierte Einheiten sind für Vergleichbarkeit, Umrechnung und automatische Plausibilisierung erforderlich.",
         "min": 0,
         "max": "1",
         "type": [
@@ -180,17 +194,20 @@
       {
         "id": "Observation.value[x]:valueQuantity.value",
         "path": "Observation.value[x].value",
+        "short": "Der numerische Messwert",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity.unit",
         "path": "Observation.value[x].unit",
+        "short": "Einheit des Messwertes (z. B. mg/dL)",
         "mustSupport": true
       },
       {
         "id": "Observation.value[x]:valueQuantity.system",
         "path": "Observation.value[x].system",
+        "short": "Kodiersystem für die Einheit (UCUM)",
         "min": 1,
         "patternUri": "http://unitsofmeasure.org",
         "mustSupport": true
@@ -198,34 +215,41 @@
       {
         "id": "Observation.value[x]:valueQuantity.code",
         "path": "Observation.value[x].code",
+        "short": "UCUM-Code der Einheit",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
+        "short": "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt",
+        "comment": "**Begründung Must Support**:\nNicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlich ein Ergebnis. In solchen Fällen ist es wichtig, nicht nur auf das Fehlen eines Wertes zu reagieren, sondern den Grund strukturiert anzugeben. dataAbsentReason ermöglicht diese präzise Aussage und verhindert Fehlinterpretationen",
         "mustSupport": true
       },
       {
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
+        "short": "Interpretation oder Bewertung des Messergebnisses (z.B. „hoch“, „niedrig“, „normal“)",
+        "comment": "Begründung MS: Unterstützt die klinische Interpretation, insbesondere bei komplexen Parametern und automatisierten Auswertungen.",
         "mustSupport": true
       },
       {
         "id": "Observation.note",
         "path": "Observation.note",
+        "short": "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)",
+        "comment": "**Begründung MS**: Dient zur Dokumentation abweichender Umstände, Freitextbefundung oder ergänzender Laborkommentare.",
         "mustSupport": true
       },
       {
         "id": "Observation.method",
         "path": "Observation.method",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information. \n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist daher für Transparenz und Vergleichbarkeit entscheidend.\n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
         "mustSupport": true
       },
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe einer Laboruntersuchung ist eine relevante medizinische Information. \n   Da die Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.\n   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
         "mustSupport": true
       },
       {
@@ -253,16 +277,21 @@
       {
         "id": "Observation.device",
         "path": "Observation.device",
+        "short": "Verwendetes Gerät oder Instrument zur Durchführung der Untersuchung",
+        "comment": "**Begründung Must Support**:\nDas verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf die Genauigkeit, Validität und Vergleichbarkeit von Untersuchungsergebnissen haben.",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange",
         "path": "Observation.referenceRange",
+        "short": "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)",
+        "comment": "**Begründung MS**: Referenzbereiche erlauben die sofortige klinische Bewertung eines Wertes",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange.low",
         "path": "Observation.referenceRange.low",
+        "short": "Untergrenze des Referenzbereichs",
         "mustSupport": true
       },
       {
@@ -292,6 +321,7 @@
       {
         "id": "Observation.referenceRange.high",
         "path": "Observation.referenceRange.high",
+        "short": "Obergrenze des Referenzbereichs",
         "mustSupport": true
       },
       {
@@ -321,6 +351,7 @@
       {
         "id": "Observation.referenceRange.type",
         "path": "Observation.referenceRange.type",
+        "short": "Art des Referenzbereichs (z. B. normal, kritisch)",
         "mustSupport": true
       },
       {
@@ -353,11 +384,13 @@
       {
         "id": "Observation.referenceRange.appliesTo",
         "path": "Observation.referenceRange.appliesTo",
+        "short": "Für wen der Referenzbereich gilt (z. B. Geschlecht, Alter)",
         "mustSupport": true
       },
       {
         "id": "Observation.referenceRange.appliesTo.coding",
         "path": "Observation.referenceRange.appliesTo.coding",
+        "short": "Kodierte Angabe zur Zielgruppe",
         "mustSupport": true
       },
       {
@@ -385,6 +418,7 @@
       {
         "id": "Observation.referenceRange.age",
         "path": "Observation.referenceRange.age",
+        "short": "Altersbereich, für den der Referenzbereich gilt",
         "mustSupport": true
       },
       {
@@ -400,6 +434,7 @@
       {
         "id": "Observation.referenceRange.text",
         "path": "Observation.referenceRange.text",
+        "short": "Freitextbeschreibung des Referenzbereichs",
         "mustSupport": true
       }
     ]
