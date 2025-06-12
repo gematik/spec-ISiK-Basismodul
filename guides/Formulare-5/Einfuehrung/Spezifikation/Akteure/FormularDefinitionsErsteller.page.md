@@ -12,6 +12,10 @@ Funktionell ist der Akteur "FormularDefinitionsErsteller" out-of-scope für dies
 
 Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (FSH) ISiK-konforme Questionnaire-Ressourcen modellieren als auch  Hersteller von Software-Lösungen, die eine UI-gestützte Erstellung ISiK-konformer Questionnaires anbieten möchten.
 
+| Hinweis | Umgang mit Sprachversionen |
+|---------|---------------------|
+| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Der Umgang mit Sprachversionen ist ein wichtiger Punkt, der im Rahmen dieser Spezifikation für ISiK-konforme Formulare festgelegt sein sollte. In der ersten Version ist dies noch nicht passiert, hierzu erfolgt nachgelagert eine Diskussion in der Community auf [Zulip im Stream von ISiK](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik). |
+
 ### Versionierung
 
 
@@ -48,3 +52,4 @@ Beispiel: Das Hinzufügen eines optionalen Feldes oder das Einfügen neuer Valid
 Das Inkrement der Patch-Nummer erfolgt, wenn Fehlerbehebungen oder technische Verbesserungen vorgenommen werden, die die Funktionalität des Formulars betreffen, jedoch keine neuen Funktionen hinzufügen oder die bestehende Struktur verändern. Diese Änderungen beinhalten das Korrigieren von Validierungsfehlern, das Beheben von Darstellungsproblemen oder das Verbessern von Performance-Aspekten ohne Einfluss auf die Interpretation oder das Benutzererlebnis.
 
 Beispiel: Das Beheben eines Fehlers bei der Datenvalidierung oder das Korrigieren von Tippfehlern im Fragentext.
+
