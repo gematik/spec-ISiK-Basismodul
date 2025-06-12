@@ -60,7 +60,7 @@ Description: "ToDo"
   * answer MS
     * ^short = "Antwort"
     * ^comment = "**Begründung MS:**
-    Die erfasste Antwort MUSS stehts vorhanden sein."
+    Die erfasste Antwort MUSS stets vorhanden sein."
     * value[x] MS
       * ^short = "Inhalt der Antwort"
       * ^comment = "**Begründung MS:**
