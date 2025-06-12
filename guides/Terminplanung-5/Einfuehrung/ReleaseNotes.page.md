@@ -9,6 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: tbd.
 
 * `improve` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
+* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`
 
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
