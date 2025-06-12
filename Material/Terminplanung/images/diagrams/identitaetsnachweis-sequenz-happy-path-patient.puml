@@ -1,0 +1,42 @@
+@startuml
+
+actor Patient
+participant "Termin-Requestor (Patientenportal)" as TR
+participant "IDP (Identitätsprovider)" as IDP
+participant "Termin-Repository" as TRP
+participant "BasisServer" as BS
+
+Note right of Patient: In diesem Fall geht es um einen Patienten als Patientn, um den Sachverhalt zu vereinfachen.
+Patient-->>TR: Aufruf in GUI und Auswahl
+TR -> TRP: Anfrage verfügbare Termine für Fachbereich
+TRP -> TR: Rückgabe verfügbarer Termine
+
+TR -> Patient: Visualisierung der verfügbaren Termine
+
+Patient->>TR: Auswahl eines Termins
+
+TR -> TR: Erstellen des Termins (vorläufig)
+Note right of TR:  Hinweis: \n - Termin im Termin-Requester geblockt, aber weder gebucht,  noch mit Patientendaten verknüpft \n - Termin ist damit noch nicht im Termin-Repository angefragt und damit besteht das Risiko konkurrierender Anfragen. 
+
+TR -> Patient: Bestätigung im Portal mit Bitte um Identitätsnachweis (ggf. per E-Mail/SMS)
+
+
+Patient-->>TR: Anmeldung und Identitätsnachweis Patient (z.B. gID, KVNR)
+TR-->>IDP: Identify Patient Request (z. B. gID, KVNR)
+IDP-->>TR: Identify Patient (validierte Identität, KVNR)
+Note right of TR: Identität verifiziert
+
+TR -> BS: Abfrage Patientendaten - GET basis-URL/Patient?identifier=KVNR|123456789
+BS -> TR: Rückgabe Patientendaten - als ISiK konformes Profil
+
+TR -> TR: Verknüpfung des Termins mit Patientendaten über Patienten-reference in der Appointment Ressource
+
+TR -> TRP: Erstellen des Termins inklusive ISiKPatient - $book (vorläufig)
+
+TRP -> TR: Buchungsbestätigung
+
+TR -> Patient: Bestätigung im Portal
+
+note right of Patient: Termin ist angelegt und der Identitätsnachweis ist erfolgt.
+
+@enduml
