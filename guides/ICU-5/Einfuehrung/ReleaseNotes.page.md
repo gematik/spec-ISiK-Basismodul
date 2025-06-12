@@ -14,7 +14,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 Datum: tbd.
 
-* `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK 
+* `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
 
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
