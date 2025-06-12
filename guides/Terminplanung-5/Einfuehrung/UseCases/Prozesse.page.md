@@ -65,6 +65,6 @@ Zur Darstellung des Sachverhalts einer Buchung durch Angehörige kann folgendes 
 In diesem Kontext sollte gelten:
 - Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
 - Die Terminbuchung selbst sollte die Identität der zu behandelnden Person erfassen – also des tatsächlichen Patienten. Diese Patientendaten (z. B. Name, Geburtsdatum, KVNR) sind mit dem gebuchten Termin zu verknüpfen und sollten korrekt an nachgelagerte Systeme (z. B. Termin-Repository, Basis-Server) übergeben werden.
-- Bei Bedarf (z. B. für die Slot-Suche) kann bereits vor der Buchung eine (minimale) strukturierte Abfrage von Patientendaten (z. B. Alter, Geschlecht etc.) erfolgen, ohne dabei eine Registrierung zu erzwingen.
+- Bei Bedarf (z. B. für die Slot-Suche) kann bereits vor der Buchung eine (minimale) strukturierte Erfassung von Patientendaten (z. B. Sprache, Alter, Geschlecht etc.) im Termin-Requestor (oder angeschlossener Komponente) erfolgen, ohne dabei eine Registrierung zu erzwingen.
 
 Die Abfragen von Patientendaten gegenüber dem Basis-Server dienen anknüpfenden Workflows (z.B. zur Bereitstellung von Dokumenten, Vitaldaten etc.). Das Zugriffsmanagement bleibt bei dieser Skizze jedoch noch offen.
