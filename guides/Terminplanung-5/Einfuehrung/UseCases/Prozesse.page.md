@@ -49,7 +49,7 @@ Folgende Alternativen zur Erbringung eines Identitätsnachweises können schemat
 {{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-bpmn.png}}
 
 Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im Patientenportal soll hier ein Workflow vorgestellt werden, der einem künftigen Happy Path zur Terminbuchung samt Datenaustausch über eine validierte Patienten-Identität und zugehöriger Daten (in Portal und KIS) entspricht. 
-Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren:
+Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren (Annahme: Patientendaten liegen bereits intern im Basis-Server vor, da Patient bereits Kontakt mit dem Krankenhaus hatte):
 
 {{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-happy-path.png}}
 
