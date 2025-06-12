@@ -30,6 +30,9 @@ Description: "ToDo"
     * ^short = "Titel/Überschrift der zugrunde liegenden FormularDefinition"
     * ^comment = "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt."
 * status MS
+  * ^short = "Status"
+  * ^comment = "**Begründung Pflichtfeld:**
+  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden."
 * subject 1..1 MS
   * ^short = "Subject (Patient), über das in diesem Formular berichtet wird."
   * ^comment = "**Begründung Pflichtfeld:**  
@@ -40,8 +43,15 @@ Description: "ToDo"
   * ^comment = "**Begründung Pflichtfeld:** 
   Relevant für die Suche und zeitliche Einordnung der FormularDaten"
 * author MS
+  * ^short = "Ersteller des Fromulars"
+  * ^comment = "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.
+  **Begründung MS:**
+  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat."
 * item MS
   * linkId MS
+    * ^short = "Eindeutige ID des Formularelement"
+    * ^comment = "**Begründung Pflichtfeld:**
+    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig."
   * text MS
     * ^short = "Frage, die beantwortet wurde"
     * ^comment = "**Begründung Pflichtfeld:**  
@@ -49,7 +59,13 @@ Description: "ToDo"
     damit die Daten auch von Systemen/Anwendern interpretiert werden können, 
     die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben."
   * answer MS
+    * ^short = "Antwort"
+    * ^comment = "**Begründung MS:**
+    Die erfasste Antwort MUSS stets vorhanden sein."
     * value[x] MS
+      * ^short = "Inhalt der Antwort"
+      * ^comment = "**Begründung MS:**
+      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein."
     * item MS
       * ^short = "Untergeordnetes Item"
       * ^comment = "**Begründung MS:**  
