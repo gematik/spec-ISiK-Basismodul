@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDefinition",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
-  "version": "5.0.0-rc",
+  "version": "5.0.0-rc2",
   "name": "ISiKFormularDefinition",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-13",
+  "date": "2025-06-05",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -57,6 +57,7 @@
         "path": "Questionnaire.version",
         "short": "Version",
         "comment": "Versionsnummer des Formulars. Sollte gem. semVer-Regeln inkrementiert werden, je nach Schweregrad der Änderungen.\n  **Begründung MS:**  \n  Wird benötigt, um FormularDefinitionen in unterschiedlichen Versionen zu differenzieren. ",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -104,6 +105,13 @@
         "path": "Questionnaire.item.linkId",
         "short": "innerhalb dieses Formulars eindeutige ID dieses Feldes",
         "comment": "**Begründung Pflichtfeld:**  \n    Erforderlich für die Verlinkung der Antworten in der QuestionnaireRespons mit der Definition des Formularfeldes.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.code",
+        "path": "Questionnaire.item.code",
+        "short": "Code für dieses Formularfeld",
+        "comment": "**Begründung MS:**  \n    Zur eindeutigen Identifikation des Formularfeldes. Ohne Code ist Observation-based-extraction nicht möglich.\n    Wenn kein Code zur Verfügung steht, besteht weiterhin die Möglichkeit ein Item ohne Code zu definieren.",
         "mustSupport": true
       },
       {

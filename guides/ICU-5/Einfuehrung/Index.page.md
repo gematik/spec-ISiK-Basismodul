@@ -4,11 +4,11 @@ topic: ImplementationGuide-markdown-Einfuehrung
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc1
+Version: 5.0.0-rc2
 
-Datum: 13.05.2025
+Datum: 05.06.2025
 
-Status: Active
+Status: Draft (Benehmensherstellung)
 
 Realm: Deutschland
 
@@ -32,9 +32,8 @@ Dieser Implementierungsleitfaden beschreibt eine bidirektionale Überleitung zwi
 ###  Stakeholder
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von KIS und PDMS.
 
-Es handelt sich um eine technische Spezifikation, zu der keine weiteren medizinischen Fachexperten zu Rate gezogen werden. 
-
-Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html), einer medizinischen Validierung unterzogen worden.
+Es handelt sich um eine technische Spezifikation. 
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. Die Profile werden mit den Kooperationspartnern der MII weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
 
 Das zugrundeliegende Informationsmodell der MII wurde vom Vorstand der DIVI (Deutsche Interdiziplinäre Vereinigung für Intensiv- und Notfallmedizin) freigegeben. Alle Universitätskliniken (im Rahmen der MII und des Netzwerks Universitätsmedizin (NUM)) haben die hier gelisteten Profile in allen Gremien bestätigt und sich auf deren Verwendung verpflichtet (z. B. Beschluss des nationalen Steuerungsgremiums (NSG) der MII 12/2024).
 

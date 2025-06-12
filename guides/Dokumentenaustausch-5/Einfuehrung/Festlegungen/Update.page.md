@@ -34,6 +34,23 @@ Ein Client SOLL in diesem Fall eine erneute Dokumentenbereitstellung durchführe
 
 ### Beispiel 
 
-    [base]/DocumentReference/example/$update-metadata?docStatus=final
+URL:  
+    HTTP POST [base]/DocumentReference/example/$update-metadata
+
+BODY:  
+<tabs>
+    <tab title="Übersicht">      
+        {{render:Resources/fsh-generated/resources/Parameters-ParametersExampleUpdateMetadata.json}}
+    </tab>
+    <tab title="XML">      
+        {{xml:Resources/fsh-generated/resources/Parameters-ParametersExampleUpdateMetadata.json}}
+    </tab>
+    <tab title="JSON">
+        {{json:Resources/fsh-generated/resources/Parameters-ParametersExampleUpdateMetadata.json}}
+    </tab>
+    <tab title="Link">
+        {{link:Resources/fsh-generated/resources/Parameters-ParametersExampleUpdateMetadata.json}}
+    </tab>
+</tabs>
 
 

@@ -7,7 +7,7 @@ Die normativen Festlegungen des Moduls ISiK Connect  sind im Wesentlichen der Se
 
 ## Anforderungsübersicht 
 
-In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden. Teilweise haben diese Anforderungen jedoch nur informativen Charakter.
+In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden. Teilweise haben diese Anforderungen jedoch nur optionalen Charakter.
 
 | ID | Anforderung 
 |--------|------ 
