@@ -1,5 +1,6 @@
 Extension: ISiKMDRRelevanzFormularExtension
 Id: ISiKMDRRelevanzFormularExtension
+Description: "Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Im default dürfen von Systemen nur Questionnaires verarbeitet werden, die hier ein 'none' als Code enthalten haben."
 Context: Questionnaire, QuestionnaireResponse
 * insert Meta
 * . ^isModifier = true

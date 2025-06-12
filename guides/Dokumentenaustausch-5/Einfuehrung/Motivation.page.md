@@ -13,4 +13,4 @@ Bei der Festlegung dieser Spezifikation findet das IHE-MHD-Profil eine besondere
 
 Der Fokus dieser Spezifikation liegt zunächst auf den Festlegungen zum Datenaustausch *innerhalb* einer Einrichtung, soll künftig jedoch auch Best Practice-Empfehlungen zur Einstellung von Dokumenten in die ePA eines Patienten, der Weiterleitung an andere Leistungserbringer via KIM oder dem einrichtungsübergreifenden Dokumentenaustausch via MHD/XDS enthalten.
 
-{{render:Material-Images-isikkontextunderwscope}}
+{{render:Material/Dokumentenaustausch/images/ISiKKontextUndErwScope.jpg}}
