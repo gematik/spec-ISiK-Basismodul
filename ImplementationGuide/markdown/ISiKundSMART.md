@@ -17,5 +17,5 @@ Um ein Zugangstoken für den Zugriff auf einen Ressourcen-Server zu erhalten, si
 * Ausführung einer durch das Zugangstoken abgesicherten FHIR Restful Interaktion am Ressourcen-Server
 * Ausstellung eines "Refresh"-Zugangstoken.
 
-Eine Übersicht des zusammenhängenden _SMART App Launch_ ist dem Abschnitt [SMART App Launch - 2.0.3 - SMART authorization & FHIR access: overview](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#smart-authorization--fhir-access-overview) der SMART-on-FHIR-Spezifikation zu entnehmen.
+Eine Übersicht des zusammenhängenden _SMART App Launch_ ist dem Abschnitt [SMART App Launch - 2.1.3 - SMART authorization & FHIR access: overview](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#smart-authorization--fhir-access-overview) der SMART-on-FHIR-Spezifikation zu entnehmen.
 

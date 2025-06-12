@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKGCS",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS",
-  "version": "5.0.0-rc",
+  "version": "5.0.0-rc2",
   "name": "ISiKGCS",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-13",
+  "date": "2025-06-05",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).\n\n### Motivation\nDie Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.\n### Kompatibilität\nDas Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet.",
   "fhirVersion": "4.0.1",
@@ -162,14 +162,14 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "Untersuchungsmethode",
-        "comment": "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \r\nVerfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden\r\n\r\n\r\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
         "mustSupport": true
       },
       {
         "id": "Observation.device",
         "path": "Observation.device",
         "short": "Gerät",
-        "comment": "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \r\n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.\r\n\r\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
         "mustSupport": true
       },
       {

@@ -11,12 +11,16 @@ Parent: Questionnaire
 * modifierExtension contains
   ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
 * modifierExtension[MDR-Relevant].valueCoding MS
+* modifierExtension[MDR-Relevant]
+  * ^short = "MPG-Relevanz der Formulardaten"
+  * ^comment = "**Begründung MS:**   
+  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
 * url 1.. MS
   * ^short = "CanoncialURL des Formulars" 
   * ^comment = "Weltweit eindeutiger Name des Formulars.
   **Begründung Pflichtfeld:**
   Wird für eindeutige Bezugnahme von FormularDaten auf FormularDefinition benötigt."
-* version MS
+* version 1.. MS
   * ^short = "Version"
   * ^comment = "Versionsnummer des Formulars. Sollte gem. semVer-Regeln inkrementiert werden, je nach Schweregrad der Änderungen.
   **Begründung MS:**  

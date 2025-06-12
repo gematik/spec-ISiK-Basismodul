@@ -21,7 +21,7 @@ und welche nicht.
 |Adaptive Forms||X|
 |Form Population|
 |&emsp;*Operations:*||X|
-|&emsp;*Modes:*|Answer context|Full population</br>Choice selection|
+|&emsp;*Modes:*|Full population|Answer context</br>Choice selection|
 |&emsp;*Design:*| Observation Based</br> Expression Based|StructureMap based|
 |Form Data Extraction|
 |&emsp;*Design:*| Observation Based|Definition Based </br> StructureMap based|
