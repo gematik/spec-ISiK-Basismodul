@@ -9,6 +9,13 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+## Version 5.0.0
+
+Datum: tbd
+
+* `fix`: Anpassung der Displaywerte in den DocumenReference-Examples von „mimeType Sufficient“ zu „Format aus MIME Type ableitbar“ https://github.com/gematik/spec-ISiK-Basismodul/pull/765
+----
+
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
