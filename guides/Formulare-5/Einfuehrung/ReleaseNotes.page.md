@@ -13,6 +13,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: tbd
 
 - `improve` Beschreibung der MDR-Relevant Extension wurde hinzugefügt und ausführlicher gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/744
+- `add` Hinweis auf Umgang mit verschiedenen Sprachversionen https://github.com/gematik/spec-ISiK-Basismodul/pull/747/
 
 ----
 
