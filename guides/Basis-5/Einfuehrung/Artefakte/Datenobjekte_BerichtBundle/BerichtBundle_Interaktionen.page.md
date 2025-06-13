@@ -9,7 +9,7 @@ capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityState
 from
     CapabilityStatement
 where
-    url = %capability1
+    url = %capability
 select
     Name: name,
     join for rest.resource.where(%canonical in supportedProfile)
