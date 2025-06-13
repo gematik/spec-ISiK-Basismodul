@@ -21,13 +21,13 @@ with
 
 <tabs>
     <tab title="Interaktionen"> 
-        {{page:FQL-Capability-REST-multicps-2}}
+        {{page:FQL-Capability-REST}}
     </tab>
     <tab title="Suchparameter">
-        {{page:FQL-Capability-Search-multicps-2}}
+        {{page:FQL-Capability-Search}}
     </tab>
     <tab title="Operationen">
-        {{page:FQL-Capability-Operations-multicps-2}}
+        {{page:FQL-Capability-Operations}}
     </tab>
 </tabs>
 
