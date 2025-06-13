@@ -1,7 +1,7 @@
 ---
 topic: Bundle_Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle
-capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle
 ---
 ### Interaktionen
 
