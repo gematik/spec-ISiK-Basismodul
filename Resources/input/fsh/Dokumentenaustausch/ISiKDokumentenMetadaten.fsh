@@ -244,7 +244,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -265,7 +265,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -286,7 +286,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Fotodokumentation Operation vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -307,7 +307,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Fotodokumentation Operation vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
@@ -328,7 +328,7 @@ Title: "dok-beispiel"
 * content.attachment.language = #de
 * content.attachment.title = "Molekularpathologiebefund vom 31.12.21"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
-* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
+* content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "Format aus MIME Type ableitbar"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(FachabteilungskontaktNormal)
