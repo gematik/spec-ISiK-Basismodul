@@ -3,7 +3,7 @@ Parent: Bundle
 Id: ISiKBerichtBundle
 Title: "ISiKBerichtBundle"
 Description: "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. 
-Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html): Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
+Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
 Das Bundle ist unveränderlich und kann signiert werden, um die Integrität und Authentizität der enthaltenen Informationen sicherzustellen.
 Ziel ist die Erstellung eines abgeschlossenen, unveränderbaren und signierbaren Dokuments."
 * insert Meta
