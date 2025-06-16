@@ -43,5 +43,27 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
 ---
 
 ## Beispiel für eine Encounter Merge Notification (Pseudo-JSON)
+#todo example in fsh
+
 ```json
-#todo
+{
+  "resourceType": "Subscription",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription"
+    ]
+  },
+  "status": "active",
+  "reason": "Benachrichtigung bei Encounter-Merge",
+  "criteria": {
+    "code": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge",
+    "display": "encounter-merge"
+  },
+  "channel": {
+    "type": "rest-hook",
+    "endpoint": "https://example.org/fhir/notification",
+    "payload": "application/fhir+json"
+  }
+}
+
+#todo example for pre and post merge
