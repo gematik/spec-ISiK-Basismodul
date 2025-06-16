@@ -36,7 +36,8 @@ Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Ko
 ## Hinweise zur Referenzierung
 
 - Nach erfolgtem Merge **SOLLEN** alle Referenzen, die auf einen der zusammengeführten Encounter zeigen, auf den überlebenden Encounter aktualisiert werden. Dies ist jedoch außerhalb des Schnittstellenumfangs und in der Verantwortung der implementierenden Systeme.
-- Da für Encounter keine FHIR-Standardoperation wie `$merge` existiert, ist die Benachrichtigung über einen erfolgten Merge ein rein konzeptuelles Konstrukt und nicht Teil der offiziellen FHIR-Spezifikation.
+- Da für Encounter keine FHIR-Standardoperation wie `$merge` existiert, ist die Benachrichtigung über einen erfolgten Merge ein konzeptuelles Konstrukt (sie ist nicht Teil der offiziellen FHIR-Spezifikation)
+
 
 ## Profilreferenz
 
