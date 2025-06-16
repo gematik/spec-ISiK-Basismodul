@@ -7,7 +7,7 @@ topic: Dokumentenbereitstellung
 
 ### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
 
-Die Dokumentenbereitstellung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html).Die verlinkte Webseite bietet weiterführende Informationen zum Simplified Push, einschließlich grafischer Darstellungen der Interaktionen.
+Die Dokumentenbereitstellung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html). Die verlinkte Webseite bietet weiterführende Informationen zum Simplified Push, einschließlich grafischer Darstellungen der Interaktionen.
 
 Die Bereitstellung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt. Es gelten die Vorgaben der FHIR-Kernspezifikation für den Rückgabewert der Create-Interaktion, siehe [Managing Return Content](https://www.hl7.org/fhir/R4/http.html#return).
 
