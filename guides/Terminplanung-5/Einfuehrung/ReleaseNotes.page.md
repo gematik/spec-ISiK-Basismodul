@@ -10,6 +10,7 @@ Datum: tbd.
 
 * `improve` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
 * `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`
+* `improve` Entfernen Modulübergreifender Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767
 
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
