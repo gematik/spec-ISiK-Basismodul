@@ -80,7 +80,7 @@ Das den Metadaten zugeordnete Dokument kann jeweils unter `DocumentReference.con
 
 ### Hinweise und Anmerkungen zur Implementierung von [IHE MHD ITI-68 (Retrieve Document)](https://profiles.ihe.net/ITI/MHD/ITI-68.html)
 
-Für die Implementierung der Interaktion "Dokumentenzugriff" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-68 (Retrieve Document)](https://profiles.ihe.net/ITI/MHD/ITI-68.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
+Für die Implementierung der Interaktion "Dokumentenzugriff" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-68 (Retrieve Document)](https://profiles.ihe.net/ITI/MHD/ITI-68.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt. Die verlinkte Webseite bietet weiterführende Informationen zur "Retrieve Document" Interaktion, einschließlich grafischer Darstellungen der Interaktionen.
 
 #### [2:3.68.4.1 Retrieve Document Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message)
 
