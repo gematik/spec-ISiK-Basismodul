@@ -14,6 +14,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 Datum: tbd
 
 * `fix`: Anpassung der Displaywerte in den DocumenReference-Examples von „mimeType Sufficient“ zu „Format aus MIME Type ableitbar“ https://github.com/gematik/spec-ISiK-Basismodul/pull/765
+* `improve`: Hinweise auf erläuternde Inhalten auf den MHD Seiten integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/770 
 ----
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
