@@ -54,7 +54,7 @@ Als Termin-Consumer werden alle System definiert, die Termininformationen abfrag
 Es sei zu beachten, dass in vielen Fällen ein Terminmanagementsystem aus unterschiedlichen Modulen besteht, die mehreren oder allen der genannten Akteure entsprechen:
 1. Ein Termin-Repository, da das System das terminführende System ist
 2. Ein Termin-Requestor, um intern im System einen Termin zu vereinbaren
-3. Ein Termin-Consumer um eine Übersicht der vereinbarten Termine anzuzeigen
+3. Ein Termin-Consumer, um eine Übersicht der vereinbarten Termine anzuzeigen
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/main-stufe-3/Material/images/diagrams/akteure_1.svg" alt="Übersicht Termin Akteure 1" width="90%"/>
 
