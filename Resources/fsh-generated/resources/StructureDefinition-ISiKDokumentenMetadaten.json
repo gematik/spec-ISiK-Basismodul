@@ -569,7 +569,14 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
-        }
+        },
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Lookup Composition.encounter.resolve().serviceType",
+            "comment": "Mapping per https://wiki.hl7.de/index.php?title=Ihevs:DocumentEntry.PracticeSettingCode von Fachabteilungsschlüssel auf PracticeSetting erforderlich."
+          }
+        ]
       }
     ]
   }
