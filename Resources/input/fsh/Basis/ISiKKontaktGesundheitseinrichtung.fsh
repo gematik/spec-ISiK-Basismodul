@@ -271,7 +271,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
       Begründung MS: Zur Harmonisierung den Festlegungen der Medizininformatik-Initiative"
   * dischargeDisposition MS
     * ^short = "Entlassungsart bzw. -grund"
-    * extension contains ExtenstionEntlassungsgrund named Entlassungsgrund 0..1 MS and ExtensionISiKRehaEntlassung named RehaEntlassung 0..1 MS
+    * extension contains ExtensionEntlassungsgrund named Entlassungsgrund 0..1 MS and ExtensionISiKRehaEntlassung named RehaEntlassung 0..1 MS
     * extension[Entlassungsgrund]
       * ^short = "Entlassungsgrund"
       * ^comment = "Entlassungsgrund nach § 301 Abs. 3 SGB V  
