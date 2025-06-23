@@ -1,24 +1,24 @@
----
-topic: UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme
----
 # Bestätigungsrelevante Systeme
 
-Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Gesundheitswesen (KIG) gegenwärtig die Definition der bestätigungsrelevanten Systeme fest. 
+Die im Folgenden definierten Subsysteme müssen gemäß § 373 Abs. 2 SGB V im Krankenhaus um die Schnittstelle erweitert werden, die das ISIK-Modul bzw. die Datenobjekte in der Spezifikation der gematik jeweils beschreiben, sobald das Bundesministerium für Gesundheit die Spezifikation gemäß §373 Abs.1 SGB V verbindlich festgelegt hat.
 
-# **Definition Bestätigungsrelevante Systeme**
-# **Allgemein**
-Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für Informationssysteme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach. 
-Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten Systeme getroffen.
+# **Definition Bestätigungsrelevante Systeme Allgemein**
 
-Bei bestätigungsrelevanten Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem *primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten*, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.
+Für den Austausch von versorgungsrelevanten Daten in Krankenhäusern erarbeitet die gematik einen verbindlichen Standard über eine standardisierte Schnittstelle für Informationssysteme in Krankenhäusern (ISiK). Damit kommt sie ihrem gesetzlichen Auftrag nach § 373 SGB V nach. Die standardisierte Schnittstellen-Festlegung ISiK wird in Modulen veröffentlicht. An dieser Stelle werden die Festlegungen für die bestätigungsrelevanten Systeme getroffen.
+
+Bei bestätigungsrelevanten Systemen in ISiK handelt es sich stets um Software-Systeme, die versorgungsrelevante Daten verarbeiten oder dauerhaft speichern. Ausgenommen sind Software-Produkte, die ausschließlich zur redundanten Datenspeicherung und -wiederherstellung eingesetzt werden. Wenn im Folgenden die Rede ist von einem primären, dauerhaften Ort zur Speicherung und Verwaltung von Daten, so ist damit im Sinne einer Single Source of Truth (führendes System) ein allgemeingültiger Datenbestand gemeint.
 
 Versorgungsrelevante Daten sind administrative Daten (z. B. Alter des Patienten, Name der Einrichtung, Arztnummer usw.) sowie Daten zu klinischen Verfahren (z. B. Prozeduren-Codes), Diagnostik (z. B. Laborbefunde), Medikation (z. B. Medikamenten-Verordnung) und Abrechnung (z. B. Versicherungsverhältnis).
 
-Es wird eine Kategorisierung der **bestätigungsrelevanten Subsysteme** entlang des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten **Definitionen** als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der **Geltungsbereich** konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der **normative Status** wird schließlich tabellarisch unter den entsprechenden Abschnitten zur **Bestätigungsrelevanz** aufgeführt. 
+Es wird eine Kategorisierung der bestätigungsrelevanten Subsysteme entlang des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten Definitionen als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der Geltungsbereich konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der normative Status wird schließlich tabellarisch unter den entsprechenden Abschnitten zur Bestätigungsrelevanz aufgeführt.
 
-Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) CapabilityStatement, das einem Akteur entspricht; in diesem Zusammenhang wird einem bestätigungsrelevanten System ein oder mehrere Akteure zugeordnet.
+Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) Capability Statement, das einem Akteur entspricht; in diesem Zusammenhang wird einem bestätigungsrelevanten System ein oder mehrere Akteure zugeordnet.
 
 Neben den bestätigungsrelevanten Systemen werden auch korrespondierende Systeme als Clients definiert.
+
+Praxisverwaltungssysteme und Reha-Informationssysteme, die im Einzelfall als patientenführendes System in einem Krankenhaus eingesetzt werden, sind nicht in die Definition mit einbezogen.
+
+Die Kommunikation innerhalb einzelner Subsysteme, z.B. eines KIS mit einem KIS-Modul, ist nicht Gegenstand der folgenden Festlegungen. Entscheidend ist, dass die Daten, die im bezeichneten Subsystem enthalten sind, über die ISiK-Schnittstelle für andere Subsysteme verfügbar gemacht werden. Von der gematik spezifizierte ISIK-Module, die im Folgenden nicht aufgeführt sind, können in ISIK-Folgestufen ergänzt werden.
 
 An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreffen:
 
@@ -35,14 +35,18 @@ An dieser Stelle werden Festlegungen getroffen, die folgende ISiK-Module betreff
 
 Das Support-Modul Labor stellt Profile bereit, die im Kontext anderer Module bestätigungsrelevant sein können, ist als Modul selbst jedoch nicht bestätigungsrelevant.
 
----
 # **Basismodul**
+
 ## **Bestätigungsrelevantes System: Basis-Server**
+
 ### **Definition**
+
 Das bestätigungsrelevante System "Basis-Server" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante administrative und klinische Daten für andere Applikationen (System: Basis-Client) über eine FHIR R4 REST API gemäß ISiK zur Abfrage und Weiternutzung bereitstellt.
 
-Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs *Patient Demographics Supplier* und im IHE-QEDm-Kontext die Rolle des Akteurs *Clinical Data Source* ein.
+Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Server nimmt im IHE-PDQm-Kontext die Rolle des Akteurs Patient Demographics Supplier und im IHE-QEDm-Kontext die Rolle des Akteurs Clinical Data Source ein.
+
 ### **Geltungsbereich**
+
 Als Basis-Server gelten in diesem Kontext Systeme, die strukturierte, versorgungsrelevante Daten über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Daten während der Patientenversorgung im Krankenhaus dienen.
 
 Dies betrifft u. a.:
@@ -50,15 +54,20 @@ Dies betrifft u. a.:
 - KIS-Systeme
 - Clinical Data Repository
 - Abrechnungssysteme, sofern diese als führende Systeme für die Speicherung und Verwaltung versorgungsrelevanter Daten genutzt werden
+
 ## **System: Basis-Client**
+
 ### **Definition**
+
 Das System "Basis-Client" im Sinne des ISiK-Moduls "Basis" ist ein System, das versorgungsrelevante administrative und klinische Daten von einem Basis-Server abfragt. Der vorrangige Zweck des Abrufs dieser versorgungsrelevanten Daten ist, sie einem Anwender anzuzeigen, um eine redundante Erfassung zu vermeiden oder sie in internen Prozessen zu verarbeiten. Auch das Aufrufen von strukturierten Workflows zur Erstellung, Manipulation (Ändern, Anreichern etc.) und Synchronisation der zuvor genannten Daten kennzeichnet "Basis-Clients".
 
-Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokuments an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen. 
+Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Basis-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Basis-Clients neu erstellte patientenbezogene Daten in Form eines strukturierten FHIR-Dokuments an Basis-Server übermitteln, sofern diese die entsprechende Interaktion unterstützen. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten sowie eine HTML-Repräsentation (Narrative) bereitstellen.
 
-Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Client nimmt im IHE-PDQm-Kontext die Rolle des *Patient Demographics Consumer* und im IHE-QEDm-Kontext die Rolle des *Clinical Data Consumer* ein.
+Nicht-normative Erläuterung in Bezug auf IHE-Festlegungen (genaueres in den ISiK Implementation Guides): Der Basis-Client nimmt im IHE-PDQm-Kontext die Rolle des Patient Demographics Consumer und im IHE-QEDm-Kontext die Rolle des Clinical Data Consumer ein.
+
 ### **Geltungsbereich**
-Als Basis-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten von anderen Systemen abfragen. Basis-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die abgefragten Daten.
+
+Als Basis-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten von anderen Systemen abfragen. Basis-Clients gelten nicht als primärer, dauerhafter Speicherort für die abgefragten Daten.
 
 Dies betrifft u. a.:
 
@@ -67,95 +76,101 @@ Dies betrifft u. a.:
 - Systeme, die Daten aus anderen Systemen abfragen möchten, um sie Anwendern oder Prozessen bedarfsgerecht zur Verfügung zu stellen, ohne diese redundant speichern zu müssen
 
 ## **Bestätigungsrelevanz**
+
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|Basis-Server| Basis Server Akteur <https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|Basis-Client|keine|nein|
+| System | konkrete Anforderungen | bestätigungsrelevant |
+| --- | --- | --- |
+| Basis-Server | Basis Server Akteur https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements | ja |
+| Basis-Client | keine | nein |
 
 # **Dokumentenaustausch**
+
 ## **System: Dokumenten-Server**
+
 ### **Definition**
 
-Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (
-potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISiK von anderen
-Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur
-Abfrage und Weiternutzung zur Verfügung stellt.
+Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISiK von anderen Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur Abfrage und Weiternutzung zur Verfügung stellt. Nach §373 SGB V
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
-Guides): Der Dokumenten-Server nimmt im Kontext
-der [Spezifikation IHE ITI Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)
-die Rollen
-der [Document Recipient](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133113-document-recipient)
-und [Document Responder](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133114-document-responder)
-ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.2
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation Guides): Der Dokumenten-Server nimmt im Kontext der Spezifikation IHE ITI Mobile access to Health Documents (MHD) die Rollen der Document Recipient und Document Responder ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.2
 
 - Simplified Publish [ITI-105] (verpflichtend)
 - Generate Metadata [ITI-106] (optional)
 - Find Document References [ITI-67] (verpflichtend)
 - Retrieve Document [ITI-68] (verpflichtend)
+
 ### **Geltungsbereich**
-Als Dokumenten-Server gelten in diesem Kontext alle Systeme, die strukturierte und/ oder unstrukturierte versorgungsrelevante Dokumente über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Dokumente dienen.
+
+Als Dokumenten-Server gelten laut §373 SGB V in diesem Kontext alle Systeme, die strukturierte und/ oder unstrukturierte versorgungsrelevante Dokumente über Schnittstellen entgegennehmen oder selbst erstellen und als primärer, dauerhafter Ort zur Speicherung und Verwaltung dieser Dokumente dienen.
 
 Dies betrifft u.a.:
 
-- KIS-Systeme mit integrierter Dokumentenverwaltung
+- KIS-Systeme mit integrierter Dokumentenverwaltung, KIS mit PDMS-Funktion oder elektronischer Kurve bzw. entsprechendes KIS-Modul
 - Archivsysteme, sofern diese nicht ausschließlich zur Umsetzung einer Backup-Lösung genutzt werden
 - Dokumentenverwaltungssysteme (DMS), sofern diese zur Speicherung von versorgungsrelevante Dokumenten (s.o. zu versorgungsrelevante Daten) verwendet werden
+
 ## **System: Dokumenten-Client**
+
 ### **Definition**
+
 Das System "Dokumenten-Client" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das Dokumente von einem Dokumenten-Server abfragt, um sie z.B. einem Anwender anzuzeigen. Dabei können sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren. Dokumenten-Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien zu unterstützen. Weiterhin können Dokumenten-Clients neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumenten-Server übermitteln. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten bereitstellen. Sowohl die Implementierung der Interaktion "Dokumentenabfrage" als auch "Dokumentenbereitstellung" sind für Dokumenten-Clients optional.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
-Guides): Der Dokumenten-Client agiert im IHE-MHD-Kontext als
-System [Document Source](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133111-document-source)
-und [Document Consumer](https://profiles.ihe.net/ITI/MHD/1331_actors_and_transactions.html#133112-document-consumer)
-ein und implementiert die IHE-MHD-Interaktionen
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation Guides): Der Dokumenten-Client agiert im IHE-MHD-Kontext als System Document Source und Document Consumer ein und implementiert die IHE-MHD-Interaktionen
 
 - Simplified Publish [ITI-105] (optional)
 - Generate Metadata [ITI-106] (optional)
 - Find Document References [ITI-67] (optional)
 - Retrieve Document [ITI-68] (optional)
+
 ### **Geltungsbereich**
-Als Dokumenten-Clients gelten in diesem Kontext alle Systeme, die strukturierte und/oder unstrukturierte versorgungsrelevante Dokumente erstellen und über Schnittstellen kommunizieren oder solche Dokumente von Dokumenten-Servern abfragen. Dokumenten-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die erstellten oder abgefragten Dokumente.
+
+Als Dokumenten-Clients gelten in diesem Kontext alle Systeme, die strukturierte und/oder unstrukturierte versorgungsrelevante Dokumente erstellen und über Schnittstellen kommunizieren oder solche Dokumente von Dokumenten-Servern abfragen. Dokumenten-Clients gelten nicht als primärer, dauerhafter Speicherort für die erstellten oder abgefragten Dokumente.
 
 Dies betrifft u.a.:
 
 - Anwendersysteme, die medizinischem Personal den bedarfsgerechten Zugang zu versorgungsrelevanten, andernorts gespeicherten Dokumenten ermöglichen
-- Telekonsil-System gemäß § 31a BMV-Ä die Dokumente von Dokumenten-Servern abfragen und zur
-  Verwendung in Telekonsilen bereitstellen
+- Telekonsil-System gemäß § 31a BMV-Ä die Dokumente von Dokumenten-Servern abfragen und zur Verwendung in Telekonsilen bereitstellen
 - KIM-Client-Anwendungssoftware, die Dokumente aus Anhängen an KIM-Nachrichten zur Speicherung an Dokumenten-Server übermitteln und/oder Dokumente von Dokumenten-Servern abfragen, um sie im Anhang an KIM-Nachrichten zu versenden
+
 ## **Bestätigungsrelevanz**
+
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|    **System**     |                                                     **konkrete Anforderungen**                                                      | **bestätigungsrelevant** |
-|:-----------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
-| Dokumenten-Server | Dokumenten Server Akteur <https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements> |            ja            |
-| Dokumenten-Client |                                                                keine                                                                |           nein           |
+| System | konkrete Anforderungen | bestätigungsrelevant |
+| --- | --- | --- |
+| Dokumenten-Server | Dokumenten Server Akteur https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements | ja |
+| Dokumenten-Client | keine | nein |
 
 # **Vitalparameter und Körpermaße**
+
 ## **Bestätigungsrelevantes System: Vitalparameter-Server**
+
 ### **Definition**
+
 Das bestätigungsrelevante System "Vitalparameter-Server" im Sinne des ISiK-Moduls "Vitalparameter und Körpermaße" ist ein System, das versorgungsrelevante Daten zu Vitalparametern (wie Herzfrequenz, Blutdruck etc.) sowie Körpermaßen (Größenangaben und Gewicht) für andere Applikationen (System: Vitalparameter-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
-Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation
-Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend
-analog zu IHE QEDm '*Clinical Data Source'* zu betrachten.
+Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation Guides): Analog zum ISiK Basismodul ist ein Vitalparameter-Server im Modul Vitalparameter weitgehend analog zu IHE QEDm 'Clinical Data Source' zu betrachten.
+
 ### **Geltungsbereich**
+
 Als Vitalparameter-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten zu Vitalparametern (wie Herzfrequenz, Blutdruck etc.) sowie Körpermaßen (Größenangaben und Gewicht) über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
 Systeme, die als Vitalparameter-Server agieren sind u.a.:
 
-- KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul
+- KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul, KIS mit PDMS-Funktion oder elektronischer Kurve bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
 - Clinical Data Repository
 - Elektronische Kurve [z.B. für die Verwendung auf Normal-Stationen]
+
 ## **System: Vitalparameter-Client**
+
 ### **Definition**
-Im Kontext des Moduls Vitalparameter und Körpermaße fragen Vitalparameter-Clients versorgungsrelevante Daten von einem Vitalparameter-Server ab (entspricht weitgehend einem IHE QEDm *Clinical Data Consumer)*, um sie z.B. einem Anwender anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Vitalparameter-Clients sind nicht verpflichtet, alle von den Vitalparameter-Servern geforderten Suchkriterien zu unterstützen.
+
+Im Kontext des Moduls Vitalparameter und Körpermaße fragen Vitalparameter-Clients versorgungsrelevante Daten von einem Vitalparameter-Server ab (entspricht weitgehend einem IHE QEDm Clinical Data Consumer), um sie z.B. einem Anwender anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Vitalparameter-Clients sind nicht verpflichtet, alle von den Vitalparameter-Servern geforderten Suchkriterien zu unterstützen.
+
 ### **Geltungsbereich**
-Als Vitalparameter-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstelle abfragen oder kommunizieren. Vitalparameter-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.
+
+Als Vitalparameter-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten über eine Schnittstelle abfragen oder kommunizieren. Vitalparameter-Clients gelten nicht als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.
 
 Vitalparameter-Clients sind zum Beispiel:
 
@@ -165,27 +180,33 @@ Dabei ist zu beachten, dass auch Systeme, die oben als bestätigungsrelevantes S
 
 - KIS
 - PDMS
+
 ## **Bestätigungsrelevanz**
+
 Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zu klinischen Vitalparametern und Körpermaßen verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt ), ist der "Vitalparameter-Server" bestätigungsrelevant (für dieses eine Profil).
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|Vitalparameter-Server| Vital Sign Standard Source Akteur <https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|Vitalparameter-Client|keine|nein|
+| System | konkrete Anforderungen | bestätigungsrelevant |
+| --- | --- | --- |
+| Vitalparameter-Server | Vital Sign Standard Source Akteur https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements | ja |
+| Vitalparameter-Client | keine | nein |
 
 # **ICU Normalstation Workflow**
+
 ## **Bestätigungsrelevantes System: ICU Source Minimal**
+
 ### **Definition**
+
 Das bestätigungsrelevante System "ICU Source Minimal " im Sinne des ISiK-Moduls "ICU Normalstation Workflow" ist ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
 Primärer Anwendungskontext für das System ICU Source Minimal ist die Bereitstellung von Vitalparameter-Daten durch Systeme auf Normalstationen. Diese Daten sind typischerweise in KIS-Systemen vorgehalten und werden dann z. B. nach einer Überleitung auf die Intensivstation von Systemen der Intensivstation übernommen.
 
 ### **Geltungsbereich**
+
 Als ICU Source Minimal gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
-Systeme, die als ICU Source Minimal agieren sind u.a.: 
+Systeme, die als ICU Source Minimal agieren sind u.a.:
 
 - KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
@@ -195,49 +216,59 @@ Systeme, die als ICU Source Minimal agieren sind u.a.:
 ## **Bestätigungsrelevantes System: ICU Source Extended**
 
 ### **Definition**
+
 Als bestätigungsrelevantes System "ICU Source Extended" im Sinne des ISiK-Moduls "ICU Normalstation Workflow" gilt ein System, das für die Intensivversorgung relevante Vitalparameter-Daten für andere Applikationen über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
-Primärer Anwendungskontext für das System ICU Source Extended sind Intensivstationen. Das System stellt die Daten aus der Intensivstation dann über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung auf Normalstation zur Verfügung. 
+Primärer Anwendungskontext für das System ICU Source Extended sind Intensivstationen. Das System stellt die Daten aus der Intensivstation dann über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung auf Normalstation zur Verfügung.
 
 Im Gegensatz zum bestätigungsrelevanten System "ICU Source Minimal" ist das bestätigungsrelevante System "ICU Source Extended" in der Lage, auch sehr spezifische Vitalparameter-Daten zu verarbeiten, die nicht in den ISiK-Profilen definiert sind. Diese Daten stammen aus der Intensivmedizinischen Versorgung und sind im Wesentlichen für die Behandlung von Patienten auf Intensivstationen von Bedeutung. Diese Daten sind typischerweise in PDMS vorgehalten.
 
 Die Profile für die Intensivversorgung entstammen der Zusammenarbeit mit dem Kerndatensatz ICU der Medizinischen Informatik Initiative (MII) und dem ISiK-Projekt. Die Profile sind in der Simplifier-Instanz des ISiK-Projektes hinterlegt und werden dort auch weiterentwickelt.
 
 ### **Geltungsbereich**
+
 Als ICU Source Extended gelten in diesem Kontext alle Systeme, die strukturierte Daten, die für die Intensivversorgung relevant sind, über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
 Systeme, die als ICU Source Minimal agieren sind u.a.:
+
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]
 - KIS-Komponenten, die zu einem PDMS äquivalente Funktionalitäten bereitstellen
 
-
 ## **Bestätigungsrelevanz**
-Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zur Intensivversrogung verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt), sind die beschriebenen Systeme bestätigungsrelevant (für dieses eine Profil).
+
+Bestätigungsrelevant im Kontext des Moduls Vitalparameter sind alle Software-Produkte, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zur Intensivversorgung verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt), sind die beschriebenen Systeme bestätigungsrelevant (für dieses eine Profil).
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|ICU Source Extended| ICU Source Extended Akteur <https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
-|ICU Source Minimal| ICU Source Minimal Akteur <https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
+| System | konkrete Anforderungen | bestätigungsrelevant |
+| --- | --- | --- |
+| ICU Source Extended | ICU Source Extended Akteur https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements | ja |
+| ICU Source Minimal | ICU Source Minimal Akteur https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements | ja |
 
 # **Terminplanung**
+
 ## **Bestätigungsrelevantes System: Termin-Repository**
+
 ### **Definition**
+
 Das bestätigungsrelevante System "Termin-Repository" im Sinne des ISiK-Moduls "Terminplanung" ist ein System, das Informationen zu verfügbaren Termineinheiten von Ressourcen (z. B. Ambulanzen, Leistungsstellen, Mitarbeiter, Geräte und Räume) vorhält und die dafür vereinbarten Termine über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und verwaltet. Das Termin-Repository gilt stets als autoritative Quelle zur Verwaltung von Termindaten und ist damit als ein terminführendes System zu verstehen.
 
 ### **Geltungsbereich**
+
 Systeme, die als Termin-Repository agieren sind u. a.:
 
 - Patientenportal im Falle, dass das System selbst terminführend ist
-- terminführenden Systeme, z. B. KIS oder auch Klinische Arbeitsplatz-Systeme (KAS) inkl. Terminverwaltung
+- terminführende Systeme, z. B. KIS oder auch Klinische Arbeitsplatz-Systeme (KAS) inkl. Terminverwaltung
 - PDMS, die Termine verwalten
 
 ## **System: Termin-Requestor (Termin-Source)**
+
 ### **Definition**
-Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin-Source zu bezeichnen) werden alle Client-Systeme definiert, die mittels Schnittstellenanfrage zur Erhebung und Veränderung von Termininformationen dienen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe per FHIR R4 REST API nach ISiK, um einen Termin zu buchen. Das Termin-Requestor allein gilt *nicht* als autoritative Quelle zur Verwaltung von Termindaten., d. h. sofern der Termin-Requestor Termindaten von einem Termin-Repository synchronisiert und speichert/cached, sollten diese Termindaten nicht als solche verbindlich für einen mögliche Weiterverbreitung gelten, es muss vielmehr sichergestellt werden, dass die Daten mit denen des Quellsystems (Termin-Repository) übereinstimmen.
+
+Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin-Source zu bezeichnen) werden alle Client-Systeme definiert, die mittels Schnittstellenanfrage zur Erhebung und Veränderung von Termininformationen dienen. Der Termin-Requestor übernimmt die Koordination der Schnittstellenaufrufe per FHIR R4 REST API nach ISiK, um einen Termin zu buchen. Das Termin-Requestor allein gilt nicht als autoritative Quelle zur Verwaltung von Termindaten, d. h. sofern der Termin-Requestor Termindaten von einem Termin-Repository synchronisiert und speichert/cached, sollten diese Termindaten nicht als solche verbindlich für eine mögliche Weiterverbreitung gelten, es muss vielmehr sichergestellt werden, dass die Daten mit denen des Quellsystems (Termin-Repository) übereinstimmen.
 
 ### **Geltungsbereich**
+
 Systeme, die als Termin-Requestor agieren sind u. a.:
 
 - Mobile Apps zur Verwaltung von Terminen
@@ -245,63 +276,62 @@ Systeme, die als Termin-Requestor agieren sind u. a.:
 - KIS / KAS bei der Synchronisierung mit einem weiteren Termin-Repository
 
 ## **System: Termin-Consumer**
+
 ### **Definition**
-Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.
+
+Als Termin-Consumer werden alle Systeme definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt in der Regel über keine permanente Persistierung der abgefragten Informationen. Durch den Termin-Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der Termin-Repositories und Termin-Requestors.
+
 ### **Geltungsbereich**
+
 Systeme, die als Termin-Consumer agieren sind u. a.:
 
 - Apps zum Anzeigen eines Kalenders
 - Systeme zum Versenden von Benachrichtigungen im Kontext eines Termins
 - Ressourcen-Managementsoftware
+
 ## **Bestätigungsrelevanz**
+
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Akteure:
 
-|    **System**     |                                     **konkrete Anforderungen**                                     | **bestätigungsrelevant** |
-|:-----------------:|:--------------------------------------------------------------------------------------------------:|:------------------------:|
-| Termin-Repository | https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements |            ja            |
-| Termin-Requestor  |                                               keine                                                |           nein           |
-|  Termin-Consumer  |                                               keine                                                |           nein           |
+| System            | konkrete Anforderungen                                                                                     | bestätigungsrelevant |
+|-------------------|-----------------------------------------------------------------------------------------------------------|---------------------|
+| Termin-Repository | https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements        | ja                  |
+| Termin-Requestor  | keine                                                                                                     | nein                |
+| Termin-Consumer   | keine                                                                                                     | nein                |
 
 # **Medikation**
+
 Das Modul "Medikation" unterscheidet die im Folgenden definierten Systeme.
+
 ## **Bestätigungsrelevantes System: Medikations-Server**
+
 ### **Definition**
 
-Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls "Medikation" ist ein
-System, das Informationen über Verordnung, Abgabe und/oder Verabreichung von Medikamenten für andere
-Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und
-Weiternutzung zur Verfügung stellt und persistiert.
+Das Bestätigungsrelevante System "Medikations-Server" im Sinne des ISiK-Moduls "Medikation" ist ein System, das Informationen über Verordnung, Abgabe und/oder Verabreichung von Medikamenten für andere Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
 
-Im ISiK-Modul Medikation lassen sich drei Funktionen unterscheiden, die ein Medikations-Server
-übernehmen kann:
+Im ISiK-Modul Medikation lassen sich drei Funktionen unterscheiden, die ein Medikations-Server übernehmen kann:
 
-- "Medikations-Information" bildet den aktuellen Medikationsstatus ab (z. B. Dauer- oder
-  Selbstmedikation)
+- "Medikations-Information" bildet den aktuellen Medikationsstatus ab (z. B. Dauer- oder Selbstmedikation)
 - "Medikations-Verordnung" beschreibt ärztliche Verordnungen im Behandlungsprozess
 - "Medikations-Verabreichungen" dokumentiert tatsächlich verabreichte Medikamente
 
 ### **Geltungsbereich**
-Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstellen bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist "die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [[...](https://wiki.gematik.de/pages/createpage.action?spaceKey=IOPAK&title=...)] Sie ist die konkrete Ausführung der Pharmakotherapie." (<https://flexikon.doccheck.com/de/Medikation>)
+
+Als Medikations-Server gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Medikationsdaten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen. Medikationsdaten bilden Informationen zur Medikation ab, diese ist "die Verordnung und Anwendung von Medikamenten unter Festlegung einer bestimmten Dosierung. [...] Sie ist die konkrete Ausführung der Pharmakotherapie." (https://flexikon.doccheck.com/de/Medikation)
 
 Systeme, die als Medikations-Server agieren können, sind u.a.:
 
 - KIS mit Funktion Medikationsdatenverwaltung bzw. entsprechendes KIS-Modul
 - Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche] (Anwendungsfallbeispiel: Medikationsdaten in das KIS übertragen bei Verlegung vom Intensivbereich auf Normal-Station)
 - Software für digitales Medikationsmanagement (z.B. für die Umsetzung von KHZG Fördertatbestand 5)
-- E-Therapieplan-System für Zytostatika-Behandlung mit Verarbeitung von Verordnungs- und
-  Medikationsinformationen
-  (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts MedikationsVerabreichung notwendig)
-- Herstellungssystem mit Verarbeitung von Verordnungs- und Medikationsinformationen
-  (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts MedikationsVerabreichung notwendig)
+- E-Therapieplan-System für Zytostatika-Behandlung mit Verarbeitung von Verordnungs- und Medikationsinformationen (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts Medikationsverabreichung notwendig)
+- Herstellungssystem mit Verarbeitung von Verordnungs- und Medikationsinformationen (gemäß Festlegungen keine Umsetzung des ISiK-Datenobjekts Medikationsverabreichung notwendig)
 
 ## **System: Medikations-Client**
 
 ### **Definition**
 
-Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante Daten von einem
-Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter
-Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht
-verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.
+Im Kontext des Moduls Medikation fragen Medikations-Clients versorgungsrelevante Daten von einem Server ab, um sie z.B. einem Anwender (End-User als Mensch) anzuzeigen oder mittels dedizierter Software zu verarbeiten, z.B. zur Entscheidungsunterstützung. Medikations-Clients sind nicht verpflichtet, alle von den Servern bereitgestellten Suchkriterien zu unterstützen.
 
 Ein Medikations-Client kann im ISiK-Modul Medikation zwei Funktionen übernehmen:
 
@@ -310,38 +340,29 @@ Ein Medikations-Client kann im ISiK-Modul Medikation zwei Funktionen übernehmen
 
 ### **Geltungsbereich**
 
-Als Medikations-Clients gelten in diesem Kontext alle Systeme, die strukturierte
-versorgungsrelevante Daten zur Medikation über eine Schnittstelle abfragen oder kommunizieren.
-Medikations-Clients gelten *nicht* als primärer, dauerhafter Speicherort für die
-versorgungsrelevante Daten.
+Als Medikations-Clients gelten in diesem Kontext alle Systeme, die strukturierte versorgungsrelevante Daten zur Medikation über eine Schnittstelle abfragen oder kommunizieren. Medikations-Clients gelten nicht als primärer, dauerhafter Speicherort für die versorgungsrelevante Daten.
 
 Medikations-Clients sind zum Beispiel:
 
 - Pflegemanagement-Systeme
 - AMTS Systeme
 
-Dabei ist zu beachten, dass auch Systeme, die oben als Medikations-Server gelistet sind, zusätzlich
-als System 'Medikations-Client' agieren können. Insbesondere für die Unterstützung eines
-Überleitungs-Workflows gilt dies für:
+Dabei ist zu beachten, dass auch Systeme, die oben als Medikations-Server gelistet sind, zusätzlich als System 'Medikations-Client' agieren können. Insbesondere für die Unterstützung eines Überleitungs-Workflows gilt dies für:
 
 - KIS
 - PDMS
 
 ## **Bestätigungsrelevantes System: AMTS Data Provider**
+
 ### **Definition**
 
-Das Bestätigungsrelevante System AMTS Data Provider im Sinne des ISiK-Moduls "Medikation" ist ein
-System, das AMTS relevante Informationen für andere Applikationen (System: Medikations-Client) über
-eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert.
-Beispiele für ATMS-relevante Informationen sind z.B. der Stillstatus, Schwangerschafts- und
-Raucherstatus, Laborparameter und Informationen über die aktuelle Medikation eines Patienten.
+Das Bestätigungsrelevante System AMTS Data Provider im Sinne des ISiK-Moduls "Medikation" ist ein System, das AMTS relevante Informationen für andere Applikationen (System: Medikations-Client) über eine FHIR R4 REST API nach ISiK zur Abfrage und Weiternutzung zur Verfügung stellt und persistiert. Beispiele für ATMS-relevante Informationen sind z.B. der Stillstatus, Schwangerschafts- und Raucherstatus, Laborparameter und Informationen über die aktuelle Medikation eines Patienten.
 
 Es geht hier nicht um ein System das AMTS-Resultate bereitstellt - daher wurde die Bezeichnung AMTS Data Provider gegenüber AMTS-Server hier bevorzugt.
+
 ### **Geltungsbereich**
 
-Als AMTS Data Provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte
-klinische Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter
-Speicherort dieser Daten dienen.
+Als AMTS Data Provider gelten in diesem Kontext alle Systeme, die AMTS relevante, strukturierte klinische Daten über eine Schnittstelle bereitstellen, verarbeiten und als primärer, dauerhafter Speicherort dieser Daten dienen.
 
 Systeme, die als AMTS Data Provider agieren können sind u.a.:
 
@@ -351,25 +372,19 @@ Systeme, die als AMTS Data Provider agieren können sind u.a.:
 
 ## **Bestätigungsrelevanz**
 
-Bestätigungsrelevant im Kontext des Moduls Medikation sind alle Systeme, die eine Teilmenge der in
-diesem Modul in Form von FHIR-Profilen definierten Daten zu Medikationsinformationen verarbeiten und
-dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata
-erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im
-hypothetischen Falle, dass ein System nur dieses unterstützt), ist das System
-bestätigungsrelevant (für dieses eine Profil).
+Bestätigungsrelevant im Kontext des Moduls Medikation sind alle Systeme, die eine Teilmenge der in diesem Modul in Form von FHIR-Profilen definierten Daten zu Medikationsinformationen verarbeiten und dauerhaft speichern (die Bestätigung wird dann ggf. nur für eine Teilmenge der Datenschemata erfolgen): auch wenn z.B. nur ein Profil für die Schnittstelle umgesetzt werden MUSS (z.B. im hypothetischen Falle, dass ein System nur dieses unterstützt), ist das System bestätigungsrelevant (für dieses eine Profil).
 
-Bestandteile des Support-Moduls Labor und des Moduls Vitalparameter sind ausschließlich im Kontext
-von AMTS-Anwendungsfällen im Rahmen des Medikationsmoduls bestätigungsrelevant (AMTS Data Provider).
+Bestandteile des Support-Moduls Labor und des Moduls Vitalparameter sind ausschließlich im Kontext von AMTS-Anwendungsfällen im Rahmen des Medikationsmoduls bestätigungsrelevant (AMTS Data Provider).
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|     **System**     |                                                                                     **konkrete Anforderungen**                                                                                     | **bestätigungsrelevant** |
-|:------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
-| Medikations-Server |    Medikationsverordnung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerordnungAkteur    |            ja            |
-| Medikations-Server |   Medikationsinformation Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationInformationAkteur   |            ja            |
-| Medikations-Server | Medikationsverabreichung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerabreichungAkteur |            ja            |
-| AMTS Data Provider |                        AMTS Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementAMTSAkteur                        |            ja            |
-| Medikations-Client |                                                                                               keine                                                                                                |           nein           |
+| System              | konkrete Anforderungen                                                                                                                                              | bestätigungsrelevant |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| Medikations-Server  | Medikationsverordnung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerordnungAkteur | ja                  |
+| Medikations-Server  | Medikationsinformation Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationInformationAkteur | ja                  |
+| Medikations-Server  | Medikationsverabreichung Server Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementMedikationVerabreichungAkteur | ja                  |
+| AMTS Data Provider  | AMTS Akteur https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementAMTSAkteur                | ja                  |
+| Medikations-Client  | keine                                                                                                                                                              | nein                |
 
 # **Connect**
 
@@ -378,9 +393,11 @@ Das Modul "Connect" unterscheidet die im Folgenden definierten Akteure.
 ## **Bestätigungsrelevantes System: Ressourcen-Server**
 
 ### **Definition**
+
 IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.
 
 ### **Geltungsbereich**
+
 Im Kontext von ISiK trifft diese Definition u.a. auf folgende bestätigungsrelevante Systeme zu:
 
 - Basis-Server
@@ -395,21 +412,25 @@ Im Kontext von ISiK trifft diese Definition u.a. auf folgende bestätigungsrelev
 ## **Akteur: Autorisierungs-Server**
 
 ### **Definition**
+
 Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Autorisierung von SMART-Clients, die auf FHIR-Ressourcen zugreifen möchten. Er stellt sicher, dass nur berechtigte Anwendungen und Benutzer Zugriff auf sensible Gesundheitsdaten erhalten.
 
 IT-Systeme in dieser Rolle stellen Sicherheits-Token aus, die einen Zugang zu auf Ressourcen-Servern verwalteten FHIR-Ressourcen autorisieren.
 
 ### **Geltungsbereich**
+
 Im Kontext von ISiK trifft diese Definition auf alle Systeme zu, die an einen Ressourcen-Server angebunden sind, um ein Sicherheits-Token für eine SMART App (Client) auszustellen. Die genauen Anforderungen unterscheiden sich allerdings je nachdem, ob ein System gleichzeitig als App-Launcher agiert oder nicht.
 
 ## **Electronic Health Record (EHR)**
 
 ### **Definition**
+
 Ein Electronic Health Record (EHR) bündelt einen Ressourcen-Server, Autorisierungs-Server und SMART App Launcher (und ggf. weitere Systeme).
 
 Im Sinne von Smart on FHIR ist der EHR das primäre Zielsystem für den Client.
 
 ### **Geltungsbereich**
+
 Ein Electronic Health Record (EHR) umfasst Systeme, die als zentrale Plattform für die Speicherung, Verwaltung und den Austausch von Gesundheitsdaten dienen. Im Kontext von ISiK wird ein EHR als Kombination aus Ressourcen-Server, Autorisierungs-Server und App Launcher betrachtet. Es kann zusätzlich weitere Funktionen wie die Integration von SMART Apps bereitstellen.
 
 Systeme, die als EHR agieren, sind u.a.:
@@ -421,29 +442,33 @@ Systeme, die als EHR agieren, sind u.a.:
 ## **Akteur: App Launcher**
 
 ### **Definition**
+
 Ein App-Launcher interagiert zwischen Autorisierungs-Server und ISiK-Ressourcen-Server und bietet einem Client einen Anwendungskontext. Der Kontext kann ein Patient oder Behandlungsfall aus dem EHR sein.
 
 ### **Geltungsbereich**
+
 Als App Launcher agieren KIS (bisher wurde eine entsprechende Funktionalität über "Fremdaufrufe" bereitgestellt).
 
 ## **Akteur: SMART App (Client)**
 
 ### **Definition**
+
 Ein Client ist eine Anwendung, die auf FHIR-Ressourcen zugreift, um Gesundheitsdaten zu lesen oder zu schreiben. Dies kann beispielsweise eine mobile Gesundheits-App oder ein klinisches Entscheidungshilfesystem sein.
 
 ### **Geltungsbereich**
+
 Alle End-User-Anwendungen, insbesondere ohne eigene Datenhaltung, gelten als SMART-App, sofern sie im vorgesehenen Kontext und in Folge eines App Launch Workflows ausgeführt werden.
 
 ## **Bestätigungsrelevanz**
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Rollen:
 
-| **System**               | **konkrete Anforderungen**                                   | **bestätigungsrelevant** |
-|---------------------------|-------------------------------------------------------------|--------------------------|
-| Ressourcen-Server (Basis-Server) | letztgültige Version des IGs Connect - relevanter Passus - <https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance> | ja                      |
-| Autorisierungs-Server     | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
-| App Launcher              | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
-| SMART App                 | letztgültige Version des IGs Connect - <https://simplifier.net/guide/isik-connect-stufe-5> | nein                    |
+| System                                | konkrete Anforderungen                                                                                                      | bestätigungsrelevant |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|---------------------|
+| Ressourcen-Server (Basis-Server)       | letztgültige Version des IGs Connect - relevanter Passus - https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance | ja                  |
+| Autorisierungs-Server                  | letztgültige Version des IGs Connect - https://simplifier.net/guide/isik-connect-stufe-5                                    | nein                |
+| App Launcher                           | letztgültige Version des IGs Connect - https://simplifier.net/guide/isik-connect-stufe-5                                    | nein                |
+| SMART App                              | letztgültige Version des IGs Connect - https://simplifier.net/guide/isik-connect-stufe-5                                    | nein                |
 
 # **Formular**
 
@@ -520,12 +545,12 @@ Das ISiK-Modul "Formular" ist auf dieser Stufe **informativ**.
 
 Die folgende Tabelle listet die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme tabellarisch auf:
 
-|**System**|**konkrete Anforderungen**|**bestätigungsrelevant**|
-| :-: | :-: | :-: |
-|FormularLauncher|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularLauncher>|nein|
-|FormularDaten-Quelle|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDatenQuelle>|nein|
-|FormularDefinitions-Ersteller|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDefinitionsErsteller>|nein| 
-|FormularRenderer|<https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularRenderer>|nein| 
+| System                      | konkrete Anforderungen                                                                                                        | bestätigungsrelevant |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------|---------------------|
+| FormularLauncher            | https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularLauncher                       | nein                |
+| FormularDaten-Quelle        | https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDatenQuelle                    | nein                |
+| FormularDefinitions-Ersteller| https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularDefinitionsErsteller           | nein                |
+| FormularRenderer            | https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Spezifikation/Akteure#FormularRenderer                       | nein                |
 
 # **Subscription**
 
@@ -533,61 +558,56 @@ Die folgende Tabelle listet die Bestätigungsrelevanz in Bezug auf die zuvor def
 
 ### **Definition**
 
-Das bestätigungsrelevante System "Subscription-Server" im Sinne des ISiK‑Moduls "Subscription"
-ist ein System, das
+Das bestätigungsrelevante System "Subscription-Server" im Sinne des ISiK-Moduls "Subscription" ist ein System, das
 
-- über eine FHIR‑REST‑API gemäß ISiK neue Subscription‑Registrierungen annimmt,
-- bei Eintreten der in den Subscriptions definierten Ereignisse (z. B. Erstellen, Ändern oder
-  Löschen von Ressourcen) automatische Benachrichtigungen erzeugt und verteilt.
+- über eine FHIR-REST-API gemäß ISiK neue Subscription-Registrierungen annimmt,
+- bei Eintreten der in den Subscriptions definierten Ereignisse (z. B. Erstellen, Ändern oder Löschen von Ressourcen) automatische Benachrichtigungen erzeugt und verteilt.
 
 ### **Geltungsbereich**
 
-Als Subscription‑Server gelten in diesem Kontext alle Systeme, die
+Als Subscription-Server gelten in diesem Kontext alle Systeme, die
 
-1. strukturierte Subscription‑Anfragen über FHIR‑Subscriptions entgegennehmen,
+1. strukturierte Subscription-Anfragen über FHIR-Subscriptions entgegennehmen,
 2. Events auf Basis dieser Subscriptions erkennen und verarbeiten,
-3. Benachrichtigungen über definierte Kanäle (REST‑Hook) versenden.
+3. Benachrichtigungen über definierte Kanäle (REST-Hook) versenden.
 
 Beispiele:
 
-- KIS-Systeme mit implementiertem Subscription‑Modul
-- PDMS (Patientendatenmanagement‑Systeme) mit implementiertem Subscription‑Modul
-- LIS (Laborinformations‑Systeme) mit implementiertem Subscription‑Modul
+- KIS-Systeme mit implementiertem Subscription-Modul
+- PDMS (Patientendatenmanagement-Systeme) mit implementiertem Subscription-Modul
+- LIS (Laborinformations-Systeme) mit implementiertem Subscription-Modul
 
 ## **System: Subscription-Client**
 
 ### **Definition**
 
-Das System "Subscription‑Client" im Sinne des ISiK‑Moduls "Subscription" ist ein System, das
+Das System "Subscription-Client" im Sinne des ISiK-Moduls "Subscription" ist ein System, das
 
-- Subscription‑Benachrichtigungen von einem Subscription‑Server empfängt,
+- Subscription-Benachrichtigungen von einem Subscription-Server empfängt,
 - die empfangene Notifications auswertet,
-- und die erhaltenen klinischen Ereignisdaten einem Anwender anzeigt oder in
-  nachgelagerte Prozesse (z. B. CDS, Alarm‑ und Monitoring‑Workflows) einspeist.
+- und die erhaltenen klinischen Ereignisdaten einem Anwender anzeigt oder in nachgelagerte Prozesse (z. B. CDS, Alarm- und Monitoring-Workflows) einspeist.
 
 ### **Geltungsbereich**
 
-Als Subscription‑Clients gelten in diesem Kontext alle Systeme, die
+Als Subscription-Clients gelten in diesem Kontext alle Systeme, die
 
-1. via FHIR‑REST Subscription‑Nachrichten empfangen und verarbeiten.
+1. via FHIR-REST Subscription-Nachrichten empfangen und verarbeiten.
 
 Beispiele:
 
-- Middleware‑Komponenten, die Stammdaten zwischen Systemen (z.B. KIS, LIS, PDMS und weiteren)
-  synchronisieren und stets aktuell halten
-- Alarm‑ und Alert‑Systeme (z. B. für kritische Labor‑ oder Vitalparameter)
-- Mobile Health‑Apps mit Push‑Notifications
-- Patientenportale, die Subscription‑Nachrichten empfangen und Patienten über Befund‑ oder
-  Termin‑Updates informieren
+- Middleware-Komponenten, die Stammdaten zwischen Systemen (z.B. KIS, LIS, PDMS und weiteren) synchronisieren und stets aktuell halten
+- Alarm- und Alert-Systeme (z. B. für kritische Labor- oder Vitalparameter)
+- Mobile Health-Apps mit Push-Notifications
+- Patientenportale, die Subscription-Nachrichten empfangen und Patienten über Befund- oder Termin-Updates informieren
 
 ## **Bestätigungsrelevanz**
 
 Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor definierten Systeme:
 
-|     **System**      |                                                  **konkrete Anforderungen**                                                   | **bestätigungsrelevant** |
-|:-------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|:------------------------:|
-| Subscription-Server | Subscription Server Akteur https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Artefakte/CapabilityStatements> |            ja            |
-| Subscription-Client |                                                             keine                                                             |           nein           |
+| System              | konkrete Anforderungen                                                                                                                     | bestätigungsrelevant |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| Subscription-Server | Subscription Server Akteur https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Artefakte/CapabilityStatements              | ja                  |
+| Subscription-Client | keine                                                                                                                                      | nein                |
 
 # Festlegungen auf Profilebene im CapabilityStatement
 
