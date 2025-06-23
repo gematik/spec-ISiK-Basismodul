@@ -16,7 +16,7 @@ Versorgungsrelevante Daten sind administrative Daten (z. B. Alter des Patienten,
 
 Es wird eine Kategorisierung der bestätigungsrelevanten Subsysteme entlang des groben Funktionsumfangs von Produkten im Markt angestrebt. In diesem Sinne sind die unten gelisteten Definitionen als Funktionsklärungen zu verstehen. Ein Akteur ist zu verstehen als ein System, das in einer bestimmten Rolle fungiert. Der Geltungsbereich konkretisiert wiederum die Definition in Bezug auf Produktkategorien. Der normative Status wird schließlich tabellarisch unter den entsprechenden Abschnitten zur Bestätigungsrelevanz aufgeführt.
 
-Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) Capability Statement, das einem Akteur entspricht; in diesem Zusammenhang wird einem bestätigungsrelevanten System ein oder mehrere Akteure zugeordnet.
+Eine weitere Detaillierung zu den einzelnen Festlegungen und Anforderungen, die im Rahmen des Bestätigungsverfahrens geprüft werden, erfolgt ggf. in entsprechenden Abschnitten des Implementierungsleitfadens der einzelnen Module. Eine technische Aufbereitung der Anforderungen in der REST-API erfolgt in der (FHIR-Ressource) CapabilityStatement, das einem Akteur entspricht; in diesem Zusammenhang wird einem bestätigungsrelevanten System ein oder mehrere Akteure zugeordnet.
 
 Neben den bestätigungsrelevanten Systemen werden auch korrespondierende Systeme als Clients definiert.
 
