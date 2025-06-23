@@ -1,3 +1,7 @@
+---
+topic: UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme
+---
+
 # Bestätigungsrelevante Systeme
 
 Die im Folgenden definierten Subsysteme müssen gemäß § 373 Abs. 2 SGB V im Krankenhaus um die Schnittstelle erweitert werden, die das ISIK-Modul bzw. die Datenobjekte in der Spezifikation der gematik jeweils beschreiben, sobald das Bundesministerium für Gesundheit die Spezifikation gemäß §373 Abs.1 SGB V verbindlich festgelegt hat.
