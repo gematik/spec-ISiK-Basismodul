@@ -94,7 +94,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 ### **Definition**
 
-Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISiK von anderen Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur Abfrage und Weiternutzung zur Verfügung stellt. Nach §373 SGB V
+Das System "Dokumenten-Server" im Sinne des ISiK-Moduls "Dokumentenaustausch" ist ein System, das (potentiell) versorgungsrelevante Dokumente über eine FHIR R4 API nach ISiK von anderen Applikationen (System: Dokumenten-Client) entgegennimmt, speichert und Dokumenten-Clients zur Abfrage und Weiternutzung zur Verfügung stellt. 
 
 Nicht-normative Erläuterung in Bezug auf IHE Festlegungen (genaueres in den ISiK Implementation Guides): Der Dokumenten-Server nimmt im Kontext der Spezifikation IHE ITI Mobile access to Health Documents (MHD) die Rollen der Document Recipient und Document Responder ein und implementiert die IHE-MHD-Interaktionen gemäß Version 4.2.2
 
