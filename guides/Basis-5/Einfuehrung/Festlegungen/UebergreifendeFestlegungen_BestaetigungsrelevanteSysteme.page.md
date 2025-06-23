@@ -2,6 +2,10 @@
 topic: UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme
 ---
 
+# Bestätigungsrelevante Systeme
+
+Gemäß §373 (2) SGB V legt das Kompetenzzentrum für Interoperabilität im Gesundheitswesen (KIG) gegenwärtig die Definition der bestätigungsrelevanten Systeme fest.
+
 Die von KIG und DKG getroffene Festlegung ist verbindlich für die bestätigungsrelevanten Systeme der ISIK-Stufe 5: [zum Dokument bestätigungsrelevanten Systeme der ISIK Stufe 5](https://github.com/gematik/spec-ISiK-Basismodul/blob/main-stufe-5/Material/Basis/250613_Best%C3%A4tigungsrelevante%20Systeme_Stufe-5.pdf)
 
 
