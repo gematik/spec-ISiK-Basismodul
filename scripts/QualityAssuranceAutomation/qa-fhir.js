@@ -96,16 +96,6 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
       continue;
     }
 
-    // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
-    if (pathParts.length === 2 && el.mustSupport) {
-      if (!el.short || el.short.trim() === '') {
-        issues.warnings.push(`⚠️ ${filePath}: Fehlendes short für MustSupport-Element '${el.path}'`);
-      }
-      if (!el.comment || el.comment.trim() === '') {
-        issues.errors.push(`❌ ${filePath}: Fehlendes comment für MustSupport-Element '${el.path}'`);
-      }
-    }
-
     if (pathParts.length === 2) {
       // Wenn Element auf Kardinalität 0..0 gesetzt ist, darf kein mustSupport-Attribut vorhanden sein
       if (el.max === '0') {
@@ -120,6 +110,16 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
         issues.errors.push(
           `❌ ${filePath}: Element '${el.path}' mit Kardinalität '${(el.min === undefined)? "": el.min}..${(el.max ===undefined )?"":el.max}' hat kein mustSupport-Attribut.`
         );
+      }
+    }
+
+        // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
+    if (pathParts.length === 2 && el.mustSupport) {
+      if (!el.short || el.short.trim() === '') {
+        issues.warnings.push(`⚠️ ${filePath}: Fehlendes short für MustSupport-Element '${el.path}'`);
+      }
+      if (!el.comment || el.comment.trim() === '') {
+        issues.errors.push(`❌ ${filePath}: Fehlendes comment für MustSupport-Element '${el.path}'`);
       }
     }
   }
@@ -270,3 +270,8 @@ logStream.end(() => {
   // Exit mit Fehlercode nur bei Errors, nicht bei Warnings
   process.exit(allIssues.errors.length > 0 ? 1 : 0);
 });
+
+module.exports = {
+  checkMustSupportDescriptions,
+  // ggf. weitere Funktionen
+};
