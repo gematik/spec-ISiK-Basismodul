@@ -12,10 +12,11 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 ## Version 5.0.0
 
-Datum: tbd.
+Datum: 26.6.2025
 
 * `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
 
+Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
