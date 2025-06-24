@@ -16,6 +16,8 @@ Datum: 26.6.2025
 * `update` Hinzufügen der Definition von DKG und KIG der Bestätigungsrelevanten Systeme für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
 * `improve` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
 
+Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
 ## Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
