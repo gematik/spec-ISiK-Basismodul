@@ -12,7 +12,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 ## Version 5.0.0
 
 Datum: 26.6.2025
-
+* `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
 * `update` Hinzufügen der Definition von DKG und KIG der Bestätigungsrelevanten Systeme für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
 
 
