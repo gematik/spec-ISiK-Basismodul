@@ -2,9 +2,9 @@
 
 ----
 
-Version: 5.0.0-rc2
+Version: 5.0.0
 
-Datum: 05.06.2025
+Datum: 24.06.2025
 
 Status: Draft (Benehmensherstellung)
 

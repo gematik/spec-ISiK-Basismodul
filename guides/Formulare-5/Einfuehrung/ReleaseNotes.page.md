@@ -10,7 +10,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.0.0
 
-Datum: 26.6.2025
+Datum: 24.06.2025
 
 - `documentation` Fehlende Begründungen und Kommentare zu Pflichtfeldern hinzugefügt  https://github.com/gematik/spec-ISiK-Basismodul/pull/746
 - `improve` Beschreibung der MDR-Relevant Extension wurde hinzugefügt und ausführlicher gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/744
