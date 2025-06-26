@@ -19,7 +19,7 @@ Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der I
 
 # Motivation Subscription Modul
 
-Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.
+Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden und wurde hier übernommen. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.
 
 Die Einführung von FHIR Subscriptions im Rahmen des ISiK-Standards zielt daher darauf ab, den
 event-basierten FHIR-Datenaustauschmechanismus zwischen verschiedenen Systemen im Krankenhaus (z.B.
