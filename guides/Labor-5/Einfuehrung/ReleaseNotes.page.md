@@ -8,7 +8,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 ## Version 5.0.0
 
-Datum: 26.6.2025
+Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
