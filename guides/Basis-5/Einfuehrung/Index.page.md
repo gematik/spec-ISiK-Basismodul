@@ -16,6 +16,8 @@ Realm: Deutschland
 
 Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
 
+Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufben](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
+
 
 ----
 
