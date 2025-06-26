@@ -8,7 +8,7 @@ Version: 5.0.0
 
 Datum: 26.06.2025
 
-Status: Draft (in Erprobung)
+Status: Aktiv (in Erprobung)
 
 Realm: Deutschland
 
