@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechnungRehaCS
+canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKUnterbrechungRehaCS
 ---
 
 ## {{link}}
