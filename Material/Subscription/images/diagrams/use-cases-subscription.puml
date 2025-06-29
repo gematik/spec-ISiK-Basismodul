@@ -1,0 +1,50 @@
+@startuml
+
+actor "User" as User
+actor "Patient" as Patient
+actor "Medizinisches Fachpersonal" as MedPersonal
+actor "Administratives Personal" as AdminPersonal
+
+skinparam ranksep 200
+
+skinparam nodesep 200 
+
+top to bottom direction
+
+rectangle "Patientenportal" as PatPortal {
+
+  usecase "UC3 - Benachrichtigung im Patientenportal" as UC3
+  usecase "UC3.1 - Statusänderung bei Terminen" as UC3_1
+  usecase "UC3.2 - Neue Dokumente" as UC3_2
+}
+
+Patient -> UC3
+
+rectangle "FÜhrendes System" as System {
+  usecase "UC1 - Patient oder Fall Merge" as UC1
+  usecase "UC2 - Benachrichtigung bei Korrektur von Daten" as UC2
+  usecase "UC5 - Automatisierte Prozesssteuerung" as UC5
+}
+
+AdminPersonal -> UC1
+AdminPersonal -> UC5
+MedPersonal --> UC2
+MedPersonal --> UC5
+
+rectangle "Drittanbieter-App" as Drittanbieter {
+  usecase "UC4 - Integration mit externen Services" as UC4
+  usecase "UC4.1 - Externe Terminverwaltungs-Systeme" as UC4_1
+  usecase "UC4.2 - Drittanbieter-App" as UC4_2
+}
+
+Patient -> User
+
+UC3 <. UC3_1 : <<extend>>
+UC3 <. UC3_2 : <<extend>>
+
+User --> UC4
+
+UC4 <. UC4_1 : <<extend>>
+UC4 <. UC4_2 : <<extend>>
+
+@enduml

@@ -49,14 +49,31 @@ def create_files_to_update_list(config):
             )
     return files_to_update
 
-
+# since there are files that are distributed in different folders, the method should make sure that all files (with the same name) are located, but only consider files located in Folder "Einfuehrung" for the file named "Index.page.md"
 def locate_files_in_current_project(files: list):
     located_files = []
     for current_file in files:
-        file_location = find_file(current_file.filename, ".")
-        if file_location is not None:
-            current_file.set_file_location(file_location)
-            located_files.append(current_file)
+        file_locations = []
+        for root, dirs, file_list in os.walk("."):
+            if current_file.filename in file_list:
+                file_location = os.path.join(root, current_file.filename)
+                # Only consider "Index.page.md" if it is directly in folder "Einfuehrung" (no recursive inclusion)
+                if current_file.filename == "Index.page.md":
+                    if os.path.basename(root) != "Einfuehrung":
+                        continue
+                file_locations.append(file_location)
+                print(f"Info: Found '{current_file.filename}' in {root}.")
+        
+        if file_locations:
+            for location in file_locations:
+                new_file_instance = FileTypeCombinationToUpdate(
+                    current_file.filename,
+                    current_file.content_type,
+                    current_file.regex_list,
+                    current_file.format
+                )
+                new_file_instance.set_file_location(location)
+                located_files.append(new_file_instance)
         else:
             print(f"Warning: File '{current_file.filename}' not found.")
     return located_files
@@ -83,28 +100,38 @@ def replace_content_in_files(files: list, new_release_version: str, new_date: da
 
 
 def replace_version_in_file(file: FileTypeCombinationToUpdate, new_release_version: str):
-    with open(file.location, 'r') as input_file:
+    with open(file.location, 'r', encoding='utf-8') as input_file:  # Specify encoding
         input_text = input_file.read()
 
     for regex in file.regex_list:
-        input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text)
+        if file.filename == "ReleaseNotes.page.md":
+            # Replace only the first occurrence
+            input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text, count=1)
+        else:
+            # Replace all occurrences
+            input_text = re.sub(regex, rf'\g<1>{new_release_version}\g<3>', input_text)
 
     print(f"Info: Replaced version with '{new_release_version}' in file '{file.location}'.")
 
-    with open(file.location, 'w') as output_file:
+    with open(file.location, 'w', encoding='utf-8') as output_file:  # Specify encoding
         output_file.write(input_text)
 
 
 def replace_date_in_file(file: FileTypeCombinationToUpdate, new_date: datetime):
-    with open(file.location, 'r') as input_file:
+    with open(file.location, 'r', encoding='utf-8') as input_file:  # Specify encoding
         input_text = input_file.read()
 
     for regex in file.regex_list:
-        input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text)
+        if file.filename == "ReleaseNotes.page.md":
+            # Replace only the first occurrence
+            input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text, count=1)
+        else:
+            # Replace all occurrences
+            input_text = re.sub(regex, rf'\g<1>{new_date.strftime(file.format)}\g<3>', input_text)
 
     print(f"Info: Replaced date with '{new_date.strftime(file.format)}' in file '{file.location}'.")
 
-    with open(file.location, 'w') as output_file:
+    with open(file.location, 'w', encoding='utf-8') as output_file:  # Specify encoding
         output_file.write(input_text)
 
 def output_commit_messages_since_last_release():

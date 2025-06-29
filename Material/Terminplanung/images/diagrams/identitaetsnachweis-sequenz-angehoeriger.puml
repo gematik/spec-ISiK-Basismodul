@@ -1,0 +1,32 @@
+@startuml
+
+actor "Buchender Angehöriger" as Buchende
+participant "Termin-Requestor (Patientenportal)" as TR
+participant "Termin-Repository" as TRP
+
+Note right of Buchende: Es handelt sich um angehörige Personen , \n die einen Termin buchen möchten. \n Der Buchende kann auch ein Gastzugang sein, \n der keine Identität verifizieren muss.
+
+Buchende->TR: Aufruf in GUI und Auswahl
+TR -> TRP: Anfrage verfügbare Termine für Fachbereich
+TRP -> TR: Rückgabe verfügbarer Termine
+
+TR -> Buchende: Visualisierung der verfügbaren Termine
+
+Buchende->>TR: Auswahl eines Termins
+
+TR -> TR: Erstellen des Termins (vorläufig)
+TR -> Buchende: Bestätigung im Portal, ggf. mit Bitte um Identitätsnachweis
+Note right of TR:  Hinweis: \n - Termin im Termin-Requester geblockt, aber weder gebucht,  noch mit Patientendaten verknüpft \n - Termin ist damit noch nicht im Termin-Repository angefragt und damit besteht das Risiko konkurrierender Anfragen. 
+
+Buchende->TR: ggf. Registrierung mit Name, Geburtsdatum, Adresse, Versicherung \n (kann entfallen bei Gastzugang)
+
+Buchende->TR: Eingabe Patientenidentität (z.B. KVNR des Patienten - d.h. NICHT des Buchenden)
+
+TR -> TRP: Erstellen des Termins $book (vorläufig)
+
+TRP -> TR: Buchungsbestätigung
+TR -> Buchende: Bestätigung im Portal
+
+note right of TRP: Termin ist angelegt (Identitätsnachweis des Patienten nicht erbracht)
+
+@enduml
