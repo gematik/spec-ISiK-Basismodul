@@ -97,10 +97,8 @@ InstanceOf: Questionnaire
     //Aktivierung der Extraction
     * insert observationExtract
     //Referenz auf das eingebettete (contained) ValueSet
-    * answerValueSet = "#valueset-pflegegrad-de"
-//Einbetten des ValueSets 
-//* contained = valueset-pflegegrad-de
-  
+    * answerValueSet = Canonical(PflegegradDE)
+      
 //Teil 4: Observation mit Vorbelegeung und Extraktion
 * item[+]
   * type = #group
