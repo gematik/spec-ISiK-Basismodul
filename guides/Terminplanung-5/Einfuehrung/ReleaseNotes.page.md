@@ -8,7 +8,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: XX.XX.2025
 
-* `improve` Hinweis zur Handhabung von Create-Interatkionen hinzugefügt
+* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
+
 
 ## Version 5.0.0
 
