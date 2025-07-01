@@ -52,6 +52,8 @@ In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `
 }
 ```
 
+Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der ``patient``-Parameter in der ``$book``-Operation zu verwenden.
+
 5. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
 
 ```json
