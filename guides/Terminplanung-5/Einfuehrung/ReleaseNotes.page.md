@@ -10,6 +10,7 @@ Datum: tbd.
 
 * `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
 * `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' 
 
 
 ## Version 5.0.0
