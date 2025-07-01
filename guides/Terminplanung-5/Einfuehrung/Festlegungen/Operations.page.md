@@ -249,13 +249,13 @@ Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten
 
 Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patient-Ressource im Kontext der Terminbuchung zu erstellen oder zu übermitteln:
 
-- Direkte Erstellung über Create-Interaktion
-  Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls (Stufe 5.0.0)](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest?version=5.0.0).  
+- Direkte Erstellung über Create-Interaktion:
+  Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls (Stufe 5)](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest).  
   Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.  
 
   > **Hintergrund**: Ein Update der Patient-Ressource über den `patient`-Parameter in der `$book`-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.
 
-- Übergabe innerhalb der `$book`-Operation 
+- Übergabe innerhalb der `$book`-Operation:
   Das Termin-Repository unterstützt die Übergabe einer Patient-Instanz mittels des dafür vorgesehenen Parameters innerhalb der `$book`-Operation.
 
 ### Asynchrone Ausführung $book
