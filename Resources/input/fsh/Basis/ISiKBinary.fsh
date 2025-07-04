@@ -19,6 +19,7 @@ Das ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Best�
 Das Profil ist Teil des ISIK Basismoduls, da es als übergreifend genutzte Ressource sowohl im [Modul Terminplanung](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte?version=current) als auch im [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte?version=current) implementiert werden muss.  "
 
 * insert Meta
+* insert CommonElements
 * contentType 1..1 MS
   * ^short = "MimeType der Binärdaten"
   * ^comment = "z.B. &quot;application/pdf&quot; oder &quot;image/jpeg&quot;  

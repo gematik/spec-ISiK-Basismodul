@@ -9,6 +9,8 @@ In FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.
 
 ### Kompatibilität
 Das Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation."
+* insert Meta
+* insert CommonElements
 * insert ISiKVitalsignCommons
 * insert ISiKVitalsignCommonsValue
 * insert Quantity-MS

@@ -20,6 +20,7 @@ Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen an
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value

@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-linksatrialer-druck
 Title: "SD MII ICU Linksatrialer Druck"
 * insert Meta
+* insert CommonElements
 * category = $observation-category#vital-signs
 * code
   * coding ..4
