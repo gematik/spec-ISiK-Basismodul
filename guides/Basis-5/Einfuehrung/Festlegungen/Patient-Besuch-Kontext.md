@@ -52,6 +52,8 @@ Eine Übertragung ohne identifizierende Patienteninformationen ist jedoch nicht 
 2. Felder, deren Inhalte entweder nicht vorliegen oder aus datenschutzrechtlichen Gründen nicht übermittelt werden dürfen, werden mit einer [data-absent-reason Extension](https://hl7.org/fhir/extensions/StructureDefinition-data-absent-reason.html) versehen.
 
 3. Die data-absent-reason Extension wird mit den Codes "unknown" oder "masked" belegt, um das Fehlen datenschutzkritischer Inhalte explizit zu kennzeichnen.
+Der Code "unknown" kennzeichnet dabei das generelle Fehlen einer Information aufgrund ihrer Abwesenheit – z. B. weil sie (noch) nicht erhoben oder dokumentiert wurde.
+Der Code "masked" kennzeichnet hingegen, dass die Information zwar vorhanden, jedoch aus Datenschutzgründen unterdrückt wurde.
 
 Diese Vorgehensweise ermöglicht eine formell gültige und zugleich datenschutzkonforme Übertragung strukturierter Informationen, auch ohne Bezug zu einer identifizierbaren Person.
 
