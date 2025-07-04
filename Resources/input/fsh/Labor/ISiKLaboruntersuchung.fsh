@@ -9,6 +9,7 @@ Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmittelther
 
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "Status der Laboruntersuchung"
   * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  

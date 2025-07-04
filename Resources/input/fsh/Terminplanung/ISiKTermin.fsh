@@ -12,6 +12,7 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
   * ^comment = "Ein Tag kann verwendet werden um zu kennzeichnen, dass die Ressource von Extern erstellt worden ist."
   * tag[Source] from http://fhir.de/ValueSet/common-meta-tag-de (required)
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains AppointmentReplaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."

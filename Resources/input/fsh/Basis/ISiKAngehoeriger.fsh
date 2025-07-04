@@ -17,6 +17,7 @@ Für das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung k
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys relatedp-de-1
 * patient 1..1 MS
   * ^short = "Patientenbezug"

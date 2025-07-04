@@ -4,6 +4,7 @@ Id: ISiKMedikationTransaction
 Title: "ISiK Medikation Transactionbundle"
 Description: "Dieses Profil definiert die Transaktions-Bundles im Rahmen von ISiK-Medikations-Szenarien."
 * insert Meta
+* insert CommonElements
 * type MS
   * ^short = "Type des Bundles"
   * ^comment = "fix: transaction"
