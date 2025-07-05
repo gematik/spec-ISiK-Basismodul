@@ -1,12 +1,12 @@
 ---
-canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKEntlassformRehaCS
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType
 ---
 
 ## {{link}}
 
 <fql output="inline">
 from
-	CodeSystem
+	ValueSet
 where
 	url = %canonical
 select
@@ -19,7 +19,7 @@ with
 
 <fql output="transpose" headers="true">
 from
-	CodeSystem
+	ValueSet
 where
 	url = %canonical
 select
@@ -30,7 +30,7 @@ select
 
 <tabs>
     <tab title="Darstellung">
-    {{page:FQL-CodeSystem}}
+    {{page:FQL-ValueSet}}
     </tab>
     <tab title="XML">      
         {{xml}}
