@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/ISiKBehandlungsergebnisRehaVS
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKBehandlungsergebnisReha
 ---
 
 ## {{link}}

@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungRehaVS
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKUnterbrechungReha
 ---
 
 ## {{link}}

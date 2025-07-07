@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/ISiKEntlassformRehaVS
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKEntlassformReha
 ---
 
 ## {{link}}
