@@ -34,7 +34,7 @@ Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für
   * ^comment = "Begründung Must-Support-Flag (MS): Das MS-Flag für das 'actor'-Element stellt sicher, dass Systeme in der Lage sind, einen Akteur zu unterstützen, wenn er vorhanden ist. Dies ist wichtig für die Ressourcenplanung und die Verfügbarkeit von Terminen, da jeder Termin nach FHIR-Kernspezifikation einem spezifischen Akteur zugeordnet werden muss. Ohne diese Zuordnung wäre es schwierig, die Verfügbarkeit und Zuständigkeit der Akteure zu verwalten."
   * identifier MS
     * ^comment = "Begründung Must-Support-Flag (MS):
-  Das Must-Support-Flag (MS) für das 'identifier'-Element stellt sicher, dass Systeme in der Lage sind, einen Identifier zu unterstützen, wenn er vorhanden ist. Dies ist wichtig für die eindeutige Identifizierung und Verknüpfung von Akteuren in verschiedenen Systemen."
+  Das Must-Support-Flag (MS) für das 'identifier'-Element stellt sicher, dass Systeme in der Lage sind, einen Identifier zu unterstützen, wenn er vorhanden ist. Dies ist wichtig für die eindeutige Identifizierung und Verknüpfung von Akteuren in verschiedenen Systemen. Inbesondere gilt dies für die genaue Identifizierung von Geräten (Device)."
   * display MS
     * ^comment = "Hinweis und Begründung zum Must Support: Für alle Target-Ressourcen SOLL ein Displaywert für die Referenz angegeben werden, sodass Systeme eine Übersicht der am Termin beteiligten Akteure anzeigen können, ohne die Referenzen auflösen zu müssen. Somit kann ein Termin-Consumer direkt anzeigen für welche Akteure ein Terminkalender existiert.
     

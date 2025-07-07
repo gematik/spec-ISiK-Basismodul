@@ -2,7 +2,10 @@ Profile: ISiKBerichtBundle
 Parent: Bundle
 Id: ISiKBerichtBundle
 Title: "ISiKBerichtBundle"
-Description: "A document style representation of the receipt (complete, self-contained, signed)"
+Description: "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. 
+Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
+Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.
+"
 * insert Meta
 * obeys ISiK-docBundle-1
 * type = #document (exactly)
