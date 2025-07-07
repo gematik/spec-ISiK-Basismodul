@@ -11,6 +11,8 @@ select
 	Beschreibung: description
 </fql>
 
+Dieses ValueSet wird verwendet in folgenden Profilen:
+
 <fql output="inline">
 from
 	StructureDefinition
