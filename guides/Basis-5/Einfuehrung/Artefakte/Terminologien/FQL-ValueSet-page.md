@@ -10,3 +10,10 @@ where
 select
 	Beschreibung: description
 </fql>
+
+<fql output="inline">
+from
+	StructureDefinition
+where differential.element.binding.exists() and differential.element.binding.valueSet = 'https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT'
+select Profil:id, Canonical: url
+</fql>
