@@ -7,17 +7,22 @@ Hinweis zur Auswahl des Profils:
 In Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).
 Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.
 
-Hinweis für die Pausierung einer Medikation:
+**Hinweis zur Pausierung einer Medikation (Best-Practice):**
 
-Ein Umsetzen einer Pausierung einer Medikation KANN als MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod im gleichen MedicationStament per UPDATE der Ressource abgebildet werden. 
-Hierbei ist zu beachten, dass dennoch ein Update des .status auf \"on-hold\" erforderlich wäre um die Pausierung möglichst einfach konsumierbar zu hinterlegen. Nach der Pausierung würde man den status wieder auf active setzen und MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod anpassen.
+Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationStatement`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:
 
-Best-practice wäre aber die Nutzung von mehreren Medicationstatements aus folgenden Gründen:
+- **Korrekte Statusabbildung:**  
+  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.
 
-    - status muss immer korrekt befüllt werden um den aktuellen Status direkt sichtbar im System durchsuchbar zu hinterlegen.
-    - effective ist ebenfalls per REST API exponiert, in Verbindung mit .status kann ich so als Client einfach alle aktuell gültigen Medikationen abrufen. Bei der Nutzung von Dosage ist diese Abfrage nicht möglich, und man müsste alle Statements abrufen, über alle dosage Objekte iterieren und darüber herausfinden was aktuell überhaupt gültig ist
-    - Falls man zu status auch die statusReason persistieren möchte, würde diese durch das Updaten des MedicationStatements verloren gehen, sobald die Pausierung der Medikation beendet ist. (Aktuell nicht gefordert, aber ein denkbarere use-case)"
+- **Effiziente Abfragen über REST API:**  
+  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  
+  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationStatements` müssten abgerufen und manuell analysiert werden.
 
+- **Erhalt von Verlaufsinformationen:**  
+  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
+  Durch neue `MedicationStatement`-Einträge bleibt die Verlaufshistorie erhalten.  
+  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
+"
 * insert Meta
 * extension MS
 * extension contains
