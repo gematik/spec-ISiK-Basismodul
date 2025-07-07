@@ -1,0 +1,131 @@
+{
+  "resourceType": "Bundle",
+  "id": "SubscriptionNotificationBundleExample",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionNotification"
+    ]
+  },
+  "type": "history",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9bb6fcbd-8391-4e35-bd4c-620a2db47af0",
+      "resource": {
+        "resourceType": "Parameters",
+        "id": "ISiKSubscriptionStatusExample",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionStatus"
+          ]
+        },
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "Subscription/1"
+            }
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "1"
+          },
+          {
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "1"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2024-02-22T18:30:05+01:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "Patient/DorisQuelle"
+                }
+              }
+            ],
+            "name": "notification-event"
+          }
+        ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
+      },
+      "response": {
+        "status": "200"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/DorisQuelle",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "DorisQuelle",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "MR",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "system": "https://fhir.krankenhaus.example/sid/PID",
+            "value": "654321"
+          },
+          {
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "type": {
+              "coding": [
+                {
+                  "code": "KVZ10",
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+                }
+              ]
+            },
+            "value": "A123456789"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Duplikat",
+            "given": [
+              "Doris"
+            ]
+          }
+        ],
+        "active": false,
+        "gender": "female",
+        "birthDate": "1964-08-12"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient"
+      },
+      "response": {
+        "status": "201"
+      }
+    }
+  ]
+}
