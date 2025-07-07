@@ -16,6 +16,10 @@ Dieses ValueSet wird verwendet in folgenden Profilen:
 <fql output="inline">
 from
 	StructureDefinition
-where differential.element.binding.valueSet = %canonical
+select
+	id, url, 
+join differential.element.binding.valueSet
+where 
+   valueSet = %canonical
 select Profil: id, Canonical: url
 </fql>
