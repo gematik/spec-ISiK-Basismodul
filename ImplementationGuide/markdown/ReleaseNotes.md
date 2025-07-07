@@ -6,7 +6,9 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.0.9
 
-* `fixed` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/694
+Datum: tbd.
+
+* `fixed` Fix Pattern auf Composition.category und Entfernen der Kardinalität 1.. auf type.text sowie Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type (entsprechend https://github.com/gematik/spec-ISiK-Basismodul/pull/749) https://github.com/gematik/spec-ISiK-Basismodul/pull/694
 
 ----
 
