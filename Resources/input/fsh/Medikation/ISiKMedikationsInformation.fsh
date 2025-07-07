@@ -16,9 +16,7 @@ Best-practice wäre aber die Nutzung von mehreren Medicationstatements aus folge
 
     - status muss immer korrekt befüllt werden um den aktuellen Status direkt sichtbar im System durchsuchbar zu hinterlegen.
     - effective ist ebenfalls per REST API exponiert, in Verbindung mit .status kann ich so als Client einfach alle aktuell gültigen Medikationen abrufen. Bei der Nutzung von Dosage ist diese Abfrage nicht möglich, und man müsste alle Statements abrufen, über alle dosage Objekte iterieren und darüber herausfinden was aktuell überhaupt gültig ist
-    - Falls man zu status auch die statusReason persistieren möchte, würde diese durch das Updaten des MedicationStatements verloren gehen, sobald die Pausierung der Medikation beendet ist. (Aktuell nicht gefordert, aber ein denkbarere use-case)
-
-"
+    - Falls man zu status auch die statusReason persistieren möchte, würde diese durch das Updaten des MedicationStatements verloren gehen, sobald die Pausierung der Medikation beendet ist. (Aktuell nicht gefordert, aber ein denkbarere use-case)"
 
 * insert Meta
 * extension MS
