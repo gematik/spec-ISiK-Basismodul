@@ -1,0 +1,50 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "Encounter-end-date",
+  "url": "https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date",
+  "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+  "version": "5.0.0",
+  "status": "active",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2025-06-26",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "DE",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Germany"
+        }
+      ]
+    }
+  ],
+  "name": "EndDate",
+  "code": "end-date",
+  "base": [
+    "Encounter"
+  ],
+  "type": "date",
+  "expression": "Encounter.period.end",
+  "comparator": [
+    "eq",
+    "ne",
+    "gt",
+    "ge",
+    "lt",
+    "le",
+    "sa",
+    "eb",
+    "ap"
+  ]
+}
