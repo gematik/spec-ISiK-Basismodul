@@ -11,7 +11,7 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
 Hinweis für die Pausierung einer Medikation:
 
 Ein Umsetzen einer Pausierung einer Medikation KANN als MedicationAdministration.dosage.timing.repeat.bounds[x]:boundsPeriod in der gleichen MedicationAdministration per UPDATE der Ressource abgebildet werden. 
-Hierbei ist zu beachten, dass dennoch ein Update des .status auf "on-hold" erforderlich wäre um die Pausierung möglichst einfach konsumierbar zu hinterlegen. Nach der Pausierung würde man den status wieder auf active setzen und MedicationAdministration.dosage.timing.repeat.bounds[x]:boundsPeriod anpassen.
+Hierbei ist zu beachten, dass dennoch ein Update des .status auf \"on-hold\" erforderlich wäre um die Pausierung möglichst einfach konsumierbar zu hinterlegen. Nach der Pausierung würde man den status wieder auf active setzen und MedicationAdministration.dosage.timing.repeat.bounds[x]:boundsPeriod anpassen.
 
 Best-practice wäre aber die Nutzung von mehreren Medicationstatements aus folgenden Gründen:
 

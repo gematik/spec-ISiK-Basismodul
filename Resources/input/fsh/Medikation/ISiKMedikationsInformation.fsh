@@ -10,7 +10,7 @@ Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer 
 Hinweis für die Pausierung einer Medikation:
 
 Ein Umsetzen einer Pausierung einer Medikation KANN als MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod im gleichen MedicationStament per UPDATE der Ressource abgebildet werden. 
-Hierbei ist zu beachten, dass dennoch ein Update des .status auf "on-hold" erforderlich wäre um die Pausierung möglichst einfach konsumierbar zu hinterlegen. Nach der Pausierung würde man den status wieder auf active setzen und MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod anpassen.
+Hierbei ist zu beachten, dass dennoch ein Update des .status auf \"on-hold\" erforderlich wäre um die Pausierung möglichst einfach konsumierbar zu hinterlegen. Nach der Pausierung würde man den status wieder auf active setzen und MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod anpassen.
 
 Best-practice wäre aber die Nutzung von mehreren Medicationstatements aus folgenden Gründen:
 
