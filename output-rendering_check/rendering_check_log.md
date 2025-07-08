@@ -1,41 +1,25 @@
 **Anzahl der gefundenen Referenzen:** 786
 
-**Anzahl der Fehler:** 175
+**Anzahl der Fehler:** 159
 
 | Quelle | Typ | Referenz | Fehler |
 |--------|-----|----------|--------|
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Abrechnungsfall\Abrechnungsfall_Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_AllergieUnvertraeglichkeit\AllergieUnvertraeglichkeit_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Angehoeriger\Angehoeriger_Beispiele.page.md:11 | render | isikangehoerigermustermann | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Angehoeriger\Angehoeriger_Beispiele.page.md:20 | link | isikangehoerigermustermann | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Angehoeriger\Angehoeriger_Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_BerichtSubsystem\BerichtSubsystem_Beispiele.page.md:18 | link | composition-blutdruck | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_CodeSystem\CodeSystem_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Diagnose\Diagnose_Beispiele.page.md:11 | render | example-condition-kreuz-stern-primaer | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Diagnose\Diagnose_Beispiele.page.md:20 | link | example-condition-kreuz-stern-primaer | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Diagnose\Diagnose_Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Kontakt\Kontakt_Interaktionen.page.md:39 | pagelink | CapabilityStatement-multicps-3 | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Lebenszustand\Lebenszustand_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Organisation\Organisation_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Patient\Patient_Beispiele.page.md:11 | render | patientinmusterfrau | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Patient\Patient_Beispiele.page.md:20 | link | patientinmusterfrau | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_PersonImGesundheitsberuf\PersonImGesundheitsberuf_Beispiele.page.md:11 | render | practitionerwalterarzt | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_PersonImGesundheitsberuf\PersonImGesundheitsberuf_Beispiele.page.md:20 | link | practitionerwalterarzt | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Prozedur\Prozedur_Beispiele.page.md:10 | render | appendektomie | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Prozedur\Prozedur_Beispiele.page.md:19 | link | appendektomie | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Prozedur\Prozedur_Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_Standort\Standort_Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_ValueSet\Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_ValueSet\ValueSet_Beispiele.page.md:9 | render | isikvaluesetexample | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Datenobjekte_ValueSet\ValueSet_Beispiele.page.md:18 | link | isikvaluesetexample | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Extensions\Patient-Geschlecht-Administrativ.page.md:25 | page | Extension-FQL-Beschreibung | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Extensions\Procedure-Dokumentationsdatum.page.md:25 | page | Extension-FQL-Beschreibung | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungsverhältnis-gesetzlich-Coverage\Beispiele.page.md:11 | render | coverageGesetzlich | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungsverhältnis-gesetzlich-Coverage\Beispiele.page.md:20 | link | coverageGesetzlich | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungsverhältnis-gesetzlich-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhaeltnis-sonstige-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhältnis-Selbstzahler-privat-Coverage\Beispiele.page.md:10 | render | coveragePrivat | Weder ID in JSON noch Topic gefunden |
-| ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhältnis-Selbstzahler-privat-Coverage\Beispiele.page.md:19 | link | coveragePrivat | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhältnis-Selbstzahler-privat-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_ISiKBinary.page.md:6 | pagelink | Dokumentenabfrage, text:Akteure und Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_Bundle\Bundle_Interaktionen.page.md:27 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-REST.page.md | Datei nicht gefunden |

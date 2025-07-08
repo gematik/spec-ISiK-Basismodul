@@ -37,6 +37,7 @@ def check_file_exists(base_path, ref_path):
     return os.path.isfile(abs_path)
 
 def check_id_in_jsons(search_id, json_dir):
+    search_id_lower = search_id.lower()
     for dirpath, _, filenames in os.walk(json_dir):
         for filename in filenames:
             if filename.endswith('.json'):
@@ -45,11 +46,11 @@ def check_id_in_jsons(search_id, json_dir):
                     with open(json_path, encoding="utf-8") as f:
                         data = json.load(f)
                         if isinstance(data, dict):
-                            if data.get("id") == search_id:
+                            if str(data.get("id", "")).lower() == search_id_lower:
                                 return True
                         elif isinstance(data, list):
                             for item in data:
-                                if isinstance(item, dict) and item.get("id") == search_id:
+                                if isinstance(item, dict) and str(item.get("id", "")).lower() == search_id_lower:
                                     return True
                 except Exception:
                     continue
@@ -75,7 +76,7 @@ def build_topic_map(md_files):
     for md_file in md_files:
         topics = extract_topics_from_md(md_file)
         for topic in topics:
-            topic_map[topic] = md_file
+            topic_map[topic.lower()] = md_file  # case-insensitive mapping
     return topic_map
 
 def write_markdown_log(errors, total_refs, filename):
@@ -121,7 +122,7 @@ def main():
                 })
         else:
             found_in_json = check_id_in_jsons(ref_str, json_dir)
-            found_as_topic = ref_str in topic_map
+            found_as_topic = ref_str.lower() in topic_map
             if not found_in_json and not found_as_topic:
                 errors.append({
                     "quelle": f"{ref['src']}:{line}",
