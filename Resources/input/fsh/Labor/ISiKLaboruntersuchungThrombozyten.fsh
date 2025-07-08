@@ -3,6 +3,7 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungThrombozyten
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * code.coding[loinc] from ObservationCodesThrombozyten
 * insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#365632008

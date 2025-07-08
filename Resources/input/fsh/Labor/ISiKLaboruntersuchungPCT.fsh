@@ -3,6 +3,7 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungPCT
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung PCT eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * code.coding[loinc] from ObservationCodesPCT (required)
 * insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#418752001

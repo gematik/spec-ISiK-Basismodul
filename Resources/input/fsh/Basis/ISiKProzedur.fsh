@@ -16,6 +16,7 @@ Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen an
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
 * extension MS

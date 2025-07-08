@@ -3,6 +3,7 @@ Parent: Observation
 Id: sd-mii-icu-sonstige-pulsatile-druecke-generisch
 Title: "SD MII ICU Sonstige pulsatile Druecke Generisch"
 * insert Meta
+* insert CommonElements
 * identifier MS
 * basedOn ..1
 * status MS
