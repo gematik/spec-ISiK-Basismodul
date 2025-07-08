@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/ISiKConfidentialityCodes
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKTerminCancelationReason
 ---
 
 ## {{link}}
