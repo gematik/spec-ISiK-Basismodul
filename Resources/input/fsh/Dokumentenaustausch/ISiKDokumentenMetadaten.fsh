@@ -19,6 +19,7 @@ Dieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnCont
 #### Einschränkungen des IHE-Profils
 Elemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt."
 * insert Meta
+* insert CommonElements
 * masterIdentifier 1.. MS
   * ^short = "Versionsspezifische OID des Dokumentes"
   * system 1..1 MS

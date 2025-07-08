@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-myokard
 Title: "SD MII ICU Koerpertemperatur Myokard"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] ..0
     * ^patternCoding.system = "http://snomed.info/sct"

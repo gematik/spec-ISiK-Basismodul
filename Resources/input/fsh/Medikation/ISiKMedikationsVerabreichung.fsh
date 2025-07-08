@@ -25,6 +25,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
 "
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "Status der Verabreichungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"

@@ -18,6 +18,25 @@
   "differential": {
     "element": [
       {
+        "id": "HealthcareService.id",
+        "path": "HealthcareService.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.meta.versionId",
+        "path": "HealthcareService.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "HealthcareService.meta.lastUpdated",
+        "path": "HealthcareService.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
         "id": "HealthcareService.active",
         "path": "HealthcareService.active",
         "comment": "Bedeutung: Ist der HealthcareService in aktiver Verwendung.\n  \n  Hinweis: Historische HealthcareServices können ebenfalls über die ISiK-Schnittstelle ausgetauscht werden. Für diese dürfen jedoch keine Termine vereinbart werden. Das terminführende System MUSS dies bei der Buchung überprüfen.\n  \n  Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität 1..1 und das Must-Support-Flag (MS) für das 'active'-Element stellen sicher, dass jede Behandlungseinheit eindeutig als aktiv oder inaktiv gekennzeichnet ist. Dies ist entscheidend für die Ressourcenplanung und Verfügbarkeit von Behandlungseinheiten.",
