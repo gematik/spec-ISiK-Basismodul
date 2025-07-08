@@ -9,6 +9,8 @@ In FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource r
 
 ### Kompatibilität
 Das Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation."
+* insert Meta
+* insert CommonElements
 * insert ISiKVitalsignCommons
 * insert ISiKVitalsignCommonsValue
 * insert Quantity-MS

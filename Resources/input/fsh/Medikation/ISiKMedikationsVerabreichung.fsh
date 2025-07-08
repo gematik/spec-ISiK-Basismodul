@@ -8,6 +8,7 @@ Das Profil ISiKMedikationsInformation (MedicationStatement) kann ebenfalls für 
 Begründung zur Profil- und Nutzungsdifferenzierung:
 Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, dann ist ein genauer Zeitstempel zwingend. Die medizinische Verabreichungsdokumentation muss durch medizinisches Personal erfolgen. Angaben von Patienten und Angehörigen sind grundsätzlich keine medizinische Verabreichungsdokumentation und daher als MedicationStament zu erfassen(['report that such a sequence (or at least a part of it) did take place'](https://hl7.org/fhir/R4/medicationstatement.html)). "
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "Status der Verabreichungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"

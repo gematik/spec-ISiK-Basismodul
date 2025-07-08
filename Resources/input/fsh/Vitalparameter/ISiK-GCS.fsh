@@ -10,6 +10,7 @@ In FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei d
 ### Kompatibilität
 Das Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet."
 * insert Meta
+* insert CommonElements
 * insert Quantity-MS
 * insert ISiKVitalsignCommons
 * insert ISiKVitalsignCommonsValue

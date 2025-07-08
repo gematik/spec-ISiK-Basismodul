@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-gelenk
 Title: "SD MII ICU Koerpertemperatur Gelenk"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#250124002

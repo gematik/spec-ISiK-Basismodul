@@ -11,6 +11,7 @@ Die Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Da
 Diese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.
 """
 * insert Meta
+* insert CommonElements
 * ^version = "1.1.0"
 * ^date = "2023-01-11T15:34:32+11:00"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"

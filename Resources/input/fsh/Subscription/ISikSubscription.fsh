@@ -17,6 +17,7 @@ Der [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/Structur
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * ^fhirVersion = #4.0.1
 * status MS
   * ^short = "Status"

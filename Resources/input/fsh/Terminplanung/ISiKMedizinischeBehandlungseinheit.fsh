@@ -9,6 +9,7 @@ Der Kontext zu diesem Profil wird mit folgender User Story veranschaulicht:
 
 Hintergrund: Die Suche nach verfügbaren Terminenblöcken (Slot) unter Einbeziehung der Dienstleistung entspricht der Angabe des Überweisungsscheins, ermöglicht hier zugleich eine präzisere Suche und vergrößert darüber hinaus den Raum möglicher Termine über verschiedene Abteilungen (und Institutionen im Patientenportal) hinweg."
 * insert Meta
+* insert CommonElements
 * active 1..1 MS
   * ^comment = "Bedeutung: Ist der HealthcareService in aktiver Verwendung.
   

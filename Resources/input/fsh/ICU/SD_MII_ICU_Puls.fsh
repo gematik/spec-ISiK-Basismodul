@@ -4,6 +4,7 @@ Id: sd-mii-icu-puls
 Title: "SD MII ICU Puls"
 Description: "Dieses Profil repräsentiert Pulsuntersuchungen die nicht den Zweck einer Herzfrequenzmessung haben, sondern die Pulsfrequenz als eigenständige Vitalfunktion erfassen."
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#8499008

@@ -28,6 +28,7 @@ Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiativ
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 "
 * insert Meta
+* insert CommonElements
 * identifier MS 
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"

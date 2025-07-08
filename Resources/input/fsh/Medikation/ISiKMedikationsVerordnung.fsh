@@ -3,6 +3,7 @@ Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and

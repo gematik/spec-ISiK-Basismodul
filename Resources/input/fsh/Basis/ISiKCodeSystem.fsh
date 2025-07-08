@@ -14,6 +14,7 @@ Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte [ValueSets zu 
 Da ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.
 Darüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. "
 * insert Meta
+* insert CommonElements
 * url 1.. MS
   * ^short = "Kanonische URL"
   * ^comment = "**Bedeutung:** Eindeutige Url zur Identifizierung des CodeSystems. Absolute Url sind zu bevorzugen.  
