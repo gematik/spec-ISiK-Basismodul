@@ -10,6 +10,8 @@ In FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.
 ### Kompatibilität
 Das Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](
 http://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation."
+* insert Meta
+* insert CommonElements
 * insert ISiKVitalsignCommons
 * insert ISiKVitalsignCommonsValue
 * insert Quantity-MS

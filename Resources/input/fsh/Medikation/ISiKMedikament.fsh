@@ -3,6 +3,7 @@ Parent: Medication
 Id: ISiKMedikament
 Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * obeys isik-med-1
 * code MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
