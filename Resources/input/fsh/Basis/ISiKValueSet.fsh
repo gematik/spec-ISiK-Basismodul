@@ -12,6 +12,7 @@ Mittels der Veröffentlichung von ValueSets können Auswahllisten für externe C
 Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 * insert Meta
+* insert CommonElements
 * url 1.. MS
   * ^comment = "**Bedeutung:** Eindeutige Url zur Identifizierung des ValueSets. Absolute Urls sind zu bevorzugen.
 

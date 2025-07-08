@@ -21,6 +21,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 "
 * insert Meta
+* insert CommonElements
 * identifier 1..* MS
   * ^short = "Identifikatoren der Fachabteilung"
   * ^comment = "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden."
