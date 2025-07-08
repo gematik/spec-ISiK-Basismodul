@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/ISiKSpecificKernTempLoincVS
+canonical: https://gematik.de/fhir/isik/ValueSet/ISiKSpecificGenericTempLoincVS
 ---
 
 ## {{link}}
