@@ -11,7 +11,7 @@ Datum: tbd.
 
 * `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
 * `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793
-* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 
 
