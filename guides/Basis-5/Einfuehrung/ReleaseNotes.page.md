@@ -16,7 +16,6 @@ Datum: XX.XX.2025
 * `improve` Allgemeine Hinweise zum Umgang mit fehlenden Daten und Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen hinzugefügt
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.
 
-
 ## Version 5.0.0
 
 Datum: 26.06.2025
