@@ -41,7 +41,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
     * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
-  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
+  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
+  
+  Hinweis für Implementierende: Der Server kann den Status auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, um die Änderung an den Client zu kommunizieren. Der Server kann ebenfalls den statusReason.code auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.
+  "
 * intent MS
   * ^short = "Ziel der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
