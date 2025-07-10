@@ -1,6 +1,6 @@
 **Anzahl der gefundenen Referenzen:** 786
 
-**Anzahl der Fehler:** 95
+**Anzahl der Fehler:** 63
 
 | Quelle | Typ | Referenz | Fehler |
 |--------|-----|----------|--------|
@@ -21,7 +21,6 @@
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungsverhältnis-gesetzlich-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhaeltnis-sonstige-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Basis-5\Einfuehrung\Artefakte\Versicherungverhältnis-Selbstzahler-privat-Coverage\Interaktionen.page.md:31 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_ISiKBinary.page.md:6 | pagelink | Dokumentenabfrage, text:Akteure und Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_Bundle\Bundle_Interaktionen.page.md:27 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-REST.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_Bundle\Bundle_Interaktionen.page.md:30 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Search.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_Bundle\Bundle_Interaktionen.page.md:33 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Operations.page.md | Datei nicht gefunden |
@@ -30,11 +29,7 @@
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:25 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Search.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:28 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Operations.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Update.page.md:9 | pagelink | Dokumentenabfrage, text:Dokumentenabfrage | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Update.page.md:33 | render | https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\UseCasesUndAkteure\Abgrenzung-Basis.page.md:19 | pagelink | Dokumentenbereitstellung, text:Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\UseCasesUndAkteure\Abgrenzung-Basis.page.md:27 | pagelink | Dokumentenbereitstellung, text:Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\UseCasesUndAkteure\Abgrenzung-Basis.page.md:34 | pagelink | Dokumentenbereitstellung, text:Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung | Weder ID in JSON noch Topic gefunden |
 | ./guides\Formulare-5\Einfuehrung\Artefakte\Extensions.page.md:23 | link | https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension | Weder ID in JSON noch Topic gefunden |
 | ./guides\Formulare-5\Einfuehrung\Artefakte\FormularDaten.page.md:31 | page | Übersicht/Artefakte/Ressourcen-Profile/FQL-Beschreibung.page.md | Datei nicht gefunden |
 | ./guides\Formulare-5\Einfuehrung\Artefakte\FormularDaten.page.md:64 | page | Übersicht/Artefakte/Ressourcen-Profile/FQL-Capability-REST.page.md | Datei nicht gefunden |
@@ -57,45 +52,18 @@
 | ./guides\Formulare-5\Einfuehrung\Artefakte\Ressourcen-Profile\SDCBaseQuestionnaire.page.md:82 | page | Startseite/Artefakte/Beispiele/Patient--Minimaldatensatz-2.page.md | Datei nicht gefunden |
 | ./guides\Formulare-5\Einfuehrung\Artefakte\Terminologien\CodeSystems\Template.page.md:39 | page | Übersicht/Artefakte/Terminologien/CodeSystems/FQL-Beschreibung.page.md | Datei nicht gefunden |
 | ./guides\Formulare-5\Einfuehrung\Artefakte\Terminologien\ValueSets\Template.page.md:29 | page | Übersicht/Artefakte/Terminologien/ValueSets/FQL-Beschreibung.page.md | Datei nicht gefunden |
-| ./guides\Formulare-5\Einfuehrung\Spezifikation\AkteureOrdner\FormularLauncher.page.md:7 | pagelink | Launch, text:Fremdaufruf | Weder ID in JSON noch Topic gefunden |
-| ./guides\Formulare-5\Einfuehrung\Spezifikation\AkteureOrdner\FormularLauncher.page.md:8 | pagelink | Launch, text:SMART-APP-Launch | Weder ID in JSON noch Topic gefunden |
-| ./guides\Formulare-5\Einfuehrung\Spezifikation\AkteureOrdner\FormularRenderer.page.md:9 | pagelink | Launch, text:Fremdaufruf | Weder ID in JSON noch Topic gefunden |
-| ./guides\Formulare-5\Einfuehrung\Spezifikation\AkteureOrdner\FormularRenderer.page.md:10 | pagelink | Launch, text:SMART-App-Launch | Weder ID in JSON noch Topic gefunden |
-| ./guides\Formulare-5\Einfuehrung\Spezifikation\AkteureOrdner\FormularRenderer.page.md:11 | pagelink | Launch, text:Stand-Alone-Launch | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Akteure.page.md:20 | pagelink | ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur,text:CapabilityStatement-Minimal-ICU | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Akteure.page.md:27 | pagelink | ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur, text:CapabilityStatement-Extended-ICU | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Festlegungen.page.md:9 | pagelink | Akteure, text: Akteuren | Weder ID in JSON noch Topic gefunden |
 | ./guides\Labor-5\Einfuehrung\Artefakte\Datenobjekt_LaboruntersuchungThrombozyten\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_AMTSBewertung\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsListe\Beispiele.page.md:26 | pagelink | ImplementationGuide/markdown/Datenobjekte/Profile_MedikationsInformation.md | Datei nicht gefunden |
-| ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:9 | pagelink | ISiKCapabilityStatementMedikationInformationAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:10 | pagelink | ISiKCapabilityStatementMedikationVerordnungAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:11 | pagelink | ISiKCapabilityStatementMedikationVerabreichungAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Subscriptions-5\Einfuehrung\Festlegungen.page.md:10 | pagelink | Artefakte, text: Artefakten | Weder ID in JSON noch Topic gefunden |
 | ./guides\Subscriptions-5\Einfuehrung\Artefakte\Datenobjekt_Subscription\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Subscriptions-5\Einfuehrung\Spezifikation\Patientenzusammenführung.page.md:66 | pagelink | Patient-Profil, text:Patienten Profil | Weder ID in JSON noch Topic gefunden |
-| ./guides\Subscriptions-5\Einfuehrung\Spezifikation\UseCases.page.md:16 | pagelink | Patient-merge, text:Patient merge und Notification | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\Artefakte\Datenobjekt_Kalender\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\Artefakte\Datenobjekt_MedizinischeBehandlungseinheit\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\Artefakte\Datenobjekt_Termin\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\Artefakte\Datenobjekt_Terminblock\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\Festlegungen\Operations.page.md:26 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalender/Profil.page.md, text:Schedule.serviceType | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Akteure.page.md:28 | pagelink | ISiKCapabilityStatementTerminRepositoryAkteur, text=Capability Statement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:20 | render | Material/Terminplanung/images/Interaktionen/1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen.png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:26 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Anlage einer Patient-Ressource | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:30 | render | Material/Terminplanung/images/Interaktionen/2. Verfügbare Behandlungsleistungen abrufen.png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:34 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_MedizinischeBehandlungseinheit/Interaktionen.page.md, text: ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:38 | render | Material/Terminplanung/images/Interaktionen/3. Verfügbare Terminlisten abrufen.png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:42 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalender/Interaktionen.page.md, text: ISiKKalender (Schedule) - Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:46 | render | Material/Terminplanung/images/Interaktionen/4. Abfrage von (verfübaren) Terminblöcken.png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:50 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Terminblock/Interaktionen.page.md, text: ISiKTerminblock (Slot) - Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:54 | render | Material/Terminplanung/images/Interaktionen/5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen.png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:64 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:71 | render | Material/Terminplanung/images/Interaktionen/6.2 Termin absagen (ausgehend vom terminführenden System).png | Datei nicht gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:75 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:79 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:89 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:101 | pagelink | guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:109 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen | Weder ID in JSON noch Topic gefunden |
-| ./guides\Terminplanung-5\Einfuehrung\UseCases\Prozesse.page.md:34 | pagelink | Interaktionen, text:Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Vitalparameter-5\Einfuehrung\Artefakte\CapabilityStatements\Index.page.md:24 | render | https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSource | Weder ID in JSON noch Topic gefunden |
