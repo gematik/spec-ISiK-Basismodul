@@ -30,6 +30,7 @@ Diese Anforderungen dienen der Qualitätssicherung von Dokumentations- und Refer
 import os
 import re
 import json
+import datetime
 
 def find_markdown_files(root_dir):
     md_files = []
@@ -193,7 +194,7 @@ def get_module_from_file_path(file_path, guides_dir):
     
     return None
 
-def pagelink_special_case_exists(ref_str, guides_dir, repo_root, source_file):
+def pagelink_special_case_exists(ref_str, guides_dir, repo_root, source_file, debug_messages=None):
     """
     Prüft, ob die referenzierte Datei/Ordner existiert.
     Vollständig slash/backslash-agnostisch mit detailliertem Debug.
@@ -201,12 +202,13 @@ def pagelink_special_case_exists(ref_str, guides_dir, repo_root, source_file):
     # Normalisiere den Referenz-Pfad (ersetze alle Backslashes durch Slashes)
     ref_norm = ref_str.replace("\\", "/").strip("/")
     
-    print(f"\n=== DEBUG pagelink_special_case_exists ===")
-    print(f"Original ref_str: '{ref_str}'")
-    print(f"Normalized ref_norm: '{ref_norm}'")
-    print(f"Source file: '{source_file}'")
-    print(f"Repo root: '{repo_root}'")
-    print(f"Guides dir: '{guides_dir}'")
+    debug_print(f"\n=== DEBUG pagelink_special_case_exists ===", debug_messages)
+    debug_print(f"Original ref_str: '{ref_str}'", debug_messages)
+    debug_print(f"Normalized ref_norm: '{ref_norm}'", debug_messages)
+    debug_print(f"Source file: '{source_file}'", debug_messages)
+    debug_print(f"Repo root: '{repo_root}'", debug_messages)
+    debug_print(f"Guides dir: '{guides_dir}'", debug_messages)
+    
     
     # Fall 1: Absoluter Pfad beginnend mit "guides/"
     if ref_norm.startswith("guides/"):
@@ -319,7 +321,27 @@ def write_markdown_log(errors, total_refs, filename):
         else:
             f.write("✅ Keine Fehler gefunden!\n")
 
-def check_reference(ref, repo_root, guides_dir, json_dir, topic_map):
+def write_debug_log(debug_messages, filename):
+    """
+    Schreibt alle Debug-Nachrichten in eine separate Logdatei.
+    """
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("# Debug Log - Rendering Check\n\n")
+        f.write(f"**Datum:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+        f.write("---\n\n")
+        for message in debug_messages:
+            f.write(f"{message}\n")
+
+def debug_print(message, debug_messages_list=None):
+    """
+    Druckt eine Debug-Nachricht und sammelt sie optional für das Log.
+    """
+    print(message)
+    if debug_messages_list is not None:
+        debug_messages_list.append(message)
+
+def check_reference(ref, repo_root, guides_dir, json_dir, topic_map, debug_messages=None):
     ref_str = ref["ref"]
     ref_type = ref["type"]
     src = ref["src"]
@@ -338,7 +360,7 @@ def check_reference(ref, repo_root, guides_dir, json_dir, topic_map):
     
     # 2. Spezialfall: pagelink mit CapabilityStatements-Ordner oder .page.md-Datei
     if is_pagelink_special_case(ref_type, ref_str):
-        if pagelink_special_case_exists(ref_str, guides_dir, repo_root, src):
+        if pagelink_special_case_exists(ref_str, guides_dir, repo_root, src, debug_messages):
             return None  # Ordner/Datei gefunden, kein Fehler
         # Wenn Ordner/Datei nicht gefunden, weiter mit normaler Prüfung
     
@@ -362,10 +384,15 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_dir = os.path.join(script_dir, "output-rendering_check")
     log_file = os.path.join(output_dir, "rendering_check_log.md")
+    debug_log_file = os.path.join(output_dir, "debug_log.md")
 
     repo_root = os.path.abspath(".")
-    print(f"DEBUG: Repository root: {repo_root}")
-    print(f"DEBUG: Guides directory: {os.path.abspath(guides_dir)}")
+    
+    # Debug-Nachrichten sammeln
+    debug_messages = []
+    
+    debug_print(f"DEBUG: Repository root: {repo_root}", debug_messages)
+    debug_print(f"DEBUG: Guides directory: {os.path.abspath(guides_dir)}", debug_messages)
     
     md_files = find_markdown_files(guides_dir)
     all_refs = []
@@ -380,26 +407,21 @@ def main():
     for ref in all_refs:
         # Debug nur für problematische .page.md Referenzen
         if ref["type"] == "pagelink" and "Operations.page.md" in ref["ref"]:
-            print(f"\nDEBUG: Verarbeite Operations.page.md pagelink: {ref}")
+            debug_print(f"\nDEBUG: Verarbeite Operations.page.md pagelink: {ref}", debug_messages)
         
-        error = check_reference(ref, repo_root, guides_dir, json_dir, topic_map)
+        error = check_reference(ref, repo_root, guides_dir, json_dir, topic_map, debug_messages)
         if error:
             errors.append(error)
-    
-    # Konsolenausgabe
-    print(f"Anzahl der gefundenen Referenzen: {total_refs}")
-    print(f"Anzahl der Fehler: {len(errors)}\n")
-    if errors:
-        print("| Quelle | Typ | Referenz | Fehler |")
-        print("|--------|-----|----------|--------|")
-        for err in errors:
-            print(f"| {err['quelle']} | {err['typ']} | {err['referenz']} | {err['fehler']} |")
-    else:
-        print("✅ Keine Fehler gefunden!")
 
-    # Logdatei schreiben
+    debug_print(f"Anzahl der gefundenen Referenzen: {total_refs}", debug_messages)
+    debug_print(f"Anzahl der Fehler: {len(errors)}", debug_messages)
+
+    # Schreibe beide Logs
     write_markdown_log(errors, total_refs, log_file)
-    print(f"\nLogdatei wurde geschrieben: {log_file}")
+    write_debug_log(debug_messages, debug_log_file)
+    
+    print(f"Logdatei wurde geschrieben: {log_file}")
+    print(f"Debug-Logdatei wurde geschrieben: {debug_log_file}")
 
 if __name__ == "__main__":
     main()
