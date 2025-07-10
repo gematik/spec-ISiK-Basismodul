@@ -15,7 +15,7 @@ Anforderungen:
       - Ob es eine JSON-Datei in einem festgelegten Verzeichnis gibt, in deren Inhalt das Feld "id" mit dem Referenzwert (case-insensitive) übereinstimmt.
       - Ob in einer Markdown-Datei ein Topic-Frontmatter (---\ntopic: ...\n---) mit passendem Namen (case-insensitive) existiert.
 
-3. Für {{pagelink:...}}-Referenzen mit einem Slash (/) im Wert und dem letzten Segment "CapabilityStatements" wird zusätzlich geprüft, ob ein entsprechender Ordner im guides-Baum existiert. Ist dies der Fall, gilt die Referenz als gültig, auch wenn keine Topic- oder ID-Übereinstimmung vorliegt.
+3. Für {{pagelink:...}}-Referenzen mit einem Slash (/) im Wert und dem letzten Segment "CapabilityStatements" oder ".page.md" wird zusätzlich geprüft, ob ein entsprechender Ordner oder eine Datei im guides-Baum existiert. Ist dies der Fall, gilt die Referenz als gültig, auch wenn keine Topic- oder ID-Übereinstimmung vorliegt.
 
 4. Die Prüfung ist betriebssystemunabhängig und tolerant gegenüber unterschiedlichen Schreibweisen von Pfaden ("/" oder "\").
 
@@ -51,17 +51,31 @@ def extract_references(md_file):
         for i, line in enumerate(f, 1):
             for pattern, ptype in patterns:
                 for match in re.findall(pattern, line):
+                    # Bereinige die Referenz: Entferne alles nach dem ersten Komma
+                    ref_clean = match.strip()
+                    if ',' in ref_clean:
+                        ref_clean = ref_clean.split(',')[0].strip()
+                    
                     refs.append({
                         "type": ptype,
-                        "ref": match.strip(),
+                        "ref": ref_clean,  # Verwende die bereinigte Referenz
                         "src": md_file,
                         "line": i,
                     })
     return refs
 
 def check_file_exists(repo_root, ref_path):
-    normalized_ref = ref_path.replace("\\", "/").lstrip("/\\")
-    abs_path = os.path.normpath(os.path.join(repo_root, normalized_ref))
+    """
+    Prüft, ob eine Datei existiert. Vollständig slash/backslash-agnostisch.
+    """
+    # Normalisiere den Pfad (ersetze alle Backslashes durch Slashes)
+    ref_norm = ref_path.replace("\\", "/").lstrip("/")
+    
+    # Teile den Pfad in Segmente auf und konstruiere ihn betriebssystemspezifisch
+    path_parts = ref_norm.split("/")
+    full_path = os.path.join(repo_root, *path_parts)
+    abs_path = os.path.abspath(full_path)
+    
     return os.path.isfile(abs_path)
 
 def check_directory_exists(repo_root, dir_path):
@@ -115,51 +129,63 @@ def build_topic_map(md_files):
             topic_map[topic.lower()] = md_file  # case-insensitive mapping
     return topic_map
 
-def is_pagelink_capstatements(ref_type, ref_str):
+
+
+def is_pagelink_special_case(ref_type, ref_str):
     """
-    Prüft, ob es sich um einen pagelink auf einen CapabilityStatements-Ordner handelt.
+    Prüft, ob es sich um einen pagelink mit speziellem Fall handelt:
+    - CapabilityStatements-Ordner
+    - .page.md-Datei
     """
     if ref_type != "pagelink":
         return False
     
     ref_norm = ref_str.replace("\\", "/")
+    
+    # Prüfe auf Slash im Wert
+    if "/" not in ref_norm:
+        return False
+    
     parts = ref_norm.strip("/").split("/")
     
-    is_capstatements = len(parts) >= 1 and parts[-1] == "CapabilityStatements"
+    # Fall 1: Letztes Segment ist "CapabilityStatements"
+    if len(parts) >= 1 and parts[-1] == "CapabilityStatements":
+        return True
     
-    if is_capstatements:
-        print(f"DEBUG: CapabilityStatements pagelink erkannt: {ref_str}")  # Debug-Ausgabe
+    # Fall 2: Letztes Segment endet auf ".page.md"
+    if len(parts) >= 1 and parts[-1].endswith(".page.md"):
+        return True
     
-    return is_capstatements
+    return False
 
 def get_module_from_file_path(file_path, guides_dir):
     """
     Ermittelt das Modul (z.B. Basis-5, ICU-5) aus dem Dateipfad.
+    Vollständig slash/backslash-agnostisch.
     """
     try:
-        # Normalisiere den Pfad
-        normalized_path = os.path.normpath(file_path)
-        normalized_guides = os.path.normpath(guides_dir)
+        # Normalisiere beide Pfade
+        file_path_norm = os.path.abspath(file_path)
+        guides_dir_norm = os.path.abspath(guides_dir)
         
-        # Finde den relativen Pfad ab guides/
-        if guides_dir.startswith('./'):
-            guides_dir_abs = os.path.abspath(guides_dir)
-        else:
-            guides_dir_abs = os.path.abspath(guides_dir)
-            
-        file_path_abs = os.path.abspath(file_path)
+        print(f"DEBUG: file_path_norm: {file_path_norm}")
+        print(f"DEBUG: guides_dir_norm: {guides_dir_norm}")
         
         # Prüfe, ob die Datei im guides-Verzeichnis liegt
-        if not file_path_abs.startswith(guides_dir_abs):
+        if not file_path_norm.startswith(guides_dir_norm):
+            print(f"DEBUG: Datei liegt nicht im guides-Verzeichnis")
             return None
             
-        # Extrahiere den relativen Pfad
-        rel_path = os.path.relpath(file_path_abs, guides_dir_abs)
+        # Extrahiere den relativen Pfad (betriebssystemspezifisch)
+        rel_path = os.path.relpath(file_path_norm, guides_dir_norm)
+        print(f"DEBUG: rel_path: {rel_path}")
         
-        # Das erste Segment ist das Modul
+        # Das erste Segment ist das Modul (betriebssystemspezifische Trennung)
         parts = rel_path.split(os.sep)
-        if len(parts) > 0:
-            return parts[0]
+        if len(parts) > 0 and parts[0] != "." and parts[0] != "..":
+            module = parts[0]
+            print(f"DEBUG: Erkanntes Modul: {module}")
+            return module
             
     except Exception as e:
         print(f"DEBUG: Fehler beim Ermitteln des Moduls für {file_path}: {e}")
@@ -167,11 +193,92 @@ def get_module_from_file_path(file_path, guides_dir):
     
     return None
 
-def pagelink_capstatements_folder_exists(ref_str, guides_dir, repo_root, source_file):
+def pagelink_special_case_exists(ref_str, guides_dir, repo_root, source_file):
     """
-    Prüft, ob der referenzierte CapabilityStatements-Ordner im gleichen Modul wie die Quelldatei existiert.
+    Prüft, ob die referenzierte Datei/Ordner existiert.
+    Vollständig slash/backslash-agnostisch mit detailliertem Debug.
     """
-    # Ermittle das Modul aus der Quelldatei
+    # Normalisiere den Referenz-Pfad (ersetze alle Backslashes durch Slashes)
+    ref_norm = ref_str.replace("\\", "/").strip("/")
+    
+    print(f"\n=== DEBUG pagelink_special_case_exists ===")
+    print(f"Original ref_str: '{ref_str}'")
+    print(f"Normalized ref_norm: '{ref_norm}'")
+    print(f"Source file: '{source_file}'")
+    print(f"Repo root: '{repo_root}'")
+    print(f"Guides dir: '{guides_dir}'")
+    
+    # Fall 1: Absoluter Pfad beginnend mit "guides/"
+    if ref_norm.startswith("guides/"):
+        print(f"DEBUG: Absoluter Pfad erkannt")
+        
+        # Entferne "guides/" und konstruiere den Pfad
+        relative_part = ref_norm[7:]  # Entferne "guides/"
+        print(f"DEBUG: Relative part: '{relative_part}'")
+        
+        # Konstruiere den Pfad betriebssystemspezifisch
+        path_parts = relative_part.split("/")
+        print(f"DEBUG: Path parts: {path_parts}")
+        
+        # Verschiedene Pfad-Konstruktionen versuchen
+        # Option 1: Direkt vom repo_root
+        full_path_1 = os.path.join(repo_root, ref_norm)
+        abs_path_1 = os.path.abspath(full_path_1)
+        print(f"DEBUG: Option 1 - Direkter Pfad: '{abs_path_1}'")
+        print(f"DEBUG: Option 1 - Existiert: {os.path.exists(abs_path_1)}")
+        
+        # Option 2: Über guides_dir
+        guides_clean = guides_dir.lstrip("./")
+        full_path_2 = os.path.join(repo_root, guides_clean, *path_parts)
+        abs_path_2 = os.path.abspath(full_path_2)
+        print(f"DEBUG: Option 2 - Über guides_dir: '{abs_path_2}'")
+        print(f"DEBUG: Option 2 - Existiert: {os.path.exists(abs_path_2)}")
+        
+        # Option 3: Pfad ohne "guides/" Präfix
+        full_path_3 = os.path.join(repo_root, guides_clean, relative_part)
+        abs_path_3 = os.path.abspath(full_path_3)
+        print(f"DEBUG: Option 3 - Ohne guides/ Präfix: '{abs_path_3}'")
+        print(f"DEBUG: Option 3 - Existiert: {os.path.exists(abs_path_3)}")
+        
+        # Prüfe alle Optionen
+        for i, (path_desc, abs_path) in enumerate([
+            ("Option 1", abs_path_1),
+            ("Option 2", abs_path_2), 
+            ("Option 3", abs_path_3)
+        ], 1):
+            if os.path.exists(abs_path):
+                if os.path.isfile(abs_path):
+                    print(f"DEBUG: ✅ {path_desc} - Datei gefunden: {abs_path}")
+                    return True
+                elif os.path.isdir(abs_path):
+                    print(f"DEBUG: ✅ {path_desc} - Ordner gefunden: {abs_path}")
+                    return True
+        
+        # Zusätzliche Debug-Info: Liste Dateien im erwarteten Verzeichnis
+        expected_dir = os.path.dirname(abs_path_3)
+        expected_filename = os.path.basename(abs_path_3)
+        print(f"DEBUG: Erwartetes Verzeichnis: '{expected_dir}'")
+        print(f"DEBUG: Erwarteter Dateiname: '{expected_filename}'")
+        
+        if os.path.exists(expected_dir):
+            try:
+                files_in_dir = os.listdir(expected_dir)
+                print(f"DEBUG: Dateien im Verzeichnis: {files_in_dir}")
+                
+                # Prüfe case-insensitive
+                for file in files_in_dir:
+                    if file.lower() == expected_filename.lower():
+                        print(f"DEBUG: ✅ Case-insensitive Match gefunden: {file}")
+                        return True
+                        
+            except Exception as e:
+                print(f"DEBUG: Fehler beim Auflisten der Dateien: {e}")
+        
+        print(f"DEBUG: ❌ Datei/Ordner nicht gefunden")
+        return False
+    
+    # Fall 2: Relativer Pfad - suche im aktuellen Modul
+    print(f"DEBUG: Relativer Pfad erkannt")
     module = get_module_from_file_path(source_file, guides_dir)
     if not module:
         print(f"DEBUG: Konnte Modul nicht ermitteln für Datei: {source_file}")
@@ -179,23 +286,26 @@ def pagelink_capstatements_folder_exists(ref_str, guides_dir, repo_root, source_
     
     print(f"DEBUG: Erkanntes Modul: {module} für Datei: {source_file}")
     
-    # Normalisiere den Referenz-Pfad
-    ref_norm = ref_str.replace("\\", "/").strip("/")
-    
     # Konstruiere den vollständigen Pfad im spezifischen Modul
-    full_path = os.path.join(repo_root, guides_dir, module, ref_norm)
-    abs_path = os.path.normpath(full_path)
+    path_parts = ref_norm.split("/")
+    guides_clean = guides_dir.lstrip("./")
+    full_path = os.path.join(repo_root, guides_clean, module, *path_parts)
+    abs_path = os.path.abspath(full_path)
     
-    print(f"DEBUG: Prüfe CapabilityStatements-Ordner: {abs_path}")
+    print(f"DEBUG: Prüfe relativen Pfad: {abs_path}")
     
-    exists = os.path.isdir(abs_path)
-    if exists:
-        print(f"DEBUG: ✅ CapabilityStatements-Ordner gefunden: {abs_path}")
+    # Prüfe sowohl auf Datei als auch auf Ordner
+    if os.path.exists(abs_path):
+        if os.path.isfile(abs_path):
+            print(f"DEBUG: ✅ Datei gefunden: {abs_path}")
+            return True
+        elif os.path.isdir(abs_path):
+            print(f"DEBUG: ✅ Ordner gefunden: {abs_path}")
+            return True
     else:
-        print(f"DEBUG: ❌ CapabilityStatements-Ordner nicht gefunden: {abs_path}")
+        print(f"DEBUG: ❌ Pfad nicht gefunden: {abs_path}")
+        return False
     
-    return exists
-
 def write_markdown_log(errors, total_refs, filename):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
@@ -226,11 +336,11 @@ def check_reference(ref, repo_root, guides_dir, json_dir, topic_map):
             }
         return None  # Datei gefunden, kein Fehler
     
-    # 2. Spezialfall: pagelink mit CapabilityStatements-Ordner
-    if is_pagelink_capstatements(ref_type, ref_str):
-        if pagelink_capstatements_folder_exists(ref_str, guides_dir, repo_root, src):
-            return None  # Ordner gefunden, kein Fehler
-        # Wenn Ordner nicht gefunden, weiter mit normaler Prüfung
+    # 2. Spezialfall: pagelink mit CapabilityStatements-Ordner oder .page.md-Datei
+    if is_pagelink_special_case(ref_type, ref_str):
+        if pagelink_special_case_exists(ref_str, guides_dir, repo_root, src):
+            return None  # Ordner/Datei gefunden, kein Fehler
+        # Wenn Ordner/Datei nicht gefunden, weiter mit normaler Prüfung
     
     # 3. Normale Prüfung für Referenzen ohne Dateiendung
     found_in_json = check_id_in_jsons(ref_str, json_dir)
@@ -249,11 +359,14 @@ def check_reference(ref, repo_root, guides_dir, json_dir, topic_map):
 def main():
     guides_dir = "./guides"
     json_dir = "./Resources/fsh-generated/resources"
-    script_dir = os.path.dirname(os.path.abspath(__file__))  # Ordner, in dem das Skript liegt
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     output_dir = os.path.join(script_dir, "output-rendering_check")
     log_file = os.path.join(output_dir, "rendering_check_log.md")
 
     repo_root = os.path.abspath(".")
+    print(f"DEBUG: Repository root: {repo_root}")
+    print(f"DEBUG: Guides directory: {os.path.abspath(guides_dir)}")
+    
     md_files = find_markdown_files(guides_dir)
     all_refs = []
     for md_file in md_files:
@@ -265,8 +378,9 @@ def main():
     errors = []
 
     for ref in all_refs:
-        if ref["type"] == "pagelink" and "CapabilityStatements" in ref["ref"]:
-            print(f"DEBUG: Verarbeite pagelink: {ref}")
+        # Debug nur für problematische .page.md Referenzen
+        if ref["type"] == "pagelink" and "Operations.page.md" in ref["ref"]:
+            print(f"\nDEBUG: Verarbeite Operations.page.md pagelink: {ref}")
         
         error = check_reference(ref, repo_root, guides_dir, json_dir, topic_map)
         if error:
