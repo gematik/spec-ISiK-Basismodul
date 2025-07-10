@@ -1,3 +1,1 @@
 ## {{page-title}}
-
-{{index:current}}
