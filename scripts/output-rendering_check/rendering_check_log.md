@@ -1,6 +1,6 @@
 **Anzahl der gefundenen Referenzen:** 786
 
-**Anzahl der Fehler:** 99
+**Anzahl der Fehler:** 95
 
 | Quelle | Typ | Referenz | Fehler |
 |--------|-----|----------|--------|
@@ -30,10 +30,6 @@
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:25 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Search.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:28 | page | Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Operations.page.md | Datei nicht gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Artefakte\Datenobjekte_DocumentReference\DocumentReference_Interaktionen.page.md:32 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Dokumentenabfrage.page.md:64 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Dokumentenabfrage.page.md:113 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\ErzeugenVonMetadaten.page.md:40 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Interaktion-Dokumentenbereitstellung.page.md:61 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Update.page.md:9 | pagelink | Dokumentenabfrage, text:Dokumentenabfrage | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\Festlegungen\Update.page.md:33 | render | https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata | Weder ID in JSON noch Topic gefunden |
 | ./guides\Dokumentenaustausch-5\Einfuehrung\UseCasesUndAkteure\Abgrenzung-Basis.page.md:19 | pagelink | Dokumentenbereitstellung, text:Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung | Weder ID in JSON noch Topic gefunden |
