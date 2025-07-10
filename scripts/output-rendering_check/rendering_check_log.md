@@ -1,6 +1,6 @@
 **Anzahl der gefundenen Referenzen:** 786
 
-**Anzahl der Fehler:** 159
+**Anzahl der Fehler:** 99
 
 | Quelle | Typ | Referenz | Fehler |
 |--------|-----|----------|--------|
@@ -69,59 +69,9 @@
 | ./guides\ICU-5\Einfuehrung\Akteure.page.md:20 | pagelink | ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur,text:CapabilityStatement-Minimal-ICU | Weder ID in JSON noch Topic gefunden |
 | ./guides\ICU-5\Einfuehrung\Akteure.page.md:27 | pagelink | ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur, text:CapabilityStatement-Extended-ICU | Weder ID in JSON noch Topic gefunden |
 | ./guides\ICU-5\Einfuehrung\Festlegungen.page.md:9 | pagelink | Akteure, text: Akteuren | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-herzzeitvolumen\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-ideales-koerpergewicht\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-intrakranieller-druck-icp\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpergewicht-percentil-altersabhaengig\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpergroesse-percentil-altersabhaengig\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-achsel\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-atemwege\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-blut\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-brust\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-brustwirbelsaeule\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-gelenk\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-halswirbelsaeule\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-harnblase\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-kern\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-leiste\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-lendenwirbelsaeule\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-myokard\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-nasal\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-nasen-rachen-raum\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-rektal\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-speiseroehre\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-stirn\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-trommelfell\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-unter-der-zunge\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-koerpertemperatur-vaginal\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksatrialer-druck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventrikulaerer-druck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventrikulaerer-herzindex\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumen\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-linksventrikulaeres-schlagvolumenindex\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-pulmonalarterieller-blutdruck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-pulmonalarterieller-wedge-druck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-pulmonalvaskulaerer-widerstandsindex\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-puls\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-rechtsatrialer-druck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-rechtsventrikulaerer-druck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-systemischer-vaskulaerer-widerstandsindex\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\ICU-5\Einfuehrung\Artefakte\Datenobjekt_sd-mii-icu-zentralvenoeser-blutdruck\Interaktionen.page.md:31 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
 | ./guides\Labor-5\Einfuehrung\Artefakte\Datenobjekt_LaboruntersuchungThrombozyten\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_AMTSBewertung\Interaktionen.page.md:30 | pagelink | CapabilityStatement | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_Medikament\Interaktionen.page.md:36 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsInformation\Interaktionen.page.md:34 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsListe\Beispiele.page.md:26 | pagelink | ImplementationGuide/markdown/Datenobjekte/Profile_MedikationsInformation.md | Datei nicht gefunden |
-| ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsListe\Interaktionen.page.md:34 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsVerabreichung\Interaktionen.page.md:36 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Medikation-5\Einfuehrung\Artefakte\Datenobjekt_MedikationsVerordnung\Interaktionen.page.md:36 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:9 | pagelink | ISiKCapabilityStatementMedikationInformationAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:10 | pagelink | ISiKCapabilityStatementMedikationVerordnungAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
 | ./guides\Medikation-5\Einfuehrung\UebergreifendeFestlegungen\AkteureUndInteraktionen.page.md:11 | pagelink | ISiKCapabilityStatementMedikationVerabreichungAkteur, text: Capability Statement | Weder ID in JSON noch Topic gefunden |
@@ -153,13 +103,3 @@
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Interaktionen.page.md:109 | pagelink | guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Terminplanung-5\Einfuehrung\UseCases\Prozesse.page.md:34 | pagelink | Interaktionen, text:Interaktionen | Weder ID in JSON noch Topic gefunden |
 | ./guides\Vitalparameter-5\Einfuehrung\Artefakte\CapabilityStatements\Index.page.md:24 | render | https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSource | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Atemfrequenz\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_BlutdruckSystemischArteriell\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_EKG\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_GCS\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Herzfrequenz\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Koerpergewicht\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Koerpergroesse\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Koerpertemperatur\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_Kopfumfang\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
-| ./guides\Vitalparameter-5\Einfuehrung\Artefakte\Datenobjekt_SauerstoffsaettigungArteriell\Interaktionen.page.md:30 | pagelink | Einfuehrung/Artefakte/CapabilityStatements | Weder ID in JSON noch Topic gefunden |
