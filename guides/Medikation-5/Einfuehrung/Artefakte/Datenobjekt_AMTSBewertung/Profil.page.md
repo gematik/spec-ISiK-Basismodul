@@ -1,6 +1,7 @@
 ---
 topic: ISiKAMTSBewertung-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle
 ---
 ## {{link}}
 
@@ -20,7 +21,7 @@ with
 from
     CapabilityStatement
 where
-    url = %capability4
+    url = %capability
 for rest.resource.where(%canonical in supportedProfile)
 select
     'Verbindlichkeit': extension('http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation').value
