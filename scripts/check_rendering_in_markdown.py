@@ -95,7 +95,8 @@ def write_markdown_log(errors, total_refs, filename):
 def main():
     guides_dir = "./guides"
     json_dir = "./Resources/fsh-generated/resources"
-    output_dir = "./output-rendering_check"
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Ordner, in dem das Skript liegt
+    output_dir = os.path.join(script_dir, "output-rendering_check")
     log_file = os.path.join(output_dir, "rendering_check_log.md")
 
     md_files = find_markdown_files(guides_dir)
