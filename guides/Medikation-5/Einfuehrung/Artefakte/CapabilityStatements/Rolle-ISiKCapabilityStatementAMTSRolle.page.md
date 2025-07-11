@@ -1,6 +1,6 @@
 ---
-topic: ISiKCapabilityStatementMedikationVerordnungRolle
-canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungRolle
+topic: ISiKCapabilityStatementAMTSRolle
+canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle
 ---
 ##  <fql output="inline" headers="false">
 from
