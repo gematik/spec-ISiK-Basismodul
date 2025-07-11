@@ -28,7 +28,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   "
   * text MS
     * ^short = "Dokumenttyp (Freitext)"
-    * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
+    * ^comment = "Begründung zu Must Support: Die freitextliche Beschreibung des assoziierten Displaywerts der primären Codierung dient einer einheitlichen Ausgabe (jenseits verschiedener Codesysteme). Der Text kann ggf. aus vorhandenen Codes übernommen werden."
 * type.coding 0.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
