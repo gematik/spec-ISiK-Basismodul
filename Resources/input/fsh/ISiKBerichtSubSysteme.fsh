@@ -34,7 +34,6 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 0..1 MS and
     KDL 0..1 MS and
     XDS 0..1 MS
 * type.coding[LOINC] = $loinc#55112-7
