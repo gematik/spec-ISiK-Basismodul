@@ -21,5 +21,5 @@ select
 join differential.element.binding.valueSet
 where 
    valueSet = %canonical
-select Profil: id, Canonical: url
+select Canonical: url
 </fql>
