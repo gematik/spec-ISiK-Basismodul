@@ -27,9 +27,7 @@ with
     <tab title="Operationen">
         {{page:FQL-Capability-Operations-multicps}}
     </tab>
-    <tab title="Link">
-        {{pagelink:Einfuehrung/Artefakte/CapabilityStatements}}
-    </tab>
+   
 </tabs>
 
 
