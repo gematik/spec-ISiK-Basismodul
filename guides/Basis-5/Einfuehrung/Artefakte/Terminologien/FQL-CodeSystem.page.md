@@ -19,5 +19,5 @@ from
 	ValueSet
 where
 	compose.include.system = %canonical
-select ValueSet:id, Canonical: url
+select Canonical: url
 </fql>
