@@ -8,7 +8,7 @@ Version: 3.0.9
 
 Datum: tbd.
 
-* `fixed` Fix Pattern auf Composition.category und Entfernen der Kardinalität 1.. auf type.text sowie Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type (entsprechend https://github.com/gematik/spec-ISiK-Basismodul/pull/749) https://github.com/gematik/spec-ISiK-Basismodul/pull/694
+* `fixed` Fix Pattern auf Composition.category und Hinzufügen von MS .. auf type.text sowie Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type (entsprechend https://github.com/gematik/spec-ISiK-Basismodul/pull/749) https://github.com/gematik/spec-ISiK-Basismodul/pull/694
 
 ----
 
