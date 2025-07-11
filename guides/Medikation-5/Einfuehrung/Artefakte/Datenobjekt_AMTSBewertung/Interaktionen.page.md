@@ -1,7 +1,7 @@
 ---
 topic: ISiKAMTSBewertung-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung
-capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle
 ---
 ### Interaktionen
 
@@ -9,7 +9,7 @@ capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityState
 from
     CapabilityStatement
 where
-    url = %capability
+    url = %capability1
 for rest.resource.where(%canonical in supportedProfile)
 select
     documentation

@@ -1,7 +1,7 @@
 ---
 topic: ISiKMedikament-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament
-capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle
 ---
 ## {{link}}
 
@@ -21,7 +21,7 @@ with
 from
     CapabilityStatement
 where
-    url = %capability
+    url = %capability1
 select
     Name: name, 
     join for rest.resource.where(%canonical in supportedProfile) 

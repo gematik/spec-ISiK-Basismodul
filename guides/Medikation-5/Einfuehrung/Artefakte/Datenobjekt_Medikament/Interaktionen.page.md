@@ -1,7 +1,7 @@
 ---
 topic: ISiKMedikament-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament
-capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle
 ---
 ### Interaktionen
 
@@ -9,7 +9,7 @@ capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityState
 from
     CapabilityStatement
 where
-    url = %capability
+    url = %capability1
 for rest.resource.where(%canonical in supportedProfile)
 select
     documentation
