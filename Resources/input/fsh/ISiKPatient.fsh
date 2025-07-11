@@ -10,14 +10,15 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
-    VersichertenId-GKV 0..1 MS and
+    VersichertenId 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
-* identifier[VersichertenId-GKV] only IdentifierKvid10
-  * ^patternIdentifier.type = $identifier-type-de-basis#GKV
-  * type 1.. MS
-  * system MS
-  * value MS
+* identifier[VersichertenId] // hier folgende Refernz auf BAsisprofile-De entfernt: only IdentifierKvid10
+  * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
+  * system 1..1 MS
+  * type 0..1 MS //offene Frage: 1..1 oder 0..1?
+  * value 1..1 MS // war vorher in profil aus Basisprofil-DE
+  // TODO hier invariante aus Basisprofil-De hinzu
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
   * type MS
