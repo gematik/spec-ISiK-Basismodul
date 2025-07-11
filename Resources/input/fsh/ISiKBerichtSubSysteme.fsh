@@ -36,9 +36,6 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * type.coding contains
     KDL 0..1 MS and
     XDS 0..1 MS
-* type.coding[LOINC] = $loinc#55112-7
-  * system 1..
-  * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
   * code 1..
@@ -84,7 +81,8 @@ Usage: #example
 * identifier[=].system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
 * identifier[=].value = "0123456789"
 * status = #final
-* type = $loinc#55112-7
+* type = $http://dvmd.de/fhir/CodeSystem/kdl#DG060104 "Blutdruckprotokoll"
+* type.text = "Blutdruckprotokoll"
 * subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * encounter.reference = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 * date = "2022-05-03"
