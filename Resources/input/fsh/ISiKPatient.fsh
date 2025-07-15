@@ -26,7 +26,6 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   Es wird dringend empfohlen, als eindeutiges Erkennungsmerkmal einer VersichertenID die unveränderte Canonical URL in `system` anstelle des `type`-Codes zu verwenden!
   Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden."
   * value 1..1 MS // war vorher in profil aus Basisprofil-DE
-  // TODO hier invariante aus Basisprofil-De hinzu
     * obeys kvid-1
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
