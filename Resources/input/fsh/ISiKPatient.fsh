@@ -117,9 +117,9 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A123456789"
+* identifier[VersichertenId].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "TestPID"
@@ -170,8 +170,8 @@ Instance: PatientOhneIdentifierTypeCode
 InstanceOf: ISiKPatient
 Usage: #example
 //* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A111111111"
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A111111111"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "111111"
@@ -185,9 +185,9 @@ Usage: #example
 Instance: PatientMitKVZ10IdentifierTypeCode
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#KVZ10
-* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId-GKV].value = "A222222222"
+* identifier[VersichertenId].type = $identifier-type-de-basis#KVZ10
+* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId].value = "A222222222"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "222222"
