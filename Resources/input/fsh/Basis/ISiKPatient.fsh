@@ -103,7 +103,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.
   **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden, da die Nummernkreise dieser Identifier identisch sind.
   **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)
-  Der Identifier kann jedoch zusätzlich zur KVNR verwendet werden, wenn für eine Zusatzversicherung eine separate versicherungsspezifischen PKV-Nummer vorliegt."
+  Der Identifier kann jedoch zusätzlich zur KVNR verwendet werden, wenn für eine Zusatzversicherung eine separate, versicherungsspezifische PKV-Nummer vorliegt."
   * use MS
     * ^short = "Verwendungszeck des Identifiers"
     * ^comment = "Hier ist stets der Wert `secondary` anzugeben."
