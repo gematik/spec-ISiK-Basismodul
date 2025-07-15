@@ -26,6 +26,14 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * identifier[Versichertennummer_PKV] only IdentifierPkv
   * ^patternIdentifier.type = $identifier-type-de-basis#PKV
   * ^mustSupport = false
+  * ^short = "Private Krankenversichertennummer"
+  * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
+  können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
+  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums meist nicht ermittelt werden kann,
+  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.
+  **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden, da die Nummernkreise dieser Identifier identisch sind.
+  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)
+  Der Identifier kann jedoch zusätzlich zur KVNR verwendet werden, wenn für eine Zusatzversicherung eine separate, versicherungsspezifische PKV-Nummer vorliegt."
   * use MS
   * type 1.. MS
   * value MS
