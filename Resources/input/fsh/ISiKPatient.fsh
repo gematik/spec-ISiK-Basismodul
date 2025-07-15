@@ -17,7 +17,8 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
   * system 1..1 MS
   //* type 0..1 MS //offene Frage: 1..1 oder 0..1?
-  * type ^comment = "**Änderung in Version 3.0.9: **  
+  * type 
+    * ^comment = "**Änderung in Version 3.0.9: **  
   In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. 
   Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional.
   Hintergrund: Die ehemals ausschließlich für gesetzlich Versicherte verwendete lebenslange VersichertenID wird künftig auch auf privat versicherte Personen ausgeweitet. 
@@ -26,6 +27,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden."
   * value 1..1 MS // war vorher in profil aus Basisprofil-DE
   // TODO hier invariante aus Basisprofil-De hinzu
+    * obeys kvid-1
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
   * type MS
@@ -207,3 +209,10 @@ Description: "The content of the country element (if present) SHALL be selected 
 Severity: #warning
 Expression: "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))"
 
+/* Kopie der gelichnamigen Invariante aus den Basisprofilen.
+Hinzugefügt, da der Identifier-Slice für KVID aufgrund des geänderten Type-codes
+nicht länger von den basisprofilen erbt  */
+Invariant: kvid-1
+Description: "Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen"
+Severity: #warning
+Expression: "matches('^[A-Z][0-9]{9}$')"
