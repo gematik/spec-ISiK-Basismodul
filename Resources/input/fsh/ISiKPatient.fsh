@@ -165,6 +165,37 @@ Usage: #example
 * address[=].postalCode = "98764"
 * address[=].country = "DE"
 
+Instance: PatientOhneIdentifierTypeCode
+InstanceOf: ISiKPatient
+Usage: #example
+//* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A111111111"
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "111111"
+* active = true
+* name[Name]
+  * family = "Ohne Typecode"
+  * given = "Identifier"
+* gender = #male
+* birthDate = "1964-08-12"
+
+Instance: PatientMitKVZ10IdentifierTypeCode
+InstanceOf: ISiKPatient
+Usage: #example
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#KVZ10
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A222222222"
+* identifier[Patientennummer].type = $v2-0203#MR
+* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
+* identifier[Patientennummer].value = "222222"
+* active = true
+* name[Name]
+  * family = "Mit KVZ10 Typecode"
+  * given = "Identifier"
+* gender = #male
+* birthDate = "1964-08-12"
 
 Invariant: isik-pat-1
 Description: "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden"
