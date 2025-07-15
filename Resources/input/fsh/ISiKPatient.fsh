@@ -16,7 +16,7 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * identifier[VersichertenId] // hier folgende Refernz auf BAsisprofile-De entfernt: only IdentifierKvid10
   * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
   * system 1..1 MS
-  * type 0..1 MS //offene Frage: 1..1 oder 0..1?
+  //* type 0..1 MS //offene Frage: 1..1 oder 0..1?
   * type ^comment = "**Änderung in Version 3.0.9: **  
   In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. 
   Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional.
