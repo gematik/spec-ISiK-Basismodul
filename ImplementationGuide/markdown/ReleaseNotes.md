@@ -5,6 +5,10 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
 
+* `change` In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional.
+Hintergrund: Die ehemals ausschließlich für gesetzlich Versicherte verwendete lebenslange VersichertenID wird künftig auch auf privat versicherte Personen ausgeweitet. Der bisher verwendete Code ist daher nicht länger zutreffend und in neueren Versionen der Deutschen Basisprofile als `deprecated` gekennzeichnet. Es wird dringend empfohlen, als eindeutiges Erkennungsmerkmal einer VersichertenID die unveränderte Canonical URL in `system` anstelle des `type`-Codes zu verwenden!
+
+Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden.
 
 Version: 3.0.8
 
