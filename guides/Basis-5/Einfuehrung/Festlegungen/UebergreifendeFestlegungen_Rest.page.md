@@ -17,8 +17,6 @@ Weiterhin steht es Servern frei, neben den in ISIK profilierten auch weitere Res
 Darüber hinaus ist es Servern gestattet, in ISiK profilierte generische Ressourcentypen, wie z.B. Organization oder Observation in Kontexten außerhalb der in ISiK spezifizierten UseCases zu verwenden.
 
 
-Status: Wir haben derzeit nur Rückmeldung von einem einzigen Hersteller, dieser geht davon aus, dass auch nicht-ISiK-konforme Instanzen über eine READ-Schnittstelle exponiert werden und verarbeitet diese entsprechend.
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
 ## Search-Interaktionen
 Die Suche MUSS sowohl mittels HTTP GET als auch HTTP POST (vgl. [FHIR RESTful Search - Introduction](https://www.hl7.org/fhir/R4/search.html#Introduction)) unterstützt werden. Die URL-Parameter komplexer Suchanfragen können personenbezogene Merkmale enthalten, daher ist im Echtbetrieb die Suche mittels HTTP POST in Verbindung mit TLS-Verschlüsselung vorzuziehen. 
