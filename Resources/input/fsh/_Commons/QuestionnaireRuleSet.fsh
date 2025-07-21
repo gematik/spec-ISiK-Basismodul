@@ -144,4 +144,10 @@ RuleSet: qritem (id, text)
 * linkId = {id}
 * text = {text}
 
-
+RuleSet: QuestionnaireExamplesMetadata(name)
+* name = "{name}"
+* version = "0.1.0"
+* url = "https://gematik.de/fhir/isik/Questionnaire/{name}"
+* status = #draft
+* experimental = false
+* publisher = "Gematik GmbH"
