@@ -20,7 +20,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^short = "Therapieart der Medikation"
   * ^comment = "Begründung des Must-Support: von der Fachseite gewünschte Angabe
 
-  Hinweis: Angabe Akut- oder Dauermedikation."
+  Hinweis: Angabe Akut- oder Dauermedikation." 
   * valueCoding
     * system MS
     * code MS
