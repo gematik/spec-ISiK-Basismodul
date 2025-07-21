@@ -1,6 +1,6 @@
 ---
-topic: ObsPrePopExtr
-canonical: https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation
+topic: PrePopDemo
+canonical: https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo
 expand: 2
 ---
 
@@ -47,11 +47,8 @@ select
     ID: linkId,
     Text: text,
     Type: type,
-    Code: code.descendants(),
-    Options[markdown]: '['  + answerValueSet.replaceMatches('^.+/(?<name>[A-Za-z-]+)$', '${name}') + '](' + answerValueSet +')',
-    Extraction: extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract').value,
-    LinkPeriod: for extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod')
-    select {Wert: value.value, Einheit: value.code}
+    Vorbelegung: for extension('http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression')
+    select {Beschreibung: value.description, FHIRPATH: value.expression}
     }
 order by linkId
 with subheader
