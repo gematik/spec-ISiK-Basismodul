@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2025-06-26",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UseCases-AMTS?version=current).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\r\n\r\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\r\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\r\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UseCases-AMTS?version=current).\r\n\r\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -40,7 +40,7 @@
         "id": "Observation.status",
         "path": "Observation.status",
         "short": "Status der Laboruntersuchung",
-        "comment": "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  \n  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, \n  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `final` und `unknown`.\n  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, \n  beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Untersuchungen, die noch nicht stattgefunden haben, o.ä.",
+        "comment": "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  \r\n  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, \r\n  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `final` und `unknown`.\r\n  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, \r\n  beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Untersuchungen, die noch nicht stattgefunden haben, o.ä.",
         "mustSupport": true
       },
       {
@@ -155,7 +155,7 @@
           "rules": "open"
         },
         "short": "Zeitpunkt der Untersuchung",
-        "comment": "**Begründung Must Support**:\nDas Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:\n\n* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),\n* Verlaufsauswertungen und Trendanalysen,\n* zeitlich abhängige Entscheidungsunterstützung,\n* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts.",
+        "comment": "**Begründung Must Support**:\r\nDas Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:\r\n\r\n* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),\r\n* Verlaufsauswertungen und Trendanalysen,\r\n* zeitlich abhängige Entscheidungsunterstützung,\r\n* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts.",
         "mustSupport": true
       },
       {
@@ -242,7 +242,7 @@
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
         "short": "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt",
-        "comment": "**Begründung Must Support**:\nNicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlich ein Ergebnis. In solchen Fällen ist es wichtig, nicht nur auf das Fehlen eines Wertes zu reagieren, sondern den Grund strukturiert anzugeben. dataAbsentReason ermöglicht diese präzise Aussage und verhindert Fehlinterpretationen",
+        "comment": "**Begründung Must Support**:\r\nNicht alle geplanten oder dokumentierten Untersuchungen liefern auch tatsächlich ein Ergebnis. In solchen Fällen ist es wichtig, nicht nur auf das Fehlen eines Wertes zu reagieren, sondern den Grund strukturiert anzugeben. dataAbsentReason ermöglicht diese präzise Aussage und verhindert Fehlinterpretationen",
         "mustSupport": true
       },
       {
@@ -262,13 +262,13 @@
       {
         "id": "Observation.method",
         "path": "Observation.method",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist daher für Transparenz und Vergleichbarkeit entscheidend.\n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \r\n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\r\n   die Information NICHT abbilden. \r\n   \r\n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist daher für Transparenz und Vergleichbarkeit entscheidend.\r\n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
         "mustSupport": true
       },
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.\n   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \r\n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\r\n   die Information NICHT abbilden. \r\n   \r\n   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.\r\n   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
         "mustSupport": true
       },
       {
@@ -297,7 +297,7 @@
         "id": "Observation.device",
         "path": "Observation.device",
         "short": "Verwendetes Gerät oder Instrument zur Durchführung der Untersuchung",
-        "comment": "**Begründung Must Support**:\nDas verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf die Genauigkeit, Validität und Vergleichbarkeit von Untersuchungsergebnissen haben.",
+        "comment": "**Begründung Must Support**:\r\nDas verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf die Genauigkeit, Validität und Vergleichbarkeit von Untersuchungsergebnissen haben.",
         "mustSupport": true
       },
       {

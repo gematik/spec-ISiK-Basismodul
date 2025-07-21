@@ -1,0 +1,89 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExamplePrePopDemo",
+  "name": "ExamplePrePopDemo",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patientenkontext"
+        }
+      ]
+    }
+  ],
+  "title": "Vorbelegung Demografischer Daten",
+  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \r\nDer Patientenkontext wird mittels der [LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \r\nDie Vorbelegung erfolgt über die [InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension",
+  "item": [
+    {
+      "type": "group",
+      "required": true,
+      "linkId": "1",
+      "text": "Demografische Patientendaten",
+      "item": [
+        {
+          "type": "string",
+          "linkId": "1.1",
+          "text": "Vorname:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.name[0].given[0]",
+                "description": "erster Vorname im ersten Namen des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "linkId": "1.2",
+          "text": "Nachname:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.name[0].family",
+                "description": "Nachname im ersten Namen des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "linkId": "1.4",
+          "text": "Versichertennummer:",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').value",
+                "description": "Versichertennnummer(KVID) des Patienten"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

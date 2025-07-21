@@ -6,8 +6,8 @@ InstanceOf: Questionnaire
 * insert launchContext("patient", #Patient, "Patientenkontext")
 * title = "Vorbelegung Demografischer Daten"
 * description = "### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten 
-Der Patientenkontext wird mittels der [LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  
-Die Vorbelegung erfolgt über die [InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension"
+Der Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  
+Die Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension"
 
 * item[+]
   * type = #group
