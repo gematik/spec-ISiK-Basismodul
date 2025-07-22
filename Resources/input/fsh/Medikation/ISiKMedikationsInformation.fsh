@@ -88,8 +88,10 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * insert ISiKMedikament-CodingPZNComment
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * insert ISiKMedikament-CodingATCComment
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
   * text MS

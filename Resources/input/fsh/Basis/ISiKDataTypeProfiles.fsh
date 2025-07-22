@@ -60,7 +60,6 @@ Description: "Data Type profile for ATC Codings in ISiK"
 * system 1.. MS
 * code 1.. MS
 * display MS
-* insert ISiKMedikament-CodingATCComment
 
 Profile: ISiKPZNCoding
 Parent: CodingPZN
@@ -71,7 +70,6 @@ Description: "Data Type profile for ATC Codings in ISiK"
 * system 1.. MS
 * code 1.. MS
 * display MS
-* insert ISiKMedikament-CodingPZNComment
 
 Invariant: sct-version-de
 Description: "Die SnomedCT-Version muss einer deutschen Edition entsprechen"
