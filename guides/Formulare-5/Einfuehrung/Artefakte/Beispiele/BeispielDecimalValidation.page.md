@@ -48,7 +48,7 @@ select
     Text: text,
     Type: type,
     Validierung: for extension
-    select {URL[markdown]: '['  +url.replaceMatches('^.+/(?<name>[A-Za-z-]+)$', '${name}') + '](' + url +')', Wert: value | value.code}
+    select {Extension[markdown]: '['  +url.replaceMatches('^.+/(?<name>[A-Za-z-]+)$', '${name}') + '](' + url +')', Wert: value | value.code}
     }
 order by linkId
 with subheader
