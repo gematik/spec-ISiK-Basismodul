@@ -123,6 +123,11 @@ RuleSet: uunit(code)
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
   * valueCoding = $unitsofmeasure#{code}
 
+RuleSet: maxDecimalPlaces(integer)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+  * valueInteger = {integer}
+
 
 RuleSet: entryFormat(string)
 * extension[+]
