@@ -59,10 +59,10 @@ with subheader
 
 ### Quellcode
 <tabs>
-  <tab header="XML">
+  <tab title="XML">
   {{xml}}
   </tab>
-  <tab header = "JSON">
+  <tab title="JSON">
   {{json}}
   </tab>
 </tabs>  

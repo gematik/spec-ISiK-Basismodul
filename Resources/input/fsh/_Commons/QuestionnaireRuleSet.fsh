@@ -156,3 +156,12 @@ RuleSet: QuestionnaireExamplesMetadata(name)
 * status = #draft
 * experimental = false
 * publisher = "Gematik GmbH"
+
+RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
+* questionnaire = Canonical({questionnaire})
+* status = #final
+* modifierExtension[MDR-Relevant].valueCoding = https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS#none
+* subject = Reference({patient})
+* author = Reference({patient})
+* authored = "2025-01-01"
+

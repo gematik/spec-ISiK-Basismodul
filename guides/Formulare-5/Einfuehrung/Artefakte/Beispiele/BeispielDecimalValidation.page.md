@@ -4,7 +4,7 @@ canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDeci
 expand: 2
 ---
 
-## {{page-title}}
+## Questionnaire
 
 ### Metadaten
 <fql output="transpose">
@@ -56,10 +56,13 @@ with subheader
 
 ### Quellcode
 <tabs>
-  <tab header="XML">
+  <tab title="XML">
   {{xml}}
   </tab>
-  <tab header = "JSON">
+  <tab title="JSON">
   {{json}}
   </tab>
 </tabs>  
+
+## QuestionnaireResponse
+{{page:Einfuehrung/Artefakte/Beispiele/BeispielDecimalValidationResponse.page.md}}
