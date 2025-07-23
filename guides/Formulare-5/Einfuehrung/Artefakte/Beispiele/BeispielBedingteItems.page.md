@@ -40,7 +40,7 @@ from
     Questionnaire
 where
     url = %canonical
-for descendants().item
+for (item | descendants().item)
 select
 {
     ID: linkId,
