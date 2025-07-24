@@ -79,16 +79,16 @@ Datum: 26.02.2025
   * Zum Hintergrund der Entscheidungsfindung beachte [öffentliche Fragestellung und Diskussion](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BMED.5D.20Administration.2FVerabreichung.20-.20Date.20or.20Timestamp). 
 * `improve` Klarstellung zum Umgang mit Freitext-Dosierungsinformationen für empfangende Systeme https://github.com/gematik/spec-ISiK-Medikation/pull/155
 * `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
-* `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` `documentation` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
+* `improve` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
+* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
 * `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Medikation/pull/156/files 
 * `improve` MS für ISiKMedikationsVerordnung.reasonReference & reasonCode hinzugefügt, um diese Elemente über alle Medication-Ressourcen hinweg zu vereinheitlichen https://github.com/gematik/spec-ISiK-Medikation/pull/161
 * `improve` Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement https://github.com/gematik/spec-ISiK-Medikation/pull/140
 * `fix` Capability Statement Korrektur des Suchparameter-Typs und weitere Fixes für Beispiele  https://github.com/gematik/spec-ISiK-Medikation/pull/148
-* `improve` `documentation` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
-* `improve` `documentation` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
-* `improve` `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` `documentation` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 
+* `improve` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
+* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
+* `improve` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
+* `improve` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 
 
 ----
 
@@ -136,8 +136,8 @@ Datum: 04.04.2024
 Datum: 08.01.2024
 
 * workflow improvement regarding image rendering and display
-* `update` Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
-* `update` sentence on ISIKBasis Ressource usage by @f-peverali in https://github.com/gematik/spec-ISiK-Medikation/pull/103
+* `improve` Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
+* `improve` sentence on ISIKBasis Ressource usage by @f-peverali in https://github.com/gematik/spec-ISiK-Medikation/pull/103
 ----
 ## Version: 3.0.0
 
@@ -150,7 +150,7 @@ Datum: 01.07.2023
 
 Datum: 30.05.2023
 
-* `update` Update der Dependency auf das aktuelle ISiK Basismoduls (3.0.0-rc3)
+* `improve` Update der Dependency auf das aktuelle ISiK Basismoduls (3.0.0-rc3)
 
 ----
 ## Version: 3.0.0-rc

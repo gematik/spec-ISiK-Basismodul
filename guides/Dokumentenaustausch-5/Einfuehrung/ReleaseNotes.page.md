@@ -144,7 +144,7 @@ Datum: 27.03.2024
 * `clarification` Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
 * `improve` Klarstellung , dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
-* `update` Update Basis dependency to 3.0.4
+* `improve` Update Basis dependency to 3.0.4
 
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/compare/v3.0.1...v.3.0.2
 
@@ -154,7 +154,7 @@ Datum: 27.03.2024
 
 Datum: 05.01.2024
 
-* `update` Update Dependency zu Basismodul (Technical Correction 3.0.1)
+* `improve` Update Dependency zu Basismodul (Technical Correction 3.0.1)
 * Nutzung der ISiKBinary präzisiert und im CapabilityStatement entsprechend korrigiert: add CpS statement and reference regarding ISIK binary PTDATA-605 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/157
 * Anforderungen zur Nutzung der Ressourcen aus ISIK Basismodul präzisiert: Feature/ptdata 773 anforderungen anpassen basis ressourcen by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/163
 * rm all interaction on Encounter + Patient  in CpS by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/165
@@ -175,13 +175,13 @@ Datum: 01.07.2023
 Datum: 31.05.2023
 
 * Dokumentenmetadaten (DocumentReference): Kardinalität korrigiert zur Harmonisierung mit MHD
-  * `update` cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
+  * `improve` cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
 
 ## Version: 3.0.0-rc3
 
 Datum: 04.04.2023
 
-* `update` Update der Dependency auf Basismodul 3.0.0-rc2
+* `improve` Update der Dependency auf Basismodul 3.0.0-rc2
 
 ---
 

@@ -42,7 +42,7 @@ Datum: 09.04.2025
 
 Datum: 18.03.2025
 
-* `update` Update der CapabilityStatements
+* `improve` Update der CapabilityStatements
 * `improve` `change` feat: added ISiK-KoerperkernTemperatur Profile
   fix: integrated mii profiles into Vitalparameter Module, KoerperKernTemp Profiles of MII are now derived from ISiK-KoerperkernTemperatur
   fix: fixed several validation errors https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/203
@@ -63,7 +63,7 @@ Datum: 24.2.2025
 * `change` Entfernen der strengeren VS-Bindings auf Observation.code[snomed] für die einfachen Vitalsignsprofile, um alle relevanten SnomedCT Concepte aus der de.basisprofil.r4 hier verwenden zu können https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/200
 * Einführung der Datentypprofile für Coding Datentypen: ISiKCoding, ISiKSnomedCTCoding & ISiKLoincCoding aus dem ISiK Basisprofil-Modul https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/159  
 * `add` Fehlende ISO11073 Codes zu ValueSet `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_ISO11073 hinzugefügt https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/179 
-* `update` Update der Abhängigkeit zu den Basisprofilen auf Version 1.5.1 - https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195:
+* `improve` Update der Abhängigkeit zu den Basisprofilen auf Version 1.5.1 - https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195:
   * Einführung eines neuen, SnomedCT basierten, VS bindings für EKG-Ableitungen. Die bisher verwendeten LOINC Codes waren LP Codes, welche nicht zur Verwendung in Instanzen bestimmt sind. Die alten Codes sind weiterhin valide, aber per Slice als deprecated markiert.
   * Statt eines patterns für Observation.code werden die "magic-loinc-codes" nun per verpflichtendem Slice erzwungen.
 * `add` Fehlende Codes zu ValueSet hinzugefügt https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/175
@@ -97,7 +97,7 @@ Datum: 4.4.2024
 * Klärung datenuebernahme pdms kis by @patrick-werner in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154
 * `add` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
 * `add` Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 
-* `update` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
+* `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `add` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `add` Hinzufügen von MS für einzelne Components : https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138
 * `clarification` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile
@@ -118,7 +118,7 @@ Datum: 20.03.2024
 
 Datum: 05.01.2024
 
-* `update` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/141/commits/2d00c0a267756694cd86dd0866e8b0339f88d593)
+* `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/141/commits/2d00c0a267756694cd86dd0866e8b0339f88d593)
 * Klärung zur Nutzung der ISiK Basis Ressourcen: [update Datenobjekte Basis adoption](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/141/commits/a8654b840e8ef4d57722eac4873d19eac1267870)
 * `add` Hinzugefügt Unterstützende Use Cases und Information zu KIS als Client : https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154
 
@@ -150,7 +150,7 @@ Datum: 11.04.2023
 
 Datum: 24.03.2023
 
-* `update` example temperature + heartrate #102 by @f-peverali in <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasse/pull/104>
+* `improve` example temperature + heartrate #102 by @f-peverali in <https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasse/pull/104>
   * Änderungen an Beispielen
 
 ----

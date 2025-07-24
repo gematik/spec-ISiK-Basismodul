@@ -23,7 +23,7 @@ Datum: XX.XX.2025
 
 Datum: 26.06.2025
 * `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
-* `update` Hinzufügen der Definition von DKG und KIG der 'Bestätigungsrelevanten Systeme' für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
+* `improve` Hinzufügen der Definition von DKG und KIG der 'Bestätigungsrelevanten Systeme' für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
 * `improve` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
@@ -152,7 +152,7 @@ Datum: 4.4.2024
 * `add` Neue Profile für Lebenszustände - Schwangerschaftsstatus , SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378
   * `add` Hinzugefügt Lebenszustand markdown descriptions  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/379
 * `feature` Feature Ptdata 827 reha entlassung by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/393
-* `update` Update Deutsche Basisprofile v1.5.0 by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/372
+* `improve` Update Deutsche Basisprofile v1.5.0 by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/372
 * `improve` Verwende IdentifierAbrechnungsnummer aus den Deutschen Basisprofilen by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/381
 * `change` Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
 * `fix` Fix /canonical to new format by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/383
@@ -220,7 +220,7 @@ Datum: 05.12.2023
 
 Datum: 01.07.2023
 
-* `documentation` Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
+* `improve` Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
 
 ----
 ## Version: 3.0.0-rc3
@@ -228,16 +228,16 @@ Datum: 01.07.2023
 Datum: 30.05.2023
 
 * `change` Allgemein Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert
-  * `update` provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
+  * `improve` provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
 * `change` ISiKCapabilityStatementBasisServer Read Shall für Composition entfernt
   * `fix` capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
 * `improve` ISiKAbrechnungsfall   * Änderung des Kodierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
     * `improve` Enhancement /account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
-    * `update` Update /identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
+    * `improve` Update /identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
   * `change` Änderung der falschen Kardinalität
     * cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
   * `change` Nur der Patient als Subject zugelassen
-    * `update` Update /account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
+    * `improve` Update /account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
 * `add` ISiK Prozedur: MS für SNOMED-Codierung
   * `add` MS for SNOMED by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/239
 * `add` ISiKVersicherungsverhaeltnisSelbstzahler Organisation als zahlende Instanz hinzugefügt
@@ -245,7 +245,7 @@ Datum: 30.05.2023
 * `add` ISiK KontaktGesundheitseinrichtung: Suchparameter für Encounter.date start/end aus R5 übernommen
   * `feature` feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/242
 * `change` ISiKBerichtSubSysteme References generisch statt ISiK-spezifisch
-  * `update` Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
+  * `improve` Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
 
 ----
 ## Version: 3.0.0-rc2
@@ -336,8 +336,8 @@ Datum: 30.09.2022
 Datum: 30.06.2022
 
 * `fix` Allgemein     * Alle Conformance Ressourcen enthalten den Prefix "https://gematik.de/fhir/isik/v2/Basismodul/" in ihrer Canonical URL
-    * `documentation` Erweiterung des Abschnittes "Verpflichtende Suchparameter (Alle Datenobjekte)" durch _tag, , _count, _include, _revinclude
-    * `documentation` Best Practice Empfehlungen für Standard-Suchfilter hinzugefügt
+    * `improve` Erweiterung des Abschnittes "Verpflichtende Suchparameter (Alle Datenobjekte)" durch _tag, , _count, _include, _revinclude
+    * `improve` Best Practice Empfehlungen für Standard-Suchfilter hinzugefügt
     * `change` Verpflichtung type-Modifier auf Referenzen hinzugefügt
     * `change` Aufhebung der Einschränkung von Chaining und Reverse Chaining auf die Referenzen "patient", "subject" und "encounter"
     * `improve` Anpassung der Vorgaben für den "Self"-Link als Antwort auf eine Suchanfrage.

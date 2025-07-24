@@ -55,7 +55,7 @@ Datum: 09.04.2025
 
 Datum: 08.04.2025
 
-* `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
+* `improve` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
 * `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c
 
 
@@ -71,7 +71,7 @@ Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die
 * `improve` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248
 * `fix` Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264
 * `improve` Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266
-* `documentation` Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267
+* `improve` Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267
 * `fix` Anpassung Kardinalität Appointment.start/end https://github.com/gematik/spec-ISiK-Terminplanung/pull/260
 
 
@@ -91,7 +91,7 @@ Datum: 02.12.2024
  * Ergänzung von Anforderungen an Akteure https://github.com/gematik/spec-ISiK-Terminplanung/pull/236
  * `fix` Fix der Canonical URL im Capability-Statement des Terminplanungsserver https://github.com/gematik/spec-ISiK-Terminplanung/pull/238
  * `add` Hinzufügen der Extension "Appointment Replaces" zum Profil ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/242
- * `update` Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240
+ * `improve` Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240
 * `fix` Korrektur des Extension Kontext in ISiKKalender https://github.com/gematik/spec-ISiK-Terminplanung/pull/239
 * Aktualisierung der Operation ISiKBookOperation https://github.com/gematik/spec-ISiK-Terminplanung/pull/245
 
@@ -111,7 +111,7 @@ Datum: 26.6.2024
 
 * `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187 
 * Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
-* `update` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
+* `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
 * `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
 * `change` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193
 
@@ -122,7 +122,7 @@ Datum: 26.6.2024
 Datum: 4.4.2024
 
 * `add` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178
-* `update` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174
+* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174
 * `add` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175
 * Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173
 * `improve` Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können
@@ -148,7 +148,7 @@ Datum: 25.3.2024
 * Präzisieren der Suchparameter-Anforderungen für Slot : https://github.com/gematik/spec-ISiK-Terminplanung/pull/168
 * Präzisieren der Anforderungen für Encounter: https://github.com/gematik/spec-ISiK-Terminplanung/commit/d596744d910fd39b421fc7f6f97f73edf471d47a 
 * Präzisierung informativ zu ISiKMedizinischeBehandlungseinheit (HealthcareService) https://github.com/gematik/spec-ISiK-Terminplanung/pull/176
-* `update` Update Dependency des Basismoduls auf 3.0.4
+* `improve` Update Dependency des Basismoduls auf 3.0.4
 
 ----
 
@@ -156,7 +156,7 @@ Datum: 25.3.2024
 
 Datum: 03.01.2024
 
-* `update` Update ISiK Basismodul Dependency -> 3.0.1
+* `improve` Update ISiK Basismodul Dependency -> 3.0.1
 * Klärung zur Verwendung der Binary: add link for clarification by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/156
 * `fix` CapabilityStatement Anforderungen entsprechend angepasst: fix CpS Encounter Read and Search interaction by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/154
 * Klärung zur Verwendung der Ressourcen aus dem Basismodul: Feature/ptdata 723 update interactions by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/158
@@ -205,7 +205,7 @@ Datum: 31.05.2023
   * Die Änderung zu Appointment.specialty wurde um eine textuelle Vorgabe zum MS ergänzt
     * `add` MS + textual constraint #72 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/91
 * Operations statt eines Bundle reicht als Return-Wert ein Appointment
-  * `update` return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
+  * `improve` return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
 
 ----
 ## Version: 3.0.0-rc1
