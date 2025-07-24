@@ -20,7 +20,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^short = "Therapieart der Medikation"
   * ^comment = "Begründung des Must-Support: von der Fachseite gewünschte Angabe
 
-  Hinweis: Angabe Akut- oder Dauermedikation."
+  Hinweis: Angabe Akut- oder Dauermedikation." 
   * valueCoding
     * system MS
     * code MS
@@ -41,7 +41,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
     * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
-  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
+  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
+  
+  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.
+  "
 * intent MS
   * ^short = "Ziel der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
