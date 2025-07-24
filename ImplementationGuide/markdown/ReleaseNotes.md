@@ -50,16 +50,16 @@ Version: 3.0.0-rc4
 
 Datum: 01.06.2023
 
-* Die über die Interaktion mit dem Ressourcen-Server hinausgehenden Teile von ISiK-Sicherheit aus ISiK Stufe 2 wurden als informative Erläuterungen wieder hinzugefügt. Hersteller oder Krankenhäuser, die _SMART on FHIR_ vollständig umsetzen wollen, erhalten so Hinweise, wie dieses kongruent zu den sonstigen ISiK-Vorgaben möglich ist.
+* `add` Die über die Interaktion mit dem Ressourcen-Server hinausgehenden Teile von ISiK-Sicherheit aus ISiK Stufe 2 wurden als informative Erläuterungen wieder hinzugefügt. Hersteller oder Krankenhäuser, die _SMART on FHIR_ vollständig umsetzen wollen, erhalten so Hinweise, wie dieses kongruent zu den sonstigen ISiK-Vorgaben möglich ist.
 * Die Hinweise zu einem break-the-glass-Szenario wurden gestrichen, da hier die regulativen Rahmenbedingungen in Deutschland deutlich von den Annahmen in den referenzierten, auf das amerikanische Gesundheitssystem fokussierenden Quellen abweichen.
-* Hinweis auf den Aufrufparameter "ISS_IDP" hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.
+* `clarification` Hinweis auf den Aufrufparameter "ISS_IDP" hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.
 
 ----
 Version: 3.0.0-rc3
 
 Datum: 25.04.2023
 
-* ReleaseNotes added
+* `add` ReleaseNotes added
 
 ----
 Version: 3.0.0-rc2

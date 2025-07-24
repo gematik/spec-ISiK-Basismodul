@@ -118,12 +118,12 @@ Version: 4.0.0-rc
 Datum: 04.04.2024
 
 * 10 neue Beispiele und Prosa zu Rezepturen, Verordnung, Verabreichung, Abgabezyklus, Darreichungsformen und nicht-trivialen Kombinationen
-* Neue Übergreifender Use Case AMTS, inklusive mini-IG und Auszügen aus IOP-Arbeitskreis. Dieser Übergreifende USe Case nutzt auch (insbesondere) weitere neue Profile aus der Basis und dem Support-Modul Labor
+* `add` Neue Übergreifender Use Case AMTS, inklusive mini-IG und Auszügen aus IOP-Arbeitskreis. Dieser Übergreifende USe Case nutzt auch (insbesondere) weitere neue Profile aus der Basis und dem Support-Modul Labor
   * Diagnose aus Basis (ISiKAllergieUnvertraeglichkeit, chr. Krankheit wie Parkinson, usw.)
   * Observation aus Basis (Schwangerschaft, AlkoholAbusus usw.)
   * Observation aus Labor oder Vital (SerumKreatinin, GFR, Blutbild, Gewicht usw.)
-* Neues Profil ISiKAMTSBewertung
-* Neues Extensions: 
+* `add` Neues Profil ISiKAMTSBewertung
+* `add` Neues Extensions: 
   * MedikationsArt in Form von Akut & Dauer
   * Selbstmedikation   * Behandlungsziel   * Replaces als Ersatz-Verordnung
   * AcceptedRisk im Zuge einer AMTS-Bewertung
@@ -136,7 +136,7 @@ Datum: 04.04.2024
 Datum: 08.01.2024
 
 * workflow improvement regarding image rendering and display
-* Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
+* `update` Update dependency with Basis:  https://github.com/gematik/spec-ISiK-Medikation/pull/102/commits/039654b03d5b159ed258c35b48c37cd2db3e4a81
 * `update` sentence on ISIKBasis Ressource usage by @f-peverali in https://github.com/gematik/spec-ISiK-Medikation/pull/103
 ----
 ## Version: 3.0.0
@@ -150,7 +150,7 @@ Datum: 01.07.2023
 
 Datum: 30.05.2023
 
-* Update der Dependency auf das aktuelle ISiK Basismoduls (3.0.0-rc3)
+* `update` Update der Dependency auf das aktuelle ISiK Basismoduls (3.0.0-rc3)
 
 ----
 ## Version: 3.0.0-rc
