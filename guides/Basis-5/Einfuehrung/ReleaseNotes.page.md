@@ -235,7 +235,7 @@ Datum: 30.05.2023
     * `improve` Enhancement /account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
     * `update` Update /identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
   * `change` Änderung der falschen Kardinalität
-    * `fix` cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
+    * cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
   * `change` Nur der Patient als Subject zugelassen
     * `update` Update /account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
 * `add` ISiK Prozedur: MS für SNOMED-Codierung
@@ -252,7 +252,7 @@ Datum: 30.05.2023
 
 Datum: 03.04.2023
 
-* KontaktGesundheitseinrichtung SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene "period" zu ermöglichen
+* `add` KontaktGesundheitseinrichtung SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene "period" zu ermöglichen
   * feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/242>
 
 ----
@@ -274,7 +274,7 @@ Datum: 24.03.2023
 
 - Änderungen am IG
   - Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country
-  - Einschränkung der Umsetzungspflicht für Suchparameter vom Typ "Token" auf Datentypen "code", "Coding" oder "CodeableConcept"
+  - `change` Einschränkung der Umsetzungspflicht für Suchparameter vom Typ "Token" auf Datentypen "code", "Coding" oder "CodeableConcept"
 - ISiKBerichtBundle   - Slicing -Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung 
 - ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
   - Fixed identifier-Slicing of Type VersichertenId-GKV
@@ -313,9 +313,9 @@ Datum: 31.10.2022
 - Prozedur   - ```id``` ist nun 0..1
 - Versicherungeverhältnis Gesetzlich
   - ```id``` ist nun 0..1
-  - ```type.coding``` ist nun Must Support
+  - `change` ```type.coding``` ist nun Must Support
   - ```VersicherungsArtDeBasis``` ist nun Must Support
-- Invarianten wurden verbessert
+- `improve` Invarianten wurden verbessert
 
 ----
 ## Version: 2.0.1

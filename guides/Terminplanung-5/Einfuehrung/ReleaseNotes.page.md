@@ -82,9 +82,9 @@ Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die
 
 Datum: 02.12.2024
 
-* Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207
-* Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
-* Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204
+* `improve` Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207
+* `improve` Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
+* `change` Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204
 * Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206
 * Anforderungen an die Kodierung von Appointment/Schedule.serviceType geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/227
 * `improve` Schwächung der Kardinalität von actor.display im Profil StructureDefinition-ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/233
