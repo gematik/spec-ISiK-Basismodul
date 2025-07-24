@@ -28,7 +28,7 @@ Description: "A document style representation of the receipt (complete, self-con
 * entry[Patient].resource only Patient
 * entry contains Encounter 0..1 MS
   * ^short = "Slice zur Hinterlegung einer Encounter-Instanz"
-  * ^comment = "Dieses Slice ist optional, aber wenn es vorhanden ist, muss es genau eine Encounter-Instanz sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
+  * ^comment = "Dieses Slice ist optional, aber wenn es vorhanden ist, muss genau eine Encounter-Instanz enthalten sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
   dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz."
 * entry[Encounter].resource only Encounter
 
