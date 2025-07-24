@@ -297,7 +297,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location ^slicing.rules = #open
 * location 
   * ^short = "Aufenthaltsorte des Patienten"
-  * location ^comment = """
+  * ^comment = """
   Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
   Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
   Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
