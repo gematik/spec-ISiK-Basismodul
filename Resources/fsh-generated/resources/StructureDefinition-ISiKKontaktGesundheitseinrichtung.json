@@ -702,6 +702,7 @@
           "rules": "open"
         },
         "short": "Aufenthaltsorte des Patienten",
+        "comment": "Hinweise zur Einschränkung von Encounter.location.status auf \"active\" zu Abbildung des aktuellen Aufenthaltortes des Patienten\nDie Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.\nDiese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.\n\nGleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  \nDamit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird.",
         "mustSupport": true
       },
       {
@@ -751,6 +752,7 @@
         "id": "Encounter.location:Zimmer.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
         "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -842,6 +844,7 @@
         "id": "Encounter.location:Bettenstellplatz.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
         "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -935,6 +938,7 @@
         "id": "Encounter.location:Station.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
         "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
