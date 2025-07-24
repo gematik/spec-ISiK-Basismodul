@@ -136,12 +136,12 @@ Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in 
 
 Datum: 27.03.2024
 
-* `clarification` Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
-* `clarification` Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
+* `improve` Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
+* `improve` Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
   * `fix` Fix /versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
-* `clarification` Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
-  * `clarification` Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
-* `clarification` Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
+* `improve` Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
+  * `improve` Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
+* `improve` Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
 * `improve` Klarstellung , dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
 * `improve` Update Basis dependency to 3.0.4

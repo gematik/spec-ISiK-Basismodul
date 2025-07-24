@@ -126,9 +126,9 @@ Datum: 4.4.2024
 * `add` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175
 * Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173
 * `improve` Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können
-  * `clarification` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
+  * `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
 * Präzisierung book-Operation https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
-* `clarification` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144
 * `fix` Fix CpS by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/179
 * `improve` Klarstellung cancelled-appt-id by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
 
@@ -179,7 +179,7 @@ Mit dem Release der Stufe 3.0.1 werden die unten gelisteten Änderungen normativ
 * Verwendung realistische Dauer für einen Slot in den Beispielen by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/137
 * Angleichung der Regeln zu meta.tag in Appointments by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/136
 * `fix` Fix HTTP return code by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/131
-* `clarification` Hinweis zur Abfrage von Behandlungsleistungen hinzugefügt by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/139
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen hinzugefügt by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/139
 * BookOperation Anforderung von KANN zu SOLLTE by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/143
 * Austausch der Communication/Binary-Ressourcen genauer beschrieben by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/140
 * `improve` Enhancement Appointment and Slot reference MS by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/133
@@ -203,9 +203,9 @@ Datum: 31.05.2023
   * Mehrere Slots müssen nicht mehr  ein und denselben Schedule referenzieren
     * rm cosntraint: allow different Schedules #82 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/92
   * Die Änderung zu Appointment.specialty wurde um eine textuelle Vorgabe zum MS ergänzt
-    * `add` MS + textual constraint #72 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/91
+    * MS + textual constraint #72 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/91
 * Operations statt eines Bundle reicht als Return-Wert ein Appointment
-  * `improve` return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
+  * return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
 
 ----
 ## Version: 3.0.0-rc1
