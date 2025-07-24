@@ -315,7 +315,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -349,7 +349,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -383,7 +383,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
