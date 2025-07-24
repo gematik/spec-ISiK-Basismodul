@@ -31,12 +31,12 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `added`: Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
-* `improved` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718
-* `added`: Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
-* `improve`: Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
-* `improve`: Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739
-* `improve`: Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Basismodul/pull/756/files
+* `add` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
+* `improve` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718
+* `add` Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
+* `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
+* `improve` Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739
+* `improve` Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Basismodul/pull/756/files
 
 
 ----
@@ -44,16 +44,16 @@ Datum: 5.6.2025
 ## Version 5.0.0-rc1
 Datum: 13.05.2025
 
-* `improved`: Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
+* `improve` Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
   erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
   nicht benötigt werden
-* `changed`: Für die menschenlesbare Bezeichnung des Dokuments ist das Element
+* `change` Für die menschenlesbare Bezeichnung des Dokuments ist das Element
   `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description`
   entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen
   sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title`
   angeben. https://github.com/gematik/spec-ISiK-Basismodul/pull/686
-    * `content.attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen.
-    * `DocumentReference.description` wurde auf 0..1 MS gesetzt, und kann weiterhin verwendet werden,
+    * content .attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen.
+    * DocumentReference .description` wurde auf 0..1 MS gesetzt, und kann weiterhin verwendet werden,
       um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare
       bereitzustellen.
 
@@ -64,11 +64,11 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `added`: Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
-* `added`: Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582
+* `add` Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582
+* `add` Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582
     * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen
 
-* `fixed`: Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
+* `fix` Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
 https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F
 
@@ -86,20 +86,20 @@ Datum: 19.3.2025
 
 Datum: 24.01.2025
 
-* `improved`: Übertragung der Dokumentation in die FHIR-Resourcen, Refactoring des ImplementationGuides https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/211
-* `fixed`: Update der der dependency de.ihe-d.terminology von 3.0.0 -> 3.0.1 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/212 - Begründung: de.ihe-d.terminology#3.0.0 war defekt: ValueSets in XML abgelegt. Inhaltlich keine Änderung
-* `fixed`: Fehlende Kennzeichnung von MS-Elementen im Bundle-Profil
+* `improve` Übertragung der Dokumentation in die FHIR-Resourcen, Refactoring des ImplementationGuides https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/211
+* `fix` Update der der dependency de.ihe-d.terminology von 3.0.0 -> 3.0.1 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/212 - Begründung de.ihe-d.terminology#3.0.0 war defekt: ValueSets in XML abgelegt. Inhaltlich keine Änderung
+* `fix` Fehlende Kennzeichnung von MS-Elementen im Bundle-Profil
 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/210
-* `fixed`: Binary-URL zeigt noch auf Basis V3
+* `fix` Binary-URL zeigt noch auf Basis V3
 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
-* `fixed`: Operations hängen im CapabilityStatement am falschen Branch
+* `fix` Operations hängen im CapabilityStatement am falschen Branch
 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
-* `fixed`: Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/213
-* `improved`: Link zum GitHub Archiv des Moduls wurde in der README ergänzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/209
-* `improved`: Update der validation pipeline Versionen https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/214
-* `fixed`: Beispiel für Dokumentensurchergebnisse wurde gefixt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/217
-* `fixed`: OPD-0 Warnung in OperationUpdateMetadata https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/218
-* `fixed`: Hinzufügen der Wildcard dependency für die Basismodul dependency https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/221
+* `fix` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/213
+* `improve` Link zum GitHub Archiv des Moduls wurde in der README ergänzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/209
+* `improve` Update der validation pipeline Versionen https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/214
+* `fix` Beispiel für Dokumentensurchergebnisse wurde gefixt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/217
+* `fix` OPD-0 Warnung in OperationUpdateMetadata https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/218
+* `fix` Hinzufügen der Wildcard dependency für die Basismodul dependency https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/221
 
 
 
@@ -109,8 +109,8 @@ https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
 
 Datum: 09.09.2024
 
-* fix IHEXDStypeCode Canonical-URL (entspricht TC 3.0.3) https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/198
-* add patternCoding by @f-peverali (entspricht TC 3.0.3) https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/198
+* `fix` IHEXDStypeCode Canonical-URL (entspricht TC 3.0.3) https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/198
+* `add` patternCoding by @f-peverali (entspricht TC 3.0.3) https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/198
 * Fix der XDS Slices für .type und .category (entspricht TC 3.0.3) https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/198
 
 ----
@@ -138,11 +138,11 @@ Datum: 27.03.2024
 
 * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
 * Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
-  * Fix/versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
+  * Fix /versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
 * Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
   * Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
 * Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
-* Klarstellung, dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
+* Klarstellung , dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
 * Update Basis dependency to 3.0.4
 
@@ -175,7 +175,7 @@ Datum: 01.07.2023
 Datum: 31.05.2023
 
 * Dokumentenmetadaten (DocumentReference): Kardinalität korrigiert zur Harmonisierung mit MHD
-  * update cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
+  * `update` cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
 
 ## Version: 3.0.0-rc3
 
@@ -188,7 +188,7 @@ Datum: 04.04.2023
 ## Version: 3.0.0-rc2
 
 Datum: 31.01.2023
-- Status-Korrektur: "draft"
+- Status -Korrektur: "draft"
 - Dependency update auf ISiK Basis-Version 2.0.4
 - weitere Änderungen an Implementierungsleitfaden (informativ)
 ---

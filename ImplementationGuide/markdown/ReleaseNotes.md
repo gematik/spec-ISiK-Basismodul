@@ -28,7 +28,7 @@ Datum: 13.05.2025
 
 Datum: 09.04.2025
 
-* `changed` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
+* `change` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
 * `feature` Abschnitt zu Backend-Services hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459
 
 ----
@@ -70,10 +70,10 @@ Wesentliche Änderungen gegenüber der Version 2.0.1 sind in folgendem Pull-Requ
 * Jca_smart_light by @jcaumann in https://github.com/gematik/spec-ISiK-Sicherheit/pull/46
 
 Die Änderungen sind folgende:
-*	Für ISIK Stufe 2 waren insbesondere EHR/KIS als bestätigungsrelevante Systeme definiert; in ISiK Stufe 3 sind nur noch Ressourcen-Server für ISiK-Security bestätigungsrelevant. Die Motivationen für diese stärkere Fokussierung sind die dadurch konsistentere Fortschreibung von ISiK-Basis sowie die fehlenden Rückmeldungen aus dem ISiK-2-Kommentierungsverfahren zu dem ISiK Stufe 2 zugrunde liegenden Plattformkonzept von _SMART on FHIR_. 
+* Für ISIK Stufe 2 waren insbesondere EHR/KIS als bestätigungsrelevante Systeme definiert; in ISiK Stufe 3 sind nur noch Ressourcen-Server für ISiK-Security bestätigungsrelevant. Die Motivationen für diese stärkere Fokussierung sind die dadurch konsistentere Fortschreibung von ISiK-Basis sowie die fehlenden Rückmeldungen aus dem ISiK-2-Kommentierungsverfahren zu dem ISiK Stufe 2 zugrunde liegenden Plattformkonzept von _SMART on FHIR_. 
 * ISiK Security in ISiK Stufe 3 stellt einen Bezug zwischen SMART Kontexten und FHIR Compartment-Definitionen her. ISiK-Ressourcen-Server müssen die Zugehörigkeit einer angefragten Ressource zu einem Kontext durch Abgleich mit der passenden _CompartmentDefinition_ sicherstellen. 
-*	Die verpflichtenden Vorgaben zu den Inhalten der _SMART Configuration_ wurden in ISiK-Sicherheit in ISiK Stufe 3 auf die Elemente reduziert, die unmittelbar aus dem OAuth2-Standard abgeleitete Informationen betreffen und für einen interoperablen Austausch von Informationen zu den an den Client delegierten Berechtigungen erforderlich sind. Allein für einen _SMART App Launch_ relevante Elemente sind zunächst lediglich optional.
-*	Für die Kodierung der _Scopes_ wurde in ISiK Stufe 2 die Unterstützung der SMART-on-FHIR-Syntax in den Versionen 1 und 2 verpflichtend vorgegeben. In Stufe 3 ist nur noch die v2-Syntax verpflichtend. Hiermit sollen Deployments vereinfacht werden, bei denen die Durchsetzung der (delegierten) Berechtigungen über ein vorgelagertes API-Gateway bzw.- einen Reverse Proxy erfolgt.
+* Die verpflichtenden Vorgaben zu den Inhalten der _SMART Configuration_ wurden in ISiK-Sicherheit in ISiK Stufe 3 auf die Elemente reduziert, die unmittelbar aus dem OAuth2-Standard abgeleitete Informationen betreffen und für einen interoperablen Austausch von Informationen zu den an den Client delegierten Berechtigungen erforderlich sind. Allein für einen _SMART App Launch_ relevante Elemente sind zunächst lediglich optional.
+* Für die Kodierung der _Scopes_ wurde in ISiK Stufe 2 die Unterstützung der SMART-on-FHIR-Syntax in den Versionen 1 und 2 verpflichtend vorgegeben. In Stufe 3 ist nur noch die v2-Syntax verpflichtend. Hiermit sollen Deployments vereinfacht werden, bei denen die Durchsetzung der (delegierten) Berechtigungen über ein vorgelagertes API-Gateway bzw.- einen Reverse Proxy erfolgt.
 
 
 ----

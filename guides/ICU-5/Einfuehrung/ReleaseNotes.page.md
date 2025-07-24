@@ -23,7 +23,7 @@ Datum: tbd
 
 Datum: 26.06.2025
 
-* `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
+* `improve` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -45,7 +45,7 @@ Datum: 09.04.2025
 
 Datum: 26.2.2025
 
-* `improved` Ausarbeitung des Workflows als eigenständiger ImplementationGuide, u.a. Anpassung der Akteurs-Namen und CapabilityStatements
+* `improve` Ausarbeitung des Workflows als eigenständiger ImplementationGuide, u.a. Anpassung der Akteurs-Namen und CapabilityStatements
 
 
 Die Profile befinden sich im [Package 4.0.1 Vitalparameter](https://simplifier.net/feeds/public/packages/de.gematik.isik-vitalparameter/4.0.1).
@@ -56,4 +56,4 @@ Die Profile befinden sich im [Package 4.0.1 Vitalparameter](https://simplifier.n
 
 Datum: 25.2.2025
 
-* `improved` Refactoring des Workflows als eigenständiger ImplementationGuide
+* `improve` Refactoring des Workflows als eigenständiger ImplementationGuide

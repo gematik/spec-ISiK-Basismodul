@@ -25,12 +25,12 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-- `improve`: Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
-- `change`: Die Mindestkardinalität für den SCT-Slice in ISiKLaboruntersuchung wurde von 1 auf 0
+- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
+- `change` Die Mindestkardinalität für den SCT-Slice in ISiKLaboruntersuchung wurde von 1 auf 0
   reduziert. Das Pattern auf code.coding[snomed].system wurde entfernt um Mehrfachkodierungen in
   SnomedCT nicht zu verhindern. https://github.com/gematik/spec-ISiK-Basismodul/pull/730
-- `improve`: Einschränkung des MS-Flag auf .specimen und .method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
-- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files 
+- `improve` Einschränkung des MS-Flag auf .specimen und .method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
+- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files
 
 
 ---
