@@ -262,7 +262,7 @@ Datum: 31.03.2023
 
 * `improve` ISiKAbrechnungsfall Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release
   * Enhancement /account identifier by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/238>
-* ISiKProzedur SNOMED-Kodierung auf Must Support gesetzt
+* `change` ISiKProzedur SNOMED-Kodierung auf Must Support gesetzt
   * MS for SNOMED by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/239>
 * `add` ISiKVersicherungsverhaeltnisSelbstzahler Organisation als möglicher 'payor' hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
   * organization as payor by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/236>
