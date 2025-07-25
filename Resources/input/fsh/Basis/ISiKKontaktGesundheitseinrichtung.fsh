@@ -297,6 +297,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location ^slicing.rules = #open
 * location 
   * ^short = "Aufenthaltsorte des Patienten"
+  * ^comment = """
+  Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
+  Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
+  Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
+
+  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird.
+  """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
@@ -315,7 +323,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -349,7 +357,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -383,7 +391,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -557,7 +565,12 @@ Usage: #example
 * location[2].location.identifier.value = "1234"
 * location[2].location.display = "Ward 1234"
 * location[2].status = #active
-* location[2].physicalType = $LocationPhysicalType#wa "Ward"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationid"
+* location[=].location.identifier.value = "56789"
+* location[=].location.display = "Ward 56789"
+* location[=].status = #completed
+* location[=].physicalType = $LocationPhysicalType#wa "Ward"
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "ORTHO-1234"
 * serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"
