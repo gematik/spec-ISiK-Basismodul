@@ -279,7 +279,7 @@ Usage: #example
 * status = #active
 
 Instance: ExampleISiKMedikament7
-InstanceOf: ISiKMedik
+InstanceOf: ISiKMedikament
 * text
   * status = #additional
   * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikament (hier: Paracetamol) in Wasser aufgelöst</div>"""
