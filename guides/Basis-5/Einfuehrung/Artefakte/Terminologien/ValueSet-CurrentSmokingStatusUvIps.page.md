@@ -1,5 +1,5 @@
 ---
-canonical: https://gematik.de/fhir/isik/ValueSet/CurrentSmokingStatusUvIps
+canonical: https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips
 ---
 
 ## {{link}}
