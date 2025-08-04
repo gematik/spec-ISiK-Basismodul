@@ -66,6 +66,13 @@ Usage: #definition
       * name = "_id"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/RiskAssessment?_id=103270`
+
+    **Anwendungshinweise:** Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -73,6 +80,13 @@ Usage: #definition
       * name = "date"
       * definition = "http://hl7.org/fhir/SearchParameter/conformance-date"
       * type = #date
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/RiskAssessment?date=2022-03-21`
+
+    **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -80,6 +94,13 @@ Usage: #definition
       * name = "encounter"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/RiskAssessment?encounter=Encounter/123`
+
+    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -87,6 +108,13 @@ Usage: #definition
       * name = "patient"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/RiskAssessment?patient=Patient/123`
+
+    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -94,6 +122,13 @@ Usage: #definition
       * name = "risk"
       * definition = "http://hl7.org/fhir/SearchParameter/RiskAssessment-risk"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/RiskAssessment?risk=http://terminology.hl7.org/CodeSystem/risk-probability|high`
+
+    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+
+        "
   * interaction[+]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -235,6 +270,11 @@ Usage: #definition
       * name = "code"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+    **Anwendungshinweise**: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token)."
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
