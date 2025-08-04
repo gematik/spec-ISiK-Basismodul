@@ -84,7 +84,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/RiskAssessment?date=2022-03-21`
 
-      **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
 
         "
     * searchParam[+]
@@ -98,7 +98,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/RiskAssessment?encounter=Encounter/123`
 
-      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -112,7 +112,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/RiskAssessment?patient=Patient/123`
 
-      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -126,7 +126,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/RiskAssessment?risk=http://terminology.hl7.org/CodeSystem/risk-probability|high`
 
-      **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
         "
   * interaction[+]
@@ -274,7 +274,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
 
-      **Anwendungshinweise**: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token)."
+        **Anwendungshinweise**: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token)."
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
