@@ -74,7 +74,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?_id=103270`
 
-        **Anwendungshinweise:** Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
 
         "
     * searchParam[+]
