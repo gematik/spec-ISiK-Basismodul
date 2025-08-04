@@ -27,7 +27,7 @@ This script performs quality assurance checks on Markdown documentation by valid
 This script automatically extracts requirement identifiers (ANF-CON-XXX patterns) from Markdown files and generates a requirements table. It scans the `ImplementationGuide/markdown` directory, finds all unique requirement IDs, and creates a Markdown table with pagelinks for navigation.
 
 ### Status
-**Active** - Fully functional but is not using the new folder structure, where the HTML files are in the `guides`-folder
+**Draft** - Fully functional but is not using the new folder structure, where the HTML files are in the `guides`-folder
 
 ### Hints for Using the Script
 - Run from the repository root directory
