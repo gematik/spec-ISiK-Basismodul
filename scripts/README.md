@@ -106,7 +106,7 @@ This directory contains advanced quality assurance tools for FHIR profiles and r
 - **README-QS.md**: Documentation for quality assurance features
 
 ### Status
-**Active** - Comprehensive QA system for FHIR validation
+**Draft** - Comprehensive QA system for FHIR validation
 
 ### Hints for Using the Script
 - The main script is `qa-fhir.js` (Node.js required)
