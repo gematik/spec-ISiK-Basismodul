@@ -33,7 +33,7 @@ This is the primary CI/CD workflow that handles FHIR validation and resource gen
 Runs comprehensive FHIR quality control checks using the Node.js quality assurance script. This workflow validates FHIR StructureDefinition files against best practices and generates detailed quality reports.
 
 ### Status
-**Active** - Quality assurance for FHIR profiles
+**Draft** - Quality assurance for FHIR profiles
 
 ### Hints for Using the Workflow
 - Manual trigger only (workflow_dispatch)
