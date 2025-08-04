@@ -74,7 +74,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?_id=103270`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
         "
     * searchParam[+]
@@ -88,7 +88,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?authoredon=2022-03-21`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
 
         "
     * searchParam[+]
@@ -102,7 +102,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
         "
     * searchParam[+]
@@ -116,7 +116,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?date=2022-03-23`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date"](https://hl7.org/fhir/R4/search.html#date).
 
         "
     * searchParam[+]
@@ -130,7 +130,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?encounter=Encounter/123`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -144,7 +144,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?intent=order`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
         "
     * searchParam[+]
@@ -158,7 +158,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?medication=Medication/123`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -172,7 +172,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?patient=Patient/123`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -186,7 +186,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?requester=Practitioner/101112`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
         "
     * searchParam[+]
@@ -200,7 +200,7 @@ Usage: #definition
         "**Beispiel:**  
         `GET [base]/MedicationRequest?status=active`
 
-    **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
+      **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
         "
   * interaction[0]
