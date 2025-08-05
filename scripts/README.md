@@ -11,9 +11,6 @@ This script performs quality assurance checks on Markdown documentation by valid
 - Markdown files have corresponding topic frontmatter
 - Special handling for CapabilityStatements and .page.md references
 
-### Status
-**Active** - This script is fully functional and used for quality assurance
-
 ### Hints for Using the Script
 - Run from the repository root directory
 - The script automatically searches all Markdown files in the `/guides` directory and subdirectories
@@ -26,9 +23,6 @@ This script performs quality assurance checks on Markdown documentation by valid
 ### Purpose/Functionality
 This script automatically extracts requirement identifiers (ANF-CON-XXX patterns) from Markdown files and generates a requirements table. It scans the `ImplementationGuide/markdown` directory, finds all unique requirement IDs, and creates a Markdown table with pagelinks for navigation.
 
-### Status
-**Draft** - Fully functional but is not using the new folder structure, where the HTML files are in the `guides`-folder
-
 ### Hints for Using the Script
 - Run from the repository root directory
 - Excludes `Anforderungsuebersicht.md` from scanning to avoid circular references
@@ -40,9 +34,6 @@ This script automatically extracts requirement identifiers (ANF-CON-XXX patterns
 
 ### Purpose/Functionality
 This script automates the release process by updating version numbers and dates across multiple files in the repository. It uses configuration from `config.yaml` to determine which files to update and what patterns to match for version and date replacements.
-
-### Status
-**Active** - Used for release management
 
 ### Hints for Using the Script
 - Requires `config.yaml` configuration file in the same directory
@@ -57,9 +48,6 @@ This script automates the release process by updating version numbers and dates 
 ### Purpose/Functionality
 This script automatically updates the GitHub Actions workflow configuration with the latest versions of Firely Terminal and SUSHI tools. It fetches the latest release versions from their respective GitHub repositories and updates the `main.yml` workflow file.
 
-### Status
-**Active** - Used for keeping CI/CD tools up to date
-
 ### Hints for Using the Script
 - Requires internet connection to access GitHub API
 - Updates `.github/workflows/main.yml` with latest tool versions
@@ -72,9 +60,6 @@ This script automatically updates the GitHub Actions workflow configuration with
 ### Purpose/Functionality
 Configuration file for the `release_publish.py` script. Defines file patterns, regex expressions, and format specifications for version and date updates across different file types.
 
-### Status
-**Active** - Configuration file used by release scripts
-
 ### Hints for Using the Script
 - Not executable - this is a configuration file
 - Modify this file to add new files or change update patterns for releases
@@ -86,9 +71,6 @@ Configuration file for the `release_publish.py` script. Defines file patterns, r
 
 ### Purpose/Functionality
 This script identifies and highlights duplicate ANF-CON requirement tags in Markdown files. It's specifically designed for the ISiK Connect Implementation Guide to ensure requirement identifiers are unique.
-
-### Status
-**Active** - Used for quality assurance
 
 ### Hints for Using the Script
 - Written in Python despite the filename lacking extension
@@ -105,9 +87,6 @@ This directory contains advanced quality assurance tools for FHIR profiles and r
 - **suppression.config.json**: Configuration for suppressing specific quality checks
 - **README-QS.md**: Documentation for quality assurance features
 
-### Status
-**Draft** - Comprehensive QA system for FHIR validation
-
 ### Hints for Using the Script
 - The main script is `qa-fhir.js` (Node.js required)
 - Checks for MustSupport elements having proper documentation
@@ -121,9 +100,6 @@ This directory contains advanced quality assurance tools for FHIR profiles and r
 
 ### Purpose/Functionality
 Directory containing output files and logs from the rendering check processes, specifically from the `check_rendering_in_markdown.py` script.
-
-### Status
-**Active** - Output directory for rendering validation
 
 ### Hints for Using the Script
 - This is an output directory, not an executable script

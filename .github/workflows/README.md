@@ -14,8 +14,6 @@ This is the primary CI/CD workflow that handles FHIR validation and resource gen
 - Validates resource status consistency
 - Auto-commits generated FHIR resources back to the repository
 
-### Status
-**Active** - Core CI/CD pipeline for FHIR validation
 
 ### Hints for Using the Workflow
 - Triggers on push to paths: `Resources/**` and `.github/workflows/**` (excluding main branches)
@@ -32,7 +30,6 @@ This is the primary CI/CD workflow that handles FHIR validation and resource gen
 ### Purpose/Functionality
 Runs comprehensive FHIR quality control checks using the Node.js quality assurance script. This workflow validates FHIR StructureDefinition files against best practices and generates detailed quality reports.
 
-
 ### Hints for Using the Workflow
 - Manual trigger only (workflow_dispatch)
 - Requires Node.js 18.19.0
@@ -41,13 +38,12 @@ Runs comprehensive FHIR quality control checks using the Node.js quality assuran
 - Check the uploaded log files for detailed quality assessment results
 - Review suppression configuration if needed to customize quality checks
 
+
 ## link-check.yml
 
 ### Purpose/Functionality
 Validates all external and internal links within the repository documentation to ensure they are accessible and not broken. Uses the Lychee link checker with caching for performance optimization.
 
-### Status
-**Active** - Documentation link validation
 
 ### Hints for Using the Workflow
 - Manual trigger only (workflow_dispatch)
@@ -63,8 +59,6 @@ Validates all external and internal links within the repository documentation to
 ### Purpose/Functionality
 Automatically renders diagrams from source files into SVG format for use in documentation. Supports multiple diagram types including PlantUML (.puml), Draw.io (.drawio), and BPMN (.bpmn) files.
 
-### Status
-**Active** - Diagram generation automation
 
 ### Hints for Using the Workflow
 - Triggers on push to diagram source files in `**/Material/images/src/**/*` paths
@@ -81,9 +75,6 @@ Automatically renders diagrams from source files into SVG format for use in docu
 ### Purpose/Functionality
 Automatically updates version numbers across the project when working on TC (Test Case) branches. This workflow detects TC branch pushes and runs the release publishing script to update version information consistently across all relevant files.
 
-### Status
-**Active** - Version management for TC branches
-
 ### Hints for Using the Workflow
 - Triggers automatically on push to branches named `TC-*` or `TC_*`
 - Requires Python 3.10 and PyYAML package
@@ -96,9 +87,6 @@ Automatically updates version numbers across the project when working on TC (Tes
 
 ### Purpose/Functionality
 Automatically maintains up-to-date dependencies by checking for new releases of Firely Terminal and SUSHI tools daily. Creates pull requests when updates are available to keep the CI/CD pipeline current with the latest tool versions.
-
-### Status
-**Active** - Dependency management automation
 
 ### Hints for Using the Workflow
 - Runs daily at 00:00 UTC via scheduled cron job
