@@ -57,6 +57,13 @@ Usage: #definition
       * name = "_id"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?_id=103270`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -64,6 +71,13 @@ Usage: #definition
       * name = "code"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -71,6 +85,13 @@ Usage: #definition
       * name = "form"
       * definition = "http://hl7.org/fhir/SearchParameter/Medication-form"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?form=http://standardterms.edqm.eu|11210000`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -78,6 +99,13 @@ Usage: #definition
       * name = "ingredient"
       * definition = "http://hl7.org/fhir/SearchParameter/Medication-ingredient"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?ingredient=Medication/123`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -85,6 +113,13 @@ Usage: #definition
       * name = "ingredient-code"
       * definition = "http://hl7.org/fhir/SearchParameter/Medication-ingredient-code"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?ingredient-code=http://fhir.de/CodeSystem/bfarm/atc|L01DB01`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -92,4 +127,11 @@ Usage: #definition
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/Medication-status"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?status=active`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
 
