@@ -39,8 +39,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Prozeduren, die noch nicht stattgefunden haben, o.ä."
 * category MS
   * ^short = "Kategorie"
-  * ^comment = "Die Kategorisierung erfolg vorzugsweise auf Basis von SNOMED. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, 
+  * ^comment = "Die Kategorisierung erfolgt vorzugsweise auf Basis von SNOMED CT. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, 
   indem das erste Zeichen des OPS-Codes mit Hilfe einer [ConceptMap](http://fhir.de/ConceptMap/OPS-SNOMED-Category) auf die zutreffende SNOMED-Kategorie gemappt wird.
+  
   **Begründung MS:** Die Kategorisierung dient der Verbesserung von Suche und Darstellung."
   * coding ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
