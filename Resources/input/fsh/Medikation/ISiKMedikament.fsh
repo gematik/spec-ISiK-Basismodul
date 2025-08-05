@@ -83,8 +83,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
       * ^patternCoding.system = $cs-ask
     * coding[ATC-DE] only ISiKATCCoding
       * ^patternCoding.system = $cs-atc-de
+      * insert ISiKMedikament-CodingATCComment
     * coding[PZN] only ISiKPZNCoding
       * ^patternCoding.system = $cs-pzn
+      * insert ISiKMedikament-CodingPZNComment
     * coding[SCT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
