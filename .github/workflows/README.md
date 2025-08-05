@@ -83,22 +83,6 @@ Automatically updates version numbers across the project when working on TC (Tes
 - Ensure the `config.yaml` file is properly configured for version update patterns
 - Review the script output to confirm all intended files were updated
 
-## ToolUpdate.yml
-
-### Purpose/Functionality
-Automatically maintains up-to-date dependencies by checking for new releases of Firely Terminal and SUSHI tools daily. Creates pull requests when updates are available to keep the CI/CD pipeline current with the latest tool versions.
-
-### Hints for Using the Workflow
-- Runs daily at 00:00 UTC via scheduled cron job
-- Manual trigger available via workflow_dispatch
-- Checks GitHub releases for FirelyTeam/firely-terminal-pipeline and FHIR/sushi
-- Only creates PRs when updates are actually needed
-- Requires `WORKFLOW_PERMISSION_GITHUB` secret for PR creation
-- Targets `main-stufe-5` branch for updates
-- Creates feature branches with descriptive names including version numbers
-- Review and test the generated PRs before merging to ensure compatibility
-- PRs include detailed information about version changes
-
 ## Workflow Dependencies and Integration
 
 ### Secrets Required
