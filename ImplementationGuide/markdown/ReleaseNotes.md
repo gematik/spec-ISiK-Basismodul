@@ -92,7 +92,7 @@ Version: 3.0.1
 
 Datum: 05.12.2023
 
-* Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9
+* Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/
 * Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11
 * Invariante zur Strassenanschrift modifiziert - fix invariant context #330: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e
   * hier auch Constraint bezüglich ISiKAngehoeriger aus Strassenanschrift entfernt
@@ -157,8 +157,6 @@ Datum: 31.03.2023
 * ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als möglicher 'payor' hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
   * add: organization as payor by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/236>
 
-**Full Changelog**: <https://github.com/gematik/spec-ISiK-Basismodul/compare/master-isik-stufe-2...main-isik-stufe-3-rc>
-
 ----
 Version: 2.0.5
 
@@ -168,7 +166,7 @@ Datum: 24.03.2023
   - Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country
   - Einschränkung der Umsetzungspflicht für Suchparameter vom Typ "Token" auf Datentypen "code", "Coding" oder "CodeableConcept"
 - ISiKBerichtBundle
-  - Slicing-Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung (https://github.com/gematik/spec-ISiK-Basismodul/pull/202/commits/e4cf702116c0d9c7a11260efc4cc9e583ba4ea889)
+  - Slicing-Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung (https://github.com/gematik/spec-ISiK-Basismodul/pull/202)
 - ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
   - Fixed identifier-Slicing of Type VersichertenId-GKV
 
