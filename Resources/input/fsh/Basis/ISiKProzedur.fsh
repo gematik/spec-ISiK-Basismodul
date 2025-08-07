@@ -83,7 +83,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * ^short = "SNOMED-codierte Darstellung der Prozedur
-    * ^comment = "Die Angabe eines SNOMED-Codes ist für Prozeduren, die nicht im OPS kodiert sind, zwingend erforderlich.
+    * ^comment = "
 
     **Hintergrund und Begründung zum Must-Support:** Das BfArM hat ein 'Zielbild für eine semantische Strategie' (https://www.bfarm.de/DE/Kodiersysteme/Services/Terminologieserver/Semantik-Strategie/_node.html) verfasst, in dem die Nutzung von international gängigen Basis-Terminologien vorgestellt wird. Dort wird als grundlegende Position dargestellt, dass basierend auf einer Basisterminologie weitere Use Cases bedient werden sollen. Bei Prozeduren wäre das damit eine klinische Dokumentation mit SNOMED CT als internationalem Kodiersystem und einer Ableitung davon zum OPS. Dies ist insbesondere auch wichtig für den Datentransfer in den European Health Data Space, im dem der OPS keine Rolle spielen wird."
   * text MS
