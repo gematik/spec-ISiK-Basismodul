@@ -102,6 +102,58 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
+      * name = "context.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationStatement-context"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationStatement?context.identifier=http://mein-krankenhaus.example/fhir/sid/kontaktfallnummern|7567867`
+
+        `GET [base]/MedicationStatement?context.identifier=7567867`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "medication.code"
+      * definition = "http://hl7.org/fhir/SearchParameter/medications-medication"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationStatement?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "patient.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationStatement?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
+
+        `GET [base]/MedicationStatement?patient.identifier=1032702`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
       * name = "effective"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationStatement-effective"
       * type = #date
@@ -302,6 +354,42 @@ Usage: #definition
         `GET [base]/List?status=current`
 
         **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "encounter.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/List?encounter.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
+
+        `GET [base]/List?encounter.identifier=7567867`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "patient.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/List?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
+
+        `GET [base]/List?patient.identifier=1032702`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
 
         "
   * interaction[0]

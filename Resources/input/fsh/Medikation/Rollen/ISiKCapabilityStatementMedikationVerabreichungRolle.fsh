@@ -175,6 +175,76 @@ Usage: #definition
         **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
 
         "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "context.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-context"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationAdministration?context.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
+
+        `GET [base]/MedicationAdministration?context.identifier=7567867`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "medication.code"
+      * definition = "http://hl7.org/fhir/SearchParameter/medications-medication"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationAdministration?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "patient.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationAdministration?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
+
+        `GET [base]/MedicationAdministration?patient.identifier=1032702`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "performer.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-performer"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationAdministration?performer.identifier=http://fhir.de/sid/bundesaerztekammer/efn|123456789123456`
+
+        `GET [base]/MedicationAdministration?performer.identifier=123456789123456`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
   * interaction[0]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

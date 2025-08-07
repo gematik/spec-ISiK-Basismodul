@@ -134,4 +134,34 @@ Usage: #definition
         **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
 
         "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "ingredient.code"
+      * definition = "http://hl7.org/fhir/SearchParameter/Medication-ingredient"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?ingredient.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "lot-number"
+      * definition = "http://hl7.org/fhir/SearchParameter/Medication-lot-number"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/Medication?lot-number=X123456`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
 
