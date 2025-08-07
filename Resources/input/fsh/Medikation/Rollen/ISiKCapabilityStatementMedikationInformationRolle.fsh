@@ -107,7 +107,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiele:**  
-        `GET [base]/MedicationStatement?context.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
+        `GET [base]/MedicationStatement?context.identifier=http://mein-krankenhaus.example/fhir/sid/kontaktfallnummern|7567867`
 
         `GET [base]/MedicationStatement?context.identifier=7567867`
 
