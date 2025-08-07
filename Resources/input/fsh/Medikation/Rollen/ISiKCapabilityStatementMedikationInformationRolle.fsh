@@ -198,7 +198,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "patient"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-      * type = #reference
+      * type = #token
       * documentation = 
         "**Beispiel:**  
         `GET [base]/MedicationStatement?patient=Patient/123`
@@ -306,7 +306,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "encounter"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
-      * type = #reference
+      * type = #token
       * documentation = 
         "**Beispiel:**  
         `GET [base]/List?encounter=Encounter/123`
