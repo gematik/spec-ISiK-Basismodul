@@ -14,6 +14,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 Datum: tbd
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 ----
 

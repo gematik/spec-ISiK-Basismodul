@@ -152,7 +152,7 @@
         "id": "MedicationRequest.status",
         "path": "MedicationRequest.status",
         "short": "Status der Verordnungsinformation",
-        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard",
+        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.\n  \n  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.\n  ",
         "mustSupport": true
       },
       {
@@ -215,7 +215,7 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:PZN",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "PZN",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -235,7 +235,7 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:ATC-DE",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "ATC-DE",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "*",
         "type": [
