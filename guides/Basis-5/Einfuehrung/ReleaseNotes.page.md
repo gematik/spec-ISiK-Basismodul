@@ -20,6 +20,7 @@ Datum: XX.XX.2025
 * `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830
 * `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826 
 * `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files
+* `improve` `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 
 
 
