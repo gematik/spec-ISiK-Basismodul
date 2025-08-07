@@ -181,7 +181,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "context.identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-context"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiele:**  
         `GET [base]/MedicationAdministration?context.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
@@ -199,7 +199,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "medication.code"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-medication"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiel:**  
         `GET [base]/MedicationAdministration?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
@@ -215,7 +215,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "patient.identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiele:**  
         `GET [base]/MedicationAdministration?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
@@ -233,7 +233,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "performer.identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationAdministration-performer"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiele:**  
         `GET [base]/MedicationAdministration?performer.identifier=http://fhir.de/sid/bundesaerztekammer/efn|123456789123456`

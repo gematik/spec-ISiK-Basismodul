@@ -140,7 +140,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "ingredient.code"
       * definition = "http://hl7.org/fhir/SearchParameter/Medication-ingredient"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiel:**  
         `GET [base]/Medication?ingredient.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
