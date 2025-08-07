@@ -281,7 +281,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "condition.code"
       * definition = "http://hl7.org/fhir/SearchParameter/RiskAssessment-condition"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiel:**  
         `GET [base]/RiskAssessment?condition.code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|F71.0`
@@ -297,7 +297,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "encounter.identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-encounter"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiele:**  
         `GET [base]/RiskAssessment?encounter.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
@@ -315,7 +315,7 @@ Usage: #definition
         * valueCode = #SHALL
       * name = "patient.identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-      * type = #token
+      * type = #reference
       * documentation = 
         "**Beispiele:**  
         `GET [base]/RiskAssessment?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
