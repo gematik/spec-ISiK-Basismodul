@@ -1,0 +1,160 @@
+@startuml ISiK_Terminplanung_Information_Model
+!define FHIR_BLUE #4A90E2
+!define FHIR_GREEN #7ED321
+!define FHIR_ORANGE #F5A623
+!define FHIR_RED #D0021B
+!define FHIR_GRAY #9B9B9B
+
+skinparam class {
+    BackgroundColor FHIR_BLUE
+    BorderColor black
+    ArrowColor black
+}
+
+skinparam classFontColor white
+skinparam classFontSize 10
+skinparam classAttributeFontSize 9
+
+title "ISiK Terminplanung - Information Model"
+
+class ISiKTermin {
+    <<Appointment>>
+    + meta : Meta (MS)
+    + meta.tag : Coding[] (MS)
+    + extension : Extension[] (MS)
+    + extension.replaces : Reference(Appointment) (MS)
+    + status : code (MS)
+    + cancelationReason : CodeableConcept (MS)
+    + start : dateTime (MS)
+    + end : dateTime (MS)
+    + slot : Reference(Slot)[] (MS)
+    + slot.reference : string (MS)
+    + comment : string (MS)
+    + patientInstruction : string (MS)
+    + participant : BackboneElement[] (MS)
+    + participant.actor : Reference (MS)
+    + participant.actor.display : string (MS)
+    + participant.status : code (MS)
+    + specialty : CodeableConcept[] (MS)
+    + specialty.coding : Coding[] (MS)
+    + serviceType : CodeableConcept[] (MS)
+    + serviceType.text : string (MS)
+    + priority : unsignedInt (MS)
+    + priority.extension : Extension[] (MS)
+    --
+    Participants:
+    + AkteurPatient : Reference(Patient) (MS)
+    + AkteurPersonImGesundheitsberuf : Reference(Practitioner) (MS)
+    + AkteurBehandlungseinheit : Reference(HealthcareService) (MS)
+    + Angehoeriger : Reference(RelatedPerson) (MS)
+    --
+    Specialty Codings:
+    + Fachrichtung : Coding (MS)
+    + ErweiterterFachabteilungsschluessel : Coding
+}
+
+class ISiKKalender {
+    <<Schedule>>
+    + active : boolean (MS)
+    + serviceType : CodeableConcept[] (MS)
+    + serviceType.text : string (MS)
+    + specialty : CodeableConcept[] (MS)
+    + specialty.coding : Coding[] (MS)
+    + actor : Reference[] (MS)
+    + actor.identifier : Identifier (MS)
+    + actor.display : string (MS)
+    + actor.reference : string (MS)
+    + extension : Extension[] (MS)
+    + extension.KalenderName : string (MS)
+    --
+    Actors:
+    + Akteur : Reference(Practitioner or HealthcareService or Location) (MS)
+    --
+    Specialty Codings:
+    + Fachrichtung : Coding (MS)
+    + ErweiterterFachabteilungsschluessel : Coding
+}
+
+class ISiKTerminblock {
+    <<Slot>>
+    + schedule : Reference(Schedule) (MS)
+    + schedule.reference : string (MS)
+    + status : code (MS)
+    + start : instant (MS)
+    + end : instant (MS)
+}
+
+class ISiKBehandlungseinheit {
+    <<HealthcareService>>
+    + active : boolean (MS)
+    + type : CodeableConcept[] (MS)
+    + specialty : CodeableConcept[] (MS)
+    + specialty.coding : Coding[] (MS)
+    + name : string (MS)
+    --
+    Specialty Codings:
+    + Fachrichtung : Coding (MS)
+    + ErweiterterFachabteilungsschluessel : Coding
+}
+
+class ISiKTerminKontakt {
+    <<Encounter>>
+    + appointment : Reference(Appointment) (MS)
+}
+
+' External references from other ISiK modules
+class Patient #7ED321 {
+    <<ISiKPatient>>
+    + identifier : Identifier[]
+    + name : HumanName[]
+    + gender : code
+    + birthDate : date
+}
+
+class Practitioner #7ED321 {
+    <<ISiKPersonImGesundheitsberuf>>
+    + identifier : Identifier[]
+    + name : HumanName[]
+    + qualification : BackboneElement[]
+}
+
+class Location #7ED321 {
+    <<ISiKStandort>>
+    + identifier : Identifier[]
+    + name : string
+    + address : Address
+}
+
+class RelatedPerson #7ED321 {
+    <<ISiKAngehoeriger>>
+    + identifier : Identifier[]
+    + name : HumanName[]
+    + relationship : CodeableConcept[]
+}
+
+' Relationships
+ISiKTermin ||--o{ ISiKTerminblock : "references via slot"
+ISiKTerminblock ||--|| ISiKKalender : "belongs to schedule"
+ISiKKalender ||--o{ ISiKBehandlungseinheit : "actor can be"
+ISiKKalender ||--o{ Practitioner : "actor can be"
+ISiKKalender ||--o{ Location : "actor can be"
+
+ISiKTermin ||--o{ Patient : "participant.actor"
+ISiKTermin ||--o{ Practitioner : "participant.actor"
+ISiKTermin ||--o{ ISiKBehandlungseinheit : "participant.actor"
+ISiKTermin ||--o{ RelatedPerson : "participant.actor"
+
+ISiKTerminKontakt ||--|| ISiKTermin : "references appointment"
+
+' Notes for key relationships
+note right of ISiKTermin : Ein Termin kann über einen oder\nmehrere Terminblöcke (Slots) gebucht werden.\nJeder Termin hat verschiedene Teilnehmer-Typen.
+
+note right of ISiKKalender : Ein Kalender definiert verfügbare\nZeiten für bestimmte Akteure\n(Practitioner, HealthcareService, Location)
+
+note bottom of ISiKTerminblock : Terminblöcke sind die buchbaren\nZeiteinheiten innerhalb eines Kalenders
+
+note left of ISiKBehandlungseinheit : Behandlungseinheiten repräsentieren\nDienstleistungen wie CT-Untersuchungen,\nchirurgische Eingriffe etc.
+
+note top of ISiKTerminKontakt : Verknüpft Termine mit dem\ntatsächlichen Encounter für\nDokumentenaustausch
+
+@enduml
