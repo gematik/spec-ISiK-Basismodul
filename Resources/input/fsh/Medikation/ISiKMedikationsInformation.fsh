@@ -371,6 +371,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation4
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme zu jeder Mahlzeit (auch Zwischenmahlzeiten)</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#10557318 "Sevelamercarbonat AL 800 mg"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -393,6 +396,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation5
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme am ersten Dienstag jedes dritten Monats</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#07260796 "Vitamin-B12-ratiopharm® N Ampullen zur Injektion"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -418,6 +424,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation6
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text  
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Dosierung kurzwirksames Insulin nach gemessenen Werten</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#06922060 "Huminsulin® Normal KwikPen™"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -437,6 +446,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformationParkinson1
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Parkinson-Medikation mit Medikament1</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#00003056 "Stalevo® 100 mg/25 mg/200 mg"
 * subject.reference = "Patient/PatientinMusterfrau"
