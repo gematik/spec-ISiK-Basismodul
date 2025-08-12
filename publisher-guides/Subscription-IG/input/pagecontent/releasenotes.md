@@ -1,33 +1,42 @@
 ---
+topic: ImplementationGuide-markdown-ReleaseNotes
 ---
+# Release Notes
 
-# ReleaseNotes
 
-Diese Seite enthält die Versionshinweise für das Test Implementation Guide.
 
-## Version 1.0.0
+Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-**Veröffentlichungsdatum:** August 2025
+Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-### Neue Features
+## Version 5.0.1
 
-- Initiale Veröffentlichung des Test Implementation Guides
-- Test Patient Profil implementiert
-- Test CapabilityStatement hinzugefügt
-- Deutsche Navigationsstruktur eingeführt
+Datum: tbd
 
-### Technische Details
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
-- Basiert auf FHIR R4.0.1
-- Verwendet SUSHI v3.16.3 für FSH-Verarbeitung
-- Kompatibel mit IG Publisher 2.0.12
+----
 
-### Bekannte Probleme
+## Version 5.0.0
 
-- Keine bekannten Probleme in dieser Version
+Datum: 26.06.2025
 
-## Geplante Änderungen
+Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-- Erweiterung der Profile in zukünftigen Versionen
-- Zusätzliche Beispiele und Use Cases
-- Erweiterte Dokumentation
+## Version 5.0.0-rc2 (Benehmensherstellung)
+
+Datum: 5.6.2025
+
+* Keine weiteren Änderungen
+
+## Version 5.0.0-rc (Kommentierung)
+
+Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
+
+Datum: 09.04.2025
+
+* Nachbau der Profile `BackportSubscriptionNotificationR4` & `BackportSubscriptionStatusR4`, Hinzufügen der R4B CS & VS `SubscriptionNotificationType` https://github.com/gematik/spec-ISiK-Basismodul/pull/645
+* Erweiterung der PatientMerge Subscription um den R5 Topic Subscription Mechanismus, um weitere Subscription UseCases zu supporten.
+* Überführung der Subscription Profile in ein eigenes Modul "Subscription".
+----
