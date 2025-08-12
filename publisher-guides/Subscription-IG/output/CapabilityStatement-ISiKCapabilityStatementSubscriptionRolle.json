@@ -1,0 +1,176 @@
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "ISiKCapabilityStatementSubscriptionRolle",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement ISiKCapabilityStatementSubscriptionRolle</b></p><a name=\"ISiKCapabilityStatementSubscriptionRolle\"> </a><a name=\"hcISiKCapabilityStatementSubscriptionRolle\"> </a><h2 id=\"title\">CapabilityStatement für Rolle &amp;quot;Subscription&amp;quot;</h2><ul><li>Implementation Guide Version: 0.0.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>application/fhir+json</code></li><li>Supported Patch Formats: </li><li>Published on: 2025-06-26 </li><li>Published by: null </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h3 id=\"shallIGs\">SHALL Support the Following Implementation Guides</h3><ul><li>https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Subscription</li></ul><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div class=\"lead\"><em>Summary of System-wide Interactions</em></div></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th class=\"text-center\"><b title=\"DELETE a resource (delete interaction)\">D</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#Subscription1-1\">Subscription</a></td><td>Supported Profiles<br/>\u00a0\u00a0<a href=\"StructureDefinition-ISiKSubscription.html\">ISiK Subscription</a></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_id, _tag, _count, _has, criteria, status, url</td><td/><td/><td><code>$status</code>, <code>$events</code></td></tr><tr><td><a href=\"#Parameters1-2\">Parameters</a></td><td>Supported Profiles<br/>\u00a0\u00a0<a href=\"StructureDefinition-BackportSubscriptionStatusR4Fixed.html\">R4 Backported R5 SubscriptionStatus</a></td><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td/><td/><td/><td/></tr><tr><td><a href=\"#Bundle1-3\">Bundle</a></td><td>Supported Profiles<br/>\u00a0\u00a0<a href=\"StructureDefinition-BackportSubscriptionNotificationR4Fixed.html\">R4 Topic-Based Subscription Notification Bundle</a></td><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"/><td/><td/><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Subscription1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Subscription</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/subscription.html\">Subscription</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>create</code>, <code>update</code>, <code>delete</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-ISiKSubscription.html\">ISiK Subscription</a></p></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>\n<code>GET [base]/[Resourcetype]?_id=103270</code>\n<strong>Anwendungshinweis:</strong>\nDer Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource\nanhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,\num den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,\nz.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:\n<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>\nWeitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href=\"https://hl7.org/fhir/R4/search.html#all\">Parameters for all resources</a>.\nDieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/resource.html#search\">_tag</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>\n<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>\n<strong>Anwendungshinweis:</strong>\nWeitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href=\"https://hl7.org/fhir/R4/search.html#all\">Parameters for all resources</a>\nsowie Abschnitt <a href=\"https://www.hl7.org/fhir/R4/resource.html#simple-tags\">Tags</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p><strong>Beispiel:</strong>\n<code>GET [base]/[Resourcetype]?_count=100</code>\n<strong>Anwendungshinweis:</strong>\nWeitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href=\"https://www.hl7.org/fhir/R4/search.html#count\">Page Count</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/subscription.html#search\">criteria</a></td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Subscription?criteria=https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</code><br/>\n<strong>Anwendungshinweis:</strong><br/>\nDient dazu eine Subscription zu finden, die auf ein bestimmtes SubscriptionTopic verweist.<br/>\nWeitere Details siehe <a href=\"https://hl7.org/fhir/R4/search.html#string\">FHIR-Kernspezifikation</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/subscription.html#search\">status</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Subscription?status=requested</code><br/>\n<strong>Anwendungshinweis:</strong><br/>\nWeitere Details siehe <a href=\"https://hl7.org/fhir/R4/search.html#token\">FHIR-Kernspezifikation</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/subscription.html#search\">url</a></td><td><code>uri</code></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Subscription?url=http://example.org/fhir/</code><br/>\n<strong>Anwendungshinweis:</strong><br/>\nDient dazu eine Subscription zu finden, die auf einen REST-Endpoint verweist welcher die Subscription Notifications empfangen soll.<br/>\nWeitere Details siehe <a href=\"https://hl7.org/fhir/R4/search.html#uri\">FHIR-Kernspezifikation</a>.</p>\n</div></td></tr><tr><td><b>MAY</b></td><td>_has</td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben\n<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>\n<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde\n<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>\n<strong>Anwendungshinweis:</strong>\nWeitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href=\"https://hl7.org/fhir/R4/search.html#has\">Reverse Chaining</a>.</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\">\u00a0</div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-status.html\">$status</a></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Subscription/[id]/$status</code><br/>\n<strong>Anwendungshinweis:</strong><br/>\nDient dazu den Status einer Subscription zu ermitteln.<br/>\nWeitere Details siehe <a href=\"https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status\">Subscriptions R5 Backport IG</a>.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-events.html\">$events</a></td><td><div><p><strong>Beispiel:</strong><br/>\n<code>GET [base]/Subscription/[id]/$events</code><br/>\n<strong>Anwendungshinweis:</strong><br/>\nDiese Operation wird verwendet, um nach SubscriptionNotifications zu suchen und diese zurückzugeben, die zuvor durch eine topic basierte Subscription in FHIR R4 ausgelöst wurden.<br/>\nWeitere Details siehe <a href=\"https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events\">Subscriptions R5 Backport IG</a>.</p>\n</div></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Parameters1-2\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Parameters</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul/></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-BackportSubscriptionStatusR4Fixed.html\">R4 Backported R5 SubscriptionStatus</a></p></div></div><p/></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Bundle1-3\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Bundle</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul/></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-BackportSubscriptionNotificationR4Fixed.html\">R4 Topic-Based Subscription Notification Bundle</a></p></div></div><p/></div></div></div></div>"
+  },
+  "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionRolle",
+  "version" : "0.0.1",
+  "name" : "ISiKCapabilityStatementSubscriptionRolle",
+  "title" : "CapabilityStatement für Rolle &quot;Subscription&quot;",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-06-26",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.gematik.de"
+    }]
+  }],
+  "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \r\n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \r\n  \r\nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \r\nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \r\nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+  "purpose" : "\nCapabilityStatement für die Rolle &quot;ISiKCapabilityStatementSubscriptionRolle&quot;.\nDiese Rolle beschreibt die Fähigkeiten eines Systems zur Registrierung, Verwaltung und Verarbeitung von FHIR Subscriptions auf Basis themenbasierter Benachrichtigungen nach dem R5-Modell unter Verwendung der Subscriptions-Backport-Mechanismen in FHIR R4.\n",
+  "kind" : "requirements",
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "application/fhir+json"],
+  "implementationGuide" : ["https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Subscription"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Subscription",
+      "supportedProfile" : ["http://example.org/fhir/test-subscription-ig/StructureDefinition/ISiKSubscription"],
+      "interaction" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "create"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "update"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "delete"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "code" : "search-type"
+      }],
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_id=103270`\n        **Anwendungshinweis:**\n        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource\n        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,\n        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,\n        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:\n        `GET [base]/Encounter?_id=103270&_include=Encounter:patient`\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).\n        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_count",
+        "type" : "number",
+        "documentation" : "**Beispiel:**\n        `GET [base]/[Resourcetype]?_count=100`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "MAY"
+        }],
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben\n        `GET [base]/Patient?_has:Observation:patient:code=1234-5`\n        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde\n        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "criteria",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Subscription-criteria",
+        "type" : "string",
+        "documentation" : "**Beispiel:**    \n        `GET [base]/Subscription?criteria=https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge`    \n        **Anwendungshinweis:**    \n        Dient dazu eine Subscription zu finden, die auf ein bestimmtes SubscriptionTopic verweist.        \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Subscription-status",
+        "type" : "token",
+        "documentation" : "**Beispiel:**    \n        `GET [base]/Subscription?status=requested`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "url",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Subscription-url",
+        "type" : "uri",
+        "documentation" : "**Beispiel:**    \n        `GET [base]/Subscription?url=http://example.org/fhir/`    \n        **Anwendungshinweis:**    \n        Dient dazu eine Subscription zu finden, die auf einen REST-Endpoint verweist welcher die Subscription Notifications empfangen soll.    \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#uri)."
+      }],
+      "operation" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status",
+        "documentation" : "**Beispiel:**    \n        `GET [base]/Subscription/[id]/$status`    \n        **Anwendungshinweis:**    \n        Dient dazu den Status einer Subscription zu ermitteln.    \n        Weitere Details siehe [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "events",
+        "definition" : "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events",
+        "documentation" : "**Beispiel:**    \n        `GET [base]/Subscription/[id]/$events`    \n        **Anwendungshinweis:**    \n        Diese Operation wird verwendet, um nach SubscriptionNotifications zu suchen und diese zurückzugeben, die zuvor durch eine topic basierte Subscription in FHIR R4 ausgelöst wurden.   \n        Weitere Details siehe [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events)."
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Parameters",
+      "supportedProfile" : ["http://example.org/fhir/test-subscription-ig/StructureDefinition/BackportSubscriptionStatusR4Fixed"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Bundle",
+      "supportedProfile" : ["http://example.org/fhir/test-subscription-ig/StructureDefinition/BackportSubscriptionNotificationR4Fixed"]
+    }]
+  }]
+}

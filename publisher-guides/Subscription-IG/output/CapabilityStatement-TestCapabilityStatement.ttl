@@ -1,0 +1,85 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-subscription-ig/CapabilityStatement/TestCapabilityStatement> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "TestCapabilityStatement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement TestCapabilityStatement</b></p><a name=\"TestCapabilityStatement\"> </a><a name=\"hcTestCapabilityStatement\"> </a><h2 id=\"title\">Test FHIR Server Capability Statement</h2><ul><li>Implementation Guide Version: 0.0.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>json</code>, <code>xml</code></li><li>Supported Patch Formats: </li><li>Published on: 2025-08-06 </li><li>Published by: null </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h3 id=\"shallIGs\">SHALL Support the Following Implementation Guides</h3><ul><li>http://example.org/fhir/test/ImplementationGuide/example.test.ig</li></ul><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div><p>Test FHIR server supporting basic Patient operations</p>\n</div><div class=\"lead\"><em>Security</em></div><div class=\"row\"><div class=\"col-lg-6\">Enable CORS: yes</div><div class=\"col-lg-6\">Security services supported: </div></div><blockquote><div><p>Uses standard FHIR security</p>\n</div></blockquote><div class=\"lead\"><em>Summary of System-wide Interactions</em></div></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th class=\"text-center\"><b title=\"DELETE a resource (delete interaction)\">D</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#Patient1-1\">Patient</a></td><td>http://example.org/fhir/test/StructureDefinition/test-patient</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>identifier, name, family, given</td><td/><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Patient1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Patient</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><code>http://example.org/fhir/test/StructureDefinition/test-patient</code></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <br/><code>read</code><div><p>Read a Patient resource</p>\n</div><code>create</code><div><p>Create a Patient resource</p>\n</div><code>update</code><div><p>Update a Patient resource</p>\n</div><code>delete</code><div><p>Delete a Patient resource</p>\n</div><code>search-type</code><div><p>Search for Patient resources</p>\n</div></li></ul></div></div><p/><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Documentation</span><blockquote><div><p>Patient resource with basic CRUD operations</p>\n</div></blockquote></div></div><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Search by patient identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Search by patient name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>family</td><td><code>string</code></td><td><div><p>Search by patient family name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>given</td><td><code>string</code></td><td><div><p>Search by patient given name</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div></div></div></div></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/test/CapabilityStatement/TestCapabilityStatement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:name [ fhir:v "TestCapabilityStatement"] ; # 
+  fhir:title [ fhir:v "Test FHIR Server Capability Statement"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-08-06"^^xsd:date] ; # 
+  fhir:description [ fhir:v "This is a test capability statement that describes the capabilities of a dummy FHIR server"] ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:software [
+     fhir:name [ fhir:v "Test FHIR Server" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "json"] [ fhir:v "xml"] ) ; # 
+  fhir:implementationGuide ( [
+     fhir:v "http://example.org/fhir/test/ImplementationGuide/example.test.ig"^^xsd:anyURI ;
+     fhir:link <http://example.org/fhir/test/ImplementationGuide/example.test.ig>
+  ] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:documentation [ fhir:v "Test FHIR server supporting basic Patient operations" ] ;
+     fhir:security [
+       fhir:cors [ fhir:v true ] ;
+       fhir:description [ fhir:v "Uses standard FHIR security" ]
+     ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Patient" ] ;
+       fhir:profile [
+         fhir:v "http://example.org/fhir/test/StructureDefinition/test-patient"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/test/StructureDefinition/test-patient>
+       ] ;
+       fhir:documentation [ fhir:v "Patient resource with basic CRUD operations" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "Read a Patient resource" ]
+       ] [
+         fhir:code [ fhir:v "create" ] ;
+         fhir:documentation [ fhir:v "Create a Patient resource" ]
+       ] [
+         fhir:code [ fhir:v "update" ] ;
+         fhir:documentation [ fhir:v "Update a Patient resource" ]
+       ] [
+         fhir:code [ fhir:v "delete" ] ;
+         fhir:documentation [ fhir:v "Delete a Patient resource" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ] ;
+         fhir:documentation [ fhir:v "Search for Patient resources" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by patient identifier" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search by patient name" ]
+       ] [
+         fhir:name [ fhir:v "family" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search by patient family name" ]
+       ] [
+         fhir:name [ fhir:v "given" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search by patient given name" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

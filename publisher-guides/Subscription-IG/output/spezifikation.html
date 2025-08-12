@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Spezifikation - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="releasenotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="spezifikation.html">Spezifikation</a>
+  </li>
+  <li>
+    <a href="festlegungen.html">Festlegungen</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR-Artefakte
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            Implementation Guide<br>
+Test Implementation Guide
+
+
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Spezifikation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Spezifikation</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#spezifikation" id="markdown-toc-spezifikation">Spezifikation</a>    <ul>
+      <li><a href="#überblick" id="markdown-toc-überblick">Überblick</a></li>
+      <li><a href="#technische-basis" id="markdown-toc-technische-basis">Technische Basis</a>        <ul>
+          <li><a href="#fhir-version" id="markdown-toc-fhir-version">FHIR Version</a></li>
+          <li><a href="#abhängigkeiten" id="markdown-toc-abhängigkeiten">Abhängigkeiten</a></li>
+        </ul>
+      </li>
+      <li><a href="#architekturprinzipien" id="markdown-toc-architekturprinzipien">Architekturprinzipien</a>        <ul>
+          <li><a href="#design-prinzipien" id="markdown-toc-design-prinzipien">Design-Prinzipien</a></li>
+          <li><a href="#profilierungsstrategie" id="markdown-toc-profilierungsstrategie">Profilierungsstrategie</a></li>
+        </ul>
+      </li>
+      <li><a href="#compliance-und-standards" id="markdown-toc-compliance-und-standards">Compliance und Standards</a>        <ul>
+          <li><a href="#validierung" id="markdown-toc-validierung">Validierung</a></li>
+          <li><a href="#konformität" id="markdown-toc-konformität">Konformität</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h1 id="spezifikation">Spezifikation</h1>
+
+<p>Diese Seite beschreibt die technischen Spezifikationen des Test Implementation Guides.</p>
+
+<h2 id="überblick">Überblick</h2>
+
+<p>Das Test Implementation Guide definiert FHIR-Profile und -Ressourcen für Testzwecke in einer lokalen Entwicklungsumgebung.</p>
+
+<h2 id="technische-basis">Technische Basis</h2>
+
+<h3 id="fhir-version">FHIR Version</h3>
+<ul>
+  <li><strong>Basis:</strong> FHIR R4.0.1</li>
+  <li><strong>Canonical URL:</strong> <code class="language-plaintext highlighter-rouge">http://example.org/fhir/test</code></li>
+  <li><strong>Version:</strong> 1.0.0</li>
+</ul>
+
+<h3 id="abhängigkeiten">Abhängigkeiten</h3>
+
+<p>Das Implementation Guide basiert auf folgenden FHIR-Paketen:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hl7.fhir.r4.core#4.0.1</code> - FHIR R4 Kernspezifikation</li>
+  <li><code class="language-plaintext highlighter-rouge">hl7.terminology.r4#6.5.0</code> - HL7 Terminologie</li>
+  <li><code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions.r4#5.2.0</code> - Universelle Erweiterungen</li>
+</ul>
+
+<h2 id="architekturprinzipien">Architekturprinzipien</h2>
+
+<h3 id="design-prinzipien">Design-Prinzipien</h3>
+<ol>
+  <li><strong>Einfachheit:</strong> Minimale, aber vollständige Implementierung</li>
+  <li><strong>Testbarkeit:</strong> Fokus auf Validierung der IG-Entwicklungsumgebung</li>
+  <li><strong>Erweiterbarkeit:</strong> Basis für komplexere IGs</li>
+</ol>
+
+<h3 id="profilierungsstrategie">Profilierungsstrategie</h3>
+<ul>
+  <li>Verwendung von FHIR Shorthand (FSH) für Profildefinitionen</li>
+  <li>Automatische Generierung von JSON/XML-Repräsentationen</li>
+  <li>Umfassende Dokumentation und Beispiele</li>
+</ul>
+
+<h2 id="compliance-und-standards">Compliance und Standards</h2>
+
+<h3 id="validierung">Validierung</h3>
+<ul>
+  <li>Alle Profile werden gegen FHIR R4 Kernspezifikation validiert</li>
+  <li>Terminologie-Validierung über HL7 Terminology Server</li>
+  <li>Strukturelle Validierung durch IG Publisher</li>
+</ul>
+
+<h3 id="konformität">Konformität</h3>
+<ul>
+  <li>Implementierungen müssen die definierten Profile einhalten</li>
+  <li>CapabilityStatements definieren erwartete Server-Funktionalitäten</li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Aug 12, 2025 10:16+0200">2025-08-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
