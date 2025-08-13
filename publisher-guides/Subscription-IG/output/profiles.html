@@ -60,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.1"}
-    h3,h4,h5,h6{--heading-prefix:"5.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -101,8 +101,27 @@
   <li>
     <a href="releasenotes.html">Release Notes</a>
   </li>
-  <li>
-    <a href="spezifikation.html">Spezifikation</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="festlegungen.html">Festlegungen</a>
@@ -113,10 +132,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profile</a>
+        <a href="artifacts.html">Artefakte</a>
       </li>
       <li>
         <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
       </li>
     </ul>
   </li>
@@ -158,7 +183,7 @@ Test Implementation Guide
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>Profile</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Profile</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -201,68 +226,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Diese Seite beschreibt alle FHIR-Profile, die in diesem Implementation Guide definiert sind.</p>
 
-<h2 id="überblick">Überblick</h2>
-
 <p>Die Profile in diesem IG definieren Einschränkungen und Erweiterungen für FHIR-Basisressourcen, um spezifische Anwendungsfälle zu unterstützen.</p>
 
-<h2 id="patient-profile">Patient Profile</h2>
+<p><a href="StructureDefinition-ISiKSubscription.html">ISiK Subscription</a></p>
 
-<h3 id="test-patient-profil">Test Patient Profil</h3>
+<p><a href="StructureDefinition-BackportSubscriptionNotificationR4Fixed.html">Backport Subscription Notification R4 Fixed</a></p>
 
-<p><strong>Canonical URL:</strong> <code class="language-plaintext highlighter-rouge">http://example.org/fhir/test/StructureDefinition/test-patient</code></p>
-
-<p><strong>Beschreibung:</strong> Ein einfaches Test-Patient-Profil für Validierungszwecke.</p>
-
-<p><strong>Basis:</strong> Patient (FHIR R4)</p>
-
-<h4 id="profil-details">Profil-Details</h4>
-
-<p><a href="StructureDefinition-test-patient.html">Test Patient Profile</a></p>
-
-<h4 id="einschränkungen">Einschränkungen</h4>
-
-<ul>
-  <li><strong>Identifikator:</strong> Mindestens ein Identifikator ist erforderlich</li>
-  <li><strong>Name:</strong> Vollständiger Name (Vor- und Nachname) ist Pflicht</li>
-  <li><strong>Geschlecht:</strong> Muss angegeben werden</li>
-  <li><strong>Geburtsdatum:</strong> Empfohlen für vollständige demografische Daten</li>
-</ul>
-
-<h4 id="verwendungszweck">Verwendungszweck</h4>
-
-<p>Dieses Profil wird verwendet für:</p>
-
-<ul>
-  <li>Validierung der IG-Entwicklungsumgebung</li>
-  <li>Testzwecke in Entwicklungs- und Staging-Umgebungen</li>
-  <li>Beispielimplementierungen für FHIR-Clients</li>
-  <li>Schulungs- und Demonstrationszwecke</li>
-</ul>
-
-<h4 id="beispiele">Beispiele</h4>
-
-<p><a href="Patient-example-test-patient.html">Beispiel Test Patient</a></p>
+<p><a href="StructureDefinition-BackportSubscriptionStatusR4Fixed.html">Backport Subscription Status R4 Fixed</a></p>
 
 <h4 id="implementierungshinweise">Implementierungshinweise</h4>
 
-<p><strong>Must Support Elemente:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Patient.identifier</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Patient.name</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Patient.gender</code></li>
-</ul>
-
-<p><strong>Terminologie:</strong></p>
-<ul>
-  <li>Geschlecht: Verwendung von <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/administrative-gender</code></li>
-  <li>Name Use: Verwendung von <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/name-use</code></li>
-</ul>
-
-<p><strong>Validierung:</strong></p>
-<ul>
-  <li>Alle Implementierungen müssen gegen dieses Profil validiert werden</li>
-  <li>Verwendung von FHIR-Validatoren empfohlen</li>
-</ul>
+<p>Siehe Beschreibungen im Profil.</p>
 
 
 
@@ -283,7 +257,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Aug 12, 2025 10:16+0200">2025-08-12</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Aug 13, 2025 16:05+0200">2025-08-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

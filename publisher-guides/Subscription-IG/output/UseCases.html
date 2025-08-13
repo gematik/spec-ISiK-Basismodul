@@ -1,11 +1,9 @@
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Example Test Patient - JSON Representation - Test Implementation Guide v0.0.1</title>
+    <title>Weitere Use Cases - Test Implementation Guide v0.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.21"}
-    h3,h4,h5,h6{--heading-prefix:"5.21"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -103,8 +101,27 @@
   <li>
     <a href="releasenotes.html">Release Notes</a>
   </li>
-  <li>
-    <a href="spezifikation.html">Spezifikation</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="festlegungen.html">Festlegungen</a>
@@ -115,10 +132,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profile</a>
+        <a href="artifacts.html">Artefakte</a>
       </li>
       <li>
         <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
       </li>
     </ul>
   </li>
@@ -160,7 +183,7 @@ Test Implementation Guide
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>Example Test Patient</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Weitere Use Cases</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -171,7 +194,16 @@ Test Implementation Guide
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-<div style="counter-reset: section 8" class="col-12">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Weitere Use Cases</h2>
   
 
 
@@ -182,84 +214,86 @@ Test Implementation Guide
 
 
 
-<ul class="nav nav-tabs">
 
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<h1 id="use-cases---übersicht">Use Cases - Übersicht</h1>
+
+<p>Die folgenden Anwendungsfälle stellen eine Auswahl möglicher Einsatzszenarien dar und sind nicht
+abschließend. Je nach Bedarf und Systemlandschaft können weitere Subscriptions für spezifische
+Anforderungen definiert werden.</p>
+
+<h2 id="1-patient-oder-fall-merge">1. Patient oder Fall Merge</h2>
+
+<ul>
   <li>
-    <a href="Patient-example-test-patient.html">Narrative Content</a>
+    <p><strong>Zusammenführung von Patientendaten:</strong> Wenn zwei Patientenakten aufgrund einer fehlerhaft
+doppelten Erfassung zusammengeführt werden, können relevante Systeme (z. B. KIS,
+Abrechnungssysteme, Labor) automatisch über die Änderung informiert werden. Dies verhindert
+Dateninkonsistenzen und ermöglicht eine einheitliche Patientenhistorie.  <br />
+Siehe auch:</p>
   </li>
-
-
-
-  
-    <li>
-      <a href="Patient-example-test-patient.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li class="active">
-      <a href="#">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="Patient-example-test-patient.ttl.html">TTL</a>
-    </li>
-  
-
-
-
+  <li>
+    <p><strong>Fall-Zusammenführung:</strong> Falls mehrere Krankenhausaufenthalte eines Patienten in einem Fall
+zusammengeführt werden, erhalten nachgelagerte Systeme eine Benachrichtigung, um Abrechnungen und
+medizinische Dokumentationen korrekt zu aktualisieren.</p>
+  </li>
 </ul>
 
+<h2 id="2-terminplanung">2. Terminplanung</h2>
 
-<a name="root"> </a>
+<ul>
+  <li><strong>Statusänderung bei Terminen:</strong> Wenn ein Termin (Appointment) verschoben oder abgesagt wird,
+erhält das Patientenportal eine automatische Benachrichtigung. Patientinnen und Patienten werden
+daraufhin per E-Mail, App-Push-Nachricht oder SMS informiert.</li>
+  <li><strong>Frei gewordener Terminslot</strong> Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
+eine Benachrichtigung. Dadurch können Patienten auf der Warteliste oder mit entsprechender Präferenz gezielt
+über die neue Verfügbarkeit informiert werden. Dies ermöglicht eine effiziente Nachbesetzung freier Termine
+und reduziert ungenutzte Kapazitäten.</li>
+</ul>
 
+<h2 id="3-benachrichtigung-bei-korrektur-von-daten">3. Benachrichtigung bei Korrektur von Daten</h2>
 
-<h2 id="root">: Example Test Patient - JSON Representation</h2>
+<ul>
+  <li>
+    <p><strong>Laborbefunde:</strong> Falls ein bereits übermittelter Laborbefund korrigiert oder aktualisiert wird,
+informiert die Subscription automatisch alle betroffenen Systeme (z. B. KIS, PDMS,
+Patientenportal), sodass Patientinnen und Patienten sowie medizinisches Fachpersonal stets über
+die neuesten Befunde verfügen.</p>
+  </li>
+  <li>
+    <p><strong>Diagnose- oder Medikationsänderungen:</strong> Wird eine Diagnose oder Medikation geändert oder
+zurückgezogen, erhalten relevante Systeme eine Benachrichtigung, um Entscheidungen in der
+Patientenversorgung auf Basis der korrekten Daten zu treffen.</p>
+  </li>
+</ul>
 
+<h2 id="4-integration-mit-externen-services">4. Integration mit externen Services</h2>
 
-<p><a href="Patient-example-test-patient.json" no-download="true">Raw json</a> | <a href="Patient-example-test-patient.json" download>Download</a></p>
+<ul>
+  <li><strong>Externe Terminverwaltungs-Systeme:</strong> Ein Terminverwaltungsportal abonniert Änderungen an
+Appointment- oder Slot-Ressourcen. Bei neu erstellten Slots kann es automatisiert Patientinnen und
+Patienten freie Termine anbieten.</li>
+  <li><strong>Apps von Drittanbietern:</strong> Drittanbieter-Apps können mithilfe von FHIR Subscriptions aktiv über
+aktuelle Daten (z.B. Vitalwerte, Medikationspläne) informiert werden und aktiv Benachrichtigungen
+versenden, sobald es zu Änderungen kommt.</li>
+</ul>
 
-  <!-- insert intro if present -->
-  
+<h2 id="5-automatisierte-prozesssteuerung">5. Automatisierte Prozesssteuerung</h2>
 
-
-
-  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resourceType</a>" : "Patient",
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.id">id</a>" : "example-test-patient",
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.meta">meta</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-      <a href="StructureDefinition-test-patient.html" style="color: Maroon">&#x1F517;</a> "http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient"
-    ]
-  },
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Patient example-test-patient&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;example-test-patient\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcexample-test-patient\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-test-patient.html\&quot;&gt;Test Patient Profile&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;TestGiven TestFamily  Unknown, DoB Unknown ( http://example.org/patient-ids#TEST-001)&lt;/p&gt;&lt;hr/&gt;&lt;/div&gt;"
-  },
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/patient-ids",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "TEST-001"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "TestFamily",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
-        "TestGiven"
-      ]
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "unknown"
-}</code></pre>
-
-
-  <!-- insert notes if present -->
-  
+<ul>
+  <li><strong>Event-getriebene Trigger:</strong> Bei Ankunft eines Patienten (Encounter.start) wird automatisch ein
+Check-in-Prozess angestoßen, der weitere Systeme informiert und ggf. Folgeprozesse aktiviert (z.B.
+Aufnahmegespräch, Unterbringung).</li>
+  <li><strong>Proaktive Informationsweiterleitung:</strong> Bei Entlassung (Encounter.end) werden weitere
+Stakeholder (z.B. Physiotherapie oder Nachsorgeeinrichtungen) automatisch informiert, um die
+Nachsorge ohne Zeitverzug zu starten.</li>
+</ul>
 
 
 
@@ -279,7 +313,7 @@ Test Implementation Guide
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Aug 12, 2025 10:16+0200">2025-08-12</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Aug 13, 2025 16:05+0200">2025-08-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -5,55 +5,15 @@
 
 Diese Seite beschreibt alle FHIR-Profile, die in diesem Implementation Guide definiert sind.
 
-## Überblick
-
 Die Profile in diesem IG definieren Einschränkungen und Erweiterungen für FHIR-Basisressourcen, um spezifische Anwendungsfälle zu unterstützen.
 
-## Patient Profile
+[ISiK Subscription](StructureDefinition-ISiKSubscription.html)
 
-### Test Patient Profil
+[Backport Subscription Notification R4 Fixed](StructureDefinition-BackportSubscriptionNotificationR4Fixed.html)
 
-**Canonical URL:** `http://example.org/fhir/test/StructureDefinition/test-patient`
+[Backport Subscription Status R4 Fixed](StructureDefinition-BackportSubscriptionStatusR4Fixed.html)
 
-**Beschreibung:** Ein einfaches Test-Patient-Profil für Validierungszwecke.
-
-**Basis:** Patient (FHIR R4)
-
-#### Profil-Details
-
-[Test Patient Profile](StructureDefinition-test-patient.html)
-
-#### Einschränkungen
-
-- **Identifikator:** Mindestens ein Identifikator ist erforderlich
-- **Name:** Vollständiger Name (Vor- und Nachname) ist Pflicht
-- **Geschlecht:** Muss angegeben werden
-- **Geburtsdatum:** Empfohlen für vollständige demografische Daten
-
-#### Verwendungszweck
-
-Dieses Profil wird verwendet für:
-
-- Validierung der IG-Entwicklungsumgebung
-- Testzwecke in Entwicklungs- und Staging-Umgebungen  
-- Beispielimplementierungen für FHIR-Clients
-- Schulungs- und Demonstrationszwecke
-
-#### Beispiele
-
-[Beispiel Test Patient](Patient-example-test-patient.html)
 
 #### Implementierungshinweise
 
-**Must Support Elemente:**
-- `Patient.identifier`
-- `Patient.name`
-- `Patient.gender`
-
-**Terminologie:**
-- Geschlecht: Verwendung von `http://hl7.org/fhir/administrative-gender`
-- Name Use: Verwendung von `http://hl7.org/fhir/name-use`
-
-**Validierung:**
-- Alle Implementierungen müssen gegen dieses Profil validiert werden
-- Verwendung von FHIR-Validatoren empfohlen
+Siehe Beschreibungen im Profil.

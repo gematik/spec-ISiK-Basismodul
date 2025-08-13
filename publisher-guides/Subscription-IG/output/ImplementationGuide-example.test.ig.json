@@ -10,7 +10,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-08-12T10:16:22+02:00",
+  "date" : "2025-08-13T16:05:06+02:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "example.test.ig",
   "license" : "CC0-1.0",
@@ -103,6 +103,17 @@
       {
         "url" : "value",
         "valueString" : "STU1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -382,6 +393,17 @@
       {
         "url" : "value",
         "valueString" : "STU1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -687,18 +709,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/example-test-patient"
-      },
-      "name" : "Example Test Patient",
-      "description" : "An example patient instance for testing",
-      "exampleCanonical" : "http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -905,30 +915,6 @@
       "name" : "SubscriptionNotificationType",
       "description" : "The type of notification represented by the status message.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/TestCapabilityStatement"
-      },
-      "name" : "Test FHIR Server Capability Statement",
-      "description" : "A dummy capability statement for testing purposes",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/test-patient"
-      },
-      "name" : "Test Patient Profile",
-      "description" : "A simple test patient profile for validation purposes",
-      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{
@@ -959,15 +945,6 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "spezifikation.html"
-        }],
-        "nameUrl" : "spezifikation.html",
-        "title" : "Spezifikation",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "festlegungen.html"
         }],
         "nameUrl" : "festlegungen.html",
@@ -977,29 +954,83 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Patientenzusammenfuehrung.html"
+        }],
+        "nameUrl" : "Patientenzusammenfuehrung.html",
+        "title" : "Patientenzusammenführung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Fallzusammenfuehrung.html"
+        }],
+        "nameUrl" : "Fallzusammenfuehrung.html",
+        "title" : "Fallzusammenführung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "UseCases.html"
+        }],
+        "nameUrl" : "UseCases.html",
+        "title" : "Weitere Use Cases",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Akteure.html"
+        }],
+        "nameUrl" : "Akteure.html",
+        "title" : "Akteure",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "FunktionenInteraktionen.html"
+        }],
+        "nameUrl" : "FunktionenInteraktionen.html",
+        "title" : "Funktionen und Interaktionen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "artifacts.html"
         }],
         "nameUrl" : "artifacts.html",
         "title" : "FHIR-Artefakte",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "profiles.html"
-          }],
-          "nameUrl" : "profiles.html",
-          "title" : "Profile",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "capabilitystatements.html"
-          }],
-          "nameUrl" : "capabilitystatements.html",
-          "title" : "Capability Statements",
-          "generation" : "markdown"
-        }]
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "profiles.html"
+        }],
+        "nameUrl" : "profiles.html",
+        "title" : "Profile",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "terminology.html"
+        }],
+        "nameUrl" : "terminology.html",
+        "title" : "Terminology",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "capabilitystatements.html"
+        }],
+        "nameUrl" : "capabilitystatements.html",
+        "title" : "Capability Statements",
+        "generation" : "markdown"
       }]
     },
     "parameter" : [{

@@ -1,13 +1,9 @@
-<!-- layouts\layout-changehistory.html -->
-<!-- get modelType -->
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - Test Implementation Guide v0.0.1</title>
+    <title>Terminology - Test Implementation Guide v0.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -64,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:""}
-    h3,h4,h5,h6{--heading-prefix:""}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -105,8 +101,27 @@
   <li>
     <a href="releasenotes.html">Release Notes</a>
   </li>
-  <li>
-    <a href="spezifikation.html">Spezifikation</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="festlegungen.html">Festlegungen</a>
@@ -117,10 +132,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profile</a>
+        <a href="artifacts.html">Artefakte</a>
       </li>
       <li>
         <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
       </li>
     </ul>
   </li>
@@ -162,7 +183,7 @@ Test Implementation Guide
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Terminology</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -173,59 +194,50 @@ Test Implementation Guide
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
-<div style="counter-reset: section 10" class="col-12">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
   
-  
-
-
-
-
-
-
-
-
-<ul class="nav nav-tabs">
-
-  <li>
-    <a href="CapabilityStatement-TestCapabilityStatement.html">Narrative Content</a>
-  </li>
-
-
-
-  
-    <li>
-      <a href="CapabilityStatement-TestCapabilityStatement.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="CapabilityStatement-TestCapabilityStatement.json.html">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="CapabilityStatement-TestCapabilityStatement.ttl.html">TTL</a>
-    </li>
+  <h2>Terminology</h2>
   
 
 
 
-</ul>
 
 
-  <a name="root"> </a>
-  <h2 id="root">: TestCapabilityStatement - Change History</h2>
-  <p>History of changes for TestCapabilityStatement .</p>
 
-  
 
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 
+<h1 id="terminologien">Terminologien</h1>
+
+<p>Diese Seite listet alle wesentlichen FHIR-Terminologien, die in diesem Implementation Guide definiert sind.</p>
+
+<p><a href="CodeSystem-ISiKSubscriptionTopic.html">ISiK SubscriptionTopic CodeSystem</a></p>
+
+<p><a href="CodeSystem-subscription-notification-type.html">ISiK Subscription Notification CodeSystem</a></p>
+
+<p>TODO: hier ggf. die entsprechenden VS einfügen?!</p>
+
+<p><a href="ValueSet-FhirMimeTypeVS.html">FhirMimeTypeVS</a></p>
+
+
+
+
+</div>
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -234,8 +246,6 @@ Test Implementation Guide
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript" src="assets/js/tabs.js"> </script>
-
   <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
@@ -243,7 +253,7 @@ Test Implementation Guide
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Aug 12, 2025 10:16+0200">2025-08-12</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Aug 13, 2025 16:05+0200">2025-08-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

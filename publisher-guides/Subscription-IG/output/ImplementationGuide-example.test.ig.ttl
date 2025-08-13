@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "TestImplementationGuide"] ; # 
   fhir:title [ fhir:v "Test Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-08-12T10:16:22+02:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-08-13T16:05:06+02:00"^^xsd:dateTime] ; # 
   fhir:description [ fhir:v "A test implementation guide for validating the local FHIR IG Publisher environment"] ; # 
   fhir:packageId [ fhir:v "example.test.ig"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -146,6 +146,21 @@
          fhir:value [
            a fhir:string ;
            fhir:v "STU1"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "no-validate"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
@@ -527,6 +542,21 @@
          fhir:value [
            a fhir:string ;
            fhir:v "STU1"
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "no-validate"
+         ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
@@ -953,25 +983,6 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
-           fhir:v "Patient"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/fhir/test-subscription-ig/Patient/example-test-patient> ;
-         fhir:reference [ fhir:v "Patient/example-test-patient" ]
-       ] ;
-       fhir:name [ fhir:v "Example Test Patient" ] ;
-       fhir:description [ fhir:v "An example patient instance for testing" ] ;
-       fhir:example [
-         a fhir:canonical ;
-         fhir:v "http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient"^^xsd:anyURI ;
-         fhir:link <http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -1291,42 +1302,6 @@
          a fhir:boolean ;
          fhir:v false
        ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "CapabilityStatement"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/fhir/test-subscription-ig/CapabilityStatement/TestCapabilityStatement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/TestCapabilityStatement" ]
-       ] ;
-       fhir:name [ fhir:v "Test FHIR Server Capability Statement" ] ;
-       fhir:description [ fhir:v "A dummy capability statement for testing purposes" ] ;
-       fhir:example [
-         a fhir:boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient> ;
-         fhir:reference [ fhir:v "StructureDefinition/test-patient" ]
-       ] ;
-       fhir:name [ fhir:v "Test Patient Profile" ] ;
-       fhir:description [ fhir:v "A simple test patient profile for validation purposes" ] ;
-       fhir:example [
-         a fhir:boolean ;
-         fhir:v false
-       ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
@@ -1375,20 +1350,6 @@
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:url ;
-             fhir:v "spezifikation.html"^^xsd:anyURI
-           ]
-         ] ) ;
-         fhir:name [
-           a fhir:url ;
-           fhir:v "spezifikation.html"^^xsd:anyURI
-         ] ;
-         fhir:title [ fhir:v "Spezifikation" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:url ;
              fhir:v "festlegungen.html"^^xsd:anyURI
            ]
          ] ) ;
@@ -1403,6 +1364,76 @@
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:url ;
+             fhir:v "Patientenzusammenfuehrung.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "Patientenzusammenfuehrung.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Patientenzusammenführung" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "Fallzusammenfuehrung.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "Fallzusammenfuehrung.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Fallzusammenführung" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "UseCases.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "UseCases.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Weitere Use Cases" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "Akteure.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "Akteure.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Akteure" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "FunktionenInteraktionen.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "FunktionenInteraktionen.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Funktionen und Interaktionen" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
              fhir:v "artifacts.html"^^xsd:anyURI
            ]
          ] ) ;
@@ -1411,36 +1442,49 @@
            fhir:v "artifacts.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "FHIR-Artefakte" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:url ;
-               fhir:v "profiles.html"^^xsd:anyURI
-             ]
-           ] ) ;
-           fhir:name [
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
              a fhir:url ;
              fhir:v "profiles.html"^^xsd:anyURI
-           ] ;
-           fhir:title [ fhir:v "Profile" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:url ;
-               fhir:v "capabilitystatements.html"^^xsd:anyURI
-             ]
-           ] ) ;
-           fhir:name [
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "profiles.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Profile" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "terminology.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "terminology.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Terminology" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
              a fhir:url ;
              fhir:v "capabilitystatements.html"^^xsd:anyURI
-           ] ;
-           fhir:title [ fhir:v "Capability Statements" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] )
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "capabilitystatements.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Capability Statements" ] ;
+         fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;
      fhir:parameter ( [

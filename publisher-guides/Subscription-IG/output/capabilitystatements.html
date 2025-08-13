@@ -60,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.2"}
-    h3,h4,h5,h6{--heading-prefix:"5.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -101,8 +101,27 @@
   <li>
     <a href="releasenotes.html">Release Notes</a>
   </li>
-  <li>
-    <a href="spezifikation.html">Spezifikation</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="festlegungen.html">Festlegungen</a>
@@ -113,10 +132,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profile</a>
+        <a href="artifacts.html">Artefakte</a>
       </li>
       <li>
         <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
       </li>
     </ul>
   </li>
@@ -158,7 +183,7 @@ Test Implementation Guide
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>Capability Statements</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Capability Statements</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -193,22 +218,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a>    <ul>
-      <li><a href="#überblick" id="markdown-toc-überblick">Überblick</a></li>
-      <li><a href="#test-fhir-server-capabilitystatement" id="markdown-toc-test-fhir-server-capabilitystatement">Test FHIR Server CapabilityStatement</a>        <ul>
-          <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
-          <li><a href="#server-fähigkeiten" id="markdown-toc-server-fähigkeiten">Server-Fähigkeiten</a></li>
-          <li><a href="#implementierungshinweise" id="markdown-toc-implementierungshinweise">Implementierungshinweise</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 
 <h1 id="capabilitystatements">CapabilityStatements</h1>
@@ -219,104 +230,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>CapabilityStatements dokumentieren die FHIR-Funktionalitäten, die ein Server implementieren muss, um mit diesem Implementation Guide konform zu sein.</p>
 
-<h2 id="test-fhir-server-capabilitystatement">Test FHIR Server CapabilityStatement</h2>
+<p><a href="CapabilityStatement-ISiKCapabilityStatementSubscriptionRolle.html">Akteur Capability Statement</a></p>
 
-<h3 id="beschreibung">Beschreibung</h3>
-
-<p><strong>Canonical URL:</strong> <code class="language-plaintext highlighter-rouge">http://example.org/fhir/test/CapabilityStatement/TestCapabilityStatement</code></p>
-
-<p><strong>Zweck:</strong> Ein Test-CapabilityStatement für Validierungszwecke</p>
-
-<h4 id="capabilitystatement-details">CapabilityStatement Details</h4>
-
-<p><a href="CapabilityStatement-TestCapabilityStatement.html">Test FHIR Server Capability Statement</a></p>
-
-<h3 id="server-fähigkeiten">Server-Fähigkeiten</h3>
-
-<h4 id="allgemeine-eigenschaften">Allgemeine Eigenschaften</h4>
-
-<ul>
-  <li><strong>FHIR Version:</strong> 4.0.1</li>
-  <li><strong>Format:</strong> JSON, XML</li>
-  <li><strong>Patch Format:</strong> JSON Patch, XML Patch</li>
-  <li><strong>Implementation Guide:</strong> Test Implementation Guide v1.0.0</li>
-</ul>
-
-<h4 id="ressourcen-unterstützung">Ressourcen-Unterstützung</h4>
-
-<h5 id="patient-ressource">Patient Ressource</h5>
-
-<p><strong>Unterstützte Operationen:</strong></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">read</code> - Lesen einzelner Patient-Ressourcen</li>
-  <li><code class="language-plaintext highlighter-rouge">vread</code> - Lesen spezifischer Versionen</li>
-  <li><code class="language-plaintext highlighter-rouge">update</code> - Aktualisierung bestehender Patienten</li>
-  <li><code class="language-plaintext highlighter-rouge">patch</code> - Partielle Aktualisierung</li>
-  <li><code class="language-plaintext highlighter-rouge">delete</code> - Löschen von Patient-Ressourcen</li>
-  <li><code class="language-plaintext highlighter-rouge">create</code> - Erstellen neuer Patienten</li>
-  <li><code class="language-plaintext highlighter-rouge">search-type</code> - Suche nach Patienten</li>
-</ul>
-
-<p><strong>Unterstützte Profile:</strong></p>
-
-<ul>
-  <li><a href="StructureDefinition-test-patient.html">Test Patient Profile</a></li>
-</ul>
-
-<p><strong>Search Parameter:</strong></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">_id</code> - Logische ID der Ressource</li>
-  <li><code class="language-plaintext highlighter-rouge">identifier</code> - Eindeutige Identifikatoren</li>
-  <li><code class="language-plaintext highlighter-rouge">name</code> - Vollständiger oder partieller Name</li>
-  <li><code class="language-plaintext highlighter-rouge">family</code> - Familienname</li>
-  <li><code class="language-plaintext highlighter-rouge">given</code> - Vorname</li>
-  <li><code class="language-plaintext highlighter-rouge">gender</code> - Geschlecht</li>
-  <li><code class="language-plaintext highlighter-rouge">birthdate</code> - Geburtsdatum</li>
-</ul>
-
-<h4 id="sicherheit">Sicherheit</h4>
-
-<p><strong>Sicherheitsmaßnahmen:</strong></p>
-
-<ul>
-  <li>HTTPS wird für alle Kommunikation empfohlen</li>
-  <li>Authentifizierung nach lokalen Richtlinien</li>
-  <li>Autorisierung auf Ressourcenebene</li>
-  <li>Audit-Logging für alle Zugriffe</li>
-</ul>
-
-<h4 id="compliance">Compliance</h4>
-
-<p><strong>Konformitätsanforderungen:</strong></p>
-
-<ul>
-  <li>Server müssen alle definierten Must Support Elemente unterstützen</li>
-  <li>Validierung gegen die Profile ist erforderlich</li>
-  <li>Fehlerbehandlung nach FHIR-Standard</li>
-  <li>Unterstützung für OperationOutcome bei Fehlern</li>
-</ul>
-
-<h3 id="implementierungshinweise">Implementierungshinweise</h3>
-
-<h4 id="empfohlene-implementierung">Empfohlene Implementierung</h4>
-
-<ul>
-  <li>Verwendung von FHIR-Bibliotheken für Standard-Operationen</li>
-  <li>Implementierung von umfassender Fehlerbehandlung</li>
-  <li>Performance-Optimierung für Such-Operationen</li>
-  <li>Bereitstellung aussagekräftiger Fehlermeldungen</li>
-</ul>
-
-<h4 id="test-und-validierung">Test und Validierung</h4>
-
-<ul>
-  <li>Verwendung von FHIR-Testwerkzeugen</li>
-  <li>Kontinuierliche Validierung gegen Profile</li>
-  <li>Monitoring der Server-Performance</li>
-  <li>Regelmäßige Sicherheitsüberprüfungen</li>
-</ul>
+<p><a href="CapabilityStatement-ISiKCapabilityStatementSubscriptionServerAkteur.html">Rolle Subscription Capability Statement</a></p>
 
 
 
@@ -337,7 +253,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Aug 12, 2025 10:16+0200">2025-08-12</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Aug 13, 2025 16:05+0200">2025-08-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -184,7 +184,7 @@ mkdir -p output
 
 **Resultierende Struktur:**
 ```
-guides/Subscriptions-5/
+/publisher-guides/Subscriptions-5/
 ├── input/
 │   ├── pagecontent/            # Für migrierte Seiten
 │   ├── images/                 # Bilder und Diagramme
@@ -205,93 +205,14 @@ template = hl7.fhir.template#current
 fsh = ../../Resources/input/fsh/Subscription
 ```
 
-#### package.json erstellen
-```json
-{
-  "name": "de.gematik.isik-subscriptions",
-  "version": "5.0.0",
-  "description": "ISiK Subscriptions Implementation Guide",
-  "license": "CC0-1.0",
-  "dependencies": {
-    "de.gematik.isik-basismodul": "5.0.0",
-    "hl7.fhir.r4.core": "4.0.1"
-  }
-}
-```
+#### package.json anpassen
+- siehe Datei
 
-#### ImplementationGuide Resource erstellen
-Erstelle `input/ImplementationGuide-subscriptions.json`:
-```json
-{
-  "resourceType": "ImplementationGuide",
-  "id": "de.gematik.isik.subscriptions",
-  "url": "https://gematik.de/fhir/isik/v5/subscriptions/ImplementationGuide/de.gematik.isik.subscriptions",
-  "version": "5.0.0",
-  "name": "ISiKSubscriptions",
-  "title": "ISiK Subscriptions",
-  "status": "active",
-  "publisher": "gematik GmbH",
-  "contact": [
-    {
-      "name": "gematik GmbH",
-      "telecom": [
-        {
-          "system": "url",
-          "value": "https://www.gematik.de"
-        }
-      ]
-    }
-  ],
-  "description": "Implementation Guide für ISiK Subscriptions Modul",
-  "fhirVersion": ["4.0.1"],
-  "dependsOn": [
-    {
-      "uri": "https://gematik.de/fhir/isik/v5/basismodul",
-      "packageId": "de.gematik.isik-basismodul",
-      "version": "5.0.0"
-    }
-  ],
-  "definition": {
-    "page": {
-      "nameUrl": "toc.html",
-      "title": "Table of Contents",
-      "generation": "html",
-      "page": [
-        {
-          "nameUrl": "index.html",
-          "title": "ISiK Subscriptions Startseite",
-          "generation": "markdown"
-        }
-      ]
-    }
-  }
-}
-```
-
-### 2.3 Build-Skripte erstellen
-
-#### _genonce.sh (Linux/macOS)
+### 2.3 Build-Skripte
 ```bash
-#!/bin/bash
-set -e
-
-echo "=== ISiK Subscriptions IG Build ==="
-
-# Java Version prüfen
-if ! java -version 2>&1 | grep -q "11\|17\|21"; then
-    echo "Fehler: Java 11+ erforderlich"
-    echo "Aktuelle Version:"
-    java -version
-    exit 1
-fi
-
-# SUSHI auf bestehende FSH-Dateien anwenden
-echo "1. SUSHI Ausführung..."
-cd ../../Resources
-sushi . --fsh-path input/fsh/Subscription --output ../guides/Subscriptions-5/temp/sushi-output
 
 # Zurück zum IG Verzeichnis
-cd ../guides/Subscriptions-5
+cd ../publisher-guides/Subscriptions-5
 
 # IG Publisher herunterladen falls nicht vorhanden
 if [ ! -f "input-cache/publisher.jar" ]; then
@@ -300,12 +221,14 @@ if [ ! -f "input-cache/publisher.jar" ]; then
     curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o input-cache/publisher.jar
 fi
 
-# IG Publisher ausführen
-echo "3. IG Publisher ausführen..."
-java -jar input-cache/publisher.jar -ig ig.ini
 
-echo "=== Build abgeschlossen ==="
-echo "Output: $(pwd)/output/index.html"
+# IG Publisher ausführen
+#C:\Users\francois.peverali\Documents\workspace-ISIK\spec-ISiK-Basismodul\publisher-guides\Subscription-IG>
+
+java "-Dfile.encoding=UTF-8" -jar .\input-cache\publisher.jar -ig ig.ini -sushi-timeout 600
+
+java "-Dfile.encoding=UTF-8" -jar .\input-cache\publisher.jar -no-sushi -ig ig.ini 
+
 ```
 
 #### _genonce.bat (Windows)
@@ -353,16 +276,7 @@ chmod +x _genonce.sh  # Linux/macOS
 ## Phase 3: Narrative Inhalte migrieren
 
 ### 3.1 Seiten nach IG Publisher Standard kopieren
-```bash
-# In guides/Subscriptions-5/
-cp -r Seiten/* input/pagecontent/
-
-# Umbenennen zu .md falls nötig
-cd input/pagecontent
-for file in *.page.md; do
-    mv "$file" "${file%.page.md}.md"
-done
-```
+- In /publisher/guides/Subscriptions-5/ kopieren
 
 ### 3.2 Markdown-Dateien für IG Publisher anpassen
 - Simplifier-spezifische Syntax entfernen
@@ -377,6 +291,8 @@ done
 # Nachher (IG Publisher):
 [Einführung](index.html)
 ```
+
+### 3.2 Menu für IG Publisher in sushi-config.yaml anpassen
 
 ---
 

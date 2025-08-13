@@ -11,7 +11,7 @@
   <name value="TestImplementationGuide"/>
   <title value="Test Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-08-12T10:16:22+02:00"/>
+  <date value="2025-08-13T16:05:06+02:00"/>
   <description value="A test implementation guide for validating the local FHIR IG Publisher environment"/>
   <packageId value="example.test.ig"/>
   <license value="CC0-1.0"/>
@@ -87,6 +87,14 @@
       </extension>
       <extension url="value">
         <valueString value="STU1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -290,6 +298,14 @@
       </extension>
       <extension url="value">
         <valueString value="STU1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -520,17 +536,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/example-test-patient"/>
-      </reference>
-      <name value="Example Test Patient"/>
-      <description value="An example patient instance for testing"/>
-      <exampleCanonical value="http://example.org/fhir/test-subscription-ig/StructureDefinition/test-patient"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -721,28 +726,6 @@
       <description value="The type of notification represented by the status message."/>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CapabilityStatement"/>
-      </extension>
-      <reference>
-        <reference value="CapabilityStatement/TestCapabilityStatement"/>
-      </reference>
-      <name value="Test FHIR Server Capability Statement"/>
-      <description value="A dummy capability statement for testing purposes"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/test-patient"/>
-      </reference>
-      <name value="Test Patient Profile"/>
-      <description value="A simple test patient profile for validation purposes"/>
-      <exampleBoolean value="false"/>
-    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -768,18 +751,50 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="spezifikation.html"/>
-        </extension>
-        <nameUrl value="spezifikation.html"/>
-        <title value="Spezifikation"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="festlegungen.html"/>
         </extension>
         <nameUrl value="festlegungen.html"/>
         <title value="Festlegungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Patientenzusammenfuehrung.html"/>
+        </extension>
+        <nameUrl value="Patientenzusammenfuehrung.html"/>
+        <title value="Patientenzusammenführung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Fallzusammenfuehrung.html"/>
+        </extension>
+        <nameUrl value="Fallzusammenfuehrung.html"/>
+        <title value="Fallzusammenführung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="UseCases.html"/>
+        </extension>
+        <nameUrl value="UseCases.html"/>
+        <title value="Weitere Use Cases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Akteure.html"/>
+        </extension>
+        <nameUrl value="Akteure.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="FunktionenInteraktionen.html"/>
+        </extension>
+        <nameUrl value="FunktionenInteraktionen.html"/>
+        <title value="Funktionen und Interaktionen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -789,22 +804,30 @@
         <nameUrl value="artifacts.html"/>
         <title value="FHIR-Artefakte"/>
         <generation value="markdown"/>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="profiles.html"/>
-          </extension>
-          <nameUrl value="profiles.html"/>
-          <title value="Profile"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="capabilitystatements.html"/>
-          </extension>
-          <nameUrl value="capabilitystatements.html"/>
-          <title value="Capability Statements"/>
-          <generation value="markdown"/>
-        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="profiles.html"/>
+        </extension>
+        <nameUrl value="profiles.html"/>
+        <title value="Profile"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="terminology.html"/>
+        </extension>
+        <nameUrl value="terminology.html"/>
+        <title value="Terminology"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="capabilitystatements.html"/>
+        </extension>
+        <nameUrl value="capabilitystatements.html"/>
+        <title value="Capability Statements"/>
+        <generation value="markdown"/>
       </page>
     </page>
     <parameter>
