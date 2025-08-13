@@ -13,7 +13,7 @@ Anforderungen definiert werden.
   doppelten Erfassung zusammengeführt werden, können relevante Systeme (z. B. KIS,
   Abrechnungssysteme, Labor) automatisch über die Änderung informiert werden. Dies verhindert
   Dateninkonsistenzen und ermöglicht eine einheitliche Patientenhistorie.    
-  Siehe auch: {{pagelink:Patient-merge, text:Patient merge und Notification }}
+  Siehe auch: [Patient merge und Notification](Patientenzusammenfuehrung.html)
 
 * **Fall-Zusammenführung:** Falls mehrere Krankenhausaufenthalte eines Patienten in einem Fall
   zusammengeführt werden, erhalten nachgelagerte Systeme eine Benachrichtigung, um Abrechnungen und

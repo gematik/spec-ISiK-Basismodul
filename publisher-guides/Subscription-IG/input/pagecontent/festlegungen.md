@@ -7,7 +7,7 @@ topic: Festlegungen
 Es gelten alle übergreifenden Festlegungen entsprechend
 dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
 
-Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Artefakte, text: Artefakten}}.
+Zudem gelten die Festlegungen gemäß dem Abschnitt zu den [Artefakten](artifacts.html).
 
 ## Normativer Status
 
