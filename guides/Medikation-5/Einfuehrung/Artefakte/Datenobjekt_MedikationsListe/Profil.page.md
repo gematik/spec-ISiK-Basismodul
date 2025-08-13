@@ -1,6 +1,7 @@
 ---
 topic: ISiKMedikationsListe-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe
+capability1: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationRolle
 ---
 ## {{link}}
 
