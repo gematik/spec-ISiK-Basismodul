@@ -2,7 +2,7 @@
 
 ## Risiken
 - Im Zuge des Vorgehens redundante Zwischenstände vermeiden
-    - Grundidee: Der bestehende Ressourcenordner sollte beibehalten werden
+    - Grundidee: Der bestehende Ressourcenordner sollten im beibehalten werden - dafür soll ein Skript erstellt werden, das die Dateien im postprocessing der Sushi Kompilierung dem korrekten IG Publisher Ordner zuweist (auf Grundlage des CpS)
     
 
 ## Aufwandsschätzung
