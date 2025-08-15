@@ -10,23 +10,14 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains
-    VersichertenId 0..1 MS and
+    VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
-* identifier[VersichertenId] // hier folgende Refernz auf BAsisprofile-De entfernt: only IdentifierKvid10
-  * ^patternIdentifier.system = "http://fhir.de/sid/gkv/kvid-10"
-  * system 1..1 MS
-  //* type 0..1 MS //offene Frage: 1..1 oder 0..1?
-  * type 
-    * ^comment = "**Änderung in Version 3.0.9: **  
-  In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. 
-  Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional.
-  Hintergrund: Die ehemals ausschließlich für gesetzlich Versicherte verwendete lebenslange VersichertenID wird künftig auch auf privat versicherte Personen ausgeweitet. 
-  Der bisher verwendete Code ist daher nicht länger zutreffend und in neueren Versionen der Deutschen Basisprofile als `deprecated` gekennzeichnet.  
-  Es wird dringend empfohlen, als eindeutiges Erkennungsmerkmal einer VersichertenID die unveränderte Canonical URL in `system` anstelle des `type`-Codes zu verwenden!
-  Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden."
-  * value 1..1 MS // war vorher in profil aus Basisprofil-DE
-    * obeys kvid-1
+* identifier[VersichertenId-GKV] only IdentifierKvid10
+  * ^patternIdentifier.type = $identifier-type-de-basis#GKV
+  * type 1.. MS
+  * system MS
+  * value MS
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
   * type MS
@@ -125,9 +116,9 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 Instance: PatientinMusterfrau
 InstanceOf: ISiKPatient
 Usage: #example
-* identifier[VersichertenId].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A123456789"
+* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
+* identifier[VersichertenId-GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[VersichertenId-GKV].value = "A123456789"
 * identifier[Patientennummer].type = $v2-0203#MR
 * identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
 * identifier[Patientennummer].value = "TestPID"
@@ -174,37 +165,6 @@ Usage: #example
 * address[=].postalCode = "98764"
 * address[=].country = "DE"
 
-Instance: PatientOhneIdentifierTypeCode
-InstanceOf: ISiKPatient
-Usage: #example
-//* identifier[VersichertenId-GKV].type = $identifier-type-de-basis#GKV
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A111111111"
-* identifier[Patientennummer].type = $v2-0203#MR
-* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "111111"
-* active = true
-* name[Name]
-  * family = "Ohne Typecode"
-  * given = "Identifier"
-* gender = #male
-* birthDate = "1964-08-12"
-
-Instance: PatientMitKVZ10IdentifierTypeCode
-InstanceOf: ISiKPatient
-Usage: #example
-* identifier[VersichertenId].type = $identifier-type-de-basis#KVZ10
-* identifier[VersichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[VersichertenId].value = "A222222222"
-* identifier[Patientennummer].type = $v2-0203#MR
-* identifier[Patientennummer].system = "https://fhir.krankenhaus.example/sid/PID"
-* identifier[Patientennummer].value = "222222"
-* active = true
-* name[Name]
-  * family = "Mit KVZ10 Typecode"
-  * given = "Identifier"
-* gender = #male
-* birthDate = "1964-08-12"
 
 Invariant: isik-pat-1
 Description: "Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden"
@@ -216,10 +176,3 @@ Description: "The content of the country element (if present) SHALL be selected 
 Severity: #warning
 Expression: "country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))"
 
-/* Kopie der gelichnamigen Invariante aus den Basisprofilen.
-Hinzugefügt, da der Identifier-Slice für KVID aufgrund des geänderten Type-codes
-nicht länger von den basisprofilen erbt  */
-Invariant: kvid-1
-Description: "Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen"
-Severity: #warning
-Expression: "matches('^[A-Z][0-9]{9}$')"

@@ -46,40 +46,45 @@
         "mustSupport": true
       },
       {
-        "id": "Patient.identifier:VersichertenId",
+        "id": "Patient.identifier:VersichertenId-GKV",
         "path": "Patient.identifier",
-        "sliceName": "VersichertenId",
+        "sliceName": "VersichertenId-GKV",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10"
+            ]
+          }
+        ],
         "patternIdentifier": {
-          "system": "http://fhir.de/sid/gkv/kvid-10"
+          "type": {
+            "coding": [
+              {
+                "code": "GKV",
+                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+              }
+            ]
+          }
         },
         "mustSupport": true
       },
       {
-        "id": "Patient.identifier:VersichertenId.type",
+        "id": "Patient.identifier:VersichertenId-GKV.type",
         "path": "Patient.identifier.type",
-        "comment": "**Änderung in Version 3.0.9: **  \n  In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. \n  Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional.\n  Hintergrund: Die ehemals ausschließlich für gesetzlich Versicherte verwendete lebenslange VersichertenID wird künftig auch auf privat versicherte Personen ausgeweitet. \n  Der bisher verwendete Code ist daher nicht länger zutreffend und in neueren Versionen der Deutschen Basisprofile als `deprecated` gekennzeichnet.  \n  Es wird dringend empfohlen, als eindeutiges Erkennungsmerkmal einer VersichertenID die unveränderte Canonical URL in `system` anstelle des `type`-Codes zu verwenden!\n  Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden."
-      },
-      {
-        "id": "Patient.identifier:VersichertenId.system",
-        "path": "Patient.identifier.system",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Patient.identifier:VersichertenId.value",
+        "id": "Patient.identifier:VersichertenId-GKV.system",
+        "path": "Patient.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:VersichertenId-GKV.value",
         "path": "Patient.identifier.value",
-        "min": 1,
-        "constraint": [
-          {
-            "key": "kvid-1",
-            "severity": "warning",
-            "human": "Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen",
-            "expression": "matches('^[A-Z][0-9]{9}$')",
-            "source": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
-          }
-        ],
         "mustSupport": true
       },
       {

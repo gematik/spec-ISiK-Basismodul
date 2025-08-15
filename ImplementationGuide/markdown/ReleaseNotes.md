@@ -11,9 +11,8 @@ Datum: 31.07.2025
 
 * `fixed` Fix Pattern auf Composition.category und Hinzufügen von MS .. auf type.text sowie Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type (entsprechend https://github.com/gematik/spec-ISiK-Basismodul/pull/749) https://github.com/gematik/spec-ISiK-Basismodul/pull/694
 * `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/818
-* `change` In Angleichung an Änderungen in neueren Versionen der Deutschen Basisprofile wurden die Constraints auf `type` für die zehnstellige VersichertenID in `Patient.identifier` gelockert. Künftig ist neben dem bisher verpflichtenden Code `GKV` alternativ der Code `KVZ10` erlaubt. Die Verwendung von `type` ist künftig optional. https://github.com/gematik/spec-ISiK-Basismodul/pull/810 
-Hintergrund: Die ehemals ausschließlich für gesetzlich Versicherte verwendete lebenslange VersichertenID wird künftig auch auf privat versicherte Personen ausgeweitet. Der bisher verwendete Code ist daher nicht länger zutreffend und in neueren Versionen der Deutschen Basisprofile als `deprecated` gekennzeichnet. Es wird dringend empfohlen, als eindeutiges Erkennungsmerkmal einer VersichertenID die unveränderte Canonical URL in `system` anstelle des `type`-Codes zu verwenden!
-  * Hinweis: Diese Änderung ist aufwärts- jedoch nicht abwärtskompatibel. Um Abwärts-Kompatibilität sicherzustellen, muss weiterhin der Code `GKV` verwendet werden.
+
+---
 
 Version: 3.0.8
 
