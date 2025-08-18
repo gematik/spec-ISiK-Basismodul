@@ -16,6 +16,7 @@ Datum: tbd.
 * `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen
 * `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `improve` `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+* `improve` Durch Entfernung des Abschnittes "Übersicht der Akteure" den Abschnitt Akteure klarer gestaltet 
 
 
 ## Version 5.0.0
