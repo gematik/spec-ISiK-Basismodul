@@ -4,7 +4,7 @@
 FHIR Profile Inheritance Diagram Generator
 ==========================================
 
-Generiert PlantUML-Diagramme für FHIR-Profile-Vererbung aus FSH-Dateien.
+Generates PlantUML diagrams for FHIR profile inheritance from FSH files.
 
 Usage:
     python generate_profile_diagram.py [input_dir] [output_file]
