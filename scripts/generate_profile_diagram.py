@@ -267,6 +267,16 @@ def main():
     # Generiere Diagramm
     result = generate_plantuml_diagram(profiles, relationships, external_parents, output_file)
     
+    # Generiere SVG-Datei
+    svg_file = output_file.replace('.puml', '.svg')
+    if generate_svg_from_plantuml(output_file, svg_file):
+        print(f"📊 SVG-Diagramm erstellt: {svg_file}")
+    else:
+        print("⚠️  SVG-Generierung fehlgeschlagen (PlantUML nicht verfügbar)")
+        print("💡 Installieren Sie PlantUML um SVG-Dateien zu generieren:")
+        print("   choco install plantuml  # oder")
+        print("   java -jar plantuml.jar")
+    
     # Ausgabe der Ergebnisse
     print_summary(result, external_parents, found_parents)
     
@@ -275,6 +285,28 @@ def main():
     print(f"   plantuml {output_file}")
     
     return 0
+
+def generate_svg_from_plantuml(puml_file, svg_file):
+    """Generiert SVG-Datei aus PlantUML-Datei"""
+    try:
+        import subprocess
+        # Versuche PlantUML zu finden und auszuführen
+        commands_to_try = [
+            ["plantuml", "-tsvg", puml_file],
+            ["java", "-jar", "plantuml.jar", "-tsvg", puml_file],
+            ["java", "-DPLANTUML_LIMIT_SIZE=32768", "-jar", "plantuml.jar", "-tsvg", puml_file]
+        ]
+        
+        for cmd in commands_to_try:
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+                return True
+            except (subprocess.CalledProcessError, FileNotFoundError):
+                continue
+        
+        return False
+    except ImportError:
+        return False
 
 if __name__ == "__main__":
     exit_code = main()

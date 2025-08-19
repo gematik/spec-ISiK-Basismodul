@@ -16,6 +16,11 @@ Durch die Übernahme der Profile der MII und Abbildung auf das ISIK-Setting, kö
 - Maximale Kardinalitäten von Coding Slices wurden von der MII übernommen
 - Die Profil-Eigenschaften der MII-Profile, die den bisherigen, existenten Profilen in ISiK entsprechen, wurden in die existenten Profile des [generischen Implementierungsleitfadens Vitalparemeter](https://simplifier.net/guide/isik-vitalparameter-stufe-5) übernommen.
 
+## Profilhierarchie 
+
+Die folgende Darstellung zeigt die Vererbungsstruktur aller ICU-Profile in diesem Modul:
+
+![Profile Inheritance Diagram](../../../../Material/ICU/Profile_Inheritance_Diagram.svg)
 
 ---
 
