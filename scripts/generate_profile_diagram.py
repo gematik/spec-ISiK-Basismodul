@@ -19,6 +19,18 @@ import re
 import sys
 from pathlib import Path
 
+def sanitize_profile_name(name):
+    """
+    Sanitizes profile names for use as PlantUML identifiers.
+    
+    Args:
+        name (str): The profile name to sanitize
+        
+    Returns:
+        str: Sanitized name suitable for PlantUML identifiers
+    """
+    return name.replace("-", "_")
+
 def extract_fsh_profiles(directory):
     """Extrahiert Profile und ihre Vererbungsbeziehungen aus FSH-Dateien"""
     profiles = {}
@@ -160,7 +172,7 @@ skinparam note {
             if len(profile_name) > 30:
                 display_name = profile_name[:27] + "..."
             
-            plantuml_content += f'  class "{display_name}" as {profile_name.replace("-", "_")} <<Local>> {{\n'
+            plantuml_content += f'  class "{display_name}" as {sanitize_profile_name(profile_name)} <<Local>> {{\n'
             if info.get('id'):
                 plantuml_content += f'    + ID: {info["id"]}\n'
             if info.get('title') and info['title'] != profile_name:
@@ -181,15 +193,15 @@ skinparam note {
             if len(profile_name) > 30:
                 display_name = profile_name[:27] + "..."
                 
-            plantuml_content += f'  class "{display_name}" as {profile_name.replace("-", "_")} <<External>> {{\n'
+            plantuml_content += f'  class "{display_name}" as {sanitize_profile_name(profile_name)} <<External>> {{\n'
             plantuml_content += '  }\n'
         plantuml_content += "}\n\n"
     
     # Füge Beziehungen hinzu
     plantuml_content += "' Inheritance relationships\n"
     for rel in relationships:
-        parent_id = rel["parent"].replace("-", "_")
-        child_id = rel["child"].replace("-", "_")
+        parent_id = sanitize_profile_name(rel["parent"])
+        child_id = sanitize_profile_name(rel["child"])
         plantuml_content += f'{parent_id} <|-- {child_id}\n'
     
     plantuml_content += "\n@enduml"
@@ -229,6 +241,28 @@ def print_summary(result, external_parents, found_parents):
     print(f"\n🔄 Vererbungsbeziehungen: {len(result['relationships'])}")
     for rel in result['relationships']:
         print(f"  • {rel['parent']} → {rel['child']} (in {rel['file']})")
+
+def generate_svg_from_plantuml(puml_file, svg_file):
+    """Generiert SVG-Datei aus PlantUML-Datei"""
+    try:
+        import subprocess
+        # Versuche PlantUML zu finden und auszuführen
+        commands_to_try = [
+            ["plantuml", "-tsvg", puml_file],
+            ["java", "-jar", "plantuml.jar", "-tsvg", puml_file],
+            ["java", "-DPLANTUML_LIMIT_SIZE=32768", "-jar", "plantuml.jar", "-tsvg", puml_file]
+        ]
+        
+        for cmd in commands_to_try:
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+                return True
+            except (subprocess.CalledProcessError, FileNotFoundError):
+                continue
+        
+        return False
+    except ImportError:
+        return False
 
 def main():
     """Hauptfunktion"""
@@ -285,28 +319,6 @@ def main():
     print(f"   plantuml {output_file}")
     
     return 0
-
-def generate_svg_from_plantuml(puml_file, svg_file):
-    """Generiert SVG-Datei aus PlantUML-Datei"""
-    try:
-        import subprocess
-        # Versuche PlantUML zu finden und auszuführen
-        commands_to_try = [
-            ["plantuml", "-tsvg", puml_file],
-            ["java", "-jar", "plantuml.jar", "-tsvg", puml_file],
-            ["java", "-DPLANTUML_LIMIT_SIZE=32768", "-jar", "plantuml.jar", "-tsvg", puml_file]
-        ]
-        
-        for cmd in commands_to_try:
-            try:
-                result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-                return True
-            except (subprocess.CalledProcessError, FileNotFoundError):
-                continue
-        
-        return False
-    except ImportError:
-        return False
 
 if __name__ == "__main__":
     exit_code = main()
