@@ -62,7 +62,7 @@ InstanceOf: ISiKFormularDaten
   * item[+]  
     * linkId = "4.1"
     * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
-    * answer.valueDecimal = 66.
+    * answer.valueDecimal = 66
   * item[+]  
     * linkId = "4.2"
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
