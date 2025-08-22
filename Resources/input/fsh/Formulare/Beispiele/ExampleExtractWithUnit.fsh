@@ -1,5 +1,5 @@
 Instance: ExampleExtractWithUnit
-InstanceOf: Questionnaire
+InstanceOf: ISiKFormularDefinition
 
 * insert QuestionnaireExamplesMetadata(ExampleExtractWithUnit)
 * title = "Observation Based Extraction bei quantitativen Angaben"

@@ -9,13 +9,13 @@ Description: "ToDo"
 * insert Meta
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
-* modifierExtension contains
+/* * modifierExtension contains
   ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
 * modifierExtension[MDR-Relevant]
   * ^short = "MPG-Relevanz der Formulardaten"
   * ^comment = "**Begründung MS:**   
   Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
-* modifierExtension[MDR-Relevant].valueCoding MS
+* modifierExtension[MDR-Relevant].valueCoding MS */
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
   * ^comment = "**Begründung MS:**

@@ -1,5 +1,5 @@
 Instance: ExampleConditionalItem
-InstanceOf: Questionnaire
+InstanceOf: ISiKFormularDefinition
 
 * insert QuestionnaireExamplesMetadata(ExampleConditionalItem)
 //Etablieren des Patientenkontextes aus SMART-Launch

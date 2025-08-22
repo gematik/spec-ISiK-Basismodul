@@ -1,5 +1,5 @@
 Instance: ExampleEntryValidationDecimal
-InstanceOf: Questionnaire
+InstanceOf: ISiKFormularDefinition
 
 * insert QuestionnaireExamplesMetadata(ExampleEntryValidationDecimal)
 * title = "Validierung von Dezimalen"

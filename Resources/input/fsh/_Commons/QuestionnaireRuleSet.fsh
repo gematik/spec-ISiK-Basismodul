@@ -144,6 +144,24 @@ RuleSet: regEx(expression)
   * url = "http://hl7.org/fhir/StructureDefinition/regex"
   * valueString = {expression}
 
+RuleSet: targetConstraint(key, expression, severity, human)  
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/targetConstraint"
+  * extension
+    * url = "key"
+    * valueId = {key}
+  * extension
+    * url = "severity"
+    * valueCode = {severity} 
+  * extension
+    * url = "expression"
+    * valueExpression
+      //* name = {name}
+      * language = #text/fhirpath
+      * expression = {expression}
+  * extension
+    * url = "human" 
+    * valueString = {human}   
 
 RuleSet: qritem (id, text)
 * linkId = {id}
@@ -156,11 +174,13 @@ RuleSet: QuestionnaireExamplesMetadata(name)
 * status = #draft
 * experimental = false
 * publisher = "Gematik GmbH"
+* modifierExtension[MDR-Relevant].valueCoding = https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS#none
+* subjectType = #Patient
 
 RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
 * questionnaire = Canonical({questionnaire})
 * status = #final
-* modifierExtension[MDR-Relevant].valueCoding = https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS#none
+//* modifierExtension[MDR-Relevant].valueCoding = https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS#none
 * subject = Reference({patient})
 * author = Reference({patient})
 * authored = "2025-01-01"
