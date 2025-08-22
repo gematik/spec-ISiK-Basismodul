@@ -52,3 +52,66 @@ InstanceOf: ISiKFormularDaten
     * answer.valueDecimal = 1.66
  
 
+Instance: TestMaxDecimal0
+InstanceOf: ISiKFormularDaten
+* insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
+* questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
+* item[+]
+  * linkId = "4"
+  * text = "Körpermaße"
+  * item[+]  
+    * linkId = "4.1"
+    * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
+    * answer.valueDecimal = 66.
+  * item[+]  
+    * linkId = "4.2"
+    * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
+    * answer.valueDecimal = 1
+
+Instance: TestMaxDecimal1
+InstanceOf: ISiKFormularDaten
+* insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
+* questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
+* item[+]
+  * linkId = "4"
+  * text = "Körpermaße"
+  * item[+]  
+    * linkId = "4.1"
+    * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
+    * answer.valueDecimal = 66.1
+  * item[+]  
+    * linkId = "4.2"
+    * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
+    * answer.valueDecimal = 1.6
+
+Instance: TestMaxDecimal2
+InstanceOf: ISiKFormularDaten
+* insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
+* questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
+* item[+]
+  * linkId = "4"
+  * text = "Körpermaße"
+  * item[+]  
+    * linkId = "4.1"
+    * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
+    * answer.valueDecimal = 66.22
+  * item[+]  
+    * linkId = "4.2"
+    * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
+    * answer.valueDecimal = 1.63
+
+Instance: TestMaxDecimal3
+InstanceOf: ISiKFormularDaten
+* insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
+* questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
+* item[+]
+  * linkId = "4"
+  * text = "Körpermaße"
+  * item[+]  
+    * linkId = "4.1"
+    * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
+    * answer.valueDecimal = 66.123
+  * item[+]  
+    * linkId = "4.2"
+    * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
+    * answer.valueDecimal = 1.123    
