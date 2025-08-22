@@ -22,10 +22,10 @@ InstanceOf: ISiKFormularDefinition
     * insert observationExtract
   * item[+]  
     //Annotation mit codierter Maßeinheit
-    * insert uunit(m)
+    * insert uunit(cm)
     * code = $loinc#8302-2
     * linkId = "4.2"
-    * text = "Körpergröße in m"
+    * text = "Körpergröße in cm"
     * type = #decimal
     * insert observationExtract
 
@@ -45,15 +45,15 @@ InstanceOf: ISiKFormularDaten
     * answer.valueDecimal = 66
   * item[+]  
     * linkId = "4.2"
-    * text = "Körpergröße in m"
-    * answer.valueDecimal = 1.66
+    * text = "Körpergröße in cm"
+    * answer.valueDecimal = 166
 
 Instance: ExtractedObservationKoerpergroesse    
 InstanceOf: ISiKKoerpergroesse
 * status = #final
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2025-08-22"
-* valueQuantity = 1.66 'm' "m"
+* valueQuantity = 166 'cm' "cm"
 * derivedFrom = Reference(ExampleExtractWithUnitResponse)
 
 Instance: ExtractedObservationKoerpergewicht    
