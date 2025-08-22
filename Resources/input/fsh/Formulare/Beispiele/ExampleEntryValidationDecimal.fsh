@@ -21,7 +21,7 @@ InstanceOf: ISiKFormularDefinition
     * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
     * type = #decimal
     * insert minMaxDecimal (20,300)
-    * insert maxDecimalPlaces(0)
+    * insert maxDecimalPlaces(1)
   * item[+]  
     //Annotation mit codierter Maßeinheit
     * insert uunit(m)
@@ -31,7 +31,7 @@ InstanceOf: ISiKFormularDefinition
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
     * type = #decimal
     * insert minMaxDecimal(1,2.5)
-    * insert maxDecimalPlaces(2)
+    * insert maxDecimalPlaces(3)
 
 
    

@@ -179,7 +179,7 @@ RuleSet: QuestionnaireExamplesMetadata(name)
 
 RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
 * questionnaire = Canonical({questionnaire})
-* status = #final
+* status = #completed
 //* modifierExtension[MDR-Relevant].valueCoding = https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS#none
 * subject = Reference({patient})
 * author = Reference({patient})
