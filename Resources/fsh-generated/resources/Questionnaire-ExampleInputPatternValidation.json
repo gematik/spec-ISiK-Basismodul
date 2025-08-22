@@ -36,13 +36,22 @@
           "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
           "extension": [
             {
-              "url": "human",
-              "valueId": "kvid-1",
-              "valueCode": "warning",
+              "url": "key",
+              "valueId": "kvid-1"
+            },
+            {
+              "url": "severity",
+              "valueCode": "warning"
+            },
+            {
+              "url": "expression",
               "valueExpression": {
                 "language": "text/fhirpath",
                 "expression": "matches(^[A-Z][0-9]{9}$)"
-              },
+              }
+            },
+            {
+              "url": "human",
               "valueString": "Eine Versichertennummer muss mit einem Großbuchstaben beginnen, gefolgt von 9 Zahlen!"
             }
           ]

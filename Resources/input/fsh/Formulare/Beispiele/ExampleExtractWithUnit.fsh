@@ -33,7 +33,7 @@ InstanceOf: ISiKFormularDefinition
    
 Instance: ExampleExtractWithUnitResponse
 InstanceOf: ISiKFormularDaten
-* insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
+* insert QuestionnaireResponseCommons(ExampleExtractWithUnit, PatientinMinimal)
 * questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
 * authored = "2025-08-22"
 * item[+]
