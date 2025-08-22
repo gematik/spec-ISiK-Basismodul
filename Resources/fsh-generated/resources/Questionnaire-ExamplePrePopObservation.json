@@ -1,6 +1,23 @@
 {
   "resourceType": "Questionnaire",
   "id": "ExamplePrePopObservation",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension",
+      "valueCoding": {
+        "code": "none",
+        "system": "https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS"
+      }
+    }
+  ],
   "name": "ExamplePrePopObservation",
   "version": "0.1.0",
   "url": "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation",
@@ -30,7 +47,7 @@
     }
   ],
   "title": "Vorbelegung von Observations",
-  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von Observations  \nDie Suche nach passenden Observations geschieht innerhlab des Patienten-Kontextes anhand des in `item-code`hinterlegten Codes.\nDie Extension [SDC-ObservationLinkPeriod](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) legt fest, wie alt  Observations maximal sein dürfen, um für die Vorbelegung herangezogen zu werden (hier: max. 1 Jahr)  \nDie Extension [SDC-ObservationExtract](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html) legt fest, ob aus den Angaben des Questionnaires eine neue Observation extrahiert werden soll (hier: true)",
+  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von Observations  \r\nDie Suche nach passenden Observations geschieht innerhlab des Patienten-Kontextes anhand des in `item-code`hinterlegten Codes.\r\nDie Extension [SDC-ObservationLinkPeriod](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) legt fest, wie alt  Observations maximal sein dürfen, um für die Vorbelegung herangezogen zu werden (hier: max. 1 Jahr)  \r\nDie Extension [SDC-ObservationExtract](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationExtract.html) legt fest, ob aus den Angaben des Questionnaires eine neue Observation extrahiert werden soll (hier: true)",
   "item": [
     {
       "type": "group",

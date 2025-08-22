@@ -1,0 +1,53 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ExampleInputPatternValidation",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension",
+      "valueCoding": {
+        "code": "none",
+        "system": "https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS"
+      }
+    }
+  ],
+  "name": "ExampleInputPatternValidation",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/ExampleInputPatternValidation",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "title": "Validierung von Formulareingaben gegen RegExPattern",
+  "description": "### Beispiel-Questionnaire mit Validierung von Benutzereingaben mittels einer FHIRPath-Expression  \r\nDie Validierung erfolgt über die [targetConstraint](https://hl7.org/fhir/extensions/StructureDefinition-targetConstraint.html)-Extension",
+  "item": [
+    {
+      "type": "string",
+      "linkId": "1.4",
+      "text": "Versichertennummer:",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+          "extension": [
+            {
+              "url": "human",
+              "valueId": "kvid-1",
+              "valueCode": "warning",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "matches(^[A-Z][0-9]{9}$)"
+              },
+              "valueString": "Eine Versichertennummer muss mit einem Großbuchstaben beginnen, gefolgt von 9 Zahlen!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

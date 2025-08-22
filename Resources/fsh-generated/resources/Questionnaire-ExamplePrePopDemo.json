@@ -1,6 +1,23 @@
 {
   "resourceType": "Questionnaire",
   "id": "ExamplePrePopDemo",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "modifierExtension": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension",
+      "valueCoding": {
+        "code": "none",
+        "system": "https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS"
+      }
+    }
+  ],
   "name": "ExamplePrePopDemo",
   "version": "0.1.0",
   "url": "https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopDemo",
@@ -30,7 +47,7 @@
     }
   ],
   "title": "Vorbelegung Demografischer Daten",
-  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \nDie Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension",
+  "description": "### Beispiel-Questionnaire mit automatischer Vorbelegung von demografischen Patientendaten \r\nDer Patientenkontext wird mittels der [SDC-LaunchContexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html)-Extension hergestellt.  \r\nDie Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-initialExpression.html)-Extension",
   "item": [
     {
       "type": "group",
@@ -47,8 +64,8 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.name[0].given[0]",
-                "description": "erster Vorname im ersten Namen des Patienten"
+                "expression": "(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()",
+                "description": "Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"
               }
             }
           ]
@@ -62,8 +79,8 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.name[0].family",
-                "description": "Nachname im ersten Namen des Patienten"
+                "expression": "(%patient.name.where(use = 'official').family | %patient.name[0].family).first()",
+                "description": "Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"
               }
             }
           ]
