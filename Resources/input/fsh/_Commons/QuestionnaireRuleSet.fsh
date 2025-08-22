@@ -147,19 +147,19 @@ RuleSet: regEx(expression)
 RuleSet: targetConstraint(key, expression, severity, human)  
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/targetConstraint"
-  * extension
+  * extension[+]
     * url = "key"
     * valueId = {key}
-  * extension
+  * extension[+]
     * url = "severity"
     * valueCode = {severity} 
-  * extension
+  * extension[+]
     * url = "expression"
     * valueExpression
       //* name = {name}
       * language = #text/fhirpath
       * expression = {expression}
-  * extension
+  * extension[+]
     * url = "human" 
     * valueString = {human}   
 
