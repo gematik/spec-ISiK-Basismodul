@@ -70,6 +70,7 @@ InstanceOf: ISiKFormularDaten
 
 Instance: TestMaxDecimal1
 InstanceOf: ISiKFormularDaten
+Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
 * insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
 * questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
 * item[+]
@@ -86,6 +87,7 @@ InstanceOf: ISiKFormularDaten
 
 Instance: TestMaxDecimal2
 InstanceOf: ISiKFormularDaten
+Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
 * insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
 * questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
 * item[+]
@@ -100,8 +102,10 @@ InstanceOf: ISiKFormularDaten
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
     * answer.valueDecimal = 1.63
 
+
 Instance: TestMaxDecimal3
 InstanceOf: ISiKFormularDaten
+Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
 * insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
 * questionnaire.extension[questionnaireDisplay].valueString = "Validierung von Dezimalen"
 * item[+]
