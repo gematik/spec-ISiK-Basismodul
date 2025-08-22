@@ -1,5 +1,5 @@
 Instance: ExamplePrePopObservation
-InstanceOf: Questionnaire
+InstanceOf: ISiKFormularDefinition
 
 * insert QuestionnaireExamplesMetadata(ExamplePrePopObservation)
 //Etablieren des Patientenkontextes aus SMART-Launch

@@ -1,5 +1,5 @@
 Instance: ExamplePrePopDemo
-InstanceOf: Questionnaire
+InstanceOf: ISiKFormularDefinition
 
 * insert QuestionnaireExamplesMetadata(ExamplePrePopDemo)
 //Etablieren des Patientenkontextes aus SMART-Launch
@@ -19,13 +19,13 @@ Die Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org
     * linkId = "1.1"
     * text = "Vorname:"
     //Vorbelegung mit Vornamen aus Patientenkontext
-    * insert initialExpression("%patient.name[0].given[0]", "erster Vorname im ersten Namen des Patienten")
+    * insert initialExpression([["(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()"]], [["Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"]])
   * item[+]
     * type = #string
     * linkId = "1.2"
     * text = "Nachname:"
     //Vorbelegung mit Nachnamen aus Patientenkontext
-    * insert initialExpression("%patient.name[0].family", "Nachname im ersten Namen des Patienten")
+    * insert initialExpression([["(%patient.name.where(use = 'official').family | %patient.name[0].family).first()"]], [["Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"]])
   * item[+]
     * type = #string
     * linkId = "1.4"
