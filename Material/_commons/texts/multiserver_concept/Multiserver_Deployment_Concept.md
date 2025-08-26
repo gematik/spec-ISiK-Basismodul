@@ -134,7 +134,8 @@ Es gibt weiterhin mehrere Server, die als ISiK Akteure im Krankenhaus laufen. Ei
 #### Herausforderung in der Umsetzung 
 - Die Frage, wer diese "führende" Rolle übernimmt, ist offen
 - Bei mehreren ISiK Servern gleicher Rolle muss auch wieder das Clearing gelöst sein (Beispiel: mehrere Medikationsführende Systeme)
-- Synchronisierungsmechanismus zwischen Servern in ISiK muss weiterentwickelt werden (z. B. mittels History-Funktion wird benötigt (z. B. für Labor-Abfragen; ggf. Erweiterung der Subscription-Funktionalität)
+- Der Synchronisierungsmechanismus zwischen Servern in ISiK muss weiterentwickelt werden.
+  Dies kann beispielsweise durch die Implementierung einer History-Funktion (z. B. für Labor-Abfragen) oder durch eine Erweiterung der Subscription-Funktionalität erfolgen.
 - Matchen der Objekte/IDs. bspw. bei Observations müssen Patienten mit abgerufen werden, und mittels Identifier der Patienten gematcht werden (MPI)
 
 
