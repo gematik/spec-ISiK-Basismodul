@@ -1,10 +1,19 @@
 # Architektur-Optionen beim Parallelbetrieb unterschiedlicher ISiK-Server
 
-## Problem
+## Zweck des Dokuments
+Dieses Dokument dient als Diskussionsgrundlage für technisch informierte Stakeholder zu Architektur-Optionen für Multiserver-Deployments in ISiK-basierten Krankenhauslandschaften.
 
-Fast alle im ISiK Kontext bestätigten Systeme nehmen die Rolle eines Servers ein. Im Beispiel des KIS als führendes System werden über ISiK Endpunkte die Ressourcentypen Patient, Account, Encounter und weitere in ISiK Basis definierte Profile bereitgestellt. Wird das Beispiel um ein PDMS (System auf Intensivstation) erweitert, welches ISiK-konform Vitalparameter bereitstellt, wird ein Problem deutlich: Der Client möchte alle medizinischen Informationen abfragen, die es zu einem bestimmten Patient gibt. Muss der Client jetzt mehrere FHIR-Server Endpunkte anfragen, sich Ressourcen zusammensammeln und dann entscheiden, welche Instanz die richtige ist? Ist die Instanz Patient aus dem KIS oder dem PDMS die richtige? Was passiert, wenn widersprüchliche Informationen zurück kommen?
+In diesem Dokument werden keinerlei normative Festlegungen getroffen. Es handelt sich um eine rein informative Diskussionsgrundlage.
+
+## Problem
+Das Ausgangsproblem besteht darin, dass im laufenden Betrieb mehrere ISiK-konforme FHIR-Server (z. B. KIS, PDMS, weitere Spezialmodule)  überlappende oder voneinander abhängige klinische Daten liefern würden. Ohne koordinierende Architektur entstehen Inkonsistenzen und divergierende Instanzen (insbesondere für Patient, Encounter) sowie grundsätzlich ein
+erhöhter Integrations- und Governance-Aufwand - etwa bei der Anbindung neuer FHIR-basierter Endanwendungen (Clients).
+
+Fast alle im ISiK Kontext bestätigten Systeme nehmen die Rolle eines Servers ein. Im Beispiel des KIS als führendes System werden über ISiK Endpunkte die Ressourcentypen Patient, Account, Encounter und weitere im Modul ISiK Basis definierte Profile bereitgestellt. Wird das Beispiel um ein PDMS (System auf Intensivstation) erweitert, welches ISiK-konform Vitalparameter bereitstellt, wird ein Problem deutlich: Der Client möchte alle medizinischen Informationen abfragen, die es zu einem bestimmten Patienten gibt. Muss der Client jetzt mehrere FHIR-Server Endpunkte anfragen, sich Ressourcen zusammensammeln und dann entscheiden, welche Instanz die richtige ist? Ist die Instanz Patient aus dem KIS oder dem PDMS die richtige? Was passiert, wenn widersprüchliche Informationen zurückkommen?
 
 Antworten auf diese Fragen und deren Implikationen zeigen im Folgenden die unterschiedlichen Architekturoptionen auf.
+Diese zahlen allesamt ein auf das übergeordnete Ziel:
+Ein konsistenter, für Clients vereinheitlichter Zugriff auf fachlich integrierte FHIR-Ressourcen mit klar definierter Datenverantwortung, konfliktarmen Identitäts- und Matching-Mechanismen sowie reduzierter Client-Komplexität.
 
 Neben den aufgeführten Architekturoptionen lassen sich auch Antipattern beschreiben, deren Umsetzung als eher problematisch anzusehen ist.
 
@@ -42,7 +51,7 @@ Ein *Client* interagiert mit dem API Gateway. 
 
 #### Nachteile
 
-- Latenzen sind zu erwarten durch Deduplizierung, Aggregation etc. im livestream
+- Latenzen sind zu erwarten durch Deduplizierung, Aggregation etc. im Livestream
 
 #### Vorteile
 
@@ -98,7 +107,7 @@ Es gibt nur **eine zentrale Persistenz mit FHIR API**, in die alle Ressourcen ge
 
 </details>
 
-### Zentraler FHIR Endpunkt mit Datenpersistenz
+### Zentraler Endpunkt mit Datenpersistenz
 
 Für diese Option gilt, dass ein Server von anderen Servern (Subsystemen) Daten aktiv anfragt. 
 Clients stellen nur an diesen zentralisierten Server Anfragen, der damit als einziger Endpunkt fungiert.
@@ -136,7 +145,7 @@ Es gibt weiterhin mehrere Server, die als ISiK Akteure im Krankenhaus laufen. Ei
 - Bei mehreren ISiK Servern gleicher Rolle muss auch wieder das Clearing gelöst sein (Beispiel: mehrere Medikationsführende Systeme)
 - Der Synchronisierungsmechanismus zwischen Servern in ISiK muss weiterentwickelt werden.
   Dies kann beispielsweise durch die Implementierung einer History-Funktion (z. B. für Labor-Abfragen) oder durch eine Erweiterung der Subscription-Funktionalität erfolgen.
-- Matchen der Objekte/IDs. bspw. bei Observations müssen Patienten mit abgerufen werden, und mittels Identifier der Patienten gematcht werden (MPI)
+- Matchen der Objekte/IDs. bspw. bei Observations müssen Patienten mit abgerufen werden, und mittels Identifier der Patienten gematcht werden (siehe MPI)
 
 
 
@@ -148,14 +157,14 @@ Neben den genannten Architektur-Optionen sei an dieser Stelle noch auf zwei Anti
 
 ### Clients unterstützen mehrere Serverendpunkte
 
-In jedem Server werden die benötigten Ressourcen für den eigenen Use Case gehalten. Clients müssen alle verfügbaren Server kennen und wissen, welchen sie pro Use Case abfragen müssen. Ein Clearing von gleichen Instanzen muss auf Clientseite stattfinden.
+In jedem Server werden die benötigten Ressourcen für den eigenen Use Case gehalten. Clients müssen alle verfügbaren Server kennen und wissen, welchen sie pro Use Case abfragen müssen. Eine Reconciliation (bzw. Clearing) von gleichen Instanzen muss auf Clientseite stattfinden.
 
 Dies ist ein Antipattern, da hier die Komplexität zur Wahrung der Datenintegrität in einem verteilten System an die Clients delegiert wird.
 
 ###  Referenzen auf andere Server
 Eine Ressource des einen Server referenziert auf eine Ressource, die auf einem anderen Server liegt. Pro Ressource/Profil gibt es nur einen Server der diese Daten vorhält.
 
-Diese Umsetzungsvariante löst zwar das Problem der doppelten Instanzen und beugt potenziellen Clearing-Themen vor, jedoch sieht ISiK diese Form der Referenzierung bisher nicht explizit vor. Zudem wird auch hier Komplexität an die Clients delegiert wird.
+Diese Umsetzungsvariante löst zwar das Problem der doppelten Instanzen und beugt potenziellen Reconciliation- und Clearing-Themen vor, jedoch sieht ISiK diese Form der Referenzierung bisher nicht explizit vor. Zudem wird auch hier Komplexität an die Clients delegiert wird.
 
 ## Fazit
 
@@ -164,3 +173,19 @@ Grundsätzlich sollten die zuletzt genannten Antipattern in der Umsetzung von Kr
 Für die zuvor vorgestellten Architekturoptionen muss Kontext- und Fallabhängig entschieden werden, welche die beste Option darstellt.
 
 
+## Terminologie & Glossar
+
+| Begriff | Präzise Bedeutung (im Dokument) | Abgrenzung / Hinweis |
+|---------|----------------------------------|----------------------|
+| Subsystem | Eigenständiger ISiK-konformer FHIR-Server (z. B. PDMS, KIS-Modul) | Enthält fachlich begrenzten Ausschnitt |
+| Zentraler Server | Rolle eines konsolidierenden FHIR-Endpunkts (je nach Option: Gateway, persistierender Hub oder aktiver Aggregator) | Nicht zwingend persistierend (bei Gateway) |
+| API Gateway | Vermittlungs-/Routing-Schicht ohne fachliche Primärpersistenz (nur Cache / Index / Mapping) | Keine dauerhafte authoritative Datenhaltung |
+| Zentrale Persistenz | FHIR-Server mit authoritative Datenbasis (Single Write Target) | Subsysteme liefern aktiv (Push) |
+| Zentraler Endpunkt (mit Persistenz) | FHIR-Server mit eigener Persistenz, der Daten überwiegend via Pull/Subscription einsammelt | Kombination aus Aggregation + Spiegelpersistenz |
+| Source of Truth | System oder Regel, das für einen Ressourcentyp als führend gilt | Kann durch Regeln dynamisch bestimmt werden |
+| Deduplizierung | Erkennen und Zusammenführen mehrfach vorliegender fachlich identischer Entitäten | Benötigt Matching-Strategie |
+| Matching | Prozess zur Identifikation gleicher Entitäten (Patient, Encounter) über Identifier / Algorithmen | Basis für Deduplizierung |
+| Reconciliation und Clearing | Regelbasierte Harmonisierung divergierender (Attribute von) Instanzen | Enthält Auffinden von Duplikaten, Konfliktauflösung und Merging |
+| MPI (Master Patient Index) | Dienst zur konsistenten Patienten-Identitätsauflösung | Kann zentral oder verteilt implementiert sein |
+| Fall-Index (Encounter Index) | Index zur konsistenten Identifikation klinischer Aufenthalte / Fälle | Analog MPI auf Encounter-Ebene |
+| SMART on FHIR | OAuth2 / OpenID basiertes App- und Scope-Modell zur Zugriffskontrolle | Betrifft Token-Kontextmodell |
