@@ -29,12 +29,20 @@ Prinzipiell sind die beschriebenen Optionen kombinierbar.
 
 Die Grundidee dieser Option besteht darin, dass eine API Gateway Schicht vor den (ISiK-konformen) FHIR Servern vorgelagert wird, um einen einheitlichen Endpunkt für Clients bereitzustellen.
 
+<!-- markdownlint-disable MD033 -->
+<figure style="max-width:800px; margin:1em auto; text-align:center;">
+  <img src="API-Gateway_ISiK.png" alt="API Gateway Schicht vor FHIR Servern" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+</figure>
+<!-- markdownlint-enable MD033 -->
+
+<!-- ![API Gateway Schicht vor FHIR Servern](API-Gateway_ISiK.png) -->
+
 <details>
 <summary> <b>Details</b>
 
 </summary>
 
-![API Gateway Schicht vor FHIR Servern](API-Gateway_ISiK.png)
+
 
 #### Beschreibung 
 
@@ -70,12 +78,16 @@ Ein *Client* interagiert mit dem API Gateway. 
 
 Diese Option kennzeichnet, dass ein Server als eine zentrale Datenpersistenz bereitsteht, die zugleich als FHIR Endpunkt fungiert. Der Server fragt die Daten nicht aktiv an, sondern erhält sie von den Subsystemen.
 
+<!-- markdownlint-disable MD033 -->
+<figure style="max-width:1200px; margin:1em auto; text-align:center;">
+  <img src="Multi-Clients_ISiK.png" alt="Zentrale Persistenz mit FHIR API - Subsysteme als Clients" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+</figure>
+<!-- markdownlint-enable MD033 -->
+
 <details>
 <summary> <b>Details</b>
 
 </summary>
-
-![Zentrale Persistenz mit FHIR API - Subsysteme als Clients](Multi-Clients_ISiK.png)
 
 #### Beschreibung 
 
@@ -112,12 +124,18 @@ Es gibt nur **eine zentrale Persistenz mit FHIR API**, in die alle Ressourcen ge
 Für diese Option gilt, dass ein Server von anderen Servern (Subsystemen) Daten aktiv anfragt. 
 Clients stellen nur an diesen zentralisierten Server Anfragen, der damit als einziger Endpunkt fungiert.
 
+<!-- markdownlint-disable MD033 -->
+<figure style="max-width:1200px; margin:1em auto; text-align:center;">
+  <img src="CDR-ISiK.png" alt="Central FHIR Endpoint with Data Persistence Architecture" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+</figure>
+<!-- markdownlint-enable MD033 -->
+
 <details>
 <summary> <b>Details</b>
 
 </summary>
 
-![Central FHIR Endpoint with Data Persistence Architecture](CDR-ISiK.png)
+
 
 #### Beschreibung 
 Es gibt *eine zentrale FHIR API für Clients mit eigener Datenpersistenz*, die in (nahezu) Echtzeit aus den Subsystemen (Ressourcen-Server) vorhandene Daten abfragt und bereitstellt. Dieser Server würde potentiell jede Rolle implementieren, die bisher in ISiK vorgesehen und ggf. zusätzliche Funktionen (siehe Herausforderung). Der Server verfügt i.d.R. über komplexe Business-Logik (Plausibilisierung von Daten, Deduplizierung, insbesondere Patient matching  etc.). Auch diese Option entspricht grob dem amerikanischem EHR Modell in Kliniken (ggf. inklusive SMART APP-Store).
