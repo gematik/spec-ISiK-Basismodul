@@ -109,7 +109,7 @@ Clients stellen nur an diesen zentralisierten Server Anfragen, der damit als ein
 
 </summary>
 
-![test](CDR-ISiK.png)
+![Central FHIR Endpoint with Data Persistence Architecture](CDR-ISiK.png)
 
 #### Beschreibung 
 Es gibt *eine zentrale FHIR API für Clients mit eigener Datenpersistenz*, die in (nahezu) Echtzeit aus den Subsystemen (Ressourcen-Server) vorhandene Daten abfragt und bereitstellt. Dieser Server würde potentiell jede Rolle implementieren, die bisher in ISiK vorgesehen und ggf. zusätzliche Funktionen (siehe Herausforderung). Der Server verfügt i.d.R. über komplexe Business-Logik (Plausibilisierung von Daten, Deduplizierung, insbesondere Patient matching  etc.). Auch diese Option entspricht grob dem amerikanischem EHR Modell in Kliniken (ggf. inklusive SMART APP-Store).
