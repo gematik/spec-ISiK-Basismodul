@@ -11,11 +11,11 @@ erhöhter Integrations- und Governance-Aufwand - etwa bei der Anbindung neuer FH
 
 Fast alle im ISiK Kontext bestätigten Systeme nehmen die Rolle eines Servers ein. Im Beispiel des KIS als führendes System werden über ISiK Endpunkte die Ressourcentypen Patient, Account, Encounter und weitere im Modul ISiK Basis definierte Profile bereitgestellt. Wird das Beispiel um ein PDMS (System auf Intensivstation) erweitert, welches ISiK-konform Vitalparameter bereitstellt, wird ein Problem deutlich: Der Client möchte alle medizinischen Informationen abfragen, die es zu einem bestimmten Patienten gibt. Muss der Client jetzt mehrere FHIR-Server Endpunkte anfragen, sich Ressourcen zusammensammeln und dann entscheiden, welche Instanz die richtige ist? Ist die Instanz Patient aus dem KIS oder dem PDMS die richtige? Was passiert, wenn widersprüchliche Informationen zurückkommen?
 
-Antworten auf diese Fragen und deren Implikationen zeigen im Folgenden die unterschiedlichen Architekturoptionen auf.
+Antworten auf diese Fragen und deren Implikationen zeigen im Folgenden die unterschiedlichen Architektur-Optionen auf.
 Diese zahlen allesamt ein auf das übergeordnete Ziel:
 Ein konsistenter, für Clients vereinheitlichter Zugriff auf fachlich integrierte FHIR-Ressourcen mit klar definierter Datenverantwortung, konfliktarmen Identitäts- und Matching-Mechanismen sowie reduzierter Client-Komplexität.
 
-Neben den aufgeführten Architekturoptionen lassen sich auch Antipattern beschreiben, deren Umsetzung als eher problematisch anzusehen ist.
+Neben den aufgeführten Architektur-Optionen lassen sich auch Antipattern beschreiben, deren Umsetzung als problematisch anzusehen ist.
 
 ## Architektur-Optionen (und ihre Herausforderungen)
 
@@ -170,7 +170,7 @@ Diese Umsetzungsvariante löst zwar das Problem der doppelten Instanzen und beug
 
 Grundsätzlich sollten die zuletzt genannten Antipattern in der Umsetzung von Krankenhaus-IT-Landschaften auf Basis von ISiK gemieden werden.
 
-Für die zuvor vorgestellten Architekturoptionen muss Kontext- und Fallabhängig entschieden werden, welche die beste Option darstellt.
+Für die zuvor vorgestellten Architektur-Optionen muss Kontext- und Fallabhängig entschieden werden, welche die beste Option darstellt.
 
 
 ## Terminologie & Glossar
