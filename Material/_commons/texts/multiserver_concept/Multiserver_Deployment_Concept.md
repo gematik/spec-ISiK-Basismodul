@@ -35,10 +35,9 @@ In jedem *Server* werden die benötigten Ressourcen für den jeweiligen Use Cas
 
 Ein *API Gateway* kennt alle verfügbaren FHIR Server und kennt ggf. die Source of Truth für spezifische Profile (dies muss ggf. konfiguriert werden). Bei einer Suchanfrage wird dann ggf. an die richtigen Server geroutet und im Zweifel aus mehreren Servern die Resultate im Livestream aggregiert und zurück gegeben. Das API Gateway verfügt über keine eigene Persistenz-Schicht (jenseits von einfachem Caching), gibt aber als Endpunkt eindeutige und unveränderliche IDs für alle FHIR-Ressourcen aus, sodass jede Entität – ob Patient, Encounter oder andere Ressource – stets dieselbe ID behält. Die Konfigurationsoptionen des Gateways unterscheiden sich im Wesentlichen entlang der folgenden Aspekte:
 
-Daten aggregieren
-Deduplizieren (Redundanz unterbinden)
-Definition einer Source of Truth
-
+- **Daten aggregieren**: Das Gateway sammelt Daten von mehreren FHIR-Servern und stellt sie dem Client als einheitliche Antwort zur Verfügung.
+- **Deduplizieren (Redundanz unterbinden)**: Das Gateway erkennt und entfernt doppelte oder redundante Ressourcen, um konsistente und eindeutige Daten bereitzustellen.
+- **Definition einer Source of Truth**: Für bestimmte Profile oder Ressourcentypen kann konfiguriert werden, welcher Server als maßgebliche Quelle ("Source of Truth") gilt.
 Ein *Client* interagiert mit dem API Gateway. 
 
 #### Nachteile
