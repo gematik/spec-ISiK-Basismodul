@@ -76,6 +76,29 @@ RuleSet: minMaxDecimal(min, max)
   * url = "http://hl7.org/fhir/StructureDefinition/minValue"
   * valueDecimal = {min}
 
+RuleSet: minLength(min)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/minLength"
+  * valueInteger = {min}
+
+RuleSet: maxOccurs(max)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs"
+  * valueInteger = {max}
+
+RuleSet: minOccurs(min)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs"
+  * valueInteger = {min}
+
+RuleSet: minMaxOccurs(min, max)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs"
+  * valueInteger = {min}
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs"
+  * valueInteger = {max}
+
 //name = patient | encounter | location | user | study
 RuleSet: launchContext(name, type, description)
 * extension
@@ -107,6 +130,12 @@ RuleSet: observationExtract
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
   * valueBoolean = true
+
+RuleSet: observationExtractCategoryVitalSign
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
+  * valueCodeableConcept
+    * coding[+] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 
 
 RuleSet: variable(name, expression)

@@ -20,6 +20,7 @@ InstanceOf: ISiKFormularDefinition
     * text = "Körpergewicht in kg"
     * type = #decimal
     * insert observationExtract
+    * insert observationExtractCategoryVitalSign
   * item[+]  
     //Annotation mit codierter Maßeinheit
     * insert uunit(cm)
@@ -28,6 +29,7 @@ InstanceOf: ISiKFormularDefinition
     * text = "Körpergröße in cm"
     * type = #decimal
     * insert observationExtract
+    * insert observationExtractCategoryVitalSign
 
 
    
