@@ -1,6 +1,8 @@
 Instance: ExamplePrePopObservation
 InstanceOf: ISiKFormularDefinition
 
+* contained[+] = PflegegradDE
+
 * insert QuestionnaireExamplesMetadata(ExamplePrePopObservation)
 //Etablieren des Patientenkontextes aus SMART-Launch
 * insert launchContext("patient", #Patient, "Patientenkontext")
