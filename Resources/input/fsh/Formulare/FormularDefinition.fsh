@@ -80,9 +80,9 @@ Parent: Questionnaire
     * ^short = "Keine Eingabe erlaubt?"
     * ^comment = "Antwort wird automatisch vorbelegt/berechnet und darf nicht vom Anwender editiert/überschrieben werden.
     **Begründung MS:** Automatisch vorbelegte Items sollen gegen Veränderung durch den Benutzer geschützt werden können (z.B. für Patientenstammdaten)."
-  //* maxLength MS
-  //  * ^short = "Längenbegrenzung"
-  //  * ^comment =  "Maximale Anzahl zulässiger Zeichen für die Beantwortung der Frage.""
+  * maxLength MS
+    * ^short = "Längenbegrenzung"
+    * ^comment =  "Maximale Anzahl zulässiger Zeichen für die Beantwortung der Frage."
   * answerValueSet MS
     * ^short = "Festlegung der Antwortmöglichkeiten durch Verweis auf ValueSet"
     * ^comment = "**Begründung MS:**  Wo geeignete ValueSets vorhanden sind, die die Antwortmöglichkeiten hinreichend repräsentieren, sollte auf diese verwiesen werden."
