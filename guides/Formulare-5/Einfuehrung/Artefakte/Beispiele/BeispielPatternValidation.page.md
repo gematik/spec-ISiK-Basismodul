@@ -1,6 +1,6 @@
 ---
-topic: ExampleExtractWithUnit
-canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit
+topic: ExampleInputPatternValidation
+canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleInputPatternValidation
 expand: 2
 ---
 
@@ -24,7 +24,9 @@ select
 <!---
 TODO: isik-sandbox -> isik-stufe-5
 -->
-<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-sandbox/Questionnaire/ExampleExtractWithUnit&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+Das Feature wird von LHC-Forms zum aktuellen Zeitpunkt noch nicht unterstützt. Aus dem Grund wird im gerenderten Formular die Validierung noch nicht korrekt ausgeführt.
+
+<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-sandbox/Questionnaire/ExampleInputPatternValidation&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
 
 ### Globale Extensions
 <fql output="transpose">
@@ -52,25 +54,11 @@ select
     ID: linkId,
     Text: text,
     Type: type,
-    Subextensions: for extension select {URL: url, Wert: value | value.code | 'System: ' + value.coding.system + '<br>Code: ' + value.coding.code}
+    Subextensions: for extension select { for extension select { URL: url, Wert: value | value.code | value.expression } }
 }
 order by linkId
 with subheader
 </fql>
-
-### Extrahierte Ressourcen
-
-<tabs>
-  <tab title="QuestionnaireResponse">
-    {{json:ExampleExtractWithUnitResponse}}
-  </tab>
-  <tab title="Observation - Körpergröße">
-    {{json:ExtractedObservationKoerpergroesse}}
-  </tab>
-  <tab title="Observation - Körpergewicht">
-    {{json:ExtractedObservationKoerpergewicht}}
-  </tab>
-</tabs>
 
 ### Quellcode
 

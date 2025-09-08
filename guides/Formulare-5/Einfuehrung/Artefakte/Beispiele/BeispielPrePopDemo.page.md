@@ -20,6 +20,12 @@ select
 }
 </fql>
 
+### Gerendertes Formular
+<!---
+TODO: isik-sandbox -> isik-stufe-5
+-->
+<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExamplePrePopDemo&patient=SZ1Patient&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+
 ### Globale Extensions
 <fql output="transpose">
 from
@@ -55,13 +61,8 @@ with subheader
 </fql>
 
 ### Quellcode
-<!---
-TODO: isik-sandbox -> isik-stufe-5
--->
+
 <tabs>
-  <tab title="LHC-Forms">
-    <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExamplePrePopDemo&patient=SZ1Patient&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
-  </tab>
   <tab title="XML">
   {{xml}}
   </tab>
