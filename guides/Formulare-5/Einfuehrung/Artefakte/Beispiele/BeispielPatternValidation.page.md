@@ -21,12 +21,10 @@ select
 </fql>
 
 ### Gerendertes Formular
-<!---
-TODO: isik-sandbox -> isik-stufe-5
--->
+
 Das Feature wird von LHC-Forms zum aktuellen Zeitpunkt noch nicht unterstützt. Aus dem Grund wird im gerenderten Formular die Validierung noch nicht korrekt ausgeführt.
 
-<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-sandbox/Questionnaire/ExampleInputPatternValidation&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-stufe-5/Questionnaire/ExampleInputPatternValidation&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
 
 ### Globale Extensions
 <fql output="transpose">

@@ -21,10 +21,8 @@ select
 </fql>
 
 ### Gerendertes Formular
-<!---
-TODO: isik-sandbox -> isik-stufe-5
--->
-<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-sandbox/Questionnaire/ExampleConditionalItem&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+
+<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-stufe-5/Questionnaire/ExampleConditionalItem&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
 
 ### Globale Extensions
 <fql output="transpose">

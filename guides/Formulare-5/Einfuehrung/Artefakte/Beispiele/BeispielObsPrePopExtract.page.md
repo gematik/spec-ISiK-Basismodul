@@ -21,12 +21,10 @@ select
 </fql>
 
 ### Gerendertes Formular
-<!---
-TODO: isik-sandbox -> isik-stufe-5
--->
+
 Zur korrekten Darstellung dieses Beispiels wird eine externe Anfrage in Richtung des offiziellen HL7 Deutschland e.V. FHIR-Server (https://fhir.hl7.de/fhir) gestellt. Falls dort keine passende Observation mehr liegen sollte, scheitert die Prepopulation. Wenden Sie sich in diesem Fall bitte an das ISiK Team. 
 
-<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExamplePrePopObservation&prepopBase=https%3A%2F%2Ffhir.hl7.de%2Ffhir&patient=10&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+<iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-stufe-5%2F&id=ExamplePrePopObservation&prepopBase=https%3A%2F%2Ffhir.hl7.de%2Ffhir&patient=10&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
 
 ### Globale Extensions
 <fql output="transpose">
