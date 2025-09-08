@@ -62,7 +62,7 @@ with subheader
 TODO: isik-sandbox -> isik-stufe-5
 -->
 <tabs>
-  <tab title="LHc-Forms">
+  <tab title="LHC-Forms">
     <p></p>
     <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExamplePrePopObservation&prepopBase=https%3A%2F%2Ffhir.hl7.de%2Ffhir&patient=10&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
   </tab>

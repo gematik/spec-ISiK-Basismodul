@@ -1,10 +1,10 @@
 ---
-topic: DezimalValidierung
-canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal
+topic: BedingteItems
+canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleExtractWithUnit
 expand: 2
 ---
 
-## Questionnaire
+## {{page-title}}
 
 ### Metadaten
 <fql output="transpose">
@@ -35,7 +35,6 @@ select
 with subheader
 </fql>
 
-### Item-Definitionen
 <fql>
 from
     Questionnaire
@@ -47,12 +46,26 @@ select
     ID: linkId,
     Text: text,
     Type: type,
-    Validierung: for extension
-    select {Extension[markdown]: '['  +url.replaceMatches('^.+/(?<name>[A-Za-z-]+)$', '${name}') + '](' + url +')', Wert: value | value.code}
-    }
+    Options: for answerOption select {Display: value.display},
+    EnableWhen: for enableWhen select {Question: question, Operator: operator, Answer: answer.descendants()}
+}
 order by linkId
 with subheader
 </fql>
+
+### Extrahierte Ressourcen
+
+<tabs>
+  <tab title="QuestionnaireResponse">
+    {{json:ExampleExtractWithUnitResponse}}
+  </tab>
+  <tab title="Observation - Körpergröße">
+    {{json:ExtractedObservationKoerpergroesse}}
+  </tab>
+  <tab title="Observation - Körpergewicht">
+    {{json:ExtractedObservationKoerpergewicht}}
+  </tab>
+</tabs>
 
 ### Quellcode
 <!---
@@ -60,7 +73,7 @@ TODO: isik-sandbox -> isik-stufe-5
 -->
 <tabs>
   <tab title="LHC-Forms">
-    <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExampleEntryValidationDecimal&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+    <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?q=https://fhir.simplifier.net/isik-sandbox/Questionnaire/ExampleExtractWithUnit&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
   </tab>
   <tab title="XML">
   {{xml}}
@@ -68,7 +81,4 @@ TODO: isik-sandbox -> isik-stufe-5
   <tab title="JSON">
   {{json}}
   </tab>
-</tabs>  
-
-## QuestionnaireResponse
-{{page:Einfuehrung/Artefakte/Beispiele/BeispielDecimalValidationResponse.page.md}}
+</tabs>
