@@ -66,9 +66,6 @@ with subheader
 </fql>
 
 ### Quellcode
-<!---
-TODO: isik-sandbox -> isik-stufe-5
--->
 <tabs>
   <tab title="XML">
   {{xml}}
