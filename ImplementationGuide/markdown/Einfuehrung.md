@@ -3,7 +3,7 @@
 ----
 Version: 3.1.0
 
-Datum: 15.08.2025
+Datum: 08.09.2025
 
 Status: Aktiv
 
