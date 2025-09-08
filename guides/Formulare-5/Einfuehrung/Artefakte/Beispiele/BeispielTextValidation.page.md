@@ -1,6 +1,6 @@
 ---
 topic: DezimalValidierung
-canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal
+canonical: https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationText
 expand: 2
 ---
 
@@ -60,7 +60,7 @@ TODO: isik-sandbox -> isik-stufe-5
 -->
 <tabs>
   <tab title="LHc-Forms">
-    <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExampleEntryValidationDecimal&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
+    <iframe src="https://gefyra.github.io/ISiK-Questionnaire-Tooling-Demo/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-sandbox%2F&id=ExampleEntryValidationText&minimal=true" style="width:100%; height:800px; border:none; display:block;"></iframe>
   </tab>
   <tab title="XML">
   {{xml}}
@@ -68,7 +68,4 @@ TODO: isik-sandbox -> isik-stufe-5
   <tab title="JSON">
   {{json}}
   </tab>
-</tabs>  
-
-## QuestionnaireResponse
-{{page:Einfuehrung/Artefakte/Beispiele/BeispielDecimalValidationResponse.page.md}}
+</tabs>
