@@ -55,6 +55,10 @@
     // filters expected information messages for the usage of wrong fullUrl in a Bundle.
     "BUNDLE_BUNDLE_POSSIBLE_MATCH_WRONG_FU@Bundle.entry[0].resource/*Parameters/SubscriptionNotification*/.parameter[5].part[2].value.ofType(Reference)",
     // filters expected information messages for the usage of non-existing ValueSets.
-    "Terminology_TX_ValueSet_NotFound@Bundle.entry[0].resource/*Parameters/SubscriptionNotification*/.parameter[3].value.ofType(code)"
+    "Terminology_TX_ValueSet_NotFound@Bundle.entry[0].resource/*Parameters/SubscriptionNotification*/.parameter[3].value.ofType(code)",
+    //Filter Bug with coding pattern only containing the system in the java validate (Issue: https://github.com/hapifhir/org.hl7.fhir.core/issues/2108 - can't filter on path, so filtering on message id only)
+    "Unknown_Code_in_Version",
+    //Filter Bug with ignoring the display language '-langage de' (https://github.com/hapifhir/org.hl7.fhir.core/issues/2111 - can't filter on path, so filtering on message id only)
+   "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR"
   ]
 }

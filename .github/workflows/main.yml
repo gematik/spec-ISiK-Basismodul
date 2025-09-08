@@ -41,26 +41,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code (PR)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Checkout code (Main)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: github.event_name != 'pull_request'
 
-      # can be deleted after https://github.com/hapifhir/org.hl7.fhir.core/pull/1990 is merged (adding json5 support)
-      - name: Strip pure comment lines
-        run: |
-          # nur Zeilen löschen, die mit optionalem Whitespace und dann // anfangen
-          sed -i '/^[[:space:]]*\/\//d' validator/advisor.json
-          # leere Zeilen aufräumen
-          sed -i '/^[[:space:]]*$/d' validator/advisor.json
-          cat validator/advisor.json
-
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.4
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.12
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: false
@@ -98,24 +89,6 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Linksatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Linksventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM|*minimum required = 1*|Observation
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Linksventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_SLICE|*matching slice is required*|Observation
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Linksventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Pulmonalarterieller-Blutdruck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Rechtsatrialer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
-            # Error because of wrong magic loinc code/bug in java validator
-            Observation-Rechtsventrikulaerer-Druck.json|VALIDATION_VAL_PROFILE_MINIMUM_MAGIC|*magic LOINC code*|Observation.code
-            # Error because of the java validator not supporting version "*"
-            Procedure-Appendektomie.json||*"http://fhir.de/CodeSystem/bfarm/ops"*|Procedure.code.coding[1].version
-            # Error caused by a bug in the java validator
-            StructureDefinition-ISiKKontaktGesundheitseinrichtung.json|Unknown_Code_in_Version|Unknown code ''*|
             # Error because of validator bug
             QuestionnaireResponse-ExampleEntryValidationDecimalResponse.json|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse.item[0].item[1].answer[0].value.ofType(decimal)
             QuestionnaireResponse-TestMaxDecimal1.json|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse.item[0].item[0].answer[0].value.ofType(decimal)

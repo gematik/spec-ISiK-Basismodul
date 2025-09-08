@@ -119,6 +119,8 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
 Instance: ExampleISiKAMTSBewertung1
 InstanceOf: ISiKAMTSBewertung
 Usage: #example
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Beispiel für eine AMTS Risikobewertung.</div>"
 * status = #final
 * code.text = "AMTS Risikobewertung"
 * subject.reference = "Patient/PatientinMusterfrau"
