@@ -116,6 +116,11 @@ jobs:
             Procedure-Appendektomie.json||*"http://fhir.de/CodeSystem/bfarm/ops"*|Procedure.code.coding[1].version
             # Error caused by a bug in the java validator
             StructureDefinition-ISiKKontaktGesundheitseinrichtung.json|Unknown_Code_in_Version|Unknown code ''*|
+            # Error because of validator bug
+            ExampleEntryValidationDecimalResponse|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse
+            TestMaxDecimal1|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse
+            TestMaxDecimal2|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse
+            TestMaxDecimal3|QUESTIONNAIRE_QR_ITEM_DECIMAL_MAX_DECIMALS|*has too many decimal places*|QuestionnaireResponse
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:
