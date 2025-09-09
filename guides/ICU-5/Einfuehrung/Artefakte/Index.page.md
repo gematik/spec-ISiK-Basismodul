@@ -20,7 +20,7 @@ Durch die Übernahme der Profile der MII und Abbildung auf das ISIK-Setting, kö
 
 Die folgende Darstellung zeigt die Vererbungsstruktur aller ICU-Profile in diesem Modul:
 
-![Profile Inheritance Diagram](../../../../Materia/ICU/Ableitungshierarchie_vereinfacht_ICU.drawio.svg)
+![Profile Inheritance Diagram](../../../../Material/ICU/Ableitungshierarchie_vereinfacht_ICU.drawio.svg)
 
 ---
 
