@@ -1,7 +1,8 @@
 # Architektur-Optionen beim Parallelbetrieb unterschiedlicher ISiK-Server
 
 ## Zweck des Dokuments
-Dieses Dokument dient als Diskussionsgrundlage für technisch informierte Stakeholder zu Architektur-Optionen für Multiserver-Deployments in ISiK-basierten Krankenhauslandschaften.
+Dieses Dokument dient als Diskussionsgrundlage für technisch informierte Stakeholder zu Architektur-Optionen für den parallelen Produktiveinsatz von ISiK-konformen Servern in Krankenhauslandschaften.
+
 
 In diesem Dokument werden keinerlei normative Festlegungen getroffen. Es handelt sich um eine rein informative Diskussionsgrundlage.
 
