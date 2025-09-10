@@ -116,7 +116,8 @@ Es gibt nur **eine zentrale Persistenz mit FHIR API**, in die alle Ressourcen ge
 
 - Neue Interaktionen (CREATE) aus ISiK werden erforderlich (in der Spezifikation und für Hersteller); entspricht nicht dem status-quo
     - Mit Ausnahme: machbar über Rückübermittlung durch Subsysteme (Composition) 
-- ggf. Komplexität zur Übergabe von Schreibrechte an externe Komponenten; z. B. muss für das CREATE, bzw. die Übergabe einzelner Profile die *source of truth* definiert werden
+- ggf. Komplexität zur Übergabe von Schreibrechten an externe Komponenten; z. B. muss für das CREATE, bzw. die Übergabe einzelner Profile die *source of truth* definiert werden
+
 
 </details>
 
