@@ -155,7 +155,8 @@ Es gibt weiterhin mehrere Server, die als ISiK Akteure im Krankenhaus laufen. Ei
 
 #### Vorteile
 
-- Es gibt weiterhin die Persistenz in den Subsystemen (Ressourcen-Servern): Redundanz als Sicherheits-Featur gegeben
+- Es gibt weiterhin die Persistenz in den Subsystemen (Ressourcen-Servern): Redundanz als Sicherheits-Feature gegeben
+
 - SMARTonFHIR Ansatz anwendbar (aber mit loser Kopplung und daher mehr Komplexität als in ZP-Option)
 - Zentrale und (mutmaßlich) weniger komplexe Autorisierung 
 - Komplexe Datenanalyse wird weniger komplex
