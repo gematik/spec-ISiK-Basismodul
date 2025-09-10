@@ -20,7 +20,8 @@ Neben den aufgeführten Architektur-Optionen lassen sich auch Antipattern beschr
 
 ## Architektur-Optionen (und ihre Herausforderungen)
 
-Für das beschriebene Problem gibt es verschiedene Lösungen, die unterschiedlich komplex sind. Anders ausgedrückt: die Komplexität wird in den unterschiedlichen Optionen verschiedene auf bestimmte Komponenten verteilt. Es ist jedoch nicht der Fall, dass eine Option grundsätzlich als mehr oder weniger komplex gegenüber den anderen Optionen erscheint.
+Für das beschriebene Problem gibt es verschiedene Lösungen, die unterschiedlich komplex sind. Anders ausgedrückt: die Komplexität wird in den unterschiedlichen Optionen verschieden auf bestimmte Komponenten verteilt. Die Komplexität wird also lediglich verlagert und nicht verringert bzw. vergrößert.
+
 
 Allen hier vorgestellten Optionen ist gemein, dass sie unnötige Komplexität - die Wahrung der Datenintegrität in einem verteilten System bringt diese zwangsläufig mit sich - auf Seite der Clients vermeiden. 
 
