@@ -96,7 +96,7 @@ Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
   * item[+]  
     * linkId = "4.1"
     * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
-    * answer.valueDecimal = 66.22
+    * answer.valueDecimal = 66.2
   * item[+]  
     * linkId = "4.2"
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
@@ -114,7 +114,7 @@ Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
   * item[+]  
     * linkId = "4.1"
     * text = "Körpergewicht in kg (muss zwischen 20 und 300kg liegen)"
-    * answer.valueDecimal = 66.123
+    * answer.valueDecimal = 66.1
   * item[+]  
     * linkId = "4.2"
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
