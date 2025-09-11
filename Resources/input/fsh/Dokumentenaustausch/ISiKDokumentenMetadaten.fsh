@@ -209,9 +209,10 @@ Ab dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Eleme
 * context 1.. MS
   * encounter ..1 MS
     * ^short = "Aufenthaltsbezug"
+    * ^comment = "**Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD."
     * reference 1.. MS
       * ^short = "Encounter-Link"
-      * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  **Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD."
+      * insert Comment-Reference-Encounter
   * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
     * coding 1..1

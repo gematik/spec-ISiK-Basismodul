@@ -112,6 +112,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
+    * insert Comment-Reference-Encounter
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt oder Zeitraum, für den die MedikationsInformation gilt"
   * ^comment = "Begründung des Must-Support: Basisinformation"

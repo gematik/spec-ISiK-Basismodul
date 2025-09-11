@@ -42,6 +42,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
 
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
   * reference 1.. MS
+    * insert Comment-Reference-Encounter
 * occurrence[x] MS
   * ^short = "Zeitpunkt oder Zeitraum der Beurteilung"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Die Angabe des Zeitpunkts oder Zeitraums ist essentiell für die Nachvollziehbarkeit.

@@ -47,6 +47,7 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1.. MS
+    * insert Comment-Reference-Encounter
 * date MS
   * ^short = "Erstellungsdatum der Liste"
   * ^comment = "Begründung des Must-Support: Basisinformation"

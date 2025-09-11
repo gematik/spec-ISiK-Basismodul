@@ -64,8 +64,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Encounter
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt/-raum der Beobachtung"
   * ^comment = "Bedeutung: Klinisch relevanter Zeitpunkt/Zeitspanne für die Observation."
