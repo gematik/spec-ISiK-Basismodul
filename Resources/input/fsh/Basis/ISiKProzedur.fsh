@@ -91,7 +91,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Patientenbezug"
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS

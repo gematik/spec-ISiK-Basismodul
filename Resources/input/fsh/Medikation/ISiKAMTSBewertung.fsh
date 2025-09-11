@@ -30,8 +30,12 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Eine Risikobewertung muss sich immer auf ein Subjekt (hier: Patient) beziehen.
 
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject
 * subject only Reference(Patient)
   * reference 1.. MS
+    * insert Comment-Reference-Subject
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Der Encounter liefert den Kontext zur Risikobeurteilung.

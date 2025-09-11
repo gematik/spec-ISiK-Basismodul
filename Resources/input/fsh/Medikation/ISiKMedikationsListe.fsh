@@ -41,6 +41,8 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"

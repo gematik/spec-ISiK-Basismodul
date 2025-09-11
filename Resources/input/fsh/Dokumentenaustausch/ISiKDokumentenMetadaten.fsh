@@ -111,7 +111,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * reference 0.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Bedingtes Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc. Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  
-    Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"
+    Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}" //TODOJS
   * identifier MS
     * ^short = "Patienten-Link (logische Referenz)"
     * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"

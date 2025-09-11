@@ -39,6 +39,9 @@ Description: "ToDo"
   * ^comment = "**Begründung Pflichtfeld:**  
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  * reference MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 

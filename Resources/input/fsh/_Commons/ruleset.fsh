@@ -131,7 +131,7 @@ RuleSet: ISiKVitalsignCommons
     * ^short = "SNOMED CT Kodierung"
     * ^comment = "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT."
 * subject MS
-  * ^comment = "Motivation MS: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * insert Comment-Reference-Subject
   * ^short = "Patient"
 * encounter MS
   * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
@@ -246,3 +246,11 @@ RuleSet: ISiKMedikament-CodingATCComment
 * ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
 
 
+RuleSet: Comment-Reference-Subject
+* ^comment = "Motivation MS: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
+
+RuleSet: Comment-Reference-Encounter
+* ^comment = "Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."

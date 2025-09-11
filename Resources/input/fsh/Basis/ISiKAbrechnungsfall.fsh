@@ -85,8 +85,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "**Begründung Pflichtfeld:** Ein Patientenbezug des Falls muss stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject
 * coverage MS
   * ^short = "Versicherungs-/Zahlungsverhältnis"
   * ^comment = "Auflistung aller Versicherungs- und oder (Selbst-/Fremd-)zahlerverhältnisse, die zur Abrechnung der in diesem Kontext erbrachten Leistungen herangezogen werden können."
