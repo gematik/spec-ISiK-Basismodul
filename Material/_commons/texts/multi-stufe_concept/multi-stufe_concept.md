@@ -17,7 +17,8 @@ In der Folge werden unterschiedliche Szenarien dargestellt, die im Zusammenhang 
 | Abkündigung im Produktivbetrieb (Kostenfalle) | Ein System in einer Stufe wird abgekündigt durch den Hersteller.                                                                   | - Insbesondere bei Abkündigung ist im Produktivbetrieb die Ablösung kritisch, wenn hier ein laufendes System abgelöst wird und durch Software-Hersteller neue Kosten für den Roll-out einer neuen Stufe (ggf. auch nur Update einer TC-Version) abgerufen werden.                                                                                                                                                                                                                                                                             | - Vereinbarung eines Garantie-Supports für 5 Jahre (❓) mit einem End-of-Life-Datum<br>- Laufendes System soll nur durch ein *kostenloses* Upgrade abgelöst werden                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 
-## N-Endpoints für ISiK-Stufen - Architektur-Empfehlung
+## N-Endpunkte für ISiK-Stufen - Architektur-Empfehlung
+
 
 Grundsätzlich sollte ein Parallelbetrieb unterschiedlicher ISiK-Stufen durch ein einzelnes System (und eine IT-Landschaft) möglich sein.
 Um dies zu ermöglichen, gilt folgende **Empfehlung** zur Konfiguration eines Servers: Pro ISiK-Stufe SOLL ein Endpunkt bereitgestellt werden. D. h. es können N Endpunkte (N = Anzahl der ISiK-Stufen) von einem einzelnen Server bereitgestellt werden.
