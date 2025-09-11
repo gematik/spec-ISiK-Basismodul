@@ -40,5 +40,6 @@ Wir empfehlen, die neueste, gültige ISiK-Version zu implementieren. Jedoch soll
 ## Begriffsbox
 
 - **Stufe** (ISiK-Stufe): Funktionale Ausbaustufe von ISiK (z. B. Stufe 2, Stufe 3). Kann Breaking Changes gegenüber vorherigen Stufen enthalten.
-- **Version** (Stufen-Version): Technische Version innerhalb einer Stufe (z. B. 3.0.1). Dient typischerweise der Fehlerbehebung und kleineren Anpassungen. Häufiger auch  ** Techical_Correction (TC-Version)**
+- **Version** (Stufen-Version): Technische Version innerhalb einer Stufe (z. B. 3.0.1). Dient typischerweise der Fehlerbehebung und kleineren Anpassungen. Häufiger auch  **Technical Correction (TC-Version)**
+
 - **Profilinstanz-Version**: Versionierung einzelner FHIR-Artefakte über die Canonical-URL mit Pipe-Notation, z. B. `canonicalURL|x.y.z` (z. B. `.../StructureDefinition/Account|4.0.1`).
