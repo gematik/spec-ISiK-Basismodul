@@ -16,4 +16,4 @@ Eine in der Praxis vermutlich häufig vorkommende Architektur sieht das KIS als 
 
 Eine andere Variante ist das Patientenportal als terminführendes System einzubinden. In dieser Variente ist das KIS weiterhin auch als Repository zu betrachten, da Kapazitäten der Leistungserbringer hier vorgehalten werden. Das Patientenportal erhält jedoch weitergehende Rechte und kann hierdurch direkt Termine buchen. Eine bidirektionale Synchronisierung des Patientenportals und des KIS muss fortlaufend durchgeführt werden. 
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/Terminplanung/Termin_Patientenportal_als_Repository.drawio.svg" width="40"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/Terminplanung/Termin_Patientenportal_als_Repository.drawio.svg"/>
