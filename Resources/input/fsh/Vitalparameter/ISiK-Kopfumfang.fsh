@@ -34,7 +34,7 @@ Usage: #example
 * effectiveDateTime = "2019-07-02"
 * performer.reference = "Practitioner/DrMustermann"
 * valueQuantity = 38 'cm' "Centimeter"
-
+ 
 Instance: ISiKKopfumfangMinExample
 InstanceOf: ISiKKopfumfang
 Usage: #example
