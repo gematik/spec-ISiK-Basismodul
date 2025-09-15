@@ -114,7 +114,7 @@ Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
-* code.coding.version = "2020"
+* code.coding.version = "2024"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
