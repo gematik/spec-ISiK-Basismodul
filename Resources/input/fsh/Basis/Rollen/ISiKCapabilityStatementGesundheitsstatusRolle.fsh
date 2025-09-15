@@ -206,7 +206,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * type = #date
       * documentation = 
           "**Beispiel:**    
-          `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23Z+02:00`    
+          `GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23+02:00`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
     * searchParam[+]
@@ -216,7 +216,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * type = #date
       * documentation = 
           "**Beispiel:**    
-          `GET [base]/AllergyIntolerance?date=2015-01-01T12:00:23Z+02:00`    
+          `GET [base]/AllergyIntolerance?date=2015-01-01T12:00:23+02:00`    
           **Anwendungshinweis:**   
           Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
     * searchParam[+]

@@ -76,6 +76,29 @@ RuleSet: minMaxDecimal(min, max)
   * url = "http://hl7.org/fhir/StructureDefinition/minValue"
   * valueDecimal = {min}
 
+RuleSet: minLength(min)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/minLength"
+  * valueInteger = {min}
+
+RuleSet: maxOccurs(max)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs"
+  * valueInteger = {max}
+
+RuleSet: minOccurs(min)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs"
+  * valueInteger = {min}
+
+RuleSet: minMaxOccurs(min, max)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs"
+  * valueInteger = {min}
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs"
+  * valueInteger = {max}
+
 //name = patient | encounter | location | user | study
 RuleSet: launchContext(name, type, description)
 * extension
@@ -108,6 +131,12 @@ RuleSet: observationExtract
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
   * valueBoolean = true
 
+RuleSet: observationExtractCategoryVitalSign
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
+  * valueCodeableConcept
+    * coding[+] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+
 
 RuleSet: variable(name, expression)
 * extension[+]
@@ -122,6 +151,11 @@ RuleSet: uunit(code)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
   * valueCoding = $unitsofmeasure#{code}
+
+RuleSet: maxDecimalPlaces(integer)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+  * valueInteger = {integer}
 
 
 RuleSet: entryFormat(string)
@@ -139,9 +173,42 @@ RuleSet: regEx(expression)
   * url = "http://hl7.org/fhir/StructureDefinition/regex"
   * valueString = {expression}
 
+RuleSet: targetConstraint(key, expression, severity, human)  
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/targetConstraint"
+  * extension[+]
+    * url = "key"
+    * valueId = {key}
+  * extension[+]
+    * url = "severity"
+    * valueCode = {severity} 
+  * extension[+]
+    * url = "expression"
+    * valueExpression
+      //* name = {name}
+      * language = #text/fhirpath
+      * expression = {expression}
+  * extension[+]
+    * url = "human" 
+    * valueString = {human}   
 
 RuleSet: qritem (id, text)
 * linkId = {id}
 * text = {text}
 
+RuleSet: QuestionnaireExamplesMetadata(name)
+* name = "{name}"
+* version = "0.1.0"
+* url = "https://gematik.de/fhir/isik/Questionnaire/{name}"
+* status = #draft
+* experimental = false
+* publisher = "Gematik GmbH"
+* subjectType = #Patient
+
+RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
+* questionnaire = Canonical({questionnaire})
+* status = #completed
+* subject = Reference({patient})
+* author = Reference({patient})
+* authored = "2025-01-01"
 
