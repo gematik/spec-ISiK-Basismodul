@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Trommelfell
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-trommelfell
 Title: "SD MII ICU Koerpertemperatur Trommelfell"
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen im Trommelfell im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code

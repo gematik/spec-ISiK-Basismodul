@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Leiste
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-leiste
 Title: "SD MII ICU Koerpertemperatur Leiste"
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Leiste im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code
