@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Generisch
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-koerpertemperatur-generisch
 Title: "SD MII ICU Koerpertemperatur Generisch"
+Description: "Dieses Profil bietet eine abstrahierte Schicht zur Körpertemperaturmessung im ICU-Umfeld. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer KörperKERNtemperatur zu verwenden (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter)."
 * insert Meta
 * insert CommonElements
 * code
