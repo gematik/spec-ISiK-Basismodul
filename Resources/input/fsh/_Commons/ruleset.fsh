@@ -131,14 +131,14 @@ RuleSet: ISiKVitalsignCommons
     * ^short = "SNOMED CT Kodierung"
     * ^comment = "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT."
 * subject MS
-  * insert Comment-Reference-Subject
+  * insert Comment-Reference-Subject(Motivation MS)
   * ^short = "Patient"
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter-with-hint
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * effective[x] MS
   * ^comment = "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Datum und Uhrzeit der Untersuchung"
@@ -244,19 +244,19 @@ RuleSet: ISiKMedikament-CodingATCComment
 * ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
 
 
-RuleSet: Comment-Reference-Subject
-* ^comment = "**Motivation MS**: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+RuleSet: Comment-Reference-Subject(Einleitung)
+* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
 
-RuleSet: Comment-Reference-Encounter-with-hint
-* ^comment = "**Motivation MS**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+RuleSet: Comment-Reference-Encounter-with-hint(Einleitung)
+* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  
 Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
 
-RuleSet: Comment-Reference-Encounter
-* ^comment = "**Motivation MS**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+RuleSet: Comment-Reference-Encounter(Einleitung)
+* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."

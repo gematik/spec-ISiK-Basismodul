@@ -83,13 +83,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter-with-hint
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * onset[x] MS 
   * ^short = "Erkrankungsbeginn"
   * ^comment = "Datum oder Alter/Lebensphase des Erkrankungsbeginns

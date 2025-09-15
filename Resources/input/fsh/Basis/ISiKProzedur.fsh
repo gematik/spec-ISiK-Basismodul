@@ -91,12 +91,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Patientenbezug"
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter
+    * insert Comment-Reference-Encounter(Begründung Pflichtfeld)
 * performed[x] 1.. MS
   * ^short = "Durchführungsdatum oder -Zeitraum"
   * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.

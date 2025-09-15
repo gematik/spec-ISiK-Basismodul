@@ -131,13 +131,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Patientenbezug"
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung des Dokumentes zu einem Patienten 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter-with-hint
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * date MS
   * ^short = "Dokumentendatum"
   * ^comment = "Datum der letzten Änderung des Dokumentes"

@@ -62,12 +62,12 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
 * subject only Reference(Patient)
   * reference 1..1 MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject
+    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
 * context MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
-    * insert Comment-Reference-Encounter
+    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
 * effectiveDateTime MS
   * ^short = "Zeitpunkt der Verabreichung"
   * ^comment = "Begründung des Must-Support: Basisinformation

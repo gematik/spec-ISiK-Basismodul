@@ -86,12 +86,12 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
 * subject only Reference(Patient)
   * reference 1..1 MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject
+    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
-    * insert Comment-Reference-Encounter
+    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
 * authoredOn MS
   * ^short = "Erstellungsdatum der Verordnung"
   * ^comment = "Begründung des Must-Support: Basisinformation"

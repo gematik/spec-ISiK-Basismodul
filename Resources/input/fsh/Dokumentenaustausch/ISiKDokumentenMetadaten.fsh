@@ -112,7 +112,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
     Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"
   * reference 0.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject
+    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
   * identifier MS
     * ^short = "Patienten-Link (logische Referenz)"
     * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"
@@ -212,7 +212,7 @@ Ab dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Eleme
     * ^comment = "**Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD."
     * reference 1.. MS
       * ^short = "Encounter-Link"
-      * insert Comment-Reference-Encounter
+      * insert Comment-Reference-Encounter(Begründung Pflichtfeld)
   * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
     * coding 1..1
