@@ -35,3 +35,32 @@ Usage: #example
 * effectiveDateTime = "2020-10-11"
 * performer.reference = "Practitioner/DrMustermann"
 * valueQuantity = 36.8 'Cel' "°C"
+
+Instance: ISiKKoerperkerntemperaturMinExample
+InstanceOf: ISiKKoerperkerntemperatur
+Usage: #example
+* status = #final
+* category[VSCat] = $observation-category#vital-signs
+* code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
+* subject = Reference(PatientinMinimal)
+* effectiveDateTime = "2024-01-15"
+* valueQuantity = 34.5 'Cel' "°C"
+
+Instance: ISiKKoerperkerntemperaturMaxExample
+InstanceOf: ISiKKoerperkerntemperatur
+Usage: #example
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
+* code.coding[snomed] = $sct#276885007 "Core body temperature"
+* code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
+* code.text = "Körperkerntemperatur - Intensivmonitoring"
+* subject = Reference(PatientinNormal)
+* effectiveDateTime = "2024-01-15T16:45:00+01:00"
+* performer = Reference(PractitionerWalterArzt)
+* valueQuantity = 42.5 'Cel' "°C"
+* method = $sct#448169003 "Digital thermometry"
+* bodySite = $sct#245544008 "Entire esophagus"
+* interpretation = $v3-ObservationInterpretation#H "High"
+* note.text = "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie"
+* device = Reference(ExampleDevice)
