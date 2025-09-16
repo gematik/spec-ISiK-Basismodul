@@ -114,7 +114,7 @@ Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
-* code.coding.version = "2020"
+* code.coding.version = "2024"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
@@ -137,6 +137,7 @@ Usage: #example
 * code.coding.version = "2024"
 * code.coding = $icd-10-gm#I99 "Sonstige und nicht näher bezeichnete Krankheiten des Kreislaufsystems"
 * code.coding[+] = $alphaid-cs#I14432 "Altersbedingte Kreislaufstörung"
+* code.coding[=].version = "2024"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * onsetDateTime = "2019-09-02"

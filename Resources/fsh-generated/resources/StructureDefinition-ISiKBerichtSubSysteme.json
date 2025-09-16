@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKBerichtSubSysteme",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme",
-  "version": "3.0.8",
+  "version": "3.1.0",
   "name": "ISiKBerichtSubSysteme",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-15",
+  "date": "2025-09-16",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung eines Berichtes in Form eines Dokumentes, die in ISiK Szenarien von Subsystemen an Primärsysteme gesendet werden.",
   "fhirVersion": "4.0.1",
@@ -61,6 +61,8 @@
       {
         "id": "Composition.type",
         "path": "Composition.type",
+        "short": "Dokumenttyp",
+        "comment": "Begründung zu Must Support: Der Dokumenttyp ist für die Identifikation des Berichtes und die Zuordnung zu einem Subsystem für die weitere Verarbeitung erforderlich.\n\n  *Hinweis für Implementierer:* \n  Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  \n  Es KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.\n\n  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,\n  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.\n  Der IHE-XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden.\n  Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.  \n  ",
         "mustSupport": true
       },
       {
@@ -75,31 +77,7 @@
           ],
           "rules": "open"
         },
-        "min": 1,
         "mustSupport": true
-      },
-      {
-        "id": "Composition.type.coding:LOINC",
-        "path": "Composition.type.coding",
-        "sliceName": "LOINC",
-        "min": 0,
-        "max": "1",
-        "patternCoding": {
-          "code": "55112-7",
-          "system": "http://loinc.org"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.type.coding:LOINC.system",
-        "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://loinc.org"
-      },
-      {
-        "id": "Composition.type.coding:LOINC.code",
-        "path": "Composition.type.coding.code",
-        "min": 1
       },
       {
         "id": "Composition.type.coding:KDL",
@@ -115,8 +93,7 @@
       {
         "id": "Composition.type.coding:KDL.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl"
+        "min": 1
       },
       {
         "id": "Composition.type.coding:KDL.code",
@@ -133,9 +110,9 @@
         ]
       },
       {
-        "id": "Composition.type.coding:IHE",
+        "id": "Composition.type.coding:XDS",
         "path": "Composition.type.coding",
-        "sliceName": "IHE",
+        "sliceName": "XDS",
         "min": 0,
         "max": "1",
         "patternCoding": {
@@ -144,19 +121,27 @@
         "mustSupport": true
       },
       {
-        "id": "Composition.type.coding:IHE.system",
+        "id": "Composition.type.coding:XDS.system",
         "path": "Composition.type.coding.system",
-        "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        "min": 1
       },
       {
-        "id": "Composition.type.coding:IHE.code",
+        "id": "Composition.type.coding:XDS.code",
         "path": "Composition.type.coding.code",
         "min": 1
       },
       {
+        "id": "Composition.type.text",
+        "path": "Composition.type.text",
+        "short": "Dokumenttyp (Freitext)",
+        "comment": "Begründung zu Must Support: Die freitextliche Beschreibung des assoziierten Displaywerts der primären Codierung dient einer einheitlichen Ausgabe (jenseits verschiedener Codesysteme). Der Text kann ggf. aus vorhandenen Codes übernommen werden.",
+        "mustSupport": true
+      },
+      {
         "id": "Composition.category",
         "path": "Composition.category",
+        "short": "Dokument-Kategorie",
+        "comment": "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden.",
         "mustSupport": true
       },
       {
@@ -179,13 +164,15 @@
         "sliceName": "LOINC",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "http://loinc.org"
+        },
         "mustSupport": true
       },
       {
         "id": "Composition.category.coding:LOINC.system",
         "path": "Composition.category.coding.system",
-        "min": 1,
-        "fixedUri": "http://loinc.org"
+        "min": 1
       },
       {
         "id": "Composition.category.coding:LOINC.code",
@@ -198,13 +185,15 @@
         "sliceName": "IHE",
         "min": 0,
         "max": "1",
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        },
         "mustSupport": true
       },
       {
         "id": "Composition.category.coding:IHE.system",
         "path": "Composition.category.coding.system",
-        "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        "min": 1
       },
       {
         "id": "Composition.category.coding:IHE.code",

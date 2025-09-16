@@ -30,7 +30,7 @@ Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen 
 ---
 
 #### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
-In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide/EinfachesAufbaumodell?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
+In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/mii-ig-modul-fall-2024-de/MIIIGModulFall/BeschreibungModul/EinfachesAufbaumodell.page.md?version=current) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
 * **Einrichtungskontakt:**
 Als Kontakt eines Patienten mit einer Einrichtung (z.B: Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.

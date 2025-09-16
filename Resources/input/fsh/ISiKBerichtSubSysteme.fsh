@@ -13,41 +13,52 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
 * status = #final (exactly)
 * status MS
 * type MS
-* type.coding 1.. MS
+  * ^short = "Dokumenttyp"
+  * ^comment = "Begründung zu Must Support: Der Dokumenttyp ist für die Identifikation des Berichtes und die Zuordnung zu einem Subsystem für die weitere Verarbeitung erforderlich.
+
+  *Hinweis für Implementierer:* 
+  Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  Es KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.
+
+  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,
+  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.
+  Der IHE-XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)
+  aus dem KDL-Code ermittelt werden.
+  Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.  
+  "
+  * text MS
+    * ^short = "Dokumenttyp (Freitext)"
+    * ^comment = "Begründung zu Must Support: Die freitextliche Beschreibung des assoziierten Displaywerts der primären Codierung dient einer einheitlichen Ausgabe (jenseits verschiedener Codesysteme). Der Text kann ggf. aus vorhandenen Codes übernommen werden."
+* type.coding 0.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 0..1 MS and
     KDL 0..1 MS and
-    IHE 0..1 MS
-* type.coding[LOINC] = $loinc#55112-7
-  * system 1..
-  * system = "http://loinc.org" (exactly)
-  * code 1..
+    XDS 0..1 MS
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
-  * system = "http://dvmd.de/fhir/CodeSystem/kdl" (exactly)
   * code 1..
     * obeys kdl-1
-* type.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+* type.coding[XDS] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
   * system 1..
-  * system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode" (exactly)
   * code 1..
 * category MS
+  * ^short = "Dokument-Kategorie"
+  * ^comment = "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden." 
 * category.coding MS
-* category.coding ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
-* category.coding[LOINC].system 1..
-* category.coding[LOINC].system = "http://loinc.org" (exactly)
-* category.coding[LOINC].code 1..
-* category.coding[IHE].system 1..
-* category.coding[IHE].system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
-* category.coding[IHE].code 1..
+* category.coding[LOINC] ^patternCoding.system = $loinc
+  * system 1..
+  * code 1..
+* category.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+  * system 1..
+  * code 1..
 * subject 1.. MS
 * subject only Reference(Patient)
   * reference 1.. MS
@@ -70,7 +81,8 @@ Usage: #example
 * identifier[=].system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
 * identifier[=].value = "0123456789"
 * status = #final
-* type = $loinc#55112-7
+* type = http://dvmd.de/fhir/CodeSystem/kdl#DG060104 "Blutdruckprotokoll"
+* type.text = "Blutdruckprotokoll"
 * subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * encounter.reference = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 * date = "2022-05-03"

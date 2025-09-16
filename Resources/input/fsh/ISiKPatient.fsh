@@ -9,11 +9,14 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^comment = "Wenn eine pre-Adoption des neuen Identifier Typs 'VersichertenId' gewünscht ist, bitte die Spezifikation aus [Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient?version=current) übernehmen. Die Änderung auf die neue Struktur ist in ISiK Stufe 
+  3 nicht möglich, da das Codesystem 'identifier-type-de-basis' aus den deutschen Basisprofile in Version 1.4.0 den Code KVZ10 noch nicht enthält."
 * identifier contains
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId-GKV] only IdentifierKvid10
+  * ^comment = "Achtung: Bitte allgemeinen Hinweis zum Element identifier beachten."
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
   * type 1.. MS
   * system MS
@@ -26,6 +29,14 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
 * identifier[Versichertennummer_PKV] only IdentifierPkv
   * ^patternIdentifier.type = $identifier-type-de-basis#PKV
   * ^mustSupport = false
+  * ^short = "Private Krankenversichertennummer"
+  * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
+  können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
+  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums meist nicht ermittelt werden kann,
+  ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.
+  **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden, da die Nummernkreise dieser Identifier identisch sind.
+  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)
+  Der Identifier kann jedoch zusätzlich zur KVNR verwendet werden, wenn für eine Zusatzversicherung eine separate, versicherungsspezifische PKV-Nummer vorliegt."
   * use MS
   * type 1.. MS
   * value MS
