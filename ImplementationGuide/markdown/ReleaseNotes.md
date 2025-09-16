@@ -7,7 +7,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Version: 3.1.0
 
-Datum: 31.07.2025
+Datum: 16.09.2025
 
 * `fixed` Fix Pattern auf Composition.category und Hinzufügen von MS .. auf type.text sowie Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung .type (entsprechend https://github.com/gematik/spec-ISiK-Basismodul/pull/749) https://github.com/gematik/spec-ISiK-Basismodul/pull/694
 * `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/818
