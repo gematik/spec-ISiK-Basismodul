@@ -16,6 +16,11 @@ Durch die Übernahme der Profile der MII und Abbildung auf das ISIK-Setting, kö
 - Maximale Kardinalitäten von Coding Slices wurden von der MII übernommen
 - Die Profil-Eigenschaften der MII-Profile, die den bisherigen, existenten Profilen in ISiK entsprechen, wurden in die existenten Profile des [generischen Implementierungsleitfadens Vitalparemeter](https://simplifier.net/guide/isik-vitalparameter-stufe-5) übernommen.
 
+## Profile aus dem ISiK Support Modul Labor
+
+Zur Unterstützung der Überleitung zwischen intensivmedizinischer und normalstationärer Versorgung (siehe Use Cases), MÜSSEN alle
+Profile aus dem [ISIK Support Modul Labor](https://simplifier.net/guide/isik-labor-stufe-5) von einem bestätigungsrelevanten System implementiert werden, sofern das System diese Daten verwaltet (z.B. in Form einer Übernahme aus einem Laborinformationssystem).
+
 ## Profilhierarchie 
 
 Die folgende Darstellung zeigt die Vererbungsstruktur aller ICU-Profile in diesem Modul:
