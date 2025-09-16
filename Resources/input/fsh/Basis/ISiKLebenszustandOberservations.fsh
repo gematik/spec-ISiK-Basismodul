@@ -58,12 +58,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Patientenbezug"
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
+    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter(Begründung Pflichtfeld)
+    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt/-raum der Beobachtung"
   * ^comment = "Bedeutung: Klinisch relevanter Zeitpunkt/Zeitspanne für die Observation."

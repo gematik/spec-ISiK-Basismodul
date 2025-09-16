@@ -138,7 +138,7 @@ RuleSet: ISiKVitalsignCommons
   * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
+    * insert Comment-Reference-Encounter-with-hint(Bedingtes Pflichtfeld)
 * effective[x] MS
   * ^comment = "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Datum und Uhrzeit der Untersuchung"
@@ -245,18 +245,18 @@ RuleSet: ISiKMedikament-CodingATCComment
 
 
 RuleSet: Comment-Reference-Subject(Einleitung)
-* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+* ^comment = "**{Einleitung}**: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
 
 RuleSet: Comment-Reference-Encounter-with-hint(Einleitung)
-* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+* ^comment = "**{Einleitung}**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  
 Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
 
 RuleSet: Comment-Reference-Encounter(Einleitung)
-* ^comment = "**{Einleitung}:**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+* ^comment = "**{Einleitung}**: Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
