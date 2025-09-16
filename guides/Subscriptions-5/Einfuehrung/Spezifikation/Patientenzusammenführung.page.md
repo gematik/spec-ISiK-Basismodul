@@ -17,7 +17,7 @@ Eine Prüfung im Rahmen des Bestätigungsverfahrens zur *Patient merge Notificat
 
 ## Zweck und Definition *Patient merge Notification*
 Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
-Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* ( gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
+Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
 
 **Definition**: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen *Patient merge*. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein *Patient merge* stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder diesen zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.
 
