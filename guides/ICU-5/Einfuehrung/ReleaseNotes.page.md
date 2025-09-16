@@ -16,6 +16,7 @@ Datum: tbd
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `add` Minimal- und Maximalbeispiele für alle Vitalaparameter Profile wurden hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/866
 
 ----
 
