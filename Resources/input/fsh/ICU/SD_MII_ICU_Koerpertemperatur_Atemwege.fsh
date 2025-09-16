@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Atemwege
 Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-atemwege
 Title: "SD MII ICU Koerpertemperatur Atemwege"
-Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung in den Atemwegen im ICU-Umfeld. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter, bzw. abgeleitete Profile im ICU-Bereich)."
+Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung in den Atemwegen im ICU-Umfeld. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
 * insert Meta
 * insert CommonElements
 * code
