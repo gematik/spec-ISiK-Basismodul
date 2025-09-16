@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Pulmonalarterieller_Wedge_Druck
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-pulmonalarterieller-wedge-druck
 Title: "SD MII ICU Pulmonalarterieller Wedge Druck"
+Description: "Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Wedge-Drucks im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code

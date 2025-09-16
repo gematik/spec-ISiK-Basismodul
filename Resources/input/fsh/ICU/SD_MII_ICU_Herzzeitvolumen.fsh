@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Herzzeitvolumen
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-herzzeitvolumen
 Title: "SD MII ICU Herzzeitvolumen"
+Description: "Dieses Profil dient der spezialisierten Abbildung des Herzzeitvolumens im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code

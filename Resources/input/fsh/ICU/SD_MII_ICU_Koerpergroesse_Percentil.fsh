@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpergroesse_Percentil_Altersabhaengig
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-koerpergroesse-percentil-altersabhaengig
 Title: "SD MII ICU Koerpergroesse Percentil"
+Description: "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergrößen-Perzentils im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * category contains sct 0..*

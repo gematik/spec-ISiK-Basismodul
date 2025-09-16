@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Intrakranieller_Druck_Icp
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-intrakranieller-druck-icp
 Title: "SD MII ICU Intrakranieller Druck ICP"
+Description: "Dieses Profil dient der spezialisierten Abbildung des intrakraniellen Drucks (ICP) im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code

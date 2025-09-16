@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Linksventrikulaerer_Herzindex_Durch_Indikatorverduennung
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung
 Title: "SD MII ICU Linksventrikulaerer Herzindex durch Indikatorverduennung"
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex durch Indikatorverdünnung im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code

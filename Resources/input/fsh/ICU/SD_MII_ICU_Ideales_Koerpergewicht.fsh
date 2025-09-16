@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Ideales_Koerpergewicht
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-ideales-koerpergewicht
 Title: "SD MII ICU Ideales Koerpergewicht"
+Description: "Dieses Profil dient der spezialisierten Abbildung des idealen Körpergewichts im ICU-Umfeld."
 * insert Meta
 * insert CommonElements
 * code
