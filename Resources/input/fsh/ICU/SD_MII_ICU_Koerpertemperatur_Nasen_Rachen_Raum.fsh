@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum
 Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-nasen-rachen-raum
 Title: "SD MII ICU Koerpertemperatur Nasen-Rachen-Raum"
+Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Nasen-Rachen-Raum im ICU-Umfeld. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
 * insert Meta
 * insert CommonElements
 * code
