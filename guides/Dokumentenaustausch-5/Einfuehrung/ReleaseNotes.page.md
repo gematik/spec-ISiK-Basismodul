@@ -14,7 +14,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 Datum: tbd
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `improve` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 ----
 
@@ -23,7 +23,7 @@ Datum: tbd
 Datum: 26.06.2025
 
 * `fix` Anpassung der Displaywerte in den DocumenReference-Examples von „mimeType Sufficient“ zu „Format aus MIME Type ableitbar“ https://github.com/gematik/spec-ISiK-Basismodul/pull/765
-* `improve` Hinweise auf erläuternde Inhalten auf den MHD Seiten integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/770 
+* `documentation` Hinweise auf erläuternde Inhalten auf den MHD Seiten integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/770 
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -86,7 +86,7 @@ Datum: 19.3.2025
 
 Datum: 24.01.2025
 
-* `improve` Übertragung der Dokumentation in die FHIR-Resourcen, Refactoring des ImplementationGuides https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/211
+* `documentation` Übertragung der Dokumentation in die FHIR-Resourcen, Refactoring des ImplementationGuides https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/211
 * `fix` Update der der dependency de.ihe-d.terminology von 3.0.0 -> 3.0.1 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/212 - Begründung de.ihe-d.terminology#3.0.0 war defekt: ValueSets in XML abgelegt. Inhaltlich keine Änderung
 * `fix` Fehlende Kennzeichnung von MS-Elementen im Bundle-Profil
 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/210
@@ -136,10 +136,10 @@ Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in 
 
 Datum: 27.03.2024
 
-* `improve` Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
-* `improve` Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
+* `documentation` Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
+* `documentation` Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
   * `fix` Fix /versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
-* `improve` Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
+* `documentation` Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
   * `improve` Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
 * `improve` Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
 * `improve` Klarstellung , dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183

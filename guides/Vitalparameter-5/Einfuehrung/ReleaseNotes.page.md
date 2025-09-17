@@ -9,7 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: tbd
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `improve` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 ----
 
@@ -95,7 +95,7 @@ Datum: 26.6.2024
 Datum: 4.4.2024
 
 * Klärung datenuebernahme pdms kis by @patrick-werner in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154
-* `improve` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
+* `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
 * `improve` Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 
 * `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `improve` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)

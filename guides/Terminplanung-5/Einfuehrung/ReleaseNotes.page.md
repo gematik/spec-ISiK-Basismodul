@@ -14,14 +14,14 @@ Datum: tbd.
 * `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen
-* `improve` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 
 ## Version 5.0.0
 
 Datum: 26.06.2025
 
-* `improve` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
+* `documentation` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
 * `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`
 * `improve` Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767
 * `improve` Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773
@@ -32,7 +32,7 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745
+* `documentation` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745
 
 
 ## Version 5.0.0-rc
@@ -43,7 +43,7 @@ Datum: 09.04.2025
 
 * `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
-* `improve` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
+* `documentation` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
 * `improve` ISiKKalender enthielt ein required Binding auf ein VS welches auf ein `fragment`
   CodeSystem
   referenziert (Schedule.specialty.coding:ErweiterterFachabteilungsschluessel). Dies wurde durch ein
@@ -56,7 +56,7 @@ Datum: 09.04.2025
 
 Datum: 08.04.2025
 
-* `improve` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
+* `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
 * `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c
 
 
@@ -84,7 +84,7 @@ Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die
 Datum: 02.12.2024
 
 * `improve` Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207
-* `improve` Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
+* `documentation` Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
 * `improve` Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204
 * Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206
 * Anforderungen an die Kodierung von Appointment/Schedule.serviceType geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/227
@@ -199,7 +199,7 @@ Datum: 31.05.2023
 
 * ISiKTerminAppointment   * Änderung zu Appointment.serviceType aus 3.0.0-rc1 (Kommentierung) wurde zurückgezogen
     * wurde revert Changes for Appointment.serviceType #88 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/89
-  * `improve` Eine IG Seite zur Encounter Beschreibung für Terminplanung wurde hinzugefügt
+  * `documentation` Eine IG Seite zur Encounter Beschreibung für Terminplanung wurde hinzugefügt
     * Encounter Beschreibung für Terminplanung by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
   * Mehrere Slots müssen nicht mehr  ein und denselben Schedule referenzieren
     * rm cosntraint: allow different Schedules #82 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/92

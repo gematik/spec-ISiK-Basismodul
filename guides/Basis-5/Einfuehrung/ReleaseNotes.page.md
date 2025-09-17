@@ -26,7 +26,7 @@ Datum: XX.XX.2025
 * `improve` Allgemeine Hinweise zum Umgang mit fehlenden Daten und Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen hinzugefügt
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.
 * `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/814
-* `improve` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826 
 
 
@@ -35,7 +35,7 @@ Datum: XX.XX.2025
 Datum: 26.06.2025
 * `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
 * `improve` Hinzufügen der Definition von DKG und KIG der 'Bestätigungsrelevanten Systeme' für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
-* `improve` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
+* `documentation` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -58,8 +58,8 @@ Datum: 5.6.2025
 Datum: 13.05.2025
 
 * `fix` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
-* `improve` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
-* `improve` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
+* `documentation` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
+* `documentation` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
 * `fix` Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/713
 
 ## Version 5.0.0-rc (Kommentierung)
@@ -132,7 +132,7 @@ Datum: 30.8.2024
 * `improve` Überarbeitung der Must Support Definition: https://github.com/gematik/spec-ISiK-Basismodul/pull/412
 * `improve` Hinzufügen von MS und weitere Anpassung von Encounter.location, um Abbildung von Standort-Historie zu ermöglichen: https://github.com/gematik/spec-ISiK-Basismodul/pull/407
 * `improve` Added MS for Account.coverage.priority https://github.com/gematik/spec-ISiK-Basismodul/pull/405 and https://github.com/gematik/spec-ISiK-Basismodul/pull/406 
-* `improve` Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380
+* `documentation` Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380
 * `improve` Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408
 * `improve` Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399
 * `improve` Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung

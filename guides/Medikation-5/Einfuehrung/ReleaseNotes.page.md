@@ -8,11 +8,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd
 
-* `improve` Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System  https://github.com/gematik/spec-ISiK-Basismodul/pull/807
+* `documentation` Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System  https://github.com/gematik/spec-ISiK-Basismodul/pull/807
 
-* `improve` Erläuterung für die Umsetzung der Pausierung einer Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/803
+* `documentation` Erläuterung für die Umsetzung der Pausierung einer Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/803
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `improve` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 
 ## Version 5.0.0
@@ -57,7 +57,7 @@ Datum: 09.04.2025
 
 Datum: 08.04.2025
 
-* `improve` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Medikation/pull/171
+* `documentation` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Medikation/pull/171
 
 ----
 
@@ -79,15 +79,15 @@ Datum: 26.02.2025
   * Zum Hintergrund der Entscheidungsfindung beachte [öffentliche Fragestellung und Diskussion](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BMED.5D.20Administration.2FVerabreichung.20-.20Date.20or.20Timestamp). 
 * `improve` Klarstellung zum Umgang mit Freitext-Dosierungsinformationen für empfangende Systeme https://github.com/gematik/spec-ISiK-Medikation/pull/155
 * `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
-* `improve` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
+* `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
 * `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
 * `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Medikation/pull/156/files 
 * `improve` MS für ISiKMedikationsVerordnung.reasonReference & reasonCode hinzugefügt, um diese Elemente über alle Medication-Ressourcen hinweg zu vereinheitlichen https://github.com/gematik/spec-ISiK-Medikation/pull/161
 * `improve` Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement https://github.com/gematik/spec-ISiK-Medikation/pull/140
 * `fix` Capability Statement Korrektur des Suchparameter-Typs und weitere Fixes für Beispiele  https://github.com/gematik/spec-ISiK-Medikation/pull/148
-* `improve` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
+* `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
 * `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
-* `improve` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
+* `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
 * `improve` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 
 
 ----
