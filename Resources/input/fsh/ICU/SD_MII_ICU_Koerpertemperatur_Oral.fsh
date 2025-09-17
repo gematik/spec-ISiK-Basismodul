@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Oral
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-unter-der-zunge
 Title: "SD MII ICU Koerpertemperatur unter der Zunge"
-Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen unter der Zunge im ICU-Umfeld."
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen unter der Zunge in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

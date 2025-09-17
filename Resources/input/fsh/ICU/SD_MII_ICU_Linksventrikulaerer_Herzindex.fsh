@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Linksventrikulaerer_Herzindex
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-linksventrikulaerer-herzindex
 Title: "SD MII ICU Linksventrikulaerer Herzindex"
-Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex im ICU-Umfeld."
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Pulmonalarterieller_Blutdruck
 Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-pulmonalarterieller-blutdruck
 Title: "SD MII ICU Pulmonalarterieller Blutdruck"
-Description: "Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Blutdrucks im ICU-Umfeld."
+Description: "Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Blutdrucks in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * category = $observation-category#vital-signs

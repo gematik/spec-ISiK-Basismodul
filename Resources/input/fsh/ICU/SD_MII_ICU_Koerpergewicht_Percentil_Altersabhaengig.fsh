@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-koerpergewicht-percentil-altersabhaengig
 Title: "SD MII ICU Koerpergewicht Percentil Altersabhaengig"
-Description: "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergewicht-Perzentils im ICU-Umfeld."
+Description: "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergewicht-Perzentils in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * category contains sct 0..*

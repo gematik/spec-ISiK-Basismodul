@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Vaginal
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-vaginal
 Title: "SD MII ICU Koerpertemperatur vaginal"
-Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen vaginal im ICU-Umfeld."
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen vaginal in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

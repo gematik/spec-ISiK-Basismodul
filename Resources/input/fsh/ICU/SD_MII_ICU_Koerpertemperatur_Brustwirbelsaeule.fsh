@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule
 Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-brustwirbelsaeule
 Title: "SD MII ICU Koerpertemperatur Brustwirbelsaeule"
-Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brustwirbelsäule im ICU-Umfeld. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
+Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brustwirbelsäule in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
 * insert Meta
 * insert CommonElements
 * code

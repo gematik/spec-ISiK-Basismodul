@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Achsel
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-achsel
 Title: "SD MII ICU Koerpertemperatur Achsel"
-Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Achsel im ICU-Umfeld."
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Achsel in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code 

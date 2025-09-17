@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Sauerstoffsaettigung_Im_Arteriellen_Blut_Durch_Pulsoxymetrie
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie
 Title: "SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie"
-Description: "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im arteriellen Blut durch Pulsoxymetrie im ICU-Umfeld."
+Description: "Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im arteriellen Blut durch Pulsoxymetrie in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

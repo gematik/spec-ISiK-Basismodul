@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Gelenk
 Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-gelenk
 Title: "SD MII ICU Koerpertemperatur Gelenk"
-Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung am Gelenk im ICU-Umfeld. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
+Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung am Gelenk in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
 * insert Meta
 * insert CommonElements
 * code

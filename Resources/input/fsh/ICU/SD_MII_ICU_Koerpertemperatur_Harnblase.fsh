@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Harnblase
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-harnblase
 Title: "SD MII ICU Koerpertemperatur Harnblase"
-Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen in der Harnblase im ICU-Umfeld."
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen in der Harnblase in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

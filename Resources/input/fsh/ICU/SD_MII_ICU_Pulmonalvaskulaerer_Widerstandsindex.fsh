@@ -2,7 +2,7 @@ Profile: SD_MII_ICU_Pulmonalvaskulaerer_Widerstandsindex
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-pulmonalvaskulaerer-widerstandsindex
 Title: "SD MII ICU Pulmonalvaskulaerer Widerstandsindex"
-Description: "Dieses Profil dient der spezialisierten Abbildung des pulmonalvaskulären Widerstandsindex im ICU-Umfeld."
+Description: "Dieses Profil dient der spezialisierten Abbildung des pulmonalvaskulären Widerstandsindex in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code
