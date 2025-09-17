@@ -126,7 +126,9 @@ Datum: 04.04.2024
 * `improve` Neues Profil ISiKAMTSBewertung
 * `improve` Neues Extensions: 
   * MedikationsArt in Form von Akut & Dauer
-  * Selbstmedikation   * Behandlungsziel   * Replaces als Ersatz-Verordnung
+  * Selbstmedikation   
+  * Behandlungsziel   
+  * Replaces als Ersatz-Verordnung
   * AcceptedRisk im Zuge einer AMTS-Bewertung
 * Erweiterung um Use Case Diagramm, Ressourcen Diagramm und Informationsmodell
 * Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern
