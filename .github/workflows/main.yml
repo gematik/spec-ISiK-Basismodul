@@ -41,17 +41,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code (PR)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Checkout code (Main)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: github.event_name != 'pull_request'
 
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.4
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.14
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: false
@@ -89,7 +89,6 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
-
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:

@@ -90,7 +90,7 @@
         "id": "Procedure.category",
         "path": "Procedure.category",
         "short": "Kategorie",
-        "comment": "Die Kategorisierung erfolg vorzugsweise auf Basis von SNOMED. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, \n  indem das erste Zeichen des OPS-Codes mit Hilfe einer [ConceptMap](http://fhir.de/ConceptMap/OPS-SNOMED-Category) auf die zutreffende SNOMED-Kategorie gemappt wird.\n  **Begründung MS:** Die Kategorisierung dient der Verbesserung von Suche und Darstellung.",
+        "comment": "Die Kategorisierung erfolgt vorzugsweise auf Basis von SNOMED CT. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, \n  indem das erste Zeichen des OPS-Codes mit Hilfe einer [ConceptMap](http://fhir.de/ConceptMap/OPS-SNOMED-Category) auf die zutreffende SNOMED-Kategorie gemappt wird.\n  \n  **Begründung MS:** Die Kategorisierung dient der Verbesserung von Suche und Darstellung.",
         "mustSupport": true
       },
       {
@@ -220,6 +220,7 @@
         "path": "Procedure.code.coding",
         "sliceName": "SNOMED-CT",
         "short": "SNOMED-codierte Darstellung der Prozedur",
+        "comment": "**Hintergrund und Begründung zum Must-Support:** Das BfArM hat ein 'Zielbild für eine semantische Strategie' (https://www.bfarm.de/DE/Kodiersysteme/Services/Terminologieserver/Semantik-Strategie/_node.html) verfasst, in dem die Nutzung von international gängigen Basis-Terminologien vorgestellt wird. Dort wird als grundlegende Position dargestellt, dass basierend auf einer Basisterminologie weitere Use Cases bedient werden sollen. Bei Prozeduren wäre das damit eine klinische Dokumentation mit SNOMED CT als internationalem Kodiersystem und einer Ableitung davon zum OPS. Dies ist insbesondere auch wichtig für den Datentransfer in den European Health Data Space, in dem der OPS keine Rolle spielen wird.",
         "min": 0,
         "max": "1",
         "type": [
