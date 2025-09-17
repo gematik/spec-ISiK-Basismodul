@@ -212,3 +212,89 @@ Invariant: kdl-1
 Description: "KDL-Code ungültig"
 Severity: #warning
 Expression: "matches('^[A-Z]{2}[0-9]{6}$')"
+
+Instance: CriticalPatient
+InstanceOf: ISiKPatient
+Title: "Patient Thomas Müller"
+Description: "Patient mit hypertensivem Notfall, vorbereitet zur Verlegung auf die ICU"
+Usage: #example
+* id = "critical-patient"
+* meta.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+* identifier[Patientennummer].system = "https://example.org/fhir/sid/pid"
+* identifier[Patientennummer].value = "1234567890"
+* name[Name].family = "Müller"
+* name[Name].given = "Thomas"
+* gender = #male
+* birthDate = "1965-04-11"
+
+Instance: BloodPressureObservation
+InstanceOf: ISiKBlutdruckSystemischArteriell
+Usage: #example
+Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
+Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
+* status = #final
+* subject = Reference(CriticalPatient)
+* effectiveDateTime = "2025-07-22T14:10:00+02:00"
+* component[SystolicBP]
+  * valueQuantity = 210 'mm[Hg]' "mmHg"
+* component[DiastolicBP]
+  * valueQuantity = 115 'mm[Hg]' "mmHg"
+* component[meanBP]
+  * valueQuantity = 140 'mm[Hg]' "mmHg"
+
+Instance: VentilationProcedure
+InstanceOf: Procedure
+Usage: #example
+Title: "Beatmung - ICU-Aufnahme"
+* category = $sct#40617009 "Artificial ventilation (regime/therapy)"
+* code = $sct#4764004 "Jet ventilation procedure (procedure)"
+* status = #completed
+* subject = Reference(CriticalPatient)
+* performedPeriod
+  * start = "2025-07-21"
+
+Instance: VentilationPressureObservation
+InstanceOf: Observation
+Usage: #example
+Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
+* partOf = Reference(VentilationProcedure)
+* status = #final
+* category = $sct#40617009 "Artificial ventilation (regime/therapy)"
+* code = $loinc#20079-0 "Pressure support setting Ventilator"
+* subject = Reference(CriticalPatient)
+* effectiveDateTime = "2025-07-21T00:00:00+02:00"
+* valueQuantity = 6 'cm[H2O]' "cm[H2O]"
+
+Instance: CompositionExampleIntensivstation
+InstanceOf: ISiKBerichtSubSysteme
+Usage: #example
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+* identifier[0].type = $v2-0203#FILL
+* identifier[=].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
+* type = $kdl#AD010116 "Verlegungsbericht"
+* subject = Reference(CriticalPatient)
+* date = "2025-07-21T00:00:00+02:00"
+* author
+  * display = "Dr. Alenia Vogt"
+* title = "Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100"
+* section
+  * title = "Patient - Herrn Thomas Müller (1965-04-11)"
+  * text[0].status = #generated
+  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+  * entry = Reference(CriticalPatient)
+* section
+  * title = "Blutdruckmessung vom 22.07.2025 - #1"
+  * text[0].status = #generated
+  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+  * entry = Reference(BloodPressureObservation)
+* section
+  * title = "Beatmungswerte vom 22.07.2025 - #1"
+  * text[0].status = #generated
+  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+  * entry = Reference(VentilationProcedure)
+* section
+  * title = "Beatmungswerte (Unterstützungsdruck) vom 22.07.2025 - #1"
+  * text[0].status = #generated
+  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+  * entry = Reference(VentilationPressureObservation)
