@@ -12,7 +12,8 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Die Tags werden folgendermaßen verwendet:
 
-- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzufügen wurde, das sich nicht auf normative Aspekte auswirkt.
+- 'documentation': um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt.
+
 - 'improve'  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte per TC umzusetzen, die aber keine Fehler beheben.
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
