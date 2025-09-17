@@ -244,7 +244,9 @@ Datum: 24.03.2023
 
 Datum: 31.01.2023
 
-- ISiKTerminblock   - Reference(Schedule) statt Reference(ISiKKalender). Reference-Element erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind.
+- ISiKTerminblock   
+  - Reference(Schedule) statt Reference(ISiKKalender). Reference-Element erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind.
+
 - Update Basismodul Dependency -> 2.0.4
 - weitere Änderungen an IG (informativ)
 
