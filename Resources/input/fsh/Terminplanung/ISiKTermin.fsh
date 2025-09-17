@@ -116,6 +116,7 @@ Begründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist
 Extension: ISiKTerminPriorityExtension
 Id: ISiKTerminPriorityExtension
 Context: Appointment.priority
+Description: "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."
 * insert Meta
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
@@ -126,6 +127,7 @@ Context: Appointment.priority
 Extension: AppointmentReplaces
 Id: AppointmentReplaces
 Context: Appointment
+Description: "Mit dieser Erweiterung kann eine neue Appointment-Ressource auf eine frühere, ersetzte Appointment-Ressource verweisen, z. B. bei einer Terminverschiebung oder -umbuchung. Dies erleichtert die Nachverfolgung von Terminänderungen und stellt sicher, dass der Zusammenhang zwischen ursprünglichem und aktuellem Termin eindeutig dokumentiert ist."
 * insert Meta
 * ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
