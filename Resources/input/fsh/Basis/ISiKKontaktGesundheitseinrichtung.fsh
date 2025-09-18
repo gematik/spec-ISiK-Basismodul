@@ -575,6 +575,210 @@ Usage: #example
 * serviceProvider.identifier.value = "ORTHO-1234"
 * serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"
 
+Instance: FachabteilungskontaktStationaereAufnahme
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktBettenverlegung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* period.end = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #completed
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-10-01T08:00:00+01:00"
+* period.end = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktEntlassung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #completed
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.start = "2025-01-20T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
+
 
 Invariant: ISiK-enc-1
 Description: "Abgeschlossene, ambulante Kontakte sollten einen Start-Zeitpunkt angeben"
