@@ -19,6 +19,7 @@ Features
 
 const fs = require('fs');
 const path = require('path');
+const { exit } = require('process');
 
 // === Suppression Config Feature ===
 // Load suppression config if present. The config file should be named 'suppression.config.json' and placed in the same directory as this script.
@@ -33,7 +34,7 @@ if (fs.existsSync(suppressionConfigPath)) {
     suppressionConfig = JSON.parse(fs.readFileSync(suppressionConfigPath, 'utf-8'));
   } catch (e) {
     console.error(`⚠️ Fehler beim Laden der suppression.config.json: ${e.message}`);
-    // Continue with empty suppression config
+    exit(1);
   }
 }
 
@@ -87,16 +88,34 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
   }
 
   const elements = profile.differential.element;
-
+ 
+  
   for (const el of elements) {
-    const pathParts = el.path.split('.');
+    let elementToBeEvaluated = false;
+    
+    const pathParts = el.id.split('.');
+
+    if( pathParts.length === 2) {
+      console.log(pathParts)
+      // Für slices und Extensions auf oberster Ebene
+      if( pathParts[1].includes(':')) {
+        let lastPathPart = pathParts[1].split(':');
+        el.path +=  ':' + lastPathPart[1];
+      }
+      
+      elementToBeEvaluated = true;
+      if(pathParts[1] == "extension") {
+        elementToBeEvaluated = false; // Extension-Element auf oberster Ebene nicht prüfen
+      }
+    }  
 
     // Suppression: skip suppressed elements for this file
     if (suppressedElementPaths.includes(el.id || el.path)) {
+      elementToBeEvaluated = false;
       continue;
     }
 
-    if (pathParts.length === 2) {
+    if (elementToBeEvaluated) {
       // Wenn Element auf Kardinalität 0..0 gesetzt ist, darf kein mustSupport-Attribut vorhanden sein
       if (el.max === '0') {
         if (el.hasOwnProperty('mustSupport')) {
@@ -114,7 +133,7 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
     }
 
         // Prüfen nur auf Elemente der 1. Ebene (ResourceName.xyz)
-    if (pathParts.length === 2 && el.mustSupport) {
+    if (elementToBeEvaluated && el.mustSupport) {
       if (!el.short || el.short.trim() === '') {
         issues.warnings.push(`⚠️ ${filePath}: Fehlendes short für MustSupport-Element '${el.path}'`);
       }
