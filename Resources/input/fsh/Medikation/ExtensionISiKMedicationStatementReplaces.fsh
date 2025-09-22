@@ -1,7 +1,7 @@
 Extension: ExtensionISiKMedicationStatementReplaces
 Id: ExtensionISiKMedicationStatementReplaces
 Title: "ISiK MedicationStatementReplaces"
-Description: "Extension zur Verlinkung der Medikationsinformation die ersetzt wurde"
+Description: "Mit dieser Erweiterung kann festgelegt werden, welche vorherige Medikation durch die aktuelle Verordnung ersetzt wird. Sie erleichtert die Nachverfolgung von Therapieänderungen, sorgt für Transparenz im Medikationsprozess."
 * insert Meta
 * ^experimental = false
 * ^context[+].type = #element
