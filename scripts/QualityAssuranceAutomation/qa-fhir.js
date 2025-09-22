@@ -96,7 +96,7 @@ function checkMustSupportDescriptions(profile, filePath, suppressedElementPaths 
     const pathParts = el.id.split('.');
 
     if( pathParts.length === 2) {
-      console.log(pathParts)
+      
       // Für slices und Extensions auf oberster Ebene
       if( pathParts[1].includes(':')) {
         let lastPathPart = pathParts[1].split(':');
@@ -171,7 +171,8 @@ log(`Starte Prüfung in: ${baseDir}`);
 
 // Anpassung der Hauptlogik für die neue Struktur
 const jsonFiles = getAllJsonFiles(baseDir);
-
+// Nutzung von alternativem fehlerhaften Testprofil für die Entwicklung
+// const jsonFiles = ['C:\\Users\\nils.kohl\\Documents\\spec-ISiK-Basismodul\\scripts\\QualityAssuranceAutomation\\ISIKProzedur-broken.json']
 let allIssues = {
   warnings: [],
   errors: []
