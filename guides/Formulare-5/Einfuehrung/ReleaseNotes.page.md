@@ -16,6 +16,7 @@ Datum: tbd
 * `improve` Separierung, Vervollständigung und Dokumentation von Beispiel-Questionnaires
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `add` Hinzufügen der Seiten für die Darstellung der Codesysteme bzw. Valuesets https://github.com/gematik/spec-ISiK-Basismodul/pull/883
 
 ----
 
