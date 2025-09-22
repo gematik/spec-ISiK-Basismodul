@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikationsInformation",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation",
-  "version": "5.0.0-rc2",
+  "version": "5.0.0",
   "name": "ISiKMedikationsInformation",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-05",
+  "date": "2025-06-26",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\n\nHinweis zur Auswahl des Profils: \nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.",
+  "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.\n\nHinweis zur Auswahl des Profils: \nIn Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).\nZur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.\n\n**Hinweis zur Pausierung einer Medikation (Best-Practice):**\n\nFür die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationStatement`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:\n\n- **Korrekte Statusabbildung:**  \n  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.\n\n- **Effiziente Abfragen über REST API:**  \n  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  \n  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationStatements` müssten abgerufen und manuell analysiert werden.\n\n- **Erhalt von Verlaufsinformationen:**  \n  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  \n  Durch neue `MedicationStatement`-Einträge bleibt die Verlaufshistorie erhalten.  \n  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*\n",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -17,6 +17,25 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "MedicationStatement.id",
+        "path": "MedicationStatement.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.meta.versionId",
+        "path": "MedicationStatement.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "MedicationStatement.meta.lastUpdated",
+        "path": "MedicationStatement.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
       {
         "id": "MedicationStatement.extension",
         "path": "MedicationStatement.extension",
@@ -213,7 +232,7 @@
         "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:PZN",
         "path": "MedicationStatement.medication[x].coding",
         "sliceName": "PZN",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -233,7 +252,7 @@
         "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:ATC-DE",
         "path": "MedicationStatement.medication[x].coding",
         "sliceName": "ATC-DE",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "*",
         "type": [
@@ -459,7 +478,7 @@
         "id": "MedicationStatement.dosage",
         "path": "MedicationStatement.dosage",
         "short": "Dosierungsangaben",
-        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterlemente erforderlich gemäß Konsens der ISiK AG Medikation",
+        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.\n  \n  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.",
         "mustSupport": true
       },
       {

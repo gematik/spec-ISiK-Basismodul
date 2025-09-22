@@ -41,4 +41,84 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 | **Warnung**
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" width="75"/> |  **Gefahr fehlerhafter Zuordnung:** Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
+### Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen
+
+Die sichere und zweckgebundene Übertragung von Gesundheitsdaten ist ein zentrales Ziel der ISiK-Spezifikation. Der Schwerpunkt liegt hierbei insbesondere auf dem Datenaustausch in den unter {{pagelink:ImplementationGuide-markdown-Motivation}} beschriebenen Anwendungsszenarien. Für diese ist, wie zuvor ausgeführt, in der Regel ein Patientenkontext erforderlich.
+
+Eine Übertragung ohne identifizierende Patienteninformationen ist jedoch nicht ausgeschlossen und kann im Rahmen der ISiK-Standards ebenfalls umgesetzt werden. Technisch erfolgt dies wie folgt:
+
+1. Es wird eine ISiK-konforme Patient-Ressource erzeugt, wobei die verpflichtenden Elemente gemäß Profildefinition (das heißt mit Kardinalität 1..1 beziehungsweise 1..*) befüllt werden müssen. Zu beachten ist, dass dies für jedes Feld erfolgen muss, das gemäß Profildefinition eine verpflichtende Kardinalität aufweist, insbesondere dann, wenn untergeordnete (Child-)Elemente dieser Felder selbst wiederum verpflichtend sind.
+
+2. Felder, deren Inhalte entweder nicht vorliegen oder aus datenschutzrechtlichen Gründen nicht übermittelt werden dürfen, werden mit einer [data-absent-reason Extension](https://hl7.org/fhir/extensions/StructureDefinition-data-absent-reason.html) versehen.
+
+3. Die data-absent-reason Extension wird mit den Codes "unknown" oder "masked" belegt, um das Fehlen datenschutzkritischer Inhalte explizit zu kennzeichnen.
+Der Code "unknown" kennzeichnet dabei das generelle Fehlen einer Information aufgrund ihrer Abwesenheit – z. B. weil sie (noch) nicht erhoben oder dokumentiert wurde.
+Der Code "masked" kennzeichnet hingegen, dass die Information zwar vorhanden, jedoch aus Datenschutzgründen unterdrückt wurde.
+
+Diese Vorgehensweise ermöglicht eine formell gültige und zugleich datenschutzkonforme Übertragung strukturierter Informationen, auch ohne Bezug zu einer identifizierbaren Person.
+
+Beispiel für eine Patient-Ressource ohne identifizierende Patienteninformationen:
+
+```json
+{
+  "resourceType": "Patient",
+  "id": "anonymized-isik-patient",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://example.org/fhir/sid/patient-id",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          }
+        ]
+      },
+      "_value": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "masked"
+          }
+        ]
+      }
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "_family": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "masked"
+          }
+        ]
+      },
+      "_given": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "masked"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gender": "unknown",
+  "_birthDate": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "unknown"
+      }
+    ]
+  },
+  ...
+```
+
 

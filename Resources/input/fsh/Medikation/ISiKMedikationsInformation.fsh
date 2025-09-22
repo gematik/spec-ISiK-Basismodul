@@ -5,9 +5,26 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Medi
 
 Hinweis zur Auswahl des Profils: 
 In Abgrenzung zu ISiKMedikationsVerabreichung (MedicationAdministration) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer lediglich Datums-genauen Angabe abgebildet (einschließlich Granularität Jahr, Monat oder Tag für .effectiveDateTime oder .effectivePeriod auf Datums-Ebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)).
-Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung."
+Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer medizinischen Verabreichungsdokumentation durch medizinisches Personal) an einen Patienten SOLL das Profil ISiKMedikationsVerabreichung (MedicationAdministration) verwendet werden. Siehe entsprechende Profilseite für weitere Begründung.
 
+**Hinweis zur Pausierung einer Medikation (Best-Practice):**
+
+Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationStatement`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:
+
+- **Korrekte Statusabbildung:**  
+  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.
+
+- **Effiziente Abfragen über REST API:**  
+  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  
+  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationStatements` müssten abgerufen und manuell analysiert werden.
+
+- **Erhalt von Verlaufsinformationen:**  
+  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
+  Durch neue `MedicationStatement`-Einträge bleibt die Verlaufshistorie erhalten.  
+  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
+"
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
@@ -71,10 +88,10 @@ Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer 
         SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
-    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen."
+    * insert ISiKMedikament-CodingPZNComment
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
-    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+    * insert ISiKMedikament-CodingATCComment
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
   * text MS
@@ -139,7 +156,9 @@ Zur sekunden-genauen Angabe der Verabreichung eines Medikaments (im Sinne einer 
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
 * dosage MS
   * ^short = "Dosierungsangaben"
-  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterlemente erforderlich gemäß Konsens der ISiK AG Medikation"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
+  
+  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert."
   * text MS
     * ^short = "Freitext-Dosierungsanweisungen"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
@@ -354,6 +373,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation4
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme zu jeder Mahlzeit (auch Zwischenmahlzeiten)</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#10557318 "Sevelamercarbonat AL 800 mg"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -376,6 +398,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation5
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme am ersten Dienstag jedes dritten Monats</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#07260796 "Vitamin-B12-ratiopharm® N Ampullen zur Injektion"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -401,6 +426,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation6
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text  
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Dosierung kurzwirksames Insulin nach gemessenen Werten</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#06922060 "Huminsulin® Normal KwikPen™"
 * subject.reference = "Patient/PatientinMusterfrau"
@@ -420,6 +448,9 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformationParkinson1
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Parkinson-Medikation mit Medikament1</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#00003056 "Stalevo® 100 mg/25 mg/200 mg"
 * subject.reference = "Patient/PatientinMusterfrau"

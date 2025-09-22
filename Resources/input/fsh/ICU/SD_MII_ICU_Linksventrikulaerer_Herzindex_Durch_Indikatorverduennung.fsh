@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung
 Title: "SD MII ICU Linksventrikulaerer Herzindex durch Indikatorverduennung"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] ..0
     * ^patternCoding.system = "http://snomed.info/sct"

@@ -7,6 +7,7 @@ Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl
 Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.
 "
 * insert Meta
+* insert CommonElements
 * obeys ISiK-docBundle-1
 * type = #document (exactly)
 * type MS

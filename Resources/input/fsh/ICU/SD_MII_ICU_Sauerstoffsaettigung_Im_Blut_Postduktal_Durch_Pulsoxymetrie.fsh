@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie
 Title: "SD MII ICU Sauerstoffsaettigung Im Blut Postduktal Durch Pulsoxymetrie"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] ..0
     * ^patternCoding.system = "http://snomed.info/sct"

@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikationsVerordnung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung",
-  "version": "5.0.0-rc2",
+  "version": "5.0.0",
   "name": "ISiKMedikationsVerordnung",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-05",
+  "date": "2025-06-26",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -17,6 +17,25 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "MedicationRequest.id",
+        "path": "MedicationRequest.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.meta.versionId",
+        "path": "MedicationRequest.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "MedicationRequest.meta.lastUpdated",
+        "path": "MedicationRequest.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
       {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
@@ -133,7 +152,7 @@
         "id": "MedicationRequest.status",
         "path": "MedicationRequest.status",
         "short": "Status der Verordnungsinformation",
-        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard",
+        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.\n  \n  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.\n  ",
         "mustSupport": true
       },
       {
@@ -196,7 +215,7 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:PZN",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "PZN",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "*",
         "type": [
@@ -216,7 +235,7 @@
         "id": "MedicationRequest.medication[x]:medicationCodeableConcept.coding:ATC-DE",
         "path": "MedicationRequest.medication[x].coding",
         "sliceName": "ATC-DE",
-        "comment": "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "*",
         "type": [
@@ -402,7 +421,7 @@
         "id": "MedicationRequest.dosageInstruction",
         "path": "MedicationRequest.dosageInstruction",
         "short": "Dosierungsangaben",
-        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation",
+        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.\n  \n  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.\n  ",
         "mustSupport": true
       },
       {

@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDaten",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
-  "version": "5.0.0-rc2",
+  "version": "5.0.0",
   "name": "ISiKFormularDaten",
   "title": "Ausgefülltes ISiK-Formular",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-05",
+  "date": "2025-06-26",
   "publisher": "gematik GmbH",
   "description": "ToDo",
   "fhirVersion": "4.0.1",
@@ -53,17 +53,31 @@
         ]
       },
       {
-        "id": "QuestionnaireResponse.modifierExtension",
-        "path": "QuestionnaireResponse.modifierExtension",
-        "min": 1
+        "id": "QuestionnaireResponse.id",
+        "path": "QuestionnaireResponse.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.meta.versionId",
+        "path": "QuestionnaireResponse.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "QuestionnaireResponse.meta.lastUpdated",
+        "path": "QuestionnaireResponse.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant",
         "path": "QuestionnaireResponse.modifierExtension",
         "sliceName": "MDR-Relevant",
         "short": "MPG-Relevanz der Formulardaten",
-        "comment": "**Begründung MS:**   \n  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz",
-        "min": 1,
+        "comment": "**Begründung MS:**\n  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor.",
+        "min": 0,
         "max": "1",
         "type": [
           {

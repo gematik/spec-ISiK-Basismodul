@@ -1,18 +1,18 @@
-Alias: $ISIKVersion = 5.0.0-rc2
+Alias: $ISIKVersion = 5.0.0
 
 RuleSet: Meta
 * ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-06-05"
+* ^date = "2025-06-26"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-06-05"
+* date = "2025-06-26"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -223,4 +223,26 @@ RuleSet: EffectiveAndPerformer
 RuleSet: MII_SpecificIEEE-11073Slice
 * coding contains 
   specific-IEEE-11073 0..1 MS
+
+
+RuleSet: CommonElements
+* id MS
+  * ^short = "serverseitige, interne ID des Datensatzes"
+  * ^comment = "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. "
+* meta.lastUpdated
+  * ^short = "Zeitpunkt der letzten Änderung"
+  * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. " 
+* meta.versionId 
+  * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
+  * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+
+RuleSet: ISiKMedikament-CodingPZNComment
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."
+
+RuleSet: ISiKMedikament-CodingATCComment
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+
 

@@ -33,6 +33,7 @@ In weiteren Ausbaustufen von ISiK soll darüber hinaus eine Übernahme der struk
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * text 1.. MS
   * ^short = "Narrativ"
   * ^comment = "HTML-Repräsentation des Dokumenten-Headers.   

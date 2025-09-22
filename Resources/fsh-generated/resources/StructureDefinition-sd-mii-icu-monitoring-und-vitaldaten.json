@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "sd-mii-icu-monitoring-und-vitaldaten",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
-  "version": "5.0.0-rc2",
+  "version": "5.0.0",
   "name": "SD_MII_ICU_Monitoring_Und_Vitaldaten",
   "title": "SD MII ICU Monitoring und Vitaldaten",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-05",
+  "date": "2025-06-26",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -29,6 +29,25 @@
             "expression": "(component.empty() and hasMember.empty()) implies (dataAbsentReason.exists() or value.exists())"
           }
         ]
+      },
+      {
+        "id": "Observation.id",
+        "path": "Observation.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta.versionId",
+        "path": "Observation.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Observation.meta.lastUpdated",
+        "path": "Observation.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Observation.identifier",

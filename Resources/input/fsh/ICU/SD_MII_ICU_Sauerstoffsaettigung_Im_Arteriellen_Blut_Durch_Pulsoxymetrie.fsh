@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie
 Title: "SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#442476006

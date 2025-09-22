@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-brust
 Title: "SD MII ICU Koerpertemperatur Brust"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#248835004

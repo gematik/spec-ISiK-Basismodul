@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-halswirbelsaeule
 Title: "SD MII ICU Koerpertemperatur Halswirbelsaeule"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#364419004

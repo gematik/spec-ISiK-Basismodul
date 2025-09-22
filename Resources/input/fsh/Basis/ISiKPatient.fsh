@@ -19,6 +19,7 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
@@ -98,10 +99,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Private Krankenversichertennummer"
   * ^comment = "Für Privatpatienten, die noch nicht über eine lebenslange, unveränderliche Krankenversichertennummer (KVNR) verfügen,
   können bis auf weiteres noch die versicherungsspezifischen PKV-Nummern angegeben werden. 
-  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums mest nicht ermittelt werden kann,
+  Da bei diesen der Bezeichner des vom Kostenträger verwendeten Namensraums meist nicht ermittelt werden kann,
   ist statt dessen der Name des Kostenträgers in `assigner` anzugeben.
-  **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden. 
-  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)"
+  **Achtung:**  Dieser Slice dient NICHT zur Abbildung einer 10-stelligen PKV-VersichertenId nach § 362 SGB V. Diese sind durch den Slice 'VersichertenId' abzubilden, da die Nummernkreise dieser Identifier identisch sind.
+  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-PrivateKrankenversichertennummer-Identifier?version=current)
+  Der Identifier kann jedoch zusätzlich zur KVNR verwendet werden, wenn für eine Zusatzversicherung eine separate, versicherungsspezifische PKV-Nummer vorliegt."
   * use MS
     * ^short = "Verwendungszeck des Identifiers"
     * ^comment = "Hier ist stets der Wert `secondary` anzugeben."

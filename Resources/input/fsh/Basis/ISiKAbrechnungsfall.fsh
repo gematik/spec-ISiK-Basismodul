@@ -24,6 +24,7 @@ Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt find
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur named AbrechnungsDiagnoseProzedur 0..* MS
 * extension[AbrechnungsDiagnoseProzedur]

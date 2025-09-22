@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-intrakranieller-druck-icp
 Title: "SD MII ICU Intrakranieller Druck ICP"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] 1..1
   * coding[sct] = $sct#250844005

@@ -3,6 +3,7 @@ Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-trommelfell
 Title: "SD MII ICU Koerpertemperatur Trommelfell"
 * insert Meta
+* insert CommonElements
 * code
   * insert MII_SpecificIEEE-11073Slice
   * coding[snomed] 1..1

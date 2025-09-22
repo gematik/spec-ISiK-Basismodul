@@ -3,6 +3,7 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungCRP
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * code.coding[loinc] from ObservationCodesCRP 
 * insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#55235003

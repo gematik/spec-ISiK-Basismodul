@@ -15,6 +15,7 @@ In FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS

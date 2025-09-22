@@ -16,6 +16,7 @@ Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen an
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
 * extension MS
@@ -38,8 +39,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   beispielsweise durch Ausblenden/Durchstreichen von Prozeduren mit dem status `entered-in-error` und Ausgrauen von Prozeduren, die noch nicht stattgefunden haben, o.ä."
 * category MS
   * ^short = "Kategorie"
-  * ^comment = "Die Kategorisierung erfolg vorzugsweise auf Basis von SNOMED. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, 
+  * ^comment = "Die Kategorisierung erfolgt vorzugsweise auf Basis von SNOMED CT. Für OPS-codierte Prozeduren MUSS die Kategorie angegeben werden: Sie kann ermittelt werden, 
   indem das erste Zeichen des OPS-Codes mit Hilfe einer [ConceptMap](http://fhir.de/ConceptMap/OPS-SNOMED-Category) auf die zutreffende SNOMED-Kategorie gemappt wird.
+  
   **Begründung MS:** Die Kategorisierung dient der Verbesserung von Suche und Darstellung."
   * coding ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
@@ -81,6 +83,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * ^short = "SNOMED-codierte Darstellung der Prozedur"
+    * ^comment = "**Hintergrund und Begründung zum Must-Support:** Das BfArM hat ein 'Zielbild für eine semantische Strategie' (https://www.bfarm.de/DE/Kodiersysteme/Services/Terminologieserver/Semantik-Strategie/_node.html) verfasst, in dem die Nutzung von international gängigen Basis-Terminologien vorgestellt wird. Dort wird als grundlegende Position dargestellt, dass basierend auf einer Basisterminologie weitere Use Cases bedient werden sollen. Bei Prozeduren wäre das damit eine klinische Dokumentation mit SNOMED CT als internationalem Kodiersystem und einer Ableitung davon zum OPS. Dies ist insbesondere auch wichtig für den Datentransfer in den European Health Data Space, in dem der OPS keine Rolle spielen wird."
   * text MS
     * ^short = "Freitextiche Beschreibung der Prozedur"
     * ^comment = "Die freitextliche Beschreibung kann ergänzend oder anstelle einer codierten Angabe der Prozedur erfolgen."

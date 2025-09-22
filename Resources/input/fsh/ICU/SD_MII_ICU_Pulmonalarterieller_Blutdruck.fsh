@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-pulmonalarterieller-blutdruck
 Title: "SD MII ICU Pulmonalarterieller Blutdruck"
 * insert Meta
+* insert CommonElements
 * category = $observation-category#vital-signs
 * code
   * coding ..4

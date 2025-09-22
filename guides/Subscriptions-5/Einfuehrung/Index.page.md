@@ -4,22 +4,21 @@ topic: ImplementationGuide-markdown-Einfuehrung
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc2
+Version: 5.0.0
 
-Datum: 05.06.2025
+Datum: 26.06.2025
 
-Status: Draft (Benehmensherstellung)
+Status: Aktiv (in Erprobung)
 
 Realm: Deutschland
 
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
 
 
 ----
 
 # Motivation Subscription Modul
 
-Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.
+Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden und wurde hier übernommen. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.
 
 Die Einführung von FHIR Subscriptions im Rahmen des ISiK-Standards zielt daher darauf ab, den
 event-basierten FHIR-Datenaustauschmechanismus zwischen verschiedenen Systemen im Krankenhaus (z.B.

@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-koerpergroesse-percentil-altersabhaengig
 Title: "SD MII ICU Koerpergroesse Percentil"
 * insert Meta
+* insert CommonElements
 * category contains sct 0..*
 * category[sct] = $sct#248326004
   * coding MS

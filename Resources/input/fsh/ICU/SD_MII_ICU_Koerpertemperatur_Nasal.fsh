@@ -3,6 +3,7 @@ Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-nasal
 Title: "SD MII ICU Koerpertemperatur nasal"
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] ..0
     * ^patternCoding.system = "http://snomed.info/sct"

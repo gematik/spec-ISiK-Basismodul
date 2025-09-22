@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikament",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament",
-  "version": "5.0.0-rc2",
+  "version": "5.0.0",
   "name": "ISiKMedikament",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-05",
+  "date": "2025-06-26",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -29,6 +29,25 @@
             "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"
           }
         ]
+      },
+      {
+        "id": "Medication.id",
+        "path": "Medication.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Medication.meta.versionId",
+        "path": "Medication.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Medication.meta.lastUpdated",
+        "path": "Medication.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Medication.code",
@@ -317,6 +336,7 @@
         "id": "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATC-DE",
         "path": "Medication.ingredient.item[x].coding",
         "sliceName": "ATC-DE",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
         "min": 0,
         "max": "1",
         "type": [
@@ -336,6 +356,7 @@
         "id": "Medication.ingredient.item[x]:itemCodeableConcept.coding:PZN",
         "path": "Medication.ingredient.item[x].coding",
         "sliceName": "PZN",
+        "comment": "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
         "min": 0,
         "max": "1",
         "type": [

@@ -3,6 +3,7 @@ Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-achsel
 Title: "SD MII ICU Koerpertemperatur Achsel"
 * insert Meta
+* insert CommonElements
 * code 
   * insert MII_SpecificIEEE-11073Slice
   * coding[snomed] 1..1 

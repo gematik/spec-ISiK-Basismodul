@@ -9,6 +9,7 @@ Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierb
 Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
 """
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "(Aktualitäts-)Status der Liste"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"

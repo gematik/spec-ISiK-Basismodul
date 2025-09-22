@@ -3,6 +3,7 @@ Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
@@ -19,7 +20,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^short = "Therapieart der Medikation"
   * ^comment = "Begründung des Must-Support: von der Fachseite gewünschte Angabe
 
-  Hinweis: Angabe Akut- oder Dauermedikation."
+  Hinweis: Angabe Akut- oder Dauermedikation." 
   * valueCoding
     * system MS
     * code MS
@@ -40,7 +41,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
     * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
-  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
+  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
+  
+  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.
+  "
 * intent MS
   * ^short = "Ziel der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
@@ -63,10 +67,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
       SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
-    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen."
+    * insert ISiKMedikament-CodingPZNComment
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
-    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+    * insert ISiKMedikament-CodingATCComment
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
   * text MS
@@ -117,7 +121,10 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
 * dosageInstruction MS
   * ^short = "Dosierungsangaben"
-  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
+  
+  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.
+  "
   * text MS
     * ^short = "Freitext-Dosierungsanweisungen"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.

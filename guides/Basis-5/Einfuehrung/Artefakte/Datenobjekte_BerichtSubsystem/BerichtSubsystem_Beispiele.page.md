@@ -6,15 +6,15 @@ topic: BerichtSubsystem-Beispiele
 
 <tabs>
     <tab title="Übersicht">      
-        {{tree:composition-blutdruck}}
+        {{tree:CompositionExampleBlutdruck}}
     </tab>
     <tab title="XML">      
-        {{xml:composition-blutdruck}}
+        {{xml:CompositionExampleBlutdruck}}
     </tab>
     <tab title="JSON">
-        {{json:composition-blutdruck}}
+        {{json:CompositionExampleBlutdruck}}
     </tab>
     <tab title="Link">
-        {{link:composition-blutdruck}}
+        {{link:CompositionExampleBlutdruck}}
     </tab>
 </tabs>

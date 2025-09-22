@@ -3,6 +3,7 @@ Parent: Bundle
 Id: ISiKDokumentenSuchergebnisse
 Title: "Suchergebnisse einer Dokumentensuche"
 * insert Meta
+* insert CommonElements
 * type MS
 * type = #searchset (exactly)
   * ^short = "Bundle-Typ"

@@ -3,6 +3,7 @@ Parent: Schedule
 Id: ISiKKalender
 Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für verschiedene Akteure (Practitioner, Device, HealthcareService) zu exponieren, sodass für die Ressourcen Termine gebucht werden können. "
 * insert Meta
+* insert CommonElements
 * active 1..1 MS
   * ^comment = "Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität 1..1 und das Must-Support-Flag (MS) für das 'active'-Element stellen sicher, dass jeder Kalender eindeutig als aktiv oder inaktiv gekennzeichnet ist. Dies ist entscheidend für die Ressourcenplanung und Verfügbarkeit von Terminen."
 * serviceType 1..* MS
@@ -59,6 +60,7 @@ Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für
 Extension: ScheduleName
 Id: ScheduleName
 Context: Schedule
+Description: "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen."
 * insert Meta
 * ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Schedule.name"

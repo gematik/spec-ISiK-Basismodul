@@ -26,7 +26,7 @@ Usage: #example
 Instance: SZ2Primaerdiagnose
 InstanceOf: ISiKDiagnose
 Usage: #example
-* code.coding[ICD-10-GM] = $icd-10-gm#E10.30 "Diabetes mellitus"
+* code.coding[ICD-10-GM] = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"
   * extension[Mehrfachcodierungs-Kennzeichen]
     * valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
   * version = "2024"

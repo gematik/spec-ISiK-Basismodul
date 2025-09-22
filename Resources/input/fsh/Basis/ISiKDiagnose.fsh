@@ -20,6 +20,7 @@ Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen an
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value
@@ -145,8 +146,8 @@ Instance: Example-condition-ausrufezeichen-primaer
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
-* code.coding.version = "2019"
-* code.coding = $icd-10-gm#F16.1 "Psychische Verhaltensstörung durch Halluzinogene (Akute Intoxikation)"
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#F16.1 "Psychische und Verhaltensstörungen durch Halluzinogene: Schädlicher Gebrauch"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
@@ -160,8 +161,8 @@ Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#!
-* code.coding.version = "2019"
-* code.coding = $icd-10-gm#U69.32 "Intravenöser Konsum sonstiger psychotroper Substanzen"
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#U69.32 "Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
@@ -174,8 +175,8 @@ Usage: #example
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
 * code.coding.extension.valueCoding.version = "2021"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
-* code.coding.version = "2019"
-* code.coding = $icd-10-gm#E10.30 "Diabetes mellitus"
+* code.coding.version = "2024"
+* code.coding = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
 * recordedDate = "2021-05-24"
@@ -189,7 +190,7 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active
 * code.coding.extension.url = $icd-10-gm-mehrfachcodierungs-kennzeichen-sd
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#*
-* code.coding.version = "2019"
+* code.coding.version = "2024"
 * code.coding = $icd-10-gm#H36.0 "Retinopathia diabetica"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
@@ -202,7 +203,7 @@ Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
-* code.coding.version = "2020"
+* code.coding.version = "2024"
 * code.coding = $icd-10-gm#F71 "Mittelgradige Intelligenzminderung"
 * subject = Reference(PatientinMusterfrau)
 * encounter = Reference(Fachabteilungskontakt)
@@ -222,7 +223,7 @@ Usage: #example
 Instance: PrimaereGonarthroseMinimal
 InstanceOf: ISiKDiagnose
 Usage: #example
-* code.coding = $icd-10-gm#M17.0 "Primäre Gonarthrose"
+* code.coding = $icd-10-gm#M17.0 "Primäre Gonarthrose, beidseitig"
   * version = "2025"
 * subject = Reference(PatientinNormal)
 * recordedDate = "2024-10-21"
@@ -235,7 +236,7 @@ Usage: #example
 * code.coding[0].system = "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
 * code.coding[0].version = "2025"
 * code.coding[0].code = #M17.0 
-* code.coding[0].display = "Primäre Gonarthrose" 
+* code.coding[0].display = "Primäre Gonarthrose, beidseitig" 
 * bodySite.coding[snomed-ct] = $sct#49076000
 * subject = Reference(PatientinNormal)
 * encounter = Reference(FachabteilungskontaktNormal)

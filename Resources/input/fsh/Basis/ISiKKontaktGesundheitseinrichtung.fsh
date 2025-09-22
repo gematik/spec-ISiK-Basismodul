@@ -41,6 +41,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 
 * insert Meta
+* insert CommonElements
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -296,6 +297,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location ^slicing.rules = #open
 * location 
   * ^short = "Aufenthaltsorte des Patienten"
+  * ^comment = """
+  Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
+  Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
+  Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
+
+  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird.
+  """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * location 1.. MS
@@ -314,7 +323,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -348,7 +357,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -382,7 +391,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
         Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
         [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
         **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value MS
+      * value 1.. MS
         * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
           **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
     * display 1.. MS
@@ -421,6 +430,7 @@ Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevan
 Extension: PlannedStartDate
 Id: PlannedStartDate
 Context: Encounter
+Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
@@ -429,13 +439,14 @@ Context: Encounter
 Extension: PlannedEndDate
 Id: PlannedEndDate
 Context: Encounter
+Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
-Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht"
+Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement."
 Context: Encounter.hospitalization.dischargeDisposition
 * insert Meta
 * extension contains
@@ -556,7 +567,12 @@ Usage: #example
 * location[2].location.identifier.value = "1234"
 * location[2].location.display = "Ward 1234"
 * location[2].status = #active
-* location[2].physicalType = $LocationPhysicalType#wa "Ward"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationid"
+* location[=].location.identifier.value = "56789"
+* location[=].location.display = "Ward 56789"
+* location[=].status = #completed
+* location[=].physicalType = $LocationPhysicalType#wa "Ward"
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "ORTHO-1234"
 * serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"

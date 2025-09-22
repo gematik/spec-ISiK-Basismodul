@@ -28,7 +28,7 @@ Für Schwangerschaftsstatus & Erwarteter Geburtstermin wird eine Kompatibilität
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
-
+* insert CommonElements
 * status MS
   * ^short = "Status"
   * ^comment = "Bedeutung: Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen, 
