@@ -701,7 +701,7 @@ InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * identifier.type = $v2-0203#VN
 * identifier.value = "0123456789"
-* status = #completed
+* status = #finished
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
@@ -756,7 +756,7 @@ InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #example
 * identifier.type = $v2-0203#VN
 * identifier.value = "0123456789"
-* status = #completed
+* status = #finished
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
