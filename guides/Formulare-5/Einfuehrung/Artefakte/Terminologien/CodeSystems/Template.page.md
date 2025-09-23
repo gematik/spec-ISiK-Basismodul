@@ -1,5 +1,5 @@
 ---
-canonical: http://example.org/CodeSystem/MeinCodeSystem
+canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS
 ---
 |Hinweis|Diese Box bitte entfernen!|
 |-
@@ -13,7 +13,7 @@ canonical: http://example.org/CodeSystem/MeinCodeSystem
 from
 	CodeSystem
 where
-	url = 'http://example.org/CodeSystem/MeinCodeSystem'
+	url = %canonical
 select
 	Beschreibung: description, CanonicalURL: url, Status: status, Version: version
 </fql>
@@ -29,7 +29,7 @@ select
 from
 	CodeSystem
 where
-	url = 'http://example.org/CodeSystem/MeinCodeSystem'
+	url = %canonical
 for concept
 select
 	Code: code, Anzeigetext: display, Definition: definition
