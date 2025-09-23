@@ -42,7 +42,7 @@ Notifications über einen Patient-merge-Vorgang SOLLEN per *rest-hook* an das su
 
 ## Abgrenzung zu *Patient merge*
 Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 
-Ein externes Starten eines *Patient merge*- bspw. durch die [$patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden.
+Ein externes Starten eines *Patient merge*- bspw. durch die [$patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden (siehe [hier](https://hl7.org/fhir/R5/patient-operation-merge.html#examples) ein Beispiel zur Operation selbst).
 
 **Hinweis**: Die Patienten-Ressource, die nicht weiter verwendet werden soll, nennen wir im Folgenden die "obsolete Ressource". Die Ressource, die erhalten bleiben soll, nennen wir "resultierende Ressource".
 
