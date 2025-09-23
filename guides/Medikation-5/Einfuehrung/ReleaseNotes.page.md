@@ -8,6 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd
 
+* `documentation` Link due Dosierungsbeispielen im IG Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882
 * `documentation` Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System  https://github.com/gematik/spec-ISiK-Basismodul/pull/807
 
 * `documentation` Erläuterung für die Umsetzung der Pausierung einer Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/803

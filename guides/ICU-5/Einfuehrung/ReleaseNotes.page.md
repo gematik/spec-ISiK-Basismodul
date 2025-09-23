@@ -14,10 +14,11 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 Datum: tbd
 
+* `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
 * `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - https://github.com/gematik/spec-ISiK-Basismodul/pull/867
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
-* `documentation` Minimal- und Maximalbeispiele für alle Vitalaparameter Profile wurden hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/866
+* `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `add` Minimal- und Maximalbeispiele für alle Vitalaparameter Profile wurden hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/866
 
 ----
 
@@ -25,7 +26,7 @@ Datum: tbd
 
 Datum: 26.06.2025
 
-* `improve` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
+* `improved` Klarstellung zur Mindestmenge an zu implementierenden Profilen für bestätigungsrelevante Systeme auf Grundlage von Akteuren und Rollen in ISiK https://github.com/gematik/spec-ISiK-Basismodul/pull/766
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -47,7 +48,7 @@ Datum: 09.04.2025
 
 Datum: 26.2.2025
 
-* `improve` Ausarbeitung des Workflows als eigenständiger ImplementationGuide, u.a. Anpassung der Akteurs-Namen und CapabilityStatements
+* `improved` Ausarbeitung des Workflows als eigenständiger ImplementationGuide, u.a. Anpassung der Akteurs-Namen und CapabilityStatements
 
 
 Die Profile befinden sich im [Package 4.0.1 Vitalparameter](https://simplifier.net/feeds/public/packages/de.gematik.isik-vitalparameter/4.0.1).
@@ -58,4 +59,4 @@ Die Profile befinden sich im [Package 4.0.1 Vitalparameter](https://simplifier.n
 
 Datum: 25.2.2025
 
-* `improve` Refactoring des Workflows als eigenständiger ImplementationGuide
+* `improved` Refactoring des Workflows als eigenständiger ImplementationGuide
