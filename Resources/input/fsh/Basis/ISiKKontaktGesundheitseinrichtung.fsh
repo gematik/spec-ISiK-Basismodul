@@ -707,7 +707,7 @@ Usage: #example
 * class = $v3-ActCode#IMP
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt
 * subject = Reference(PatientinNormal)
-* period.start = "2025-10-15T08:00:00+01:00"
+* period.start = "2025-01-15T08:00:00+01:00"
 * period.end = "2025-01-15T14:00:00+01:00"
 * serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
 * location[+].physicalType = $LocationPhysicalType#wa "Ward"
