@@ -5,6 +5,15 @@ canonical: https://gematik.de/fhir/isik/ValueSet/ISiKMDRRelevanzFormularVS
 
 ## {{link}}
 
+<fql output="inline">
+from
+	ValueSet
+where
+	url = %canonical
+select
+	Beschreibung: description
+</fql>
+
 ### Metadaten
 
 <fql output="transpose" headers="true">

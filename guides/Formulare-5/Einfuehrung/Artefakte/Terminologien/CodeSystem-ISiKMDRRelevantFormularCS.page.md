@@ -1,11 +1,18 @@
 ---
 canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS
 ---
-|Hinweis|Diese Box bitte entfernen!|
-|-
-|![Information](https://wiki.hl7.de/images/thumb/Under_construction_icon-blue.svg/100px-Under_construction_icon-blue.svg.png)|Diese Seite ist ein Template, das bei Verwendung für ein konkretes Projekt angepasst werden muss! Dieses Banner kann verwendet werden, um zu kennzeichnen, welche Seiten noch nicht bearbeitet wurden, sich gerade in Arbeit befinden oder um auf offene Punkte hinzuweisen.|
+
 
 ## {{link}}
+
+<fql output="inline">
+from
+	CodeSystem
+where
+	url = %canonical
+select
+	Beschreibung: description
+</fql>
 
 ### Metadaten
 
