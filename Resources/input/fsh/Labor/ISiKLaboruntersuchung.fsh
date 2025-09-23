@@ -43,14 +43,14 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 * subject 1.. MS
   * ^short = "Referenz auf den Patienten"
   * ^comment = "**Begründung MS**: Die Verknüpfung zur Patientin oder zum Patienten ist zwingend notwendig für jegliche klinische Verwertbarkeit."
-  * reference 1.. MS
+  * reference MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "**Begründung MS**: Dient der Einordnung in den klinischen Verlauf und ermöglicht Kontextinformationen wie Aufnahmediagnose oder behandelnde Abteilung."
-  * reference 1.. MS
-    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
+  * reference MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effective[x] MS
   * ^short = "Zeitpunkt der Untersuchung"
   * ^comment = "**Begründung Must Support**:

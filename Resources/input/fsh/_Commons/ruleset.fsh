@@ -138,7 +138,7 @@ RuleSet: ISiKVitalsignCommons
   * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter-with-hint(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * effective[x] MS
   * ^comment = "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Datum und Uhrzeit der Untersuchung"

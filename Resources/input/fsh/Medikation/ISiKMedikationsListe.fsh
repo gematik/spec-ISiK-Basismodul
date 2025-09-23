@@ -42,12 +42,12 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
 * subject only Reference(Patient)
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1.. MS
-    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Encounter(Begründung MS)
 * date MS
   * ^short = "Erstellungsdatum der Liste"
   * ^comment = "Begründung des Must-Support: Basisinformation"

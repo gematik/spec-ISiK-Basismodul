@@ -77,12 +77,12 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^short = "Patientenbezug"
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * insert Comment-Reference-Encounter(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Encounter(Begründung MS)
 
 * onset[x] MS
   * ^short = "Beginn-Zeitpunkt"

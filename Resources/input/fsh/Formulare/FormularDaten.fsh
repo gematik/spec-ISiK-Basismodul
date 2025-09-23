@@ -41,7 +41,7 @@ Description: "ToDo"
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * insert Comment-Reference-Subject(Bedingtes Pflichtfeld)
+    * insert Comment-Reference-Subject(Begründung MS)
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 
