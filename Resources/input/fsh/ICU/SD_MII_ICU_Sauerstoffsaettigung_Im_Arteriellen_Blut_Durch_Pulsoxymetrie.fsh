@@ -12,7 +12,7 @@ Title: "SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie"
   * coding[IEEE-11073] 1..1
   * coding[IEEE-11073] = $IEEE11073#150324
   * coding contains loinc-fhir-core 1..1 MS
-  * coding[loinc-fhir-core] = $loinc#2708-6
+  * coding[loinc-fhir-core] = $loinc#2708-6 // Sauerstoffsättigung in arteriellem Blut
     * ^short = "Magic Loinc Value Sauerstoffsättigung"
     * ^comment = "**Begründung Pflichtfeld:** Die Angabe des magic Loinc Wertes für die Sauerstoffsättigung ist laut FHIR-Core-Spezifikation verpflichtend."
     * system 1.. MS
@@ -30,7 +30,7 @@ Usage: #example
 * status = #final
 * code
   * coding[sct] = $sct#442476006 "Arterial oxygen saturation"
-  * coding[loinc] = $loinc#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
+  * coding[loinc] = $loinc#59408-5 "Sauerstoffsättigung in arteriellem Blut mittels Pulsoximetrie"
   * coding[IEEE-11073] = $IEEE11073#150324 "MDC_SAT_O2_ART"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod

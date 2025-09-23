@@ -37,7 +37,7 @@ Das Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/obs
 Instance: ISiKEKGExample
 InstanceOf: ISiKEKG
 Usage: #example
-* code.coding[loinc] = $loinc#11524-6 "EKG study"
+* code.coding[loinc] = $loinc#11524-6 "EKG-Bericht"
 * code.coding[snomed] = $sct#106073009 "EKG wave, interval AND/OR segment"
 * subject = Reference(PatientinMusterfrau)
 * status = #final
@@ -64,7 +64,7 @@ Usage: #example
 Instance: ISiKEKGMinExample
 InstanceOf: ISiKEKG
 Usage: #example
-* code.coding[loinc] = $loinc#11524-6 "EKG study"
+* code.coding[loinc] = $loinc#11524-6 "EKG-Bericht"
 * subject = Reference(PatientinMinimal)
 * status = #final
 * category = $observation-category#procedure
@@ -78,7 +78,7 @@ Usage: #example
 Instance: ISiKEKGMaxExample
 InstanceOf: ISiKEKG
 Usage: #example
-* code.coding[loinc] = $loinc#11524-6 "EKG study"
+* code.coding[loinc] = $loinc#11524-6 "EKG-Bericht"
 * code.coding[snomed] = $sct#106073009 "EKG wave, interval AND/OR segment"
 * subject = Reference(PatientinNormal)
 * status = #final
@@ -102,17 +102,17 @@ Usage: #example
 * component[=].valueSampledData.period = 5
 * component[=].valueSampledData.dimensions = 1
 * component[=].valueSampledData.data = "2048 2050 2045 2055 2068 2070 2059 2031 2022 2035 2042 2041 2048 2055 2055 2061 2066 2072 2067 2071 2069 2060 2061 2046 1974 1893 1892 2017 2137 2174 2145 2110 2094 2085 2075 2075 2068 2067 2070 2070 2068 2065 2053 2055 2065 2062 2050 2037 2035 2026 2015 2003 2009 2020 2032 2047 2076 2100 2119 2133 2139 2156 2145 2146 2136 2136 2123 2107 2105 2104 2109 2109 2099 2081 2084 2085 2092 2089 2096 2100 2078 2077 2082 2085 2083 2076 2072 2068 2070 2082 2083 2082 2083 2071 2066 2066 2072 2072 2078 2082 2075 2068 2070 2071 2069 2067 2056 2060 2057 2056 2059 2067 2067 2074 2085 2081 2088 2093 2098 2103 2108 2113 2118 2123 2128 2133 2138 2143 2148 2153 2158 2163 2168 2173 2178 2183 2188 2193 2198"
-* component[+].code = $sct#272732008 "Lead aVR"
+* component[+].code = $sct#257474006 "aVR"
 * component[=].valueSampledData.origin.value = 2048
 * component[=].valueSampledData.period = 5
 * component[=].valueSampledData.dimensions = 1
 * component[=].valueSampledData.data = "2020 2018 2024 2014 2001 1999 2010 2038 2047 2034 2027 2028 2021 2014 2014 2008 2003 1997 2002 1998 2000 2009 2008 2023 2095 2176 2177 2152 2023 1986 2016 2059 2075 2084 2094 2094 2101 2102 2099 2099 2101 2104 2116 2114 2104 2107 2119 2132 2134 2143 2154 2166 2160 2149 2137 2122 2093 2069 2050 2036 2030 2013 2024 2025 2033 2033 2046 2062 2064 2063 2058 2058 2068 2086 2083 2082 2075 2078 2071 2067 2089 2090 2085 2082 2084 2091 2095 2099 2097 2085 2084 2083 2084 2096 2101 2101 2095 2095 2089 2086 2100 2098 2095 2092 2094 2101 2099 2098 2091 2093 2094 2100 2108 2113 2118 2123 2128 2133 2138 2143 2148 2153 2158 2163 2168 2173 2178 2183 2188 2193 2198 2203 2208 2213"
-* component[+].code = $sct#272733003 "Lead aVL"
+* component[+].code = $sct#257473000 "aVL"
 * component[=].valueSampledData.origin.value = 2048
 * component[=].valueSampledData.period = 5
 * component[=].valueSampledData.dimensions = 1
 * component[=].valueSampledData.data = "2048 2047 2044 2047 2054 2055 2051 2036 2031 2038 2041 2040 2044 2047 2047 2050 2053 2056 2054 2056 2055 2051 2051 2042 2009 1964 1964 1987 2070 2090 2076 2060 2053 2049 2044 2044 2041 2040 2042 2042 2041 2039 2033 2034 2039 2037 2031 2025 2024 2019 2013 2007 2010 2016 2022 2031 2046 2062 2073 2081 2085 2094 2087 2088 2083 2083 2076 2067 2066 2065 2068 2068 2062 2051 2053 2054 2058 2056 2060 2062 2049 2048 2051 2053 2052 2048 2046 2043 2044 2051 2051 2051 2051 2046 2043 2043 2046 2046 2049 2051 2047 2043 2044 2045 2044 2043 2038 2040 2038 2037 2039 2043 2043 2047 2053 2051 2058 2063 2068 2073 2078 2083 2088 2093 2098 2103 2108 2113 2118 2123 2128 2133 2138 2143 2148 2153 2158"
-* component[+].code = $sct#272734009 "Lead aVF"
+* component[+].code = $sct#257472005 "aVF"
 * component[=].valueSampledData.origin.value = 2048
 * component[=].valueSampledData.period = 5
 * component[=].valueSampledData.dimensions = 1

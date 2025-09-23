@@ -24,7 +24,7 @@ InstanceOf: ISiKAtemfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#9279-1 "Respiratory rate"
+* code = $loinc#9279-1 "Atemfrequenz"
 * code.coding[snomed] = $sct#86290005 "Respiratory rate"
 * code.coding[IEEE11073] = $IEEE11073#151562 "MDC_RESP_RATE"
 * code.text = "Atemfrequenz"
@@ -38,7 +38,7 @@ InstanceOf: ISiKAtemfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#9279-1 "Respiratory rate"
+* code = $loinc#9279-1 "Atemfrequenz"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 8 '/min' "Atemzüge pro Minute"
@@ -48,7 +48,7 @@ InstanceOf: ISiKAtemfrequenz
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#9279-1 "Respiratory rate"
+* code = $loinc#9279-1 "Atemfrequenz"
 * code.coding[snomed] = $sct#86290005 "Respiratory rate"
 * code.coding[IEEE11073] = $IEEE11073#151562 "MDC_RESP_RATE"
 * code.text = "Atemfrequenz - Intensivüberwachung"
@@ -57,6 +57,6 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 35 '/min' "Atemzüge pro Minute"
 * method = $sct#37931006 "Auscultation"
-* bodySite = $sct#181216001 "Entire chest"
+* bodySite = $sct#181216001 "Entire lung"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Tachypnoe bei akuter respiratorischer Insuffizienz"

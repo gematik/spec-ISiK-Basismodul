@@ -75,10 +75,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Bedeutung: Erfasster Wert der Observation."
 //folgende Elemente hatten bislang kein MS-Flag, aber  im IG gab es  Anmerkungen dazu:   
 * component
-  //TODO:  * ^short = ""
+  * ^short = "Ergebnis-Komponenten"
   * ^comment = "Bedeutung: Bei Vitalparametern, die aus mehreren Einzelnen Messpunkten bestehen (Blutdruck, EKG, GCS), werden die gemessenen Einzelwerte jeweils mit einem separaten LOINC-Code in Observation.component.code versehen und der entsprechende Messwert in Observation.component.value erfasst." 
 * hasMember
-  //TODO:  * ^short = ""
+  * ^short = "Zugehörige Teiluntersuchung"
   * ^comment = "Bedeutung: Weitere Observation, die mit dieser Observation gemeinsam zu betrachten ist." 
 
 
@@ -103,7 +103,7 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Pregnancy status"
+* code = $loinc#82810-3 "Schwangerschaftsstatus"
   * coding.version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -128,7 +128,7 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code.coding[loinc] = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus letzter Menstruationsperiode"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -184,7 +184,7 @@ Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
 * code.coding[snomed-ct] = $sct#77176002 "Smoker"
   * version = "http://snomed.info/sct/11000274103/version/20231115"
-* code.coding[loinc] = $loinc#72166-2 "Tobacco smoking status"
+* code.coding[loinc] = $loinc#72166-2 "Raucherstatus"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -214,7 +214,7 @@ Title: "ISiKStillstatusBeispiel"
 Description: "ISiKStillstatusBeispiel"
 * code.coding[snomed-ct] = $sct#413712001 "Breastfeeding (mother)"
   * version = "http://snomed.info/sct/11000274103/version/20231115"
-* code.coding[loinc] = $loinc#63895-7 "Breastfeeding status"
+* code.coding[loinc] = $loinc#63895-7 "Stillstatus"
   * version = "2.77" 
 * status = #final
 * subject = Reference(PatientinMusterfrau)

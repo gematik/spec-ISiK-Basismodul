@@ -24,7 +24,7 @@ InstanceOf: SD_MII_ICU_Koerpergewicht_Percentil_Altersabhaengig
 Usage: #example
 * status = #final
 * code
-  * coding[loinc] = $loinc#8336-0 "Body weight [Percentile] Per age"
+  * coding[loinc] = $loinc#8336-0 "Körpergewicht [Perzentil] pro Alter"
   * coding[sct] = $sct#1153592008 "Weight for age percentile"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod

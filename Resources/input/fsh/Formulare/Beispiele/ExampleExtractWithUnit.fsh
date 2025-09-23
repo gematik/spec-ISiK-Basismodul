@@ -15,7 +15,7 @@ InstanceOf: ISiKFormularDefinition
   * item[+]  
     //Annotation mit codierter Maßeinheit
     * insert uunit(kg)
-    * code = $loinc#29463-7
+    * code = $loinc#29463-7 // Körpergewicht
     * linkId = "4.1"
     * text = "Körpergewicht in kg"
     * type = #decimal

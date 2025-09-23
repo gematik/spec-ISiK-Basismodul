@@ -9,7 +9,7 @@ Title: "SD MII ICU Koerpertemperatur Blut"
   * coding[snomed] 1..1
   * coding[snomed] = $sct#1222808002 //"Core body temperature measured in blood"
   * coding[specific-loinc] 1..1
-  * coding[specific-loinc] = $loinc#60834-9 // "Blood temperature"
+  * coding[specific-loinc] = $loinc#60834-9 // "Körpertemperatur - gemessen im Blut"
   * coding[specific-IEEE-11073] 1..1
   * coding[specific-IEEE-11073] = $IEEE11073#188436
 
@@ -19,7 +19,7 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Blut
 Usage: #example
 * status = #final
 * code
-  * coding[specific-loinc] = $loinc#60834-9 "Blood temperature"
+  * coding[specific-loinc] = $loinc#60834-9 "Körpertemperatur - gemessen im Blut"
   * coding[snomed] = $sct#1222808002 "Core body temperature measured in blood"
   * coding[specific-IEEE-11073] = $IEEE11073#188436 "Blood temperature"
 * subject = Reference(PatientinMusterfrau)
