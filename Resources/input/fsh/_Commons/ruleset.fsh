@@ -247,7 +247,8 @@ RuleSet: ISiKMedikament-CodingATCComment
 RuleSet: Comment-Reference-Subject(Einleitung)
 * ^comment = "**{Einleitung}:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
-Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
 
 RuleSet: Comment-Reference-Encounter-with-hint(Einleitung)
 * ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
