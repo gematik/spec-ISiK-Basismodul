@@ -255,7 +255,8 @@ RuleSet: Comment-Reference-Encounter-with-hint(Einleitung)
 **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  
 Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
-Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profile referenziert werden."
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
 
 RuleSet: Comment-Reference-Encounter(Einleitung)
 * ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
