@@ -35,7 +35,8 @@ Datum: tbd
 * `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
-
+* `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt. 
+* `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt
 
 
 ## Version 5.0.0
@@ -388,4 +389,5 @@ Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
 ----
+
 
