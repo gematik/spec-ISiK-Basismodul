@@ -34,7 +34,7 @@ Die Grundidee dieser Option besteht darin, dass eine API Gateway Schicht vor den
 
 <!-- markdownlint-disable MD033 -->
 <figure style="max-width:800px; margin:1em auto; text-align:center;">
-  <img src="API-Gateway_ISiK.png" alt="API Gateway Schicht vor FHIR Servern" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+  <img src="api-gateway_ISiK.png" alt="API Gateway Schicht vor FHIR Servern" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
 </figure>
 <!-- markdownlint-enable MD033 -->
 
@@ -83,7 +83,7 @@ Diese Option kennzeichnet, dass ein Server als eine zentrale Datenpersistenz ber
 
 <!-- markdownlint-disable MD033 -->
 <figure style="max-width:1200px; margin:1em auto; text-align:center;">
-  <img src="Multi-Clients_ISiK.png" alt="Zentrale Persistenz mit FHIR API - Subsysteme als Clients" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+  <img src="zentraler-fhir-server.png" alt="Zentrale Persistenz mit FHIR API - Subsysteme als Clients" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
 </figure>
 <!-- markdownlint-enable MD033 -->
 
@@ -130,7 +130,7 @@ Clients stellen nur an diesen zentralisierten Server Anfragen, der damit als ein
 
 <!-- markdownlint-disable MD033 -->
 <figure style="max-width:1200px; margin:1em auto; text-align:center;">
-  <img src="CDR-ISiK.png" alt="Central FHIR Endpoint with Data Persistence Architecture" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+  <img src="zentraler-abfrageendpunkt.png" alt="Central FHIR Endpoint with Data Persistence Architecture" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
 </figure>
 <!-- markdownlint-enable MD033 -->
 
@@ -202,8 +202,8 @@ Für die zuvor vorgestellten Architektur-Optionen muss Kontext- und Fallabhängi
 |---------|----------------------------------|----------------------|
 | Subsystem | Eigenständiger ISiK-konformer FHIR-Server (z. B. PDMS, KIS-Modul) | Enthält fachlich begrenzten Ausschnitt |
 | Zentraler Server | Rolle eines konsolidierenden FHIR-Endpunkts (je nach Option: Gateway, persistierender Hub oder aktiver Aggregator) | Nicht zwingend persistierend (bei Gateway) |
-| API Gateway | Vermittlungs-/Routing-Schicht ohne fachliche Primärpersistenz (nur Cache / Index / Mapping) | Keine dauerhafte authoritative Datenhaltung |
-| Zentrale Persistenz | FHIR-Server mit authoritative Datenbasis (Single Write Target) | Subsysteme liefern aktiv (Push) |
+| API Gateway | Vermittlungs-/Routing-Schicht ohne fachliche Primärpersistenz (nur Cache / Index / Mapping) | Keine dauerhafte autoritative Datenhaltung |
+| Zentrale Persistenz | FHIR-Server mit autoritative Datenbasis (Single Write Target) | Subsysteme liefern aktiv (Push) |
 | Zentraler Endpunkt (mit Persistenz) | FHIR-Server mit eigener Persistenz, der Daten überwiegend via Pull/Subscription einsammelt | Kombination aus Aggregation + Spiegelpersistenz |
 | Source of Truth | System oder Regel, das für einen Ressourcentyp als führend gilt | Kann durch Regeln dynamisch bestimmt werden |
 | Deduplizierung | Erkennen und Zusammenführen mehrfach vorliegender fachlich identischer Entitäten | Benötigt Matching-Strategie |
