@@ -24,8 +24,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Motivation Kardinalität und Must-Support: Referenz auf den Patienten, zu dem diese angehörige Person in Beziehung steht. Diese Verlinkung ist essentiell für die Dokumentation der Beziehung zwischen Patient und Angehörigem."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Information zu einem Patienten 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * relationship MS
   * ^short = "Verwandtschaftsverhältnis"
   * ^comment = "**Begründung MS:** Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
