@@ -34,7 +34,7 @@ Die Grundidee dieser Option besteht darin, dass eine API Gateway Schicht vor den
 
 <!-- markdownlint-disable MD033 -->
 <figure style="max-width:800px; margin:1em auto; text-align:center;">
-  <img src="api-gateway_ISiK.png" alt="API Gateway Schicht vor FHIR Servern" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+  <img src="api-gateway.png" alt="API Gateway Schicht vor FHIR Servern" style="max-width:100%; height:auto; display:block; margin:0 auto;" />
 </figure>
 <!-- markdownlint-enable MD033 -->
 
