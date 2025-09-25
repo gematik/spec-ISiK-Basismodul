@@ -303,7 +303,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
 
   Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
-  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich welcher auch einen Wechsel des Aufenthaltortes zur Folge hat SOLLTE der Status der Location auf 'completed' gesetzt werden.
+  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLLTE der Status der Location auf 'completed' gesetzt werden.
   """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
