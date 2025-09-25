@@ -21,7 +21,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-* ^extension[$compliesWithProfile][+].valueCanonical = Canonical(TIPatient|1.1.1)
+* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPatient|1.1.1)
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
