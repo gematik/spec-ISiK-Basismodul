@@ -40,7 +40,7 @@ Der Wechsel der Fachabteilung führt zudem zu einer neuen Kodierung in "serviceT
 
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktStationswechsel2.json}}
 
-Die Abbildung eines Stationswechsels entspricht der eines Fachbereichswechsels. Ändert sich hierbei lediglich die Station (Location) und nicht die Fachabteilung (serviceType), ist der bestehende Abteilungskontakt zu aktualisieren; ein neuer Abteilungskontakt wird nicht angelegt.
+Ändert sich lediglich die Station (Location) bei einer Verlegung und nicht die Fachabteilung (serviceType), ist der bestehende Abteilungskontakt zu aktualisieren; ein neuer Abteilungskontakt wird nicht angelegt.
 
 **Beispiel für die Abbildung einer Entlassung:**
 
