@@ -122,7 +122,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosageInstruction MS only DosageDE
+* dosageInstruction only DosageDE MS
   * ^short = "Dosierungsangaben"
   * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
   
