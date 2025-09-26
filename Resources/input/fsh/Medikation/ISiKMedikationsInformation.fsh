@@ -157,12 +157,12 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosage MS
+* dosage MS only DisageDE
   * ^short = "Dosierungsangaben"
   * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
   
   **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert."
-  * text MS
+  * text 
     * ^short = "Freitext-Dosierungsanweisungen"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
@@ -174,7 +174,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
 "
   * patientInstruction MS
     * ^short = "besondere Anweisungen für den Patienten"
-  * timing MS
+  * timing 
     * ^short = "Angaben zum Timing"
     * event MS
       * ^short = "fester Zeitpunkt"
@@ -262,7 +262,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
     * coding[SNOMED-CT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
-  * doseAndRate MS
+  * doseAndRate 
     * ^short = "Angaben zu Dosis und Rate"
     * doseRange MS
       * ^short = "Dosisbereich"

@@ -112,10 +112,10 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosage MS
+* dosage MS only DosageDE
   * ^short = "Dosierungsangaben"
   * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation"
-  * text MS
+  * text
     * ^short = "Freitext-Dosierungsangabe"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
