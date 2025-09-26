@@ -112,7 +112,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosage MS only DosageDE
+* dosage MS
   * ^short = "Dosierungsangaben"
   * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation"
   * text
