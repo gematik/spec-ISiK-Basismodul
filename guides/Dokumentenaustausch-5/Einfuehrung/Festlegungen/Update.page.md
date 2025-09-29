@@ -3,7 +3,7 @@ topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Update
 canonical: https://gematik.de/fhir/isik/OperationDefinition/UpdateMetadata
 ---
 
-<fql>
+<fql output="transpose">
         from
 	        OperationDefinition
         where
