@@ -53,7 +53,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name contains
     Name 1..1 MS 
 * name[Name] only HumannameDeBasis
-  * ^patternHumanName.use = #official    
+  * ^patternHumanName.use = #official
+  * ^comment = "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.
+  **Begründung MS:** Siehe untergeordnete Elemente"
   * use MS
     * ^short = "Verwendungszweck"
     * ^comment = "Verwendungszweck des Namens. Der präferierte Namen für die Brief- und Rechnungszustellung SOLLTE als `official`

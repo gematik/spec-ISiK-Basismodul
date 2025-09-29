@@ -13,6 +13,8 @@ Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (
 * type MS
 * timestamp 1.. MS
 * identifier 1.. MS
+  * ^short = "Identifier des Berichtsbundles"
+  * ^comment = "**Motivation MS:** Zur Identifikation des Berichtbundles muss ein Identifier vom Subsystem mit angegeben werden."
 * entry MS
   * fullUrl 1..1 MS
   * resource 1..1 MS
