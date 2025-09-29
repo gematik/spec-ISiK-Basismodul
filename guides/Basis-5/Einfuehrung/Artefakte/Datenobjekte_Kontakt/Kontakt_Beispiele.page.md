@@ -32,7 +32,7 @@ Der Status eines vorherigen Abteilungskontakts wird auf completed gesetzt. Der Z
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktFachbereichswechsel2.json}}
 
 Ein neuer aktiver Abteilungskontakt wurde durch den Fachbereitswechsel angelegt. Der Startzeitpunkt wurde in "period.start" dokumentiert und entspricht dem Zeitpunkt der Verlegung.
-Der Wechsel der Fachabteilung führt zudem zu einer neuen Kodierung in "serviceType". Die "partOf"-Referenz bestehender Versorgungsstellenkontakte ist auf den neuen Abteilungskontakt zu setzen.
+Der Wechsel der Fachabteilung führt zudem zu einer neuen Kodierung in "serviceType". Die "partOf"-Referenz bestehender Versorgungsstellenkontakte wird auf den neuen Abteilungskontakt gesetzt.
 
 **Beispiel für die Abbildung eines Stationswechsel:**
 
