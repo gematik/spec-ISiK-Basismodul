@@ -31,7 +31,7 @@ Der Status eines vorherigen Abteilungskontakts ist auf completed zu setzen. Der 
 
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktFachbereichswechsel2.json}}
 
-Ein neuer aktiver Abteilungskontakt ist anzulegen. Der Startzeitpunkt in "period.start" entspricht dem Zeitpunkt der Verlegung.
+Ein neuer aktiver Abteilungskontakt wurde durch den Fachbereitswechsel angelegt. Der Startzeitpunkt wurde in "period.start" dokumentiert und entspricht dem Zeitpunkt der Verlegung.
 Der Wechsel der Fachabteilung führt zudem zu einer neuen Kodierung in "serviceType". Die "partOf"-Referenz bestehender Versorgungsstellenkontakte ist auf den neuen Abteilungskontakt zu setzen.
 
 **Beispiel für die Abbildung eines Stationswechsel:**
@@ -46,4 +46,4 @@ Der Wechsel der Fachabteilung führt zudem zu einer neuen Kodierung in "serviceT
 
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktEntlassung.json}}
 
-Alle Abteilungskontakte sind mit einem period.end zu versehen und der Status ist auf completed zu setzen. Dies gilt auch für noch offene Versorgungsstellenkontakte.
+Das Datum der Entlassung wurde in allen Abteilungskontakten in period.end dokumentiert. Der Encounter wurde durch den Status ``completed`` geschlossen. Offene Versorgungsstellenkontakte sind ebenfalls zu schließen.
