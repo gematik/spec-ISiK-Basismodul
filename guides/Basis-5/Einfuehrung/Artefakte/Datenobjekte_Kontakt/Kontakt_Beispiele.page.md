@@ -27,7 +27,7 @@ Die Anlage eines Versorgungsstellenkontakts ist optional möglich; sie fällt je
 
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktFachbereichswechsel1.json}}
 
-Der Status eines vorherigen Abteilungskontakts ist auf completed zu setzen. Der Zeitpunkt der Verlegung ist in period.end zu dokumentieren.
+Der Status eines vorherigen Abteilungskontakts wird auf completed gesetzt. Der Zeitpunkt der Verlegung wird (entsprechend der Anforderung im IG) in period.end dokumentiert.
 
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktFachbereichswechsel2.json}}
 
