@@ -18,7 +18,7 @@ Die Anlage eines Versorgungsstellenkontakts ist optional möglich; sie fällt je
 {{json:Resources/fsh-generated/resources/Encounter-FachabteilungskontaktBettenverlegung.json}}
 
 Die Bettenverlegung wird durch Anpassungen im "location"-Element abgebildet.
-Der vorherige Bettenstellplatz kann mit dem Status "completed" bestehen bleiben, wobei die "period" entsprechend anzupassen ist.
+Der vorherige Bettenstellplatz kann mit dem Status "completed" bestehen bleiben, wobei die "period" entsprechend angepasst wird.
 Der neue Bettenstellplatz erhält den Status "active".
 
 Die Anlage eines Versorgungsstellenkontakts ist optional möglich; sie fällt jedoch nicht in den Geltungsbereich von ISiK. Der Status eines vorherigen Versorgungsstellenkontaktes ist auf "completed" zu setzen.
