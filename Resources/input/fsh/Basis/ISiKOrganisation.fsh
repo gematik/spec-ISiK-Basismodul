@@ -16,12 +16,15 @@ Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
 Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  
 ### Kompatibilität
 
-Für das Profil ISiKOrganisation wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
+Für das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  
+
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 
 "
 * insert Meta
 * insert CommonElements
+* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIOrganization|1.1.1)
 * identifier 1..* MS
   * ^short = "Identifikatoren der Fachabteilung"
   * ^comment = "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden."
