@@ -36,7 +36,6 @@ Datum: tbd
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
 * `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
-
 * `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
 
 
