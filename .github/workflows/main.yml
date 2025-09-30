@@ -26,12 +26,12 @@ jobs:
       # Optional: Download dependencies via FHIR Package Tool using sushi-config.yaml
       - name: Download Dependencies
         run: |
-          fhir-pkg-tool --sushi-deps-file Resources/sushi-config.yaml -o ./packages
+          fhir-pkg-tool --sushi-deps-file Resources/sushi-config.yaml
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
         run: |
-          sushi .
+          sushi Resources/
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
