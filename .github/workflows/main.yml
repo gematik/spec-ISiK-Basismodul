@@ -20,38 +20,47 @@ jobs:
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     env:
-      IG_OUTPUT_DIR: publisher-guides/Subscription-IG/output
+      SUSHI_INPUT_DIR: Resources
+      IG_PUBLISHER_DIR: publisher-guides/Subscription-IG
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Optional: Download dependencies via FHIR Package Tool using sushi-config.yaml
+      # Download dependencies via FHIR Package Tool using sushi-config.yaml from Resources
       - name: Download Dependencies
         run: |
-          fhir-pkg-tool --sushi-deps-file publisher-guides/Subscription-IG/sushi-config.yaml
+          fhir-pkg-tool --sushi-deps-file ${{ env.SUSHI_INPUT_DIR }}/sushi-config.yaml
 
-      # Run SUSHI (FSH -> FHIR conversion)
+      # Run SUSHI (FSH -> FHIR conversion) on Resources directory
       - name: Run SUSHI
         run: |
-          sushi publisher-guides/Subscription-IG
+          sushi ${{ env.SUSHI_INPUT_DIR }}
+
+      # Expand CapabilityStatement
+      - name: Expand CapabilityStatement
+        uses: Gefyra/capabilityStatement-expander@v0
+        with:
+          input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+          output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+          capability_statement_url: 'https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur'
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          igpublisher -ig publisher-guides/Subscription-IG/ig.ini
+          igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
 
       # Upload the IG build output as an artifact
       - name: Upload Build Results
         uses: actions/upload-artifact@v4
         with:
           name: fhir-ig
-          path: ${{ env.IG_OUTPUT_DIR }}/
+          path: ${{ env.IG_PUBLISHER_DIR }}/output/
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
         run: |
-          echo "${GITHUB_REF_NAME}" > "${IG_OUTPUT_DIR}/.branch-name"
+          echo "${GITHUB_REF_NAME}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
       # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
@@ -86,7 +95,7 @@ jobs:
           branch_dir="gh-pages/${GITHUB_REF_NAME}"
           rm -rf "${branch_dir}"
           mkdir -p "${branch_dir}"
-          cp -R "${IG_OUTPUT_DIR}/." "${branch_dir}/"
+          cp -R "${{ env.IG_PUBLISHER_DIR }}/output/." "${branch_dir}/"
 
           cd gh-pages
           git config user.name "${GIT_AUTHOR_NAME}"
