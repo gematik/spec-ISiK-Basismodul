@@ -11,6 +11,7 @@ on:
 permissions:
   actions: write
   contents: write
+  packages: read
 
 jobs:
 
@@ -20,6 +21,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       # Optional: Download dependencies via FHIR Package Tool using sushi-config.yaml
       - name: Download Dependencies
