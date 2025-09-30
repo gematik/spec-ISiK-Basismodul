@@ -52,9 +52,9 @@ jobs:
           echo "${GITHUB_REF_NAME}" > publisher-guides/Subscription-IG/output/.branch-name
 
       # Publish the IG output to a branch-specific directory on gh-pages
-      # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        shell: bash
         env:
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

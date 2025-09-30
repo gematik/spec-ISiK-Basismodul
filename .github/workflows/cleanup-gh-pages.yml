@@ -42,6 +42,7 @@ jobs:
 
       - name: Prune deleted branch directories
         if: steps.gh-pages.outputs.exists == 'true'
+        shell: bash
         env:
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
