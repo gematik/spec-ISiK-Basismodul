@@ -26,17 +26,17 @@ jobs:
       # Optional: Download dependencies via FHIR Package Tool using sushi-config.yaml
       - name: Download Dependencies
         run: |
-          fhir-pkg-tool --sushi-deps-file Resources/sushi-config.yaml
+          fhir-pkg-tool --sushi-deps-file publisher-guides/Subscription-IG/sushi-config.yaml
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
         run: |
-          sushi Resources/
+          sushi publisher-guides/Subscription-IG
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
-          igpublisher -ig ig.ini -tx https://tx.fhir.org
+          igpublisher -ig publisher-guides/Subscription-IG/ig.ini
 
       # Upload the IG build output as an artifact
       - name: Upload Build Results
