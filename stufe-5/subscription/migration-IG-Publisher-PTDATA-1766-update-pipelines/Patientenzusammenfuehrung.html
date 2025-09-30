@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Patientenzusammenführung - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="releasenotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="festlegungen.html">Festlegungen</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR-Artefakte
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefakte</a>
+      </li>
+      <li>
+        <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            Implementation Guide<br>
+Test Implementation Guide
+
+
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Patientenzusammenführung</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Patientenzusammenführung</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#patient-merge-und-notification" id="markdown-toc-patient-merge-und-notification">Patient merge und Notification</a>    <ul>
+      <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+      <li><a href="#normativer-status" id="markdown-toc-normativer-status">Normativer Status</a></li>
+      <li><a href="#zweck-und-definition-patient-merge-notification" id="markdown-toc-zweck-und-definition-patient-merge-notification">Zweck und Definition <em>Patient merge Notification</em></a></li>
+      <li><a href="#festlegungen-zu-patient-merge-notification" id="markdown-toc-festlegungen-zu-patient-merge-notification">Festlegungen zu <em>Patient merge Notification</em></a>        <ul>
+          <li><a href="#proof-of-concept-implementierung" id="markdown-toc-proof-of-concept-implementierung">Proof of Concept Implementierung</a></li>
+          <li><a href="#notification-channel-types" id="markdown-toc-notification-channel-types">Notification Channel Types</a></li>
+        </ul>
+      </li>
+      <li><a href="#abgrenzung-zu-patient-merge" id="markdown-toc-abgrenzung-zu-patient-merge">Abgrenzung zu <em>Patient merge</em></a>        <ul>
+          <li><a href="#obsolete-patienten-ressource" id="markdown-toc-obsolete-patienten-ressource">Obsolete Patienten-Ressource</a></li>
+          <li><a href="#resultierende-patienten-ressource" id="markdown-toc-resultierende-patienten-ressource">Resultierende Patienten-Ressource</a></li>
+          <li><a href="#referenzen-auf-das-patientenobjekt" id="markdown-toc-referenzen-auf-das-patientenobjekt">Referenzen auf das Patientenobjekt</a></li>
+        </ul>
+      </li>
+      <li><a href="#hinweise-zum-client-system" id="markdown-toc-hinweise-zum-client-system">Hinweise zum Client-System</a>        <ul>
+          <li><a href="#recovery-mechanismus" id="markdown-toc-recovery-mechanismus">Recovery Mechanismus</a></li>
+          <li><a href="#datensicherheit-client" id="markdown-toc-datensicherheit-client">Datensicherheit Client</a></li>
+          <li><a href="#websocket" id="markdown-toc-websocket">Websocket</a></li>
+        </ul>
+      </li>
+      <li><a href="#beispiele" id="markdown-toc-beispiele">Beispiele</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h1 id="patient-merge-und-notification">Patient merge und Notification</h1>
+
+<h2 id="motivation">Motivation</h2>
+<p>Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen.</p>
+
+<p>Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer Krankenhaus-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).</p>
+
+<p>Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen <em>Patient merge</em> benachrichtigt (im Folgenden <em>Patient merge Notification</em>), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer <em>Patient merge</em> Notification auf Basis von FHIR.</p>
+
+<h2 id="normativer-status">Normativer Status</h2>
+<p>Alle hier getroffenen Festlegungen haben den normativen Status einer KANN-Anforderung. Werden allerdings die hier festgelegten Lösungen genutzt, so SOLLEN die hier angeführten Vorgaben (inklusive Profil-Ebene) eingehalten werden.</p>
+
+<p>Eine Prüfung im Rahmen des Bestätigungsverfahrens zur <em>Patient merge Notification</em> ist in der jetzigen Entwicklungsstufe nicht vorgesehen.</p>
+
+<h2 id="zweck-und-definition-patient-merge-notification">Zweck und Definition <em>Patient merge Notification</em></h2>
+<p>Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
+Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen <em>Patient merges</em> ( gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.</p>
+
+<p><strong>Definition</strong>: Der Workflow ‘Patient merge Notification’ entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen <em>Patient merge</em>. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein <em>Patient merge</em> stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder diesen zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.</p>
+
+<h2 id="festlegungen-zu-patient-merge-notification">Festlegungen zu <em>Patient merge Notification</em></h2>
+<p>Falls eine <em>Patient merge Notification</em> im Rahmen von ISIK bereitgestellt wird, gelten folgende Festlegungen:</p>
+
+<p>Das patientenführende System SOLL einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können. Dieser Mechanismus basiert auf dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/channels.html">Subscriptions R5 Backport IG</a> und nutzt das Konzept der “Topic-Based Subscription” aus FHIR R5.</p>
+
+<p>Hierfür wurde das Subscription Topic: <em>https://gematik.de/fhir/isik/StructureDefinition/ISiKPatientMergeSubscription</em> definiert.</p>
+
+<p>Das patientenführende System SOLL den Support dieser Subscription innerhalb des CapabilityStatements bekannt geben.</p>
+
+<p>Weitere Informationen zum Subscription Workflow finden sich hier:</p>
+
+<p><a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/workflow.html">Subscription Workflow - Subscriptions R5 Backport</a></p>
+
+<h3 id="proof-of-concept-implementierung">Proof of Concept Implementierung</h3>
+<p>Zur Illustration der technischen Umsetzung für die <em>Patient merge Notification</em> dient ein <a href="https://github.com/gematik/poc-isik-patient-merge">Prove of Concept (POC) mit Anleitung</a>.</p>
+
+<h3 id="notification-channel-types">Notification Channel Types</h3>
+<p>Notifications über einen Patient-merge-Vorgang SOLLEN per <em>rest-hook</em> an das subscribende System versandt werden. Im <em>rest-hook</em> Fall postet das patientenführende System ein NotificationBundle an den in <code class="language-plaintext highlighter-rouge">Subscription.channel.endpoint</code> definierten REST Endpunkt.</p>
+
+<h2 id="abgrenzung-zu-patient-merge">Abgrenzung zu <em>Patient merge</em></h2>
+<p>Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 
+Ein externes Starten eines <em>Patient merge</em>- bspw. durch die <a href="https://hl7.org/fhir/R5/patient-operation-merge.html">$patient-merge Operation aus R5</a> - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden.</p>
+
+<p><strong>Hinweis</strong>: Die Patienten-Ressource, die nicht weiter verwendet werden soll, nennen wir im Folgenden die “obsolete Ressource”. Die Ressource, die erhalten bleiben soll, nennen wir “resultierende Ressource”.</p>
+
+<h3 id="obsolete-patienten-ressource">Obsolete Patienten-Ressource</h3>
+<p>Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISiKPatient Profilanforderungen hinaus.</p>
+
+<p>Allerdings KANN das patientenführende System die obsolete Patienten-Ressource weiter vorhalten. Ein Entfernen der obsoleten Ressource ist ebenfalls erlaubt.</p>
+
+<p>Falls die obsolete Ressource nach einem merge weiter vorgehalten wird, SOLLEN die Elemente der obsoleten Ressource folgendermaßen befüllt werden, um sicherzustellen, dass die obsolete Ressource auf die resultieren Ressource verweist und dass die obsolete Ressource als inaktiv gekennzeichnet ist:</p>
+<ul>
+  <li>.active = false</li>
+  <li>.link.other = Reference(auf “resultierenden” Patient)</li>
+  <li>.link.type = “replaced-by”</li>
+</ul>
+
+<h3 id="resultierende-patienten-ressource">Resultierende Patienten-Ressource</h3>
+<p>Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISIKPatient Profilanforderungen hinaus.</p>
+
+<p>Allerdings SOLL das patientenführende System nach einem merge die Elemente der resultierenden Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:</p>
+<ul>
+  <li>.link.other = Reference.identifier (logische Referenz mittels Patientennummer Identifier auf “obsoleten” Patient)</li>
+  <li>.link.type = “replaces”</li>
+</ul>
+
+<p>Siehe auch: [Patienten Profil]{https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient}</p>
+
+<h3 id="referenzen-auf-das-patientenobjekt">Referenzen auf das Patientenobjekt</h3>
+<p>Es gilt folgende Annahme: Das patientenführende System SOLL sicherstellen, dass alle auf die obsolete Ressource referenzierenden FHIR-Ressourcen nach dem <em>Patient merge</em>auf die resultierende Ressource referenzieren.</p>
+
+<h2 id="hinweise-zum-client-system">Hinweise zum Client-System</h2>
+
+<h3 id="recovery-mechanismus">Recovery Mechanismus</h3>
+<p>Ein Recovery Mechanismus wird benötigt, damit im Falle einer ausgebliebenen <em>Patient merge Notification</em>ein Client die aktuelle Patienteninstanz auffinden und erneut referenzieren kann.</p>
+
+<p>Folgender Hinweis dient der Einhaltung eines Recovery Mechanismus:</p>
+
+<p>Client-Systeme SOLLEN den Status einer <em>gecachten</em> Patienteninstanz vor der Interaktion mit einem patientenführenden System per READ auf das Patientenobjekt überprüfen.
+Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den status <code class="language-plaintext highlighter-rouge">active=false</code> haben, kann das Patientenobjekt mittels Suche auf einen bekannten und stabilen Identifier, bspw. die gesetzliche Krankenversichertennummer, neu geladen werden.</p>
+
+<h3 id="datensicherheit-client">Datensicherheit Client</h3>
+
+<p><strong>Hinweis</strong>: Die “patient-merge Subscription-Notification” kann personenbezogene Daten versenden, falls man “full-resource” als Content-Code gewählt hat. Für den REST-Hook sollte daher stets ein HTTPS-Endpunkt genutzt werden. Zusätzlich kann Subscription.channel.header genutzt werden, um einen Autorisierungs-Header an den Endpunkt zu übertragen. <br />
+Siehe auch: <a href="https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html">Safety and Security, Subscription Backport IG</a></p>
+
+<p>In jedem Fall sind auch Client-seitig die notwendigen Maßnahmen zu ergreifen, um eine sichere Kommunikation personenbezogener Daten zu gewährleisten.</p>
+
+<h3 id="websocket">Websocket</h3>
+
+<p>Hier muss sich der Client per <a href="https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html"><code class="language-plaintext highlighter-rouge">$get-ws-binding-token</code> Operation</a> einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die Expiration-Dauer, sowie der Websocket-Endpunkt enthalten.<br />
+Siehe auch: <a href="https://hl7.org/fhir/uv/subscriptions-backport/channels.html#websockets">Subscriptions R5 Backport IG, Websocket</a></p>
+
+<h2 id="beispiele">Beispiele</h2>
+<p>Die <em>Patient merge Notification</em> kann folgendermaßen illustriert werden:</p>
+
+<p>Es existieren fälschlicherweise zwei Instanzen im patientenführenden System, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
+Diese sind:</p>
+
+<p>“Quell” Patienten-Ressource:</p>
+<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resourceType</a>" : "Patient",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.id">id</a>" : "DorisQuelle",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a href="StructureDefinition-ISiKPatient.html" style="color: Maroon">&#x1F517;</a> "http://example.org/fhir/test-subscription-ig/StructureDefinition/ISiKPatient"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Patient DorisQuelle&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;DorisQuelle\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcDorisQuelle\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-ISiKPatient.html\&quot;&gt;ISiKPatient&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;Doris Duplikat (official) Female, DoB: 1964-08-12 ( Medical record number)&lt;/p&gt;&lt;hr/&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Record is active\&quot;&gt;Active:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Other Id (see the one above)\&quot;&gt;Other Id:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;Krankenversichertennummer/A123456789&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "MR"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://fhir.krankenhaus.example/sid/PID",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "654321"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "KVZ10"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://fhir.de/sid/gkv/kvid-10",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "A123456789"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.active">active</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">use</a>" : "official",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Duplikat",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
+        "Doris"
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "female",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.birthDate">birthDate</a>" : "1964-08-12"
+}</code></pre>
+
+<p>und</p>
+
+<p>“Ziel” Patienten-Ressource:</p>
+<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resourceType</a>" : "Patient",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.id">id</a>" : "DorisZiel",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a href="StructureDefinition-ISiKPatient.html" style="color: Maroon">&#x1F517;</a> "http://example.org/fhir/test-subscription-ig/StructureDefinition/ISiKPatient"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Patient DorisZiel&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;DorisZiel\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcDorisZiel\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-ISiKPatient.html\&quot;&gt;ISiKPatient&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;Doris Duplikat (official) Female, DoB: 1964-08-12 ( Medical record number)&lt;/p&gt;&lt;hr/&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Record is active\&quot;&gt;Active:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Other Id (see the one above)\&quot;&gt;Other Id:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;Krankenversichertennummer/A123456789&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "MR"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://fhir.krankenhaus.example/sid/PID",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "123456"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "KVZ10"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://fhir.de/sid/gkv/kvid-10",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "A123456789"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.active">active</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">use</a>" : "official",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Duplikat",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
+        "Doris"
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "female",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.birthDate">birthDate</a>" : "1964-08-12"
+}</code></pre>
+
+<p>Mittels eines <em>Patient merge</em> wird die “Ziel” Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert. Daraus entsteht die resultierende Patienten-Instanz:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DorisZiel"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v2-0203"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.krankenhaus.example/sid/PID"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/sid/gkv/kvid-10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KVZ10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/identifier-type-de-basis"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A123456789"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"official"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duplikat"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Doris"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1964-08-12"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.krankenhaus.example/sid/PID"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"654321"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replaces"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre></div></div>
+
+<p>Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (http://hl7.org/SubscriptionTopic/patient-merge) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Sep 30, 2025 14:13+0000">2025-09-30</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

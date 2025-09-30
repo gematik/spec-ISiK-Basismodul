@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Parameters",
+  "id" : "ISiKSubscriptionStatusExample",
+  "meta" : {
+    "profile" : ["http://example.org/fhir/test-subscription-ig/StructureDefinition/ISiKSubscriptionStatus"]
+  },
+  "parameter" : [{
+    "name" : "subscription",
+    "valueReference" : {
+      "reference" : "Subscription/1"
+    }
+  },
+  {
+    "name" : "status",
+    "valueCode" : "active"
+  },
+  {
+    "name" : "type",
+    "valueCode" : "event-notification"
+  },
+  {
+    "name" : "topic",
+    "valueCanonical" : "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+  },
+  {
+    "name" : "events-since-subscription-start",
+    "valueString" : "1"
+  },
+  {
+    "name" : "notification-event",
+    "part" : [{
+      "name" : "event-number",
+      "valueString" : "1"
+    },
+    {
+      "name" : "timestamp",
+      "valueInstant" : "2024-02-22T18:30:05+01:00"
+    },
+    {
+      "name" : "focus",
+      "valueReference" : {
+        "reference" : "Patient/DorisQuelle"
+      }
+    }]
+  }]
+}
