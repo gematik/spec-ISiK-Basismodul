@@ -17,41 +17,30 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Login to GHCR
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false
-        env:
-          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "$GHCR_TOKEN" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
       # Optional: Download dependencies via FHIR Package Tool using sushi-config.yaml
       - name: Download Dependencies
-        uses: Gefyra/ig-publisher-action@main
-        with:
-          variant: with-snapshot-support
-          command: fhir-pkg-tool
-          args: --sushi-deps-file sushi-config.yaml -o ./packages
+        run: |
+          fhir-pkg-tool --sushi-deps-file sushi-config.yaml -o ./packages
 
       # Run SUSHI (FSH -> FHIR conversion)
       - name: Run SUSHI
-        uses: Gefyra/ig-publisher-action@main
-        with:
-          variant: with-snapshot-support
-          command: sushi
-          args: .
+        run: |
+          sushi .
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
-        uses: Gefyra/ig-publisher-action@main
-        with:
-          variant: with-snapshot-support
-          command: igpublisher
-          args: -ig ig.ini -tx https://tx.fhir.org
+        run: |
+          igpublisher -ig ig.ini -tx https://tx.fhir.org
 
       # Upload the IG build output as an artifact
       - name: Upload Build Results
