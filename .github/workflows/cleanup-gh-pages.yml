@@ -66,9 +66,15 @@ jobs:
           for metadata in **/.branch-name; do
             branch=$(cat "$metadata" | tr -d '\r')
             dir=$(dirname "$metadata")
+            dir_no_prefix=${dir#./}
 
             if [ -z "$branch" ]; then
               echo "Skipping $dir because branch marker is empty."
+              continue
+            fi
+
+            if [ -z "$dir_no_prefix" ] || [ "$dir_no_prefix" = "." ] || [ "$dir_no_prefix" = "IG" ] || [[ "$dir_no_prefix" == IG/* ]]; then
+              echo "Preserving $dir; skipping cleanup."
               continue
             fi
 
@@ -87,7 +93,7 @@ jobs:
             exit 0
           fi
 
-          find . -type d -empty -delete
+          find . -mindepth 1 -type d -empty ! -path './IG' ! -path './IG/*' -delete
 
           git add --all
           if git diff --cached --quiet; then
