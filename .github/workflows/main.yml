@@ -49,20 +49,45 @@ jobs:
         run: |
           set -eu
           archive=/tmp/runner-filesystem.tar.gz
-          tar_cmd="tar --warning=no-file-changed \
+          sudo_cmd=""
+          if command -v sudo >/dev/null 2>&1; then
+            sudo_cmd="sudo"
+          fi
+
+          excludes="\
             --exclude=${archive} \
+            --exclude=/tmp/runner-filesystem.tar.gz \
+            --exclude=tmp/runner-filesystem.tar.gz \
+            --exclude=./tmp/runner-filesystem.tar.gz \
             --exclude=/proc \
             --exclude=/sys \
-            --exclude=/dev/fd \
-            --exclude=/dev/shm \
-            --exclude=/run \
-            -czf ${archive} /"
+            --exclude=/dev \
+            --exclude=/run"
 
-          if command -v sudo >/dev/null 2>&1; then
-            sudo sh -c "${tar_cmd}"
-            sudo chown "$(id -un):$(id -gn)" "${archive}"
+          echo "[snapshot] creating archive at ${archive}"
+          if [ -n "${sudo_cmd}" ]; then
+            ${sudo_cmd} env GZIP=-1 tar \
+              --warning=no-file-changed \
+              --ignore-failed-read \
+              --numeric-owner \
+              --one-file-system \
+              --checkpoint=50000 \
+              --checkpoint-action=echo="[snapshot] processed %u entries" \
+              --totals \
+              ${excludes} \
+              -czf "${archive}" /
+            ${sudo_cmd} chown "$(id -un):$(id -gn)" "${archive}"
           else
-            eval "${tar_cmd}"
+            env GZIP=-1 tar \
+              --warning=no-file-changed \
+              --ignore-failed-read \
+              --numeric-owner \
+              --one-file-system \
+              --checkpoint=50000 \
+              --checkpoint-action=echo="[snapshot] processed %u entries" \
+              --totals \
+              ${excludes} \
+              -czf "${archive}" /
             chown "$(id -un):$(id -gn)" "${archive}" 2>/dev/null || true
           fi
 
