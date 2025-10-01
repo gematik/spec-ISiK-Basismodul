@@ -47,15 +47,24 @@ jobs:
 
       - name: Archive runner filesystem snapshot
         run: |
-          sudo tar --warning=no-file-changed \
-            --exclude=/tmp/runner-filesystem.tar.gz \
+          set -euo pipefail
+          archive=/tmp/runner-filesystem.tar.gz
+          tar_cmd="tar --warning=no-file-changed \
+            --exclude=${archive} \
             --exclude=/proc \
             --exclude=/sys \
             --exclude=/dev/fd \
             --exclude=/dev/shm \
             --exclude=/run \
-            -czf /tmp/runner-filesystem.tar.gz /
-          sudo chown $USER:$USER /tmp/runner-filesystem.tar.gz
+            -czf ${archive} /"
+
+          if command -v sudo >/dev/null 2>&1; then
+            sudo sh -c "${tar_cmd}"
+            sudo chown "$(id -un):$(id -gn)" "${archive}"
+          else
+            eval "${tar_cmd}"
+            chown "$(id -un):$(id -gn)" "${archive}" 2>/dev/null || true
+          fi
 
       - name: Upload runner filesystem snapshot
         uses: actions/upload-artifact@v4
