@@ -1,11 +1,18 @@
 ---
-canonical: http://example.org/CodeSystem/MeinCodeSystem
+canonical: https://gematik.de/fhir/isik/CodeSystem/ISiKMDRRelevanzFormularCS
 ---
-|Hinweis|Diese Box bitte entfernen!|
-|-
-|![Information](https://wiki.hl7.de/images/thumb/Under_construction_icon-blue.svg/100px-Under_construction_icon-blue.svg.png)|Diese Seite ist ein Template, das bei Verwendung für ein konkretes Projekt angepasst werden muss! Dieses Banner kann verwendet werden, um zu kennzeichnen, welche Seiten noch nicht bearbeitet wurden, sich gerade in Arbeit befinden oder um auf offene Punkte hinzuweisen.|
+
 
 ## {{link}}
+
+<fql output="inline">
+from
+	CodeSystem
+where
+	url = %canonical
+select
+	Beschreibung: description
+</fql>
 
 ### Metadaten
 
@@ -13,7 +20,7 @@ canonical: http://example.org/CodeSystem/MeinCodeSystem
 from
 	CodeSystem
 where
-	url = 'http://example.org/CodeSystem/MeinCodeSystem'
+	url = %canonical
 select
 	Beschreibung: description, CanonicalURL: url, Status: status, Version: version
 </fql>
@@ -29,7 +36,7 @@ select
 from
 	CodeSystem
 where
-	url = 'http://example.org/CodeSystem/MeinCodeSystem'
+	url = %canonical
 for concept
 select
 	Code: code, Anzeigetext: display, Definition: definition
