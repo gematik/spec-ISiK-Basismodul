@@ -44,6 +44,25 @@ jobs:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: 'https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur'
+
+      - name: Archive runner filesystem snapshot
+        run: |
+          sudo tar --warning=no-file-changed \
+            --exclude=/tmp/runner-filesystem.tar.gz \
+            --exclude=/proc \
+            --exclude=/sys \
+            --exclude=/dev/fd \
+            --exclude=/dev/shm \
+            --exclude=/run \
+            -czf /tmp/runner-filesystem.tar.gz /
+          sudo chown $USER:$USER /tmp/runner-filesystem.tar.gz
+
+      - name: Upload runner filesystem snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-filesystem
+          path: /tmp/runner-filesystem.tar.gz
+          retention-days: 1
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
