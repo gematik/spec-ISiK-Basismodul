@@ -47,7 +47,7 @@ jobs:
 
       - name: Archive runner filesystem snapshot
         run: |
-          set -euo pipefail
+          set -eu
           archive=/tmp/runner-filesystem.tar.gz
           tar_cmd="tar --warning=no-file-changed \
             --exclude=${archive} \
