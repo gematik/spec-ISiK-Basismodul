@@ -44,57 +44,6 @@ jobs:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: 'https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur'
-
-      - name: Archive runner filesystem snapshot
-        run: |
-          set -eu
-          archive=/tmp/runner-filesystem.tar.gz
-          sudo_cmd=""
-          if command -v sudo >/dev/null 2>&1; then
-            sudo_cmd="sudo"
-          fi
-
-          excludes="\
-            --exclude=${archive} \
-            --exclude=/tmp/runner-filesystem.tar.gz \
-            --exclude=tmp/runner-filesystem.tar.gz \
-            --exclude=./tmp/runner-filesystem.tar.gz \
-            --exclude=/proc \
-            --exclude=/sys \
-            --exclude=/dev \
-            --exclude=/run"
-
-          echo "[snapshot] creating archive at ${archive}"
-          if [ -n "${sudo_cmd}" ]; then
-            ${sudo_cmd} env GZIP=-1 tar \
-              --warning=no-file-changed \
-              --ignore-failed-read \
-              --numeric-owner \
-              --checkpoint=50000 \
-              --checkpoint-action=echo="[snapshot] processed %u entries" \
-              --totals \
-              ${excludes} \
-              -czf "${archive}" /
-            ${sudo_cmd} chown "$(id -un):$(id -gn)" "${archive}"
-          else
-            env GZIP=-1 tar \
-              --warning=no-file-changed \
-              --ignore-failed-read \
-              --numeric-owner \
-              --checkpoint=50000 \
-              --checkpoint-action=echo="[snapshot] processed %u entries" \
-              --totals \
-              ${excludes} \
-              -czf "${archive}" /
-            chown "$(id -un):$(id -gn)" "${archive}" 2>/dev/null || true
-          fi
-
-      - name: Upload runner filesystem snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: runner-filesystem
-          path: /tmp/runner-filesystem.tar.gz
-          retention-days: 1
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
