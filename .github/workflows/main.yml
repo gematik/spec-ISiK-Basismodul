@@ -115,3 +115,15 @@ jobs:
           fi
           git commit -m "chore: update ${GITHUB_REF_NAME} pages"
           git push origin gh-pages
+
+      - name: Announce published URL
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        shell: bash
+        run: |
+          set -eu
+          repo_owner="${GITHUB_REPOSITORY_OWNER}"
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          branch="${GITHUB_REF_NAME}"
+          url="https://${repo_owner}.github.io/${repo_name}/${branch}/"
+          echo "Published to ${url}"
+          printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
