@@ -27,6 +27,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # show used tooling versions  
+      - name: Display Tool & Release Information
+        uses: Gefyra/ig-publisher-action@v1
+        with:
+          variant: with-snapshot-support
+          command: echo
+          args: "=== Starting build with version information displayed above ==="
+
       # Download dependencies via FHIR Package Tool using sushi-config.yaml from Resources
       - name: Download Dependencies
         run: |
