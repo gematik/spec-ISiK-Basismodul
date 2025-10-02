@@ -11,7 +11,7 @@
   <name value="TestImplementationGuide"/>
   <title value="Test Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-10-02T08:53:05+00:00"/>
+  <date value="2025-10-02T09:49:38+00:00"/>
   <description value="A test implementation guide for validating the local FHIR IG Publisher environment"/>
   <packageId value="example.test.ig"/>
   <license value="CC0-1.0"/>
@@ -497,9 +497,29 @@
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementSubscriptionRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;Subscription&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xD;&#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xD;&#xA;  &#xD;&#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xD;&#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xD;&#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
         <reference value="CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur-expanded"/>
       </reference>
       <name value="Akteur &amp;quot;ISiKCapabilityStatementSubscriptionServerAkteur&amp;quot; (Expanded)"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xD;&#xA;  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   &#xD;&#xA;&#xD;&#xA;  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.&#xD;&#xA;Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. &#xD;&#xA;Der `MODE`-Parameter kann ignoriert werden.  &#xD;&#xA;Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). &#xD;&#xA;Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xD;&#xA;wird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  &#xD;&#xA;&#xD;&#xA;Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen &#xD;&#xA;und die Versionsnummer angeben.   &#xD;&#xA;Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.&#xD;&#xA;Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.&#xD;&#xA;&#xD;&#xA;Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. &#xD;&#xA;Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, &#xD;&#xA;sofern diese in der Instanz implementiert wurden.  &#xD;&#xA;&#xD;&#xA;Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur"/>
+      </reference>
+      <name value="Akteur &amp;quot;ISiKCapabilityStatementSubscriptionServerAkteur&amp;quot;"/>
       <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xD;&#xA;  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   &#xD;&#xA;&#xD;&#xA;  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.&#xD;&#xA;Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. &#xD;&#xA;Der `MODE`-Parameter kann ignoriert werden.  &#xD;&#xA;Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). &#xD;&#xA;Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xD;&#xA;wird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  &#xD;&#xA;&#xD;&#xA;Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen &#xD;&#xA;und die Versionsnummer angeben.   &#xD;&#xA;Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.&#xD;&#xA;Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.&#xD;&#xA;&#xD;&#xA;Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. &#xD;&#xA;Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, &#xD;&#xA;sofern diese in der Instanz implementiert wurden.  &#xD;&#xA;&#xD;&#xA;Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."/>
     </resource>
     <resource>
