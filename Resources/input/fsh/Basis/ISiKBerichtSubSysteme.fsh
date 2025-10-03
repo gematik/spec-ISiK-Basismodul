@@ -219,6 +219,8 @@ Title: "Patient Thomas Müller"
 Description: "Patient mit hypertensivem Notfall, vorbereitet zur Verlegung auf die ICU"
 Usage: #inline
 * id = "11c3de2f-d461-4063-a0c2-fde122e76a79"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Patient</h3>  <div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div>  <div><strong>Name:</strong><span> Thomas <b>MÜLLER </b></span></div>  <div><strong>Geschlecht:</strong><span>male</span></div>  <div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div>    </div>"
 * meta.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
 * identifier[Patientennummer].system = "https://example.org/fhir/sid/pid"
 * identifier[Patientennummer].value = "1234567890"
@@ -233,6 +235,8 @@ Usage: #inline
 Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
 Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
 * id = "880d8c69-fc05-4e1f-8203-a8ff40007f84"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3>  <div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div>  <div><strong>Status:</strong><span>FINAL</span></div>  <div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div>    <div><strong>Messwerte:</strong><table style=\"border-collapse: collapse; width: 100%;\"><thead><tr style=\"background-color: #f2f2f2;\"><th style=\"border: 1px solid #ddd; padding: 8px;\">Parameter</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Wert</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Einheit</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Systolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>210</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Diastolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>115</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>  <span>Mittlerer arterieller Druck</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>140</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr></tbody></table></div>    </div>"
 * status = #final
 * subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * effectiveDateTime = "2025-07-22T14:10:00+02:00"
@@ -248,6 +252,8 @@ InstanceOf: Procedure
 Usage: #inline
 Title: "Beatmung - ICU-Aufnahme"
 * id = "61a2e9af-88f9-4ee2-a97f-c136530aadba"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Prozedur</h3>    <div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div>  <div><strong>Status:</strong><span>COMPLETED</span></div>  <div><strong>Kategorie:</strong><span><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></span></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div>            </div>"
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
 * code = $sct#4764004 "Jet ventilation procedure (procedure)"
 * status = #completed
@@ -260,6 +266,8 @@ InstanceOf: Observation
 Usage: #inline
 Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
 * id = "32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3>  <div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div>  <div><strong>Status:</strong><span>FINAL</span></div>  <div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div>  <div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div>    <div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div>  </div>"
 * partOf = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
 * status = #final
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
@@ -272,7 +280,8 @@ Instance: CompositionExampleIntensivstation
 InstanceOf: ISiKBerichtSubSysteme
 Usage: #inline
 * id = "54d0804f-c770-4b61-a175-28fa1875b2a9"
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
+* text.status = #extensions
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100</h2>  <div><strong>Dokument-ID:</strong><span>urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9</span><span> (urn:ietf:rfc:3986)</span></div>  <div><strong>Status:</strong><span>final</span></div>  <div><strong>Dokumenttyp:</strong><span><span>Verlegungsbericht</span><span> (http://dvmd.de/fhir/CodeSystem/kdl)</span></span></div>  <div><strong>Erstellt am:</strong><span>21.07.2025 00:00</span></div>  <div><strong>Autor:</strong><ul><li><span>Dr. Alenia Vogt</span></li></ul></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Fall:</strong><span>urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41</span></div> </div>"
 * identifier[0].type = $v2-0203#FILL
 * identifier[=].system = "urn:ietf:rfc:3986"
 * identifier[=].value = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
@@ -283,26 +292,31 @@ Usage: #inline
 * author
   * display = "Dr. Alenia Vogt"
 * title = "Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100"
-* section
-  * title = "Patient - Herrn Thomas Müller (1965-04-11)"
-  * text[0].status = #generated
-  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
-* section
-  * title = "Blutdruckmessung vom 22.07.2025 - #1"
-  * text[0].status = #generated
-  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84)
-* section
-  * title = "Beatmungswerte vom 22.07.2025 - #1"
-  * text[0].status = #generated
-  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
-* section
+* section[0]
   * title = "Beatmungswerte (Unterstützungsdruck) vom 22.07.2025 - #1"
-  * text[0].status = #generated
-  * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464)
+  * text.status = #generated
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><h3>Observation</h3>    <div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div>    <div><strong>Status:</strong><span>FINAL</span></div>    <div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div>    <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div>    <div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div>        <div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div>    </div></div>"
+  * entry[0] = Reference(urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464)
+* section[+]
+  * title = "Patient"
+  * text.status = #generated
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Patient</h3>    <div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div>    <div><strong>Name:</strong><span> Thomas <b>MÜLLER </b></span></div>    <div><strong>Geschlecht:</strong><span>male</span></div>    <div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div>        </div>"
+  * entry[0] = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
+* section[+]
+  * title = "Encounter"
+  * text.status = #generated
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Encounter</h2>    <div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div>    <div><strong>Status:</strong><span>in-progress</span></div>    <div><strong>Kontaktart:</strong><span>inpatient encounter</span></div>    <div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div>    <div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div>    <div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div>    <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div>        </div>"
+  * entry[0] = Reference(urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41)
+* section[+]
+  * title = "Observation"
+  * text.status = #generated
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3>    <div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div>    <div><strong>Status:</strong><span>FINAL</span></div>    <div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div>    <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div>        <div><strong>Messwerte:</strong><table style=\"border-collapse: collapse; width: 100%;\"><thead><tr style=\"background-color: #f2f2f2;\"><th style=\"border: 1px solid #ddd; padding: 8px;\">Parameter</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Wert</th><th style=\"border: 1px solid #ddd; padding: 8px;\">Einheit</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>    <span>Systolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>210</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>    <span>Diastolisch</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>115</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>    <span>Mittlerer arterieller Druck</span></span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>140</span></td><td style=\"border: 1px solid #ddd; padding: 8px;\"><span>mmHg</span></td></tr></tbody></table></div>        </div>"
+  * entry[0] = Reference(urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84)
+* section[+]
+  * title = "Procedure"
+  * text.status = #generated
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Prozedur</h3>        <div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div>    <div><strong>Status:</strong><span>COMPLETED</span></div>    <div><strong>Kategorie:</strong><span><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></span></div>    <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>        <div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div>                        </div>"
+  * entry[0] = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
 
 Instance: ICUEncounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -310,6 +324,8 @@ Usage: #inline
 Title: "ICU Aufenthalt - Thomas Müller"
 Description: "Intensivstations-Aufenthalt für Patient Thomas Müller mit hypertensivem Notfall"
 * id = "88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Encounter</h2>  <div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div>  <div><strong>Status:</strong><span>in-progress</span></div>  <div><strong>Kontaktart:</strong><span>inpatient encounter</span></div>  <div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div>  <div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div>  <div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div>    </div>"
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://example.org/fhir/sid/encounter-id"
 * identifier.value = "ICU-2025-001"
