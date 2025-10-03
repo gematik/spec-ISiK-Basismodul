@@ -234,7 +234,7 @@ Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
 Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
 * id = "880d8c69-fc05-4e1f-8203-a8ff40007f84"
 * status = #final
-* subject = Reference(CriticalPatient)
+* subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * effectiveDateTime = "2025-07-22T14:10:00+02:00"
 * component[SystolicBP]
   * valueQuantity = 210 'mm[Hg]' "mmHg"
@@ -251,7 +251,7 @@ Title: "Beatmung - ICU-Aufnahme"
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
 * code = $sct#4764004 "Jet ventilation procedure (procedure)"
 * status = #completed
-* subject = Reference(CriticalPatient)
+* subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * performedPeriod
   * start = "2025-07-21"
 
@@ -260,11 +260,11 @@ InstanceOf: Observation
 Usage: #inline
 Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
 * id = "32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"
-* partOf = Reference(VentilationProcedure)
+* partOf = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
 * status = #final
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
 * code = $loinc#20079-0 "Pressure support setting Ventilator"
-* subject = Reference(CriticalPatient)
+* subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * effectiveDateTime = "2025-07-21T00:00:00+02:00"
 * valueQuantity = 6 'cm[H2O]' "cm[H2O]"
 
@@ -277,8 +277,8 @@ Usage: #inline
 * identifier[=].system = "urn:ietf:rfc:3986"
 * identifier[=].value = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
 * type = $kdl#AD010116 "Verlegungsbericht"
-* subject = Reference(CriticalPatient)
-* encounter = Reference(ICUEncounter)
+* subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
+* encounter = Reference(urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41)
 * date = "2025-07-21T00:00:00+02:00"
 * author
   * display = "Dr. Alenia Vogt"
@@ -287,22 +287,22 @@ Usage: #inline
   * title = "Patient - Herrn Thomas Müller (1965-04-11)"
   * text[0].status = #generated
   * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(CriticalPatient)
+  * entry = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * section
   * title = "Blutdruckmessung vom 22.07.2025 - #1"
   * text[0].status = #generated
   * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(BloodPressureObservation)
+  * entry = Reference(urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84)
 * section
   * title = "Beatmungswerte vom 22.07.2025 - #1"
   * text[0].status = #generated
   * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(VentilationProcedure)
+  * entry = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
 * section
   * title = "Beatmungswerte (Unterstützungsdruck) vom 22.07.2025 - #1"
   * text[0].status = #generated
   * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
-  * entry = Reference(VentilationPressureObservation)
+  * entry = Reference(urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464)
 
 Instance: ICUEncounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
@@ -317,7 +317,7 @@ Description: "Intensivstations-Aufenthalt für Patient Thomas Müller mit hypert
 * class = $v3-ActCode#IMP "inpatient encounter"
 * type[Kontaktebene] = $Kontaktebene#abteilungskontakt "Abteilungskontakt"
 * serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
-* subject = Reference(CriticalPatient)
+* subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * period.start = "2025-07-21T00:00:00+02:00"
 * serviceProvider.identifier.system = "https://example.org/fhir/sid/abteilungsid"
 * serviceProvider.identifier.value = "ICU-001"
