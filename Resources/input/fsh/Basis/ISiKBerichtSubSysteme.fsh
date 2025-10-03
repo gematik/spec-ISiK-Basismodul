@@ -274,6 +274,7 @@ Usage: #example
 * identifier[=].value = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
 * type = $kdl#AD010116 "Verlegungsbericht"
 * subject = Reference(CriticalPatient)
+* encounter = Reference(ICUEncounter)
 * date = "2025-07-21T00:00:00+02:00"
 * author
   * display = "Dr. Alenia Vogt"
@@ -298,3 +299,49 @@ Usage: #example
   * text[0].status = #generated
   * text[=].div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
   * entry = Reference(VentilationPressureObservation)
+
+Instance: ICUEncounter
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+Title: "ICU Aufenthalt - Thomas Müller"
+Description: "Intensivstations-Aufenthalt für Patient Thomas Müller mit hypertensivem Notfall"
+* identifier.type = $v2-0203#VN
+* identifier.system = "https://example.org/fhir/sid/encounter-id"
+* identifier.value = "ICU-2025-001"
+* status = #in-progress
+* class = $v3-ActCode#IMP "inpatient encounter"
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt "Abteilungskontakt"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* subject = Reference(CriticalPatient)
+* period.start = "2025-07-21T00:00:00+02:00"
+* serviceProvider.identifier.system = "https://example.org/fhir/sid/abteilungsid"
+* serviceProvider.identifier.value = "ICU-001"
+* serviceProvider.display = "Intensivstation - Innere Medizin"
+
+Instance: BundleExampleIntensivstation
+InstanceOf: ISiKBerichtBundle
+Usage: #example
+Title: "Bundle Intensivstations-Verlegungsbericht"
+Description: "Beispiel für ein Bundle mit Intensivstations-Verlegungsbericht für Patient Thomas Müller inklusive kritischer Vitalparameter und Beatmungsparameter"
+* identifier[0].type = $v2-0203#FILL
+* identifier[=].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:uuid:a8f12c45-8e61-4f32-b123-456789abcdef"
+* timestamp = "2025-07-21T00:00:00+02:00"
+* entry[Composition]
+  * resource = CompositionExampleIntensivstation
+  * fullUrl = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
+* entry[Patient]
+  * resource = CriticalPatient
+  * fullUrl = "urn:uuid:critical-patient-001"
+* entry[Encounter]
+  * resource = ICUEncounter
+  * fullUrl = "urn:uuid:icu-encounter-001"
+* entry[+]
+  * resource = BloodPressureObservation
+  * fullUrl = "urn:uuid:bp-observation-001"
+* entry[+]
+  * resource = VentilationProcedure
+  * fullUrl = "urn:uuid:ventilation-procedure-001"
+* entry[+]
+  * resource = VentilationPressureObservation
+  * fullUrl = "urn:uuid:ventilation-pressure-obs-001"
