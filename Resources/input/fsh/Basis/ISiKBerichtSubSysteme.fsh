@@ -218,7 +218,7 @@ InstanceOf: ISiKPatient
 Title: "Patient Thomas M체ller"
 Description: "Patient mit hypertensivem Notfall, vorbereitet zur Verlegung auf die ICU"
 Usage: #inline
-* id = "critical-patient"
+* id = "11c3de2f-d461-4063-a0c2-fde122e76a79"
 * meta.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
 * identifier[Patientennummer].system = "https://example.org/fhir/sid/pid"
 * identifier[Patientennummer].value = "1234567890"
@@ -232,6 +232,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #inline
 Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
 Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
+* id = "880d8c69-fc05-4e1f-8203-a8ff40007f84"
 * status = #final
 * subject = Reference(CriticalPatient)
 * effectiveDateTime = "2025-07-22T14:10:00+02:00"
@@ -246,6 +247,7 @@ Instance: VentilationProcedure
 InstanceOf: Procedure
 Usage: #inline
 Title: "Beatmung - ICU-Aufnahme"
+* id = "61a2e9af-88f9-4ee2-a97f-c136530aadba"
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
 * code = $sct#4764004 "Jet ventilation procedure (procedure)"
 * status = #completed
@@ -257,6 +259,7 @@ Instance: VentilationPressureObservation
 InstanceOf: Observation
 Usage: #inline
 Title: "Unterst체tzungsdruck Beatmung - ICU-Aufnahme"
+* id = "32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"
 * partOf = Reference(VentilationProcedure)
 * status = #final
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
@@ -268,6 +271,7 @@ Title: "Unterst체tzungsdruck Beatmung - ICU-Aufnahme"
 Instance: CompositionExampleIntensivstation
 InstanceOf: ISiKBerichtSubSysteme
 Usage: #inline
+* id = "54d0804f-c770-4b61-a175-28fa1875b2a9"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * identifier[0].type = $v2-0203#FILL
 * identifier[=].system = "urn:ietf:rfc:3986"
@@ -305,6 +309,7 @@ InstanceOf: ISiKKontaktGesundheitseinrichtung
 Usage: #inline
 Title: "ICU Aufenthalt - Thomas M체ller"
 Description: "Intensivstations-Aufenthalt f체r Patient Thomas M체ller mit hypertensivem Notfall"
+* id = "88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"
 * identifier.type = $v2-0203#VN
 * identifier.system = "https://example.org/fhir/sid/encounter-id"
 * identifier.value = "ICU-2025-001"
@@ -333,16 +338,16 @@ Description: "Beispiel f체r ein Bundle mit Intensivstations-Verlegungsbericht f�
   * fullUrl = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
 * entry[+]
   * resource = CriticalPatient
-  * fullUrl = "urn:uuid:critical-patient-001"
+  * fullUrl = "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79"
 * entry[+]
   * resource = ICUEncounter
-  * fullUrl = "urn:uuid:icu-encounter-001"
+  * fullUrl = "urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"
 * entry[+]
   * resource = BloodPressureObservation
-  * fullUrl = "urn:uuid:bp-observation-001"
+  * fullUrl = "urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84"
 * entry[+]
   * resource = VentilationProcedure
-  * fullUrl = "urn:uuid:ventilation-procedure-001"
+  * fullUrl = "urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba"
 * entry[+]
   * resource = VentilationPressureObservation
-  * fullUrl = "urn:uuid:ventilation-pressure-obs-001"
+  * fullUrl = "urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"

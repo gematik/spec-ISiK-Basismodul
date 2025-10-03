@@ -24,7 +24,7 @@
     {
       "resource": {
         "resourceType": "Composition",
-        "id": "CompositionExampleIntensivstation",
+        "id": "54d0804f-c770-4b61-a175-28fa1875b2a9",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"
@@ -57,10 +57,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/critical-patient"
+          "reference": "Patient/11c3de2f-d461-4063-a0c2-fde122e76a79"
         },
         "encounter": {
-          "reference": "Encounter/ICUEncounter"
+          "reference": "Encounter/88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"
         },
         "date": "2025-07-21T00:00:00+02:00",
         "author": [
@@ -78,7 +78,7 @@
             },
             "entry": [
               {
-                "reference": "Observation/VentilationPressureObservation"
+                "reference": "Observation/32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"
               }
             ]
           }
@@ -89,7 +89,7 @@
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "critical-patient",
+        "id": "11c3de2f-d461-4063-a0c2-fde122e76a79",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
@@ -121,12 +121,12 @@
         "gender": "male",
         "birthDate": "1965-04-11"
       },
-      "fullUrl": "urn:uuid:critical-patient-001"
+      "fullUrl": "urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79"
     },
     {
       "resource": {
         "resourceType": "Encounter",
-        "id": "ICUEncounter",
+        "id": "88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
@@ -173,7 +173,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/critical-patient"
+          "reference": "Patient/11c3de2f-d461-4063-a0c2-fde122e76a79"
         },
         "period": {
           "start": "2025-07-21T00:00:00+02:00"
@@ -186,12 +186,12 @@
           "display": "Intensivstation - Innere Medizin"
         }
       },
-      "fullUrl": "urn:uuid:icu-encounter-001"
+      "fullUrl": "urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "BloodPressureObservation",
+        "id": "880d8c69-fc05-4e1f-8203-a8ff40007f84",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"
@@ -267,16 +267,16 @@
         ],
         "status": "final",
         "subject": {
-          "reference": "Patient/critical-patient"
+          "reference": "Patient/11c3de2f-d461-4063-a0c2-fde122e76a79"
         },
         "effectiveDateTime": "2025-07-22T14:10:00+02:00"
       },
-      "fullUrl": "urn:uuid:bp-observation-001"
+      "fullUrl": "urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84"
     },
     {
       "resource": {
         "resourceType": "Procedure",
-        "id": "VentilationProcedure",
+        "id": "61a2e9af-88f9-4ee2-a97f-c136530aadba",
         "category": {
           "coding": [
             {
@@ -297,21 +297,21 @@
         },
         "status": "completed",
         "subject": {
-          "reference": "Patient/critical-patient"
+          "reference": "Patient/11c3de2f-d461-4063-a0c2-fde122e76a79"
         },
         "performedPeriod": {
           "start": "2025-07-21"
         }
       },
-      "fullUrl": "urn:uuid:ventilation-procedure-001"
+      "fullUrl": "urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba"
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "VentilationPressureObservation",
+        "id": "32bb8c8a-418c-4fc2-b1c7-c33f1a99a464",
         "partOf": [
           {
-            "reference": "Procedure/VentilationProcedure"
+            "reference": "Procedure/61a2e9af-88f9-4ee2-a97f-c136530aadba"
           }
         ],
         "status": "final",
@@ -336,7 +336,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/critical-patient"
+          "reference": "Patient/11c3de2f-d461-4063-a0c2-fde122e76a79"
         },
         "effectiveDateTime": "2025-07-21T00:00:00+02:00",
         "valueQuantity": {
@@ -346,7 +346,7 @@
           "unit": "cm[H2O]"
         }
       },
-      "fullUrl": "urn:uuid:ventilation-pressure-obs-001"
+      "fullUrl": "urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"
     }
   ]
 }
