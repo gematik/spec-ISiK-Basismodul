@@ -217,7 +217,7 @@ Instance: CriticalPatient
 InstanceOf: ISiKPatient
 Title: "Patient Thomas Müller"
 Description: "Patient mit hypertensivem Notfall, vorbereitet zur Verlegung auf die ICU"
-Usage: #example
+Usage: #inline
 * id = "critical-patient"
 * meta.profile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
 * identifier[Patientennummer].system = "https://example.org/fhir/sid/pid"
@@ -229,7 +229,7 @@ Usage: #example
 
 Instance: BloodPressureObservation
 InstanceOf: ISiKBlutdruckSystemischArteriell
-Usage: #example
+Usage: #inline
 Title: "Hypertensiver Blutdruck - ICU-Aufnahme"
 Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vor Verlegung auf Intensivstation."
 * status = #final
@@ -244,7 +244,7 @@ Description: "Kritischer Blutdruckwert (Systole 210 / Diastole 115 / MAP 140) vo
 
 Instance: VentilationProcedure
 InstanceOf: Procedure
-Usage: #example
+Usage: #inline
 Title: "Beatmung - ICU-Aufnahme"
 * category = $sct#40617009 "Artificial ventilation (regime/therapy)"
 * code = $sct#4764004 "Jet ventilation procedure (procedure)"
@@ -255,7 +255,7 @@ Title: "Beatmung - ICU-Aufnahme"
 
 Instance: VentilationPressureObservation
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
 * partOf = Reference(VentilationProcedure)
 * status = #final
@@ -267,7 +267,7 @@ Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
 
 Instance: CompositionExampleIntensivstation
 InstanceOf: ISiKBerichtSubSysteme
-Usage: #example
+Usage: #inline
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 * identifier[0].type = $v2-0203#FILL
 * identifier[=].system = "urn:ietf:rfc:3986"
@@ -302,7 +302,7 @@ Usage: #example
 
 Instance: ICUEncounter
 InstanceOf: ISiKKontaktGesundheitseinrichtung
-Usage: #example
+Usage: #inline
 Title: "ICU Aufenthalt - Thomas Müller"
 Description: "Intensivstations-Aufenthalt für Patient Thomas Müller mit hypertensivem Notfall"
 * identifier.type = $v2-0203#VN
@@ -323,17 +323,18 @@ InstanceOf: ISiKBerichtBundle
 Usage: #example
 Title: "Bundle Intensivstations-Verlegungsbericht"
 Description: "Beispiel für ein Bundle mit Intensivstations-Verlegungsbericht für Patient Thomas Müller inklusive kritischer Vitalparameter und Beatmungsparameter"
-* identifier[0].type = $v2-0203#FILL
-* identifier[=].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:uuid:a8f12c45-8e61-4f32-b123-456789abcdef"
+* identifier
+  * type = $v2-0203#FILL
+  * system = "urn:ietf:rfc:3986"
+  * value = "urn:uuid:a8f12c45-8e61-4f32-b123-456789abcdef"
 * timestamp = "2025-07-21T00:00:00+02:00"
-* entry[Composition]
+* entry[+]
   * resource = CompositionExampleIntensivstation
   * fullUrl = "urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9"
-* entry[Patient]
+* entry[+]
   * resource = CriticalPatient
   * fullUrl = "urn:uuid:critical-patient-001"
-* entry[Encounter]
+* entry[+]
   * resource = ICUEncounter
   * fullUrl = "urn:uuid:icu-encounter-001"
 * entry[+]
