@@ -264,7 +264,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * doseAndRate 
-    * ^short = "Angaben zu Dosis und Rate"
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
