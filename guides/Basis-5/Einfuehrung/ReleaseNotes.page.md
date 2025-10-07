@@ -35,6 +35,9 @@ Datum: tbd
 * `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
+* `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
+* `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
+* `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompabilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren.
 
 
 
@@ -388,4 +391,5 @@ Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
 ----
+
 
