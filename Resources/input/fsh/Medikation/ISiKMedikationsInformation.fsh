@@ -164,7 +164,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert."
 * dosage  only DosageDE  
   * text 
-    * ^short = "Freitext-Dosierungsanweisungen"
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
@@ -176,7 +175,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * patientInstruction MS
     * ^short = "besondere Anweisungen für den Patienten"
   * timing 
-    * ^short = "Angaben zum Timing"
     * event MS
       * ^short = "fester Zeitpunkt"
     * repeat MS
@@ -264,7 +262,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * doseAndRate 
-    * ^short = "Angaben zu Dosis und Rate"
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
