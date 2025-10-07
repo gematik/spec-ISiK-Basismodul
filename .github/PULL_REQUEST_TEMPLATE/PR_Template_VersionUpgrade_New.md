@@ -39,6 +39,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 
 ## Archive IG
 
+**Archiving needs to be done before publishing the IGs**
 -  Provide / Archive the IG in the corresponding _gh-pages_ branch of the GitHub project.
   - Checkout the Branch (no need to merge it later). 
   - Export from Simplifier via _-> Guides -> Expand the Modul ... -> Export_
