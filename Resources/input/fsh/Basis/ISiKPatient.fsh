@@ -14,12 +14,14 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)
 * [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
-* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)  
+* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
+* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)  
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
 * insert CommonElements
+* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPatient|1.1.1)
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
