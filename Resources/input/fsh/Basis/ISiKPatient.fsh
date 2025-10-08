@@ -17,7 +17,7 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 * [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
 * [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)
 
-Es ist zu beachten, dass das Profil ISiKPatient NICHT kompatibel mit folgenden Profilen ist:
+Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:
 
 * [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen."
 
