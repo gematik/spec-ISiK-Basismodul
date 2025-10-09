@@ -239,6 +239,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
+* deceased MS
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, sollten den Wert dieses Elements vor der weiteren Verarbeitung prüfen."
 * address MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
