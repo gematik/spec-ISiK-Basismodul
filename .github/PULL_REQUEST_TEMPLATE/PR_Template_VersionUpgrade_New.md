@@ -31,6 +31,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - [ ] With the corresponding version number, and
   - [ ] The Release notes (from all Igs with changes) 
   - [ ] Unlist the old package by _-> clicking on the old package_, _-> go to Administration_ and _-> click on Unlist_
+- [ ] Archive all the changed IGs. Use the steps described below
 - [ ] Publish all the IGs **with changes** in Simplifier. Do the following for each one:
   - [ ]  Provide a version in the IG title --> (x.x.x)
   - [ ]  Scope the IG to the published package
