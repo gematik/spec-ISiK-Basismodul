@@ -45,7 +45,7 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
   - Checkout the Branch (no need to merge it later). 
   - Export from Simplifier via _-> Guides -> Expand the Modul ... -> Export_
   - Add the zip (other tasks are automated by action called "Unzip and Update IG Version in webpage", in order to provide the Archige in the following page . https://gematik.github.io/spec-ISiK-Basismodul/index.html)
-- If ISiK Basismodul was updated all depending Modules should be updated  with a renewed dependency to the incremented Basismodul version - possibly including and closing technical corrections
+
 
 
 ## Finished
