@@ -8,7 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: XX.XX.2025
 
-* `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt.
+* `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888
 
 ## Version 5.0.0
 
