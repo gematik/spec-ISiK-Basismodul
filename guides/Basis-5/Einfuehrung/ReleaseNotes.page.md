@@ -38,6 +38,7 @@ Datum: tbd
 * `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
 * `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
 * `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompabilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren.
+* `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweilgen Modifier-Elements ein bedingtes Must-Support hinzugefügt um die korrekte Verarbeitung der Ressourcen gewährleisten zu können
 
 
 
@@ -391,5 +392,6 @@ Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
 ----
+
 
 
