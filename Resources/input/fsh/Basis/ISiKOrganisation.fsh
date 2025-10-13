@@ -90,6 +90,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
 * type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
 * type[Fachbereich] from $IHEpracticeSettingVS (required)
+  * ^comment = "Motivation: Ein Fachbereich muss als solcher hinsichtlich des Typs kodiert werden."
 * type[Fachbereich].coding.system 1.. MS
 * type[Fachbereich].coding.code 1.. MS
 * name  MS
@@ -111,6 +112,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * ^short = "Postfachadresse"
+  * ^comment = "Adresse, die nur für postalische Zustellung genutzt werden kann."
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #postal
@@ -124,6 +127,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * postalCode 1.. MS
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
+  * ^short = "Straßenanschrift"
+  * ^comment = "Wohn- oder Aufenthaltsort des Patienten"
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both
@@ -214,7 +219,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
 * type ^slicing.ordered = false
 * type contains
   organisationstyp 0..1 MS and
-  EinrichtungsArt 0..1 and
+  EinrichtungsArt 0..1 MS and
   ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_typeVS (required)
   * ^short = "Allgemeiner Organisationstyp"
@@ -250,6 +255,8 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
     Strassenanschrift 0..* MS and
     Postfach 0..* MS
 * address[Postfach] only AddressDeBasis
+  * ^short = "Postfachadresse"
+  * ^comment = "Adresse, die nur für postalische Zustellung genutzt werden kann."
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #postal
@@ -263,6 +270,8 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * postalCode 1.. MS
   * country 1.. MS
 * address[Strassenanschrift] only AddressDeBasis
+  * ^short = "Straßenanschrift"
+  * ^comment = "Wohn- oder Aufenthaltsort des Patienten"
   * obeys address-cnt-2or3-char
   * extension[Stadtteil] MS
   * ^patternAddress.type = #both

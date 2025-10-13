@@ -40,6 +40,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
   * ^patternIdentifier.type = $v2-0203#PRN
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
   * type 1..
 * name MS
   * ^slicing.discriminator.type = #pattern

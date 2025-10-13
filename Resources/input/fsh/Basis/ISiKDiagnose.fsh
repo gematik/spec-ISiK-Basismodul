@@ -99,7 +99,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * onset[x] only dateTime or Age
 * onsetDateTime MS
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
 * onsetAge MS 
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
   * extension[Lebensphase-Beginn]
     * ^short = "Lebensphase des Erkrankungsbeginns"
@@ -113,11 +115,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   so MUSS dieses System die Information NICHT abbilden. 
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * abatementAge MS
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
   * extension[Lebensphase-Ende]
     * ^short = "Lebensphase des Erkrankungsendes"
     * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
 * abatementDateTime MS
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
 * recordedDate 1.. MS
   * ^short = "Dokumentationsdatum"
   * ^comment = "Datum, an dem die Diagnose dokumentiert wurde.   

@@ -62,15 +62,18 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
 * extension[plannedStartDate]
   * ^short = "geplantes Aufnahmedatum"
+  * ^comment = "**Motivstion MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben."
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate named plannedEndDate 0..1 MS
 * extension[plannedEndDate]
   * ^short = "geplantes Entlassdatum"
+  * ^comment = "**Motivstion MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen."
 * identifier 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains Aufnahmenummer 0..1 MS
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
+  * ^comment = "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert."
   * type 1.. MS
     * coding 1.. MS
       * ^slicing.discriminator.type = #pattern
@@ -179,6 +182,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
@@ -307,9 +311,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
+  * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
-    * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
     * reference MS
       * ^short = "Location-Link"
       * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
@@ -342,6 +346,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Zimmer]
+  * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
     * reference MS
@@ -376,6 +381,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Bettenstellplatz]
+  * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
     * reference MS
@@ -411,8 +417,11 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * serviceProvider MS
+  * ^comment = "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden."
   * identifier 1.. MS
+    * ^comment = "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein."
   * display 1.. MS
+    * ^comment = "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein."
 * appointment MS
 * appointment  ^comment = "
   
