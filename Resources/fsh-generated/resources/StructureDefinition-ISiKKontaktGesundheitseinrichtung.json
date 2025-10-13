@@ -150,6 +150,7 @@
         "path": "Encounter.extension",
         "sliceName": "plannedStartDate",
         "short": "geplantes Aufnahmedatum",
+        "comment": "**Motivstion MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben.",
         "min": 0,
         "max": "1",
         "type": [
@@ -167,6 +168,7 @@
         "path": "Encounter.extension",
         "sliceName": "plannedEndDate",
         "short": "geplantes Entlassdatum",
+        "comment": "**Motivstion MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -198,6 +200,7 @@
         "id": "Encounter.identifier:Aufnahmenummer",
         "path": "Encounter.identifier",
         "sliceName": "Aufnahmenummer",
+        "comment": "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.",
         "min": 0,
         "max": "1",
         "patternIdentifier": {
@@ -457,6 +460,7 @@
         "id": "Encounter.subject",
         "path": "Encounter.subject",
         "short": "Patientenbezug",
+        "comment": "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
         "min": 1,
         "mustSupport": true
       },
@@ -717,6 +721,7 @@
         "id": "Encounter.location:Zimmer",
         "path": "Encounter.location",
         "sliceName": "Zimmer",
+        "comment": "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -809,6 +814,7 @@
         "id": "Encounter.location:Bettenstellplatz",
         "path": "Encounter.location",
         "sliceName": "Bettenstellplatz",
+        "comment": "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -902,6 +908,7 @@
         "id": "Encounter.location:Station",
         "path": "Encounter.location",
         "sliceName": "Station",
+        "comment": "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -910,7 +917,6 @@
         "id": "Encounter.location:Station.location",
         "path": "Encounter.location.location",
         "short": "Aufenthaltsort",
-        "comment": "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "mustSupport": true
       },
       {
@@ -994,17 +1000,20 @@
       {
         "id": "Encounter.serviceProvider",
         "path": "Encounter.serviceProvider",
+        "comment": "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden.",
         "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider.identifier",
         "path": "Encounter.serviceProvider.identifier",
+        "comment": "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider.display",
         "path": "Encounter.serviceProvider.display",
+        "comment": "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein.",
         "min": 1,
         "mustSupport": true
       }
