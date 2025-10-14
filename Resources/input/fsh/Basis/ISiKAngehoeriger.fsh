@@ -41,7 +41,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 
 * name MS
-* name
   * ^short = "Offizieller Name der angehörigen Person"
   * ^comment = "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, 
   ist die Angabe des offiziellen Namens relevant.
@@ -54,6 +53,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Name 1..1 MS 
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
+  * ^short = "Slice für den offizieller Name der angehörigen Person"
   * ^comment = "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.
   **Begründung MS:** Siehe untergeordnete Elemente"
   * use MS
@@ -76,12 +76,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^short = "Offizielle Adresse der angehörigen Person"
   * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
-* address MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  //* ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
+
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS

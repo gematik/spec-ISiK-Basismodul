@@ -96,10 +96,13 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * ^short = "Beginn-Zeitpunkt"
   * ^comment = "**Begründung MS:** Der dokumentierte Beginn unterstützt die medizinische Bewertung, ob eine Allergie aktuell relevant ist, und wird in CapabilityStatements als Suchparameter gefordert."
 * onsetDateTime MS
+  * ^short = "Beginn der Allergie/Unvertraeglichkeit"
   * ^comment = "**Begründung MS:** Diese Variante erlaubt es, den Beginn als exakten Zeitstempel zu übertragen, wie er in Primärsystemen üblich ist."
 * onsetAge MS
+  * ^short = "Alter beim Beginn der Allergie/Unvertraeglichkeit"
   * ^comment = "**Begründung MS:** Für lang zurückliegende Ereignisse wird der Beginn häufig nur als Alter dokumentiert"
 * onsetString MS
+  * ^short = "Freitextinformation zum Beginn der Allergie/Unvertraeglichkeit"
   * ^comment = "**Begründung MS:** Steht keine strukturierte Angabe zur Verfügung, verhindert eine Freitextbeschreibung des Beginns Informationsverlust."
 * recordedDate MS
   * ^short = "Datum an dem die Allergie/Unverträglichkeit aufgezeichnet wurde"
@@ -115,6 +118,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * reference MS
   * display MS
 * note MS
+  * ^short = "Anmerkung"
   * ^comment = "**Begründung MS:** Anmerkungen transportieren kontextuelle Details (z. B. individuelle Auslöser oder Maßnahmen), die in Codes nicht erfasst werden können."
   * author[x] MS
   * author[x] only Reference

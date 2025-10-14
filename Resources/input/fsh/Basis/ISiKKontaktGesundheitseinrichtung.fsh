@@ -68,6 +68,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * ^short = "geplantes Entlassdatum"
   * ^comment = "**Motivstion MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen."
 * identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier des Encounter"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -120,6 +121,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   regulatorischen und abrechnungrelevanten Rahmenbedingungen, erfolgt in `type`.  
   Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `class` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
 * type MS
+  * ^comment = "Typ des Encounter"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -165,6 +167,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
 * serviceType 0..1 MS
+  * ^comment = "ServiceType des Encounter"
   * coding 1.. MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"

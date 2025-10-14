@@ -11,13 +11,17 @@ Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (
 * obeys ISiK-docBundle-1
 * type = #document (exactly)
 * type MS
+  * ^short = "Typ des Bundles"
   * ^comment = "**Begründung MS:** Damit das Bundle ein Document-Bundle nach FHIR-Core Spec ist, muss der type auf `document` gesetzt werden."
 * timestamp 1.. MS
+  * ^short = "Datum des Bundles"
   * ^comment = "**Begründung Pflichtfeld:** Ein Datum muss für die korrekte Verarbeitung durch das Zielsystem vorhanden sein."
 * identifier 1.. MS
   * ^short = "Identifier des Berichtsbundles"
   * ^comment = "**Motivation MS:** Zur Identifikation des Berichtbundles muss ein Identifier vom Subsystem mit angegeben werden."
 * entry MS
+  * ^short = "Eintrag pro Ressource"
+  * ^comment = "**Begründung MS:** Alle im Rahmen des Berichtes relevanten Informationen müssen hier referenziert werden."
   * fullUrl 1..1 MS
   * resource 1..1 MS
   * search 0..0

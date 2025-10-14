@@ -21,6 +21,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -45,6 +46,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
   * type 1..
 * name MS
+  * ^comment = "Namen der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -105,6 +107,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * postalCode 1.. MS
   * country 1.. MS
 * gender MS
+  * ^comment = "Geschlecht der Person"
   * ^short = "Administratives Geschlecht"
   * ^short = "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden."
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS
