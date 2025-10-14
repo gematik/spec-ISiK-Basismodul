@@ -1,0 +1,36 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-subscription-ig/ValueSet/FhirMimeTypeVS> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FhirMimeTypeVS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet FhirMimeTypeVS</b></p><a name=\"FhirMimeTypeVS\"> </a><a name=\"hcFhirMimeTypeVS\"> </a><ul><li>Include these codes as defined in <code>urn:ietf:bcp:13</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>application/fhir+json</td><td style=\"color: #cccccc\">application/fhir+json</td></tr><tr><td>application/fhir+xml</td><td style=\"color: #cccccc\">application/fhir+xml</td></tr></table></li></ul></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/isik/ValueSet/FhirMimeTypeVS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:name [ fhir:v "FhirMimeTypeVS"] ; # 
+  fhir:title [ fhir:v "FhirMimeTypeVS"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26"^^xsd:date] ; # 
+  fhir:description [ fhir:v "FHIR Mime Types"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "urn:ietf:bcp:13"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "application/fhir+json" ]
+       ] [
+         fhir:code [ fhir:v "application/fhir+xml" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
