@@ -13,7 +13,7 @@ In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implemen
 |--------|------|------
 | ANF-CON-001  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 34.1.1.3 Resource Server}} | MUSS
 | ANF-CON-002 | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.103.2.1 Resource Server}} | SOLL
-| ANF-CON-003  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type}} | -
+| ANF-CON-003  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type}} | SOLL
 | ANF-CON-004  | {{pagelink:ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md, text:IHE IUA - Abschnitt 3.71.4.1.2.2 Authorization Code grant type}} | MUSS
 | ANF-CON-005  | {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text:ISiK-Ressourcen-Server - Verarbeitung von Autorisierungen}} | MUSS
 | ANF-CON-006  | {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text:FHIR-Ressourcen-Server - Mindestunterstützung Compartment Definition}} | MUSS
