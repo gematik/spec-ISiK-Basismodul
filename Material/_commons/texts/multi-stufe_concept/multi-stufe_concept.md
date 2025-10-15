@@ -4,7 +4,8 @@ Da mit dem 1.7.2024 zwei Stufen von ISiK im Echtbetrieb sein könnten, ist zu kl
 
 Es findet zwar eine jährliche Abkündigung einer veralteten ISiK-Stufe statt – Abkündigung einer Version bedeutet, dass die Version nicht mehr vom PT Data der gematik als Spezifikation gewartet wird –, aber KEIN Verbot der Nutzung dieser Version.
 
-Die Konsequenz ist: Kurzfristig muss ein Parallelbetrieb möglich sein; d. h. wir können die Ablösung einer Stufe im Produktivbetrieb einer Einrichtung nicht empfehlen (insbesondere auf die mögliche Kostenfalle bei Upgrades, s. u.).
+Die Konsequenz ist: Kurzfristig muss ein Parallelbetrieb möglich sein; d. h. wir können die Ablösung einer Stufe im Produktivbetrieb einer Einrichtung nicht empfehlen (insbesondere in Bezug auf möglicherweise entstehende Kosten bei Upgrades, s. u.).
+
 
 ## Szenarien
 In der Folge werden unterschiedliche Szenarien dargestellt, die im Zusammenhang mit dem Produktiveinsatz unterschiedlicher ISiK-Stufen stehen.
