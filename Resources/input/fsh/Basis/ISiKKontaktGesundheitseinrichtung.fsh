@@ -62,7 +62,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
 * extension[plannedStartDate]
   * ^short = "geplantes Aufnahmedatum"
-  * ^comment = "**Motivstion MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben."
+  * ^comment = "**Begründung MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben."
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate named plannedEndDate 0..1 MS
 * extension[plannedEndDate]
   * ^short = "geplantes Entlassdatum"
