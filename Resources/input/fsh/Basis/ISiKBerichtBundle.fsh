@@ -33,7 +33,7 @@ Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (
 * entry contains Composition 1..1 MS
 * entry[Composition]
   * ^short = "Slice zur Hinterlegung einer Composition-Instanz"
-  * ^comment = "Dieses Slice wir explizit aufgeführt, um zu verdeutlichen, dass immer eine Composition-Instanz im Bundle enthalten ist.
+  * ^comment = "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Composition-Instanz im Bundle enthalten ist.
   Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits, dass die erste Ressource im Bundle eine Composition sein muss. Alle daraus referenzierten Ressourcen müssen ebenfalls Teil des Bundle sein."
 * entry[Composition].resource only ISiKBerichtSubSysteme
 * entry contains Patient 1..1 MS
