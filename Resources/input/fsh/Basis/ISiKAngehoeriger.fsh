@@ -53,7 +53,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Name 1..1 MS 
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
-  * ^short = "Slice für den offizieller Name der angehörigen Person"
+  * ^short = "Slice für den offiziellen Namen der angehörigen Person"
   * ^comment = "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.
   **Begründung MS:** Siehe untergeordnete Elemente"
   * use MS
