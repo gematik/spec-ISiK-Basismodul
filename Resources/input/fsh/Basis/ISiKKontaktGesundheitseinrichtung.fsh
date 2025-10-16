@@ -351,7 +351,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status = #active
 * location[Zimmer]
   * ^short = "Slice für das aktive Zimmer"
-  * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
     * reference MS
