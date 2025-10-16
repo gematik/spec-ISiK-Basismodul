@@ -37,11 +37,13 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
+  * ^short = "Einheitliche Fortbildungsnummer für Ärzte in Deutschland"
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
   * ^comment = "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden." 
   // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
+  * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
   * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
   * type 1..

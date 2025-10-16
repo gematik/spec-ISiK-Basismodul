@@ -74,6 +74,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * ^slicing.rules = #open
 * identifier contains Aufnahmenummer 0..1 MS
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
+  * ^short = "Aufnahmenummer"
   * ^comment = "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert."
   * type 1.. MS
     * coding 1.. MS
@@ -167,7 +168,6 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
 * serviceType 0..1 MS
-  * ^comment = "ServiceType des Encounter"
   * coding 1.. MS
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
@@ -314,6 +314,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
+  * ^short = "Slice für die aktive Station"
   * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
@@ -349,6 +350,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Zimmer]
+  * ^short = "Slice für das aktive Zimmer"
   * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
@@ -384,6 +386,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Bettenstellplatz]
+  * ^short = "Slice für das aktive Bett"
   * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
   * location 1.. MS
     * ^short = "Aufenthaltsort"
@@ -420,12 +423,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * serviceProvider MS
+  * ^short = "Zuständige ServiceProvider"
   * ^comment = "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden."
   * identifier 1.. MS
     * ^comment = "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein."
   * display 1.. MS
     * ^comment = "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein."
 * appointment MS
+* appointment ^short = "Verknüpfung mit einem Termin"
 * appointment  ^comment = "
   
 **Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. 

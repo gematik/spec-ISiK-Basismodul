@@ -81,6 +81,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als 
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
 * operationalStatus from $v2-0116-BedStatus
+  * ^comment = "Belegungsstatus eines Raums"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
@@ -96,6 +97,7 @@ das einen Bettenstellplatz referenziert.
 * physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
 * operationalStatus MS
 * operationalStatus from $v2-0116-BedStatus
+  * ^short = "Belegungsstatus eines Bettenstellplatz"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
 
 
