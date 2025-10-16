@@ -38,6 +38,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^short = "Eindeutiger Identifier"
+  * ^comment = "Über die mit MS gekennzeichneten Slices hinaus können weitere Identifier vorkommen, ohne, dass eine ISiK Inkompatibilität besteht. Verarbeitet werden müssen aber nur die folgenden Slices."
 * identifier contains Abrechnungsnummer 1..1 MS
 * identifier[Abrechnungsnummer] only IdentifierAbrechnungsnummer
   * ^short = "Abrechnungsfallnummer"
