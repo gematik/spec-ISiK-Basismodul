@@ -185,11 +185,25 @@ RuleSet: CodeableConcept-MS
   * ^comment = "Motivation MS: Semantische Kodierung."
   * ^short = "Coding"
   * code MS
-    * ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
-    * ^short = "Code"
+    * insert Coding-Code-MS
   * system MS
-    * ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
-    * ^short = "System"
+    * insert Coding-System-MS
+
+RuleSet: Coding-Code-MS
+* ^short = "Code"
+* ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
+
+RuleSet: Coding-System-MS
+* ^short = "System"
+* ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
+
+RuleSet: Coding-Display-MS
+* ^short = "Display"
+* ^comment = "Motivation MS: Anzeigename des kodierten Wertes."
+
+RuleSet: Coding-Version-MS
+* ^short = "Version"
+* ^comment = "Motivation MS: Version des kodierten Wertes."
 
 RuleSet: Component-MS
 * ^comment = "Motivation MS: Erfassung der Komponenten eines Vitalparameters" 

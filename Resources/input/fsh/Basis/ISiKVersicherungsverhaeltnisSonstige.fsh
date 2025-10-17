@@ -35,8 +35,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "Motivation für MS: Da ein ISIK-Profil besteht, sollte dies ggf. referenziert werden." */
 * beneficiary only Reference(Patient)
 * beneficiary MS
-  * reference 1.. MS
-* beneficiary MS
   * ^short = "Begünstigte Person"
   * ^comment = "Hier handelt es ich konkret um den Patienten, für den die Kostenübernahme gilt."
   * reference 1.. MS
