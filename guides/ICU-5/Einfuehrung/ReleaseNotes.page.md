@@ -14,6 +14,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 Datum: tbd
 
+* `documentation` Dokumentation Profilen zwecks Kennzeichnung der Ableitung der Profile hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/870
 * `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
 * `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - https://github.com/gematik/spec-ISiK-Basismodul/pull/867
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
