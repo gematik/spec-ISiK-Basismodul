@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:alpine-3.20
+FROM mcr.microsoft.com/devcontainers/base:alpine-3.22
 
 # Setzen der Umgebungsvariablen
 ENV FIRELY_TERMINAL_VERSION=3.1.0
