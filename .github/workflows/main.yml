@@ -5,9 +5,25 @@ name: Build and Publish IG
 # Controls when the action will run.
 on:
   push:
-    branches:
-      - '**'
+    paths:
+      - 'Resources/**'
+      - '.github/workflows/**'
+    branches-ignore:
+      - 'main**'
   pull_request:
+    branches:
+      - 'main**'
+  workflow_call:
+    secrets:
+      SIMPLIFIER_USERNAME:
+        required: true
+      SIMPLIFIER_PASSWORD:
+        required: true
+      WORKFLOW_PERMISSION_GITHUB:
+        required: true
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 permissions:
   actions: write
@@ -24,8 +40,67 @@ jobs:
       IG_PUBLISHER_DIR: publisher-guides/Subscription-IG
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code (PR)
+        uses: actions/checkout@v5
+        if: github.event_name == 'pull_request'
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Checkout code (Main)
+        uses: actions/checkout@v5
+        if: github.event_name != 'pull_request'
+
+      - name: Firely.Terminal (GitHub Actions)
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.15
+        with:
+          PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
+          DOTNET_VALIDATION_ENABLED: false
+          JAVA_VALIDATION_ENABLED: true
+          JAVA_VALIDATION_OPTIONS: >
+            -allow-example-urls true
+            -output validation.json
+            -html-output validation.html
+            -show-message-ids
+            -language de
+            -jurisdiction de
+            -display-issues-are-warnings
+            -advisor-file validator/advisor.json
+            -resolution-context file:Resources/fsh-generated/resources/
+          SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
+          SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
+          SUSHI_ENABLED: true
+          TERMINOLOGY_SERVICE_BFARM_ENABLED: true
+          SUSHI_OPTIONS: Resources/
+          EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
+
+      - name: Upload validation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-validation-results
+          path: |
+            validation.json
+            validation.html
+          retention-days: 1
+
+      - name: Convert Validation Report
+        uses: patrick-werner/validation-outcome-markdown-renderer@v1
+        with:
+          bundle-file: validation.json
+          include: errors
+          filters: |
+            # Struktur: fileName|messageId|detailsWildcard|location
+      - name: Validate Resource Status
+        uses: patrick-werner/fhir-resource-status-check@1.2.0
+        with:
+          folder: './Resources/fsh-generated/resources/'
+
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          committer_name: GitHub Actions Bot
+          committer_email: ActionBot@github.com
+          add: Resources/fsh-generated/resources/
+          message: auto-generated FHIR files by GitHub Actions (CI FSH to FHIR Validation)
 
       # show used tooling versions  
       - name: Display Tool & Release Information
