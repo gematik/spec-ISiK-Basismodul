@@ -21,6 +21,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -36,14 +37,18 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^patternIdentifier.type = $v2-0203#LANR
   * type 1..
 * identifier[EFN] only IdentifierEfn
+  * ^short = "Einheitliche Fortbildungsnummer für Ärzte in Deutschland"
   * ^patternIdentifier.type = $v2-0203#DN
   * type 1..
   * ^comment = "In bestimmten KIS wird keine EFN geführt, da diese aus Compliance-Gründen getrennt in HR-Systemen vorgehalten wird (Hinweis kam von Stakeholder), daher soll der entsprechende Test im Test-System mit \"warningOnly\" ausgegeben werden." 
   // Dennoch soll das MS im Profil enthalten sein: das war laut gefyra eine KBV-Anforderung [Stand 9.12.2022].
 * identifier[TelematikId] only IdentifierTelematikId
+  * ^short = "Telematik-ID"
   * ^patternIdentifier.type = $v2-0203#PRN
+  * ^comment = "**Begründung MS:** Zur Verknüpfung der Patient Instanz mit Diensten der Telematik Infrastruktur SOLL die ID mit angegeben sein."
   * type 1..
 * name MS
+  * ^comment = "Namen der Person"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -104,6 +109,7 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * postalCode 1.. MS
   * country 1.. MS
 * gender MS
+  * ^comment = "Geschlecht der Person"
   * ^short = "Administratives Geschlecht"
   * ^short = "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden."
   * extension contains GenderOtherDE named Geschlecht-Administrativ 0..1 MS

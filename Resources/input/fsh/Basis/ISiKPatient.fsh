@@ -15,9 +15,11 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)
 * [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
 * [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
-* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)  
+* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)
 
-Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:
+
+* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen."
 
 * insert Meta
 * insert CommonElements
@@ -25,6 +27,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
+  * ^comment = "Eindeutiger Identifier des Patienten"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -40,7 +43,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     unveränderbare Teil der Versichertennummer, 
     der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
     Er gilt für alle Krankenversichertennummern, 
-    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.  
+    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  
     **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)"
   * type 1.. MS
     * ^short = "Art des Identifiers"
@@ -140,6 +143,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   (Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven 
   Patient-Ressource interagieren."
 * name MS
+  * ^comment = "Angabe der Namen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -240,6 +244,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
 * address MS
+  * ^comment = "Angabe der Adressen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
