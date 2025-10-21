@@ -5,9 +5,9 @@ topic: ImplementationGuide-markdown-Einfuehrung
 
 ----
 
-Version: 5.0.0
+Version: 5.1.0
 
-Datum: 26.06.2025
+Datum: 21.10.2025
 
 Status: Aktiv
 
