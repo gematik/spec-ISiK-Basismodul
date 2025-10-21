@@ -85,7 +85,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-10-21T14:42:52+00:00",
+  "date" : "2025-10-21T14:52:13+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "example.test.ig",
   "license" : "CC0-1.0",
