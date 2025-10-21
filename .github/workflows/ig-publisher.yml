@@ -52,17 +52,17 @@ jobs:
         run: |
           igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
 
+      - name: Record branch metadata for Pages cleanup
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        run: |
+          echo "${GITHUB_REF_NAME}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
+
       # Upload the IG build output as an artifact
       - name: Upload Build Results
         uses: actions/upload-artifact@v4
         with:
           name: fhir-ig
           path: ${{ env.IG_PUBLISHER_DIR }}/output/
-
-      - name: Record branch metadata for Pages cleanup
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
-        run: |
-          echo "${GITHUB_REF_NAME}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
       # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
