@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.1.0
 
-Datum: 21.10.2025
+Datum: 22.10.2025
 
 * `documentation` Link zu Dosierungsbeispielen im IG
   Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882

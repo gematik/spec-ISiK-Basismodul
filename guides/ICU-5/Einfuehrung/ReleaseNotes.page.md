@@ -12,7 +12,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 ## Version 5.1.0
 
-Datum: 21.10.2025
+Datum: 22.10.2025
 
 * `documentation` Dokumentation Profilen zwecks Kennzeichnung der Ableitung der Profile hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/870
 * `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
