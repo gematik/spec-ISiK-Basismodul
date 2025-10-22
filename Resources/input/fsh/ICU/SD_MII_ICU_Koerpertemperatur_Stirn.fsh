@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Stirn
 Parent: SD_MII_ICU_Koerpertemperatur_Generisch
 Id: sd-mii-icu-koerpertemperatur-stirn
 Title: "SD MII ICU Koerpertemperatur Stirn"
+Description: "Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Stirn in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."
 * insert Meta
 * insert CommonElements
 * code

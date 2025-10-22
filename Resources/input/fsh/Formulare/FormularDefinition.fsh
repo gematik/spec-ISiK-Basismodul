@@ -10,12 +10,11 @@ Parent: Questionnaire
 * insert Meta
 * insert CommonElements
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
-* modifierExtension[MDR-Relevant].valueCoding MS
+  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
 * modifierExtension[MDR-Relevant]
   * ^short = "MPG-Relevanz der Formulardaten"
-  * ^comment = "**Begründung MS:**   
-  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
+  * ^comment = "**Begründung MS:**
+  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
 * url 1.. MS
   * ^short = "CanoncialURL des Formulars" 
   * ^comment = "Weltweit eindeutiger Name des Formulars.
@@ -70,6 +69,14 @@ Parent: Questionnaire
     Je nach 'type' des items: Fragestellung, Anzeigetext oder Gruppenname"
   * type MS
     * ^comment = "Time is handled using \"string\".  File is handled using Attachment.  (Content can be sent as a contained binary)."
+  * enableWhen MS
+    * ^comment = "**Begründung MS:** Bedingungen, die erfüllt sein müssen, damit das Item dargestellt wird. Dieses Feld ist ein modifier-Element, weshalb MS obligatorisch ist, es muss interpretiert werden."
+    * question MS
+      * ^comment = "LinkId der Frage, bei der die Bedingung zu erfüllen ist."
+    * operator MS
+      * ^comment = "Operator, mittels dem die Value der .question mit dem in answer[x] angegeben Element vergleichen wird."
+    * answer[x] MS
+      * ^comment = "Rechter Wert des Bedingungsvergleich"
   * required MS
     * ^short = "Pflichtfeld?"
     * ^comment = "**Begründung MS:**  
@@ -81,9 +88,9 @@ Parent: Questionnaire
     * ^short = "Keine Eingabe erlaubt?"
     * ^comment = "Antwort wird automatisch vorbelegt/berechnet und darf nicht vom Anwender editiert/überschrieben werden.
     **Begründung MS:** Automatisch vorbelegte Items sollen gegen Veränderung durch den Benutzer geschützt werden können (z.B. für Patientenstammdaten)."
-  //* maxLength MS
-  //  * ^short = "Längenbegrenzung"
-  //  * ^comment =  "Maximale Anzahl zulässiger Zeichen für die Beantwortung der Frage.""
+  * maxLength MS
+    * ^short = "Längenbegrenzung"
+    * ^comment =  "Maximale Anzahl zulässiger Zeichen für die Beantwortung der Frage."
   * answerValueSet MS
     * ^short = "Festlegung der Antwortmöglichkeiten durch Verweis auf ValueSet"
     * ^comment = "**Begründung MS:**  Wo geeignete ValueSets vorhanden sind, die die Antwortmöglichkeiten hinreichend repräsentieren, sollte auf diese verwiesen werden."

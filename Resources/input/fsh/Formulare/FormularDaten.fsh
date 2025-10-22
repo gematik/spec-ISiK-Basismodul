@@ -10,11 +10,11 @@ Description: "ToDo"
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
+  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
 * modifierExtension[MDR-Relevant]
   * ^short = "MPG-Relevanz der Formulardaten"
-  * ^comment = "**Begründung MS:**   
-  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
+  * ^comment = "**Begründung MS:**
+  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
 * modifierExtension[MDR-Relevant].valueCoding MS
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
@@ -39,6 +39,9 @@ Description: "ToDo"
   * ^comment = "**Begründung Pflichtfeld:**  
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 

@@ -106,10 +106,13 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1..1 MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * context MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt oder Zeitraum, für den die MedikationsInformation gilt"
   * ^comment = "Begründung des Must-Support: Basisinformation"
@@ -154,11 +157,13 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosage MS
+* dosage MS 
   * ^short = "Dosierungsangaben"
-  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterlemente erforderlich gemäß Konsens der ISiK AG Medikation"
-  * text MS
-    * ^short = "Freitext-Dosierungsanweisungen"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
+  
+  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert."
+* dosage  only DosageDE  
+  * text 
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
@@ -169,8 +174,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
 "
   * patientInstruction MS
     * ^short = "besondere Anweisungen für den Patienten"
-  * timing MS
-    * ^short = "Angaben zum Timing"
+  * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
     * repeat MS
@@ -257,8 +261,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
     * coding[SNOMED-CT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
-  * doseAndRate MS
-    * ^short = "Angaben zu Dosis und Rate"
+  * doseAndRate 
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS

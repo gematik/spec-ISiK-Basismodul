@@ -17,7 +17,7 @@ Eine Prüfung im Rahmen des Bestätigungsverfahrens zur *Patient merge Notificat
 
 ## Zweck und Definition *Patient merge Notification*
 Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
-Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* ( gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
+Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen *Patient merges* gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.
 
 **Definition**: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen *Patient merge*. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein *Patient merge* stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder diesen zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.
 
@@ -26,7 +26,7 @@ Falls eine *Patient merge Notification* im Rahmen von ISIK bereitgestellt wird, 
 
 Das patientenführende System SOLL einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können. Dieser Mechanismus basiert auf dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/channels.html) und nutzt das Konzept der "Topic-Based Subscription" aus FHIR R5.  
 
-Hierfür wurde das Subscription Topic: *https://gematik.de/fhir/isik/StructureDefinition/ISiKPatientMergeSubscription* definiert.
+Hierfür steht das Subscription Profil samt [CodeSystem](https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic) für das SubscriptionTopic bereit.
 
 Das patientenführende System SOLL den Support dieser Subscription innerhalb des CapabilityStatements bekannt geben.
 
@@ -42,7 +42,7 @@ Notifications über einen Patient-merge-Vorgang SOLLEN per *rest-hook* an das su
 
 ## Abgrenzung zu *Patient merge*
 Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS). 
-Ein externes Starten eines *Patient merge*- bspw. durch die [$patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden.
+Ein externes Starten eines *Patient merge*- bspw. durch die [$patient-merge Operation aus R5](https://hl7.org/fhir/R5/patient-operation-merge.html) - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden (siehe [hier](https://hl7.org/fhir/R5/patient-operation-merge.html#examples) ein Beispiel zur Operation selbst).
 
 **Hinweis**: Die Patienten-Ressource, die nicht weiter verwendet werden soll, nennen wir im Folgenden die "obsolete Ressource". Die Ressource, die erhalten bleiben soll, nennen wir "resultierende Ressource".
 

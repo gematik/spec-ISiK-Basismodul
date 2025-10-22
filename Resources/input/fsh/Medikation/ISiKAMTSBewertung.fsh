@@ -7,6 +7,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
 * insert CommonElements
 * extension MS
 * extension contains ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS
+* extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Die Möglichkeit der freitextlichen Dokumentation dieser Daten wurde von der Fachseite (AG) gewünscht.
 
@@ -32,12 +33,14 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
 * subject only Reference(Patient)
   * reference 1.. MS
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Der Encounter liefert den Kontext zur Risikobeurteilung.
 
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
   * reference 1.. MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * occurrence[x] MS
   * ^short = "Zeitpunkt oder Zeitraum der Beurteilung"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Die Angabe des Zeitpunkts oder Zeitraums ist essentiell für die Nachvollziehbarkeit.
