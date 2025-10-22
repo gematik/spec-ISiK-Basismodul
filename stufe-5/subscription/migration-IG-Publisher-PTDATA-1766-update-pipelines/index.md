@@ -14,7 +14,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-subscription-ig/ImplementationGuide/example.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-10-21 | *Computable Name*:TestImplementationGuide |
+| Draft as of 2025-10-22 | *Computable Name*:TestImplementationGuide |
 
 -------
 
@@ -85,7 +85,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-10-21T14:52:13+00:00",
+  "date" : "2025-10-22T07:14:13+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "example.test.ig",
   "license" : "CC0-1.0",
