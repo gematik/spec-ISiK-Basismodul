@@ -88,6 +88,6 @@ Description: "Data Type profile for ATC Codings in ISiK"
   * insert Coding-Display-MS
 
 Invariant: sct-version-de
-Description: "Die SnomedCT-Version muss einer deutschen Edition entsprechen"
+Description: "Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen"
 Severity: #error
-Expression: "startsWith('http://snomed.info/sct/11000274103')"
+Expression: "startsWith('http://snomed.info/sct/11000274103/')"
