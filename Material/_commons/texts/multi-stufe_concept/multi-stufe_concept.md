@@ -28,6 +28,8 @@ Dies entspricht dem Vorgehen bei FHIR-Infrastructure (Quelle siehe – wobei hie
 
 Unter dieser Annahme SOLL auch ein Client entsprechend konfiguriert sein, dass der Client den Server-Endpunkt abfragt, der der eigenen Stufe entspricht. Ggf. können unterschiedliche Server-Endpunkte abgefragt werden; wobei sich dann die Frage eröffnet, ob ein Versions-Persistieren durch einen Client notwendig wird.
 
+Implementierungen, bei denen der Client die Daten entsprechend der FHIR-Core-Spezifikation verarbeitet und dabei die im Profil vorgesehenen Merkmale zur Identifikation der korrekten Elemente nutzt, sollten grundsätzlich keine Probleme mit der Aufwärts- oder Abwärtskompatibilität der Stufen erwarten. Der Client sollte zum Beispiel insbesondere beim Slicing auf das hierfür definierte Attribut achten (z.B. Identifier nach Typ) oder bei einer kardinalen Obergrenze größer als 1 davon ausgehen, dass mehrere Elemente geliefert werden können.
+
 ## Fazit
 Wir empfehlen, die neueste, gültige ISiK-Version zu implementieren. Jedoch sollten alle Stufen von ISiK, die im Betrieb bereits ausgerollt sind, durch einen Endpunkt weiter unterstützt werden.
 
