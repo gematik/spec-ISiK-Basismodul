@@ -39,6 +39,7 @@ Datum: 22.10.2025
 * `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
 * `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompabilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren.
 * `documentation` Hinweise zur Kompabilität des ISiKPatient-Profils zum EPAPatient-Profil der gematik hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/898
+* `fix` Änderung an Coverage.subscriber.identifier wurde zurückgenommen https://github.com/gematik/spec-ISiK-Basismodul/pull/912
 
 
 
