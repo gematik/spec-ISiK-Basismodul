@@ -11,7 +11,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 ## Version 5.1.0
 
-Datum: 22.10.2025
+Datum: 23.10.2025
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
