@@ -101,7 +101,7 @@ RuleSet: minMaxOccurs(min, max)
 
 //name = patient | encounter | location | user | study
 RuleSet: launchContext(name, type, description)
-* extension
+* extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
   * extension[+]
     * url = "name"
