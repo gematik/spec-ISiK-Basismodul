@@ -1,0 +1,466 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ISiK-SubscriptionTopic - JSON Representation - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.11"}
+    h3,h4,h5,h6{--heading-prefix:"9.11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="releasenotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patientenzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Fallzusammenfuehrung</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Weitere Use Cases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="festlegungen.html">Festlegungen</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR-Artefakte
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefakte</a>
+      </li>
+      <li>
+        <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            Implementation Guide<br>
+Test Implementation Guide
+
+
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>ISiK-SubscriptionTopic</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 8" class="col-12">
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="CodeSystem-ISiKSubscriptionTopic.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-ISiKSubscriptionTopic.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-ISiKSubscriptionTopic.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: ISiK-SubscriptionTopic - JSON Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2025-06-26
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="CodeSystem-ISiKSubscriptionTopic.json" no-download="true">Raw json</a> | <a href="CodeSystem-ISiKSubscriptionTopic.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">id</a>" : "ISiKSubscriptionTopic",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem ISiKSubscriptionTopic&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ISiKSubscriptionTopic\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcISiKSubscriptionTopic\&quot;&gt; &lt;/a&gt;&lt;p&gt;This  code system &lt;code&gt;https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47patient-merge\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;patient-merge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47encounter-merge\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;encounter-merge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/account-merge&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47account-merge\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;account-merge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Account\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Account&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47AllergyIntolerance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;AllergyIntolerance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Appointment\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Appointment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Binary\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Binary&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47CodeSystem\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;CodeSystem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Condition\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Condition&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Coverage\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Coverage&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47DocumentReference\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;DocumentReference&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Encounter\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Encounter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47HealthcareService\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HealthcareService&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47List\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;List&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Medication\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Medication&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47MedicationAdministration\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;MedicationAdministration&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47MedicationRequest\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;MedicationRequest&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47MedicationStatement\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;MedicationStatement&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Observation\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Observation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Patient\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Practitioner\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Practitioner&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Procedure\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Procedure&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Questionnaire\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Questionnaire&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47QuestionnaireResponse\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;QuestionnaireResponse&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47RelatedPerson\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;RelatedPerson&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47RiskAssessment\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;RiskAssessment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Schedule\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Schedule&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Slot\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Slot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47Subscription\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Subscription&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet&lt;a name=\&quot;ISiKSubscriptionTopic-https.58.47.47gematik.46de.47fhir.47isik.47SubscriptionTopic.47Resource.47ValueSet\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;ValueSet&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a>" : "https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "0.0.1",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">name</a>" : "ISiKSubscriptionTopic",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">title</a>" : "ISiK-SubscriptionTopic",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.experimental">experimental</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2025-06-26",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">description</a>" : "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.content">content</a>" : "complete",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.count">count</a>" : 30,
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "patient-merge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "encounter-merge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/account-merge",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "account-merge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Account"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "AllergyIntolerance"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Appointment"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Binary"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "CodeSystem"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Condition"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Coverage"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "DocumentReference"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Encounter"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "HealthcareService"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "List"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Medication"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "MedicationAdministration"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "MedicationRequest"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "MedicationStatement"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Observation"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Patient"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Practitioner"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Procedure"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Questionnaire"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "QuestionnaireResponse"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "RelatedPerson"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "RiskAssessment"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Schedule"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Slot"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Subscription"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "ValueSet"
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Oct 23, 2025 15:11+0000">2025-10-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
