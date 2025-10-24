@@ -89,6 +89,11 @@ Usage: #example
 * type = $versicherungsart-de-basis#GKV
 * beneficiary = Reference(SZ2Patient)
 * subscriber = Reference(SZ2Patient)
+* subscriber
+  * identifier
+    * type = $identifier-type-de-basis#KVZ10
+    * system = "http://fhir.de/sid/gkv/kvid-10"
+    * value = "A222222222"  
 * payor
   * identifier
     * type = $v2-0203#XX

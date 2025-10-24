@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAtemfrequenz",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKAtemfrequenz",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).\n### Motivation\nDie Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation.",
   "fhirVersion": "4.0.1",
@@ -21,26 +21,26 @@
         "id": "Observation.id",
         "path": "Observation.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Observation.meta.versionId",
         "path": "Observation.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Observation.meta.lastUpdated",
         "path": "Observation.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Observation.status",
         "path": "Observation.status",
         "short": "Untersuchungsstatus",
-        "comment": "**WICHTIGER Hinweis für Implementierer:**  \r\n* Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `final`.\r\n* Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.",
+        "comment": "**WICHTIGER Hinweis für Implementierer:**  \n* Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `final`.\n* Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.",
         "mustSupport": true
       },
       {
@@ -103,7 +103,7 @@
         "id": "Observation.subject",
         "path": "Observation.subject",
         "short": "Patient",
-        "comment": "**Motivation MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Motivation MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "mustSupport": true
       },
       {
@@ -117,7 +117,7 @@
         "id": "Observation.encounter.reference",
         "path": "Observation.encounter.reference",
         "short": "Encounter-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \r\nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -194,14 +194,14 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "short": "Untersuchungsmethode",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \r\nVerfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden\r\n\r\n\r\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \nVerfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden\n\n\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
         "mustSupport": true
       },
       {
         "id": "Observation.device",
         "path": "Observation.device",
         "short": "Gerät",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \r\n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.\r\n\r\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:**  \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.\n\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
         "mustSupport": true
       }
     ]

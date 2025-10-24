@@ -19,10 +19,10 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
-## Version 5.0.1
+## Version 5.1.0
 
 
-Datum: tbd
+Datum: 23.10.2025
 
 * `documentation` Beschreibungen für die Extensions in ISiK (auch Backports) hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/877
 * `improve` Festlegungen für Verwendung von `Encounter.location.location.identifier` konkretisiert. https://github.com/gematik/spec-ISiK-Basismodul/pull/827
@@ -37,8 +37,9 @@ Datum: tbd
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
 * `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
 * `improve` Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881
-* `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompatibilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren. https://github.com/gematik/spec-ISiK-Basismodul/pull/892
+* `improve` Die Profile ``ISiKPatient``, ``ÌSiKOrganization``, sowie ``ISiKPersonImGesundheitsberuf`` enthalten nun eine "impose-Profile"-Extension um die Kompatibilität mit den entsprechenden [TI-Commons-Profile](https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html) zu dokumentieren.
 * `documentation` Hinweise zur Kompatibilität des ISiKPatient-Profils zum EPAPatient-Profil der gematik hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/898
+* `fix` Änderung an Coverage.subscriber.identifier wurde zurückgenommen https://github.com/gematik/spec-ISiK-Basismodul/pull/912
 
 
 
@@ -393,6 +394,7 @@ Datum: 08.04.2022
 
 * Initiale Ballotierungsversion für ISiK Stufe 2
 ----
+
 
 
 
