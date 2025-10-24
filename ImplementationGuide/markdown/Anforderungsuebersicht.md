@@ -55,7 +55,7 @@ In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implemen
 | ANF-CON-042 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Patient- / User-level Backend Service}} | KÖNNEN/SOLL
 | ANF-CON-043 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Zurückweisung Scopes Backend Service}} | MUSS
 | ANF-CON-044 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Scope-Parameter Backend Service}} | MUSS
-| ANF-CON-045 | {{pagelink:ImplementationGuide/markdown/SmartBackendServices/Schritt3AbrufAccessToken.md, text:Launch Scopes Access Token Response}} | -
+| ANF-CON-045 | {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt2ClientAutorisierung.md, text:Launch Scopes Access Token Response}} | MUSS
 | ANF-CON-046 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:authorization_endpoint}} | MUSS
 | ANF-CON-047 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:grant_types_supported}} | MUSS
 | ANF-CON-048 | {{pagelink: ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:refresh_token}} | MUSS
