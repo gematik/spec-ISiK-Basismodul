@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="schritt-4-austausch-des-autorisierungscodes-fur-ein-zugangstoken">Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken</h1>
+<p>Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet, um die in <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2">Implicit Grant - OAuth 2.0 Security Best Current Practice</a> dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.</p>
+<hr />
+<h2 id="authentifizierung-der-clients">Authentifizierung der Clients</h2>
+<p>Confidential Clients MÜSSEN sich gegenüber dem &quot;Token&quot;-Endpunkt des Autorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten unterstützt werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-017</a>):</p>
+<h3 id="json-web-token-jwt-profile-for-oauth-2.0-client-authentication-and-authorization-grants-empfehlung">JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)</h3>
+<p>Die präferierte Variante für die Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants</a>. Hierzu MÜSSEN folgende Schritte unterstützt werden:</p>
+<ol>
+<li>Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder <a href="https://datatracker.ietf.org/doc/html/rfc8017">RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)</a> oder <a href="https://datatracker.ietf.org/doc/html/rfc6979">ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))</a> als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als <a href="https://datatracker.ietf.org/doc/html/rfc7517">JSON Web Key</a> eingebettet in einem <a href="https://datatracker.ietf.org/doc/html/rfc7517#section-5">JSON Web Key Set</a> übermittelt. Angaben zur Schlüssellänge sind den Abschnitten <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.3">RFC7518 - Abschnitt 3.3 - Digital Signature with RSASSA-PKCS1-v1_</a> und <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.4">RFC7518 - Abschnitt 3.4 - Digital Signature with ECDSA</a> zu entnehmen.</li>
+</ol>
+<p>Folgende Anforderungen werden an den JSON Web Key gestellt:</p>
+<ul>
+<li><p>Als Signaturalgorithmus muss durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden, <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.1">siehe RFC7518 - &quot;alg&quot; (Algorithm) Header Parameter Values for JWS</a>. Weitere Signaturalgorithmen können unterstützt werden.</p>
+</li>
+<li><p>Der JSON Web Key muss mindestens folgende Parameter enthalten:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.1">&quot;kty&quot; (Key Type) Parameter</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.5">&quot;kid&quot; (Key ID) Parameter</a></li>
+<li>Für einen öffentlichen RSA Web Key: &quot;n&quot; (Modulus) Parameter, &quot;e&quot; (Exponent) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.3">RFC7518 - 6.3 Parameters for RSA Keys</a>)</li>
+<li>Für einen öffentlichen Elliptic Curve Web Key: &quot;crv&quot; (Curve) Parameter, &quot;x&quot; (X Coordinate) Parameter, &quot;y&quot; (Y Coordinate) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.2">RFC7518 - 6.2 Parameters for RSA Keys</a>)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Ein Austausch des JSON Web Key muss durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key">SMART App Launch - 4.1 - Client Authentication: Asymmetric (public key)</a> aufgeführten Vorteile empfohlen.</li>
+</ol>
+<p>(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver soll prüfen, dass diese URL mit dem <a href="https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2">&quot;jku&quot; Parameter</a> der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token übereinstimmt.</p>
+<p>(2) Das JSON Web Key Set kann dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall soll das JSON Web Key Set mindestens zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in <a href="https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#registering-a-client-communicting-public-keys">SMART App Launch - 5.0.4 - Registering a SMART Backend Service (communicating public keys)</a> zusammengefasst.</p>
+<p>Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.</p>
+<ol start="3">
+<li>Der Client erzeugt ein JSON Web Token entsprechend der in <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint">SMART App Launch - 4.1.5 - Authenticating to the Token endpoint</a> definierten Vorgaben und verwendet dies als &quot;client_assertion&quot;.</li>
+</ol>
+<h3 id="http-basic-authentication">HTTP Basic Authentication:</h3>
+<p>Der Client tauscht während der Registrierung (siehe <a href="ImplementationGuide-markdown-ISiKundSMART-Schritt1RegistrierungClient.html" title='ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistrierungClient.md'>Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System</a>) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7617">RFC7617 - The 'Basic' HTTP Authentication Scheme</a>. Als &quot;username&quot; muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.</p>
+<hr />
+<h2 id="austausch-des-autorisierungscodes-fur-ein-zugangstoken">Austausch des Autorisierungscodes für ein Zugangstoken</h2>
+<p>In Abschnitt <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token">SMART App Launch - 2.1.10 - Obtain access token</a> werden alle notwendigen Parameter definiert, durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter &quot;id_token&quot; und &quot;refresh_token&quot; unterstützt werden MÜSSEN (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-018</a>). Ein id_token muss ausgestellt werden, wenn der Client einen &quot;openid fhirUser&quot; Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im EHR nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext).</p>
+<p>Alle verpflichtenden Implementierungsdetails aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token">SMART App Launch - 2.1.10 - Obtain access token</a> MÜSSEN durch den Autorisierungsserver unterstützt werden (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-019</a>).</p>
+<p>Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen, um einen Token Revocation Mechanismus effizient implementieren zu können. Siehe <a href="ImplementationGuide-markdown-ISiKundSMART-Schritt6RefreshToken.html" title='ImplementationGuide/markdown/ISiKundSMART/Schritt6RefreshToken.md'>Schritt 6: Refresh Token &amp; Revocation</a>.</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<ol>
+<li>Generierung Public/Private Key:</li>
+</ol>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+    <span style="color:#A31515;">&quot;p&quot;</span>: <span style="color:#A31515;">&quot;xmB9u3-YZG9wQudAA0lrSxfPMrzdyRg9_ucaXVVXmBfEkP4B0TJf4Qy3PElekRpRwQQzkTGru06uJZr3C-FnnjbVyzGjSJovWP5S4vBm7zWVGMMhdLDCRtGqx2qC0MGLV7aAGg7XN590US_8XRqtMiMv4RHwj5mzMK-S-4-G_dc&quot;</span>,
+    <span style="color:#A31515;">&quot;kty&quot;</span>: <span style="color:#A31515;">&quot;RSA&quot;</span>,
+    <span style="color:#A31515;">&quot;q&quot;</span>: <span style="color:#A31515;">&quot;vrKETfeUnSZY7eMy0E1UfY8wwE0tFC5r63hpXMqvBKKORXd4XOdqVPUoGeWg-tk4g7aQWW5SJIYk72EGaRuZ-S1giFo724fbJ0lxMxM-HOqMrxhCEDFNOzsjS-tZzbq8krXOp8yAPMENx3bvMFyk2N84qFVaD4gkibIPR6QM_fM&quot;</span>,
+    <span style="color:#A31515;">&quot;d&quot;</span>: <span style="color:#A31515;">&quot;iuoCvT6rbu0ME2V61cw9OSxafD6Fbk2rL4IwkS2AfiMnoEeHpII36oHjU-OYRCRtOGoj8Hes0NkBTffXocYbyXKAxpdzogh1WqPyCraIDJSNR_Wv2ebHdtmie_3ZOdPntYN6MN8y7rinlZBWNgXH8d7GCo48UnT4zu66gyqN7gWVN90it4B0Xcy_3RdHpIO3e1ES-zDWDkP8APL8NPxMAqX7NL5sYtWxKCdFXfMi456iZ_THMu4dJC9QtqTkzphwtsbSrGTTMZXHuqw92fH7NRRhc17vyanNzMXbPJ6Wiy8DoI_1Gopz9HFOWzK7RiQeJtes136vTRXKa3vcnZFB4Q&quot;</span>,
+    <span style="color:#A31515;">&quot;e&quot;</span>: <span style="color:#A31515;">&quot;AQAB&quot;</span>,
+    <span style="color:#A31515;">&quot;use&quot;</span>: <span style="color:#A31515;">&quot;sig&quot;</span>,
+    <span style="color:#A31515;">&quot;kid&quot;</span>: <span style="color:#A31515;">&quot;t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ&quot;</span>,
+    <span style="color:#A31515;">&quot;qi&quot;</span>: <span style="color:#A31515;">&quot;cl61xViRvryTB6ZpIlxd_4Iqj7P27TUVg5foJ3OfzoqwMdCHzxqdmUkc5_hvZB18eUTxu6hj1f4tw63r61D84SdOxJ8YC7b7Cu1sc2sh4YvlrpeGjKFZfHQCCxQigXJID4XBElxxqoiTWnCrUQPq6cMo3An9h-_w0AjtJAA2i2Y&quot;</span>,
+    <span style="color:#A31515;">&quot;dp&quot;</span>: <span style="color:#A31515;">&quot;dNWDd5hQYmaXkW-s7cKh5Fojd9hwLu2OJcBqcKnAqxzkchiHbXPjsCHTETiM75y2pZ0Z2duNLwXJ3vADrAWXB0F4bPHRHwNf-2Pd4TaBCUVfiHP0EkvAQAFgOY5reRNkQ8aCb9ZpvqK02NQQJ618b9j1a_Mq4Qg-1t-xC2Oet4U&quot;</span>,
+    <span style="color:#A31515;">&quot;alg&quot;</span>: <span style="color:#A31515;">&quot;RS384&quot;</span>,
+    <span style="color:#A31515;">&quot;dq&quot;</span>: <span style="color:#A31515;">&quot;i-nGkL3Z2ANOtBtCKPrTxtvMVQtKy8fTfox2IZLEHo51_BnPwbo4leTZa0bDecjuYhUMi9EZi5qwdsGlRnDt45ibfu9Vg5iF_qkv2N2BcQ3V8pHFxsOlepPFLeqblQoxWSLzYMH2RJ0QUwy8KauPd18v3rHgxgyJYk22UEXZEmk&quot;</span>,
+    <span style="color:#A31515;">&quot;n&quot;</span>: <span style="color:#A31515;">&quot;k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ&quot;</span>
+}
+
+</pre></div>
+</div>
+<ol start="2">
+<li>JSON Web Key Set mit öffenlichem Schlüsselteil erzeugen:</li>
+</ol>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+    <span style="color:#A31515;">&quot;keys&quot;</span>: [
+        {
+            <span style="color:#A31515;">&quot;kty&quot;</span>: <span style="color:#A31515;">&quot;RSA&quot;</span>,
+            <span style="color:#A31515;">&quot;e&quot;</span>: <span style="color:#A31515;">&quot;AQAB&quot;</span>,
+            <span style="color:#A31515;">&quot;use&quot;</span>: <span style="color:#A31515;">&quot;sig&quot;</span>,
+            <span style="color:#A31515;">&quot;kid&quot;</span>: <span style="color:#A31515;">&quot;t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ&quot;</span>,
+            <span style="color:#A31515;">&quot;alg&quot;</span>: <span style="color:#A31515;">&quot;RS384&quot;</span>,
+            <span style="color:#A31515;">&quot;n&quot;</span>: <span style="color:#A31515;">&quot;k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ&quot;</span>
+        }
+    ]
+}
+
+</pre></div>
+</div>
+<ol start="3">
+<li><p>Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Autorisierungsserver (keine weiteren Vorgaben).</p>
+</li>
+<li><p>Erzeugung eines JSON Web Tokens signiert mit dem oben genannten Private/Public Key Pair:</p>
+</li>
+</ol>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+
+</pre></div>
+</div>
+<p>Dekodierte Form:</p>
+<p>Header:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;typ&quot;</span>: <span style="color:#A31515;">&quot;JWT&quot;</span>,
+  <span style="color:#A31515;">&quot;alg&quot;</span>: <span style="color:#A31515;">&quot;RS384&quot;</span>
+}
+
+</pre></div>
+</div>
+<p>Body:</p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+  <span style="color:#A31515;">&quot;iss&quot;</span>: <span style="color:#A31515;">&quot;Example Issuer&quot;</span>,
+  <span style="color:#A31515;">&quot;iat&quot;</span>: <span style="color:Blue;">null</span>,
+  <span style="color:#A31515;">&quot;exp&quot;</span>: 1643986970,
+  <span style="color:#A31515;">&quot;aud&quot;</span>: <span style="color:#A31515;">&quot;https://example.org/auth/token&quot;</span>,
+  <span style="color:#A31515;">&quot;sub&quot;</span>: <span style="color:#A31515;">&quot;TestClientId&quot;</span>,
+  <span style="color:#A31515;">&quot;jti&quot;</span>: <span style="color:#A31515;">&quot;76a5e086-e9a7-44fe-9728-7121615c6291&quot;</span>
+}
+
+</pre></div>
+</div>
+<ol start="5">
+<li>Access Token abrufen</li>
+</ol>
+<pre><code>POST /token HTTP/1.1
+Host: server.example.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&amp;
+code=&lt;Autorisierungscode aus Schritt 3&gt;&amp;
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&amp;
+code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&amp;
+client_id=TestClientId&amp;
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&amp;
+client_assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+
+</code></pre>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

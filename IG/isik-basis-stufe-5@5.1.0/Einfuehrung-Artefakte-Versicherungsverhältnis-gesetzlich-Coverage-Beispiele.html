@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext und Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Kontext und Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Erlaeuterung-Akteurs-und-Rollenmodell.html">
+                                            Akteurs- und Rollenmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen_UmgangFehlendeDaten.html">
+                                            Umgang mit fehlenden Daten
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Versicherungverhaeltnis-sonstige-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis sonstige (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_BerichtBundle.html">
+                                            Bericht aus Subsystemen (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Beispiele</h2>
+<h3 id="valides-minimalbeispiel">Valides Minimalbeispiel:</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#58fbcb9b-15fd-4c2b-a19f-096545542807" aria-controls="58fbcb9b-15fd-4c2b-a19f-096545542807" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#535fd129-439e-477c-8919-2727abf5ab2c" aria-controls="535fd129-439e-477c-8919-2727abf5ab2c" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#e0f4888c-4a84-40c7-9d90-0631f8465c6a" aria-controls="e0f4888c-4a84-40c7-9d90-0631f8465c6a" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#1c5021cf-6338-43d9-82ba-e530cb10a821" aria-controls="1c5021cf-6338-43d9-82ba-e530cb10a821" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="58fbcb9b-15fd-4c2b-a19f-096545542807">
+    <div class="stu3-treetable" id="e7d005e14a234402abb70a90b3362f89" data-level="1"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>Coverage</b></td></tr><tr class="collapsed" data-id="4c7b5f4060914d62bd5dce5cc48ab365" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>CoverageGesetzlich</span></td></tr><tr class="collapsed" data-id="eb8ef0c9f9634db08fce4d84d218d331" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="43b4b989c7e54555b614176812d2e485" data-parentId="eb8ef0c9f9634db08fce4d84d218d331"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</span></td></tr><tr class="collapsed" data-id="e824c490ccf74429b7fb41e47dff6d99" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>active</span></td></tr><tr class="collapsed" data-id="63546d294c144802885afe71da7d5b2a" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="52d095e19ec84ba7977f1911a03a9023" data-parentId="63546d294c144802885afe71da7d5b2a"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="d220ce647e3949cc932bbaf34d85d0f5" data-parentId="52d095e19ec84ba7977f1911a03a9023"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/versicherungsart-de-basis</span></td></tr><tr class="collapsed" data-id="8ae4cf2942f34604b43321b8d24fdb3d" data-parentId="52d095e19ec84ba7977f1911a03a9023"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>GKV</span></td></tr><tr class="collapsed" data-id="99bb87b227594e42af7cdab02954101a" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>beneficiary</b></td></tr><tr class="collapsed" data-id="24b63ad12ae445d893cf62e69fb32794" data-parentId="99bb87b227594e42af7cdab02954101a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="88e51839b7b348ef8c1787471a42c7cc" data-parentId="c1182ff503da466f8cc4e583823aef9e"><td class="instance"><span class="baseIcon primitive"></span><b>payor</b></td></tr><tr class="collapsed" data-id="1e92af72f9314c3781c227bdcdd3baa9" data-parentId="88e51839b7b348ef8c1787471a42c7cc"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="1d718bdf4974478394994fd0db8cc962" data-parentId="1e92af72f9314c3781c227bdcdd3baa9"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="ef4d7d7bb65b4baa8e59ac0d3ccdf5d3" data-parentId="1d718bdf4974478394994fd0db8cc962"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="0a0d91a1b0e94111805793dcd7057acd" data-parentId="ef4d7d7bb65b4baa8e59ac0d3ccdf5d3"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr><tr class="collapsed" data-id="0808d61c5c3e4ac3b49a7751f58b8333" data-parentId="ef4d7d7bb65b4baa8e59ac0d3ccdf5d3"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>XX</span></td></tr><tr class="collapsed" data-id="3374d13e79d14457b0ab233ced80a0e6" data-parentId="1e92af72f9314c3781c227bdcdd3baa9"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/sid/arge-ik/iknr</span></td></tr><tr class="collapsed" data-id="2c6169c5330e4a679e2f7879bd08a12a" data-parentId="1e92af72f9314c3781c227bdcdd3baa9"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>260326822</span></td></tr><tr class="collapsed" data-id="b1aecdada2424a2bb387985e4ac15e18" data-parentId="88e51839b7b348ef8c1787471a42c7cc"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Eine Gesundheitskasse</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablee7d005e14a234402abb70a90b3362f89 = new InstanceTree();
+resourceTreeTablee7d005e14a234402abb70a90b3362f89.init("e7d005e14a234402abb70a90b3362f89");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="535fd129-439e-477c-8919-2727abf5ab2c">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">Coverage</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.id" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">CoverageGesetzlich</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.meta" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.meta.profile" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.status" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/versicherungsart-de-basis</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding.code" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">GKV</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.beneficiary" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">beneficiary</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.beneficiary.reference" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">beneficiary</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">payor</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">identifier</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">type</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding.code" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">XX</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/sid/arge-ik/iknr</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.value" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">260326822</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.display" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Eine Gesundheitskasse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">payor</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Coverage</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="e0f4888c-4a84-40c7-9d90-0631f8465c6a">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.resourceType" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coverage</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.id" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CoverageGesetzlich</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.meta" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.meta.profile" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding.code" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">GKV</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.type.coding.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/versicherungsart-de-basis</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">payor</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">identifier</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.type.coding.code" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">XX</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.system" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/arge-ik/iknr</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.identifier.value" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">260326822</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.payor.display" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Eine Gesundheitskasse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.status" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.beneficiary" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">beneficiary</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json#Coverage.beneficiary.reference" title="ISiKVersicherungsverhaeltnisGesetzlich
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="1c5021cf-6338-43d9-82ba-e530cb10a821">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Coverage-CoverageGesetzlich.json'>CoverageGesetzlich</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

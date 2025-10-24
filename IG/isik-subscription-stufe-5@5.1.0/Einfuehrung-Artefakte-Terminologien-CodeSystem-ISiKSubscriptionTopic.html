@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Subscriptions</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Subscriptions
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Fallzusammenf&#xFC;hrung.html">
+                                            Fallzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-UseCases.html">
+                                            Weitere UseCases
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Festlegungen.html">
+                                Festlegungen
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Subscription.html">
+                                            ISiKSubscription (Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionStatusR4Fixed.html">
+                                            BackportSubscriptionStatusR4Fixed (Parameters)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_BackportSubscriptionNotificationR4Fixed.html">
+                                            BackportSubscriptionNotificationR4Fixed (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="link"><a  href='artifacts/Resources/fsh-generated/resources/CodeSystem-ISiKSubscriptionTopic.json'>ISiKSubscriptionTopic</a></h2>
+<p>Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.</p>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Beschreibung</b></th><td><p>Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.</p>
+</td><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic'>https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic</a></td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.1.0</td><tr><th><b>Herausgeber</b></th><td>gematik GmbH</td></table>
+<h3 id="inhalt">Inhalt</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#ed6895d0-ccbf-48df-bd18-2f74579c8ca0" aria-controls="ed6895d0-ccbf-48df-bd18-2f74579c8ca0" role="tab" data-toggle="tab">Darstellung</a>
+</li><li role="presentation" class="">
+    <a href="#4d839743-8015-4005-9da5-79466a60b6ad" aria-controls="4d839743-8015-4005-9da5-79466a60b6ad" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#da92649a-a6fd-4f05-9e54-f75dfb272a15" aria-controls="da92649a-a6fd-4f05-9e54-f75dfb272a15" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#ae720873-72af-4b74-961b-feef2c8aa962" aria-controls="ae720873-72af-4b74-961b-feef2c8aa962" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ed6895d0-ccbf-48df-bd18-2f74579c8ca0">
+    <table  class='table table-bordered fql-table'><thead><tr><th>Code</th><th>Anzeigetext</th></tr></thead><tbody><tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</td><td>patient-merge</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge</td><td>encounter-merge</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/account-merge</td><td>account-merge</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account</td><td>Account</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance</td><td>AllergyIntolerance</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment</td><td>Appointment</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary</td><td>Binary</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem</td><td>CodeSystem</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition</td><td>Condition</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage</td><td>Coverage</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference</td><td>DocumentReference</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter</td><td>Encounter</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService</td><td>HealthcareService</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List</td><td>List</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication</td><td>Medication</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration</td><td>MedicationAdministration</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest</td><td>MedicationRequest</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement</td><td>MedicationStatement</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation</td><td>Observation</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient</td><td>Patient</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner</td><td>Practitioner</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure</td><td>Procedure</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire</td><td>Questionnaire</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse</td><td>QuestionnaireResponse</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson</td><td>RelatedPerson</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment</td><td>RiskAssessment</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule</td><td>Schedule</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot</td><td>Slot</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription</td><td>Subscription</td></tr>
+<tr><td>https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet</td><td>ValueSet</td></tr>
+</tbody></table>
+
+</div><div role="tabpanel" class="tab-pane " id="4d839743-8015-4005-9da5-79466a60b6ad">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">CodeSystem</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.id" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSubscriptionTopic</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.url" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.version" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">5.1.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.name" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKSubscriptionTopic</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.title" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiK-SubscriptionTopic</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.status" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.experimental" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.date" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">date</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-10-23</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.publisher" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.description" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Liste der aller SubscriptionTopics, die in ISiK verwendet werden k&#246;nnen. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics f&#252;r Updates der Ressourcen enthalten, die in ISiK verwendet werden k&#246;nnen.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.content" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">content</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">complete</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.count" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">count</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">30</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">patient-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">encounter-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/account-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">account-merge</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Account</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">AllergyIntolerance</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Appointment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Binary</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">CodeSystem</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Condition</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Coverage</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DocumentReference</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">HealthcareService</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">List</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Medication</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationAdministration</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationRequest</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MedicationStatement</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Observation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Practitioner</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Procedure</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Questionnaire</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">QuestionnaireResponse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">RelatedPerson</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">RiskAssessment</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Schedule</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Slot</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Subscription</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ValueSet</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">concept</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">CodeSystem</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="da92649a-a6fd-4f05-9e54-f75dfb272a15">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.resourceType" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CodeSystem</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.status" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.content" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">content</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">complete</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.name" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSubscriptionTopic</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.id" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKSubscriptionTopic</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.title" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiK-SubscriptionTopic</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.description" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Liste der aller SubscriptionTopics, die in ISiK verwendet werden k&#246;nnen. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics f&#252;r Updates der Ressourcen enthalten, die in ISiK verwendet werden k&#246;nnen.</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.version" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">5.1.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.url" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">concept</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">patient-merge</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">encounter-merge</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/account-merge</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">account-merge</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Account</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Account</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/AllergyIntolerance</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">AllergyIntolerance</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Appointment</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Appointment</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Binary</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Binary</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/CodeSystem</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CodeSystem</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Condition</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Coverage</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Coverage</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/DocumentReference</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DocumentReference</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Encounter</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/HealthcareService</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">HealthcareService</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/List</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">List</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Medication</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Medication</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationAdministration</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationAdministration</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationRequest</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationRequest</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/MedicationStatement</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Observation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Observation</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Patient</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Practitioner</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Procedure</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Procedure</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Questionnaire</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Questionnaire</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/QuestionnaireResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">QuestionnaireResponse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RelatedPerson</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">RelatedPerson</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/RiskAssessment</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">RiskAssessment</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Schedule</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Slot</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Subscription</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.code" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.concept.display" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ValueSet</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.experimental" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.publisher" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.date" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">date</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-10-23</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="https://simplifier.net/resolve?scope=package:hl7.fhir.r4.core@4.0.1&filepath=package/StructureDefinition-CodeSystem.json#CodeSystem.count" title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" target="_blank">count</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">30</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="ae720873-72af-4b74-961b-feef2c8aa962">
+    <a  href='artifacts/Resources/fsh-generated/resources/CodeSystem-ISiKSubscriptionTopic.json'>ISiKSubscriptionTopic</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
