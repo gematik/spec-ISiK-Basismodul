@@ -18,6 +18,12 @@ Die Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+## Version 5.1.1
+
+Datum: tbd.
+
+* `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
+
 
 ## Version 5.1.0
 
