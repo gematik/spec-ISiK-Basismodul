@@ -219,7 +219,8 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 * telecom MS
   * ^short = "Angabe der Kontaktdaten"
   * ^comment = "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.
-  **Begründung MS:** Kontaktdaten sind in verschiedenen Kontexten wichtig, z.B. für Terminvereinbarungen oder Rückfragen."
+  **Bedingtes MS:** Kontaktdaten sind im Kontext der Terminplanung unerlässlich, z.B. für Terminvereinbarungen oder Rückfragen. Das Must-Support gilt ausschließlich für Systeme, 
+  Kontaktdaten persistieren."
   * system 1.. MS
     * ^short = "Art der Kontaktdaten"
     * ^comment = "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  
