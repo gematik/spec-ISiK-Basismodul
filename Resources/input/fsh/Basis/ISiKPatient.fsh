@@ -216,8 +216,18 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
   * prefix ..0
-* telecom.system 1..
-* telecom.value 1..
+* telecom MS
+  * ^short = "Angabe der Kontaktdaten"
+  * ^comment = "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.
+  **Begründung MS:** Kontaktdaten sind in verschiedenen Kontexten wichtig, z.B. für Terminvereinbarungen oder Rückfragen."
+  * system 1.. MS
+    * ^short = "Art der Kontaktdaten"
+    * ^comment = "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Dient der Unterscheidung verschiedener Kontaktarten"
+  * value 1.. MS
+    * ^short = "Wert der Kontaktdaten"
+    * ^comment = "Enthält den eigentlichen Wert der Kontaktdaten, z.B. die Telefonnummer oder E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Ohne diese Angabe sind die Kontaktdaten nicht nutzbar."
 * gender 1.. MS
   * ^short = "Administratives Geschlecht" 
   * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
