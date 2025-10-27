@@ -18,6 +18,12 @@ Die Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+## Version 5.1.x
+
+Datum: tbd
+
+* `fix` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten unerläslich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
+
 
 ## Version 5.1.0
 
