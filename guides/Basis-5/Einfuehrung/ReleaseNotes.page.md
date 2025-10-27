@@ -24,7 +24,7 @@ Die Tags werden folgendermaßen verwendet:
 Datum: tbd.
 
 * `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
-* `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten unerläslich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
+* `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten unerlässlich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
 
 
 ## Version 5.1.0
