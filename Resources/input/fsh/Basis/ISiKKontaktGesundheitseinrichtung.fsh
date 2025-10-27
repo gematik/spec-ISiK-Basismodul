@@ -320,7 +320,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     aus dem der Identifier stammt. 
     Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
     [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
   * value 1.. MS
     * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
       **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."

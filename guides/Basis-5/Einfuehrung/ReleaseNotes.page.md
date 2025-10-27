@@ -23,6 +23,7 @@ Die Tags werden folgendermaßen verwendet:
 Datum: tbd.
 
 * `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
+* `improve`+ `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring und Ausweitung der identifier Constraints auf alle Slice von Encounter.location
 
 
 ## Version 5.1.0
