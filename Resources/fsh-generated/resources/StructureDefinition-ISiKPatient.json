@@ -475,14 +475,27 @@
         "max": "0"
       },
       {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "short": "Angabe der Kontaktdaten",
+        "comment": "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.\n  **Bedingtes MS:** Kontaktdaten sind im Kontext der Terminplanung unerlässlich, z.B. für Terminvereinbarungen oder Rückfragen. Das Must-Support gilt ausschließlich für Systeme, die\n  Kontaktdaten persistieren.",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.telecom.system",
         "path": "Patient.telecom.system",
-        "min": 1
+        "short": "Art der Kontaktdaten",
+        "comment": "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  \n      **Begründung Pflichtfeld:** Dient der Unterscheidung verschiedener Kontaktarten",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Patient.telecom.value",
         "path": "Patient.telecom.value",
-        "min": 1
+        "short": "Wert der Kontaktdaten",
+        "comment": "Enthält den eigentlichen Wert der Kontaktdaten, z.B. die Telefonnummer oder E-Mail-Adresse.  \n      **Begründung Pflichtfeld:** Ohne diese Angabe sind die Kontaktdaten nicht nutzbar.",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Patient.gender",
