@@ -50,9 +50,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
 * verificationStatus MS
   * ^short = "Bestätigungsstatus"
-  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Da die Zusatzkennzeichen für die Diagnosensicherheit (V, G, A und Z) im stationären Bereich nicht verwendet werden dürfen für abrechnungsrelevante Diagnosen (vgl. Basiswissen Kodieren - Eine kurze Einführung in die Anwendung von ICD-10 und OPS, BfArM/DIMDI), MUSS ein Server diese Information NICHT abbilden. Das System SOLL jedoch den Aktivitätsstatus für diese abrechnungsrelevanten Diagnosen hart kodieren in der Condition-Instanz 
-  (Condition.verificationStatus auf 'confirmed'), sodass Clients nicht missverständlich mit einer fälschlicherweise angelegten 
-  Condition-Ressource ('entered-in-error') interagieren. In stationären Kontexten in dem die Diagnose nicht gesichert ist werden oftmals entsprechend den Kodierrichtlinien lediglich die Symptome kodiert."
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Im Falle von abrechnungsrelevanten Diagnosen SOLL in der Condition-Instanz der Aktivitätsstatus hart-codiert werden   (Condition.verificationStatus auf 'confirmed'), sodass Clients nicht missverständlich mit einer fälschlicherweise angelegten 
+  Condition-Ressource ('entered-in-error') **interagieren.** Dies gilt, da Zusatzkennzeichen für die Diagnosensicherheit (V, G, A und Z) im stationären Bereich nicht verwendet werden dürfen, sodass ein Server diese Information nicht abbilden muss.
+"
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
