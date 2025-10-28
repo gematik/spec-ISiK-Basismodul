@@ -27,9 +27,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   **Einschränkung der übergreifenden MS-Definition:**  
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer RelatedPerson-Ressource, 
   so MUSS dieses System die Information NICHT abbilden. 
-  Das System SOLL jedoch den Aktivitätsstatus hart kodieren in der Patienteninstanz 
-  (RelatedPerson.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven 
-  RelatedPerson-Ressource interagieren."
+  
+  "
 * patient 1..1 MS
   * ^short = "Patientenbezug"
   * ^comment = "Motivation Kardinalität und Must-Support: Referenz auf den Patienten, zu dem diese angehörige Person in Beziehung steht. Diese Verlinkung ist essentiell für die Dokumentation der Beziehung zwischen Patient und Angehörigem."
