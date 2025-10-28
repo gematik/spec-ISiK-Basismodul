@@ -27,7 +27,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   **Einschränkung der übergreifenden MS-Definition:**  
   Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer RelatedPerson-Ressource, 
   so MUSS dieses System die Information NICHT abbilden. 
-  
   "
 * patient 1..1 MS
   * ^short = "Patientenbezug"
