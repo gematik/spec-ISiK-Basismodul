@@ -313,18 +313,18 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
   """
   * identifier 1.. MS
-  * ^short = "Identifier des Aufenthaltsortes"
-  * system MS
-    * ^short = "Namensraum des Identifiers"
-    * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    * ^short = "Identifier des Aufenthaltsortes"
+    * system MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
     aus dem der Identifier stammt. 
     Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
     [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
     **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
-  * value 1.. MS
-    * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+    * value 1.. MS
+      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
       **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-* display 1.. MS
+  * display 1.. MS
   * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
