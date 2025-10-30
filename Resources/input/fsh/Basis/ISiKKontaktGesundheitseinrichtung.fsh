@@ -302,30 +302,30 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location ^slicing.discriminator[+].type = #pattern
 * location ^slicing.discriminator[=].path = "status"
 * location ^slicing.rules = #open
-* location 
-  * ^short = "Aufenthaltsorte des Patienten"
-  * ^comment = """
-  Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
-  Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
-  Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
+  * location 
+    * ^short = "Aufenthaltsorte des Patienten"
+    * ^comment = """
+    Hinweise zur Einschränkung von Encounter.location.status auf "active" zu Abbildung des aktuellen Aufenthaltortes des Patienten
+    Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
+    Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
 
-  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
-  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
-  """
-  * identifier 1.. MS
-    * ^short = "Identifier des Aufenthaltsortes"
-    * system MS
-      * ^short = "Namensraum des Identifiers"
-      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-    aus dem der Identifier stammt. 
-    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
-    * value 1.. MS
-      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-  * display 1.. MS
-  * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+    Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+    Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
+    """
+    * identifier 1.. MS
+      * ^short = "Identifier des Aufenthaltsortes"
+      * system MS
+        * ^short = "Namensraum des Identifiers"
+        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+      aus dem der Identifier stammt. 
+      Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+      [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+      **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
+      * value 1.. MS
+        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+        **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+    * display 1.. MS
+    * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
   * ^short = "Slice für die aktive Station"
