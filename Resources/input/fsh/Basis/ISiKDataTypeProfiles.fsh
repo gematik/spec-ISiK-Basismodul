@@ -19,6 +19,7 @@ Description: "Data Type profile for Snomed-CT Codings in ISiK"
 * insert Meta
 * system = $sct
 * version MS
+  * insert Coding-Version-MS
 * version obeys sct-version-de
 
 Profile: ISiKLoincCoding
@@ -29,6 +30,7 @@ Description: "Data Type profile for LOINC Codings in ISiK"
 * insert Meta
 * system = $loinc
 * version MS
+  * insert Coding-Version-MS
 
 // Profile die von den dt. Basisprofilen erben
 //
