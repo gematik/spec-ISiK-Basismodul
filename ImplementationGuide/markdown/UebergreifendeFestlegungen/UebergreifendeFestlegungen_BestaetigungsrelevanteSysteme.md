@@ -9,7 +9,7 @@ zweijähriger Übergangsfrist im Krankenhaus um die Schnittstelle erweitert sein
 das ISIK-Modul bzw. die Datenobjekte der gematik jeweils beschreiben. Die Festlegung der Systeme zu den einzelnen ISiK-Modulen ist um Erläuterungen in eckigen
 Klammern ergänzt.
 
-ISiK-Basismodul (Stufe 1 und Stufe 2)
+ISiK-Basismodul
 - Krankenhaus-Informationssystem (KIS)
 
 ISiK-Modul Vitalwerte und Körpermaße
