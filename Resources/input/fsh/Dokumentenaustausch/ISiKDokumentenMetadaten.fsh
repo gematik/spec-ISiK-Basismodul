@@ -22,6 +22,7 @@ Elemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf 
 * insert CommonElements
 * masterIdentifier 1.. MS
   * ^short = "Versionsspezifische OID des Dokumentes"
+  * ^comment = "**Begründung Must Support:** Die OID ist erforderlich, um die Version des Dokumentes eindeutig zu identifizieren."
   * system 1..1 MS
     * ^short = "Namensraum des Identifiers"
     * ^comment = "Bei OIDs und UUIDs ist hier stets der Wert `urn:ietf:rfc:3986` anzugeben. Weitere Hinweise zur AbbildungVerwendung von MasterIdentifiern und deren Abbildung auf FHIR sind [in IHE-ITI](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types) zu finden."
@@ -108,6 +109,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
     * ^comment = "Der Anzeigetext zum XDS-Class-Code"
 * subject 1..1 MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 0.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Bedingtes Pflichtfeld:** Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  
@@ -210,6 +212,8 @@ Ab dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Eleme
     genügt die Angabe des Codes
     &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;"
 * context 1.. MS
+  * ^short = "Kontextinformationen zum Dokument"
+  * ^comment = "**Begründung Must Support:** Kontextinformationen sind erforderlich, um die Relevanz und den Bezug des Dokuments zu verstehen."
   * encounter ..1 MS
     * ^short = "Aufenthaltsbezug"
     * ^comment = "**Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD."
