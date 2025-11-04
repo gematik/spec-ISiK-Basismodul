@@ -257,7 +257,7 @@ RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * reference MS
     * ^short = "Location-Link"
     * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
   * identifier 1.. MS
     * ^short = "Identifier des Aufenthaltsortes"
     * system MS
