@@ -709,39 +709,8 @@
           ],
           "rules": "open"
         },
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location",
-        "path": "Encounter.location.location",
-        "short": "(Menschenlesbarer) Name des Aufenthaltsortes",
-        "comment": "Hinweise zur Einschränkung von Encounter.location.status auf \"active\" zu Abbildung des aktuellen Aufenthaltortes des Patienten\nDie Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.\nDiese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.\n\nGleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  \nDamit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden."
-      },
-      {
-        "id": "Encounter.location.location.identifier",
-        "path": "Encounter.location.location.identifier",
-        "short": "Identifier des Aufenthaltsortes",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location.identifier.system",
-        "path": "Encounter.location.location.identifier.system",
-        "short": "Namensraum des Identifiers",
-        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n      aus dem der Identifier stammt. \n      Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n      [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n      **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist).",
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location.identifier.value",
-        "path": "Encounter.location.location.identifier.value",
-        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n        **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Encounter.location.location.display",
-        "path": "Encounter.location.location.display",
-        "min": 1,
+        "short": "Aufenthaltsorte des Patienten",
+        "comment": "Hinweise zur Einschränkung von Encounter.location.status auf \"active\" zu Abbildung des aktuellen Aufenthaltortes des Patienten\nDie Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.\nDiese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.\n\nGleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  \nDamit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.",
         "mustSupport": true
       },
       {
@@ -772,7 +741,35 @@
         "id": "Encounter.location:Zimmer.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \nund ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "short": "Identifier des Aufenthaltsortes",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.identifier.system",
+        "path": "Encounter.location.location.identifier.system",
+        "short": "Namensraum des Identifiers",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist).",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.identifier.value",
+        "path": "Encounter.location.location.identifier.value",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Zimmer.location.display",
+        "path": "Encounter.location.location.display",
+        "short": "(Menschenlesbarer) Name des Aufenthaltsortes",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -838,7 +835,35 @@
         "id": "Encounter.location:Bettenstellplatz.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \nund ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bettenstellplatz.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "short": "Identifier des Aufenthaltsortes",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bettenstellplatz.location.identifier.system",
+        "path": "Encounter.location.location.identifier.system",
+        "short": "Namensraum des Identifiers",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist).",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bettenstellplatz.location.identifier.value",
+        "path": "Encounter.location.location.identifier.value",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Bettenstellplatz.location.display",
+        "path": "Encounter.location.location.display",
+        "short": "(Menschenlesbarer) Name des Aufenthaltsortes",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -905,7 +930,35 @@
         "id": "Encounter.location:Station.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \nund ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.identifier",
+        "path": "Encounter.location.location.identifier",
+        "short": "Identifier des Aufenthaltsortes",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.identifier.system",
+        "path": "Encounter.location.location.identifier.system",
+        "short": "Namensraum des Identifiers",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist).",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.identifier.value",
+        "path": "Encounter.location.location.identifier.value",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location:Station.location.display",
+        "path": "Encounter.location.location.display",
+        "short": "(Menschenlesbarer) Name des Aufenthaltsortes",
+        "min": 1,
         "mustSupport": true
       },
       {
