@@ -51,7 +51,7 @@ Die Vorbelegung erfolgt über die [SDC-InitialExpression](https://build.fhir.org
     * type = #string
     * linkId = "2.3"
     * text = "Fachabteilungsschlüssel §301:"
-    * insert initialExpression([["(%encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').display | %encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').code)"]], [["Selektion des Fachabteilungsschlüssel"]])
+    * insert initialExpression([["%encounter.serviceType.coding.where(system = 'http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel').display"]], [["Selektion des Fachabteilungsschlüssel"]])
   * item[+]
     * type = #string
     * linkId = "2.4"
