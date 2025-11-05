@@ -212,3 +212,22 @@ RuleSet: QuestionnaireResponseCommons(questionnaire, patient)
 * author = Reference({patient})
 * authored = "2025-01-01"
 
+RuleSet: tbeContext(expression)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+  * valueString = {expression}
+
+RuleSet: tbeValue(expression)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+  * valueString = {expression}
+
+RuleSet: tbeExtract(resourceId, fullUrl)
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+  * extension[+]
+    * url = "template"
+    * valueReference = Reference({resourceId})
+  * extension[+]
+    * url = "fullUrl"
+    * valueString = "%{fullUrl}"
