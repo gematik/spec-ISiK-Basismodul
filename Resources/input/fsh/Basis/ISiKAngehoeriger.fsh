@@ -21,12 +21,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys relatedp-de-1
 * active MS
   * ^short = "Status des Datensatzes"
-  * ^comment = "
-  `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  
-  `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
-  **Einschränkung der übergreifenden MS-Definition:**  
-  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer RelatedPerson-Ressource, 
-  so MUSS dieses System die Information NICHT abbilden. 
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. 
+
+  **Hinweis zur Verwendung:**
+  * `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  
+  * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
+  
+    **WICHTIGER Hinweis für Implementierer:**  
+* Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
+* Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können." 
   "
 * patient 1..1 MS
   * ^short = "Patientenbezug"

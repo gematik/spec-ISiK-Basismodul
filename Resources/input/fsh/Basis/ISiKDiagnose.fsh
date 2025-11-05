@@ -50,9 +50,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
 * verificationStatus MS
   * ^short = "Bestätigungsstatus"
-  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Im Falle von abrechnungsrelevanten Diagnosen SOLL in der Condition-Instanz der Aktivitätsstatus hart-codiert werden   (Condition.verificationStatus auf 'confirmed'), sodass Clients nicht missverständlich mit einer fälschlicherweise angelegten 
-  Condition-Ressource ('entered-in-error') **interagieren.** Dies gilt, da Zusatzkennzeichen für die Diagnosensicherheit (V, G, A und Z) im stationären Bereich nicht verwendet werden dürfen, sodass ein Server diese Information nicht abbilden muss.
-"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.
+  
+  **WICHTIGER Hinweis für Implementierer:**  
+* Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.
+* Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können."
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
