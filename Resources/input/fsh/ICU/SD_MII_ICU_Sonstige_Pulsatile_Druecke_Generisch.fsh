@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Parent: Observation
 Id: sd-mii-icu-sonstige-pulsatile-druecke-generisch
 Title: "SD MII ICU Sonstige pulsatile Druecke Generisch"
+Description: "Dieses Profil bietet eine abstrahierte Schicht zur Abbildung sonstiger pulsatiler Drücke in der Akutmedizin. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer Blutdruckmessung (siehe dafür Profile zu Blutdruck im generischen Modul Vitalparameter)."
 * insert Meta
 * insert CommonElements
 * identifier MS

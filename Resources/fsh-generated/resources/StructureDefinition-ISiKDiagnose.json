@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDiagnose",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKDiagnose",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \nüber die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  \n### Motivation\nDie Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, \nob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  \n\nIn FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  \n\nDa die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. \nFalls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), \nist alternativ eine Repräsentation als Freitext-Diagnose möglich.\n\n### Kompatibilität\nFür das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:\n* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)\n* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
@@ -34,20 +34,20 @@
         "id": "Condition.id",
         "path": "Condition.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Condition.meta.versionId",
         "path": "Condition.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Condition.meta.lastUpdated",
         "path": "Condition.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Condition.extension",
@@ -231,6 +231,7 @@
       {
         "id": "Condition.bodySite",
         "path": "Condition.bodySite",
+        "short": "Körperstelle",
         "comment": "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)",
         "mustSupport": true
       },
@@ -275,7 +276,7 @@
         "id": "Condition.subject.reference",
         "path": "Condition.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -290,7 +291,7 @@
         "id": "Condition.encounter.reference",
         "path": "Condition.encounter.reference",
         "short": "Encounter-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \r\nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -323,6 +324,8 @@
         "id": "Condition.onset[x]:onsetDateTime",
         "path": "Condition.onset[x]",
         "sliceName": "onsetDateTime",
+        "short": "Erkrankungsbeginn als Datum",
+        "comment": "''Begründung MS:** Siehe onset[x]",
         "min": 0,
         "max": "1",
         "type": [
@@ -336,6 +339,8 @@
         "id": "Condition.onset[x]:onsetAge",
         "path": "Condition.onset[x]",
         "sliceName": "onsetAge",
+        "short": "Erkrankungsbeginn als Alter",
+        "comment": "''Begründung MS:** Siehe onset[x]",
         "min": 0,
         "max": "1",
         "type": [
@@ -391,6 +396,8 @@
         "id": "Condition.abatement[x]:abatementAge",
         "path": "Condition.abatement[x]",
         "sliceName": "abatementAge",
+        "short": "Klinische relevanter Zeitraum Ende als Alter",
+        "comment": "''Begründung MS:** Siehe abatement[x]",
         "min": 0,
         "max": "1",
         "type": [
@@ -421,6 +428,8 @@
         "id": "Condition.abatement[x]:abatementDateTime",
         "path": "Condition.abatement[x]",
         "sliceName": "abatementDateTime",
+        "short": "Klinische relevanter Zeitraum Ende als Datum",
+        "comment": "''Begründung MS:** Siehe abatement[x]",
         "min": 0,
         "max": "1",
         "type": [

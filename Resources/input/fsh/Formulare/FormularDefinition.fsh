@@ -69,6 +69,14 @@ Parent: Questionnaire
     Je nach 'type' des items: Fragestellung, Anzeigetext oder Gruppenname"
   * type MS
     * ^comment = "Time is handled using \"string\".  File is handled using Attachment.  (Content can be sent as a contained binary)."
+  * enableWhen MS
+    * ^comment = "**Begründung MS:** Bedingungen, die erfüllt sein müssen, damit das Item dargestellt wird. Dieses Feld ist ein modifier-Element, weshalb MS obligatorisch ist, es muss interpretiert werden."
+    * question MS
+      * ^comment = "LinkId der Frage, bei der die Bedingung zu erfüllen ist."
+    * operator MS
+      * ^comment = "Operator, mittels dem die Value der .question mit dem in answer[x] angegeben Element vergleichen wird."
+    * answer[x] MS
+      * ^comment = "Rechter Wert des Bedingungsvergleich"
   * required MS
     * ^short = "Pflichtfeld?"
     * ^comment = "**Begründung MS:**  

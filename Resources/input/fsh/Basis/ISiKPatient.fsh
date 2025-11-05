@@ -15,9 +15,11 @@ Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen ang
 * [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)
 * [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)
 * [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)
-* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)  
+* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)
 
-Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:
+
+* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen."
 
 * insert Meta
 * insert CommonElements
@@ -25,6 +27,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
+  * ^comment = "Eindeutiger Identifier des Patienten"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -40,7 +43,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     unveränderbare Teil der Versichertennummer, 
     der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
     Er gilt für alle Krankenversichertennummern, 
-    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.  
+    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  
     **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)"
   * type 1.. MS
     * ^short = "Art des Identifiers"
@@ -140,6 +143,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   (Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven 
   Patient-Ressource interagieren."
 * name MS
+  * ^comment = "Angabe der Namen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -212,8 +216,19 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
   * prefix ..0
-* telecom.system 1..
-* telecom.value 1..
+* telecom MS
+  * ^short = "Angabe der Kontaktdaten"
+  * ^comment = "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.
+  **Bedingtes MS:** Kontaktdaten sind im Kontext der Terminplanung unerlässlich, z.B. für Terminvereinbarungen oder Rückfragen. Das Must-Support gilt ausschließlich für Systeme, die
+  Kontaktdaten persistieren."
+  * system 1.. MS
+    * ^short = "Art der Kontaktdaten"
+    * ^comment = "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Dient der Unterscheidung verschiedener Kontaktarten"
+  * value 1.. MS
+    * ^short = "Wert der Kontaktdaten"
+    * ^comment = "Enthält den eigentlichen Wert der Kontaktdaten, z.B. die Telefonnummer oder E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Ohne diese Angabe sind die Kontaktdaten nicht nutzbar."
 * gender 1.. MS
   * ^short = "Administratives Geschlecht" 
   * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
@@ -246,6 +261,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
   * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können."
 * address MS
+  * ^comment = "Angabe der Adressen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open

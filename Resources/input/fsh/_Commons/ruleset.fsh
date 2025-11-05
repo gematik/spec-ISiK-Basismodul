@@ -1,18 +1,18 @@
-Alias: $ISIKVersion = 5.0.0
+Alias: $ISIKVersion = 5.1.0
 
 RuleSet: Meta
 * ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-06-26"
+* ^date = "2025-10-23"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-06-26"
+* date = "2025-10-23"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -185,11 +185,25 @@ RuleSet: CodeableConcept-MS
   * ^comment = "Motivation MS: Semantische Kodierung."
   * ^short = "Coding"
   * code MS
-    * ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
-    * ^short = "Code"
+    * insert Coding-Code-MS
   * system MS
-    * ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
-    * ^short = "System"
+    * insert Coding-System-MS
+
+RuleSet: Coding-Code-MS
+* ^short = "Code"
+* ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
+
+RuleSet: Coding-System-MS
+* ^short = "System"
+* ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
+
+RuleSet: Coding-Display-MS
+* ^short = "Display"
+* ^comment = "Motivation MS: Anzeigename des kodierten Wertes."
+
+RuleSet: Coding-Version-MS
+* ^short = "Version"
+* ^comment = "Motivation MS: Version des kodierten Wertes."
 
 RuleSet: Component-MS
 * ^comment = "Motivation MS: Erfassung der Komponenten eines Vitalparameters" 
@@ -236,6 +250,28 @@ RuleSet: CommonElements
   * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
   * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
   Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+
+RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+* location 1.. MS
+  * ^short = "Aufenthaltsort"
+  * reference MS
+    * ^short = "Location-Link"
+    * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * identifier 1.. MS
+    * ^short = "Identifier des Aufenthaltsortes"
+    * system MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
+    * value 1.. MS
+      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+  * display 1.. MS
+    * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 
 RuleSet: ISiKMedikament-CodingPZNComment
 * ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."

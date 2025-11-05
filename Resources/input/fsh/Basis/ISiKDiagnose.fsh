@@ -108,7 +108,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * onset[x] only dateTime or Age
 * onsetDateTime MS
+  * ^short = "Erkrankungsbeginn als Datum"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
 * onsetAge MS 
+  * ^short = "Erkrankungsbeginn als Alter"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
   * extension[Lebensphase-Beginn]
     * ^short = "Lebensphase des Erkrankungsbeginns"
@@ -122,11 +126,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   so MUSS dieses System die Information NICHT abbilden. 
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * abatementAge MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Alter"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
   * extension[Lebensphase-Ende]
     * ^short = "Lebensphase des Erkrankungsendes"
     * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
 * abatementDateTime MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Datum"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
 * recordedDate 1.. MS
   * ^short = "Dokumentationsdatum"
   * ^comment = "Datum, an dem die Diagnose dokumentiert wurde.   
@@ -137,6 +145,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Notizen"
   * ^comment = "Ergänzende Hinweise und Anmerkungen zur Diagnose"
 * bodySite MS
+  * ^short = "Körperstelle"
   * ^comment = "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)"
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern
@@ -177,7 +186,6 @@ InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding.version = "2021"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
 * code.coding.version = "2024"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"
