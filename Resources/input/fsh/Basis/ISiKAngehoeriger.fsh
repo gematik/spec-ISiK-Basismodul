@@ -28,8 +28,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
   
     **WICHTIGER Hinweis für Implementierer:**  
-* Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
-* Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können." 
+    * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
+    * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können." 
 
 * patient 1..1 MS
   * ^short = "Patientenbezug"
