@@ -83,7 +83,7 @@
         "id": "Condition.verificationStatus",
         "path": "Condition.verificationStatus",
         "short": "Bestätigungsstatus",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** Im Falle von abrechnungsrelevanten Diagnosen SOLL in der Condition-Instanz der Aktivitätsstatus hart-codiert werden   (Condition.verificationStatus auf 'confirmed'), sodass Clients nicht missverständlich mit einer fälschlicherweise angelegten \n  Condition-Ressource ('entered-in-error') **interagieren.** Dies gilt, da Zusatzkennzeichen für die Diagnosensicherheit (V, G, A und Z) im stationären Bereich nicht verwendet werden dürfen, sodass ein Server diese Information nicht abbilden muss.\n",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.\n  \n  **WICHTIGER Hinweis für Implementierer:**  \n* Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.\n* Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
         "mustSupport": true
       },
       {

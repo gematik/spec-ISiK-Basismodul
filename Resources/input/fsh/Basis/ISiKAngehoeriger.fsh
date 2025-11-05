@@ -30,7 +30,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     **WICHTIGER Hinweis für Implementierer:**  
 * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
 * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können." 
-  "
+
 * patient 1..1 MS
   * ^short = "Patientenbezug"
   * ^comment = "Motivation Kardinalität und Must-Support: Referenz auf den Patienten, zu dem diese angehörige Person in Beziehung steht. Diese Verlinkung ist essentiell für die Dokumentation der Beziehung zwischen Patient und Angehörigem."
