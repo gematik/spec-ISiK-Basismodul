@@ -48,7 +48,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * extension[Aufnahmegrund]
   * ^short = "Aufnahmegrund"
   * ^comment = "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung
-nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLLTE am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLLTE dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
+nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLL am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLL dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden."
   * extension[ErsteUndZweiteStelle] MS
     * ^short = "Aufnahmegrund: 1. & 2. Stelle"
     * ^comment = "1. und 2. Stelle des Aufnahmegrunds nach § 301 Abs. 3 SGB V."
@@ -62,15 +62,20 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate named plannedStartDate 0..1 MS
 * extension[plannedStartDate]
   * ^short = "geplantes Aufnahmedatum"
+  * ^comment = "**Begründung MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben."
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate named plannedEndDate 0..1 MS
 * extension[plannedEndDate]
   * ^short = "geplantes Entlassdatum"
+  * ^comment = "**Begründung MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen."
 * identifier 1.. MS
+  * ^comment = "Eindeutiger Identifier des Encounter"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * identifier contains Aufnahmenummer 0..1 MS
 * identifier[Aufnahmenummer] ^patternIdentifier.type = $v2-0203#VN
+  * ^short = "Aufnahmenummer"
+  * ^comment = "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert."
   * type 1.. MS
     * coding 1.. MS
       * ^slicing.discriminator.type = #pattern
@@ -117,6 +122,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   regulatorischen und abrechnungrelevanten Rahmenbedingungen, erfolgt in `type`.  
   Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `class` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
 * type MS
+  * ^comment = "Typ des Encounter"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -179,6 +185,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
@@ -303,31 +310,13 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
 
   Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
-  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird.
+  Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
   """
 * location contains  Zimmer 0..1 MS and Bettenstellplatz 0..1 MS and Station 0..1 MS
 * location[Station]
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * ^comment = "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * ^short = "Slice für die aktive Station"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
     * ^short = "Art des Aufenthaltsortes (hier: Station)"
@@ -342,26 +331,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Zimmer]
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * ^short = "Slice für das aktive Zimmer"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
     * ^short = "Art des Aufenthaltsortes (hier: Zimmer)"
@@ -376,26 +348,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * location[Bettenstellplatz]
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * ^short = "Slice für das aktive Bett"
+  * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"
@@ -411,9 +366,14 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * status MS
   * status = #active
 * serviceProvider MS
+  * ^short = "Zuständige ServiceProvider"
+  * ^comment = "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden."
   * identifier 1.. MS
+    * ^comment = "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein."
   * display 1.. MS
+    * ^comment = "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein."
 * appointment MS
+* appointment ^short = "Verknüpfung mit einem Termin"
 * appointment  ^comment = "
   
 **Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. 
@@ -430,6 +390,7 @@ Hieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevan
 Extension: PlannedStartDate
 Id: PlannedStartDate
 Context: Encounter
+Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
@@ -438,13 +399,14 @@ Context: Encounter
 Extension: PlannedEndDate
 Id: PlannedEndDate
 Context: Encounter
+Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
 * insert Meta
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
 Extension: ExtensionISiKRehaEntlassung
 Id: ExtensionISiKRehaEntlassung
-Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht"
+Description: "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement."
 Context: Encounter.hospitalization.dischargeDisposition
 * insert Meta
 * extension contains
@@ -574,6 +536,210 @@ Usage: #example
 * serviceProvider.identifier.system = "https://test.krankenhaus.de/fhir/sid/fachabteilungsid"
 * serviceProvider.identifier.value = "ORTHO-1234"
 * serviceProvider.display = "Fachabteilung für Orthopädie und Endoprothetik"
+
+Instance: FachabteilungskontaktStationaereAufnahme
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktBettenverlegung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-01T10:00:00+01:00"
+* period.end = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#1500 "Allgemeine Chirurgie"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B016"
+* location[=].location.display = "Bett B016"
+* location[=].period.end = "2025-05-01T12:00:00+01:00"
+* location[=].status = #completed
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktFachbereichswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-10T08:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel1
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T08:00:00+01:00"
+* period.end = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#2600 "Hals-, Nasen-, Ohrenheilkunde"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "CHA1"
+* location[=].location.display = "Station CHA1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "B027"
+* location[=].location.display = "Bett B027"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktStationswechsel2
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #in-progress
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
+
+Instance: FachabteilungskontaktEntlassung
+InstanceOf: ISiKKontaktGesundheitseinrichtung
+Usage: #example
+* identifier.type = $v2-0203#VN
+* identifier.value = "0123456789"
+* status = #finished
+* class = $v3-ActCode#IMP
+* type[Kontaktebene] = $Kontaktebene#abteilungskontakt
+* subject = Reference(PatientinNormal)
+* period.start = "2025-01-15T14:00:00+01:00"
+* period.start = "2025-01-20T10:00:00+01:00"
+* serviceType = $FachabteilungsschluesselCS#0100 "Innere Medizin"
+* location[+].physicalType = $LocationPhysicalType#wa "Ward"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/stationId"
+* location[=].location.identifier.value = "INNG1"
+* location[=].location.display = "Station INNG1"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#ro "Room"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/zimmerId"
+* location[=].location.identifier.value = "Z001"
+* location[=].location.display = "Zimmer Z001"
+* location[=].status = #active
+* location[+].physicalType = $LocationPhysicalType#bd "Bed"
+* location[=].location.identifier.system = "https://test.krankenhaus.de/fhir/sid/bettId"
+* location[=].location.identifier.value = "A010"
+* location[=].location.display = "Bett A010"
+* location[=].status = #active
 
 
 Invariant: ISiK-enc-1

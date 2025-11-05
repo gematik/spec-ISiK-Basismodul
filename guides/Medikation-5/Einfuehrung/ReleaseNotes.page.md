@@ -4,10 +4,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+## Version 5.1.0
 
-Datum: tbd
+Datum: 23.10.2025
 
+* `documentation` Link zu Dosierungsbeispielen im IG
+  Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882
 * `documentation` Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System  https://github.com/gematik/spec-ISiK-Basismodul/pull/807
 
 * `documentation` Erläuterung für die Umsetzung der Pausierung einer Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/803

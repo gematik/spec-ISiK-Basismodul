@@ -8,14 +8,17 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+## Version 5.1.0
 
-Datum: tbd
+Datum: 23.10.2025
+
+* `improve` enableWhen-Element mit MS versehen, wurde initial vergessen aber in Beispielen und Beschreibungen genannt https://github.com/gematik/spec-ISiK-Basismodul/pull/896
 
 * `documentation` Satz zur Nutzung der Labor-Profile verschoben in den korrekten IG (ICU) - https://github.com/gematik/spec-ISiK-Basismodul/pull/867
 * `improve` Separierung, Vervollständigung und Dokumentation von Beispiel-Questionnaires
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+
 
 ----
 

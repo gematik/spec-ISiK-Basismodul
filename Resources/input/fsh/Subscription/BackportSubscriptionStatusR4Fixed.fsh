@@ -13,6 +13,7 @@ Diese lokale Definition wird durch das offizielle `backport-subscription-status-
 * insert Meta
 * insert CommonElements
 * ^version = "1.1.0"
+* ^publisher = "HL7 International / FHIR Infrastructure"
 * ^date = "2023-01-11T15:34:32+11:00"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"
 * ^contact[=].telecom.system = #url

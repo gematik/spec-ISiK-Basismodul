@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDefinition",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKFormularDefinition",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -20,20 +20,20 @@
         "id": "Questionnaire.id",
         "path": "Questionnaire.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Questionnaire.meta.versionId",
         "path": "Questionnaire.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Questionnaire.meta.lastUpdated",
         "path": "Questionnaire.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Questionnaire.modifierExtension:MDR-Relevant",
@@ -141,6 +141,30 @@
         "id": "Questionnaire.item.type",
         "path": "Questionnaire.item.type",
         "comment": "Time is handled using \"string\".  File is handled using Attachment.  (Content can be sent as a contained binary).",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen",
+        "path": "Questionnaire.item.enableWhen",
+        "comment": "**Begründung MS:** Bedingungen, die erfüllt sein müssen, damit das Item dargestellt wird. Dieses Feld ist ein modifier-Element, weshalb MS obligatorisch ist, es muss interpretiert werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.question",
+        "path": "Questionnaire.item.enableWhen.question",
+        "comment": "LinkId der Frage, bei der die Bedingung zu erfüllen ist.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.operator",
+        "path": "Questionnaire.item.enableWhen.operator",
+        "comment": "Operator, mittels dem die Value der .question mit dem in answer[x] angegeben Element vergleichen wird.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.answer[x]",
+        "path": "Questionnaire.item.enableWhen.answer[x]",
+        "comment": "Rechter Wert des Bedingungsvergleich",
         "mustSupport": true
       },
       {
