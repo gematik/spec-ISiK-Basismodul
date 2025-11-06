@@ -1,7 +1,5 @@
 # R4 Topic-Based Subscription Notification Bundle - Test Implementation Guide v0.0.1
 
-Implementation Guide
-
 Test Implementation Guide
 
 Version 0.0.1 - STU1
