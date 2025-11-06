@@ -230,4 +230,9 @@ RuleSet: tbeExtract(resourceId, fullUrl)
     * valueReference = Reference({resourceId})
   * extension[+]
     * url = "fullUrl"
-    * valueString = "%{fullUrl}"
+    * valueString = {fullUrl}
+
+RuleSet: hiddenItem
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * valueBoolean = true
