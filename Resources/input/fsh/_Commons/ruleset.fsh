@@ -266,7 +266,7 @@ RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
     aus dem der Identifier stammt. 
     Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
     [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht die Angabe des identifiers des Aufenthaltsortes die Abfrage von Informationen über den Aufenthaltsort (was mit display nicht unmittelbar gegeben ist)."
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert."
     * value 1.. MS
       * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
       **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
