@@ -37,8 +37,25 @@ Title: "DemoTemplatebasedExtractionQuestionnaire"
     * linkId = "gender"
     * text = "Geschlecht"
     * type = #choice
-    * answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
-    * insert initialExpression([["%patient.gender"]], [["Selektion des Geschlechts des Patienten"]])
+    * insert initialExpression([["%questionnaire.repeat(item).where(linkId='gender').answerOption.valueCoding.where(code=%patient.gender)"]], [["Selektion des Geschlechts des Patienten"]])
+    * answerOption[+]
+      * valueCoding
+        * system = "http://hl7.org/fhir/administrative-gender"
+        * code = #unknown
+        * display = "Unbekannt"
+      * initialSelected = true
+    * answerOption[+].valueCoding
+      * system = "http://hl7.org/fhir/administrative-gender"
+      * code = #male
+      * display = "Männlich"
+    * answerOption[+].valueCoding
+      * system = "http://hl7.org/fhir/administrative-gender"
+      * code = #female
+      * display = "Weiblich"
+    * answerOption[+].valueCoding
+      * system = "http://hl7.org/fhir/administrative-gender"
+      * code = #other
+      * display = "Anderes"
   * item[+]
     * linkId = "birthDate"
     * text = "Geburtsdatum"
