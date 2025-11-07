@@ -114,7 +114,7 @@ RuleSet: launchContext(name, type, description)
     * valueString = {description}
 
 RuleSet: initialExpression(expression, description)
-* extension
+* extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
   * valueExpression
     * language = #text/fhirpath
