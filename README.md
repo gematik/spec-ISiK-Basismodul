@@ -32,8 +32,6 @@ Zum build der Profile und für anderen Routinen werden Action eingesetzt (in .gi
 Weitere Tools zur Unterstützung der Entwicklung, die lokal ausführbar sein sollen oder von den o.g. Github Actions aufgerufen werden, sind im Ordner *scripts* abgelegt.
 
 Beschreibungen und Dokumentation zur Nutzung zu den einzelnen Scripts und actions sollen ggf. in den entsprechenden README Dateien der entsprechenden Ordner angelegt werden.
-
-## License
  
 ## License
 
