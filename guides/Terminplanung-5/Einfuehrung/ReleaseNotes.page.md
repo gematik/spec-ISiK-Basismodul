@@ -9,11 +9,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 23.10.2025
 
-* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
-* `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793
-* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805
+* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792 -> #Mock-Change prüfen
+* `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793 -> #Mock-Change prüfen
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805 -> #Mock-Change prüfen
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen
+* `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen -> #Mock-Change prüfen
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Durch Entfernung des Abschnittes "Übersicht der Akteure" den Abschnitt Akteure klarer gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/848
@@ -24,7 +24,7 @@ Datum: 23.10.2025
 Datum: 26.06.2025
 
 * `documentation` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
-* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`
+* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files` -> #Mock-Change prüfen - Feauture IDP?
 * `improve` Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767
 * `improve` Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773
 
@@ -43,7 +43,7 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
+* `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607 -> #Mock-Change prüfen
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
 * `documentation` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
 * `improve` ISiKKalender enthielt ein required Binding auf ein VS welches auf ein `fragment`
@@ -59,7 +59,7 @@ Datum: 09.04.2025
 Datum: 08.04.2025
 
 * `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
-* `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c
+* `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c -> #Mock-Change prüfen
 
 
 ---
@@ -69,8 +69,8 @@ Datum: 08.04.2025
 Datum: 20.02.2025
 
 
-* `improve` Die Verbindlichkeit des Suchparameters `subject` in Communication wurde von SHALL auf MAY reduziert. https://github.com/gematik/spec-ISiK-Terminplanung/pull/247
-Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen. 
+* `improve` Die Verbindlichkeit des Suchparameters `subject` in Communication wurde von SHALL auf MAY reduziert. https://github.com/gematik/spec-ISiK-Terminplanung/pull/247 
+Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen. -> #Mock-Change prüfen
 * `improve` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248
 * `fix` Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264
 * `improve` Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266
@@ -115,8 +115,8 @@ Datum: 26.6.2024
 * `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187 
 * Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
 * `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
-* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
-* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193
+* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195 -> #Mock-Change prüfen
+* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change prüfen
 
 ----
 
@@ -124,8 +124,8 @@ Datum: 26.6.2024
 
 Datum: 4.4.2024
 
-* `improve` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178
-* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174
+* `improve` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178 -> #Mock-Change prüfen
+* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174 #Mock-Change prüfen
 * `improve` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175
 * Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173
 * `improve` Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können
