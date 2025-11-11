@@ -316,26 +316,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location[Station]
   * ^short = "Slice für die aktive Station"
   * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
     * ^short = "Art des Aufenthaltsortes (hier: Station)"
@@ -352,26 +333,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location[Zimmer]
   * ^short = "Slice für das aktive Zimmer"
   * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ro
     * ^short = "Art des Aufenthaltsortes (hier: Zimmer)"
@@ -388,26 +350,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
 * location[Bettenstellplatz]
   * ^short = "Slice für das aktive Bett"
   * ^comment = "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können."
-  * location 1.. MS
-    * ^short = "Aufenthaltsort"
-    * reference MS
-      * ^short = "Location-Link"
-      * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-    * identifier 1.. MS
-      * ^short = "Identifier des Aufenthaltsortes"
-      * system MS
-        * ^short = "Namensraum des Identifiers"
-        * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
-        aus dem der Identifier stammt. 
-        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
-        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
-        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-      * value 1.. MS
-        * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
-          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
-    * display 1.. MS
-      * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+  * insert ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
   * physicalType 1..1 MS
   * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bd
     * ^comment = "Die Kodierung in diesem Slice entstammt folgendem Valueset - gelistet unter .location.(All slices.)physicalType: https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType"

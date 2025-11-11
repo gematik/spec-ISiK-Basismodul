@@ -254,6 +254,12 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
+* deceased[x] MS
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. 
+  
+    **WICHTIGER Hinweis für Implementierer:**  
+  * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
+  * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können."
 * address MS
   * ^comment = "Angabe der Adressen"
   * ^slicing.discriminator.type = #pattern
