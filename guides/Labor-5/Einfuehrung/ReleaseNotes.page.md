@@ -27,7 +27,7 @@ Mit Inkrafttreten der Stufe 5 werden auch s채mtliche nachfolgend aufgef체hrten �
 
 Datum: 5.6.2025
 
-- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
+- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727 -> #Mock-Change pr체fen
 - `improve` Die Mindestkardinalit채t f체r den SCT-Slice in ISiKLaboruntersuchung wurde von 1 auf 0
   reduziert. Das Pattern auf code.coding[snomed].system wurde entfernt um Mehrfachkodierungen in
   SnomedCT nicht zu verhindern. https://github.com/gematik/spec-ISiK-Basismodul/pull/730
