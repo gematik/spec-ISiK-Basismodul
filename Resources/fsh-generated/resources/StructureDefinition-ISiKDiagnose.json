@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2025-10-23",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \nüber die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  \n### Motivation\nDie Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, \nob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  \n\nIn FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  \n\nDa die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. \nFalls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), \nist alternativ eine Repräsentation als Freitext-Diagnose möglich.\n\n### Kompatibilität\nFür das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:\n* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)\n* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \r\nüber die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  \r\n### Motivation\r\nDie Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, \r\nob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  \r\n\r\nIn FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  \r\n\r\nDa die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. \r\nFalls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), \r\nist alternativ eine Repräsentation als Freitext-Diagnose möglich.\r\n\r\n### Kompatibilität\r\nFür das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:\r\n* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)\r\n* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  \r\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -34,24 +34,33 @@
         "id": "Condition.id",
         "path": "Condition.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Condition.meta.versionId",
         "path": "Condition.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Condition.meta.lastUpdated",
         "path": "Condition.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Condition.extension",
         "path": "Condition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -59,7 +68,7 @@
         "path": "Condition.extension",
         "sliceName": "related",
         "short": "Verknüpfte Diagnose",
-        "comment": " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, \n  ICD-10-Codierte Diagnosen miteinander zu verknüpfen (&quot;Kreuz-Stern-Ausrufezeichen-Notation&quot;), \n  diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.\n  Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.\n  Statt dessen müssen sie zwei eigenständige Condition-Ressourcen abgebildet werden, die mit Hilfe der `related`-Extension miteinander verknüpft werden.  \n  Die Sekundärdiagnose verweist jeweils auf die Primärdiagnose.",
+        "comment": " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, \r\n  ICD-10-Codierte Diagnosen miteinander zu verknüpfen (&quot;Kreuz-Stern-Ausrufezeichen-Notation&quot;), \r\n  diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.\r\n  Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.\r\n  Statt dessen müssen sie zwei eigenständige Condition-Ressourcen abgebildet werden, die mit Hilfe der `related`-Extension miteinander verknüpft werden.  \r\n  Die Sekundärdiagnose verweist jeweils auf die Primärdiagnose.",
         "min": 0,
         "max": "1",
         "type": [
@@ -76,7 +85,7 @@
         "id": "Condition.clinicalStatus",
         "path": "Condition.clinicalStatus",
         "short": "klinischer Status",
-        "comment": "**Begründung MS:** Auch in Stufe 4 sind keine (client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen \n  (siehe CapabilityStatement). Das heißt, entweder führen KISe entsprechende Informationen und exponieren diese, \n  oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. \n  Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, \n  erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur \n  zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch `clinicalStatus` befüllen, sofern die entsprechende Information verfügbar ist.  \n  **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem \n  [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.\n  Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden.",
+        "comment": "**Begründung MS:** Auch in Stufe 4 sind keine (client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen \r\n  (siehe CapabilityStatement). Das heißt, entweder führen KISe entsprechende Informationen und exponieren diese, \r\n  oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. \r\n  Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, \r\n  erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen.  \r\n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur \r\n  zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. \r\n  Das System MUSS jedoch `clinicalStatus` befüllen, sofern die entsprechende Information verfügbar ist.  \r\n  **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem \r\n  [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.\r\n  Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden.",
         "mustSupport": true
       },
       {
@@ -90,7 +99,7 @@
         "id": "Condition.code",
         "path": "Condition.code",
         "short": "Diagnose-Code",
-        "comment": "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. \n  Ist keine Codierung möglich, MUSS statt dessen eine textuelle Beschreibung der Prozedur angegeben werden.  \n   **Begründung Pflichtfeld:** Ist *weder* eine Codierung *noch* eine textuelle Beschreibung vorhanden, besitzt diese Ressource keine medizinische Aussagefähigkeit.",
+        "comment": "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. \r\n  Ist keine Codierung möglich, MUSS statt dessen eine textuelle Beschreibung der Prozedur angegeben werden.  \r\n   **Begründung Pflichtfeld:** Ist *weder* eine Codierung *noch* eine textuelle Beschreibung vorhanden, besitzt diese Ressource keine medizinische Aussagefähigkeit.",
         "min": 1,
         "constraint": [
           {
@@ -276,7 +285,7 @@
         "id": "Condition.subject.reference",
         "path": "Condition.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -291,7 +300,7 @@
         "id": "Condition.encounter.reference",
         "path": "Condition.encounter.reference",
         "short": "Encounter-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \r\nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -309,7 +318,7 @@
           "rules": "open"
         },
         "short": "Erkrankungsbeginn",
-        "comment": "Datum oder Alter/Lebensphase des Erkrankungsbeginns\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "comment": "Datum oder Alter/Lebensphase des Erkrankungsbeginns\r\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \r\n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\r\n  so MUSS dieses System die Information NICHT abbilden. \r\n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
         "type": [
           {
             "code": "dateTime"
@@ -381,7 +390,7 @@
           "rules": "open"
         },
         "short": "Klinische relevanter Zeitraum Ende",
-        "comment": "Ende des klinisch relevanten Zeitraums der Diagnose  \n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "comment": "Ende des klinisch relevanten Zeitraums der Diagnose  \r\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \r\n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\r\n  so MUSS dieses System die Information NICHT abbilden. \r\n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
         "type": [
           {
             "code": "dateTime"
@@ -443,7 +452,7 @@
         "id": "Condition.recordedDate",
         "path": "Condition.recordedDate",
         "short": "Dokumentationsdatum",
-        "comment": "Datum, an dem die Diagnose dokumentiert wurde.   \n  **Begründung Pflichtfeld:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, \n  nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.  \n  **Hinweis:** Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden.",
+        "comment": "Datum, an dem die Diagnose dokumentiert wurde.   \r\n  **Begründung Pflichtfeld:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, \r\n  nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.  \r\n  **Hinweis:** Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden.",
         "min": 1,
         "mustSupport": true
       },
