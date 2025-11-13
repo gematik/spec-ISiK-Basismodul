@@ -59,7 +59,7 @@ Datum: 09.04.2025
 Datum: 08.04.2025
 
 * `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
-* `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c -> #Mock-Change prüfen
+* `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1919 
 
 
 ---
