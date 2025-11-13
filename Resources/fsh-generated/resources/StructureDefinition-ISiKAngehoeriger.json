@@ -50,6 +50,13 @@
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
+        "id": "RelatedPerson.active",
+        "path": "RelatedPerson.active",
+        "short": "Status des Datensatzes",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. \n\n  **Hinweis zur Verwendung:**\n  * `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  \n  * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  \n  \n    **WICHTIGER Hinweis für Implementierer:**  \n    * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.\n    * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
+        "mustSupport": true
+      },
+      {
         "id": "RelatedPerson.patient",
         "path": "RelatedPerson.patient",
         "short": "Patientenbezug",

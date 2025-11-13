@@ -48,6 +48,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem 
   [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.
   Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
+* verificationStatus MS
+  * ^short = "Bestätigungsstatus"
+  * ^comment = """
+    **Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.
+
+    **WICHTIGER Hinweis für Implementierer:**  
+    - Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.
+    - Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.
+    """
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
