@@ -34,7 +34,7 @@ Datum: 5.6.2025
 * `improve` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
 * `improve` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718 > #MOCK-Change zu prüfen - ggf. Lockerung (hinsichtlich logischer Referenzen) - Ticket https://service.gematik.de/browse/PTDATA-1916
 * `improve` Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
-* `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725 
+* `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
 * `improve` Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739
 * `improve` Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Basismodul/pull/756/files
 
