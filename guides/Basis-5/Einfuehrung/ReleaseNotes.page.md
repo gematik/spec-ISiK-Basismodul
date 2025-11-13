@@ -38,7 +38,7 @@ Datum: 23.10.2025
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826 
 * `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830
-* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files #Test-Diff #MOCK-Change -> impliziert, das Ressourcen, die von ISiK Profil abweichen, nicht abgelehnt werden dürfen.
+* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files #Test-Diff #MOCK-Change -> impliziert, das Ressourcen, die von ISiK Profil abweichen, nicht abgelehnt werden dürfen. KEIN MOCK-CHANGE
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
 * `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
@@ -63,9 +63,9 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. https://github.com/gematik/spec-ISiK-Basismodul/pull/748 #MOCK-Change -> impliziert, das Ressourcen, die von ISiK Profil abweichen, nicht abgelehnt werden dürfen. (s.o.)
-* `improve` Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. https://github.com/gematik/spec-ISiK-Basismodul/pull/748 #Test-Change? #MOCK-Change s.o.
-* `improve` Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes https://github.com/gematik/spec-ISiK-Basismodul/pull/748 #Test-Change? #MOCK-Change
+* `improve` Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. https://github.com/gematik/spec-ISiK-Basismodul/pull/748
+* `improve` Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. https://github.com/gematik/spec-ISiK-Basismodul/pull/748 #Test-Change?
+* `improve` Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes https://github.com/gematik/spec-ISiK-Basismodul/pull/748 #Test-Change?
 * `fix` affectsState-Attribut der $update-Operation auf `true` gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert. 
 * `fix` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/726 
 * `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzufügen, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/738 
@@ -177,7 +177,7 @@ Datum: 30.8.2024
 
 Datum: 4.4.2024
 
-* `improve` Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359 #Test-Change #Mock-Server (ggf. redundant, warten da eigenes Modul in Stufe 5)
+* `improve` Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359 #Test-Change #Mock-Server (ggf. redundant, warten da eigenes Modul in Stufe 5) -> Subscription
 * `improve` Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358 #Test-Change
 * `improve` Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369 #Test-Change
 * `improve` Neue Profile für Lebenszustände - Schwangerschaftsstatus , SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378
