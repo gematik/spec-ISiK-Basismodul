@@ -115,7 +115,7 @@ Datum: 26.6.2024
 * `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187 
 * Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
 * `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
-* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195 -> #Mock-Change prüfen
+* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
 * `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change prüfen
 
 ----
