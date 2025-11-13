@@ -51,7 +51,7 @@ Datum: 13.05.2025
   `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description`
   entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen
   sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title`
-  angeben. https://github.com/gematik/spec-ISiK-Basismodul/pull/686 #MOCK-Change zu prüfen _> ggf. guter Fall für Demo zu abwärtskompatibler Lösung (Stufe 3 und 5).
+  angeben. https://github.com/gematik/spec-ISiK-Basismodul/pull/686 #MOCK-Change zu prüfen _> ggf. guter Fall für Demo zu abwärtskompatibler Lösung (Stufe 3 und 5). - Ticket https://service.gematik.de/browse/PTDATA-1917 
     * content .attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen.
     * DocumentReference .description` wurde auf 0..1 MS gesetzt, und kann weiterhin verwendet werden,
       um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare
