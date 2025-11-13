@@ -116,7 +116,7 @@ Datum: 26.6.2024
 * Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
 * `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
 * `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
-* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change prüfen
+* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change geprüft -> Kombi-Parameter-Vorgabe statt Single und daher höchstwahrscheinlich irrelevant
 
 ----
 
