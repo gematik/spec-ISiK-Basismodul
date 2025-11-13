@@ -11,7 +11,7 @@ Datum: 23.10.2025
 
 * `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
 * `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1919
-* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805 -> #Mock-Change prüfen
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1920 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen -> #Mock-Change prüfen
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
