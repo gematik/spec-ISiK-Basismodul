@@ -66,7 +66,7 @@ Datum: 09.04.2025
 
 * `improve` Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen - https://service.gematik.de/browse/PTDATA-1918
 * `improve` Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen -> ticket https://service.gematik.de/browse/PTDATA-1916
-    * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen #MOCK-Change zu prüfen 
+    * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen
 
 * `fix` Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
