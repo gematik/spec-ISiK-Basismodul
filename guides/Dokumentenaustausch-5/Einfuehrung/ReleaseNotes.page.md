@@ -31,7 +31,7 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F) -> #MOCK-Change zu prüfen - Vermutlich kein Change, da HAPI Core-Funtion
+* `improve` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
 * `improve` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718 > #MOCK-Change zu prüfen - ggf. Lockerung (hinsichtlich logischer Referenzen)
 * `improve` Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
 * `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725 
