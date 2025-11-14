@@ -4,11 +4,20 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+
+## Version 5.X.X
 
 Datum: XX.XX.2025
 
 * `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888
+
+
+## Version 5.1.0
+
+Datum: 23.10.2025
+
+Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
+
 
 ## Version 5.0.0
 

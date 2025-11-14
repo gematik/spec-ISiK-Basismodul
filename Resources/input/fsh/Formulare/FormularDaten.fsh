@@ -5,7 +5,8 @@ Alias: $ordinalValue = http://hl7.org/fhir/StructureDefinition/ordinalValue
 Profile: ISiKFormularDaten
 Parent: QuestionnaireResponse
 Title: "Ausgefülltes ISiK-Formular"
-Description: "ToDo"
+Description: "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.
+Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben."
 * insert Meta
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
@@ -52,6 +53,8 @@ Description: "ToDo"
   **Begründung MS:**
   In den meisten Fällen ist relevant, wer Formulardaten erfasst hat."
 * item MS
+  * ^short = "Formularelement"
+  * ^comment = "**Begründung MS:** Es können beliebig viele Formularelemente hier abgebildet werden."
   * linkId MS
     * ^short = "Eindeutige ID des Formularelement"
     * ^comment = "**Begründung Pflichtfeld:**

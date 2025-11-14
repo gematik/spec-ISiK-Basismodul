@@ -44,8 +44,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * reference MS
     * ^comment = "Motivation für MS: Da ein ISIK-Profil besteht, sollte dies ggf. referenziert werden." */
 * beneficiary only Reference(Patient)
-* beneficiary MS
-  * reference 1.. MS
 
 * beneficiary MS
   * ^short = "Begünstigte Person"

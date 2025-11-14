@@ -129,11 +129,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * code 1..
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
