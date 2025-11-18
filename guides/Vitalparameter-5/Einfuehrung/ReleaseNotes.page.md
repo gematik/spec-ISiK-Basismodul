@@ -8,7 +8,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: tbd
 
-* `documentation` Fehlende Begründungen für MS-Elemente nachgefplegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
+* `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
+  `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
+  angepasst (falls es keine Instanz der Zielinstanz gab).
+* `documentation` Fehlende Begründungen für MS-Elemente
+  nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
 
 ## Version 5.1.0
 
