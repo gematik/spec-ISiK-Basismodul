@@ -9,7 +9,7 @@
   "experimental": false,
   "date": "2025-10-23",
   "publisher": "gematik GmbH",
-  "description": "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.\r\nDie verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben.",
+  "description": "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.\nDie verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -56,41 +56,27 @@
         "id": "QuestionnaireResponse.id",
         "path": "QuestionnaireResponse.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.meta.versionId",
         "path": "QuestionnaireResponse.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "QuestionnaireResponse.meta.lastUpdated",
         "path": "QuestionnaireResponse.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
-      },
-      {
-        "id": "QuestionnaireResponse.modifierExtension",
-        "path": "QuestionnaireResponse.modifierExtension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant",
         "path": "QuestionnaireResponse.modifierExtension",
         "sliceName": "MDR-Relevant",
         "short": "MPG-Relevanz der Formulardaten",
-        "comment": "**Begründung MS:**\r\n  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor.",
+        "comment": "**Begründung MS:**\n  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor.",
         "min": 0,
         "max": "1",
         "type": [
@@ -112,30 +98,20 @@
         "id": "QuestionnaireResponse.identifier",
         "path": "QuestionnaireResponse.identifier",
         "short": "eindeutiger Identifier der FormularDaten",
-        "comment": "**Begründung MS:**\r\n  Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen.",
+        "comment": "**Begründung MS:**\n  Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.questionnaire",
         "path": "QuestionnaireResponse.questionnaire",
         "short": "Bezug zur FormularDefinition inkl. Version",
-        "comment": "Bei der Angabe der Canonical, sollte die Version der FormularDefinition, welche bei der Erstellung die Grundlage gebildet hat, angegeben sein.\r\n  **Begründung MS:** \r\n  Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein.",
+        "comment": "Bei der Angabe der Canonical, sollte die Version der FormularDefinition, welche bei der Erstellung die Grundlage gebildet hat, angegeben sein.\n  **Begründung MS:** \n  Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.questionnaire.extension",
         "path": "QuestionnaireResponse.questionnaire.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 1
       },
       {
@@ -160,14 +136,14 @@
         "id": "QuestionnaireResponse.status",
         "path": "QuestionnaireResponse.status",
         "short": "Status",
-        "comment": "**Begründung Pflichtfeld:**\r\n  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden.",
+        "comment": "**Begründung Pflichtfeld:**\n  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.subject",
         "path": "QuestionnaireResponse.subject",
         "short": "Subject (Patient), über das in diesem Formular berichtet wird.",
-        "comment": "**Begründung Pflichtfeld:**  \r\n  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  \r\n  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.",
+        "comment": "**Begründung Pflichtfeld:**  \n  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  \n  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -175,7 +151,7 @@
         "id": "QuestionnaireResponse.subject.reference",
         "path": "QuestionnaireResponse.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -183,7 +159,7 @@
         "id": "QuestionnaireResponse.authored",
         "path": "QuestionnaireResponse.authored",
         "short": "Datum der FormularDaten",
-        "comment": "**Begründung Pflichtfeld:** \r\n  Relevant für die Suche und zeitliche Einordnung der FormularDaten",
+        "comment": "**Begründung Pflichtfeld:** \n  Relevant für die Suche und zeitliche Einordnung der FormularDaten",
         "min": 1,
         "mustSupport": true
       },
@@ -191,7 +167,7 @@
         "id": "QuestionnaireResponse.author",
         "path": "QuestionnaireResponse.author",
         "short": "Ersteller des Fromulars",
-        "comment": "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.\r\n  **Begründung MS:**\r\n  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat.",
+        "comment": "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.\n  **Begründung MS:**\n  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat.",
         "mustSupport": true
       },
       {
@@ -205,42 +181,42 @@
         "id": "QuestionnaireResponse.item.linkId",
         "path": "QuestionnaireResponse.item.linkId",
         "short": "Eindeutige ID des Formularelement",
-        "comment": "**Begründung Pflichtfeld:**\r\n    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig.",
+        "comment": "**Begründung Pflichtfeld:**\n    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.text",
         "path": "QuestionnaireResponse.item.text",
         "short": "Frage, die beantwortet wurde",
-        "comment": "**Begründung Pflichtfeld:**  \r\n    Die FormularDaten sollte pro Antwort auch die Fragestellung mitführen, \r\n    damit die Daten auch von Systemen/Anwendern interpretiert werden können, \r\n    die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben.",
+        "comment": "**Begründung Pflichtfeld:**  \n    Die FormularDaten sollte pro Antwort auch die Fragestellung mitführen, \n    damit die Daten auch von Systemen/Anwendern interpretiert werden können, \n    die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.answer",
         "path": "QuestionnaireResponse.item.answer",
         "short": "Antwort",
-        "comment": "**Begründung MS:**\r\n    Die erfasste Antwort MUSS stets vorhanden sein.",
+        "comment": "**Begründung MS:**\n    Die erfasste Antwort MUSS stets vorhanden sein.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.answer.value[x]",
         "path": "QuestionnaireResponse.item.answer.value[x]",
         "short": "Inhalt der Antwort",
-        "comment": "**Begründung MS:**\r\n      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein.",
+        "comment": "**Begründung MS:**\n      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.answer.item",
         "path": "QuestionnaireResponse.item.answer.item",
         "short": "Untergeordnetes Item",
-        "comment": "**Begründung MS:**  \r\n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
         "mustSupport": true
       },
       {
         "id": "QuestionnaireResponse.item.item",
         "path": "QuestionnaireResponse.item.item",
         "short": "Untergeordnetes Item",
-        "comment": "**Begründung MS:**  \r\n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
+        "comment": "**Begründung MS:**  \n   Items können beliebig verschachtelt und zu Gruppen zusammengefasst werden, um komplexere und umfangreichere Formulare zu strukturieren.",
         "mustSupport": true
       }
     ]

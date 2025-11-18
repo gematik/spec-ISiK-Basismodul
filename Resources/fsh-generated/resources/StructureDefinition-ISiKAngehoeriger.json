@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2025-10-23",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.  \r\n### Motivation\r\nDer Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,\r\n in denen das Versicherungsverhältnis eine Rolle spielt. \r\n Hier können Angehörige, bspw. der hauptversicherte Elternteil \r\n eines minderjährigen Kindes, in der Familienversicherung sein. \r\n In Selbstzahler-Szenarien können Angehörige die Zahler für eine \r\n im Krankenhaus erbrachte Leistung sein.\r\nIn FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.\r\n\r\n### Kompatibilität\r\nFür das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\r\n\r\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.  \n### Motivation\nDer Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,\n in denen das Versicherungsverhältnis eine Rolle spielt. \n Hier können Angehörige, bspw. der hauptversicherte Elternteil \n eines minderjährigen Kindes, in der Familienversicherung sein. \n In Selbstzahler-Szenarien können Angehörige die Zahler für eine \n im Krankenhaus erbrachte Leistung sein.\nIn FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.\n\n### Kompatibilität\nFür das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -34,26 +34,26 @@
         "id": "RelatedPerson.id",
         "path": "RelatedPerson.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "RelatedPerson.meta.versionId",
         "path": "RelatedPerson.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "RelatedPerson.meta.lastUpdated",
         "path": "RelatedPerson.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "RelatedPerson.active",
         "path": "RelatedPerson.active",
         "short": "Status des Datensatzes",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. \r\n\r\n  **Hinweis zur Verwendung:**\r\n  * `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  \r\n  * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  \r\n  \r\n    **WICHTIGER Hinweis für Implementierer:**  \r\n    * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.\r\n    * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. \n\n  **Hinweis zur Verwendung:**\n  * `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  \n  * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  \n  \n    **WICHTIGER Hinweis für Implementierer:**  \n    * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.\n    * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
         "mustSupport": true
       },
       {
@@ -67,7 +67,7 @@
         "id": "RelatedPerson.patient.reference",
         "path": "RelatedPerson.patient.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -91,7 +91,7 @@
           "rules": "open"
         },
         "short": "Offizieller Name der angehörigen Person",
-        "comment": "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, \r\n  ist die Angabe des offiziellen Namens relevant.\r\n  Wenn kein Name vorliegt, MUSS die [data-absent-reason-Extension](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html) eingesetzt werden.   \r\n  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)",
+        "comment": "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, \n  ist die Angabe des offiziellen Namens relevant.\n  Wenn kein Name vorliegt, MUSS die [data-absent-reason-Extension](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html) eingesetzt werden.   \n  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)",
         "min": 1,
         "mustSupport": true
       },
@@ -100,7 +100,7 @@
         "path": "RelatedPerson.name",
         "sliceName": "Name",
         "short": "Slice für den offiziellen Namen der angehörigen Person",
-        "comment": "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.\r\n  **Begründung MS:** Siehe untergeordnete Elemente",
+        "comment": "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.\n  **Begründung MS:** Siehe untergeordnete Elemente",
         "min": 1,
         "max": "1",
         "type": [
@@ -120,20 +120,20 @@
         "id": "RelatedPerson.name:Name.use",
         "path": "RelatedPerson.name.use",
         "short": "Verwendungszweck",
-        "comment": "Verwendungszweck des Namens. Der präferierte Namen für die Brief- und Rechnungszustellung SOLLTE als `official`\r\n    gekennzeichnet werden und mindestens über einen Vor- und Nachnamen verfügen.    \r\n    **Begründung MS:** Dient als Unterscheidungs- und Auswahlkriterium",
+        "comment": "Verwendungszweck des Namens. Der präferierte Namen für die Brief- und Rechnungszustellung SOLLTE als `official`\n    gekennzeichnet werden und mindestens über einen Vor- und Nachnamen verfügen.    \n    **Begründung MS:** Dient als Unterscheidungs- und Auswahlkriterium",
         "mustSupport": true
       },
       {
         "id": "RelatedPerson.name:Name.family",
         "path": "RelatedPerson.name.family",
         "short": "Nachname",
-        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  \r\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  \n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
         "mustSupport": true
       },
       {
         "id": "RelatedPerson.name:Name.given",
         "path": "RelatedPerson.name.given",
-        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.\r\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
         "mustSupport": true
       },
       {
@@ -147,7 +147,7 @@
         "id": "RelatedPerson.telecom",
         "path": "RelatedPerson.telecom",
         "short": "Telekommunikationsverbindung",
-        "comment": "Telekommunikationsverbindung (z.B. Telefonnummer, eMail-Adresse)  \r\n  **Begründung MS:** Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)",
+        "comment": "Telekommunikationsverbindung (z.B. Telefonnummer, eMail-Adresse)  \n  **Begründung MS:** Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)",
         "mustSupport": true
       },
       {
@@ -222,7 +222,7 @@
         "id": "RelatedPerson.address:Strassenanschrift.type",
         "path": "RelatedPerson.address.type",
         "short": "Adresstyp",
-        "comment": "Hier ist stets der Wert `both` anzugeben.  \r\n    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium",
+        "comment": "Hier ist stets der Wert `both` anzugeben.  \n    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium",
         "min": 1,
         "mustSupport": true
       },
@@ -230,7 +230,7 @@
         "id": "RelatedPerson.address:Strassenanschrift.line",
         "path": "RelatedPerson.address.line",
         "short": "Adresszeile",
-        "comment": "Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, c/o \r\n    sowie weitere Zustellungshinweise enthalten. \r\n    Die Informationen können in mehrere line-Komponenten aufgeteilt werden. \r\n    Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln, \r\n    müssen diese Informationen stets vollständig auch in der line-Komponente, \r\n    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, \r\n    auf diese Informationen zugreifen zu können.  \r\n    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  \r\n    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der \r\n    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.",
+        "comment": "Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, c/o \n    sowie weitere Zustellungshinweise enthalten. \n    Die Informationen können in mehrere line-Komponenten aufgeteilt werden. \n    Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln, \n    müssen diese Informationen stets vollständig auch in der line-Komponente, \n    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, \n    auf diese Informationen zugreifen zu können.  \n    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  \n    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der \n    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.",
         "min": 1,
         "mustSupport": true
       },
@@ -239,26 +239,26 @@
         "path": "RelatedPerson.address.line.extension",
         "sliceName": "Strasse",
         "short": "Strassenname",
-        "comment": "Strassenname (ohne Hausnummer).\r\n        Bei Angabe einer Strasse in dieser Extension muss diese auch in Address.line angegeben werden,\r\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \r\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
+        "comment": "Strassenname (ohne Hausnummer).\n        Bei Angabe einer Strasse in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
       },
       {
         "id": "RelatedPerson.address:Strassenanschrift.line.extension:Hausnummer",
         "path": "RelatedPerson.address.line.extension",
         "sliceName": "Hausnummer",
-        "comment": "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). \r\n        Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,\r\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.   \r\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
+        "comment": "Hausnummer, sowie Zusätze (Appartmentnummer, Etage...). \n        Bei Angabe einer Hausnummer in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.   \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
       },
       {
         "id": "RelatedPerson.address:Strassenanschrift.line.extension:Adresszusatz",
         "path": "RelatedPerson.address.line.extension",
         "sliceName": "Adresszusatz",
-        "comment": "Zusätzliche Informationen, wie z.B. '3. Etage', 'Appartment C'.\r\n        Bei Angabe einer Zusatzinformation in dieser Extension muss diese auch in Address.line angegeben werden,\r\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \r\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
+        "comment": "Zusätzliche Informationen, wie z.B. '3. Etage', 'Appartment C'.\n        Bei Angabe einer Zusatzinformation in dieser Extension muss diese auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
       },
       {
         "id": "RelatedPerson.address:Strassenanschrift.line.extension:Postfach",
         "path": "RelatedPerson.address.line.extension",
         "sliceName": "Postfach",
         "short": "Postfachnummer",
-        "comment": "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,\r\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. \r\n        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  \r\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
+        "comment": "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. \n        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten.",
         "max": "0"
       },
       {
@@ -318,7 +318,7 @@
         "id": "RelatedPerson.address:Postfach.type",
         "path": "RelatedPerson.address.type",
         "short": "Adresstyp",
-        "comment": "Hier ist stets der Wert `postal` anzugeben.  \r\n    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium",
+        "comment": "Hier ist stets der Wert `postal` anzugeben.  \n    **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium",
         "min": 1,
         "mustSupport": true
       },
@@ -326,7 +326,7 @@
         "id": "RelatedPerson.address:Postfach.line",
         "path": "RelatedPerson.address.line",
         "short": "Adresszeile",
-        "comment": "Diese Komponente enthält die Postfachadresse als String der Form 'Postfach: 12345'.\r\n    Bei Verwendung der Postfach-Extension, um die Postfachnummer strukturiert zu übermitteln, \r\n    müssen diese Informationen stets vollständig auch in der line-Komponente, \r\n    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, \r\n    auf diese Informationen zugreifen zu können.  \r\n    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  \r\n    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der \r\n    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.",
+        "comment": "Diese Komponente enthält die Postfachadresse als String der Form 'Postfach: 12345'.\n    Bei Verwendung der Postfach-Extension, um die Postfachnummer strukturiert zu übermitteln, \n    müssen diese Informationen stets vollständig auch in der line-Komponente, \n    die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, \n    auf diese Informationen zugreifen zu können.  \n    **Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar.  \n    **Begründung für Reduktion der max. Kardinalität:** Die maximale Kardinalität wurde in Übereinstimmung mit der \n    DIN-Norm 5008 (Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung) auf 3 beschränkt.",
         "min": 1,
         "mustSupport": true
       },
@@ -353,7 +353,7 @@
         "path": "RelatedPerson.address.line.extension",
         "sliceName": "Postfach",
         "short": "Postfachnummer",
-        "comment": "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,\r\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. \r\n        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  \r\n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
+        "comment": "Postfach-Adresse. Bei Angabe eines Postfaches in dieser Extension muss das Postfach auch in Address.line angegeben werden,\n        um die Interoperabilität mit Systemen zu gewährleisten, die diese Extension nicht verwenden. \n        Eine Postfach-Adresse darf nicht in Verbindung mit Address.type `physical` oder `both` verwendet werden.  \n        **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."
       },
       {
         "id": "RelatedPerson.address:Postfach.city",
