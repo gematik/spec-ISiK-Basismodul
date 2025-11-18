@@ -195,7 +195,7 @@ Usage: #example
 * status = #final
 * type = $loinc#55112-7 
 * type.text = "Kurzbericht"
-* subject = Reference(PatientinMusterfrau)
+* subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * encounter.reference = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"
 * date = "2022-05-03"
 * author.type = "Device"

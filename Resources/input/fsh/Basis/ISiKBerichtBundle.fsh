@@ -95,7 +95,7 @@ Usage: #example
 * type[0] = $Kontaktart-de#operation
 * type[+] = $Kontaktebene#abteilungskontakt
 * serviceType = $FachabteilungsschluesselCS#0100
-* subject = Reference(PatientinMusterfrau)
+* subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * period.start = "2022-05-03"
 * period.end = "2022-05-05"
 
