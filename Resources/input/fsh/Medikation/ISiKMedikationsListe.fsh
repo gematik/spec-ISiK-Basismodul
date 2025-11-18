@@ -69,36 +69,36 @@ InstanceOf: ISiKMedikationsListe
 Usage: #example
 * status = #current
 * mode = #working
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * date = 2021-07-04
 * entry[+]
   * date = 2021-07-01
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformation1"
+  * item = Reference(ExampleISiKMedikationsInformation1)
 * entry[+]
   * date = 2021-07-04
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformation2"
+  * item = Reference(ExampleISiKMedikationsInformation2)
 
 Instance: ExampleISiKMedikationsListeParkinson
 InstanceOf: ISiKMedikationsListe
 Usage: #example
 * status = #current
 * mode = #working
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * date = 2024-02-20
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson1"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson1)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson2"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson2)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson3"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson3)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson4"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson4)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson5"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson5)

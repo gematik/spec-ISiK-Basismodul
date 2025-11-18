@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungTSH1
 InstanceOf: ISiKLaboruntersuchungTSH
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#3015-5
 * code.coding[snomed] = $sct#61167004 "Thyroid stimulating hormone measurement"
