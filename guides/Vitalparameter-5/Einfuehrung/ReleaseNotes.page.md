@@ -10,7 +10,7 @@ Datum: tbd
 
 * `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
   `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
-  angepasst (falls es keine Instanz der Zielinstanz gab).
+  angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
 * `documentation` Fehlende Begründungen für MS-Elemente
   nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
 
