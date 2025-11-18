@@ -30,7 +30,7 @@ Usage: #example
 * code.text = "Pulsoximetrische Sauerstoffsättigung"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 98 '%' "%"
 * component[0].code.coding[0] = $loinc#3151-8 "Inhaled oxygen flow rate"
 * component[=].code.coding[+] = $sct#427081008 "Delivered oxygen flow rate"

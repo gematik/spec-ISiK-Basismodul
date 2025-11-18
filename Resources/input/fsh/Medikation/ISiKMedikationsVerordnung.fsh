@@ -271,7 +271,7 @@ Usage: #example
 * status = #active
 * intent = #order
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * authoredOn = 2021-07-01
 * requester.reference = "Practitioner/PractitionerWalterArzt"
@@ -294,7 +294,7 @@ Usage: #example
 * status = #active
 * intent = #order
 * medicationReference = Reference(ExampleISiKMedikament8)
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * authoredOn = 2024-01-17
 * requester.reference = "Practitioner/PractitionerWalterArzt"

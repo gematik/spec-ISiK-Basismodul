@@ -227,7 +227,7 @@ RuleSet: Observation-category-VSCat-MS
   * ^short = "Vitalparameterkategorie"
 
 RuleSet: EffectiveAndPerformer
-* performer.reference = "Practitioner/DrMedMusterarzt"
+* performer = Reference(PractitionerWalterArzt)
 * effectiveDateTime = 2021-09-01T12:00:00Z
 
 
