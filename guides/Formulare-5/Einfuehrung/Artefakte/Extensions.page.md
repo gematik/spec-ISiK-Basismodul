@@ -20,6 +20,7 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | FormularRendering | [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert maximale Vorkommen eines Items | SOLL |
 | FormularRendering | [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert minimale Vorkommen eines Items | SOLL |
 | FormularRendering | [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html) | Questionnaire.item, Questionnaire.item.item | Definiert die Einheit für numerische Werte | SOLL |
+| FormularRendering | [questionnaire-hidden](https://hl7.org/fhir/R4/extension-questionnaire-hidden.html) | Questionnaire.item, Questionnaire.item.item | Ermöglicht das Ausblenden von Items |
 | FormularDatenValidierung | [regex](https://hl7.org/fhir/R4/extension-regex.html) | Questionnaire.item | Fügt reguläre Ausdrücke für Validierung hinzu <br> Die Extension ist in zukünftigen Versionen deprecated. Aus dem Grund wird die Extension targetConstraint empfohlen zu nutzen. | KANN |
 | FormularDatenValidierung | [targetConstraint](http://hl7.org/fhir/StructureDefinition/targetConstraint) | Questionnaire.item | Fügt reguläre Ausdrücke für Validierung hinzu | SOLL |
 
@@ -70,7 +71,6 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | [questionnaire-constraint](https://hl7.org/fhir/R4/extension-questionnaire-constraint.html) | Questionnaire, Questionnaire.item, Questionnaire.item.item | Fügt Einschränkungen für Antworten hinzu |
 | [questionnaire-displayCategory](https://hl7.org/fhir/R4/extension-questionnaire-displaycategory.html) | Questionnaire.item, Questionnaire.item.item | Definiert die Anzeigekategorie eines Items |
 | [questionnaire-fhirType](https://hl7.org/fhir/R4/extension-questionnaire-fhirtype.html) | Questionnaire.item, Questionnaire.item.item | Spezifiziert den FHIR-Datentyp |
-| [questionnaire-hidden](https://hl7.org/fhir/R4/extension-questionnaire-hidden.html) | Questionnaire.item, Questionnaire.item.item | Ermöglicht das Ausblenden von Items |
 | [questionnaire-itemControl](https://hl7.org/fhir/R4/extension-questionnaire-itemcontrol.html) | Questionnaire.item, Questionnaire.item.item | Kontrolliert die Darstellung von Items |
 | [questionnaire-optionExclusive](https://hl7.org/fhir/R4/extension-questionnaire-optionexclusive.html) | Questionnaire.item.answerOption | Markiert eine Antwortoption als exklusiv |
 | [questionnaire-optionPrefix](https://hl7.org/fhir/R4/extension-questionnaire-optionprefix.html) | Questionnaire.item.answerOption | Fügt Präfixe zu Antwortoptionen hinzu |
