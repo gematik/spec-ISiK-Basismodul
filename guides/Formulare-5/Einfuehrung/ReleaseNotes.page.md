@@ -6,7 +6,13 @@ topic: ReleaseNotes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
+Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.4
+
+## Version x.x.x
+
+Datum: tbd
+
+* `documentation` Fehlende Comments und shorts für Must-Support Elemente hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/918
 
 ## Version 5.1.0
 

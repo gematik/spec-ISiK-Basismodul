@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungCRP1
 InstanceOf: ISiKLaboruntersuchungCRP
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#1988-5 "C-reaktives Protein [Masse/Volumen] in Serum oder Plasma"
 * code.coding[snomed] = $sct#55235003 "C-reactive protein measurement"

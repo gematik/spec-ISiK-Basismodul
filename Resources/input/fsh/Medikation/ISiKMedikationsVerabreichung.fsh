@@ -175,8 +175,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2021-07-01
 * dosage
   * dose
@@ -190,8 +190,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2024-01-22
 * dosage
   * dose
@@ -205,8 +205,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"
@@ -230,8 +230,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament2)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"

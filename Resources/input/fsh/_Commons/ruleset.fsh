@@ -227,7 +227,7 @@ RuleSet: Observation-category-VSCat-MS
   * ^short = "Vitalparameterkategorie"
 
 RuleSet: EffectiveAndPerformer
-* performer.reference = "Practitioner/DrMedMusterarzt"
+* performer = Reference(PractitionerWalterArzt)
 * effectiveDateTime = 2021-09-01T12:00:00Z
 
 
@@ -250,6 +250,28 @@ RuleSet: CommonElements
   * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
   * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
   Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+
+RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+* location 1.. MS
+  * ^short = "Aufenthaltsort"
+  * reference MS
+    * ^short = "Location-Link"
+    * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * identifier 1.. MS
+    * ^short = "Identifier des Aufenthaltsortes"
+    * system MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert."
+    * value 1.. MS
+      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+  * display 1.. MS
+    * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 
 RuleSet: ISiKMedikament-CodingPZNComment
 * ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."
