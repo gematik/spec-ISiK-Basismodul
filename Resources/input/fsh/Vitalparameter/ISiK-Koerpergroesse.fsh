@@ -29,5 +29,32 @@ Usage: #example
 * code.text = "Körpergröße"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 174 'cm' "centimeter"
+
+Instance: ISiKKoerpergroesseMinExample
+InstanceOf: ISiKKoerpergroesse
+Usage: #example
+* status = #final
+* category[VSCat] = $observation-category#vital-signs
+* code = $loinc#8302-2 "Body height"
+* subject = Reference(PatientinMinimal)
+* effectiveDateTime = "2024-01-15"
+* valueQuantity = 48 'cm' "centimeter"
+
+Instance: ISiKKoerpergroesseMaxExample
+InstanceOf: ISiKKoerpergroesse
+Usage: #example
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* code = $loinc#8302-2 "Body height"
+* code.coding[snomed] = $sct#1153637007 "Body height"
+* code.coding[IEEE11073] = $IEEE11073#188740 "MDC_LEN_BODY_ACTUAL"
+* code.text = "Körpergröße - Klinische Messung"
+* subject = Reference(PatientinNormal)
+* effectiveDateTime = "2024-01-15T09:00:00+01:00"
+* performer = Reference(PractitionerWalterArzt)
+* valueQuantity = 205 'cm' "centimeter"
+* method = $sct#414135002 "Estimated"
+* bodySite = $sct#38266002 "Entire body as a whole"
+* note.text = "Körpergröße geschätzt aufgrund der Bettlägerigkeit des Patienten"

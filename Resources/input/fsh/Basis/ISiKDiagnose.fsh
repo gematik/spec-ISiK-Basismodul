@@ -48,6 +48,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem 
   [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.
   Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden."
+* verificationStatus MS
+  * ^short = "Bestätigungsstatus"
+  * ^comment = """
+    **Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.
+
+    **WICHTIGER Hinweis für Implementierer:**  
+    - Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.
+    - Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.
+    """
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
@@ -83,18 +92,13 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
-    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
   * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    
-    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. 
-    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * onset[x] MS 
   * ^short = "Erkrankungsbeginn"
   * ^comment = "Datum oder Alter/Lebensphase des Erkrankungsbeginns
@@ -104,7 +108,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * onset[x] only dateTime or Age
 * onsetDateTime MS
+  * ^short = "Erkrankungsbeginn als Datum"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
 * onsetAge MS 
+  * ^short = "Erkrankungsbeginn als Alter"
+  * ^comment = "''Begründung MS:** Siehe onset[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Beginn 0..1
   * extension[Lebensphase-Beginn]
     * ^short = "Lebensphase des Erkrankungsbeginns"
@@ -118,11 +126,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   so MUSS dieses System die Information NICHT abbilden. 
   Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist."
 * abatementAge MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Alter"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
   * extension contains ExtensionLebensphase named Lebensphase-Ende 0..1
   * extension[Lebensphase-Ende]
     * ^short = "Lebensphase des Erkrankungsendes"
     * ^comment = "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen"
 * abatementDateTime MS
+  * ^short = "Klinische relevanter Zeitraum Ende als Datum"
+  * ^comment = "''Begründung MS:** Siehe abatement[x]"
 * recordedDate 1.. MS
   * ^short = "Dokumentationsdatum"
   * ^comment = "Datum, an dem die Diagnose dokumentiert wurde.   
@@ -133,6 +145,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Notizen"
   * ^comment = "Ergänzende Hinweise und Anmerkungen zur Diagnose"
 * bodySite MS
+  * ^short = "Körperstelle"
   * ^comment = "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)"
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern
@@ -173,7 +186,6 @@ InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#recurrence
 * code.coding.extension.url = "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"
-* code.coding.extension.valueCoding.version = "2021"
 * code.coding.extension.valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
 * code.coding.version = "2024"
 * code.coding = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"

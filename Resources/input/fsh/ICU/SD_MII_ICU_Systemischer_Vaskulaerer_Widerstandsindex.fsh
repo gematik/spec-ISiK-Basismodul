@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Systemischer_Vaskulaerer_Widerstandsindex
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-systemischer-vaskulaerer-widerstandsindex
 Title: "SD MII ICU Systemischer Vaskulaerer Widerstandsindex"
+Description: "Dieses Profil dient der spezialisierten Abbildung des systemisch-vaskulären Widerstandsindex in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

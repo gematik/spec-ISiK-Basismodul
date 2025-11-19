@@ -5,8 +5,11 @@ Title: "ISiKCoding"
 Description: "Data Type profile for Codings in ISiK"
 * insert Meta
 * system 1.. MS
+  * insert Coding-System-MS
 * code 1.. MS
+  * insert Coding-Code-MS
 * display MS
+  * insert Coding-Display-MS
 
 Profile: ISiKSnomedCTCoding
 Parent: ISiKCoding
@@ -16,6 +19,7 @@ Description: "Data Type profile for Snomed-CT Codings in ISiK"
 * insert Meta
 * system = $sct
 * version MS
+  * insert Coding-Version-MS
 * version obeys sct-version-de
 
 Profile: ISiKLoincCoding
@@ -26,6 +30,7 @@ Description: "Data Type profile for LOINC Codings in ISiK"
 * insert Meta
 * system = $loinc
 * version MS
+  * insert Coding-Version-MS
 
 // Profile die von den dt. Basisprofilen erben
 //
@@ -37,9 +42,13 @@ Title: "ISiKICD10GMCoding"
 Description: "Data Type profile for ICD10-GM Codings in ISiK"
 * insert Meta
 * system 1.. MS
+  * insert Coding-System-MS
 * code 1.. MS
+  * insert Coding-Code-MS
 * display MS
+  * insert Coding-Display-MS
 * version MS
+  * insert Coding-Version-MS
 
 Profile: ISiKASKCoding
 Parent: CodingASK
@@ -48,8 +57,11 @@ Title: "ISiKASKCoding"
 Description: "Data Type profile for ASK Codings in ISiK"
 * insert Meta
 * system 1.. MS
+  * insert Coding-System-MS
 * code 1.. MS
+  * insert Coding-Code-MS
 * display MS
+  * insert Coding-Display-MS
 
 Profile: ISiKATCCoding
 Parent: CodingATC
@@ -58,8 +70,11 @@ Title: "ISiKATCCoding"
 Description: "Data Type profile for ATC Codings in ISiK"
 * insert Meta
 * system 1.. MS
+  * insert Coding-System-MS
 * code 1.. MS
+  * insert Coding-Code-MS
 * display MS
+  * insert Coding-Display-MS
 
 Profile: ISiKPZNCoding
 Parent: CodingPZN
@@ -68,10 +83,13 @@ Title: "ISiKPZNCoding"
 Description: "Data Type profile for ATC Codings in ISiK"
 * insert Meta
 * system 1.. MS
+  * insert Coding-System-MS
 * code 1.. MS
+  * insert Coding-Code-MS
 * display MS
+  * insert Coding-Display-MS
 
 Invariant: sct-version-de
-Description: "Die SnomedCT-Version muss einer deutschen Edition entsprechen"
+Description: "Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen"
 Severity: #error
-Expression: "startsWith('http://snomed.info/sct/11000274103')"
+Expression: "startsWith('http://snomed.info/sct/11000274103/')"

@@ -129,19 +129,16 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * code 1..
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung des Dokumentes zu einem Patienten 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    
-    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. 
-    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * date MS
   * ^short = "Dokumentendatum"
   * ^comment = "Datum der letzten Änderung des Dokumentes"

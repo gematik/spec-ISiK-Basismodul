@@ -2,12 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDefinition",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKFormularDefinition",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
+  "description": "Im Profil `ISiKFormularDefinition` sind Mindestanforderungen an ISiK kompatible Formulare definiert.\nDie verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -20,33 +21,28 @@
         "id": "Questionnaire.id",
         "path": "Questionnaire.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Questionnaire.meta.versionId",
         "path": "Questionnaire.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Questionnaire.meta.lastUpdated",
         "path": "Questionnaire.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
-      },
-      {
-        "id": "Questionnaire.modifierExtension",
-        "path": "Questionnaire.modifierExtension",
-        "min": 1
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Questionnaire.modifierExtension:MDR-Relevant",
         "path": "Questionnaire.modifierExtension",
         "sliceName": "MDR-Relevant",
         "short": "MPG-Relevanz der Formulardaten",
-        "comment": "**Begründung MS:**   \n  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz",
-        "min": 1,
+        "comment": "**Begründung MS:**\n  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor.",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -56,11 +52,6 @@
             ]
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "Questionnaire.modifierExtension:MDR-Relevant.value[x]",
-        "path": "Questionnaire.modifierExtension.value[x]",
         "mustSupport": true
       },
       {
@@ -154,6 +145,30 @@
         "mustSupport": true
       },
       {
+        "id": "Questionnaire.item.enableWhen",
+        "path": "Questionnaire.item.enableWhen",
+        "comment": "**Begründung MS:** Bedingungen, die erfüllt sein müssen, damit das Item dargestellt wird. Dieses Feld ist ein modifier-Element, weshalb MS obligatorisch ist, es muss interpretiert werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.question",
+        "path": "Questionnaire.item.enableWhen.question",
+        "comment": "LinkId der Frage, bei der die Bedingung zu erfüllen ist.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.operator",
+        "path": "Questionnaire.item.enableWhen.operator",
+        "comment": "Operator, mittels dem die Value der .question mit dem in answer[x] angegeben Element vergleichen wird.",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.enableWhen.answer[x]",
+        "path": "Questionnaire.item.enableWhen.answer[x]",
+        "comment": "Rechter Wert des Bedingungsvergleich",
+        "mustSupport": true
+      },
+      {
         "id": "Questionnaire.item.required",
         "path": "Questionnaire.item.required",
         "short": "Pflichtfeld?",
@@ -172,6 +187,13 @@
         "path": "Questionnaire.item.readOnly",
         "short": "Keine Eingabe erlaubt?",
         "comment": "Antwort wird automatisch vorbelegt/berechnet und darf nicht vom Anwender editiert/überschrieben werden.\n    **Begründung MS:** Automatisch vorbelegte Items sollen gegen Veränderung durch den Benutzer geschützt werden können (z.B. für Patientenstammdaten).",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.item.maxLength",
+        "path": "Questionnaire.item.maxLength",
+        "short": "Längenbegrenzung",
+        "comment": "Maximale Anzahl zulässiger Zeichen für die Beantwortung der Frage.",
         "mustSupport": true
       },
       {

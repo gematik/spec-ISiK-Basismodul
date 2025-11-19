@@ -61,10 +61,13 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1..1 MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * context MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effectiveDateTime MS
   * ^short = "Zeitpunkt der Verabreichung"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -168,8 +171,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2021-07-01
 * dosage
   * dose
@@ -183,8 +186,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2024-01-22
 * dosage
   * dose
@@ -198,8 +201,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"
@@ -223,8 +226,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament2)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"

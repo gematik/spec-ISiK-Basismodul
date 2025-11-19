@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Linksatrialer_Druck
 Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-linksatrialer-druck
 Title: "SD MII ICU Linksatrialer Druck"
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksatrialen Drucks in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * category = $observation-category#vital-signs

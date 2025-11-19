@@ -30,4 +30,4 @@ Zur Verdeutlichung der Abhängigkeiten zwischen Rollen und Akteuren steht das un
 
 
 
-<img src="/Material/Basis/images/diagrams/Akteurs_und_Rollenmodell_ISiK.svg" alt="Akteure und Rollen in ISiK"/> 
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/main-stufe-5/Material/Basis/images/diagrams/Akteurs_und_Rollenmodell_ISiK.svg" alt="Rollen-Akteurs-Modell" />

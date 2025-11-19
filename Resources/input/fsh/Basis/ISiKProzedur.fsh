@@ -83,23 +83,22 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[SNOMED-CT] only ISiKSnomedCTCoding
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * ^short = "SNOMED-codierte Darstellung der Prozedur"
+    * ^comment = "**Hintergrund und Begründung zum Must-Support:** Das BfArM hat ein 'Zielbild für eine semantische Strategie' (https://www.bfarm.de/DE/Kodiersysteme/Services/Terminologieserver/Semantik-Strategie/_node.html) verfasst, in dem die Nutzung von international gängigen Basis-Terminologien vorgestellt wird. Dort wird als grundlegende Position dargestellt, dass basierend auf einer Basisterminologie weitere Use Cases bedient werden sollen. Bei Prozeduren wäre das damit eine klinische Dokumentation mit SNOMED CT als internationalem Kodiersystem und einer Ableitung davon zum OPS. Dies ist insbesondere auch wichtig für den Datentransfer in den European Health Data Space, in dem der OPS keine Rolle spielen wird."
   * text MS
     * ^short = "Freitextiche Beschreibung der Prozedur"
     * ^comment = "Die freitextliche Beschreibung kann ergänzend oder anstelle einer codierten Angabe der Prozedur erfolgen."
 * subject MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    
-    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. 
-    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
+    * insert Comment-Reference-Encounter(Begründung Pflichtfeld)
 * performed[x] 1.. MS
   * ^short = "Durchführungsdatum oder -Zeitraum"
   * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.
