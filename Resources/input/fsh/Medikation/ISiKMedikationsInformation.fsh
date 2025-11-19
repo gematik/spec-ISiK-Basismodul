@@ -73,6 +73,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^short = "Status der Medikationsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
 * medication[x] MS
+  * ^short = "Angabe des Medikaments"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Siehe Slicing-Definition zur Wahlmöglichkeit zwischen codierter Angabe und Referenz auf Medication-Ressource."
 * medicationCodeableConcept MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -154,6 +156,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Begründung zu Must-Support: Konsolidierung mit MII."
   * reference 1..1 MS
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"

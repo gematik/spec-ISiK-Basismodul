@@ -53,6 +53,7 @@ Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * entry MS
   * ^short = "Listeneintrag"
+  * ^comment = "Begründung des Must-Support: Abbildung einzelner MedikationsInformationen in der Liste"
   * date MS
     * ^short = "Datum des Listeneintrags"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit

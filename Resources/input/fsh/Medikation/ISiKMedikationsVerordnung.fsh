@@ -119,6 +119,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * reference 1..1 MS
     * ^comment = "Begründung des Must-Support: Referenz auf die Diagnose oder Untersuchung, die die Medikation begründet."
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
@@ -248,6 +250,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerAdministration only MedicationQuantity
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
+  * ^short = "angeforderte Abgabemenge"
+  * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
   * quantity only MedicationQuantity
     * ^short = "angeforderte Abgabemenge"
