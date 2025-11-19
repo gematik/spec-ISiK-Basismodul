@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementFormularRendererClient
 InstanceOf: CapabilityStatement
 Usage: #definition
-//* insert Meta-CapabilityStatement-Rolle
+* insert Meta-CapabilityStatement
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularRendererClient"
 * name = "ISiKCapabilityStatementFormularRendererClient"
 * title = "ISiK CapabilityStatement FormularRenderer Client"

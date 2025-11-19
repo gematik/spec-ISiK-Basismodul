@@ -31,9 +31,6 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Arte
   * extension[questionnaireDisplay] 
     * ^short = "Titel/Überschrift der zugrunde liegenden FormularDefinition"
     * ^comment = "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt."
-* derivedFrom MS
-  * ^short = "Abgeleitet von"
-  * ^comment = "Verweis auf ein Questionnaire, von dem abgeleitet wurde, welches erweitert wurde oder welches als Grundlage diente."
 * status MS
   * ^short = "Status"
   * ^comment = "**Begründung Pflichtfeld:**
