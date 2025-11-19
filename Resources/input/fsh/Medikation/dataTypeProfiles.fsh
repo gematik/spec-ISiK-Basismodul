@@ -9,7 +9,7 @@ Description: "Quantity Datentyp der die Nutzung von UCUM vorgibt. Bei dimensions
   * ^comment = "Begründung des Must-Support: Basisinformation zur Medikation"
 * unit MS
   * ^short = "Einheit der Medikation als String"
-  * ^comment = "Begründung des Must-Support: Zur Interpretation der Menge ist der Code erforderlich."
+  * ^comment = "Begründung des Must-Support: Bereitstellung einer menschenlesbaren Darstellung der Einheit."
 * system 1..1 MS
 * system = $cs-ucum
   * ^short = "System der Einheit"
