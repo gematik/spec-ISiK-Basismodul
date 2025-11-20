@@ -1,0 +1,235 @@
+@startuml
+'--------------------------------------------------------------
+'use the following parameters to configure the diagram
+'--------------------------------------------------------------
+
+'left to right direction
+
+' ---------- set parameters here --------------
+' if no parameter is set, the minimal model is shown
+'----------------------------------------
+
+
+'!define SHOW_AUTHORIZATION
+'!define DETAIL_HIGH
+'TODO show Subscirption-Management in detail
+'!define SHOW_LIS
+'!define ADD_OPTIONAL
+'!define SHOW_COMMENTS /* TODO debug - show comments in the diagram */
+
+'!include test-model.puml
+
+'-----------
+
+title ISiK Zielarchitektur – CDR und API Gateway
+
+
+
+cloud "ISiK-bestätigungsrelevante Systeme \n ('Ressourcen-Server')" {
+
+component KIS  {
+  !ifdef DETAIL_HIGH
+  component "Terminplanung" {
+    [Termin-Repository (KIS-Modul)] as TerminKIS
+    portin iBookAppointments
+    } 
+  ' component "PDMS-Modul" as PDMSKISMODUL
+  ' component "weiteres KIS-Modul" as KISMODUL
+  component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeStammdaten
+    }
+  !endif
+  portin iProvideBasicData
+  }
+
+  component "Patientendatenmanagementsystem (PDMS)" as PDMS {
+    !ifdef DETAIL_HIGH
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionPDMS {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeVitalSigns
+    }
+    !endif
+    portin iProvideVitalSigns
+  }
+
+  component "Dokumentenmanagementsystem (DMS)" as DMS {
+    !ifdef DETAIL_HIGH
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionDMS {
+    portin  iSubscribeDocuments
+    }
+    !endif
+    portin iProvideDocuments
+  }
+
+  component "Medikationssystem" as Medikationssystem {
+  
+  !ifdef DETAIL_HIGH
+    component "Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionMedikationssystem {
+    ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+    portin  iSubscribeMedication
+    }
+    
+  !endif
+  portin iProvideMedication
+
+  }
+
+
+
+}
+
+
+
+!ifdef SHOW_COMMENTS
+note right of Medikationssystem : Für das Medikationssystem sind auch Schreiboperationen (CREATE) vorgesehen.
+!endif
+
+package "Zentrale ISiK Infrastruktur" {
+    component "Clinical Data Repository (CDR)" as CDR {
+      !ifdef DETAIL_HIGH
+        component "Zentrales Alerting und Notification Management \n (mittels Subscription - nicht normativ)" as SubscriptionCDR {
+        ' Diese Komponente bedingt, das das CDR event-getriggered bzw. über einen livestream aktualisiert wird
+          portin  iSubscribe
+          
+        }
+      !endif
+  
+    portin iAggregateInternalFHIR
+    }
+
+  !ifdef SHOW_COMMENTS
+  note right of CDR : Das CDR ist ein Aggregator und stellt zentralisiert die Daten aus den Subsystemen über eine \n  FHIR-Schnittstellen für Clients bereit. \n  Es ist kein Automatismus , dass die Subsysteme direkt auf das CDR zugreifen.
+  !endif
+
+  [API Gateway] as APIGateway
+  ' erlaubt lose Kopplung der Clients und der KH-(Sub-)Systeme
+
+  !ifdef SHOW_COMMENTS
+  note right of APIGateway : Für jeden Client, der angeschlossen wird, \n  muss von Seiten von IT-Verantwortlichen für das Krankenhaus eine Entscheidung zum Routing der FHIR Anfragen und Operationen sowie eine entsprechende Konfiguration des API Gateways erfolgen.
+  !endif
+
+    
+  portin iCentralizeFHIR
+  !ifdef DETAIL_HIGH
+  portin iSubscribeToo
+  portin iBookAppointmentsToo
+  !endif
+
+  
+  !ifdef SHOW_AUTHORIZATION
+  [Autorisierungsserver (Connect/SMART)] as Autorisierungsserver
+  !endif
+
+  !ifdef SHOW_COMMENTS
+  note right of Autorisierungsserver : Autorisierungsserver ist nicht normativ, da die \n  Implementierung von SMART on FHIR nicht Bestandteil des ISiK-Architekturmodells ist.
+  !endif
+  
+}
+
+[Formularmanagementsystem]
+  
+!ifdef SHOW_LIS
+[Laborinformationssystem (LIS)] as LIS
+!endif
+
+cloud "Clients" {
+  [FHIR Client]
+  !ifdef DETAIL_HIGH
+  [Termin-Requestor]
+  !endif
+
+}
+
+!ifdef ADD_OPTIONAL
+cloud "Orchestration Layer (Optional)" as OrchLayer { 
+  component "Workflow Engine"
+  component "Process Modeller"
+  }
+' für Prozessoptimierung siehe https://www.hl7.org/documentcenter/public/ballots/2025MAY/downloads/HL7_ORCH_BLUEPRINT_E1_I1_2025MAY.pdf
+
+
+' Weitere Schichten (z.B. Orchestration Layer) 
+  OrchLayer --( iSubscribeToo : uses
+  OrchLayer --( iCentralizeFHIR : uses
+  Clients -->OrchLayer : uses
+!endif
+
+' Schnittstellen zwischen zentraler Infrastruktur und externen Clients
+iCentralizeFHIR - APIGateway  : provides
+[FHIR Client] --( iCentralizeFHIR : uses
+!ifdef DETAIL_HIGH
+iBookAppointmentsToo - APIGateway : provides
+[Termin-Requestor] -( iBookAppointmentsToo : uses
+!endif
+
+APIGateway --( iAggregateInternalFHIR : uses 
+
+' Direkte Schnittstellen zwischen ISiK-Systemen
+KIS --( iProvideVitalSigns : FHIR API ICU 
+PDMS --( iProvideBasicData : FHIR API generische Vitalparameter für ICU
+' ggf. ist hier aufgrund der MARKTSITUATION die Integration zwischen PDMS und KIS nicht zielführend, sondern die Aggregation der Daten im CDR sinnvoller
+
+' TODO lollipop notation for ICU in both directions
+
+!ifdef SHOW_LIS
+[LIS] ..> [KIS] :  API Labordaten
+[LIS] ..> [PDMS] :  API Labordaten
+[LIS] ..> [Medikationssystem] :  API Labordaten
+!endif
+
+' FHIR Schnittstellen zwischen zentraler Infrastruktur und ISiK-Systemen
+
+' alle Standardabfragen werden über den API Gateway geroutet an das CDR, das Subsysteme aggregiert
+CDR --( iProvideBasicData : uses FHIR API (Patient, Encounter etc.) 
+CDR --( iProvideVitalSigns : uses - Read-only FHIR API für generische Vitalparameter und ICU 
+CDR --( iProvideDocuments : uses - FHIR API (Dokumente))
+CDR --( iProvideMedication : uses - CREATE+READ FHIR API (Medikationsdate: Verabreichung, Verordnung und Information)
+!ifdef SHOW_AUTHORIZATION
+CDR -- [Autorisierungsserver] : SMART on FHIR API (Authorization) ???
+APIGateway -- [Autorisierungsserver] : SMART on FHIR API (Authorization)  ???
+!endif
+
+CDR -- [Formularmanagementsystem] : ??? FHIR API (Formulare)
+
+' Die Terminplanung wird direkt weitergeleitet an das die dedizierte Terminplanungsschnittstelle (ggf. des KIS)
+!ifdef DETAIL_HIGH
+APIGateway -( iBookAppointments : uses
+APIGateway --( iProvideMedication :  uses ???
+!endif
+
+
+
+' API Gateway fungiert hier als statisch konfigurierter Reverse Proxy für alle FHIR-Schnittstellen
+' APIGateway --> [KIS] : Forwarding an FHIR API (Patient, Encounter etc.) ' auskommentiert da nicht beste Option
+' APIGateway --> [PDMS] : Forwarding an  FHIR API (Blutdruck, Herzfrequenz etc.) ' auskommentiert da nicht beste Option
+' APIGateway --> [DMS] : Forwarding an  FHIR API (Dokumente) ' auskommentiert da nicht beste Option ' auskommentiert da nicht beste Option
+' APIGateway --> [Medikationssystem] : Forwarding an FHIR API (Medikationsdate: Verabreichung, Verordnung und Infromation) ' auskommentiert da nicht beste Option
+
+' Zentralisiertes Alerting und Notification Management (mittels Subscription) zu subsystemen 
+!ifdef DETAIL_HIGH
+APIGateway --( iSubscribe : uses 
+!endif
+
+' Eng gekoppeltes Alerting und Notification Management (mittels Subscription) zu subsystemen 
+!ifdef DETAIL_HIGH
+CDR --( iSubscribeStammdaten : uses
+CDR --( iSubscribeVitalSigns : uses
+CDR --( iSubscribeDocuments : uses
+CDR --( iSubscribeMedication : uses
+!endif
+
+
+' Client-Subscription-Management
+!ifdef DETAIL_HIGH
+iSubscribeToo -- APIGateway : provides 
+[FHIR Client] -( iSubscribeToo : "(optional) uses" 
+[Termin-Requestor] -( iSubscribeToo : "(optional) uses" 
+!endif
+
+
+
+
+' weitere Schnittstellen zwischen CDR und ISiK-Systemen sollten hier nicht vorkommen, da wir nicht zur Nutzung von v2 für die Aggregation ermutigen wollen [KIS] --> [CDR] : HL7 v2 (ADT, ORU, ORM)
+
+@enduml
