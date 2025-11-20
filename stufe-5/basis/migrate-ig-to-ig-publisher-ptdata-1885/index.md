@@ -1,4 +1,62 @@
-# Resource Test Implementation Guide
+# Index - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* **Index**
+
+## Index
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig | *Version*:0.0.1 |
+| Draft as of 2025-11-20 | *Computable Name*:TestImplementationGuide |
+
+![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
+
+-------
+
+Version: 5.0.0
+
+Datum: 26.06.2025
+
+Status: Aktiv
+
+Realm: Deutschland
+
+Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
+
+Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
+
+-------
+
+# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+
+Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
+
+Hersteller bestätigungsrelevanter Systeme sollen durch diesen IG in die Lage versetzt werden, eine konforme Implementierung zu erstellen und das Bestätigungsverfahren der gematik erfolgreich zu absolvieren.
+
+Weitere Informationen siehe [§373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
+
+Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim [National Release Center für SNOMED CT in Deutschland](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html) beantragt werden.
+
+**Kontakt**
+
+Bringen Sie Allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
+
+Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff “Portalzugang”.
+
+**Herausgeber**
+
+gematik GmbH
+
+[Impressum](https://www.gematik.de/impressum/)
+
+**Gender-Hinweis**
+
+Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle weiteren Geschlechter, neben männlich und weiblich, ab.
 
 
 
@@ -13,7 +71,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-11-20T14:42:10+00:00",
+  "date" : "2025-11-20T15:10:08+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "basis.test.ig",
   "license" : "CC0-1.0",
@@ -2063,10 +2121,10 @@
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index.html"
+              "valueUrl" : "index.html"
             }
           ],
-          "nameUrl" : "Index.html",
+          "nameUrl" : "index.html",
           "title" : "Index",
           "generation" : "markdown"
         },
