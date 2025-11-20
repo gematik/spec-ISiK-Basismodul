@@ -39,6 +39,8 @@ Datum: 23.10.2025
 * `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826 
 * `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830 #Test-Change (Canonical geändert)
 * `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files #Test-Diff #MOCK-Change -> impliziert, das Ressourcen, die von ISiK Profil abweichen, nicht abgelehnt werden dürfen.
+* `fix` Anpassung der Canonical des Valuesets *CurrentSmokingStatusUvIPS* auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830
+* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files #Test-Diff #MOCK-Change -> impliziert, das Ressourcen, die von ISiK Profil abweichen, nicht abgelehnt werden dürfen. KEIN MOCK-CHANGE
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878
 * `documentation` Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881
