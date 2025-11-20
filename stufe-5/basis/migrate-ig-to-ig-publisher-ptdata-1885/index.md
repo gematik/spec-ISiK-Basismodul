@@ -71,7 +71,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-11-20T15:24:16+00:00",
+  "date" : "2025-11-20T15:44:38+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "basis.test.ig",
   "license" : "CC0-1.0",
@@ -2132,10 +2132,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Motivation.page.html"
+              "valueUrl" : "Motivation.html"
             }
           ],
-          "nameUrl" : "Motivation.page.html",
+          "nameUrl" : "Motivation.html",
           "title" : "Motivation",
           "generation" : "markdown"
         },
@@ -2143,10 +2143,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "ReleaseNotes.page.html"
+              "valueUrl" : "ReleaseNotes.html"
             }
           ],
-          "nameUrl" : "ReleaseNotes.page.html",
+          "nameUrl" : "ReleaseNotes.html",
           "title" : "Release Notes",
           "generation" : "markdown"
         },
@@ -2154,10 +2154,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_UseCaseAnwendung.page.html"
+              "valueUrl" : "Index_UseCaseAnwendung.html"
             }
           ],
-          "nameUrl" : "Index_UseCaseAnwendung.page.html",
+          "nameUrl" : "Index_UseCaseAnwendung.html",
           "title" : "Use Cases und Anwendungskontexte",
           "generation" : "markdown"
         },
@@ -2165,10 +2165,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Abbildung-des-Konstrukts-Fall.page.html"
+              "valueUrl" : "Abbildung-des-Konstrukts-Fall.html"
             }
           ],
-          "nameUrl" : "Abbildung-des-Konstrukts-Fall.page.html",
+          "nameUrl" : "Abbildung-des-Konstrukts-Fall.html",
           "title" : "Abbildung des Konstrukts \"Fall\"",
           "generation" : "markdown"
         },
@@ -2176,10 +2176,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Datenuebermittlung-aus-Subsystemen.page.html"
+              "valueUrl" : "Datenuebermittlung-aus-Subsystemen.html"
             }
           ],
-          "nameUrl" : "Datenuebermittlung-aus-Subsystemen.page.html",
+          "nameUrl" : "Datenuebermittlung-aus-Subsystemen.html",
           "title" : "Datenübermittlung aus Subsystemen",
           "generation" : "markdown"
         },
@@ -2187,10 +2187,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.page.html"
+              "valueUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html"
             }
           ],
-          "nameUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.page.html",
+          "nameUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html",
           "title" : "Akteurs- und Rollenmodell",
           "generation" : "markdown"
         },
@@ -2198,10 +2198,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Beispielszenarien.page.html"
+              "valueUrl" : "Index_Beispielszenarien.html"
             }
           ],
-          "nameUrl" : "Index_Beispielszenarien.page.html",
+          "nameUrl" : "Index_Beispielszenarien.html",
           "title" : "Beispielszenarien",
           "generation" : "markdown"
         },
@@ -2209,10 +2209,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.page.html"
+              "valueUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html"
             }
           ],
-          "nameUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.page.html",
+          "nameUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html",
           "title" : "Szenario 1: DRG-Fall, Kind mit Wahlleistung",
           "generation" : "markdown"
         },
@@ -2220,10 +2220,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-2-Kreuz-Stern-Diagnose.page.html"
+              "valueUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html"
             }
           ],
-          "nameUrl" : "Szenario-2-Kreuz-Stern-Diagnose.page.html",
+          "nameUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html",
           "title" : "Szenario 2: Kreuz-Stern-Diagnose",
           "generation" : "markdown"
         },
@@ -2231,10 +2231,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Festlegungen.page.html"
+              "valueUrl" : "Index_Festlegungen.html"
             }
           ],
-          "nameUrl" : "Index_Festlegungen.page.html",
+          "nameUrl" : "Index_Festlegungen.html",
           "title" : "Festlegungen",
           "generation" : "markdown"
         },
@@ -2242,10 +2242,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Methodik.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_Methodik.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Methodik.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_Methodik.html",
           "title" : "Methodik",
           "generation" : "markdown"
         },
@@ -2253,10 +2253,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html",
           "title" : "Bestätigungsrelevante Systeme",
           "generation" : "markdown"
         },
@@ -2264,10 +2264,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.page.html"
+              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.page.html",
+          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html",
           "title" : "Kompatibilität der gematik-Spezifikation",
           "generation" : "markdown"
         },
@@ -2275,10 +2275,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.page.html"
+              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.page.html",
+          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html",
           "title" : "Kompatibilität der gematik-Spezifikation IHE",
           "generation" : "markdown"
         },
@@ -2286,10 +2286,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html",
           "title" : "Must-Support-Flags",
           "generation" : "markdown"
         },
@@ -2297,10 +2297,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html",
           "title" : "Repräsentationsformate",
           "generation" : "markdown"
         },
@@ -2308,10 +2308,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Suchparameter.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_Suchparameter.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Suchparameter.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_Suchparameter.html",
           "title" : "Suchparameter",
           "generation" : "markdown"
         },
@@ -2319,10 +2319,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Rest.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_Rest.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Rest.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_Rest.html",
           "title" : "REST-API",
           "generation" : "markdown"
         },
@@ -2341,10 +2341,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.page.html"
+              "valueUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.page.html",
+          "nameUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html",
           "title" : "Umgang mit fehlenden Daten",
           "generation" : "markdown"
         }
