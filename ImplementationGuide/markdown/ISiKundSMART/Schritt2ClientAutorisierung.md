@@ -1,9 +1,5 @@
 # Schritt 2: App bittet um Autorisierung
 
----
-### Informativ
----
-
 Im nachfolgenden Schritt wird durch den Client an dem "authorize"-Endpunkt des Autorisierungsservers ein Autorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
 Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe {{pagelink:ImplementationGuide/markdown/ISiKAutorisierung.md, text:'ISiK-Connect: Autorisierung'}}) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
@@ -12,9 +8,9 @@ Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_
 
 ## EHR Launch
 
-Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-009}}). Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/Uebersicht.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
+Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-009}}). Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/Kontext.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
-Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Mit diesem beliebig gewählten Parameter (z.B. eine UUID) kann der Client das Access Token mit dem Kontext verknüpfen, aus dem der Client gestartet worden ist. Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten, welcher dem Anwender zuvor präsentiert wurde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen, welche die zuvor genannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann spezifische Kontextparameter anfragen. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientenkontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
+Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Mit diesem beliebig gewählten Parameter (z.B. eine UUID) kann der Client das Access Token mit dem Kontext verknüpfen, aus dem der Client gestartet worden ist. Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten, welcher dem Anwender zuvor präsentiert wurde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2.2/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen, welche die zuvor genannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2.2/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann spezifische Kontextparameter anfragen. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientenkontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
 
 ----
 
@@ -26,7 +22,7 @@ Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client 
 
 ## Parameter Autorisierungsanfrage
 
-Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-010}}). Insbesondere gilt dies für die Unterstützung von HTTP POST-basierten Autorisierungsanfragen und der Unterstützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
+Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-010}}). Insbesondere gilt dies für die Unterstützung von HTTP POST-basierten Autorisierungsanfragen und der Unterstützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
 
 Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichend von RFC6749 verpflichtend ist.
 
@@ -46,7 +42,7 @@ Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR
 
 ## Hinweise zu Identity Scopes
 
-Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. EHR MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-015}}). Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden.  
+Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. EHR MÜSSEN die Vorgaben nach [2.2.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2.2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-015}}). Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden.  
 
 ----
 

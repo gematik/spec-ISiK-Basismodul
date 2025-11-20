@@ -4,12 +4,14 @@ Id: ISiKMedikationTransactionResponse
 Title: "ISiK Medikation TransactionBundle-Response"
 Description: "Dieses Profil definiert die Server-Antwort auf Transaktions-Bundles im Rahmen von ISiK-Medikations-Szenarien."
 * insert Meta
+* insert CommonElements
 * type MS
   * ^short = "Type des Bundles"
   * ^comment = "fix: transaction-response"
   * ^fixedCode = #transaction-response
 * entry 1..* MS
   * ^short = "Der einzelne Eintrag zur Interaktion"
+  * ^comment = "Begründung des Must-Support: Einzelne Ressourcen innerhalb der Transaktion"
   * link 0..0
   * fullUrl MS
     * ^short = "vollständige URL der Ressource"

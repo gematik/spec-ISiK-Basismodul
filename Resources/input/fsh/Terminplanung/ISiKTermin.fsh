@@ -12,6 +12,7 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
   * ^comment = "Ein Tag kann verwendet werden um zu kennzeichnen, dass die Ressource von Extern erstellt worden ist."
   * tag[Source] from http://fhir.de/ValueSet/common-meta-tag-de (required)
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains AppointmentReplaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
@@ -115,6 +116,7 @@ Begründung zu Kardinalität und Must Support: Die Angabe eines Angehörigen ist
 Extension: ISiKTerminPriorityExtension
 Id: ISiKTerminPriorityExtension
 Context: Appointment.priority
+Description: "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."
 * insert Meta
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
@@ -125,6 +127,7 @@ Context: Appointment.priority
 Extension: AppointmentReplaces
 Id: AppointmentReplaces
 Context: Appointment
+Description: "Mit dieser Erweiterung kann eine neue Appointment-Ressource auf eine frühere, ersetzte Appointment-Ressource verweisen, z. B. bei einer Terminverschiebung oder -umbuchung. Dies erleichtert die Nachverfolgung von Terminänderungen und stellt sicher, dass der Zusammenhang zwischen ursprünglichem und aktuellem Termin eindeutig dokumentiert ist."
 * insert Meta
 * ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"

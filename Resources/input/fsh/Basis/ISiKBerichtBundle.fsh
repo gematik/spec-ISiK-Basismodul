@@ -2,14 +2,26 @@ Profile: ISiKBerichtBundle
 Parent: Bundle
 Id: ISiKBerichtBundle
 Title: "ISiKBerichtBundle"
-Description: "A document style representation of the receipt (complete, self-contained, signed)"
+Description: "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. 
+Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
+Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.
+"
 * insert Meta
+* insert CommonElements
 * obeys ISiK-docBundle-1
 * type = #document (exactly)
 * type MS
+  * ^short = "Typ des Bundles"
+  * ^comment = "**Begründung MS:** Damit das Bundle ein Document-Bundle nach FHIR-Core Spec ist, muss der type auf `document` gesetzt werden."
 * timestamp 1.. MS
+  * ^short = "Datum des Bundles"
+  * ^comment = "**Begründung Pflichtfeld:** Ein Datum muss für die korrekte Verarbeitung durch das Zielsystem vorhanden sein."
 * identifier 1.. MS
+  * ^short = "Identifier des Berichtsbundles"
+  * ^comment = "**Motivation MS:** Zur Identifikation des Berichtbundles muss ein Identifier vom Subsystem mit angegeben werden."
 * entry MS
+  * ^short = "Eintrag pro Ressource"
+  * ^comment = "**Begründung MS:** Alle im Rahmen des Berichtes relevanten Informationen müssen hier referenziert werden."
   * fullUrl 1..1 MS
   * resource 1..1 MS
   * search 0..0
@@ -19,7 +31,24 @@ Description: "A document style representation of the receipt (complete, self-con
   * ^slicing.discriminator.path = "resource"
   * ^slicing.rules = #open
 * entry contains Composition 1..1 MS
+* entry[Composition]
+  * ^short = "Slice zur Hinterlegung einer Composition-Instanz"
+  * ^comment = "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Composition-Instanz im Bundle enthalten ist.
+  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits, dass die erste Ressource im Bundle eine Composition sein muss. Alle daraus referenzierten Ressourcen müssen ebenfalls Teil des Bundle sein."
 * entry[Composition].resource only ISiKBerichtSubSysteme
+* entry contains Patient 1..1 MS
+* entry[Patient]
+  * ^short = "Slice zur Hinterlegung einer Patienten-Instanz"
+  * ^comment = "Dieses Slice wir explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten ist.
+  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
+  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz."
+* entry[Patient].resource only Patient
+* entry contains Encounter 0..1 MS
+* entry[Encounter]
+  * ^short = "Slice zur Hinterlegung einer Encounter-Instanz"
+  * ^comment = "Dieses Slice ist optional, aber wenn es vorhanden ist, muss es genau eine Encounter-Instanz sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
+  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz."
+* entry[Encounter].resource only Encounter
 
 Instance: ISiKBundle-Example
 InstanceOf: ISiKBerichtBundle

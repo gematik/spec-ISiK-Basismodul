@@ -2,8 +2,14 @@ Profile: ISiKMedikationsListe
 Parent: List
 Id: ISiKMedikationsListe
 Title: "ISiK Medikationsliste"
-Description: "Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien."
+Description: """Dieses Profil ermöglicht die Zusammenführung einzelner MedikationsInformationen eines Patienten in ISiK Szenarien.
+
+Die MedicationList verweist auf MedicationStatement-Ressourcen und bildet Medikationen ab, die aktuell eingenommen, im Krankenhaus verabreicht oder aus externen Quellen dokumentiert wurden - etwa durch Patientenangaben, Medikationspläne oder Entlassbriefe.
+Im Unterschied zum eMP der ePA ist die ISiK-MedikationsListe dynamisch generierbar und systemseitig aktualisierbar. Sie kann auch Informationen enthalten, die außerhalb des eigenen Hauses erfasst wurden – sofern diese dem System strukturiert vorliegen (z.B. durch eMP-Import).
+Ein Import aus dem eMP ist möglich, aber nicht verpflichtend.
+"""
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "(Aktualitäts-)Status der Liste"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
@@ -35,15 +41,19 @@ Description: "Dieses Profil ermöglicht die Zusammenführung einzelner Medikatio
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1.. MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * date MS
   * ^short = "Erstellungsdatum der Liste"
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * entry MS
   * ^short = "Listeneintrag"
+  * ^comment = "Begründung des Must-Support: Abbildung einzelner MedikationsInformationen in der Liste"
   * date MS
     * ^short = "Datum des Listeneintrags"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit
@@ -60,36 +70,36 @@ InstanceOf: ISiKMedikationsListe
 Usage: #example
 * status = #current
 * mode = #working
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * date = 2021-07-04
 * entry[+]
   * date = 2021-07-01
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformation1"
+  * item = Reference(ExampleISiKMedikationsInformation1)
 * entry[+]
   * date = 2021-07-04
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformation2"
+  * item = Reference(ExampleISiKMedikationsInformation2)
 
 Instance: ExampleISiKMedikationsListeParkinson
 InstanceOf: ISiKMedikationsListe
 Usage: #example
 * status = #current
 * mode = #working
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * date = 2024-02-20
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson1"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson1)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson2"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson2)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson3"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson3)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson4"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson4)
 * entry[+]
   * date = 2024-02-20
-  * item.reference = "MedicationStatement/ExampleISiKMedikationsInformationParkinson5"
+  * item = Reference(ExampleISiKMedikationsInformationParkinson5)

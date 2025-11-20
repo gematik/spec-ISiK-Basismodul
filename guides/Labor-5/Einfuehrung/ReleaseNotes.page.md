@@ -6,7 +6,45 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
-## Version 5.0.0-rc (Kommentierung)
+## Version 5.1.1
+
+Datum: tbd
+
+* `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
+  `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
+  angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
+
+----
+
+## Version 5.1.0
+
+Datum: 23.10.2025
+
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+
+## Version 5.0.0
+
+Datum: 26.06.2025
+
+Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
+
+## Version 5.0.0-rc2 (Benehmensherstellung)
+
+Datum: 5.6.2025
+
+- `improve` Erlaubte referenzierbare Profile von Element Subject auf Patient reduziert https://github.com/gematik/spec-ISiK-Basismodul/pull/727
+- `improve` Die Mindestkardinalität für den SCT-Slice in ISiKLaboruntersuchung wurde von 1 auf 0
+  reduziert. Das Pattern auf code.coding[snomed].system wurde entfernt um Mehrfachkodierungen in
+  SnomedCT nicht zu verhindern. https://github.com/gematik/spec-ISiK-Basismodul/pull/730
+- `improve` Einschränkung des MS-Flag auf .specimen und .method für alle Profile aus dem Labormodul https://github.com/gematik/spec-ISiK-Basismodul/pull/735 
+- `improve` Neue Anforderungen zur Implementierung von .status im ISiK Profil Laboruntersuchung und Erweiterung der Dokumentation zum Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/698/files
+
+
+---
+
+## Version 5.0.0-rc
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 

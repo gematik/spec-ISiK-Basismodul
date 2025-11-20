@@ -1,15 +1,21 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Labor/main-stufe-4/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc
+Version: 5.1.0
 
-Datum: 09.04.2025
+Datum: 23.10.2025
 
-Status: Draft (Kommentierung)
+Status: Aktiv (Support-Modul)
 
 Realm: Deutschland
 
 ----
+
+# Support-Modul Labor – Motivation und Status
+
+Im Rahmen verschiedener ISiK-Module, wie beispielsweise AMTS oder dem Workflow für ICU-Normalstationen, besteht ein Bedarf an Labordaten. Dieses Modul dient der Bereitstellung entsprechender Profile.
+
+Das Support-Modul Labor ist ausschließlich als unterstützendes Element für andere ISiK-Module konzipiert und nicht für eine eigenständige Implementierung vorgesehen.
 
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 

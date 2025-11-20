@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Linksventrikulaerer_Druck
 Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-linksventrikulaerer-druck
 Title: "SD MII ICU Linksventrikulaerer Druck"
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Drucks in der Akutmedizin."
 * insert Meta
+* insert CommonElements
 * category = $observation-category#vital-signs
 * code
   * coding ..3

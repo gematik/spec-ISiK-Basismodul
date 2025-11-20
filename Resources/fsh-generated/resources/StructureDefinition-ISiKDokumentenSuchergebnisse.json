@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenSuchergebnisse",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenSuchergebnisse",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "name": "ISiKDokumentenSuchergebnisse",
   "title": "Suchergebnisse einer Dokumentensuche",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -17,6 +17,25 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.versionId",
+        "path": "Bundle.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Bundle.meta.lastUpdated",
+        "path": "Bundle.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
       {
         "id": "Bundle.type",
         "path": "Bundle.type",
@@ -43,14 +62,16 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "short": "Ergebnisse der Dokumentensuche",
+        "comment": "Jedes Suchergebnis wird in einer separaten `entry` abgebildet. Bundles mit `total = 0` haben keine `entry`",
+        "mustSupport": true
       },
       {
         "id": "Bundle.entry:DocumentReference",
         "path": "Bundle.entry",
         "sliceName": "DocumentReference",
         "short": "Suchergebnis",
-        "comment": "Jedes Suchergebnis wird in einer separaten `entry` abgebildet. Bundles mit `total = 0` haben keine `entry`",
         "min": 0,
         "max": "*",
         "mustSupport": true

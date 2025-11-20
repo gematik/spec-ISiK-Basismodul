@@ -1,7 +1,7 @@
 Extension: ExtensionISiKMedikationsart
 Id: ExtensionISiKMedikationsart
 Title: "ISiK Medikationsart"
-Description: "Extension zur Dokumentation der Therapieart einer Medikation (Akut- oder Dauermedikation)."
+Description: "Diese Erweiterung ermöglicht die genaue Angabe der Art der Medikation, beispielsweise ob es sich um eine Dauermedikation, Bedarfsmedikation oder eine situative Medikation handelt. Dies trägt zur besseren Strukturierung von Medikationsplänen und zur eindeutigen Kommunikation über die Medikation bei."
 * insert Meta
 * ^experimental = false
 * ^context[+].type = #element

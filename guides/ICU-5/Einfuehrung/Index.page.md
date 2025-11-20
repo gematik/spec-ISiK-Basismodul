@@ -4,17 +4,16 @@ topic: ImplementationGuide-markdown-Einfuehrung
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc
+Version: 5.1.0
 
-Datum: 09.04.2025
+Datum: 23.10.2025
 
-Status: Active
+Status: Aktiv
 
 Realm: Deutschland
 
 
 
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
 
 
 ----
@@ -23,13 +22,23 @@ Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der I
 
 Die bestehenden ISiK-Profile und Implementierungsleitfäden haben den Workflow einer bidirektionalen Überleitung von Patienten zwischen Intensiv- und Normalversorgung innerhalb eines Krankenhauses nicht adressiert. Da die ISiK-Stakeholder anerkannt haben, dass dieser Workflow  für die Krankenhausversorgung von besonderer Dringlichkeit ist, trifft der vorliegende Implementierungsleitfaden Festlegungen, um diesen zu unterstützen.
 
+Die Spezifikation ist in enger Kooperation mit den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
+
+
 ## Motivation und Hintergrund
 Dieser Implementierungsleitfaden beschreibt eine bidirektionale Überleitung zwischen Intensiv- und Normalversorgung auf der Ebene eines Workflows zur Datenkommunikation zwischen den betroffenen Systemen (PDMS und KIS).
 
 ###  Stakeholder
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von KIS und PDMS.
 
-Es handelt sich um eine technische Spezifikation, zu der keine weiteren medizinischen Fachexperten zu Rate gezogen werden. Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) einer medizinischen Validierung unterzogen worden.
+Es handelt sich um eine technische Spezifikation. 
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. Die Profile werden mit den Kooperationspartnern der MII weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
+
+Das zugrundeliegende Informationsmodell der MII wurde vom Vorstand der DIVI (Deutsche Interdiziplinäre Vereinigung für Intensiv- und Notfallmedizin) freigegeben. Alle Universitätskliniken (im Rahmen der MII und des Netzwerks Universitätsmedizin (NUM)) haben die hier gelisteten Profile in allen Gremien bestätigt und sich auf deren Verwendung verpflichtet (z. B. Beschluss des nationalen Steuerungsgremiums (NSG) der MII 12/2024).
+
+Im Sinne der Qualitätssicherung der Profile wurden die Snapshots und Beispiele nach [dieser Checkliste (PDF)](https://github.com/gematik/spec-ISiK-Basismodul/blob/main-stufe-5/Material/ICU/Checkliste%20fach%C3%A4rztliche%20Validierung%20spezifischer%20Snapshots%20und%20Beispiele%20V1.2.pdf) strukturiert von zwei in der Intensivmedizin erfahrenen Fachärzten, die nicht an der Profilierung beteiligt waren, unabhängig geprüft. Aus den resultierenden Testprotokollen wurde anschließend in einem Workshop mit weiteren Ärzten sowie technischen FHIR-Experten eine konkrete Handlungsempfehlung pro Profil und Beispiel abgeleitet und im nationalen Meeting des MII KDS ICU-Teams am 7.5.2024 konsentiert.
+
+Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
 
 Kommunikations-Workflows, die auf dieser Schnittstellen-Festlegung aufbauen, können lediglich der Unterstützung von Versorgung und Qualitätssicherungsmaßnahmen in der Überleitung zwischen Intensiv- und Normalversorgung (bidirektional) dienen.
 

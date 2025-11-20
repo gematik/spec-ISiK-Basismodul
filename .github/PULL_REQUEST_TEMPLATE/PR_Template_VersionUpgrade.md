@@ -15,11 +15,10 @@ All jobs with an `x` in the boxes were performed to the best of knowledge.
 <!--- Lets check everything before we continue. -->
 - This PR refers to a versioned Branch with a name and a version number in the form of N.n.n, e.g. "TC_3.2.1".
 - This PR has a clean meaningful commit history. Minor commits or commits without description have been squashed, at the latest now.
-- The GitHub Actions "TC version update" and "CI (FHIR Validation)" finished successfully; release version and date was updated accordingly by release_publish.py (triggered by action)
-- Eventually, increase the dependency of to newer Basis Modul and Basispofil-de and possibly others (package json and sushi-config)
-- [ ] Update IG folder name to current verion (e.g. guide\Implementierungsleitfaden-...-4.0.3)
+- [ ] The GitHub Actions "TC version update" and "CI (FHIR Validation)" finished successfully; release version and date was updated accordingly by release_publish.py (triggered by action)
+- [ ] Eventually, increase the dependency of  Basispofil-de and possibly others (package.json and sushi-config) (update to newer Basismodul not needed anymore)
 - [ ] the release notes were reviewed with a person responsible for testing
-- [ ] New Release Notes were created, alined to the commit history. Possibly, if you want to check the release notes for completeness, check against automatic relesase note generation in GitHub. In Github, go to 
+- [ ] New Release Notes were created, aligned to the commit history. Possibly, if you want to check the release notes for completeness, check against automatic release note generation in GitHub. In Github, go to 
   - _-> Releases_ then _-> Draft a new release_ with the _Modul Name and Version_, then
   - _-> Target the main-Branch_ and _-> enter a new Tag according to the Version_, then click.
   - Click _-> Generate Release notes_ , _-> Adjust them if necessary_ and _-> Copy/Paste the Details in the RealeaseNotes.md_ of the very Branch you want to merge.

@@ -59,7 +59,7 @@ Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/pat
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
-
+Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
@@ -123,13 +123,3 @@ Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
-
-Alias: $iSiKLaboruntersuchungSerumkreatinin = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungSerumkreatinin
-Alias: $iSiKLaboruntersuchungPCT = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT
-Alias: $iSiKLaboruntersuchungCRP = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP
-Alias: $iSiKLaboruntersuchungHb = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb
-Alias: $iSiKLaboruntersuchungTroponin =  https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTroponin
-
-Alias: $ISiKLaboruntersuchungGFR = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungGFR
-Alias: $ISiKLaboruntersuchungThrombozyten = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungThrombozyten
-Alias: $ISiKLaboruntersuchungTSH = https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTSH

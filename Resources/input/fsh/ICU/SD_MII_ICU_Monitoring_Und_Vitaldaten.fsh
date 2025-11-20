@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Parent: Observation
 Id: sd-mii-icu-monitoring-und-vitaldaten
 Title: "SD MII ICU Monitoring und Vitaldaten"
+Description: "Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten."
 * insert Meta
+* insert CommonElements
 * obeys vs-de-2
 * identifier MS
 * basedOn MS

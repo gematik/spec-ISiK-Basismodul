@@ -4,17 +4,19 @@ topic: ImplementationGuide-markdown-Einfuehrung
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc
+Version: 5.1.0
 
-Datum: 09.04.2025
+Datum: 23.10.2025
 
-Status: Active
+Status: Aktiv
 
 Realm: Deutschland
 
 
 
 Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
+
+Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
 
 
 ----

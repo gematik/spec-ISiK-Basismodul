@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennu
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd
 Title: "SD MII ICU Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung"
+Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzzeitvolumens durch Indikatorverdünnung in der Akutmedizin."
 * insert Meta
+* insert CommonElements
 * code
   * coding[sct] ..0
     * ^patternCoding.system = "http://snomed.info/sct"

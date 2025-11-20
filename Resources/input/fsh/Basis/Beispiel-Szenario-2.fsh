@@ -26,7 +26,7 @@ Usage: #example
 Instance: SZ2Primaerdiagnose
 InstanceOf: ISiKDiagnose
 Usage: #example
-* code.coding[ICD-10-GM] = $icd-10-gm#E10.30 "Diabetes mellitus"
+* code.coding[ICD-10-GM] = $icd-10-gm#E10.30 "Diabetes mellitus, Typ 1: Mit Augenkomplikationen: Nicht als entgleist bezeichnet"
   * extension[Mehrfachcodierungs-Kennzeichen]
     * valueCoding = $icd-10-gm-mehrfachcodierungs-kennzeichen-cs#†
   * version = "2024"
@@ -89,6 +89,11 @@ Usage: #example
 * type = $versicherungsart-de-basis#GKV
 * beneficiary = Reference(SZ2Patient)
 * subscriber = Reference(SZ2Patient)
+* subscriber
+  * identifier
+    * type = $identifier-type-de-basis#KVZ10
+    * system = "http://fhir.de/sid/gkv/kvid-10"
+    * value = "A222222222"  
 * payor
   * identifier
     * type = $v2-0203#XX

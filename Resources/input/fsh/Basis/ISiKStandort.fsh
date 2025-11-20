@@ -28,7 +28,9 @@ Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiativ
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 "
 * insert Meta
+* insert CommonElements
 * identifier MS 
+  * ^short = "Eindeutiger Identifier des Standorts"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -37,28 +39,38 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   standortnummer-dkg 0..1 MS
 * identifier[standortnummer-dkg] only $identifier-standortnummer-dkg
   * ^patternIdentifier.system = $identifier-standortnummer-dkg-system
+  * ^short = "Standortnummer nach DKG"
   * ^comment = "Motivation : Entsprechend der Festlegung der DKG laut Basisprofile-DE 1.5.0 (https://simplifier.net/packages/de.basisprofil.r4/) "
 * name MS 
+  * ^short = "Name des Standort"
   * ^comment =  "Motivation: Kein Name zwingend notwendig (z.B. für ein Zimmer), wenn über .identifier identifizierbar; weicht daher ab von https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
 * mode MS 
+  * ^short = "Modus des Standorts"
   * ^comment = "Motivation: Die Einschränkung auf \"instance\" erfolgt, da im  ISiK-Kontext ausschließlich konkrete Standorte übertragen werden sollen. Hiermit wird zusätzlich die Kompatibilität zur MII-Spezifikation eines Standortes gewahrt https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
 * mode = #instance
 * type MS
+  * ^short = "Typ des Standorts"
   * ^comment = "Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * address MS
+  * ^short = "Adresse des Standorts"
   * ^comment = "Motivation: Bei Verfügbarkeit einer Adresse muss ein System diese Information bereitstellen. Darüber hinaus muss das abrufende System diese Information verarbeiten können."
 * address only AddressDeBasis
 * physicalType 1..1 MS
+  * ^short = "Physikalischer Typ des Standorts"
 
   * ^comment = "Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist."
 
 * position MS 
+  * ^short = "Geodaten eines Standorts"
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * managingOrganization 1..1 MS 
+  * ^short = "Verwaltende Organisation des Standorts"
   * ^comment = "Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
 * partOf MS
+  * ^short = "Organisationale Zugehörigkeit"
   * ^comment = "Motivation: Ein System muss die organisationale Zugehörigkeit eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * hoursOfOperation MS
+  * ^short = "Betriebszeiten des Standorts"
   * ^comment = "Motivation: Ein System muss die Betriebszeiten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 
 Profile: ISiKStandortRaum
@@ -69,6 +81,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als 
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
 * operationalStatus from $v2-0116-BedStatus
+  * ^comment = "Belegungsstatus eines Raums"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
@@ -84,6 +97,7 @@ das einen Bettenstellplatz referenziert.
 * physicalType = $LocationPhysicalType#bd "Bed" // Dies entspreicht der Definition des VS "This is not the physical bed/trolley that may be moved about, but the space it may occupy."
 * operationalStatus MS
 * operationalStatus from $v2-0116-BedStatus
+  * ^short = "Belegungsstatus eines Bettenstellplatz"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
 
 

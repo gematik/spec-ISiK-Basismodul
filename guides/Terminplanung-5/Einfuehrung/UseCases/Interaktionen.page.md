@@ -51,13 +51,15 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin
 
 ---
 
-{{render:Material/images/Interaktionen/5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen.png}}
+{{render:Material/Terminplanung/images/Interaktionen/5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen.png}}
 
 Für einen durch den Benutzer ausgewählten Terminblock bzw. mehreren aufeinander folgenden Terminblöcken kann durch den Termin-Requestor ein Termin angefragt werden. Dieser kann direkt oder erst nach manueller Bestätigung durch das Termin-Repository freigegeben werden.
 
 Es ist zu beachten, dass innerhalb dieser Aktion ein terminführendes Termin-Repository die Rolle des Termin-Requestors übernehmen kann und den neu-angelegten Termin in ein weiteres Terminrepository spiegelt.
 
 In diesem Kontext kann das Termin-Repsoitory zudem Zusatzinformationen (z.B. Lagepläne) an den Termin-Requestor übermitteln.
+
+Die Buchung eines Termins kann auch eine Aktualisierung eines Termins darstellen, indem für einen bestehenden Termin ein oder mehrere neu ausgewählte Terminblöcke an das Terminrepository übergeben werden.
 
 Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
 
@@ -74,9 +76,13 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 ---
 
+Eine Verschiebeoperation kann im Normalfall als eine Neubuchung mit geändertem Zeitfenster ausgeführt werden (siehe Interaktion 5, bzw. {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.)
+
+Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Termins notwendig werden, wenn ursprüngliche Ressourcen nicht mehr verfügbar sind für den neu zu belegenden Slot:
+
 {{render:Material/Terminplanung/images/Interaktionen/7.1 Termin verschieben (ausgehend vom Client).png}}
 
-{{render:Material/Terminplanung/images/Interaktionen/7.2 Termin verschieben (ausgehend vom Termin-Repository).png}}
+{{render:Material/Terminplanung/images/Interaktionen/7.2 Termin verschieben (ausgehend vom Termin Repository).png}}
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen.
 
@@ -86,7 +92,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 {{render:Material/Terminplanung/images/Interaktionen/8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client).png}}
 
-{{render:Material/Terminplanung/images/Interaktionen/8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin-Repository).png}}
+{{render:Material/Terminplanung/images/Interaktionen/8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository).png}}
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System durch Zusatzinformationen (z.B. welche Teilnehmer oder Ressourcen sind Teil des Termins) erweitert werden.
 

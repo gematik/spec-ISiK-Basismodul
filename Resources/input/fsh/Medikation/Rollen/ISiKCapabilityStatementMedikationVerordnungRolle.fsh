@@ -70,6 +70,13 @@ Usage: #definition
       * name = "_id"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?_id=103270`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -77,6 +84,13 @@ Usage: #definition
       * name = "authoredon"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationRequest-authoredon"
       * type = #date
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?authoredon=2022-03-21`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Date'](https://hl7.org/fhir/R4/search.html#date).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -84,6 +98,13 @@ Usage: #definition
       * name = "code"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -91,6 +112,13 @@ Usage: #definition
       * name = "date"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-date"
       * type = #date
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?date=2022-03-23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Date'](https://hl7.org/fhir/R4/search.html#date).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -98,6 +126,13 @@ Usage: #definition
       * name = "encounter"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-encounter"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?encounter=Encounter/123`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -105,6 +140,13 @@ Usage: #definition
       * name = "intent"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationRequest-intent"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?intent=order`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -112,6 +154,13 @@ Usage: #definition
       * name = "medication"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-medication"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?medication=Medication/123`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -119,6 +168,13 @@ Usage: #definition
       * name = "patient"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?patient=Patient/123`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -126,6 +182,13 @@ Usage: #definition
       * name = "requester"
       * definition = "http://hl7.org/fhir/SearchParameter/MedicationRequest-requester"
       * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?requester=Practitioner/101112`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        "
     * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -133,6 +196,83 @@ Usage: #definition
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/medications-status"
       * type = #token
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?status=active`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "encounter.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/medications-encounter"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationRequest?encounter.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`
+
+        `GET [base]/MedicationRequest?encounter.identifier=7567867`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "medication.code"
+      * definition = "http://hl7.org/fhir/SearchParameter/medications-medication"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**  
+        `GET [base]/MedicationRequest?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "patient.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationRequest?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`
+
+        `GET [base]/MedicationRequest?patient.identifier=1032702`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
+    * searchParam[+]
+      * extension
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHALL
+      * name = "requester.identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/MedicationRequest-requester"
+      * type = #reference
+      * documentation = 
+        "**Beispiele:**  
+        `GET [base]/MedicationRequest?requester.identifier=http://fhir.de/sid/bundesaerztekammer/efn|123456789123456`
+
+        `GET [base]/MedicationRequest?requester.identifier=123456789123456`
+
+        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
+
+        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).
+
+        "
   * interaction[0]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

@@ -3,6 +3,7 @@ Parent: Medication
 Id: ISiKMedikament
 Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * obeys isik-med-1
 * code MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
@@ -12,15 +13,18 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-      PZN 0..1 MS and
-      ATC-DE 0..1 MS and
+      PZN 0..* MS and
+      ATC-DE 0..* MS and
       SCT 0..1 MS
     * ^comment = "Begründung des Must-Support: Medikamente MÜSSEN kodiert werden, hierfür kann eine PZN, ATC-Code oder SnomedCT Code verwendet werden"
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, bspw. existieren für Aspirin 3 verschiedene Packungsgrößen."
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * ^comment = "Merfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, bspw. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
   * coding[SCT] only ISiKSnomedCTCoding
+  * coding[SCT] from $vs-ti-medication-snomed-ct (extensible)
     * ^patternCoding.system = $cs-sct
   * text MS
     * ^comment = "Begründung des Must-Support: Falls eine Kodierung nicht möglich ist kann das Medikament alternativ per Freitext erfasst werden"
@@ -79,8 +83,10 @@ Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen
       * ^patternCoding.system = $cs-ask
     * coding[ATC-DE] only ISiKATCCoding
       * ^patternCoding.system = $cs-atc-de
+      * insert ISiKMedikament-CodingATCComment
     * coding[PZN] only ISiKPZNCoding
       * ^patternCoding.system = $cs-pzn
+      * insert ISiKMedikament-CodingPZNComment
     * coding[SCT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
@@ -117,6 +123,9 @@ Expression: "code.exists() or ingredient.exists()"
 Instance: ExampleISiKMedikament1
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikament codiert (Wirkstoff)</div>"""
 * code.coding
   * system = $cs-atc-de
   * code = #V03AB23
@@ -127,6 +136,9 @@ Usage: #example
 Instance: ExampleISiKMedikament2
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für eine Infusionslösung</div>"""
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgelöst zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionslösung"
 * status = #active
 * form.coding
@@ -162,6 +174,9 @@ Usage: #example
 Instance: ExampleISiKMedikament3
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikament codiert (mit PZN)</div>"""
 * code.coding
   * system = $cs-pzn
   * code = #07265233
@@ -171,6 +186,9 @@ Usage: #example
 Instance: ExampleISiKMedikament4
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikamentenrezeptur aus Fertigarzneimitteln</div>"""
 * status = #active
 * form.text = "Tabletten"
 * ingredient[0]
@@ -211,6 +229,9 @@ Usage: #example
 Instance: ExampleISiKMedikament5
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikamentenrezeptur aus Wirkstoffen</div>"""
 * status = #active
 * form.text = "Tabletten"
 * ingredient[0]
@@ -253,12 +274,17 @@ Usage: #example
 Instance: ExampleISiKMedikament6
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikament als Freitext</div>"""
 * code.text = "Enoxaparin-Natrium 40 mg"
 * status = #active
 
 Instance: ExampleISiKMedikament7
 InstanceOf: ISiKMedikament
-Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Medikament (hier: Paracetamol) in Wasser aufgelöst</div>"""
 * code.text = "Paracetamol gelöst in Wasser"
 * status = #active
 * ingredient[0]
@@ -295,6 +321,9 @@ Usage: #example
 Instance: ExampleISiKMedikament8
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Zytostatikum mit absoluter Wirkstärken-Angabe:</div>"""
 * code.text = "Infusion bestehend aus 80 mg/m² KOF Paclitaxel aufgelöst zur Verabreichung in 5-%iger (50 mg/ml) Glucose-Infusionslösung"
 * status = #active
 * form.coding
@@ -341,6 +370,9 @@ Usage: #example
 Instance: ExampleISiKMedikament9
 InstanceOf: ISiKMedikament
 Usage: #example
+* text
+  * status = #additional
+  * div = """<div xmlns="http://www.w3.org/1999/xhtml">Zytostatikum mit absoluter Wirkstärken-Angabe:</div>"""
 * code.text = "Infusion bestehend aus 142 mg Paclitaxel aufgelöst zur Verabreichung in 500 ml 5-%iger (50 mg/ml) Glucose-Infusionslösung"
 * status = #active
 * form.coding

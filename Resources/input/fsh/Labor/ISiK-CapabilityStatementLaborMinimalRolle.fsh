@@ -25,21 +25,21 @@ Usage: #definition
   * resource[+]
     * type = #Observation
     * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $iSiKLaboruntersuchungSerumkreatinin
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungSerumkreatinin)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $iSiKLaboruntersuchungPCT
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungPCT)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $iSiKLaboruntersuchungCRP
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungCRP)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $iSiKLaboruntersuchungHb
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungHb)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $iSiKLaboruntersuchungTroponin
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungTroponin)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $ISiKLaboruntersuchungGFR
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungGFR)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $ISiKLaboruntersuchungThrombozyten
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungThrombozyten)
       * insert CapabilityStatementExpectationExt(SHALL)
-    * supportedProfile[+] = $ISiKLaboruntersuchungTSH
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungTSH)
       * insert CapabilityStatementExpectationExt(SHALL)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)

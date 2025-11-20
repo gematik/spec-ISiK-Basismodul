@@ -1,14 +1,20 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKOrganisationFachabteilung",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+      "valueCanonical": "https://gematik.de/fhir/ti/StructureDefinition/ti-organization|1.1.1"
+    }
+  ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "name": "ISiKOrganisationFachabteilung",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisation wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
+  "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -17,6 +23,25 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Organization.id",
+        "path": "Organization.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.meta.versionId",
+        "path": "Organization.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Organization.meta.lastUpdated",
+        "path": "Organization.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
       {
         "id": "Organization.identifier",
         "path": "Organization.identifier",
@@ -29,6 +54,8 @@
           ],
           "rules": "open"
         },
+        "short": "Identifikatoren der Fachabteilung",
+        "comment": "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -36,6 +63,7 @@
         "id": "Organization.identifier:IKNR",
         "path": "Organization.identifier",
         "sliceName": "IKNR",
+        "short": "Institutionskennzeichen",
         "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. ",
         "min": 0,
         "max": "1",
@@ -56,6 +84,7 @@
         "id": "Organization.identifier:BSNR",
         "path": "Organization.identifier",
         "sliceName": "BSNR",
+        "short": "Betriebsstättennummer",
         "comment": "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist.",
         "min": 0,
         "max": "1",
@@ -76,6 +105,7 @@
         "id": "Organization.identifier:TelematikID",
         "path": "Organization.identifier",
         "sliceName": "TelematikID",
+        "short": "Telematik-ID",
         "comment": "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist.",
         "min": 0,
         "max": "1",
@@ -96,6 +126,7 @@
         "id": "Organization.identifier:Abteilungsidentifikator",
         "path": "Organization.identifier",
         "sliceName": "Abteilungsidentifikator",
+        "short": "Krankenhausinterner Abteilungsidentifikator",
         "comment": "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung.",
         "min": 1,
         "max": "1",
@@ -126,6 +157,7 @@
       {
         "id": "Organization.active",
         "path": "Organization.active",
+        "short": "Aktiv/Inaktiv Status",
         "comment": "Motivation: Ein System muss prüfen können, ob eine Fachabteilung als Organisation aktiv ist oder nicht, sofern diese Information verfügbar ist.",
         "mustSupport": true
       },
@@ -142,6 +174,7 @@
           "rules": "open",
           "ordered": false
         },
+        "short": "Art der Organisation",
         "comment": "Motivation: Ein System muss den Typ einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist. \n  Die Festlegung einer endlichen Menge von Organisations-Formen in verbindlicher weise, ist zum Zeitpunkt der Festlegung nicht möglich.",
         "min": 1,
         "mustSupport": true
@@ -150,6 +183,7 @@
         "id": "Organization.type:organisationstyp",
         "path": "Organization.type",
         "sliceName": "organisationstyp",
+        "short": "Angabe des Organisations-Typ",
         "comment": "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden.",
         "min": 1,
         "max": "1",
@@ -167,6 +201,7 @@
         "id": "Organization.type:ErweiterterFachabteilungsschluessel",
         "path": "Organization.type",
         "sliceName": "ErweiterterFachabteilungsschluessel",
+        "short": "Angabe des §301 Fachabteilungsschlüssel",
         "comment": "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann. \n  \n  Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern.",
         "min": 0,
         "max": "1",
@@ -192,6 +227,8 @@
         "id": "Organization.type:Fachbereich",
         "path": "Organization.type",
         "sliceName": "Fachbereich",
+        "short": "Angabe des IHE-PracticeSetting Code",
+        "comment": "Motivation: Ein Fachbereich muss als solcher hinsichtlich des Typs kodiert werden.",
         "min": 0,
         "max": "1",
         "mustSupport": true,
@@ -215,18 +252,21 @@
       {
         "id": "Organization.name",
         "path": "Organization.name",
+        "short": "Name der Organisation",
         "comment": "Motivation: Einer Organisation oder Organisationseinheit muss ein Name zugewiesen werden.",
         "mustSupport": true
       },
       {
         "id": "Organization.alias",
         "path": "Organization.alias",
-        "comment": "Hinweis: unter Umstaänden können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
+        "short": "Alias der Organisation",
+        "comment": "Hinweis: unter Umständen können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
         "mustSupport": true
       },
       {
         "id": "Organization.telecom",
         "path": "Organization.telecom",
+        "short": "Kontaktinformation",
         "comment": "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
         "mustSupport": true
       },
@@ -242,6 +282,7 @@
           ],
           "rules": "open"
         },
+        "short": "Adresse der Organisation",
         "comment": "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification.",
         "mustSupport": true
       },
@@ -249,6 +290,8 @@
         "id": "Organization.address:Strassenanschrift",
         "path": "Organization.address",
         "sliceName": "Strassenanschrift",
+        "short": "Straßenanschrift",
+        "comment": "Wohn- oder Aufenthaltsort des Patienten",
         "min": 0,
         "max": "*",
         "type": [
@@ -337,6 +380,8 @@
         "id": "Organization.address:Postfach",
         "path": "Organization.address",
         "sliceName": "Postfach",
+        "short": "Postfachadresse",
+        "comment": "Adresse, die nur für postalische Zustellung genutzt werden kann.",
         "min": 0,
         "max": "*",
         "type": [
@@ -424,18 +469,21 @@
       {
         "id": "Organization.partOf",
         "path": "Organization.partOf",
+        "short": "Übergeordnete Organisation",
         "comment": "Motivation: System muss die Hierarchie einer Organisationseinheit innherhalb einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
         "mustSupport": true
       },
       {
         "id": "Organization.contact",
         "path": "Organization.contact",
+        "short": "Kontaktperson oder -abteilung",
         "comment": "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
         "mustSupport": true
       },
       {
         "id": "Organization.endpoint",
         "path": "Organization.endpoint",
+        "short": "Technischer Endpunkt",
         "comment": "Motivation: Ein System muss den technischen Endpunkt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.",
         "mustSupport": true
       }

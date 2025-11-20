@@ -3,7 +3,9 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungGFR
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * code.coding[loinc] from ObservationCodesGFR
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#80274001
 * valueQuantity from ObservationUnitsGFR
 * referenceRange MS
@@ -14,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungGFR1
 InstanceOf: ISiKLaboruntersuchungGFR
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#98980-6
 * code.coding[snomed] = $sct#80274001 "Glomerular filtration rate"

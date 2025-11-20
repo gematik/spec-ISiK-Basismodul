@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenMetadaten",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-09",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.  \n\n  ### Motivation\nDie Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.\n\n  ### Kompatibilität\nDieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) (Version 4.2.0) von IHE International.\n\n  #### Abweichungen vom IHE-Profil\n- Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.\n- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion {{pagelink: Dokumentenbereitstellung}} wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.\n- `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden\n\n#### Einschränkungen des IHE-Profils\nElemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt.",
   "fhirVersion": "4.0.1",
@@ -26,9 +26,29 @@
   "differential": {
     "element": [
       {
+        "id": "DocumentReference.id",
+        "path": "DocumentReference.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.meta.versionId",
+        "path": "DocumentReference.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "DocumentReference.meta.lastUpdated",
+        "path": "DocumentReference.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
         "id": "DocumentReference.masterIdentifier",
         "path": "DocumentReference.masterIdentifier",
         "short": "Versionsspezifische OID des Dokumentes",
+        "comment": "**Begründung Must Support:** Die OID ist erforderlich, um die Version des Dokumentes eindeutig zu identifizieren.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
@@ -57,6 +77,7 @@
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
+        "short": "Identifier des Dokumentes",
         "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]\n\nUpdate für Stufe 3:\nIn MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.\n",
         "mustSupport": true,
         "mapping": [
@@ -278,6 +299,7 @@
         "id": "DocumentReference.subject",
         "path": "DocumentReference.subject",
         "short": "Patientenbezug",
+        "comment": "**Begründung Must-Support:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
@@ -292,7 +314,7 @@
         "id": "DocumentReference.subject.reference",
         "path": "DocumentReference.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Bedingtes Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc. Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  \n    Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}",
+        "comment": "**Bedingtes Pflichtfeld:** Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  \nLeer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}\n\nDie Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "mustSupport": true
       },
       {
@@ -338,14 +360,9 @@
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.custodian",
-        "path": "DocumentReference.custodian",
-        "comment": "Einschränkung der Kardinalität analog MHD V4.0.1",
-        "max": "0"
-      },
-      {
         "id": "DocumentReference.relatesTo",
         "path": "DocumentReference.relatesTo",
+        "short": "Beziehung zu anderen Dokumenten",
         "comment": "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden.",
         "mustSupport": true
       },
@@ -373,15 +390,7 @@
       {
         "id": "DocumentReference.description",
         "path": "DocumentReference.description",
-        "comment": "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;",
-        "min": 1,
-        "mustSupport": true,
-        "mapping": [
-          {
-            "identity": "CompositionDocumentReferenceMapping",
-            "map": "Composition.title"
-          }
-        ]
+        "comment": "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen."
       },
       {
         "id": "DocumentReference.securityLabel",
@@ -441,7 +450,7 @@
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
         "short": "Base64-codierte Binärdaten",
-        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden.\n\nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
         "mustSupport": true
       },
       {
@@ -454,6 +463,20 @@
           {
             "identity": "CompositionDocumentReferenceMapping",
             "map": "vom Server festgelegter Speicherort des Bundles/Narratives"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.content.attachment.title",
+        "path": "DocumentReference.content.attachment.title",
+        "short": "Bezeichnung des Dokuments",
+        "comment": "Menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen, z.B. als Titel in einer Dokumentenliste ('Lungenfunktionstest vom 18.02.2022').\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.",
+        "min": 1,
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Composition.title"
           }
         ]
       },
@@ -492,6 +515,8 @@
       {
         "id": "DocumentReference.context",
         "path": "DocumentReference.context",
+        "short": "Kontextinformationen zum Dokument",
+        "comment": "**Begründung Must Support:** Kontextinformationen sind erforderlich, um die Relevanz und den Bezug des Dokuments zu verstehen.",
         "min": 1,
         "mustSupport": true
       },
@@ -499,6 +524,7 @@
         "id": "DocumentReference.context.encounter",
         "path": "DocumentReference.context.encounter",
         "short": "Aufenthaltsbezug",
+        "comment": "**Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.",
         "max": "1",
         "mustSupport": true,
         "mapping": [
@@ -513,7 +539,7 @@
         "id": "DocumentReference.context.encounter.reference",
         "path": "DocumentReference.context.encounter.reference",
         "short": "Encounter-Link",
-        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  **Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.",
+        "comment": "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -569,7 +595,14 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
-        }
+        },
+        "mapping": [
+          {
+            "identity": "CompositionDocumentReferenceMapping",
+            "map": "Lookup Composition.encounter.resolve().serviceType",
+            "comment": "Mapping per https://wiki.hl7.de/index.php?title=Ihevs:DocumentEntry.PracticeSettingCode von Fachabteilungsschlüssel auf PracticeSetting erforderlich."
+          }
+        ]
       }
     ]
   }

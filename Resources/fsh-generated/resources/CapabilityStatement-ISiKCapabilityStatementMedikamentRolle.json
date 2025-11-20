@@ -2,11 +2,11 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementMedikamentRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikamentRolle",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-04-09",
+  "date": "2025-10-23",
   "contact": [
     {
       "telecom": [
@@ -34,7 +34,7 @@
     "application/fhir+xml",
     "application/fhir+json"
   ],
-  "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \r\n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \r\n  \r\nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \r\nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \r\nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+  "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
   "name": "ISiKCapabilityStatementMedikamentRolle",
   "title": "ISiK CapabilityStatement MedikamentRolle",
   "purpose": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen, die ein ISiK-konformes System unterstützen muss, um Abfragen zum Medikament zu ermöglichen.\n  \n**HISTORIE:**    \n* 5.0.0\n  * `refactor`als eigene Rolle initiiert\n",
@@ -114,7 +114,8 @@
               ],
               "name": "_id",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?_id=103270`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).\n\n        "
             },
             {
               "extension": [
@@ -125,7 +126,8 @@
               ],
               "name": "code",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
             },
             {
               "extension": [
@@ -136,7 +138,8 @@
               ],
               "name": "form",
               "definition": "http://hl7.org/fhir/SearchParameter/Medication-form",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?form=http://standardterms.edqm.eu|11210000`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
             },
             {
               "extension": [
@@ -147,7 +150,8 @@
               ],
               "name": "ingredient",
               "definition": "http://hl7.org/fhir/SearchParameter/Medication-ingredient",
-              "type": "reference"
+              "type": "reference",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?ingredient=Medication/123`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        "
             },
             {
               "extension": [
@@ -158,7 +162,8 @@
               ],
               "name": "ingredient-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Medication-ingredient-code",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?ingredient-code=http://fhir.de/CodeSystem/bfarm/atc|L01DB01`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
             },
             {
               "extension": [
@@ -169,7 +174,32 @@
               ],
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/Medication-status",
-              "type": "token"
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?status=active`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "ingredient.code",
+              "definition": "http://hl7.org/fhir/SearchParameter/Medication-ingredient",
+              "type": "reference",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?ingredient.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "lot-number",
+              "definition": "http://hl7.org/fhir/SearchParameter/Medication-lot-number",
+              "type": "token",
+              "documentation": "**Beispiel:**  \n        `GET [base]/Medication?lot-number=X123456`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
             }
           ]
         }

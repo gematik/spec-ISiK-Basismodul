@@ -2,7 +2,7 @@ Profile: ISiKBerichtSubSysteme
 Parent: Composition
 Id: ISiKBerichtSubSysteme
 Description: 
-"Dieses Profil ermöglicht die krankenhaus-interne Übermittlung eines Berichtes bestehend aus beliebien strukturierten FHIR-Ressourcen 
+"Dieses Profil ermöglicht die krankenhaus-interne Übermittlung eines Berichtes bestehend aus beliebigen strukturierten FHIR-Ressourcen 
 sowie einer textuellen HTML-Repräsentation (Narrative) an einen ISiK-Basis-kompatiblen Server.
 ### Motivation
 In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:
@@ -33,6 +33,7 @@ In weiteren Ausbaustufen von ISiK soll darüber hinaus eine Übernahme der struk
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * text 1.. MS
   * ^short = "Narrativ"
   * ^comment = "HTML-Repräsentation des Dokumenten-Headers.   
@@ -55,10 +56,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   Wenn es sich bei dem verwendeten Identifier um eine OID oder UUID handelt, so ist hier der Wert `urn:ietf:rfc:3986` anzugeben und in `Identifier.value` das jeweilige Präfix `urn:uuid:` bzw. `urn:oid:` zu verwenden.  
   Beispiel:
 ```xml  
-&lt;identifier&gt; 
-    &lt;system value="urn:ietf:rfc:3986"&gt;  
-    &lt;value value="urn:oid:2.16.840.1.113883.6.96"&gt; 
-&lt;/identifier&gt;
+<identifier> 
+    <system value="urn:ietf:rfc:3986">  
+    <value value="urn:oid:2.16.840.1.113883.6.96"> 
+</identifier>
 ```
 """
   * system MS
@@ -79,62 +80,65 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * status MS
 * type MS
   * ^short = "Dokumenttyp"
-  * ^comment = "Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
-  Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden."
-  * text 1.. MS
+  * ^comment = "Begründung zu Must Support: Der Dokumenttyp ist für die Identifikation des Berichtes und die Zuordnung zu einem Subsystem für die weitere Verarbeitung erforderlich.
+
+  *Hinweis für Implementierer:* 
+  Der zu übermittelnde Bericht repräsentiert eine Zusammenfassung der strukturierten Daten aus dem Subsystem. Das Dokument KANN z.B. mittels KDL oder IHE-D-XDS-Typecodes klassifiziert werden.  
+  Es KANN derzeit jedoch auch eine rein textuelle Beschreibung des Dokumenttyps angegeben werden.
+  
+  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,
+  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.
+  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)
+  aus dem KDL-Code ermittelt werden.
+  Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.  
+  "
+  * text MS
     * ^short = "Dokumenttyp (Freitext)"
     * ^comment = "Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps."
-* type.coding 1.. MS
+* type.coding 0.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains
-    LOINC 0..1 MS and
     KDL 0..1 MS and
-    IHE 0..1 MS
-* type.coding[LOINC] = $loinc#55112-7
+    XDS 0..1 MS
   * system 1..
   * code 1..
 * type.coding[KDL] ^patternCoding.system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * system 1..
   * code 1..
     * obeys kdl-1
-* type.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+* type.coding[XDS] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
   * system 1..
   * code 1..
 * category MS
   * ^short = "Dokument-Kategorie"
-  * ^comment = "Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden. " 
+  * ^comment = "Begründung zu Must Support: Die Klassifizierung kann zur Strukturierung der Berichte genutzt werden, in dem Fall, dass das Narrative des Berichts dem Benutzer angezeigt wird. Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden." 
 * category.coding MS
-* category.coding ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "system"
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
-* category.coding[LOINC]
+* category.coding[LOINC] ^patternCoding.system = $loinc
   * system 1..
-  * system = $loinc
   * code 1..
-* category.coding[IHE]
+* category.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
   * system 1..
-  * system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode" (exactly)
   * code 1..
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung des Dokumentes zu einem Patienten 
-  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug des Dokument MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.    
-    **WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu {{pagelink:Fall}}) erfolgen. 
-    Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: `Encounter.account`) 
-    unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * date MS
   * ^short = "Dokumentendatum"
   * ^comment = "Datum der letzten Änderung des Dokumentes"
@@ -168,7 +172,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     Hinweise: Für Aggregation einer vollständigen menschenlesbaren Repräsentation 
     MÜSSEN die Repräsentationen der einzelnen Kapitel an die Repräsentation 
     der Metadaten (Composition.text) angehängt werden. 
-    Für die Separierung KÖNNEN einfache &lt;div&gt;-Tags verwendet werden. 
+    Für die Separierung KÖNNEN einfache <div>-Tags verwendet werden. 
     Es ist zu beachten, dass Kapitel auch Unterkapitel enthalten KÖNNEN 
     (Composition.section.section), die bei der Aggregation entsprechend 
     berücksichtigt werden MÜSSEN.  

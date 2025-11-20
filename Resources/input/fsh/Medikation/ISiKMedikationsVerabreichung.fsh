@@ -6,8 +6,26 @@ Hinweis zur Auswahl des Profils: In Abgrenzung zu ISiKMedikationsInformation (Me
 Das Profil ISiKMedikationsInformation (MedicationStatement) kann ebenfalls für  die Abbildung der Verabreichung von Medikamenten für einen Patienten verwendet werden, wenn keine Zeitpunkt-genauen Angaben zur Verabreichung vorliegen, sondern lediglich Datums-genaue Angaben (einschließlich Granularität Jahr, Monat oder Tag).
 
 Begründung zur Profil- und Nutzungsdifferenzierung:
-Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, dann ist ein genauer Zeitstempel zwingend. Die medizinische Verabreichungsdokumentation muss durch medizinisches Personal erfolgen. Angaben von Patienten und Angehörigen sind grundsätzlich keine medizinische Verabreichungsdokumentation und daher als MedicationStament zu erfassen(['report that such a sequence (or at least a part of it) did take place'](https://hl7.org/fhir/R4/medicationstatement.html)). "
+Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, dann ist ein genauer Zeitstempel zwingend. Die medizinische Verabreichungsdokumentation muss durch medizinisches Personal erfolgen. Angaben von Patienten und Angehörigen sind grundsätzlich keine medizinische Verabreichungsdokumentation und daher als MedicationStament zu erfassen(['report that such a sequence (or at least a part of it) did take place'](https://hl7.org/fhir/R4/medicationstatement.html)). 
+
+**Hinweis zur Pausierung einer Medikation (Best-Practice):**
+
+Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationAdministration`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:
+
+- **Korrekte Statusabbildung:**  
+  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.
+
+- **Effiziente Abfragen über REST API:**  
+  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  
+  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationAdministrations` müssten abgerufen und manuell analysiert werden.
+
+- **Erhalt von Verlaufsinformationen:**  
+  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
+  Durch neue `MedicationAdministration`-Einträge bleibt die Verlaufshistorie erhalten.  
+  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
+"
 * insert Meta
+* insert CommonElements
 * status MS
   * ^short = "Status der Verabreichungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
@@ -21,13 +39,15 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-      PZN 0..1 MS and
-      ATC-DE 0..1 MS and
+      PZN 0..* MS and
+      ATC-DE 0..* MS and
       SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * insert ISiKMedikament-CodingPZNComment
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * insert ISiKMedikament-CodingATCComment
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
 * medicationReference MS
@@ -41,10 +61,13 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1..1 MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * context MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effectiveDateTime MS
   * ^short = "Zeitpunkt der Verabreichung"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -63,6 +86,8 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
   * start MS
   * end MS
 * performer MS
+  * ^short = "Durchführende Person(en) der Verabreichung"
+  * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit"
   * actor MS
     * ^short = "Referenz auf die verabreichende Person"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit"
@@ -74,7 +99,20 @@ Handelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, 
   * ^short = "Grund der Medikation (Referenz)"
   * ^comment = "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können."
   * reference 1..1 MS
+* request MS
+  * ^short = "Referenz auf die Verordnung"
+  * ^comment = """**Einschränkung der übergreifenden MS-Definition:**
+  Verfügt ein bestätigungsrelevantes System nicht über die Möglichkeit zur Abbildung der zugrunde liegenden Verordnung einer Verabreichung, 
+  so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Die referenzierte Verordnung (`MedicationRequest`) bildet in der Regel die Grundlage einer Verabreichung (`MedicationAdministration`). 
+  Aus fachlicher Sicht ist die Verknüpfung beider Ressourcen wesentlich, da sie die Nachvollziehbarkeit der therapeutischen Maßnahme unterstützt. 
+  Allerdings existieren in der Versorgungspraxis auch Systeme, die keine strukturierte Erfassung oder Referenzierung einer zugrundeliegenden Verordnung vorsehen. 
+  Daher wird `MedicationAdministration.request` in ISiK als eingeschränktes Must Support definiert, um eine einheitliche  Implementierung zu fördern.
+  """
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
@@ -137,8 +175,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2021-07-01
 * dosage
   * dose
@@ -152,8 +190,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2024-01-22
 * dosage
   * dose
@@ -167,8 +205,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"
@@ -192,8 +230,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament2)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"

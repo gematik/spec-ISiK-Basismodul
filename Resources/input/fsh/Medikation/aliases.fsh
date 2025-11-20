@@ -27,3 +27,4 @@ Alias: $EntlassungsgrundDritteStelle = http://fhir.de/CodeSystem/dkgev/Entlassun
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
 Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
+Alias: $vs-ti-medication-snomed-ct = https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs

@@ -2,7 +2,7 @@
 topic: UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter
 ---
 ## Allgemeine Hinweise zu Suchparametern
-Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) wo möglich gefordert wird. Entsprechend sind Abfragen durch Clients auf Basis von bekannten Informationen aus dem Kontext *einer einzelnen* Patient- und/oder Encounter-Ressource zu begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK).
+Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) wo möglich gefordert wird. Entsprechend sind Abfragen durch Clients auf Basis von bekannten Informationen aus dem Kontext *einer einzelnen* Patient- und/oder Encounter-Ressource zu begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
 Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das Vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
 
 Innerhalb der jeweiligen Abschnitte 'Interaktionen' (Siehe {{pagelink:Artefakte}}) werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
@@ -93,34 +93,6 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 
 ``[base]/Condition?_has:Encounter:diagnosis:identifier=https://example.org/fhir/sid/aufnahmenummer|1234``
 Diese Suche gibt alle Diagnosen zurück, die im Kontext des Kontakts mit der Aufnahmenummer '1234' dokumentiert worden sind.
-
-## Verpflichtende Suchparameter (Alle Datenobjekte)
-
-Folgende Suchparameter MÜSSEN für alle bestätigungsrelevanten Datenobjekte implementiert werden:
-
-* ``_id``
-
-    - Beispiele: ``GET [base]/Patient?_id=103270``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
-    - Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.
-
-* ``_tag``
-
-    - Beispiele: ``GET [base]/Patient?_tag=https://example.org/codes|needs-review``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_tag" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all) und [FHIR-Basisspezifikation - Abschnitt "Tags"](https://www.hl7.org/fhir/R4/resource.html#simple-tags).
-
-* ``_count``
-
-    - Beispiele: ``GET [base]/Patient?_count=100``
-    - Anwendungshinweise: Weitere Informationen zur Suche nach "_count" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Page Count"](https://www.hl7.org/fhir/R4/search.html#count).
-
-    Hieraus ergibt sich, dass durch [Paging entsprechend der FHIR-Kernspezifikation](https://www.hl7.org/fhir/R4/http.html#paging) unterstützt werden MUSS.
-    Für die URIs in den Link-Relationen "first", "last", "next", sowie "prev" MUSS sichergestellt werden, dass NICHT die ursprünglich verwendeten Suchparameter, sowie anderweitig sensitive Informationen enthalten, welche in der Suchanfrage an das bestätigungsrelevante System versendet wurden.
-    Der "self"-Link innerhalb des Such-Bundles MUSS entsprechend der Vorgaben aus [FHIR Kernspezifikation - 3.1.1.6 - Server Conformance](https://www.hl7.org/fhir/R4/search.html#conformance) strukturiert sein.
-
-    Der ```:iterate``` Modifier KANN unterstützt werden.
-
-Die aufgelisteten Suchparameter MÜSSEN entsprechend der Vorgaben für das CapabilityStatement pro Ressource aufgelistet werden.
 
 ## Verkettete Suchparameter (Fokus auf Patient und Encounter)
 

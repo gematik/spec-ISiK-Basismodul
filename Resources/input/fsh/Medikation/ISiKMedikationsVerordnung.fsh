@@ -3,6 +3,7 @@ Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
@@ -19,7 +20,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^short = "Therapieart der Medikation"
   * ^comment = "Begründung des Must-Support: von der Fachseite gewünschte Angabe
 
-  Hinweis: Angabe Akut- oder Dauermedikation."
+  Hinweis: Angabe Akut- oder Dauermedikation." 
   * valueCoding
     * system MS
     * code MS
@@ -32,14 +33,18 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * valueString MS
 * extension[medicationRequestReplaces]
   * ^short = "Welche Medikationsverordnung wird ersetzt?"
-  * ^comment = "Begründung des Must-Support: historische Nachvollziehbarkeit
+  * ^comment = "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.
 
-  Hinweis: Welche Medikationsverordnung wird ersetzt?"
+    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.
+    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung."
   * valueReference MS
     * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
-  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
+  * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
+  
+  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.
+  "
 * intent MS
   * ^short = "Ziel der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
@@ -57,13 +62,15 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
   * coding contains
-      PZN 0..1 MS and
-      ATC-DE 0..1 MS and
+      PZN 0..* MS and
+      ATC-DE 0..* MS and
       SCT 0..1 MS
   * coding[PZN] only ISiKPZNCoding
     * ^patternCoding.system = $cs-pzn
+    * insert ISiKMedikament-CodingPZNComment
   * coding[ATC-DE] only ISiKATCCoding
     * ^patternCoding.system = $cs-atc-de
+    * insert ISiKMedikament-CodingATCComment
   * coding[SCT] only ISiKSnomedCTCoding
     * ^patternCoding.system = $cs-sct
   * text MS
@@ -78,10 +85,13 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^comment = "Begründung des Must-Support: Basisinformation"
 * subject only Reference(Patient)
   * reference 1..1 MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext"
   * reference 1..1 MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * authoredOn MS
   * ^short = "Erstellungsdatum der Verordnung"
   * ^comment = "Begründung des Must-Support: Basisinformation"
@@ -104,19 +114,24 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * text MS
 * reasonReference MS
   * ^short = "Grund der Medikation (Referenz)"
-  * ^comment = "  Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.
+  * ^comment = "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.
   Begründung zu Must-Support: Konsolidierung mit MII."
   * reference 1..1 MS
     * ^comment = "Begründung des Must-Support: Referenz auf die Diagnose oder Untersuchung, die die Medikation begründet."
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
 * dosageInstruction MS
   * ^short = "Dosierungsangaben"
-  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation"
-  * text MS
-    * ^short = "Freitext-Dosierungsanweisungen"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
+  
+  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.
+  "
+* dosageInstruction only DosageDE
+  * text 
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
@@ -126,8 +141,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
   * patientInstruction MS
     * ^short = "besondere Anweisungen für den Patienten"
-  * timing MS
-    * ^short = "Angaben zum Timing"
+  * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
     * repeat MS
@@ -139,20 +153,6 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * unit MS
         * system 1..1 MS
         * code 1..1 MS
-      * boundsRange MS
-        * ^short = "Bereich für die Begrenzung"
-        * low MS
-          * ^patternQuantity.system = $cs-ucum
-          * value 1..1 MS
-          * unit MS
-          * system 1..1 MS
-          * code 1..1 MS
-        * high MS
-          * ^patternQuantity.system = $cs-ucum
-          * value 1..1 MS
-          * unit MS
-          * system 1..1 MS
-          * code 1..1 MS
       * boundsPeriod MS
         * ^short = "begrenzender Zeitraum"
         * start MS
@@ -214,8 +214,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * coding[SNOMED-CT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
-  * doseAndRate MS
-    * ^short = "Angaben zu Dosis und Rate"
+  * doseAndRate 
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
@@ -223,7 +222,6 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
       * high MS
       * high only MedicationQuantity
     * doseQuantity MS
-    * doseQuantity only MedicationQuantity
       * ^short = "Dosis"
     * rateRatio MS
       * ^short = "Raten-Verhältnis"
@@ -252,6 +250,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerAdministration only MedicationQuantity
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
+  * ^short = "angeforderte Abgabemenge"
+  * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
   * quantity only MedicationQuantity
     * ^short = "angeforderte Abgabemenge"
@@ -260,6 +260,11 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * ^short = "Ersatz zulässig"
   * ^comment = "Begründung des Must-Support: Alignment mit dem (E-)Rezept"
   * allowedBoolean MS
+* priorPrescription 
+  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie"
+  * ^comment = "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.
+
+  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
 
 Instance: ExampleISiKMedikationsVerordnung
 InstanceOf: ISiKMedikationsVerordnung
@@ -270,7 +275,7 @@ Usage: #example
 * status = #active
 * intent = #order
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * authoredOn = 2021-07-01
 * requester.reference = "Practitioner/PractitionerWalterArzt"
@@ -293,7 +298,7 @@ Usage: #example
 * status = #active
 * intent = #order
 * medicationReference = Reference(ExampleISiKMedikament8)
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * authoredOn = 2024-01-17
 * requester.reference = "Practitioner/PractitionerWalterArzt"

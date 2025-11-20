@@ -102,8 +102,7 @@ Diese Rolle stellt erweiterte Interaktionen zur Abfrage von Stammdaten bereit.
         `GET [base]/Patient?telecom=phone|+49152236898`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  
-        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend." 
-      * insert Expectation (#SHALL)
+        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
     * searchRevInclude[+] = "Encounter:patient"
       * insert Expectation (#SHALL)
     * searchRevInclude[+] = "Encounter:subject"
