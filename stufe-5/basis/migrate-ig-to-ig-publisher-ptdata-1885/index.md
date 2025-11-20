@@ -13,7 +13,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-11-20T14:13:30+00:00",
+  "date" : "2025-11-20T14:42:10+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "basis.test.ig",
   "license" : "CC0-1.0",
@@ -2063,10 +2063,10 @@
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index.page.html"
+              "valueUrl" : "Index.html"
             }
           ],
-          "nameUrl" : "Index.page.html",
+          "nameUrl" : "Index.html",
           "title" : "Index",
           "generation" : "markdown"
         },
