@@ -152,6 +152,8 @@ https://github.com/gematik/spec-ISiK-Basismodul/issues/436 #No-Test-Change (Capa
 
 Datum: 30.8.2024
 
+#OBSOLETE? - da bis hier TC in Stufe 3 umgesetzten wurden, sind einige Änderungen mutmaßlich in Tiger Stue 3 enthalten
+
 * `improve` Neudefinition der bestätigungsrelevanten Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/426 #No-Test-Change
 * `improve` Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/411 #No-Test-Change
 * `improve` Überarbeitung der Must Support Definition: https://github.com/gematik/spec-ISiK-Basismodul/pull/412 #No-Test-Change
