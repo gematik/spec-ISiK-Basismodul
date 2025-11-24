@@ -22,7 +22,7 @@ Realm: Deutschland
 
 ... TODO
 
-Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
+Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrazionszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
 
 
 ## Motivation und Hintergrund
@@ -34,7 +34,10 @@ TODO
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
 
 Es handelt sich um eine technische Spezifikation. 
-Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. Die Profile werden mit den Kooperationspartnern der MII und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
+
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+
+Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
 
 TODO - ggf. übernehmen Abschnitt zur Prüfung aus ICU
 
