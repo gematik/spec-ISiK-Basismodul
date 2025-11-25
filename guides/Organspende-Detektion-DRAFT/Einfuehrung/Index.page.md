@@ -26,16 +26,14 @@ Die Spezifikation ist in enger Kooperation mit der Deutschen Stiftung Organtrans
 
 
 ## Motivation und Hintergrund
-Dieser Implementierungsleitfaden beschreibt eine Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.
+Dieser Implementierungsleitfaden beschreibt einen Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.
 
 TODO
 
 ###  Stakeholder
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
 
-Es handelt sich um eine technische Spezifikation. 
-
-Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+Es handelt sich um eine technische Spezifikation. Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
 
 Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
 
