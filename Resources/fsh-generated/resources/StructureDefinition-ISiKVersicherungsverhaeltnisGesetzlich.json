@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKVersicherungsverhaeltnisGesetzlich",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKVersicherungsverhaeltnisGesetzlich",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen\n\n* [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
@@ -85,7 +85,43 @@
         "id": "Coverage.subscriber.reference",
         "path": "Coverage.subscriber.reference",
         "comment": "Die Verlinkung auf eine Patienten- oder RelatedPerson-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten/Angehörigen \n    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.identifier",
+        "path": "Coverage.subscriber.identifier",
+        "short": "Lebenslange Krankenversichertennummer der Hauptversicherten",
+        "comment": "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, \n      unveränderbare Teil der Versichertennummer, \n      der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.\n      Er gilt für alle Krankenversichertennummern, \n      unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt.  \n      **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)",
         "min": 1,
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-kvid-10"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.identifier.system",
+        "path": "Coverage.subscriber.identifier.system",
+        "short": "Namensraum der Versichertennummer",
+        "comment": "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  \n      **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.identifier.value",
+        "path": "Coverage.subscriber.identifier.value",
+        "short": "Lebenslange Krankenversichertennummer",
+        "comment": "Der 10-stellige, unveränderbare Teil der Versichertennummer.",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriber.display",
+        "path": "Coverage.subscriber.display",
+        "short": "Name des Hauptversicherten",
+        "comment": "**Begründung MS:** Da das die Versichertennummer nicht zur Darstellung für den Anwender geeignet ist, \n    sollte ergänzend der Name des Versicherten angegeben werden.",
         "mustSupport": true
       },
       {

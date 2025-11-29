@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKValueSet",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKValueSet",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n### Motivation\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n### Kompatibilität\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
@@ -21,24 +21,25 @@
         "id": "ValueSet.id",
         "path": "ValueSet.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "ValueSet.meta.versionId",
         "path": "ValueSet.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "ValueSet.meta.lastUpdated",
         "path": "ValueSet.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "ValueSet.url",
         "path": "ValueSet.url",
+        "short": "Eindeutige Url des ValueSets",
         "comment": "**Bedeutung:** Eindeutige Url zur Identifizierung des ValueSets. Absolute Urls sind zu bevorzugen.\n\n**Hinweise:** OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE eine Canonical Url vergeben werden.",
         "min": 1,
         "mustSupport": true
@@ -46,6 +47,7 @@
       {
         "id": "ValueSet.version",
         "path": "ValueSet.version",
+        "short": "Version des ValueSets",
         "comment": "\n**Bedeutung:** Version des ValueSets\n\n**Hinweise:** Jede Änderung des dazugehörigen CodeSystems MUSS eine Änderung in der Version des CodeSystems und ValueSets nach sich ziehen.",
         "min": 1,
         "mustSupport": true
@@ -53,6 +55,7 @@
       {
         "id": "ValueSet.name",
         "path": "ValueSet.name",
+        "short": "Name des ValueSets",
         "comment": "**Bedeutung:** Maschinenlesbarer Name des ValueSets\n\n**Hinweise:** Der Constraint [vsd-0](https://www.hl7.org/fhir/R4/valueset.html#invs) ist hierbei zu beachten.",
         "min": 1,
         "mustSupport": true
@@ -67,6 +70,7 @@
       {
         "id": "ValueSet.useContext",
         "path": "ValueSet.useContext",
+        "short": "Datenelement-Relevanz das ValueSet",
         "comment": "**Bedeutung:** Angabe für welches Datenelement das ValueSet relevant ist\n\n**Hinweise:** Es muss mindestens ein useContext angegeben werden, in dem der Ressourcen-Typ kodiert wird, in dem das ValueSet in einem Element zur Verwendung kommt.",
         "min": 1,
         "mustSupport": true
@@ -98,6 +102,7 @@
       {
         "id": "ValueSet.expansion",
         "path": "ValueSet.expansion",
+        "short": "Expansion der Konzepte",
         "comment": "**Bedeutung:** Angabe der Konzepte aus denen sich das ValueSet zusammensetzt.\n\n**Hinweise:** Mindestens MUSS ein Code und ein Anzeigetext spezifiziert werden.",
         "min": 1,
         "mustSupport": true

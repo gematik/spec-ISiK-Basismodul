@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungPCT1
 InstanceOf: ISiKLaboruntersuchungPCT
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#33959-8
 * code.coding[snomed] = $sct#418752001 "Procalcitonin" 
