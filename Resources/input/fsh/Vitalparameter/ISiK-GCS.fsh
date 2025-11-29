@@ -61,7 +61,7 @@ Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * component[Verbal].code = $loinc#9270-0 "Glasgow coma score verbal"
 * component[Verbal].valueCodeableConcept = $loinc#LA6560-2 "Confused"
 * component[Motor].code = $loinc#9268-4 "Glasgow coma score motor"

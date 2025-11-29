@@ -126,7 +126,7 @@ Usage: #example
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Beispiel für eine AMTS Risikobewertung.</div>"
 * status = #final
 * code.text = "AMTS Risikobewertung"
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * occurrenceDateTime = 2024-02-20T13:14:32+01:00
 * condition.reference = "Condition/BehandlungsDiagnoseFreitext"

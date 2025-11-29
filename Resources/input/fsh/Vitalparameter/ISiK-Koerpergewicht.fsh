@@ -30,7 +30,7 @@ Usage: #example
 * code.text = "Körpergewicht"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 79 'kg' "kilogram"
 
 Instance: ISiKKoerpergewichtMinExample

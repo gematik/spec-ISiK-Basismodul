@@ -7,6 +7,8 @@ Alias: $sdc-valueset = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-values
 
 Profile: ISiKFormularDefinition
 Parent: Questionnaire
+Description: "Im Profil `ISiKFormularDefinition` sind Mindestanforderungen an ISiK kompatible Formulare definiert.
+Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben."
 * insert Meta
 * insert CommonElements
 * modifierExtension contains
