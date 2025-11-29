@@ -30,7 +30,7 @@ Usage: #example
 * code.text = "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 36.8 'Cel' "°C"
 
 Instance: ISiKKoerpertemperaturMinExample

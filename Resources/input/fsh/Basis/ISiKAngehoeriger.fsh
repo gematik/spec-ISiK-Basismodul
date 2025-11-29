@@ -19,6 +19,18 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * insert Meta
 * insert CommonElements
 * obeys relatedp-de-1
+* active MS
+  * ^short = "Status des Datensatzes"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. 
+
+  **Hinweis zur Verwendung:**
+  * `true` = Der Datensatz befindet sich in Verwendung/kann verwendet werden  
+  * `false`= Der Datensatz wurde storniert (z.B. bei Dubletten, Merge) oder archiviert  
+  
+    **WICHTIGER Hinweis für Implementierer:**  
+    * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
+    * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können." 
+
 * patient 1..1 MS
   * ^short = "Patientenbezug"
   * ^comment = "Motivation Kardinalität und Must-Support: Referenz auf den Patienten, zu dem diese angehörige Person in Beziehung steht. Diese Verlinkung ist essentiell für die Dokumentation der Beziehung zwischen Patient und Angehörigem."
@@ -41,7 +53,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 
 * name MS
-* name
   * ^short = "Offizieller Name der angehörigen Person"
   * ^comment = "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, 
   ist die Angabe des offiziellen Namens relevant.
@@ -53,7 +64,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * name contains
     Name 1..1 MS 
 * name[Name] only HumannameDeBasis
-  * ^patternHumanName.use = #official    
+  * ^patternHumanName.use = #official
+  * ^short = "Slice für den offiziellen Namen der angehörigen Person"
+  * ^comment = "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.
+  **Begründung MS:** Siehe untergeordnete Elemente"
   * use MS
     * ^short = "Verwendungszweck"
     * ^comment = "Verwendungszweck des Namens. Der präferierte Namen für die Brief- und Rechnungszustellung SOLLTE als `official`
@@ -74,12 +88,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^short = "Offizielle Adresse der angehörigen Person"
   * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
-* address MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  //* ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
+
 * address contains
     Strassenanschrift 0..* MS and
     Postfach 0..* MS

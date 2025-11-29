@@ -8,11 +8,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKPatient",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n### Motivation  \nDer Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n### Kompatibilität\nFür das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
   "fhirVersion": "4.0.1",
@@ -40,20 +40,20 @@
         "id": "Patient.id",
         "path": "Patient.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "Patient.meta.versionId",
         "path": "Patient.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "Patient.meta.lastUpdated",
         "path": "Patient.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "Patient.identifier",
@@ -67,6 +67,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Eindeutiger Identifier des Patienten",
         "min": 1,
         "mustSupport": true
       },
@@ -312,6 +313,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Angabe der Namen",
         "min": 1,
         "mustSupport": true
       },
@@ -473,14 +475,27 @@
         "max": "0"
       },
       {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "short": "Angabe der Kontaktdaten",
+        "comment": "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.\n  **Bedingtes MS:** Kontaktdaten sind im Kontext der Terminplanung unerlässlich, z.B. für Terminvereinbarungen oder Rückfragen. Das Must-Support gilt ausschließlich für Systeme, die\n  Kontaktdaten persistieren.",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.telecom.system",
         "path": "Patient.telecom.system",
-        "min": 1
+        "short": "Art der Kontaktdaten",
+        "comment": "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  \n      **Begründung Pflichtfeld:** Dient der Unterscheidung verschiedener Kontaktarten",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Patient.telecom.value",
         "path": "Patient.telecom.value",
-        "min": 1
+        "short": "Wert der Kontaktdaten",
+        "comment": "Enthält den eigentlichen Wert der Kontaktdaten, z.B. die Telefonnummer oder E-Mail-Adresse.  \n      **Begründung Pflichtfeld:** Ohne diese Angabe sind die Kontaktdaten nicht nutzbar.",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Patient.gender",
@@ -541,6 +556,12 @@
         "mustSupport": true
       },
       {
+        "id": "Patient.deceased[x]",
+        "path": "Patient.deceased[x]",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. \n  \n    **WICHTIGER Hinweis für Implementierer:**  \n  * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.\n  * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
+        "mustSupport": true
+      },
+      {
         "id": "Patient.address",
         "path": "Patient.address",
         "slicing": {
@@ -552,6 +573,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Angabe der Adressen",
         "mustSupport": true
       },
       {

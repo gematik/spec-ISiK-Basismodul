@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKOrganisation",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "name": "ISiKOrganisation",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-26",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien.",
   "fhirVersion": "4.0.1",
@@ -187,6 +187,7 @@
         "comment": "Beschreibt die Art der Einrichtung nach IHE XDS Standards.",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode"
@@ -271,6 +272,8 @@
         "id": "Organization.address:Strassenanschrift",
         "path": "Organization.address",
         "sliceName": "Strassenanschrift",
+        "short": "Straßenanschrift",
+        "comment": "Wohn- oder Aufenthaltsort des Patienten",
         "min": 0,
         "max": "*",
         "type": [
@@ -359,6 +362,8 @@
         "id": "Organization.address:Postfach",
         "path": "Organization.address",
         "sliceName": "Postfach",
+        "short": "Postfachadresse",
+        "comment": "Adresse, die nur für postalische Zustellung genutzt werden kann.",
         "min": 0,
         "max": "*",
         "type": [

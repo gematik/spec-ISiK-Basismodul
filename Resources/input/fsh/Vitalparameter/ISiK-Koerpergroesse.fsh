@@ -29,7 +29,7 @@ Usage: #example
 * code.text = "Körpergröße"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 174 'cm' "centimeter"
 
 Instance: ISiKKoerpergroesseMinExample

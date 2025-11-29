@@ -27,6 +27,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
+  * ^comment = "Eindeutiger Identifier des Patienten"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -142,6 +143,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
   (Patient.active auf 'true'), sodass Clients nicht missverständlich mit einer inaktiven 
   Patient-Ressource interagieren."
 * name MS
+  * ^comment = "Angabe der Namen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
@@ -214,8 +216,19 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
         **Begründung MS:** Erforderlich für die verlustfreie Kommunikation von VSDM-Daten."   
   * given ..0
   * prefix ..0
-* telecom.system 1..
-* telecom.value 1..
+* telecom MS
+  * ^short = "Angabe der Kontaktdaten"
+  * ^comment = "Angabe der Kontaktdaten des Patienten, z.B. Telefonnummer oder E-Mail-Adresse.
+  **Bedingtes MS:** Kontaktdaten sind im Kontext der Terminplanung unerlässlich, z.B. für Terminvereinbarungen oder Rückfragen. Das Must-Support gilt ausschließlich für Systeme, die
+  Kontaktdaten persistieren."
+  * system 1.. MS
+    * ^short = "Art der Kontaktdaten"
+    * ^comment = "Hier ist der Art der Kontaktdaten anzugeben, z.B. `phone` für Telefonnummer oder `email` für E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Dient der Unterscheidung verschiedener Kontaktarten"
+  * value 1.. MS
+    * ^short = "Wert der Kontaktdaten"
+    * ^comment = "Enthält den eigentlichen Wert der Kontaktdaten, z.B. die Telefonnummer oder E-Mail-Adresse.  
+      **Begründung Pflichtfeld:** Ohne diese Angabe sind die Kontaktdaten nicht nutzbar."
 * gender 1.. MS
   * ^short = "Administratives Geschlecht" 
   * ^comment = "Für die Geschlechtskennzeichen 'unbestimmt' und 'divers' ist der international vereinbarte code `other` zu verwenden.
@@ -241,7 +254,14 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
   * ^comment = "Tages-, monats- oder jahresgenaues Geburtsdatum.  
     **Begründung Pflichtfeld:** Das Geburstdatum dient - in Verbindung mit dem Namen - als wichtiges Such- und Unterscheidungskriterium.  
     **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Geburtsdatum)"
+* deceased[x] MS
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. 
+  
+    **WICHTIGER Hinweis für Implementierer:**  
+  * Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden.
+  * Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können."
 * address MS
+  * ^comment = "Angabe der Adressen"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open

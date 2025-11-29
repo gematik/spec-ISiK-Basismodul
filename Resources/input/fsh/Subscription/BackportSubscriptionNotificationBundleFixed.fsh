@@ -12,6 +12,7 @@ Es wird durch das offizielle `backport-subscription-notification-r4` Profil erse
 """
 * insert Meta
 * insert CommonElements
+* ^publisher = "HL7 International / FHIR Infrastructure"
 * ^version = "1.1.0"
 * ^date = "2023-01-11T15:35:36+11:00"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"
