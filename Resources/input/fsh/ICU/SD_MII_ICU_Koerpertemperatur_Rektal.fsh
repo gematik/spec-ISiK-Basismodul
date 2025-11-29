@@ -2,6 +2,7 @@ Profile: SD_MII_ICU_Koerpertemperatur_Rektal
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-rektal
 Title: "SD MII ICU Koerpertemperatur rektal"
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen rektal in der Akutmedizin."
 * insert Meta
 * insert CommonElements
 * code

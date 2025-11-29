@@ -32,7 +32,7 @@ Usage: #example
 * code.text = "Kopfumfang"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2019-07-02"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 38 'cm' "Centimeter"
  
 Instance: ISiKKopfumfangMinExample

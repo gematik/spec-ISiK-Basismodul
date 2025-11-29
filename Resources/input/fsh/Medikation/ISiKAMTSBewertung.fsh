@@ -7,6 +7,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
 * insert CommonElements
 * extension MS
 * extension contains ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS
+* extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Die Möglichkeit der freitextlichen Dokumentation dieser Daten wurde von der Fachseite (AG) gewünscht.
 
@@ -125,7 +126,7 @@ Usage: #example
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Beispiel für eine AMTS Risikobewertung.</div>"
 * status = #final
 * code.text = "AMTS Risikobewertung"
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * occurrenceDateTime = 2024-02-20T13:14:32+01:00
 * condition.reference = "Condition/BehandlungsDiagnoseFreitext"

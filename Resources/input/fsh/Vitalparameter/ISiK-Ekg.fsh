@@ -44,7 +44,7 @@ Usage: #example
 * category = $observation-category#procedure
 * device = Reference(ExampleDevice)
 * effectiveDateTime = "2019-07-02"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * component[+].code = $sct#272729005 "Lead I"
 * component[=].valueSampledData.origin.value = 2048
 * component[=].valueSampledData.period = 10

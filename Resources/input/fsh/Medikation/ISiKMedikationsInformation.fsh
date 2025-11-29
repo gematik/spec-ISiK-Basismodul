@@ -73,6 +73,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^short = "Status der Medikationsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
 * medication[x] MS
+  * ^short = "Angabe des Medikaments"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Siehe Slicing-Definition zur Wahlmöglichkeit zwischen codierter Angabe und Referenz auf Medication-Ressource."
 * medicationCodeableConcept MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -154,16 +156,18 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Begründung zu Must-Support: Konsolidierung mit MII."
   * reference 1..1 MS
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
-* dosage MS
+* dosage MS 
   * ^short = "Dosierungsangaben"
   * ^comment = "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.
   
   **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert."
-  * text MS
-    * ^short = "Freitext-Dosierungsanweisungen"
+* dosage  only DosageDE  
+  * text 
     * ^comment = "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
@@ -174,8 +178,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
 "
   * patientInstruction MS
     * ^short = "besondere Anweisungen für den Patienten"
-  * timing MS
-    * ^short = "Angaben zum Timing"
+  * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
     * repeat MS
@@ -262,8 +265,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
     * coding[SNOMED-CT] only ISiKSnomedCTCoding
       * ^patternCoding.system = $cs-sct
     * text MS
-  * doseAndRate MS
-    * ^short = "Angaben zu Dosis und Rate"
+  * doseAndRate 
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
@@ -309,8 +311,8 @@ Usage: #example
 * extension[behandlungsziel].valueString = "Schmerztherapie postoperativ"
 * status = #active
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2021-07-01
 * dateAsserted = 2021-07-01
 * reasonReference.reference = "Condition/BehandlungsDiagnoseFreitext"
@@ -328,11 +330,11 @@ Usage: #example
 Instance: ExampleISiKMedikationsInformation2
 InstanceOf: ISiKMedikationsInformation
 Usage: #example
-* extension[medicationStatementReplaces].valueReference.reference = "MedicationStatement/55555"
+* extension[medicationStatementReplaces].valueReference = Reference(ExampleISiKMedikationsInformation1)
 * status = #active
 * medicationReference.reference = "Medication/ExampleISiKMedikament2"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2021-07-04
 * dateAsserted = 2021-07-03
 * dosage
@@ -352,8 +354,8 @@ InstanceOf: ISiKMedikationsInformation
 Usage: #example
 * status = #active
 * medicationReference = Reference(ExampleISiKMedikament8)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod
   * start = 2024-01-22
   * end = 2024-02-26
@@ -381,8 +383,8 @@ Usage: #example
   * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme zu jeder Mahlzeit (auch Zwischenmahlzeiten)</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#10557318 "Sevelamercarbonat AL 800 mg"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod
   * start = 2024-01-22
 * dateAsserted = 2024-02-16
@@ -406,8 +408,8 @@ Usage: #example
   * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme am ersten Dienstag jedes dritten Monats</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#07260796 "Vitamin-B12-ratiopharm® N Ampullen zur Injektion"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod
   * start = 2024-02-06
 * dateAsserted = 2024-01-31
@@ -434,8 +436,8 @@ Usage: #example
   * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Dosierung kurzwirksames Insulin nach gemessenen Werten</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#06922060 "Huminsulin® Normal KwikPen™"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseDiabetesMellitus"
@@ -456,8 +458,8 @@ Usage: #example
   * div = """<div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Parkinson-Medikation mit Medikament1</div>"""
 * status = #active
 * medicationCodeableConcept = $cs-pzn#00003056 "Stalevo® 100 mg/25 mg/200 mg"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseParkinson"
@@ -481,8 +483,8 @@ InstanceOf: ISiKMedikationsInformation
 Usage: #example
 * status = #active
 * medicationCodeableConcept = $cs-pzn#09339154 "Quetiapin HEXAL® 50 mg"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseParkinson"
@@ -504,8 +506,8 @@ InstanceOf: ISiKMedikationsInformation
 Usage: #example
 * status = #active
 * medicationCodeableConcept = $cs-pzn#03395803 "Madopar® 125 mg"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseParkinson"
@@ -536,8 +538,8 @@ InstanceOf: ISiKMedikationsInformation
 Usage: #example
 * status = #active
 * medicationCodeableConcept = $cs-pzn#11119856 "Entacapon HEC 200 mg"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseParkinson"
@@ -559,8 +561,8 @@ InstanceOf: ISiKMedikationsInformation
 Usage: #example
 * status = #active
 * medicationCodeableConcept = $cs-pzn#04855419 "LevoCarb 200/50 ret - 1 A Pharma®"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectivePeriod.start = 2024-02-20
 * dateAsserted = 2024-02-20
 * reasonReference.reference = "Condition/DiagnoseParkinson"
