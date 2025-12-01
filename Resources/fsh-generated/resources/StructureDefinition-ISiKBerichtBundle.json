@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKBerichtBundle",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtBundle",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "name": "ISiKBerichtBundle",
   "title": "ISiKBerichtBundle",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-16",
+  "date": "2025-12-01",
   "publisher": "gematik GmbH",
   "description": "A document style representation of the receipt (complete, self-contained, signed)",
   "fhirVersion": "4.0.1",
@@ -61,7 +61,7 @@
           ],
           "rules": "open"
         },
-        "min": 1,
+        "min": 2,
         "mustSupport": true
       },
       {
@@ -108,6 +108,44 @@
             "profile": [
               "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBerichtSubSysteme"
             ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Patient",
+        "path": "Bundle.entry",
+        "sliceName": "Patient",
+        "short": "Slice zur Hinterlegung einer Patienten-Instanz",
+        "comment": "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten sein muss.\n  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Patient.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Patient"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Encounter",
+        "path": "Bundle.entry",
+        "sliceName": "Encounter",
+        "short": "Slice zur Hinterlegung einer Encounter-Instanz",
+        "comment": "Dieses Slice ist optional, aber wenn es vorhanden ist, muss genau eine Encounter-Instanz enthalten sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Encounter.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Encounter"
           }
         ]
       }
