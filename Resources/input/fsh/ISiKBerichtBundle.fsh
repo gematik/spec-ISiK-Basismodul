@@ -21,16 +21,19 @@ Description: "A document style representation of the receipt (complete, self-con
 * entry contains Composition 1..1 MS
 * entry[Composition].resource only ISiKBerichtSubSysteme
 * entry contains Patient 1..1 MS
-* entry[Patient].resource only Patient
+* entry[Patient] 
   * ^short = "Slice zur Hinterlegung einer Patienten-Instanz"
   * ^comment = "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten sein muss.
   Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
   dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz."
+* entry[Patient].resource only Patient
 * entry contains Encounter 0..1 MS
-* entry[Encounter].resource only Encounter
+* entry[Encounter]
   * ^short = "Slice zur Hinterlegung einer Encounter-Instanz"
   * ^comment = "Dieses Slice ist optional, aber wenn es vorhanden ist, muss genau eine Encounter-Instanz enthalten sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,
   dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz."
+* entry[Encounter].resource only Encounter
+
 
 Instance: ISiKBundle-Example
 InstanceOf: ISiKBerichtBundle
