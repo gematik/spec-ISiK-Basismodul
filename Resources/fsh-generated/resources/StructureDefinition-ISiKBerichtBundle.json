@@ -61,8 +61,6 @@
           ],
           "rules": "open"
         },
-        "short": "Slice zur Hinterlegung einer Encounter-Instanz",
-        "comment": "Dieses Slice ist optional, aber wenn es vorhanden ist, muss genau eine Encounter-Instanz enthalten sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz.",
         "min": 2,
         "mustSupport": true
       },
@@ -124,6 +122,8 @@
       {
         "id": "Bundle.entry:Patient.resource",
         "path": "Bundle.entry.resource",
+        "short": "Slice zur Hinterlegung einer Patienten-Instanz",
+        "comment": "Dieses Slice wird explizit aufgeführt, um zu verdeutlichen, dass immer eine Patienten-Instanz im Bundle enthalten sein muss.\n  Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Patient-Instanz.",
         "type": [
           {
             "code": "Patient"
@@ -141,6 +141,8 @@
       {
         "id": "Bundle.entry:Encounter.resource",
         "path": "Bundle.entry.resource",
+        "short": "Slice zur Hinterlegung einer Encounter-Instanz",
+        "comment": "Dieses Slice ist optional, aber wenn es vorhanden ist, muss genau eine Encounter-Instanz enthalten sein. Die FHIR-Core Specification besagt für [Document-Bundles](https://www.hl7.org/fhir/R4/documents.html) bereits,\n  dass einige von der Composition referenzierte Ressourcen immer auch im Bundle enthalten sein müssen. Hierzu gehört im ISiK Kontext auch die Encounter-Instanz.",
         "type": [
           {
             "code": "Encounter"
