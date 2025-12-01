@@ -9,11 +9,14 @@ Description: "Dieses Profil beschreibt die Nutzung von administrativen Patienten
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
+  * ^comment = "**Hinweis:** Wenn eine pre-Adoption des neuen Identifier Typs 'VersichertenId' gewünscht ist, bitte die Spezifikation aus [Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient) übernehmen. Die Änderung auf die neue Struktur ist in ISiK Stufe 
+  3 nicht möglich, da das Codesystem 'identifier-type-de-basis' aus den deutschen Basisprofilen in Version 1.4.0 den Code KVZ10 noch nicht enthält."
 * identifier contains
     VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId-GKV] only IdentifierKvid10
+  * ^comment = "Achtung: Bitte allgemeinen Hinweis zum Element identifier beachten."
   * ^patternIdentifier.type = $identifier-type-de-basis#GKV
   * type 1.. MS
   * system MS

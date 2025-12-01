@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKPatient",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient",
-  "version": "3.0.9",
+  "version": "3.1.0",
   "name": "ISiKPatient",
   "status": "active",
   "experimental": false,
-  "date": "2025-07-16",
+  "date": "2025-09-16",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil beschreibt die Nutzung von administrativen Patientendaten in ISiK-Szenarien.",
   "fhirVersion": "4.0.1",
@@ -42,6 +42,7 @@
           ],
           "rules": "open"
         },
+        "comment": "**Hinweis:** Wenn eine pre-Adoption des neuen Identifier Typs 'VersichertenId' gewünscht ist, bitte die Spezifikation aus [Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient) übernehmen. Die Änderung auf die neue Struktur ist in ISiK Stufe \n  3 nicht möglich, da das Codesystem 'identifier-type-de-basis' aus den deutschen Basisprofilen in Version 1.4.0 den Code KVZ10 noch nicht enthält.",
         "min": 1,
         "mustSupport": true
       },
@@ -49,6 +50,7 @@
         "id": "Patient.identifier:VersichertenId-GKV",
         "path": "Patient.identifier",
         "sliceName": "VersichertenId-GKV",
+        "comment": "Achtung: Bitte allgemeinen Hinweis zum Element identifier beachten.",
         "min": 0,
         "max": "1",
         "type": [

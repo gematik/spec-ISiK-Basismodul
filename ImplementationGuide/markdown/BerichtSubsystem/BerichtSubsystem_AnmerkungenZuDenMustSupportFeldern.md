@@ -27,7 +27,7 @@
 
 **Bedeutung:** Subsystem-seitig zugewiesener Identifier des Berichtes mit Angabe der URL des vom Subsystem verwendeten Namensraumes
 
-**Hinweise:** Werden eigene Identifier bzw. NamingSystems verwendet, so sei auf den Leitfaden der Basisprofile Deutschland (HL7 Deutschland) zu den [Best-Practices bei Namensräumen](https://ig.fhir.de/basisprofile-de/stable/Terminologie-Namensraeume.html) verwiesen.
+**Hinweise:** Werden eigene Identifier bzw. NamingSystems verwendet, so sei auf den Leitfaden der Basisprofile Deutschland (HL7 Deutschland) zu den [Best-Practices bei Namensräumen](https://ig.fhir.de/basisprofile-de/stable/ig-markdown-Terminologie-Namensraeume.html) verwiesen.
 
 Dazu ein Beispiel für einen Identifier eines Sub-System-Berichts:
 ```xml

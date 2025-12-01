@@ -52,7 +52,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
     Beispiele:
 
-    ```GET [base]/Condition?recorded-date=2015-01-01T12:00:23Z+02:00```
+    ```GET [base]/Condition?recorded-date=2015-01-01T12:00:23+02:00```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach "Condition.recordedDate" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
 

@@ -13,11 +13,11 @@ Kodierter klinischer Status der Prozedur. MUSS angegeben werden, da die Interpre
 ### `Procedure.category`
 
 **Bedeutung:**
-Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes erfolgen. Eine ConceptMap für das Mapping von OPS-Kodes -> Kategorie findet sich in den [Deutschen Basisprofilen - Implementierungsleitfaden Abschnitt Terminologien](https://ig.fhir.de/basisprofile-de/stable/Terminologie-ConceptMaps.html). Die Angabe der Kategeorie MUSS nur für OPS-kodierte Prozeduren erfolgen.
+Zur groben Kategorisierung MUSS eine Kodierung auf Basis der OPS-Klassencodes erfolgen. Eine ConceptMap für das Mapping von OPS-Kodes -> Kategorie findet sich in den [Deutschen Basisprofilen - Implementierungsleitfaden Abschnitt Terminologien](https://ig.fhir.de/basisprofile-de/stable/ig-markdown-Terminologie-ConceptMaps.html). Die Angabe der Kategeorie MUSS nur für OPS-kodierte Prozeduren erfolgen.
 
 ### `Procedure.code.coding`
 
-**Bedeutung:** Codierte Prozedur. Entweder kodiert per [OPS](https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/OPS-ICHI/OPS/_node.html) oder [SNOMED CT](https://www.snomed.org). Bei der Kodierung per SNOMED CT ist das ValueSet [ProzedurenCodesSCT](https://simplifier.net/ISiK/ProzedurenCodesSCT) zu beachten.
+**Bedeutung:** Codierte Prozedur. Entweder kodiert per [OPS](https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/OPS-ICHI/OPS/_node.html) oder [SNOMED CT](https://www.snomed.org). Bei der Kodierung per SNOMED CT ist das ValueSet [ProzedurenCodesSCT](https://simplifier.net/isik-basis-v3/prozedurencodessct) zu beachten.
 
 ### `Procedure.code.text`
 
