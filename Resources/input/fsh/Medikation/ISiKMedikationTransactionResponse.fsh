@@ -11,6 +11,7 @@ Description: "Dieses Profil definiert die Server-Antwort auf Transaktions-Bundle
   * ^fixedCode = #transaction-response
 * entry 1..* MS
   * ^short = "Der einzelne Eintrag zur Interaktion"
+  * ^comment = "Begründung des Must-Support: Einzelne Ressourcen innerhalb der Transaktion"
   * link 0..0
   * fullUrl MS
     * ^short = "vollständige URL der Ressource"

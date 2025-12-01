@@ -30,7 +30,7 @@ Usage: #example
 * code.text = "Atemfrequenz"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2019-07-02"
-* performer.reference = "Practitioner/DrMustermann"
+* performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 26 '/min' "Atemzüge pro Minute"
 
 Instance: ISiKAtemfrequenzMinExample
