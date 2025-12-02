@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-basis-ig/Location/StationStandortBeispiel> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "StationStandortBeispiel"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location StationStandortBeispiel</b></p><a name=\"StationStandortBeispiel\"> </a><a name=\"hcStationStandortBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKStandort.html\">ISiKStandort</a></p></div><p><b>identifier</b>: <code>http://fhir.de/sid/dkgev/standortnummer</code>/123456</p><p><b>operationalStatus</b>: <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0116.html#v2-0116-O\">bedStatus: O</a> (Occupied)</p><p><b>name</b>: Station A</p><p><b>mode</b>: Instance</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode _LocationIdentifiedEntityRoleCode}\">LocationIdentifiedEntityRoleCode</span></p><p><b>address</b>: Krankenhausstraße 123 Musterstadt 12345 </p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>13.405</td><td>52.52</td></tr></table><p><b>managingOrganization</b>: <a href=\"Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html\">Organization Allgemeinchirurgie</a></p><blockquote><p><b>hoursOfOperation</b></p><p><b>daysOfWeek</b>: Friday</p><p><b>allDay</b>: true</p></blockquote><blockquote><p><b>hoursOfOperation</b></p><p><b>daysOfWeek</b>: Sunday</p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://fhir.de/sid/dkgev/standortnummer"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/sid/dkgev/standortnummer>
+     ] ;
+     fhir:value [ fhir:v "123456" ]
+  ] ) ; # 
+  fhir:operationalStatus [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v2-0116"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v2-0116>
+     ] ;
+     fhir:code [ fhir:v "O" ] ;
+     fhir:display [ fhir:v "Occupied" ]
+  ] ; # 
+  fhir:name [ fhir:v "Station A"] ; # 
+  fhir:mode [ fhir:v "instance"] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-RoleCode>
+       ] ;
+       fhir:code [ fhir:v "_LocationIdentifiedEntityRoleCode" ]
+     ] )
+  ] ) ; # 
+  fhir:address [
+     fhir:line ( [ fhir:v "Krankenhausstraße 123" ] ) ;
+     fhir:city [ fhir:v "Musterstadt" ] ;
+     fhir:postalCode [ fhir:v "12345" ]
+  ] ; # 
+  fhir:physicalType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+       ] ;
+       fhir:code [ fhir:v "wa" ] ;
+       fhir:display [ fhir:v "Ward" ]
+     ] )
+  ] ; # 
+  fhir:position [
+     fhir:longitude [ fhir:v 13.405 ] ;
+     fhir:latitude [ fhir:v 52.52 ]
+  ] ; # 
+  fhir:managingOrganization [
+     fhir:l <http://example.org/fhir/test-basis-ig/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel> ;
+     fhir:reference [ fhir:v "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel" ]
+  ] ; # 
+  fhir:hoursOfOperation ( [
+     fhir:daysOfWeek ( [ fhir:v "fri" ] ) ;
+     fhir:allDay [ fhir:v true ]
+  ] [
+     fhir:daysOfWeek ( [ fhir:v "sun" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
