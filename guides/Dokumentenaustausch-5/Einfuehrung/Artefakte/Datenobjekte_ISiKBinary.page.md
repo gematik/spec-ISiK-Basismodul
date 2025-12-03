@@ -7,4 +7,4 @@ ISiKBinary dient im Kontext des Dokumentenaustauschs dazu entsprechende Binärda
 
 ### FHIR-Profil
 
-Es gelten bis auf weiteres die Vorgaben des ISiK Basismoduls für das Profil ['ISiKBinary'](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary?version=current).
+Es gelten bis auf weiteres die Vorgaben des ISiK Basismoduls für das Profil ['ISiKBinary'](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary).
