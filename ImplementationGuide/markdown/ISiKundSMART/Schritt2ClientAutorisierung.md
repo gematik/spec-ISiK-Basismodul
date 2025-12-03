@@ -34,7 +34,7 @@ Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichen
 
 ## TLS
 
-Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md?version=current) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-011}}).
+Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-011}}).
 
 ----
 
