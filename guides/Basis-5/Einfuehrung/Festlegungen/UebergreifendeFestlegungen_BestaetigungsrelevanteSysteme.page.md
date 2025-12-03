@@ -72,7 +72,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Basis-Server|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementBasisServerAkteur.page.md?version=current>|ja|
+|Basis-Server|<[https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementBasisServerAkteur.page.md](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementBasisServerAkteur)>|ja|
 |Basis-Client|keine|nein|
 # **Dokumentenaustausch**
 ## **Akteur: Dokumenten-Server**
@@ -116,7 +116,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Dokumenten-Server|<https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?version=current#ISiKCapabilityStatementDokumentenServerAkteur>|ja|
+|Dokumenten-Server|<https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/einfuehrung/artefakte/capabilitystatements#ISiKCapabilityStatementDokumentenServerAkteur>|ja|
 |Dokumenten-Client|keine|nein|
 # **Vitalparameter und Körpermaße**
 ## **Akteur: Vitalparameter-Server**
@@ -154,7 +154,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Vitalparameter-Server|<https://simplifier.net/guide/isik-vitalparameter-stufe-5?version=current>|ja|
+|Vitalparameter-Server|<https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Vitalparameter-Client|keine|nein|
 # **Terminplanung**
 ## **Akteur: Termin-Repository**
@@ -189,7 +189,7 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Termin-Repository|[Guide Terminplanung](https://simplifier.net/guide/isik-terminplanung-stufe-5?version=current)|ja|
+|Termin-Repository|[Guide Terminplanung](https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Artefakte/CapabilityStatements)|ja|
 |Termin-Requestor|keine|nein|
 |Termin-Consumer|keine|nein|
 # **Medikation**
@@ -246,8 +246,8 @@ Tabellarisch gelistet wird hier die Bestätigungsrelevanz in Bezug auf die zuvor
 
 |**Akteur**|**konkrete Anforderungen**|**bestätigungsrelevant**|
 | :-: | :-: | :-: |
-|Medikations-Server|<https://simplifier.net/guide/isik-medikation-stufe-5?version=current>|ja|
-|AMTS Data Provider|<https://simplifier.net/guide/isik-basis-stufe-5?version=current><br><https://simplifier.net/guide/isik-labor-stufe-5?version=current>|ja|
+|Medikations-Server|<https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements|ja|
+|AMTS Data Provider|<https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements><br><https://simplifier.net/guide/isik-labor-stufe-5/Einfuehrung/Artefakte/CapabilityStatements>|ja|
 |Medikations-Client|keine|nein|
 
 
