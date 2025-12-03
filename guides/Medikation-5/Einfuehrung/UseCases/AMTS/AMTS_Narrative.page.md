@@ -60,7 +60,7 @@ Als Übergreifender Use Case ist AMTS grundsätzlich im Modul Medikation veranke
  
 ### 3.3. Weitere zu berücksichtigende Systeme und Standards
 
-Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Kompatibilitaet?version=5.1.0) sollen weiterhin gewahrt bleiben.
+Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Kompatibilitaet) sollen weiterhin gewahrt bleiben.
 
 Da mit dem [MIO Medikationsplan](https://mio.kbv.de/display/EMP1X0X0/) eine FHIR-basierte Lösung zur Verwendung in der ePA für Alle erstellt wird, sollte die Kompatibilität sowohl organisatorisch als auch in der Umsetzung der Spezifikation angestrebt werden.
 
