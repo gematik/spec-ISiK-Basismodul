@@ -29,6 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fix Git Safe Directory
+        run: git config --global --add safe.directory '*'
+
       # Download dependencies via FHIR Package Tool using sushi-config.yaml from Resources
       - name: Download Dependencies
         run: |
