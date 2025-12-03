@@ -12,16 +12,20 @@ Mittels der Veröffentlichung von ValueSets können Auswahllisten für externe C
 Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 * insert Meta
+* insert CommonElements
 * url 1.. MS
+  * ^short = "Eindeutige Url des ValueSets"
   * ^comment = "**Bedeutung:** Eindeutige Url zur Identifizierung des ValueSets. Absolute Urls sind zu bevorzugen.
 
 **Hinweise:** OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE eine Canonical Url vergeben werden."
 * version 1.. MS
+  * ^short = "Version des ValueSets"
   * ^comment = "
 **Bedeutung:** Version des ValueSets
 
 **Hinweise:** Jede Änderung des dazugehörigen CodeSystems MUSS eine Änderung in der Version des CodeSystems und ValueSets nach sich ziehen."
 * name 1.. MS
+  * ^short = "Name des ValueSets"
   * ^comment = "**Bedeutung:** Maschinenlesbarer Name des ValueSets
 
 **Hinweise:** Der Constraint [vsd-0](https://www.hl7.org/fhir/R4/valueset.html#invs) ist hierbei zu beachten."
@@ -35,6 +39,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben."
 
 * useContext 1.. MS
+  * ^short = "Datenelement-Relevanz das ValueSet"
   * ^comment = "**Bedeutung:** Angabe für welches Datenelement das ValueSet relevant ist
 
 **Hinweise:** Es muss mindestens ein useContext angegeben werden, in dem der Ressourcen-Typ kodiert wird, in dem das ValueSet in einem Element zur Verwendung kommt."
@@ -45,6 +50,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * useContext.value[x] ^binding.description = "One of the resource types defined as part of this version of FHIR."
   * ^comment = "Angabe in welchem Ressourcen-Typ das ValueSet verwendet wird."
 * expansion 1.. MS
+  * ^short = "Expansion der Konzepte"
   * ^comment = "**Bedeutung:** Angabe der Konzepte aus denen sich das ValueSet zusammensetzt.
 
 **Hinweise:** Mindestens MUSS ein Code und ein Anzeigetext spezifiziert werden."

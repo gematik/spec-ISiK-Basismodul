@@ -1,0 +1,68 @@
+@startchen
+left to right direction
+title "ISiK Terminplanung - Entity Relationship Diagram"
+
+entity ISiKTermin {
+  
+}
+relationship slot {
+}
+entity ISiKTerminblock {
+ 
+}
+
+
+
+relationship schedule {
+}
+entity ISiKKalender { 
+}
+
+relationship participant {
+}
+
+
+
+entity ISiKMedizinischeBehandlungseinheit {
+
+}
+relationship actor{
+} 
+
+
+
+
+
+
+' External entities from ISiK Basis (referenced in relationships)
+entity Patient {
+  
+}
+
+
+entity Practitioner {
+
+}
+
+
+actor -N- Practitioner
+
+
+entity RelatedPerson {
+  
+}
+
+ISiKTerminblock -N- schedule
+schedule -1- ISiKKalender
+
+ISiKKalender -M- actor
+actor -N- ISiKMedizinischeBehandlungseinheit
+ISiKTermin -1- slot
+slot -N- ISiKTerminblock
+ISiKTermin -N- participant
+participant -M- Patient
+participant -M- Practitioner
+participant -M- RelatedPerson
+participant -M- ISiKMedizinischeBehandlungseinheit 
+
+@endchen

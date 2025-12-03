@@ -1,0 +1,78 @@
+@startuml
+skinparam componentStyle rectangle
+left to right direction
+
+package "Vitalparameter Modul" {
+  node "ISiK Vital Sign Standard Source Akteur" as el_1
+  
+  component "ISiK VitalSign  Standard Source Rolle" as el_3
+}
+
+package "Supportmodul Labor" {
+  component "ISiK Labor Minimal Rolle" as el_2
+  }
+
+package "Basismodul" {
+  node "ISiK Basis Server Akteur" as el_4
+  component "ISiK Aufbaustruktur-Rolle" as el_5
+  component "ISiK Composition Konsumenten Rolle" as el_6
+  component "ISiK Erweiterte Stammdaten Rolle" as el_7
+
+
+
+  
+  component "ISiK Terminologie Rolle" as el_12
+  component "ISiK Versicherungsverhältnis Rolle" as el_13
+  cloud "Geteilte Basis Rollen" {
+    component "ISiK Klinische Rolle" as el_8
+    component "ISiK Gesundheitsstatus Rolle" as el_9
+    component "ISiK Stammdaten Rolle" as el_11
+    component "ISiK Leistungserbringer Rolle" as el_10
+  }
+}
+package "Medikationsmodul" {
+  node "ISiK Medikationsverordnungs Akteur" as el_14
+  node "ISiK Medikation Information Akteur" as el_15
+  node "ISiK Medikation Verarbreichung Akteur" as el_16
+  node "ISiK AMTS Akteur" as el_17
+  component "ISiK Medikation Verordnung Rolle" as el_18
+  component "ISiK Medikation Information Rolle" as el_19
+  component "ISiK Medikation Verabreichung Rolle" as el_20
+  component "ISiK AMTS Rolle" as el_21
+  component "ISiK Medikament Rolle" as el_22
+}
+el_1 --> el_11
+el_17 --> el_2
+el_17 --> el_9
+el_1 --> el_2
+el_1 --> el_3
+el_4 --> el_5
+el_4 --> el_6
+el_4 --> el_7
+el_4 --> el_9
+el_4 --> el_8
+el_4 --> el_10
+el_4 --> el_11
+el_4 --> el_12
+el_4 --> el_13
+el_14 --> el_18
+el_14 --> el_11
+el_14 --> el_10
+el_14 --> el_22
+el_15 --> el_19
+el_15 --> el_11
+el_15 --> el_10
+el_15 --> el_22
+el_16 --> el_20
+el_16 --> el_11
+el_16 --> el_10
+el_16 --> el_22
+el_17 --> el_21
+el_17 --> el_10
+el_17 --> el_11
+el_17 --> el_8
+el_17 --> el_20
+el_17 --> el_19
+el_17 --> el_18
+el_17 --> el_22
+@enduml

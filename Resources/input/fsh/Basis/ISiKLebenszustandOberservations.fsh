@@ -28,7 +28,7 @@ Für Schwangerschaftsstatus & Erwarteter Geburtstermin wird eine Kompatibilität
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
-
+* insert CommonElements
 * status MS
   * ^short = "Status"
   * ^comment = "Bedeutung: Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen, 
@@ -56,16 +56,16 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[loinc] only ISiKLoincCoding
 * subject 1.. MS
   * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Patientenbezug der Beobachtung MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
-    * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation 
-    zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Beobachtung MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = "Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt 
-    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+    * insert Comment-Reference-Encounter(Begründung MS)
 * effective[x] 1..1 MS
   * ^short = "Zeitpunkt/-raum der Beobachtung"
   * ^comment = "Bedeutung: Klinisch relevanter Zeitpunkt/Zeitspanne für die Observation."
@@ -96,7 +96,7 @@ Description: "Schwangerschaftsstatus einer Patientin"
 * hasMember only Reference(ISiKSchwangerschaftErwarteterEntbindungstermin)
 * hasMember 0..1 MS
 * hasMember ^short = "Erwartetes Geburtsdatum"
-* hasMember ^definition = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
+* hasMember ^comment = "Eine Referenz auf die ErwartetesGeburtsdatum Observation"
 * hasMember.reference 1.. MS
 
 Instance: ISiKSchwangerschaftsstatusBeispiel
@@ -189,7 +189,7 @@ Title: "ISiKRaucherStatusBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = LOINC#LA15920-4 "Former smoker"
+* valueCodeableConcept = $loinc#LA15920-4 "Former smoker"
   * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
 * performer = Reference(PractitionerWalterArzt)

@@ -5,23 +5,26 @@ Alias: $ordinalValue = http://hl7.org/fhir/StructureDefinition/ordinalValue
 Profile: ISiKFormularDaten
 Parent: QuestionnaireResponse
 Title: "Ausgefülltes ISiK-Formular"
-Description: "ToDo"
+Description: "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.
+Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben."
 * insert Meta
+* insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 1..1 MS
+  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
 * modifierExtension[MDR-Relevant]
   * ^short = "MPG-Relevanz der Formulardaten"
-  * ^comment = "**Begründung MS:**   
-  Systeme, die Formulardaten anzeigen oder weiterverarbeiten benötigen Information zu deren MPG-Relevanz"  
+  * ^comment = "**Begründung MS:**
+  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
 * modifierExtension[MDR-Relevant].valueCoding MS
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
   * ^comment = "**Begründung MS:**
   Ein vom FormularRenderer vergebener, eindeutiger Identifier kann von weiterverarbeitenden Systemen genutzt werden, um Dubletten zu erkennen."
 * questionnaire 1.. MS
-  * ^short = "Bezug zur FormularDefinition"
-  * ^comment = "**Begründung MS:** 
+  * ^short = "Bezug zur FormularDefinition inkl. Version"
+  * ^comment = "Bei der Angabe der Canonical, sollte die Version der FormularDefinition, welche bei der Erstellung die Grundlage gebildet hat, angegeben sein.
+  **Begründung MS:** 
   Der Bezug zur Formulardefinition kann für die Interpretation und Darstellung der Formulardaten relevant sein."
 //* questionnaire only Canonical(ISiKFormularDefinition) 
   * extension contains DisplayName named questionnaireDisplay 1..1 MS
@@ -29,18 +32,33 @@ Description: "ToDo"
     * ^short = "Titel/Überschrift der zugrunde liegenden FormularDefinition"
     * ^comment = "Wird für die Darstellung und Auffindbarkeit der FormularDaten benötigt."
 * status MS
+  * ^short = "Status"
+  * ^comment = "**Begründung Pflichtfeld:**
+  Bei der Verarbeitung von FormularDaten ist es wichtig, den Status zu beachten. Falls die Instanz noch nicht `completed` ist, sollte von einer Weiterverarbeitung abgesehen werden."
 * subject 1..1 MS
   * ^short = "Subject (Patient), über das in diesem Formular berichtet wird."
   * ^comment = "**Begründung Pflichtfeld:**  
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung MS)
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 
   Relevant für die Suche und zeitliche Einordnung der FormularDaten"
 * author MS
+  * ^short = "Ersteller des Fromulars"
+  * ^comment = "Auch wenn hier keine Einschränkung vorgenommen wurde, ist zu empfehlen, hier die ausfüllende Person (Patient/Practitioner) zu referenzieren und nicht nur die Software (Device), mit der das Formular ausgefüllt wurde.
+  **Begründung MS:**
+  In den meisten Fällen ist relevant, wer Formulardaten erfasst hat."
 * item MS
+  * ^short = "Formularelement"
+  * ^comment = "**Begründung MS:** Es können beliebig viele Formularelemente hier abgebildet werden."
   * linkId MS
+    * ^short = "Eindeutige ID des Formularelement"
+    * ^comment = "**Begründung Pflichtfeld:**
+    Die LinkId ordnet die Information der Antwort einer Frage in der FormularDefinition zu und ist aus dem Grund zur Interpretation der Antwort unablässig."
   * text MS
     * ^short = "Frage, die beantwortet wurde"
     * ^comment = "**Begründung Pflichtfeld:**  
@@ -48,7 +66,13 @@ Description: "ToDo"
     damit die Daten auch von Systemen/Anwendern interpretiert werden können, 
     die *keinen* Zugriff auf die zugrunde liegende FormularDefinition haben."
   * answer MS
+    * ^short = "Antwort"
+    * ^comment = "**Begründung MS:**
+    Die erfasste Antwort MUSS stets vorhanden sein."
     * value[x] MS
+      * ^short = "Inhalt der Antwort"
+      * ^comment = "**Begründung MS:**
+      Der Inhalt der jeweilig erfassten Antwort MUSS stehts vorhanden sein."
     * item MS
       * ^short = "Untergeordnetes Item"
       * ^comment = "**Begründung MS:**  

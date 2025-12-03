@@ -1,11 +1,12 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/main-stufe-4/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0-rc
+Version: 5.1.0
 
-Datum: tbd.
+Datum: 23.10.2025
 
-Status: Draft
+
+Status: Aktiv
 
 Realm: Deutschland
 

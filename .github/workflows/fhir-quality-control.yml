@@ -1,0 +1,30 @@
+name: Check FHIR Quality Control
+
+on:
+  workflow_dispatch:
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '18.19.0' # Specify the Node.js version you need
+
+
+      - name: Run FHIR quality control
+        run: |
+          node qa-fhir.js
+        working-directory: scripts/QualityAssuranceAutomation
+
+
+      - name: Upload log file
+        uses: actions/upload-artifact@v5
+        with:
+          name: fhir-quality-control-log
+          path: scripts/QualityAssuranceAutomation/log/validation.*.log

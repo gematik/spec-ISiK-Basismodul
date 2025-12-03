@@ -2,11 +2,11 @@
 
 ----
 
-Version: 5.0.0-rc (draft)
+Version: 5.1.0
 
-Datum: 08.04.2025
+Datum: 23.10.2025
 
-Status: Draft (Kommentierung)
+Status: Aktiv
 
 Realm: Deutschland
 

@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKalender",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "name": "ISiKKalender",
   "status": "active",
   "experimental": false,
-  "date": "2024-11-25",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für verschiedene Akteure (Practitioner, Device, HealthcareService) zu exponieren, sodass für die Ressourcen Termine gebucht werden können. ",
   "fhirVersion": "4.0.1",
@@ -17,6 +17,25 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Schedule.id",
+        "path": "Schedule.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.meta.versionId",
+        "path": "Schedule.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Schedule.meta.lastUpdated",
+        "path": "Schedule.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
       {
         "id": "Schedule.extension",
         "path": "Schedule.extension",
@@ -47,6 +66,7 @@
       {
         "id": "Schedule.active",
         "path": "Schedule.active",
+        "short": "Gibt an, ob der Kalender aktiv ist",
         "comment": "Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität 1..1 und das Must-Support-Flag (MS) für das 'active'-Element stellen sicher, dass jeder Kalender eindeutig als aktiv oder inaktiv gekennzeichnet ist. Dies ist entscheidend für die Ressourcenplanung und Verfügbarkeit von Terminen.",
         "min": 1,
         "mustSupport": true
@@ -54,6 +74,7 @@
       {
         "id": "Schedule.serviceType",
         "path": "Schedule.serviceType",
+        "short": "Die Art der Dienstleistung, die der Kalender abdeckt",
         "comment": "Begründung zu Kardinalität und Must Support: Die Dienstleistungsart eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher ist dieses Feld verpflichtend (1..*) und muss unterstützt werden (MS). Aufgrund der Heterogenität von Dienstleistungen ist eine standardisierte Kodierung nicht zwingend notwendig, eine Freitextbeschreibung ist ausreichend.",
         "min": 1,
         "mustSupport": true
@@ -66,6 +87,7 @@
       {
         "id": "Schedule.specialty",
         "path": "Schedule.specialty",
+        "short": "Die Fachrichtung, die der Kalender abdeckt",
         "comment": "Hinweis: Ein Kalender kann für einen Akteur gepflegt werden. Dieser Akteur kann in einer oder mehreren Fachrichtungen agieren. Für die Ressourcenplanung (z.B. welche Akteure sind für einen Termin verfügbar) sollte auch auf die Speciality des Akteurs zurückgegriffen werden für den Fall, dass ein Kalender pro Fachbereich - d.h. Akteur-übergreifend - gepflegt wird. \n  \n  Begründung Kardinalität Must-Support-Flag (MS): Die Kardinalität 1..* und das Must-Support-Flag (MS) für das 'specialty'-Element stellen sicher, dass jeder Kalender mindestens eine Fachrichtung angibt. Dies ist wichtig für die Ressourcenplanung und die Verfügbarkeit von Terminen, sodass angefragte Termine einem Fachbereich zugeordnet werden können.\n\n  Hintergrund: Die Festlegung hat in einer Expertengruppe am 4.6.2024 stattgefunden. Diese war zuvor in einer ISiK Arbeitsgruppe bekanntgegeben worden und stand damit allen Beteiligten offen. \n  ",
         "min": 1,
         "mustSupport": true
@@ -126,13 +148,14 @@
           ],
           "rules": "open"
         },
+        "short": "Der Akteur, der dem Kalender zugeordnet ist",
         "comment": "Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität der Akteur-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass ein  Akteur eindeutig ist, falls dieser vorhanden ist. Durch das MS wird sichergestellt, dass Systeme in der Lage sind, einen Akteur zu unterstützen, wenn er vorhanden ist.",
         "mustSupport": true
       },
       {
         "id": "Schedule.actor.identifier",
         "path": "Schedule.actor.identifier",
-        "comment": "Begründung Must-Support-Flag (MS):\n  Das Must-Support-Flag (MS) für das 'identifier'-Element stellt sicher, dass Systeme in der Lage sind, einen Identifier zu unterstützen, wenn er vorhanden ist. Dies ist wichtig für die eindeutige Identifizierung und Verknüpfung von Akteuren in verschiedenen Systemen.",
+        "comment": "Begründung Must-Support-Flag (MS):\n  Das Must-Support-Flag (MS) für das 'identifier'-Element stellt sicher, dass Systeme in der Lage sind, einen Identifier zu unterstützen, wenn er vorhanden ist. Dies ist wichtig für die eindeutige Identifizierung und Verknüpfung von Akteuren in verschiedenen Systemen. Inbesondere gilt dies für die genaue Identifizierung von Geräten (Device).",
         "mustSupport": true
       },
       {

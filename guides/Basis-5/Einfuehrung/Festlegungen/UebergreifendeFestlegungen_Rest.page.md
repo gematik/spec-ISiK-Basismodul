@@ -7,6 +7,17 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest
 Instanzen von Datenobjekten, die die REST-Interaktion "READ" fordern, MÜSSEN per HTTP GET auf ```[BASE_URL]/[resourceType]/[ID]``` abgerufen werden können. 
 Siehe: https://www.hl7.org/fhir/R4/http.html#read 
 
+### Profil-Konformität
+Instanzen, die von einem ISiK-konformen Server über READ-Interaktionen bereitgestellt werden, SOLLEN valide gegen die entsprechenden ISiK-Profile sein. Ausnahmen bilden Instanzen, die für Anwendungsfälle außerhalb des ISIK-Scopes erstellt wurden oder historische Daten, die bereits *vor* der ISiK-Implementierung erzeugt, oder aus nicht-ISiK-konformen Systemen übernommen wurden.
+
+### Nicht profilierte Ressourcentypen
+Weiterhin steht es Servern frei, neben den in ISIK profilierten auch weitere Ressourcentypen über die REST-API bereitzustellen, sofern dies im CapabilityStatement des Servers entsprechend spezifiziert ist. Server SOLLEN dabei auf ein öffentlich verfügbares Profil des jeweiligen Ressourcentyps referenzieren, das die vom Server implementierten Constraints abbildet. Es KANN sich dabei um ein Profil aus einem anderen (z.B. IHE-/KBV-/MII-)Implementierungsleitfaden oder ein vom Hersteller selbst publiziertes Profil handeln.
+
+### generische Ressourcentypen
+Darüber hinaus ist es Servern gestattet, in ISiK profilierte generische Ressourcentypen, wie z.B. Organization oder Observation in Kontexten außerhalb der in ISiK spezifizierten UseCases zu verwenden.
+
+
+
 ## Search-Interaktionen
 Die Suche MUSS sowohl mittels HTTP GET als auch HTTP POST (vgl. [FHIR RESTful Search - Introduction](https://www.hl7.org/fhir/R4/search.html#Introduction)) unterstützt werden. Die URL-Parameter komplexer Suchanfragen können personenbezogene Merkmale enthalten, daher ist im Echtbetrieb die Suche mittels HTTP POST in Verbindung mit TLS-Verschlüsselung vorzuziehen. 
 
@@ -39,7 +50,13 @@ Sollte die erzeugte Ressource dauerhaft in das bestätigungsrelevante System üb
 
 Per Create-Interaktion erzeugte Ressourcen MÜSSEN im Falle einer erfolgreichen Übermittlung direkt über die READ- und SEARCH-Interaktionen zur Verfügung gestellt werden.
 
-Ressourcen, die zu einem entsprechenden ISiK-Profil nicht konform sind, MÜSSEN durch das bestätigungsrelevante System abgelehnt werden. Als Antwort MUSS ein HTTP Status-Code 400 - Bad Request mit einer ```OperationOutcome```-Ressource zurückgegeben werden, falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource handelt. Die ```OperationOutcome``` MUSS eine Auflistung aller Fehler in der übermittelten Ressource in kodierter Form vorweisen. Anderweitig (semantisch) invalide Ressourcen MÜSSEN ebenfalls mit einer entsprechenden OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLLTE der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden.
+Ressourcen, die zu einem entsprechenden ISiK-Profil nicht konform sind, KÖNNEN durch das bestätigungsrelevante System abgewiesen werden.  Falls diese abgewiesenen Ressourcen syntaktisch korrekt sind, dann SOLL der Server als Antwort ein HTTP Status-Code 422 - Unprocessable Entity mit einer ```OperationOutcome```-Ressource zurückgeben.
+
+Falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource handelt, dann SOLL als Antwort ein HTTP Status-Code 400 - Bad Request mit einer ```OperationOutcome```-Ressource zurückgegeben werden. Die ```OperationOutcome``` SOLL eine Auflistung aller Fehler in der übermittelten Ressource in kodierter Form vorweisen. Anderweitig (semantisch) invalide Ressourcen KÖNNEN ebenfalls mit einer entsprechenden OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden.
+
+**Hintergrund:** Bei diesen Festlegungen wurden die Vorgaben der [Kernspezifikation](https://hl7.org/fhir/http.html#create) übernommen.
+
+Systeme SOLLEN die [Hinweise zum korrekten Umgang mit Validierung beachten](https://hl7.org/fhir/R4/validation.html#correct-use) und dem [Robustheitsgrundsatz](https://de.wikipedia.org/wiki/Robustheitsgrundsatz) folgen:  "Eine Implementierung sollte in ihrem Sendeverhalten konservativ und in ihrem Empfangsverhalten liberal sein."
 
 
 ## Update-Interaktionen

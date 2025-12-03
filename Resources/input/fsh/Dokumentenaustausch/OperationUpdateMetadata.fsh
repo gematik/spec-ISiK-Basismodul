@@ -7,8 +7,31 @@ Title: "update-metadata"
 * title = "Update document metadata"
 * kind = #operation
 * name = "UpdateMetadata"
-* description = "Update selected, uncritical document metadata in a safe and controlled manner without having to replace the whole document"
+* description = "
+## Interaktion: Update von Metadaten, Löschen von Dokumenten
+
+Die Operation ``UpdateMetadata`` ermöglicht es, unkritische Metadaten gezielt und kontrolliert zu aktualisieren oder vorläufige Dokumente durch Setzen des Status entered-in-error zuverlässig zu löschen, ohne ein neues Dokument anlegen zu müssen.
+
+### Herstellung von Dokumentenkontext
+Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das Update angewendet werden soll. Hierzu kann die Interaktion {{pagelink:Dokumentenabfrage, text:Dokumentenabfrage}} verwendet werden.
+
+### Metadatenupdate
+Das Update der Metadaten erfolgt mittels der `$update-metadata` Operation.
+Hinweis: Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht kein Metadatenupdate vor. Hier müsste stets ein neues Dokument übermittelt werden.
+
+Für den ISiK Use Case als maßgeblich relevant und unkritisch in Bezug auf die Versionierung hat sich jedoch das Element `docStatus`erwiesen, welches im IHE-Kontext keine Berücksichtigung findet. Im einrichtungsinternen Dokumentenaustausch kommt es häufig vor, dass sich der Status eines Dokumentes ändert (z.b. `preliminary` -> `final`), ohne dass dies Auswirkungen auf den Inhalt hat. Die Anlage eines neuen Dokumentes wäre in diesem Kontext nicht effizient.
+
+Ebenso erlaubt diese Operation, vorläufige Dokumente durch ein Update von docStatus zu *löschen* (`preliminary` -> `entered-in-error` ). 
+
+Wenn Dokumenten-Server $update-metadata unterstützen, dann MÜSSEN Dokumenten-Server das *Löschen* von vorläufigen Dokumenten unterstützen, d.h. dann MÜSSEN Server bei einem Update auf den Status `entered-in-error` auch den Code in `DocumentReference.status` auf  `entered-in-error` setzen und dafür Sorge tragen, dass diese Dokumente bei Suchanfragen nicht mehr als Ergebnisse zurückgegeben werden (siehe [Search Related Safety Checks](https://hl7.org/fhir/R4/safety.html)), es sei denn der Client sucht *explizit* nach gelöschten Dokumenten (z.B. `/DocumentReference?status=entered-in-error`). 
+
+Sobald ein Dokument den Status `final` erreicht hat, MUSS ein Server  die Änderungen von Metadaten NICHT mehr zulassen (d.h. ein Server KANN in diesem Fall die Löschung finaler Dokumente erlauben, MUSS es aber nicht. Der Server KANN in diesem Fall auch eine Fehlermeldung ausgeben).
+
+Finale Dokumente SOLLEN nur noch mit MHD-konformen Methoden aktualisiert bzw. gelöscht werden, indem sie durch eine neue bzw. leere Version ersetzt werden. 
+Ein Client SOLL in diesem Fall eine erneute Dokumentenbereitstellung durchführen, mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo.target` und dem Code `replaces` in `DocumentReference.relatesTo.code`.
+"
 * code = #update-metadata
+* affectsState = true
 * comment = "
     Expected behaviour:
 * Servers SHALL update the DocumentReference.docStatus with the submitted values
@@ -30,3 +53,11 @@ Title: "update-metadata"
   * binding 
     * strength = #required 
     * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
+
+
+Instance: ParametersExampleUpdateMetadata
+InstanceOf: Parameters
+Usage: #example
+Description: "Example of an input parameter for the request body for the update-metadata operation" 
+* parameter.name = "docStatus"
+* parameter.valueCode = #final

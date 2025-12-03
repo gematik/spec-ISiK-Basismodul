@@ -1,3 +1,3 @@
 # Übergreifende Festlegungen
 
-Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen?version=current).
+Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).

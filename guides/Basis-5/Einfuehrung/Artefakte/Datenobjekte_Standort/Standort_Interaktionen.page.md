@@ -1,6 +1,7 @@
 ---
 topic: Standort-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort
+capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle
 ---
 
 ### Interaktionen
@@ -27,7 +28,5 @@ with
     <tab title="Operationen">
         {{page:FQL-Capability-Operations}}
     </tab>
-    <tab title="Link">
-        {{pagelink:CapabilityStatement}}
-    </tab>
+ 
 </tabs>

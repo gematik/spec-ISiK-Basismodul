@@ -1,4 +1,4 @@
-ValueSet: SubscriptionNotificationType
+ValueSet: SubscriptionNotificationTypeVS
 Id: subscription-notification-type
 Title: "SubscriptionNotificationType"
 Description: "The type of notification represented by the status message."
@@ -21,9 +21,9 @@ Description: "The type of notification represented by the status message."
 * ^contact.telecom[+].system = #email
 * ^contact.telecom[=].value = "fhir@lists.hl7.org"
 * ^immutable = true
-* include codes from system SubscriptionNotificationType
+* include codes from system SubscriptionNotificationTypeCS
 
-CodeSystem: SubscriptionNotificationType
+CodeSystem: SubscriptionNotificationTypeCS
 Id: subscription-notification-type
 Title: "SubscriptionNotificationType"
 Description: "The type of notification represented by the status message."

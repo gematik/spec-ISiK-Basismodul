@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKontaktGesundheitseinrichtung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "name": "ISiKKontaktGesundheitseinrichtung",
   "status": "active",
   "experimental": false,
-  "date": "2024-11-25",
+  "date": "2025-10-23",
   "publisher": "gematik GmbH",
   "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
@@ -80,6 +80,25 @@
         ]
       },
       {
+        "id": "Encounter.id",
+        "path": "Encounter.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.meta.versionId",
+        "path": "Encounter.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Encounter.meta.lastUpdated",
+        "path": "Encounter.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
         "id": "Encounter.extension",
         "path": "Encounter.extension",
         "mustSupport": true
@@ -89,7 +108,7 @@
         "path": "Encounter.extension",
         "sliceName": "Aufnahmegrund",
         "short": "Aufnahmegrund",
-        "comment": "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung\nnach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLLTE am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLLTE dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden.",
+        "comment": "Aufnahmegrund nach § 301 Abs. 3 SGB V. Dieser gehört zu den 'Medizinischen Daten des Behandlungsfalls' entsprechend der Definitionen für die Datenübermittlung\nnach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den Abrechnungsfall zu dokumentieren. Diese Extension SOLL am ersten Abteilungskontakt, der die stationäre Aufnahme repräsentiert, dokumentiert werden. Wird durch den Encounter ein Einrichtungskontakt repräsentiert, SOLL dort zusätzlich zu dem Abteilungskontakt der Aufnahmegrund dokumentiert werden.",
         "min": 0,
         "max": "1",
         "type": [
@@ -131,6 +150,7 @@
         "path": "Encounter.extension",
         "sliceName": "plannedStartDate",
         "short": "geplantes Aufnahmedatum",
+        "comment": "**Begründung MS:** Im Falle einer geplanten Aufnahme ist das Datum mittels dieser Extension anzugeben.",
         "min": 0,
         "max": "1",
         "type": [
@@ -148,6 +168,7 @@
         "path": "Encounter.extension",
         "sliceName": "plannedEndDate",
         "short": "geplantes Entlassdatum",
+        "comment": "**Begründung MS:** Im Falle der Dokumentation eines geplanten Entlassdatums ist diese Extension zu befüllen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -172,6 +193,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Eindeutiger Identifier des Encounter",
         "min": 1,
         "mustSupport": true
       },
@@ -179,6 +201,8 @@
         "id": "Encounter.identifier:Aufnahmenummer",
         "path": "Encounter.identifier",
         "sliceName": "Aufnahmenummer",
+        "short": "Aufnahmenummer",
+        "comment": "**Begründung MS:** Die Aufnahmenummer ist nicht die 'Fallnummer', welche sich auf den kompletten Abrechnungsfall bezieht. Hier wird ein Identifier angegeben, der den Kontakt eindeutig identifiziert.",
         "min": 0,
         "max": "1",
         "patternIdentifier": {
@@ -291,6 +315,7 @@
           ],
           "rules": "open"
         },
+        "comment": "Typ des Encounter",
         "min": 1,
         "mustSupport": true
       },
@@ -438,6 +463,7 @@
         "id": "Encounter.subject",
         "path": "Encounter.subject",
         "short": "Patientenbezug",
+        "comment": "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
         "min": 1,
         "mustSupport": true
       },
@@ -452,6 +478,7 @@
       {
         "id": "Encounter.appointment",
         "path": "Encounter.appointment",
+        "short": "Verknüpfung mit einem Termin",
         "comment": "\n  \n**Begründung und Einschränkung des Must Support**: Dieses Element dient der Verknüpfung mit einem Termin (Appointment) aus dem entsprechenden ISiK Modul und - darauf aufbauend - der Dokumentenkommunikation. Das Element 'appointment' SOLL für den im Folgenden geschilderten Fall implementiert werden. Andernfalls KANN es entfallen. \n\nDie Anforderung einer Verknüpfung mit einem Appointment stammt aus dem Szenario der Dokumentenübertragung zwischen Patientenportal und krankenhaus-internem Primärsystem (z.B. KIS) im Kontext einer Terminbuchung: Dokumente liegen bei Terminbuchung erst im Patientenportal (im Appointment) vor und werden erst mit Anlage des Encounters in das KIS (etc.) übermittelt. Dazu SOLL ein Primärsystem zu Beginn des Termins das Appointment mit dem neu angelegten Encounter verknüpfen, um die Dokumente aus dem Patientenportal darüber vermittelt zuordnen zu können (ausgenommen hiervon sind Termine, die nicht stattfinden, da für diese in der Regel keine Encounter angelegt werden).\n\nÜber die Referenz auf Appointment KÖNNEN Patientenportale den Fallbezug aus dem Termin ermitteln und Dokumente an ein KIS senden.\n\nHieraus folgt, dass das Element nur relevant ist, falls das bestätigungsrelevante System zusätzlich zum vorliegenden Profil (Encounter) das Profil ISiKTermin (Appointment) implementiert.\n\n**Hinweis:**  Zur Umsetzung der Funktionalität zum Dokumentenaustausch gemäß ISiK ist der entsprechende [Implementation Guide zum Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5) zu beachten.",
         "mustSupport": true
       },
@@ -683,6 +710,7 @@
           "rules": "open"
         },
         "short": "Aufenthaltsorte des Patienten",
+        "comment": "Hinweise zur Einschränkung von Encounter.location.status auf \"active\" zu Abbildung des aktuellen Aufenthaltortes des Patienten\nDie Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.\nDiese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.\n\nGleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  \nDamit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.",
         "mustSupport": true
       },
       {
@@ -697,6 +725,8 @@
         "id": "Encounter.location:Zimmer",
         "path": "Encounter.location",
         "sliceName": "Zimmer",
+        "short": "Slice für das aktive Zimmer",
+        "comment": "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -711,7 +741,7 @@
         "id": "Encounter.location:Zimmer.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
         "mustSupport": true
       },
       {
@@ -725,13 +755,14 @@
         "id": "Encounter.location:Zimmer.location.identifier.system",
         "path": "Encounter.location.location.identifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n        aus dem der Identifier stammt. \n        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert.",
         "mustSupport": true
       },
       {
         "id": "Encounter.location:Zimmer.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
-        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -788,6 +819,8 @@
         "id": "Encounter.location:Bettenstellplatz",
         "path": "Encounter.location",
         "sliceName": "Bettenstellplatz",
+        "short": "Slice für das aktive Bett",
+        "comment": "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -802,7 +835,7 @@
         "id": "Encounter.location:Bettenstellplatz.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
         "mustSupport": true
       },
       {
@@ -816,13 +849,14 @@
         "id": "Encounter.location:Bettenstellplatz.location.identifier.system",
         "path": "Encounter.location.location.identifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n        aus dem der Identifier stammt. \n        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert.",
         "mustSupport": true
       },
       {
         "id": "Encounter.location:Bettenstellplatz.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
-        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -880,6 +914,8 @@
         "id": "Encounter.location:Station",
         "path": "Encounter.location",
         "sliceName": "Station",
+        "short": "Slice für die aktive Station",
+        "comment": "**Begründung MS:** Die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -888,14 +924,13 @@
         "id": "Encounter.location:Station.location",
         "path": "Encounter.location.location",
         "short": "Aufenthaltsort",
-        "comment": "**Begründung MS:** die Kenntnis des aktuellen Aufenthaltsortes ist häufig systemübergreifend relevant (z.B. für Küchen- und Logistiksysteme) und sollte daher über die Schnittstelle kommuniziert werden können.",
         "mustSupport": true
       },
       {
         "id": "Encounter.location:Station.location.reference",
         "path": "Encounter.location.location.reference",
         "short": "Location-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n  und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort \n    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.",
         "mustSupport": true
       },
       {
@@ -909,13 +944,14 @@
         "id": "Encounter.location:Station.location.identifier.system",
         "path": "Encounter.location.location.identifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n        aus dem der Identifier stammt. \n        Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n        [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n        **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
+        "comment": "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, \n    aus dem der Identifier stammt. \n    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den \n    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert.",
         "mustSupport": true
       },
       {
         "id": "Encounter.location:Station.location.identifier.value",
         "path": "Encounter.location.location.identifier.value",
-        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n          **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "comment": "Enthält den eigentlichen Wert des Identifiers.  \n      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -971,17 +1007,21 @@
       {
         "id": "Encounter.serviceProvider",
         "path": "Encounter.serviceProvider",
+        "short": "Zuständige ServiceProvider",
+        "comment": "**Begründung MS:** Der zuständige ServiceProvider für diesen Kontakt sollte hier angegeben werden.",
         "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider.identifier",
         "path": "Encounter.serviceProvider.identifier",
+        "comment": "**Begründung Pflichtfeld:** Ein eindeutiger Identifier des ServiceProvider muss vorhanden sein.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Encounter.serviceProvider.display",
         "path": "Encounter.serviceProvider.display",
+        "comment": "**Begründung MS:** Ein Anzeigename für den ServiceProvider muss vorhanden sein.",
         "min": 1,
         "mustSupport": true
       }

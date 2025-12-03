@@ -11,7 +11,9 @@ Die Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Da
 Diese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.
 """
 * insert Meta
+* insert CommonElements
 * ^version = "1.1.0"
+* ^publisher = "HL7 International / FHIR Infrastructure"
 * ^date = "2023-01-11T15:34:32+11:00"
 * ^contact[0].name = "HL7 FHIR Infrastructure WG"
 * ^contact[=].telecom.system = #url
@@ -66,7 +68,7 @@ Diese lokale Definition wird durch das offizielle `backport-subscription-status-
 * parameter[type].name ^short = "Slice discriminator: the type of event for this notification"
 * parameter[type].value[x] 1.. MS
 * parameter[type].value[x] only code
-* parameter[type].value[x] from SubscriptionNotificationType (required)
+* parameter[type].value[x] from SubscriptionNotificationTypeVS (required)
 * parameter[type].value[x] ^short = "The type of event being conveyed with this notificaiton."
 * parameter[eventsSinceSubscriptionStart] ^short = "Parameter containing the number of events since this subscription started"
 * parameter[eventsSinceSubscriptionStart].name = "events-since-subscription-start" (exactly)

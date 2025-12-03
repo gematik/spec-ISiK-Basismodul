@@ -38,18 +38,6 @@ select
 	CanonicalURL: url, Intention: kind, Status: status, Version: version
 </fql>
 
-### Zu importierende Rollen
-<fql>
-from
-    CapabilityStatement
-where
-    url = %canonical
-select 
-    'SHALL Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHALL'),
-    'SHOULD Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHOULD'),
-    'MAY Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'MAY')
-</fql>
-
 ### Anforderungen an die FHIR-API
 <fql output="transpose" headers="true">
 from

@@ -4,8 +4,10 @@ Id: ISiKAMTSBewertung
 Title: "ISiK AMTS-Bewertung"
 Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risikobeurteilung im Rahmen der Arzneimitteltherapiesicherheit (AMTS)."
 * insert Meta
+* insert CommonElements
 * extension MS
 * extension contains ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS
+* extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Die Möglichkeit der freitextlichen Dokumentation dieser Daten wurde von der Fachseite (AG) gewünscht.
 
@@ -31,12 +33,14 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
 * subject only Reference(Patient)
   * reference 1.. MS
+    * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Referenz auf den Abteilungskontakt"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Der Encounter liefert den Kontext zur Risikobeurteilung.
 
   Hintergrund: Das MS wurde im Rahmen der Ausarbeitung zur Stufe 4 des ISiK Moduls Medikation hinzugefügt und mit den Stakeholdern abgestimmt. "
   * reference 1.. MS
+    * insert Comment-Reference-Encounter(Begründung MS)
 * occurrence[x] MS
   * ^short = "Zeitpunkt oder Zeitraum der Beurteilung"
   * ^comment = "Begründung des Must-Support-Support-Flag (MS): Die Angabe des Zeitpunkts oder Zeitraums ist essentiell für die Nachvollziehbarkeit.
@@ -118,9 +122,11 @@ Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Risi
 Instance: ExampleISiKAMTSBewertung1
 InstanceOf: ISiKAMTSBewertung
 Usage: #example
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Beispiel für eine AMTS Risikobewertung.</div>"
 * status = #final
 * code.text = "AMTS Risikobewertung"
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * encounter.reference = "Encounter/Fachabteilungskontakt"
 * occurrenceDateTime = 2024-02-20T13:14:32+01:00
 * condition.reference = "Condition/BehandlungsDiagnoseFreitext"

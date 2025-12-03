@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Koerpertemperatur_Speiseroehre
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-speiseroehre
 Title: "SD MII ICU Koerpertemperatur Speiseroehre"
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Speiseröhre in der Akutmedizin."
 * insert Meta
+* insert CommonElements
 * code
   * insert MII_SpecificIEEE-11073Slice
   * coding[snomed] 1..1

@@ -3,7 +3,9 @@ Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungSerumkreatinin
 Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumkreatinin eines Patienten in ISiK Szenarien."
 * insert Meta
+* insert CommonElements
 * code.coding[loinc] from ObservationCodesSerumkreatinin
+* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#70901006
 * valueQuantity from ObservationUnitsSerumkreatinin
 * referenceRange MS
@@ -14,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungSerumkreatinin1
 InstanceOf: ISiKLaboruntersuchungSerumkreatinin
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2160-0
 * code.coding[snomed] = $sct#70901006 "Creatinine measurement"

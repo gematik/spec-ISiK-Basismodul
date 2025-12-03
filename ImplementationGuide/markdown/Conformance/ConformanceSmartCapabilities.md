@@ -1,10 +1,14 @@
 # Conformance: SMART Capabilities
 
+---
+### Normativ
+---
+
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN eine _SMART Capabilities_ JSON-Datei als '.well-known'-Dokument (vgl. [RFC5785](https://datatracker.ietf.org/doc/html/rfc5785)) anbieten. Clients können auf diese Art und Weise u.a. abfragen, welche Kontexte und _Scopes_ seitens des ISiK-Ressourcenservers unterstützt werden.
 
-ISiK-Ressourcen-Server MÜSSEN dieses JSON-Dokument unter der URL bereitstellen, der durch Anhängen von ```/.well-known/smart-configuration``` an ihre Basis-URL gebildet wird. Die Kodierung der _SMART Capabilities_ MUSS den Vorgaben aus [SMART App Launch - 8.2 - FHIR Authorization Endpoint and Capabilities Discovery using a Well-Known Uniform Resource Identifiers (URIs)](https://hl7.org/fhir/smart-app-launch/STU2/conformance.html#using-well-known) entsprechen. 
+ISiK-Ressourcen-Server MÜSSEN dieses JSON-Dokument unter der URL bereitstellen, der durch Anhängen von ```/.well-known/smart-configuration``` an ihre Basis-URL gebildet wird. Die Kodierung der _SMART Capabilities_ MUSS den Vorgaben aus [SMART App Launch - 6.1 - FHIR Authorization Endpoint and Capabilities Discovery using a Well-Known Uniform Resource Identifiers (URIs)](https://hl7.org/fhir/smart-app-launch/STU2.2/conformance.html#using-well-known) entsprechen. 
 
-## Normative Vorgaben für ISiK-Connect
+## Vorgaben für Well-Known Capability Dokumente
 
 Im Rahmen des Bestätigungsverfahrens für ISiK-Connect werden die folgenden Angaben in den _SMART Capabilities_ eines ISiK-Ressourcenservers geprüft:
 
@@ -13,7 +17,7 @@ Im Rahmen des Bestätigungsverfahrens für ISiK-Connect werden die folgenden Ang
   * Der _Grant Type_ ```refresh_token``` SOLL unterstützt werden. Wenn dieser _Grant Type_ angegeben ist, MUSS eine Erneuerung des _Access Token_ über ein _Refresh Token_ möglich sein.
 * ```token_endpoint```: Es MUSS die URL des Token-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein Zugriffstoken zur Bestätigung einer Autorisierung zum Zugriff auf geschützte Ressourcen des ISiK-Ressourcenservers abgerufen werden kann ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-48}}).
 * ```code_challenge_methods_supported```: Es MÜSSEN die vom Autorisierungsserver unterstützten PKCE-Code-Challenge-Methoden angegeben sein. Die Methode ```S256``` MUSS unterstützt werden. Die Methode ```plain``` DARF NICHT unterstützt werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-49}}).
-* ```scopes_supported```: siehe {{pagelink:ImplementationGuide/markdown/ConformanceScopesKontexte.md, text:Scopes und Kontexte}}. Der ISiK-Ressourcen-Server MUSS alle aufgeführten _Scopes_ unterstützen. Er KANN weitere _Scopes_ unterstützen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-50}})s. 
+* ```scopes_supported```: siehe {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:Scopes und Kontexte}}. Der ISiK-Ressourcen-Server MUSS alle aufgeführten _Scopes_ unterstützen. Er KANN weitere _Scopes_ unterstützen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-50}})s. 
 * ```capabilities```
   * ```permission-v2```: ISiK-Ressourcen-Server MÜSSEN die SMARTv2-Syntax für die Kodierung von _Scopes_ unterstützen. Sie KÖNNEN zusätzlich auch die grobranulare Syntax von SMARTv1 unterstützen (```permission-v1```) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-51}})
 

@@ -2,11 +2,11 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementTerminRepositoryRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle",
-  "version": "5.0.0-rc",
+  "version": "5.1.0",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2024-11-25",
+  "date": "2025-10-23",
   "contact": [
     {
       "telecom": [
@@ -292,7 +292,7 @@
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/Slot-status",
               "type": "token",
-              "documentation": "**Beispiel:**    \n        `GET [base]/Slot?status=free&schedule=Schedule/ISiKTerminExample`\n        `GET [base]/Slot?status=free&schedule.actor:Practitioner.name=Musterarzt`    \n        **Anwendungshinweis:**   \n        Der Suchparameter `status` MUSS in Kombination ('&') mit dem Parameter `schedule` unterstützt werden. \n        Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.\n        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.  \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Slot?status=free&schedule=Schedule/ISiKTerminExample`\n        `GET [base]/Slot?status=free&schedule.actor:Practitioner.name=Musterarzt`    \n        **Anwendungshinweis:**   \n        Der Suchparameter `status` MUSS in Kombination ('&') mit dem Parameter `schedule` unterstützt werden. \n        Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.\n        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden. Falls der Parameter nicht alleinstehend unterstützt wird, dann SOLL der Server einen Fehler-Code 422 (Unprocessable Entity) zurückgeben, falls ein Client den Parameter alleinstehend verwendet. Zudem SOLL eine OperationOutcome über die fehlende Kombination bei der Suchanfrage Auskunft geben.\n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             },
             {
               "extension": [

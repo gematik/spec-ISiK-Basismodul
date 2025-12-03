@@ -1,10 +1,6 @@
 
 # SMART Backend Services
 
----
-### Informativ
----
-
 Die SMART Backend Services spezifizieren ein standardisiertes Autorisierungsverfahren für serverseitige Anwendungen, die autonom oder semi-autonom auf FHIR-APIs zugreifen müssen. Diese Anwendungen agieren ohne direkten Endnutzer-Context und sind für den sicheren, regelmäßigen oder ereignisgesteuerten Datenaustausch mit FHIR-Servern ausgelegt.
 
 | Beispiel                         | Funktion / Beschreibung                                                                                                   | Typischer Zugriff                          |

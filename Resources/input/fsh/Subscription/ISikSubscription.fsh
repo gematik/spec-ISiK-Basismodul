@@ -11,12 +11,13 @@ Um als Subsystem über ein Subsription-Event informiert zu werden, KANN der FHIR
 
 ### Kompatibilität
 
-Das Profil PatientMergeSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).  
+Das Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).
 Der [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta
+* insert CommonElements
 * ^fhirVersion = #4.0.1
 * status MS
   * ^short = "Status"
@@ -80,19 +81,6 @@ Description: "ISiKSubscriptionNotification"
 * insert Meta
 * ^fhirVersion = #4.0.1
 
-
-/* TODO: für folgende Felder gab es im IG Beschreibungen, hier aber keine Elemente:
-
-### `Subscription.category`
-**Bedeutung:** Canonical URL des Subscription-Topics, aktuell wird nur folgendes SubscriptionTopic unterstützt: https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
-**Hinweise:** Siehe [Subscriptions R5 Backport](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html)
-
-### `Subscription.payload.extension[content]`
-**Bedeutung:** Welcher Ressourceninhalt in der Nutzlast der Benachrichtigung geliefert werden soll. Zur Auswahl stehen eine leere Nutzlast (`empty`), nur die Ressourcen-id (`id-only`) oder der gesamte Inhalt der Ressource (`full-resource`).
-**Hinweise:** Siehe [Extension: Backport R5 Subscription Payload Content Information](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-payload-content.html)
-*/   
-
-
 Instance: PatientMergeSubscriptionExample
 InstanceOf: ISiKSubscription
 Usage: #example
@@ -105,13 +93,6 @@ Usage: #example
   * payload = #application/fhir+json
     * extension[content].valueCode = #full-resource
   * header = "Authorization: Bearer xxxxxxxxxx"
-
-ValueSet: RestSubscriptionChannelType
-Id: RestSubscriptionChannelType
-Title: "RestSubscriptionChannelType"
-Description: "Rest Subscription Channel Type for ISiK"
-* insert Meta
-* SubscriptionChannelType#rest-hook
 
 Instance: SubscriptionNotificationBundleExample
 InstanceOf: ISiKSubscriptionNotification

@@ -1,18 +1,18 @@
-Alias: $ISIKVersion = 5.0.0-rc
+Alias: $ISIKVersion = 5.1.0
 
 RuleSet: Meta
 * ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2024-11-25"
+* ^date = "2025-10-23"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2024-11-25"
+* date = "2025-10-23"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -48,8 +48,9 @@ wird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/
 Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen 
 und die Versionsnummer angeben.   
 Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.
+Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.
 
-Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement mit `SHALL` gekennzeichnet sind. 
+Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. 
 Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, 
 sofern diese in der Instanz implementiert wurden.  
 
@@ -100,6 +101,13 @@ RuleSet: supportedLaborProfile
   * extension.url = $capabilitystatement-expectation
   * extension.valueCode = #SHALL
 
+RuleSet: ISiKVitalsignCommonsValue
+// ISiK Vitalsign Commons Value is needed for the ISiK Vitalsign Profiles since some of them are not using the value[x] element (e.g. ISiKBlutdruck is using component).
+* insert Meta
+* value[x] MS
+  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
+  * ^short = "Untersuchungsergebnis"
+
 RuleSet: ISiKVitalsignCommons
 * insert Meta
 * status MS
@@ -123,16 +131,14 @@ RuleSet: ISiKVitalsignCommons
     * ^short = "SNOMED CT Kodierung"
     * ^comment = "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT."
 * subject MS
-  * ^comment = "Motivation MS: Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * insert Comment-Reference-Subject(Motivation MS)
   * ^short = "Patient"
 * encounter MS
-  * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Aufenthaltsbezug"
+  * ^comment = "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant"
   * reference 1.. MS
     * ^short = "Encounter-Link"
-    * ^comment = """**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.  
-**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene "Abteilungskontakt" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes "Fall") erfolgen.  
-Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"Fallnummer" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)"""
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
 * effective[x] MS
   * ^comment = "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant"
   * ^short = "Datum und Uhrzeit der Untersuchung"
@@ -140,17 +146,22 @@ Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)"
   * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
   * ^short = "Untersuchender"
 * method MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden
+
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Untersuchungsmethode"
 * device MS
-  * ^comment = "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit"
+  * ^comment = "**Einschränkung der übergreifenden MS-Definition:**  
+  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.
+
+  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht."
   * ^short = "Gerät"
 * dataAbsentReason MS
   * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
   * ^short = "Grund für fehlende Untersuchungsergebnisse"
-* value[x] MS
-  * ^comment = "Motivation MS: Der Wert des Vitalparameters ist das zentrale Ergebnis der Untersuchung"
-  * ^short = "Untersuchungsergebnis"
+
 
 RuleSet: Quantity-MS
 * valueQuantity MS
@@ -174,11 +185,25 @@ RuleSet: CodeableConcept-MS
   * ^comment = "Motivation MS: Semantische Kodierung."
   * ^short = "Coding"
   * code MS
-    * ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
-    * ^short = "Code"
+    * insert Coding-Code-MS
   * system MS
-    * ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
-    * ^short = "System"
+    * insert Coding-System-MS
+
+RuleSet: Coding-Code-MS
+* ^short = "Code"
+* ^comment = "Motivation MS: Kodierter Wert aus einem CodeSystem."
+
+RuleSet: Coding-System-MS
+* ^short = "System"
+* ^comment = "Motivation MS: URL des CodeSystems des kodierten Wertes."
+
+RuleSet: Coding-Display-MS
+* ^short = "Display"
+* ^comment = "Motivation MS: Anzeigename des kodierten Wertes."
+
+RuleSet: Coding-Version-MS
+* ^short = "Version"
+* ^comment = "Motivation MS: Version des kodierten Wertes."
 
 RuleSet: Component-MS
 * ^comment = "Motivation MS: Erfassung der Komponenten eines Vitalparameters" 
@@ -202,7 +227,7 @@ RuleSet: Observation-category-VSCat-MS
   * ^short = "Vitalparameterkategorie"
 
 RuleSet: EffectiveAndPerformer
-* performer.reference = "Practitioner/DrMedMusterarzt"
+* performer = Reference(PractitionerWalterArzt)
 * effectiveDateTime = 2021-09-01T12:00:00Z
 
 
@@ -211,3 +236,65 @@ RuleSet: MII_SpecificIEEE-11073Slice
 * coding contains 
   specific-IEEE-11073 0..1 MS
 
+
+RuleSet: CommonElements
+* id MS
+  * ^short = "serverseitige, interne ID des Datensatzes"
+  * ^comment = "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. "
+* meta.lastUpdated
+  * ^short = "Zeitpunkt der letzten Änderung"
+  * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. " 
+* meta.versionId 
+  * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
+  * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
+  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+
+RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
+* location 1.. MS
+  * ^short = "Aufenthaltsort"
+  * reference MS
+    * ^short = "Location-Link"
+    * ^comment = "**Begründung MS:** Die Verlinkung auf eine Location-Ressource dient der technischen Zuordnung des Besuchs zu einem Aufenthaltsort 
+    und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
+  * identifier 1.. MS
+    * ^short = "Identifier des Aufenthaltsortes"
+    * system MS
+      * ^short = "Namensraum des Identifiers"
+      * ^comment = "Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben, 
+    aus dem der Identifier stammt. 
+    Hinweise zur Festlegung der URLs für lokale Namensräume sind in den 
+    [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current) beschrieben.  
+    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher. Darüber hinaus ermöglicht es der Identifier, die Suche (z.B. von aktuellen Aufenthalten auf einer Station) mittels `/Encounter?location:identifier=XXX` auch dann zu nutzen, wenn keine Verlinkung auf eine Location-Ressource vorhanden ist. Auf `location.display` ist im Standard derzeit kein Suchparameter definiert."
+    * value 1.. MS
+      * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
+      **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+  * display 1.. MS
+    * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
+
+RuleSet: ISiKMedikament-CodingPZNComment
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."
+
+RuleSet: ISiKMedikament-CodingATCComment
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+
+
+RuleSet: Comment-Reference-Subject(Einleitung)
+* ^comment = "**{Einleitung}:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
+
+RuleSet: Comment-Reference-Encounter-with-hint(Einleitung)
+* ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  
+Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)
+Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
+
+RuleSet: Comment-Reference-Encounter(Einleitung)
+* ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
+Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
+Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."

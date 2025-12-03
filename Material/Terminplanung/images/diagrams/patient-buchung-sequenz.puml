@@ -4,9 +4,9 @@ actor Buchende
 participant "Termin-Requestor (Patientenportal)" as TR
 participant "Termin-Repository" as TRP
 
-Buchende -> TR: Registrierung mit Name, Geburtsdatum, E-Mail (ggf. Adresse, Versicherung)
-TR -> Buchende: Bestätigungsmail
-note right of TR: Account angelegt, aber Identität nicht verifiziert
+Buchende -> TR: (optional). Schnelleingabe Patienten Identität (z.B. gID, KVNR)
+TR -> Buchende: (optional) Bestätigungsmail
+note right of TR: (optional) Account angelegt, aber Identität nicht verifiziert
 
 Buchende -> TR: Auswahl Fachbereich / Behandlungstermin
 TR -> TRP: Anfrage verfügbare Termine für Fachbereich

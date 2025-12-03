@@ -2,7 +2,7 @@
 topic: Artefakte
 ---
 
-## {{page-title}}
+# {{page-title}}
 
 ## Festlegungen
 

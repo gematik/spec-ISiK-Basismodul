@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Koerpertemperatur_Blut
 Parent: ISiKKoerperkerntemperatur
 Id: sd-mii-icu-koerpertemperatur-blut
 Title: "SD MII ICU Koerpertemperatur Blut"
+Description: "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen im Blut in der Akutmedizin."
 * insert Meta
+* insert CommonElements
 * code
   * insert MII_SpecificIEEE-11073Slice
   * coding[snomed] 1..1

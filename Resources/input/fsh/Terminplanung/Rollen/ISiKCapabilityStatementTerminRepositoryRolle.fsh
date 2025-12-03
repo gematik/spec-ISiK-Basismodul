@@ -117,7 +117,7 @@ Usage: #definition
         **Anwendungshinweis:**   
         Der Suchparameter `status` MUSS in Kombination ('&') mit dem Parameter `schedule` unterstützt werden. 
         Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.
-        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.  
+        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden. Falls der Parameter nicht alleinstehend unterstützt wird, dann SOLL der Server einen Fehler-Code 422 (Unprocessable Entity) zurückgeben, falls ein Client den Parameter alleinstehend verwendet. Zudem SOLL eine OperationOutcome über die fehlende Kombination bei der Suchanfrage Auskunft geben.
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
     * searchParam[+]
       * insert Expectation (#SHALL) 

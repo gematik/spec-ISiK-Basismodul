@@ -1,12 +1,8 @@
 # Schritt 1: Registrierung eines SMART Clients mit dem EHR
 
----
-### Informativ
----
+Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann, muss der Client beim Autorisierungsserver des EHR registriert werden. Per Abschnitt [SMART App Launch - 2.1.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-1-register) ist ihm freigestellt, wie diese Registrierung durchgeführt wird.
 
-Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann, muss der Client beim Autorisierungsserver des EHR registriert werden. Per Abschnitt [SMART App Launch - 2.0.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-1-register) ist ihm freigestellt, wie diese Registrierung durchgeführt wird.
-
-Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#request) unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt [7.  Receiving the Authorization Response in a Native App](https://datatracker.ietf.org/doc/html/rfc8252#section-7) hingewiesen. Für Redirect URIs sind folgende Schemata zu unterstützen:
+Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#request) unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt [7.  Receiving the Authorization Response in a Native App](https://datatracker.ietf.org/doc/html/rfc8252#section-7) hingewiesen. Für Redirect URIs sind folgende Schemata zu unterstützen:
 
 - Private-Use URI Scheme Redirection
 - Claimed "https" Scheme URI Redirection

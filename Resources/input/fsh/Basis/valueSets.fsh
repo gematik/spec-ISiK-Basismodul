@@ -90,9 +90,9 @@ Id: StillstatusVS
 Title: "Stillstatus LOINC Antwortoptionen"
 Description: "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC."
 * insert Meta
-* LOINC#LA4489-6 "Unknown"
-* LOINC#LA29253-4 "Not currently breastfeeding"
-* LOINC#LA29252-6 "Currently breastfeeding"
+* $loinc#LA4489-6 "Unknown"
+* $loinc#LA29253-4 "Not currently breastfeeding"
+* $loinc#LA29252-6 "Currently breastfeeding"
 
 ValueSet: ISiKBesondereBehandlungsformRehaVS
 Id: ISiKBesondereBehandlungsformReha
@@ -112,11 +112,11 @@ Description: "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung d
 * insert Meta
 * include codes from system ISiKEntlassformRehaCS
 
-ValueSet: ISiKUnterbrechnungRehaVS
-Id: ISiKUnterbrechnungReha
+ValueSet: ISiKUnterbrechungRehaVS
+Id: ISiKUnterbrechungReha
 Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung."
 * insert Meta
-* include codes from system ISiKUnterbrechnungRehaCS
+* include codes from system ISiKUnterbrechungRehaCS
 
 Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
 
@@ -137,27 +137,27 @@ Description: "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab an
 * ^jurisdiction = $m49.htm#001
 * ^immutable = false
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
-* LOINC#LA18976-3 "Current every day smoker"
-* LOINC#LA18976-3 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18976-3 ^extension[=].valueDecimal = 1
-* LOINC#LA18977-1 "Current some day smoker"
-* LOINC#LA18977-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18977-1 ^extension[=].valueDecimal = 2
-* LOINC#LA15920-4 "Former smoker"
-* LOINC#LA15920-4 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA15920-4 ^extension[=].valueDecimal = 3
-* LOINC#LA18978-9 "Never smoker"
-* LOINC#LA18978-9 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18978-9 ^extension[=].valueDecimal = 4
-* LOINC#LA18979-7 "Smoker, current status unknown"
-* LOINC#LA18979-7 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18979-7 ^extension[=].valueDecimal = 5
-* LOINC#LA18980-5 "Unknown if ever smoked"
-* LOINC#LA18980-5 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18980-5 ^extension[=].valueDecimal = 6
-* LOINC#LA18981-3 "Heavy tobacco smoker"
-* LOINC#LA18981-3 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18981-3 ^extension[=].valueDecimal = 7
-* LOINC#LA18982-1 "Light tobacco smoker"
-* LOINC#LA18982-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
-* LOINC#LA18982-1 ^extension[=].valueDecimal = 8
+* $loinc#LA18976-3 "Current every day smoker"
+* $loinc#LA18976-3 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18976-3 ^extension[=].valueDecimal = 1
+* $loinc#LA18977-1 "Current some day smoker"
+* $loinc#LA18977-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18977-1 ^extension[=].valueDecimal = 2
+* $loinc#LA15920-4 "Former smoker"
+* $loinc#LA15920-4 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA15920-4 ^extension[=].valueDecimal = 3
+* $loinc#LA18978-9 "Never smoker"
+* $loinc#LA18978-9 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18978-9 ^extension[=].valueDecimal = 4
+* $loinc#LA18979-7 "Smoker, current status unknown"
+* $loinc#LA18979-7 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18979-7 ^extension[=].valueDecimal = 5
+* $loinc#LA18980-5 "Unknown if ever smoked"
+* $loinc#LA18980-5 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18980-5 ^extension[=].valueDecimal = 6
+* $loinc#LA18981-3 "Heavy tobacco smoker"
+* $loinc#LA18981-3 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18981-3 ^extension[=].valueDecimal = 7
+* $loinc#LA18982-1 "Light tobacco smoker"
+* $loinc#LA18982-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
+* $loinc#LA18982-1 ^extension[=].valueDecimal = 8

@@ -2,7 +2,9 @@ Profile: SD_MII_ICU_Rechtsatrialer_Druck
 Parent: SD_MII_ICU_Sonstige_Pulsatile_Druecke_Generisch
 Id: sd-mii-icu-rechtsatrialer-druck
 Title: "SD MII ICU Rechtsatrialer Druck"
+Description: "Dieses Profil dient der spezialisierten Abbildung des rechtsatrialen Drucks in der Akutmedizin."
 * insert Meta
+* insert CommonElements
 * category = $observation-category#vital-signs
 * code
   * coding ..4
