@@ -38,7 +38,7 @@ Primär zu berücksichtigende User sind
 * Pharmazeutisches Personal (Apotheker, PTAs etc.)
 * Patienten (bei Aufnahme, Entlassung, stationärer Medikation usw.)
 
-Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.page.md?version=current). Primär hervorzuheben sind dabei:
+Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme). Primär hervorzuheben sind dabei:
 * KIS, auch fokussierte KIS der Dentalklinik oder der Mund-, Kiefer- und Gesichtschirurgie
 * KIS-Submodule der Medikation
 * Eigenständige Systeme der Krankenhausapotheke (AVS)
@@ -60,7 +60,7 @@ Als Übergreifender Use Case ist AMTS grundsätzlich im Modul Medikation veranke
  
 ### 3.3. Weitere zu berücksichtigende Systeme und Standards
 
-Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Kompatibilitaet.page.md?version=current) sollen weiterhin gewahrt bleiben.
+Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Kompatibilitaet?version=5.1.0) sollen weiterhin gewahrt bleiben.
 
 Da mit dem [MIO Medikationsplan](https://mio.kbv.de/display/EMP1X0X0/) eine FHIR-basierte Lösung zur Verwendung in der ePA für Alle erstellt wird, sollte die Kompatibilität sowohl organisatorisch als auch in der Umsetzung der Spezifikation angestrebt werden.
 
