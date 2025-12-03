@@ -17,7 +17,7 @@ Es gelten die allgemeinen Vorgaben der FHIR-Kernspezifikation für die Ausführu
 
 Folgende Schritte KÖNNEN notwendig sein, sodass ein Termin durch einen Termin-Requestor innerhalb eines Termin-Repository eingestellt wird. Es ist zu beachten, dass für spezielle Implementierungen nicht alle Schritte hiervon relevant sind und übersprungen werden können.
 
-Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://simplifier.net/guide/isik-connect-stufe-5?version=current) verwiesen.
+Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://simplifier.net/guide/isik-connect-stufe-5) verwiesen.
 
 User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Patientenportal einen Termin in der allgemeinmedizinischen Ambulanz eines Krankenhauses. Da der Patient seit Tagen Bauchschmerzen hat, die in den letzten Stunden stärker werden, wählt er die Priorität "Notfall".
 
@@ -246,7 +246,7 @@ Beispiel: Absage eines Termins
 Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten Elemente zur Folge hat, z.B. aufgrund einer zeitlichen Verschiebung des Termins, so kann die Appointment-Ressource erneut unter Beibehaltung der id an die $book-Operation übergeben werden. Das Termin-Repository kann so feststellen, ob der Termin in abgeänderter Form verfügbar ist.
 ### Anlage einer Patient-Ressource
 
-Ein Termin-Repository SOLL die Anlage (Create-Interaktion) einer Patient-Ressource entsprechend der Vorgaben des [ISiK-Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md?version=current) unterstützen.
+Ein Termin-Repository SOLL die Anlage (Create-Interaktion) einer Patient-Ressource entsprechend der Vorgaben des [ISiK-Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest) unterstützen.
 
 Ein Termin-Repository MUSS die Übergabe einer Patienten-Instanz mittels des entsprechenden Parameters in der $book-operation unterstützen (s.u.). 
 ### Asynchrone Ausführung $book
