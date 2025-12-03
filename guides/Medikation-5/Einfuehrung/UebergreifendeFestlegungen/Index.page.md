@@ -1,6 +1,6 @@
 # Übergreifende Festlegungen
 
-Es gelten die Festlegungen aus dem Modul ISiK [ISiK Basis Stufe 4](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen?version=current).
+Es gelten die Festlegungen aus dem Modul ISiK [ISiK Basis](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
 
 Darüber hinaus gelten in diesem Modul folgende Datenobjekt-übergreifende Festlegungen:
 
