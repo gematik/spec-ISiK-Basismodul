@@ -19,9 +19,9 @@ Dieses Modul unterscheidet CapabilityStatements für:
 - Abfragen administrativer Daten zum Patienten und Fallkontakt (Encounter)
 - Abfragen von Vitalparametern
 
-Alle bestätigungsrelevanten Systeme MÜSSEN im Sinne der [Herstellung des Patienten- und Encounter-Kontextes](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext.md?version=current) Interaktionen auf die entsprechenden Profile unterstützen:
+Alle bestätigungsrelevanten Systeme MÜSSEN im Sinne der [Herstellung des Patienten- und Encounter-Kontextes](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext) Interaktionen auf die entsprechenden Profile unterstützen:
 
 {{render:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMinimalAdministrativeDataSource}}
 
 
-Die CapabilityStatements gelten für alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.page.md?version=current), die unter die Definition der 'Vitalparameter und Körpermaße' fallen  :
+Die CapabilityStatements gelten für alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme), die unter die Definition der 'Vitalparameter und Körpermaße' fallen  :
