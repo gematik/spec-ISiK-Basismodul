@@ -156,9 +156,47 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Wert der Beobachtung",
-        "comment": "Bedeutung: Erfasster Wert der Observation.",
+        "comment": "**Begründung Must-Support:** Erfasster Wert der Observation.",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueDateTime",
+        "path": "Observation.value[x]",
+        "sliceName": "valueDateTime",
+        "comment": "**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "comment": "**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "mustSupport": true
       },
       {
