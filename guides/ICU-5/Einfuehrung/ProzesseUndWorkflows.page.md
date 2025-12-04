@@ -41,5 +41,6 @@ Eine Abfrage per HTTP GET allein reicht nicht aus, um die benötigten Daten rech
 - FHIR Subscription (vgl. im ISiK Kontext [Patient merge Notification](https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Spezifikation/Patientenzusammenführung)
 - Create-Interaktion (POST) (vgl. im ISiK Kontext [REST-API](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest))
 - HL7 v2 Messaging
+- Rückübermittelung als FHIR Document per [ISiKBerichtSubSysteme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem)
 
 - etc.
