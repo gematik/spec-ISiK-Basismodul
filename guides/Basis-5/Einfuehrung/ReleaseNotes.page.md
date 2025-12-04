@@ -29,6 +29,7 @@ Datum: tbd.
 * `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können https://github.com/gematik/spec-ISiK-Basismodul/pull/904
 * `documentation` Korrektur des Satzes zur Verwendung von ISiKBinary https://github.com/gematik/spec-ISiK-Basismodul/pull/930
 * `documentation` Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt
+* `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation https://github.com/gematik/spec-ISiK-Basismodul/pull/945
 
 ## Version 5.1.0
 
