@@ -38,7 +38,7 @@ Primär zu berücksichtigende User sind
 * Pharmazeutisches Personal (Apotheker, PTAs etc.)
 * Patienten (bei Aufnahme, Entlassung, stationärer Medikation usw.)
 
-Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.page.md). Primär hervorzuheben sind dabei:
+Beteiligte Systeme sind prinzipiell alle [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme). Primär hervorzuheben sind dabei:
 * KIS, auch fokussierte KIS der Dentalklinik oder der Mund-, Kiefer- und Gesichtschirurgie
 * KIS-Submodule der Medikation
 * Eigenständige Systeme der Krankenhausapotheke (AVS)
