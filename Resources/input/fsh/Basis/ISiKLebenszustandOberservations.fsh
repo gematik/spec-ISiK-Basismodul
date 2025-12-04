@@ -72,7 +72,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * effective[x] only dateTime or Period
 * value[x] 1.. MS
   * ^short = "Wert der Beobachtung"
-  * ^comment = "Bedeutung: Erfasster Wert der Observation."
+  * ^comment = "**Begründung Must-Support:** Erfasster Wert der Observation."
+* valueDateTime MS
+  * ^comment = "**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert."
+* valueCodeableConcept MS
+  * ^comment = "**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept."
 //folgende Elemente hatten bislang kein MS-Flag, aber  im IG gab es  Anmerkungen dazu:   
 * component
   //TODO:  * ^short = ""
