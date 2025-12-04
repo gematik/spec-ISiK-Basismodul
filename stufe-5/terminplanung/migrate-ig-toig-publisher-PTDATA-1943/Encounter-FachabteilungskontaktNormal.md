@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * ****
 
 ## Encounter: 
@@ -38,9 +38,9 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Condition** | **Use** | **Rank** |
-| * | [Condition Primäre Gonarthrose, beidseitig](Condition-PrimaereGonarthroseNormal.md) | Behandlungsrelevante Diagnosen | 1 |
+| * | [Condition/PrimaereGonarthroseNormal](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/PrimaereGonarthroseNormal) | Behandlungsrelevante Diagnosen | 1 |
 
-**account**: [Account: identifier = Account number; status = active; type = inpatient encounter](Account-AbrechnungsfallGonarthrose.md)
+**account**: [Account/AbrechnungsfallGonarthrose](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Account/AbrechnungsfallGonarthrose)
 
 ### Hospitalizations
 
@@ -49,9 +49,9 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 | - | **AdmitSource** | **DischargeDisposition** |
 | * | Einweisung durch einen Arzt |  |
 
-> **location****location**:[Zimmer 1234](Location-RaumStandortBeispiel.md)**status**: Active**physicalType**:Room
+> **location****location**:[Zimmer 1234](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Location/RaumStandortBeispiel)**status**: Active**physicalType**:Room
 
-> **location****location**:[Bettenstellplatz 1234](Location-BettenstellplatzStandortBeispiel.md)**status**: Active**physicalType**:Bed
+> **location****location**:[Bettenstellplatz 1234](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Location/BettenstellplatzStandortBeispiel)**status**: Active**physicalType**:Bed
 
 > **location****location**: Ward 1234 (Identifier:`https://test.krankenhaus.de/fhir/sid/stationid`/1234)**status**: Active
 

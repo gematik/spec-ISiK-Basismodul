@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * ****
 
 ## Encounter: 
@@ -24,7 +24,7 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 
 **period**: 2024-10-14 --> 2024-10-14
 
-**account**: [Account: identifier = Account number; status = active; type = inpatient encounter](Account-SZ1DRGFall.md)
+**account**: [Account/SZ1DRGFall](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Account/SZ1DRGFall)
 
 
 

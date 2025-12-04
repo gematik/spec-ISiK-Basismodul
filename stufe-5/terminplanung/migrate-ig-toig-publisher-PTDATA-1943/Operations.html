@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Operation $book - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Index</a>
+  </li>
+  <li><a name="l159">​</a>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">UseCases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UseCases.html">UseCases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität</a>
+      </li>
+      <li>
+        <a href="Prozesse.html">Prozesse</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+      <li>
+        <a href="Architekturoptionen.html">Architekturoptionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Festlegungen</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Operations.html">Operation $book</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR-Artefakte
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefakte</a>
+      </li>
+      <li>
+        <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Test Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Operation $book</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Operation $book</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#operations" id="markdown-toc-operations">Operations</a>    <ul>
+      <li><a href="#buchung-eines-termins" id="markdown-toc-buchung-eines-termins">Buchung eines Termins</a></li>
+      <li><a href="#übersicht-interaktion-termin-requestor-mit-termin-repository" id="markdown-toc-übersicht-interaktion-termin-requestor-mit-termin-repository">Übersicht Interaktion Termin-Requestor mit Termin-Repository</a></li>
+      <li><a href="#aktualisierung--absage-eines-termins" id="markdown-toc-aktualisierung--absage-eines-termins">Aktualisierung / Absage eines Termins</a></li>
+      <li><a href="#anlage--aktualisierung-einer-patient-ressource" id="markdown-toc-anlage--aktualisierung-einer-patient-ressource">Anlage / Aktualisierung einer Patient-Ressource</a></li>
+      <li><a href="#asynchrone-ausführung-book" id="markdown-toc-asynchrone-ausführung-book">Asynchrone Ausführung $book</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h1 id="operations">Operations</h1>
+
+<p>Es gelten die allgemeinen Vorgaben der FHIR-Kernspezifikation für die Ausführung von <a href="https://www.hl7.org/fhir/R4/operations.html">Custom Operations</a>.</p>
+
+<hr/>
+
+<h3 id="buchung-eines-termins">Buchung eines Termins</h3>
+
+<h3 id="übersicht-interaktion-termin-requestor-mit-termin-repository">Übersicht Interaktion Termin-Requestor mit Termin-Repository</h3>
+
+<p>Folgende Schritte KÖNNEN notwendig sein, sodass ein Termin durch einen Termin-Requestor innerhalb eines Termin-Repository eingestellt wird. Es ist zu beachten, dass für spezielle Implementierungen nicht alle Schritte hiervon relevant sind und übersprungen werden können.</p>
+
+<p>Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das <a href="https://simplifier.net/guide/isik-connect-stufe-5">ISiK-Modul ‘Connect’</a> verwiesen.</p>
+
+<p>User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Patientenportal einen Termin in der allgemeinmedizinischen Ambulanz eines Krankenhauses. Da der Patient seit Tagen Bauchschmerzen hat, die in den letzten Stunden stärker werden, wählt er die Priorität “Notfall”.</p>
+
+<ol>
+  <li>Abfrage aller Kodierungen der angebotenen gesundheitlichen Dienstleistungen durch den Termin-Requestor: <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|HealthcareService</code> bzw. <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|Schedule</code></li>
+</ol>
+
+<p>Das Termin-Repository MUSS alle CodeSysteme exponieren, welche für die Kodierung einer verfügbaren gesundheitlichen Dienstleistungen relevant sind. Die Anfrage ist nicht auf HealthcareService beschränkt. Weitere Ressourcen-Kontexte können hierfür relevant sein. Beispielsweise erfolgt die Kodierung der Leistungen für einen Behandler im Kontext eines Schedules (vgl. ). Alle verwendeten CodeSysteme MÜSSEN exponiert werden, insoweit diese sich als CodeSystem-Ressourcen ausdrücken lassen.</p>
+
+<p>Hinweis: Diese Abfrage ist für eine Initialisierung des Termin-Requestors gedacht. Es ist davon auszugehen, dass diese Auswahlliste nicht dynamisch angepasst wird durch das Termin-Repository und nicht bei jeder Terminbuchung erneut abgefragt werden muss.</p>
+
+<ol>
+  <li>Abfrage aller verfügbaren Kalender durch den Termin-Requestor: <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/Schedule</code> bzw. <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/Schedule?actor=Practitioner/ISiKPractitionerExample</code></li>
+</ol>
+
+<p>Der Termin-Requestor KANN durch die Abfrage aller verfügbaren Kalender alle Ressourcen abfragen, für die eine Terminbuchung zur Verfügung steht. Diese Abfrage kann auf ein oder mehrere Akteure eingeschränkt werden.</p>
+
+<ol>
+  <li>Abfrage aller verfügbaren Slots für einen Kalender durch den Termin-Requestor: <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/Slot?schedule=&lt;Schedule/ISiKKalenderExample&gt;&amp;status=free</code></li>
+</ol>
+
+<p>In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: <code class="language-plaintext highlighter-rouge">GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT</code></p>
+
+<ol>
+  <li>Anlage einer Patient-Ressource durch den Termin-Requestor: <code class="language-plaintext highlighter-rouge">POST https://example.org/fhir/Patient</code></li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/common-meta-tag-de"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der <code class="language-plaintext highlighter-rouge">patient</code>-Parameter in der <code class="language-plaintext highlighter-rouge">$book</code>-Operation zu verwenden.</p>
+
+<ol>
+  <li>Aufruf der $book-Operation durch den Termin-Requestor: <code class="language-plaintext highlighter-rouge">POST https://example.org/fhir/Appointment/$book</code></li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISiKTerminExample"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/common-meta-tag-de"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-10T09:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-10T09:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"slot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISiKSlotExample"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"serviceType"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/service-type"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"specialty"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"010"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:1.2.276.0.76.5.114"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Patient"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/example"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"_priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25876001"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Antwort des Termin-Repository:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISiKTerminExample"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"external"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.de/CodeSystem/common-meta-tag-de"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-10T09:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-10T09:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"slot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISiKSlotExample"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"serviceType"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/service-type"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"specialty"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"010"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:1.2.276.0.76.5.114"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Patient"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/example"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"_priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25876001"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Für den Fall, dass ein Termin-Repository zum aktuellen Zeitpunkt keine Terminbestätigung geben kann, wird in der Antwortnachricht zurückgegebenen Appointment-Ressource der Wert von “Appointment.status” auf “pending” gesetzt. Als HTTP-Status-Code MUSS das Termin-Repository “202 - Accepted” zurückgeben.
+Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status “pending” seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf “booked” bzw. “cancelled” stellen. Sofern dieses unterstützt wird, SOLL eine Benachrichtigung des Termin-Consumers per Push-Mechanismus erfolgen (siehe auch nächster Abschnitt). In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.</p>
+
+<hr/>
+
+<h3 id="aktualisierung--absage-eines-termins">Aktualisierung / Absage eines Termins</h3>
+
+<p>Es ist zu beachten, dass es aus Effizienzgründen für bestimmte Implementierungen sinnvoll sein kann, dass Updates einer Appointment-Ressource ausgelöst durch das Termin-Repository mittels eines Push-Mechanismus an Termin-Consumer / Termin-Requestor übermittelt werden. Im Standard-Fall müssen diese Akteure die Ressourcen mittels des entsprechenden Endpunktes eigenständig abfragen und auf Updates überprüfen. Für einen Push-Mechanismus wird auf <a href="https://www.hl7.org/fhir/R4/subscription.html">FHIR Subscriptions</a> verwiesen. Die vorliegende Spezifikation macht jedoch KEINE Vorgaben für die Verwendung einer solchen Methodik.</p>
+
+<p>Eine Aktualisierung der Ressource erfolgt mittels einer <a href="https://www.hl7.org/fhir/R4/http.html#patch">HTTP PATCH-Interaktion</a>. Updates einer Appointment-Ressource MUSS das Termin-Repository unterstützen. Es MUSS mindestens die PATCH-Interaktion auf Basis einer FHIRPath-Patch-Parameter Ressource unterstützt werden.</p>
+
+<p>Folgende Elemente DÜRFEN NICHT durch ein Update der Ressourcen verändert werden:</p>
+
+<ul>
+  <li>Appointment.slot</li>
+  <li>Appointment.start</li>
+  <li>Appointment.end</li>
+  <li>Appointment.participant.actor.where(resolve() is Patient)</li>
+</ul>
+
+<p><strong>Hinweis:</strong> Ein Termin-Repository MUSS einen Termin ablehnen, falls der Termin auf einen nicht vorhandenen (gelöscht oder inaktiv) Patienten referenziert. Dies gilt insbesondere auch nachträglich für vorläufig angelegte Patienten-Ressourcen.</p>
+
+<p>Sollte die PATCH-Parameter-Ressource eins dieser Elemente verändern, MUSS die Operation mit einem Status Code “HTTP 400 - Bad Request” zurückgewiesen werden. Eine OperationOutcome Ressource MUSS zurückgegeben werden, die in kodierter Form den entsprechenden Fehler beschreibt.</p>
+
+<p>Beispiel: Absage eines Termins</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replace"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment.status"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten Elemente zur Folge hat, z.B. aufgrund einer zeitlichen Verschiebung des Termins, so kann die Appointment-Ressource erneut unter Beibehaltung der id an die $book-Operation übergeben werden. Das Termin-Repository kann so feststellen, ob der Termin in abgeänderter Form verfügbar ist.</p>
+
+<h3 id="anlage--aktualisierung-einer-patient-ressource">Anlage / Aktualisierung einer Patient-Ressource</h3>
+
+<p>Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patient-Ressource im Kontext der Terminbuchung zu erstellen oder zu übermitteln:</p>
+
+<ul>
+  <li>
+    <p>Direkte Erstellung über Create-Interaktion:
+Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest">ISiK-Basismoduls (Stufe 5)</a>.<br/>
+Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.</p>
+
+    <blockquote>
+      <p><strong>Hintergrund</strong>: Ein Update der Patient-Ressource über den <code class="language-plaintext highlighter-rouge">patient</code>-Parameter in der <code class="language-plaintext highlighter-rouge">$book</code>-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Übergabe innerhalb der <code class="language-plaintext highlighter-rouge">$book</code>-Operation:
+Das Termin-Repository unterstützt die Übergabe einer Patient-Instanz mittels des dafür vorgesehenen Parameters innerhalb der <code class="language-plaintext highlighter-rouge">$book</code>-Operation.</p>
+  </li>
+</ul>
+
+<h3 id="asynchrone-ausführung-book">Asynchrone Ausführung $book</h3>
+
+<p>Die Operation zur Buchung eines Termins MUSS ebenfalls asynchron ausgeführt werden können, falls ein Termin-Repository keine Zusagen zu Antwortzeiten machen kann und somit das Problem besteht, dass der Client in einen Timeout läuft. Beispielsweise kann dies der Fall sein, wenn die Buchungsanfrage im Termin-Repository asynchrone Anfragen an andere Systeme auslöst und der Termin erst bestätigt werden kann, wenn diese durchgelaufen sind. Es gelten die Regeln der <a href="https://www.hl7.org/fhir/r4/operations.html">FHIR Kernspezifikation - Abschnitt 3.2.0.7 Executing an Operation Asynchronously</a>:</p>
+
+<ul>
+  <li>Der Aufruf der $book-Operation erfolgte auch im asynchronen Fall durch einen POST-Request</li>
+  <li>Ein HTTP-Header mit dem Namen “Prefer” und dem Inhalt “respond-async” MUSS im Aufruf der Operation enthalten sein</li>
+  <li>Als HTTP-Status-Code MUSS das Termin-Repository “202 - Accepted” zurückgeben</li>
+  <li>Im Fehlerfall MUSS ein 4XX- oder 5XX-HTTP-Status-Code zurückgeben werden</li>
+  <li>Zudem MUSS das Termin-Repository einen ‚Content-Location‘-Header zurückliefern, in dem eine valide absolute URL enthalten ist, unter der die oben beschriebene Appointment- bzw. OperationOutcome-Ressource als Antwort auf die Buchung des Termins abgerufen werden kann</li>
+</ul>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 4, 2025 18:17+0000">2025-12-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

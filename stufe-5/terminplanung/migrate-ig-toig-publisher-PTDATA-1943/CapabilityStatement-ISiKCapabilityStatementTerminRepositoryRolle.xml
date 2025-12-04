@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="ISiKCapabilityStatementTerminRepositoryRolle"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement ISiKCapabilityStatementTerminRepositoryRolle</b></p><a name="ISiKCapabilityStatementTerminRepositoryRolle"> </a><a name="hcISiKCapabilityStatementTerminRepositoryRolle"> </a><h2 id="title">ISiK CapabilityStatement Termin-Repository Rolle</h2><ul><li>Implementation Guide Version: 0.0.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>application/fhir+json</code></li><li>Published on: 2025-10-23 </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Schedule1-1">Schedule</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ISiKKalender.html">ISiKKalender</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td>_id, _tag, _count, _has, active, service-type, specialty, actor</td><td/><td><code>Slot:schedule</code>, <code>Schedule:actor</code></td><td/></tr><tr><td><a href="#Slot1-2">Slot</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ISiKTerminblock.html">ISiKTerminblock</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td>_id, _tag, _count, _has, schedule, status, start</td><td><code>Slot:schedule</code></td><td><code>Appointment:slot</code></td><td/></tr><tr><td><a href="#Appointment1-3">Appointment</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ISiKTermin.html">ISiKTermin</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td>_id, _tag, _count, _has, status, service-type, specialty, date, slot, actor</td><td><code>Appointment:slot</code>, <code>Appointment:actor</code></td><td/><td><code>$book</code></td></tr><tr><td><a href="#HealthcareService1-4">HealthcareService</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ISiKMedizinischeBehandlungseinheit.html">ISiKMedizinischeBehandlungseinheit</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td>_id, _tag, _count, _has, active, service-type, specialty, name</td><td><code>Schedule:actor</code>, <code>Appointment:actor</code></td><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Schedule1-1" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Schedule</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/schedule.html">Schedule</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ISiKKalender.html">ISiKKalender</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/schedule.html#search">active</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Schedule?active=true</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/schedule.html#search">service-type</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Schedule?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/schedule.html#search">specialty</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Schedule?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/schedule.html#search">actor</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Schedule?actor=Practitioner/ISiKPractitionerExample</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td>_has</td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Slot1-2" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Slot</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/slot.html">Slot</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ISiKTerminblock.html">ISiKTerminblock</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/slot.html#search">schedule</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Slot?schedule=Schedule/ISiKKalenderExample&amp;start=2022-12-10T09:00:00Z</code><br/>
+<code>GET [base]/Slot?schedule=Schedule/ISiKKalenderExample</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Der Suchparameter <code>schedule</code> MUSS in Kombination mit einem definierten Startzeitpunkt mittels Suchparameter <code>start</code> unterstützt werden.
+Der Suchparameter <code>schedule</code> KANN alleinstehend unterstützt werden. Beim Fehlen des <code>start</code>-Suchparameters SOLL der aktuelle Zeitpunkt des Servers
+als Startzeitpunkt per Default verwendet werden.
+In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich:<br/>
+<code>GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=https://example.org/fhir/CodeSystem/Behandlungsleistung|CT</code><br/>
+Dies kann notwendig sein, falls interdisziplinäre Kalender durch das Termin-Repository gepflegt werden (z.B. ein Kalender pro Station).
+In solchen Fälle wäre es sinnvoll, wenn das Termin-Repository einem Termin-Requestor eine Verknüpfung zwischen Kalender (Schedule)
+und Behandlungsleistung (HealthcareService) bereitstellen würde.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/slot.html#search">status</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Slot?status=free&amp;schedule=Schedule/ISiKTerminExample</code><br/>
+<code>GET [base]/Slot?status=free&amp;schedule.actor:Practitioner.name=Musterarzt</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Der Suchparameter <code>status</code> MUSS in Kombination ('&amp;') mit dem Parameter <code>schedule</code> unterstützt werden.
+Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.
+Der Suchparameter MUSS NICHT alleinstehend unterstützt werden. Falls der Parameter nicht alleinstehend unterstützt wird, dann SOLL der Server einen Fehler-Code 422 (Unprocessable Entity) zurückgeben, falls ein Client den Parameter alleinstehend verwendet. Zudem SOLL eine OperationOutcome über die fehlende Kombination bei der Suchanfrage Auskunft geben.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/slot.html#search">start</a></td><td><code>date</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule=Schedule/ISiKTerminExample</code><br/>
+<code>GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule.actor:Practitioner.name=Musterarzt</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Der Suchparameter <code>start</code> MUSS in Kombination ('&amp;') mit dem Parameter <code>schedule</code> unterstützt werden.
+Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.
+Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td>_has</td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Appointment1-3" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Appointment</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/appointment.html">Appointment</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>, <code>patch</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ISiKTermin.html">ISiKTermin</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">status</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?status=booked</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">service-type</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Anwendungshinweise: Bei einer Suche mit dem <code>:not</code>-Modifier MÜSSEN Ressourcen, die keinen Wert für <code>Appointment.serviceType</code> enthalten,
+im Suchergebnis enthalten sein.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">specialty</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br/>
+<strong>Anwendungshinweis:</strong>
+Anwendungshinweise: Bei einer Suche mit dem <code>:not</code>-Modifier MÜSSEN Ressourcen, die keinen Wert für <code>Appointment.specialty</code> enthalten,
+im Suchergebnis enthalten sein.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">date</a></td><td><code>date</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?date=2022-12-10T09:00:00Z</code><br/>
+<strong>Anwendungshinweis:</strong>
+Die Suche wird gegen das Element <code>Appointment.start</code> ausgewertet.<br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">slot</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?slot=Slot/ISiKSlotExample</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">actor</a></td><td><code>reference</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/Appointment?actor=Patient/ISiKPatientExample</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td>_has</td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-ISiKAppointmentBookOperation.html">$book</a></td><td><div><p>Die $book-Operation ermöglicht einem Termin-Requestor einen Termin in einem Termin-Repository zu buchen bzw. zu verschieben.</p>
+</div></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="HealthcareService1-4" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>HealthcareService</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/healthcareservice.html">HealthcareService</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ISiKMedizinischeBehandlungseinheit.html">ISiKMedizinischeBehandlungseinheit</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/healthcareservice.html#search">active</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/HealthcareService?active=true</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/healthcareservice.html#search">service-type</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/HealthcareService?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/healthcareservice.html#search">specialty</a></td><td><code>token</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/HealthcareService?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/healthcareservice.html#search">name</a></td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong><br/>
+<code>GET [base]/HealthcareService?name=Medizinische Behandlungseinheit Des Fachbereichs 0100</code><br/>
+<strong>Anwendungshinweis:</strong><br/>
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</div></td></tr><tr><td><b>MAY</b></td><td>_has</td><td><code>string</code></td><td><div><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+  </text>
+  <url value="https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle"/>
+  <version value="0.0.1"/>
+  <name value="ISiKCapabilityStatementTerminRepositoryRolle"/>
+  <title value="ISiK CapabilityStatement Termin-Repository Rolle"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-10-23"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+  <purpose value="Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Termin-Repository-Daten exponiert."/>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="application/fhir+json"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Schedule"/>
+      <supportedProfile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <searchRevInclude value="Slot:schedule">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchRevInclude>
+      <searchRevInclude value="Schedule:actor">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchRevInclude>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_id=103270`&#xA;        **Anwendungshinweis:**&#xA;        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource&#xA;        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,&#xA;        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,&#xA;        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:&#xA;        `GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient`&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&#xA;        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)&#xA;        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_count"/>
+        <type value="number"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_count=100`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben&#xA;        `GET [base]/Patient?_has:Observation:patient:code=1234-5`&#xA;        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde&#xA;        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="active"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Schedule-active"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Schedule?active=true`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="service-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Schedule-service-type"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Schedule?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="specialty"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Schedule-specialty"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Schedule?specialty=urn:oid:1.2.276.0.76.5.114|535`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="actor"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Schedule-actor"/>
+        <type value="reference"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Schedule?actor=Practitioner/ISiKPractitionerExample`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "/>
+      </searchParam>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Slot"/>
+      <supportedProfile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <searchInclude value="Slot:schedule">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchInclude>
+      <searchRevInclude value="Appointment:slot">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchRevInclude>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_id=103270`&#xA;        **Anwendungshinweis:**&#xA;        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource&#xA;        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,&#xA;        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,&#xA;        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:&#xA;        `GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient`&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&#xA;        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)&#xA;        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_count"/>
+        <type value="number"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_count=100`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben&#xA;        `GET [base]/Patient?_has:Observation:patient:code=1234-5`&#xA;        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde&#xA;        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="schedule"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Slot-schedule"/>
+        <type value="reference"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Slot?schedule=Schedule/ISiKKalenderExample&amp;start=2022-12-10T09:00:00Z`  &#xA;        `GET [base]/Slot?schedule=Schedule/ISiKKalenderExample`    &#xA;        **Anwendungshinweis:**   &#xA;        Der Suchparameter `schedule` MUSS in Kombination mit einem definierten Startzeitpunkt mittels Suchparameter `start` unterstützt werden. &#xA;        Der Suchparameter `schedule` KANN alleinstehend unterstützt werden. Beim Fehlen des `start`-Suchparameters SOLL der aktuelle Zeitpunkt des Servers &#xA;        als Startzeitpunkt per Default verwendet werden.&#xA;        In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich:  &#xA;        `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=https://example.org/fhir/CodeSystem/Behandlungsleistung|CT`  &#xA;        Dies kann notwendig sein, falls interdisziplinäre Kalender durch das Termin-Repository gepflegt werden (z.B. ein Kalender pro Station). &#xA;        In solchen Fälle wäre es sinnvoll, wenn das Termin-Repository einem Termin-Requestor eine Verknüpfung zwischen Kalender (Schedule) &#xA;        und Behandlungsleistung (HealthcareService) bereitstellen würde.&#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Slot-status"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Slot?status=free&amp;schedule=Schedule/ISiKTerminExample`&#xA;        `GET [base]/Slot?status=free&amp;schedule.actor:Practitioner.name=Musterarzt`    &#xA;        **Anwendungshinweis:**   &#xA;        Der Suchparameter `status` MUSS in Kombination ('&amp;') mit dem Parameter `schedule` unterstützt werden. &#xA;        Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.&#xA;        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden. Falls der Parameter nicht alleinstehend unterstützt wird, dann SOLL der Server einen Fehler-Code 422 (Unprocessable Entity) zurückgeben, falls ein Client den Parameter alleinstehend verwendet. Zudem SOLL eine OperationOutcome über die fehlende Kombination bei der Suchanfrage Auskunft geben.&#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="start"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Slot-start"/>
+        <type value="date"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule=Schedule/ISiKTerminExample`  &#xA;        `GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule.actor:Practitioner.name=Musterarzt`    &#xA;        **Anwendungshinweis:**  &#xA;        Der Suchparameter `start` MUSS in Kombination ('&amp;') mit dem Parameter `schedule` unterstützt werden.&#xA;        Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.&#xA;        Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.&#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "/>
+      </searchParam>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Appointment"/>
+      <supportedProfile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="patch"/>
+      </interaction>
+      <searchInclude value="Appointment:slot">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchInclude>
+      <searchInclude value="Appointment:actor">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchInclude>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_id=103270`&#xA;        **Anwendungshinweis:**&#xA;        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource&#xA;        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,&#xA;        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,&#xA;        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:&#xA;        `GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient`&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&#xA;        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)&#xA;        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_count"/>
+        <type value="number"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_count=100`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben&#xA;        `GET [base]/Patient?_has:Observation:patient:code=1234-5`&#xA;        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde&#xA;        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-status"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?status=booked`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="service-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-service-type"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT`    &#xA;        **Anwendungshinweis:**   &#xA;        Anwendungshinweise: Bei einer Suche mit dem `:not`-Modifier MÜSSEN Ressourcen, die keinen Wert für `Appointment.serviceType` enthalten, &#xA;        im Suchergebnis enthalten sein.&#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="specialty"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-service-type"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?specialty=urn:oid:1.2.276.0.76.5.114|535`    &#xA;        **Anwendungshinweis:** &#xA;        Anwendungshinweise: Bei einer Suche mit dem `:not`-Modifier MÜSSEN Ressourcen, die keinen Wert für `Appointment.specialty` enthalten, &#xA;        im Suchergebnis enthalten sein. &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-date"/>
+        <type value="date"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?date=2022-12-10T09:00:00Z`    &#xA;        **Anwendungshinweis:** &#xA;        Die Suche wird gegen das Element `Appointment.start` ausgewertet.  &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="slot"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-slot"/>
+        <type value="reference"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?slot=Slot/ISiKSlotExample`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="actor"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-actor"/>
+        <type value="reference"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/Appointment?actor=Patient/ISiKPatientExample`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "/>
+      </searchParam>
+      <operation>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="book"/>
+        <definition value="https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook"/>
+        <documentation value="Die $book-Operation ermöglicht einem Termin-Requestor einen Termin in einem Termin-Repository zu buchen bzw. zu verschieben."/>
+      </operation>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="HealthcareService"/>
+      <supportedProfile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <searchInclude value="Schedule:actor">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchInclude>
+      <searchInclude value="Appointment:actor">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+      </searchInclude>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_id=103270`&#xA;        **Anwendungshinweis:**&#xA;        Der Parameter `_id` wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource&#xA;        anhand der `id`  die `READ`-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,&#xA;        um den Abruf einer Ressource bspw. mit einem `_include` weiterer Ressourcen zu verbinden,&#xA;        z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:&#xA;        `GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient`&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).&#xA;        Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)&#xA;        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_count"/>
+        <type value="number"/>
+        <documentation value="**Beispiel:**&#xA;        `GET [base]/[Resourcetype]?_count=100`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Page Count](https://www.hl7.org/fhir/R4/search.html#count).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="**Beispiel:** Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben&#xA;        `GET [base]/Patient?_has:Observation:patient:code=1234-5`&#xA;        **Beispiel:** Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde&#xA;        `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`&#xA;        **Anwendungshinweis:**&#xA;        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="active"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/HealthcareService-active"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/HealthcareService?active=true`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="service-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/HealthcareService-service-type"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/HealthcareService?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="specialty"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/HealthcareService-specialty"/>
+        <type value="token"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/HealthcareService?specialty=urn:oid:1.2.276.0.76.5.114|535`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/HealthcareService-name"/>
+        <type value="string"/>
+        <documentation value="**Beispiel:**    &#xA;        `GET [base]/HealthcareService?name=Medizinische Behandlungseinheit Des Fachbereichs 0100`    &#xA;        **Anwendungshinweis:**   &#xA;        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "/>
+      </searchParam>
+    </resource>
+  </rest>
+</CapabilityStatement>

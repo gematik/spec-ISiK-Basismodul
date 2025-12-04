@@ -1,36 +1,48 @@
-# Index - Test Implementation Guide v0.0.1
+# Home - Test Implementation Guide v0.0.1
 
 Test Implementation Guide
 
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* **Index**
+* **Home**
 
-## Index
+## Home
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-12-02 | *Computable Name*:TestImplementationGuide |
+| *Official URL*:http://example.org/fhir/test-termin-ig/ImplementationGuide/terminplanung.test.ig | *Version*:0.0.1 |
+| Draft as of 2025-12-04 | *Computable Name*:TestImplementationGuide |
 
-![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
+![](https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
 
 -------
 
-Version: 5.0.0
+Version: 5.1.0
 
-Datum: 26.06.2025
+Datum: 23.10.2025
 
 Status: Aktiv
 
 Realm: Deutschland
 
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
-
-Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
-
 -------
+
+# Motivation Terminplanung
+
+Die Vereinbarung von Terminen für Behandlungsleistungen repräsentiert oftmals für Patienten oder für sie zuständige Leistungserbringer den Einstieg in den Versorgungsablauf im Krankenhaus. Die Terminplanung agiert somit als kritische Schnittstelle zwischen diversen Akteuren im Gesundheitswesen, inklusive der zu behandelnden Personen. Informationen zu notwendigen bzw. gewünschten Behandlungen, Verfügbarkeiten der involvierten Personen und abrechnungsrelevante Details zur Krankenversicherung müssen potenziell ausgetauscht werden, um einen optimierten Ablauf des Aufenthaltes im Krankenhaus zu ermöglichen.
+
+Das Krankenhauszukunftsgesetz (KHZG) hebt die zentrale Rolle der Terminvereinbarung hervor in dem in den dazugehörigen Fördertatbeständen Vorgaben für die Terminplanung im digitalen Aufnahmemanagement bzw. für die Terminplanung mittels Patientenportalen gemacht werden (vgl. §19 Abs. 1 Satz 1 Nr. 2 KHSFV bzw. §21 Abs. 2 KHSFV).
+
+Angelehnt an diese Vorgaben soll mittels ISiK die Grundlage geschaffen werden, um die beschriebenen oder ähnliche Use Cases durchzuführen und die fachlich-inhaltlichen Informationen in einer interoperablen Art und Weise auszutauschen. ISiK versteht sich somit als Schnittstellenbeschreibung, um eine einheitliche API zu dokumentieren, durch die ein Termin vereinbart und verwaltet werden kann. Das vorliegende ISiK-Modul bietet somit explizit KEIN umfassendes Datenmodell für die krankenhausinterne Ressourcenplanung. Hingegen werden durch ISiK Minimalvorgaben für bestätigungsrelevante Systeme spezifiziert, auf die komplexere Workflows ausgestaltet werden können.
+
+Durch ISiK Terminplanung sollen folgende Möglichkeiten eröffnet werden:
+
+* Abruf von Abbildungen von verfügbaren teil- und voll- stationären Behandlungsleistungen durch ein Krankenhaus
+* Abfrage von Terminen und Verfügbarkeiten
+* Buchungsmanagement von verfügbaren Terminen
+* Benachrichtigungen bei Terminänderungen
+* Anlage eines neuen Patienten im terminführenden System (Übermittlung Patient/Versicherungsinformationen)
 
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
@@ -44,7 +56,7 @@ Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für de
 
 **Kontakt**
 
-Bringen Sie Allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
+Bringen Sie allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
 
 Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff “Portalzugang”.
 
@@ -65,15 +77,15 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "basis.test.ig",
-  "url" : "http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig",
+  "id" : "terminplanung.test.ig",
+  "url" : "http://example.org/fhir/test-termin-ig/ImplementationGuide/terminplanung.test.ig",
   "version" : "0.0.1",
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-02T15:42:33+00:00",
+  "date" : "2025-12-04T18:17:34+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
-  "packageId" : "basis.test.ig",
+  "packageId" : "example.test.ig",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [
@@ -105,12 +117,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
       "id" : "hl7_fhir_uv_ips",
       "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
       "packageId" : "hl7.fhir.uv.ips",
-      "version" : "1.1.0"
-    },
-    {
-      "id" : "hl7_fhir_uv_subscriptions_backport_r4",
-      "uri" : "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
-      "packageId" : "hl7.fhir.uv.subscriptions-backport.r4",
       "version" : "1.1.0"
     },
     {
@@ -290,7 +296,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-basis-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-termin-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -632,7 +638,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-basis-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-termin-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -838,172 +844,23 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Account"
+            "valueString" : "Appointment"
           }
         ],
         "reference" : {
-          "reference" : "Account/AbrechnungsfallDRG"
+          "reference" : "Appointment/ISiKTerminExample"
         }
       },
       {
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Account"
+            "valueString" : "Appointment"
           }
         ],
         "reference" : {
-          "reference" : "Account/AbrechnungsfallGonarthrose"
+          "reference" : "Appointment/ISiKTerminExampleExtendedICU"
         }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Account"
-          }
-        ],
-        "reference" : {
-          "reference" : "Account/SZ1DRGFall"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Account"
-          }
-        ],
-        "reference" : {
-          "reference" : "Account/SZ2DRGFall"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "AllergyIntolerance"
-          }
-        ],
-        "reference" : {
-          "reference" : "AllergyIntolerance/ISiKAllergieUnvertraeglichkeitBeispiel1"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Bundle"
-          }
-        ],
-        "reference" : {
-          "reference" : "Bundle/ISiKBundle-Example"
-        },
-        "name" : "Blutdruckmessung vom 3.5.2022 (Bundle)"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;AufbaustrukturRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur-expanded"
-        },
-        "name" : "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot; (Expanded)",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur"
-        },
-        "name" : "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementKlinischeRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CapabilityStatement"
-          }
-        ],
-        "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle"
-        },
-        "name" : "CapabilityStatement für Rolle &quot;LeistungserbringerRolle&quot;",
-        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
       },
       {
         "extension" : [
@@ -1026,9 +883,35 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementTerminologieRolle"
+          "reference" : "CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur-expanded"
         },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;",
+        "name" : "ISiK CapabilityStatement Termin-Repository Akteur (Expanded)",
+        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "CapabilityStatement"
+          }
+        ],
+        "reference" : {
+          "reference" : "CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur"
+        },
+        "name" : "ISiK CapabilityStatement Termin-Repository Akteur",
+        "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "CapabilityStatement"
+          }
+        ],
+        "reference" : {
+          "reference" : "CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle"
+        },
+        "name" : "ISiK CapabilityStatement Termin-Repository Rolle",
         "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
       },
       {
@@ -1039,9 +922,9 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
+          "reference" : "CapabilityStatement/ISiKCapabilityStatementTerminologieRolle"
         },
-        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;",
+        "name" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;",
         "description" : "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."
       },
       {
@@ -1055,193 +938,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "reference" : "CodeSystem/CodeSystemExample"
         },
         "name" : "TestKatalog"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/AltersbedingteKreislaufstoerung"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/BehandlungsDiagnoseFreitext"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/Example-condition-ausrufezeichen-primaer"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/Example-condition-ausrufezeichen-sekundaer"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/Example-condition-kreuz-stern-primaer"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/Example-condition-kreuz-stern-sekundaer"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/MittelgradigeIntelligenzminderung"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/PrimaereGonarthroseMinimal"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/PrimaereGonarthroseNormal"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/SZ2Primaerdiagnose"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Condition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Condition/SZ2Sekundaerdiagnose"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/CoverageGesetzlich"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/CoveragePrivat"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/CoverageSonstige"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/SZ1VersicherungGesetzlich"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/SZ1VersicherungSelbstzahler"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Coverage"
-          }
-        ],
-        "reference" : {
-          "reference" : "Coverage/SZ2VersicherungGesetzlich"
-        }
       },
       {
         "extension" : [
@@ -1401,114 +1097,26 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Location"
+            "valueString" : "HealthcareService"
           }
         ],
         "reference" : {
-          "reference" : "Location/BettenstellplatzStandortBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Location"
-          }
-        ],
-        "reference" : {
-          "reference" : "Location/RaumStandortBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Location"
-          }
-        ],
-        "reference" : {
-          "reference" : "Location/StationStandortBeispiel"
+          "reference" : "HealthcareService/ISiKMedizinischeBehandlungseinheitExample"
         },
-        "name" : "Station A"
+        "name" : "Allgemeine Beratungsstelle der Fachabteilung 0100"
       },
       {
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Observation"
+            "valueString" : "OperationDefinition"
           }
         ],
         "reference" : {
-          "reference" : "Observation/ISiKAlkoholAbususBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Observation"
-          }
-        ],
-        "reference" : {
-          "reference" : "Observation/ISiKRaucherStatusBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Observation"
-          }
-        ],
-        "reference" : {
-          "reference" : "Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Observation"
-          }
-        ],
-        "reference" : {
-          "reference" : "Observation/ISiKSchwangerschaftsstatusBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Observation"
-          }
-        ],
-        "reference" : {
-          "reference" : "Observation/ISiKStillstatusBeispiel"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Organization"
-          }
-        ],
-        "reference" : {
-          "reference" : "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel"
+          "reference" : "OperationDefinition/ISiKAppointmentBookOperation"
         },
-        "name" : "Allgemeinchirurgie"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Organization"
-          }
-        ],
-        "reference" : {
-          "reference" : "Organization/KrankenhausOrganisationBeispiel"
-        },
-        "name" : "Uniklinik Entenhausen"
+        "name" : "Book",
+        "description" : "OperationDefinition für die Buchung eines Termins. Die Operation überprüft ob der Termin noch verfügbar ist im Termin-Repository."
       },
       {
         "extension" : [
@@ -1591,44 +1199,11 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Practitioner"
+            "valueString" : "Schedule"
           }
         ],
         "reference" : {
-          "reference" : "Practitioner/PractitionerWalterArzt"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Procedure"
-          }
-        ],
-        "reference" : {
-          "reference" : "Procedure/Appendektomie"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "RelatedPerson"
-          }
-        ],
-        "reference" : {
-          "reference" : "RelatedPerson/ISiKAngehoerigerMustermann"
-        }
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "RelatedPerson"
-          }
-        ],
-        "reference" : {
-          "reference" : "RelatedPerson/SZ1Mutter"
+          "reference" : "Schedule/ISiKKalenderExample"
         }
       },
       {
@@ -1661,6 +1236,17 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Slot"
+          }
+        ],
+        "reference" : {
+          "reference" : "Slot/ISiKTerminblockExample"
+        }
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "StructureDefinition:extension"
           }
         ],
@@ -1669,70 +1255,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         },
         "name" : "ISiK CapabilityStatement Imports Expectation",
         "description" : "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKAbrechnungsfall"
-        },
-        "name" : "ISiKAbrechnungsfall",
-        "description" : "Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.  \nZugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde *nicht* primär zum Zweck der Abbildung von Abrechnungsprozessen definiert. \n\n### Motivation\nKomplementär zum Datenobjekt &quot;Kontakt - Encounter&quot; können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen \ninnerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.\nEin solcher Abrechnungsfall kann mehrere Kontakte umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationärer Besuch).  \n\nGemeinsam mit dem Einrichtungskontakt bildet der Abrechnungsfall einen wichtigen Einstiegspunkt in die Dokumentation der Behandlungsleistungen der Patienten.\nAls Bindeglied zwischen den Kontakten und dem Versicherungsverhältnis erfolgt eine feingranulare Auflistung, \nin welchen Zeiträumen ein Behandlungskontext zwischen einer Gesundheitseinrichtung und der Patienten bestand.\nZudem werden Diagnosen abschließend / nachträglich dokumentiert, sodass eine Übersicht von relevanten (DRG)-Diagnosen ermöglicht wird, \nohne die Gesamtheit aller Kontakte betrachten zu müssen.\n\nIn FHIR wird der Abrechnungsfall mit der `Account`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}.\n\n### Kompatibilität\n* zum Zeitpunkt der Veröffentlichung sind keine abweichenden Modellierungen der Account-Ressource bekannt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKAlkoholAbusus"
-        },
-        "name" : "ISiK Alkohol Abusus"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKAllergieUnvertraeglichkeit"
-        },
-        "name" : "ISiKAllergieUnvertraeglichkeit",
-        "description" : "Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n### Motivation\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n### Kompatibilität\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKAngehoeriger"
-        },
-        "name" : "ISiKAngehoeriger",
-        "description" : "Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.  \n### Motivation\nDer Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,\n in denen das Versicherungsverhältnis eine Rolle spielt. \n Hier können Angehörige, bspw. der hauptversicherte Elternteil \n eines minderjährigen Kindes, in der Familienversicherung sein. \n In Selbstzahler-Szenarien können Angehörige die Zahler für eine \n im Krankenhaus erbrachte Leistung sein.\nIn FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.\n\n### Kompatibilität\nFür das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKBerichtBundle"
-        },
-        "name" : "ISiKBerichtBundle",
-        "description" : "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. \nDas Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. \nDas Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind."
       },
       {
         "extension" : [
@@ -1755,10 +1277,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/ISiKDiagnose"
+          "reference" : "StructureDefinition/ISiKKalender"
         },
-        "name" : "ISiKDiagnose",
-        "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \nüber die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  \n### Motivation\nDie Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, \nob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  \n\nIn FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  \n\nDa die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. \nFalls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), \nist alternativ eine Repräsentation als Freitext-Diagnose möglich.\n\n### Kompatibilität\nFür das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:\n* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)\n* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+        "name" : "ISiKKalender",
+        "description" : "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für verschiedene Akteure (Practitioner, Device, HealthcareService) zu exponieren, sodass für die Ressourcen Termine gebucht werden können."
       },
       {
         "extension" : [
@@ -1781,36 +1303,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/ISiKLebensZustand"
+          "reference" : "StructureDefinition/ISiKMedizinischeBehandlungseinheit"
         },
-        "name" : "ISiKLebensZustand",
-        "description" : "Basisprofil für ISiKLebensZustand Observation \n\n### Motivation\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert.\n\nDieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.  \nDie folgenden Profile vom Typ `Observation` sind spezifische Profile im oben genannten Sinn:  \n* {{pagelink:Schwangerschaftsstatus-Profil}}\n* {{pagelink:ErwarteterEntbindungstermin-Profil}}\n* {{pagelink:Stillstatus-Profil}} \n* {{pagelink:AlkoholAbusus-Profil}} \n* {{pagelink:RaucherStatus-Profil}} \n\n### Kompatibilität\n\nFür Schwangerschaftsstatus & Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden **IPS** Profilen angestrebt:\n* [IPS Resource Profile: Observation - Pregnancy: EDD](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html). \n* [IPS Resource Profile: Observation - Pregnancy: status](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-status-uv-ips.html)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKOrganisation"
-        },
-        "name" : "ISiKOrganisation",
-        "description" : "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKOrganisationFachabteilung"
-        },
-        "name" : "ISiKOrganisationFachabteilung",
-        "description" : "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+        "name" : "ISiKMedizinischeBehandlungseinheit",
+        "description" : "Unter einer medizinischen Behandlungseinheit wird hier im weiteren Sinne eine Dienstleistung (diagnostisch, therapeutisch, im weiten Sinne gesundheitsfördernd etc.) zum Zweck einer Terminbuchung verstanden. Hierfür können von der Fachabteilung (Organization) unabhängige Kalender gepflegt werden. Im Kontext der Terminplanung können somit angebotene Leistungen (z.B. CT/MRT-Untersuchungen, chirurgische Eingriffe, Beratungsstunden zur Geburt etc.) abgebildet werden.\n\nDer Kontext zu diesem Profil wird mit folgender User Story veranschaulicht: \n\n**User Story**: Ein Patient erhält von seiner Hausärztin einen Überweisungsschein für eine weitere diagnostische Untersuchung in Form einer Kapselendoskopie der Speiseröhre. Der Patient nutzt ein Patientenportal, um unter Angabe der benötigten diagnostische Leistung nach einem verfügbaren Termin zu suchen und findet einen passenden Termin bei der Fachabteilung für Gastroenterologie eines örtlichen Krankenhauses.\n\nHintergrund: Die Suche nach verfügbaren Terminenblöcken (Slot) unter Einbeziehung der Dienstleistung entspricht der Angabe des Überweisungsscheins, ermöglicht hier zugleich eine präzisere Suche und vergrößert darüber hinaus den Raum möglicher Termine über verschiedene Abteilungen (und Institutionen im Patientenportal) hinweg."
       },
       {
         "extension" : [
@@ -1833,10 +1329,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/ISiKPersonImGesundheitsberuf"
+          "reference" : "StructureDefinition/ISiKTermin"
         },
-        "name" : "ISiKPersonImGesundheitsberuf",
-        "description" : "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.\n### Motivation\n\nDas Profil ISIKPersonImGesundheitsberuf bildet alle denkbaren medizinischen Leistungserbringer und Fachexperten  ab. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element `performer` der Procedure Ressource, oder als die Person, die eine Diagnose stellt, im Element `asserter` der Condition Ressource.\n\nIn FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource\n repräsentiert.  \n Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil KBV_PR_Base_Practitioner der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner). \n* [Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)\n* [Profil TIPractitioner der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
+        "name" : "ISiKTermin",
+        "description" : "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag."
       },
       {
         "extension" : [
@@ -1846,99 +1342,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/ISiKProzedur"
+          "reference" : "StructureDefinition/ISiKTerminblock"
         },
-        "name" : "ISiKProzedur",
-        "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.\n### Motivation\nDie Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.\n\nIn FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.\n\nDa die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.\n\n### Kompatibilität\nFür das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:\n\n* [Profil Prozedur](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure) der Medizininformatik Initiative  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKRaucherStatus"
-        },
-        "name" : "ISiK Raucherstatus"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin"
-        },
-        "name" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKSchwangerschaftsstatus"
-        },
-        "name" : "ISiK Schwangerschaftsstatus",
-        "description" : "Schwangerschaftsstatus einer Patientin"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKStandort"
-        },
-        "name" : "ISiKStandort",
-        "description" : "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines \nKrankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  \n### Motivation\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form. \n\nDie Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:\n- Zuweisungen von Diensten an bestimmte Standorte im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär) - u.a. für \n    - Patientenportale im Rahmen der Terminbuchung, z.B. um den Wunsch nach Einzelbett, bzw. 1 oder 2 Betten abzubilden\n    - KIS und weitere Subsysteme:\n      - zur Patientenabholung und Information für den Transportdienst\n      - Abbildung der Verfügbarkeit eines spezifischen Bettenstellplatzes (z.B. mit spezifischem Monitoring-Device) \n- Im Rahmen der Versorgung kann eine der folgenden Beispiel-Fragen beantworten werden:\n    - Handelt es sich um ein Isolationszimmer?\n    - Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte?\n    - etc.\n\nDafür werden Standort-Profile in unterschiedlicher Granularität definiert. \n\n### Kompatibilität\nFür das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der \nKompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKStandortBettenstellplatz"
-        },
-        "name" : "ISiKStandortBettenstellplatz",
-        "description" : "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) \neines Krankenhauses.  \n### Hinweis  \nEin einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, \ndas einen Bettenstellplatz referenziert."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKStandortRaum"
-        },
-        "name" : "ISiKStandortRaum",
-        "description" : "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKStillstatus"
-        },
-        "name" : "ISiKStillstatus",
-        "description" : "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
+        "name" : "ISiKTerminblock",
+        "description" : "Die Slot-Ressource repräsentiert die Verbindung eines Termins (Appointment) und den dazugehörigen Ressourcen (z.B. HealthcareService, Device, Practitioner). Für diese Ressourcen können separate Kalender (Schedules) verwaltet werden. Der Slot agiert als Verbindungsstück zwischen diesen Ressourcen."
       },
       {
         "extension" : [
@@ -1952,58 +1359,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         },
         "name" : "ISiKValueSet",
         "description" : "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n### Motivation\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n### Kompatibilität\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"
-        },
-        "name" : "ISiKVersicherungsverhaeltnisGesetzlich",
-        "description" : "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen\n\n* [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
-        },
-        "name" : "ISiKVersicherungsverhaeltnisSelbstzahler",
-        "description" : "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen\n\n* [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/ISiKVersicherungsverhaeltnisSonstige"
-        },
-        "name" : "ISiKVersicherungsverhaeltnisSonstige",
-        "description" : "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, \nbei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem [Basis-Coverage-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/DiagnosesSCT"
-        },
-        "name" : "DiagnosesSCT",
-        "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes"
       },
       {
         "extension" : [
@@ -2025,85 +1380,22 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           }
         ],
         "reference" : {
+          "reference" : "ValueSet/ISiKTerminCancelationReason"
+        },
+        "name" : "ISiKTerminCancelationReason",
+        "description" : "Enthaelt alle erlaubten Gruende fuer eine Stornierung eines ISiKTermins"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
           "reference" : "ValueSet/ISiKValueSetExample"
         },
         "name" : "TestValueSet"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/ProzedurenCodesSCT"
-        },
-        "name" : "ProzedurenCodesSCT",
-        "description" : "Enthaelt alle SNOMED Procedure Codes"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/ProzedurenKategorieSCT"
-        },
-        "name" : "ProzedurenKategorieSCT",
-        "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/SchwangerschaftEtMethodeVS"
-        },
-        "name" : "Schwangerschaft Erwarteter Entbindungstermin Methode"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/SchwangerschaftsstatusVS"
-        },
-        "name" : "Schwangerschaftsstatus Valueset"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/StillstatusVS"
-        },
-        "name" : "Stillstatus LOINC Antwortoptionen",
-        "description" : "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC."
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/current-smoking-status-uv-ips"
-        },
-        "name" : "Current Smoking Status - IPS",
-        "description" : "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms."
       }
     ],
     "page" : {
@@ -2125,18 +1417,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
             }
           ],
           "nameUrl" : "index.html",
-          "title" : "Index",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Motivation.html"
-            }
-          ],
-          "nameUrl" : "Motivation.html",
-          "title" : "Motivation",
+          "title" : "Home",
           "generation" : "markdown"
         },
         {
@@ -2154,87 +1435,87 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_UseCaseAnwendung.html"
+              "valueUrl" : "UseCases.html"
             }
           ],
-          "nameUrl" : "Index_UseCaseAnwendung.html",
-          "title" : "Use Cases und Anwendungskontexte",
+          "nameUrl" : "UseCases.html",
+          "title" : "UseCases",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Abbildung-des-Konstrukts-Fall.html"
+              "valueUrl" : "Akteure.html"
             }
           ],
-          "nameUrl" : "Abbildung-des-Konstrukts-Fall.html",
-          "title" : "Abbildung des Konstrukts \"Fall\"",
+          "nameUrl" : "Akteure.html",
+          "title" : "Akteure",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Datenuebermittlung-aus-Subsystemen.html"
+              "valueUrl" : "Interaktionen.html"
             }
           ],
-          "nameUrl" : "Datenuebermittlung-aus-Subsystemen.html",
-          "title" : "Datenübermittlung aus Subsystemen",
+          "nameUrl" : "Interaktionen.html",
+          "title" : "Interaktionen",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html"
+              "valueUrl" : "Kompatibilitaet.html"
             }
           ],
-          "nameUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html",
-          "title" : "Akteurs- und Rollenmodell",
+          "nameUrl" : "Kompatibilitaet.html",
+          "title" : "Kompatibilität",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Beispielszenarien.html"
+              "valueUrl" : "Prozesse.html"
             }
           ],
-          "nameUrl" : "Index_Beispielszenarien.html",
-          "title" : "Beispielszenarien",
+          "nameUrl" : "Prozesse.html",
+          "title" : "Prozesse",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html"
+              "valueUrl" : "Informationsmodell.html"
             }
           ],
-          "nameUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html",
-          "title" : "Szenario 1: DRG-Fall, Kind mit Wahlleistung",
+          "nameUrl" : "Informationsmodell.html",
+          "title" : "Informationsmodell",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html"
+              "valueUrl" : "Architekturoptionen.html"
             }
           ],
-          "nameUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html",
-          "title" : "Szenario 2: Kreuz-Stern-Diagnose",
+          "nameUrl" : "Architekturoptionen.html",
+          "title" : "Architekturoptionen",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Festlegungen.html"
+              "valueUrl" : "Festlegungen.html"
             }
           ],
-          "nameUrl" : "Index_Festlegungen.html",
+          "nameUrl" : "Festlegungen.html",
           "title" : "Festlegungen",
           "generation" : "markdown"
         },
@@ -2242,110 +1523,66 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Methodik.html"
+              "valueUrl" : "UebergreifendeFestlegungen.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Methodik.html",
-          "title" : "Methodik",
+          "nameUrl" : "UebergreifendeFestlegungen.html",
+          "title" : "Übergreifende Festlegungen",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html"
+              "valueUrl" : "Operations.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html",
-          "title" : "Bestätigungsrelevante Systeme",
+          "nameUrl" : "Operations.html",
+          "title" : "Operation $book",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html"
+              "valueUrl" : "artifacts.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html",
-          "title" : "Kompatibilität der gematik-Spezifikation",
+          "nameUrl" : "artifacts.html",
+          "title" : "FHIR-Artefakte",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html"
+              "valueUrl" : "profiles.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html",
-          "title" : "Kompatibilität der gematik-Spezifikation IHE",
+          "nameUrl" : "profiles.html",
+          "title" : "Profile",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html"
+              "valueUrl" : "terminology.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html",
-          "title" : "Must-Support-Flags",
+          "nameUrl" : "terminology.html",
+          "title" : "Terminology",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html"
+              "valueUrl" : "capabilitystatements.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html",
-          "title" : "Repräsentationsformate",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Suchparameter.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Suchparameter.html",
-          "title" : "Suchparameter",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Rest.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Rest.html",
-          "title" : "REST-API",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Patient-Besuch-Kontext.html"
-            }
-          ],
-          "nameUrl" : "Patient-Besuch-Kontext.html",
-          "title" : "Herstellung von Patienten- und Besuchskontext",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html",
-          "title" : "Umgang mit fehlenden Daten",
+          "nameUrl" : "capabilitystatements.html",
+          "title" : "Capability Statements",
           "generation" : "markdown"
         }
       ]

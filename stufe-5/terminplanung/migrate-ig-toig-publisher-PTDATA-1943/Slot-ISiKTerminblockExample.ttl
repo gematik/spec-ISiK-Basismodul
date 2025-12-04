@@ -1,0 +1,31 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-termin-ig/Slot/ISiKTerminblockExample> a fhir:Slot ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKTerminblockExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Slot ISiKTerminblockExample</b></p><a name=\"ISiKTerminblockExample\"> </a><a name=\"hcISiKTerminblockExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKTerminblock.html\">ISiKTerminblock</a></p></div><p><b>schedule</b>: <a href=\"Schedule-ISiKKalenderExample.html\">Schedule: serviceType = General Practice; specialty = Allgemeinmedizin</a></p><p><b>status</b>: Busy</p><p><b>start</b>: 2022-12-10 09:00:00+0000</p><p><b>end</b>: 2022-12-10 11:00:00+0000</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:schedule [
+     fhir:l <http://example.org/fhir/test-termin-ig/Schedule/ISiKKalenderExample> ;
+     fhir:reference [ fhir:v "Schedule/ISiKKalenderExample" ]
+  ] ; # 
+  fhir:status [ fhir:v "busy"] ; # 
+  fhir:start [ fhir:v "2022-12-10T09:00:00Z"^^xsd:dateTime] ; # 
+  fhir:end [ fhir:v "2022-12-10T11:00:00Z"^^xsd:dateTime] . # 
+
+# -------------------------------------------------------------------------------------
+

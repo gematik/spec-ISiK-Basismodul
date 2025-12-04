@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-termin-ig/Schedule/ISiKKalenderExample> a fhir:Schedule ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKKalenderExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Schedule ISiKKalenderExample</b></p><a name=\"ISiKKalenderExample\"> </a><a name=\"hcISiKKalenderExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKalender.html\">ISiKKalender</a></p></div><p><b>active</b>: true</p><p><b>serviceType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-type 124}\">General Practice</span></p><p><b>specialty</b>: <span title=\"Codes:{http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen ALLG}\">Allgemeinmedizin</span></p><p><b>actor</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/example\">Dr. Fleming</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:serviceType ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/service-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/service-type>
+       ] ;
+       fhir:code [ fhir:v "124" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"^^xsd:anyURI ;
+         fhir:l <http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen>
+       ] ;
+       fhir:code [ fhir:v "ALLG" ]
+     ] )
+  ] ) ; # 
+  fhir:actor ( [
+     fhir:l <http://example.org/fhir/test-termin-ig/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ] ;
+     fhir:display [ fhir:v "Dr. Fleming" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

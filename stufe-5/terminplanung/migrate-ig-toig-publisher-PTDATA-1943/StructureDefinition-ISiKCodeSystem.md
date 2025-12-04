@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **ISiKCodeSystem**
 
 ## Resource Profile: ISiKCodeSystem 
@@ -28,9 +28,9 @@ Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte[ValueSets zu e
 **Usages:**
 
 * Examples for this Profile: [TestKatalog](CodeSystem-CodeSystemExample.md)
-* CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementTerminologieRolle"](CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Termin-Repository Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementTerminologieRolle"](CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKCodeSystem)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/example.test.ig|current/StructureDefinition/ISiKCodeSystem)
 
 ### Formal Views of Profile Content
 

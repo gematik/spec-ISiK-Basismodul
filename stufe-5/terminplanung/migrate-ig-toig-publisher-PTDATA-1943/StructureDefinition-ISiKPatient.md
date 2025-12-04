@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **ISiKPatient**
 
 ## Resource Profile: ISiKPatient 
@@ -41,9 +41,9 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 **Usages:**
 
 * Examples for this Profile: [Patient/DorisQuelle](Patient-DorisQuelle.md), [Patient/DorisZiel](Patient-DorisZiel.md), [Patient/PatientinMinimal](Patient-PatientinMinimal.md), [Patient/PatientinMusterfrau](Patient-PatientinMusterfrau.md)...Show 3 more,[Patient/PatientinNormal](Patient-PatientinNormal.md),[Patient/SZ1Patient](Patient-SZ1Patient.md)and[Patient/SZ2Patient](Patient-SZ2Patient.md)
-* CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md), [CapabilityStatement für Rolle "ISiKCapabilityStatementErweiterteStammdatenRolle"](CapabilityStatement-ISiKCapabilityStatementErweiterteStammdatenRolle.md) and [CapabilityStatement für Rolle "StammdatenRolle"](CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.md)
+* CapabilityStatements using this Profile: [CapabilityStatement für Rolle "StammdatenRolle"](CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.md) and [ISiK CapabilityStatement Termin-Repository Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKPatient)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/example.test.ig|current/StructureDefinition/ISiKPatient)
 
 ### Formal Views of Profile Content
 

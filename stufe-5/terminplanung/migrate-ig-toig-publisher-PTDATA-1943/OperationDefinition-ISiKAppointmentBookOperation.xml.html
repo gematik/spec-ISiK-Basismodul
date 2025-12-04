@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Book - XML Representation - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"13.6"}
+    h3,h4,h5,h6{--heading-prefix:"13.6"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Index</a>
+  </li>
+  <li><a name="l159">​</a>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">UseCases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UseCases.html">UseCases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität</a>
+      </li>
+      <li>
+        <a href="Prozesse.html">Prozesse</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+      <li>
+        <a href="Architekturoptionen.html">Architekturoptionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Festlegungen</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Operations.html">Operation $book</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR-Artefakte
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefakte</a>
+      </li>
+      <li>
+        <a href="capabilitystatements.html">CapabilityStatements</a>
+      </li>
+      <li>
+        <a href="profiles.html">Profile</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Test Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>FHIR-Artefakte</b></a></li><li><b>Book</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 7" class="col-12">
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="OperationDefinition-ISiKAppointmentBookOperation.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-ISiKAppointmentBookOperation.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-ISiKAppointmentBookOperation.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Book - XML Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2025-10-23
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="OperationDefinition-ISiKAppointmentBookOperation.xml" no-download="true">Raw xml</a> | <a download="null" href="OperationDefinition-ISiKAppointmentBookOperation.xml">Download</a></p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-xml">
+&lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">OperationDefinition</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="ISiKAppointmentBookOperation"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="generated"/&gt;
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p class="res-header-id"&gt;&lt;b&gt;Generated Narrative: OperationDefinition ISiKAppointmentBookOperation&lt;/b&gt;&lt;/p&gt;&lt;a name="ISiKAppointmentBookOperation"&gt; &lt;/a&gt;&lt;a name="hcISiKAppointmentBookOperation"&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/Appointment/$book&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;appt-resource&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/appointment.html"&gt;Appointment&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Eine Appointment-Ressource entsprechend dem dazugehörigen ISiK-Profil MUSS übergeben werden. Falls das Parameter-Element 'Appointment' als einziges Parameter-Element verwendet wird, SOLL die Appointment-Ressource direkt im HTTP Body übergeben werden, alternativ zu einer Parameter-Ressource inklusive dem eingebetteten Appointment-Element. Invalide Ressourcen MÜSSEN abgelehnt werden durch das Termin-Repository (zur Form der Ablehnung s.u.). Das Appointment MUSS den Status 'proposed' enthalten. Bei Terminverschiebungen (keine Terminabsage!) kann ein Appointment mit einem angepassten Zeitfenster in diesem Parameter übergeben werden. Appointment-Ressourcen können beim Anlegen eine id enthalten. Ist ein Appointment mit dieser id bereits im Termin-Repository vorhanden, MUSS es unter Beibehaltung der id aktualisiert werden.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;cancelled-appt-id&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#uri"&gt;uri&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Im Falle einer Terminverschiebung kann die Situation vorkommen, dass Terminressourcen (z.B. Räume oder angebotene Dienstleistungen) nicht verfügbar sind. Dadurch kann es notwendig sein, den zu verschiebenden Termin neu zu planen. Dies wird als zweistufiger Prozess durch die $book-Operation unterstützt, bei dem ein Termin storniert und ein neuer Termin gebucht wird. Dieser Parameter repräsentiert die Ressourcen-Id des zu stornierenden Appointments. Der uri-Parameter kann eine absolute URL enthalten, Server SOLLEN jedoch nur Termine für ihre eigene Domäne verwalten. Im neu-angelegten Appointment MUSS eine Reference auf den abgesagten Termin hinterlegt werden (vgl. Appointment.extension:replaces) durch den Server. Der Status der abgesagten Ressource MUSS durch den Server angepasst werden (status = 'cancelled'). Die Verschiebung ist als transaktionale Operation zu verstehen, d.h. die Absage des originalen Termins DARF durch den Server nur bestätigt werden, wenn der neue vorgeschlagene Termin angenommen werden kann. Andernfalls MUSS die Terminverschiebung mit einem entsprechenden Hinweis abgelehnt werden.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;schedule&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/references.html#Reference"&gt;Reference&lt;/a&gt; (&lt;a href="StructureDefinition-ISiKKalender.html" title="https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender"&gt;ISiKKalender&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Im Falle dass ein Appointment keine Referenz auf ein oder mehrere Slots enthält, MUSS der Server die benötigten Slots auf Basis der Referenz auf Schedule, sowie dem Start- und Endzeitpunkt im Appointment ermitteln.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;patient&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/patient.html"&gt;Patient&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine Patient-Ressource, die die Person identifiziert, für die der Termin gemäß dem Parameter 'appt-resource' gebucht werden soll. Die Ressource KANN vom ISiKPatient-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (zur Form der Ablehnung s.u.). Dieser Parameter dient der Übermittlung der Patienteninformationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf einen Patienten zurückgeben, sofern kein Patient unter Appointment.participant im 'appt-resource'-Parameter referenziert ist.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;related-person&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/patient.html"&gt;Patient&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine RelatedPerson-Ressource, die eine Person identifiziert, die den Termin im Namen des Patienten bucht. Die Ressource KANN vom ISiKRelatedPerson-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (siehe Form der Ablehnung unten). Dieser Parameter dient der Übermittlung der RelatedPerson-Informationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf eine RelatedPerson zurückgeben, sofern keine RelatedPerson unter Appointment.participant im 'appt-resource'-Parameter referenziert ist.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/appointment.html"&gt;Appointment&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Falls die Interaktion erfolgreich ist, ist der Status Code HTTP 201 - Created zurückzugeben. Im Erfolgsfall MUSS als Return-Parameter eine Appointment-Ressource (entsprechend dem dazugehörigen ISiK-Profil) zurückgegeben werden. Das id-Element der Appointment-Ressource MUSS korrekt gefüllt werden. Der Server MUSS den Status der Appointment-Ressource auf 'booked' oder 'pending' ändern. Der Server MUSS die verwendeten Slot-Ressourcen als Referenz im Appointment angeben. Die Appointment-Ressource SOLL direkt im HTTP Body zurückgegeben werden, falls es sich um den einzigen Rückgabewert handelt. Alternativ kann die Appointment-Ressource innerhalb einer Parameter-Ressource zurückgegeben werden. Als Teil der Parameter-Ressource können zusätzlich Hinweise zum Termin als OperationOutcome zurückgegeben werden.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/operationoutcome.html"&gt;OperationOutcome&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Falls die Interaktion fehlschlägt, MUSS als Return-Parameter eine OperationOutcome-Ressource zurückgegeben werden. Syntaktisch fehlerhafte Appointment-Ressourcen (z. B. ungültige XML-/JSON-Repräsentationen gemäß Kernspezifikation) MÜSSEN mit dem HTTP Status-Code 400 – Bad Request abgewiesen werden. Anderweitige und insbesondere semantisch invalide Appointment-Ressourcen (z.B. bei inkorrekter semantischer Kodierung der Fachrichtung (serviceType) oder bei Verstößen gegen Kardinalitäten gemäß dem ISiKTermin-Profil oder der $book-OperationDefinition) MÜSSEN mit einer OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden. Eine OperationOutcome-Ressource KANN zu informativen Zwecken in jedem Fall zurückgegeben werden (s.o.).&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="0.0.1"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Book"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="active"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="operation"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2025-10-23"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="url"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="https://www.gematik.de"/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.description">description</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="OperationDefinition für die Buchung eines Termins. Die Operation überprüft ob der Termin noch verfügbar ist im Termin-Repository."/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.affectsState">affectsState</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="true"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="book"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Appointment"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="true"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">instance</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="appt-resource"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Eine Appointment-Ressource entsprechend dem dazugehörigen ISiK-Profil MUSS übergeben werden. Falls das Parameter-Element 'Appointment' als einziges Parameter-Element verwendet wird, SOLL die Appointment-Ressource direkt im HTTP Body übergeben werden, alternativ zu einer Parameter-Ressource inklusive dem eingebetteten Appointment-Element. Invalide Ressourcen MÜSSEN abgelehnt werden durch das Termin-Repository (zur Form der Ablehnung s.u.). Das Appointment MUSS den Status 'proposed' enthalten. Bei Terminverschiebungen (keine Terminabsage!) kann ein Appointment mit einem angepassten Zeitfenster in diesem Parameter übergeben werden. Appointment-Ressourcen können beim Anlegen eine id enthalten. Ist ein Appointment mit dieser id bereits im Termin-Repository vorhanden, MUSS es unter Beibehaltung der id aktualisiert werden."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Appointment"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="cancelled-appt-id"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Im Falle einer Terminverschiebung kann die Situation vorkommen, dass Terminressourcen (z.B. Räume oder angebotene Dienstleistungen) nicht verfügbar sind. Dadurch kann es notwendig sein, den zu verschiebenden Termin neu zu planen. Dies wird als zweistufiger Prozess durch die $book-Operation unterstützt, bei dem ein Termin storniert und ein neuer Termin gebucht wird. Dieser Parameter repräsentiert die Ressourcen-Id des zu stornierenden Appointments. Der uri-Parameter kann eine absolute URL enthalten, Server SOLLEN jedoch nur Termine für ihre eigene Domäne verwalten. Im neu-angelegten Appointment MUSS eine Reference auf den abgesagten Termin hinterlegt werden (vgl. Appointment.extension:replaces) durch den Server. Der Status der abgesagten Ressource MUSS durch den Server angepasst werden (status = 'cancelled'). Die Verschiebung ist als transaktionale Operation zu verstehen, d.h. die Absage des originalen Termins DARF durch den Server nur bestätigt werden, wenn der neue vorgeschlagene Termin angenommen werden kann. Andernfalls MUSS die Terminverschiebung mit einem entsprechenden Hinweis abgelehnt werden."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="uri"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="schedule"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Im Falle dass ein Appointment keine Referenz auf ein oder mehrere Slots enthält, MUSS der Server die benötigten Slots auf Basis der Referenz auf Schedule, sowie dem Start- und Endzeitpunkt im Appointment ermitteln."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Reference"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="patient"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine Patient-Ressource, die die Person identifiziert, für die der Termin gemäß dem Parameter 'appt-resource' gebucht werden soll. Die Ressource KANN vom ISiKPatient-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (zur Form der Ablehnung s.u.). Dieser Parameter dient der Übermittlung der Patienteninformationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf einen Patienten zurückgeben, sofern kein Patient unter Appointment.participant im 'appt-resource'-Parameter referenziert ist."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Patient"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="related-person"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine RelatedPerson-Ressource, die eine Person identifiziert, die den Termin im Namen des Patienten bucht. Die Ressource KANN vom ISiKRelatedPerson-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (siehe Form der Ablehnung unten). Dieser Parameter dient der Übermittlung der RelatedPerson-Informationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf eine RelatedPerson zurückgeben, sofern keine RelatedPerson unter Appointment.participant im 'appt-resource'-Parameter referenziert ist."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Patient"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="return"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="out"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Falls die Interaktion erfolgreich ist, ist der Status Code HTTP 201 - Created zurückzugeben. Im Erfolgsfall MUSS als Return-Parameter eine Appointment-Ressource (entsprechend dem dazugehörigen ISiK-Profil) zurückgegeben werden. Das id-Element der Appointment-Ressource MUSS korrekt gefüllt werden. Der Server MUSS den Status der Appointment-Ressource auf 'booked' oder 'pending' ändern. Der Server MUSS die verwendeten Slot-Ressourcen als Referenz im Appointment angeben. Die Appointment-Ressource SOLL direkt im HTTP Body zurückgegeben werden, falls es sich um den einzigen Rückgabewert handelt. Alternativ kann die Appointment-Ressource innerhalb einer Parameter-Ressource zurückgegeben werden. Als Teil der Parameter-Ressource können zusätzlich Hinweise zum Termin als OperationOutcome zurückgegeben werden."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Appointment"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="return"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="out"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Falls die Interaktion fehlschlägt, MUSS als Return-Parameter eine OperationOutcome-Ressource zurückgegeben werden. Syntaktisch fehlerhafte Appointment-Ressourcen (z. B. ungültige XML-/JSON-Repräsentationen gemäß Kernspezifikation) MÜSSEN mit dem HTTP Status-Code 400 – Bad Request abgewiesen werden. Anderweitige und insbesondere semantisch invalide Appointment-Ressourcen (z.B. bei inkorrekter semantischer Kodierung der Fachrichtung (serviceType) oder bei Verstößen gegen Kardinalitäten gemäß dem ISiKTermin-Profil oder der $book-OperationDefinition) MÜSSEN mit einer OperationOutcome-Ressource abgewiesen werden. In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden. Eine OperationOutcome-Ressource KANN zu informativen Zwecken in jedem Fall zurückgegeben werden (s.o.)."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="OperationOutcome"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">OperationDefinition</a>&gt;</code></pre>
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket example.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 4, 2025 18:17+0000">2025-12-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

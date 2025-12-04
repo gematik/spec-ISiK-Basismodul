@@ -15,26 +15,27 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.0.1
+## Version 5.1.0
 
-Datum: XX.XX.2025
+Datum: 23.10.2025
 
-* `improve` Festlegungen für Verwendung von `Encounter.location.location.identifier` konkretisiert. https://github.com/gematik/spec-ISiK-Basismodul/pull/827
-* `improve` Allgemeine Hinweise zum Umgang mit fehlenden Daten und Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen hinzugefügt
-* `improve` id-Elemente sind in **allen** Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.
-* `improve` Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/814
-* `add` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
-* `fix` Anpassung der Canonical des Valuesets **CurrentSmokingStatusUvIPS** auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830
-* `improve` Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826
-* `improve` Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files
+* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
+* `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter ‘start’ https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805
+* `improve` id-Elemente sind in **allen** Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen
+* `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
+* `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+* `documentation` Durch Entfernung des Abschnittes “Übersicht der Akteure” den Abschnitt Akteure klarer gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/848
 
 ## Version 5.0.0
 
 Datum: 26.06.2025
 
-* `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
-* `update` Hinzufügen der Definition von DKG und KIG der ‘Bestätigungsrelevanten Systeme’ für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784
-* `improve` Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768
+* `documentation` Dokumentation und Klarstellung zur Verwendung des Akteurs “Buchender” (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
+* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`
+* `improve` Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767
+* `improve` Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -42,187 +43,150 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `fixed` Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. https://github.com/gematik/spec-ISiK-Basismodul/pull/748
-* `clarification` Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. https://github.com/gematik/spec-ISiK-Basismodul/pull/748
-* `improve` Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes https://github.com/gematik/spec-ISiK-Basismodul/pull/748
-* `fixed` affectsState-Attribut der $update-Operation auf `true` gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert.
-* `fixed` Typo in Canonical des Codesystems und Valuesets UnterbrechungReha korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/726
-* `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzufügen, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/738
-* `improve` Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung für .type https://github.com/gematik/spec-ISiK-Basismodul/pull/749
-* `improve` Update UebergreifendeFestlegungen Methodik https://github.com/gematik/spec-ISiK-Basismodul/pull/708
+* `documentation` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745
 
-## Version 5.0.0-rc1
-
-Datum: 13.05.2025
-
-* `fixed` Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693
-* `add` Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701
-* `improve` Entfernen des Abschnitts “Verpflichtende Suchparameter”, da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
-* `fixed` Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/713
-
-## Version 5.0.0-rc (Kommentierung)
+## Version 5.0.0-rc
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `change` Auslagern der Subscription Profile und UseCases in ein eigenes Modul Subscription https://github.com/gematik/spec-ISiK-Basismodul/pull/645
-* `improve` Klarstellung zum Zweck des Account Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/632
-* `add` Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/602
-* `improve` Hinweise zur Abbildung des Aufnahmegrunds im Encounter hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/647
+* `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607
 * `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
-* `fixed` Fix Pattern auf Composition.type https://github.com/gematik/spec-ISiK-Basismodul/pull/598
-* `fixed` Fix Pattern auf patternCoding.system für AlphaID + Beispiel AlphaID hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/556
-* `improve` Hinweis zur Repräsentation einer PKV-VersichertenId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/587
+* `documentation` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
+* `improve` ISiKKalender enthielt ein required Binding auf ein VS welches auf ein `fragment` CodeSystem referenziert (Schedule.specialty.coding:ErweiterterFachabteilungsschluessel). Dies wurde durch ein extensible Binding und ein Pattern auf .system ersetzt um die Validierbarkeit des Feldes zu ermöglichen. https://github.com/gematik/spec-ISiK-Basismodul/pull/613
 
 -------
 
 ## Version 4.0.3
 
-* `fixed` broken package
+Datum: 08.04.2025
+
+* `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient` https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
+* `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269 und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c
 
 -------
 
 ## Version 4.0.2
 
-* `fixed` Anpassung Kardinalität von “ExtensionAbrechnungsart” unter Account.coverage https://github.com/gematik/spec-ISiK-Basismodul/pull/526
-* `fixed` SearchParameter “contains” existiert nicht in FHIR R4, Suchparameter wird entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/529
-* `fixed` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter ‘near’ https://github.com/gematik/spec-ISiK-Basismodul/pull/533
-* `improved` `softened` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/515
-* `fixed` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/539
-* `improved` Schärfung von Kommentaren von MS-Feldern für das Datenobjekt ‘Practitioner’ https://github.com/gematik/spec-ISiK-Basismodul/pull/541
-* `fixed` Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/539
-* `improved` Generalisierter Abschnitt zur Herstellung des Patienten- und Encounter-Kontextes hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/542
-* `add` `example` Beispiele hinzugefügt für Patient, Condition, Encounter https://github.com/gematik/spec-ISiK-Basismodul/pull/520
-* `improved` Groß- und kleinschreibung bei ISiK-eigenen CodeSystemen deaktiviert https://github.com/gematik/spec-ISiK-Basismodul/pull/532/files
-* `fixed` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter ‘near’ https://github.com/gematik/spec-ISiK-Basismodul/pull/533
-* `fixed` Procedure-code existiert nicht, verwende clinical-code https://github.com/gematik/spec-ISiK-Basismodul/pull/531
-* `improve` Update Basisprofile-De Version auf 1.5.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/549
+Datum: 20.02.2025
+
+* `improve` Die Verbindlichkeit des Suchparameters `subject` in Communication wurde von SHALL auf MAY reduziert. https://github.com/gematik/spec-ISiK-Terminplanung/pull/247 Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen.
+* `improve` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248
+* `fix` Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264
+* `improve` Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266
+* `improve` Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267
+* `fix` Anpassung Kardinalität Appointment.start/end https://github.com/gematik/spec-ISiK-Terminplanung/pull/260
 
 -------
 
 ## Version 4.0.1
 
-Datum: 25.11.2024
+Datum: 02.12.2024
 
-* `improved` Refactoring des ImplementationGuides
-* `fixed` Procedure.code zu Pflichfeld gemacht https://github.com/gematik/spec-ISiK-Basismodul/issues/454
-* `fixed` Condition.onset harmonisiert mit KBV-Profil und mit Condition.abatement https://github.com/gematik/spec-ISiK-Basismodul/issues/454
-* `improved` Vereinheitlichung des Umgangs mit ressourcenübergreifenden Suchparametern https://github.com/gematik/spec-ISiK-Basismodul/issues/438
-* `fixed` Anpassung der include/revinclude Anforderungen in den übergreifenden Festelegungen und dem CapabilityStatement
-* `fixed` CodeSystem-Ressource wird im CapabilityStatement nun korrekt angezeigt https://github.com/gematik/spec-ISiK-Basismodul/issues/436
-* `fixed` CapabilityStatement **near** SearchParameter type & ResourceType Organization spelling, removed custom backport Extension - switched to the official backport mechanism, fixed Bindings to CodeSystems https://github.com/gematik/spec-ISiK-Basismodul/commit/ae706142832e2059046ce978c4b0dc472c2375e6
-* `improved` Hinweis zur Handhabung von leeren Elementen und einem :not-Modifier hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/473 obsoleter PR, dafür umgesetzt hier: https://github.com/gematik/spec-ISiK-Basismodul/commit/e63cc68d311057f7b30b5b405c5533bef41e9d68
-* `fixed` Dependency zum R5 backporting IG auf das R4 only package angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/479
-* `improved` Formulierung zur Verwendung des Versorgungsstellenkontaktes https://github.com/gematik/spec-ISiK-Basismodul/pull/488
-* `add``example`Beispiel Station hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/546/files
-* `improved` Harmonisierung von Encounter.type und Account.type https://github.com/gematik/spec-ISiK-Basismodul/pull/441
-* `improved` Änderung der Kardinalität von Composition.type.text auf 1..1 https://github.com/gematik/spec-ISiK-Basismodul/pull/441
-
-## Version: 4.0.0
-
-Datum: 30.8.2024
-
-* Neudefinition der bestätigungsrelevanten Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/426
-* Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/411
-* Überarbeitung der Must Support Definition: https://github.com/gematik/spec-ISiK-Basismodul/pull/412
-* Hinzufügen von MS und weitere Anpassung von Encounter.location, um Abbildung von Standort-Historie zu ermöglichen: https://github.com/gematik/spec-ISiK-Basismodul/pull/407
-* Added MS for Account.coverage.priority https://github.com/gematik/spec-ISiK-Basismodul/pull/405 and https://github.com/gematik/spec-ISiK-Basismodul/pull/406
-* Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380
-* Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408
-* Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399
-* Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung
-* Entfernen der MS-Flag für .id, da irreführend https://github.com/gematik/spec-ISiK-Basismodul/pull/414
-* Fix Beispiel DorisResultat für patient-merge https://github.com/gematik/spec-ISiK-Basismodul/pull/415
-* Anforderung zu Procedure.Encounter hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/419
-* Änderung der MS-Definition für Patient.active https://github.com/gematik/spec-ISiK-Basismodul/pull/421
-* Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422
-* SnomedCT Coding.version muss auf die German Edition zeigen https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* ISiKAngehoeriger: hinzufügen von MS auf .relation & .telecom, entfernen der gender extension https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* ISiKDiagnose: hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* ISiKOrganisation: identifier:TelematikId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/417
-* Harmonisierung mit Anforderung mit Kontakt/Fall-Seite https://github.com/gematik/spec-ISiK-Basismodul/pull/424
-* Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423
-* Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418
-* Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398
+* `improve` Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207
+* `documentation` Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
+* `improve` Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204
+* Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206
+* Anforderungen an die Kodierung von Appointment/Schedule.serviceType geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/227
+* `improve` Schwächung der Kardinalität von actor.display im Profil StructureDefinition-ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/233
+* Ergänzung von Anforderungen an Akteure https://github.com/gematik/spec-ISiK-Terminplanung/pull/236
+* `fix` Fix der Canonical URL im Capability-Statement des Terminplanungsserver https://github.com/gematik/spec-ISiK-Terminplanung/pull/238
+* `improve` Hinzufügen der Extension “Appointment Replaces” zum Profil ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/242
+* `improve` Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240
+* `fix` Korrektur des Extension Kontext in ISiKKalender https://github.com/gematik/spec-ISiK-Terminplanung/pull/239
+* Aktualisierung der Operation ISiKBookOperation https://github.com/gematik/spec-ISiK-Terminplanung/pull/245
 
 -------
 
-## Version: 4.0.0-rc2
+## Version 4.0.0
+
+Datum: 01.10.2024
+
+* Aktive Version ohne weitere Änderungen
+
+-------
+
+## Version 4.0.0-rc2
+
+Datum: 26.6.2024
+
+* `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187
+* Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
+* `improve` Update der IHE ValueSets zu “practiceSetting” in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
+* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
+* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193
+
+-------
+
+## Version 4.0.0-rc
 
 Datum: 4.4.2024
 
-* Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link & patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359
-* Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358
-* Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369
-* Neue Profile für Lebenszustände - Schwangerschaftsstatus, SS-ET, Raucher & Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378 
-* Hinzugefügt Lebenszustand markdown descriptions by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/379
+* `improve` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178
+* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174
+* `improve` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175
+* Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173
+* `improve` Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können 
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
  
-* Feature: Ptdata 827 reha entlassung by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/393
-* Update Deutsche Basisprofile v1.5.0 by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/372
-* Verwende IdentifierAbrechnungsnummer aus den Deutschen Basisprofilen by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/381
-* Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files
-* Fix/canonical to new format by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/383
-* Feature/ptdata 821 account abrechnungsart by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/386
-* Feature/ptdata 671 // MS für coding.version by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/390
-* Feature: added Allergyintollerance to CapStatement by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/385
-* Lockerung der Anforderung für den Suchparameter “context-type-value” definiert für ISiKValueSet zu “KANN”
-
--------
-
-## Version: 3.0.5
-
-Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 eingebracht sind.
+* Präzisierung book-Operation https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144
+* `fix` Fix CpS by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/179
+* `improve` Klarstellung cancelled-appt-id by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
 
 -------
 
 ## Version: 3.0.4
 
-Datum: 1.3.2024
-
-* Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: https://github.com/gematik/spec-ISiK-Basismodul/pull/362
-* Korrektur der Anforderung zur Encounter-Kontaktebene: https://github.com/gematik/spec-ISiK-Basismodul/pull/363
-* Hinweis zur Nutzung des Suchparameter “context-type-value” hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/367
-* Änderung der Anforderung zu KANN für Profil ISIKKatalog: https://github.com/gematik/spec-ISiK-Basismodul/pull/367
-* Lockerung für Extension Kardinalität in Account zu ..* und hinzufügen einer Beschreibung: https://github.com/gematik/spec-ISiK-Basismodul/pull/366
+Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 (4.0.0-rc2) eingebracht sind.
 
 -------
 
 ## Version: 3.0.3
 
-Datum: 15.01.2024
+Datum: 25.3.2024
 
-* Anpassung und Harmonisierung der Anforderungen zu HTTP-Responses: update HTTP response requirement #308 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/354
-
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.2…v.3.0.3
+* Reduzierung der Anforderung für ISiKNachricht https://github.com/gematik/spec-ISiK-Terminplanung/pull/172
+* Präzisieren der Suchparameter-Anforderungen für Slot : https://github.com/gematik/spec-ISiK-Terminplanung/pull/168
+* Präzisieren der Anforderungen für Encounter: https://github.com/gematik/spec-ISiK-Terminplanung/commit/d596744d910fd39b421fc7f6f97f73edf471d47a
+* Präzisierung informativ zu ISiKMedizinischeBehandlungseinheit (HealthcareService) https://github.com/gematik/spec-ISiK-Terminplanung/pull/176
+* `improve` Update Dependency des Basismoduls auf 3.0.4
 
 -------
 
 ## Version: 3.0.2
 
-Datum: 09.01.2024
+Datum: 03.01.2024
 
-* Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - Feature/anfisk 146 search related person by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/346
-
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1…v.3.0.2
+* `improve` Update ISiK Basismodul Dependency -> 3.0.1
+* Klärung zur Verwendung der Binary: add link for clarification by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/156
+* `fix` CapabilityStatement Anforderungen entsprechend angepasst: fix CpS Encounter Read and Search interaction by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/154
+* Klärung zur Verwendung der Ressourcen aus dem Basismodul: Feature/ptdata 723 update interactions by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/158
+* Klärung zur Nutzung der ISiKNachricht; Feature/clarify bidirectional anfisk 178 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/160
 
 -------
 
 ## Version: 3.0.1
 
-Datum: 05.12.2023
+Datum: 30.10.2023
 
-* Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9
-* Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11
-* Invariante zur Strassenanschrift modifiziert - fix invariant context #330: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e 
-* hier auch Constraint bezüglich ISiKAngehoeriger aus Strassenanschrift entfernt
- 
-* Anforderungen im CapabilityStatement zum Account entsprechend der textuellen Anforderungen angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/ac4d2c730bb94dd50cc4f5deea8c2b1344329d2c
-* Neue (klärende) Anforderung zum Versorgungsstellenkontakt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d7005923c4596f8a646468f20e1f9975f2489bef
-* Öffnung der Festlegung einer Coverage-ID - fix identifier slices + add MS beneficiary + rm MS kvid: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/bd66cca38397b987581bece3d2e9f508813ff765
-* Zielstellung zur Interoperabilität der Profile angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/3130973de182a078208f181a64ff1cfd8783493a
+Mit dem Release der Stufe 3.0.1 werden die unten gelisteten Änderungen normativ festgesetzt.
 
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0…v.3.0.1
+* `fix` Fixing KalenderName extension name ISiKKalenderSchedule.md by @alexey-tschudnowsky in https://github.com/gematik/spec-ISiK-Terminplanung/pull/110
+* `fix` Fix Suchparameter “content-mode” zu “context-type-value” by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/120
+* `improve` Anpassung CapabilityStatement an die textuelle Beschreibung der verpflichtenden Interaktionen by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/125
+* Informative Anmerkung für den Fall, dass .extenstion:name nicht verfügbar ist by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/129
+* `improve` Anpassung Sequenzdiagramme by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/127
+* `improve` Example Canonical für Behandlungsleistung angepasst by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/134
+* Abfrage aller verfügbaren Slots für Kalender durch Termin-Requestor by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/135
+* Verwendung realistische Dauer für einen Slot in den Beispielen by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/137
+* Angleichung der Regeln zu meta.tag in Appointments by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/136
+* `fix` Fix HTTP return code by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/131
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen hinzugefügt by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/139
+* BookOperation Anforderung von KANN zu SOLLTE by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/143
+* Austausch der Communication/Binary-Ressourcen genauer beschrieben by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/140
+* `improve` Enhancement Appointment and Slot reference MS by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/133
 
 -------
 
@@ -234,166 +198,80 @@ Datum: 01.07.2023
 
 -------
 
-## Version: 3.0.0-rc3
-
-Datum: 30.05.2023
-
-* Allgemein: Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert 
-* update provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263
- 
-* ISiKCapabilityStatementBasisServer: Read Shall für Composition entfernt 
-* fix capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260
- 
-* ISiKAbrechnungsfall: 
-* Änderung des Kodierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst 
-* Enhancement/account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238
-* Update/identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269
- 
-* Änderung der falschen Kardinalität 
-* fix cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262
- 
-* Nur der Patient als Subject zugelassen 
-* Update/account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265
- 
- 
-* ISiK Prozedur: MS für SNOMED-Codierung 
-* add: MS for SNOMED by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/239
- 
-* ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als zahlende Instanz hinzugefügt 
-* add: organization as payor by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/236
- 
-* ISiK KontaktGesundheitseinrichtung: Suchparameter für Encounter.date start/end aus R5 übernommen 
-* feat: Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/242
- 
-* ISiKBerichtSubSysteme: References generisch statt ISiK-spezifisch 
-* update Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
- 
-
--------
-
 ## Version: 3.0.0-rc2
 
-Datum: 03.04.2023
+Datum: 31.05.2023
 
-* KontaktGesundheitseinrichtung: SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene “period” zu ermöglichen 
-* feat: Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in [https://github.com/gematik/spec-ISiK-Basismodul/pull/242](https://github.com/gematik/spec-ISiK-Basismodul/pull/242)
+* ISiKTerminAppointment * Änderung zu Appointment.serviceType aus 3.0.0-rc1 (Kommentierung) wurde zurückgezogen 
+* wurde revert Changes for Appointment.serviceType #88 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/89
+* `documentation` Eine IG Seite zur Encounter Beschreibung für Terminplanung wurde hinzugefügt 
+* Encounter Beschreibung für Terminplanung by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
+ 
+* Mehrere Slots müssen nicht mehr ein und denselben Schedule referenzieren 
+* rm cosntraint: allow different Schedules #82 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/92
+ 
+* Die Änderung zu Appointment.specialty wurde um eine textuelle Vorgabe zum MS ergänzt 
+* MS + textual constraint #72 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/91
+ 
+ 
+* Operations statt eines Bundle reicht als Return-Wert ein Appointment 
+* return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
  
 
 -------
 
 ## Version: 3.0.0-rc1
 
-Datum: 31.03.2023
+Datum: 04.04.2023
 
-* ISiKAbrechnungsfall: Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release 
-* Enhancement/account identifier by @f-peverali in [https://github.com/gematik/spec-ISiK-Basismodul/pull/238](https://github.com/gematik/spec-ISiK-Basismodul/pull/238)
+* ISiKTerminKontaktMitGesundheitseinrichtung - by @f-peverali in [https://github.com/gematik/spec-ISiK-Terminplanung/commit/9f523157682bd26a304f388a6f0d7c91a91811da](https://github.com/gematik/spec-ISiK-Terminplanung/commit/9f523157682bd26a304f388a6f0d7c91a91811da) : Entfernen des Profils da kein integraler Use Case für Terminvereinbarung und Inkompatibilität zum ISiK Basisprofil
+* ISiKNachricht Hinweis zum Thema Sicherheit eingefügt. Ohne weitere Maßnahmen können über ISiKNachricht keine medizinischen Daten ausgetauscht werden. Hierfür sollte daher bevorzugt die ePA verwendet werden.
+* ISiKTermin - Enhancement /appointment by @jcaumann in [https://github.com/gematik/spec-ISiK-Terminplanung/pull/79](https://github.com/gematik/spec-ISiK-Terminplanung/pull/79) : 
+* `improve` Kardinalität der Elemente Appointment.specialty und Appointment.serviceType von 1..* auf 0..* geändert . MustSupport dieser Elemente von “true” auf “false” geändert. 
+* FHIR erlaubt die Anlage von Appointments ohne Bindung an einen Slot und außerhalb des Worksflows über einen Kalender. Dies kann z.B. auch dann erforderlich sein, wenn ein Termin außerhalb der definierten Slots per Telefon vereinbart und dann in das System eingespeist wird. In diesem Fall findet keine “Vererbung” von serviceType und specialty aus einem Kalender statt. Die Person, die den Termin in das System einträgt sollte hier selbst entscheiden können, welche Attribute sie explizit angibt und welche sich implizit aus dem Kontext erschließen.
+* ISiK Terminblöcke referenzieren auf Kalender, die auch andere als ISIK Kalender sein können. Damit ist nicht sichergestellt, dass eine durchgängige, automatische “Vererbung” von specialty und serviceType über Schedule und Slot in ein Appointment möglich ist (in FHIR Schedule und ISiK Terminblock ist die Kardinalität jeweils “0..*”, d.h. diese Angaben können auch gänzlich fehlen).
  
-* ISiKProzedur: SNOMED-Kodierung auf Must Support gesetzt 
-* add: MS for SNOMED by @f-peverali in [https://github.com/gematik/spec-ISiK-Basismodul/pull/239](https://github.com/gematik/spec-ISiK-Basismodul/pull/239)
+* Kongruenz der Angaben in Appointment.start/end und Appointment.slot.start/end von MUSS auf SOLL herabgestuft. 
+* s .o. Bei off-band-Buchungen wird eine gewisse Flexibilität im Umgang mit dem Kalender benötigt.
  
-* ISiKVersicherungsverhaeltnisSelbstzahler: Organisation als möglicher ‘payor’ hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt) 
-* add: organization as payor by @f-peverali in [https://github.com/gematik/spec-ISiK-Basismodul/pull/236](https://github.com/gematik/spec-ISiK-Basismodul/pull/236)
+* Hinweise zu den erwarteten Ergebnissen bei Suchanfragen auf “sepcialty” und “serviceType” in Fällen, bei denen diese Elemente keinen Wert haben.
  
-
--------
-
-## Version: 2.0.5
-
-Datum: 24.03.2023
-
-* Änderungen am IG 
-* Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country
-* Einschränkung der Umsetzungspflicht für Suchparameter vom Typ “Token” auf Datentypen “code”, “Coding” oder “CodeableConcept”
+* ISiKBookOperation Für die Abbildung eines manuellen Buchungsprozesses wurden die Vorgaben zu den Return Values beim Appointment.status um “pending” erweitert 
+* in Enhancement/appointment by @jcaumann in [https://github.com/gematik/spec-ISiK-Terminplanung/pull/79](https://github.com/gematik/spec-ISiK-Terminplanung/pull/79)
  
-* ISiKBerichtBundle 
-* Slicing-Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung
- 
-* ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung) 
-* Fixed identifier-Slicing of Type VersichertenId-GKV
- 
-
--------
-
-## Version: 2.0.4
-
-Datum: 31.01.2023
-
-* ISiKVersicherungsverhaeltnisGesetzlich 
-* `Reference` auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoeriger (entspricht allgemeinem Design-Prinzip)
-* `Coverage.beneficiary.identifier` URL in `patternidentifier.system` ersetzt
- 
-* weitere Änderungen an Implementierungsleitfaeden (informativ)
 
 -------
 
 ## Version: 2.0.3
 
-Datum: 21.12.2022
+Datum: 24.03.2023
 
-* CapabilityStatemtent 
-* Composition und Bundle-Parameter hinzugefügt
+* `improve` enhancement backport extension r5 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/61 
+* ISiKKalender - Harmonisierung mit den Empfehlungen der Basisprofile DE
  
-* ISiKBerichtSubsystem 
-* `encounter` auf FHIR-Core gesetzt
- 
-* ISiKBerichtBundle 
-* Beispiele hinzugefügt
- 
-* Weitere geringfügige Änderungen am Implementierungsleitfaden
+* `fix` quickfix typo IG by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/63
+
+**Full Changelog**: https://github.com/gematik/spec-ISiK-Terminplanung/compare/v2.0.2…v.2.0.3
 
 -------
 
 ## Version: 2.0.2
 
-Datum: 31.10.2022
+Datum: 31.01.2023
 
-* Bericht für Subsysteme 
-* `id` ist nun 0..1
+* ISiKTerminblock 
+* Reference(Schedule) statt Reference(ISiKKalender). Reference-Element erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind.
  
-* Kontakt 
-* `id` ist nun 0..1
- 
-* Patient 
-* `id` ist nun 0..1
-* Der Identifier `Versichertennummer-GKV` wurde zu `VersichertenId-GKV`
- 
-* Prozedur 
-* `id` ist nun 0..1
- 
-* Versicherungeverhältnis Gesetzlich 
-* `id` ist nun 0..1
-* `type.coding` ist nun Must Support
-* `VersicherungsArtDeBasis` ist nun Must Support
- 
-* Invarianten wurden verbessert
+* Update Basismodul Dependency -> 2.0.4
+* weitere Änderungen an IG (informativ)
 
 -------
 
 ## Version: 2.0.1
 
-Datum: 30.09.2022
+Datum: 31.10.2022
 
-* ISiKPatient: 
-* .address.Strassenanschrift.extension:Stadtteil, .type, .status nun Must Support
- 
-* ISiKPersonImGesundheitsberuf: 
-* .address.Strassenanschrift.extension:Stadtteil, nun Must Support
- 
-* ISiKAngehöriger: 
-* .address.Strassenanschrift.extension:Stadtteil, nun Must Support
- 
-* ISiKAbrechnungsfall 
-* .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
- 
-* ISiKKontaktGesundheitseinrichtung 
-* .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer
- 
-* ISiKVersicherungsverhaeltnisGesetzlich 
-* .type ist nun Must Support
- 
-* ISiKVersicherungsverhaeltnisSelbstzahler 
-* .type und .status ist nun Must Support
- 
+* Update Basismodul Dependency -> 2.0.2
 
 -------
 
@@ -401,64 +279,15 @@ Datum: 30.09.2022
 
 Datum: 30.06.2022
 
-* Allgemein: 
-* Alle Conformance Ressourcen enthalten den Prefix “https://gematik.de/fhir/isik/v2/Basismodul/” in ihrer Canonical URL
-* Erweiterung des Abschnittes “Verpflichtende Suchparameter (Alle Datenobjekte)” durch _tag, , _count, _include, _revinclude
-* Best Practice Empfehlungen für Standard-Suchfilter hinzugefügt
-* Verpflichtung :type-Modifier auf Referenzen hinzugefügt
-* Aufhebung der Einschränkung von Chaining und Reverse Chaining auf die Referenzen “patient”, “subject” und “encounter”
-* Anpassung der Vorgaben für den “Self”-Link als Antwort auf eine Suchanfrage.
- 
-* Neue Profile hinzugefügt: 
-* ISiKAbrechnungsfall
-* ISiKBerichtBundle
-* ISiKBinary
-* ISiKCodeSystem
-* ISiKValueSet
- 
-* ISiKAngehöriger: 
-* Target Profil Einschränkung auf ISiKPatient in RelatedPerson.patient aufgehoben
- 
-* ISiKBerichtSubsystem: 
-* Must-Support Flags hinzugefügt
- 
-* ISiKDiagnose: 
-* Beschreibung von “isik-con1”-Constraint korrigiert
-* Must Support Flag für Extension “related” hinzugefügt
- 
-* ISiKPatient: 
-* Umbenennung Slice von “Patient.identifier:Versichertennummer-GKV in “Patient.identifier:VersichertenId-GKV”
- 
-* ISiKPersonImGesundheitsberuf: 
-* Element “Practitioner.identifier:TelematikId” hinzugefügt (must-support)
- 
-* ISiKVersicherungsverhaeltnisGesetzlich: 
-* Must-Support Flag auf “Coverage.payor.identifier.type” hinzugefügt
- 
-* ISiKKontaktGesundheitseinrichtung 
-* Constraints ISiK-enc-2 bis ISiK-enc-8 hinzugefügt
-* Extensions plannedStartDate, plannedEndDate und Wahlleistung hinzugefügt
-* Änderung Kardinalität von Element “Encounter.identifier:Aufnahmenummer.type” auf 1..1
-* Änderung Kardinalität von Element “Encounter.type:Kontaktebene” auf 1..1
-* Element “Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel” hinzugefügt
-* Änderung Kardinalität von “Encounter.period” von 1..1 auf 0..1
-* Element “Encounter.diagnosis.use.coding:Diagnosetyp” und “Encounter.diagnosis.use.coding:DiagnosesubTyp” hinzugefügt
-* Must-Support Flag auf Element “Encounter.account” hinzugefügt
-* Änderung der Binding-Strength des Elementes “Encounter.hospitalization.admitSource” von “preferred” auf “extensible”
-* Extensible ValueSet zu Element “Encounter.location.physicalType” hinzugefügt
-* Anstelle von “Encounter.location.location.display” ist nun “Encounter.serviceProvider.identifier” zu verwenden
-* Must-Support-Flag entfernt auf Element “Encounter.partOf”
- 
+* Initialer Release
 
 -------
 
-## Version: 2.0.0-ballot
+## Version: 2.0.0 (Ballotierung)
 
-Datum: 08.04.2022
+Datum: 31.03.2022
 
-*  
+* Initiale Ballotierungsversion für ISiK Stufe 2
 
-## Initiale Ballotierungsversion für ISiK Stufe 2
-
- 
+-------
 

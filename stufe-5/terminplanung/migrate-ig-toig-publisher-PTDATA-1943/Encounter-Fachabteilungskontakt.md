@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * ****
 
 ## Encounter: 
@@ -36,9 +36,9 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 | | | |
 | :--- | :--- | :--- |
 | - | **Condition** | **Use** |
-| * | [Condition](Condition-BehandlungsDiagnoseFreitext.md) | Behandlungsrelevante Diagnosen |
+| * | [Condition/BehandlungsDiagnoseFreitext](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Condition/BehandlungsDiagnoseFreitext) | Behandlungsrelevante Diagnosen |
 
-**account**: [Account: extension = ; identifier = Account number; status = active; type = inpatient encounter](Account-AbrechnungsfallDRG.md)
+**account**: [Account/AbrechnungsfallDRG](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Account/AbrechnungsfallDRG)
 
 ### Hospitalizations
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Appointment xmlns="http://hl7.org/fhir">
+  <id value="ISiKTerminExample"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin"/>
+    <tag>
+      <system value="http://fhir.de/CodeSystem/common-meta-tag-de"/>
+      <code value="external"/>
+    </tag>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Appointment ISiKTerminExample</b></p><a name="ISiKTerminExample"> </a><a name="hcISiKTerminExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKTermin.html">ISiKTermin</a></p><p style="margin-bottom: 0px">Tag: External (Details: CS Basisprofil Common Meta Tag DE code external = 'External')</p></div><p><b>status</b>: Proposed</p><p><b>serviceType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/service-type 124}">General Practice</span></p><p><b>specialty</b>: <span title="Codes:{http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen ALLG}">Allgemeinmedizin</span></p><p><b>priority</b>: <code>de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension: </code><span title="Codes:{http://snomed.info/sct 25876001}">Emergency</span></p><p><b>start</b>: 2022-12-10 09:00:00+0000</p><p><b>end</b>: 2022-12-10 11:00:00+0000</p><p><b>slot</b>: <a href="Slot-ISiKTerminblockExample.html">Slot: status = busy; start = 2022-12-10 09:00:00+0000; end = 2022-12-10 11:00:00+0000</a></p><h3>Participants</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td><td><b>Status</b></td></tr><tr><td style="display: none">*</td><td><a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/ISiKPatientTest">Test Patient</a></td><td>Accepted</td></tr></table></div>
+  </text>
+  <status value="proposed"/>
+  <serviceType>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/service-type"/>
+      <code value="124"/>
+    </coding>
+  </serviceType>
+  <specialty>
+    <coding>
+      <system value="http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"/>
+      <code value="ALLG"/>
+    </coding>
+  </specialty>
+  <priority>
+    <extension url="https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="25876001"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </priority>
+  <start value="2022-12-10T09:00:00Z"/>
+  <end value="2022-12-10T11:00:00Z"/>
+  <slot>
+    <reference value="Slot/ISiKTerminblockExample"/>
+  </slot>
+  <participant>
+    <actor>
+      <reference value="Patient/ISiKPatientTest"/>
+      <display value="Test Patient"/>
+    </actor>
+    <status value="accepted"/>
+  </participant>
+</Appointment>

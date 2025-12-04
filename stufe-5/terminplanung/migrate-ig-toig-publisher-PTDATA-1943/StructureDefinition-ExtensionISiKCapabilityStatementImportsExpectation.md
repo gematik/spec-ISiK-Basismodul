@@ -5,7 +5,7 @@ Test Implementation Guide
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **ISiK CapabilityStatement Imports Expectation**
 
 ## Extension: ISiK CapabilityStatement Imports Expectation 
@@ -27,9 +27,9 @@ This extension may be used on the following element(s):
 
 **Usages:**
 
-* Examples for this Extension: [ISiK-CapabilityStatementBasisServerAkteur](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur.md)
+* Examples for this Extension: [ISiKCapabilityStatementTerminRepositoryAkteur](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/example.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
 
 ### Formal Views of Extension Content
 
