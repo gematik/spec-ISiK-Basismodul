@@ -56,7 +56,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Schedule?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/Schedule?specialty=http://ihe-d.de/CodeSystems/ProzessrollenFuerAutoren|535`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
     * searchParam[+]
@@ -183,7 +183,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Appointment?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/Appointment?specialty=http://ihe-d.de/CodeSystems/ProzessrollenFuerAutoren|535`    
         **Anwendungshinweis:** 
         Anwendungshinweise: Bei einer Suche mit dem `:not`-Modifier MÜSSEN Ressourcen, die keinen Wert für `Appointment.specialty` enthalten, 
         im Suchergebnis enthalten sein. 
@@ -269,7 +269,7 @@ Usage: #definition
       * type = #token
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/HealthcareService?specialty=urn:oid:1.2.276.0.76.5.114|535`    
+        `GET [base]/HealthcareService?specialty=http://ihe-d.de/CodeSystems/ProzessrollenFuerAutoren|535`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
     * searchParam[+]
