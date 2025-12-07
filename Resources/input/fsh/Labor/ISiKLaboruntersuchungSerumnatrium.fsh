@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungSerumnatrium
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungSerumnatrium
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil findet u.a. Verwendung im Use Case zur Unterstützung von Transplantationsbeauftragten mittels DETECT (siehe https://www.detect-iha.de)."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil wird unter anderem im Use Case zur Unterstützung von Transplantationsbeauftragten durch DETECT (siehe https://www.detect-iha.de) eingesetzt, insbesondere im Rahmen von Messungen mittels Point-of-Care-Testing."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesSerumnatrium
