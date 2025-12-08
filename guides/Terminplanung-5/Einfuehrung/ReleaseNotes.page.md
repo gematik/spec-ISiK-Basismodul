@@ -9,6 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum tbd
 
 * `improve` alle Elemente sind mit short-description versehen https://github.com/gematik/spec-ISiK-Basismodul/pull/928
+* `documentation` Korrektur IHE Canonical in Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/944
 
 ## Version 5.1.0
 
