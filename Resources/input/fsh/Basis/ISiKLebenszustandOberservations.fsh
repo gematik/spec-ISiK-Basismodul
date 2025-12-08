@@ -29,6 +29,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+* ^abstract = true
 * status MS
   * ^short = "Status"
   * ^comment = "Bedeutung: Der Status MUSS insbesondere zur Differenzierung von abgeschlossenen, 
