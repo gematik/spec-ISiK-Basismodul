@@ -1,0 +1,163 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-dok-ig/Encounter/FachabteilungskontaktFachbereichswechsel1> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FachabteilungskontaktFachbereichswechsel1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter FachabteilungskontaktFachbereichswechsel1</b></p><a name=\"FachabteilungskontaktFachbereichswechsel1\"> </a><a name=\"hcFachabteilungskontaktFachbereichswechsel1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKontaktGesundheitseinrichtung.html\">ISiKKontaktGesundheitseinrichtung</a></p></div><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 1500}\">Allgemeine Chirurgie</span></p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p><p><b>period</b>: 2025-01-01 10:00:00+0100 --&gt; 2025-01-10 08:00:00+0100</p><blockquote><p><b>location</b></p><p><b>location</b>: Station CHA1 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/stationId</code>/CHA1)</p><p><b>status</b>: Active</p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type wa}\">Ward</span></p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: Zimmer Z001 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/zimmerId</code>/Z001)</p><p><b>status</b>: Active</p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}\">Room</span></p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: Bett B016 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/bettId</code>/B016)</p><p><b>status</b>: Completed</p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}\">Bed</span></p><p><b>period</b>: ?? --&gt; 2025-05-01 12:00:00+0100</p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: Bett B027 (Identifier: <code>https://test.krankenhaus.de/fhir/sid/bettId</code>/B027)</p><p><b>status</b>: Active</p><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}\">Bed</span></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "VN" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "IMP" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/Kontaktebene"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/Kontaktebene>
+       ] ;
+       fhir:code [ fhir:v "abteilungskontakt" ]
+     ] )
+  ] ) ; # 
+  fhir:serviceType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel>
+       ] ;
+       fhir:code [ fhir:v "1500" ] ;
+       fhir:display [ fhir:v "Allgemeine Chirurgie" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-dok-ig/Patient/PatientinNormal> ;
+     fhir:reference [ fhir:v "Patient/PatientinNormal" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2025-01-01T10:00:00+01:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2025-01-10T08:00:00+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:location ( [
+     fhir:location [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://test.krankenhaus.de/fhir/sid/stationId"^^xsd:anyURI ;
+           fhir:l <https://test.krankenhaus.de/fhir/sid/stationId>
+         ] ;
+         fhir:value [ fhir:v "CHA1" ]
+       ] ;
+       fhir:display [ fhir:v "Station CHA1" ]
+     ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:physicalType [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+         ] ;
+         fhir:code [ fhir:v "wa" ] ;
+         fhir:display [ fhir:v "Ward" ]
+       ] )
+     ]
+  ] [
+     fhir:location [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://test.krankenhaus.de/fhir/sid/zimmerId"^^xsd:anyURI ;
+           fhir:l <https://test.krankenhaus.de/fhir/sid/zimmerId>
+         ] ;
+         fhir:value [ fhir:v "Z001" ]
+       ] ;
+       fhir:display [ fhir:v "Zimmer Z001" ]
+     ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:physicalType [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+         ] ;
+         fhir:code [ fhir:v "ro" ] ;
+         fhir:display [ fhir:v "Room" ]
+       ] )
+     ]
+  ] [
+     fhir:location [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://test.krankenhaus.de/fhir/sid/bettId"^^xsd:anyURI ;
+           fhir:l <https://test.krankenhaus.de/fhir/sid/bettId>
+         ] ;
+         fhir:value [ fhir:v "B016" ]
+       ] ;
+       fhir:display [ fhir:v "Bett B016" ]
+     ] ;
+     fhir:status [ fhir:v "completed" ] ;
+     fhir:physicalType [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+         ] ;
+         fhir:code [ fhir:v "bd" ] ;
+         fhir:display [ fhir:v "Bed" ]
+       ] )
+     ] ;
+     fhir:period [
+       fhir:end [ fhir:v "2025-05-01T12:00:00+01:00"^^xsd:dateTime ]
+     ]
+  ] [
+     fhir:location [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://test.krankenhaus.de/fhir/sid/bettId"^^xsd:anyURI ;
+           fhir:l <https://test.krankenhaus.de/fhir/sid/bettId>
+         ] ;
+         fhir:value [ fhir:v "B027" ]
+       ] ;
+       fhir:display [ fhir:v "Bett B027" ]
+     ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:physicalType [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+         ] ;
+         fhir:code [ fhir:v "bd" ] ;
+         fhir:display [ fhir:v "Bed" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

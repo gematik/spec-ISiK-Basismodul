@@ -1,0 +1,219 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-dok-ig/Bundle/ISiKBundle-Example> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKBundle-Example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle>
+     ] )
+  ] ; # 
+  fhir:identifier [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "FILL" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://fhir.krankenhaus.example/sid/subsystem-a/berichtbundlenummer"^^xsd:anyURI ;
+       fhir:l <https://fhir.krankenhaus.example/sid/subsystem-a/berichtbundlenummer>
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ; # 
+  fhir:type [ fhir:v "document"] ; # 
+  fhir:timestamp [ fhir:v "2022-05-03T17:57:34+01:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002"^^xsd:anyURI ;
+       fhir:l <urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002>
+     ] ;
+     fhir:resource ( <urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"^^xsd:anyURI ;
+       fhir:l <urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345>
+     ] ;
+     fhir:resource ( <urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"^^xsd:anyURI ;
+       fhir:l <urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765>
+     ] ;
+     fhir:resource ( <urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765> )
+  ] ) . # 
+
+<urn:uuid:74b471ba-6fc9-11ed-a1eb-0242ac120002> a fhir:Composition ;
+  fhir:id [ fhir:v "CompositionExampleBlutdruck"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_CompositionExampleBlutdruck\"> </a><p>Familienname:Fürstin von Musterfrau</p><p>Geburtsdatum:1964-08-12</p><p>PID:TestPID</p><p>Bericht-Status:final</p><p>Bericht-Typ:Berichtzusammenfassung / Document Summary</p><p>Datum:03.05.2022</p><p>Titel:Blutdruckmessung vom 3.5.2022</p><p>Autor:Gerät XY, Fa. Z, Modell T</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "FILL" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"^^xsd:anyURI ;
+       fhir:l <https://fhir.krankenhaus.example/sid/system-a/berichtnummer>
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:55112-7 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "55112-7" ]
+     ] ) ;
+     fhir:text [ fhir:v "Kurzbericht" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345> ;
+     fhir:reference [ fhir:v "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765> ;
+     fhir:reference [ fhir:v "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765" ]
+  ] ; # 
+  fhir:date [ fhir:v "2022-05-03"^^xsd:date] ; # 
+  fhir:author ( [
+     fhir:type [
+       fhir:v "Device"^^xsd:anyURI ;
+       fhir:l fhir:Device
+     ] ;
+     fhir:display [ fhir:v "Gerät XY, Fa. Z, Modell T" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Blutdruckmessung vom 3.5.2022"] ; # 
+  fhir:section ( [
+     fhir:title [ fhir:v "Messung" ] ;
+     fhir:text [
+       fhir:status [ fhir:v "generated" ] ;
+       fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td><b>Systolisch</b></td><td><b>Diastolisch</b></td><td><b>Einheit</b></td><td><b>Uhrzeit</b></td></tr><tr><td>140</td><td>110</td><td>mmHG</td><td>17:15h</td></tr></table></div>"^^rdf:XMLLiteral ]
+     ]
+  ] ) . # 
+
+<urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345> a fhir:Patient ;
+  fhir:id [ fhir:v "PatientinMusterfrauMinimal"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_PatientinMusterfrauMinimal\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientinMusterfrauMinimal</b></p><a name=\"PatientinMusterfrauMinimal\"> </a><a name=\"hcPatientinMusterfrauMinimal\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)</p><hr/></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://fhir.krankenhaus.example/sid/PID"^^xsd:anyURI ;
+       fhir:l <https://fhir.krankenhaus.example/sid/PID>
+     ] ;
+     fhir:value [ fhir:v "TestPID" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Fürstin von Musterfrau" ] ;
+     fhir:given ( [ fhir:v "Erika" ] ) ;
+     fhir:prefix ( [ fhir:v "Dr." ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1964-08-12"^^xsd:date] . # 
+
+<urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765> a fhir:Encounter ;
+  fhir:id [ fhir:v "FachabteilungskontaktMinimal"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_FachabteilungskontaktMinimal\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter FachabteilungskontaktMinimal</b></p><a name=\"FachabteilungskontaktMinimal\"> </a><a name=\"hcFachabteilungskontaktMinimal\"> </a><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Unknown</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Bundle-ISiKBundle-Example.html#urn-uuid-3bada18a-6fd2-11ed-a1eb-0242ac112345\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)</a></p><p><b>period</b>: 2022-05-03 --&gt; 2022-05-05</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "VN" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://test.krankenhaus.de/fhir/sid/besuchsnummer"^^xsd:anyURI ;
+       fhir:l <https://test.krankenhaus.de/fhir/sid/besuchsnummer>
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "IMP" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/kontaktart-de"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/kontaktart-de>
+       ] ;
+       fhir:code [ fhir:v "operation" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/Kontaktebene"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/Kontaktebene>
+       ] ;
+       fhir:code [ fhir:v "abteilungskontakt" ]
+     ] )
+  ] ) ; # 
+  fhir:serviceType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel>
+       ] ;
+       fhir:code [ fhir:v "0100" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345> ;
+     fhir:reference [ fhir:v "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345" ]
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2022-05-03"^^xsd:date ] ;
+     fhir:end [ fhir:v "2022-05-05"^^xsd:date ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
