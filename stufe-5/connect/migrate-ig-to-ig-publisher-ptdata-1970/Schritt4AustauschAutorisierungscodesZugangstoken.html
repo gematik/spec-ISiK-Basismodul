@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Schritt 4: Austausch von Autorisierungscodes gegen Zugangstoken - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"20"}
+    h3,h4,h5,h6{--heading-prefix:"20"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav"><a name="l99">​</a>
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="Einfuehrung.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Akteure.html">Akteure</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">UebergreifendeFestlegungen</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation.html">Kompatibilitaet der Gematik Spezifikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext Smart-on-FHIR
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ISiKundSMART.html">Smart on FHIR - App Launch</a>
+      </li>
+      <li>
+        <a href="BackendServices.html">Smart on FHIR - Backend Services</a>
+      </li>
+      <li>
+        <a href="AutoProvisioning.html">Auto Provisioning</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen Connect
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ConformanceSmartCapabilities.html">Smart Capabilities</a>
+      </li>
+      <li>
+        <a href="ConformanceScopesKontexte.html">Scopes und Compartments</a>
+      </li>
+      <li>
+        <a href="ISiKAutorisierung.html">Autorisierung</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="Anforderungsuebersicht.html">Anforderungsübersicht</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Test Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Schritt 4: Austausch von Autorisierungscodes gegen Zugangstoken</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Schritt 4: Austausch von Autorisierungscodes gegen Zugangstoken</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#schritt-4-austausch-des-autorisierungscodes-für-ein-zugangstoken" id="markdown-toc-schritt-4-austausch-des-autorisierungscodes-für-ein-zugangstoken">Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken</a>    <ul>
+      <li><a href="#authentifizierung-der-clients" id="markdown-toc-authentifizierung-der-clients">Authentifizierung der Clients</a>        <ul>
+          <li><a href="#json-web-token-jwt-profile-for-oauth-20-client-authentication-and-authorization-grants-empfehlung" id="markdown-toc-json-web-token-jwt-profile-for-oauth-20-client-authentication-and-authorization-grants-empfehlung">JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)</a></li>
+          <li><a href="#http-basic-authentication" id="markdown-toc-http-basic-authentication">HTTP Basic Authentication:</a></li>
+        </ul>
+      </li>
+      <li><a href="#austausch-des-autorisierungscodes-für-ein-zugangstoken" id="markdown-toc-austausch-des-autorisierungscodes-für-ein-zugangstoken">Austausch des Autorisierungscodes für ein Zugangstoken</a></li>
+      <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="schritt-4-austausch-des-autorisierungscodes-für-ein-zugangstoken">Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken</h1>
+
+<p>Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet, um die in <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2">Implicit Grant - OAuth 2.0 Security Best Current Practice</a> dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.</p>
+
+<hr/>
+
+<h2 id="authentifizierung-der-clients">Authentifizierung der Clients</h2>
+
+<p>Confidential Clients MÜSSEN sich gegenüber dem “Token”-Endpunkt des Autorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten unterstützt werden ():</p>
+
+<h3 id="json-web-token-jwt-profile-for-oauth-20-client-authentication-and-authorization-grants-empfehlung">JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)</h3>
+
+<p>Die präferierte Variante für die Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants</a>. Hierzu MÜSSEN folgende Schritte unterstützt werden:</p>
+
+<ol>
+  <li>Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder <a href="https://datatracker.ietf.org/doc/html/rfc8017">RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)</a> oder <a href="https://datatracker.ietf.org/doc/html/rfc6979">ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))</a> als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als <a href="https://datatracker.ietf.org/doc/html/rfc7517">JSON Web Key</a> eingebettet in einem <a href="https://datatracker.ietf.org/doc/html/rfc7517#section-5">JSON Web Key Set</a> übermittelt. Angaben zur Schlüssellänge sind den Abschnitten <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.3">RFC7518 - Abschnitt 3.3 - Digital Signature with RSASSA-PKCS1-v1_</a> und <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.4">RFC7518 - Abschnitt 3.4 - Digital Signature with ECDSA</a> zu entnehmen.</li>
+</ol>
+
+<p>Folgende Anforderungen werden an den JSON Web Key gestellt:</p>
+
+<ul>
+  <li>
+    <p>Als Signaturalgorithmus muss durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden, <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.1">siehe RFC7518 - “alg” (Algorithm) Header Parameter Values for JWS</a>. Weitere Signaturalgorithmen können unterstützt werden.</p>
+  </li>
+  <li>
+    <p>Der JSON Web Key muss mindestens folgende Parameter enthalten:</p>
+    <ul>
+      <li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.1">“kty” (Key Type) Parameter</a></li>
+      <li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.5">“kid” (Key ID) Parameter</a></li>
+      <li>Für einen öffentlichen RSA Web Key: “n” (Modulus) Parameter, “e” (Exponent) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.3">RFC7518 - 6.3 Parameters for RSA Keys</a>)</li>
+      <li>Für einen öffentlichen Elliptic Curve Web Key: “crv” (Curve) Parameter, “x” (X Coordinate) Parameter, “y” (Y Coordinate) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.2">RFC7518 - 6.2 Parameters for RSA Keys</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>Ein Austausch des JSON Web Key muss durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key">SMART App Launch - 4.1 - Client Authentication: Asymmetric (public key)</a> aufgeführten Vorteile empfohlen.</li>
+</ol>
+
+<p>(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver soll prüfen, dass diese URL mit dem <a href="https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2">“jku” Parameter</a> der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token übereinstimmt.</p>
+
+<p>(2) Das JSON Web Key Set kann dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall soll das JSON Web Key Set mindestens zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in <a href="https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#registering-a-client-communicting-public-keys">SMART App Launch - 5.0.4 - Registering a SMART Backend Service (communicating public keys)</a> zusammengefasst.</p>
+
+<p>Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.</p>
+
+<ol>
+  <li>Der Client erzeugt ein JSON Web Token entsprechend der in <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint">SMART App Launch - 4.1.5 - Authenticating to the Token endpoint</a> definierten Vorgaben und verwendet dies als “client_assertion”.</li>
+</ol>
+
+<h3 id="http-basic-authentication">HTTP Basic Authentication:</h3>
+
+<p>Der Client tauscht während der Registrierung (siehe ) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7617">RFC7617 - The ‘Basic’ HTTP Authentication Scheme</a>. Als “username” muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.</p>
+
+<hr/>
+
+<h2 id="austausch-des-autorisierungscodes-für-ein-zugangstoken">Austausch des Autorisierungscodes für ein Zugangstoken</h2>
+
+<p>In Abschnitt <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token">SMART App Launch - 2.1.10 - Obtain access token</a> werden alle notwendigen Parameter definiert, durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter “id_token” und “refresh_token” unterstützt werden MÜSSEN (). Ein id_token muss ausgestellt werden, wenn der Client einen “openid fhirUser” Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im EHR nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext).</p>
+
+<p>Alle verpflichtenden Implementierungsdetails aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token">SMART App Launch - 2.1.10 - Obtain access token</a> MÜSSEN durch den Autorisierungsserver unterstützt werden ().</p>
+
+<p>Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen, um einen Token Revocation Mechanismus effizient implementieren zu können. Siehe .</p>
+
+<hr/>
+
+<h2 id="beispiel">Beispiel</h2>
+
+<ol>
+  <li>Generierung Public/Private Key:</li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xmB9u3-YZG9wQudAA0lrSxfPMrzdyRg9_ucaXVVXmBfEkP4B0TJf4Qy3PElekRpRwQQzkTGru06uJZr3C-FnnjbVyzGjSJovWP5S4vBm7zWVGMMhdLDCRtGqx2qC0MGLV7aAGg7XN590US_8XRqtMiMv4RHwj5mzMK-S-4-G_dc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RSA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"q"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vrKETfeUnSZY7eMy0E1UfY8wwE0tFC5r63hpXMqvBKKORXd4XOdqVPUoGeWg-tk4g7aQWW5SJIYk72EGaRuZ-S1giFo724fbJ0lxMxM-HOqMrxhCEDFNOzsjS-tZzbq8krXOp8yAPMENx3bvMFyk2N84qFVaD4gkibIPR6QM_fM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"d"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iuoCvT6rbu0ME2V61cw9OSxafD6Fbk2rL4IwkS2AfiMnoEeHpII36oHjU-OYRCRtOGoj8Hes0NkBTffXocYbyXKAxpdzogh1WqPyCraIDJSNR_Wv2ebHdtmie_3ZOdPntYN6MN8y7rinlZBWNgXH8d7GCo48UnT4zu66gyqN7gWVN90it4B0Xcy_3RdHpIO3e1ES-zDWDkP8APL8NPxMAqX7NL5sYtWxKCdFXfMi456iZ_THMu4dJC9QtqTkzphwtsbSrGTTMZXHuqw92fH7NRRhc17vyanNzMXbPJ6Wiy8DoI_1Gopz9HFOWzK7RiQeJtes136vTRXKa3vcnZFB4Q"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"e"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQAB"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sig"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cl61xViRvryTB6ZpIlxd_4Iqj7P27TUVg5foJ3OfzoqwMdCHzxqdmUkc5_hvZB18eUTxu6hj1f4tw63r61D84SdOxJ8YC7b7Cu1sc2sh4YvlrpeGjKFZfHQCCxQigXJID4XBElxxqoiTWnCrUQPq6cMo3An9h-_w0AjtJAA2i2Y"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dNWDd5hQYmaXkW-s7cKh5Fojd9hwLu2OJcBqcKnAqxzkchiHbXPjsCHTETiM75y2pZ0Z2duNLwXJ3vADrAWXB0F4bPHRHwNf-2Pd4TaBCUVfiHP0EkvAQAFgOY5reRNkQ8aCb9ZpvqK02NQQJ618b9j1a_Mq4Qg-1t-xC2Oet4U"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RS384"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i-nGkL3Z2ANOtBtCKPrTxtvMVQtKy8fTfox2IZLEHo51_BnPwbo4leTZa0bDecjuYhUMi9EZi5qwdsGlRnDt45ibfu9Vg5iF_qkv2N2BcQ3V8pHFxsOlepPFLeqblQoxWSLzYMH2RJ0QUwy8KauPd18v3rHgxgyJYk22UEXZEmk"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ol>
+  <li>JSON Web Key Set mit öffenlichem Schlüsselteil erzeugen:</li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"kty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RSA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"e"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQAB"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sig"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"kid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RS384"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Autorisierungsserver (keine weiteren Vorgaben).</p>
+  </li>
+  <li>
+    <p>Erzeugung eines JSON Web Tokens signiert mit dem oben genannten Private/Public Key Pair:</p>
+  </li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">eyJ</span><span class="mi">0</span><span class="err">eXAiOiJKV</span><span class="mi">1</span><span class="err">QiLCJhbGciOiJSUzM</span><span class="mi">4</span><span class="err">NCJ</span><span class="mi">9</span><span class="err">.eyJpc</span><span class="mi">3</span><span class="err">MiOiJFeGFtcGxlIElzc</span><span class="mi">3</span><span class="err">VlciIsImlhdCI</span><span class="mi">6</span><span class="err">bnVsbCwiZXhwIjoxNjQzOTg</span><span class="mi">2</span><span class="err">OTcwLCJhdWQiOiJodHRwczovL</span><span class="mi">2</span><span class="err">V</span><span class="mi">4</span><span class="err">YW</span><span class="mi">1</span><span class="err">wbGUub</span><span class="mi">3</span><span class="err">JnL</span><span class="mi">2</span><span class="err">F</span><span class="mi">1</span><span class="err">dGgvdG</span><span class="mi">9</span><span class="err">rZW</span><span class="mi">4</span><span class="err">iLCJzdWIiOiJUZXN</span><span class="mi">0</span><span class="err">Q</span><span class="mi">2</span><span class="err">xpZW</span><span class="mi">50</span><span class="err">SWQiLCJqdGkiOiI</span><span class="mi">3</span><span class="err">NmE</span><span class="mi">1</span><span class="err">ZTA</span><span class="mi">4</span><span class="err">Ni</span><span class="mi">1</span><span class="err">lOWE</span><span class="mi">3</span><span class="err">LTQ</span><span class="mi">0</span><span class="err">ZmUtOTcyOC</span><span class="mi">03</span><span class="err">MTIxNjE</span><span class="mi">1</span><span class="err">YzYyOTEifQ.i_Hzfzuqquc</span><span class="mi">7</span><span class="err">ouj</span><span class="mi">0</span><span class="err">-CDxtddvsLxTr</span><span class="mi">5</span><span class="err">RmcR-hlXYRFmAvxaAg</span><span class="mi">6</span><span class="err">akf_EL</span><span class="mi">6</span><span class="err">DAqRVLfW</span><span class="mi">1</span><span class="err">u-FU</span><span class="mi">9</span><span class="err">JJs</span><span class="mi">015</span><span class="err">eTvtugYNNI</span><span class="mi">0</span><span class="err">QPWdZVHJQ</span><span class="mi">54</span><span class="err">TVIkVx</span><span class="mi">8</span><span class="err">jsaf_RvbF</span><span class="mi">3</span><span class="err">q</span><span class="mi">4</span><span class="err">DpeiRdEXv</span><span class="mi">1</span><span class="err">j</span><span class="mi">34</span><span class="err">k_KrgNRTi</span><span class="mi">6</span><span class="err">d</span><span class="mi">1</span><span class="err">Rneem</span><span class="mi">8</span><span class="err">qmTKIQRiWv</span><span class="mi">1</span><span class="err">iYeNgENPHnL</span><span class="mi">0</span><span class="err">SV</span><span class="mi">69</span><span class="err">Pi</span><span class="mi">7</span><span class="err">PoXr</span><span class="mi">2</span><span class="err">s</span><span class="mi">7</span><span class="err">JWFUO</span><span class="mi">56</span><span class="err">HqWR</span><span class="mi">0</span><span class="err">tmPweVm</span><span class="mi">3</span><span class="err">aS</span><span class="mi">24</span><span class="err">jeAaRGqISAbTPHuq-R</span><span class="mi">8</span><span class="err">QVD</span><span class="mi">7</span><span class="err">fMFqQBR_n</span><span class="mi">6</span><span class="err">xSMCHUxZHBQDFg</span><span class="mi">2</span><span class="err">c</span><span class="mi">6</span><span class="err">leY</span><span class="mi">8</span><span class="err">WlrwZUz</span><span class="mi">9</span><span class="err">lJZnX</span><span class="mi">5</span><span class="err">R</span><span class="mi">76</span><span class="err">iHylfqZ-kAk</span><span class="mi">38</span><span class="err">xHpnFtsmbF</span><span class="mi">8</span><span class="err">YH</span><span class="mi">4</span><span class="err">EUjYmSGT</span><span class="mi">8</span><span class="err">SPn</span><span class="mi">0</span><span class="err">y</span><span class="mi">9</span><span class="err">RHKFI</span><span class="mi">7</span><span class="err">LCm</span><span class="mi">9</span><span class="err">p</span><span class="mi">5</span><span class="err">DeVPPgYQ</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Dekodierte Form:</p>
+
+<p>Header:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RS384"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Body:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Issuer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1643986970</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/auth/token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TestClientId"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jti"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76a5e086-e9a7-44fe-9728-7121615c6291"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ol>
+  <li>Access Token abrufen
+```
+POST /token HTTP/1.1
+Host: server.example.com
+Content-Type: application/x-www-form-urlencoded</li>
+</ol>
+
+<p>grant_type=authorization_code&amp;
+code=&lt;Autorisierungscode aus Schritt 3&gt;&amp;
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&amp;
+code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&amp;
+client_id=TestClientId&amp;
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&amp;
+client_assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ</p>
+
+<p>```</p>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket connect.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Dec 9, 2025 10:35+0000">2025-12-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

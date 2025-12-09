@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>ISiK Connect Kontext - Test Implementation Guide v0.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav"><a name="l99">​</a>
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="Einfuehrung.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li>
+    <a href="Akteure.html">Akteure</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">UebergreifendeFestlegungen</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation.html">Kompatibilitaet der Gematik Spezifikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext Smart-on-FHIR
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ISiKundSMART.html">Smart on FHIR - App Launch</a>
+      </li>
+      <li>
+        <a href="BackendServices.html">Smart on FHIR - Backend Services</a>
+      </li>
+      <li>
+        <a href="AutoProvisioning.html">Auto Provisioning</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen Connect
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ConformanceSmartCapabilities.html">Smart Capabilities</a>
+      </li>
+      <li>
+        <a href="ConformanceScopesKontexte.html">Scopes und Compartments</a>
+      </li>
+      <li>
+        <a href="ISiKAutorisierung.html">Autorisierung</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="Anforderungsuebersicht.html">Anforderungsübersicht</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Test Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1 - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>ISiK Connect Kontext</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>ISiK Connect Kontext</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#isik-connect" id="markdown-toc-isik-connect">ISiK-Connect</a>    <ul>
+      <li><a href="#smart-on-fhir" id="markdown-toc-smart-on-fhir">SMART on FHIR</a></li>
+      <li><a href="#smart-app-launch" id="markdown-toc-smart-app-launch">SMART App Launch</a></li>
+      <li><a href="#vorgaben-zur-autorisierung-in-isik-connect" id="markdown-toc-vorgaben-zur-autorisierung-in-isik-connect">Vorgaben zur Autorisierung in ISiK Connect</a></li>
+      <li><a href="#informative-hinweise-zur-weitergehenden-umsetzung-von-smart-on-fhir" id="markdown-toc-informative-hinweise-zur-weitergehenden-umsetzung-von-smart-on-fhir">Informative Hinweise zur weitergehenden Umsetzung von SMART on FHIR</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="isik-connect">ISiK-Connect</h1>
+
+<p>Konnektivität und Sicherheit haben im Zusammenhang mit einem interoperablen Datenaustausch in und mit Krankenhäusern viele Facetten: Nutzer müssen authentifiziert sein, Berechtigungen müssen definiert und durchgesetzt werden, Daten müssen gegen Verfälschung geschützt und verfügbar sein, Datenänderungen müssen nachvollziehbar sein etc. Hierzu können Technologien wie z. B. <a href="https://saml.xml.org/saml-specifications"><em>SAML</em></a> oder <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html"><em>UMA</em></a> genutzt werden. Diese Technologien basieren auf einem etablierten und erprobten Stack aus Standards wie <a href="https://restfulapi.net/"><em>ReST Representational State Transfer</em></a>, <a href="https://oauth.net/2/"><em>OAuth2</em></a> oder , <a href="https://openid.net/developers/specs/"><em>OpenID Connect</em></a>. Diese Standards sind domänenunabhängig spezifiziert und müssen daher für den Einsatz im deutschen Gesundheitswesen und ggf. auch für das Zusammenspiel mit dem HL7 FHIR-Standard profiliert werden. FHIR bietet hierzu unterstützende Ressourcen wie z. B. <a href="https://hl7.org/fhir/R4/consent.html"><em>Consent</em></a>, <a href="https://hl7.org/fhir/R4/auditevent.html"><em>AuditEvent</em></a> oder <a href="https://hl7.org/fhir/R4/compartmentdefinition.html"><em>CompartmentDefinition</em></a> an, die eine Bindung zwischen FHIR und dedizierten Sicherheitsstandards herstellen können. Im Fall von ISiK sind zusätzlich im deutschen Gesundheitswesen bereits definierte Bausteine der Gesundheitstelematik wie z. B. sektorale Identitätsdienste oder Konnektoren/TI-Gateways zu berücksichtigen, die idealerweise für die Authentifizierung an Patienten- und Zuweiserportalen, dem Schutz von Gesundheitsdaten im Krankenhaus, einem Ende-zu-Ende gesicherten Datenaustausch mit Niedergelassenen und anderen potenziell ISiK-relevanten Themen genutzt werden sollen.</p>
+
+<p><strong>Autorisierung von Zugriffen auf FHIR Ressourcen</strong></p>
+
+<p>Ziel der vorliegenden Spezifikation ist es, per FHIR RESTful API formulierte Anfragen an einen Ressourcen-Server unter Nutzung eines zuverlässigen und sicheren Autorisierungsprotokolls - und damit unter Berücksichtigung von vergebenen Berechtigungen und formulierten Sicherheitsmechanismen - zu beantworten. Hierzu werden Teile des von <em>SMART Health IT</em> und <em>Boston Childrens Hospital</em> auf Basis des OAuth2-Standards definierten, von HL7 als Teil des FHIR-Standards übernommenen <a href="https://smarthealthit.org/smart-on-fhir-api/"><em>‘SMART on FHIR’ API</em></a> profiliert, so dass diese im Kontext der bestehenden ISiK-Festlegungen nutzbar sind. Das SMART-on-FHIR-API soll die Weiterentwicklung von <em>Electronic Health Records</em> (EHR) zu Plattformen befördern, bei denen - analog zu mobilen Plattformen wie iOS oder Android - Anwendungen aus einem <em>App Store</em> in eine solche Plattform eingebracht und dort in einer sicheren Umgebung ausgeführt werden (<em>“SMART App Launch”</em>).</p>
+
+<p>Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den  zu entnehmen. Diese sind durch die bestätitungsrelevanten Akteure umzusetzen. In den weiteren Abschnitten folgt zunächst eine Einführung in das Thema SMART on FHIR. Zudem werden weitere Implementierungshinweise geliefert.</p>
+
+<h3 id="smart-on-fhir">SMART on FHIR</h3>
+
+<p>Technische Systeme können in einer SMART-on-FHIR-konformen Umsetzung eines Autorisierungssystems eine oder mehrere der folgenden Rollen einnehmen:</p>
+<ul>
+  <li>Ressourcen-Server: IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.</li>
+  <li>Client: IT-Systeme in dieser Rolle fragen geschützte Ressourcen von Ressourcenservern ab oder senden geschützte Ressourcen an Ressourcen-Server.</li>
+  <li>Autorisierungsserver: IT-Systeme in dieser Rolle stellen für authentifizierte Nutzer Sicherheitstoken aus, die einen Zugang zu auf Ressourcenservern verwalteten FHIR Ressourcen autorisieren.</li>
+  <li>App-Launcher: IT-Systeme in dieser Rolle können einen Client aus ihrem eigenen Sicherheitskontext initialisieren oder in einen neu aufgesetzten Kontext stellen. Der Kontext kann z. B. der aktuell ausgewählte Patient oder Behandlungsfall sein.</li>
+</ul>
+
+<p>Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispielsweise kann ein KIS selbst Ressourcen bereitstellen (“Ressourcen-Server”), Ressourcen von spezialisierten Subsystemen abrufen (“Client”), die Autorisierung von Nutzern durchführen (“Autorisierungsserver”) und weitere Anwendungen aus dem aktuellen Nutzer- und/oder Patientenkontext heraus starten (“App-Launcher”). Durch eine solche Integration verschiedener Rollen kann ein KIS einen <em>Electronic Health Record</em> im Sinne von <em>SMART on FHIR</em> darstellen und damit als Plattform für wiederverwendbare, austauschbare und dynamisch startbare Anwendungen (<em>SMART Apps</em>) fungieren.</p>
+
+<p>Hieraus ergeben sich die  für das Modul ISiK Connect.</p>
+
+<h3 id="smart-app-launch">SMART App Launch</h3>
+
+<p>ISiK-Connect soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/index.html">HL7 Implementierungsleitfadens <em>Smart App Launch</em></a> ermöglichen. Ziel des <em>Smart App Launch</em> ist es, ein Zugriffstoken von einem OAuth2-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein Client eine FHIR-RESTful-Interaktion gegen einen Ressourcen-Server durchführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugriffstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcen-Server zuzugreifen, sieht der <em>Smart App Launch</em> die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Schritt</th>
+      <th>Ressourcen-Server</th>
+      <th>Client</th>
+      <th>Autorisierungsserver</th>
+      <th>App-Launcher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Aufsetzen der Vertrauensbeziehungen</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Starten des Clients im Launch-Kontext</td>
+      <td>&nbsp;</td>
+      <td>X</td>
+      <td>(X)</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Abruf der SMART-Konfiguration</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>4a</td>
+      <td>Autorisierungsanfrage des Clients</td>
+      <td>&nbsp;</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>4b</td>
+      <td>Prüfung der Anfrage und Ausgabe des Codes</td>
+      <td>&nbsp;</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Austausch des Codes gegen ein Zugriffstoken</td>
+      <td>&nbsp;</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Autorisierte ReST-Interaktion</td>
+      <td>X</td>
+      <td>X</td>
+      <td>(X)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Neuausstellung eines Zugriffstokens</td>
+      <td>&nbsp;</td>
+      <td>X</td>
+      <td>X</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Eine Übersicht des zusammenhängenden <em>SMART App Launch</em> ist dem Abschnitt  zu entnehmen.</p>
+
+<h2 id="vorgaben-zur-autorisierung-in-isik-connect">Vorgaben zur Autorisierung in ISiK Connect</h2>
+
+<p>Wie aus der Tabelle zu ersehen, betrifft das Gros der SMART-on-FHIR-Spezifikation das Zusammenspiel der Systeme in den Rollen des Clients und des Autorisierungsservers. Dieses wird zusätzlich stark geprägt durch den Kontext aus welchem bzw. in welchen der Client - d. h. die wiederverwendbare, austauschbare, modulare Anwendung - dynamisch gestartet wird:</p>
+
+<ul>
+  <li>
+    <p><a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-2-launch-ehr">SMART App Launch - EHR Launch</a>:
+Ein Client kann aus dem Kontext eines anderen Systems (das dann in der Rolle des App-Launchers agiert) direkt innerhalb einer bestehenden <em>User Session</em> gestartet werden, beispielsweise indem der eingeloggte Benutzer den Client startet und dieser durch das System in einer neuen Browserinstanz oder einem eingebetteten <em>iframe</em> geöffnet wird.</p>
+  </li>
+  <li>
+    <p><a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#launch-app-standalone-launch">SMART App Launch - Standalone Launch</a>:
+Clients, welche außerhalb eines anderen Systems gestartet werden (z.B. Mobile Apps welche Daten von einem ISiK-Ressourcen-Server abfragen möchten), müssen ihren Kontext explizit über eine Nutzerinteraktion gegen eine als ISiK-App-Launcher fungierende Komponente aufbauen. Dieses kann beispielsweise ein Widget zur Auswahl des zu aktivierenden Patientenkontextes sein.</p>
+  </li>
+</ul>
+
+<p>Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierungsserver und App-Laucher, die gemeinsam den Launch-Kontext des Clients bestimmen und verwalten. Diese starke Kopplung lässt sich nur schwer mit den in den  beschriebenen Zielen vereinbaren und erschwert den Einsatz marktüblicher Produkte oder Open-Source-Bibliotheken für den Aufbau eines IAM-Subsystems. <strong>Daher werden in Modul ISiK Connect zunächst nur Interaktionen gegen Systeme in der Rolle eines Ressourcenservers definiert, der ISiK-relevante FHIR RESTful APIs anbietet. Diese Ressourcen-Server sind in ISiK Connect bestätigungsrelevant und werden im Folgenden als ‘ISiK-Ressourcen-Server’ bezeichnet.</strong> Die Vorgaben umfassen dabei insbesondere die SMART-Konfiguration (Schritt 3) sowie die Syntax und Semantik der über das Zugriffstoken vermittelten Autorisierungen (Schritt 6).</p>
+
+<p>Diese in ISiK Connect vorgenommene Profilierung des SMART-on-FHIR-API fokussiert somit auf die Absicherung der bereits in anderen ISiK Modulen betrachteten FHIR-Ressourcen wie z. B. <em>Patient</em>, <em>Encounter</em> oder <em>Observation</em>, macht den Herstellern und Krankenhäusern hierbei aber weder Vorgaben zu konkreten Berechtigungsmodellen/-regeln oder dem Zuschnitt der zum Identitäts- und Berechtigungsmanagement (IAM) einzusetzenden Produkte. Hersteller bestätigungsrelevanten Systemen werden durch die vorliegende Spezifikation in die Lage versetzt, eine konforme Erweiterung der bestehenden Implementierung zu erstellen und eine (Teil-)Konformität zu ISiK-Connect zu gewährleisten, ohne dass hierzu tiefgreifende systemische Änderungen an der bestehenden Autorisierungs- und Authentifizierungsinfrastruktur erforderlich sind.</p>
+
+<p>Für ISiK Connect werden keine normativen Festlegungen getroffen, die andere Profile auf dem <em>OAuth2</em>-Standard wie z. B. <em>IHE IUA</em> grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der Orientierungshilfe Krankenhausinformationssysteme (OH KIS)) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind.</p>
+
+<h2 id="informative-hinweise-zur-weitergehenden-umsetzung-von-smart-on-fhir">Informative Hinweise zur weitergehenden Umsetzung von SMART on FHIR</h2>
+
+<p>Für Hersteller von Autorisierungsservern, <em>SMART Client-Apps</em>, KIS sowie Patienten- und Zuweiserportalen kann es attraktiv sein, ihre Lösungen über die in ISiK Connect normativen API-Aufrufe gegenüber ISiK-Ressourcenservern hinaus am SMART-on-FHIR-Standard auszurichten. Auch Krankenhäuser können von den grundlegenden Ideen hinter <em>SMART on FHIR</em> profitieren, z. B. indem funktionale Module von Drittherstellern über einen <em>Smart App Launch</em> einfacher in bestehende Systemlandschaften integriert werden können.</p>
+
+<p>ISiK Connect unterstützt dies, indem die Integration der bestätigungsrelevanten Systeme und Schnittstellen in das gesamte SMART-on-FHIR-Ökosystem als informative Ergänzung beschrieben wird. Im Abschnitt  werden die kompletten Interaktionen zwischen EHR (KIS, Portal), <em>SMART Apps</em>, Autorisierungsserver und Ressourcenservern auf Basis der aktuellen Fassung des SMART-on-FHIR-Standards beschrieben. Diese Beschreibungen sind informativ, da sie aktuell nicht Gegenstand der ISiK-Konformitätsfeststellungen sind und da sie - zumindest in Teilen - auch über den Standard hinausgehende Good Practices beinhalten. Um den Lesern dieser Spezifikation die Unterscheidung zwischen normativen und informativen Bestandteilen von ISiK Connect zu erleichtern, sind alle Seiten mit bestätigungsrelevanten Inhalten deutlich mit dem Label “Normativ” im Seitenkopf gekennzeichnet.</p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket connect.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Dec 9, 2025 10:35+0000">2025-12-09</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
