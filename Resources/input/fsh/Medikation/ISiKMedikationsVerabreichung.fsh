@@ -86,6 +86,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * start MS
   * end MS
 * performer MS
+  * ^short = "Durchführende Person(en) der Verabreichung"
+  * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit"
   * actor MS
     * ^short = "Referenz auf die verabreichende Person"
     * ^comment = "Begründung des Must-Support: Nachvollziehbarkeit"
@@ -109,6 +111,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Daher wird `MedicationAdministration.request` in ISiK als eingeschränktes Must Support definiert, um eine einheitliche  Implementierung zu fördern.
   """
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
@@ -121,7 +125,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' 
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' 
     
     Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'."
   * site MS
@@ -171,8 +175,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference.reference = "Medication/ExampleISiKMedikament1"
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2021-07-01
 * dosage
   * dose
@@ -186,8 +190,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * effectiveDateTime = 2024-01-22
 * dosage
   * dose
@@ -201,8 +205,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament9)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"
@@ -226,8 +230,8 @@ InstanceOf: ISiKMedikationsVerabreichung
 Usage: #example
 * status = #completed
 * medicationReference = Reference(ExampleISiKMedikament2)
-* subject.reference = "Patient/PatientinMusterfrau"
-* context.reference = "Encounter/Fachabteilungskontakt"
+* subject = Reference(PatientinMusterfrau)
+* context = Reference(FachabteilungskontaktMinimal)
 * context.identifier.value = "0123456789"
 * effectiveDateTime = 2021-07-01
 * note.text = "Testnotiz"

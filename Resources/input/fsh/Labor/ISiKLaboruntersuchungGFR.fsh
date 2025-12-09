@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungGFR1
 InstanceOf: ISiKLaboruntersuchungGFR
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#98980-6
 * code.coding[snomed] = $sct#80274001 "Glomerular filtration rate"

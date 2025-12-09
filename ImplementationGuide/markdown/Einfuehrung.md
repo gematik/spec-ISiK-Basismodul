@@ -74,7 +74,7 @@ Dieser Implementation Guide baut auf diesen Prinzipien auf und erweitert sie gez
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. 
-Für diesen Zweck wurden [FHIR-Profile](https://simplifier.net/guide/isik-basis-stufe-5/einfuehrung?version=current) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
+Für diesen Zweck wurden [FHIR-Profile](https://simplifier.net/guide/isik-basis-stufe-5/einfuehrung) und ein REST-basiertes Application Programming Interface (API) entwickelt. Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html).
 
 Weitere Informationen siehe [§ 373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
 

@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungHb1
 InstanceOf: ISiKLaboruntersuchungHb
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#718-7
 * code.coding[snomed] = $sct#416125006 "Concentration of hemoglobin in erythrocyte"

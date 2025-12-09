@@ -16,7 +16,7 @@ Instance: ExampleISiKLaboruntersuchungTroponin1
 InstanceOf: ISiKLaboruntersuchungTroponin
 Usage: #example
 * status = #final
-* subject.reference = "Patient/PatientinMusterfrau"
+* subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#42757-5
 * code.coding[snomed] = $sct#105000003 "Troponin measurement"
