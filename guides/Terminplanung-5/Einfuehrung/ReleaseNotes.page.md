@@ -9,11 +9,11 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 23.10.2025
 
-* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
-* `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1919
-* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1920 
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
-* `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen
+* `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792 #No-Test-Change
+* `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1919 #Test-Change (Patienten-Instanz-Anlegen) - A oR B Schema - HIER SOLLEN alle Anforderungen der book Operation entlang der neuesten Version umgesetzt werden - siehe https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Festlegungen/Operations?version=5.1.0. Die in Folgenden gelisteten Anforderungs-Änderungen wären damit redundant/obsolet 
+* `improve` Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter 'start' https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1920 #Test-Change-Optional? (SOLL -> Optional)
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799 #Test-Change? (id-Abfragen für Server MUSS auf alle Profile)
+* `improve` Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen #Test-Change-Optional? "In diesem Fall SOLL der HTTP Status-Code HTTP 422 - Unprocessable Entity verwendet werden. Eine OperationOutcome-Ressource KANN zu informativen Zwecken in jedem Fall zurückgegeben werden (s.o.)." (https://simplifier.net/guide/isik-terminplanung-stufe-5/Einfuehrung/Festlegungen/Operations.page.md)
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 * `documentation` Durch Entfernung des Abschnittes "Übersicht der Akteure" den Abschnitt Akteure klarer gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/848
@@ -24,9 +24,9 @@ Datum: 23.10.2025
 Datum: 26.06.2025
 
 * `documentation` Dokumentation und Klarstellung zur Verwendung des Akteurs "Buchender" (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763
-* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files` -> #Mock-Change prüfen - Feauture IDP? - https://service.gematik.de/browse/PTDATA-1921
-* `improve` Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767
-* `improve` Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773
+* `improve` Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files` -> #Mock-Change prüfen - Feauture IDP? - https://service.gematik.de/browse/PTDATA-1921 #No-Test-Change
+* `improve` Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767 #No-Test-Change
+* `improve` Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773 #No-Test-Change
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
@@ -38,19 +38,21 @@ Datum: 5.6.2025
 
 
 ## Version 5.0.0-rc
+-> #Test-Changes - Womöglich sind hier Test Changes schon in Stufe 3 abgebildet (s.u.)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1922
-* `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604
+
+* `improve` Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607 -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1922 #Test-Change (Schwächung bzw Entfernen) -> ggf. Bereits gelöst mit ) Wo kann ich in diesem Repo einsehen, wann die Letzten Änderungen an den Test cases vorgenommen wurden?
+* `improve` Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604 #No-Test-Change
 * `documentation` Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277
 * `improve` ISiKKalender enthielt ein required Binding auf ein VS welches auf ein `fragment`
   CodeSystem
   referenziert (Schedule.specialty.coding:ErweiterterFachabteilungsschluessel). Dies wurde durch ein
   extensible Binding und ein Pattern auf .system ersetzt um die Validierbarkeit des Feldes zu
-  ermöglichen. https://github.com/gematik/spec-ISiK-Basismodul/pull/613
+  ermöglichen. https://github.com/gematik/spec-ISiK-Basismodul/pull/613 #Test-Change? Fraglich -> vermutlich obsolet, da entsprechender Slice nicht als MS und vermutlich nicht getestet
 
 ---
 
@@ -60,6 +62,7 @@ Datum: 08.04.2025
 
 * `documentation` Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter `subject` und `patient`  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273
 * `improve` Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c -> #Mock-Change prüfen - Ticket https://service.gematik.de/browse/PTDATA-1919 
+#Test-Change ggf. redundant/obsolet. S. o. zu "Patienten-Instanz-Anlegen"
 
 
 ---
@@ -70,12 +73,13 @@ Datum: 20.02.2025
 
 
 * `improve` Die Verbindlichkeit des Suchparameters `subject` in Communication wurde von SHALL auf MAY reduziert. https://github.com/gematik/spec-ISiK-Terminplanung/pull/247 
-Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen. -> #Mock-Change prüfen -> sollte Obsolet seinm da Communication-Interaktionen entfernt
-* `improve` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248
-* `fix` Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264
-* `improve` Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266
-* `improve` Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267
-* `fix` Anpassung Kardinalität Appointment.start/end https://github.com/gematik/spec-ISiK-Terminplanung/pull/260
+Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen. -> #Mock-Change prüfen -> sollte Obsolet sein da Communication-Interaktionen entfernt
+#Test-Change? Fraglich - vermutlich obsolet, da bereits in 3 als option / bzw. "bedingtes" MUSS - siehe https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-ISiKNachrichtCommunication
+* `improve` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248 #No-Test-Change
+* `fix` Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264 #No-Test-Change
+* `improve` Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266 #No-Test-Change
+* `improve` Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267 #No-Test-Change
+* `fix` Anpassung Kardinalität Appointment.start/end https://github.com/gematik/spec-ISiK-Terminplanung/pull/260 #Test-Change (jede Instanz MUSS start und ende enthalten)
 
 
 
@@ -85,18 +89,18 @@ Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die
 
 Datum: 02.12.2024
 
-* `improve` Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207
+* `improve` Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207 #No-Test-Change
 * `documentation` Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209
-* `improve` Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204
-* Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206
+* `improve` Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204 #No-Test-Change, da obsolet, da bereits in Stufe 3 umgesetzt https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-ISiKTerminAppointment
+* Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206 #No-Test-Change - obsolet, da bereits abgedeckt in 3 https://simplifier.net/guide/isik-terminplanung-v3/ImplementationGuide-markdown-Datenobjekte-ISiKKalenderSchedule
 * Anforderungen an die Kodierung von Appointment/Schedule.serviceType geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/227
-* `improve` Schwächung der Kardinalität von actor.display im Profil StructureDefinition-ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/233
- * Ergänzung von Anforderungen an Akteure https://github.com/gematik/spec-ISiK-Terminplanung/pull/236
- * `fix` Fix der Canonical URL im Capability-Statement des Terminplanungsserver https://github.com/gematik/spec-ISiK-Terminplanung/pull/238
- * `improve` Hinzufügen der Extension "Appointment Replaces" zum Profil ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/242
- * `improve` Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240
-* `fix` Korrektur des Extension Kontext in ISiKKalender https://github.com/gematik/spec-ISiK-Terminplanung/pull/239
-* Aktualisierung der Operation ISiKBookOperation https://github.com/gematik/spec-ISiK-Terminplanung/pull/245
+* `improve` Schwächung der Kardinalität von actor.display im Profil StructureDefinition-ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/233 #No-test-Change, da obsolet
+ * Ergänzung von Anforderungen an Akteure https://github.com/gematik/spec-ISiK-Terminplanung/pull/236 #No-Test-Change
+ * `fix` Fix der Canonical URL im Capability-Statement des Terminplanungsserver https://github.com/gematik/spec-ISiK-Terminplanung/pull/238 #No-Test-Change
+ * `improve` Hinzufügen der Extension "Appointment Replaces" zum Profil ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/242 - #No-Test-Change - obsolet, da schon in 3 eingeführt
+ * `improve` Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240 - #No-Test-Change - obsolet
+* `fix` Korrektur des Extension Kontext in ISiKKalender https://github.com/gematik/spec-ISiK-Terminplanung/pull/239 #No-Test-Change sehr wahrscheinlich kein Testfall hierfür
+* Aktualisierung der Operation ISiKBookOperation https://github.com/gematik/spec-ISiK-Terminplanung/pull/245 #No-Test-Change obsolet - s.o. 
 
 ----
 
@@ -112,11 +116,11 @@ Datum: 01.10.2024
 
 Datum: 26.6.2024
 
-* `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187 
-* Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191
-* `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files
-* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195
-* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change geprüft -> Kombi-Parameter-Vorgabe statt Single und daher höchstwahrscheinlich irrelevant
+* `improve` Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187 #No-Test-Change 
+* Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191 #No-Test-Change  obsolet
+* `improve` Update der IHE ValueSets zu "practiceSetting" in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files #Test-Change? fraglich, sollte eigentlich schon dem Stand der Stufe 3 entsprechen daher wahrscheinlich obsolet, da bereits angepasst
+* `improve` Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195 #No-Test-Change 
+* `improve` Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193 -> #Mock-Change geprüft -> Kombi-Parameter-Vorgabe statt Single und daher höchstwahrscheinlich irrelevant #No-Test-Change obsolet, da hier https://github.com/gematik/spec-ISiK-Terminplanung/pull/200/files 
 
 ----
 
@@ -124,16 +128,16 @@ Datum: 26.6.2024
 
 Datum: 4.4.2024
 
-* `improve` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178 -> #Mock-Change prüfen
-* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174 #Mock-Change prüfen
-* `improve` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175
-* Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173
+* `improve` Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178 -> #Mock-Change prüfen #No-Test-Change
+* `improve` Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174 #Mock-Change prüfen #No-Test-Change - obsolet
+* `improve` Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175 #No-Test-Change - obsolet
+* Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173 #No-Test-Change - obsolet
 * `improve` Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können
-  * `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87
-* Präzisierung book-Operation https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
-* `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144
-* `fix` Fix CpS by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/179
-* `improve` Klarstellung cancelled-appt-id by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/177
+  * `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87 #No-Test-Change - obsolet
+* Präzisierung book-Operation https://github.com/gematik/spec-ISiK-Terminplanung/pull/177 No-Test-Change - obsolet
+* `improve` Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144 #No-Test-Change - obsolet
+* `fix` Fix CpS by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/179 #No-Test-Change
+* `improve` Klarstellung cancelled-appt-id by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/177 No-Test-Change - obsolet
 
 ----
 
