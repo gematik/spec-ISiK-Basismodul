@@ -62,10 +62,8 @@ jobs:
   build:
     needs: prepare
     runs-on: ubuntu-latest
-    # Prevent parallel commits to avoid conflicts
-    concurrency:
-      group: commit-expanded-resources-${{ github.ref }}
-      cancel-in-progress: false
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     strategy:
@@ -109,25 +107,18 @@ jobs:
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: ${{ matrix.capability_statement_url }}
       
-      # Commit expanded resources back to repository
-      - name: Commit Expanded Resources
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ${{ env.IG_PUBLISHER_DIR }}/input/resources
-          if git diff --cached --quiet; then
-            echo "No changes to commit for ${{ matrix.ig_name }}"
-          else
-            git pull --rebase origin ${GITHUB_REF_NAME}
-            git commit -m "chore(${{ matrix.ig_name }}): update expanded CapabilityStatement resources [skip ci]"
-            git push origin HEAD:${GITHUB_REF_NAME}
-          fi
-      
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
         run: |
           igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
+
+      # Upload expanded resources for commit (outside container)
+      - name: Upload Expanded Resources
+        uses: actions/upload-artifact@v4
+        with:
+          name: expanded-resources-${{ matrix.ig_name }}
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+          retention-days: 1
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
@@ -253,3 +244,53 @@ jobs:
               });
               core.info(`Created IG publish URL comment for ${igName} on PR #${pr.number}`);
             }
+
+  # Commit all expanded resources in one go
+  commit:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      # Download all artifacts
+      - name: Download All Expanded Resources
+        uses: actions/download-artifact@v4
+        with:
+          pattern: expanded-resources-*
+          path: artifacts
+
+      # Copy all expanded resources to their respective directories
+      - name: Copy Expanded Resources
+        run: |
+          for dir in artifacts/expanded-resources-*/; do
+            ig_name=$(basename "$dir" | sed 's/expanded-resources-//')
+            echo "Processing $ig_name..."
+            
+            # Find matching IG directory in publisher-guides
+            ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+            if [ -n "$ig_path" ]; then
+              echo "Copying to $ig_path/input/resources/"
+              mkdir -p "$ig_path/input/resources"
+              cp -r "$dir"* "$ig_path/input/resources/"
+            else
+              echo "Warning: No matching directory found for $ig_name"
+            fi
+          done
+
+      # Commit all changes at once
+      - name: Commit All Expanded Resources
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publisher-guides/*/input/resources
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update expanded CapabilityStatement resources for all IGs [skip ci]"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
