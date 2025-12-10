@@ -33,6 +33,9 @@ jobs:
       - name: Download Dependencies
         run: |
           fhir-pkg-tool --sushi-deps-file ${{ env.SUSHI_INPUT_DIR }}/sushi-config.yaml
+          echo "=== FHIR Package Cache Contents ==="
+          ls -la ~/.fhir/packages/ || echo "Package cache directory not found"
+          echo "==================================="
 
       # Run SUSHI (FSH -> FHIR conversion) on Resources directory
       - name: Run SUSHI
@@ -54,6 +57,7 @@ jobs:
           name: fhir-packages
           path: ~/.fhir/packages
           retention-days: 1
+          if-no-files-found: warn
 
   # ============================================
   # Build each IG in parallel
@@ -98,6 +102,13 @@ jobs:
         with:
           name: fhir-packages
           path: ~/.fhir/packages
+
+      # Verify package cache
+      - name: Verify Package Cache
+        run: |
+          echo "=== Verifying FHIR Package Cache ==="
+          ls -la ~/.fhir/packages/ || echo "Package cache directory empty or not found"
+          echo "===================================="
 
       # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
       - name: Expand CapabilityStatement
