@@ -27,7 +27,7 @@ This extension may be used on the following element(s):
 
 **Usages:**
 
-* Examples for this Extension: [ISiK-CapabilityStatementBasisServerAkteur](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur.md)
+* Examples for this Extension: [ISiKCapabilityStatementDokumentenServerAkteur](CapabilityStatement-ISiKCapabilityStatementDokumentenServerAkteur.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dok.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
 

@@ -1,167 +1,89 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://example.org/fhir/ValueSet/TestValueSet",
-      "version" : "0.0.1",
+      "url" : "http://dvmd.de/fhir/ValueSet/kdl",
+      "version" : "2025",
       "status" : "active",
-      "name" : "TestValueSet",
-      "title" : null,
-      "description" : ""
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/DiagnoseTyp",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "DiagnoseTyp",
-      "title" : "DiagnoseTyp ValueSet",
-      "description" : "DiagnoseTyp ValueSet",
-      "systems" : ["http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"],
+      "name" : "ValueSetKDL",
+      "title" : "ValueSet Klinische Dokumentenklassen-Liste (Version 2025)",
+      "description" : "ValueSets sind Listen von Codes, die in einem bestimmten Kontext verwendet werden. Durch sog. &quot;Terminology-Binding&quot; können Attribute von FHIR-Ressourcen an ValueSets gebunden werden, um die Menge der zulässigen Werte für dieses Attribut einzuschränken.  Dieses ValueSet enthält sämtliche Codes aus dem CodeSystem &quot;KDL&quot; und ist für Bindings an Attribute geeignet, an denen alle Werte aus dem CodeSystem &quot;KDL&quot; erlaubt werden sollen.  Beispiel: DocumentReference.type",
+      "systems" : ["http://dvmd.de/fhir/CodeSystem/kdl"],
+      "oids" : ["1.2.276.0.76.11.469"],
+      "sources" : ["1.2.276.0.76.11.469"],
       "uses" : {
       },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     },
     {
-      "url" : "http://fhir.de/ValueSet/Diagnosesubtyp",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "Diagnosesubtyp",
-      "title" : "Diagnosesubtyp ValueSet",
-      "description" : "Diagnosesubtyp ValueSet",
-      "systems" : [
-        "http://terminology.hl7.org/CodeSystem/diagnosis-role",
-        "http://fhir.de/CodeSystem/KontaktDiagnoseProzedur"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/EncounterClassDE",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "EncounterClassDE",
-      "title" : "EncounterClassDE",
-      "description" : "Fallarten und Patientenstatus zur Codierung von Encounter.class",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/EncounterStatusDe",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "EncounterStatusDe",
-      "title" : "Encounter Status ValueSet",
-      "description" : "Einschränkung von Encounter Status in Vorbereitung auf Änderungen in FHIR R5",
-      "systems" : ["http://hl7.org/fhir/encounter-status"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/bfarm/ops",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "OpsVS",
-      "title" : "OPS ValueSet",
-      "description" : "OPS ValueSet",
-      "systems" : ["http://fhir.de/CodeSystem/bfarm/ops"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/dgkev/Aufnahmeanlass",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "AufnahmeanlassVS",
-      "title" : "Aufnahmeanlass ValueSet",
-      "description" : "Aufnahmeanlass, Datenübermittlung nach § 301 Abs. 3 SGB V",
-      "systems" : ["http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "FachabteilungsschluesselVS",
-      "title" : "Fachabteilungsschlüssel ValueSet",
-      "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung",
-      "systems" : ["http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "ValueSetFachabteilungsschluesselErweitert",
-      "title" : "FachabteilungsschluesselErweitert ValueSet",
-      "description" : "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung inkl. Spezialisierungen",
-      "systems" : [
-        "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation",
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung",
-      "StructureDefinition-ISiKOrganisationFachabteilung.html" : "ISiKOrganisationFachabteilung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/kontaktart-de",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "KontaktartDe",
-      "title" : "KontaktartDe ValueSet",
-      "description" : "Kontaktarten für die Codierung von Encounter.type",
-      "systems" : ["http://fhir.de/CodeSystem/kontaktart-de"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://fhir.de/ValueSet/kontaktebene-de",
-      "version" : "1.5.4",
-      "status" : "active",
-      "name" : "KontaktebeneDe",
-      "title" : "KontaktebeneDe ValueSet",
-      "description" : "Kontaktebene für die Codierung von Encounter.type",
-      "systems" : ["http://fhir.de/CodeSystem/Kontaktebene"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/organization-type",
+      "url" : "http://hl7.org/fhir/ValueSet/composition-status",
       "version" : "4.0.1",
       "status" : "draft",
-      "name" : "OrganizationType",
-      "title" : "Organization type",
-      "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/organization-type"],
-      "oids" : ["2.16.840.1.113883.4.642.3.414"],
-      "sources" : ["2.16.840.1.113883.4.642.3.414"],
+      "name" : "CompositionStatus",
+      "title" : "CompositionStatus",
+      "description" : "The workflow/clinical status of the composition.",
+      "systems" : ["http://hl7.org/fhir/composition-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.241"],
+      "sources" : ["2.16.840.1.113883.4.642.3.241"],
       "uses" : {
       },
-      "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation"
+      "OperationDefinition-UpdateMetadata.html" : "Update document metadata"
     },
     {
-      "url" : "http://hl7.org/fhir/ValueSet/resource-types",
-      "version" : "4.0.1",
+      "url" : "http://ihe-d.de/ValueSets/IHEXDSclassCode",
+      "version" : "2021-06-25T13:44:47",
       "status" : "active",
-      "name" : "ResourceType",
-      "title" : "ResourceType",
-      "description" : "One of the resource types defined as part of this version of FHIR.",
-      "systems" : ["http://hl7.org/fhir/resource-types"],
-      "oids" : ["2.16.840.1.113883.4.642.3.27"],
-      "sources" : ["2.16.840.1.113883.4.642.3.27"],
+      "name" : "IHEXDSclassCode",
+      "title" : "IHE XDS classCode",
+      "description" : "**classCode (XDSDocumentEntry)**\r\n A high-level classification of XDS Documents that indicates the kind of document, e.g., report, summary, note, consent.",
+      "systems" : [
+        "http://loinc.org",
+        "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+      ],
+      "oids" : ["1.2.276.0.76.11.32"],
+      "sources" : ["1.2.276.0.76.11.32"],
       "uses" : {
       },
-      "StructureDefinition-ISiKValueSet.html" : "ISiKValueSet"
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
+    },
+    {
+      "url" : "http://ihe-d.de/ValueSets/IHEXDSeventCodeList",
+      "version" : "2021-07-06T21:19:41",
+      "status" : "active",
+      "name" : "IHEXDSeventCodeList",
+      "title" : "IHE XDS eventCodeList",
+      "description" : "**eventCodeList (XDSDocumentEntry)**\r\nThis list of codes represents the main clinical acts being documented in an XDS Document.",
+      "systems" : [
+        "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+        "http://dvmd.de/fhir/CodeSystem/kdl",
+        "http://ihe-d.de/CodeSystems/DokumentenWarnhinweise",
+        "http://ihe-d.de/CodeSystems/FallkontextBeiDokumentenerstellung",
+        "urn:iso-astm:E1762-95:2013",
+        "http://dicom.nema.org/resources/ontology/DCM",
+        "http://snomed.info/sct"
+      ],
+      "oids" : ["1.2.276.0.76.11.34"],
+      "sources" : ["1.2.276.0.76.11.34"],
+      "uses" : {
+      },
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
+    },
+    {
+      "url" : "http://ihe-d.de/ValueSets/IHEXDSformatCodeDE",
+      "version" : "2018-12-14T17:07:12",
+      "status" : "active",
+      "name" : "IHEXDSformatCodeDE",
+      "title" : "IHE XDS formatCode",
+      "description" : "**formatCode (XDSDocumentEntry)**\r\nGlobally unique code specifying the format of an XDS Document. Along with the typeCode, it should provide sufficient information to allow a potential consumer to know if it will be able to process the document.",
+      "systems" : [
+        "urn:dicom:uid",
+        "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+        "http://ihe-d.de/CodeSystems/DeutscheDokumentenformate"
+      ],
+      "oids" : ["1.2.276.0.76.11.35"],
+      "sources" : ["1.2.276.0.76.11.35"],
+      "uses" : {
+      },
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     },
     {
       "url" : "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
@@ -178,7 +100,7 @@
       "sources" : ["1.2.276.0.76.11.36"],
       "uses" : {
       },
-      "StructureDefinition-ISiKOrganisation.html" : "ISiKOrganisation"
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     },
     {
       "url" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode",
@@ -195,7 +117,24 @@
       "sources" : ["1.2.276.0.76.11.37"],
       "uses" : {
       },
-      "StructureDefinition-ISiKOrganisationFachabteilung.html" : "ISiKOrganisationFachabteilung"
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
+    },
+    {
+      "url" : "http://ihe-d.de/ValueSets/IHEXDStypeCode",
+      "version" : "2020-02-07T07:55:58",
+      "status" : "active",
+      "name" : "IHEXDStypeCode",
+      "title" : "IHE XDS typeCode",
+      "description" : "**typeCode (XDSDocumentEntry)**\r\nA low-level classification of XDS Documents within a classCode that describes class, event, specialty, and setting.",
+      "systems" : [
+        "http://ihe-d.de/CodeSystems/IHEXDStypeCode",
+        "http://loinc.org"
+      ],
+      "oids" : ["1.2.276.0.76.11.38"],
+      "sources" : ["1.2.276.0.76.11.38"],
+      "uses" : {
+      },
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/conformance-expectation",
@@ -214,129 +153,16 @@
       "StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" : "ISiK CapabilityStatement Imports Expectation"
     },
     {
-      "url" : "http://terminology.hl7.org/ValueSet/v2-0116",
-      "version" : "2.0.0",
-      "status" : "active",
-      "name" : "Hl7VSBedStatus",
-      "title" : "hl7VS-bedStatus",
-      "description" : "Value Set of codes that specify the state of a bed in an inpatient setting, and is used to determine if a patient may be assigned to it or not.",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0116"],
-      "oids" : ["2.16.840.1.113883.21.51"],
-      "sources" : ["2.16.840.1.113883.21.51"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKStandortRaum.html" : "ISiKStandortRaum",
-      "StructureDefinition-ISiKStandortBettenstellplatz.html" : "ISiKStandortBettenstellplatz"
-    },
-    {
-      "url" : "http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked",
-      "version" : "1.0.0",
-      "status" : "active",
-      "name" : "YesNoUnknownNotAsked",
-      "title" : "Yes No Unknown NotAsked",
-      "description" : "This value set contains 4 concepts commonly used as answers to items in a questionnaire.",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKAlkoholAbusus.html" : "ISiK Alkohol Abusus"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT",
+      "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKConfidentialityCodes",
       "version" : "0.0.1",
       "status" : "active",
-      "name" : "DiagnosesSCT",
-      "title" : null,
-      "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
-      "systems" : ["http://snomed.info/sct"],
+      "name" : "ISiKConfidentialityCodes",
+      "title" : "ISiKConfidentialityCodes",
+      "description" : "Vertraulichkeitsstufen",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-Confidentiality"],
       "uses" : {
       },
-      "StructureDefinition-ISiKDiagnose.html" : "ISiKDiagnose"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "ISiKLocationPhysicalType",
-      "title" : null,
-      "description" : "",
-      "systems" : [
-        "http://terminology.hl7.org/CodeSystem/location-physical-type"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" : "ISiKKontaktGesundheitseinrichtung"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "ProzedurenCodesSCT",
-      "title" : null,
-      "description" : "Enthaelt alle SNOMED Procedure Codes",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "ProzedurenKategorieSCT",
-      "title" : null,
-      "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKProzedur.html" : "ISiKProzedur"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftEtMethodeVS",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "SchwangerschaftEtMethodeVS",
-      "title" : "Schwangerschaft Erwarteter Entbindungstermin Methode",
-      "description" : "",
-      "systems" : ["http://loinc.org"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.html" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "SchwangerschaftsstatusVS",
-      "title" : "Schwangerschaftsstatus Valueset",
-      "description" : "",
-      "systems" : ["http://loinc.org"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKSchwangerschaftsstatus.html" : "ISiK Schwangerschaftsstatus"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/StillstatusVS",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "StillstatusVS",
-      "title" : "Stillstatus LOINC Antwortoptionen",
-      "description" : "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.",
-      "systems" : ["http://loinc.org"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKStillstatus.html" : "ISiKStillstatus"
-    },
-    {
-      "url" : "https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips",
-      "version" : "0.0.1",
-      "status" : "active",
-      "name" : "CurrentSmokingStatusUvIps",
-      "title" : "Current Smoking Status - IPS",
-      "description" : "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms.",
-      "systems" : ["http://loinc.org"],
-      "uses" : {
-      },
-      "StructureDefinition-ISiKRaucherStatus.html" : "ISiK Raucherstatus"
+      "StructureDefinition-ISiKDokumentenMetadaten.html" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     }
   ]
 }

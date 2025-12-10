@@ -1,0 +1,124 @@
+# ISiKBinary - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKBinary**
+
+## Resource Profile: ISiKBinary 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKBinary | *Version*:0.0.1 |
+| Active as of 2025-10-23 | *Computable Name*:ISiKBinary |
+
+ 
+Dieses Profil ermöglicht die Darstellung von FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) in ISiK Szenarien. 
+
+### Motivation
+
+ 
+Für FHIR-fremde Formate werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder über die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. Binary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen (z.B. Patient und Encounter) gestellt. 
+
+### Kompatibilität
+
+ 
+Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.gematik.de/servicedesk/customer/portal/16)gemeldet werden. 
+
+### Hinweis
+
+ 
+Das ISIK-Binary-Profil ist**nicht**Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul. Das Profil ist Teil des ISIK Basismoduls, da es als übergreifend genutzte Ressource sowohl im[Modul Terminplanung](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte?version=current)als auch im[Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte?version=current)implementiert werden muss. 
+
+**Usages:**
+
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Dokumenten Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementDokumentenServerAkteur-expanded.md) and [ISiK CapabilityStatement Dokumentenverwaltung Rolle](CapabilityStatement-ISiKCapabilityStatementDokumentenverwaltungRolle.md)
+* This Profile is not used by any profiles in this Implementation Guide
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dok.test.ig|current/StructureDefinition/ISiKBinary)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKBinary.csv), [Excel](StructureDefinition-ISiKBinary.xlsx), [Schematron](StructureDefinition-ISiKBinary.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKBinary",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKBinary",
+  "version" : "0.0.1",
+  "name" : "ISiKBinary",
+  "title" : "ISiKBinary",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-10-23",
+  "description" : "Dieses Profil ermöglicht die Darstellung von FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) in ISiK Szenarien. \n\n### Motivation\nFür FHIR-fremde Formate werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen (z.B. Patient und Encounter) gestellt. \n\n### Kompatibilität\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n### Hinweis\n\nDas ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul.\nDas Profil ist Teil des ISIK Basismoduls, da es als übergreifend genutzte Ressource sowohl im [Modul Terminplanung](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte?version=current) als auch im [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v4/ImplementationGuide-markdown-Datenobjekte?version=current) implementiert werden muss.  ",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Binary",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Binary",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Binary",
+        "path" : "Binary"
+      },
+      {
+        "id" : "Binary.id",
+        "path" : "Binary.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Binary.meta.versionId",
+        "path" : "Binary.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "Binary.meta.lastUpdated",
+        "path" : "Binary.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "Binary.contentType",
+        "path" : "Binary.contentType",
+        "short" : "MimeType der Binärdaten",
+        "comment" : "z.B. &quot;application/pdf&quot; oder &quot;image/jpeg&quot;  \n    **Begründung Pflichtfeld:** Ohne Kenntnis des MimeTypes sind die Base65-codierten Daten in `data` nicht interpretierbar",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Binary.data",
+        "path" : "Binary.data",
+        "short" : "Base64-codierte Binärdaten",
+        "comment" : "**Begründung Pflichtfeld:** Sind keine Binärdaten vorhanden, ist diese Ressource sinnlos.",
+        "min" : 1,
+        "mustSupport" : true
+      }
+    ]
+  }
+}
+
+```

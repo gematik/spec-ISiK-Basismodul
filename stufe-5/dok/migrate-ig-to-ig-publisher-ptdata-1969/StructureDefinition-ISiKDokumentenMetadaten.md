@@ -1,0 +1,701 @@
+# Erforderliche Metadaten für Dokumentenaustausch in ISiK - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Erforderliche Metadaten für Dokumentenaustausch in ISiK**
+
+## Resource Profile: Erforderliche Metadaten für Dokumentenaustausch in ISiK 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten | *Version*:0.0.1 |
+| Active as of 2025-10-23 | *Computable Name*:ISiKDokumentenMetadaten |
+
+ 
+Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik. 
+### Motivation Die Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem. 
+### Kompatibilität Dieses Profil basiert auf dem Profil[MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html)(Version 4.2.0) von IHE International. 
+#### Abweichungen vom IHE-Profil 
+* Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.
+* `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion {{pagelink: Dokumentenbereitstellung}} wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.
+* `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden
+ 
+
+#### Einschränkungen des IHE-Profils
+
+ 
+Elemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt. 
+
+**Usages:**
+
+* Examples for this Profile: [DocumentReference/dok-beispiel-client-with-binary-jpeg-example-short](DocumentReference-dok-beispiel-client-with-binary-jpeg-example-short.md), [DocumentReference/dok-beispiel-client-with-binary-jpeg-example](DocumentReference-dok-beispiel-client-with-binary-jpeg-example.md), [DocumentReference/dok-beispiel-client-with-binary-pdf-example-short](DocumentReference-dok-beispiel-client-with-binary-pdf-example-short.md), [DocumentReference/dok-beispiel-client-with-binary-pdf-example](DocumentReference-dok-beispiel-client-with-binary-pdf-example.md) and [DocumentReference/dok-beispiel-server](DocumentReference-dok-beispiel-server.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Dokumenten Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementDokumentenServerAkteur-expanded.md) and [ISiK CapabilityStatement Dokumentenverwaltung Rolle](CapabilityStatement-ISiKCapabilityStatementDokumentenverwaltungRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dok.test.ig|current/StructureDefinition/ISiKDokumentenMetadaten)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKDokumentenMetadaten.csv), [Excel](StructureDefinition-ISiKDokumentenMetadaten.xlsx), [Schematron](StructureDefinition-ISiKDokumentenMetadaten.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKDokumentenMetadaten",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten",
+  "version" : "0.0.1",
+  "name" : "ISiKDokumentenMetadaten",
+  "title" : "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-10-23",
+  "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.  \n\n  ### Motivation\nDie Ressource DocumentReference enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über DocumentReference.content beschrieben und über DocumentReference.content.attachment referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.\n\n  ### Kompatibilität\nDieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnContained References Option](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html) (Version 4.2.0) von IHE International.\n\n  #### Abweichungen vom IHE-Profil\n- Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.\n- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion {{pagelink: Dokumentenbereitstellung}} wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.\n- `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden\n\n#### Einschränkungen des IHE-Profils\nElemente mit ValueSet-Bindings ohne verbindliche Vorgabe seitens IHE wurden auf die in Deutschland gebräuchlichen Terminologien (gemäß der Festlegungen von IHE Deutschland e.V.) eingeschränkt.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "CompositionDocumentReferenceMapping",
+      "uri" : "http://hl7.org/fhir/StructureDefinition/Composition",
+      "name" : "Metadaten eines strukturieren Dokumentes (Document-Bundle)"
+    },
+    {
+      "identity" : "workflow",
+      "uri" : "http://hl7.org/fhir/workflow",
+      "name" : "Workflow Pattern"
+    },
+    {
+      "identity" : "fhircomposition",
+      "uri" : "http://hl7.org/fhir/composition",
+      "name" : "FHIR Composition"
+    },
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    },
+    {
+      "identity" : "cda",
+      "uri" : "http://hl7.org/v3/cda",
+      "name" : "CDA (R2)"
+    },
+    {
+      "identity" : "w5",
+      "uri" : "http://hl7.org/fhir/fivews",
+      "name" : "FiveWs Pattern Mapping"
+    },
+    {
+      "identity" : "v2",
+      "uri" : "http://hl7.org/v2",
+      "name" : "HL7 v2 Mapping"
+    },
+    {
+      "identity" : "xds",
+      "uri" : "http://ihe.net/xds",
+      "name" : "XDS metadata equivalent"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "DocumentReference",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/DocumentReference",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "DocumentReference",
+        "path" : "DocumentReference"
+      },
+      {
+        "id" : "DocumentReference.id",
+        "path" : "DocumentReference.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.meta.versionId",
+        "path" : "DocumentReference.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "DocumentReference.meta.lastUpdated",
+        "path" : "DocumentReference.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "DocumentReference.masterIdentifier",
+        "path" : "DocumentReference.masterIdentifier",
+        "short" : "Versionsspezifische OID des Dokumentes",
+        "comment" : "**Begründung Must Support:** Die OID ist erforderlich, um die Version des Dokumentes eindeutig zu identifizieren.",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Bundle.identifier"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.masterIdentifier.system",
+        "path" : "DocumentReference.masterIdentifier.system",
+        "short" : "Namensraum des Identifiers",
+        "comment" : "Bei OIDs und UUIDs ist hier stets der Wert `urn:ietf:rfc:3986` anzugeben. Weitere Hinweise zur AbbildungVerwendung von MasterIdentifiern und deren Abbildung auf FHIR sind [in IHE-ITI](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types) zu finden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.masterIdentifier.value",
+        "path" : "DocumentReference.masterIdentifier.value",
+        "short" : "Wert des Identifiers",
+        "comment" : "OID mit URI-Präfix &quot;urn:oid:&quot;. Es sei darauf hingewiesen, dass OIDs auf Basis von UUIDs generiert werden können, ohne einen eigenen Namesraum zu beantragen. Zunächst müssen hierzu alle 128 Bit der UUID in einen Integer-Wert umgerechnet werden. Das Ergebnis muss ohne Bindestriche an die Root-OID '2.25' angehängt werden. Siehe [IHE International - Creating Unique IDs - OID and UUID](https://wiki.ihe.net/index.php/Creating_Unique_IDs_-_OID_and_UUID).",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.identifier",
+        "path" : "DocumentReference.identifier",
+        "short" : "Identifier des Dokumentes",
+        "comment" : "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]\n\nUpdate für Stufe 3:\nIn MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.\n",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.identifier"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.status",
+        "path" : "DocumentReference.status",
+        "short" : "Status des Dokumentenmetadatensatzes",
+        "comment" : "Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt.",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "=current"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.docStatus",
+        "path" : "DocumentReference.docStatus",
+        "short" : "Bearbeitungsstatus des Dokumentes",
+        "comment" : "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Die Verwendung von docStatus bleibt jedoch optional,\n  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dokumentenserver müssen jedoch in der Lage sein, den Dokumentenstatus\n (sofern vorhanden) zu persistieren, anzuzeigen und zu reproduzieren.\n  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.status"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.type",
+        "path" : "DocumentReference.type",
+        "short" : "Dokumententyp",
+        "comment" : "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich und ein Server MUSS beide Kodierungen bereitstellen - trotz der Kardinalität DocumentReference.type.coding:XDS 0..1 -, jedoch ist der IHE-XDS-Type-Code bei Übermittlung für Clients nicht verpflichtend (s.u. zu XDS).\n  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,\n  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitsgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding",
+        "path" : "DocumentReference.type.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "min" : 1
+      },
+      {
+        "id" : "DocumentReference.type.coding:KDL",
+        "path" : "DocumentReference.type.coding",
+        "sliceName" : "KDL",
+        "short" : "Dokumenttyp gem. KDL-Terminologie",
+        "min" : 1,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://dvmd.de/fhir/CodeSystem/kdl"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://dvmd.de/fhir/ValueSet/kdl"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.type.coding[KDL]"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.type.coding:KDL.system",
+        "path" : "DocumentReference.type.coding.system",
+        "short" : "Kodiersystem",
+        "comment" : "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding:KDL.code",
+        "path" : "DocumentReference.type.coding.code",
+        "short" : "Code",
+        "comment" : "Der KDL-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding:KDL.display",
+        "path" : "DocumentReference.type.coding.display",
+        "short" : "Anzeigetext",
+        "comment" : "Der Anzeigetext zum KDL-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding:XDS",
+        "path" : "DocumentReference.type.coding",
+        "sliceName" : "XDS",
+        "short" : "Dokumenttyp gem. IHE-De-Terminologie",
+        "comment" : "Die Übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,\n  MUSS jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten\n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDStypeCode"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.type.coding[XDS]",
+            "comment" : "Kann mittels Lookup in den KDL->XDS ConceptMaps anhand des KDL-Type-Codes ermittelt werden"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.type.coding:XDS.system",
+        "path" : "DocumentReference.type.coding.system",
+        "short" : "Kodiersystem",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding:XDS.code",
+        "path" : "DocumentReference.type.coding.code",
+        "short" : "Code",
+        "comment" : "Der XDS-Type-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.type.coding:XDS.display",
+        "path" : "DocumentReference.type.coding.display",
+        "short" : "Anzeigetext",
+        "comment" : "Der Anzeigetext zum XDS-Type-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.category",
+        "path" : "DocumentReference.category",
+        "short" : "Dokumentklasse/-Kategorie",
+        "comment" : "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.\n  Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,\n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.\n  Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden.",
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.category.coding",
+        "path" : "DocumentReference.category.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "min" : 1
+      },
+      {
+        "id" : "DocumentReference.category.coding:XDS",
+        "path" : "DocumentReference.category.coding",
+        "sliceName" : "XDS",
+        "min" : 1,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSclassCode"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.category.coding[XDS]",
+            "comment" : "Kann mittels Lookup in den KDL->XDS ConceptMaps anhand des KDL-Type-Codes ermittelt werden"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.category.coding:XDS.system",
+        "path" : "DocumentReference.category.coding.system",
+        "short" : "Kodiersystem",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.category.coding:XDS.code",
+        "path" : "DocumentReference.category.coding.code",
+        "short" : "Code",
+        "comment" : "Der XDS-Class-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.category.coding:XDS.display",
+        "path" : "DocumentReference.category.coding.display",
+        "short" : "Anzeigetext",
+        "comment" : "Der Anzeigetext zum XDS-Class-Code",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.subject",
+        "path" : "DocumentReference.subject",
+        "short" : "Patientenbezug",
+        "comment" : "**Begründung Must-Support:** Ein Patientenbezug der Prozedur MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Lookup Composition.subject.resolve().identifier[PID]",
+            "comment" : "Ermittlung des korrekten Patienten auf dem Server anhand des Identifiers (PID) und/oder weiterer Kriterien erforderlich"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.subject.reference",
+        "path" : "DocumentReference.subject.reference",
+        "short" : "Patienten-Link",
+        "comment" : "**Bedingtes Pflichtfeld:** Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  \nLeer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}\n\nDie Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.subject.identifier",
+        "path" : "DocumentReference.subject.identifier",
+        "short" : "Patienten-Link (logische Referenz)",
+        "comment" : "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.subject.identifier.system",
+        "path" : "DocumentReference.subject.identifier.system",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.subject.identifier.value",
+        "path" : "DocumentReference.subject.identifier.value",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.date",
+        "path" : "DocumentReference.date",
+        "comment" : "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend.\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar.\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt.\n\nUpdate für Stufe 3:\nIn MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.\n"
+      },
+      {
+        "id" : "DocumentReference.author",
+        "path" : "DocumentReference.author",
+        "short" : "Autor des Dokumentes",
+        "comment" : "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend.\n  Eine darüber hinaus gehende Verlinkung auf einen Practitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich.",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.author"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.author.display",
+        "path" : "DocumentReference.author.display",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.relatesTo",
+        "path" : "DocumentReference.relatesTo",
+        "short" : "Beziehung zu anderen Dokumenten",
+        "comment" : "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.relatesTo.code",
+        "path" : "DocumentReference.relatesTo.code",
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.relatesTo.code"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.relatesTo.target",
+        "path" : "DocumentReference.relatesTo.target",
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Lookup Composition.relatesTo.targetReference.resolve().identifier",
+            "comment" : "Ermittlung der zu ersetzenden DocumentReference anhand des identifiers der referenzierten Composition erforderlich"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.description",
+        "path" : "DocumentReference.description",
+        "comment" : "Optionaler Freitext zur ergänzenden Beschreibung des Dokumentes. Die eigentliche menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen sollte in 'content.attachment.title' angegeben werden.\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.\n\nDas Element 'description' kann weiterhin verwendet werden, um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare bereitzustellen."
+      },
+      {
+        "id" : "DocumentReference.securityLabel",
+        "path" : "DocumentReference.securityLabel",
+        "short" : "Vertraulichkeit",
+        "comment" : "Die Bereitstellung der Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\n&#13;\n\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "min" : 1,
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://gematik.de/fhir/isik/ValueSet/ISiKConfidentialityCodes"
+        }
+      },
+      {
+        "id" : "DocumentReference.content",
+        "path" : "DocumentReference.content",
+        "short" : "Beschreibung des Dokumenteninhaltes",
+        "comment" : "Die Kardinalität wurde angepasst, um den Vorgaben von IHE MHD zu ensprechen [Änderung im Zuge der Kommentierung Stufe 3].",
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.content.attachment",
+        "path" : "DocumentReference.content.attachment",
+        "short" : "Anhang",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.content.attachment.contentType",
+        "path" : "DocumentReference.content.attachment.contentType",
+        "short" : "Mimetype des Dokumentes",
+        "comment" : "Mimetype (Dateityp) des Dokumentes (z.B. &quot;application/pdf&quot;)",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "`application/html` für den extrahierten Narrative, `application/fhir+xml` oder `application/fhir+json` für das Bundle"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.content.attachment.language",
+        "path" : "DocumentReference.content.attachment.language",
+        "short" : "Sprache, in der das Dokument verfasst wurde.",
+        "comment" : "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen,\n      fest auf &quot;de&quot; oder &quot;de-DE&quot; gesetzt werden.",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "=de sofern keine abweichende Angabe in Composition.language"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.content.attachment.data",
+        "path" : "DocumentReference.content.attachment.data",
+        "short" : "Base64-codierte Binärdaten",
+        "comment" : "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden.\n\nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.content.attachment.url",
+        "path" : "DocumentReference.content.attachment.url",
+        "short" : "Referenz auf Dokument",
+        "comment" : "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n\nWird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieses konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.\n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "vom Server festgelegter Speicherort des Bundles/Narratives"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.content.attachment.title",
+        "path" : "DocumentReference.content.attachment.title",
+        "short" : "Bezeichnung des Dokuments",
+        "comment" : "Menschenlesbare Bezeichnung des Dokuments zur Anzeige in Benutzeroberflächen, z.B. als Titel in einer Dokumentenliste ('Lungenfunktionstest vom 18.02.2022').\n\nUpdate für Stufe 5:\nAb dieser Stufe ist für die menschenlesbare Bezeichnung des Dokuments das Element `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description` entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title` angeben.",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.title"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.content.attachment.creation",
+        "path" : "DocumentReference.content.attachment.creation",
+        "short" : "Dokumentendatum",
+        "comment" : "Es obliegt dem erzeugenden System, zu entscheiden,\n      welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung",
+        "min" : 1,
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Composition.date"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.content.format",
+        "path" : "DocumentReference.content.format",
+        "short" : "Format des Dokumentes",
+        "comment" : "Sofern das Dokument nicht auf einem standardisierten,\n    strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,\n    genügt die Angabe des Codes\n    &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;",
+        "min" : 1,
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSformatCodeDE"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "=urn:ihe:iti:xds:2017:mimeTypeSufficient"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.context",
+        "path" : "DocumentReference.context",
+        "short" : "Kontextinformationen zum Dokument",
+        "comment" : "**Begründung Must Support:** Kontextinformationen sind erforderlich, um die Relevanz und den Bezug des Dokuments zu verstehen.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.context.encounter",
+        "path" : "DocumentReference.context.encounter",
+        "short" : "Aufenthaltsbezug",
+        "comment" : "**Hinweis Kompatibilität:** In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.",
+        "max" : "1",
+        "mustSupport" : true,
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Lookup Composition.encounter.resolve().identifier",
+            "comment" : "Ermittlung des korrekten Encounters auf dem Server anhand des Identifiers(Fallnummer) und/oder weiterer Kriterien erforderlich"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.context.encounter.reference",
+        "path" : "DocumentReference.context.encounter.reference",
+        "short" : "Encounter-Link",
+        "comment" : "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "DocumentReference.context.event",
+        "path" : "DocumentReference.context.event",
+        "comment" : "Binding auf IHE-DE Terminologie hinzugefügt",
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSeventCodeList"
+        }
+      },
+      {
+        "id" : "DocumentReference.context.event.coding",
+        "path" : "DocumentReference.context.event.coding",
+        "min" : 1,
+        "max" : "1"
+      },
+      {
+        "id" : "DocumentReference.context.event.coding.system",
+        "path" : "DocumentReference.context.event.coding.system",
+        "min" : 1
+      },
+      {
+        "id" : "DocumentReference.context.event.coding.code",
+        "path" : "DocumentReference.context.event.coding.code",
+        "min" : 1
+      },
+      {
+        "id" : "DocumentReference.context.facilityType",
+        "path" : "DocumentReference.context.facilityType",
+        "short" : "Art der Einrichtung, aus der das Dokument stammt",
+        "comment" : "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden.",
+        "min" : 1,
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "=KHS, sofern nichts anderes bekannt"
+          }
+        ]
+      },
+      {
+        "id" : "DocumentReference.context.practiceSetting",
+        "path" : "DocumentReference.context.practiceSetting",
+        "comment" : "Binding auf IHE-DE Terminologie hinzugefügt",
+        "min" : 1,
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
+        },
+        "mapping" : [
+          {
+            "identity" : "CompositionDocumentReferenceMapping",
+            "map" : "Lookup Composition.encounter.resolve().serviceType",
+            "comment" : "Mapping per https://wiki.hl7.de/index.php?title=Ihevs:DocumentEntry.PracticeSettingCode von Fachabteilungsschlüssel auf PracticeSetting erforderlich."
+          }
+        ]
+      }
+    ]
+  }
+}
+
+```
