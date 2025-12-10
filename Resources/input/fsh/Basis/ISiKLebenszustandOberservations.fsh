@@ -189,7 +189,7 @@ Title: "ISiKRaucherStatusBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = LOINC#LA15920-4 "Former smoker"
+* valueCodeableConcept = $loinc#LA15920-4 "Former smoker"
   * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
 * performer = Reference(PractitionerWalterArzt)
