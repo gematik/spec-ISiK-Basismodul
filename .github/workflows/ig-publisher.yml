@@ -29,29 +29,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Create FHIR package cache directory
-      - name: Create Package Cache Directory
-        run: |
-          mkdir -p /root/.fhir/packages
-          echo "Created /root/.fhir/packages"
-
       # Download dependencies via FHIR Package Tool using sushi-config.yaml from Resources
       - name: Download Dependencies
         run: |
           fhir-pkg-tool --sushi-deps-file ${{ env.SUSHI_INPUT_DIR }}/sushi-config.yaml
-          echo "=== After fhir-pkg-tool ==="
-          ls -la /root/.fhir/packages/ || echo "Package cache still empty"
-          find /root/.fhir -type f 2>/dev/null || echo "No files in /root/.fhir"
-          echo "==========================="
+          echo "=== FHIR Package Cache Contents ==="
+          ls -la /github/home/.fhir/packages/ | head -20
+          echo "==================================="
 
       # Run SUSHI (FSH -> FHIR conversion) on Resources directory
       - name: Run SUSHI
         run: |
           sushi ${{ env.SUSHI_INPUT_DIR }}
-          echo "=== After SUSHI ==="
-          ls -la /root/.fhir/packages/ 2>/dev/null || echo "Package cache still empty"
-          find /root/.fhir -type d -name "packages" 2>/dev/null || echo "No packages directory found"
-          echo "==================="
 
       # Upload fsh-generated output for use by build jobs
       - name: Upload FSH Generated Resources
@@ -66,9 +55,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: fhir-packages
-          path: /root/.fhir/packages
+          path: /github/home/.fhir/packages
           retention-days: 1
-          if-no-files-found: warn
 
   # ============================================
   # Build each IG in parallel
@@ -112,14 +100,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: fhir-packages
-          path: /root/.fhir/packages
+          path: /github/home/.fhir/packages
 
-      # Verify package cache
-      - name: Verify Package Cache
+      # Copy packages to where IG Publisher expects them
+      - name: Setup Package Cache for IG Publisher
         run: |
-          echo "=== Verifying FHIR Package Cache ==="
-          ls -la /root/.fhir/packages/ || echo "Package cache directory empty or not found"
-          echo "===================================="
+          echo "=== Copying packages to /root/.fhir/packages ==="
+          mkdir -p /root/.fhir/packages
+          cp -r /github/home/.fhir/packages/* /root/.fhir/packages/
+          echo "=== Package cache ready ==="
+          ls -la /root/.fhir/packages/ | head -20
+          echo "==============================="
 
       # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
       - name: Expand CapabilityStatement
