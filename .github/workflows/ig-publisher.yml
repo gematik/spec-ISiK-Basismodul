@@ -47,6 +47,14 @@ jobs:
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           retention-days: 1
 
+      # Upload FHIR package cache for use by build jobs
+      - name: Upload FHIR Package Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-packages
+          path: ~/.fhir/packages
+          retention-days: 1
+
   # ============================================
   # Build each IG in parallel
   # ⚙️ IG Configuration: Add or modify IGs in the matrix below
@@ -81,6 +89,13 @@ jobs:
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+
+      # Download the FHIR package cache from prepare job
+      - name: Download FHIR Package Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: fhir-packages
+          path: ~/.fhir/packages
 
       # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
       - name: Expand CapabilityStatement
