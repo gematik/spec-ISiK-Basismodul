@@ -13,7 +13,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Datum: 23.10.2025
 
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799 #Test-Change? (id-Abfragen für Server MUSS auf alle Profile)
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 ----
@@ -22,7 +22,7 @@ Datum: 23.10.2025
 
 Datum: 26.06.2025
 
-* `fix` Anpassung der Displaywerte in den DocumenReference-Examples von „mimeType Sufficient“ zu „Format aus MIME Type ableitbar“ https://github.com/gematik/spec-ISiK-Basismodul/pull/765
+* `fix` Anpassung der Displaywerte in den DocumenReference-Examples von „mimeType Sufficient“ zu „Format aus MIME Type ableitbar“ https://github.com/gematik/spec-ISiK-Basismodul/pull/765 #Test-Change? Unklar , ggf. Anpassung der Test-Examples nötig
 * `documentation` Hinweise auf erläuternde Inhalten auf den MHD Seiten integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/770 
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
@@ -31,12 +31,12 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F)
-* `improve` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718 > #MOCK-Change zu prüfen - ggf. Lockerung (hinsichtlich logischer Referenzen) - Ticket https://service.gematik.de/browse/PTDATA-1916
-* `improve` Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725
-* `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
-* `improve` Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739
-* `improve` Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Basismodul/pull/756/files
+* `improve` Neuer verbindlicher Suchparameter `identifier` für DocumentReference hinzugefügt, auf Basis von [Community-Feedback](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F) #Test-Change - neue Interaktion 
+* `improve` Anforderung gelockert zur Herstellung des Patienten-Kontextes und Ausschluss von logischen Referenzen im ISiK-kontext entfernt https://github.com/gematik/spec-ISiK-Basismodul/pull/718 > #MOCK-Change zu prüfen - ggf. Lockerung (hinsichtlich logischer Referenzen) - Ticket https://service.gematik.de/browse/PTDATA-1916 #No-Test-Change
+* `improve` Must-Support auf Bundle.entry, da darunterliegende Elemente ebenfalls als Must-Support gekennzeichnet sind https://github.com/gematik/spec-ISiK-Basismodul/pull/725 #No-Test-Change
+* `improve` Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725 #Test-Change? ggf. Custodian zulassen
+* `improve` Optimierung der Verständlichkeit des Abschnittes "2:3.68.4.1.2 Message Semantics" https://github.com/gematik/spec-ISiK-Basismodul/pull/739 #No-Test-Change
+* `improve` Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Basismodul/pull/756/files #Test-Change? ggf. lockerung? , fraglich ob die kontext-Herstellung überhaupt getestet wird oder implizit ist
 
 
 ----
@@ -46,16 +46,16 @@ Datum: 13.05.2025
 
 * `improve` Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
   erforderlich ist und mehrere umfangreiche indirekte Dependencies enthält, die für dieses Modul
-  nicht benötigt werden
+  nicht benötigt werden #No-Test-Change
 * `improve` Für die menschenlesbare Bezeichnung des Dokuments ist das Element
   `content.attachment.title` zu verwenden. Die bisherige Nutzung von `DocumentReference.description`
   entfällt zugunsten einer besseren Angleichung an MHD und die ePA-Spezifikation. Implementierungen
   sollten daher den Titel des Dokuments ausschließlich in `content.attachment.title`
   angeben. https://github.com/gematik/spec-ISiK-Basismodul/pull/686 #MOCK-Change zu prüfen _> ggf. guter Fall für Demo zu abwärtskompatibler Lösung (Stufe 3 und 5). - Ticket https://service.gematik.de/browse/PTDATA-1917 
-    * content .attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen.
+    * content .attachment.title` wurde auf 1..1 MS gesetzt, um die Verwendung zu erzwingen. #Test-Change
     * DocumentReference .description` wurde auf 0..1 MS gesetzt, und kann weiterhin verwendet werden,
       um inhaltliche Hinweise zum Dokument, eine knappe Zusammenfassung oder ergänzende Kommentare
-      bereitzustellen.
+      bereitzustellen. #Test-Change?
 
 
 ## Version 5.0.0-rc (Kommentierung)
@@ -64,11 +64,11 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `improve` Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen - https://service.gematik.de/browse/PTDATA-1918
-* `improve` Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen -> ticket https://service.gematik.de/browse/PTDATA-1916
+* `improve` Löschen von vorläufigen Dokumenten durch update des docStatus auf `entered-in-error` mittels `$updateMetadata` hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen - https://service.gematik.de/browse/PTDATA-1918 #Test-Change siehe - https://github.com/gematik/spec-ISiK-Basismodul/pull/582/files#diff-8cb0c87c86395d2e4b1fa18a32ec7e106d81ad4aaaa3a4a4eda9323a0d258314R19
+* `improve` Ergänzung einer weiteren experimentellen Methode der Herstellung von Patientenkontext mittels Logical Reference https://github.com/gematik/spec-ISiK-Basismodul/pull/582 #MOCK-Change zu prüfen -> ticket https://service.gematik.de/browse/PTDATA-1916 #Test-Change Optionaler-Test - siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/582/files#diff-b5472f866f5124467b23df42da54ed1e98abd1507fc894e1fbb390a08de0e311R72 
     * Im Zuge dessen Lockerung der Kardinalität von `DocumentReference.subject.reference` auf 0..1, um diese Methode zu ermöglichen
 
-* `fix` Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
+* `fix` Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe #Test-Change - zu ürüfen, nur umzusetzen, wenn urn:ietf:rfc:3986 in Tests vorkommt
 https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
 https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F
 
@@ -78,7 +78,7 @@ https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20mas
 
 Datum: 19.3.2025
 
-* `improve` 'revert' 'improve' Patient-/Encounter-Interaktionen hinzugefügt - https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/233/commits/105c1cffdf91ccb5e51dc7adf5e8a238019fd7d4
+* `improve` 'revert' 'improve' Patient-/Encounter-Interaktionen hinzugefügt - https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/233/commits/105c1cffdf91ccb5e51dc7adf5e8a238019fd7d4 #Test-Change die Interaktionen müssen vorliegen - im Wesentlichen prüfen, da diese auch schon in Stufe 3 korrigiert sein sollten.
 
 ----
 
@@ -87,19 +87,19 @@ Datum: 19.3.2025
 Datum: 24.01.2025
 
 * `documentation` Übertragung der Dokumentation in die FHIR-Resourcen, Refactoring des ImplementationGuides https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/211
-* `fix` Update der der dependency de.ihe-d.terminology von 3.0.0 -> 3.0.1 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/212 - Begründung de.ihe-d.terminology#3.0.0 war defekt: ValueSets in XML abgelegt. Inhaltlich keine Änderung
+* `fix` Update der der dependency de.ihe-d.terminology von 3.0.0 -> 3.0.1 https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/212 - Begründung de.ihe-d.terminology#3.0.0 war defekt: ValueSets in XML abgelegt. Inhaltlich keine Änderung #No-Test-Change
 * `fix` Fehlende Kennzeichnung von MS-Elementen im Bundle-Profil
-https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/210
+https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/210 #Test-Change zu Ürpfen, ob MS Elementer bereits in test abgedeckt - hier https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/203/files#diff-0a660c0ecc8e80e22cd41d885fb2f8f93e85a046c11aec8398392f3404e7ec26R6 
 * `fix` Binary-URL zeigt noch auf Basis V3
-https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
+https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206 #No-Test-Change
 * `fix` Operations hängen im CapabilityStatement am falschen Branch
-https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
-* `fix` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/213
-* `improve` Link zum GitHub Archiv des Moduls wurde in der README ergänzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/209
-* `improve` Update der validation pipeline Versionen https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/214
-* `fix` Beispiel für Dokumentensurchergebnisse wurde gefixt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/217
-* `fix` OPD-0 Warnung in OperationUpdateMetadata https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/218
-* `fix` Hinzufügen der Wildcard dependency für die Basismodul dependency https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/221
+https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206 #No-Test-Change
+* `fix` Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/213 #No-Test-Change
+* `improve` Link zum GitHub Archiv des Moduls wurde in der README ergänzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/209 #No-Test-Change
+* `improve` Update der validation pipeline Versionen https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/214 #No-Test-Change
+* `fix` Beispiel für Dokumentensurchergebnisse wurde gefixt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/217 #No-Test-Change
+* `fix` OPD-0 Warnung in OperationUpdateMetadata https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/218  #No-Test-Change
+* `fix` Hinzufügen der Wildcard dependency für die Basismodul dependency https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/221 #No-Test-Change
 
 
 
@@ -119,9 +119,9 @@ Datum: 09.09.2024
 
 Datum: 03.04.2024
 
-* `improve` Dependency hinzugefügt zu IHE-Package zwecks Auflösung von ValueSets https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/181
-* Erweiterung um Use Case Diagramm, Resourcen Diagramm und Informationsmodell
-* Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern
+* `improve` Dependency hinzugefügt zu IHE-Package zwecks Auflösung von ValueSets https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/181 #No-Test-Change
+* Erweiterung um Use Case Diagramm, Resourcen Diagramm und Informationsmodell  #No-Test-Change
+* Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern #No-Test-Change
 
 
 ----
