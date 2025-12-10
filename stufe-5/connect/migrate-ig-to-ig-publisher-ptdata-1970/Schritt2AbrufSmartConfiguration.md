@@ -1,13 +1,14 @@
-# Schritt 2: Abruf .well-known/smart-configuration - Test Implementation Guide v0.0.1
+# Schritt 2 Abruf Smart Configuration - Test Implementation Guide v0.0.1
 
 Test Implementation Guide
 
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* **Schritt 2: Abruf .well-known/smart-configuration**
+* [**Backend Services**](BackendServices.md)
+* **Schritt 2 Abruf Smart Configuration**
 
-## Schritt 2: Abruf .well-known/smart-configuration
+## Schritt 2 Abruf Smart Configuration
 
 # Schritt 2: Abruf .well-known/smart-configuration
 

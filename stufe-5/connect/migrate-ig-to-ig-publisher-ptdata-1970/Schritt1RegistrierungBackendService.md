@@ -1,13 +1,14 @@
-# Schritt 1: Registrierung eines Smart Backend Services - Test Implementation Guide v0.0.1
+# Schritt 1 Registrierung Backend Service - Test Implementation Guide v0.0.1
 
 Test Implementation Guide
 
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* **Schritt 1: Registrierung eines Smart Backend Services**
+* [**Backend Services**](BackendServices.md)
+* **Schritt 1 Registrierung Backend Service**
 
-## Schritt 1: Registrierung eines Smart Backend Services
+## Schritt 1 Registrierung Backend Service
 
 # Schritt 1: Registrierung eines SMART Backend Services
 
