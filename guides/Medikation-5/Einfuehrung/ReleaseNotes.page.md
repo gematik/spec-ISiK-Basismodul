@@ -13,7 +13,7 @@ Datum: 23.10.2025
 * `documentation` Erläuterung zur Nutzung von MedicationRequest.status für die Umsetzung asynchroner Prüfung im empfangenden System  https://github.com/gematik/spec-ISiK-Basismodul/pull/807
 
 * `documentation` Erläuterung für die Umsetzung der Pausierung einer Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/803
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799 #Test-Change? (id-Abfragen für Server MUSS auf alle Profile) - analog wie für alle anderen Module handhaben
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 
@@ -28,21 +28,21 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Öffnung der Kardinalität für ATC und PZN Kodierung, sodass nun eine Mehrfachkordierung möglich ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/737
+* `improve` Öffnung der Kardinalität für ATC und PZN Kodierung, sodass nun eine Mehrfachkordierung möglich ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/737 #Test-Change? - zu prüfen - fraglich, ob hier ein Test-Case zur max-Kardinalität bestand
 * `improve` MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange - Der Datentyp
   boundsRange wurde als Must-Support entfernt, da er in der praktischen Verordnung medizinischer
   Therapien nur in sehr seltenen Spezialfällen Anwendung
-  findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728
+  findet. https://github.com/gematik/spec-ISiK-Basismodul/pull/728 #Test-Change? - zu prüfen. Ggf. lockern
 * `improve` Das Element MedicationAdministration.request im Profil ISiKMedikationsVerabreichung
   wurde als eingeschränktes Must-Support gekennzeichnet, da die Angabe der zugrunde liegenden
-  Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell abbildbar. https://github.com/gematik/spec-ISiK-Basismodul/pull/734
+  Verordnung fachlich relevant ist, aber nicht in allen Systemen strukturell abbildbar. https://github.com/gematik/spec-ISiK-Basismodul/pull/734 #Test-Change? - zu prüfen. Ggf. lockern
 * `improve` Verbesserung der Beschreibung des ISiKMedicationList-Profils: klarere Abgrenzung zur
   ePA/eMP und präzisere Darstellung der enthaltenen Informationen
-  (MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733
+  (MedicationStatements). https://github.com/gematik/spec-ISiK-Basismodul/pull/733 #No-Test-Change
 * `improve` ISiKMedikationsVerordnung: Kommentar zu priorPrescription hinzugefügt und Definitionen
   in den Kommentaren beider Elemente (priorPrescription und extension.medicationRequestReplaces)
-  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736
-* `improve` ValueSet für Medikament-Kodierung übernommen aus ePA-Medication statt SNOMED-all 
+  sprachlich und fachlich überarbeitet. https://github.com/gematik/spec-ISiK-Basismodul/pull/736 #No-Test-Change
+* `improve` ValueSet für Medikament-Kodierung übernommen aus ePA-Medication statt SNOMED-all #Test-Change ? ggf. zu Prüfen für SNMOED-Kodierungen. Vgl. ggf. VS hier https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/Datenobjekt_Medikament
 
 ---
 
@@ -52,7 +52,7 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* `improve` Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt und List-Interaktionen sowie Interaktionen auf ISiKSchwangerschaftErwarteterEntbindungstermin für AMTS eingeführt + Refactoring Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/597
+* `improve` Überarbeitung von Akteuren und Rollen, dabei Procedure-Interaktionen für Akteur im Kontext von AMTS eingeführt und List-Interaktionen sowie Interaktionen auf ISiKSchwangerschaftErwarteterEntbindungstermin für AMTS eingeführt + Refactoring Rollen https://github.com/gematik/spec-ISiK-Basismodul/pull/597 #Test-Change - Procedure-Interaktionen 
 
 ---
 
@@ -68,8 +68,8 @@ Datum: 08.04.2025
 
 Datum: 06.03.2025
 
-* `improve` Klarstellung zu übergreifenden Festlegungen https://github.com/gematik/spec-ISiK-Medikation/pull/168
-* `fix` broken package 
+* `improve` Klarstellung zu übergreifenden Festlegungen https://github.com/gematik/spec-ISiK-Medikation/pull/168 #No-Test-Change
+* `fix` broken package  #No-Test-Change
 
 ----
 
@@ -77,21 +77,20 @@ Datum: 06.03.2025
 
 Datum: 26.02.2025
 
-* `improve` Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement https://github.com/gematik/spec-ISiK-Medikation/pull/140
-* `improve` Klärung zur Nutzung der Zeit-Elemente in ISiKMedikationsInformation -und ISiKMedikationsVerabreichung https://github.com/gematik/spec-ISiK-Medikation/pull/154
+* `improve` Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement https://github.com/gematik/spec-ISiK-Medikation/pull/140 #No-Test-Change bereits umgesetzt in 3
+* `improve` Klärung zur Nutzung der Zeit-Elemente in ISiKMedikationsInformation -und ISiKMedikationsVerabreichung https://github.com/gematik/spec-ISiK-Medikation/pull/154 #No-Test-Change bereits umgesetzt in 3
   * Zum Hintergrund der Entscheidungsfindung beachte [öffentliche Fragestellung und Diskussion](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BMED.5D.20Administration.2FVerabreichung.20-.20Date.20or.20Timestamp). 
-* `improve` Klarstellung zum Umgang mit Freitext-Dosierungsinformationen für empfangende Systeme https://github.com/gematik/spec-ISiK-Medikation/pull/155
-* `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
+* `improve` Klarstellung zum Umgang mit Freitext-Dosierungsinformationen für empfangende Systeme https://github.com/gematik/spec-ISiK-Medikation/pull/155 #No-Test-Change bereits umgesetzt in 3
+* `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141 #No-Test-Change
 * `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
-* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Medikation/pull/156/files 
-* `improve` MS für ISiKMedikationsVerordnung.reasonReference & reasonCode hinzugefügt, um diese Elemente über alle Medication-Ressourcen hinweg zu vereinheitlichen https://github.com/gematik/spec-ISiK-Medikation/pull/161
-* `improve` Möglicher Breaking Change für Clients: Änderung (Schwächung) der MS-Definition für .reasonCode und reasonReference für MedicationAdministration und MedicationStatement https://github.com/gematik/spec-ISiK-Medikation/pull/140
-* `fix` Capability Statement Korrektur des Suchparameter-Typs und weitere Fixes für Beispiele  https://github.com/gematik/spec-ISiK-Medikation/pull/148
-* `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141
-* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158
+* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158 #No-Test-Change
+* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist. Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Medikation/pull/156/files   #No-Test-Change bereits umgesetzt in 3
+* `improve` MS für ISiKMedikationsVerordnung.reasonReference & reasonCode hinzugefügt, um diese Elemente über alle Medication-Ressourcen hinweg zu vereinheitlichen https://github.com/gematik/spec-ISiK-Medikation/pull/161 #No-Test-Change - rdundant / obsolet - s. o. 
+* `fix` Capability Statement Korrektur des Suchparameter-Typs und weitere Fixes für Beispiele  https://github.com/gematik/spec-ISiK-Medikation/pull/148 #Test-Change? fraglich - ggf. Anpassung
+* `fix` Korrektur der Description & Status des MedicationQuantity Profils https://github.com/gematik/spec-ISiK-Medikation/pull/141 #No-Test-Change
+* `improve` Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Medikation/pull/158 #No-Test-Change
 * `documentation` Dokumentation für MS-Flags https://github.com/gematik/spec-ISiK-Medikation/pull/139
-* `improve` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 
+* `improve` Hinweis zur Kontextherstellung https://github.com/gematik/spec-ISiK-Medikation/pull/167 #No-Test-Change
 
 ----
 
@@ -107,11 +106,11 @@ Datum: 15.10.2024
 
 Datum: 26.06.2024
 
-- Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Medikation/pull/122
-- Klärung Dosis-Rate Quantity und Ratio (Beispiele, Must-Support)  https://github.com/gematik/spec-ISiK-Medikation/pull/124/files
-- Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Medikation/pull/122
-- Entfernen der WG14 Kodierung, Hinzufügen eines SimpleQuantity Profiles, Update der Abhängigkeit auf IPS 1.1.0, Hinzufügen eines SCT Slices zu Medikationsoprofilen, bei Medication.amount (Ratios) numerator und denominator auf 1..1 https://github.com/gematik/spec-ISiK-Medikation/pull/123
-- Entfernen von MS von MedicationStatement.partOf https://github.com/gematik/spec-ISiK-Medikation/pull/126
+- Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Medikation/pull/122 #No-Test-Change redundant/obsolet - s.o. zu .id
+- Klärung Dosis-Rate Quantity und Ratio (Beispiele, Must-Support)  https://github.com/gematik/spec-ISiK-Medikation/pull/124/files #No-Test-Change
+- Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Medikation/pull/122 #No-Test-Change redundant/obsolet - s.o. zu .id
+- Entfernen der WG14 Kodierung, Hinzufügen eines SimpleQuantity Profiles, Update der Abhängigkeit auf IPS 1.1.0, Hinzufügen eines SCT Slices zu Medikationsoprofilen, bei Medication.amount (Ratios) numerator und denominator auf 1..1 https://github.com/gematik/spec-ISiK-Medikation/pull/123 #Test-Change zu prüfen - insbesondere ggf. Anpassung : https://github.com/gematik/spec-ISiK-Medikation/pull/123/files#diff-5b28aeef58ff96d8225634773792d600c3d8c14aa1769e51469c08249fcdbfd7R57  und https://github.com/gematik/spec-ISiK-Medikation/pull/123/files#diff-2cb2c8ab026818916afce512dea7201677f9a3b205f980aaaf181eeee9d584f0R1 
+- Entfernen von MS von MedicationStatement.partOf https://github.com/gematik/spec-ISiK-Medikation/pull/126 #Test-Change - ggf. Lockerung
 
 ---
 **Release Candidate zur Kommentierung**
@@ -124,16 +123,16 @@ Datum: 04.04.2024
 * `improve` Neue Übergreifender Use Case AMTS, inklusive mini-IG und Auszügen aus IOP-Arbeitskreis. Dieser Übergreifende USe Case nutzt auch (insbesondere) weitere neue Profile aus der Basis und dem Support-Modul Labor
   * Diagnose aus Basis (ISiKAllergieUnvertraeglichkeit, chr. Krankheit wie Parkinson, usw.)
   * Observation aus Basis (Schwangerschaft, AlkoholAbusus usw.)
-  * Observation aus Labor oder Vital (SerumKreatinin, GFR, Blutbild, Gewicht usw.)
-* `improve` Neues Profil ISiKAMTSBewertung
-* `improve` Neues Extensions: 
+  * Observation aus Labor oder Vital (SerumKreatinin, GFR, Blutbild, Gewicht usw.) #Test-Change hierfür sollte ggf. ein gesondertes Test-Paket entstehen. Der UC soll noch vor Stufe 6 als eigener IG publiziert werden. - Allerdings hier ein geeingetes CapabilityStatement für das Interaktionen und Profile getestet werden müssen - https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/CapabilityStatements/Akteur-ISiKCapabilityStatementAMTSAkteur.page.md
+* `improve` Neues Profil ISiKAMTSBewertung #Test-Change s.o.
+* `improve` Neues Extensions:  #Test-Change s.o.AMTS
   * MedikationsArt in Form von Akut & Dauer
   * Selbstmedikation   
   * Behandlungsziel   
   * Replaces als Ersatz-Verordnung
   * AcceptedRisk im Zuge einer AMTS-Bewertung
-* Erweiterung um Use Case Diagramm, Ressourcen Diagramm und Informationsmodell
-* Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern
+* Erweiterung um Use Case Diagramm, Ressourcen Diagramm und Informationsmodell #No-Test-Change
+* Erweiterung um Use Case Zusammenhänge von verketteten Suchparametern #No-Test-Change
 
 ----
 ## Version: 3.0.1
