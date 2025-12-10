@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-basis-ig/Coverage/CoverageGesetzlich> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CoverageGesetzlich"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage CoverageGesetzlich</b></p><a name=\"CoverageGesetzlich\"> </a><a name=\"hcCoverageGesetzlich\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.html\">ISiKVersicherungsverhaeltnisGesetzlich</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/versicherungsart-de-basis GKV}\">gesetzliche Krankenversicherung</span></p><p><b>beneficiary</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>payor</b>: Eine Gesundheitskasse (Identifier: Organization identifier/260326822)</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/versicherungsart-de-basis"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/versicherungsart-de-basis>
+       ] ;
+       fhir:code [ fhir:v "GKV" ]
+     ] )
+  ] ; # 
+  fhir:beneficiary [
+     fhir:l <http://example.org/fhir/test-basis-ig/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+           ] ;
+           fhir:code [ fhir:v "XX" ]
+         ] )
+       ] ;
+       fhir:system [
+         fhir:v "http://fhir.de/sid/arge-ik/iknr"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/arge-ik/iknr>
+       ] ;
+       fhir:value [ fhir:v "260326822" ]
+     ] ;
+     fhir:display [ fhir:v "Eine Gesundheitskasse" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
