@@ -15,20 +15,6 @@ permissions:
   issues: write
   pull-requests: write
 
-# ============================================
-# IG Configuration Matrix
-# Add or modify IGs here
-# ============================================
-env:
-  IG_MATRIX: |
-    [
-      {
-        "ig_name": "Subscription-IG",
-        "ig_dir": "publisher-guides/Subscription-IG",
-        "capability_statement_url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur"
-      }
-    ]
-
 jobs:
 
   # Shared preparation step: Run SUSHI once for all IGs
@@ -61,7 +47,10 @@ jobs:
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           retention-days: 1
 
-  # Build each IG in parallel using a matrix strategy
+  # ============================================
+  # Build each IG in parallel
+  # ⚙️ IG Configuration: Add or modify IGs in the matrix below
+  # ============================================
   build:
     needs: prepare
     runs-on: ubuntu-latest
@@ -69,7 +58,14 @@ jobs:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     strategy:
       matrix:
-        include: ${{ fromJson(env.IG_MATRIX) }}
+        include:
+          - ig_name: Subscription-IG
+            ig_dir: publisher-guides/Subscription-IG
+            capability_statement_url: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur
+          # Add more IGs here:
+          # - ig_name: Basis-IG
+          #   ig_dir: publisher-guides/Basis-IG
+          #   capability_statement_url: https://gematik.de/fhir/isik/CapabilityStatement/AnotherCapability
 
     env:
       SUSHI_INPUT_DIR: Resources
