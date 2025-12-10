@@ -15,15 +15,29 @@ permissions:
   issues: write
   pull-requests: write
 
+# ============================================
+# IG Configuration Matrix
+# Add or modify IGs here
+# ============================================
+env:
+  IG_MATRIX: |
+    [
+      {
+        "ig_name": "Subscription-IG",
+        "ig_dir": "publisher-guides/Subscription-IG",
+        "capability_statement_url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur"
+      }
+    ]
+
 jobs:
 
-  build:
+  # Shared preparation step: Run SUSHI once for all IGs
+  prepare:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     env:
       SUSHI_INPUT_DIR: Resources
-      IG_PUBLISHER_DIR: publisher-guides/Subscription-IG
 
     steps:
       - name: Checkout
@@ -39,13 +53,46 @@ jobs:
         run: |
           sushi ${{ env.SUSHI_INPUT_DIR }}
 
+      # Upload fsh-generated output for use by build jobs
+      - name: Upload FSH Generated Resources
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsh-generated
+          path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+          retention-days: 1
+
+  # Build each IG in parallel using a matrix strategy
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
+    strategy:
+      matrix:
+        include: ${{ fromJson(env.IG_MATRIX) }}
+
+    env:
+      SUSHI_INPUT_DIR: Resources
+      IG_PUBLISHER_DIR: ${{ matrix.ig_dir }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Download the fsh-generated artifact from prepare job
+      - name: Download FSH Generated Resources
+        uses: actions/download-artifact@v4
+        with:
+          name: fsh-generated
+          path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+
       # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
       - name: Expand CapabilityStatement
         uses: Gefyra/capabilityStatement-expander@v0
         with:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
-          capability_statement_url: 'https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur'
+          capability_statement_url: ${{ matrix.capability_statement_url }}
       
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
@@ -62,7 +109,7 @@ jobs:
       - name: Upload Build Results
         uses: actions/upload-artifact@v4
         with:
-          name: fhir-ig
+          name: fhir-ig-${{ matrix.ig_name }}
           path: |
             ${{ env.IG_PUBLISHER_DIR }}/output
 
@@ -75,6 +122,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: github-actions[bot]
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          IG_NAME: ${{ matrix.ig_name }}
         run: |
           set -euo pipefail
 
@@ -96,7 +144,7 @@ jobs:
             cd ..
           fi
 
-          branch_dir="gh-pages/${GITHUB_REF_NAME}"
+          branch_dir="gh-pages/${GITHUB_REF_NAME}/${IG_NAME}"
           rm -rf "${branch_dir}"
           mkdir -p "${branch_dir}"
           cp -R "${{ env.IG_PUBLISHER_DIR }}/output/." "${branch_dir}/"
@@ -109,7 +157,7 @@ jobs:
             echo "No updates to publish."
             exit 0
           fi
-          git commit -m "chore: update ${GITHUB_REF_NAME} pages"
+          git commit -m "chore: update ${GITHUB_REF_NAME}/${IG_NAME} pages"
           git push origin gh-pages
 
       - name: Announce published URL
@@ -121,10 +169,12 @@ jobs:
           repo_owner="${GITHUB_REPOSITORY_OWNER}"
           repo_name="${GITHUB_REPOSITORY#*/}"
           branch="${GITHUB_REF_NAME}"
-          url="https://${repo_owner}.github.io/${repo_name}/${branch}/"
-          echo "Published to ${url}"
-          printf '### Deployment\n[Open published IG for branch `%s`](%s)\n' "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
+          ig_name="${{ matrix.ig_name }}"
+          url="https://${repo_owner}.github.io/${repo_name}/${branch}/${ig_name}/"
+          echo "Published ${ig_name} to ${url}"
+          printf '### Deployment: %s\n[Open published IG for branch `%s`](%s)\n' "${ig_name}" "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
           echo "published_url=${url}" >> "${GITHUB_OUTPUT}"
+          echo "ig_name=${ig_name}" >> "${GITHUB_OUTPUT}"
 
       - name: Upsert PR comment with published URL
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
@@ -132,14 +182,16 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.ref_name }}
           PUBLISHED_URL: ${{ steps.announce_url.outputs.published_url }}
+          IG_NAME: ${{ steps.announce_url.outputs.ig_name }}
         with:
           script: |
             const { owner, repo } = context.repo;
             const branch = process.env.BRANCH_NAME;
-            const marker = '<!-- ig-publish-url -->';
+            const igName = process.env.IG_NAME;
+            const marker = `<!-- ig-publish-url-${igName} -->`;
             const url = process.env.PUBLISHED_URL;
             const body = `${marker}
-            ### Deployment
+            ### Deployment: ${igName}
             [Open published IG for branch \`${branch}\`](${url})`;
 
             // Try to find an open PR for this branch
@@ -157,17 +209,17 @@ jobs:
               owner, repo, issue_number: pr.number, per_page: 100
             });
 
-            // Find existing marker comment (any author)
+            // Find existing marker comment for this specific IG
             const existing = comments.find(c => typeof c.body === 'string' && c.body.includes(marker));
 
             if (existing) {
               await github.rest.issues.updateComment({
                 owner, repo, comment_id: existing.id, body
               });
-              core.info(`Updated IG publish URL comment on PR #${pr.number}`);
+              core.info(`Updated IG publish URL comment for ${igName} on PR #${pr.number}`);
             } else {
               await github.rest.issues.createComment({
                 owner, repo, issue_number: pr.number, body
               });
-              core.info(`Created IG publish URL comment on PR #${pr.number}`);
+              core.info(`Created IG publish URL comment for ${igName} on PR #${pr.number}`);
             }
