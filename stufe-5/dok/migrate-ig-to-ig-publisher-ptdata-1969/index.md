@@ -13,7 +13,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-09T15:29:45+00:00",
+  "date" : "2025-12-10T09:33:33+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "dok.test.ig",
   "license" : "CC0-1.0",
