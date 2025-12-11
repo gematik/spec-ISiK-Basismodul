@@ -14,7 +14,7 @@ Datum: 11.12.2025
 * `documentation` Fehlende Begründungen für MS-Elemente
   nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
 
-## Version 5.1.1-rc
+## Version 5.1.0
 
 Datum: 11.12.2025
 
