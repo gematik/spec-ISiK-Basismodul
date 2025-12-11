@@ -19,7 +19,7 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
-## Version 5.1.1
+## Version 5.1.1-rc
 
 Datum: 11.12.2025
 
@@ -34,7 +34,7 @@ Datum: 11.12.2025
 ## Version 5.1.0
 
 
-Datum: 23.10.2025
+Datum: 11.12.2025
 
 * `documentation` Beschreibungen für die Extensions in ISiK (auch Backports) hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/877
 * `improve` Festlegungen für Verwendung von `Encounter.location.location.identifier` konkretisiert. https://github.com/gematik/spec-ISiK-Basismodul/pull/827

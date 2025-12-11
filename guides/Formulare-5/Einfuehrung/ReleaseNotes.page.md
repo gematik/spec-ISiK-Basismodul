@@ -14,9 +14,9 @@ Datum: 11.12.2025
 
 * `documentation` Fehlende Comments und shorts für Must-Support Elemente hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/918
 
-## Version 5.1.0
+## Version 5.1.1-rc
 
-Datum: 23.10.2025
+Datum: 11.12.2025
 
 * `improve` enableWhen-Element mit MS versehen, wurde initial vergessen aber in Beispielen und Beschreibungen genannt https://github.com/gematik/spec-ISiK-Basismodul/pull/896
 
