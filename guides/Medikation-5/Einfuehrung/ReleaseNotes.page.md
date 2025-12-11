@@ -16,7 +16,7 @@ Datum: tbd
 
 ## Version 5.1.0
 
-Datum: 11.12.2025
+Datum: 23.10.2025
 
 * `documentation` Link zu Dosierungsbeispielen im IG
   Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882
