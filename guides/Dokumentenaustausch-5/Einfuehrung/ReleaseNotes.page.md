@@ -15,9 +15,9 @@ Datum: tbd
 
 * `documentation` fehlende shorts und comments nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/921
 
-## Version 5.1.0
+## Version 5.1.1
 
-Datum: 23.10.2025
+Datum: 11.12.2025
 
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
