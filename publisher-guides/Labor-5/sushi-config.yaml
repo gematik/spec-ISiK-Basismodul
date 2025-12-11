@@ -1,0 +1,69 @@
+id: labor.test.ig
+canonical: http://example.org/fhir/test-labor-ig
+name: TestImplementationGuide
+title: Test Implementation Guide
+description: A test implementation guide for validating the local FHIR IG Publisher environment
+status: draft
+version: 0.0.1
+fhirVersion: 4.0.1
+copyrightYear: 2025+
+releaseLabel: STU1
+license: CC0-1.0
+publisher: Test Organization
+
+applyExtensionMetadataToRoot: false
+dependencies:
+  # hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
+  de.basisprofil.r4: 1.5.4
+  de.ihe-d.terminology: 3.0.1
+  dvmd.kdl.r4: 2025.0.1
+  ihe.formatcode.fhir: 1.4.0
+  hl7.fhir.uv.sdc: 3.0.0
+  de.gematik.terminology: 1.0.6
+  
+pages:
+  AMTS.page.md:
+    title: AMTS
+  BestaetigungsrelevanteSysteme.page.md:
+    title: Bestätigungsrelevante Systeme
+  Einfuehrung.md:
+    title: Einführung
+  InteraktionenUndSearchTypes.page.md:
+    title: Interaktionen und Search Types
+  Kompatibilitaet.page.md:
+    title: Kompatibilität
+  ReleaseNotes.page.md:
+    title: Release Notes
+  RestApi.page.md:
+    title: REST-API
+  UebergreifendeFestlegungen.md:
+    title: Übergreifende Festlegungen
+  UebergreifendeUseCases.md:
+    title: Übergreifende Use Cases
+
+
+menu:
+  Einführung: Einfuehrung.html
+  Release Notes: ReleaseNotes.page.html
+  Festlegungen:
+    Übergreifende Festlegungen: UebergreifendeFestlegungen.html
+    Bestätigungsrelevante Systeme: BestaetigungsrelevanteSysteme.page.html
+    REST-API Grundlagen: RestApi.page.html
+    Kompatibilität: Kompatibilitaet.page.html
+  Use Cases:
+    Übergreifende Use Cases: UebergreifendeUseCases.html
+    Arzneimitteltherapiesicherheit (AMTS): AMTS.page.html
+    Interaktionen und Search Types: InteraktionenUndSearchTypes.page.html
+  FHIR-Artefakte:
+    Artefakte: artifacts.html
+    CapabilityStatements: capabilitystatements.html
+    Profile: profiles.html
+    Terminology: terminology.html
+
+parameters:
+  no-validate: true
+
+#und ggfs noch:
+#  no-narrative: true
