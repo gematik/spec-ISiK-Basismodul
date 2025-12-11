@@ -33,7 +33,7 @@ Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein 
 * Examples for this Profile: [TestValueSet](ValueSet-ISiKValueSetExample.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementTerminologieRolle"](CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKValueSet)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKValueSet)
 
 ### Formal Views of Profile Content
 

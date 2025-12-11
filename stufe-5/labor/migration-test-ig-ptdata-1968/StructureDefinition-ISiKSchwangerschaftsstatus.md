@@ -23,7 +23,7 @@ Schwangerschaftsstatus einer Patientin
 * Examples for this Profile: [Observation/ISiKSchwangerschaftsstatusBeispiel](Observation-ISiKSchwangerschaftsstatusBeispiel.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKSchwangerschaftsstatus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKSchwangerschaftsstatus)
 
 ### Formal Views of Profile Content
 

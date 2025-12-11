@@ -37,7 +37,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Coverage/CoveragePrivat](Coverage-CoveragePrivat.md) and [Coverage/SZ1VersicherungSelbstzahler](Coverage-SZ1VersicherungSelbstzahler.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"](CapabilityStatement-ISiKCapabilityStatementVersicherungsverhaeltnisRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler)
 
 ### Formal Views of Profile Content
 

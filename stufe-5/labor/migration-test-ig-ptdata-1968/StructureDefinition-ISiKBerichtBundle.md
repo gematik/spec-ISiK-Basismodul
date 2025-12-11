@@ -22,7 +22,7 @@ Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Kr
 
 * Examples for this Profile: [Bundle/ISiKBundle-Example](Bundle-ISiKBundle-Example.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKBerichtBundle)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKBerichtBundle)
 
 ### Formal Views of Profile Content
 

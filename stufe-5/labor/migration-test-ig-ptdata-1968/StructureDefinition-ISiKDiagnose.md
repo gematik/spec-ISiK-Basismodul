@@ -39,7 +39,7 @@ Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen an
 * Examples for this Profile: [Condition/AltersbedingteKreislaufstoerung](Condition-AltersbedingteKreislaufstoerung.md), [Condition/BehandlungsDiagnoseFreitext](Condition-BehandlungsDiagnoseFreitext.md), [Condition/Example-condition-ausrufezeichen-primaer](Condition-Example-condition-ausrufezeichen-primaer.md), [Condition/Example-condition-ausrufezeichen-sekundaer](Condition-Example-condition-ausrufezeichen-sekundaer.md)...Show 7 more,[Condition/Example-condition-kreuz-stern-primaer](Condition-Example-condition-kreuz-stern-primaer.md),[Condition/Example-condition-kreuz-stern-sekundaer](Condition-Example-condition-kreuz-stern-sekundaer.md),[Condition/MittelgradigeIntelligenzminderung](Condition-MittelgradigeIntelligenzminderung.md),[Condition/PrimaereGonarthroseMinimal](Condition-PrimaereGonarthroseMinimal.md),[Condition/PrimaereGonarthroseNormal](Condition-PrimaereGonarthroseNormal.md),[Condition/SZ2Primaerdiagnose](Condition-SZ2Primaerdiagnose.md)and[Condition/SZ2Sekundaerdiagnose](Condition-SZ2Sekundaerdiagnose.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementKlinischeRolle"](CapabilityStatement-ISiKCapabilityStatementKlinischeRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKDiagnose)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKDiagnose)
 
 ### Formal Views of Profile Content
 

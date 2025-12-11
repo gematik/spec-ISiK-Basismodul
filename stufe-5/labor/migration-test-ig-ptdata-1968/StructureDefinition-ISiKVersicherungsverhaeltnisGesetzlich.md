@@ -37,7 +37,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Coverage/CoverageGesetzlich](Coverage-CoverageGesetzlich.md), [Coverage/SZ1VersicherungGesetzlich](Coverage-SZ1VersicherungGesetzlich.md) and [Coverage/SZ2VersicherungGesetzlich](Coverage-SZ2VersicherungGesetzlich.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"](CapabilityStatement-ISiKCapabilityStatementVersicherungsverhaeltnisRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich)
 
 ### Formal Views of Profile Content
 

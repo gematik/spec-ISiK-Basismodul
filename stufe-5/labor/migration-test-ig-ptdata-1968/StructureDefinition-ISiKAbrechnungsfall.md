@@ -39,7 +39,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Account/AbrechnungsfallDRG](Account-AbrechnungsfallDRG.md), [Account/AbrechnungsfallGonarthrose](Account-AbrechnungsfallGonarthrose.md), [Account/SZ1DRGFall](Account-SZ1DRGFall.md) and [Account/SZ2DRGFall](Account-SZ2DRGFall.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"](CapabilityStatement-ISiKCapabilityStatementVersicherungsverhaeltnisRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKAbrechnungsfall)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKAbrechnungsfall)
 
 ### Formal Views of Profile Content
 

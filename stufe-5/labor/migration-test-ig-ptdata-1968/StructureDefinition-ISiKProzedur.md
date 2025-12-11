@@ -38,7 +38,7 @@ Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen an
 * Examples for this Profile: [Procedure/Appendektomie](Procedure-Appendektomie.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementKlinischeRolle"](CapabilityStatement-ISiKCapabilityStatementKlinischeRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKProzedur)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKProzedur)
 
 ### Formal Views of Profile Content
 

@@ -35,7 +35,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Practitioner/PractitionerWalterArzt](Practitioner-PractitionerWalterArzt.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "LeistungserbringerRolle"](CapabilityStatement-ISiKCapabilityStatementLeistungserbringerRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKPersonImGesundheitsberuf)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKPersonImGesundheitsberuf)
 
 ### Formal Views of Profile Content
 

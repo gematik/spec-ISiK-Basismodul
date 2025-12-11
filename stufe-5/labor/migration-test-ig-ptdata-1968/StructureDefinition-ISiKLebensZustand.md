@@ -46,7 +46,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Derived from this Profile: [ISiK Alkohol Abusus](StructureDefinition-ISiKAlkoholAbusus.md), [ISiK Raucherstatus](StructureDefinition-ISiKRaucherStatus.md), [ISiK Schwangerschaft - Erwarteter Entbindungstermin](StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.md), [ISiK Schwangerschaftsstatus](StructureDefinition-ISiKSchwangerschaftsstatus.md) and [ISiKStillstatus](StructureDefinition-ISiKStillstatus.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKLebensZustand)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKLebensZustand)
 
 ### Formal Views of Profile Content
 

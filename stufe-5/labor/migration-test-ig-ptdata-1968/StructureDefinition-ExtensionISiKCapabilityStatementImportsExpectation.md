@@ -29,7 +29,7 @@ This extension may be used on the following element(s):
 
 * Examples for this Extension: [ISiK-CapabilityStatementBasisServerAkteur](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
 
 ### Formal Views of Extension Content
 

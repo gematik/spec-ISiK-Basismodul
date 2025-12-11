@@ -1,62 +1,4 @@
-# Index - Test Implementation Guide v0.0.1
-
-Test Implementation Guide
-
-Version 0.0.1 - STU1
-
-* [**Table of Contents**](toc.md)
-* **Index**
-
-## Index
-
-| | |
-| :--- | :--- |
-| *Official URL*:http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-12-10 | *Computable Name*:TestImplementationGuide |
-
-![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
-
--------
-
-Version: 5.0.0
-
-Datum: 26.06.2025
-
-Status: Aktiv
-
-Realm: Deutschland
-
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
-
-Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
-
--------
-
-# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
-
-Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
-
-Hersteller bestätigungsrelevanter Systeme sollen durch diesen IG in die Lage versetzt werden, eine konforme Implementierung zu erstellen und das Bestätigungsverfahren der gematik erfolgreich zu absolvieren.
-
-Weitere Informationen siehe [§373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
-
-Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim [National Release Center für SNOMED CT in Deutschland](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html) beantragt werden.
-
-**Kontakt**
-
-Bringen Sie Allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
-
-Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff “Portalzugang”.
-
-**Herausgeber**
-
-gematik GmbH
-
-[Impressum](https://www.gematik.de/impressum/)
-
-**Gender-Hinweis**
-
-Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle weiteren Geschlechter, neben männlich und weiblich, ab.
+# Resource Test Implementation Guide
 
 
 
@@ -65,15 +7,15 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "basis.test.ig",
-  "url" : "http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig",
+  "id" : "labor.test.ig",
+  "url" : "http://example.org/fhir/test-labor-ig/ImplementationGuide/labor.test.ig",
   "version" : "0.0.1",
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-10T12:42:05+00:00",
+  "date" : "2025-12-11T09:01:49+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
-  "packageId" : "basis.test.ig",
+  "packageId" : "labor.test.ig",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [
@@ -290,7 +232,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-basis-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-labor-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -632,7 +574,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-basis-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-labor-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -2121,142 +2063,21 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "index.html"
+              "valueUrl" : "AMTS.page.html"
             }
           ],
-          "nameUrl" : "index.html",
-          "title" : "Index",
+          "nameUrl" : "AMTS.page.html",
+          "title" : "AMTS",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Motivation.html"
+              "valueUrl" : "BestaetigungsrelevanteSysteme.page.html"
             }
           ],
-          "nameUrl" : "Motivation.html",
-          "title" : "Motivation",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "ReleaseNotes.html"
-            }
-          ],
-          "nameUrl" : "ReleaseNotes.html",
-          "title" : "Release Notes",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_UseCaseAnwendung.html"
-            }
-          ],
-          "nameUrl" : "Index_UseCaseAnwendung.html",
-          "title" : "Use Cases und Anwendungskontexte",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Abbildung-des-Konstrukts-Fall.html"
-            }
-          ],
-          "nameUrl" : "Abbildung-des-Konstrukts-Fall.html",
-          "title" : "Abbildung des Konstrukts \"Fall\"",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Datenuebermittlung-aus-Subsystemen.html"
-            }
-          ],
-          "nameUrl" : "Datenuebermittlung-aus-Subsystemen.html",
-          "title" : "Datenübermittlung aus Subsystemen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html"
-            }
-          ],
-          "nameUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html",
-          "title" : "Akteurs- und Rollenmodell",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Beispielszenarien.html"
-            }
-          ],
-          "nameUrl" : "Index_Beispielszenarien.html",
-          "title" : "Beispielszenarien",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html"
-            }
-          ],
-          "nameUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html",
-          "title" : "Szenario 1: DRG-Fall, Kind mit Wahlleistung",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html"
-            }
-          ],
-          "nameUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html",
-          "title" : "Szenario 2: Kreuz-Stern-Diagnose",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Festlegungen.html"
-            }
-          ],
-          "nameUrl" : "Index_Festlegungen.html",
-          "title" : "Festlegungen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Methodik.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Methodik.html",
-          "title" : "Methodik",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html",
+          "nameUrl" : "BestaetigungsrelevanteSysteme.page.html",
           "title" : "Bestätigungsrelevante Systeme",
           "generation" : "markdown"
         },
@@ -2264,65 +2085,54 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html"
+              "valueUrl" : "Einfuehrung.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html",
-          "title" : "Kompatibilität der gematik-Spezifikation",
+          "nameUrl" : "Einfuehrung.html",
+          "title" : "Einführung",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html"
+              "valueUrl" : "InteraktionenUndSearchTypes.page.html"
             }
           ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html",
-          "title" : "Kompatibilität der gematik-Spezifikation IHE",
+          "nameUrl" : "InteraktionenUndSearchTypes.page.html",
+          "title" : "Interaktionen und Search Types",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html"
+              "valueUrl" : "Kompatibilitaet.page.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html",
-          "title" : "Must-Support-Flags",
+          "nameUrl" : "Kompatibilitaet.page.html",
+          "title" : "Kompatibilität",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html"
+              "valueUrl" : "ReleaseNotes.page.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html",
-          "title" : "Repräsentationsformate",
+          "nameUrl" : "ReleaseNotes.page.html",
+          "title" : "Release Notes",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Suchparameter.html"
+              "valueUrl" : "RestApi.page.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_Suchparameter.html",
-          "title" : "Suchparameter",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Rest.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Rest.html",
+          "nameUrl" : "RestApi.page.html",
           "title" : "REST-API",
           "generation" : "markdown"
         },
@@ -2330,22 +2140,22 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Patient-Besuch-Kontext.html"
+              "valueUrl" : "UebergreifendeFestlegungen.html"
             }
           ],
-          "nameUrl" : "Patient-Besuch-Kontext.html",
-          "title" : "Herstellung von Patienten- und Besuchskontext",
+          "nameUrl" : "UebergreifendeFestlegungen.html",
+          "title" : "Übergreifende Festlegungen",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html"
+              "valueUrl" : "UebergreifendeUseCases.html"
             }
           ],
-          "nameUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html",
-          "title" : "Umgang mit fehlenden Daten",
+          "nameUrl" : "UebergreifendeUseCases.html",
+          "title" : "Übergreifende Use Cases",
           "generation" : "markdown"
         }
       ]

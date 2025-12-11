@@ -23,7 +23,7 @@ Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines 
 * Examples for this Profile: [Uniklinik Entenhausen](Organization-KrankenhausOrganisationBeispiel.md)
 * CapabilityStatements using this Profile: [CapabilityStatement für Rolle "AufbaustrukturRolle"](CapabilityStatement-ISiKCapabilityStatementAufbaustrukturRolle.md) and [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKOrganisation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKOrganisation)
 
 ### Formal Views of Profile Content
 

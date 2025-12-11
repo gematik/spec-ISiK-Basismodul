@@ -30,7 +30,7 @@ Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte[ValueSets zu e
 * Examples for this Profile: [TestKatalog](CodeSystem-CodeSystemExample.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementTerminologieRolle"](CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKCodeSystem)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKCodeSystem)
 
 ### Formal Views of Profile Content
 

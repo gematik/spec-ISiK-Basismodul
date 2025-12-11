@@ -28,7 +28,7 @@ Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource ‘Device’ abgebilde
 * Examples for this Profile: [Location/BettenstellplatzStandortBeispiel](Location-BettenstellplatzStandortBeispiel.md)
 * CapabilityStatements using this Profile: [CapabilityStatement für Rolle "AufbaustrukturRolle"](CapabilityStatement-ISiKCapabilityStatementAufbaustrukturRolle.md) and [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKStandortBettenstellplatz)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKStandortBettenstellplatz)
 
 ### Formal Views of Profile Content
 

@@ -23,7 +23,7 @@ Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird
 * Examples for this Profile: [Observation/ISiKStillstatusBeispiel](Observation-ISiKStillstatusBeispiel.md)
 * CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementBasisServerAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKStillstatus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/labor.test.ig|current/StructureDefinition/ISiKStillstatus)
 
 ### Formal Views of Profile Content
 
