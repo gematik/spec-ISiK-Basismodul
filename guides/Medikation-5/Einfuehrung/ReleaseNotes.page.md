@@ -4,9 +4,9 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.1.1
+## Version 5.1.1-rc
 
-Datum: tbd
+Datum: 11.12.2025
 
 * `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
   `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel
@@ -16,7 +16,7 @@ Datum: tbd
 
 ## Version 5.1.0
 
-Datum: 23.10.2025
+Datum: 11.12.2025
 
 * `documentation` Link zu Dosierungsbeispielen im IG
   Medikation https://github.com/gematik/spec-ISiK-Basismodul/pull/882
@@ -26,6 +26,8 @@ Datum: 23.10.2025
 * `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `documentation` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
+
+
 
 
 ## Version 5.0.0
