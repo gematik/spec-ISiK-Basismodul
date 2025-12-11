@@ -8,7 +8,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 ## Version 5.1.1
 
-Datum: tbd
+Datum: 11.12.2025
 
 * `improve` Ressourcen Referenzen in den FSH Dateien wurden auf das Format
   `Reference(RessourcenNamen)` vereinheitlicht. Hierdurch wurden teilweise das Referenzziel

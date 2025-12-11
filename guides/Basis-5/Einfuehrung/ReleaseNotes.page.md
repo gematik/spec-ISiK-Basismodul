@@ -21,7 +21,7 @@ Die Tags werden folgendermaßen verwendet:
 
 ## Version 5.1.1
 
-Datum: tbd.
+Datum: 11.12.2025
 
 * `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
 * `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917
