@@ -24,17 +24,6 @@
       "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/kontaktebene-de" : "KontaktebeneDe ValueSet"
     },
     {
-      "url" : "http://fhir.de/CodeSystem/bfarm/ops",
-      "version" : null,
-      "status" : "active",
-      "name" : "OPS",
-      "title" : "OPS",
-      "description" : "OPS Platzhalter-CodeSystem",
-      "uses" : {
-      },
-      "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/bfarm/ops" : "OPS ValueSet"
-    },
-    {
       "url" : "http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass",
       "version" : "1.5.4",
       "status" : "active",
@@ -91,32 +80,6 @@
       "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/EncounterStatusDe" : "Encounter Status ValueSet"
     },
     {
-      "url" : "http://hl7.org/fhir/resource-types",
-      "version" : "4.0.1",
-      "status" : "active",
-      "name" : "ResourceType",
-      "title" : "ResourceType",
-      "description" : "One of the resource types defined as part of this version of FHIR.",
-      "uses" : {
-      },
-      "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
-    },
-    {
-      "url" : "http://loinc.org",
-      "version" : "3.1.0",
-      "status" : "active",
-      "name" : "LOINC",
-      "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
-      "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
-      "oids" : ["2.16.840.1.113883.6.1"],
-      "uses" : {
-      },
-      "ValueSet-StillstatusVS.html" : "Stillstatus LOINC Antwortoptionen",
-      "ValueSet-current-smoking-status-uv-ips.html" : "Current Smoking Status - IPS",
-      "ValueSet-SchwangerschaftsstatusVS.html" : "Schwangerschaftsstatus Valueset",
-      "ValueSet-SchwangerschaftEtMethodeVS.html" : "Schwangerschaft Erwarteter Entbindungstermin Methode"
-    },
-    {
       "url" : "http://snomed.info/sct",
       "version" : null,
       "status" : "active",
@@ -126,9 +89,21 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-DiagnosesSCT.html" : "DiagnosesSCT",
-      "ValueSet-ProzedurenCodesSCT.html" : "ProzedurenCodesSCT",
-      "ValueSet-ProzedurenKategorieSCT.html" : "ProzedurenKategorieSCT"
+      "https://simplifier.net/resolve?scope=de.gematik.terminology@1.0.6&canonical=https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs" : "TI Arzneimittel SNOMED CT ValueSet",
+      "ValueSet-SctRouteOfAdministration.html" : "SctRouteOfAdministration"
+    },
+    {
+      "url" : "http://standardterms.edqm.eu",
+      "version" : "5 February 2025",
+      "status" : "active",
+      "name" : "EDQM_Standard_Terms",
+      "title" : "EDQM Standard Terms",
+      "description" : "Standard terms published by the European Directorate for the Quality of Medicines & HealthCare (EDQM) for pharmaceutical dose forms, routes and methods of administration, containers, closures, administration devices and units of presentation.",
+      "oids" : ["0.4.0.127.0.16.1.1.2.1"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/uv/ips/STU1.1/ValueSet-medicine-doseform.html" : "Medicine Doseform - IPS",
+      "http://hl7.org/fhir/uv/ips/STU1.1/ValueSet-medicine-route-of-administration.html" : "Medicine Route of Administration - IPS"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/conformance-expectation",
@@ -165,42 +140,6 @@
       "uses" : {
       },
       "ValueSet-ISiKLocationPhysicalType.html" : "ISiKLocationPhysicalType"
-    },
-    {
-      "url" : "http://terminology.hl7.org/CodeSystem/organization-type",
-      "version" : "2.0.1",
-      "status" : "active",
-      "name" : "OrganizationType",
-      "title" : "Organization type",
-      "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
-      "oids" : ["2.16.840.1.113883.4.642.1.1128"],
-      "uses" : {
-      },
-      "http://hl7.org/fhir/R4/valueset-organization-type.html" : "Organization type"
-    },
-    {
-      "url" : "http://terminology.hl7.org/CodeSystem/v2-0116",
-      "version" : "2.2.0",
-      "status" : "active",
-      "name" : "BedStatus",
-      "title" : "bedStatus",
-      "description" : "Code system of concepts which specify the state of a bed in an inpatient setting, and is used to determine if a patient may be assigned to it or not.  Used in HL7 Version 2.x messaging in the DLD and PV1 segments.",
-      "oids" : ["2.16.840.1.113883.18.47"],
-      "uses" : {
-      },
-      "http://terminology.hl7.org/7.0.0/ValueSet-v2-0116.html" : "hl7VS-bedStatus"
-    },
-    {
-      "url" : "http://terminology.hl7.org/CodeSystem/v2-0532",
-      "version" : "2.1.0",
-      "status" : "active",
-      "name" : "ExpandedYesNoIndicator",
-      "title" : "expandedYes-NoIndicator",
-      "description" : "HL7-defined code system of concepts used to specify an expansion on the original Yes/No indicator table by including \"flavors of null\".  It is intended to be applied to fields where the response is not limited to \"yes\" or \"no\".  Used in numerous locations in HL7 Version 2.x messaging.",
-      "oids" : ["2.16.840.1.113883.18.347"],
-      "uses" : {
-      },
-      "http://terminology.hl7.org/7.0.0/ValueSet-yes-no-unknown-not-asked.html" : "Yes No Unknown NotAsked"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",

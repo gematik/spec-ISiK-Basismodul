@@ -1,0 +1,1089 @@
+# ISiKMedikationsVerordnung - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKMedikationsVerordnung**
+
+## Resource Profile: ISiKMedikationsVerordnung 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung | *Version*:0.0.1 |
+| Active as of 2025-10-23 | *Computable Name*:ISiKMedikationsVerordnung |
+
+ 
+Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien. 
+
+**Usages:**
+
+* Examples for this Profile: [MedicationRequest/ExampleISiKMedikationsVerordnung](MedicationRequest-ExampleISiKMedikationsVerordnung.md) and [MedicationRequest/ExampleISiKMedikationsVerordnung2](MedicationRequest-ExampleISiKMedikationsVerordnung2.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Medikationsverordnung Server Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementMedikationVerordnungAkteur-expanded.md) and [ISiK CapabilityStatement Medikationsverordnung Rolle](CapabilityStatement-ISiKCapabilityStatementMedikationVerordnungRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/medikation.test.ig|current/StructureDefinition/ISiKMedikationsVerordnung)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKMedikationsVerordnung.csv), [Excel](StructureDefinition-ISiKMedikationsVerordnung.xlsx), [Schematron](StructureDefinition-ISiKMedikationsVerordnung.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKMedikationsVerordnung",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung",
+  "version" : "0.0.1",
+  "name" : "ISiKMedikationsVerordnung",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-10-23",
+  "description" : "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "workflow",
+      "uri" : "http://hl7.org/fhir/workflow",
+      "name" : "Workflow Pattern"
+    },
+    {
+      "identity" : "script10.6",
+      "uri" : "http://ncpdp.org/SCRIPT10_6",
+      "name" : "Mapping to NCPDP SCRIPT 10.6"
+    },
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    },
+    {
+      "identity" : "w5",
+      "uri" : "http://hl7.org/fhir/fivews",
+      "name" : "FiveWs Pattern Mapping"
+    },
+    {
+      "identity" : "v2",
+      "uri" : "http://hl7.org/v2",
+      "name" : "HL7 v2 Mapping"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "MedicationRequest",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "MedicationRequest",
+        "path" : "MedicationRequest"
+      },
+      {
+        "id" : "MedicationRequest.id",
+        "path" : "MedicationRequest.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.meta.versionId",
+        "path" : "MedicationRequest.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "MedicationRequest.meta.lastUpdated",
+        "path" : "MedicationRequest.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "MedicationRequest.extension",
+        "path" : "MedicationRequest.extension",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "value",
+              "path" : "url"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:acceptedRisk",
+        "path" : "MedicationRequest.extension",
+        "sliceName" : "acceptedRisk",
+        "short" : "akzeptiertes (in Kauf genommenes) Risiko",
+        "comment" : "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein\n\n  Hinweis: Hier kann ein im Rahmen der Medikation festgestelltes, aber in Kauf genommenes Risiko dokumentiert werden, speziell auch die Begründung und ggf. erforderliche Begleitmaßnahmen.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:acceptedRisk.value[x]",
+        "path" : "MedicationRequest.extension.value[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medikationsart",
+        "path" : "MedicationRequest.extension",
+        "sliceName" : "medikationsart",
+        "short" : "Therapieart der Medikation",
+        "comment" : "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Angabe Akut- oder Dauermedikation.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medikationsart.value[x].system",
+        "path" : "MedicationRequest.extension.value[x].system",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medikationsart.value[x].code",
+        "path" : "MedicationRequest.extension.value[x].code",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medikationsart.value[x].display",
+        "path" : "MedicationRequest.extension.value[x].display",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:behandlungsziel",
+        "path" : "MedicationRequest.extension",
+        "sliceName" : "behandlungsziel",
+        "short" : "Behandlungsziel (textuell)",
+        "comment" : "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Freitext-Beschreibung des Behandlungsziels.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:behandlungsziel.value[x]",
+        "path" : "MedicationRequest.extension.value[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medicationRequestReplaces",
+        "path" : "MedicationRequest.extension",
+        "sliceName" : "medicationRequestReplaces",
+        "short" : "Welche Medikationsverordnung wird ersetzt?",
+        "comment" : "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.\n\n    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.\n    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationRequestReplaces"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medicationRequestReplaces.value[x]",
+        "path" : "MedicationRequest.extension.value[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.extension:medicationRequestReplaces.value[x].reference",
+        "path" : "MedicationRequest.extension.value[x].reference",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.status",
+        "path" : "MedicationRequest.status",
+        "short" : "Status der Verordnungsinformation",
+        "comment" : "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.\n  \n  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.\n  ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.intent",
+        "path" : "MedicationRequest.intent",
+        "short" : "Ziel der Verordnungsinformation",
+        "comment" : "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard\n\n  Hinweis: i.d.R. 'order'",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.doNotPerform",
+        "path" : "MedicationRequest.doNotPerform",
+        "comment" : "Begründung der Kardinalitätsänderung: Use Case für dieses Feld ist nicht im Scope",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.medication[x]",
+        "path" : "MedicationRequest.medication[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        }
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept",
+        "path" : "MedicationRequest.medication[x]",
+        "sliceName" : "medicationCodeableConcept",
+        "short" : "Medikament in codierter Form oder ggf. als Freitext",
+        "comment" : "Begründung des Must-Support: Basisinformation\n\n  Hinweis: kann verwendet werden, wenn keine detaillierten Informationen zum Medikament (z.B. Rezepturen) existieren.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
+        "path" : "MedicationRequest.medication[x].coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding:PZN",
+        "path" : "MedicationRequest.medication[x].coding",
+        "sliceName" : "PZN",
+        "comment" : "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKPZNCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://fhir.de/CodeSystem/ifa/pzn"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding:ATC-DE",
+        "path" : "MedicationRequest.medication[x].coding",
+        "sliceName" : "ATC-DE",
+        "comment" : "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird.",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKATCCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://fhir.de/CodeSystem/bfarm/atc"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding:SCT",
+        "path" : "MedicationRequest.medication[x].coding",
+        "sliceName" : "SCT",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.text",
+        "path" : "MedicationRequest.medication[x].text",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationReference",
+        "path" : "MedicationRequest.medication[x]",
+        "sliceName" : "medicationReference",
+        "short" : "Referenz auf das Medikament (Medication-Ressource)",
+        "comment" : "Begründung des Must-Support: Basisinformation\n\n  Hinweis: wird verwendet, wenn detaillierte Informationen zum Medikament vorliegen",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Medication"]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationReference.reference",
+        "path" : "MedicationRequest.medication[x].reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.subject",
+        "path" : "MedicationRequest.subject",
+        "short" : "Referenz auf den Patienten",
+        "comment" : "Begründung des Must-Support: Basisinformation",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient"]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.subject.reference",
+        "path" : "MedicationRequest.subject.reference",
+        "short" : "Patienten-Link",
+        "comment" : "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.encounter",
+        "path" : "MedicationRequest.encounter",
+        "short" : "Referenz auf den Abteilungskontakt",
+        "comment" : "Begründung des Must-Support: Basisinformation im Krankenhaus-Kontext",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.encounter.reference",
+        "path" : "MedicationRequest.encounter.reference",
+        "comment" : "**Begründung MS:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.authoredOn",
+        "path" : "MedicationRequest.authoredOn",
+        "short" : "Erstellungsdatum der Verordnung",
+        "comment" : "Begründung des Must-Support: Basisinformation",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.requester",
+        "path" : "MedicationRequest.requester",
+        "short" : "Referenz auf die verordnende Person",
+        "comment" : "Begründung des Must-Support: Nachvollziehbarkeit",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.requester.reference",
+        "path" : "MedicationRequest.requester.reference",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode",
+        "path" : "MedicationRequest.reasonCode",
+        "short" : "Grund der Medikation (codiert)",
+        "comment" : "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\nBegründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding",
+        "path" : "MedicationRequest.reasonCode.coding",
+        "comment" : "Begründung des Must-Support: Falls der Grund kodierbar ist, sollte er auch kodiert werden.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.system",
+        "path" : "MedicationRequest.reasonCode.coding.system",
+        "comment" : "Begründung des Must-Support und Kardinalität: Ein Coding Element benötigt immer ein System um die Bedeutung des Codes zu definieren.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.code",
+        "path" : "MedicationRequest.reasonCode.coding.code",
+        "comment" : "Begründung des Must-Support und Kardinalität: Ein Coding Element benötigt immer einen Code um die Bedeutung des Codes zu definieren.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.display",
+        "path" : "MedicationRequest.reasonCode.coding.display",
+        "comment" : "Begründung des Must-Support: Ein Display Element ist für die Lesbarkeit der Information notwendig.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.text",
+        "path" : "MedicationRequest.reasonCode.text",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonReference",
+        "path" : "MedicationRequest.reasonReference",
+        "short" : "Grund der Medikation (Referenz)",
+        "comment" : "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  Begründung zu Must-Support: Konsolidierung mit MII.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonReference.reference",
+        "path" : "MedicationRequest.reasonReference.reference",
+        "comment" : "Begründung des Must-Support: Referenz auf die Diagnose oder Untersuchung, die die Medikation begründet.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.note",
+        "path" : "MedicationRequest.note",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.note.text",
+        "path" : "MedicationRequest.note.text",
+        "short" : "Freitext-Notiz",
+        "comment" : "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction",
+        "path" : "MedicationRequest.dosageInstruction",
+        "short" : "Dosierungsangaben",
+        "comment" : "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.\n  \n  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.\n  ",
+        "type" : [
+          {
+            "code" : "Dosage",
+            "profile" : [
+              "http://ig.fhir.de/igs/medication/StructureDefinition/DosageDE"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.text",
+        "path" : "MedicationRequest.dosageInstruction.text",
+        "comment" : "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.patientInstruction",
+        "path" : "MedicationRequest.dosageInstruction.patientInstruction",
+        "short" : "besondere Anweisungen für den Patienten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.event",
+        "path" : "MedicationRequest.dosageInstruction.timing.event",
+        "short" : "fester Zeitpunkt",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat",
+        "short" : "Wiederholungs-Angaben"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
+        "sliceName" : "boundsDuration",
+        "short" : "Begrenzung der Dauer",
+        "type" : [
+          {
+            "code" : "Duration"
+          }
+        ],
+        "patternDuration" : {
+          "system" : "http://unitsofmeasure.org"
+        }
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration.value",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].value",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration.system",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].system",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration.code",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].code",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
+        "sliceName" : "boundsPeriod",
+        "short" : "begrenzender Zeitraum",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Period"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.start",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].start",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.end",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].end",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.count",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.count",
+        "short" : "Anzahl Wiederholungen",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.countMax",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.countMax",
+        "short" : "maximale Anzahl Wiederholungen",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.duration",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.duration",
+        "short" : "Dauer der Verabreichung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.durationMax",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.durationMax",
+        "short" : "maximale Dauer der Verabreichung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.durationUnit",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.durationUnit",
+        "short" : "Einheit der Dauer",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.frequency",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.frequency",
+        "short" : "Frequenz (Anzahl der Gaben pro Periode)"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.frequencyMax",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.frequencyMax",
+        "short" : "maximale Frequenz",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.period",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.period",
+        "short" : "Zeitperiode zur Frequenz"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.periodMax",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.periodMax",
+        "short" : "maximale Zeitperiode zur Frequenz",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
+        "short" : "Einheit der Zeitperiode"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.dayOfWeek",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.dayOfWeek",
+        "short" : "Wochentag"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.timeOfDay",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.timeOfDay",
+        "short" : "Tageszeit"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.when",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.when",
+        "short" : "Tageszeitpunkt codiert"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.timing.repeat.offset",
+        "path" : "MedicationRequest.dosageInstruction.timing.repeat.offset",
+        "short" : "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.asNeeded[x]",
+        "path" : "MedicationRequest.dosageInstruction.asNeeded[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        }
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.asNeeded[x]:asNeededBoolean",
+        "path" : "MedicationRequest.dosageInstruction.asNeeded[x]",
+        "sliceName" : "asNeededBoolean",
+        "short" : "Bedarfsmedikation",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "boolean"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.site",
+        "path" : "MedicationRequest.dosageInstruction.site",
+        "short" : "Körperstelle der Verabreichung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.site.coding",
+        "path" : "MedicationRequest.dosageInstruction.site.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.site.coding:SNOMED-CT",
+        "path" : "MedicationRequest.dosageInstruction.site.coding",
+        "sliceName" : "SNOMED-CT",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.site.text",
+        "path" : "MedicationRequest.dosageInstruction.site.text",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.route",
+        "path" : "MedicationRequest.dosageInstruction.route",
+        "short" : "Route",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.route.coding",
+        "path" : "MedicationRequest.dosageInstruction.route.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.route.coding:EDQM",
+        "path" : "MedicationRequest.dosageInstruction.route.coding",
+        "sliceName" : "EDQM",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://standardterms.edqm.eu"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration"
+        }
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.route.coding:SNOMED-CT",
+        "path" : "MedicationRequest.dosageInstruction.route.coding",
+        "sliceName" : "SNOMED-CT",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration"
+        }
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.route.text",
+        "path" : "MedicationRequest.dosageInstruction.route.text",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "sliceName" : "doseQuantity",
+        "short" : "Dosis",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseRange",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+        "sliceName" : "doseRange",
+        "short" : "Dosisbereich",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Range"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseRange.low",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x].low",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseRange.high",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.dose[x].high",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        }
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRatio",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "sliceName" : "rateRatio",
+        "short" : "Raten-Verhältnis",
+        "comment" : "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Ratio"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRatio.numerator",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x].numerator",
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRatio.denominator",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x].denominator",
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRange",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "sliceName" : "rateRange",
+        "short" : "Raten-Bereich",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Range"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRange.low",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x].low",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateRange.high",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x].high",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]:rateQuantity",
+        "path" : "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
+        "sliceName" : "rateQuantity",
+        "short" : "Rate",
+        "comment" : "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.maxDosePerPeriod",
+        "path" : "MedicationRequest.dosageInstruction.maxDosePerPeriod",
+        "short" : "Maximaldosis (Zähler) pro Zeitraum (Nenner)",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.maxDosePerPeriod.numerator",
+        "path" : "MedicationRequest.dosageInstruction.maxDosePerPeriod.numerator",
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.maxDosePerPeriod.denominator",
+        "path" : "MedicationRequest.dosageInstruction.maxDosePerPeriod.denominator",
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction.maxDosePerAdministration",
+        "path" : "MedicationRequest.dosageInstruction.maxDosePerAdministration",
+        "short" : "Maximaldosis pro Verabreichung",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dispenseRequest",
+        "path" : "MedicationRequest.dispenseRequest",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.dispenseRequest.quantity",
+        "path" : "MedicationRequest.dispenseRequest.quantity",
+        "short" : "angeforderte Abgabemenge",
+        "comment" : "Begründung des Must-Support: Basisinformation",
+        "type" : [
+          {
+            "code" : "Quantity",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.substitution",
+        "path" : "MedicationRequest.substitution",
+        "short" : "Ersatz zulässig",
+        "comment" : "Begründung des Must-Support: Alignment mit dem (E-)Rezept",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.substitution.allowed[x]",
+        "path" : "MedicationRequest.substitution.allowed[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        }
+      },
+      {
+        "id" : "MedicationRequest.substitution.allowed[x]:allowedBoolean",
+        "path" : "MedicationRequest.substitution.allowed[x]",
+        "sliceName" : "allowedBoolean",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "boolean"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.priorPrescription",
+        "path" : "MedicationRequest.priorPrescription",
+        "short" : "Vorherige Verordnung bei fortgesetzter Therapie",
+        "comment" : "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.\n\n  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
+      }
+    ]
+  }
+}
+
+```

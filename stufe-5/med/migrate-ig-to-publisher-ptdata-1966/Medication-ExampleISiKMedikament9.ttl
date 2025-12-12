@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-medikation-ig/Medication/ExampleISiKMedikament9> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleISiKMedikament9"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "additional" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Zytostatikum mit absoluter Wirkstärken-Angabe:</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:code [
+     fhir:text [ fhir:v "Infusion bestehend aus 142 mg Paclitaxel aufgelöst zur Verabreichung in 500 ml 5-%iger (50 mg/ml) Glucose-Infusionslösung" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://standardterms.edqm.eu"^^xsd:anyURI ;
+         fhir:l <http://standardterms.edqm.eu>
+       ] ;
+       fhir:code [ fhir:v "11210000" ] ;
+       fhir:display [ fhir:v "Solution for infusion" ]
+     ] )
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
+         ] ;
+         fhir:version [ fhir:v "2024" ] ;
+         fhir:code [ fhir:v "L01CD01" ] ;
+         fhir:display [ fhir:v "Paclitaxel" ]
+       ] )
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "142"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mg" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "500"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Milliliter" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mL" ]
+       ]
+     ]
+  ] [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
+         ] ;
+         fhir:version [ fhir:v "2024" ] ;
+         fhir:code [ fhir:v "B05BA11" ] ;
+         fhir:display [ fhir:v "Glucose" ]
+       ] )
+     ] ;
+     fhir:isActive [ fhir:v false ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "50"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mg" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Milliliter" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mL" ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

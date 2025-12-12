@@ -29,7 +29,7 @@ This extension may be used on the following element(s):
 
 * This Extension is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ISiKTerminPriorityExtension)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/medikation.test.ig|current/StructureDefinition/ISiKTerminPriorityExtension)
 
 ### Formal Views of Extension Content
 
