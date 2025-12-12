@@ -1,0 +1,194 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-basis-ig/Patient/PatientinMusterfrau> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PatientinMusterfrau"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientinMusterfrau</b></p><a name=\"PatientinMusterfrau\"> </a><a name=\"hcPatientinMusterfrau\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPatient.html\">ISiKPatient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>Medical record number/TestPID</li><li>Krankenversichertennummer/A123456789</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Alternate names (see the one above)\">Alt. Name:</td><td colspan=\"3\">Gabler (Name changed for Marriage)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>Musterweg 2 3. Etage Musterhausen 98764 DE </li><li>Postfach 8 15 Musterhausen 98764 DE </li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://fhir.krankenhaus.example/sid/PID"^^xsd:anyURI ;
+       fhir:l <https://fhir.krankenhaus.example/sid/PID>
+     ] ;
+     fhir:value [ fhir:v "TestPID" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/identifier-type-de-basis"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/identifier-type-de-basis>
+         ] ;
+         fhir:code [ fhir:v "KVZ10" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/sid/gkv/kvid-10>
+     ] ;
+     fhir:value [ fhir:v "A123456789" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/identifier-type-de-basis"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/identifier-type-de-basis>
+         ] ;
+         fhir:code [ fhir:v "PKV" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "1234567890" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Test PKV AG" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [
+       fhir:v "Fürstin von Musterfrau" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.de/StructureDefinition/humanname-namenszusatz"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/StructureDefinition/humanname-namenszusatz>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Fürstin"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-name"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-name>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Musterfrau"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-prefix>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "von"
+         ]
+       ] )
+     ] ;
+     fhir:given ( [ fhir:v "Erika" ] ) ;
+     fhir:prefix ( [
+       fhir:v "Dr." ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "AC"
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:use [ fhir:v "maiden" ] ;
+     fhir:family [
+       fhir:v "Gabler" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-name"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-name>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Gabler"
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1964-08-12"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:v "Musterweg 2" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Musterweg"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "2"
+         ]
+       ] )
+     ] [
+       fhir:v "3. Etage" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "3. Etage"
+         ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "Musterhausen" ] ;
+     fhir:postalCode [ fhir:v "98764" ] ;
+     fhir:country [ fhir:v "DE" ]
+  ] [
+     fhir:type [ fhir:v "postal" ] ;
+     fhir:line ( [
+       fhir:v "Postfach 8 15" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Postfach 8 15"
+         ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "Musterhausen" ] ;
+     fhir:postalCode [ fhir:v "98764" ] ;
+     fhir:country [ fhir:v "DE" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
