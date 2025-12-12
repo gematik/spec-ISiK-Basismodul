@@ -1,0 +1,125 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-icu-ig/Observation/ISiKKoerpertemperaturMaxExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKKoerpertemperaturMaxExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ISiKKoerpertemperaturMaxExample</b></p><a name=\"ISiKKoerpertemperaturMaxExample\"> </a><a name=\"hcISiKKoerpertemperaturMaxExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKKoerpertemperatur.html\">ISiKKoerpertemperatur</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 8310-5}, {http://snomed.info/sct 386725007}, {urn:iso:std:iso:11073:10101 150364}\">Körpertemperatur - Fiebermessung</span></p><p><b>subject</b>: <a href=\"Patient-PatientinNormal.html\">Anna Müller (official) Female, DoB: 1957-08-12 ( Medical record number)</a></p><p><b>effective</b>: 2024-01-15 20:15:00+0100</p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Practitioner/PractitionerWalterArzt\">Practitioner/PractitionerWalterArzt</a></p><p><b>value</b>: 41.2 °C<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeCel = 'Cel')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p><p><b>note</b>: </p><blockquote><div><p>Hyperthermie bei schwerer Sepsis - kontinuierliches Monitoring erforderlich</p>\n</div></blockquote><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 21974007}\">Tongue structure</span></p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 448169003}\">Digital thermometry</span></p><p><b>device</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Device/ExampleDevice\">Device/ExampleDevice</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "vital-signs" ] ;
+       fhir:display [ fhir:v "Vital Signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:8310-5 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "8310-5" ] ;
+       fhir:display [ fhir:v "Body temperature" ]
+     ] [
+       a sct:386725007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "386725007" ] ;
+       fhir:display [ fhir:v "Body temperature" ]
+     ] [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:11073:10101"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:11073:10101>
+       ] ;
+       fhir:code [ fhir:v "150364" ] ;
+       fhir:display [ fhir:v "MDC_TEMP_BODY" ]
+     ] ) ;
+     fhir:text [ fhir:v "Körpertemperatur - Fiebermessung" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-icu-ig/Patient/PatientinNormal> ;
+     fhir:reference [ fhir:v "Patient/PatientinNormal" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-01-15T20:15:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <http://example.org/fhir/test-icu-ig/Practitioner/PractitionerWalterArzt> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerWalterArzt" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v 41.2 ] ;
+     fhir:unit [ fhir:v "°C" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "Cel" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation>
+       ] ;
+       fhir:code [ fhir:v "H" ] ;
+       fhir:display [ fhir:v "High" ]
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Hyperthermie bei schwerer Sepsis - kontinuierliches Monitoring erforderlich" ]
+  ] ) ; # 
+  fhir:bodySite [
+     fhir:coding ( [
+       a sct:21974007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "21974007" ] ;
+       fhir:display [ fhir:v "Tongue structure" ]
+     ] )
+  ] ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:448169003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "448169003" ] ;
+       fhir:display [ fhir:v "Digital thermometry" ]
+     ] )
+  ] ; # 
+  fhir:device [
+     fhir:l <http://example.org/fhir/test-icu-ig/Device/ExampleDevice> ;
+     fhir:reference [ fhir:v "Device/ExampleDevice" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -27,9 +27,9 @@ This extension may be used on the following element(s):
 
 **Usages:**
 
-* Examples for this Extension: [ISiK-CapabilityStatementBasisServerAkteur](CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur.md)
+* Examples for this Extension: [ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/basis.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/icu.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
 
 ### Formal Views of Extension Content
 
