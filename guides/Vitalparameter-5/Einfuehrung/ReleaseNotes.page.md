@@ -8,7 +8,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Datum: 23.10.2025
 
-* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799
+* `improve` id-Elemente sind in *allen* Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799 #Test-Change ggf. handhaben wie in restlichen Modulen
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 
 ----
@@ -23,8 +23,8 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 
 Datum: 5.6.2025
 
-* `improve` Anpassung der MS-Definitionen, um klarzustellen, dass bestimmte Systeme keine Angaben zu Methode und Gerät machen müssen, wenn ihnen die entsprechende Datenstruktur fehlt https://github.com/gematik/spec-ISiK-Basismodul/pull/732
-* `improve` Entfernen unnötiger value[x]-Elemente und Schwächung der Must-Support-Anforderungen für Blutdruck .meanBP https://github.com/gematik/spec-ISiK-Basismodul/pull/731
+* `improve` Anpassung der MS-Definitionen, um klarzustellen, dass bestimmte Systeme keine Angaben zu Methode und Gerät machen müssen, wenn ihnen die entsprechende Datenstruktur fehlt https://github.com/gematik/spec-ISiK-Basismodul/pull/732 #Test-Change -ggf. Aufweichung auf Optional
+* `improve` Entfernen unnötiger value[x]-Elemente und Schwächung der Must-Support-Anforderungen für Blutdruck .meanBP https://github.com/gematik/spec-ISiK-Basismodul/pull/731 #Test-Change ggf. Test-SChwächung für Blutdruck
 
 
 ## Version 5.0.0-rc
@@ -33,7 +33,7 @@ Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
-* RelatedPerson als optionalen Akteur in ISiKTermin hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/606 
+* RelatedPerson als optionalen Akteur in ISiKTermin hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/606 -> #No-Test-Change FAlscher eintrag / nicht relevant für Vitalparameter
 
 ---
 
@@ -60,18 +60,18 @@ Datum: 18.03.2025
 
 Datum: 24.2.2025
 
-* `improve` Entfernen der strengeren VS-Bindings auf Observation.code[snomed] für die einfachen Vitalsignsprofile, um alle relevanten SnomedCT Concepte aus der de.basisprofil.r4 hier verwenden zu können https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/200
+* `improve` Entfernen der strengeren VS-Bindings auf Observation.code[snomed] für die einfachen Vitalsignsprofile, um alle relevanten SnomedCT Concepte aus der de.basisprofil.r4 hier verwenden zu können https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/200 #Test-Change ggf. Schwächung
 * Einführung der Datentypprofile für Coding Datentypen: ISiKCoding, ISiKSnomedCTCoding & ISiKLoincCoding aus dem ISiK Basisprofil-Modul https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/159  
 * `improve` Fehlende ISO11073 Codes zu ValueSet `VS_MII_ICU_Code_Monitoring_und_Vitaldaten_ISO11073 hinzugefügt https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/179 
-* `improve` Update der Abhängigkeit zu den Basisprofilen auf Version 1.5.1 - https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195:
+* `improve` Update der Abhängigkeit zu den Basisprofilen auf Version 1.5.1 - https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/195: #Test-Change - ggf. Anpassung mit neuer Basis
   * Einführung eines neuen, SnomedCT basierten, VS bindings für EKG-Ableitungen. Die bisher verwendeten LOINC Codes waren LP Codes, welche nicht zur Verwendung in Instanzen bestimmt sind. Die alten Codes sind weiterhin valide, aber per Slice als deprecated markiert.
   * Statt eines patterns für Observation.code werden die "magic-loinc-codes" nun per verpflichtendem Slice erzwungen.
-* `improve` Fehlende Codes zu ValueSet hinzugefügt https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/175
-* `improve` Beschreibungen und MS-Kommentare für alle "Nicht-MII"-Ressourcen hinzugefügt und MS für value[x] verbessert https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/184
+* `improve` Fehlende Codes zu ValueSet hinzugefügt https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/175 #No-Test-Change
+* `improve` Beschreibungen und MS-Kommentare für alle "Nicht-MII"-Ressourcen hinzugefügt und MS für value[x] verbessert https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/184 #No-Test-Change
 * Formulierungsänderung zur Nutzung von Profilen aus der Basis https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/196
-* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.  https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192
-* `improve` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192 
-* `improve` Update Suchparameter clinical-patient (SHALL) und subject (SHALL->MAY) + Hinweis zur Kontextherstellung + Einbindung CpS
+* `improve` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.  https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192 #Test-Change ggf. schwächen eines Tests für Suchparameter subject
+* `improve` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind. https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/192 #Test-Change ggf. schwächen eines Tests für Suchparameter subject
+* `improve` Update Suchparameter clinical-patient (SHALL) und subject (SHALL->MAY) + Hinweis zur Kontextherstellung + Einbindung CpS #Test-Change ggf. schwächen eines Tests für Suchparameter subject
 
 ---
 ## Version: 4.0.0
@@ -98,10 +98,10 @@ Datum: 4.4.2024
 * `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
 * `improve` Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 
 * `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
-* `improve` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
+* `improve` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156) #Test-Change - hinzufügen Coding Tests für SNOMED
 * `improve` Hinzufügen von MS für einzelne Components : https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138
 * `improve` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile
-* `fix` Fix CpS rendering by @alexzautke in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161 
+* `fix` Fix CpS rendering by @alexzautke in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161  #Test-Change Hinzufügen/SChärfen von Testfällen
 
 ----
 ## Version: 3.0.2
