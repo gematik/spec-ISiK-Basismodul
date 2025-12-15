@@ -21,7 +21,7 @@ Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten �
 Datum: 5.6.2025
 
 * `improve` Implementierungshinweise für ISiK-Ressourcenserver hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/697
-* `improve` SMART 2.0 Versionsupdate auf 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files
+* `improve` SMART 2.0 Versionsupdate auf 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files #Test-Change ? ggf. Anpassung der grundlegenden Konfiguration
 
 
 ## Version 5.0.0-rc1
