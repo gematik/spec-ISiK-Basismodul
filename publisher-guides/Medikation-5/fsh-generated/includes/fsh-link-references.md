@@ -1,1 +1,0 @@
-[TestImplementationGuide]: ImplementationGuide-medikation.test.ig.html
