@@ -16,3 +16,5 @@ Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Akteure, t
 ## Herstellung von Patienten- und Encounterkontext
 
 - TODO prüfen (ggf. an ICU orientieren)
+
+## Kompatibilität

@@ -18,7 +18,7 @@ Realm: Deutschland
 
 ----
 
-# Motivation Workflow Organspendetektion (?- TODO Wording zu Prüfen)
+# Motivation Workflow Organspendeerkennung (?- TODO Wording zu Prüfen)
 
 ... TODO
 
@@ -50,7 +50,7 @@ Primär zu berücksichtigende User sind:
 * transplantationsbeauftragte Ärztinnen und Ärzte
 
 ###  Einordnung in die ISiK Landschaft
-Als übergreifender Use Case (bzw. Workflow) ist die Organspendetektion nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+Als übergreifender Use Case (bzw. Workflow) ist die Organspendeerkennung nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
 
 - TODO prüfen (ggf. an ICU orientieren)
  
