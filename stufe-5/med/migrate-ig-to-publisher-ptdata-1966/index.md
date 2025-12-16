@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-medikation-ig/ImplementationGuide/medikation.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-12-15 | *Computable Name*:TestImplementationGuide |
+| Draft as of 2025-12-16 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
 
@@ -81,7 +81,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-15T15:12:08+00:00",
+  "date" : "2025-12-16T08:40:06+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "medikation.test.ig",
   "license" : "CC0-1.0",
