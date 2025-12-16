@@ -22,7 +22,7 @@ Realm: Deutschland
 
 ... TODO
 
-Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrazionszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
+Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
 
 
 ## Motivation und Hintergrund
