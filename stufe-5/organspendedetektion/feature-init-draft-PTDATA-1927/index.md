@@ -1,13 +1,13 @@
-# Index - Test Implementation Guide v0.0.1
+# Einführung - Test Implementation Guide v0.0.1
 
 Test Implementation Guide
 
 Version 0.0.1 - STU1
 
 * [**Table of Contents**](toc.md)
-* **Index**
+* **Einführung**
 
-## Index
+## Einführung
 
 | | |
 | :--- | :--- |
@@ -28,7 +28,7 @@ Realm: Deutschland
 
 -------
 
-# Motivation Workflow Organspendetektion (?- TODO Wording zu Prüfen)
+# Motivation Workflow Organspendeerkennung (?- TODO Wording zu Prüfen)
 
 … TODO
 
@@ -64,7 +64,7 @@ Primär zu berücksichtigende User sind:
 
 ### Einordnung in die ISiK Landschaft
 
-Als übergreifender Use Case (bzw. Workflow) ist die Organspendetektion nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+Als übergreifender Use Case (bzw. Workflow) ist die Organspendeerkennung nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
 
 * TODO prüfen (ggf. an ICU orientieren)
 
@@ -113,7 +113,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-16T10:42:57+00:00",
+  "date" : "2025-12-16T14:19:48+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
@@ -2180,18 +2180,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
             }
           ],
           "nameUrl" : "index.html",
-          "title" : "Index",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Motivation.html"
-            }
-          ],
-          "nameUrl" : "Motivation.html",
-          "title" : "Motivation",
+          "title" : "Einführung",
           "generation" : "markdown"
         },
         {
