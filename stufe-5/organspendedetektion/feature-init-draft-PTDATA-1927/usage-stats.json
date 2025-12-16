@@ -1,0 +1,306 @@
+{
+  "package": "Organspendeerkennung.test.ig",
+  "version": "0.0.1",
+  "fhirVersion": "4.0.1",
+  "extensions": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation",
+      "title": "ISiK CapabilityStatement Imports Expectation",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
+      "title": "ISiKTerminPriorityExtension",
+      "types": [
+        "CodeableConcept"
+      ]
+    }
+  ],
+  "profiles": {
+    "Account": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall",
+        "title": "ISiKAbrechnungsfall"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus",
+        "title": "ISiKStillstatus"
+      }
+    ],
+    "AllergyIntolerance": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
+        "title": "ISiKAllergieUnvertraeglichkeit"
+      }
+    ],
+    "RelatedPerson": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger",
+        "title": "ISiKAngehoeriger"
+      }
+    ],
+    "Bundle": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle",
+        "title": "ISiKBerichtBundle"
+      }
+    ],
+    "CodeSystem": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem",
+        "title": "ISiKCodeSystem"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
+        "title": "ISiKDiagnose"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
+        "title": "ISiKKontaktGesundheitseinrichtung"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation",
+        "title": "ISiKOrganisation"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung",
+        "title": "ISiKOrganisationFachabteilung"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient",
+        "title": "ISiKPatient"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf",
+        "title": "ISiKPersonImGesundheitsberuf"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
+        "title": "ISiKProzedur"
+      }
+    ],
+    "Location": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort",
+        "title": "ISiKStandort"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz",
+        "title": "ISiKStandortBettenstellplatz"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum",
+        "title": "ISiKStandortRaum"
+      }
+    ],
+    "ValueSet": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet",
+        "title": "ISiKValueSet"
+      }
+    ],
+    "Coverage": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich",
+        "title": "ISiKVersicherungsverhaeltnisGesetzlich"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler",
+        "title": "ISiKVersicherungsverhaeltnisSelbstzahler"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSonstige",
+        "title": "ISiKVersicherungsverhaeltnisSonstige"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.de/StructureDefinition/Aufnahmegrund": [
+      "Encounter"
+    ],
+    "http://fhir.de/StructureDefinition/Entlassungsgrund": [
+      "Encounter.hospitalization.dischargeDisposition"
+    ],
+    "http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur": [
+      "Account"
+    ],
+    "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart": [
+      "Account.coverage"
+    ],
+    "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum": [
+      "Procedure"
+    ],
+    "http://fhir.de/StructureDefinition/Wahlleistung": [
+      "Encounter.hospitalization"
+    ],
+    "http://fhir.de/StructureDefinition/gender-amtlich-de": [
+      "Patient.gender",
+      "Practitioner.gender"
+    ],
+    "http://fhir.de/StructureDefinition/humanname-namenszusatz": [
+      "Patient.name.family",
+      "Practitioner.name.family",
+      "RelatedPerson.name.family"
+    ],
+    "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen": [
+      "Condition.code.coding"
+    ],
+    "http://fhir.de/StructureDefinition/lebensphase": [
+      "Condition.abatement[x]",
+      "Condition.onset[x]"
+    ],
+    "http://fhir.de/StructureDefinition/seitenlokalisation": [
+      "Procedure.code.coding"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate": [
+      "Encounter"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate": [
+      "Encounter"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.document",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.searchInclude",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.searchRevInclude",
+      "CapabilityStatement.rest.resource.supportedProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-related": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Patient.birthDate",
+      "Practitioner.birthDate"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-name": [
+      "Patient.name.family",
+      "Practitioner.name.family",
+      "RelatedPerson.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
+      "Patient.name.family",
+      "Practitioner.name.family",
+      "RelatedPerson.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Organization.address.line",
+      "Patient.address.line",
+      "Practitioner.address.line",
+      "RelatedPerson.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Organization.address.line",
+      "Patient.address.line",
+      "Practitioner.address.line",
+      "RelatedPerson.address.line",
+      "StructureDefinition.snapshot.element.example.valueString"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox": [
+      "Organization.address.line",
+      "Patient.address.line",
+      "Practitioner.address.line",
+      "RelatedPerson.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct": [
+      "Organization.address",
+      "Patient.address",
+      "Practitioner.address",
+      "RelatedPerson.address"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Organization.address.line",
+      "Patient.address.line",
+      "Practitioner.address.line",
+      "RelatedPerson.address.line",
+      "StructureDefinition.snapshot.element.example.valueString"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier": [
+      "Patient.name.prefix",
+      "Practitioner.name.prefix",
+      "RelatedPerson.name.prefix"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/ordinalValue": [
+      "ValueSet.compose.include.concept"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation": [
+      "CapabilityStatement.imports"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKRehaEntlassung": [
+      "Encounter.hospitalization.dischargeDisposition"
+    ]
+  }
+}

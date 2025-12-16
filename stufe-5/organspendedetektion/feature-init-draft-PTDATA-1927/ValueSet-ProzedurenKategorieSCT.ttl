@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-Orgnaspendedetektion-ig/ValueSet/ProzedurenKategorieSCT> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ProzedurenKategorieSCT"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ProzedurenKategorieSCT</b></p><a name=\"ProzedurenKategorieSCT\"> </a><a name=\"hcProzedurenKategorieSCT\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/165197003\">165197003</a></td><td>Diagnostic assessment</td></tr><tr><td><a href=\"http://snomed.info/id/363679005\">363679005</a></td><td>Imaging</td></tr><tr><td><a href=\"http://snomed.info/id/387713003\">387713003</a></td><td>Surgical procedure</td></tr><tr><td><a href=\"http://snomed.info/id/18629005\">18629005</a></td><td>Administration of medicine</td></tr><tr><td><a href=\"http://snomed.info/id/277132007\">277132007</a></td><td>Therapeutic procedure</td></tr><tr><td><a href=\"http://snomed.info/id/394841004\">394841004</a></td><td>Other category</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT>
+  ] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:name [ fhir:v "ProzedurenKategorieSCT"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-23"^^xsd:date] ; # 
+  fhir:description [ fhir:v "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "165197003" ] ;
+         fhir:display [ fhir:v "Diagnostic assessment" ]
+       ] [
+         fhir:code [ fhir:v "363679005" ] ;
+         fhir:display [ fhir:v "Imaging" ]
+       ] [
+         fhir:code [ fhir:v "387713003" ] ;
+         fhir:display [ fhir:v "Surgical procedure" ]
+       ] [
+         fhir:code [ fhir:v "18629005" ] ;
+         fhir:display [ fhir:v "Administration of medicine" ]
+       ] [
+         fhir:code [ fhir:v "277132007" ] ;
+         fhir:display [ fhir:v "Therapeutic procedure" ]
+       ] [
+         fhir:code [ fhir:v "394841004" ] ;
+         fhir:display [ fhir:v "Other category" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
