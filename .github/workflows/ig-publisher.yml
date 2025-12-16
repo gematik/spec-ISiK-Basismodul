@@ -23,7 +23,7 @@ jobs:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     env:
       SUSHI_INPUT_DIR: Resources
-      IG_PUBLISHER_DIR: publisher-guides/Basis-5
+      IG_PUBLISHER_DIR: publisher-guides/Organspendedetektion
 
     steps:
       - name: Checkout
@@ -33,6 +33,11 @@ jobs:
       - name: Download Dependencies
         run: |
           fhir-pkg-tool --sushi-deps-file ${{ env.SUSHI_INPUT_DIR }}/sushi-config.yaml
+
+      # Run SUSHI (FSH -> FHIR conversion) on IG directory
+      - name: Run SUSHI
+        run: |
+          sushi ${{ env.IG_PUBLISHER_DIR }}
 
       # Run SUSHI (FSH -> FHIR conversion) on Resources directory
       - name: Run SUSHI
