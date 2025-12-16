@@ -11,26 +11,68 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/test-Orgnaspendedetektion-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1 |
+| *Official URL*:http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1 |
 | Draft as of 2025-12-16 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
 
 -------
 
-Version: 5.0.0
+Version: 0.0.1
 
-Datum: 26.06.2025
+Datum: tbd.
 
-Status: Aktiv
+Status: DRAFT
 
 Realm: Deutschland
 
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
-
-Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
-
 -------
+
+# Motivation Workflow Organspendetektion (?- TODO Wording zu Prüfen)
+
+… TODO
+
+Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
+
+## Motivation und Hintergrund
+
+Dieser Implementierungsleitfaden beschreibt eine Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.
+
+TODO
+
+### Stakeholder
+
+Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
+
+Es handelt sich um eine technische Spezifikation.
+
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden.
+
+Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK.
+
+TODO - ggf. übernehmen Abschnitt zur Prüfung aus ICU
+
+Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
+
+Kommunikations-Workflows, die auf dieser Schnittstellen-Festlegung aufbauen, können lediglich der Unterstützung von Versorgung und Qualitätssicherungsmaßnahmen in der … TODO .
+
+### User
+
+Primär zu berücksichtigende User sind:
+
+* transplantationsbeauftragte Ärztinnen und Ärzte
+
+### Einordnung in die ISiK Landschaft
+
+Als übergreifender Use Case (bzw. Workflow) ist die Organspendetektion nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+
+* TODO prüfen (ggf. an ICU orientieren)
+
+### Out-of-Scope
+
+Aufgrund technischer Beschränkungen und Aufwände gibt es Aspekte, die aktuell außen vor bleiben müssen:
+
+* TODO prüfen (ggf. an ICU orientieren)
 
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
@@ -66,12 +108,12 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
 {
   "resourceType" : "ImplementationGuide",
   "id" : "Organspendeerkennung.test.ig",
-  "url" : "http://example.org/fhir/test-Orgnaspendedetektion-ig/ImplementationGuide/Organspendeerkennung.test.ig",
+  "url" : "http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig",
   "version" : "0.0.1",
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-16T09:32:51+00:00",
+  "date" : "2025-12-16T10:42:57+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
@@ -290,7 +332,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-Orgnaspendedetektion-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-Organspendeerkennung-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -632,7 +674,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-Orgnaspendedetektion-ig/history.html"
+            "valueString" : "http://example.org/fhir/test-Organspendeerkennung-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -2178,187 +2220,33 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Abbildung-des-Konstrukts-Fall.html"
+              "valueUrl" : "ProzesseUndWorkflows.html"
             }
           ],
-          "nameUrl" : "Abbildung-des-Konstrukts-Fall.html",
-          "title" : "Abbildung des Konstrukts \"Fall\"",
+          "nameUrl" : "ProzesseUndWorkflows.html",
+          "title" : "Prozesse und Workflows",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Datenuebermittlung-aus-Subsystemen.html"
+              "valueUrl" : "Akteure.html"
             }
           ],
-          "nameUrl" : "Datenuebermittlung-aus-Subsystemen.html",
-          "title" : "Datenübermittlung aus Subsystemen",
+          "nameUrl" : "Akteure.html",
+          "title" : "Akteure",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html"
+              "valueUrl" : "Festlegungen.html"
             }
           ],
-          "nameUrl" : "Erlaeuterung-Akteurs-und-Rollenmodell.html",
-          "title" : "Akteurs- und Rollenmodell",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Beispielszenarien.html"
-            }
-          ],
-          "nameUrl" : "Index_Beispielszenarien.html",
-          "title" : "Beispielszenarien",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html"
-            }
-          ],
-          "nameUrl" : "Szenario-1-DRG-Fall-Kind-mit-Wahlleistung.html",
-          "title" : "Szenario 1: DRG-Fall, Kind mit Wahlleistung",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html"
-            }
-          ],
-          "nameUrl" : "Szenario-2-Kreuz-Stern-Diagnose.html",
-          "title" : "Szenario 2: Kreuz-Stern-Diagnose",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Index_Festlegungen.html"
-            }
-          ],
-          "nameUrl" : "Index_Festlegungen.html",
+          "nameUrl" : "Festlegungen.html",
           "title" : "Festlegungen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Methodik.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Methodik.html",
-          "title" : "Methodik",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html",
-          "title" : "Bestätigungsrelevante Systeme",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html"
-            }
-          ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_Andere.html",
-          "title" : "Kompatibilität der gematik-Spezifikation",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html"
-            }
-          ],
-          "nameUrl" : "KompatibilitaetDerGematikSpezifikation_IHE.html",
-          "title" : "Kompatibilität der gematik-Spezifikation IHE",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Must-Support-Flags.html",
-          "title" : "Must-Support-Flags",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Repraesentationsformate.html",
-          "title" : "Repräsentationsformate",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Suchparameter.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Suchparameter.html",
-          "title" : "Suchparameter",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_Rest.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_Rest.html",
-          "title" : "REST-API",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Patient-Besuch-Kontext.html"
-            }
-          ],
-          "nameUrl" : "Patient-Besuch-Kontext.html",
-          "title" : "Herstellung von Patienten- und Besuchskontext",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html"
-            }
-          ],
-          "nameUrl" : "UebergreifendeFestlegungen_UmgangFehlendeDaten.html",
-          "title" : "Umgang mit fehlenden Daten",
           "generation" : "markdown"
         }
       ]
