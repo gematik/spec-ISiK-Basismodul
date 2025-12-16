@@ -4,22 +4,59 @@ topic: ImplementationGuide-markdown-Einfuehrung
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.0.0
+Version: 0.0.1
 
-Datum: 26.06.2025
+Datum: tbd.
 
-Status: Aktiv
+Status: DRAFT
 
 Realm: Deutschland
 
 
 
-Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
-
-Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
 
 
 ----
+
+# Motivation Workflow Organspendetektion (?- TODO Wording zu Prüfen)
+
+... TODO
+
+Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
+
+
+## Motivation und Hintergrund
+Dieser Implementierungsleitfaden beschreibt eine Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.
+
+TODO
+
+###  Stakeholder
+Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
+
+Es handelt sich um eine technische Spezifikation. 
+
+Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+
+Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
+
+TODO - ggf. übernehmen Abschnitt zur Prüfung aus ICU
+
+Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
+
+Kommunikations-Workflows, die auf dieser Schnittstellen-Festlegung aufbauen, können lediglich der Unterstützung von Versorgung und Qualitätssicherungsmaßnahmen in der ... TODO .
+
+###  User
+Primär zu berücksichtigende User sind:
+* transplantationsbeauftragte Ärztinnen und Ärzte
+
+###  Einordnung in die ISiK Landschaft
+Als übergreifender Use Case (bzw. Workflow) ist die Organspendetektion nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+
+- TODO prüfen (ggf. an ICU orientieren)
+ 
+###  Out-of-Scope
+Aufgrund technischer Beschränkungen und Aufwände gibt es Aspekte, die aktuell außen vor bleiben müssen:
+- TODO prüfen (ggf. an ICU orientieren)
 
 
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
@@ -50,3 +87,4 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die
 männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer
 geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle
 weiteren Geschlechter, neben männlich und weiblich, ab.
+
