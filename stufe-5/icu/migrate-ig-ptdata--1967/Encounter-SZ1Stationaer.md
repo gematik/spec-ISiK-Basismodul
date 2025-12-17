@@ -16,7 +16,7 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 
 **status**: Finished
 
-**class**: [ActCode: IMP](http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP) (inpatient encounter)
+**class**: [ActCode: IMP](http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-IMP) (inpatient encounter)
 
 **type**: Abteilungskontakt, Normalstationär
 
