@@ -10,7 +10,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-10T10:30:13+00:00",
+  "date" : "2025-12-17T10:54:00+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "dok.test.ig",
   "license" : "CC0-1.0",
@@ -23,7 +23,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.0.0"
+    "version" : "7.0.1"
   },
   {
     "id" : "hl7ext",
@@ -807,6 +807,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ISiKTerminPriorityExtension"
+      },
+      "name" : "ISiKTerminPriorityExtension",
+      "description" : "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -824,6 +835,15 @@
       "title" : "Table of Contents",
       "generation" : "html",
       "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Einführung",
+        "generation" : "markdown"
+      },
+      {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "Abgrenzung-Basis.html"
@@ -848,15 +868,6 @@
         }],
         "nameUrl" : "Dokumentenabfrage.html",
         "title" : "Dokumentenabfrage",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "Einfuehrung.html"
-        }],
-        "nameUrl" : "Einfuehrung.html",
-        "title" : "Einführung",
         "generation" : "markdown"
       },
       {

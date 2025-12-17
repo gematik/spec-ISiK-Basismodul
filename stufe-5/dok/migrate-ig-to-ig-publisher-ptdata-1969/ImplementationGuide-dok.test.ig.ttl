@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "TestImplementationGuide"] ; # 
   fhir:title [ fhir:v "Test Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-12-10T10:30:13+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-12-17T10:54:00+00:00"^^xsd:dateTime] ; # 
   fhir:description [ fhir:v "A test implementation guide for validating the local FHIR IG Publisher environment"] ; # 
   fhir:packageId [ fhir:v "dok.test.ig"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -43,7 +43,7 @@
        fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "7.0.0" ]
+     fhir:version [ fhir:v "7.0.1" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -1622,6 +1622,23 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://example.org/fhir/test-dok-ig/StructureDefinition/ISiKTerminPriorityExtension> ;
+         fhir:reference [ fhir:v "StructureDefinition/ISiKTerminPriorityExtension" ]
+       ] ;
+       fhir:name [ fhir:v "ISiKTerminPriorityExtension" ] ;
+       fhir:description [ fhir:v "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen." ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -1652,6 +1669,25 @@
        fhir:title [ fhir:v "Table of Contents" ] ;
        fhir:generation [ fhir:v "html" ] ;
        fhir:page ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "index.html"^^xsd:anyURI ;
+             fhir:l fhir:index.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "index.html"^^xsd:anyURI ;
+           fhir:l fhir:index.html
+         ] ;
+         fhir:title [ fhir:v "Einführung" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
          fhir:extension ( [
            fhir:url [
              fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
@@ -1707,25 +1743,6 @@
            fhir:l fhir:Dokumentenabfrage.html
          ] ;
          fhir:title [ fhir:v "Dokumentenabfrage" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
-           fhir:value [
-             a fhir:Url ;
-             fhir:v "Einfuehrung.html"^^xsd:anyURI ;
-             fhir:l fhir:Einfuehrung.html
-           ]
-         ] ) ;
-         fhir:name [
-           a fhir:Url ;
-           fhir:v "Einfuehrung.html"^^xsd:anyURI ;
-           fhir:l fhir:Einfuehrung.html
-         ] ;
-         fhir:title [ fhir:v "Einführung" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

@@ -11,7 +11,7 @@
   <name value="TestImplementationGuide"/>
   <title value="Test Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-12-10T10:30:13+00:00"/>
+  <date value="2025-12-17T10:54:00+00:00"/>
   <description value="A test implementation guide for validating the local FHIR IG Publisher environment"/>
   <packageId value="dok.test.ig"/>
   <license value="CC0-1.0"/>
@@ -22,7 +22,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.0.0"/>
+    <version value="7.0.1"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -624,6 +624,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKTerminPriorityExtension"/>
+      </reference>
+      <name value="ISiKTerminPriorityExtension"/>
+      <description value="Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -639,6 +649,14 @@
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
       <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Einführung"/>
+        <generation value="markdown"/>
+      </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="Abgrenzung-Basis.html"/>
@@ -661,14 +679,6 @@
         </extension>
         <nameUrl value="Dokumentenabfrage.html"/>
         <title value="Dokumentenabfrage"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="Einfuehrung.html"/>
-        </extension>
-        <nameUrl value="Einfuehrung.html"/>
-        <title value="Einführung"/>
         <generation value="markdown"/>
       </page>
       <page>
