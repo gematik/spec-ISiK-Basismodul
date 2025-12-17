@@ -15,7 +15,7 @@ Datum: 17.12.2025
 
 * `documentation` fehlende shorts und comments nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/921
 
-## Version 5.1.1
+## Version 5.1.0
 
 Datum: 11.12.2025
 
