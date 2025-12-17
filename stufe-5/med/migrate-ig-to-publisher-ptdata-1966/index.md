@@ -81,7 +81,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-17T09:52:28+00:00",
+  "date" : "2025-12-17T10:02:32+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "medikation.test.ig",
   "license" : "CC0-1.0",
@@ -1454,6 +1454,17 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "index.html"
+            }
+          ],
+          "nameUrl" : "index.html",
+          "title" : "Einführung",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "AkteureUndInteraktionen.html"
             }
           ],
@@ -1470,17 +1481,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           ],
           "nameUrl" : "BestaetigungsrelevanteSysteme.html",
           "title" : "Bestätigungsrelevante Systeme",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "index.html"
-            }
-          ],
-          "nameUrl" : "index.html",
-          "title" : "Einführung",
           "generation" : "markdown"
         },
         {
