@@ -16,7 +16,7 @@ Datum: 17.12.2025
 
 ## Version 5.1.0
 
-Datum: 11.12.2025
+Datum: 23.10.2025
 
 * `improve` enableWhen-Element mit MS versehen, wurde initial vergessen aber in Beispielen und Beschreibungen genannt https://github.com/gematik/spec-ISiK-Basismodul/pull/896
 

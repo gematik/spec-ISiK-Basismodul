@@ -13,7 +13,7 @@ Datum: 17.12.2025
 
 ## Version 5.1.0
 
-Datum: 11.12.2025
+Datum: 23.10.2025
 
 * `improve` Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792
 * `improve` Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793

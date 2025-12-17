@@ -19,7 +19,7 @@ Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Impleme
 
 ## Version 5.1.0
 
-Datum: 11.12.2025
+Datum: 23.10.2025
 
 * `documentation` Dokumentation Profilen zwecks Kennzeichnung der Ableitung der Profile hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/870
 * `documentation` Refactoring und Vervollständigung zur Dokumentation der Herstellung eines Patienten- und Ecounter-Kontextes
