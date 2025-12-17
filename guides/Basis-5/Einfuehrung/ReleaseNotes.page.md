@@ -19,9 +19,9 @@ Die Tags werden folgendermaßen verwendet:
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
 
-## Version 5.1.1-rc
+## Version 5.1.1
 
-Datum: 11.12.2025
+Datum: 17.12.2025
 
 * `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
 * `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917
