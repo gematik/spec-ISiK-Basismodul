@@ -1,4 +1,64 @@
-# Resource Test Implementation Guide
+# Einführung - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* **Einführung**
+
+## Einführung
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://example.org/fhir/test-labor-ig/ImplementationGuide/labor.test.ig | *Version*:0.0.1 |
+| Draft as of 2025-12-17 | *Computable Name*:TestImplementationGuide |
+
+![](https://raw.githubusercontent.com/gematik/spec-ISiK-Labor/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
+
+-------
+
+Version: 5.1.0
+
+Datum: 23.10.2025
+
+Status: Aktiv (Support-Modul)
+
+Realm: Deutschland
+
+-------
+
+# Support-Modul Labor – Motivation und Status
+
+Im Rahmen verschiedener ISiK-Module, wie beispielsweise AMTS oder dem Workflow für ICU-Normalstationen, besteht ein Bedarf an Labordaten. Dieses Modul dient der Bereitstellung entsprechender Profile.
+
+Das Support-Modul Labor ist ausschließlich als unterstützendes Element für andere ISiK-Module konzipiert und nicht für eine eigenständige Implementierung vorgesehen.
+
+# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+
+Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
+
+Hersteller bestätigungsrelevanter Systeme sollen durch diesen IG in die Lage versetzt werden, eine konforme Implementierung zu erstellen und das Bestätigungsverfahren der gematik erfolgreich zu absolvieren.
+
+Weitere Informationen siehe [§373 SGB V](https://www.gesetze-im-internet.de/sgb_5/__373.html).
+
+Hinweis: Sowohl für die Implementierung der ISiK-Spezifikation als auch für den Betrieb eines Produktes, das die ISiK-Spezifikation implementiert, ist eine SNOMED-CT-Lizenz notwendig. Diese kann beim [National Release Center für SNOMED CT in Deutschland](https://www.bfarm.de/DE/Kodiersysteme/Terminologien/SNOMED-CT/_node.html) beantragt werden.
+
+**Kontakt**
+
+Bringen Sie allgemeine Fragen und Anmerkungen gerne über unser Anfrageportal ein: [Anfragen ISiK + ISiP](https://service.gematik.de/servicedesk/customer/portal/16)
+
+Falls Sie keinen Zugang zum Anfrageportal haben und dieses nutzen wollen, senden Sie uns bitte eine Nachricht an die Adresse isik [ at ] gematik.de mit dem Betreff “Portalzugang”.
+
+**Herausgeber**
+
+gematik GmbH
+
+[Impressum](https://www.gematik.de/impressum/)
+
+**Gender-Hinweis**
+
+Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle weiteren Geschlechter, neben männlich und weiblich, ab.
 
 
 
@@ -13,7 +73,7 @@
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-11T15:25:19+00:00",
+  "date" : "2025-12-17T10:29:32+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "labor.test.ig",
   "license" : "CC0-1.0",
@@ -29,7 +89,7 @@
       ],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r4",
-      "version" : "7.0.0"
+      "version" : "7.0.1"
     },
     {
       "id" : "hl7ext",
@@ -1231,6 +1291,17 @@
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "index.html"
+            }
+          ],
+          "nameUrl" : "index.html",
+          "title" : "Einführung",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "AMTS.page.html"
             }
           ],
@@ -1247,17 +1318,6 @@
           ],
           "nameUrl" : "BestaetigungsrelevanteSysteme.page.html",
           "title" : "Bestätigungsrelevante Systeme",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Einfuehrung.html"
-            }
-          ],
-          "nameUrl" : "Einfuehrung.html",
-          "title" : "Einführung",
           "generation" : "markdown"
         },
         {
