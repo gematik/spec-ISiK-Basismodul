@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKTerminblock",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock",
-  "version": "5.1.0",
+  "version": "5.1.1-rc",
   "name": "ISiKTerminblock",
   "status": "active",
   "experimental": false,
-  "date": "2025-10-23",
+  "date": "2025-12-11",
   "publisher": "gematik GmbH",
   "description": "Die Slot-Ressource repräsentiert die Verbindung eines Termins (Appointment) und den dazugehörigen Ressourcen (z.B. HealthcareService, Device, Practitioner). Für diese Ressourcen können separate Kalender (Schedules) verwaltet werden. Der Slot agiert als Verbindungsstück zwischen diesen Ressourcen.",
   "fhirVersion": "4.0.1",
@@ -52,6 +52,7 @@
       {
         "id": "Slot.schedule",
         "path": "Slot.schedule",
+        "short": "Der Kalender dem dieser Terminblock zugeordnet ist",
         "comment": "Begründung Kardinalität und MS: Die Kardinalität der reference-Eigenschaft wird auf 1..* festgelegt, um sicherzustellen, dass ein Kalender eindeutig referenziert und identifiziert werden kann.",
         "mustSupport": true
       },
@@ -64,18 +65,21 @@
       {
         "id": "Slot.status",
         "path": "Slot.status",
+        "short": "Der Status des Terminblocks",
         "comment": "Begründung Must Support: Dies ist wichtig, um die Verfügbarkeit von Terminen zu gewährleisten, eine Überbuchung zu verhindern und zudem einem Termin-Requestor die Möglichkeit zu bieten nur freie Termine bei der Terminbuchung anzuzeigen.",
         "mustSupport": true
       },
       {
         "id": "Slot.start",
         "path": "Slot.start",
+        "short": "Der Startzeitpunkt des Terminblocks",
         "comment": "Begründung Must Support: Dies ist wichtig, um den Zeitpunkt des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.",
         "mustSupport": true
       },
       {
         "id": "Slot.end",
         "path": "Slot.end",
+        "short": "Der Endzeitpunkt des Terminblocks",
         "comment": "Begründung Must Support: Dies ist wichtig, um die Länge des Termins an einen Termin-Requestor / Termin-Consumer zu kommunizieren.",
         "mustSupport": true
       }

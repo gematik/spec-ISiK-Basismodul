@@ -39,7 +39,7 @@ Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-R
 Das Bundle MUSS folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle, hybrid}}  
 
-Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/UseCasesUndAkteure/AkteureUndInteraktionen/ErzeugenVonMetadaten.page.md).
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten).
 
 ### Verarbeitung des Dokumentes
 
