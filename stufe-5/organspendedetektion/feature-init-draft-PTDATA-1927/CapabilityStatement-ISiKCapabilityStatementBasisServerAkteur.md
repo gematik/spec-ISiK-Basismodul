@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiK-CapabilityStatementBasisServerAkteur |
+| Active as of 2025-12-11 | *Computable Name*:ISiK-CapabilityStatementBasisServerAkteur |
 
  
 Dieses CapabilityStatement beschreibt alle Interaktionen, die ein System unterstützen MUSS, welches diesen Akteur implementiert. 
@@ -41,7 +41,7 @@ CapabilityStatement für den Akteur "ISiKCapabilityStatementBasisServerAkteur". 
   "title" : "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "contact" : [
     {
       "telecom" : [

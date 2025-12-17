@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKTerminPriorityExtension |
+| Active as of 2025-12-11 | *Computable Name*:ISiKTerminPriorityExtension |
 
 Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.
 
@@ -56,7 +56,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKTerminPriorityEx
   "name" : "ISiKTerminPriorityExtension",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

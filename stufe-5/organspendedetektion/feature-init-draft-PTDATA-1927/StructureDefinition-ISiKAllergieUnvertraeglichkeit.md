@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKAllergieUnvertraeglichkeit |
+| Active as of 2025-12-11 | *Computable Name*:ISiKAllergieUnvertraeglichkeit |
 
  
 Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien. 
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAllergieUnvertra
   "name" : "ISiKAllergieUnvertraeglichkeit",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "\nDiese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n### Motivation\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n### Kompatibilität\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

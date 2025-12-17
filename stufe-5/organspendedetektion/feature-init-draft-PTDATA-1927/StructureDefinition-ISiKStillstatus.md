@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKStillstatus |
+| Active as of 2025-12-11 | *Computable Name*:ISiKStillstatus |
 
  
 Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStillstatus.csv)
   "title" : "ISiKStillstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird",
   "fhirVersion" : "4.0.1",
   "mapping" : [
@@ -121,6 +121,17 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStillstatus.csv)
       {
         "id" : "Observation.value[x]",
         "path" : "Observation.value[x]",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.value[x]:valueCodeableConcept",
+        "path" : "Observation.value[x]",
+        "sliceName" : "valueCodeableConcept",
+        "min" : 1,
         "type" : [
           {
             "code" : "CodeableConcept"

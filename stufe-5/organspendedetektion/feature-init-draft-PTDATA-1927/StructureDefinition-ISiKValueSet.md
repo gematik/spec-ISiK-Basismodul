@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKValueSet |
+| Active as of 2025-12-11 | *Computable Name*:ISiKValueSet |
 
  
 Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes für die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien. 
@@ -56,7 +56,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKValueSet.csv), [
   "name" : "ISiKValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n### Motivation\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n### Kompatibilität\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

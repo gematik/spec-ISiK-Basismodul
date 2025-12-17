@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKOrganisation |
+| Active as of 2025-12-11 | *Computable Name*:ISiKOrganisation |
 
  
 Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKOrganisation.csv
   "name" : "ISiKOrganisation",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

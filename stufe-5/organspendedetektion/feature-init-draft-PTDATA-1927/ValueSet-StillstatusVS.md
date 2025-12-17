@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/StillstatusVS | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:StillstatusVS |
+| Active as of 2025-12-11 | *Computable Name*:StillstatusVS |
 
  
 Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC. 
@@ -55,7 +55,7 @@ Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.
   "title" : "Stillstatus LOINC Antwortoptionen",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.",
   "compose" : {
     "include" : [

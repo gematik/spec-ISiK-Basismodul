@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
+| Active as of 2025-12-11 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
 
 **Usages:**
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschaftE
   "title" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -101,7 +101,18 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschaftE
       {
         "id" : "Observation.value[x]",
         "path" : "Observation.value[x]",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.value[x]:valueDateTime",
+        "path" : "Observation.value[x]",
+        "sliceName" : "valueDateTime",
         "comment" : "Motivation: Eine Observation MUSS immer einen Wert enthalten",
+        "min" : 1,
         "type" : [
           {
             "code" : "dateTime"

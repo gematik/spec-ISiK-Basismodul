@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/ProzedurenKategorieSCT | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ProzedurenKategorieSCT |
+| Active as of 2025-12-11 | *Computable Name*:ProzedurenKategorieSCT |
 
  
 Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel 
@@ -54,7 +54,7 @@ Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel
   "name" : "ProzedurenKategorieSCT",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
   "compose" : {
     "include" : [

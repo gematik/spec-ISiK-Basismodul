@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "TestImplementationGuide"] ; # 
   fhir:title [ fhir:v "Test Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-12-16T14:19:48+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-12-17T08:30:11+00:00"^^xsd:dateTime] ; # 
   fhir:description [ fhir:v "A test implementation guide for validating the local FHIR IG Publisher environment"] ; # 
   fhir:packageId [ fhir:v "Organspendeerkennung.test.ig"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -1473,6 +1473,22 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <http://example.org/fhir/test-Organspendeerkennung-ig/Bundle/BundleExampleIntensivstation> ;
+         fhir:reference [ fhir:v "Bundle/BundleExampleIntensivstation" ]
+       ] ;
+       fhir:name [ fhir:v "Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <http://example.org/fhir/test-Organspendeerkennung-ig/Bundle/ISiKBundle-Example> ;
          fhir:reference [ fhir:v "Bundle/ISiKBundle-Example" ]
        ] ;
@@ -2657,7 +2673,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
+           fhir:v "StructureDefinition:resource:abstract"
          ]
        ] ) ;
        fhir:reference [

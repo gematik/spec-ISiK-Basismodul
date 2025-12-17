@@ -13,14 +13,14 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKBerichtBundle |
+| Active as of 2025-12-11 | *Computable Name*:ISiKBerichtBundle |
 
  
 Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. Das Bundle entspricht den Anforderungen an ein[FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html): Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind. 
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/ISiKBundle-Example](Bundle-ISiKBundle-Example.md)
+* Examples for this Profile: [Bundle/BundleExampleIntensivstation](Bundle-BundleExampleIntensivstation.md) and [Bundle/ISiKBundle-Example](Bundle-ISiKBundle-Example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/Organspendeerkennung.test.ig|current/StructureDefinition/ISiKBerichtBundle)
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKBerichtBundle.cs
   "title" : "ISiKBerichtBundle",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. \nDas Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. \nDas Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.\n",
   "fhirVersion" : "4.0.1",
   "mapping" : [

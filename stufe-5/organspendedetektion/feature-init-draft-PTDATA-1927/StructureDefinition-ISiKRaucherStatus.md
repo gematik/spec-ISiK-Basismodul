@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKRaucherStatus |
+| Active as of 2025-12-11 | *Computable Name*:ISiKRaucherStatus |
 
 **Usages:**
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKRaucherStatus.cs
   "title" : "ISiK Raucherstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -129,6 +129,17 @@ Other representations of profile: [CSV](StructureDefinition-ISiKRaucherStatus.cs
       {
         "id" : "Observation.value[x]",
         "path" : "Observation.value[x]",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id" : "Observation.value[x]:valueCodeableConcept",
+        "path" : "Observation.value[x]",
+        "sliceName" : "valueCodeableConcept",
+        "min" : 1,
         "type" : [
           {
             "code" : "CodeableConcept"

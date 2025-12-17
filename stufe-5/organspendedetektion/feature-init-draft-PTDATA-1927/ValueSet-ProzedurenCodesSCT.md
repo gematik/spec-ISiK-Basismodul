@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/ProzedurenCodesSCT | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ProzedurenCodesSCT |
+| Active as of 2025-12-11 | *Computable Name*:ProzedurenCodesSCT |
 
  
 Enthaelt alle SNOMED Procedure Codes 
@@ -54,7 +54,7 @@ Enthaelt alle SNOMED Procedure Codes
   "name" : "ProzedurenCodesSCT",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Enthaelt alle SNOMED Procedure Codes",
   "compose" : {
     "include" : [

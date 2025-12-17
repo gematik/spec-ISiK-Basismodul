@@ -261,19 +261,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#2">Behavior: Search Parameters</a>
       </li>
       <li>
-         <a href="#3">Structures: Resource Profiles</a>
+         <a href="#3">Structures: Abstract Profiles</a>
       </li>
       <li>
-         <a href="#4">Structures: Extension Definitions</a>
+         <a href="#4">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#5">Terminology: Value Sets</a>
+         <a href="#5">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#6">Terminology: Code Systems</a>
+         <a href="#6">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#7">Other</a>
+         <a href="#7">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#8">Other</a>
       </li>
    </ul>
 </div>
@@ -483,6 +486,49 @@ wird die <a href="https://hl7.org/fhir/R4/extension-capabilitystatement-expectat
       </tbody>
    </table>
    <a name="3"> </a>
+   <h3>Structures: Abstract Profiles </h3>
+    <p>These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles <em>based</em> on these abstract profiles, but do not declare conformance to the abstract profiles themselves.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ISiKLebensZustand.html" title="StructureDefinition/ISiKLebensZustand">ISiKLebensZustand</a>
+            </td>
+            <td>
+<p>Basisprofil für ISiKLebensZustand Observation</p>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.
+Motivierender Use-Case zur Einführung dieser Profile ist die <a href="https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS">Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS</a>.</p>
+
+<p>In FHIR werden Untersuchungen, bzw. Beobachtungen als <a href="https://hl7.org/fhir/R4/observation.html"><code class="language-plaintext highlighter-rouge">Observation</code></a>-Ressource repräsentiert.</p>
+
+<p>Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.<br/>
+Die folgenden Profile vom Typ <code class="language-plaintext highlighter-rouge">Observation</code> sind spezifische Profile im oben genannten Sinn:</p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<h3 id="kompatibilität">Kompatibilität</h3>
+
+<p>Für Schwangerschaftsstatus &amp; Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden <strong>IPS</strong> Profilen angestrebt:</p>
+<ul>
+  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: EDD</a>.</li>
+  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-status-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: status</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
    <h3>Structures: Resource Profiles </h3>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -692,41 +738,6 @@ auch valide sind gegen:</p>
 <ul>
   <li>Profil <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung">Kontakt mit einer Gesundheitseinrichtung 
 der Medizininformatik-Initiative</a></li>
-</ul>
-
-<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-ISiKLebensZustand.html" title="StructureDefinition/ISiKLebensZustand">ISiKLebensZustand</a>
-            </td>
-            <td>
-<p>Basisprofil für ISiKLebensZustand Observation</p>
-
-<h3 id="motivation">Motivation</h3>
-
-<p>Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.
-Motivierender Use-Case zur Einführung dieser Profile ist die <a href="https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS">Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS</a>.</p>
-
-<p>In FHIR werden Untersuchungen, bzw. Beobachtungen als <a href="https://hl7.org/fhir/R4/observation.html"><code class="language-plaintext highlighter-rouge">Observation</code></a>-Ressource repräsentiert.</p>
-
-<p>Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.<br/>
-Die folgenden Profile vom Typ <code class="language-plaintext highlighter-rouge">Observation</code> sind spezifische Profile im oben genannten Sinn:</p>
-<ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-
-<h3 id="kompatibilität">Kompatibilität</h3>
-
-<p>Für Schwangerschaftsstatus &amp; Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden <strong>IPS</strong> Profilen angestrebt:</p>
-<ul>
-  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: EDD</a>.</li>
-  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-status-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: status</a></li>
 </ul>
 
 <p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
@@ -995,7 +1006,7 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
          </tr>
       </tbody>
    </table>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Structures: Extension Definitions </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1019,7 +1030,7 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
          </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="6"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1099,7 +1110,7 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1112,7 +1123,7 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
          </tr>
       </tbody>
    </table>
-   <a name="7"> </a>
+   <a name="8"> </a>
    <h3>Other </h3>
     <p>These are resources that are used within this implementation guide that do not fit into one of the other categories.</p>
 <table class="grid">
@@ -1408,6 +1419,11 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
                <a href="Organization-KrankenhausOrganisationBeispiel.html" title="Organization/KrankenhausOrganisationBeispiel">Uniklinik Entenhausen</a>
             </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-BundleExampleIntensivstation.html" title="Bundle/BundleExampleIntensivstation">Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)</a>
+            </td>
+         </tr>
       </tbody>
    </table>
 </div>
@@ -1428,7 +1444,7 @@ In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsenti
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Dec 16, 2025 14:19+0000">2025-12-16</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Dec 17, 2025 08:30+0000">2025-12-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

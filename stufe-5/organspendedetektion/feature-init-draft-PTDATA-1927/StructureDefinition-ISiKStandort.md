@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKStandort |
+| Active as of 2025-12-11 | *Computable Name*:ISiKStandort |
 
  
 Dieses Profil dient der strukturierten Erfassung von Standortangaben eines Krankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien. 
@@ -75,7 +75,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStandort.csv), [
   "name" : "ISiKStandort",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines \nKrankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  \n### Motivation\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form. \n\nDie Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:\n- Zuweisungen von Diensten an bestimmte Standorte im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär) - u.a. für \n    - Patientenportale im Rahmen der Terminbuchung, z.B. um den Wunsch nach Einzelbett, bzw. 1 oder 2 Betten abzubilden\n    - KIS und weitere Subsysteme:\n      - zur Patientenabholung und Information für den Transportdienst\n      - Abbildung der Verfügbarkeit eines spezifischen Bettenstellplatzes (z.B. mit spezifischem Monitoring-Device) \n- Im Rahmen der Versorgung kann eine der folgenden Beispiel-Fragen beantworten werden:\n    - Handelt es sich um ein Isolationszimmer?\n    - Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte?\n    - etc.\n\nDafür werden Standort-Profile in unterschiedlicher Granularität definiert. \n\n### Kompatibilität\nFür das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der \nKompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n",
   "fhirVersion" : "4.0.1",
   "mapping" : [

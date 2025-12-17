@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:SchwangerschaftsstatusVS |
+| Active as of 2025-12-11 | *Computable Name*:SchwangerschaftsstatusVS |
 
  **References** 
 
@@ -52,7 +52,7 @@ Version 0.0.1 - STU1
   "title" : "Schwangerschaftsstatus Valueset",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "compose" : {
     "include" : [
       {

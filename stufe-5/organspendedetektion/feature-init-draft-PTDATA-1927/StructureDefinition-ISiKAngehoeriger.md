@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKAngehoeriger |
+| Active as of 2025-12-11 | *Computable Name*:ISiKAngehoeriger |
 
  
 Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien. 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAngehoeriger.csv
   "name" : "ISiKAngehoeriger",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.  \n### Motivation\nDer Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,\n in denen das Versicherungsverhältnis eine Rolle spielt. \n Hier können Angehörige, bspw. der hauptversicherte Elternteil \n eines minderjährigen Kindes, in der Familienversicherung sein. \n In Selbstzahler-Szenarien können Angehörige die Zahler für eine \n im Krankenhaus erbrachte Leistung sein.\nIn FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.\n\n### Kompatibilität\nFür das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:DiagnosesSCT |
+| Active as of 2025-12-11 | *Computable Name*:DiagnosesSCT |
 
  
 Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes 
@@ -54,7 +54,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
   "name" : "DiagnosesSCT",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes",
   "compose" : {
     "include" : [

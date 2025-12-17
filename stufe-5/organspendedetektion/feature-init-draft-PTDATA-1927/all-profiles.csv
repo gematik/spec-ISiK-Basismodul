@@ -565,7 +565,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 </valueReference>","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKAlkoholAbusus","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Bedeutung: Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked","",,,,"Observation.value[x]",0,1,"obs-7
+","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","",,"closed","Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKAlkoholAbusus","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","http://terminology.hl7.org/ValueSet/yes-no-unknown-not-asked","",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKAlkoholAbusus","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKAlkoholAbusus","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -4286,7 +4295,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 ","Who is responsible for the observation","Who was responsible for asserting the observed value as ""true"".","","May give a degree of confidence in the observation and also indicates where follow-up questions should be directed.","","","","","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKLebensZustand","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","Quantity {[]} {[]}
-CodeableConcept {[]} {[]}string {[]} {[]}boolean {[]} {[]}integer {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}SampledData {[]} {[]}time {[]} {[]}dateTime {[]} {[]}Period {[]} {[]}","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Bedeutung: Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
+CodeableConcept {[]} {[]}string {[]} {[]}boolean {[]} {[]}integer {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}SampledData {[]} {[]}time {[]} {[]}dateTime {[]} {[]}Period {[]} {[]}","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","",,"open","Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKLebensZustand","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKLebensZustand","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKLebensZustand","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -7410,7 +7428,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 </valueReference>","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKRaucherStatus","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Bedeutung: Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips","",,,,"Observation.value[x]",0,1,"obs-7
+","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","",,"closed","Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKRaucherStatus","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips","",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKRaucherStatus","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKRaucherStatus","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -7704,7 +7731,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 ","Who is responsible for the observation","Who was responsible for asserting the observed value as ""true"".","","May give a degree of confidence in the observation and also indicates where follow-up questions should be directed.","","","","","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKSchwangerschaftErwarteterEntbindungstermin","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","dateTime {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Motivation: Eine Observation MUSS immer einen Wert enthalten","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
+","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","",,"closed","Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKSchwangerschaftErwarteterEntbindungstermin","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",1,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","Motivation: Eine Observation MUSS immer einen Wert enthalten","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKSchwangerschaftErwarteterEntbindungstermin","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKSchwangerschaftErwarteterEntbindungstermin","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -8003,12 +8039,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 ","Who is responsible for the observation","Who was responsible for asserting the observed value as ""true"".","","May give a degree of confidence in the observation and also indicates where follow-up questions should be directed.","","","","","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKSchwangerschaftsstatus","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Bedeutung: Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKSchwangerschaftsstatus","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS","",,,,"Observation.value[x]",0,1,"obs-7
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/SchwangerschaftsstatusVS","",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKSchwangerschaftsstatus","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKSchwangerschaftsstatus","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -8845,7 +8885,16 @@ Period {[]} {[]}","Zeitpunkt/-raum der Beobachtung","The time or time-period the
 </valueReference>","","","",,,,,"",,,,"Observation.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKStillstatus","Observation.value[x]","Observation.value[x]","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","Bedeutung: Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/StillstatusVS","",,,,"Observation.value[x]",0,1,"obs-7
+","Wert der Beobachtung","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Erfasster Wert der Observation.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"","type:$this}
+","",,"closed","Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKStillstatus","Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Viele Lebenszustände (z. B. Schwangerschaftsstatus, Alkoholabusus, Raucherstatus) werden als kategorisierte Angaben kodiert und erfordern daher ein CodeableConcept.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","","https://gematik.de/fhir/isik/ValueSet/StillstatusVS","",,,,"Observation.value[x]",0,1,"obs-7
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ISiKStillstatus","Observation.value[x]:valueDateTime","Observation.value[x]","valueDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Actual result","The information determined as a result of making the observation, if the information has a simple value.","**Begründung Must-Support:** Zeitpunktbezogene Lebenszustände (z. B. erwarteter Entbindungstermin) benötigen eine eindeutige Datumsangabe als Wert.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,,,,"",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ISiKStillstatus","Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"","","","CodeableConcept {[]} {[]}

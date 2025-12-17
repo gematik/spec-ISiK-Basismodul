@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKAbrechnungsfall |
+| Active as of 2025-12-11 | *Computable Name*:ISiKAbrechnungsfall |
 
  
 Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAbrechnungsfall.
   "name" : "ISiKAbrechnungsfall",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.  \nZugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde *nicht* primär zum Zweck der Abbildung von Abrechnungsprozessen definiert. \n\n### Motivation\nKomplementär zum Datenobjekt &quot;Kontakt - Encounter&quot; können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen \ninnerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.\nEin solcher Abrechnungsfall kann mehrere Kontakte umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationärer Besuch).  \n\nGemeinsam mit dem Einrichtungskontakt bildet der Abrechnungsfall einen wichtigen Einstiegspunkt in die Dokumentation der Behandlungsleistungen der Patienten.\nAls Bindeglied zwischen den Kontakten und dem Versicherungsverhältnis erfolgt eine feingranulare Auflistung, \nin welchen Zeiträumen ein Behandlungskontext zwischen einer Gesundheitseinrichtung und der Patienten bestand.\nZudem werden Diagnosen abschließend / nachträglich dokumentiert, sodass eine Übersicht von relevanten (DRG)-Diagnosen ermöglicht wird, \nohne die Gesamtheit aller Kontakte betrachten zu müssen.\n\nIn FHIR wird der Abrechnungsfall mit der `Account`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}.\n\n### Kompatibilität\n* zum Zeitpunkt der Veröffentlichung sind keine abweichenden Modellierungen der Account-Ressource bekannt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

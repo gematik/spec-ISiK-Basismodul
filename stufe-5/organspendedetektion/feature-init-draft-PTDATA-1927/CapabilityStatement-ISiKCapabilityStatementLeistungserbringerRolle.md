@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKCapabilityStatementLeistungserbringerRolle |
+| Active as of 2025-12-11 | *Computable Name*:ISiKCapabilityStatementLeistungserbringerRolle |
 
  
 Dieses CapabilityStatement beschreibt alle Interaktionen, die ein System unterstützen MUSS, welches diese Rolle implementiert. 
@@ -36,7 +36,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementLeistungserbringerRol
   "title" : "CapabilityStatement für Rolle &quot;LeistungserbringerRolle&quot;",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "contact" : [
     {
       "telecom" : [

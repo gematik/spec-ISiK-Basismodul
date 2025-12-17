@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz | *Version*:0.0.1 |
-| Active as of 2025-10-23 | *Computable Name*:ISiKStandortBettenstellplatz |
+| Active as of 2025-12-11 | *Computable Name*:ISiKStandortBettenstellplatz |
 
  
 Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) eines Krankenhauses. 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStandortBettenst
   "name" : "ISiKStandortBettenstellplatz",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-23",
+  "date" : "2025-12-11",
   "description" : "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) \neines Krankenhauses.  \n### Hinweis  \nEin einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, \ndas einen Bettenstellplatz referenziert.\n",
   "fhirVersion" : "4.0.1",
   "mapping" : [
