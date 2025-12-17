@@ -24,7 +24,7 @@ Profile: [ISiKKontaktGesundheitseinrichtung](StructureDefinition-ISiKKontaktGesu
 
 **period**: 2024-10-07 --> 2024-10-10
 
-**account**: [Account: identifier = Account number; status = active; type = inpatient encounter](Account-SZ1DRGFall.md)
+**account**: [Account/SZ1DRGFall](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Account/SZ1DRGFall)
 
 ### Hospitalizations
 

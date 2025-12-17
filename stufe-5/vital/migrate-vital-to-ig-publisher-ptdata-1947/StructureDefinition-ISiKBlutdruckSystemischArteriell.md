@@ -1,0 +1,573 @@
+# ISiKBlutdruckSystemischArteriell - Test Implementation Guide v0.0.1
+
+Test Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKBlutdruckSystemischArteriell**
+
+## Resource Profile: ISiKBlutdruckSystemischArteriell 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell | *Version*:0.0.1 |
+| Active as of 2025-10-23 | *Computable Name*:ISiKBlutdruckSystemischArteriell |
+
+ 
+Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus). 
+
+### Motivation
+
+ 
+Die Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen. 
+In FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet. 
+Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code ‘not-performed’) verwendet werden. 
+
+### Kompatibilität
+
+ 
+Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil[VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck)aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil[Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp)aus der FHIR R4 Spezifikation. 
+
+**Usages:**
+
+* Examples for this Profile: [Observation/ISiKBlutdruckSystemischArteriellExample](Observation-ISiKBlutdruckSystemischArteriellExample.md), [Observation/ISiKBlutdruckSystemischArteriellMaxExample](Observation-ISiKBlutdruckSystemischArteriellMaxExample.md) and [Observation/ISiKBlutdruckSystemischArteriellMinExample](Observation-ISiKBlutdruckSystemischArteriellMinExample.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Vital Sign Standard Source Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementVitalSignStandardSourceAkteur-expanded.md) and [ISiK CapabilityStatement VitalSign Standard Source Rolle](CapabilityStatement-ISiKCapabilityStatementVitalSignStandardSourceRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/vitalparameter.test.ig|current/StructureDefinition/ISiKBlutdruckSystemischArteriell)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKBlutdruckSystemischArteriell.csv), [Excel](StructureDefinition-ISiKBlutdruckSystemischArteriell.xlsx), [Schematron](StructureDefinition-ISiKBlutdruckSystemischArteriell.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKBlutdruckSystemischArteriell",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell",
+  "version" : "0.0.1",
+  "name" : "ISiKBlutdruckSystemischArteriell",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-10-23",
+  "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).\n### Motivation\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n### Kompatibilität\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
+  "fhirVersion" : "4.0.1",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Observation",
+  "baseDefinition" : "http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Observation",
+        "path" : "Observation"
+      },
+      {
+        "id" : "Observation.id",
+        "path" : "Observation.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.meta.versionId",
+        "path" : "Observation.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "Observation.meta.lastUpdated",
+        "path" : "Observation.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "Observation.status",
+        "path" : "Observation.status",
+        "short" : "Untersuchungsstatus",
+        "comment" : "**WICHTIGER Hinweis für Implementierer:**  \n* Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch `final`.\n* Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, beispielsweise durch Ausblenden/Durchstreichen von Ressourcen mit dem status `entered-in-error` und Ausgrauen von Ressourcen, die einen Plan- oder Entwurfs-Status haben.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.category",
+        "path" : "Observation.category",
+        "short" : "Untersuchungskategorie",
+        "comment" : "Motivation MS: Dieses Feld erlaubt die Sortierung und Abfrage anhand der Kategorie der Untersuchung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.category:VSCat",
+        "path" : "Observation.category",
+        "sliceName" : "VSCat",
+        "short" : "Vitalparameterkategorie",
+        "comment" : "Motivation MS: Die Kategorie 'vital-signs' dient der Kategorisierung von Vitalparametern",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code",
+        "path" : "Observation.code",
+        "short" : "Code",
+        "comment" : "Motivation MS: Die Observation wird anhand des Codes identifiziert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code.coding",
+        "path" : "Observation.code.coding",
+        "short" : "Coding",
+        "comment" : "Motivation MS: Semantische Kodierung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code.coding:loinc",
+        "path" : "Observation.code.coding",
+        "sliceName" : "loinc",
+        "short" : "LOINC Kodierung",
+        "comment" : "Motivation MS: Kodierung des Vitalparameters mittels LOINC.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code.coding:snomed",
+        "path" : "Observation.code.coding",
+        "sliceName" : "snomed",
+        "short" : "SNOMED CT Kodierung",
+        "comment" : "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code.coding:IEEE11073",
+        "path" : "Observation.code.coding",
+        "sliceName" : "IEEE11073",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "urn:iso:std:iso:11073:10101",
+          "code" : "150016"
+        }
+      },
+      {
+        "id" : "Observation.subject",
+        "path" : "Observation.subject",
+        "short" : "Patient",
+        "comment" : "**Motivation MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.encounter",
+        "path" : "Observation.encounter",
+        "short" : "Aufenthaltsbezug",
+        "comment" : "Motivation MS: Der Behandlungskontext ist für die Interpretation der Untersuchungsergebnisse relevant",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.encounter.reference",
+        "path" : "Observation.encounter.reference",
+        "short" : "Encounter-Link",
+        "comment" : "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.effective[x]",
+        "path" : "Observation.effective[x]",
+        "short" : "Datum und Uhrzeit der Untersuchung",
+        "comment" : "Motivation MS: Das Datum und die Uhrzeit der Untersuchung sind für die Interpretation der Untersuchungsergebnisse relevant",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.performer",
+        "path" : "Observation.performer",
+        "short" : "Untersuchender",
+        "comment" : "Motivation MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.dataAbsentReason",
+        "path" : "Observation.dataAbsentReason",
+        "short" : "Grund für fehlende Untersuchungsergebnisse",
+        "comment" : "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.method",
+        "path" : "Observation.method",
+        "short" : "Untersuchungsmethode",
+        "comment" : "**Einschränkung der übergreifenden MS-Definition:**  \nVerfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Untersuchungsmethode, so MUSS dieses System die Information NICHT abbilden\n\n\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.device",
+        "path" : "Observation.device",
+        "short" : "Gerät",
+        "comment" : "**Einschränkung der übergreifenden MS-Definition:**  \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Geräts, mittels dessen der Parameter erhoben worden ist, so MUSS dieses System die Information NICHT abbilden.\n\n  Motivation zum eingeschränkten MS: Dieses Feld stellt präzisierende Angaben zum Zweck der Qualitätsbewertung bereit. Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component",
+        "path" : "Observation.component",
+        "short" : "Vitalparameter-Komponente",
+        "comment" : "Motivation MS: Erfassung der Komponenten eines Vitalparameters",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component.code",
+        "path" : "Observation.component.code",
+        "short" : "Code",
+        "comment" : "Motivation MS: Die Komponente wird anhand des Codes identifiziert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component.code.coding",
+        "path" : "Observation.component.code.coding",
+        "short" : "Coding",
+        "comment" : "Motivation MS: Semantische Kodierung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component.value[x]",
+        "path" : "Observation.component.value[x]",
+        "short" : "Wert der Komponente",
+        "comment" : "Motivation MS: Der Wert der Komponente ist ein Ergebnis der Untersuchung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component.dataAbsentReason",
+        "path" : "Observation.component.dataAbsentReason",
+        "short" : "Grund für fehlendes Untersuchungsergebniss",
+        "comment" : "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP",
+        "path" : "Observation.component",
+        "sliceName" : "SystolicBP",
+        "short" : "Systolischer Blutdruck",
+        "comment" : "Motivation MS: Kodierung des systolischen Blutdrucks.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.code",
+        "path" : "Observation.component.code",
+        "short" : "Code",
+        "comment" : "Motivation MS: Die Komponente wird anhand des Codes identifiziert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.code.coding",
+        "path" : "Observation.component.code.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "short" : "Coding",
+        "comment" : "Motivation MS: Semantische Kodierung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.code.coding:IEEE11073",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "IEEE11073",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "urn:iso:std:iso:11073:10101",
+          "code" : "150017"
+        }
+      },
+      {
+        "id" : "Observation.component:SystolicBP.code.coding:SCT",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "SCT",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "271649006"
+        }
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]",
+        "path" : "Observation.component.value[x]",
+        "short" : "Wert der Komponente",
+        "comment" : "Motivation MS: Der Wert der Komponente ist ein Ergebnis der Untersuchung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]:valueQuantity",
+        "path" : "Observation.component.value[x]",
+        "sliceName" : "valueQuantity",
+        "short" : "quantitatives Untersuchungsergebnis",
+        "comment" : "Motivation MS: valueQuantity muss für VitalSigns unterstützt werden",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]:valueQuantity.value",
+        "path" : "Observation.component.value[x].value",
+        "short" : "Wert",
+        "comment" : "Motivation MS: Eine Quantity soll einen Wert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]:valueQuantity.unit",
+        "path" : "Observation.component.value[x].unit",
+        "short" : "Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll eine Einheit enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]:valueQuantity.system",
+        "path" : "Observation.component.value[x].system",
+        "short" : "CodeSystem aus dem die Einheit stammt",
+        "comment" : "Motivation MS: Eine Quantity soll ein System, mit dem die Einheit kodiert wird, enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.value[x]:valueQuantity.code",
+        "path" : "Observation.component.value[x].code",
+        "short" : "Code der Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll einen Code der die Einheit kodiert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:SystolicBP.dataAbsentReason",
+        "path" : "Observation.component.dataAbsentReason",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP",
+        "path" : "Observation.component",
+        "sliceName" : "DiastolicBP",
+        "short" : "Diastolischer Blutdruck",
+        "comment" : "Motivation MS: Kodierung des diastolischen Blutdrucks.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.code",
+        "path" : "Observation.component.code",
+        "short" : "Code",
+        "comment" : "Motivation MS: Die Komponente wird anhand des Codes identifiziert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.code.coding",
+        "path" : "Observation.component.code.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "short" : "Coding",
+        "comment" : "Motivation MS: Semantische Kodierung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.code.coding:IEEE11073",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "IEEE11073",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "urn:iso:std:iso:11073:10101",
+          "code" : "150018"
+        }
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.code.coding:SCT",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "SCT",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "271650006"
+        }
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]",
+        "path" : "Observation.component.value[x]",
+        "short" : "Wert der Komponente",
+        "comment" : "Motivation MS: Der Wert der Komponente ist ein Ergebnis der Untersuchung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]:valueQuantity",
+        "path" : "Observation.component.value[x]",
+        "sliceName" : "valueQuantity",
+        "short" : "quantitatives Untersuchungsergebnis",
+        "comment" : "Motivation MS: valueQuantity muss für VitalSigns unterstützt werden",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]:valueQuantity.value",
+        "path" : "Observation.component.value[x].value",
+        "short" : "Wert",
+        "comment" : "Motivation MS: Eine Quantity soll einen Wert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]:valueQuantity.unit",
+        "path" : "Observation.component.value[x].unit",
+        "short" : "Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll eine Einheit enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]:valueQuantity.system",
+        "path" : "Observation.component.value[x].system",
+        "short" : "CodeSystem aus dem die Einheit stammt",
+        "comment" : "Motivation MS: Eine Quantity soll ein System, mit dem die Einheit kodiert wird, enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.value[x]:valueQuantity.code",
+        "path" : "Observation.component.value[x].code",
+        "short" : "Code der Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll einen Code der die Einheit kodiert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:DiastolicBP.dataAbsentReason",
+        "path" : "Observation.component.dataAbsentReason",
+        "short" : "Grund für fehlendes Untersuchungsergebniss",
+        "comment" : "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP",
+        "path" : "Observation.component",
+        "sliceName" : "meanBP",
+        "short" : "Mittlerer arterieller Druck",
+        "comment" : "**Einschränkung der übergreifenden MS-Definition:**  \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des mittleren Blutdrucks, \n  so MUSS dieses System die Information NICHT abbilden.\n\n  Motivation zum eingeschränkten MS: Kodierung des mittleren arteriellen Drucks. Von einem medizinischen Experten im Workshop zur ISiK Kommentierung Stufe 5 wurde erläutert, dass .meanBP relevant in der Normalversorgung und üblich in bekannten Systemen sei (allein Diastole und Systole entspricht nicht mehr medizinischem Stand der Praxis). Allerdings rechtfertigt der Stand der Umsetzung in gängigen Systemen eine Implementierungspflicht (MS) für die Schnittstelle nicht.\n  In der ISiK wird die Angabe des mittleren arteriellen Drucks als eingeschränktes Must Support definiert, um eine einheitliche Implementierung zu fördern.\n  ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.code",
+        "path" : "Observation.component.code",
+        "short" : "Code",
+        "comment" : "Motivation MS: Die Komponente wird anhand des Codes identifiziert.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.code.coding",
+        "path" : "Observation.component.code.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "short" : "Coding",
+        "comment" : "Motivation MS: Semantische Kodierung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.code.coding:IEEE11073",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "IEEE11073",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "urn:iso:std:iso:11073:10101",
+          "code" : "150019"
+        }
+      },
+      {
+        "id" : "Observation.component:meanBP.code.coding:SCT",
+        "path" : "Observation.component.code.coding",
+        "sliceName" : "SCT",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "6797001"
+        }
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]",
+        "path" : "Observation.component.value[x]",
+        "short" : "Wert der Komponente",
+        "comment" : "Motivation MS: Der Wert der Komponente ist ein Ergebnis der Untersuchung",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]:valueQuantity",
+        "path" : "Observation.component.value[x]",
+        "sliceName" : "valueQuantity",
+        "short" : "quantitatives Untersuchungsergebnis",
+        "comment" : "Motivation MS: valueQuantity muss für VitalSigns unterstützt werden",
+        "type" : [
+          {
+            "code" : "Quantity"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]:valueQuantity.value",
+        "path" : "Observation.component.value[x].value",
+        "short" : "Wert",
+        "comment" : "Motivation MS: Eine Quantity soll einen Wert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]:valueQuantity.unit",
+        "path" : "Observation.component.value[x].unit",
+        "short" : "Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll eine Einheit enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]:valueQuantity.system",
+        "path" : "Observation.component.value[x].system",
+        "short" : "CodeSystem aus dem die Einheit stammt",
+        "comment" : "Motivation MS: Eine Quantity soll ein System, mit dem die Einheit kodiert wird, enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.value[x]:valueQuantity.code",
+        "path" : "Observation.component.value[x].code",
+        "short" : "Code der Einheit",
+        "comment" : "Motivation MS: Eine Quantity soll einen Code der die Einheit kodiert enthalten",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.component:meanBP.dataAbsentReason",
+        "path" : "Observation.component.dataAbsentReason",
+        "mustSupport" : true
+      }
+    ]
+  }
+}
+
+```
