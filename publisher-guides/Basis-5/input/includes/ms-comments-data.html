@@ -5,11 +5,11 @@
   )
   select
     targets.Url as ProfileUrl,
-    json_extract(elem.value, '$.id') as Feldname,
-    json_extract(elem.value, '$.short') as Kurzbeschreibung,
-    json_extract(elem.value, '$.comment') as Hinweise
+    json_extract(elem.value, '$.id') as Element,
+    json_extract(elem.value, '$.short') as Short,
+    json_extract(elem.value, '$.comment') as Comment
   from targets,
        json_each(targets.Json, '$.differential.element') as elem
   where coalesce(json_extract(elem.value, '$.mustSupport'), 0) = 1
-  order by ProfileUrl, Feldname
+  order by ProfileUrl, Element
 %}
