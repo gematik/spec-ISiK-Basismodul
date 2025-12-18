@@ -6,9 +6,9 @@ topic: Einfuehrung
 
 
 ----
-Version: 5.1.1-rc
+Version: 5.1.1
 
-Datum: 11.12.2025
+Datum: 17.12.2025
 
 Status: Draft (in Arbeit)
 
