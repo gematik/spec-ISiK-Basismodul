@@ -9,9 +9,7 @@ topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Interaktionen
 **Use Case:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
 Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReference-Ressource gemäß der FHIR-Spezifikation.
 Dabei MÜSSEN ausgewählte Suchparameter von Dokumentenservern verpflichtend unterstützt werden. Die Selektion erfolgt anhand der Relevanz der Parameter für die identifizierten Use Cases.
-
 Der Zugriff auf die von den DocumentReferences verlinkten Dokumente (z.B. im PDF-Format) MUSS per READ-Interaktion auf der [Binary-Ressource gemäß ISIK-Spezifikation](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary) erfolgen.
-
 
 ### Dokumentenbereitstellung (bestätigungsrelevant)
 **Use Case:** Ein (webbasierter/mobiler) Client möchte neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumentenserver übermitteln. Der Server MUSS Dokument und Metadaten entgegennehmen, diese persistieren und anschließend für die Dokumentabfrage und den -zugriff bereitstellen.

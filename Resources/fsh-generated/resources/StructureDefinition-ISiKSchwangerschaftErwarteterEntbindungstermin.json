@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "name": "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "title": "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
   "status": "active",
   "experimental": false,
-  "date": "2025-10-23",
+  "date": "2025-12-17",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -28,7 +28,18 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueDateTime",
+        "path": "Observation.value[x]",
+        "sliceName": "valueDateTime",
         "comment": "Motivation: Eine Observation MUSS immer einen Wert enthalten",
+        "min": 1,
         "type": [
           {
             "code": "dateTime"
