@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-12-17 | *Computable Name*:TestImplementationGuide |
+| Draft as of 2025-12-18 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
 
@@ -113,7 +113,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-17T08:30:11+00:00",
+  "date" : "2025-12-18T13:34:16+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
@@ -534,7 +534,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
       },
       {
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-        "valueCode" : "hl7.fhir.uv.tools.r4#0.8.0"
+        "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
       },
       {
         "extension" : [

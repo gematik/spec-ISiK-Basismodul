@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/SchwangerschaftEtMethodeVS | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:SchwangerschaftEtMethodeVS |
+| Active as of 2025-12-17 | *Computable Name*:SchwangerschaftEtMethodeVS |
 
  **References** 
 
@@ -52,7 +52,7 @@ Version 0.0.1 - STU1
   "title" : "Schwangerschaft Erwarteter Entbindungstermin Methode",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "compose" : {
     "include" : [
       {

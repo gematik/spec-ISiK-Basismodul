@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/CodeSystem/TestKatalog | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:TestKatalog |
+| Active as of 2025-12-17 | *Computable Name*:TestKatalog |
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
@@ -37,7 +37,7 @@ Version 0.0.1 - STU1
   "name" : "TestKatalog",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "contact" : [
     {
       "telecom" : [

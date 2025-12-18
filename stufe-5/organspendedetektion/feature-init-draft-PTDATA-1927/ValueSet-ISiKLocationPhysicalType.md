@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKLocationPhysicalType |
+| Active as of 2025-12-17 | *Computable Name*:ISiKLocationPhysicalType |
 
  **References** 
 
@@ -51,7 +51,7 @@ Version 0.0.1 - STU1
   "name" : "ISiKLocationPhysicalType",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "compose" : {
     "include" : [
       {

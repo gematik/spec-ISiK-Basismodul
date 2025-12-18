@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
+| Active as of 2025-12-17 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
 
 **Usages:**
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschaftE
   "title" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {

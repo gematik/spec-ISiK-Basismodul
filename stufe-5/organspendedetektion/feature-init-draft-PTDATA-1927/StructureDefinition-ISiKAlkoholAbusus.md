@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKAlkoholAbusus |
+| Active as of 2025-12-17 | *Computable Name*:ISiKAlkoholAbusus |
 
 **Usages:**
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAlkoholAbusus.cs
   "title" : "ISiK Alkohol Abusus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {

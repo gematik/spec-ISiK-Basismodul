@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ExtensionISiKCapabilityStatementImportsExpectation |
+| Active as of 2025-12-17 | *Computable Name*:ExtensionISiKCapabilityStatementImportsExpectation |
 
 Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to **not** support a feature.
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-ExtensionISiKCapabil
   "title" : "ISiK CapabilityStatement Imports Expectation",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "description" : "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
   "fhirVersion" : "4.0.1",
   "mapping" : [

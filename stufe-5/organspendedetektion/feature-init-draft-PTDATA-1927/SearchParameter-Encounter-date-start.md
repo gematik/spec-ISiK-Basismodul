@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:DateStart |
+| Active as of 2025-12-17 | *Computable Name*:DateStart |
 
  
 The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values. 
@@ -31,7 +31,7 @@ The actual start date of the Encounter (Backport from R5). The parameter cannot 
   "name" : "DateStart",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "contact" : [
     {
       "telecom" : [

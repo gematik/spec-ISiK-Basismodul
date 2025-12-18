@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKCapabilityISiKCapabilityStatementTerminologieRolle |
+| Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityISiKCapabilityStatementTerminologieRolle |
 
  
 Dieses CapabilityStatement beschreibt alle Interaktionen, die ein System unterstützen MUSS, welches diese Rolle implementiert. 
@@ -36,7 +36,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementTerminologieRolle". D
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "contact" : [
     {
       "telecom" : [

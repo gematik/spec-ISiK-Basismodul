@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKCapabilityStatementCompositionKonsumentenRolle |
+| Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementCompositionKonsumentenRolle |
 
  
 Dieses CapabilityStatement beschreibt alle Interaktionen, die ein System unterstützen MUSS, welches diese Rolle implementiert. 
@@ -36,7 +36,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementCompositionKonsumente
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "contact" : [
     {
       "telecom" : [

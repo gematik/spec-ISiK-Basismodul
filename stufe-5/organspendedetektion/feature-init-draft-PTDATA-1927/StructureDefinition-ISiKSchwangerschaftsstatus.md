@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKSchwangerschaftsstatus |
+| Active as of 2025-12-17 | *Computable Name*:ISiKSchwangerschaftsstatus |
 
  
 Schwangerschaftsstatus einer Patientin 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschafts
   "title" : "ISiK Schwangerschaftsstatus",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "description" : "Schwangerschaftsstatus einer Patientin",
   "fhirVersion" : "4.0.1",
   "mapping" : [

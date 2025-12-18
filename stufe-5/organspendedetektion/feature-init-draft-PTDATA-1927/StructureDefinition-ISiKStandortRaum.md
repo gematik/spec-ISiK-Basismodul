@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum | *Version*:0.0.1 |
-| Active as of 2025-12-11 | *Computable Name*:ISiKStandortRaum |
+| Active as of 2025-12-17 | *Computable Name*:ISiKStandortRaum |
 
  
 Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStandortRaum.csv
   "name" : "ISiKStandortRaum",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-11",
+  "date" : "2025-12-17",
   "description" : "Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
