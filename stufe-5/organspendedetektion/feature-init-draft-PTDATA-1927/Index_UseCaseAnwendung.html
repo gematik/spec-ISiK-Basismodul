@@ -262,44 +262,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a>    <ul>
-      <li><a href="#use-cases---übergang-zwischen-akut--und-normalversorgung" id="markdown-toc-use-cases---übergang-zwischen-akut--und-normalversorgung">Use Cases - Übergang zwischen Akut- und Normalversorgung</a>        <ul>
-          <li><a href="#werte-pdms" id="markdown-toc-werte-pdms">Werte PDMS</a></li>
-          <li><a href="#laborwerte" id="markdown-toc-laborwerte">Laborwerte</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
 
-<h1 id="use-cases">Use Cases</h1>
+<h1 id="use-cases-und-anwendungsszenarien">Use Cases und Anwendungsszenarien</h1>
 
-<h2 id="use-cases---übergang-zwischen-akut--und-normalversorgung">Use Cases - Übergang zwischen Akut- und Normalversorgung</h2>
+<h2 id="use-cases---organspendeerkennung">Use Cases - Organspendeerkennung</h2>
 
-<p>Identifikation von Patienten, die für ein Organspende in Frage kommen.</p>
+<p>Die Organspendeerkennung beinhaltet die Identifikation von Patienten, die für eine Organspende in Frage kommen. Zur Erhöhung der Identifikationsrate kann Software, die über Schnittstellenzugänge zu relevanten Vitalparametern aus einer Datenquelle (hier: PDMS) erhält, eine organisatorische Unterstützung für die Transplantationsbeauftragten bereitstellen.</p>
 
-<p>… “organisatorische Unterstützung für transplantationsbeauftragte Ärztinnen und Ärzte” entwickelt</p>
+<p>Konkret kann der folgende Use Case beschrieben werden:</p>
+
+<p>Ein Software-Client ruft über eine standardisierte Schnittstelle die im PDMS dokumentierten klinischen Daten (z.B. Vitalparameter, Laborwerte) von Patienten auf Intensivstationen ab. Diese Daten werden kontinuierlich und automatisiert anhand definierter Kriterien gefiltert, die als Indikatoren für eine potenzielle Organspende dienen. Sobald ein Fall anhand dieser Parameter als relevant identifiziert wird, initiiert das System eine Benachrichtigung an die zuständigen Transplantationsbeauftragten. Durch diesen schnittstellenbasierten Zugriff auf Echtzeitdaten wird sichergestellt, dass potenzielle Spender frühzeitig erkannt werden und eine dezidierte Einschätzung hinsichtlich eines irreversiblen Hirnfunktionsausfalls sowie der Möglichkeit einer Organspende zeitgerecht erfolgen kann.</p>
 
 <h3 id="werte-pdms">Werte PDMS</h3>
 
-<p>Datenquellen für die hier betrachteten Fälle</p>
+<p>Datenquelle für die hier betrachteten Fälle ist ausschließlich ein PDMS.</p>
 
-<p>Einige Use Stories, die diesen Kontext illustrieren sind folgende:</p>
+<p>Einige User Stories, die diesen Kontext illustrieren, sind folgende:</p>
 
-<p><strong>UC-VIT-ORGDET-001</strong>: tbd.</p>
+<p><strong>UC-ORGANSPENDEERKENNUNG-001</strong>: 
+Als transplantationsbeauftragte Ärztin möchte ich durch ein Tool, welches relevante Parameter aus dem PDMS zyklisch  (alle 4 bis 12 Stunden) abfragt und auf kritische Werte prüft, frühzeitig auf potenzielle Organspender hingewiesen werden, um rechtzeitig die notwendigen Schritte für eine Organspende einleiten zu können.</p>
 
-<p>Hintergrund: fachlich wäre hier auch eine Blutdruckabfrage relevant - auch diese soll auf entsprechende Weise abgefragt werden können.</p>
-
-<h3 id="laborwerte">Laborwerte</h3>
-<p>Einige Werte, die für den geschilderten Kontext relevant sind, stammen aus einem Labor Informations System (LIS). Hierzu illustrierend:</p>
-
-<p><strong>UC-VIT-ORGDET-LAB-001</strong>: tbd.</p>
+<p><strong>UC-ORGANSPENDEERKENNUNG-002</strong>:
+Als Arzt in der Intensivmedizin möchte ich, dass eine dedizierte Anwendung die relevanten Vitalparameter und Laborwerte aus dem PDMS meiner Patienten kontinuierlich überwacht und mich benachrichtigt, wenn ein Patient Anzeichen für einen irreversiblen Hirnfunktionsausfall zeigt, um die Organspendeerkennung zu unterstützen.</p>
 
 
 
@@ -320,7 +307,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 14:24+0000">2025-12-18</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 14:41+0000">2025-12-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
