@@ -2,31 +2,27 @@
 topic: ImplementationGuide-markdown-UseCasesAnwendung
 ---
 
-# Use Cases
+# Use Cases und Anwendungsszenarien
 
-## Use Cases - Übergang zwischen Akut- und Normalversorgung
+## Use Cases - Organspendeerkennung
 
-Identifikation von Patienten, die für ein Organspende in Frage kommen.
+Die Organspendeerkennung beinhaltet die Identifikation von Patienten, die für eine Organspende in Frage kommen. Zur Erhöhung der Identifikationsrate kann Software, die über Schnittstellenzugänge zu relevanten Vitalparametern aus einer Datenquelle (hier: PDMS) erhält, eine organisatorische Unterstützung für die Transplantationsbeauftragten bereitstellen.
 
-... "organisatorische Unterstützung für transplantationsbeauftragte Ärztinnen und Ärzte" entwickelt
+Konkret kann der folgende Use Case beschrieben werden:
+
+Ein Software-Client ruft über eine standardisierte Schnittstelle die im PDMS dokumentierten klinischen Daten (z.B. Vitalparameter, Laborwerte) von Patienten auf Intensivstationen ab. Diese Daten werden kontinuierlich und automatisiert anhand definierter Kriterien gefiltert, die als Indikatoren für eine potenzielle Organspende dienen. Sobald ein Fall anhand dieser Parameter als relevant identifiziert wird, initiiert das System eine Benachrichtigung an die zuständigen Transplantationsbeauftragten. Durch diesen schnittstellenbasierten Zugriff auf Echtzeitdaten wird sichergestellt, dass potenzielle Spender frühzeitig erkannt werden und eine dezidierte Einschätzung hinsichtlich eines irreversiblen Hirnfunktionsausfalls sowie der Möglichkeit einer Organspende zeitgerecht erfolgen kann.
 
 ### Werte PDMS
 
-Datenquellen für die hier betrachteten Fälle 
+Datenquelle für die hier betrachteten Fälle ist ausschließlich ein PDMS.
 
-Einige Use Stories, die diesen Kontext illustrieren sind folgende:
+Einige User Stories, die diesen Kontext illustrieren, sind folgende:
 
-**UC-VIT-ORGDET-001**: tbd.
+**UC-ORGANSPENDEERKENNUNG-001**: 
+Als transplantationsbeauftragte Ärztin möchte ich durch ein Tool, welches relevante Parameter aus dem PDMS zyklisch  (alle 4 bis 12 Stunden) abfragt und auf kritische Werte prüft, frühzeitig auf potenzielle Organspender hingewiesen werden, um rechtzeitig die notwendigen Schritte für eine Organspende einleiten zu können.
 
-Hintergrund: fachlich wäre hier auch eine Blutdruckabfrage relevant - auch diese soll auf entsprechende Weise abgefragt werden können.
-
-
-
-
-### Laborwerte
-Einige Werte, die für den geschilderten Kontext relevant sind, stammen aus einem Labor Informations System (LIS). Hierzu illustrierend:
-
-**UC-VIT-ORGDET-LAB-001**: tbd.
+**UC-ORGANSPENDEERKENNUNG-002**:
+Als Arzt in der Intensivmedizin möchte ich, dass eine dedizierte Anwendung die relevanten Vitalparameter und Laborwerte aus dem PDMS meiner Patienten kontinuierlich überwacht und mich benachrichtigt, wenn ein Patient Anzeichen für einen irreversiblen Hirnfunktionsausfall zeigt, um die Organspendeerkennung zu unterstützen.
 
 
 

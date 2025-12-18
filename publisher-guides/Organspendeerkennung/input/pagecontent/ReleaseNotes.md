@@ -13,3 +13,7 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 ## Version 0.0.1-rc
 
 Datum: tbd.
+
+* Initiale Version des Implementierungsleitfadens zur Organspendeerkennung im Rahmen von ISiK
+
+
