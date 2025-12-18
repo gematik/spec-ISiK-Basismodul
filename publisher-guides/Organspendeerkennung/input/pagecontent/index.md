@@ -12,51 +12,48 @@ Status: DRAFT
 
 Realm: Deutschland
 
-
-
-
-
 ----
 
-# Motivation Workflow Organspendeerkennung (?- TODO Wording zu Prüfen)
+# Organspendeerkennung
 
-... TODO
+Die Organspendeerkennung, die mit der Feststellung eines Irreversiblen Hirnfunktionsausfalls (IHA) eng zusammenhängt, ist ein kritischer Prozess in der Intensivmedizin, der darauf abzielt, potenzielle Organspender frühzeitig zu identifizieren und die notwendigen Schritte für eine erfolgreiche Organtransplantation einzuleiten.
+
+## Motivation und Hintergrund
+Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen. Ziel ist es, die Integration von Anwendungen zu ermöglichen, die eine informationstechnische Unterstützung der Organspendeerkennung ermöglichen.
+
+Dabei geht es insbesondere um organisatorisch unterstützendes Tool, das die klinischen DAten von intensivmedizinisch behandelten Patienten nach relevanten Parametern  durchsucht, welche auf einen möglicherweise bevorstehenden IHA hinweisen und die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten stellt.
+
+Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. Studien zeigen, dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird. (#TODO prüfen und Studie referenzieren)
+
+Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.
+
+##  Stakeholder
+Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
+
+Es handelt sich um eine technische Spezifikation, die keinerlei Vorgaben zur klinischen Umsetzung des Workflows macht.
 
 Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
 
+Eine medizinische Validierung der Profile erfolgte durch die gematik nicht. 
 
-## Motivation und Hintergrund
-Dieser Implementierungsleitfaden beschreibt eine Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.
-
-TODO
-
-###  Stakeholder
-Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
-
-Es handelt sich um eine technische Spezifikation. 
-
-Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+Allerdings sind bestimmte Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
 
 Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
 
-TODO - ggf. übernehmen Abschnitt zur Prüfung aus ICU
-
-Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
-
-Kommunikations-Workflows, die auf dieser Schnittstellen-Festlegung aufbauen, können lediglich der Unterstützung von Versorgung und Qualitätssicherungsmaßnahmen in der ... TODO .
-
-###  User
+##  User
 Primär zu berücksichtigende User sind:
 * transplantationsbeauftragte Ärztinnen und Ärzte
 
-###  Einordnung in die ISiK Landschaft
-Als übergreifender Use Case (bzw. Workflow) ist die Organspendeerkennung nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+##  Einordnung in die ISiK Landschaft
+Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparameter verankert. 
 
-- TODO prüfen (ggf. an ICU orientieren)
+Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
+
+* **ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen** - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung)
  
-###  Out-of-Scope
-Aufgrund technischer Beschränkungen und Aufwände gibt es Aspekte, die aktuell außen vor bleiben müssen:
-- TODO prüfen (ggf. an ICU orientieren)
+##  Out-of-Scope
+Es werden keine Vorgaben zur konkreten technischen Umsetzung des Workflows gemacht, sondern lediglich die notwendigen Schnittstellen (inklusive Profile) spezifiziert.
 
 
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
