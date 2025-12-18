@@ -1,6 +1,6 @@
-# TestValueSet - Test Implementation Guide v0.0.1
+# TestValueSet - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 
@@ -58,7 +58,7 @@ No formal definition provided for this value set
   "version" : "0.0.1",
   "name" : "TestValueSet",
   "status" : "active",
-  "date" : "2025-12-18T13:34:16+00:00",
+  "date" : "2025-12-18T13:56:20+00:00",
   "useContext" : [
     {
       "code" : {

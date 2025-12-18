@@ -1,6 +1,6 @@
-# Einführung - Test Implementation Guide v0.0.1
+# Einführung - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 
@@ -111,10 +111,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "url" : "http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig",
   "version" : "0.0.1",
   "name" : "TestImplementationGuide",
-  "title" : "Test Implementation Guide",
+  "title" : "Organspendeerkennung",
   "status" : "draft",
-  "date" : "2025-12-18T13:34:16+00:00",
-  "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
+  "date" : "2025-12-18T13:56:20+00:00",
+  "description" : "Dieser Implementierungsleitfaden schlägt eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus vor.",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],

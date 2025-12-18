@@ -1,6 +1,6 @@
-# CapabilityStatement für Rolle "AufbaustrukturRolle" - Test Implementation Guide v0.0.1
+# CapabilityStatement für Rolle "AufbaustrukturRolle" - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 

@@ -1,6 +1,6 @@
-# CapabilityStatement für Rolle "ISiKCapabilityStatementCompositionKonsumentenRolle" - Test Implementation Guide v0.0.1
+# CapabilityStatement für Rolle "ISiKCapabilityStatementCompositionKonsumentenRolle" - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 

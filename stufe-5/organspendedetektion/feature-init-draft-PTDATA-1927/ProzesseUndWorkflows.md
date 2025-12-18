@@ -1,6 +1,6 @@
-# Prozesse und Workflows - Test Implementation Guide v0.0.1
+# Prozesse und Workflows - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 
@@ -11,5 +11,13 @@ Version 0.0.1 - STU1
 
 # Prozesse
 
-* TODO prüfen (ggf. an ICU orientieren)
+## Ein Prozess zur Organspendeerkennung
+
+#TODO: Diagramm ergänzen
+
+## Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung
+
+Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organspendeerkennung dar:
+
+Das Diagramm zeigt die Interaktionen zwischen den verschiedenen Akteuren und Systemen, die an der Abfrage der Parameter für die Organspendeerkennung beteiligt sind. Es verdeutlicht die Schritte, die unternommen werden, um die relevanten Daten zu sammeln und auszuwerten.
 

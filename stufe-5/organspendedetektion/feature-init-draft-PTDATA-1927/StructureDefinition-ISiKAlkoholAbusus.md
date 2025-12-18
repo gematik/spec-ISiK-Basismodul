@@ -1,6 +1,6 @@
-# ISiK Alkohol Abusus - Test Implementation Guide v0.0.1
+# ISiK Alkohol Abusus - Organspendeerkennung v0.0.1
 
-Test Implementation Guide
+Organspendeerkennung
 
 Version 0.0.1 - STU1
 
