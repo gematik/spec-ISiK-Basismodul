@@ -36,7 +36,7 @@ Die Organspendeerkennung, die mit der Feststellung eines Irreversiblen Hirnfunkt
 
 Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen. Ziel ist es, die Integration von Anwendungen zu ermöglichen, die eine informationstechnische Unterstützung der Organspendeerkennung ermöglichen.
 
-Dabei geht es insbesondere um organisatorisch unterstützendes Tool, das die klinischen DAten von intensivmedizinisch behandelten Patienten nach relevanten Parametern durchsucht, welche auf einen möglicherweise bevorstehenden IHA hinweisen und die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten stellt.
+Bei der unterstützenden Software geht es insbesondere um organisatorisch unterstützende Tools, welche die klinischen Daten von intensivmedizinisch behandelten Patienten nach relevanten Parametern durchsuchen. Relevant sind dabei Parameter, welche auf einen möglicherweise bevorstehenden IHA hinweisen. Die Software analysiert diese Parameter und stellt die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten.
 
 Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. So zeigt eine [Studie](https://link.springer.com/article/10.1007/s00101-018-0510-x), dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird. Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.
 
@@ -111,7 +111,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Organspendeerkennung",
   "status" : "draft",
-  "date" : "2025-12-18T15:13:32+00:00",
+  "date" : "2025-12-18T15:21:25+00:00",
   "description" : "Dieser Implementierungsleitfaden schlägt eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus vor.",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
