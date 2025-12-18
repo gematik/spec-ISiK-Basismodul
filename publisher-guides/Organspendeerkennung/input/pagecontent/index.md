@@ -23,8 +23,7 @@ Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfra
 
 Dabei geht es insbesondere um organisatorisch unterstützendes Tool, das die klinischen DAten von intensivmedizinisch behandelten Patienten nach relevanten Parametern  durchsucht, welche auf einen möglicherweise bevorstehenden IHA hinweisen und die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten stellt.
 
-Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. Studien zeigen, dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird. (#TODO prüfen und Studie referenzieren)
-
+Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. So zeigt eine [Studie](https://link.springer.com/article/10.1007/s00101-018-0510-x), dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird.
 Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.
 
 ##  Stakeholder
