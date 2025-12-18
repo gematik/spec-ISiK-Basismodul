@@ -301,23 +301,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#motivation-workflow-organspendeerkennung---todo-wording-zu-prüfen" id="markdown-toc-motivation-workflow-organspendeerkennung---todo-wording-zu-prüfen">Motivation Workflow Organspendeerkennung (?- TODO Wording zu Prüfen)</a>    <ul>
-      <li><a href="#motivation-und-hintergrund" id="markdown-toc-motivation-und-hintergrund">Motivation und Hintergrund</a>        <ul>
-          <li><a href="#stakeholder" id="markdown-toc-stakeholder">Stakeholder</a></li>
-          <li><a href="#user" id="markdown-toc-user">User</a></li>
-          <li><a href="#einordnung-in-die-isik-landschaft" id="markdown-toc-einordnung-in-die-isik-landschaft">Einordnung in die ISiK Landschaft</a></li>
-          <li><a href="#out-of-scope" id="markdown-toc-out-of-scope">Out-of-Scope</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik" id="markdown-toc-interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</a></li>
-</ul>
-
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
 
 <p><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/></p>
@@ -333,50 +318,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr/>
 
-<h1 id="motivation-workflow-organspendeerkennung---todo-wording-zu-prüfen">Motivation Workflow Organspendeerkennung (?- TODO Wording zu Prüfen)</h1>
+<h1 id="organspendeerkennung">Organspendeerkennung</h1>
 
-<p>… TODO</p>
+<p>Die Organspendeerkennung, die mit der Feststellung eines Irreversiblen Hirnfunktionsausfalls (IHA) eng zusammenhängt, ist ein kritischer Prozess in der Intensivmedizin, der darauf abzielt, potenzielle Organspender frühzeitig zu identifizieren und die notwendigen Schritte für eine erfolgreiche Organtransplantation einzuleiten.</p>
+
+<h2 id="motivation-und-hintergrund">Motivation und Hintergrund</h2>
+<p>Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen. Ziel ist es, die Integration von Anwendungen zu ermöglichen, die eine informationstechnische Unterstützung der Organspendeerkennung ermöglichen.</p>
+
+<p>Dabei geht es insbesondere um organisatorisch unterstützendes Tool, das die klinischen DAten von intensivmedizinisch behandelten Patienten nach relevanten Parametern  durchsucht, welche auf einen möglicherweise bevorstehenden IHA hinweisen und die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten stellt.</p>
+
+<p>Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. Studien zeigen, dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird. (#TODO prüfen und Studie referenzieren)</p>
+
+<p>Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.</p>
+
+<h2 id="stakeholder">Stakeholder</h2>
+<p>Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.</p>
+
+<p>Es handelt sich um eine technische Spezifikation, die keinerlei Vorgaben zur klinischen Umsetzung des Workflows macht.</p>
 
 <p>Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html">Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)</a> entstanden.</p>
 
-<h2 id="motivation-und-hintergrund">Motivation und Hintergrund</h2>
-<p>Dieser Implementierungsleitfaden beschreibt eine Workflow, bei dem Daten zum geschilderten Use Case durch ein PDMS bereitgestellt werden.</p>
+<p>Eine medizinische Validierung der Profile erfolgte durch die gematik nicht.</p>
 
-<p>TODO</p>
-
-<h3 id="stakeholder">Stakeholder</h3>
-<p>Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.</p>
-
-<p>Es handelt sich um eine technische Spezifikation.</p>
-
-<p>Allerdings sind Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der <a href="https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current">Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)</a>, einer medizinischen Validierung unterzogen worden.</p>
+<p>Allerdings sind bestimmte Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der <a href="https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current">Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)</a>, einer medizinischen Validierung unterzogen worden. 
+Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.</p>
 
 <p>Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK.</p>
 
-<p>TODO - ggf. übernehmen Abschnitt zur Prüfung aus ICU</p>
-
-<p>Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.</p>
-
-<p>Kommunikations-Workflows, die auf dieser Schnittstellen-Festlegung aufbauen, können lediglich der Unterstützung von Versorgung und Qualitätssicherungsmaßnahmen in der … TODO .</p>
-
-<h3 id="user">User</h3>
+<h2 id="user">User</h2>
 <p>Primär zu berücksichtigende User sind:</p>
 <ul>
   <li>transplantationsbeauftragte Ärztinnen und Ärzte</li>
 </ul>
 
-<h3 id="einordnung-in-die-isik-landschaft">Einordnung in die ISiK Landschaft</h3>
-<p>Als übergreifender Use Case (bzw. Workflow) ist die Organspendeerkennung nicht allein im Modul Vitalparameter verankert. Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:</p>
+<h2 id="einordnung-in-die-isik-landschaft">Einordnung in die ISiK Landschaft</h2>
+<p>Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparameter verankert.</p>
+
+<p>Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:</p>
 
 <ul>
-  <li>TODO prüfen (ggf. an ICU orientieren)</li>
+  <li><strong>ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen</strong> - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung">ISiK Basismodul</a></li>
 </ul>
 
-<h3 id="out-of-scope">Out-of-Scope</h3>
-<p>Aufgrund technischer Beschränkungen und Aufwände gibt es Aspekte, die aktuell außen vor bleiben müssen:</p>
-<ul>
-  <li>TODO prüfen (ggf. an ICU orientieren)</li>
-</ul>
+<h2 id="out-of-scope">Out-of-Scope</h2>
+<p>Es werden keine Vorgaben zur konkreten technischen Umsetzung des Workflows gemacht, sondern lediglich die notwendigen Schnittstellen (inklusive Profile) spezifiziert.</p>
 
 <h1 id="interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</h1>
 
@@ -426,7 +411,7 @@ weiteren Geschlechter, neben männlich und weiblich, ab.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 13:56+0000">2025-12-18</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 14:24+0000">2025-12-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
