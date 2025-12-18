@@ -230,10 +230,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische Darstellung - eine technische Detaillierung mit normativer Geltung wird im CapabilityStatement getroffen).</p>
 
+<h2 id="akteur---rolle-minimal-organspende">Akteur - Rolle Minimal Organspende</h2>
+
+<p>Profile: MUSS Profile aus dem Modul Organspende
+Interaction: READ, SEARCH</p>
+
+<h2 id="akteur---rolle-organspende-extended">Akteur - Rolle Organspende extended</h2>
+
+<p>Profile: MUSS und KANN Profile aus dem Modul Organspende
+Interaction: READ, SEARCH</p>
+
+<h2 id="akteur---vitalsign-icu-source-extended">Akteur - VitalSign ICU Source Extended</h2>
+
+<p>Profile: Profile aus dem Modul Vitalparameter (MI-I) - beinhaltet neben zahlreichen weiteren Profilen auch Profile aus dem Modul Organspende
+Interaction: READ, SEARCH</p>
+
+<p>Zur genauen Beschreibung und Liste der Interaktionen siehe <a href="https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?#ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur">hier</a>.</p>
+
+<h2 id="erklärung-zu-weiteren-capability-statements">Erklärung zu weiteren Capability Statements</h2>
+
+<p>Die Akteure aggregieren in diesem Kontext weitere Rollen (als Funktionsbausteine), die als solche statische Mengen von Interaktionen festlegen.
+Um eine Minimalliste der zu implementierenden Profile einzusehen, sind die importierten Rollen (imports) in den jeweiligen Akteuren zu betrachten und die darin enthaltenen Interaktionen auf spezifische Profile. Die aggregierten Profil- und Interaktions-Anforderungen aus den Rollen, die ein Akteur aggregiert (imports) entsprechen einer Minimalliste der zu implementierenden Profile (wobei im Falle des vorliegenden Workflows einige spezialisierte Profile entfallen können, wenn die notwendigen Daten für ein bestätigungsrelevantes System nicht bereitstehen.)</p>
+
+<h1 id="festlegung-zur-implementierung-der-akteure">Festlegung zur Implementierung der Akteure</h1>
+<p>Eine Festlegung zur Implementierung erfolgt im Rahmen der Definition der bestätigungsrelevanten Systeme.</p>
+
+  <!-- ANF-ICU-002 -->
+<p>Vitalparameter-Server entsprechend der Definition zu den <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme">bestätigungsrelevanten Systeme</a> MÜSSEN folgenden Akteur implementieren:</p>
 <ul>
-  <li>TODO prüfen (ggf. an ICU orientieren)</li>
+  <li><a href="https://simplifier.net/isik-stufe-5/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur/~json">Akteur - VitalSign ICU Source Extended</a></li>
 </ul>
 
+<p>Primär hervorzuheben sind entsprechend der Definition der DKG dabei.</p>
+
+<ul>
+  <li>KIS mit Funktion elektronische Kurve bzw. entsprechendes KIS-Modul</li>
+  <li>Patientendaten-Managementsystem (PDMS) [z.B. für Intensivbereiche]</li>
+  <li>Elektronische Kurve [z.B. für die Verwendung auf Normal-Stationen]</li>
+</ul>
 
 
 
@@ -253,7 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 15:02+0000">2025-12-18</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Dec 18, 2025 15:16+0000">2025-12-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
