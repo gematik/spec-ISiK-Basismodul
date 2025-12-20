@@ -30,6 +30,7 @@ Datum: 17.12.2025
 * `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917
 * `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten der Terminvereinbarung unerlässlich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
 * `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können https://github.com/gematik/spec-ISiK-Basismodul/pull/904
+* `fix` Anpassung der package.json um nicht notwendige Dependency "dvmd.kdl.r4" zu entfernen https://github.com/gematik/spec-ISiK-Basismodul/pull/925
 * `documentation` Korrektur des Satzes zur Verwendung von ISiKBinary https://github.com/gematik/spec-ISiK-Basismodul/pull/930
 * `documentation` Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt
 * `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/945
