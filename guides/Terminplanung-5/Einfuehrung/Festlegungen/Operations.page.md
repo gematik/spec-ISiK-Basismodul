@@ -93,8 +93,8 @@ Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das 
     {
       "coding": [
         {
-          "code": "010",
-          "system": "http://ihe-d.de/CodeSystems/ProzessrollenFuerAutoren"
+          "code": "ALLG",
+          "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"
         }
       ]
     }
@@ -165,8 +165,8 @@ Antwort des Termin-Repository:
     {
       "coding": [
         {
-          "code": "010",
-          "system": "http://ihe-d.de/CodeSystems/ProzessrollenFuerAutoren"
+          "code": "ALLG",
+          "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"
         }
       ]
     }
