@@ -25,10 +25,6 @@ Version 0.0.1 - STU1
 
 ### Expansion
 
-Expansion from tx.fhir.org based on Loinc v2.81
-
-This value set contains 3 concepts
-
 -------
 
  Explanation of the columns that may appear on this page: 

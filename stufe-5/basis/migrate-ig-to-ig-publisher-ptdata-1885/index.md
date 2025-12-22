@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-basis-ig/ImplementationGuide/basis.test.ig | *Version*:0.0.1 |
-| Draft as of 2025-12-01 | *Computable Name*:TestImplementationGuide |
+| Draft as of 2025-12-22 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
 
@@ -71,7 +71,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Test Implementation Guide",
   "status" : "draft",
-  "date" : "2025-12-01T08:27:40+00:00",
+  "date" : "2025-12-22T09:32:22+00:00",
   "description" : "A test implementation guide for validating the local FHIR IG Publisher environment",
   "packageId" : "basis.test.ig",
   "license" : "CC0-1.0",
@@ -87,7 +87,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
       ],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r4",
-      "version" : "7.0.0"
+      "version" : "7.0.1"
     },
     {
       "id" : "hl7ext",
@@ -492,7 +492,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
       },
       {
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-        "valueCode" : "hl7.fhir.uv.tools.r4#0.8.0"
+        "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
       },
       {
         "extension" : [
@@ -1939,6 +1939,19 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
         },
         "name" : "ISiKStillstatus",
         "description" : "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:extension"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/ISiKTerminPriorityExtension"
+        },
+        "name" : "ISiKTerminPriorityExtension",
+        "description" : "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."
       },
       {
         "extension" : [

@@ -22,25 +22,6 @@ Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seite
  
 CapabilityStatement für die Rolle "ISiKCapabilityStatementCompositionKonsumentenRolle". Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKBerichtBundles. 
 
-## CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;
-
-* Implementation Guide Version: 0.0.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `application/fhir+xml`, `application/fhir+json`
-* Published on: 2025-10-23 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-### SHALL Support the Following Implementation Guides
-
-* https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul
-
-## FHIR Document Capabilities
-
-| | | |
-| :--- | :--- | :--- |
-| consumer | [ISiKBerichtBundle](StructureDefinition-ISiKBerichtBundle.md) | Endpunkt zur Entgegennahme von Subsystem-Berichten in Form eines ISiKBerichtBundles. Weitere Hinweise siehe {{pagelink:BerichtSubsystem}} |
-
 
 
 ## Resource Content

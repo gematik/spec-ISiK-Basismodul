@@ -45,10 +45,6 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
  [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
 
- 
-
-Other representations of profile: [CSV](StructureDefinition-ISiKKontaktGesundheitseinrichtung.csv), [Excel](StructureDefinition-ISiKKontaktGesundheitseinrichtung.xlsx), [Schematron](StructureDefinition-ISiKKontaktGesundheitseinrichtung.sch) 
-
 
 
 ## Resource Content

@@ -27,25 +27,6 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
  
 CapabilityStatement für den Akteur "ISiKCapabilityStatementBasisServerAkteur". Dieser Akteur aggregiert die Rollen zur Abfrage von Stammdaten, Erweiterte Stammdaten, Aufbau-Struktur, Terminologie, klinischen Daten, Abrechnungsinformationen und Gesundheitsstatus. 
 
-## Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;
-
-* Implementation Guide Version: 0.0.1 
-* FHIR Version: 4.0.1 
-* Supported Formats: `application/fhir+xml`, `application/fhir+json`
-* Published on: 2025-10-23 
-
-> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
-
-This CapabilityStatement imports these CapabilityStatements [CapabilityStatement für Rolle &quot;StammdatenRolle&quot;](CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;](CapabilityStatement-ISiKCapabilityStatementErweiterteStammdatenRolle.md), [CapabilityStatement für Rolle &quot;AufbaustrukturRolle&quot;](CapabilityStatement-ISiKCapabilityStatementAufbaustrukturRolle.md), [CapabilityStatement für Rolle &quot;LeistungserbringerRolle&quot;](CapabilityStatement-ISiKCapabilityStatementLeistungserbringerRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;](CapabilityStatement-ISiKCapabilityStatementKlinischeRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;](CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;](CapabilityStatement-ISiKCapabilityStatementVersicherungsverhaeltnisRolle.md), [CapabilityStatement für Rolle &quot;ISiKCapabilityStatementCompositionKonsumentenRolle&quot;](CapabilityStatement-ISiKCapabilityStatementCompositionKonsumentenRolle.md)
-
-### SHALL Support the Following Implementation Guides
-
-* https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul
-
-## FHIR RESTful Capabilities
-
-### Mode: server
-
 
 
 ## Resource Content

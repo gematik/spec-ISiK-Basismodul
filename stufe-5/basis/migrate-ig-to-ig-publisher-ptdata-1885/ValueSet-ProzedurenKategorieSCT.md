@@ -28,10 +28,6 @@ Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel
 
 ### Expansion
 
-Expansion from tx.fhir.org based on SNOMED CT International edition 01-Feb 2025
-
-This value set contains 6 concepts
-
 -------
 
  Explanation of the columns that may appear on this page: 

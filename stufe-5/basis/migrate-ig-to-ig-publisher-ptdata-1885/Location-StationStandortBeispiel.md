@@ -14,7 +14,7 @@ Profile: [ISiKStandort](StructureDefinition-ISiKStandort.md)
 
 **identifier**: `http://fhir.de/sid/dkgev/standortnummer`/123456
 
-**operationalStatus**: [bedStatus: O](http://terminology.hl7.org/5.0.0/CodeSystem-v2-0116.html#v2-0116-O) (Occupied)
+**operationalStatus**: [bedStatus: O](http://terminology.hl7.org/7.0.1/CodeSystem-v2-0116.html#v2-0116-O) (Occupied)
 
 **name**: Station A
 

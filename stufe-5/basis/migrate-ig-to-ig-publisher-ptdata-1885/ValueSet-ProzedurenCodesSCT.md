@@ -24,15 +24,9 @@ Enthaelt alle SNOMED Procedure Codes
 
 ### Logical Definition (CLD)
 
-* Include codes from[`http://snomed.info/sct`](http://www.snomed.org/)version Not Stated (use latest from terminology server) where concept descends from 71388002 (Procedure)
-
  
 
 ### Expansion
-
-Expansion from tx.fhir.org based on SNOMED CT International edition 01-Feb 2025
-
-This value set has >1000 codes in it. In order to keep the publication size manageable, only a selection (1000 codes) of the whole set of codes is shown
 
 -------
 

@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips | *Version*:0.0.1 |
-| Active as of 2025-12-01 | *Computable Name*:CurrentSmokingStatusUvIps |
+| Active as of 2025-12-22 | *Computable Name*:CurrentSmokingStatusUvIps |
 | *Other Identifiers:*http://art-decor.org/ns/oids/vs#2.16.840.1.113883.11.22.59 (use: official, ) | |
 | **Copyright/Legal**: This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc | |
 
@@ -29,10 +29,6 @@ HL7 LOINC value set for smoking status. Based on the HL7 Vocab and Structured Do
  
 
 ### Expansion
-
-Expansion from tx.fhir.org based on Loinc v2.81
-
-This value set contains 8 concepts
 
 -------
 
@@ -71,7 +67,7 @@ This value set contains 8 concepts
   "title" : "Current Smoking Status - IPS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-01T08:27:40+00:00",
+  "date" : "2025-12-22T09:32:22+00:00",
   "contact" : [
     {
       "telecom" : [

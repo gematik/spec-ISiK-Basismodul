@@ -10,70 +10,6 @@ Version 0.0.1 - STU1
 
 ## Bundle: Blutdruckmessung vom 3.5.2022 (Bundle)
 
-**Document Details**
-
-Profile: [ISiKBerichtBundle](StructureDefinition-ISiKBerichtBundle.md)
-
-Final Document at 2022-05-03 by Gerät XY, Fa. Z, Modell T for [Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)](Bundle-ISiKBundle-Example.md#urn-uuid-3bada18a-6fd2-11ed-a1eb-0242ac112345) in encounter [Encounter: identifier = Visit number; status = unknown; class = inpatient encounter (ActCode#IMP); type = Operation,Abteilungskontakt; serviceType = Innere Medizin; period = 2022-05-03 --> 2022-05-05](Bundle-ISiKBundle-Example.md#urn-uuid-74b46c1a-6fc9-11ed-a1eb-0242ac198765)
-
--------
-
-**Document Subject**
-
-Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)
-
--------
-
--------
-
-**Document Content**
-
-Familienname:Fürstin von Musterfrau
-
-Geburtsdatum:1964-08-12
-
-PID:TestPID
-
-Bericht-Status:final
-
-Bericht-Typ:Berichtzusammenfassung / Document Summary
-
-Datum:03.05.2022
-
-Titel:Blutdruckmessung vom 3.5.2022
-
-Autor:Gerät XY, Fa. Z, Modell T
-
--------
-
-## Messung
-
-* **Systolisch**: 140
-  * **Diastolisch**: 110
-  * **Einheit**: mmHG
-  * **Uhrzeit**: 17:15h
-
--------
-
-## Additional Resources Included in Document
-
--------
-
-Entry 2 - fullUrl = urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345
-
-Resource Patient:
-
-> Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)
--------
-
--------
-
-Entry 3 - fullUrl = urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765
-
-Resource Encounter:
-
-> **identifier**: Visit number/0123456789**status**: Unknown**class**:inpatient encounter**type**:Operation,Abteilungskontakt**serviceType**: No display for Encounter.serviceType (concept: Innere Medizin)**subject**:[Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)](Bundle-ISiKBundle-Example.md#urn-uuid-3bada18a-6fd2-11ed-a1eb-0242ac112345)
-
 
 
 ## Resource Content
@@ -205,7 +141,7 @@ Resource Encounter:
         "id" : "FachabteilungskontaktMinimal",
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_FachabteilungskontaktMinimal\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter FachabteilungskontaktMinimal</b></p><a name=\"FachabteilungskontaktMinimal\"> </a><a name=\"hcFachabteilungskontaktMinimal\"> </a><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Unknown</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Bundle-ISiKBundle-Example.html#urn-uuid-3bada18a-6fd2-11ed-a1eb-0242ac112345\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)</a></p><p><b>period</b>: 2022-05-03 --&gt; 2022-05-05</p></div>"
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_FachabteilungskontaktMinimal\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter FachabteilungskontaktMinimal</b></p><a name=\"FachabteilungskontaktMinimal\"> </a><a name=\"hcFachabteilungskontaktMinimal\"> </a><p><b>identifier</b>: Visit number/0123456789</p><p><b>status</b>: Unknown</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-IMP\">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/kontaktart-de operation}\">Operation</span>, <span title=\"Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}\">Abteilungskontakt</span></p><p><b>serviceType</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel 0100}\">Innere Medizin</span></p><p><b>subject</b>: <a href=\"Bundle-ISiKBundle-Example.html#urn-uuid-3bada18a-6fd2-11ed-a1eb-0242ac112345\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Medical record number)</a></p><p><b>period</b>: 2022-05-03 --&gt; 2022-05-05</p></div>"
         },
         "identifier" : [
           {
