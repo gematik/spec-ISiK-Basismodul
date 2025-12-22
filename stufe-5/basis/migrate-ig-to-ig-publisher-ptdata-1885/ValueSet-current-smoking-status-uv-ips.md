@@ -67,7 +67,7 @@ HL7 LOINC value set for smoking status. Based on the HL7 Vocab and Structured Do
   "title" : "Current Smoking Status - IPS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-12-22T09:32:22+00:00",
+  "date" : "2025-12-22T10:09:17+00:00",
   "contact" : [
     {
       "telecom" : [
