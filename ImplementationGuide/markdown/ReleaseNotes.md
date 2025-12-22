@@ -4,12 +4,19 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+Version: 3.1.2
+
+Datum 22.12.2025
+
+* `fix` Harmonisierung mit dem Deutschen Basisprofil "CoverageDeGkv": Coverage.subscriber sollte auch einen Patienten referenzieren dürfen. 
+
+---
+
 Version: 3.1.1
 
 Datum: 1.12.2025
 
 * `improve` Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) abbilden, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/824
-* `fix` Harmonisierung mit dem Deutschen Basisprofil "CoverageDeGkv": Coverage.subscriber sollte auch einen Patienten referenzieren dürfen. 
 
 ---
 
