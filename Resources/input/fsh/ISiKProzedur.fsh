@@ -24,21 +24,20 @@ Description: "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Inform
   * obeys sct-ops-1 and proc-ISiK-3
   * ^constraint[1].source = Canonical(ISiKProzedur)
   * coding MS
-    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
   * coding contains
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
   * coding[OPS] only CodingOPS
-  * coding[OPS] from OpsVS (required)
     * extension[Seitenlokalisation] MS
     * system MS
     * version MS
     * code MS
   * coding[SNOMED-CT] from $ProzedurenCodesSCT (required)
     * system 1.. MS
-    * system = "http://snomed.info/sct"
+    * system = "http://snomed.info/sct" (exactly)
     * code 1.. MS
   * text MS
 * subject MS
