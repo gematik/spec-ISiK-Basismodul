@@ -110,7 +110,6 @@ Alias: $vs-observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
 Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-mii-wirkstofftyp = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp
 
-
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 Alias: $cs-risk-probability = http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $cs-v3-event-timing = http://terminology.hl7.org/CodeSystem/v3-TimingEvent
