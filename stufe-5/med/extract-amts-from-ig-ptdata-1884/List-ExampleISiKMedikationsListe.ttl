@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-amts-ig/List/ExampleISiKMedikationsListe> a fhir:List ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleISiKMedikationsListe"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: List ExampleISiKMedikationsListe</b></p><a name=\"ExampleISiKMedikationsListe\"> </a><a name=\"hcExampleISiKMedikationsListe\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsListe.html\">ISiK Medikationsliste</a></p></div><table class=\"clstu\"><tr><td>Date: 2021-07-04 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medication List </td></tr><tr><td>Subject: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a>Encounter: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformation1.html\">MedicationStatement: extension = Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar.,akut (ISiKMedikationsartCS#akut),true,Schmerztherapie postoperativ; status = active; medication[x] = -&gt;Medication Acetylcystein; effective[x] = 2021-07-01 --&gt; (ongoing); dateAsserted = 2021-07-01</a></td><td>2021-07-01</td></tr><tr><td><a href=\"MedicationStatement-ExampleISiKMedikationsInformation2.html\">MedicationStatement: extension = -&gt;MedicationStatement: extension = Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar.,akut (ISiKMedikationsartCS#akut),true,Schmerztherapie postoperativ; status = active; medication[x] = -&gt;Medication Acetylcystein; effective[x] = 2021-07-01 --&gt; (ongoing); dateAsserted = 2021-07-01; status = active; medication[x] = -&gt;Medication ; effective[x] = 2021-07-04 --&gt; (ongoing); dateAsserted = 2021-07-03</a></td><td>2021-07-04</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:mode [ fhir:v "working"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/list-example-use-codes"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/list-example-use-codes>
+       ] ;
+       fhir:code [ fhir:v "medications" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-amts-ig/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://example.org/fhir/test-amts-ig/Encounter/Fachabteilungskontakt> ;
+     fhir:reference [ fhir:v "Encounter/Fachabteilungskontakt" ]
+  ] ; # 
+  fhir:date [ fhir:v "2021-07-04"^^xsd:date] ; # 
+  fhir:entry ( [
+     fhir:date [ fhir:v "2021-07-01"^^xsd:date ] ;
+     fhir:item [
+       fhir:l <http://example.org/fhir/test-amts-ig/MedicationStatement/ExampleISiKMedikationsInformation1> ;
+       fhir:reference [ fhir:v "MedicationStatement/ExampleISiKMedikationsInformation1" ]
+     ]
+  ] [
+     fhir:date [ fhir:v "2021-07-04"^^xsd:date ] ;
+     fhir:item [
+       fhir:l <http://example.org/fhir/test-amts-ig/MedicationStatement/ExampleISiKMedikationsInformation2> ;
+       fhir:reference [ fhir:v "MedicationStatement/ExampleISiKMedikationsInformation2" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

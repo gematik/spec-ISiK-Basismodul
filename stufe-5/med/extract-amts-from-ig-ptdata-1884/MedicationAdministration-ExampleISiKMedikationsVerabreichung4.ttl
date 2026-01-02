@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-amts-ig/MedicationAdministration/ExampleISiKMedikationsVerabreichung4> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleISiKMedikationsVerabreichung4"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration ExampleISiKMedikationsVerabreichung4</b></p><a name=\"ExampleISiKMedikationsVerabreichung4\"> </a><a name=\"hcExampleISiKMedikationsVerabreichung4\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKMedikationsVerabreichung.html\">ISiKMedikationsVerabreichung</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-ExampleISiKMedikament2.html\">Medication </a></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>context</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktMinimal\">Encounter/FachabteilungskontaktMinimal</a></p><p><b>effective</b>: 2021-07-01</p><p><b>note</b>: </p><blockquote><div><p>Testnotiz</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Site</b></td><td><b>Route</b></td><td><b>Dose</b></td><td><b>Rate[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1L Infusion mit Rate 50ml/h</td><td><span title=\"Codes:{http://snomed.info/sct 6073002}\">Structure of ligament of left superior vena cava</span></td><td><span title=\"Codes:{http://standardterms.edqm.eu 20045000}\">Intravenous use</span></td><td>1000 mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span></td><td>50 mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemL = 'mL')</span>/1 h<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeh = 'h')</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <http://example.org/fhir/test-amts-ig/Medication/ExampleISiKMedikament2> ;
+     fhir:reference [ fhir:v "Medication/ExampleISiKMedikament2" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-amts-ig/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:context [
+     fhir:l <http://example.org/fhir/test-amts-ig/Encounter/FachabteilungskontaktMinimal> ;
+     fhir:reference [ fhir:v "Encounter/FachabteilungskontaktMinimal" ] ;
+     fhir:identifier [
+       fhir:value [ fhir:v "0123456789" ]
+     ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2021-07-01"^^xsd:date
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Testnotiz" ]
+  ] ) ; # 
+  fhir:dosage [
+     fhir:text [ fhir:v "1L Infusion mit Rate 50ml/h" ] ;
+     fhir:site [
+       fhir:coding ( [
+         a sct:6073002 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "6073002" ] ;
+         fhir:display [ fhir:v "Structure of ligament of left superior vena cava" ]
+       ] )
+     ] ;
+     fhir:route [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://standardterms.edqm.eu"^^xsd:anyURI ;
+           fhir:l <http://standardterms.edqm.eu>
+         ] ;
+         fhir:code [ fhir:v "20045000" ] ;
+         fhir:display [ fhir:v "Intravenous use" ]
+       ] )
+     ] ;
+     fhir:dose [
+       fhir:value [ fhir:v "1000"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mL" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mL" ]
+     ] ;
+     fhir:rate [
+       a fhir:Ratio ;
+       fhir:numerator [
+         fhir:value [ fhir:v "50"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mL" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mL" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "h" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "h" ]
+       ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

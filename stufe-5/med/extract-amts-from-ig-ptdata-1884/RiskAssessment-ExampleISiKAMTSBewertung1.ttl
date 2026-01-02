@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-amts-ig/RiskAssessment/ExampleISiKAMTSBewertung1> a fhir:RiskAssessment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleISiKAMTSBewertung1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "additional" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beispiel für eine AMTS Risikobewertung.</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:text [ fhir:v "AMTS Risikobewertung" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-amts-ig/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <http://example.org/fhir/test-amts-ig/Encounter/Fachabteilungskontakt> ;
+     fhir:reference [ fhir:v "Encounter/Fachabteilungskontakt" ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:DateTime ;
+     fhir:v "2024-02-20T13:14:32+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:condition [
+     fhir:l <http://example.org/fhir/test-amts-ig/Condition/BehandlungsDiagnoseFreitext> ;
+     fhir:reference [ fhir:v "Condition/BehandlungsDiagnoseFreitext" ]
+  ] ; # 
+  fhir:reasonReference ( [
+     fhir:l <http://example.org/fhir/test-amts-ig/DocumentReference/AnamnesebogenScan123456> ;
+     fhir:reference [ fhir:v "DocumentReference/AnamnesebogenScan123456" ]
+  ] ) ; # 
+  fhir:basis ( [
+     fhir:l <http://example.org/fhir/test-amts-ig/Observation/Koerpergewicht7777> ;
+     fhir:reference [ fhir:v "Observation/Koerpergewicht7777" ]
+  ] ) ; # 
+  fhir:prediction ( [
+     fhir:outcome [
+       fhir:text [ fhir:v "Niereninsuffizienz" ]
+     ] ;
+     fhir:qualitativeRisk [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/risk-probability"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/risk-probability>
+         ] ;
+         fhir:code [ fhir:v "high" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:mitigation [ fhir:v "Substitution der Stalevo Dauermedikation"] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Abklärung in der Frühbesprechung am 21.02.2024" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

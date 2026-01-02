@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-amts-ig/Procedure/Appendektomie> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Appendektomie"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure Appendektomie</b></p><a name=\"Appendektomie\"> </a><a name=\"hcAppendektomie\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKProzedur.html\">ISiKProzedur</a></p></div><p><b>ExtensionProzedurDokumentationsdatum</b>: 2020-04-23</p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Surgical procedure (procedure)</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 80146002}, {http://fhir.de/CodeSystem/bfarm/ops 5-470}\">Entfernung des Blinddarms</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>performed</b>: 2020-04-23</p><p><b>note</b>: </p><blockquote><div><p>Testnotiz</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum>
+     ] ;
+     fhir:value [
+       a fhir:DateTime ;
+       fhir:v "2020-04-23"^^xsd:date
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:category [
+     fhir:coding ( [
+       a sct:387713003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "387713003" ] ;
+       fhir:display [ fhir:v "Surgical procedure (procedure)" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:80146002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "80146002" ] ;
+       fhir:display [ fhir:v "Excision of appendix (procedure)" ]
+     ] [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/bfarm/ops"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/bfarm/ops>
+       ] ;
+       fhir:version [ fhir:v "2020" ] ;
+       fhir:code [ fhir:v "5-470" ] ;
+       fhir:display [ fhir:v "Appendektomie" ]
+     ] [
+       fhir:version [ fhir:v "2024" ]
+     ] ) ;
+     fhir:text [ fhir:v "Entfernung des Blinddarms" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://example.org/fhir/test-amts-ig/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:performed [
+     a fhir:DateTime ;
+     fhir:v "2020-04-23"^^xsd:date
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Testnotiz" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

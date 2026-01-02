@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsInformation4"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für Medikation/Einnahme zu jeder Mahlzeit (auch Zwischenmahlzeiten)</div>
+  </text>
+  <status value="active"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+      <code value="10557318"/>
+      <display value="Sevelamercarbonat AL 800 mg"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <context>
+    <reference value="Encounter/FachabteilungskontaktMinimal"/>
+  </context>
+  <effectivePeriod>
+    <start value="2024-01-22"/>
+  </effectivePeriod>
+  <dateAsserted value="2024-02-16"/>
+  <dosage>
+    <patientInstruction value="auch zu Zwischenmahlzeiten"/>
+    <timing>
+      <repeat>
+        <when value="C"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="1"/>
+        <unit value="Tabl."/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="1"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+</MedicationStatement>

@@ -1,0 +1,87 @@
+#  - AMTS ISiK Implementation Guide v0.0.1
+
+AMTS ISiK Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* ****
+
+## Medication: 
+
+Beispiel für eine Infusionslösung
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Medication",
+  "id" : "ExampleISiKMedikament2",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"
+    ]
+  },
+  "code" : {
+    "text" : "Infusion bestehend aus 85mg Doxorubicin aufgelöst zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionslösung"
+  },
+  "status" : "active",
+  "form" : {
+    "coding" : [
+      {
+        "system" : "http://standardterms.edqm.eu",
+        "code" : "11210000",
+        "display" : "Solution for infusion"
+      }
+    ]
+  },
+  "ingredient" : [
+    {
+      "extension" : [
+        {
+          "url" : "http://fhir.de/StructureDefinition/WirkstofftypEX",
+          "valueCoding" : {
+            "system" : "http://fhir.de/CodeSystem/WirkstofftypCS",
+            "code" : "IN"
+          }
+        }
+      ],
+      "itemCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+            "version" : "2024",
+            "code" : "L01DB01",
+            "display" : "Doxorubicin"
+          }
+        ]
+      },
+      "isActive" : true,
+      "strength" : {
+        "numerator" : {
+          "value" : 85,
+          "unit" : "mg",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "mg"
+        },
+        "denominator" : {
+          "value" : 250,
+          "unit" : "Milliliter",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "mL"
+        }
+      }
+    },
+    {
+      "itemReference" : {
+        "reference" : "Medication/7f27cb8d-940b-43fd-ab8b-fee5b7a9b060"
+      },
+      "isActive" : true
+    }
+  ]
+}
+
+```

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsVerordnung"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MedicationRequest ExampleISiKMedikationsVerordnung</b></p><a name="ExampleISiKMedikationsVerordnung"> </a><a name="hcExampleISiKMedikationsVerordnung"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKMedikationsVerordnung.html">ISiKMedikationsVerordnung</a></p></div><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk</b>: Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar.</p><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</b>: ISiKMedikationsartCS: akut (akut)</p><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel</b>: Schmerztherapie postoperativ</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>medication</b>: <a href="Medication-ExampleISiKMedikament1.html">Medication Acetylcystein</a></p><p><b>subject</b>: <a href="Patient-PatientinMusterfrau.html">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href="Encounter-Fachabteilungskontakt.html">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>authoredOn</b>: 2021-07-01</p><p><b>requester</b>: <a href="Practitioner-PractitionerWalterArzt.html">Practitioner Walter Arzt(official)</a></p><p><b>reasonReference</b>: <a href="Condition-BehandlungsDiagnoseFreitext.html">Condition </a></p><blockquote><p><b>dosageInstruction</b></p><p><b>timing</b>: Morning, Noon, Evening, Once</p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>1 Brausetablette<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></td></tr></table></blockquote></div>
+  </text>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk">
+    <valueString value="Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar."/>
+  </extension>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart">
+    <valueCoding>
+      <system value="https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS"/>
+      <code value="akut"/>
+    </valueCoding>
+  </extension>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel">
+    <valueString value="Schmerztherapie postoperativ"/>
+  </extension>
+  <status value="active"/>
+  <intent value="order"/>
+  <medicationReference>
+    <reference value="Medication/ExampleISiKMedikament1"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/Fachabteilungskontakt"/>
+  </encounter>
+  <authoredOn value="2021-07-01"/>
+  <requester>
+    <reference value="Practitioner/PractitionerWalterArzt"/>
+  </requester>
+  <reasonReference>
+    <reference value="Condition/BehandlungsDiagnoseFreitext"/>
+  </reasonReference>
+  <dosageInstruction>
+    <timing>
+      <repeat>
+        <when value="MORN"/>
+        <when value="NOON"/>
+        <when value="EVE"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="1"/>
+        <unit value="Brausetablette"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="1"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosageInstruction>
+</MedicationRequest>

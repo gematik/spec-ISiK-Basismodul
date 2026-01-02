@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikationsInformation1"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MedicationStatement ExampleISiKMedikationsInformation1</b></p><a name="ExampleISiKMedikationsInformation1"> </a><a name="hcExampleISiKMedikationsInformation1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKMedikationsInformation.html">ISiKMedikationsInformation</a></p></div><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk</b>: Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar.</p><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</b>: ISiKMedikationsartCS: akut (akut)</p><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKSelbstmedikation</b>: true</p><p><b>de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel</b>: Schmerztherapie postoperativ</p><p><b>status</b>: Active</p><p><b>medication</b>: <a href="Medication-ExampleISiKMedikament1.html">Medication Acetylcystein</a></p><p><b>subject</b>: <a href="Patient-PatientinMusterfrau.html">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>context</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktMinimal">Encounter/FachabteilungskontaktMinimal</a></p><p><b>effective</b>: 2021-07-01 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2021-07-01</p><p><b>reasonReference</b>: <a href="Condition-BehandlungsDiagnoseFreitext.html">Condition </a></p><blockquote><p><b>dosage</b></p><p><b>timing</b>: Morning, Noon, Evening, Once</p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>1 Brausetablette<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></td></tr></table></blockquote></div>
+  </text>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk">
+    <valueString value="Erhöhtes Blutungsrisiko ist in diesem Fall vertretbar."/>
+  </extension>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart">
+    <valueCoding>
+      <system value="https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS"/>
+      <code value="akut"/>
+    </valueCoding>
+  </extension>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKSelbstmedikation">
+    <valueBoolean value="true"/>
+  </extension>
+  <extension url="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel">
+    <valueString value="Schmerztherapie postoperativ"/>
+  </extension>
+  <status value="active"/>
+  <medicationReference>
+    <reference value="Medication/ExampleISiKMedikament1"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <context>
+    <reference value="Encounter/FachabteilungskontaktMinimal"/>
+  </context>
+  <effectivePeriod>
+    <start value="2021-07-01"/>
+  </effectivePeriod>
+  <dateAsserted value="2021-07-01"/>
+  <reasonReference>
+    <reference value="Condition/BehandlungsDiagnoseFreitext"/>
+  </reasonReference>
+  <dosage>
+    <timing>
+      <repeat>
+        <when value="MORN"/>
+        <when value="NOON"/>
+        <when value="EVE"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="1"/>
+        <unit value="Brausetablette"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="1"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+</MedicationStatement>

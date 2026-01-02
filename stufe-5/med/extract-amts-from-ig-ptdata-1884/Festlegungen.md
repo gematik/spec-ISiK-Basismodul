@@ -1,0 +1,49 @@
+# Festlegungen - AMTS ISiK Implementation Guide v0.0.1
+
+AMTS ISiK Implementation Guide
+
+Version 0.0.1 - STU1
+
+* [**Table of Contents**](toc.md)
+* **Festlegungen**
+
+## Festlegungen
+
+# Übergreifende Festlegungen
+
+Es gelten alle übergreifenden Festlegungen entsprechend dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
+
+Zudem gelten die Festlegungen gemäß dem Abschnitt zu den .
+
+## REST-API
+
+Es gelten grundsätzlich die [Allgemeinen Hinweise zur REST API aus dem Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md).
+
+Abweichend hiervon bzw. ergänzend hierzu gilt:
+
+* Das Erstellen einer Ressource per HTTP POST (Create-Interaktion) MUSS unterstützt werden.
+* Das Update einer Ressource per HTTP PUT (Update-Interaktion) MUSS unterstützt werden.
+* Das Löschen einer Ressource per HTTP DELETE (Delete-Interaktion, vgl. [FHIR RESTful API - Delete](https://www.hl7.org/fhir/R4/http.html#delete)) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens. Als Alternative zur Delete-Interaktion kann das Setzen eines entsprechenden Ressourcen-Status (beispielsweise “entered-in-error”) dienen.
+
+### Transaktionen
+
+FHIR-Transaktionen MÜSSEN unterstützt werden, vgl. [FHIR RESTful API - Batch/Transaction](https://www.hl7.org/fhir/R4/http.html#transaction). Es MÜSSEN die dort im Bereich “transaction” genannten Punkte unterstüzt werden. Eine reine Batch-Verarbeitung ist nicht ausreichend.
+
+Für jede schreibende Gesamt-Interaktion (Create, Update sowie ggf. Delete), bei der mehr als eine Ressourcen-Instanz erzeugt, geändert oder gelöscht wird, MUSS ein FHIR Transaktions-Bundle, wie in diesem Leitfaden profiliert, verwendet werden.
+
+Wird keine oder nur eine Ressourcen-Instanz modifiziert, kann ebenfalls eine Transaktion verwendet werden. Der Server MUSS auch solche Transaktionen verarbeiten. Die obigen Anforderungen bezüglich der Interaktionen außerhalb von Transaktionen bleiben unbeschadet.
+
+Der Server MUSS als Antwort auf ein FHIR Transaktions-Bundle ein FHIR TransactionResponse-Bundle, wie in diesem Leitfaden profiliert und in der FHIR-Spezifikation beschrieben, senden.
+
+### Historie
+
+Die Historisierung/Versionierung von FHIR Ressourcen-Instanzen (vgl. [FHIR RESTful API - History](https://www.hl7.org/fhir/R4/http.html#history)) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens.
+
+## Herstellung von Patienten- und Encounterkontext
+
+Vor der Abfrage von Vitalparameter-Ressourcen muss ein Client (VitalSign Standard Consumer bzw VitalSign ICU Consumer) einen entsprechenden Patienten und ggf. auch einen Fallkontakt (Encounter) identifizieren, dem die Vitalparameter zugeordnet sind.
+
+In diesem Zusammenhang sind insbesondere die Vorgaben zur [Herstellung des Patienten- und Encounter-Kontextes](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext.md) zu beachten.
+
+Zur Herstellung des Patienten- und Encounterkontextes MÜSSEN daher Systeme, die als VitalSign Standard Source und VitalSign ICU Consumer agieren, auch Interaktionen auf die genannten Ressourcen aus dem ISiK Basismodul unterstützen (Minimal Administrative Data Source). Die Liste der zu unterstützenden Interaktionen auf diese Ressourcen (Festlegung für diese Modul) ist dem CapabilityStatement zur Minimal Administrative Data Source zu entnehmen.
+
