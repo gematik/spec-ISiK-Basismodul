@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKProzedur",
   "url": "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKProzedur",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "name": "ISiKProzedur",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-01",
+  "date": "2026-01-05",
   "publisher": "gematik GmbH",
   "description": "Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien.",
   "fhirVersion": "4.0.1",
@@ -133,7 +133,7 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
+              "type": "value",
               "path": "system"
             }
           ],
@@ -155,11 +155,7 @@
             ]
           }
         ],
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://fhir.de/ValueSet/bfarm/ops"
-        }
+        "mustSupport": true
       },
       {
         "id": "Procedure.code.coding:OPS.extension:Seitenlokalisation",
@@ -198,7 +194,7 @@
         "id": "Procedure.code.coding:SNOMED-CT.system",
         "path": "Procedure.code.coding.system",
         "min": 1,
-        "patternUri": "http://snomed.info/sct",
+        "fixedUri": "http://snomed.info/sct",
         "mustSupport": true
       },
       {
