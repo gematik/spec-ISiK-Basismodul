@@ -3,7 +3,7 @@
 ----
 Version: 3.1.2
 
-Datum: 22.12.2025
+Datum: 05.01.2026
 
 Status: Aktiv
 
