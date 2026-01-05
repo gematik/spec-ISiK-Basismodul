@@ -13,7 +13,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/ValueSet/TestValueSet | *Version*:0.0.1 |
-| Active as of 2025-12-18 | *Computable Name*:TestValueSet |
+| Active as of 2026-01-05 | *Computable Name*:TestValueSet |
 | **Usage:**Clinical Focus: Encounter | |
 
  **References** 
@@ -58,7 +58,7 @@ No formal definition provided for this value set
   "version" : "0.0.1",
   "name" : "TestValueSet",
   "status" : "active",
-  "date" : "2025-12-18T15:21:25+00:00",
+  "date" : "2026-01-05T14:32:04+00:00",
   "useContext" : [
     {
       "code" : {
