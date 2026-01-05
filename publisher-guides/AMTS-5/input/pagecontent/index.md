@@ -12,7 +12,7 @@ Realm: Deutschland
 
 ----
 
-# Motivation AMTS Implementation 
+# Motivation AMTS Implementation Guide
 
 Die Arzneimittel-Therapiesicherheit ist ein wesentlicher Bestandteil einer qualitativ hochwertigen Patientenversorgung, da Medikationsfehler sowie nicht berücksichtigte Risiken wie Wechselwirkungen, Allergien oder Kontraindikationen erhebliche gesundheitliche Schäden verursachen können. Ein Implementierungsleitfaden im ISiK-Kontext schafft die notwendige Grundlage, um sicherheitsrelevante Informationen standardisiert, interoperabel und systemübergreifend verfügbar zu machen. Dadurch können potenzielle Risiken frühzeitig erkannt, klinische Entscheidungen gezielt unterstützt und die Sicherheit der Arzneimitteltherapie nachhaltig verbessert werden.
 
@@ -34,10 +34,10 @@ Die genauere Zielstellung kann unter Einbeziehung der Stakeholder in der Evoluti
 ## Out-of-scope
 
 Aufgrund technischer Beschränkungen oder eines starken implizierten Aufwands gibt es auch Aspekte, die aktuell noch außen vor bleiben müssen:
-* Die Schaffung, Abstimmung und Spezifikation eines vollständigen ISiK Labor Moduls.
-* Medical Knowledge Management. Eine medizinische Wissensdatenbank ohne Patientenbezug, in der zum Beispiel Informationen zu bekannten Nebenwirkungen,Wechselwirkungen oder Kontra-Indikationen gespeichert werden (z.B. FHIR-R5 Ressource _ClinicalUseDefinition_). Leider stehen entsprechende Ressourcen erst in R5 zur Verfügung und es gibt kein einheitliches Bild wo eine solche Medical Knowledge DB in der deutschen Gesundheitslandschaft (und in der Telematik Infrastruktur) zu verorten wäre.
-* Die Einbeziehung eines Therapieziel (FHIR-R4 Ressource _Goal_), da dies sehr komplex ist und ein erheblicher Abstimmungsaufwand impliziert wäre.
-* Die Einbeziehung eines Therapieplan (FHIR-R4 Ressource _Careplan_), da dieser ein neues Fachfeld braucht. Dieses Feld (Onkologie) würde ein neues ISiK Modul sowie IG begründen und benötigt eine eigene Arbeitsgruppe in einer zukünftigen Stufe.
+1. Die Schaffung, Abstimmung und Spezifikation eines vollständigen ISiK Labor Moduls.
+2. Medical Knowledge Management. Eine medizinische Wissensdatenbank ohne Patientenbezug, in der zum Beispiel Informationen zu bekannten Nebenwirkungen,Wechselwirkungen oder Kontra-Indikationen gespeichert werden (z.B. FHIR-R5 Ressource _ClinicalUseDefinition_). Leider stehen entsprechende Ressourcen erst in R5 zur Verfügung und es gibt kein einheitliches Bild wo eine solche Medical Knowledge DB in der deutschen Gesundheitslandschaft (und in der Telematik Infrastruktur) zu verorten wäre.
+3. Die Einbeziehung eines Therapieziel (FHIR-R4 Ressource _Goal_), da dies sehr komplex ist und ein erheblicher Abstimmungsaufwand impliziert wäre.
+4. Die Einbeziehung eines Therapieplan (FHIR-R4 Ressource _Careplan_), da dieser ein neues Fachfeld braucht. Dieses Feld (Onkologie) würde ein neues ISiK Modul sowie IG begründen und benötigt eine eigene Arbeitsgruppe in einer zukünftigen Stufe.
 
 Einige dieser Aspekte sind bereits im Backlog für kommende ISiK Entwicklungsstufen aufgenommen.
 
