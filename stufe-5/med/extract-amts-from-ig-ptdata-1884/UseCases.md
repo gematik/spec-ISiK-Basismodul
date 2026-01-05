@@ -11,11 +11,11 @@ Version 0.0.1 - STU1
 
 # Use Cases und Versorgungsprozesse
 
-Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis **Analyse der Medikationsprozesse** des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für eine detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
+Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis **Analyse der Medikationsprozesse** des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
 
 ## User Stories und Use Cases
 
-In folgendem wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Requirements gegeben. User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
+Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Requirements gegeben. User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
 
 ## User Stories - Business
 
@@ -30,7 +30,7 @@ Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nac
 * **Requirement**: Im Rahmen neu bekanntgewordener Informationen MUSS der Nutzer auf AMTS hin prüfen können.
  
 * **User Story 03** - Stationäre Aufnahme mit Medikationsumstellung (Medication Reconciliation) 
-* Bei der stationären Aufnahme eines Patienten soll die bestehenden (häusliche oder ambulante) Medikation mit in das geänderte Versorgungsumfeld übersetzt und angepasst werden, um eine gleichwertige und sichere stationäre Verordnung zu gewährleisten.
+* Bei der stationären Aufnahme eines Patienten soll die bestehende (häusliche oder ambulante) Medikation mit in das geänderte Versorgungsumfeld übersetzt und angepasst werden, um eine gleichwertige und sichere stationäre Verordnung zu gewährleisten.
 * **Requirement**: Im Rahmen der Patientenaufnahme MUSS der Nutzer auf AMTS hin prüfen können.
  
 * **User Story 04** - Entlassung mit Medikationsumstellung (Medication Reconciliation) 
@@ -75,10 +75,6 @@ Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor si
 
 ## Grafische Zusammenfassung
 
-Im Gegensatz zu den sonstigen Zusammenfassungen, wird in den folgenden Diagrammen auf den vorliegenden Übergreifende Use Case (AMTS) fokussiert und nicht auf das gesamte Modul.
-
-### Use Case Diagramm AMTS
-
 Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwednungsfälle gegeben. Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
 
 * Allgemeine und intuitiv verständliche Use Cases. 
@@ -91,14 +87,6 @@ Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implement
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg)
 
 **Anwendungsfälle AMTS**
-
-### Interaktionen In der Versorgung
-
-Im Folgenden ist ein beispielhafter Versorgungsprozess aus dem Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis **Analyse der Medikationsprozesse** dargestellt.
-
-![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/AMTS_AuszugAK/Versorgungsprozess2.jpg)
-
-**Beispielprozess: Sturz mit stationärer Behandlung und hausärztlicher Weiterbehandlung**
 
 ### Interaktionen im Rahmen AMTS
 
