@@ -36,8 +36,4 @@ Die Historisierung/Versionierung von FHIR Ressourcen-Instanzen (vgl. [FHIR RESTf
 
 ## Herstellung von Patienten- und Encounterkontext
 
-Vor der Abfrage von Vitalparameter-Ressourcen muss ein Client (VitalSign Standard Consumer bzw VitalSign ICU Consumer) einen entsprechenden Patienten und ggf. auch einen Fallkontakt (Encounter) identifizieren, dem die Vitalparameter zugeordnet sind.
-
 In diesem Zusammenhang sind insbesondere die Vorgaben zur [Herstellung des Patienten- und Encounter-Kontextes](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext.md) zu beachten.
-
-Zur Herstellung des Patienten- und Encounterkontextes MÜSSEN daher Systeme, die als VitalSign Standard Source und VitalSign ICU Consumer agieren, auch Interaktionen auf die genannten Ressourcen aus dem ISiK Basismodul unterstützen (Minimal Administrative Data Source). Die Liste der zu unterstützenden Interaktionen auf diese Ressourcen (Festlegung für diese Modul) ist dem CapabilityStatement zur Minimal Administrative Data Source zu entnehmen.
