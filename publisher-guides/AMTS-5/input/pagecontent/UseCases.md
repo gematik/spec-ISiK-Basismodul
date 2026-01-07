@@ -63,7 +63,7 @@ Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor si
 
 ## Grafische Zusammenfassung
 
-Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwednungsfälle gegeben.
+Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwendungsfälle gegeben.
 Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
 * Allgemeine und intuitiv verständliche Use Cases.
   * Kombinationen und weitere Details sind möglich.
