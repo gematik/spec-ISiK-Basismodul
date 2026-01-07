@@ -82,7 +82,7 @@ Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implement
 * Übergreifende Use Cases und ihre Sub Use Cases können in einem separaten Diagram auf den entsprechenden Seiten gefunden werden.
  
 * Allgemeine und intuitiv Adverse Use Cases. Diese gilt es zu vermeiden.
-* In den Funktionen werde triviale Suchen einer Ressoruce anhand ihrer eigenen Properties nicht dargestelt, z.B. Suche einer Ressoruce anhand der ID, Name, Code usw.
+* In den Funktionen werde triviale Suchen einer Ressource anhand ihrer eigenen Properties nicht dargestellt, z.B. Suche einer Ressource anhand der ID, Name, Code usw.
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg)
 
