@@ -25,7 +25,7 @@ Die bedeutendsten abzudeckenden Use Cases sind Wechselwirkungen, Allergien und K
 
 Ziele des vorliegenden IG sind:
 1. Die Identifikation und Beschreibung relevanter Anwendungsfälle.
-2. Die Identifikation und nachfolgende Spezifikation neuer notwendiger (oder zu erweiternder) Ressourcen als Informationsträger für die AMTS Bewertung.
+2. Die Identifikation und nachfolgende Spezifikation neuer, notwendiger (oder zu erweiternder) Ressourcen als Informationsträger für die AMTS Bewertung.
 3. Die Schaffung eines Implementierungsleitfadens zur Bereitstellung ebendieser AMTS relevanten Informationen.
 4. Die korrekte Abgrenzung des Leistungsumfangs ISiK-Medikation im Bezug auf AMTS (Out-of-Scope).
 
