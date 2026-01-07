@@ -6,7 +6,7 @@ topic: Akteure
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
-**Diskussion**: Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext des [CapabilityStatements des Vitalparameter Implementierungsleitfadens](https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements) geführt werden, hier als 'Akteure' (informativ).
+**Diskussion**: Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext der CapabilityStatements dieses Implementierungsleitfadens geführt werden, hier als 'Akteure' (informativ) beschriebene.
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
 
@@ -15,15 +15,21 @@ Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische 
 
 ## Akteur - Rolle Minimal Organspende
 
-Profile: MUSS Profile aus dem Modul Organspende
+Dieser Akteur stellt eine Minimal-Variante dar, deren Funktionen zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle unabdinglich sind.
+
+Profile: MUSS-Profile aus dem Modul Organspende
 Interaction: READ, SEARCH
 
 ## Akteur - Rolle Organspende extended
+
+Dieser Akteur beinhaltet über die Minimal-Variante hinaus weitere Interaktionen, die nützlich sind um mittels zusätzliche Parameter die Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle weitergehend zu unterstützen.
 
 Profile: MUSS und KANN Profile aus dem Modul Organspende
 Interaction: READ, SEARCH
 
 ## Akteur - VitalSign ICU Source Extended
+
+Dieser Akteur ist der umfassendste Akteur im Kontext der Organspendeerkennung. Er beinhaltet sämtliche Profile und Interaktionen, die zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle relevant sind und definiert darüber hinausgehende Interaktionen, die im Kontext der Intensivmedizin relevant sind. 
 
 Profile: Profile aus dem Modul Vitalparameter (MI-I) - beinhaltet neben zahlreichen weiteren Profilen auch Profile aus dem Modul Organspende
 Interaction: READ, SEARCH
