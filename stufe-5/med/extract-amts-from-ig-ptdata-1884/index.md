@@ -52,7 +52,7 @@ Die genauere Zielstellung kann unter Einbeziehung der Stakeholder in der Evoluti
 Aufgrund technischer Beschränkungen oder eines vorerst unnötigen Aufwands gibt es auch Aspekte, die aktuell noch außen vor bleiben müssen:
 
 1. Die Schaffung, Abstimmung und Spezifikation eines vollständigen ISiK Labor Moduls.
-1. Medical Knowledge Management. Eine medizinische Wissensdatenbank ohne Patientenbezug, in der zum Beispiel Informationen zu bekannten Nebenwirkungen,Wechselwirkungen oder Kontra-Indikationen gespeichert werden (z.B. FHIR-R5 Ressource**ClinicalUseDefinition**). Leider stehen entsprechende Ressourcen erst in R5 zur Verfügung und es gibt kein einheitliches Bild wo eine solche Medical Knowledge DB in der deutschen Gesundheitslandschaft (und in der Telematik Infrastruktur) zu verorten wäre.
+1. Medical Knowledge Management: Eine medizinische Wissensdatenbank ohne Patientenbezug, in der zum Beispiel Informationen zu bekannten Nebenwirkungen, Wechselwirkungen oder Kontra-Indikationen gespeichert werden (z.B. FHIR-R5 Ressource**ClinicalUseDefinition**). Leider stehen entsprechende Ressourcen erst in R5 zur Verfügung und es gibt kein einheitliches Bild wo eine solche Medical Knowledge Datenbank in der deutschen Gesundheitslandschaft (und in der Telematik Infrastruktur) zu verorten wäre.
 1. Die Einbeziehung eines Therapieziel (FHIR-R4 Ressource**Goal**), da dies sehr komplex ist und ein erheblicher Abstimmungsaufwand impliziert wäre.
 1. Die Einbeziehung eines Therapieplan (FHIR-R4 Ressource**Careplan**), da dieser ein neues Fachfeld braucht. Dieses Feld (Onkologie) würde ein neues ISiK Modul sowie IG begründen und benötigt eine eigene Arbeitsgruppe in einer zukünftigen Stufe.
 
@@ -97,7 +97,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-07T08:35:03+00:00",
+  "date" : "2026-01-07T10:40:47+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.test.ig",
   "license" : "CC0-1.0",
