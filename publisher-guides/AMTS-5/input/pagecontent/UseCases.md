@@ -14,16 +14,16 @@ Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nac
 
 - **User Story 01** - AMTS Prüfung bei Verordnung, Änderung der Verordnung und Abgabe
    - Ein Heilberufler (insb. Ärzte, Apotheker) möchte AMTS-relevante Informationen abrufen, um eine sichere Verordnung, Änderung einer Verordnung (z.B. Substitution) oder Abgabe einer Medikation zu gewährleisten.
-   - **Requirement**: Im Rahmen der Medikationsverordnung, -Änderung oder -Ausgabe MUSS der Nutzer auf AMTS hin prüfen können.
+   - **Anforderung**: Im Rahmen der Medikationsverordnung, -Änderung oder -Ausgabe MUSS der Nutzer auf AMTS hin prüfen können.
 - **User Story 02** - AMTS Prüfung bei neuer Informationslage
    - Ein Heilberufler (insb. Ärzte, Apotheker) möchte AMTS-relevante Informationen abrufen, um eine sichere Abgabe einer Medikation zu gewährleisten.
-   - **Requirement**: Im Rahmen neu bekanntgewordener Informationen MUSS der Nutzer auf AMTS hin prüfen können.
+   - **Anforderung**: Im Rahmen neu bekanntgewordener Informationen MUSS der Nutzer auf AMTS hin prüfen können.
 - **User Story 03** - Stationäre Aufnahme mit Medikationsumstellung (Medication Reconciliation)
    - Bei der stationären Aufnahme eines Patienten soll die bestehende (häusliche oder ambulante) Medikation mit in das geänderte Versorgungsumfeld übersetzt und angepasst werden, um eine gleichwertige und sichere stationäre Verordnung zu gewährleisten.
-   - **Requirement**: Im Rahmen der Patientenaufnahme MUSS der Nutzer auf AMTS hin prüfen können.
+   - **Anforderung**: Im Rahmen der Patientenaufnahme MUSS der Nutzer auf AMTS hin prüfen können.
 - **User Story 04** - Entlassung mit Medikationsumstellung (Medication Reconciliation)
    - Bei der Entlassung eines Patienten aus der stationären Versorgung soll die initiale Medikation mit in das sich ändernde Umfeld übersetzt und angepasst werden, um eine gleichwertige und sichere Weiterführung der Medikation zu gewährleisten.
-   - **Requirement**: Im Rahmen der Entlassung MUSS der Nutzer auf AMTS hin prüfen können.
+   - **Anforderung**: Im Rahmen der Entlassung MUSS der Nutzer auf AMTS hin prüfen können.
 
 Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der Schnittstellen ist eine vorher unbekannte Informationslage. Die Informationen können initial neu sein, durch den Patienten später in den Prozess hinzugegeben werden, oder sich im Zuge einer Behandlung ergeben.
 
