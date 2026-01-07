@@ -1,8 +1,8 @@
-# TestKatalog - Organspendeerkennung v0.0.1
+# TestKatalog - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/CodeSystem/TestKatalog | *Version*:0.0.1 |
+| *Official URL*:http://example.org/fhir/CodeSystem/TestKatalog | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:TestKatalog |
 
  This Code system is referenced in the content logical definition of the following value sets: 
@@ -33,7 +33,7 @@ Version 0.0.1 - STU1
     ]
   },
   "url" : "http://example.org/fhir/CodeSystem/TestKatalog",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "TestKatalog",
   "status" : "active",
   "experimental" : false,

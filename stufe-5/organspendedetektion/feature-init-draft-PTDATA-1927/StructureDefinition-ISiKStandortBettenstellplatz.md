@@ -1,8 +1,8 @@
-# ISiKStandortBettenstellplatz - Organspendeerkennung v0.0.1
+# ISiKStandortBettenstellplatz - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKStandortBettenstellplatz |
 
  
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStandortBettenst
   "resourceType" : "StructureDefinition",
   "id" : "ISiKStandortBettenstellplatz",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKStandortBettenstellplatz",
   "status" : "active",
   "experimental" : false,

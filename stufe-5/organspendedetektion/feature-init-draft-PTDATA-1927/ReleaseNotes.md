@@ -1,8 +1,8 @@
-# Release Notes - Organspendeerkennung v0.0.1
+# Release Notes - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * **Release Notes**

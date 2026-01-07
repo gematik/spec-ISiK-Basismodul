@@ -1,8 +1,8 @@
-# ISiK Schwangerschaft - Erwarteter Entbindungstermin - Organspendeerkennung v0.0.1
+# ISiK Schwangerschaft - Erwarteter Entbindungstermin - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
 
 **Usages:**
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschaftE
   "resourceType" : "StructureDefinition",
   "id" : "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "title" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
   "status" : "active",

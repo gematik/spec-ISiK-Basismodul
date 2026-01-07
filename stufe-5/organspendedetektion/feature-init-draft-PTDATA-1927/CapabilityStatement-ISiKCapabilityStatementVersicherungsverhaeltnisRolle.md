@@ -1,8 +1,8 @@
-# CapabilityStatement für Rolle "ISiKCapabilityStatementVersicherungsverhaeltnisRolle" - Organspendeerkennung v0.0.1
+# CapabilityStatement für Rolle "ISiKCapabilityStatementVersicherungsverhaeltnisRolle" - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementVersicherungsverhaeltnisRolle |
 
  
@@ -31,7 +31,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementVersicherungsverhaelt
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementVersicherungsverhaeltnisRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKCapabilityStatementVersicherungsverhaeltnisRolle",
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;",
   "status" : "active",

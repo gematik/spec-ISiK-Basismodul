@@ -1,8 +1,8 @@
-# ISiKPersonImGesundheitsberuf - Organspendeerkennung v0.0.1
+# ISiKPersonImGesundheitsberuf - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKPersonImGesundheitsberuf |
 
  
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKPersonImGesundhe
     }
   ],
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKPersonImGesundheitsberuf",
   "status" : "active",
   "experimental" : false,

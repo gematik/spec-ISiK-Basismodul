@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Akteure - Organspendeerkennung v0.0.1</title>
+    <title>Akteure - Organspendeerkennung v0.0.1-rc</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -165,7 +165,7 @@
 Organspendeerkennung
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 0.0.1 - STU1
+            <span style="display:inline-block;">Version 0.0.1-rc - STU1
                 
                 
             </span>
@@ -225,22 +225,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/></p>
 
-<p><strong>Diskussion</strong>: Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext des <a href="https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements">CapabilityStatements des Vitalparameter Implementierungsleitfadens</a> geführt werden, hier als ‘Akteure’ (informativ).
+<p><strong>Diskussion</strong>: Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext der CapabilityStatements dieses Implementierungsleitfadens geführt werden, hier als ‘Akteure’ (informativ) beschriebene.
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/></p>
 
 <p>Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische Darstellung - eine technische Detaillierung mit normativer Geltung wird im CapabilityStatement getroffen).</p>
 
 <h2 id="akteur---rolle-minimal-organspende">Akteur - Rolle Minimal Organspende</h2>
 
-<p>Profile: MUSS Profile aus dem Modul Organspende
+<p>Dieser Akteur stellt eine Minimal-Variante dar, deren Funktionen zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle unabdinglich sind.</p>
+
+<p>Profile: MUSS-Profile aus dem Modul Organspende
 Interaction: READ, SEARCH</p>
 
 <h2 id="akteur---rolle-organspende-extended">Akteur - Rolle Organspende extended</h2>
+
+<p>Dieser Akteur beinhaltet über die Minimal-Variante hinaus weitere Interaktionen, die nützlich sind um mittels zusätzliche Parameter die Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle weitergehend zu unterstützen.</p>
 
 <p>Profile: MUSS und KANN Profile aus dem Modul Organspende
 Interaction: READ, SEARCH</p>
 
 <h2 id="akteur---vitalsign-icu-source-extended">Akteur - VitalSign ICU Source Extended</h2>
+
+<p>Dieser Akteur ist der umfassendste Akteur im Kontext der Organspendeerkennung. Er beinhaltet sämtliche Profile und Interaktionen, die zur Umsetzung der Workflows der Organspenderkennung mittels ISiK-Schnittstelle relevant sind und definiert darüber hinausgehende Interaktionen, die im Kontext der Intensivmedizin relevant sind.</p>
 
 <p>Profile: Profile aus dem Modul Vitalparameter (MI-I) - beinhaltet neben zahlreichen weiteren Profilen auch Profile aus dem Modul Organspende
 Interaction: READ, SEARCH</p>
@@ -287,7 +293,7 @@ Um eine Minimalliste der zu implementierenden Profile einzusehen, sind die impor
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jan 7, 2026 10:28+0000">2026-01-07</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jan 7, 2026 10:59+0000">2026-01-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

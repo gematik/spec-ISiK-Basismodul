@@ -1,8 +1,8 @@
-# Einführung - Organspendeerkennung v0.0.1
+# Einführung - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * **Einführung**
@@ -11,14 +11,14 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1 |
+| *Official URL*:http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1-rc |
 | Draft as of 2026-01-07 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
 
 -------
 
-Version: 0.0.1
+Version: 0.0.1-rc
 
 Datum: tbd.
 
@@ -107,11 +107,11 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "resourceType" : "ImplementationGuide",
   "id" : "Organspendeerkennung.test.ig",
   "url" : "http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "TestImplementationGuide",
   "title" : "Organspendeerkennung",
   "status" : "draft",
-  "date" : "2026-01-07T10:28:01+00:00",
+  "date" : "2026-01-07T10:59:40+00:00",
   "description" : "Dieser Implementierungsleitfaden schlägt eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus vor.",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",

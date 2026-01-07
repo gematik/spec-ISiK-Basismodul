@@ -1,8 +1,8 @@
-# ISiKCodeSystem - Organspendeerkennung v0.0.1
+# ISiKCodeSystem - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCodeSystem |
 
  
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKCodeSystem.csv),
   "resourceType" : "StructureDefinition",
   "id" : "ISiKCodeSystem",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKCodeSystem",
   "status" : "active",
   "experimental" : false,

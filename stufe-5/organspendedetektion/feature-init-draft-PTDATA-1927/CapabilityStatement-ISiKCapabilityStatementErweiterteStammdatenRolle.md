@@ -1,8 +1,8 @@
-# CapabilityStatement für Rolle "ISiKCapabilityStatementErweiterteStammdatenRolle" - Organspendeerkennung v0.0.1
+# CapabilityStatement für Rolle "ISiKCapabilityStatementErweiterteStammdatenRolle" - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementErweiterteStammdatenRolle |
 
  
@@ -31,7 +31,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementErweiterteStammdatenR
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementErweiterteStammdatenRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKCapabilityStatementErweiterteStammdatenRolle",
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;",
   "status" : "active",

@@ -1,8 +1,8 @@
-# ISiKTerminPriorityExtension - Organspendeerkennung v0.0.1
+# ISiKTerminPriorityExtension - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKTerminPriorityExtension |
 
 Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKTerminPriorityEx
   "resourceType" : "StructureDefinition",
   "id" : "ISiKTerminPriorityExtension",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKTerminPriorityExtension",
   "status" : "active",
   "experimental" : false,

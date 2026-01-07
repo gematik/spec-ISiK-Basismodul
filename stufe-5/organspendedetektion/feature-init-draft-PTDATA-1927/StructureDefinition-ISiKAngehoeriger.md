@@ -1,8 +1,8 @@
-# ISiKAngehoeriger - Organspendeerkennung v0.0.1
+# ISiKAngehoeriger - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKAngehoeriger |
 
  
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAngehoeriger.csv
   "resourceType" : "StructureDefinition",
   "id" : "ISiKAngehoeriger",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKAngehoeriger",
   "status" : "active",
   "experimental" : false,

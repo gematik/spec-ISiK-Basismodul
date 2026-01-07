@@ -1,8 +1,8 @@
-# ISiKBerichtBundle - Organspendeerkennung v0.0.1
+# ISiKBerichtBundle - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKBerichtBundle |
 
  
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKBerichtBundle.cs
   "resourceType" : "StructureDefinition",
   "id" : "ISiKBerichtBundle",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKBerichtBundle",
   "title" : "ISiKBerichtBundle",
   "status" : "active",

@@ -1,8 +1,8 @@
-# ISiKStandortRaum - Organspendeerkennung v0.0.1
+# ISiKStandortRaum - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKStandortRaum |
 
  
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStandortRaum.csv
   "resourceType" : "StructureDefinition",
   "id" : "ISiKStandortRaum",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKStandortRaum",
   "status" : "active",
   "experimental" : false,

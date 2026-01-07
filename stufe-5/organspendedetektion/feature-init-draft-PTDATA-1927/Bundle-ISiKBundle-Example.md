@@ -1,8 +1,8 @@
-# Blutdruckmessung vom 3.5.2022 (Bundle) - Organspendeerkennung v0.0.1
+# Blutdruckmessung vom 3.5.2022 (Bundle) - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

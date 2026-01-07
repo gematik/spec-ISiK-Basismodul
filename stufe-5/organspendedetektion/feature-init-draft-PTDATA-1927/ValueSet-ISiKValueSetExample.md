@@ -1,8 +1,8 @@
-# TestValueSet - Organspendeerkennung v0.0.1
+# TestValueSet - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/ValueSet/TestValueSet | *Version*:0.0.1 |
+| *Official URL*:http://example.org/fhir/ValueSet/TestValueSet | *Version*:0.0.1-rc |
 | Active as of 2026-01-07 | *Computable Name*:TestValueSet |
 | **Usage:**Clinical Focus: Encounter | |
 
@@ -55,10 +55,10 @@ No formal definition provided for this value set
     ]
   },
   "url" : "http://example.org/fhir/ValueSet/TestValueSet",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "TestValueSet",
   "status" : "active",
-  "date" : "2026-01-07T10:28:01+00:00",
+  "date" : "2026-01-07T10:59:40+00:00",
   "useContext" : [
     {
       "code" : {

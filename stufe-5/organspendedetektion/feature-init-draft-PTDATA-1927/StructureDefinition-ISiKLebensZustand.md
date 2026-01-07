@@ -1,8 +1,8 @@
-# ISiKLebensZustand - Organspendeerkennung v0.0.1
+# ISiKLebensZustand - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLebensZustand |
 
  
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLebensZustand.cs
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLebensZustand",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKLebensZustand",
   "title" : "ISiKLebensZustand",
   "status" : "active",

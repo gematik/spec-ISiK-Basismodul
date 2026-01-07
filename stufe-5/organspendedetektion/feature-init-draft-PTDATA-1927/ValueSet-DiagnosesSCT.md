@@ -1,8 +1,8 @@
-# DiagnosesSCT - Organspendeerkennung v0.0.1
+# DiagnosesSCT - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:DiagnosesSCT |
 
  
@@ -50,7 +50,7 @@ Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context
   "resourceType" : "ValueSet",
   "id" : "DiagnosesSCT",
   "url" : "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "DiagnosesSCT",
   "status" : "active",
   "experimental" : false,

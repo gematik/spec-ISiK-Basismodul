@@ -1,8 +1,8 @@
-# ISiKAllergieUnvertraeglichkeit - Organspendeerkennung v0.0.1
+# ISiKAllergieUnvertraeglichkeit - Organspendeerkennung v0.0.1-rc
 
 Organspendeerkennung
 
-Version 0.0.1 - STU1
+Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit | *Version*:0.0.1-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKAllergieUnvertraeglichkeit |
 
  
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAllergieUnvertra
   "resourceType" : "StructureDefinition",
   "id" : "ISiKAllergieUnvertraeglichkeit",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
-  "version" : "0.0.1",
+  "version" : "0.0.1-rc",
   "name" : "ISiKAllergieUnvertraeglichkeit",
   "status" : "active",
   "experimental" : false,
