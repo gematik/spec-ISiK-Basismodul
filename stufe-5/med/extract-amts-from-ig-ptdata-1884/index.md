@@ -40,8 +40,8 @@ Durch diesen Implementierungsleitfaden werden die bereitgestellten Ressourcen de
 
 Ziele des vorliegenden IG sind:
 
-1. Die Identifikation und Beschreibung zentral relevanter Anwendungsfälle.
-1. Die Identifikation und nachfolgende Spezifikation neuer notwendiger (oder zu erweiternder) Ressourcen als Informationsträger für die AMTS Bewertung.
+1. Die Identifikation und Beschreibung relevanter Anwendungsfälle.
+1. Die Identifikation und nachfolgende Spezifikation neuer, notwendiger (oder zu erweiternder) Ressourcen als Informationsträger für die AMTS Bewertung.
 1. Die Schaffung eines Implementierungsleitfadens zur Bereitstellung ebendieser AMTS relevanten Informationen.
 1. Die korrekte Abgrenzung des Leistungsumfangs ISiK-Medikation im Bezug auf AMTS (Out-of-Scope).
 
@@ -97,7 +97,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-07T08:28:56+00:00",
+  "date" : "2026-01-07T08:31:17+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.test.ig",
   "license" : "CC0-1.0",
