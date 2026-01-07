@@ -15,7 +15,7 @@ Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gema
 
 ## User Stories und Use Cases
 
-Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Requirements gegeben. User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
+Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Anforderungen gegeben. User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
 
 ## User Stories - Business
 
