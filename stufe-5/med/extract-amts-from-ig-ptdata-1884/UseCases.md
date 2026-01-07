@@ -56,7 +56,7 @@ Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der S
 * Zur Entzündungsvermeidung ist eine weitere Verordnung notwendig.
 * Im Rahmen des Entlassprozesses erarbeitet das Krankenhauspersonal einen Vorschlag zur Umstellung auf häusliche Gesamtmedikation.
 * Mit Hilfe der Schnittstellen werden alle **AMTS relevanten Informationen konsolidiert** und ein AMTS-Check durchgeführt.
-* Im Entlassgespräch werdend Veränderungen kommuniziert und erklärt.
+* Im Entlassgespräch werden Veränderungen kommuniziert und erklärt.
 * Der Patient wird mit einem neuen Medikationsplan entlassen.
 
 ## Weitere implizite Annahmen und weitere Informationen
@@ -75,7 +75,7 @@ Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor si
 
 ## Grafische Zusammenfassung
 
-Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwednungsfälle gegeben. Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
+Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwendungsfälle gegeben. Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
 
 * Allgemeine und intuitiv verständliche Use Cases. 
 * Kombinationen und weitere Details sind möglich.

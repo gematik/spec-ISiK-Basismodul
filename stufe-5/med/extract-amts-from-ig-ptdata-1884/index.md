@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-amts-ig/ImplementationGuide/amts.test.ig | *Version*:0.0.1 |
-| Draft as of 2026-01-05 | *Computable Name*:AMTSImplementationGuide |
+| Draft as of 2026-01-07 | *Computable Name*:AMTSImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
 
@@ -97,7 +97,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-05T14:58:24+00:00",
+  "date" : "2026-01-07T08:10:47+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.test.ig",
   "license" : "CC0-1.0",
