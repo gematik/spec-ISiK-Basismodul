@@ -69,7 +69,7 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
   * Kombinationen und weitere Details sind möglich.
   * Übergreifende Use Cases und ihre Sub Use Cases können in einem separaten Diagram auf den entsprechenden Seiten gefunden werden.
 * Allgemeine und intuitiv Adverse Use Cases. Diese gilt es zu vermeiden.
-* In den Funktionen werde triviale Suchen einer Ressoruce anhand ihrer eigenen Properties nicht dargestelt, z.B. Suche einer Ressoruce anhand der ID, Name, Code usw.
+* In den Funktionen werde triviale Suchen einer Ressource anhand ihrer eigenen Properties nicht dargestellt, z.B. Suche einer Ressource anhand der ID, Name, Code usw.
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg" alt="AMTS Use Cases" width="90%"/>
 
