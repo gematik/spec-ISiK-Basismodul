@@ -232,7 +232,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-01-05
+            as of 2026-01-07
           
         
       </td>
@@ -256,8 +256,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#organspendeerkennung" id="markdown-toc-organspendeerkennung">Organspendeerkennung</a></li>
+  <li><a href="#interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik" id="markdown-toc-interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</a></li>
+</ul>
+
 </div>
 
 <p><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/></p>
@@ -273,11 +279,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <hr/>
 
-<h1 id="organspendeerkennung">Organspendeerkennung</h1>
+<h3 id="organspendeerkennung">Organspendeerkennung</h3>
 
 <p>Die Organspendeerkennung, die mit der Feststellung eines Irreversiblen Hirnfunktionsausfalls (IHA) eng zusammenhängt, ist ein kritischer Prozess in der Intensivmedizin, der darauf abzielt, potenzielle Organspender frühzeitig zu identifizieren und die notwendigen Schritte für eine erfolgreiche Organtransplantation einzuleiten.</p>
 
-<h2 id="motivation-und-hintergrund">Motivation und Hintergrund</h2>
+<h4 id="motivation-und-hintergrund">Motivation und Hintergrund</h4>
 <p>Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen. Ziel ist es, die Integration von Anwendungen zu ermöglichen, die eine informationstechnische Unterstützung der Organspendeerkennung ermöglichen.</p>
 
 <p>Bei der unterstützenden Software geht es insbesondere um organisatorisch unterstützende Tools, welche die klinischen Daten von intensivmedizinisch behandelten Patienten nach relevanten Parametern  durchsuchen. Relevant sind dabei Parameter, welche auf einen möglicherweise bevorstehenden IHA hinweisen. Die Software analysiert diese Parameter und stellt die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten.</p>
@@ -285,12 +291,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. So zeigt eine <a href="https://link.springer.com/article/10.1007/s00101-018-0510-x">Studie</a>, dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird.
 Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.</p>
 
-<h2 id="stakeholder">Stakeholder</h2>
+<h4 id="stakeholder">Stakeholder</h4>
 <p>Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.</p>
 
 <p>Es handelt sich um eine technische Spezifikation, die keinerlei Vorgaben zur klinischen Umsetzung des Workflows macht.</p>
 
-<p>Die Spezifikation ist in enger Kooperation mit der Deutsche Stiftung Organtransplantation (DSO) sowie des Datenintegrationszentrums der Uniklinik Dresden (DIZ UKDD) und auch den <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html">Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)</a> entstanden.</p>
+<p>Die Spezifikation ist in enger Kooperation mit der Deutschen Stiftung Organtransplantation (DSO) sowie dem Datenintegrationszentrum der Uniklinik Dresden (DIZ UKDD) und auch den <a href="https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html">Verantwortlichen des ‘Kerndatensatzes Erweiterungsmodul Intensivmedizin’ der Medizininformatik Initiative (MII)</a> entstanden.</p>
 
 <p>Eine medizinische Validierung der Profile erfolgte durch die gematik nicht.</p>
 
@@ -299,13 +305,13 @@ Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzi
 
 <p>Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK.</p>
 
-<h2 id="user">User</h2>
+<h4 id="user">User</h4>
 <p>Primär zu berücksichtigende User sind:</p>
 <ul>
   <li>transplantationsbeauftragte Ärztinnen und Ärzte</li>
 </ul>
 
-<h2 id="einordnung-in-die-isik-landschaft">Einordnung in die ISiK Landschaft</h2>
+<h4 id="einordnung-in-die-isik-landschaft">Einordnung in die ISiK Landschaft</h4>
 <p>Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparameter verankert.</p>
 
 <p>Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:</p>
@@ -314,10 +320,10 @@ Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzi
   <li><strong>ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen</strong> - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung">ISiK Basismodul</a></li>
 </ul>
 
-<h2 id="out-of-scope">Out-of-Scope</h2>
+<h4 id="out-of-scope">Out-of-Scope</h4>
 <p>Es werden keine Vorgaben zur konkreten technischen Umsetzung des Workflows gemacht, sondern lediglich die notwendigen Schnittstellen (inklusive Profile) spezifiziert.</p>
 
-<h1 id="interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</h1>
+<h3 id="interoperabler-datenaustausch-durch-informationssysteme-im-krankenhaus-isik">Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)</h3>
 
 <p>Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">REST</a>-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen <a href="https://www.hl7.org/fhir/R4/http.html">vom FHIR Standard vorgegeben</a>. Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.</p>
 
@@ -365,7 +371,7 @@ weiteren Geschlechter, neben männlich und weiblich, ab.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jan 5, 2026 14:41+0000">2026-01-05</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket Organspendeerkennung.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jan 7, 2026 10:21+0000">2026-01-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
