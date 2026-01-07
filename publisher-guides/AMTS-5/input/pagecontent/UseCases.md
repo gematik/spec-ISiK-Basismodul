@@ -42,7 +42,7 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
 * Zur Entzündungsvermeidung ist eine weitere Verordnung notwendig.
 * Im Rahmen des Entlassprozesses erarbeitet das Krankenhauspersonal einen Vorschlag zur Umstellung auf häusliche Gesamtmedikation.
 * Mit Hilfe der Schnittstellen werden alle **AMTS relevanten Informationen konsolidiert** und ein AMTS-Check durchgeführt.
-* Im Entlassgespräch werdend Veränderungen kommuniziert und erklärt.
+* Im Entlassgespräch werden Veränderungen kommuniziert und erklärt.
 * Der Patient wird mit einem neuen Medikationsplan entlassen.
 
 
