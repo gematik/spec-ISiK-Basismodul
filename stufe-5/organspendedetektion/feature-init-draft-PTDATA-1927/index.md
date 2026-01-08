@@ -12,7 +12,7 @@ Version 0.0.1-rc - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-Organspendeerkennung-ig/ImplementationGuide/Organspendeerkennung.test.ig | *Version*:0.0.1-rc |
-| Draft as of 2026-01-07 | *Computable Name*:TestImplementationGuide |
+| Draft as of 2026-01-08 | *Computable Name*:TestImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg)
 
@@ -111,7 +111,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Organspendeerkennung",
   "status" : "draft",
-  "date" : "2026-01-07T10:59:40+00:00",
+  "date" : "2026-01-08T15:50:08+00:00",
   "description" : "Dieser Implementierungsleitfaden schlägt eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus vor.",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",

@@ -9,13 +9,13 @@ Version 0.0.1-rc - STU1
 
 ## Prozesse und Workflows
 
-# Prozesse
+### Prozesse
 
-## Ein Prozess zur Organspendeerkennung
+#### Ein Prozess zur Organspendeerkennung
 
 #TODO: Diagramm ergänzen
 
-## Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung
+#### Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung
 
 Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organspendeerkennung dar:
 
