@@ -1,8 +1,8 @@
-# ISiKKoerpergroesse - AMTS ISiK Implementation Guide v0.0.1
+# ISiKKoerpergroesse - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKKoerpergroesse |
 
  
@@ -34,7 +34,7 @@ Das Profil ISiKKoerpergroesse ist vom Profil[VitalSignDE_Koerpergroesse](http://
 * Examples for this Profile: [Observation/ExtractedObservationKoerpergroesse](Observation-ExtractedObservationKoerpergroesse.md), [Observation/ISiKKoerpergroesseExample](Observation-ISiKKoerpergroesseExample.md), [Observation/ISiKKoerpergroesseMaxExample](Observation-ISiKKoerpergroesseMaxExample.md) and [Observation/ISiKKoerpergroesseMinExample](Observation-ISiKKoerpergroesseMinExample.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement AMTS Rolle](CapabilityStatement-ISiKCapabilityStatementAMTSRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKKoerpergroesse)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKKoerpergroesse)
 
 ### Formal Views of Profile Content
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKKoerpergroesse.c
   "resourceType" : "StructureDefinition",
   "id" : "ISiKKoerpergroesse",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKKoerpergroesse",
   "status" : "active",
   "experimental" : false,

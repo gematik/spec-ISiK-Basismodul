@@ -1,8 +1,8 @@
-# EndDate - AMTS ISiK Implementation Guide v0.0.1
+# EndDate - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:EndDate |
 
  
@@ -27,7 +27,7 @@ The actual end date of the Encounter (Backport from R5). The parameter cannot re
   "resourceType" : "SearchParameter",
   "id" : "Encounter-end-date",
   "url" : "https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "EndDate",
   "status" : "active",
   "experimental" : false,

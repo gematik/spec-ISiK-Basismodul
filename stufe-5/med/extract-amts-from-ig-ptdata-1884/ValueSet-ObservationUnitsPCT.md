@@ -1,8 +1,8 @@
-# ObservationUnitsPCT - AMTS ISiK Implementation Guide v0.0.1
+# ObservationUnitsPCT - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ObservationUnitsPCT | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ObservationUnitsPCT | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ObservationUnitsPCT |
 
  
@@ -50,7 +50,7 @@ Enthält UCUM-Einheiten für die Observation PCT
   "resourceType" : "ValueSet",
   "id" : "ObservationUnitsPCT",
   "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsPCT",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ObservationUnitsPCT",
   "status" : "active",
   "experimental" : false,

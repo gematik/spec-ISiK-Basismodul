@@ -1,8 +1,8 @@
-# ISiK Schwangerschaftsstatus - AMTS ISiK Implementation Guide v0.0.1
+# ISiK Schwangerschaftsstatus - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKSchwangerschaftsstatus |
 
  
@@ -23,7 +23,7 @@ Schwangerschaftsstatus einer Patientin
 * Examples for this Profile: [Observation/ISiKSchwangerschaftsstatusBeispiel](Observation-ISiKSchwangerschaftsstatusBeispiel.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKSchwangerschaftsstatus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKSchwangerschaftsstatus)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschafts
   "resourceType" : "StructureDefinition",
   "id" : "ISiKSchwangerschaftsstatus",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKSchwangerschaftsstatus",
   "title" : "ISiK Schwangerschaftsstatus",
   "status" : "active",

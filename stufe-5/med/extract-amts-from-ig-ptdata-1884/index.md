@@ -1,8 +1,8 @@
-# Einführung - AMTS ISiK Implementation Guide v0.0.1
+# Einführung - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * **Einführung**
@@ -11,14 +11,10 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/test-amts-ig/ImplementationGuide/amts.test.ig | *Version*:0.0.1 |
+| *Official URL*:http://example.org/fhir/amts-ig/ImplementationGuide/amts.ig | *Version*:6.0.0-rc |
 | Draft as of 2026-01-08 | *Computable Name*:AMTSImplementationGuide |
 
-![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
-
--------
-
-Version: 5.1.1
+Version: 6.0.0-rc
 
 Datum: 17.12.2025
 
@@ -90,15 +86,15 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "amts.test.ig",
-  "url" : "http://example.org/fhir/test-amts-ig/ImplementationGuide/amts.test.ig",
-  "version" : "0.0.1",
+  "id" : "amts.ig",
+  "url" : "http://example.org/fhir/amts-ig/ImplementationGuide/amts.ig",
+  "version" : "6.0.0-rc",
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-08T14:03:32+00:00",
+  "date" : "2026-01-08T14:46:36+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
-  "packageId" : "amts.test.ig",
+  "packageId" : "amts.ig",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [
@@ -127,46 +123,16 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
       "version" : "5.2.0"
     },
     {
-      "id" : "hl7_fhir_uv_ips",
-      "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
-      "packageId" : "hl7.fhir.uv.ips",
-      "version" : "1.1.0"
-    },
-    {
-      "id" : "hl7_fhir_uv_subscriptions_backport_r4",
-      "uri" : "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
-      "packageId" : "hl7.fhir.uv.subscriptions-backport.r4",
-      "version" : "1.1.0"
-    },
-    {
       "id" : "de_basisprofil_r4",
       "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "packageId" : "de.basisprofil.r4",
       "version" : "1.5.4"
     },
     {
-      "id" : "de_ihe_d_terminology",
-      "uri" : "http://fhir.de/packages/de.ihe-d.terminology",
-      "packageId" : "de.ihe-d.terminology",
-      "version" : "3.0.1"
-    },
-    {
-      "id" : "dvmd_kdl_r4",
-      "uri" : "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
-      "packageId" : "dvmd.kdl.r4",
-      "version" : "2025.0.1"
-    },
-    {
       "id" : "ihe_formatcode_fhir",
       "uri" : "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
       "packageId" : "ihe.formatcode.fhir",
       "version" : "1.4.0"
-    },
-    {
-      "id" : "hl7_fhir_uv_sdc",
-      "uri" : "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
-      "packageId" : "hl7.fhir.uv.sdc",
-      "version" : "3.0.0"
     },
     {
       "id" : "de_gematik_terminology",
@@ -315,7 +281,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-amts-ig/history.html"
+            "valueString" : "http://example.org/fhir/amts-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -657,7 +623,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           },
           {
             "url" : "value",
-            "valueString" : "http://example.org/fhir/test-amts-ig/history.html"
+            "valueString" : "http://example.org/fhir/amts-ig/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"

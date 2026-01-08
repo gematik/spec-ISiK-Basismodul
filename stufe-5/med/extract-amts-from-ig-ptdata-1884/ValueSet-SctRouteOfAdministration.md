@@ -1,8 +1,8 @@
-# SctRouteOfAdministration - AMTS ISiK Implementation Guide v0.0.1
+# SctRouteOfAdministration - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:SctRouteOfAdministration |
 
  
@@ -52,7 +52,7 @@ Enthaelt alle SNOMED CT Administrationsarten
   "resourceType" : "ValueSet",
   "id" : "SctRouteOfAdministration",
   "url" : "https://gematik.de/fhir/isik/ValueSet/SctRouteOfAdministration",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "SctRouteOfAdministration",
   "status" : "active",
   "experimental" : false,

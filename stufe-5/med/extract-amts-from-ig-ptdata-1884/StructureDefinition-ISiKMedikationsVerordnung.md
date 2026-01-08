@@ -1,8 +1,8 @@
-# ISiKMedikationsVerordnung - AMTS ISiK Implementation Guide v0.0.1
+# ISiKMedikationsVerordnung - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKMedikationsVerordnung |
 
  
@@ -23,7 +23,7 @@ Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patien
 * Examples for this Profile: [MedicationRequest/ExampleISiKMedikationsVerordnung](MedicationRequest-ExampleISiKMedikationsVerordnung.md) and [MedicationRequest/ExampleISiKMedikationsVerordnung2](MedicationRequest-ExampleISiKMedikationsVerordnung2.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Medikationsverordnung Rolle](CapabilityStatement-ISiKCapabilityStatementMedikationVerordnungRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKMedikationsVerordnung)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKMedikationsVerordnung)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKMedikationsVeror
   "resourceType" : "StructureDefinition",
   "id" : "ISiKMedikationsVerordnung",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKMedikationsVerordnung",
   "status" : "active",
   "experimental" : false,

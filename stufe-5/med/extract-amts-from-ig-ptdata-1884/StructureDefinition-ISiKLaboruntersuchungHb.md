@@ -1,8 +1,8 @@
-# ISiKLaboruntersuchungHb - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLaboruntersuchungHb - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLaboruntersuchungHb |
 
  
@@ -23,7 +23,7 @@ Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten
 * Examples for this Profile: [Observation/ExampleISiKLaboruntersuchungHb1](Observation-ExampleISiKLaboruntersuchungHb1.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Labor Minimal Rolle](CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKLaboruntersuchungHb)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKLaboruntersuchungHb)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLaboruntersuchun
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLaboruntersuchungHb",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLaboruntersuchungHb",
   "status" : "active",
   "experimental" : false,

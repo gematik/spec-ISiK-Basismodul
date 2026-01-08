@@ -1,8 +1,8 @@
-# ISiKMedikament - AMTS ISiK Implementation Guide v0.0.1
+# ISiKMedikament - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKMedikament |
 
  
@@ -23,7 +23,7 @@ Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen
 * Examples for this Profile: [Medication/ExampleISiKMedikament1](Medication-ExampleISiKMedikament1.md), [Medication/ExampleISiKMedikament2](Medication-ExampleISiKMedikament2.md), [Medication/ExampleISiKMedikament3](Medication-ExampleISiKMedikament3.md), [Medication/ExampleISiKMedikament4](Medication-ExampleISiKMedikament4.md)...Show 6 more,[Medication/ExampleISiKMedikament5](Medication-ExampleISiKMedikament5.md),[Medication/ExampleISiKMedikament6](Medication-ExampleISiKMedikament6.md),[Medication/ExampleISiKMedikament7](Medication-ExampleISiKMedikament7.md),[Medication/ExampleISiKMedikament8](Medication-ExampleISiKMedikament8.md),[Medication/ExampleISiKMedikament9](Medication-ExampleISiKMedikament9.md)and[Medication/ParacetamolInfusion](Medication-ParacetamolInfusion.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement MedikamentRolle](CapabilityStatement-ISiKCapabilityStatementMedikamentRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKMedikament)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKMedikament)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKMedikament.csv),
   "resourceType" : "StructureDefinition",
   "id" : "ISiKMedikament",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKMedikament",
   "status" : "active",
   "experimental" : false,

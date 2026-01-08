@@ -1,8 +1,8 @@
-# ISiK CapabilityStatement Imports Expectation - AMTS ISiK Implementation Guide v0.0.1
+# ISiK CapabilityStatement Imports Expectation - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ExtensionISiKCapabilityStatementImportsExpectation |
 
 Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to **not** support a feature.
@@ -29,7 +29,7 @@ This extension may be used on the following element(s):
 
 * Examples for this Extension: [ISiKCapabilityStatementAMTSAkteur](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation)
 
 ### Formal Views of Extension Content
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-ExtensionISiKCapabil
   "resourceType" : "StructureDefinition",
   "id" : "ExtensionISiKCapabilityStatementImportsExpectation",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ExtensionISiKCapabilityStatementImportsExpectation",
   "title" : "ISiK CapabilityStatement Imports Expectation",
   "status" : "active",

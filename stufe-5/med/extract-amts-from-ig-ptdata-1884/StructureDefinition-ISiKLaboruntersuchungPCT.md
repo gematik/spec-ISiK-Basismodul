@@ -1,8 +1,8 @@
-# ISiKLaboruntersuchungPCT - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLaboruntersuchungPCT - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLaboruntersuchungPCT |
 
  
@@ -23,7 +23,7 @@ Dieses Profil ermöglicht die Abbildung der Laboruntersuchung PCT eines Patiente
 * Examples for this Profile: [Observation/ExampleISiKLaboruntersuchungPCT1](Observation-ExampleISiKLaboruntersuchungPCT1.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Labor Minimal Rolle](CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKLaboruntersuchungPCT)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKLaboruntersuchungPCT)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLaboruntersuchun
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLaboruntersuchungPCT",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLaboruntersuchungPCT",
   "status" : "active",
   "experimental" : false,

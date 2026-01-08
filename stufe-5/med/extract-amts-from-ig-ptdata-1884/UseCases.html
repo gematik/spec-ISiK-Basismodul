@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Use Cases - AMTS ISiK Implementation Guide v0.0.1</title>
+    <title>Use Cases - AMTS ISiK Implementation Guide v6.0.0-rc</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -145,7 +145,7 @@
 AMTS ISiK Implementation Guide<br/>
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 0.0.1 - STU1
+            <span style="display:inline-block;">Version 6.0.0-rc - STU1
                 
                 
             </span>
@@ -197,19 +197,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
-</div>
-<h3 id="use-cases-und-versorgungsprozesse">Use Cases und Versorgungsprozesse</h3>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
+<ul id="markdown-toc">
+  <li><a href="#user-stories-und-use-cases" id="markdown-toc-user-stories-und-use-cases">User Stories und Use Cases</a></li>
+  <li><a href="#user-stories---business" id="markdown-toc-user-stories---business">User Stories - Business</a></li>
+  <li><a href="#exemplarische-abläufe" id="markdown-toc-exemplarische-abläufe">Exemplarische Abläufe</a></li>
+  <li><a href="#weitere-implizite-annahmen-und-weitere-informationen" id="markdown-toc-weitere-implizite-annahmen-und-weitere-informationen">Weitere implizite Annahmen und weitere Informationen</a></li>
+  <li><a href="#grafische-zusammenfassung" id="markdown-toc-grafische-zusammenfassung">Grafische Zusammenfassung</a></li>
+  <li><a href="#anwendungsfälle-amts" id="markdown-toc-anwendungsfälle-amts">Anwendungsfälle AMTS</a></li>
+  <li><a href="#fhir-profile-des-anwendungsfalls-amts" id="markdown-toc-fhir-profile-des-anwendungsfalls-amts">FHIR-Profile des Anwendungsfalls AMTS</a></li>
+</ul>
+
+</div>
 <p>Im Positionspapier <a href="https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf">Digital gestützte Medikationsprozesse</a> aus dem Arbeitskreis <em>Analyse der Medikationsprozesse</em> des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.</p>
 
-<h4 id="user-stories-und-use-cases">User Stories und Use Cases</h4>
+<h3 id="user-stories-und-use-cases">User Stories und Use Cases</h3>
 
 <p>Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Anforderungen gegeben.
 User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.</p>
 
-<h4 id="user-stories---business">User Stories - Business</h4>
+<h3 id="user-stories---business">User Stories - Business</h3>
 
 <p>Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nach einem AMTS-Check und einem entsprechenden Informationsaustausch entsteht.</p>
 
@@ -242,7 +251,7 @@ User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken,
 
 <p>Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der Schnittstellen ist eine vorher unbekannte Informationslage. Die Informationen können initial neu sein, durch den Patienten später in den Prozess hinzugegeben werden, oder sich im Zuge einer Behandlung ergeben.</p>
 
-<h4 id="exemplarische-abläufe">Exemplarische Abläufe</h4>
+<h3 id="exemplarische-abläufe">Exemplarische Abläufe</h3>
 
 <p><strong>Beispiel-Sequenz Geplanter operativer Eingriff mit stationärem Aufenthalt</strong><br/>
 Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:</p>
@@ -262,7 +271,7 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:<
   <li>Der Patient wird mit einem neuen Medikationsplan entlassen.</li>
 </ul>
 
-<h4 id="weitere-implizite-annahmen-und-weitere-informationen">Weitere implizite Annahmen und weitere Informationen</h4>
+<h3 id="weitere-implizite-annahmen-und-weitere-informationen">Weitere implizite Annahmen und weitere Informationen</h3>
 
 <p><em>Annahmen:</em></p>
 <ul>
@@ -278,7 +287,7 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:<
 
 <p>Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor sind im Positionspapier <a href="https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf">Digital gestützte Medikationsprozesse</a> aus dem Arbeitskreis <em>Analyse der Medikationsprozesse</em> des Interop Councils zu finden.</p>
 
-<h4 id="grafische-zusammenfassung">Grafische Zusammenfassung</h4>
+<h3 id="grafische-zusammenfassung">Grafische Zusammenfassung</h3>
 
 <p>Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwendungsfälle gegeben.
 Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:</p>
@@ -295,9 +304,9 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
 <p><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg" alt="AMTS Use Cases" width="90%"/></p>
 
-<p><strong>Anwendungsfälle AMTS</strong></p>
+<h3 id="anwendungsfälle-amts">Anwendungsfälle AMTS</h3>
 
-<h5 id="interaktionen-im-rahmen-amts">Interaktionen im Rahmen AMTS</h5>
+<p><strong>Interaktionen im Rahmen AMTS</strong></p>
 
 <p>Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push im Sinne eines Businessprozesses modelliert.</p>
 
@@ -309,7 +318,7 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
 <p><strong>AMTS Push</strong></p>
 
-<h4 id="fhir-profile-des-anwendungsfalls-amts">FHIR-Profile des Anwendungsfalls AMTS</h4>
+<h3 id="fhir-profile-des-anwendungsfalls-amts">FHIR-Profile des Anwendungsfalls AMTS</h3>
 
 <p>Dieser Übergreifende Use Case umfasst mehrere Profile aus verschiedenen Modulen. Die Einzelbeschreibungen sind im Folgenden verlinkt:</p>
 <ul>
@@ -349,7 +358,7 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket amts.test.ig#0.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jan 8, 2026 14:03+0000">2026-01-08</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Paket amts.ig#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jan 8, 2026 14:46+0000">2026-01-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

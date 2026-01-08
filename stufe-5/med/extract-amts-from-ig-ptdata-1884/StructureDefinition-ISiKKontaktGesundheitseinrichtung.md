@@ -1,8 +1,8 @@
-# ISiKKontaktGesundheitseinrichtung - AMTS ISiK Implementation Guide v0.0.1
+# ISiKKontaktGesundheitseinrichtung - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKKontaktGesundheitseinrichtung |
 
  
@@ -39,7 +39,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Encounter/Fachabteilungskontakt](Encounter-Fachabteilungskontakt.md), [Encounter/FachabteilungskontaktBettenverlegung](Encounter-FachabteilungskontaktBettenverlegung.md), [Encounter/FachabteilungskontaktEntlassung](Encounter-FachabteilungskontaktEntlassung.md), [Encounter/FachabteilungskontaktFachbereichswechsel1](Encounter-FachabteilungskontaktFachbereichswechsel1.md)...Show 10 more,[Encounter/FachabteilungskontaktFachbereichswechsel2](Encounter-FachabteilungskontaktFachbereichswechsel2.md),[Encounter/FachabteilungskontaktMinimal2](Encounter-FachabteilungskontaktMinimal2.md),[Encounter/FachabteilungskontaktNormal](Encounter-FachabteilungskontaktNormal.md),[Encounter/FachabteilungskontaktStationaereAufnahme](Encounter-FachabteilungskontaktStationaereAufnahme.md),[Encounter/FachabteilungskontaktStationswechsel1](Encounter-FachabteilungskontaktStationswechsel1.md),[Encounter/FachabteilungskontaktStationswechsel2](Encounter-FachabteilungskontaktStationswechsel2.md),[Encounter/SZ1Nachstationaer](Encounter-SZ1Nachstationaer.md),[Encounter/SZ1Stationaer](Encounter-SZ1Stationaer.md),[Encounter/SZ1Vorstationaer](Encounter-SZ1Vorstationaer.md)and[Encounter/SZ2Encounter](Encounter-SZ2Encounter.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md), [CapabilityStatement für Rolle "LeistungserbringerRolle"](CapabilityStatement-ISiKCapabilityStatementLeistungserbringerRolle.md) and [CapabilityStatement für Rolle "StammdatenRolle"](CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKKontaktGesundheitseinrichtung)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKKontaktGesundheitseinrichtung)
 
 ### Formal Views of Profile Content
 
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKKontaktGesundhei
   "resourceType" : "StructureDefinition",
   "id" : "ISiKKontaktGesundheitseinrichtung",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKKontaktGesundheitseinrichtung",
   "status" : "active",
   "experimental" : false,

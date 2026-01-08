@@ -1,8 +1,8 @@
-# ISiKPersonImGesundheitsberuf - AMTS ISiK Implementation Guide v0.0.1
+# ISiKPersonImGesundheitsberuf - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKPersonImGesundheitsberuf |
 
  
@@ -35,7 +35,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [Practitioner/PractitionerWalterArzt](Practitioner-PractitionerWalterArzt.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "LeistungserbringerRolle"](CapabilityStatement-ISiKCapabilityStatementLeistungserbringerRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKPersonImGesundheitsberuf)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKPersonImGesundheitsberuf)
 
 ### Formal Views of Profile Content
 
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKPersonImGesundhe
     }
   ],
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKPersonImGesundheitsberuf",
   "status" : "active",
   "experimental" : false,

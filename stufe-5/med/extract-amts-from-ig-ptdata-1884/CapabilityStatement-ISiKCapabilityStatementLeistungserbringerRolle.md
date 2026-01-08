@@ -1,8 +1,8 @@
-# CapabilityStatement für Rolle "LeistungserbringerRolle" - AMTS ISiK Implementation Guide v0.0.1
+# CapabilityStatement für Rolle "LeistungserbringerRolle" - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementLeistungserbringerRolle |
 
  
@@ -31,7 +31,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementLeistungserbringerRol
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementLeistungserbringerRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKCapabilityStatementLeistungserbringerRolle",
   "title" : "CapabilityStatement für Rolle &quot;LeistungserbringerRolle&quot;",
   "status" : "active",

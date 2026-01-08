@@ -1,8 +1,8 @@
-# ObservationUnitsCRP - AMTS ISiK Implementation Guide v0.0.1
+# ObservationUnitsCRP - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ObservationUnitsCRP | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ObservationUnitsCRP | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ObservationUnitsCRP |
 
  
@@ -50,7 +50,7 @@ Enthält UCUM-Einheiten für die Observation CRP
   "resourceType" : "ValueSet",
   "id" : "ObservationUnitsCRP",
   "url" : "https://gematik.de/fhir/isik/ValueSet/ObservationUnitsCRP",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ObservationUnitsCRP",
   "status" : "active",
   "experimental" : false,

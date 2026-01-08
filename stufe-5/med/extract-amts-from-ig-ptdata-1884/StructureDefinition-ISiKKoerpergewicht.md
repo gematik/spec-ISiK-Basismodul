@@ -1,8 +1,8 @@
-# ISiKKoerpergewicht - AMTS ISiK Implementation Guide v0.0.1
+# ISiKKoerpergewicht - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKKoerpergewicht |
 
  
@@ -34,7 +34,7 @@ Das Profil ISiKKoerpergewicht ist vom Profil[VitalSignDE_Koerpergewicht](http://
 * Examples for this Profile: [Observation/ExtractedObservationKoerpergewicht](Observation-ExtractedObservationKoerpergewicht.md), [Observation/ISiKKoerpergewichtExample](Observation-ISiKKoerpergewichtExample.md), [Observation/ISiKKoerpergewichtMaxExample](Observation-ISiKKoerpergewichtMaxExample.md) and [Observation/ISiKKoerpergewichtMinExample](Observation-ISiKKoerpergewichtMinExample.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement AMTS Rolle](CapabilityStatement-ISiKCapabilityStatementAMTSRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKKoerpergewicht)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKKoerpergewicht)
 
 ### Formal Views of Profile Content
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKKoerpergewicht.c
   "resourceType" : "StructureDefinition",
   "id" : "ISiKKoerpergewicht",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKKoerpergewicht",
   "status" : "active",
   "experimental" : false,

@@ -1,8 +1,8 @@
-# ISiKStillstatus - AMTS ISiK Implementation Guide v0.0.1
+# ISiKStillstatus - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKStillstatus |
 
  
@@ -23,7 +23,7 @@ Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird
 * Examples for this Profile: [Observation/ISiKStillstatusBeispiel](Observation-ISiKStillstatusBeispiel.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKStillstatus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKStillstatus)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKStillstatus.csv)
   "resourceType" : "StructureDefinition",
   "id" : "ISiKStillstatus",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKStillstatus",
   "title" : "ISiKStillstatus",
   "status" : "active",

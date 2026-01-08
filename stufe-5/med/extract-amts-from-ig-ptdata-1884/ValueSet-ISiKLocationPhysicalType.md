@@ -1,8 +1,8 @@
-# ISiKLocationPhysicalType - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLocationPhysicalType - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLocationPhysicalType |
 
  **References** 
@@ -47,7 +47,7 @@ Version 0.0.1 - STU1
   "resourceType" : "ValueSet",
   "id" : "ISiKLocationPhysicalType",
   "url" : "https://gematik.de/fhir/isik/ValueSet/ISiKLocationPhysicalType",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLocationPhysicalType",
   "status" : "active",
   "experimental" : false,

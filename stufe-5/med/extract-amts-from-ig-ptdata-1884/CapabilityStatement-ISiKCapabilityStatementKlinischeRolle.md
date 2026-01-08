@@ -1,8 +1,8 @@
-# CapabilityStatement für Rolle "ISiKCapabilityStatementKlinischeRolle" - AMTS ISiK Implementation Guide v0.0.1
+# CapabilityStatement für Rolle "ISiKCapabilityStatementKlinischeRolle" - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementKlinischeRolle |
 
  
@@ -31,7 +31,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementKlinischeRolle". Dies
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementKlinischeRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKCapabilityStatementKlinischeRolle",
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;",
   "status" : "active",

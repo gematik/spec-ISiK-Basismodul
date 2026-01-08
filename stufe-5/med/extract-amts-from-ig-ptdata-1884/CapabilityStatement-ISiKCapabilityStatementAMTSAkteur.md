@@ -1,8 +1,8 @@
-# ISiK CapabilityStatement AMTS Akteur - AMTS ISiK Implementation Guide v0.0.1
+# ISiK CapabilityStatement AMTS Akteur - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementAMTSAkteur |
 
  
@@ -42,7 +42,7 @@ Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes 
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementAMTSAkteur",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKCapabilityStatementAMTSAkteur",
   "title" : "ISiK CapabilityStatement AMTS Akteur",
   "status" : "active",

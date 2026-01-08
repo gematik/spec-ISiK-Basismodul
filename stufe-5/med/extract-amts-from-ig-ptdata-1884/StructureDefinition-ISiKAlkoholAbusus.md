@@ -1,8 +1,8 @@
-# ISiK Alkohol Abusus - AMTS ISiK Implementation Guide v0.0.1
+# ISiK Alkohol Abusus - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKAlkoholAbusus |
 
 **Usages:**
@@ -20,7 +20,7 @@ Version 0.0.1 - STU1
 * Examples for this Profile: [Observation/ISiKAlkoholAbususBeispiel](Observation-ISiKAlkoholAbususBeispiel.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKAlkoholAbusus)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKAlkoholAbusus)
 
 ### Formal Views of Profile Content
 
@@ -39,7 +39,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAlkoholAbusus.cs
   "resourceType" : "StructureDefinition",
   "id" : "ISiKAlkoholAbusus",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKAlkoholAbusus",
   "title" : "ISiK Alkohol Abusus",
   "status" : "active",

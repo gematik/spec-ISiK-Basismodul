@@ -1,8 +1,8 @@
-# ISiKMedikationsVerabreichung - AMTS ISiK Implementation Guide v0.0.1
+# ISiKMedikationsVerabreichung - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKMedikationsVerabreichung |
 
  
@@ -36,7 +36,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen,**mehrere`Medi
 * Examples for this Profile: [MedicationAdministration/ExampleISiKMedikationsVerabreichung](MedicationAdministration-ExampleISiKMedikationsVerabreichung.md), [MedicationAdministration/ExampleISiKMedikationsVerabreichung2](MedicationAdministration-ExampleISiKMedikationsVerabreichung2.md), [MedicationAdministration/ExampleISiKMedikationsVerabreichung3](MedicationAdministration-ExampleISiKMedikationsVerabreichung3.md) and [MedicationAdministration/ExampleISiKMedikationsVerabreichung4](MedicationAdministration-ExampleISiKMedikationsVerabreichung4.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Medikationsverabreichung Rolle](CapabilityStatement-ISiKCapabilityStatementMedikationVerabreichungRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKMedikationsVerabreichung)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKMedikationsVerabreichung)
 
 ### Formal Views of Profile Content
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKMedikationsVerab
   "resourceType" : "StructureDefinition",
   "id" : "ISiKMedikationsVerabreichung",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKMedikationsVerabreichung",
   "status" : "active",
   "experimental" : false,

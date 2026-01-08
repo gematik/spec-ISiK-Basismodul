@@ -1,8 +1,8 @@
-# ISiKMedikationsInformation - AMTS ISiK Implementation Guide v0.0.1
+# ISiKMedikationsInformation - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKMedikationsInformation |
 
  
@@ -36,7 +36,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen,**mehrere`Medi
 * Examples for this Profile: [MedicationStatement/ExampleISiKMedikationsInformation1](MedicationStatement-ExampleISiKMedikationsInformation1.md), [MedicationStatement/ExampleISiKMedikationsInformation2](MedicationStatement-ExampleISiKMedikationsInformation2.md), [MedicationStatement/ExampleISiKMedikationsInformation3](MedicationStatement-ExampleISiKMedikationsInformation3.md), [MedicationStatement/ExampleISiKMedikationsInformation4](MedicationStatement-ExampleISiKMedikationsInformation4.md)...Show 7 more,[MedicationStatement/ExampleISiKMedikationsInformation5](MedicationStatement-ExampleISiKMedikationsInformation5.md),[MedicationStatement/ExampleISiKMedikationsInformation6](MedicationStatement-ExampleISiKMedikationsInformation6.md),[MedicationStatement/ExampleISiKMedikationsInformationParkinson1](MedicationStatement-ExampleISiKMedikationsInformationParkinson1.md),[MedicationStatement/ExampleISiKMedikationsInformationParkinson2](MedicationStatement-ExampleISiKMedikationsInformationParkinson2.md),[MedicationStatement/ExampleISiKMedikationsInformationParkinson3](MedicationStatement-ExampleISiKMedikationsInformationParkinson3.md),[MedicationStatement/ExampleISiKMedikationsInformationParkinson4](MedicationStatement-ExampleISiKMedikationsInformationParkinson4.md)and[MedicationStatement/ExampleISiKMedikationsInformationParkinson5](MedicationStatement-ExampleISiKMedikationsInformationParkinson5.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Medikation Server - Medikationsinformation](CapabilityStatement-ISiKCapabilityStatementMedikationInformationRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKMedikationsInformation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKMedikationsInformation)
 
 ### Formal Views of Profile Content
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKMedikationsInfor
   "resourceType" : "StructureDefinition",
   "id" : "ISiKMedikationsInformation",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKMedikationsInformation",
   "status" : "active",
   "experimental" : false,

@@ -1,8 +1,8 @@
-# ISiKPatient - AMTS ISiK Implementation Guide v0.0.1
+# ISiKPatient - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKPatient |
 
  
@@ -43,7 +43,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 * Examples for this Profile: [Patient/DorisQuelle](Patient-DorisQuelle.md), [Patient/DorisZiel](Patient-DorisZiel.md), [Patient/PatientinMinimal](Patient-PatientinMinimal.md), [Patient/PatientinMusterfrau](Patient-PatientinMusterfrau.md)...Show 3 more,[Patient/PatientinNormal](Patient-PatientinNormal.md),[Patient/SZ1Patient](Patient-SZ1Patient.md)and[Patient/SZ2Patient](Patient-SZ2Patient.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "StammdatenRolle"](CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKPatient)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKPatient)
 
 ### Formal Views of Profile Content
 
@@ -68,7 +68,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKPatient.csv), [E
     }
   ],
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKPatient",
   "status" : "active",
   "experimental" : false,

@@ -1,8 +1,8 @@
-# ISiK CapabilityStatement AMTS Rolle - AMTS ISiK Implementation Guide v0.0.1
+# ISiK CapabilityStatement AMTS Rolle - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementAMTSRolle |
 
  
@@ -35,7 +35,7 @@ Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktione
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementAMTSRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSRolle",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKCapabilityStatementAMTSRolle",
   "title" : "ISiK CapabilityStatement AMTS Rolle",
   "status" : "active",

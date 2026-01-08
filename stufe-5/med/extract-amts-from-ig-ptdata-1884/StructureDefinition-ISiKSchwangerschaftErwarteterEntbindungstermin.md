@@ -1,8 +1,8 @@
-# ISiK Schwangerschaft - Erwarteter Entbindungstermin - AMTS ISiK Implementation Guide v0.0.1
+# ISiK Schwangerschaft - Erwarteter Entbindungstermin - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKSchwangerschaftErwarteterEntbindungstermin |
 
 **Usages:**
@@ -21,7 +21,7 @@ Version 0.0.1 - STU1
 * Examples for this Profile: [Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel](Observation-ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin)
 
 ### Formal Views of Profile Content
 
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKSchwangerschaftE
   "resourceType" : "StructureDefinition",
   "id" : "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKSchwangerschaftErwarteterEntbindungstermin",
   "title" : "ISiK Schwangerschaft - Erwarteter Entbindungstermin",
   "status" : "active",

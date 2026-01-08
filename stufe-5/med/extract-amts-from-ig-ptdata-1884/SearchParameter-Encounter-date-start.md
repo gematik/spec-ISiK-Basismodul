@@ -1,8 +1,8 @@
-# DateStart - AMTS ISiK Implementation Guide v0.0.1
+# DateStart - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:DateStart |
 
  
@@ -27,7 +27,7 @@ The actual start date of the Encounter (Backport from R5). The parameter cannot 
   "resourceType" : "SearchParameter",
   "id" : "Encounter-date-start",
   "url" : "https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "DateStart",
   "status" : "active",
   "experimental" : false,

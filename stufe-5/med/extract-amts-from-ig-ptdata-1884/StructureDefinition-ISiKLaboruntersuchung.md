@@ -1,8 +1,8 @@
-# ISiKLaboruntersuchung - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLaboruntersuchung - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLaboruntersuchung |
 
  
@@ -24,7 +24,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als[`Observation`](https://hl7
 
 * Derived from this Profile: [ISiKLaboruntersuchungCRP](StructureDefinition-ISiKLaboruntersuchungCRP.md), [ISiKLaboruntersuchungGFR](StructureDefinition-ISiKLaboruntersuchungGFR.md), [ISiKLaboruntersuchungHb](StructureDefinition-ISiKLaboruntersuchungHb.md), [ISiKLaboruntersuchungPCT](StructureDefinition-ISiKLaboruntersuchungPCT.md)...Show 4 more,[ISiKLaboruntersuchungSerumkreatinin](StructureDefinition-ISiKLaboruntersuchungSerumkreatinin.md),[ISiKLaboruntersuchungTSH](StructureDefinition-ISiKLaboruntersuchungTSH.md),[ISiKLaboruntersuchungThrombozyten](StructureDefinition-ISiKLaboruntersuchungThrombozyten.md)and[ISiKLaboruntersuchungTroponin](StructureDefinition-ISiKLaboruntersuchungTroponin.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKLaboruntersuchung)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKLaboruntersuchung)
 
 ### Formal Views of Profile Content
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLaboruntersuchun
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLaboruntersuchung",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLaboruntersuchung",
   "status" : "active",
   "experimental" : false,

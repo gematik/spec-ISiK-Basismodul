@@ -1,8 +1,8 @@
-# ISiKLaboruntersuchungCRP - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLaboruntersuchungCRP - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLaboruntersuchungCRP |
 
  
@@ -23,7 +23,7 @@ Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patiente
 * Examples for this Profile: [Observation/ExampleISiKLaboruntersuchungCRP1](Observation-ExampleISiKLaboruntersuchungCRP1.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Labor Minimal Rolle](CapabilityStatement-ISiKCapabilityStatementLaborMinimalRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKLaboruntersuchungCRP)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKLaboruntersuchungCRP)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLaboruntersuchun
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLaboruntersuchungCRP",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLaboruntersuchungCRP",
   "status" : "active",
   "experimental" : false,

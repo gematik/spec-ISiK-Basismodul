@@ -1,8 +1,8 @@
-# ISiKAllergieUnvertraeglichkeit - AMTS ISiK Implementation Guide v0.0.1
+# ISiKAllergieUnvertraeglichkeit - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKAllergieUnvertraeglichkeit |
 
  
@@ -39,7 +39,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Examples for this Profile: [AllergyIntolerance/ISiKAllergieUnvertraeglichkeitBeispiel1](AllergyIntolerance-ISiKAllergieUnvertraeglichkeitBeispiel1.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md), [ISiK CapabilityStatement AMTS Rolle](CapabilityStatement-ISiKCapabilityStatementAMTSRolle.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKAllergieUnvertraeglichkeit)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKAllergieUnvertraeglichkeit)
 
 ### Formal Views of Profile Content
 
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKAllergieUnvertra
   "resourceType" : "StructureDefinition",
   "id" : "ISiKAllergieUnvertraeglichkeit",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKAllergieUnvertraeglichkeit",
   "status" : "active",
   "experimental" : false,

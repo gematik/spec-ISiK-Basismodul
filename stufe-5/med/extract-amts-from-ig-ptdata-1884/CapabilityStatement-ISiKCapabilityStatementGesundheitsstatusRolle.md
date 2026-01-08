@@ -1,8 +1,8 @@
-# CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle" - AMTS ISiK Implementation Guide v0.0.1
+# CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle" - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKCapabilityStatementGesundheitsstatusRolle |
 
  
@@ -31,7 +31,7 @@ CapabilityStatement für die Rolle "ISiKCapabilityStatementGesundheitsstatusRoll
   "resourceType" : "CapabilityStatement",
   "id" : "ISiKCapabilityStatementGesundheitsstatusRolle",
   "url" : "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKCapabilityStatementGesundheitsstatusRolle",
   "title" : "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementGesundheitsstatusRolle&quot;",
   "status" : "active",

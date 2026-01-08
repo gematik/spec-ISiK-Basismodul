@@ -1,8 +1,8 @@
-# ISiK Medikationsliste - AMTS ISiK Implementation Guide v0.0.1
+# ISiK Medikationsliste - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKMedikationsListe |
 
  
@@ -24,7 +24,7 @@ Die MedicationList verweist auf MedicationStatement-Ressourcen und bildet Medika
 * Examples for this Profile: [List/ExampleISiKMedikationsListe](List-ExampleISiKMedikationsListe.md) and [List/ExampleISiKMedikationsListeParkinson](List-ExampleISiKMedikationsListeParkinson.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [ISiK CapabilityStatement Medikation Server - Medikationsinformation](CapabilityStatement-ISiKCapabilityStatementMedikationInformationRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKMedikationsListe)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKMedikationsListe)
 
 ### Formal Views of Profile Content
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKMedikationsListe
   "resourceType" : "StructureDefinition",
   "id" : "ISiKMedikationsListe",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsListe",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKMedikationsListe",
   "title" : "ISiK Medikationsliste",
   "status" : "active",

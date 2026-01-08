@@ -1,8 +1,8 @@
-# ISiKLebensZustand - AMTS ISiK Implementation Guide v0.0.1
+# ISiKLebensZustand - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand | *Version*:0.0.1 |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand | *Version*:6.0.0-rc |
 | Active as of 2025-12-17 | *Computable Name*:ISiKLebensZustand |
 
  
@@ -46,7 +46,7 @@ Hinweise zu Inkompatibilitäten können über die[Portalseite](https://service.g
 * Derived from this Profile: [ISiK Alkohol Abusus](StructureDefinition-ISiKAlkoholAbusus.md), [ISiK Raucherstatus](StructureDefinition-ISiKRaucherStatus.md), [ISiK Schwangerschaft - Erwarteter Entbindungstermin](StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.md), [ISiK Schwangerschaftsstatus](StructureDefinition-ISiKSchwangerschaftsstatus.md) and [ISiKStillstatus](StructureDefinition-ISiKStillstatus.md)
 * CapabilityStatements using this Profile: [ISiK CapabilityStatement AMTS Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementAMTSAkteur-expanded.md) and [CapabilityStatement für Rolle "ISiKCapabilityStatementGesundheitsstatusRolle"](CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.test.ig|current/StructureDefinition/ISiKLebensZustand)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/amts.ig|current/StructureDefinition/ISiKLebensZustand)
 
 ### Formal Views of Profile Content
 
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-ISiKLebensZustand.cs
   "resourceType" : "StructureDefinition",
   "id" : "ISiKLebensZustand",
   "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand",
-  "version" : "0.0.1",
+  "version" : "6.0.0-rc",
   "name" : "ISiKLebensZustand",
   "title" : "ISiKLebensZustand",
   "status" : "active",

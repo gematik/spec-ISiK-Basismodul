@@ -1,8 +1,8 @@
-# Artifacts Summary - AMTS ISiK Implementation Guide v0.0.1
+# Artifacts Summary - AMTS ISiK Implementation Guide v6.0.0-rc
 
 AMTS ISiK Implementation Guide
 
-Version 0.0.1 - STU1
+Version 6.0.0-rc - STU1
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**
