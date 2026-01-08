@@ -1,14 +1,12 @@
-### Use Cases und Versorgungsprozesse
-
 Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis *Analyse der Medikationsprozesse* des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
 
 
-#### User Stories und Use Cases
+### User Stories und Use Cases
 
 Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Anforderungen gegeben.
 User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
 
-#### User Stories - Business
+### User Stories - Business
 
 Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nach einem AMTS-Check und einem entsprechenden Informationsaustausch entsteht.
 
@@ -27,7 +25,7 @@ Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nac
 
 Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der Schnittstellen ist eine vorher unbekannte Informationslage. Die Informationen können initial neu sein, durch den Patienten später in den Prozess hinzugegeben werden, oder sich im Zuge einer Behandlung ergeben.
 
-#### Exemplarische Abläufe
+### Exemplarische Abläufe
 
 **Beispiel-Sequenz Geplanter operativer Eingriff mit stationärem Aufenthalt**  
 Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
@@ -48,7 +46,7 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
 
 
 
-#### Weitere implizite Annahmen und weitere Informationen
+### Weitere implizite Annahmen und weitere Informationen
 
 *Annahmen:*
 * Ein beteiligtes und ISiK-AMTS-bestätigtes System verfügt über die grundlegende Funktion zur Durchführung eines AMTS-Checks. Wie ein AMTS-Check durchzuführen ist wird in diesem IG nicht beschrieben.
@@ -61,7 +59,7 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
 
 Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor sind im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis *Analyse der Medikationsprozesse* des Interop Councils zu finden. 
 
-#### Grafische Zusammenfassung
+### Grafische Zusammenfassung
 
 Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwendungsfälle gegeben.
 Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
@@ -74,9 +72,9 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg" alt="AMTS Use Cases" width="90%"/>
 
 
-**Anwendungsfälle AMTS**
+### Anwendungsfälle AMTS
 
-##### Interaktionen im Rahmen AMTS
+**Interaktionen im Rahmen AMTS**
 
 Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push im Sinne eines Businessprozesses modelliert.
 
@@ -90,7 +88,7 @@ Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push 
 **AMTS Push**
 
 
-#### FHIR-Profile des Anwendungsfalls AMTS
+### FHIR-Profile des Anwendungsfalls AMTS
 
 Dieser Übergreifende Use Case umfasst mehrere Profile aus verschiedenen Modulen. Die Einzelbeschreibungen sind im Folgenden verlinkt:
 - Die [AMTS Bewertung der Medikation](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/Datenobjekt_AMTSBewertung) zur Persistierung des Ergebnisses eines AMTS-Checks.
