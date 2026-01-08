@@ -9,38 +9,38 @@ Version 0.0.1 - STU1
 
 ## Use Cases
 
-# Use Cases und Versorgungsprozesse
+### Use Cases und Versorgungsprozesse
 
 Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis **Analyse der Medikationsprozesse** des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
 
-## User Stories und Use Cases
+#### User Stories und Use Cases
 
 Im folgenden wird eine grob-granulare Übersicht über die User Stories bzw. Use Cases und die zugehörigen technischen Anforderungen gegeben. User Stories sollen dazu dienen die Bereiche der Bedarfsanalyse grob abzudecken, daraufhin zu präzisieren und die Problemdefinition zu schärfen. Sie fokussieren sich auf den Nutzer und was dieser mit einer Funktionalität erreichen möchte. Use Cases sind eher technisch orientiert und fokussieren verschiedene Einsatzszenarien und deren Anwendungsfälle.
 
-## User Stories - Business
+#### User Stories - Business
 
 Die User Stories beschreiben die grundlegenden Kontexte, in denen der Bedarf nach einem AMTS-Check und einem entsprechenden Informationsaustausch entsteht.
 
 * **User Story 01** - AMTS Prüfung bei Verordnung, Änderung der Verordnung und Abgabe 
 * Ein Heilberufler (insb. Ärzte, Apotheker) möchte AMTS-relevante Informationen abrufen, um eine sichere Verordnung, Änderung einer Verordnung (z.B. Substitution) oder Abgabe einer Medikation zu gewährleisten.
-* **Requirement**: Im Rahmen der Medikationsverordnung, -Änderung oder -Ausgabe MUSS der Nutzer auf AMTS hin prüfen können.
+* **Anforderung**: Im Rahmen der Medikationsverordnung, -Änderung oder -Ausgabe MUSS der Nutzer auf AMTS hin prüfen können.
  
 * **User Story 02** - AMTS Prüfung bei neuer Informationslage 
 * Ein Heilberufler (insb. Ärzte, Apotheker) möchte AMTS-relevante Informationen abrufen, um eine sichere Abgabe einer Medikation zu gewährleisten.
-* **Requirement**: Im Rahmen neu bekanntgewordener Informationen MUSS der Nutzer auf AMTS hin prüfen können.
+* **Anforderung**: Im Rahmen neu bekanntgewordener Informationen MUSS der Nutzer auf AMTS hin prüfen können.
  
 * **User Story 03** - Stationäre Aufnahme mit Medikationsumstellung (Medication Reconciliation) 
 * Bei der stationären Aufnahme eines Patienten soll die bestehende (häusliche oder ambulante) Medikation mit in das geänderte Versorgungsumfeld übersetzt und angepasst werden, um eine gleichwertige und sichere stationäre Verordnung zu gewährleisten.
-* **Requirement**: Im Rahmen der Patientenaufnahme MUSS der Nutzer auf AMTS hin prüfen können.
+* **Anforderung**: Im Rahmen der Patientenaufnahme MUSS der Nutzer auf AMTS hin prüfen können.
  
 * **User Story 04** - Entlassung mit Medikationsumstellung (Medication Reconciliation) 
 * Bei der Entlassung eines Patienten aus der stationären Versorgung soll die initiale Medikation mit in das sich ändernde Umfeld übersetzt und angepasst werden, um eine gleichwertige und sichere Weiterführung der Medikation zu gewährleisten.
-* **Requirement**: Im Rahmen der Entlassung MUSS der Nutzer auf AMTS hin prüfen können.
+* **Anforderung**: Im Rahmen der Entlassung MUSS der Nutzer auf AMTS hin prüfen können.
  
 
 Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der Schnittstellen ist eine vorher unbekannte Informationslage. Die Informationen können initial neu sein, durch den Patienten später in den Prozess hinzugegeben werden, oder sich im Zuge einer Behandlung ergeben.
 
-## Exemplarische Abläufe
+#### Exemplarische Abläufe
 
 **Beispiel-Sequenz Geplanter operativer Eingriff mit stationärem Aufenthalt**
  Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
@@ -59,7 +59,7 @@ Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der S
 * Im Entlassgespräch werden Veränderungen kommuniziert und erklärt.
 * Der Patient wird mit einem neuen Medikationsplan entlassen.
 
-## Weitere implizite Annahmen und weitere Informationen
+#### Weitere implizite Annahmen und weitere Informationen
 
 **Annahmen:**
 
@@ -73,7 +73,7 @@ Der zentrale Auslöser einer AMTS-Prüfung und damit auch für die Nutzung der S
 
 Weitere Anwendungsfälle und Versorgungsprozesse für den stationären Sektor sind im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis **Analyse der Medikationsprozesse** des Interop Councils zu finden.
 
-## Grafische Zusammenfassung
+#### Grafische Zusammenfassung
 
 Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implementierungsleitfaden (AMTS) abgedeckten Anwendungsfälle gegeben. Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
 
@@ -88,7 +88,7 @@ Im Folgenden wird ein grafischer Überblick über möglichst in diesem Implement
 
 **Anwendungsfälle AMTS**
 
-### Interaktionen im Rahmen AMTS
+##### Interaktionen im Rahmen AMTS
 
 Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push im Sinne eines Businessprozesses modelliert.
 
@@ -100,7 +100,7 @@ Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push 
 
 **AMTS Push**
 
-## FHIR-Profile des Anwendungsfalls AMTS
+#### FHIR-Profile des Anwendungsfalls AMTS
 
 Dieser Übergreifende Use Case umfasst mehrere Profile aus verschiedenen Modulen. Die Einzelbeschreibungen sind im Folgenden verlinkt:
 

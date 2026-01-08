@@ -12,7 +12,7 @@ Version 0.0.1 - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/test-amts-ig/ImplementationGuide/amts.test.ig | *Version*:0.0.1 |
-| Draft as of 2026-01-07 | *Computable Name*:AMTSImplementationGuide |
+| Draft as of 2026-01-08 | *Computable Name*:AMTSImplementationGuide |
 
 ![](https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg)
 
@@ -28,7 +28,7 @@ Realm: Deutschland
 
 -------
 
-# Motivation AMTS Implementation Guide
+### Motivation AMTS Implementation Guide
 
 Die Arzneimittel-Therapiesicherheit ist ein wesentlicher Bestandteil einer qualitativ hochwertigen Patientenversorgung, da Medikationsfehler sowie nicht berücksichtigte Risiken wie Wechselwirkungen, Allergien oder Kontraindikationen erhebliche gesundheitliche Schäden verursachen können. Ein Implementierungsleitfaden im ISiK-Kontext schafft die notwendige Grundlage, um sicherheitsrelevante Informationen standardisiert, interoperabel und systemübergreifend verfügbar zu machen. Dadurch können potenzielle Risiken frühzeitig erkannt, klinische Entscheidungen gezielt unterstützt und die Sicherheit der Arzneimitteltherapie nachhaltig verbessert werden.
 
@@ -36,18 +36,17 @@ Dieser Implementierungsleitfaden beschreibt die an der Schnittstelle verfügbare
 
 Durch diesen Implementierungsleitfaden werden die bereitgestellten Ressourcen der ISiK-Landschaft erweitert, sodass eine Vielzahl an Funktionen möglich ist, mit denen eine Medikation individuell durch die Informationssysteme beurteilt oder angepasst werden kann. Die bedeutendsten abzudeckenden Use Cases sind Wechselwirkungen, Allergien und Kontraindikationen, die vor einer Abgabe identifiziert werden sollten. So lässt sich dann z.B. erkennen, ob ein Medikament in einem bestimmten Behandlungsfall nicht als sicher einzustufen ist. Mit den verfügbaren Informationen könnte potenziell auch ein individuell besser geeignetes Medikament vorgeschlagen werden.
 
-## Ziele
+#### Ziele
 
 Ziele des vorliegenden IG sind:
 
 1. Die Identifikation und Beschreibung relevanter Anwendungsfälle.
 1. Die Identifikation und nachfolgende Spezifikation neuer, notwendiger (oder zu erweiternder) Ressourcen als Informationsträger für die AMTS Bewertung.
 1. Die Schaffung eines Implementierungsleitfadens zur Bereitstellung ebendieser AMTS-relevanten Informationen.
-1. Die korrekte Abgrenzung des Leistungsumfangs ISiK-Medikation im Bezug auf AMTS (Out-of-Scope).
 
 Die genauere Zielstellung kann unter Einbeziehung der Stakeholder in der Evolution von ISiK erweitert oder verändert werden.
 
-## Out-of-scope
+#### Out-of-scope
 
 Aufgrund technischer Beschränkungen oder eines vorerst unnötigen Aufwands gibt es auch Aspekte, die aktuell noch außen vor bleiben müssen:
 
@@ -58,7 +57,7 @@ Aufgrund technischer Beschränkungen oder eines vorerst unnötigen Aufwands gibt
 
 Einige dieser Aspekte sind bereits im Backlog für kommende ISiK Entwicklungsstufen aufgenommen.
 
-# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
 
@@ -97,7 +96,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-07T10:42:26+00:00",
+  "date" : "2026-01-08T14:03:32+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.test.ig",
   "license" : "CC0-1.0",
