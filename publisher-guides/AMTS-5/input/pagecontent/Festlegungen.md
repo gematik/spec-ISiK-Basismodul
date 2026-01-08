@@ -2,13 +2,13 @@
 topic: Festlegungen
 ---
 
-# Übergreifende Festlegungen
+### Übergreifende Festlegungen
 
 Es gelten alle übergreifenden Festlegungen entsprechend dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
 
 Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Akteure, text: Akteuren}}.
 
-## REST-API
+#### REST-API
 
 Es gelten grundsätzlich die [Allgemeinen Hinweise zur REST API aus dem Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md).
 
@@ -20,7 +20,7 @@ Abweichend hiervon bzw. ergänzend hierzu gilt:
 
 * Das Löschen einer Ressource per HTTP DELETE (Delete-Interaktion, vgl. [FHIR RESTful API - Delete](https://www.hl7.org/fhir/R4/http.html#delete)) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens. Als Alternative zur Delete-Interaktion kann das Setzen eines entsprechenden Ressourcen-Status (beispielsweise "entered-in-error") dienen.
 
-### Transaktionen
+##### Transaktionen
 
 FHIR-Transaktionen MÜSSEN unterstützt werden, vgl. [FHIR RESTful API - Batch/Transaction](https://www.hl7.org/fhir/R4/http.html#transaction). Es MÜSSEN die dort im Bereich "transaction" genannten Punkte unterstüzt werden. Eine reine Batch-Verarbeitung ist nicht ausreichend.
 
@@ -30,10 +30,10 @@ Wird keine oder nur eine Ressourcen-Instanz modifiziert, kann ebenfalls eine Tra
 
 Der Server MUSS als Antwort auf ein FHIR Transaktions-Bundle ein FHIR TransactionResponse-Bundle, wie in diesem Leitfaden profiliert und in der FHIR-Spezifikation beschrieben, senden.
 
-### Historie
+##### Historie
 
 Die Historisierung/Versionierung von FHIR Ressourcen-Instanzen (vgl. [FHIR RESTful API - History](https://www.hl7.org/fhir/R4/http.html#history)) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens.
 
-## Herstellung von Patienten- und Encounterkontext
+#### Herstellung von Patienten- und Encounterkontext
 
 In diesem Zusammenhang sind insbesondere die Vorgaben zur [Herstellung des Patienten- und Encounter-Kontextes](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext.md) zu beachten.
