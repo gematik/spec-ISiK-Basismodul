@@ -2,7 +2,7 @@
 topic: ISiKCapabilityStatementStammdatenRolle
 canonical: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle
 ---
-##  <fql output="inline" headers="false">
+####  <fql output="inline" headers="false">
 from
     CapabilityStatement
 where
@@ -38,7 +38,7 @@ select
 	CanonicalURL: url, Intention: kind, Status: status, Version: version
 </fql>
 
-### Anforderungen an die FHIR-API
+##### Anforderungen an die FHIR-API
 <fql output="transpose" headers="true">
 from
     CapabilityStatement
@@ -53,7 +53,7 @@ order by type
 </fql>
 
 
-#### Interaktionen
+###### Interaktionen
 <fql>
 from
     CapabilityStatement
@@ -73,7 +73,7 @@ select
 order by Ressourcentyp
 </fql>
 
-#### Profile
+###### Profile
 <fql>
 from
     CapabilityStatement
@@ -89,7 +89,7 @@ select
 order by Ressourcentyp
 </fql>
 
-#### Ressourcentyp-spezifische Operations 
+###### Ressourcentyp-spezifische Operations 
 
 <fql>
 from
@@ -108,7 +108,7 @@ join operation
 }
 </fql> 
 
-#### Globale Operations 
+###### Globale Operations 
 
 <fql>
 from
@@ -124,7 +124,7 @@ select
 }
 </fql>
 
-#### Dokumenten-Endpunkt
+###### Dokumenten-Endpunkt
 <fql>
 from
 	CapabilityStatement
@@ -136,7 +136,7 @@ select
     Dokumentation: documentation, Profil: profile
 </fql>
 
-#### Suchparameter
+###### Suchparameter
 <fql>
 from
     CapabilityStatement
@@ -155,7 +155,7 @@ join searchParam
 }
 </fql>
 
-#### (Reverse-)Include
+###### (Reverse-)Include
 <fql>
 from
     CapabilityStatement

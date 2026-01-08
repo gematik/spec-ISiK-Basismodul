@@ -3,7 +3,7 @@ topic: SD_MII_ICU_Intrakranieller_Druck_Icp-Profil
 canonical: https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp
 capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalRolle
 ---
-## {{link}}
+#### {{link}}
 
 <fql output="inline">
 from
@@ -16,7 +16,7 @@ with
   no header
 </fql>
 
-### Bestätigungsrelevanz
+##### Bestätigungsrelevanz
 <fql output="transpose">
 from
     CapabilityStatement
@@ -26,7 +26,7 @@ select
     'Bitte aus dem CpS entnehmen': url
 </fql>
 
-### Metadaten
+##### Metadaten
 
 <fql output="transpose" headers="true">
 from
@@ -37,7 +37,7 @@ select
 	Canonical: url, Status: status, Version: version, Basis: baseDefinition
 </fql>
 
-### Inhalt
+##### Inhalt
 
 <tabs>
   <tab title="Darstellung">{{tree, buttons}}</tab>
@@ -46,7 +46,7 @@ select
   <tab title="Link">{{link}}</tab>
 </tabs>
 
-### Constraints/Invarianten
+##### Constraints/Invarianten
 <fql headers="true">
 from 
     StructureDefinition 
@@ -57,7 +57,7 @@ for
 select Name: key, Schweregrad: severity, Beschreibung: human, Ausdruck: expression
 </fql>
 
-### Terminology-Bindings
+##### Terminology-Bindings
 <fql headers="true">
 from 
     StructureDefinition

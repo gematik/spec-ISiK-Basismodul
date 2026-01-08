@@ -3,7 +3,7 @@ topic: SD_MII_ICU_Intrakranieller_Druck_Icp-MS
 canonical: https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp
 ---
 
-### Anmerkungen zu Must-Support-Feldern
+##### Anmerkungen zu Must-Support-Feldern
 
 <fql>
 from

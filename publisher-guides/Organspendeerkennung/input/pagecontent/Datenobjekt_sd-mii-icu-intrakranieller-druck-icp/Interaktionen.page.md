@@ -3,7 +3,7 @@ topic: SD_MII_ICU_Intrakranieller_Druck_Icp-Interaktionen
 canonical: https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp
 capability: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalRolle
 ---
-### Interaktionen
+##### Interaktionen
 
 <fql output="inline">
 from

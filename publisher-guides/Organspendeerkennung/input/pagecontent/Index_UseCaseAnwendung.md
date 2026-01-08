@@ -2,9 +2,9 @@
 topic: ImplementationGuide-markdown-UseCasesAnwendung
 ---
 
-# Use Cases und Anwendungsszenarien Organspendeerkennung
+### Use Cases und Anwendungsszenarien Organspendeerkennung
 
-## Use Case 
+#### Use Case 
 
 Die Organspendeerkennung umfasst die Identifikation von Patienten, die als Organspender infrage kommen. Zur Erhöhung der Identifikationsrate kann Software, die über Schnittstellenzugänge zu relevanten Vitalparametern aus einer Datenquelle (hier: PDMS) erhält, eine organisatorische Unterstützung für die Transplantationsbeauftragten bereitstellen.
 
@@ -15,7 +15,7 @@ Ein Software-Client ruft über eine standardisierte Schnittstelle die im PDMS do
 
 Datenquelle für die hier betrachteten Fälle ist ausschließlich ein PDMS.
 
-## User Stories
+#### User Stories
 
 Einige User Stories, die diesen Kontext illustrieren, sind folgende:
 
