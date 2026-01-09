@@ -195,48 +195,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 
-<h3 id="übergreifende-festlegungen">Übergreifende Festlegungen</h3>
-
-<p>Es gelten alle übergreifenden Festlegungen entsprechend dem <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen">ISiK Basismodul</a>.</p>
-
-<p>Zudem gelten die Festlegungen gemäß dem Abschnitt zu den .</p>
-
-<h4 id="rest-api">REST-API</h4>
-
-<p>Es gelten grundsätzlich die <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md">Allgemeinen Hinweise zur REST API aus dem Basismodul</a>.</p>
-
-<p>Abweichend hiervon bzw. ergänzend hierzu gilt:</p>
-
-<ul>
-  <li>
-    <p>Das Erstellen einer Ressource per HTTP POST (Create-Interaktion) MUSS unterstützt werden.</p>
-  </li>
-  <li>
-    <p>Das Update einer Ressource per HTTP PUT (Update-Interaktion) MUSS unterstützt werden.</p>
-  </li>
-  <li>
-    <p>Das Löschen einer Ressource per HTTP DELETE (Delete-Interaktion, vgl. <a href="https://www.hl7.org/fhir/R4/http.html#delete">FHIR RESTful API - Delete</a>) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens. Als Alternative zur Delete-Interaktion kann das Setzen eines entsprechenden Ressourcen-Status (beispielsweise “entered-in-error”) dienen.</p>
-  </li>
-</ul>
-
-<h5 id="transaktionen">Transaktionen</h5>
-
-<p>FHIR-Transaktionen MÜSSEN unterstützt werden, vgl. <a href="https://www.hl7.org/fhir/R4/http.html#transaction">FHIR RESTful API - Batch/Transaction</a>. Es MÜSSEN die dort im Bereich “transaction” genannten Punkte unterstüzt werden. Eine reine Batch-Verarbeitung ist nicht ausreichend.</p>
-
-<p>Für jede schreibende Gesamt-Interaktion (Create, Update sowie ggf. Delete), bei der mehr als eine Ressourcen-Instanz erzeugt, geändert oder gelöscht wird, MUSS ein FHIR Transaktions-Bundle, wie in diesem Leitfaden profiliert, verwendet werden.</p>
-
-<p>Wird keine oder nur eine Ressourcen-Instanz modifiziert, kann ebenfalls eine Transaktion verwendet werden. Der Server MUSS auch solche Transaktionen verarbeiten. Die obigen Anforderungen bezüglich der Interaktionen außerhalb von Transaktionen bleiben unbeschadet.</p>
-
-<p>Der Server MUSS als Antwort auf ein FHIR Transaktions-Bundle ein FHIR TransactionResponse-Bundle, wie in diesem Leitfaden profiliert und in der FHIR-Spezifikation beschrieben, senden.</p>
-
-<h5 id="historie">Historie</h5>
-
-<p>Die Historisierung/Versionierung von FHIR Ressourcen-Instanzen (vgl. <a href="https://www.hl7.org/fhir/R4/http.html#history">FHIR RESTful API - History</a>) KANN unterstützt werden, ist aber nicht Gegenstand weiterer Ausarbeitung dieses Implementierungsleitfadens.</p>
-
-<h4 id="herstellung-von-patienten--und-encounterkontext">Herstellung von Patienten- und Encounterkontext</h4>
-
-<p>In diesem Zusammenhang sind insbesondere die Vorgaben zur <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/Patient-Besuch-Kontext.md">Herstellung des Patienten- und Encounter-Kontextes</a> zu beachten.</p>
-
+<p>Es gelten die Festlegungen aus dem Modul ISiK Medikation !!!!!Hier noch Link zur Festlegungsseite einfügen!!!!</p>
 
 
 
@@ -256,7 +215,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket amts.ig#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jan 9, 2026 09:42+0000">2026-01-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket amts.ig#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jan 9, 2026 12:51+0000">2026-01-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
