@@ -78,12 +78,12 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
 Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push im Sinne eines Businessprozesses modelliert.
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_pull.svg" class="center" alt="AMTS Pull" width="90%"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_pull.svg" class="center" alt="AMTS Pull" width="100%"/>
 
 **AMTS Pull**
 
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_push.svg" class="center" alt="AMTS Push" width="90%"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_push.svg" class="center" alt="AMTS Push" width="100%"/>
 
 **AMTS Push**
 
