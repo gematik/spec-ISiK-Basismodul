@@ -92,7 +92,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-09T07:37:22+00:00",
+  "date" : "2026-01-09T09:42:04+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.ig",
   "license" : "CC0-1.0",
@@ -2753,17 +2753,6 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           ],
           "nameUrl" : "Festlegungen.html",
           "title" : "Festlegungen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "Stakeholder.html"
-            }
-          ],
-          "nameUrl" : "Stakeholder.html",
-          "title" : "Stakeholder und weitere Systeme",
           "generation" : "markdown"
         }
       ]
