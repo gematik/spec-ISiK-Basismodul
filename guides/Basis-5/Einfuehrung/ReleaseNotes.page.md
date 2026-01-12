@@ -18,17 +18,22 @@ Die Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+## Version 5.x.x
+
+* fix: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
 
 ## Version 5.1.1
 
-Datum: tbd.
+Datum: 17.12.2025
 
 * `improve` Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911
 * `documentation` Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917
 * `improve` Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten der Terminvereinbarung unerlässlich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915
 * `improve` Für die Profile `ISiKPatient`, `ISiKAngehoeriger`, sowie `ISiKDiagnose` wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können https://github.com/gematik/spec-ISiK-Basismodul/pull/904
+* `fix` Anpassung der package.json um nicht notwendige Dependency "dvmd.kdl.r4" zu entfernen https://github.com/gematik/spec-ISiK-Basismodul/pull/925
 * `documentation` Korrektur des Satzes zur Verwendung von ISiKBinary https://github.com/gematik/spec-ISiK-Basismodul/pull/930
 * `documentation` Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt
+* `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/945
 
 ## Version 5.1.0
 
