@@ -5,7 +5,7 @@ Organspendeerkennung
 Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)**
 
 ## Bundle: Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)

@@ -5,7 +5,7 @@ Organspendeerkennung
 Version 0.0.1-rc - STU1
 
 * [**Table of Contents**](toc.md)
-* [**Artifacts Summary**](artifacts.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **CapabilityStatement für Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;**
 
 ## CapabilityStatement: CapabilityStatement für Rolle "ISiKCapabilityStatementKlinischeRolle" 
