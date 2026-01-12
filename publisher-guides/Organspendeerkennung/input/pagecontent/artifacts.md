@@ -4,22 +4,22 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 #### Akteure
 
-{% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Akteur" %}
+{% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Akteur" withPurpose="true" %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
 
 #### Rollen
 
-{% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Rolle" %}
+{% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Rolle" withPurpose="true" %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
 
 ### Ressourcenprofile
 
-{% include artifacts-table-generator.html resourceType="StructureDefinition" kind="resource" %}
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" kind="resource" %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
 
 ### Datentypen
 
-{% include artifacts-table-generator.html resourceType="StructureDefinition" kind="complex-type" %}
+{% include artifacts-table-generator-isik.html resourceType="StructureDefinition" kind="complex-type" %}
 <div><figcaption><strong>Tabelle:</strong> Datentypen</figcaption></div>
 
 ### Terminologien
@@ -28,11 +28,10 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.
 
-{% include artifacts-table-generator.html resourceType="ValueSet" %}
+{% include artifacts-table-generator-isik.html resourceType="ValueSet" %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
-
 
 #### Code Systems
 
-{% include artifacts-table-generator.html resourceType="CodeSystem" %}
+{% include artifacts-table-generator-isik.html resourceType="CodeSystem" %}
 <div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>

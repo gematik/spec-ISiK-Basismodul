@@ -9,6 +9,11 @@
     {% if include.withDesc == false %}
         {% assign with_desc = false %}
     {% endif %}
+    {% assign with_purp = false %}
+    {% if include.withPurpose == true %}
+        {% assign with_purp = true %}
+        {% assign with_desc = false %}
+    {% endif %}
     {% for resource in site.data.resources %}
         {% assign allowed = false %}
         {% if renderList.size > 0 %}
@@ -34,6 +39,13 @@
                 {% assign allowed = false %}
             {% endif %}
         {% endif %}
+        {% if allowed == true and include.kind %}
+            {% if resource[1].kind == include.kind %}
+                {% assign allowed = true %}
+            {% else %}
+                {% assign allowed = false %}
+            {% endif %}
+        {% endif %}
         {% if allowed == true %}
          <tr>
             <td style="column-width:30%">
@@ -46,6 +58,11 @@
                 </a>
             </td>
             {% if with_desc %}
+            <td>
+                <p>{{ resource[1].description | default: "-" | markdownify }}</p>
+            </td>
+            {% endif %}
+            {% if with_purp %}
             <td>
                 <p>{{ resource[1].purpose | default: "-" | markdownify }}</p>
             </td>
