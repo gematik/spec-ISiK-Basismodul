@@ -111,7 +111,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "TestImplementationGuide",
   "title" : "Organspendeerkennung",
   "status" : "draft",
-  "date" : "2026-01-12T13:18:56+00:00",
+  "date" : "2026-01-12T13:39:29+00:00",
   "description" : "Dieser Implementierungsleitfaden schlägt eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus vor.",
   "packageId" : "Organspendeerkennung.test.ig",
   "license" : "CC0-1.0",
