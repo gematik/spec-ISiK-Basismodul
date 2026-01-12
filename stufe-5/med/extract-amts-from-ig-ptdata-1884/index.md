@@ -12,7 +12,7 @@ Version 6.0.0-rc - STU1
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/amts-ig/ImplementationGuide/amts.ig | *Version*:6.0.0-rc |
-| Draft as of 2026-01-09 | *Computable Name*:AMTSImplementationGuide |
+| Draft as of 2026-01-12 | *Computable Name*:AMTSImplementationGuide |
 
 Version: 6.0.0-rc
 
@@ -92,7 +92,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "AMTSImplementationGuide",
   "title" : "AMTS ISiK Implementation Guide",
   "status" : "draft",
-  "date" : "2026-01-09T12:51:52+00:00",
+  "date" : "2026-01-12T08:08:08+00:00",
   "description" : "Implementation for the AMTS module based on ISiK specifications.",
   "packageId" : "amts.ig",
   "license" : "CC0-1.0",
