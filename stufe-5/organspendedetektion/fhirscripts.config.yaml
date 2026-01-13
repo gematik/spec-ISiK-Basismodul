@@ -1,0 +1,30 @@
+install:
+  - firely_terminal
+  - sushi
+  - igpub
+  - epatools
+  - igtools
+  - publishtools
+deploy:
+  env:
+    dev: "gematik_gemspec_fhir_dev-0"  # Replace with your actual GCS bucket name
+    prod: "prod_bucket"  # Replace with your actual GCS bucket name
+  path: "ig/fhir"
+build:
+  builtin:
+    igtools: true
+    epatools: # true would enable all steps
+      cap_statements: true
+      openapi: true
+  args:
+    openapi:
+      additional_archive:
+        - openapi.add.json
+  pipeline:
+    # - requirements
+    # - sushi
+    # - cap_statements
+    # - shell: touch test.txt
+    # - igpub
+    - openapi
+    # - igpub_qa
