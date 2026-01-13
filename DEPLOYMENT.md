@@ -29,7 +29,7 @@ deploy:
   env:
     dev: "your-dev-bucket-name"    # e.g., gematik_gemspec_fhir_dev-0
     prod: "your-prod-bucket-name"  # Your production bucket
-  path: "ig/fhir"
+  path: "ig/fhir" # also "ig/fhir/isik" 
 ```
 
 ### 3. Run Deployment
