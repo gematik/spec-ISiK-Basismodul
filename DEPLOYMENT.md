@@ -16,7 +16,7 @@ This guide explains how to deploy the FHIR Implementation Guide using the gemati
 # From the repository root
 cd stufe-5/organspendedetektion
 
-# Build from latest release
+# Build from latest release - here hard-coded v. 0.22.0
 docker build -t fhir-scripts https://github.com/gematik/fhir-scripts.git#v0.22.0:docker/devcontainer
 ```
 
