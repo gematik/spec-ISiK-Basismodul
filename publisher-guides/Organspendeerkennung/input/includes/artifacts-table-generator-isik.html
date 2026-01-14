@@ -52,12 +52,12 @@
             </td>
             {% if with_desc %}
             <td>
-                <p>{{ resource[1].description | default: "-" | markdownify }}</p>
+                {{ resource[1].description | default: "-" | replace: "###### ", "" | replace: "##### ", "" | replace: "#### ", "" | replace: "### ", "" | replace: "## ", "" | replace: "# ", "" | markdownify }}
             </td>
             {% endif %}
             {% if with_purp %}
             <td>
-                <p>{{ resource[1].purpose | default: "-" | markdownify }}</p>
+                {{ resource[1].purpose | default: "-" | replace: "###### ", "" | replace: "##### ", "" | replace: "#### ", "" | replace: "### ", "" | replace: "## ", "" | replace: "# ", "" | markdownify }}
             </td>
             {% endif %}
          </tr>
