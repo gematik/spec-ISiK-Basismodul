@@ -4,7 +4,8 @@ This guide explains how to deploy the FHIR Implementation Guide using the gemati
 
 ## Prerequisites
 
-- Docker installed on your system
+- Docker installed on your system 
+  - alternatively install locally with pipx (see https://github.com/gematik/fhir-scripts?tab=readme-ov-file#python-script)
 - Access to Google Cloud Storage buckets
 - Google Cloud credentials configured (if deploying to production)
 
