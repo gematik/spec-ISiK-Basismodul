@@ -38,7 +38,13 @@ Als Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder
 
 Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
 
-<img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-MII.png">
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-MII.png" alt="Versorgungsstellenkontakt" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> </figcaption>
+</figure>
+
 
 ---
 
