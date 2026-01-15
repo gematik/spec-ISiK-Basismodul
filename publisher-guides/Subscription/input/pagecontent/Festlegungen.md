@@ -2,14 +2,14 @@
 topic: Festlegungen
 ---
 
-# Übergreifende Festlegungen
+###Übergreifende Festlegungen
 
 Es gelten alle übergreifenden Festlegungen entsprechend
 dem [ISiK Basismodul](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/Index_Festlegungen.html).
 
 Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Artefakte, text: Artefakten}}.
 
-## Normativer Status
+####Normativer Status
 
 Systeme KÖNNEN die hier beschriebenen Use Cases zur Nutzung themenbasierter Subscriptions nach dem
 Backport-Modell unterstützen.
@@ -24,7 +24,7 @@ Die Nutzung dieser Mechanismen ist derzeit nicht verpflichtend, sondern dient de
 technischen Orientierung, wie Subscriptions auf Basis von SubscriptionTopic-Konzepten bereits heute
 in ISiK-konformen Systemen umgesetzt werden können.
 
-## Zu Unterstützende Funktionalitäten des Subscription-Backport IGs
+####Zu Unterstützende Funktionalitäten des Subscription-Backport IGs
 
 Für die Umsetzung von themenbasierten Ereignisbenachrichtigungen im Rahmen dieses Moduls SOLLEN die
 folgenden Funktionalitäten aus dem Subscriptions-Backport IG unterstützt werden:
