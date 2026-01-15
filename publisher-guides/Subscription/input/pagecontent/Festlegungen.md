@@ -56,4 +56,4 @@ folgenden Funktionalitäten aus dem Subscriptions-Backport IG unterstützt werde
 
 * R4 Backported R5 SubscriptionStatus (Parameters)  
   Die Rückmeldung zum Zustand einer Subscription MUSS in Form eines Parameters-Objekts erfolgen, das
-  dem Profil `backport-subscription-status-r4 entspricht.
+  dem Profil `backport-subscription-status-r4` entspricht.
