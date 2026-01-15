@@ -2,7 +2,7 @@
 topic: UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme
 ---
 
-# Bestätigungsrelevante Systeme
+### Bestätigungsrelevante Systeme
 
 Gemäß § 373 Abs. 2 SGB V legt das Kompetenzzentrum für Interoperabilität im Gesundheitswesen (KIG) derzeit die Definition der bestätigungsrelevanten Systeme fest.
 

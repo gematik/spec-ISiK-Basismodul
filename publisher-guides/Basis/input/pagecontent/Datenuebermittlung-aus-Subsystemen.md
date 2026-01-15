@@ -2,7 +2,7 @@
 topic: DatenübermittlungSubsystem
 ---
 
-## {{page-title}}
+#### {{page-title}}
 
 In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:
 
@@ -22,7 +22,7 @@ Es obliegt dabei dem Ermessen des Herstellers, ob die Übernahme strukturierter 
 
 Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressource vorgesehen](https://www.hl7.org/fhir/R4/composition.html), in einem FHIR-Bundle versendet.
 
-### Interaktionen
+##### Interaktionen
 
 Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mittels einer 'POST'-Interaktion auf den Endpunkt des Primärsystems.
 
@@ -41,7 +41,7 @@ Das Bundle MUSS folgendem Profil entsprechen:
 
 Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten).
 
-### Verarbeitung des Dokumentes
+##### Verarbeitung des Dokumentes
 
 **Hinweis:** Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles, die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. 'transaction') aufstellen.
 
@@ -57,12 +57,12 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 
 Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.
 
-### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
+##### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
 
 Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, Datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
 Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
 
-### Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle
+##### Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle
 
 Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
 
@@ -81,7 +81,7 @@ Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus 
     * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammengefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
-### Persistierung der menschenlesbaren Repräsentation
+##### Persistierung der menschenlesbaren Repräsentation
 
 Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
 Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/R4/documentreference-mappings.html#fhircomposition).
@@ -92,7 +92,7 @@ Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachme
 
 Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt wird, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben wird.
 
-### Hinweise zum Umgang mit strukturierten Daten
+##### Hinweise zum Umgang mit strukturierten Daten
 
 Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
 

@@ -1,7 +1,7 @@
 ---
 topic: ImplementationGuide-markdown-ReleaseNotes
 ---
-# Release Notes
+### Release Notes
 
 
 
@@ -18,11 +18,11 @@ Die Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
-## Version 5.x.x
+##### Version 5.x.x
 
 * fix: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
 
-## Version 5.1.1
+#### Version 5.1.1
 
 Datum: 17.12.2025
 
@@ -35,7 +35,7 @@ Datum: 17.12.2025
 * `documentation` Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt
 * `improve` Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/945
 
-## Version 5.1.0
+### Version 5.1.0
 
 
 Datum: 23.10.2025
@@ -60,7 +60,7 @@ Datum: 23.10.2025
 
 
 
-## Version 5.0.0
+#### Version 5.0.0
 
 Datum: 26.06.2025
 * `improve` Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780
@@ -69,7 +69,7 @@ Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-## Version 5.0.0-rc2 (Benehmensherstellung)
+#### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
@@ -83,7 +83,7 @@ Datum: 5.6.2025
 * `improve` Update UebergreifendeFestlegungen Methodik https://github.com/gematik/spec-ISiK-Basismodul/pull/708
 
 
-## Version 5.0.0-rc1
+#### Version 5.0.0-rc1
 
 Datum: 13.05.2025
 
@@ -92,7 +92,7 @@ Datum: 13.05.2025
 * `documentation` Entfernen des Abschnitts "Verpflichtende Suchparameter", da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709
 * `fix` Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/713
 
-## Version 5.0.0-rc (Kommentierung)
+#### Version 5.0.0-rc (Kommentierung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
@@ -110,12 +110,12 @@ Datum: 09.04.2025
 
 ----
 
-## Version 4.0.3
+#### Version 4.0.3
 * `fix` broken package
 
 ----
 
-## Version 4.0.2
+#### Version 4.0.2
 * `fix` Anpassung Kardinalität von "ExtensionAbrechnungsart" unter Account.coverage https://github.com/gematik/spec-ISiK-Basismodul/pull/526
 * `fix` SearchParameter “contains” existiert nicht in FHIR R4, Suchparameter wird entfernt  https://github.com/gematik/spec-ISiK-Basismodul/pull/529
 * `fix` Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter 'near' https://github.com/gematik/spec-ISiK-Basismodul/pull/533
@@ -133,7 +133,7 @@ Datum: 09.04.2025
 
 ----
 
-## Version 4.0.1
+#### Version 4.0.1
 
 Datum: 25.11.2024
 
@@ -153,7 +153,7 @@ https://github.com/gematik/spec-ISiK-Basismodul/issues/436
 * `improve` Harmonisierung von Encounter.type und Account.type https://github.com/gematik/spec-ISiK-Basismodul/pull/441
 * `improve` Änderung der Kardinalität von Composition.type.text auf 1..1 https://github.com/gematik/spec-ISiK-Basismodul/pull/441
 
-## Version: 4.0.0
+#### Version: 4.0.0
 
 Datum: 30.8.2024
 
@@ -183,7 +183,7 @@ Datum: 30.8.2024
 
 ----
 
-## Version: 4.0.0-rc2
+#### Version: 4.0.0-rc2
 
 Datum: 4.4.2024
 
@@ -204,13 +204,13 @@ Datum: 4.4.2024
 
 ----
 
-## Version: 3.0.5
+#### Version: 3.0.5
 
 Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 eingebracht sind.
 
 ----
 
-## Version: 3.0.4
+#### Version: 3.0.4
 
 Datum: 1.3.2024
 
@@ -222,7 +222,7 @@ Datum: 1.3.2024
 
 
 ----
-## Version: 3.0.3
+#### Version: 3.0.3
 
 Datum: 15.01.2024
 
@@ -231,7 +231,7 @@ Datum: 15.01.2024
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.2...v.3.0.3
 
 ----
-## Version: 3.0.2
+#### Version: 3.0.2
 
 Datum: 09.01.2024
 
@@ -240,7 +240,7 @@ Datum: 09.01.2024
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1...v.3.0.2
 
 ----
-## Version: 3.0.1
+#### Version: 3.0.1
 
 Datum: 05.12.2023
 
@@ -257,14 +257,14 @@ Datum: 05.12.2023
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0...v.3.0.1
 
 ----
-## Version: 3.0.0
+#### Version: 3.0.0
 
 Datum: 01.07.2023
 
 * `improve` Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
 
 ----
-## Version: 3.0.0-rc3
+#### Version: 3.0.0-rc3
 
 Datum: 30.05.2023
 
@@ -289,7 +289,7 @@ Datum: 30.05.2023
   * Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256
 
 ----
-## Version: 3.0.0-rc2
+#### Version: 3.0.0-rc2
 
 Datum: 03.04.2023
 
@@ -297,7 +297,7 @@ Datum: 03.04.2023
   * feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <https://github.com/gematik/spec-ISiK-Basismodul/pull/242>
 
 ----
-## Version: 3.0.0-rc1
+#### Version: 3.0.0-rc1
 
 Datum: 31.03.2023
 
@@ -309,7 +309,7 @@ Datum: 31.03.2023
   * organization as payor by @f-peverali in <https://github.com/gematik/spec-ISiK-Basismodul/pull/236>
 
 ----
-## Version: 2.0.5
+#### Version: 2.0.5
 
 Datum: 24.03.2023
 
@@ -321,7 +321,7 @@ Datum: 24.03.2023
   - Fixed identifier-Slicing of Type VersichertenId-GKV
 
 ----
-## Version: 2.0.4
+#### Version: 2.0.4
 
 Datum: 31.01.2023
 
@@ -330,7 +330,7 @@ Datum: 31.01.2023
 - weitere Änderungen an Implementierungsleitfaeden (informativ)
 
 ----
-## Version: 2.0.3
+#### Version: 2.0.3
 
 Datum: 21.12.2022
 
@@ -342,7 +342,7 @@ Datum: 21.12.2022
 
 
 ----
-## Version: 2.0.2
+#### Version: 2.0.2
 
 Datum: 31.10.2022
 
@@ -359,7 +359,7 @@ Datum: 31.10.2022
 - `improve` Invarianten wurden verbessert
 
 ----
-## Version: 2.0.1
+#### Version: 2.0.1
 
 Datum: 30.09.2022
 
@@ -372,7 +372,7 @@ Datum: 30.09.2022
 * ISiKVersicherungsverhaeltnisSelbstzahler   * .type und .status ist nun Must Support
 
 ----
-## Version: 2.0.0
+#### Version: 2.0.0
 
 Datum: 30.06.2022
 
@@ -404,7 +404,7 @@ Datum: 30.06.2022
     * Must -Support-Flag entfernt auf Element "Encounter.partOf"
 
 ----
-## Version: 2.0.0-ballot
+#### Version: 2.0.0-ballot
 
 Datum: 08.04.2022
 

@@ -1,7 +1,7 @@
 ---
 topic: UebergreifendeFestlegungen-UmgangMitFehlendenDaten
 ---
-## Allgemeine Hinweise zum Umgang mit fehlenden Daten
+#### Allgemeine Hinweise zum Umgang mit fehlenden Daten
 In bestimmten Situationen können Informationen zu einem Datenelement fehlen, ohne dass das Quellsystem den Grund dafür kennt.
 Wenn das betroffene Datenelement eine minimale Kardinalität von 0 hat, also optional ist, auch wenn es als Must Support gekennzeichnet ist, sollte es aus der Ressource weggelassen werden. Handelt es sich hingegen um ein obligatorisches Element mit einer minimalen Kardinalität größer als 0, muss es trotzdem in der Ressource enthalten sein, selbst wenn keine Werte vorliegen. Für solche Fälle wird nachfolgend ein einheitliches Vorgehen im Sinne einer Best Practice zusammengefasst:
 
