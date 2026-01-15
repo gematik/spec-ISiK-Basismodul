@@ -1,7 +1,7 @@
 ---
 topic: ImplementationGuide-markdown-ReleaseNotes
 ---
-###Release Notes
+### Release Notes
 
 
 
@@ -9,7 +9,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-####Version 6.0.0-rc
+#### Version 6.0.0-rc
 
 Datum: tbd.
 
@@ -17,13 +17,13 @@ Datum: tbd.
 
 ----
 
-####Version 5.1.1
+#### Version 5.1.1
 
 Datum: 17.12.2025
 
 Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
 
-####Version 5.1.0
+#### Version 5.1.0
 
 Datum: 23.10.2025
 
@@ -33,19 +33,19 @@ Datum: 23.10.2025
 
 ----
 
-####Version 5.0.0
+#### Version 5.0.0
 
 Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-####Version 5.0.0-rc2 (Benehmensherstellung)
+#### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
 * Keine weiteren Änderungen
 
-####Version 5.0.0-rc (Kommentierung)
+#### Version 5.0.0-rc (Kommentierung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 

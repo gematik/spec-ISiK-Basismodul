@@ -2,7 +2,7 @@
 
 Es gelten die in Interaktionen und der Workflow aus dem [Subscription Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/workflow.html#workflow-fhir-r4)
 
-#####Interaktionen
+##### Interaktionen
 
 * Topic Discovery SOLL durch die [CapabilityStatementSubscriptionTopic-Extension](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-capabilitystatement-subscriptiontopic-canonical.html) supported werden.
 * [HandShake](https://hl7.org/fhir/uv/subscriptions-backport/workflow.html#workflow-fhir-r4) MUSS unterstützt werden.

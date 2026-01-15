@@ -12,7 +12,7 @@ Realm: Deutschland
 
 ----
 
-###Motivation Subscription Modul
+### Motivation Subscription Modul
 
 Im Kontext von ISiK wird eine übergreifende Lösung für die strukturierte und kontextbezogene Bereitstellung von Änderungen benötigt. Ein entsprechender Lösungsansatz für die Kommunikation einer erfolgten Zusammenführung von ISiK-Patienten-Instanzen (patient-merge) ist bereits erarbeitet worden und wurde hier übernommen. Eine Verallgemeinerung dieses Ansatzes für ISiK soll im vorliegenden Implementierungsleitfaden erfolgen.
 
@@ -35,7 +35,7 @@ Verwendung des Subscription Backport IGs ermöglicht eine standardisierte Nutzun
 Features in R4 und ermöglicht eine zukunftssichere Implementierung eines event-basierten
 Datenaustauschmechanismus.
 
-####Stakeholder
+#### Stakeholder
 
 Die Spezifikation richtet sich insbesondere an Softwarehersteller von 1)
 Krankenhausinformationssystemen (KIS), 2) zugehörigen Modulen und Subsystemen, die mit FHIR
@@ -48,7 +48,7 @@ der Verantwortung der jeweiligen Systeme.
 
 ----
 
-###Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
 
