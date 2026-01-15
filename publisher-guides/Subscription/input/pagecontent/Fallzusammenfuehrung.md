@@ -22,7 +22,7 @@ Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Ko
 ## Technische Anforderungen
 
 - Es **SOLL** eine Encounter Merge Notification bereitgestellt werden, wenn zwei oder mehr Encounter zu einem gemeinsamen Encounter zusammengeführt wurden.
-- Die Notification **SOLL** das [ISiK Subscription Profil](https://simplifier.net/isik-stufe-5/isiksubscription) nutzen.
+- Die Notification **SOLL** das [ISiK Subscription Profil](https://simplifier.net/isik-stufe-6/isiksubscription) nutzen.
 - Als `.criteria` **SOLL** folgender Wert genutzt werden:  
   `https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge`  
   mit dem Display: `encounter-merge`
