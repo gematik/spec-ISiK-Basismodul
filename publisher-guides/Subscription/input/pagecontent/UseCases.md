@@ -24,7 +24,7 @@ Anforderungen definiert werden.
 * **Statusänderung bei Terminen:** Wenn ein Termin (Appointment) verschoben oder abgesagt wird,
   erhält das Patientenportal eine automatische Benachrichtigung. Patientinnen und Patienten werden
   daraufhin per E-Mail, App-Push-Nachricht oder SMS informiert.
-* **Frei gewordener Terminslot** Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
+* **Frei gewordener Terminslot:** Wird ein zuvor belegter Terminslot (Slot) wieder verfügbar, erhält das Terminportal
 eine Benachrichtigung. Dadurch können Patienten auf der Warteliste oder mit entsprechender Präferenz gezielt
 über die neue Verfügbarkeit informiert werden. Dies ermöglicht eine effiziente Nachbesetzung freier Termine
 und reduziert ungenutzte Kapazitäten.
