@@ -18,7 +18,7 @@ Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem 
 
 * **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
-{{render:Material/Basis/images/Encounter/Encounter-Modell-Medizinisch.png}}
+![Encounter Modell Medizinisch](../../../../Material/Basis/images/Encounter/Encounter-Modell-Medizinisch.png)
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind. 
 
@@ -38,7 +38,7 @@ Als Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder
 
 Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
 
-{{render:Material/Basis/images/Encounter/Encounter-Modell-MII.png}}
+![Encounter Modell MII](../../../../Material/Basis/images/Encounter/Encounter-Modell-MII.png)
 
 ---
 
@@ -46,7 +46,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
 
-{{render:Material/Basis/images/Encounter/Encounter-Modelle.png}}
+![Encounter Modelle](../../../../Material/Basis/images/Encounter/Encounter-Modelle.png)
 
 Verpflichtend umzusetzen ist für die bestätigungsrelevanten Systeme der Account, im Sinne der Gruppierung einzelner Besuche, zu einem gemeinsamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
 
@@ -72,6 +72,6 @@ ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primär
 Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.
 
 
-{{render:Material/Basis/images/Encounter/Encounter-Modell-Fallnummer.png}}
+![Encounter Modell Fallnummer](../../../../Material/Basis/images/Encounter/Encounter-Modell-Fallnummer.png)
 
 ---
