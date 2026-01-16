@@ -37,7 +37,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-MII.png" alt="Versorgungsstellenkontakt" style="width: 100%;">
+        <img src="Encounter-Modell-MII.png" alt="MII Fall Abbildung" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong> </figcaption>
 </figure>
