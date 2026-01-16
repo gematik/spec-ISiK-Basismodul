@@ -15,7 +15,13 @@ Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem 
 
 * **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
-<img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-Medizinisch.png">
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Medizinisch.png" alt="Fall Abbildung generisch" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> </figcaption>
+</figure>
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind. 
 
@@ -59,7 +65,13 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
 
 * Encounter im ISiK-Kontext sind stets als "Abteilungskontakte", im Sinne der MI-I mit dem entsprechenden `Encounter.type`-Code, zu kennzeichnen.
 * Jegliche im ISiK-Basis-Modul, als auch in anderen ISiK-Modulen definierte Ressourcen, die über einen Encounter-Kontext verfügen, müssen auf einen ISiK-Encounter (Abteilungskontakt) referenzieren.
-<img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-ISiK.png">
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-ISiK.png" alt="ISiK Fall Abbildung" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> </figcaption>
+</figure>
 
 ---
 
@@ -74,7 +86,12 @@ Es müssen zusätzliche Kriterien, wie z.B. Zeitraum(`Encounter.period`), Fallar
 ISiK berücksichtigt jedoch die gängige Praxis, dass die Fallnummer als primäres Suchkriterium verwendet wird; auch von Systemen, die rein der medizinischen Versorgung dienen und keine Abrechnungsfunktionen implementieren. 
 Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource zu implementieren, nur um Zugriff zur Fallnummer zu bekommen, ist das Mitführen des Account-Identifiers als logische Referenz auf den Account im Encounter verpflichtend. Die Fallnummer eines Encounters kann daher auch ohne Kenntnis des Accounts ermittelt werden.
 
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Fallnummer.png" alt="Repräsentation Fallnummer" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> </figcaption>
+</figure>
 
-<img src="../../../../Material/Basis/images/Encounter/Encounter-Modell-Fallnummer.png">
 
 ---
