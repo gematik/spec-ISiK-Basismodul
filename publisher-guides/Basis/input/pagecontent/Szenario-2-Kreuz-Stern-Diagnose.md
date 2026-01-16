@@ -1,7 +1,8 @@
 ---
 expand: 5
 ---
-### Szenario
+### Szenario 2: Kreuz-Stern Diagnose
+
 * volljährige, hauptversicherte Patientin
 * stationärer Aufenthalt
 * Kreuz-Stern-Diagnose (ICD-10) als Krankenhaus-Hauptdiagnose

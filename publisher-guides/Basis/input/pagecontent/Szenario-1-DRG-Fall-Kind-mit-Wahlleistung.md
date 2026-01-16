@@ -2,7 +2,8 @@
 expand: 5
 ---
 
-### Szenario
+### Szenario 1: DRG Fall - Kind mit Wahlleistung
+
 * minderjähriges Kind
 * familienversichert über Mutter
 * Selbstzahlerverhältnis mit abweichendem Rechnungsempfänger
