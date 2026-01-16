@@ -98,15 +98,176 @@ Es existieren fälschlicherweise zwei Instanzen im patientenführenden System, d
 Diese sind:
 
 "Quell" Patienten-Ressource:  
-{{json:DorisQuelle}}
+
+```json
+{
+  "resourceType": "Patient",
+  "id": "DorisQuelle",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "MR",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://fhir.krankenhaus.example/sid/PID",
+      "value": "654321"
+    },
+    {
+      "system": "http://fhir.de/sid/gkv/kvid-10",
+      "type": {
+        "coding": [
+          {
+            "code": "KVZ10",
+            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+          }
+        ]
+      },
+      "value": "A123456789"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Duplikat",
+      "given": [
+        "Doris"
+      ]
+    }
+  ],
+  "active": false,
+  "gender": "female",
+  "birthDate": "1964-08-12"
+}
+
+```
 
 und
 
 "Ziel" Patienten-Ressource:  
-{{json:DorisZiel}}
+
+```json
+{
+  "resourceType": "Patient",
+  "id": "DorisZiel",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "MR",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://fhir.krankenhaus.example/sid/PID",
+      "value": "123456"
+    },
+    {
+      "system": "http://fhir.de/sid/gkv/kvid-10",
+      "type": {
+        "coding": [
+          {
+            "code": "KVZ10",
+            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+          }
+        ]
+      },
+      "value": "A123456789"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Duplikat",
+      "given": [
+        "Doris"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "birthDate": "1964-08-12"
+}
+
+```
 
 Mittels eines *Patient merge* wird die "Ziel" Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert. Daraus entsteht die resultierende Patienten-Instanz:
-{{json:Resources/static/Patient-DorisResultat.json}}
+
+```json
+{
+  "resourceType": "Patient",
+  "id": "DorisZiel",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "MR",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://fhir.krankenhaus.example/sid/PID",
+      "value": "123456"
+    },
+    {
+      "system": "http://fhir.de/sid/gkv/kvid-10",
+      "type": {
+        "coding": [
+          {
+            "code": "KVZ10",
+            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+          }
+        ]
+      },
+      "value": "A123456789"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Duplikat",
+      "given": [
+        "Doris"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "birthDate": "1964-08-12",
+  "link": [
+    {
+      "other": {
+        "identifier": {
+          "system": "https://fhir.krankenhaus.example/sid/PID",
+          "value": "654321"
+        }
+      },
+      "type": "replaces"
+    }
+  ]
+}
+
+```
 
 Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (http://hl7.org/SubscriptionTopic/patient-merge) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.
 
