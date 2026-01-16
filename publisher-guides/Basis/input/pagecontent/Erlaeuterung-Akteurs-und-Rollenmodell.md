@@ -26,6 +26,9 @@ Dieses Modell ermöglicht eine **strukturierte, modulare und nachvollziehbare De
 
 Zur Verdeutlichung der Abhängigkeiten zwischen Rollen und Akteuren steht das unten dargestellte Diagramm zur Verfügung. Es handelt sich um einen Ausschnitt der Akteure und Rollen aus den Modulen Vitalparameter-, Basis- und Medikationsmodul und stellt diese graphisch dar: 
 
-
-
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/main-stufe-5/Material/Basis/images/diagrams/Akteurs_und_Rollenmodell_ISiK.svg" alt="Rollen-Akteurs-Modell" />
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Akteurs_und_Rollenmodell_ISiK.svg" alt="Rollen-Akteurs-Modell" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> </figcaption>
+</figure>
