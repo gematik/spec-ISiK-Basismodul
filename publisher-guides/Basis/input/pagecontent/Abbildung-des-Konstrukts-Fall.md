@@ -30,7 +30,7 @@ Als Kontakt eines Patienten mit einer Einrichtung (z.B. Klinik) gruppiert mehrer
 * **Abteilungskontakt:**
 Als Kontakt des Patienten mit einer Fachabteilung eines Krankenhauses (z.B. einer Ambulanz oder einer stationären Fachabteilung).
 
-* **Versorgungsstellenkontakt:**
+* **Versorgungsstellenkontakt:** 
 Als Kontakt des Patienten mit konkreten Servicestellen, wie z.B. Radiologie oder Endoskopie
 
 Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codierung in `Encounter.type` verwendet. Die Hierarchie der Encounter wird über die `Encounter.partOf`-Relation hergestellt. Ambulante Besuche werden in dem Modell derzeit noch nicht berücksichtigt.
