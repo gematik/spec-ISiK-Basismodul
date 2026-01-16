@@ -46,7 +46,6 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
 ---
 
 #### Beispiel für eine Encounter Merge Notification (Pseudo-JSON)
-# todo example in fsh
 
 ```json
 {
@@ -68,5 +67,4 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
     "payload": "application/fhir+json"
   }
 }
-
-# todo example for pre and post merge
+```
