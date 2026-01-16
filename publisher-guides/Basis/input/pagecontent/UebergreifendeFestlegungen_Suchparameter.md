@@ -1,7 +1,7 @@
 ---
 topic: UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter
 ---
-#### Allgemeine Hinweise zu Suchparametern
+### Allgemeine Hinweise zu Suchparametern
 Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) wo möglich gefordert wird. Entsprechend sind Abfragen durch Clients auf Basis von bekannten Informationen aus dem Kontext *einer einzelnen* Patient- und/oder Encounter-Ressource zu begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
 Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das Vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
 
@@ -26,7 +26,7 @@ Des Weiteren werden zusätzlich sogenannte 'Modifier' pro Suchparameter-Typ defi
 
 Für die im Rahmen dieses Leitfadens relevanten Typen gelten folgende allgemeinen Festlegungen:
 
-##### Date/DateTime
+#### Date/DateTime
 
 Die Präfixe `lt`,`le`,`gt`,`ge`,`eq` MÜSSEN für jeden Suchparameter vom Typ 'date/dateTime' unterstützt werden.
 
@@ -45,7 +45,7 @@ Suche nach allen Diagnosen mit einem Dokumentationsdatum im Zeitraum Januar 2024
 
 Es ist zu beachten, dass jedes Datum einen impliziten Werte-Bereich besitzt. Siehe https://hl7.org/fhir/R4/search.html#date.
 
-##### String
+#### String
 
 Der Modifier `:contains` MUSS für alle spezifizierten Suchparameter vom Typ 'String' unterstützt werden.
 
@@ -54,7 +54,7 @@ Der Modifier `:contains` MUSS für alle spezifizierten Suchparameter vom Typ 'St
 ```[base]/Patient?address:contains=Berlin``` <br>
 Diese Suchanfrage gibt alle Patienten zurück zum Client, welche in einem Adress-Bestandteil den String 'Berlin' enthält (z.B. alle Berliner Adressen unabhängig von konkreten Bezirken).
 
-##### Token
+#### Token
 
 Der Modifier `:not` MUSS für alle spezifizierten Suchparameter vom Typ 'Token' unterstützt werden, sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" verwendet werden.
 Bei einer Suche mit dem ":not"-Modifier MÜSSEN Ressourcen, die keinen Wert für das Element des Suchparameters enthalten, im Suchergebnis enthalten sein.
@@ -69,7 +69,7 @@ Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb 
 ```[base]/Condition?code:not=Test``` <br>
 Diese Suche gibt alle Condition-Ressourcen zurück zum Client, welche innerhalb `Condition.code.coding` NICHT den Code 'Test' enthält. Es ist zu beachten, dass dies auch alle Ressourcen beinhaltet, die keinen kodierten Wert für `Condition.code` enthalten.
 
-##### Reference
+#### Reference
 
 Der Modifier `:identifier` KANN für alle spezifizierten Suchparameter vom Typ 'Reference' unterstützt werden.
 
@@ -94,7 +94,7 @@ Diese Suche gibt alle Prozeduren zurück zum Client, welche innerhalb `Procedure
 ``[base]/Condition?_has:Encounter:diagnosis:identifier=https://example.org/fhir/sid/aufnahmenummer|1234``
 Diese Suche gibt alle Diagnosen zurück, die im Kontext des Kontakts mit der Aufnahmenummer '1234' dokumentiert worden sind.
 
-#### Verkettete Suchparameter (Fokus auf Patient und Encounter)
+### Verkettete Suchparameter (Fokus auf Patient und Encounter)
 
 Für Suchparameter namens 'patient' und 'encounter' MÜSSEN die Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) verpflichtend implementiert werden. Eine Verkettung über die Chaining-Parameter (Multi-Chaining) KANN implementiert werden.
 
@@ -132,7 +132,7 @@ Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden - w
 Mehrfach-Chaining ist generell nicht gefordert, es sei denn es wird in einem Modul für einzelne Parameter explizit verlangt.
 
 
-##### Best-Practice-Empfehlungen für Standard-Suchfilter
+#### Best-Practice-Empfehlungen für Standard-Suchfilter
 
 Diese grundlegenden Best-Practice-Empfehlungen beziehen sich auf die korrekte Verwaltung des Suchprozesses seitens des Servers, mit Bezug auf Sicherheit im klinischen Umfeld. Unstimmigkeiten in den Erwartungen zwischen Client und Server können dazu führen, dass mehr Ressourcen als erwartet oder angemessen gefunden werden, oder, dass Ressourcen in den Suchergebnissen fehlen, die eigentlich vorhanden sein sollten. Im Folgenden werden daher Empfehlungen für Standard-Suchfilter genannt, die ein Grundmaß an Sicherheit im klinischen Umfeld bereitstellen sollen.
 

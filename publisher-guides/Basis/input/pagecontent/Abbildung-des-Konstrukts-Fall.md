@@ -2,10 +2,7 @@
 topic: Fall
 ---
 
-#### {{page-title}}
-
-
-##### Der Begriff "Fall" im Kontext von FHIR
+### Der Begriff "Fall" im Kontext von FHIR
 
 Der Begriff "Fall" gruppiert im Sprachgebrauch verschiedene Konzepte, die in FHIR durch unterschiedliche Ressourcen repräsentiert werden:
 
@@ -24,7 +21,7 @@ Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine syn
 
 ---
 
-##### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
+### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
 In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide-backup/EinfachesAufbaumodell) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
 * **Einrichtungskontakt:**
@@ -48,7 +45,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 ---
 
-##### Der Begriff "Fall" im Kontext der ISiK-Spezifikation
+### Der Begriff "Fall" im Kontext der ISiK-Spezifikation
 
 Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
 
@@ -66,7 +63,7 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
 
 ---
 
-##### Die Repräsentation der "Fall"-Nummer
+### Die Repräsentation der "Fall"-Nummer
 
 Die "Fall"-Nummer ist ein im Kontext der stationären Versorgung häufig verwendetes Vehikel, um (insbesondere in der HL7-V2-Kommunikation) mit einfachen Mitteln den Fallkontext medizinischer Dokumentationen herzustellen.
 

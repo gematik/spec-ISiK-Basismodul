@@ -3,17 +3,17 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest
 ---
 ### REST-API
 
-## Read-Interaktionen
+#### Read-Interaktionen
 Instanzen von Datenobjekten, die die REST-Interaktion "READ" fordern, MÜSSEN per HTTP GET auf ```[BASE_URL]/[resourceType]/[ID]``` abgerufen werden können. 
 Siehe: https://www.hl7.org/fhir/R4/http.html#read 
 
-##### Profil-Konformität
+#### Profil-Konformität
 Instanzen, die von einem ISiK-konformen Server über READ-Interaktionen bereitgestellt werden, SOLLEN valide gegen die entsprechenden ISiK-Profile sein. Ausnahmen bilden Instanzen, die für Anwendungsfälle außerhalb des ISIK-Scopes erstellt wurden oder historische Daten, die bereits *vor* der ISiK-Implementierung erzeugt, oder aus nicht-ISiK-konformen Systemen übernommen wurden.
 
-##### Nicht profilierte Ressourcentypen
+#### Nicht profilierte Ressourcentypen
 Weiterhin steht es Servern frei, neben den in ISIK profilierten auch weitere Ressourcentypen über die REST-API bereitzustellen, sofern dies im CapabilityStatement des Servers entsprechend spezifiziert ist. Server SOLLEN dabei auf ein öffentlich verfügbares Profil des jeweiligen Ressourcentyps referenzieren, das die vom Server implementierten Constraints abbildet. Es KANN sich dabei um ein Profil aus einem anderen (z.B. IHE-/KBV-/MII-)Implementierungsleitfaden oder ein vom Hersteller selbst publiziertes Profil handeln.
 
-##### generische Ressourcentypen
+#### generische Ressourcentypen
 Darüber hinaus ist es Servern gestattet, in ISiK profilierte generische Ressourcentypen, wie z.B. Organization oder Observation in Kontexten außerhalb der in ISiK spezifizierten UseCases zu verwenden.
 
 

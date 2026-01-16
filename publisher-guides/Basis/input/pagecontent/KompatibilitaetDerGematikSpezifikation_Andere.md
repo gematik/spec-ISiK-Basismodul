@@ -1,7 +1,7 @@
 ---
 topic: UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation-Andere
 ---
-#### Kompatibilität zu anderen nationalen FHIR-basierten Spezifikationen
+### Kompatibilität zu anderen nationalen FHIR-basierten Spezifikationen
 
 Grundlage des ISiK-Leitfadens sind in Deutschland bereits abgestimmte und erprobte Profile, unter anderem:
 * die [Basisprofile von HL7 Deutschland e.V.](https://simplifier.net/basisprofil-de-r4)

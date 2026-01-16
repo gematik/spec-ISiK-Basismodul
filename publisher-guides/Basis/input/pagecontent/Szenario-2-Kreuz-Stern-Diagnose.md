@@ -1,18 +1,16 @@
 ---
 expand: 5
 ---
-#### {{page-title}}
-
 ### Szenario
 * volljährige, hauptversicherte Patientin
 * stationärer Aufenthalt
 * Kreuz-Stern-Diagnose (ICD-10) als Krankenhaus-Hauptdiagnose
 
-##### Ressourcen-Graph
+#### Ressourcen-Graph
 
 {{render:Material/Basis/images/Szenarien/Szenario2-BundleViewer.png}}
 
-##### Instanzen: Personen
+#### Instanzen: Personen
 <tabs>
     <tab title="Patientin">      
         {{render:SZ2Patient}}
@@ -20,7 +18,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Diagnosen
+#### Instanzen: Diagnosen
 <tabs>
     <tab title="Primärdiagnose">      
         {{render:SZ2Primaerdiagnose}}
@@ -32,7 +30,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Versicherungsverhältnisse
+#### Instanzen: Versicherungsverhältnisse
 <tabs>
     <tab title="Versicherung gesetzlich">
         {{render:SZ2VersicherungGesetzlich}}
@@ -40,7 +38,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Besuche
+#### Instanzen: Besuche
 <tabs>
     <tab title="Stationär">
         {{render:SZ2Encounter}}
@@ -49,7 +47,7 @@ expand: 5
 </tabs>
 
 
-##### Instanzen: Abrechnungsfall
+#### Instanzen: Abrechnungsfall
 <tabs>
     <tab title="DRG-Abrechnungsfall">
         {{render:Resources/fsh-generated/resources/Account-SZ2DRGFall.json}}

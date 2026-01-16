@@ -1,7 +1,7 @@
 ---
 topic: UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation-IHE
 ---
-#### Kompatibilität zu IHE-Profilen
+### Kompatibilität zu IHE-Profilen
 
 Die ISiK-Spezifikationen werden basierend auf folgenden IHE-Profilen entwickelt:
 * [PDQm (Patient Demographic Query for mobile)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
@@ -20,13 +20,13 @@ Der Mehrwert der ISiK-Spezifikation besteht darin, dass die genannten IHE-Intera
 
 Die Darstellungen der in diesen IHE-Profilen festgelegten Interaktionen und Use Cases sind den oben verlinkten Dokumenten zu entnehmen.
 
-##### IHE PDQm
+#### IHE PDQm
 
-###### Umfang
+##### Umfang
 PDQm unterstützt das Abfragen von demografischen Patientendaten.
 Damit fällt dieser Anwendungsfall vollständig in den Umfang der Festlegungen von ISiK.
 
-###### Akteure
+##### Akteure
 PDQm definiert die Kommunikation zwischen zwei Akteuren:
 1. dem *Patient Demographics Consumer* und
 2. dem *Patient Demographics Supplier*
@@ -34,19 +34,19 @@ PDQm definiert die Kommunikation zwischen zwei Akteuren:
 Im ISiK Kontext nehmen die bestätigungsrelevanten Systeme die Rolle des *Patient Demographics Supplier* ein.
 Die *Pediatric Demographics Option* liegt außerhalb des Abdeckungsbereiches von ISiK.
 
-###### Transaktionen
+##### Transaktionen
 PDQm definiert die Transaktion *ITI-78 (Mobile Patient Demographics Query)*, deren Grundlagen identisch sind mit den in ISiK definierten Interaktionen auf dem Datenobjekt "Patient".
 Der Unterschied zwischen PDQm und ISiK besteht lediglich darin, dass ISiK nicht alle in PDQm spezifizierten Suchparameter zwingend erfordert.
 Suchparameter, die in PDQm obligatorisch sind, in ISiK jedoch optional, sind in diesem Leitfaden mit einem entsprechenden Hinweis versehen.
 
 
-##### IHE QEDm
+#### IHE QEDm
 
-###### Umfang
+##### Umfang
 QEDm unterstützt das Abfragen klinischer Informationen wie zum Beispiel Diagnosen, Beobachtungen (u.a. Vitalparameter), Messdaten und Allergien unter Verwendung des FHIR-Standards.
 Damit überlappt der Anwendungsfall von QEDm in großen Teilen mit den Festlegungen von ISiK.
 
-###### Akteure
+##### Akteure
 QEDm definiert die Kommunikation zwischen zwei Akteuren:
 1. dem *Clinical Data Consumer* und
 2. der *Clinical Data Source*
@@ -61,13 +61,13 @@ Alle weiteren Optionen liegen außerhalb des Abdeckungsbereiches von ISiK in Hin
 
 Die Aufgabe der Clinical Data Source liegt in der Beantwortung der Anfragen nach Informationen durch die Rückgabe von FHIR-Ressourcen, die den gegebenen Suchparametern entsprechen.
 
-###### Transaktionen
+##### Transaktionen
 QEDm definiert die Transaktion *PCC-44 (Mobile Query for Existing Data)*, deren Grundlagen identisch sind mit den in ISiK definierten Interaktionen auf den Datenobjekten "Diagnose" "Prozedur" und "Kontakt/Fall".
 Der Unterschied zwischen QEDm und ISiK besteht lediglich darin, dass ISiK über die Vorgaben von PDQm hinaus die Implementierung weiterer Suchparameter fordert.
 
 So beschränkt sich QEDm zum Beispiel auf die Encounter-Suchparameter `patient` und `date`, während ISiK auch die Suche nach der Fallnummer (`identifier`) und weiteren, für die einrichtungsinterne Kommunikation relevanten Kriterien unterstützt.
 
-##### Abweichungen
+#### Abweichungen
 Hersteller, die die ISiK-Vorgaben implementiert haben, können erwarten, dass ihre Systeme damit die Anforderungen von QEDm im Rahmen der oben genannten Optionen sowie PDQm vollständig erfüllen.
 
 Sollten sich Abweichungen ergeben in dem Sinne, dass Hersteller, die ISiK implementiert und erfolgreich bestätigt haben *zusätzliche* Funktionen implementieren müssen, um QEDm- bzw. PDQm-konform zu sein, so werden diese hier aufgelistet:

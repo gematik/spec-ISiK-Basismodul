@@ -1,7 +1,6 @@
 ---
 expand: 5
 ---
-#### {{page-title}}
 
 ### Szenario
 * minderjähriges Kind
@@ -11,11 +10,11 @@ expand: 5
 * Abrechnung als DRG-Fall 
 * stationärer Aufenthalt mit Wahlleistung Begleitperson (keine Kassenleistung, wird selbst bezahlt)
 
-##### Ressourcen-Graph
+#### Ressourcen-Graph
 
 {{render:Material/Basis/images/Szenarien/Szenario1-BundleViewer.png}}
 
-##### Instanzen: Personen
+#### Instanzen: Personen
 <tabs>
     <tab title="Patientin">      
         {{render:SZ1Patient}}
@@ -27,7 +26,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Versicherungsverhältnisse
+#### Instanzen: Versicherungsverhältnisse
 <tabs>
     <tab title="Versicherung gesetzlich">
         {{render:SZ1VersicherungGesetzlich}}
@@ -39,7 +38,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Besuche
+#### Instanzen: Besuche
 <tabs>
     <tab title="Vorstationärer">
         {{render:SZ1Vorstationaer}}
@@ -55,7 +54,7 @@ expand: 5
     </tab>
 </tabs>
 
-##### Instanzen: Abrechnungsfall
+#### Instanzen: Abrechnungsfall
 <tabs>
     <tab title="DRG-Abrechnungsfall">
         {{render:Resources/fsh-generated/resources/Account-SZ1DRGFall.json}}
