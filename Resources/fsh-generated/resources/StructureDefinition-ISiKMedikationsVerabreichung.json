@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikationsVerabreichung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerabreichung",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "name": "ISiKMedikationsVerabreichung",
   "status": "active",
   "experimental": false,
-  "date": "2025-10-23",
+  "date": "2025-12-17",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung der Verabreichung von Medikamenten für einen Patienten in ISiK Szenarien. \nHinweis zur Auswahl des Profils: In Abgrenzung zu ISiKMedikationsInformation (MedicationStatement) wird mittels des vorliegenden Profils die Verabreichung eines Medikaments an einen Patienten mit einer Zeitpunkt-genauen Angabe abgebildet (.effectiveDateTime oder .effectivePeriod auf Sekundenebene gemäß der [FHIR-Core Vorgabe](https://hl7.org/fhir/R4/datatypes.html#dateTime)). D.h. die lediglich Datums-genaue Angabe  ist im vorliegenden Profil nicht erlaubt. \nDas Profil ISiKMedikationsInformation (MedicationStatement) kann ebenfalls für  die Abbildung der Verabreichung von Medikamenten für einen Patienten verwendet werden, wenn keine Zeitpunkt-genauen Angaben zur Verabreichung vorliegen, sondern lediglich Datums-genaue Angaben (einschließlich Granularität Jahr, Monat oder Tag).\n\nBegründung zur Profil- und Nutzungsdifferenzierung:\nHandelt es sich bei Erfassung um eine medizinische Verabreichungsdokumentation, dann ist ein genauer Zeitstempel zwingend. Die medizinische Verabreichungsdokumentation muss durch medizinisches Personal erfolgen. Angaben von Patienten und Angehörigen sind grundsätzlich keine medizinische Verabreichungsdokumentation und daher als MedicationStament zu erfassen(['report that such a sequence (or at least a part of it) did take place'](https://hl7.org/fhir/R4/medicationstatement.html)). \n\n**Hinweis zur Pausierung einer Medikation (Best-Practice):**\n\nFür die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `MedicationAdministration`-Ressourcen** zu verwenden, anstatt eine bestehende zu überschreiben. Dies bringt folgende Vorteile:\n\n- **Korrekte Statusabbildung:**  \n  Das `status`-Feld muss stets aktuell gepflegt werden, um den momentanen Zustand der Medikation systemweit sichtbar und durchsuchbar zu halten.\n\n- **Effiziente Abfragen über REST API:**  \n  In Kombination mit `effective[x]` ermöglicht das `status`-Feld die gezielte Abfrage aller aktuell gültigen Medikationseinträge über die REST API.  \n  Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationAdministrations` müssten abgerufen und manuell analysiert werden.\n\n- **Erhalt von Verlaufsinformationen:**  \n  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  \n  Durch neue `MedicationAdministration`-Einträge bleibt die Verlaufshistorie erhalten.  \n  *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*\n",
   "fhirVersion": "4.0.1",
@@ -263,6 +263,8 @@
       {
         "id": "MedicationAdministration.performer",
         "path": "MedicationAdministration.performer",
+        "short": "Durchführende Person(en) der Verabreichung",
+        "comment": "Begründung des Must-Support: Nachvollziehbarkeit",
         "mustSupport": true
       },
       {
@@ -308,6 +310,8 @@
       {
         "id": "MedicationAdministration.note",
         "path": "MedicationAdministration.note",
+        "short": "Zusätzliche Anmerkungen zur Medikation",
+        "comment": "Begründung des Must-Support: Fachlich relevante Zusatzinformationen",
         "mustSupport": true
       },
       {
@@ -328,7 +332,7 @@
         "id": "MedicationAdministration.dosage.text",
         "path": "MedicationAdministration.dosage.text",
         "short": "Freitext-Dosierungsangabe",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' \n    \n    Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'.",
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' \n    \n    Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'.",
         "mustSupport": true
       },
       {

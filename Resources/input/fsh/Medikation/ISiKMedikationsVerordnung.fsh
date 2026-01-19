@@ -119,6 +119,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * reference 1..1 MS
     * ^comment = "Begründung des Must-Support: Referenz auf die Diagnose oder Untersuchung, die die Medikation begründet."
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
@@ -134,7 +136,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
     
     Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
   * patientInstruction MS
@@ -248,6 +250,8 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerAdministration only MedicationQuantity
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
+  * ^short = "angeforderte Abgabemenge"
+  * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
   * quantity only MedicationQuantity
     * ^short = "angeforderte Abgabemenge"
