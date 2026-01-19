@@ -25,7 +25,7 @@ Description: "Template für Template-based Extraction auf Basis des (ISiKPatient
     * insert tbeValue([["item.where(linkId = 'given').answer.value.first()"]])
 * telecom
   * insert tbeContext([["item.where(linkId = 'telecom')"]])
-  * system 
+  * system = #phone 
     * insert tbeValue([["item.where(linkId = 'telecom-system').answer.value"]])
   * value
     * insert tbeValue([["item.where(linkId = 'telecom-value').answer.value"]])
