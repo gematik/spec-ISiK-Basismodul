@@ -18,46 +18,24 @@ expand: 5
 
 
 #### Instanzen: Personen
-<tabs>
-    <tab title="Patientin">      
-        {{render:SZ2Patient}}
-        Link: {{link:SZ2Patient}}
-    </tab>
-</tabs>
+
+[Patientin](Patient-SZ2Patient.html)
 
 #### Instanzen: Diagnosen
-<tabs>
-    <tab title="Primärdiagnose">      
-        {{render:SZ2Primaerdiagnose}}
-        Link: {{link:SZ2Primaerdiagnose}}
-    </tab>
-    <tab title="Sekundärdiagnose">      
-        {{render:SZ2Sekundaerdiagnose}}
-        Link: {{link:SZ2Sekundaerdiagnose}}
-    </tab>
-</tabs>
+
+[Primärdiagnose](Condition-SZ2Primaerdiagnose.html)
+
+[Sekundärdiagnose](Condition-SZ2Sekundaerdiagnose.html)
 
 #### Instanzen: Versicherungsverhältnisse
-<tabs>
-    <tab title="Versicherung gesetzlich">
-        {{render:SZ2VersicherungGesetzlich}}
-        Link: {{link:SZ2VersicherungGesetzlich}}
-    </tab>
-</tabs>
+
+[Versicherung gesetzlich](Coverage-SZ2VersicherungGesetzlich.html)
 
 #### Instanzen: Besuche
-<tabs>
-    <tab title="Stationär">
-        {{render:SZ2Encounter}}
-        Link: {{link:SZ2Encounter}} 
-    </tab>
-</tabs>
 
+[Stationärer](Encounter-SZ2Encounter.html)
 
 #### Instanzen: Abrechnungsfall
-<tabs>
-    <tab title="DRG-Abrechnungsfall">
-        {{render:Resources/fsh-generated/resources/Account-SZ2DRGFall.json}}
-        Link: {{link:Resources/fsh-generated/resources/Account-SZ2DRGFall.json}} 
-    </tab>
-</tabs>
+
+[DRG-Abrechnungsfall](Account-SZ2DRGFall.html)
+

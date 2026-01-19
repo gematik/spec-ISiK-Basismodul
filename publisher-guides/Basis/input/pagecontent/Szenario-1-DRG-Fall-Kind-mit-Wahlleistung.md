@@ -23,54 +23,25 @@ expand: 5
 
 #### Instanzen: Personen
 
-##### Patientin
-
 [SZ1 Patient](Patient-SZ1Patient.html)
 
-##### Mutter
-<tabs>
-    <tab title="Patientin">      
-        {{render:SZ1Patient}}
-        Link: {{link:SZ1Patient}}
-    </tab>
-    <tab title="Mutter">      
-        {{render:SZ1Mutter}}
-        Link: {{link:SZ1Mutter}}
-    </tab>
-</tabs>
+[SZ1 Mutter](RelatedPerson-SZ1Mutter.html)
 
 #### Instanzen: Versicherungsverhältnisse
-<tabs>
-    <tab title="Versicherung gesetzlich">
-        {{render:SZ1VersicherungGesetzlich}}
-        Link: {{link:SZ1VersicherungGesetzlich}}
-    </tab>
-    <tab title="Versicherung Selbstzahler">
-        {{render:SZ1VersicherungSelbstzahler}}
-        Link: {{link:SZ1VersicherungSelbstzahler}}
-    </tab>
-</tabs>
+
+[SZ1 Versicherung gesetzlich](Coverage-SZ1VersicherungGesetzlich.html)
+
+[SZ1 Versicherung Selbstzahler](Coverage-SZ1VersicherungSelbstzahler.html)
 
 #### Instanzen: Besuche
-<tabs>
-    <tab title="Vorstationärer">
-        {{render:SZ1Vorstationaer}}
-        Link: {{link:SZ1Vorstationaer}} 
-    </tab>
-    <tab title="Stationär">
-        {{render:SZ1Stationaer}}
-        Link: {{link:SZ1Stationaer}} 
-    </tab>
-    <tab title="Nachstationär">
-        {{render:SZ1Nachstationaer}}
-        Link: {{link:SZ1Nachstationaer}} 
-    </tab>
-</tabs>
+
+[Vorstationärer](Encounter-SZ1Vorstationaer.html)
+
+[Stationärer](Encounter-SZ1Stationaer.html)
+
+[Nachstionärer](Encounter-SZ1Nachstationaer.html)
 
 #### Instanzen: Abrechnungsfall
-<tabs>
-    <tab title="DRG-Abrechnungsfall">
-        {{render:Resources/fsh-generated/resources/Account-SZ1DRGFall.json}}
-        Link: {{link:Resources/fsh-generated/resources/Account-SZ1DRGFall.json}} 
-    </tab>
-</tabs>
+
+[DRG-Abrechnungsfall](Account-SZ1DRGFall.html)
+
