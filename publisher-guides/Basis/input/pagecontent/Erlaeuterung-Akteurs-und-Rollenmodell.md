@@ -30,5 +30,5 @@ Zur Verdeutlichung der Abhängigkeiten zwischen Rollen und Akteuren steht das un
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Akteurs_und_Rollenmodell_ISiK.svg" alt="Rollen-Akteurs-Modell" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung: </strong>Akteurs- und Rollenmodell</figcaption>
 </figure>

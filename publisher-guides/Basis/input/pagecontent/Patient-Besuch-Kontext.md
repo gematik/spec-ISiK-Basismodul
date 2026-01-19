@@ -1,23 +1,22 @@
-### Herstellung von Patient- und Encounterkontext
 
 Vor der Bereitstellung von patientenbezogenen Ressourcen, wie sie u.a. von den Modulen Vitalparameter, Dokumentenaustausch oder Medikation beschrieben werden, muss ein Client einen Patienten- und Encounterkontext herstellen, damit diese serverseitig dem richtigen Patienten und Besuch zugeordnet werden können.
 
 Aus diesem Grund MÜSSEN Hersteller, die serverseitige Akteure dieser Module implementieren, die in diesem Leitfaden spezifizierten Interaktionen zum Suchen und Abrufen von Patienten- und Encounter-Ressourcen ebenfalls implementieren.
 
-#### Server-seitige Implementierungsvarianten
+### Server-seitige Implementierungsvarianten
 
-##### Stand Alone Implementierung
+#### Stand Alone Implementierung
 Dabei ist es den Herstellern von nicht-patientenführenden Systemen ("Subsystemen") freigestellt, ob sie dauerhaft eine vollständige Kopie der relevanten Patienten- und Besuchsdaten des patientenführenden Systems vorhalten wollen. 
 Dies kann zum Beispiel über folgende Mechanismen erfolgen:
 * durch die Entgegennahme und Verarbeitung von HL7 V2 ADT-Nachrichten aus dem patientenführenden System
 * mittels zyklischer Abfragen des Ressourcentyp- oder Server-Level _history-Endpoints unter Nutzung von "_since"-Parametern (oder "_lastUpdated") können sowohl neue als auch geänderte Patientendaten ermittelt und abgeholt werden (derzeit in ISiK nicht spezifiziert) 
 * mit Hilfe von Subscription (derzeit in Ausarbeitung für ISiK Stufe 5)
 
-##### Fassadenimplementierung
+#### Fassadenimplementierung
 Alternativ können Subsysteme die benötigten Informationen ad hoc aus dem Primärsystem beziehen, wenn sie von einem Client angefragt werden. In diesem Fall kann das Subsystem die Suchanfrage eines Clients nach Patienten- oder Encounter-Ressourcen an das patientenführende System delegieren und dem Client die gelieferten Antworten durchreichen. Suchtreffer können in der Datenbank des Subystems gecached oder erneut abgerufen und persistiert werden, wenn ein Client eine Interaktion mit Bezug zu einer dieser Ressourcen ausführen möchte (z.B. durch POSTen einer patientenbezogenen Ressource (Observation, DocumentReference) mit Referenz auf den Patienten bzw. Encounter).
 Besondere Vorsicht ist hierbei auf den Umgang mit URLs geboten. Je nach Architektur können die Suchergebnisse des patientenführenden Systems nicht unverändert an den Client übergeben werden. Ggf. müssen die Referenzen des patientenführenden Systems an den Endpunkt des Subsystems angeglichen und/oder Ressourcen-IDs des Primärsystems mit den vom Client verwendeten IDs ersetzt werden.
 
-#### Client-seitige Implementierungsvarianten
+### Client-seitige Implementierungsvarianten
 Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets eines oder mehrere der folgenden Verfahren zur Herstellung des Patienten-und Besuchs-Kontextes nutzen:
 
 1. **SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte)). 
@@ -41,7 +40,7 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 | **Warnung**
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" width="75"/> |  **Gefahr fehlerhafter Zuordnung:** Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
-#### Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen
+### Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen
 
 Die sichere und zweckgebundene Übertragung von Gesundheitsdaten ist ein zentrales Ziel der ISiK-Spezifikation. Der Schwerpunkt liegt hierbei insbesondere auf dem Datenaustausch in den unter {{pagelink:ImplementationGuide-markdown-Motivation}} beschriebenen Anwendungsszenarien. Für diese ist, wie zuvor ausgeführt, in der Regel ein Patientenkontext erforderlich.
 

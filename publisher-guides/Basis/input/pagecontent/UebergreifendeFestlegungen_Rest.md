@@ -1,27 +1,27 @@
 ---
 topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest
 ---
-### REST-API
 
-#### Read-Interaktionen
+
+### Read-Interaktionen
 Instanzen von Datenobjekten, die die REST-Interaktion "READ" fordern, MÜSSEN per HTTP GET auf ```[BASE_URL]/[resourceType]/[ID]``` abgerufen werden können. 
 Siehe: https://www.hl7.org/fhir/R4/http.html#read 
 
-#### Profil-Konformität
+### Profil-Konformität
 Instanzen, die von einem ISiK-konformen Server über READ-Interaktionen bereitgestellt werden, SOLLEN valide gegen die entsprechenden ISiK-Profile sein. Ausnahmen bilden Instanzen, die für Anwendungsfälle außerhalb des ISIK-Scopes erstellt wurden oder historische Daten, die bereits *vor* der ISiK-Implementierung erzeugt, oder aus nicht-ISiK-konformen Systemen übernommen wurden.
 
-#### Nicht profilierte Ressourcentypen
+### Nicht profilierte Ressourcentypen
 Weiterhin steht es Servern frei, neben den in ISIK profilierten auch weitere Ressourcentypen über die REST-API bereitzustellen, sofern dies im CapabilityStatement des Servers entsprechend spezifiziert ist. Server SOLLEN dabei auf ein öffentlich verfügbares Profil des jeweiligen Ressourcentyps referenzieren, das die vom Server implementierten Constraints abbildet. Es KANN sich dabei um ein Profil aus einem anderen (z.B. IHE-/KBV-/MII-)Implementierungsleitfaden oder ein vom Hersteller selbst publiziertes Profil handeln.
 
-#### generische Ressourcentypen
+### generische Ressourcentypen
 Darüber hinaus ist es Servern gestattet, in ISiK profilierte generische Ressourcentypen, wie z.B. Organization oder Observation in Kontexten außerhalb der in ISiK spezifizierten UseCases zu verwenden.
 
 
 
-#### Search-Interaktionen
+### Search-Interaktionen
 Die Suche MUSS sowohl mittels HTTP GET als auch HTTP POST (vgl. [FHIR RESTful Search - Introduction](https://www.hl7.org/fhir/R4/search.html#Introduction)) unterstützt werden. Die URL-Parameter komplexer Suchanfragen können personenbezogene Merkmale enthalten, daher ist im Echtbetrieb die Suche mittels HTTP POST in Verbindung mit TLS-Verschlüsselung vorzuziehen. 
 
-#### Create-Interaktionen
+### Create-Interaktionen
 Ein System KANN das Erstellen einer Ressource mittels HTTP POST (vgl. [FHIR RESTful API - create](https://www.hl7.org/fhir/R4/http.html#create)) unterstützen. Einzelne Datenobjekte (spezifiziert im vorliegenden Basismodul oder in einem ISiK Erweiterungsmodul) können diese Interaktion als verpflichtend kennzeichnen.
 
 Es liegt im Ermessen des bestätigungsrelevanten Systems, ob eine externe Ressource durch das System direkt übernommen wird. Auch wie die Herkunft der übernommenen Ressource gekennzeichnet wird, liegt im Ermessen des bestätigungsrelevanten Systems.
@@ -59,11 +59,11 @@ Falls es sich um einen syntaktischen Fehler in der Repräsentation der Ressource
 Systeme SOLLEN die [Hinweise zum korrekten Umgang mit Validierung beachten](https://hl7.org/fhir/R4/validation.html#correct-use) und dem [Robustheitsgrundsatz](https://de.wikipedia.org/wiki/Robustheitsgrundsatz) folgen:  "Eine Implementierung sollte in ihrem Sendeverhalten konservativ und in ihrem Empfangsverhalten liberal sein."
 
 
-#### Update-Interaktionen
+### Update-Interaktionen
 Das Update einer Ressource KANN per HTTP PUT (vgl. [FHIR RESTful API - update](https://www.hl7.org/fhir/R4/http.html#update)) unterstützt werden. Es ist zu beachten, dass beim Update einer Ressource bestimmte dazugehörige [Metadaten](https://www.hl7.org/fhir/R4/resource.html#Meta) beibehalten werden SOLLTEN. Die gleichen Vorgaben für die Handhabung von invaliden Ressourcen wie beschrieben im Abschnitt "Create-Interaktionen", gelten auch für Update-Interaktionen.
 
 
-#### Sicherheitsaspekte
+### Sicherheitsaspekte
 Alle REST-Interaktionen müssen sowohl mittels HTTP als auch HTTPS (TLS-Verschlüsselung) unterstützt werden. Vorgaben zur TLS-Verschlüsselung sind dem nachfolgenden Link für die FHIR Security Check List zu entnehmen.
 Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 

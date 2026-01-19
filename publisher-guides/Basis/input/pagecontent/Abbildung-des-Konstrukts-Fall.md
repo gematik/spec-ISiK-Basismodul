@@ -20,7 +20,7 @@ Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen 
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-Medizinisch.png" alt="Fall Abbildung generisch" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung:</strong>Generische Fall Abbildung </figcaption>
 </figure>
 
 Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine synonymen Begriffe sind. 
@@ -45,7 +45,7 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-MII.png" alt="MII Fall Abbildung" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung:</strong>Fall Abbildung MII</figcaption>
 </figure>
 
 
@@ -55,7 +55,12 @@ Zur Unterscheidung der verschiedenen Kontaktebenen wird in der MI-I eine Codieru
 
 Für die derzeitige Ausbaustufe des ISiK Basismoduls werden alle zuvor genannten Sichtweise und Modelle berücksichtigt:
 
-<img src="../../../../Material/Basis/images/Encounter/Encounter-Modelle.png">
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modelle.png" alt="Encounter Modelle" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Encounter Modelle</figcaption>
+</figure>
 
 Verpflichtend umzusetzen ist für die bestätigungsrelevanten Systeme der Account, im Sinne der Gruppierung einzelner Besuche, zu einem gemeinsamen (Abrechnungs-)Fall sowie der Encounter der Ebene "Abteilungskontakt" im Sinne des Modells der Medizininformatikinitiative.
 
@@ -70,7 +75,7 @@ Wichtig sind dabei jedoch folgende Punkte zu beachten:
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-ISiK.png" alt="ISiK Fall Abbildung" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung:</strong>Fall Abbildung ISiK</figcaption>
 </figure>
 
 ---
@@ -90,7 +95,7 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Encounter-Modell-Fallnummer.png" alt="Repräsentation Fallnummer" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung:</strong>Repräsentation der Fallnummer</figcaption>
 </figure>
 
 

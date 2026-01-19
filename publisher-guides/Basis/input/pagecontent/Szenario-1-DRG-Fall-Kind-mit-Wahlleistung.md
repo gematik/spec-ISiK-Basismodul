@@ -17,11 +17,15 @@ expand: 5
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Szenario1-BundleViewer.png" alt="Szenario 1 Bundle Viewer" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong> </figcaption>
+    <figcaption><strong>Abbildung:</strong> Aufbau des Bundles für Szenario 1 </figcaption>
 </figure>
 
 
 #### Instanzen: Personen
+
+##### Patientin
+
+##### Mutter
 <tabs>
     <tab title="Patientin">      
         {{render:SZ1Patient}}
