@@ -27,26 +27,26 @@ wurde.
 Es gelten zur Umsetzung der Subscription Funktionalität CapabilityStatements (Akteure und Rollen)
 sowie Datenstrukturen entsprechend der folgenden Seite.
 
-### CapabilityStatements
+## CapabilityStatements
 
-#### Akteure
+### Akteure
 
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Akteur" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
 
-#### Rollen
+### Rollen
 
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Rolle" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
 
-### Ressourcenprofile
+## Ressourcenprofile
 
 {% include artifacts-table-generator-isik.html resourceType="StructureDefinition" %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
 
-### Terminologien
+## Terminologien
 
-#### Value Sets
+### Value Sets
 
 Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.
 
@@ -54,12 +54,12 @@ Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten fes
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
 
 
-#### Code Systems
+### Code Systems
 
 {% include artifacts-table-generator.html resourceType="CodeSystem" %}
 <div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
 
-### Beispiele
+## Beispiele
 
 {% include example-list-generator.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>

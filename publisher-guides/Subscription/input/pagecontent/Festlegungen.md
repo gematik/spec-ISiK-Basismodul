@@ -7,7 +7,7 @@ topic: Festlegungen
 Es gelten alle übergreifenden Festlegungen entsprechend
 dem [ISiK Basismodul](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/Index_Festlegungen.html).
 
-Zudem gelten die Festlegungen gemäß dem Abschnitt zu den {{pagelink:Artefakte, text: Artefakten}}.
+Zudem gelten die Festlegungen gemäß dem Abschnitt zu den [FHIR-Artefakten](artifacts.html).
 
 #### Normativer Status
 
@@ -33,7 +33,8 @@ folgenden Funktionalitäten aus dem Subscriptions-Backport IG unterstützt werde
   Unterstützung des Benachrichtigungsmechanismus per REST-Hook zur Auslieferung von
   Subscription-Ereignissen an konfigurierbare HTTP-Endpunkte.
 
-* Handshake (Channel Validation)    Implementierung des optionalen Handshake-Verfahrens zur
+* Handshake (Channel Validation) 
+  Implementierung des optionalen Handshake-Verfahrens zur
   Bestätigung der Erreichbarkeit und
   Authentizität des Zielsystems.
 
