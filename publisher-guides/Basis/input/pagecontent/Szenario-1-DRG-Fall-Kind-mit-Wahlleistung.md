@@ -25,6 +25,8 @@ expand: 5
 
 ##### Patientin
 
+[SZ1 Patient](Patient-SZ1Patient.html)
+
 ##### Mutter
 <tabs>
     <tab title="Patientin">      
