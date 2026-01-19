@@ -32,6 +32,9 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Arte
   * ^comment = "Dem Anwender angezeigter Titel des Formulars.  
   **Begründung MS:**  
   Wird für die Darstellung und Auffindbarkeit der FormularDefinition benötigt."
+* derivedFrom MS
+  * ^short = "Abgeleitet von"
+  * ^comment = "Verweis auf ein Questionnaire, von dem abgeleitet wurde, welches erweitert wurde oder welches als Grundlage diente."
 * status MS
   * ^short = "active | retired"
   * ^comment = "Die im ISiK-Kontext bereitgestellten Formulare sollten final ausspezifiziert sein und daher den Status 'active' haben. 

@@ -1,0 +1,475 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DemoTemplatebasedExtractionQuestionnaire",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition"
+    ]
+  },
+  "subjectType": [
+    "Patient"
+  ],
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "IsikPatientTemplate",
+      "_id": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "item.where(linkId = 'resourceId').answer.value"
+          }
+        ]
+      },
+      "meta": {
+        "profile": [
+          "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"
+        ]
+      },
+      "identifier": [
+        {
+          "type": {
+            "coding": [
+              {
+                "code": "MR",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId = 'patientId')"
+            }
+          ],
+          "_system": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'patientId-system').answer.value"
+              }
+            ]
+          },
+          "_value": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'patientId-value').answer.value"
+              }
+            ]
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "code": "KVZ10",
+                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
+              }
+            ]
+          },
+          "system": "http://fhir.de/sid/gkv/kvid-10",
+          "_value": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'versichertenId').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId = 'name')"
+            }
+          ],
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'given' or linkId = 'family').answer.value.join(' ')"
+              }
+            ]
+          },
+          "_family": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'family').answer.value.first()"
+              }
+            ]
+          },
+          "_given": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "item.where(linkId = 'given').answer.value.first()"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "address": [
+        {
+          "type": "both",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId = 'address')"
+            }
+          ],
+          "country": "DE",
+          "_country": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'address-country').answer.value.first()"
+              }
+            ]
+          },
+          "_line": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "item.where(linkId = 'address-line').answer.value"
+                }
+              ]
+            }
+          ],
+          "_city": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'address-city').answer.value.first()"
+              }
+            ]
+          },
+          "_postalCode": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'address-postalCode').answer.value.first()"
+              }
+            ]
+          }
+        }
+      ],
+      "active": true,
+      "telecom": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId = 'telecom')"
+            }
+          ],
+          "system": "phone",
+          "_system": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'telecom-system').answer.value"
+              }
+            ]
+          },
+          "_value": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'telecom-value').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "gender": "unknown",
+      "_gender": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "item.where(linkId = 'gender').answer.value.first().code"
+          }
+        ]
+      },
+      "_birthDate": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "item.where(linkId = 'birthDate').answer.value.first()"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "DemoTemplatebasedExtractionQuestionnaire",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/isik/Questionnaire/DemoTemplatebasedExtractionQuestionnaire",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Gematik GmbH",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patientenkontext"
+        }
+      ]
+    }
+  ],
+  "title": "DemoTemplatebasedExtractionQuestionnaire",
+  "description": "### Beispiel-Questionnaire zur Demonstration der Template-basierten Extraktion von Patientendaten",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+          "extension": [
+            {
+              "url": "template",
+              "valueReference": {
+                "reference": "#IsikPatientTemplate"
+              }
+            },
+            {
+              "url": "fullUrl",
+              "valueString": "('Patient/' + item.where(linkId = 'resourceId').answer.value)"
+            }
+          ]
+        }
+      ],
+      "linkId": "patient",
+      "text": "Patient Informationen",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "resourceId",
+          "text": "Ressourcen-ID",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.id",
+                "description": "Selektion der Ressourcen-ID des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "name",
+          "text": "Name",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "given",
+              "text": "Vorname",
+              "type": "string",
+              "repeats": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "(%patient.name.where(use = 'official').given[0] | %patient.name[0].given[0]).first()",
+                    "description": "Selektion des ersten Vornamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "family",
+              "text": "Nachname",
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "(%patient.name.where(use = 'official').family | %patient.name[0].family).first()",
+                    "description": "Selektion des Nachnamens des Patienten. Präferiert aus dem offiziellem Namen, alternativ erster gefundener Name"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "gender",
+          "text": "Geschlecht",
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%questionnaire.repeat(item).where(linkId='gender').answerOption.valueCoding.where(code=%patient.gender)",
+                "description": "Selektion des Geschlechts des Patienten"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "unknown",
+                "display": "Unbekannt"
+              },
+              "initialSelected": true
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "male",
+                "display": "Männlich"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "female",
+                "display": "Weiblich"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "code": "other",
+                "display": "Anderes"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "birthDate",
+          "text": "Geburtsdatum",
+          "type": "date",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.birthDate",
+                "description": "Selektion des Geburtsdatums des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "patientId",
+          "text": "Patienten-ID",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "patientId-system",
+              "text": "System der Patienten-ID",
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.identifier.where(type.coding.first().code = 'MR').system",
+                    "description": "Selektion des Systems der Patienten-ID."
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "patientId-value",
+              "text": "Wert der Patienten-ID",
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.identifier.where(type.coding.first().code = 'MR').value",
+                    "description": "Selektion des Value der Patienten-ID."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "versichertenId",
+          "text": "Versichertennummer",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.identifier.where(system = 'http://fhir.de/sid/gkv/kvid-10').value",
+                "description": "Versichertennnummer(KVID) des Patienten"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "telecom",
+          "text": "Kontaktmöglichkeit",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "telecom-system",
+              "type": "string",
+              "initial": [
+                {
+                  "valueString": "phone"
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "telecom-value",
+              "text": "Telefonnummer",
+              "type": "string",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.telecom.where(system = 'phone').first().value",
+                    "description": "Selektion des Value der Patienten-ID."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
