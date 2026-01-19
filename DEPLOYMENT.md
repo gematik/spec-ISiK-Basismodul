@@ -14,9 +14,6 @@ This guide explains how to deploy the FHIR Implementation Guide using the gemati
 ### 1. Build the Docker Image
 
 ```bash
-# From the repository root
-cd stufe-5/organspendedetektion
-
 # Build from latest release - here hard-coded v. 0.22.0
 docker build -t fhir-scripts https://github.com/gematik/fhir-scripts.git#v0.22.0:docker/devcontainer
 ```
@@ -45,15 +42,7 @@ docker run -it --rm \
   fhir-scripts bash
 
 # Inside container:
-fhirscripts deploy dev --ig-output ./feature-init-draft-PTDATA-1927
-```
-
-## Deployment Commands
-
-### Deploy to Development Environment
-
-```bash
-fhirscripts deploy dev --ig-output ./feature-init-draft-PTDATA-1927
+fhirscripts deploy dev --ig-output ./stufe-5/organspendedetektion/feature-init-draft-PTDATA-1927
 ```
 
 ## Troubleshooting
