@@ -46,9 +46,9 @@ from
 where
     url = %canonical
 select 
-    'SHALL Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHALL'),
-    'SHOULD Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHOULD'),
-    'MAY Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'MAY')
+    'SHALL-Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHALL'),
+    'SHOULD-Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'SHOULD'),
+    'MAY-Rollen': imports.where(extension('https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation').value = 'MAY')
 </fql>
 
 

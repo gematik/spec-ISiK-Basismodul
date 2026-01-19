@@ -65,7 +65,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
   * coding[OPS] only CodingOPS
-  * coding[OPS] from OpsVS (required)
+  * coding[OPS]
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"

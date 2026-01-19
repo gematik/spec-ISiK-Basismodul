@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKTermin",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "name": "ISiKTermin",
   "status": "active",
   "experimental": false,
-  "date": "2025-10-23",
+  "date": "2025-12-17",
   "publisher": "gematik GmbH",
   "description": "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag.",
   "fhirVersion": "4.0.1",
@@ -106,12 +106,14 @@
       {
         "id": "Appointment.status",
         "path": "Appointment.status",
+        "short": "Der Status des Termins",
         "comment": "Begründung zu Must Support : Im ISiK Kontext ist der Status eines Termins von entscheidender Bedeutung, um den aktuellen Stand und die Verfügbarkeit des Termins zu kommunizieren.",
         "mustSupport": true
       },
       {
         "id": "Appointment.cancelationReason",
         "path": "Appointment.cancelationReason",
+        "short": "Der Grund für die Absage des Termins",
         "comment": "Begründung zu Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, einen Grund für die Absage eines Termins zu hinterlegen.",
         "mustSupport": true,
         "binding": {
@@ -208,18 +210,21 @@
       {
         "id": "Appointment.start",
         "path": "Appointment.start",
+        "short": "Der Startzeitpunkt des Termins",
         "comment": "Begründung zu Kardinalität und Must Support: Der Startzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert.",
         "mustSupport": true
       },
       {
         "id": "Appointment.end",
         "path": "Appointment.end",
+        "short": "Der Endzeitpunkt des Termins",
         "comment": "Begründung zu Kardinalität und Must Support: Der Endzeitpunkt eines Termins ist von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS). Das Feld ist in den meisten Fällen verpflichtend, nur für die Status 'proposed', 'cancelled', 'waitlist' existiert kein Wert.",
         "mustSupport": true
       },
       {
         "id": "Appointment.slot",
         "path": "Appointment.slot",
+        "short": "Verweise auf die gebuchten Terminblöcke",
         "comment": "Begründung zu Kardinalität und Must Support: Die Kardinalität der slot-Eigenschaft bleibt 0..*, sodass ein Termin-Requestor bei der Terminbuchung nur einen Termin und ein Verweis auf ein ISiKKalender übergeben kann. Es ist dann die Aufgabe des Termin-Repositories in Abhängigkeit der gebuchten Dienstleistung freie Terminblöcke zu finden. Diese sind im Appointment zu referenzieren.",
         "mustSupport": true
       },
@@ -232,12 +237,14 @@
       {
         "id": "Appointment.comment",
         "path": "Appointment.comment",
+        "short": "Zusätzliche Kommentare zum Termin zwischen Leistungserbringern",
         "comment": "Hinweis: Im ISiK Kontext sollte dieses Feld zur internen Kommunikation zwischen Leistungserbringern verwendet werden, z.B. für interne Notizen rund um den Termin.\n\nBegründung zum Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, zusätzliche Informationen zum Termin zu hinterlegen und abrufen zu können. \n\nEs gilt weiterhin die Semantik des Elements nach FHIR-Kernspezifikation:\n\n'Additional text to aid in facilitating the appointment. For instance, a comment might be, 'patient should proceed immediately to infusion room upon arrival'\n\nWhere this is a planned appointment and the start/end dates are not set then this field can be used to provide additional guidance on the details of the appointment request, including any restrictions on when to book it.'",
         "mustSupport": true
       },
       {
         "id": "Appointment.patientInstruction",
         "path": "Appointment.patientInstruction",
+        "short": "Anweisungen für den Patienten zum Termin",
         "comment": "Hinweis: Dieses Feld sollte im Kontext von ISIK verwendet werden für die Kommunikation im Sinne der Definition der FHIR-Kernspezifikation - sowohl von Systemseite (administrativ) als auch von Seiten des medizinischen Fachpersonals.\n\nBeispiel für eine Nachricht: 'Bitte nüchtern erscheinen' etc.\n\nBegründung zum Must Support: Dieses Feld ist optional (0..1), muss jedoch implementiert werden (MS), um die Möglichkeit zu bieten, zusätzliche Informationen für Patienten zum Termin zu hinterlegen und abrufen zu können. \n\nEs gilt weiterhin der Hinweis der FHIR Kernspezifikation:\n'Note that FHIR strings SHALL NOT exceed 1MB in size'",
         "mustSupport": true
       },
@@ -253,6 +260,7 @@
           ],
           "rules": "open"
         },
+        "short": "Teilnehmer des Termins",
         "comment": "Hinweis: Die Kardinalität von actor.display und das MS-Flag von .status wird an die Slices vererbt und diese sind entsprechend zu implementieren.\n\nBegründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS).",
         "mustSupport": true
       },

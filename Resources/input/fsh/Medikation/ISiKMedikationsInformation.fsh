@@ -73,6 +73,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * ^short = "Status der Medikationsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard"
 * medication[x] MS
+  * ^short = "Angabe des Medikaments"
+  * ^comment = "Begründung des Must-Support: Basisinformation. Siehe Slicing-Definition zur Wahlmöglichkeit zwischen codierter Angabe und Referenz auf Medication-Ressource."
 * medicationCodeableConcept MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
   * ^comment = "Begründung des Must-Support: Basisinformation
@@ -154,6 +156,8 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Begründung zu Must-Support: Konsolidierung mit MII."
   * reference 1..1 MS
 * note MS
+  * ^short = "Zusätzliche Anmerkungen zur Medikation"
+  * ^comment = "Begründung des Must-Support: Fachlich relevante Zusatzinformationen"
   * text MS
     * ^short = "Freitext-Notiz"
     * ^comment = "Begründung des Must-Support: Angabe zusätzlicher Informationen kann fachlich relevant sein"
@@ -168,7 +172,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags.page.md?version=current): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
     
     Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.
 "
