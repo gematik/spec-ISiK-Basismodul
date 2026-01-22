@@ -140,15 +140,11 @@ jobs:
           
           echo "=== Expanding CapabilityStatements ==="
           
-          # Convert YAML list to newline-separated format for processing
+          # Convert YAML list to newline-separated format using Python (available in container)
           urls_json='${{ toJSON(matrix.capability_statement_urls) }}'
           
-          # Count URLs
-          url_count=$(echo "${urls_json}" | jq -r 'length')
-          echo "URLs to process: ${url_count} total"
-          
-          # Process each URL
-          echo "${urls_json}" | jq -r '.[]' | while IFS= read -r url; do
+          # Parse JSON array with Python and iterate
+          echo "${urls_json}" | python3 -c 'import json, sys; urls = json.load(sys.stdin); print(f"URLs to process: {len(urls)} total", file=sys.stderr); [print(url) for url in urls]' | while IFS= read -r url; do
             echo "--- Expanding: ${url} ---"
           
             # Call the expander tool (available in the container)
