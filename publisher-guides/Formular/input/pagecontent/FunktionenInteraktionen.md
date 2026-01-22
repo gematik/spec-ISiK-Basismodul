@@ -1,4 +1,6 @@
+<div>
 {% include akteure.svg %}
+</div>
 
 ### Launch eines Formular-Renderers
 
@@ -34,7 +36,9 @@ Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheit
 Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen.
 In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.html#FormularRenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.
 
+<div>
 {% include formDefVerwaltung.svg %}
+</div>
 
 ### Interaktion: FormularDatenVorbelegung
 
@@ -42,7 +46,9 @@ Ein FormularRenderer prüft eine [FormularDefinition]() TODO auf entsprechende A
 Dies kann entweder mittels der [Expression based population](https://build.fhir.org/ig/HL7/sdc/populate.html#exp-pop)  
 oder der [Observation based prepopulation](https://build.fhir.org/ig/HL7/sdc/populate.html#obs-pop) geschehen.
 
+<div>
 {% include formDatVorbelegung.svg %}
+</div>
 
 Die folgenden Core und SDC Extensions sind für die Vorbelegung in dieser Stufe relevant. Unter [Extensions](Extensions.html) sind mehr Informationen dazu zu finden.
 
@@ -102,7 +108,9 @@ Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe r
 
 Die Rückübermittlung von [FormularDaten]() TODO erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md)
 
+<div>
 {% include formDatRueckuebermittlung.svg %}
+</div>
 
 | **Work in Progress** | **Fehlendes Artefakt** |
 |-|-|

@@ -2,10 +2,6 @@
 topic: Extensions
 ---
 
-# {{page-title}}
-
-## Questionnaire Extensions
-
 Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
 
 ### Core Extensions (Questionnaire)
