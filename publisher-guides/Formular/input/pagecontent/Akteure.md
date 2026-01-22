@@ -1,4 +1,6 @@
+<div>
 {% include akteure.svg %}
+</div>
 
 ### FormularLauncher
 

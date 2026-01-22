@@ -2,13 +2,6 @@
 topic: BestPractice
 ---
 
-
-| **Work in Progress** | **Unvollständige Inhalte** |
-|-|-|
-|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Diese Seite ist unvollständig. Die BestPractices sollen aus den Erfahrungen mit ersten Implementierungen und Anwendungen dieses Moduls heraus entwickelt und kontinuierlich fortgeschrieben werden. Vorschläge und Hinweise zur Weiterentwicklung können im  [ISiK-Unterforum](https://chat.fhir.org/#streams/287581/german.2Fisik) des [internationalen FHIR-Chats](https://chat.fhir.org/) gegeben werden. **Bei der Anlage neuer Diskussionsthemen mit Bezug zu diesem Modul bitte das Präfix `[FORM]` verwenden!** |
-
-## BestPractice bei der Erstellung von Formulardefinitionen
-
 ### Funktionsumfang
 
 * FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
@@ -38,3 +31,7 @@ Obwohl die Definition-Based Extraction und Prepopulation derzeit nicht verbindli
 Formulare, deren Einsatz eine Zweckbestimmung im Sinne der EU-Medizinprodukteverordnung (MDR) nach sich zieht und somit unter die entsprechende EU-Richtlinie für Medizinprodukte fallen, sollen ebenfalls über dieses Modul erstellt werden können.
 Solche Formulare müssen jedoch eine spezielle Extension enthalten, die sie eindeutig als medizinproduktrelevante Formulare kennzeichnet.
 Die Anzeige und Verarbeitung dieser Formulare darf ausschließlich im Rahmen ihrer definierten Zweckbestimmung erfolgen. Die Verantwortung für die Prüfung und Freigabe dieser Formulare liegt beim jeweiligen Hersteller.
+
+| **Work in Progress** | **Unvollständige Inhalte** |
+|-|-|
+|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Diese Seite ist unvollständig. Die BestPractices sollen aus den Erfahrungen mit ersten Implementierungen und Anwendungen dieses Moduls heraus entwickelt und kontinuierlich fortgeschrieben werden. Vorschläge und Hinweise zur Weiterentwicklung können im  [ISiK-Unterforum](https://chat.fhir.org/#streams/287581/german.2Fisik) des [internationalen FHIR-Chats](https://chat.fhir.org/) gegeben werden. **Bei der Anlage neuer Diskussionsthemen mit Bezug zu diesem Modul bitte das Präfix `[FORM]` verwenden!** |
