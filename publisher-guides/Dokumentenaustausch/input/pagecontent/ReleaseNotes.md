@@ -1,7 +1,7 @@
 ---
 topic: ImplementationGuide-markdown-ReleaseNotes
 ---
-# Release Notes
+### Release Notes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
@@ -9,13 +9,13 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.1.1
+#### Version 5.1.1
 
 Datum: 17.12.2025
 
 * `documentation` fehlende shorts und comments nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/921
 
-## Version 5.1.0
+#### Version 5.1.0
 
 Datum: 23.10.2025
 
@@ -24,7 +24,7 @@ Datum: 23.10.2025
 
 ----
 
-## Version 5.0.0
+#### Version 5.0.0
 
 Datum: 26.06.2025
 
@@ -33,7 +33,7 @@ Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-## Version 5.0.0-rc2 (Benehmensherstellung)
+#### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
@@ -47,7 +47,7 @@ Datum: 5.6.2025
 
 ----
 
-## Version 5.0.0-rc1
+#### Version 5.0.0-rc1
 Datum: 13.05.2025
 
 * `improve` Dependency auf IHE-MHD-Package entfernt, da dieses nicht für die Validierung
@@ -64,7 +64,7 @@ Datum: 13.05.2025
       bereitzustellen.
 
 
-## Version 5.0.0-rc (Kommentierung)
+#### Version 5.0.0-rc (Kommentierung)
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
@@ -80,7 +80,7 @@ https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20mas
 
 ----
 
-## Version: 4.0.2
+#### Version: 4.0.2
 
 Datum: 19.3.2025
 
@@ -88,7 +88,7 @@ Datum: 19.3.2025
 
 ----
 
-## Version: 4.0.1
+#### Version: 4.0.1
 
 Datum: 24.01.2025
 
@@ -111,7 +111,7 @@ https://github.com/gematik/spec-ISiK-Dokumentenaustausch/issues/206
 
 ----
 
-## Version: 4.0.0
+#### Version: 4.0.0
 
 Datum: 09.09.2024
 
@@ -121,7 +121,7 @@ Datum: 09.09.2024
 
 ----
 
-## Version: 4.0.0-rc
+#### Version: 4.0.0-rc
 
 Datum: 03.04.2024
 
@@ -132,13 +132,13 @@ Datum: 03.04.2024
 
 ----
 
-## Version: 3.0.3
+#### Version: 3.0.3
 
 Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 (4.0.0-rc2) eingebracht sind.
 
 ----
 
-## Version: 3.0.2
+#### Version: 3.0.2
 
 Datum: 27.03.2024
 
@@ -156,7 +156,7 @@ Datum: 27.03.2024
 
 ----
 
-## Version: 3.0.1
+#### Version: 3.0.1
 
 Datum: 05.01.2024
 
@@ -168,7 +168,7 @@ Datum: 05.01.2024
 
 ----
 
-## Version: 3.0.0
+#### Version: 3.0.0
 
 Datum: 01.07.2023
 
@@ -176,14 +176,14 @@ Datum: 01.07.2023
 
 ----
 
-## Version: 3.0.0-rc4
+#### Version: 3.0.0-rc4
 
 Datum: 31.05.2023
 
 * Dokumentenmetadaten (DocumentReference): Kardinalität korrigiert zur Harmonisierung mit MHD
   * `improve` cardinality #139 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/143
 
-## Version: 3.0.0-rc3
+#### Version: 3.0.0-rc3
 
 Datum: 04.04.2023
 
@@ -191,7 +191,7 @@ Datum: 04.04.2023
 
 ---
 
-## Version: 3.0.0-rc2
+#### Version: 3.0.0-rc2
 
 Datum: 31.01.2023
 - Status -Korrektur: "draft"
@@ -199,7 +199,7 @@ Datum: 31.01.2023
 - weitere Änderungen an Implementierungsleitfaden (informativ)
 ---
 
-## Version: 3.0.0-rc1
+#### Version: 3.0.0-rc1
 
 Datum: 04.01.2023
 - Interaktion Dokumentenbereitstellung: Ersetzen der Operation $submit-document mit IHE ITI-105
@@ -213,7 +213,7 @@ Datum: 04.01.2023
 - Beispieldaten an Änderungen in den Interaktionen angepasst
 ----
 
-## Version: 2.0.1
+#### Version: 2.0.1
 
 Datum: 31.10.2022
 
@@ -221,7 +221,7 @@ Datum: 31.10.2022
 
 ----
 
-## Version: 2.0.0
+#### Version: 2.0.0
 
 Datum: 30.06.2022
 
