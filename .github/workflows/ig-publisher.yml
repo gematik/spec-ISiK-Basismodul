@@ -89,13 +89,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Download the fsh-generated artifact from prepare job
-      - name: Download FSH Generated Resources
-        uses: actions/download-artifact@v4
-        with:
-          name: fsh-generated
-          path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
-
       # Download the FHIR package cache from prepare job
       - name: Download FHIR Package Cache
         uses: actions/download-artifact@v4
@@ -112,6 +105,18 @@ jobs:
           echo "=== Package cache ready ==="
           ls -la /root/.fhir/packages/ | head -20
           echo "==============================="
+
+      # generate Implementationguide resource & menu
+      - name: Run SUSHI (IG local)
+        run: |
+          sushi ${{ env.IG_PUBLISHER_DIR }}      
+
+      # Download the fsh-generated artifact from prepare job
+      - name: Download FSH Generated Resources
+        uses: actions/download-artifact@v4
+        with:
+          name: fsh-generated
+          path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
       # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
       - name: Expand CapabilityStatement
