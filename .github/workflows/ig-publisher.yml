@@ -140,20 +140,30 @@ jobs:
           
           echo "=== Expanding CapabilityStatements ==="
           
-          # Convert YAML list to newline-separated format using Python (available in container)
+          # Convert YAML list to JSON using GitHub Actions toJSON
           urls_json='${{ toJSON(matrix.capability_statement_urls) }}'
           
-          # Parse JSON array with Python and iterate
-          echo "${urls_json}" | python3 -c 'import json, sys; urls = json.load(sys.stdin); print(f"URLs to process: {len(urls)} total", file=sys.stderr); [print(url) for url in urls]' | while IFS= read -r url; do
-            echo "--- Expanding: ${url} ---"
+          # Parse JSON array using sed/grep (no external dependencies needed)
+          # Extract URLs from JSON array: ["url1","url2"] -> url1\nurl2
+          urls=$(echo "${urls_json}" | sed 's/^\[//;s/\]$//;s/","/\n/g;s/"//g')
           
-            # Call the expander tool (available in the container)
-            capabilitystatement-expander \
-              --input-directory "${INPUT_DIR}" \
-              --output-directory "${OUTPUT_DIR}" \
-              --capability-statement-url "${url}"
+          # Count URLs
+          url_count=$(echo "${urls}" | grep -c '^http' || echo "0")
+          echo "URLs to process: ${url_count} total"
           
-            echo "✓ Completed: ${url}"
+          # Process each URL
+          echo "${urls}" | while IFS= read -r url; do
+            if [ -n "${url}" ]; then
+              echo "--- Expanding: ${url} ---"
+          
+              # Call the expander tool (available in the container)
+              capabilitystatement-expander \
+                --input-directory "${INPUT_DIR}" \
+                --output-directory "${OUTPUT_DIR}" \
+                --capability-statement-url "${url}"
+          
+              echo "✓ Completed: ${url}"
+            fi
           done
           
           echo "=== All CapabilityStatements expanded ==="
