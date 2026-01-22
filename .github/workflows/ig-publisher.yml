@@ -72,14 +72,25 @@ jobs:
         include:
           # ig_name: Name of the IG (used for artifact names and publishing)
           # ig_dir: Directory of the IG within publisher-guides
-          # capability_statement_url: URL of the CapabilityStatement to expand
+          # capability_statement_urls: List of CapabilityStatement URLs to expand (YAML list)
+          #   - For a single URL:
+          #       capability_statement_urls:
+          #         - https://example.com/CapabilityStatement/Server
+          #   - For multiple URLs:
+          #       capability_statement_urls:
+          #         - https://example.com/CS1
+          #         - https://example.com/CS2
+          #         - https://example.com/CS3
           - ig_name: Organspendeerkennung
             ig_dir: publisher-guides/Organspendeerkennung
-            capability_statement_url: https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
           # Add more IGs here:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
-          #   capability_statement_url: https://gematik.de/fhir/isik/CapabilityStatement/AnotherCapability
+          #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
 
     env:
       SUSHI_INPUT_DIR: Resources
@@ -118,13 +129,41 @@ jobs:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
-      # Expand CapabilityStatement and copy referenced resources to IG Publisher input directory
-      - name: Expand CapabilityStatement
-        uses: Gefyra/capabilityStatement-expander@v0
-        with:
-          input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
-          output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
-          capability_statement_url: ${{ matrix.capability_statement_url }}
+      # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
+      - name: Expand CapabilityStatements
+        shell: bash
+        env:
+          INPUT_DIR: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+          OUTPUT_DIR: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+        run: |
+          set -euo pipefail
+          
+          echo "=== Expanding CapabilityStatements ==="
+          
+          # Convert YAML list to bash array
+          urls=(${{ join(matrix.capability_statement_urls, ' ') }})
+          
+          echo "URLs to process: ${#urls[@]} total"
+          
+          # Iterate over all URLs
+          for url in "${urls[@]}"; do
+            echo "--- Expanding: ${url} ---"
+          
+            # Use the capabilityStatement-expander action's underlying script/binary
+            # Since we can't call the action multiple times, we'll use the Docker image directly
+            docker run --rm \
+              -v "${PWD}/${INPUT_DIR}:/input:ro" \
+              -v "${PWD}/${OUTPUT_DIR}:/output" \
+              ghcr.io/gefyra/capabilitystatement-expander:latest \
+              --input-directory /input \
+              --output-directory /output \
+              --capability-statement-url "${url}"
+          
+            echo "✓ Completed: ${url}"
+          done
+          
+          echo "=== All CapabilityStatements expanded ==="
+          ls -la "${OUTPUT_DIR}" | head -30
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
