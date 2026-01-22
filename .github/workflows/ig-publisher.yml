@@ -140,23 +140,21 @@ jobs:
           
           echo "=== Expanding CapabilityStatements ==="
           
-          # Convert YAML list to bash array
-          urls=(${{ join(matrix.capability_statement_urls, ' ') }})
+          # Convert YAML list to newline-separated format for processing
+          urls_json='${{ toJSON(matrix.capability_statement_urls) }}'
           
-          echo "URLs to process: ${#urls[@]} total"
+          # Count URLs
+          url_count=$(echo "${urls_json}" | jq -r 'length')
+          echo "URLs to process: ${url_count} total"
           
-          # Iterate over all URLs
-          for url in "${urls[@]}"; do
+          # Process each URL
+          echo "${urls_json}" | jq -r '.[]' | while IFS= read -r url; do
             echo "--- Expanding: ${url} ---"
           
-            # Use the capabilityStatement-expander action's underlying script/binary
-            # Since we can't call the action multiple times, we'll use the Docker image directly
-            docker run --rm \
-              -v "${PWD}/${INPUT_DIR}:/input:ro" \
-              -v "${PWD}/${OUTPUT_DIR}:/output" \
-              ghcr.io/gefyra/capabilitystatement-expander:latest \
-              --input-directory /input \
-              --output-directory /output \
+            # Call the expander tool (available in the container)
+            capabilitystatement-expander \
+              --input-directory "${INPUT_DIR}" \
+              --output-directory "${OUTPUT_DIR}" \
               --capability-statement-url "${url}"
           
             echo "✓ Completed: ${url}"
