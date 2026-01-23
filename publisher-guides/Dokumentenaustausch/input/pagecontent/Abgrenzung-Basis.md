@@ -1,4 +1,3 @@
-## Abgrenzung zu ISiK Basis bei der Kommunikation *strukturierter* Dokumente (FHIR-Document-Bundle)
 ### Interaktion ISiK Modul Basis: Bericht aus Subsystem
 * UseCase: Client übermittelt diverse strukturierte Informationen in Form eines Dokumentes an einen Empfänger. Der Empfänger (oder ggf. dessen Benutzer) kann selbst entscheiden, welche Informationen übernommen und ggf. weiterverarbeitet werden können/sollen. Als Minimum muss die Narrative (die HTML-Repräsentation des gesamten Dokumentes) übernommen werden.
 * HTTP-verb: POST auf [base]

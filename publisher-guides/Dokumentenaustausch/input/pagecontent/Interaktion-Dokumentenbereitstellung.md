@@ -1,69 +1,66 @@
 ---
 topic: Dokumentenbereitstellung
 ---
-----
 
-### Interaktion: Dokumentenbereitstellung
-
-#### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
+### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
 
 Die Dokumentenbereitstellung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html). Die verlinkte Webseite bietet weiterführende Informationen zum Simplified Push, einschließlich grafischer Darstellungen der Interaktionen.
 
 Die Bereitstellung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt. Es gelten die Vorgaben der FHIR-Kernspezifikation für den Rückgabewert der Create-Interaktion, siehe [Managing Return Content](https://www.hl7.org/fhir/R4/http.html#return).
 
-#### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
+### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
 Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
 
-##### [2:3.105.4.1 Simplified Publish Request Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310541-simplified-publish-request-message)
+#### [2:3.105.4.1 Simplified Publish Request Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310541-simplified-publish-request-message)
 
-###### [2:3.105.4.1.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105411-trigger-events)
+##### [2:3.105.4.1.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105411-trigger-events)
 Die Vereinbarungen gelten uneingeschränkt.
 
-###### [2:3.105.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105412-message-semantics)
+##### [2:3.105.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105412-message-semantics)
 * Die übermittelte Ressource muss nur gegen das Profil "ISiKDokumentenMetadaten" valide sein, nicht gegen die IHE-DocumentReference-Profile, da die Bereitstellung des Elementes `DocumentReference.docStatus` im ISiK-Kontext erlaubt, im IHE-Kontext jedoch verboten ist.
 * Für Clients ist es ausreichend, das Dokument mit Hilfe eines KDL-Codes in DocumentReference.type zu klassifizieren. Die entsprechenden XDS-Class- und -Type-Codes müssen vom Server bei der Verarbeitung ergänzt werden. DocumentReference.category kann bei der Dokumentenbereitstellung leer bleiben.
 
-###### [2:3.105.4.1.2.1 DocumentReference Resources](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054121-documentreference-resources)
+##### [2:3.105.4.1.2.1 DocumentReference Resources](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054121-documentreference-resources)
 * Die DocumentReference-Ressoucen müssen im ISiK-Kontext auf Basis des Profils "ISiKDokumentenMetadaten" und den dort vereinbarten Kardinalitäten bzw. MustSupport-Flags erstellt werden.
 * Die Verwendung von Contained-Ressourcen ist im ISiK-Kontext nicht erlaubt
 
-###### [2:3.105.4.1.2.2 Patient Identity](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054122-patient-identity)
+##### [2:3.105.4.1.2.2 Patient Identity](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054122-patient-identity)
 
 * Der Client KANN eine der im Kapitel "Herstellung von Patient- und Encounterkontext" beschriebenen
   Optionen verwenden, um den Patienten- und Encounter-Kontext zu etablieren.
 * `DocumentReference.sourcePatientInfo` wird im ISiK-Kontext nicht verwendet
-###### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
+##### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
 Die Vereinbarungen gelten uneingeschränkt.
 
 **Hinweis**: Dies bedeutet, dass inhaltliche Updates von Dokumenten, in Abgrenzung zu Updates von Dokumentenmetadaten, durch den Client als neue Create-Interaktion durchgeführt werden muss. Update-Interaktionen sind in diesem Kontext undefiniert. Das Dokument, welches das Update repräsentiert, muss eine entsprechende relatesTo-Relation zum vorherigen Dokument aufweisen. Der Status des vorherigen Dokumentes MUSS durch den Server auf ``superseded`` gesetzt werden.
 
-###### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
+##### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
 * Die Erzeugung einer SubmissionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
 * Der Server muss ggf. fehlende XDS-Class- und -Type-Codes anhand des übermittelten KDL-Codes ergänzen und in DocumentReference.type bzw. DocumentReference.category zurückliefern.
 Die XDS-Codes können über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden. 
 Die XDS-Codes werden für den einrichtungsübergreifenden Dokumentenaustausch über IHE XDS, bzw. MHD oder für die Bereitstellung der Dokumente an die ePA des Patienten benötigt.
 
-###### [2:3.105.4.1.3.1 Grouping with Actors in other Document Sharing Profiles](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054131-grouping-with-actors-in-other-document-sharing-profiles)
+##### [2:3.105.4.1.3.1 Grouping with Actors in other Document Sharing Profiles](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054131-grouping-with-actors-in-other-document-sharing-profiles)
 Das Kapitel ist für den ISiK-Kontext nicht relevant.
 
-##### [2:3.105.4.2 Simplified Publish Response Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310542-simplified-publish-response-message)
+#### [2:3.105.4.2 Simplified Publish Response Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310542-simplified-publish-response-message)
 
-###### [2:3.105.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105421-trigger-events)
+##### [2:3.105.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105421-trigger-events)
 Die Vereinbarungen gelten uneingeschränkt.
  
-###### [2:3.105.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105422-message-semantics)
+##### [2:3.105.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105422-message-semantics)
 Die Vereinbarungen gelten uneingeschränkt.
 
-###### [2:3.105.4.2.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105423-expected-actions)
+##### [2:3.105.4.2.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105423-expected-actions)
 Die Vereinbarungen gelten uneingeschränkt.
 
-##### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
+#### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
 Es gelten die Vereinbarungen gemäß {{pagelink:/Einfuehrung/Artefakte/CapabilityStatements}}
 
-#### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
+### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
 
-#### Herstellung von Patient- und Encounterkontext
+### Herstellung von Patient- und Encounterkontext
 Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
 Zur Herstellung des Kontextes sind die in ISiK Basis beschriebenen  Verfahren möglich:
 https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Patient-Besuch-Kontext  
@@ -89,7 +86,7 @@ Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
 | <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die Zuordnung mittels logischer Identifier ist bisher nicht erprobt. Entwickler, die diese Funktionalität nutzen, sind gebeten, im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen, ob sich diese Funktion implementierbar/nützlich oder komplex/problematisch erwiesen hat. Abhängig von der Rückmeldung kann dieses Feature in späteren Releases entweder verbindlich gemacht oder entfernt werden. |
 
 
-#### Beispiel
+### Beispiel
 
 `POST [base]/DocumentReference`
 
