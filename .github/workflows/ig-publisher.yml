@@ -189,24 +189,31 @@ jobs:
           # Use absolute path from workspace root
           INPUT_PATH="${{ env.IG_PUBLISHER_DIR }}/input"
           
-          if git diff --quiet "${INPUT_PATH}" 2>/dev/null; then
-            echo "has_changes=false" >> "${GITHUB_OUTPUT}"
-            echo "No changes detected in input/ directory - skipping IG build"
-
-            # Store "no changes" status for PR comment
-            mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-            echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-          else
-            echo "has_changes=true" >> "${GITHUB_OUTPUT}"
-            echo "Changes detected in input/ directory:"
+          echo "Checking for changes in: ${INPUT_PATH}"
           
-            # Try to show changed files with git diff
-            if changed_files=$(git diff --name-only "${INPUT_PATH}" 2>/dev/null) && [ -n "$changed_files" ]; then
-              echo "$changed_files"
+          # Use git status to detect any changes (modified, added, deleted files)
+          # This catches both tracked and untracked files
+          if [ -d "${INPUT_PATH}" ]; then
+            status_output=$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")
+          
+            if [ -z "$status_output" ]; then
+              # No changes detected
+              echo "has_changes=false" >> "${GITHUB_OUTPUT}"
+              echo "No changes detected in input/ directory - skipping IG build"
+          
+              # Store "no changes" status for PR comment
+              mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
+              echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
             else
-              # Fallback: use git status to show changes
-              git status --short "${INPUT_PATH}" 2>/dev/null || echo "  (files changed, unable to list)"
+              # Changes detected
+              echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+              echo "Changes detected in input/ directory:"
+              echo "$status_output"
             fi
+          else
+            # Directory doesn't exist yet - treat as "has changes" to trigger build
+            echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+            echo "Input directory does not exist yet - will be created during build"
           fi
 
       # Run the HL7 FHIR IG Publisher
