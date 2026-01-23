@@ -36,7 +36,7 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
         LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150017
     * coding[SCT] = $sct#271649006
@@ -53,7 +53,7 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
         LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150018
     * coding[SCT] = $sct#271650006
@@ -79,7 +79,7 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
         LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150019
     * coding[SCT] = $sct#6797001
