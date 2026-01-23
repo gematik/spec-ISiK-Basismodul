@@ -178,6 +178,10 @@ jobs:
         run: |
           set -euo pipefail
           
+          # Fix git ownership issue in container
+          git config --global --add safe.directory /__w/spec-ISiK-Basismodul/spec-ISiK-Basismodul || true
+          git config --global --add safe.directory "$(pwd)" || true
+          
           # Check if force_build is enabled
           force_build="${{ github.event.inputs.force_build }}"
           if [ "${force_build}" = "true" ]; then
@@ -189,43 +193,23 @@ jobs:
           FSH_GEN_PATH="${{ env.IG_PUBLISHER_DIR }}/fsh-generated"
           INPUT_PATH="${{ env.IG_PUBLISHER_DIR }}/input"
           
-          echo "=== DEBUG: Checking paths ==="
-          echo "FSH_GEN_PATH: ${FSH_GEN_PATH}"
-          echo "INPUT_PATH: ${INPUT_PATH}"
+          echo "Checking for changes in:"
+          echo "  - ${FSH_GEN_PATH}"
+          echo "  - ${INPUT_PATH}"
           echo ""
           
-          echo "=== DEBUG: File timestamps (last 5 modified files) ==="
-          find "${INPUT_PATH}" -type f -exec ls -lt {} + 2>/dev/null | head -6 || echo "No files in input/"
-          echo ""
-          
-          echo "=== DEBUG: Raw git status output ==="
-          git status --porcelain "${FSH_GEN_PATH}" "${INPUT_PATH}" 2>&1 || echo "(git status failed)"
-          echo ""
-          
-          echo "=== DEBUG: Git diff --name-only HEAD ==="
-          git diff --name-only HEAD -- "${FSH_GEN_PATH}" "${INPUT_PATH}" 2>&1 || echo "(git diff failed)"
-          echo ""
-          
-          echo "=== DEBUG: Untracked files ==="
-          git ls-files --others --exclude-standard "${FSH_GEN_PATH}" "${INPUT_PATH}" 2>&1 || echo "(git ls-files failed)"
-          echo ""
-          
-          echo "=== DEBUG: Check if paths are in .gitignore ==="
-          git check-ignore -v "${INPUT_PATH}/resources/"* 2>/dev/null | head -5 || echo "Not ignored"
-          echo ""
-          
-          # Now do the actual check
           has_changes=false
-          changes_found=""
           
-          # Check both paths
+          # Check both paths for changes
           for check_path in "${FSH_GEN_PATH}" "${INPUT_PATH}"; do
             if [ -d "$check_path" ]; then
               status_out=$(git status --porcelain "$check_path" 2>/dev/null || echo "")
           
               if [ -n "$status_out" ]; then
                 has_changes=true
-                changes_found="${changes_found}\nChanges in ${check_path}:\n${status_out}\n"
+                echo "Changes detected in ${check_path}:"
+                echo "$status_out" | head -20
+                echo ""
               fi
             fi
           done
@@ -233,11 +217,9 @@ jobs:
           # Set output
           if [ "$has_changes" = true ]; then
             echo "has_changes=true" >> "${GITHUB_OUTPUT}"
-            echo "=== RESULT: Changes detected ==="
-            echo -e "$changes_found"
           else
             echo "has_changes=false" >> "${GITHUB_OUTPUT}"
-            echo "=== RESULT: No changes detected - skipping IG build ==="
+            echo "No changes detected - skipping IG build"
           
             mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
             echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
