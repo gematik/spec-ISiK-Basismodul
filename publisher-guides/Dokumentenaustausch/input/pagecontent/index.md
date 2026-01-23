@@ -12,7 +12,7 @@ Realm: Deutschland
 
 ----
 
-######### Motivation Dokumentenaustausch
+### Motivation Dokumentenaustausch
 
 Die bedarfsgerechte Bereitstellung von klinischen Dokumenten spielt bei der Patientenversorgung eine wichtige Rolle.
 Dokumente liegen in den meisten Fällen in elektronischer Form vor (digital erstellt oder eingescannt). Die in den Einrichtungen etablierten Kommunikationsverfahren mittels HL7 Version 2 haben jedoch ausschließlich die Server-zu-Server-Kommunikation im Fokus und erlauben keine standardisierte query-getriebene Dokumentenbereitstellung, wie sie zum Beispiel für webbasierte und mobile Applikationen erforderlich wäre.
