@@ -171,7 +171,7 @@ jobs:
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
 
-      # Check if there are changes in the input directory after expansion
+      # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
         id: check_changes
         shell: bash
@@ -186,34 +186,45 @@ jobs:
             exit 0
           fi
           
-          # Use absolute path from workspace root
-          INPUT_PATH="${{ env.IG_PUBLISHER_DIR }}/input"
+          echo "Checking for changes after SUSHI (local) and CapabilityStatement expansion..."
           
-          echo "Checking for changes in: ${INPUT_PATH}"
+          has_changes=false
+          changes_found=""
           
-          # Use git status to detect any changes (modified, added, deleted files)
-          # This catches both tracked and untracked files
-          if [ -d "${INPUT_PATH}" ]; then
-            status_output=$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")
+          # Check 1: Did the local SUSHI build generate/update files in fsh-generated/?
+          # This includes ImplementationGuide resource and menu.xml
+          FSH_GEN_PATH="${{ env.IG_PUBLISHER_DIR }}/fsh-generated"
+          if [ -d "${FSH_GEN_PATH}" ]; then
+            fsh_status=$(git status --porcelain "${FSH_GEN_PATH}" 2>/dev/null || echo "")
           
-            if [ -z "$status_output" ]; then
-              # No changes detected
-              echo "has_changes=false" >> "${GITHUB_OUTPUT}"
-              echo "No changes detected in input/ directory - skipping IG build"
-          
-              # Store "no changes" status for PR comment
-              mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-              echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-            else
-              # Changes detected
-              echo "has_changes=true" >> "${GITHUB_OUTPUT}"
-              echo "Changes detected in input/ directory:"
-              echo "$status_output"
+            if [ -n "$fsh_status" ]; then
+              has_changes=true
+              changes_found="${changes_found}\nChanges in ${FSH_GEN_PATH}/ (SUSHI local build - IG resource, menu.xml):\n${fsh_status}"
             fi
-          else
-            # Directory doesn't exist yet - treat as "has changes" to trigger build
+          fi
+          
+          # Check 2: Did the CapabilityStatement expander add/modify files in input/?
+          INPUT_PATH="${{ env.IG_PUBLISHER_DIR }}/input"
+          if [ -d "${INPUT_PATH}" ]; then
+            input_status=$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")
+          
+            if [ -n "$input_status" ]; then
+              has_changes=true
+              changes_found="${changes_found}\nChanges in ${INPUT_PATH}/ (CapabilityStatement expansion):\n${input_status}"
+            fi
+          fi
+          
+          # Set output and display results
+          if [ "$has_changes" = true ]; then
             echo "has_changes=true" >> "${GITHUB_OUTPUT}"
-            echo "Input directory does not exist yet - will be created during build"
+            echo -e "$changes_found"
+          else
+            echo "has_changes=false" >> "${GITHUB_OUTPUT}"
+            echo "No changes detected - skipping IG build"
+          
+            # Store "no changes" status for PR comment
+            mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
+            echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
           fi
 
       # Run the HL7 FHIR IG Publisher
@@ -222,14 +233,14 @@ jobs:
         run: |
           igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
 
-      # Upload expanded resources for commit (outside container)
+      # Upload expanded resources for commit (always, not only when build runs)
       - name: Upload Expanded Resources
-        if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: expanded-resources-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           retention-days: 1
+          if-no-files-found: warn
 
       - name: Record branch metadata for Pages cleanup
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
@@ -404,16 +415,28 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          echo "=== Files before staging ==="
+          ls -la publisher-guides/*/fsh-generated 2>/dev/null || echo "No fsh-generated directories"
+          ls -la publisher-guides/*/input/resources 2>/dev/null || echo "No input/resources directories"
+          
           # Stage per-IG fsh-generated outputs and expanded resources
+          echo "=== Staging publisher-guides/*/fsh-generated ==="
           git add publisher-guides/*/fsh-generated || true
+          
+          echo "=== Staging publisher-guides/*/input/resources ==="
           git add publisher-guides/*/input/resources || true
+          
           echo "=== Staged changes ==="
           git diff --name-only --cached || true
+          
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
+            echo "=== Committing changes ==="
             git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs [skip ci]"
             git push origin HEAD:${GITHUB_REF_NAME}
+            echo "=== Commit and push completed ==="
           fi
 
       # Download all IG URL metadata to create a unified PR comment
