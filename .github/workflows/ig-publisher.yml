@@ -526,18 +526,19 @@ jobs:
               owner, repo, issue_number: pr.number, per_page: 100
             });
             
-            // Find existing marker comment
-            const existing = comments.find(c => typeof c.body === 'string' && c.body.includes(marker));
+            // Find and delete existing marker comment(s)
+            const existingComments = comments.filter(c => typeof c.body === 'string' && c.body.includes(marker));
             
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner, repo, comment_id: existing.id, body
+            for (const existing of existingComments) {
+              await github.rest.issues.deleteComment({
+                owner, repo, comment_id: existing.id
               });
-              core.info(`Updated PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo, issue_number: pr.number, body
-              });
-              core.info(`Created PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
+              core.info(`Deleted old PR comment #${existing.id} on PR #${pr.number}`);
             }
+            
+            // Create new comment
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: pr.number, body
+            });
+            core.info(`Created new PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
 
