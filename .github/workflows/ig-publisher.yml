@@ -130,44 +130,13 @@ jobs:
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
-      - name: Expand CapabilityStatements
-        shell: bash
-        env:
-          INPUT_DIR: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
-          OUTPUT_DIR: ${{ env.IG_PUBLISHER_DIR }}/input/resources
-        run: |
-          set -euo pipefail
-          
-          echo "=== Expanding CapabilityStatements ==="
-          
-          # Convert YAML list to JSON using GitHub Actions toJSON
-          urls_json='${{ toJSON(matrix.capability_statement_urls) }}'
-          
-          # Parse JSON array using sed/grep (no external dependencies needed)
-          # Extract URLs from JSON array: ["url1","url2"] -> url1\nurl2
-          urls=$(echo "${urls_json}" | sed 's/^\[//;s/\]$//;s/","/\n/g;s/"//g')
-          
-          # Count URLs
-          url_count=$(echo "${urls}" | grep -c '^http' || echo "0")
-          echo "URLs to process: ${url_count} total"
-          
-          # Process each URL
-          echo "${urls}" | while IFS= read -r url; do
-            if [ -n "${url}" ]; then
-              echo "--- Expanding: ${url} ---"
-          
-              # Call the expander tool (available in the container)
-              capabilitystatement-expander \
-                --input-directory "${INPUT_DIR}" \
-                --output-directory "${OUTPUT_DIR}" \
-                --capability-statement-url "${url}"
-          
-              echo "✓ Completed: ${url}"
-            fi
-          done
-          
-          echo "=== All CapabilityStatements expanded ==="
-          ls -la "${OUTPUT_DIR}" | head -30
+      # Note: The action will be updated to support multiple URLs via capability_statement_urls parameter
+      - name: Expand CapabilityStatement
+        uses: Gefyra/capabilityStatement-expander@v0
+        with:
+          input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+          output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+          capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
 
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
