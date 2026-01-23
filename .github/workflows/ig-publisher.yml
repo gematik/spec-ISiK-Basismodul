@@ -1,5 +1,22 @@
 name: Build and Publish IG
 
+# IMPORTANT — Matrix build
+# The Implementation Guides (IGs) to be built are configured further down
+# in the `strategy.matrix.include` section. For each IG, provide these fields:
+#   - ig_name:   A unique identifier / display name (e.g. Organspendeerkennung)
+#   - ig_dir:    Directory under `publisher-guides` (e.g. publisher-guides/Organspendeerkennung)
+#   - capability_statement_urls: A YAML list with one or more CapabilityStatement URLs
+#
+# Example (add to the matrix below):
+#   - ig_name: My-IG
+#     ig_dir: publisher-guides/My-IG
+#     capability_statement_urls:
+#       - https://example.com/CapabilityStatement/Server
+#       - https://example.com/CapabilityStatement/Client
+#
+# Note: The matrix controls which parallel build jobs are created. Edit that
+# list to add or remove IGs or to specify multiple CapabilityStatements per IG.
+
 # Controls when the action will run.
 on:
   push:
