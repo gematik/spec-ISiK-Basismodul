@@ -195,18 +195,18 @@ jobs:
             exit 0
           fi
           
-          cd "${{ env.IG_PUBLISHER_DIR }}"
-          if git diff --quiet input/; then
+          # Check for changes in the input directory (relative to workspace root)
+          if git diff --quiet "${{ env.IG_PUBLISHER_DIR }}/input/" 2>/dev/null; then
             echo "has_changes=false" >> "${GITHUB_OUTPUT}"
             echo "No changes detected in input/ directory - skipping IG build"
           
-            # Store "no changes" status for PR comment
-            mkdir -p /tmp/ig-urls
-            echo "${{ matrix.ig_name }}|NO_CHANGES" >> /tmp/ig-urls/urls.txt
+            # Store "no changes" status for PR comment (use GITHUB_WORKSPACE which is persistent)
+            mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
+            echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
           else
             echo "has_changes=true" >> "${GITHUB_OUTPUT}"
             echo "Changes detected in input/ directory:"
-            git diff --name-only input/
+            git diff --name-only "${{ env.IG_PUBLISHER_DIR }}/input/" 2>/dev/null || echo "  (unable to show diff)"
           fi
 
       # Run the HL7 FHIR IG Publisher
@@ -301,15 +301,15 @@ jobs:
           printf '### Deployment: %s\n[Open published IG for branch `%s`](%s)\n' "${ig_name}" "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
           
           # Store URL in a file for the commit job to collect
-          mkdir -p /tmp/ig-urls
-          echo "${ig_name}|${url}" >> /tmp/ig-urls/urls.txt
+          mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
+          echo "${ig_name}|${url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
 
       - name: Upload IG URL metadata
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
         uses: actions/upload-artifact@v4
         with:
           name: ig-url-${{ matrix.ig_name }}
-          path: /tmp/ig-urls/urls.txt
+          path: ${{ github.workspace }}/.ig-urls-temp/urls.txt
           retention-days: 1
 
   # Commit all expanded resources in one go
