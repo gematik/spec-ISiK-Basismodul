@@ -183,6 +183,7 @@ jobs:
       # Check if there are changes in the input directory after expansion
       - name: Check for input changes
         id: check_changes
+        shell: bash
         run: |
           set -euo pipefail
           
@@ -339,6 +340,7 @@ jobs:
 
       # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
       - name: Copy SUSHI-generated IGs and Expanded Resources
+        shell: bash
         run: |
           set -euo pipefail
           # First handle SUSHI-generated IGs
@@ -381,6 +383,7 @@ jobs:
 
       # Show unstaged changes before staging (helpful debugging output)
       - name: Show unstaged changes (before git add)
+        shell: bash
         run: |
           echo "=== git status --porcelain ==="
           git status --porcelain || true
@@ -389,6 +392,7 @@ jobs:
 
       # Commit all SUSHI-generated ImplementationGuides and expanded resources (if any changes)
       - name: Commit All SUSHI-generated ImplementationGuides and Expanded Resources
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
