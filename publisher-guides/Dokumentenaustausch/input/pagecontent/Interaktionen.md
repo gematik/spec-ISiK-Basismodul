@@ -1,7 +1,6 @@
 ---
 topic: AkteureUndInteraktionen-AkteureUndInteraktionen-Interaktionen
 ---
-----
 
 ### Dokumentenabfrage und -Zugriff (bestätigungsrelevant)
 **Use Case:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
