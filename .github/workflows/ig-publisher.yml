@@ -19,10 +19,10 @@ name: Build and Publish IG
 
 # Controls when the action will run.
 on:
-  push:
-    branches:
-      - '**'
+  # Run on pull request events only
   pull_request:
+
+  # Allow manual triggering for production builds or testing
   workflow_dispatch:
     inputs:
       force_build:
