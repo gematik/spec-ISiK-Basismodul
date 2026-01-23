@@ -153,15 +153,6 @@ jobs:
         run: |
           sushi ${{ env.IG_PUBLISHER_DIR }}      
 
-      # Debug: list possible locations for the generated ImplementationGuide
-      - name: List SUSHI-generated files (debug)
-        run: |
-          echo "Looking for ImplementationGuide JSONs in fsh-generated and IG input/resources"
-          echo "-- ${SUSHI_INPUT_DIR}/fsh-generated/resources --"
-          ls -la "${SUSHI_INPUT_DIR}/fsh-generated/resources" || true
-          echo "-- ${IG_PUBLISHER_DIR}/input/resources --"
-          ls -la "${IG_PUBLISHER_DIR}/input/resources" || true
-
       # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
       - name: Upload SUSHI-generated ImplementationGuide
         uses: actions/upload-artifact@v4
@@ -208,7 +199,14 @@ jobs:
           else
             echo "has_changes=true" >> "${GITHUB_OUTPUT}"
             echo "Changes detected in input/ directory:"
-            git diff --name-only "${INPUT_PATH}" 2>/dev/null || echo "  (git diff succeeded, files changed)"
+          
+            # Try to show changed files with git diff
+            if changed_files=$(git diff --name-only "${INPUT_PATH}" 2>/dev/null) && [ -n "$changed_files" ]; then
+              echo "$changed_files"
+            else
+              # Fallback: use git status to show changes
+              git status --short "${INPUT_PATH}" 2>/dev/null || echo "  (files changed, unable to list)"
+            fi
           fi
 
       # Run the HL7 FHIR IG Publisher
