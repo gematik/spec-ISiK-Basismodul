@@ -23,6 +23,13 @@ on:
     branches:
       - '**'
   pull_request:
+  workflow_dispatch:
+    inputs:
+      force_build:
+        description: 'Force build even if no input changes detected'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   actions: write
@@ -134,17 +141,35 @@ jobs:
           ls -la /root/.fhir/packages/ | head -20
           echo "==============================="
 
-      # generate Implementationguide resource & menu
-      - name: Run SUSHI (IG local)
-        run: |
-          sushi ${{ env.IG_PUBLISHER_DIR }}      
-
       # Download the fsh-generated artifact from prepare job
       - name: Download FSH Generated Resources
         uses: actions/download-artifact@v4
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
+
+      # generate Implementationguide resource & menu
+      - name: Run SUSHI (IG local)
+        run: |
+          sushi ${{ env.IG_PUBLISHER_DIR }}      
+
+      # Debug: list possible locations for the generated ImplementationGuide
+      - name: List SUSHI-generated files (debug)
+        run: |
+          echo "Looking for ImplementationGuide JSONs in fsh-generated and IG input/resources"
+          echo "-- ${SUSHI_INPUT_DIR}/fsh-generated/resources --"
+          ls -la "${SUSHI_INPUT_DIR}/fsh-generated/resources" || true
+          echo "-- ${IG_PUBLISHER_DIR}/input/resources --"
+          ls -la "${IG_PUBLISHER_DIR}/input/resources" || true
+
+      # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
+      - name: Upload SUSHI-generated ImplementationGuide
+        uses: actions/upload-artifact@v4
+        with:
+          name: sushi-generated-ig-${{ matrix.ig_name }}
+          # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
+          path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
+          retention-days: 1
 
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
       # Note: The action will be updated to support multiple URLs via capability_statement_urls parameter
@@ -155,13 +180,43 @@ jobs:
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
 
+      # Check if there are changes in the input directory after expansion
+      - name: Check for input changes
+        id: check_changes
+        run: |
+          set -euo pipefail
+          
+          # Check if force_build is enabled
+          force_build="${{ github.event.inputs.force_build }}"
+          if [ "${force_build}" = "true" ]; then
+            echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+            echo "Force build enabled - proceeding with IG build regardless of changes"
+            exit 0
+          fi
+          
+          cd "${{ env.IG_PUBLISHER_DIR }}"
+          if git diff --quiet input/; then
+            echo "has_changes=false" >> "${GITHUB_OUTPUT}"
+            echo "No changes detected in input/ directory - skipping IG build"
+          
+            # Store "no changes" status for PR comment
+            mkdir -p /tmp/ig-urls
+            echo "${{ matrix.ig_name }}|NO_CHANGES" >> /tmp/ig-urls/urls.txt
+          else
+            echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+            echo "Changes detected in input/ directory:"
+            git diff --name-only input/
+          fi
+
       # Run the HL7 FHIR IG Publisher
       - name: Build IG
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
 
       # Upload expanded resources for commit (outside container)
       - name: Upload Expanded Resources
+        if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: expanded-resources-${{ matrix.ig_name }}
@@ -169,13 +224,14 @@ jobs:
           retention-days: 1
 
       - name: Record branch metadata for Pages cleanup
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         run: |
           set -eu
           echo "${GITHUB_REF_NAME}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
       # Upload the IG build output as an artifact
       - name: Upload Build Results
+        if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: fhir-ig-${{ matrix.ig_name }}
@@ -184,7 +240,7 @@ jobs:
 
       # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         env:
           REPO: ${{ github.repository }}
@@ -231,7 +287,7 @@ jobs:
 
       - name: Announce published URL
         id: announce_url
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         run: |
           set -eu
@@ -242,56 +298,18 @@ jobs:
           url="https://${repo_owner}.github.io/${repo_name}/${branch}/${ig_name}/"
           echo "Published ${ig_name} to ${url}"
           printf '### Deployment: %s\n[Open published IG for branch `%s`](%s)\n' "${ig_name}" "${branch}" "${url}" >> "${GITHUB_STEP_SUMMARY}"
-          echo "published_url=${url}" >> "${GITHUB_OUTPUT}"
-          echo "ig_name=${ig_name}" >> "${GITHUB_OUTPUT}"
+          
+          # Store URL in a file for the commit job to collect
+          mkdir -p /tmp/ig-urls
+          echo "${ig_name}|${url}" >> /tmp/ig-urls/urls.txt
 
-      - name: Upsert PR comment with published URL
+      - name: Upload IG URL metadata
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
-        uses: actions/github-script@v7
-        env:
-          BRANCH_NAME: ${{ github.ref_name }}
-          PUBLISHED_URL: ${{ steps.announce_url.outputs.published_url }}
-          IG_NAME: ${{ steps.announce_url.outputs.ig_name }}
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            const { owner, repo } = context.repo;
-            const branch = process.env.BRANCH_NAME;
-            const igName = process.env.IG_NAME;
-            const marker = `<!-- ig-publish-url-${igName} -->`;
-            const url = process.env.PUBLISHED_URL;
-            const body = `${marker}
-            ### Deployment: ${igName}
-            [Open published IG for branch \`${branch}\`](${url})`;
-
-            // Try to find an open PR for this branch
-            const { data: prs } = await github.rest.pulls.list({
-              owner, repo, state: 'open', per_page: 100
-            });
-            const pr = prs.find(p => p.head && p.head.ref === branch);
-            if (!pr) {
-              core.info(`No open PR found for branch ${branch}; skipping PR comment.`);
-              return;
-            }
-
-            // List existing comments on that PR
-            const { data: comments } = await github.rest.issues.listComments({
-              owner, repo, issue_number: pr.number, per_page: 100
-            });
-
-            // Find existing marker comment for this specific IG
-            const existing = comments.find(c => typeof c.body === 'string' && c.body.includes(marker));
-
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner, repo, comment_id: existing.id, body
-              });
-              core.info(`Updated IG publish URL comment for ${igName} on PR #${pr.number}`);
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo, issue_number: pr.number, body
-              });
-              core.info(`Created IG publish URL comment for ${igName} on PR #${pr.number}`);
-            }
+          name: ig-url-${{ matrix.ig_name }}
+          path: /tmp/ig-urls/urls.txt
+          retention-days: 1
 
   # Commit all expanded resources in one go
   commit:
@@ -305,40 +323,188 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
-      # Download all artifacts
-      - name: Download All Expanded Resources
+      # Download SUSHI-generated ImplementationGuides (only)
+      - name: Download SUSHI-generated ImplementationGuides
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sushi-generated-ig-*
+          path: artifacts
+
+      # Download expanded resources from build jobs (these are required)
+      - name: Download Expanded Resources
         uses: actions/download-artifact@v4
         with:
           pattern: expanded-resources-*
           path: artifacts
 
-      # Copy all expanded resources to their respective directories
-      - name: Copy Expanded Resources
+      # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
+      - name: Copy SUSHI-generated IGs and Expanded Resources
         run: |
-          for dir in artifacts/expanded-resources-*/; do
-            ig_name=$(basename "$dir" | sed 's/expanded-resources-//')
-            echo "Processing $ig_name..."
-          
+          set -euo pipefail
+          # First handle SUSHI-generated IGs
+          for dir in artifacts/sushi-generated-ig-*/; do
+            [ -d "$dir" ] || continue
+            base=$(basename "$dir")
+            ig_name=$(echo "$base" | sed 's/sushi-generated-ig-//')
+            echo "Processing SUSHI-generated artifact $base for IG: $ig_name"
+
             # Find matching IG directory in publisher-guides
             ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
             if [ -n "$ig_path" ]; then
-              echo "Copying to $ig_path/input/resources/"
-              mkdir -p "$ig_path/input/resources"
-              cp -r "$dir"* "$ig_path/input/resources/"
+              target_dir="$ig_path/fsh-generated"
+              echo "Copying SUSHI-generated files to ${target_dir}/"
+              mkdir -p "${target_dir}"
+              # Clean target to avoid stale files
+              rm -rf "${target_dir:?}/*" || true
+              cp -r "$dir"* "${target_dir}/" || true
             else
-              echo "Warning: No matching directory found for $ig_name"
+              echo "Warning: No matching directory found for $ig_name (SUSHI artifact)"
             fi
           done
 
-      # Commit all changes at once
-      - name: Commit All Expanded Resources
+          # Then handle expanded resources from capability statement expansion
+          for dir in artifacts/expanded-resources-*/; do
+            [ -d "$dir" ] || continue
+            base=$(basename "$dir")
+            ig_name=$(echo "$base" | sed 's/expanded-resources-//')
+            echo "Processing expanded-resources artifact $base for IG: $ig_name"
+
+            ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+            if [ -n "$ig_path" ]; then
+              echo "Copying expanded resources to $ig_path/input/resources/"
+              mkdir -p "$ig_path/input/resources"
+              cp -r "$dir"* "$ig_path/input/resources/" || true
+            else
+              echo "Warning: No matching directory found for $ig_name (expanded resources)"
+            fi
+          done
+
+      # Show unstaged changes before staging (helpful debugging output)
+      - name: Show unstaged changes (before git add)
+        run: |
+          echo "=== git status --porcelain ==="
+          git status --porcelain || true
+          echo "=== git diff --name-only ==="
+          git diff --name-only || true
+
+      # Commit all SUSHI-generated ImplementationGuides and expanded resources (if any changes)
+      - name: Commit All SUSHI-generated ImplementationGuides and Expanded Resources
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publisher-guides/*/input/resources
+          # Stage per-IG fsh-generated outputs and expanded resources
+          git add publisher-guides/*/fsh-generated || true
+          git add publisher-guides/*/input/resources || true
+          echo "=== Staged changes ==="
+          git diff --name-only --cached || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: update expanded CapabilityStatement resources for all IGs [skip ci]"
+            git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs [skip ci]"
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
+
+      # Download all IG URL metadata to create a unified PR comment
+      - name: Download IG URL metadata
+        uses: actions/download-artifact@v4
+        with:
+          pattern: ig-url-*
+          path: ig-urls
+        continue-on-error: true
+
+      # Create or update a single PR comment with all published IG URLs
+      - name: Update PR comment with all published IGs
+        uses: actions/github-script@v7
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const branch = process.env.BRANCH_NAME;
+            const marker = `<!-- ig-publish-urls-all -->`;
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Collect all IG URLs from artifacts
+            const igUrls = [];
+            const igUrlsDir = 'ig-urls';
+            
+            try {
+              if (fs.existsSync(igUrlsDir)) {
+                const artifacts = fs.readdirSync(igUrlsDir);
+                for (const artifact of artifacts) {
+                  const urlFile = path.join(igUrlsDir, artifact, 'urls.txt');
+                  if (fs.existsSync(urlFile)) {
+                    const content = fs.readFileSync(urlFile, 'utf8');
+                    const lines = content.trim().split('\n');
+                    for (const line of lines) {
+                      const [igName, url] = line.split('|');
+                      if (igName && url) {
+                        igUrls.push({ name: igName.trim(), url: url.trim() });
+                      }
+                    }
+                  }
+                }
+              }
+            } catch (error) {
+              core.warning(`Failed to read IG URLs: ${error.message}`);
+            }
+            
+            if (igUrls.length === 0) {
+              core.info('No IG URLs found - skipping PR comment');
+              return;
+            }
+            
+            // Build comment body with all IGs
+            let body = `${marker}\n### 🚀 Published Implementation Guides\n\n`;
+            body += `Branch: \`${branch}\`\n\n`;
+            
+            const publishedIGs = igUrls.filter(ig => ig.url !== 'NO_CHANGES');
+            const unchangedIGs = igUrls.filter(ig => ig.url === 'NO_CHANGES');
+            
+            if (publishedIGs.length > 0) {
+              body += '#### ✅ Published IGs:\n\n';
+              for (const ig of publishedIGs) {
+                body += `- **${ig.name}**: [View Published IG](${ig.url})\n`;
+              }
+            }
+            
+            if (unchangedIGs.length > 0) {
+              body += '\n#### ℹ️ Skipped (no changes in input/):\n\n';
+              for (const ig of unchangedIGs) {
+                body += `- **${ig.name}**: No changes detected - build skipped\n`;
+              }
+              body += '\n_Note: Use "Force build" option in workflow dispatch to rebuild these IGs._\n';
+            }
+            
+            // Try to find an open PR for this branch
+            const { data: prs } = await github.rest.pulls.list({
+              owner, repo, state: 'open', per_page: 100
+            });
+            const pr = prs.find(p => p.head && p.head.ref === branch);
+            
+            if (!pr) {
+              core.info(`No open PR found for branch ${branch}; skipping PR comment.`);
+              return;
+            }
+            
+            // List existing comments on that PR
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo, issue_number: pr.number, per_page: 100
+            });
+            
+            // Find existing marker comment
+            const existing = comments.find(c => typeof c.body === 'string' && c.body.includes(marker));
+            
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner, repo, comment_id: existing.id, body
+              });
+              core.info(`Updated PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: pr.number, body
+              });
+              core.info(`Created PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
+            }
+
