@@ -31,6 +31,12 @@ on:
         type: boolean
         default: false
 
+# Ensure only one workflow runs per branch at a time
+# New runs will cancel in-progress runs for the same branch
+concurrency:
+  group: ig-publisher-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   actions: write
   contents: write
@@ -411,12 +417,19 @@ jobs:
       - name: Commit All SUSHI-generated ImplementationGuides and Expanded Resources
         shell: bash
         run: |
+          # Fix potential git ownership issues
+          git config --global --add safe.directory "$(pwd)" || true
+          
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           echo "=== Files before staging ==="
-          ls -la publisher-guides/*/fsh-generated 2>/dev/null || echo "No fsh-generated directories"
-          ls -la publisher-guides/*/input/resources 2>/dev/null || echo "No input/resources directories"
+          echo "fsh-generated directories:"
+          find publisher-guides -type d -name "fsh-generated" -exec ls -la {} \; 2>/dev/null || echo "No fsh-generated directories"
+          echo ""
+          echo "input/resources directories:"
+          find publisher-guides -type d -path "*/input/resources" -exec ls -la {} \; 2>/dev/null | head -20 || echo "No input/resources directories"
+          echo ""
           
           # Stage per-IG fsh-generated outputs and expanded resources
           echo "=== Staging publisher-guides/*/fsh-generated ==="
