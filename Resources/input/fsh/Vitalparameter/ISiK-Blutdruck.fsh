@@ -37,8 +37,10 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
     * coding contains 
         IEEE11073 0..1 and
         SCT 0..1
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150017
     * coding[SCT] = $sct#271649006
+    * coding[LOINC] = $loinc#8480-6
 * component[DiastolicBP] MS
   * ^comment = "Motivation MS: Kodierung des diastolischen Blutdrucks."
   * ^short = "Diastolischer Blutdruck"
@@ -52,8 +54,10 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
     * coding contains 
         IEEE11073 0..1 and
         SCT 0..1
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150018
     * coding[SCT] = $sct#271650006
+    * coding[LOINC] = $loinc#8462-4
   * dataAbsentReason MS
     * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
     * ^short = "Grund für fehlendes Untersuchungsergebniss"
@@ -76,8 +80,10 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
     * coding contains 
         IEEE11073 0..1 and
         SCT 0..1
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150019
     * coding[SCT] = $sct#6797001
+    * coding[LOINC] = $loinc#8478-0
 
 Instance: ISiKBlutdruckSystemischArteriellExample
 InstanceOf: ISiKBlutdruckSystemischArteriell
