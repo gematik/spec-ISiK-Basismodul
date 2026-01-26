@@ -34,10 +34,10 @@
     "application/fhir+xml",
     "application/fhir+json"
   ],
-  "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+  "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \r\n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \r\n  \r\nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \r\nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \r\nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
   "name": "ISiKCapabilityStatementMedikationVerabreichungRolle",
   "title": "ISiK CapabilityStatement Medikationsverabreichung Rolle",
-  "purpose": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverabreichung' zu bestehen.\n  \n**HISTORIE:**    \n\n* `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   \n* `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  \n",
+  "purpose": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverabreichung' zu bestehen.\r\n  \r\n**HISTORIE:**    \r\n\r\n* `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   \r\n* `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  \r\n",
   "rest": [
     {
       "mode": "server",
@@ -142,7 +142,7 @@
               "name": "_id",
               "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
               "type": "token",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?_id=103270`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?_id=103270`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach '_id' finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Parameters for all resources'](https://hl7.org/fhir/R4/search.html#all).\r\n\r\n        "
             },
             {
               "extension": [
@@ -154,7 +154,7 @@
               "name": "code",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
               "type": "token",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\r\n\r\n        "
             },
             {
               "extension": [
@@ -166,7 +166,7 @@
               "name": "context",
               "definition": "http://hl7.org/fhir/SearchParameter/MedicationAdministration-context",
               "type": "reference",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?context=Encounter/123`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?context=Encounter/123`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\r\n\r\n        "
             },
             {
               "extension": [
@@ -178,7 +178,7 @@
               "name": "effective-time",
               "definition": "http://hl7.org/fhir/SearchParameter/MedicationAdministration-effective-time",
               "type": "date",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?effective-time=2022-03-23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Date'](https://hl7.org/fhir/R4/search.html#date).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?effective-time=2022-03-23`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Date'](https://hl7.org/fhir/R4/search.html#date).\r\n\r\n        "
             },
             {
               "extension": [
@@ -190,7 +190,7 @@
               "name": "medication",
               "definition": "http://hl7.org/fhir/SearchParameter/medications-medication",
               "type": "reference",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?medication=Medication/123`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?medication=Medication/123`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\r\n\r\n        "
             },
             {
               "extension": [
@@ -202,7 +202,7 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?patient=Patient/123`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?patient=Patient/123`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\r\n\r\n        "
             },
             {
               "extension": [
@@ -214,7 +214,7 @@
               "name": "performer",
               "definition": "http://hl7.org/fhir/SearchParameter/MedicationAdministration-performer",
               "type": "reference",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?performer=Practitioner/101112`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?performer=Practitioner/101112`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\r\n\r\n        "
             },
             {
               "extension": [
@@ -226,7 +226,7 @@
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/medications-status",
               "type": "token",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?status=completed`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?status=completed`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\r\n\r\n        "
             },
             {
               "extension": [
@@ -238,7 +238,7 @@
               "name": "context.identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/MedicationAdministration-context",
               "type": "reference",
-              "documentation": "**Beispiele:**  \n        `GET [base]/MedicationAdministration?context.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`\n\n        `GET [base]/MedicationAdministration?context.identifier=7567867`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+              "documentation": "**Beispiele:**  \r\n        `GET [base]/MedicationAdministration?context.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867`\r\n\r\n        `GET [base]/MedicationAdministration?context.identifier=7567867`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Reference Search'](https://www.hl7.org/fhir/R4/search.html#reference).\r\n\r\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\r\n\r\n        "
             },
             {
               "extension": [
@@ -250,7 +250,7 @@
               "name": "medication.code",
               "definition": "http://hl7.org/fhir/SearchParameter/medications-medication",
               "type": "reference",
-              "documentation": "**Beispiel:**  \n        `GET [base]/MedicationAdministration?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+              "documentation": "**Beispiel:**  \r\n        `GET [base]/MedicationAdministration?medication.code=http://fhir.de/CodeSystem/bfarm/atc|V03AB23`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\r\n\r\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\r\n\r\n        "
             },
             {
               "extension": [
@@ -262,7 +262,7 @@
               "name": "patient.identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "**Beispiele:**  \n        `GET [base]/MedicationAdministration?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`\n\n        `GET [base]/MedicationAdministration?patient.identifier=1032702`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+              "documentation": "**Beispiele:**  \r\n        `GET [base]/MedicationAdministration?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`\r\n\r\n        `GET [base]/MedicationAdministration?patient.identifier=1032702`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\r\n\r\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\r\n\r\n        "
             },
             {
               "extension": [
@@ -274,7 +274,7 @@
               "name": "performer.identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/MedicationAdministration-performer",
               "type": "reference",
-              "documentation": "**Beispiele:**  \n        `GET [base]/MedicationAdministration?performer.identifier=http://fhir.de/sid/bundesaerztekammer/efn|123456789123456`\n\n        `GET [base]/MedicationAdministration?performer.identifier=123456789123456`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+              "documentation": "**Beispiele:**  \r\n        `GET [base]/MedicationAdministration?performer.identifier=http://fhir.de/sid/bundesaerztekammer/efn|123456789123456`\r\n\r\n        `GET [base]/MedicationAdministration?performer.identifier=123456789123456`\r\n\r\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\r\n\r\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\r\n\r\n        "
             }
           ]
         }
