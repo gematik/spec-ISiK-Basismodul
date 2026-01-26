@@ -62,44 +62,70 @@ jobs:
 
           shopt -s globstar nullglob
           removed=0
+          declare -A checked_branches
 
+          echo "=== Scanning for branch directories with .branch-name markers ==="
+          
           for metadata in **/.branch-name; do
             branch=$(cat "$metadata" | tr -d '\r')
             dir=$(dirname "$metadata")
             dir_no_prefix=${dir#./}
+          
+            # Extract branch name from path (first directory level)
+            branch_dir=$(echo "$dir_no_prefix" | cut -d'/' -f1)
 
             if [ -z "$branch" ]; then
-              echo "Skipping $dir because branch marker is empty."
+              echo "⚠️  Skipping $dir because branch marker is empty."
               continue
             fi
 
+            # Skip protected directories
             if [ -z "$dir_no_prefix" ] || [ "$dir_no_prefix" = "." ] || [ "$dir_no_prefix" = "IG" ] || [[ "$dir_no_prefix" == IG/* ]]; then
-              echo "Preserving $dir; skipping cleanup."
+              echo "🔒 Preserving $dir (protected directory)"
               continue
             fi
 
+            # Check if we already processed this branch directory
+            if [ -n "${checked_branches[$branch_dir]+x}" ]; then
+              echo "ℹ️  Already checked branch directory '$branch_dir', skipping $dir"
+              continue
+            fi
+
+            checked_branches[$branch_dir]=1
+
+            # Check if the branch still exists remotely
             if git ls-remote --heads origin "$branch" | grep -q "."; then
-              echo "Branch '$branch' still exists. Keeping $dir."
+              echo "✅ Branch '$branch' exists -> keeping directory '$branch_dir/'"
               continue
             fi
 
-            echo "Branch '$branch' no longer exists. Removing $dir."
-            rm -rf "$dir"
+            # Branch deleted -> remove entire branch directory (all IGs)
+            echo "🗑️  Branch '$branch' deleted -> removing entire directory '$branch_dir/'"
+            rm -rf "$branch_dir"
             removed=1
           done
 
           if [ "$removed" -eq 0 ]; then
-            echo "No stale branch directories found."
+            echo ""
+            echo "✨ No stale branch directories found. gh-pages is clean."
             exit 0
           fi
 
+          echo ""
+          echo "🧹 Cleaning up empty directories..."
           find . -mindepth 1 -type d -empty ! -path './IG' ! -path './IG/*' -delete
 
           git add --all
           if git diff --cached --quiet; then
-            echo "No changes to commit after cleanup."
+            echo ""
+            echo "ℹ️  No changes to commit after cleanup."
             exit 0
           fi
 
-          git commit -m "chore: remove Pages for deleted branches"
+          echo ""
+          echo "💾 Committing cleanup changes..."
+          git commit -m "chore: remove gh-pages directories for deleted branches"
           git push origin gh-pages
+          
+          echo ""
+          echo "✅ Cleanup completed successfully!"
