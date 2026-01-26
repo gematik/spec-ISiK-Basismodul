@@ -27,7 +27,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
-  * ^comment = "Eindeutiger Identifier des Patienten-blub"
+  * ^comment = "Eindeutiger Identifier des Patienten"
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
