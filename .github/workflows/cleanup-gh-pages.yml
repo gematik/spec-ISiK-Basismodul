@@ -65,6 +65,7 @@ jobs:
           declare -A checked_branches
 
           echo "=== Scanning for branch directories with .branch-name markers ==="
+          echo "Expected structure: {branch_name}/{ig_name}/.branch-name"
           
           for metadata in **/.branch-name; do
             branch=$(cat "$metadata" | tr -d '\r')
@@ -72,14 +73,16 @@ jobs:
             dir_no_prefix=${dir#./}
           
             # Extract branch name from path (first directory level)
+            # Structure is: branch_name/ig_name/.branch-name
             branch_dir=$(echo "$dir_no_prefix" | cut -d'/' -f1)
+            ig_dir=$(echo "$dir_no_prefix" | cut -d'/' -f2)
 
             if [ -z "$branch" ]; then
               echo "⚠️  Skipping $dir because branch marker is empty."
               continue
             fi
 
-            # Skip protected directories
+            # Skip protected directories (IG/ is the production directory)
             if [ -z "$dir_no_prefix" ] || [ "$dir_no_prefix" = "." ] || [ "$dir_no_prefix" = "IG" ] || [[ "$dir_no_prefix" == IG/* ]]; then
               echo "🔒 Preserving $dir (protected directory)"
               continue
@@ -93,14 +96,17 @@ jobs:
 
             checked_branches[$branch_dir]=1
 
+            echo "📂 Found branch directory: '$branch_dir/' (from marker in $dir_no_prefix)"
+            echo "   Branch name from marker: '$branch'"
+
             # Check if the branch still exists remotely
             if git ls-remote --heads origin "$branch" | grep -q "."; then
-              echo "✅ Branch '$branch' exists -> keeping directory '$branch_dir/'"
+              echo "   ✅ Branch '$branch' still exists -> keeping directory '$branch_dir/'"
               continue
             fi
 
-            # Branch deleted -> remove entire branch directory (all IGs)
-            echo "🗑️  Branch '$branch' deleted -> removing entire directory '$branch_dir/'"
+            # Branch deleted -> remove entire branch directory (all IGs under this branch)
+            echo "   🗑️  Branch '$branch' deleted -> removing entire directory '$branch_dir/' (all IGs)"
             rm -rf "$branch_dir"
             removed=1
           done
