@@ -228,7 +228,26 @@ jobs:
             echo "No changes detected - skipping IG build"
           
             mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-            echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
+          
+            # For PRs, try to preserve the previous URL if it exists on gh-pages
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+              ig_name="${{ matrix.ig_name }}"
+              repo_owner="${GITHUB_REPOSITORY_OWNER}"
+              repo_name="${GITHUB_REPOSITORY#*/}"
+              potential_url="https://${repo_owner}.github.io/${repo_name}/${branch_name}/${ig_name}/"
+          
+              # Check if the URL exists by trying to access the index.html
+              if curl --output /dev/null --silent --head --fail "${potential_url}index.html"; then
+                echo "Found existing published IG at ${potential_url}"
+                echo "${{ matrix.ig_name }}|${potential_url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
+              else
+                echo "No previous publication found - marking as NO_CHANGES"
+                echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
+              fi
+            else
+              echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
+            fi
           fi
 
       # Run the HL7 FHIR IG Publisher
@@ -521,14 +540,15 @@ jobs:
               for (const ig of publishedIGs) {
                 body += `- **${ig.name}**: [View Published IG](${ig.url})\n`;
               }
+              body += '\n_These IGs are available at the URLs above (last build may have been from a previous commit)._\n';
             }
             
             if (unchangedIGs.length > 0) {
-              body += '\n#### ℹ️ Skipped (no changes in input/):\n\n';
+              body += '\n#### ℹ️ Not yet published:\n\n';
               for (const ig of unchangedIGs) {
                 body += `- **${ig.name}**: No changes detected - build skipped\n`;
               }
-              body += '\n_Note: Use "Force build" option in workflow dispatch to rebuild these IGs._\n';
+              body += '\n_Note: Use "Force build" option in workflow dispatch to build these IGs._\n';
             }
             
             // Try to find an open PR for this branch
