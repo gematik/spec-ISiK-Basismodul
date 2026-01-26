@@ -247,10 +247,11 @@ jobs:
           if-no-files-found: warn
 
       - name: Record branch metadata for Pages cleanup
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
         run: |
           set -eu
-          echo "${GITHUB_REF_NAME}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
+          branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          echo "${branch_name}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
       # Upload the IG build output as an artifact
       - name: Upload Build Results
@@ -263,7 +264,7 @@ jobs:
 
       # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
         shell: bash
         env:
           REPO: ${{ github.repository }}
@@ -273,6 +274,9 @@ jobs:
           IG_NAME: ${{ matrix.ig_name }}
         run: |
           set -euo pipefail
+
+          # Use GITHUB_HEAD_REF for pull requests, GITHUB_REF_NAME for pushes
+          branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
 
           remote_url="https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
 
@@ -292,7 +296,7 @@ jobs:
             cd ..
           fi
 
-          branch_dir="gh-pages/${GITHUB_REF_NAME}/${IG_NAME}"
+          branch_dir="gh-pages/${branch_name}/${IG_NAME}"
           rm -rf "${branch_dir}"
           mkdir -p "${branch_dir}"
           cp -R "${{ env.IG_PUBLISHER_DIR }}/output/." "${branch_dir}/"
@@ -305,18 +309,18 @@ jobs:
             echo "No updates to publish."
             exit 0
           fi
-          git commit -m "chore: update ${GITHUB_REF_NAME}/${IG_NAME} pages"
+          git commit -m "chore: update ${branch_name}/${IG_NAME} pages"
           git push origin gh-pages
 
       - name: Announce published URL
         id: announce_url
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
         shell: bash
         run: |
           set -eu
           repo_owner="${GITHUB_REPOSITORY_OWNER}"
           repo_name="${GITHUB_REPOSITORY#*/}"
-          branch="${GITHUB_REF_NAME}"
+          branch="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           ig_name="${{ matrix.ig_name }}"
           url="https://${repo_owner}.github.io/${repo_name}/${branch}/${ig_name}/"
           echo "Published ${ig_name} to ${url}"
@@ -327,7 +331,7 @@ jobs:
           echo "${ig_name}|${url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
 
       - name: Upload IG URL metadata
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: ig-url-${{ matrix.ig_name }}
@@ -339,13 +343,13 @@ jobs:
   commit:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Download SUSHI-generated ImplementationGuides (only)
       - name: Download SUSHI-generated ImplementationGuides
@@ -445,13 +449,16 @@ jobs:
             echo "No changes to commit"
           else
             echo "=== Committing changes ==="
+            # Use GITHUB_HEAD_REF for pull requests, GITHUB_REF_NAME for pushes
+            branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
             git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs [skip ci]"
-            git push origin HEAD:${GITHUB_REF_NAME}
+            git push origin HEAD:${branch_name}
             echo "=== Commit and push completed ==="
           fi
 
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
+        if: github.event_name == 'pull_request'
         uses: actions/download-artifact@v4
         with:
           pattern: ig-url-*
@@ -460,9 +467,10 @@ jobs:
 
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         env:
-          BRANCH_NAME: ${{ github.ref_name }}
+          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         with:
           script: |
             const { owner, repo } = context.repo;
@@ -554,4 +562,3 @@ jobs:
               owner, repo, issue_number: pr.number, body
             });
             core.info(`Created new PR comment with ${publishedIGs.length} published and ${unchangedIGs.length} skipped IG(s) on PR #${pr.number}`);
-
