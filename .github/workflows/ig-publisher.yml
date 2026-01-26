@@ -93,8 +93,6 @@ jobs:
   build:
     needs: prepare
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     strategy:
@@ -169,7 +167,7 @@ jobs:
           retention-days: 1
 
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
-      # Note: The action will be updated to support multiple URLs via capability_statement_urls parameter
+      # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
         uses: Gefyra/capabilityStatement-expander@v0
         with:
@@ -421,6 +419,7 @@ jobs:
             if [ -n "$ig_path" ]; then
               echo "Copying expanded resources to $ig_path/input/resources/"
               mkdir -p "$ig_path/input/resources"
+              rm -rf "$ig_path/input/resources/"* || true
               cp -r "$dir"* "$ig_path/input/resources/" || true
             else
               echo "Warning: No matching directory found for $ig_name (expanded resources)"
