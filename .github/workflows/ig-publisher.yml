@@ -115,6 +115,10 @@ jobs:
             ig_dir: publisher-guides/Organspendeerkennung
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+          - ig_name: ISiK-Formularmodul
+            ig_dir: publisher-guides/Formular
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleAkteur
           # Add more IGs here:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
@@ -228,26 +232,7 @@ jobs:
             echo "No changes detected - skipping IG build"
           
             mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-          
-            # For PRs, try to preserve the previous URL if it exists on gh-pages
-            if [ "${{ github.event_name }}" = "pull_request" ]; then
-              branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-              ig_name="${{ matrix.ig_name }}"
-              repo_owner="${GITHUB_REPOSITORY_OWNER}"
-              repo_name="${GITHUB_REPOSITORY#*/}"
-              potential_url="https://${repo_owner}.github.io/${repo_name}/${branch_name}/${ig_name}/"
-          
-              # Check if the URL exists by trying to access the index.html
-              if curl --output /dev/null --silent --head --fail "${potential_url}index.html"; then
-                echo "Found existing published IG at ${potential_url}"
-                echo "${{ matrix.ig_name }}|${potential_url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-              else
-                echo "No previous publication found - marking as NO_CHANGES"
-                echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-              fi
-            else
-              echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-            fi
+            echo "${{ matrix.ig_name }}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
           fi
 
       # Run the HL7 FHIR IG Publisher
@@ -266,7 +251,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Record branch metadata for Pages cleanup
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         run: |
           set -eu
           branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
@@ -283,7 +268,7 @@ jobs:
 
       # Publish the IG output to a branch-specific directory on gh-pages
       - name: Publish branch output to GitHub Pages
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         env:
           REPO: ${{ github.repository }}
@@ -315,7 +300,7 @@ jobs:
             cd ..
           fi
 
-          branch_dir="gh-pages/${branch_name}/${IG_NAME}"
+          branch_dir="gh-pages/${GITHUB_REF_NAME}/${IG_NAME}"
           rm -rf "${branch_dir}"
           mkdir -p "${branch_dir}"
           cp -R "${{ env.IG_PUBLISHER_DIR }}/output/." "${branch_dir}/"
@@ -328,18 +313,18 @@ jobs:
             echo "No updates to publish."
             exit 0
           fi
-          git commit -m "chore: update ${branch_name}/${IG_NAME} pages"
+          git commit -m "chore: update ${GITHUB_REF_NAME}/${IG_NAME} pages"
           git push origin gh-pages
 
       - name: Announce published URL
         id: announce_url
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/') && steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         run: |
           set -eu
           repo_owner="${GITHUB_REPOSITORY_OWNER}"
           repo_name="${GITHUB_REPOSITORY#*/}"
-          branch="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          branch="${GITHUB_REF_NAME}"
           ig_name="${{ matrix.ig_name }}"
           url="https://${repo_owner}.github.io/${repo_name}/${branch}/${ig_name}/"
           echo "Published ${ig_name} to ${url}"
@@ -350,7 +335,7 @@ jobs:
           echo "${ig_name}|${url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
 
       - name: Upload IG URL metadata
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
         uses: actions/upload-artifact@v4
         with:
           name: ig-url-${{ matrix.ig_name }}
@@ -362,13 +347,13 @@ jobs:
   commit:
     needs: build
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
 
       # Download SUSHI-generated ImplementationGuides (only)
       - name: Download SUSHI-generated ImplementationGuides
@@ -468,16 +453,13 @@ jobs:
             echo "No changes to commit"
           else
             echo "=== Committing changes ==="
-            # Use GITHUB_HEAD_REF for pull requests, GITHUB_REF_NAME for pushes
-            branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
             git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs [skip ci]"
-            git push origin HEAD:${branch_name}
+            git push origin HEAD:${GITHUB_REF_NAME}
             echo "=== Commit and push completed ==="
           fi
 
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/download-artifact@v4
         with:
           pattern: ig-url-*
@@ -486,10 +468,9 @@ jobs:
 
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
-        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         env:
-          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+          BRANCH_NAME: ${{ github.ref_name }}
         with:
           script: |
             const { owner, repo } = context.repo;
@@ -540,15 +521,14 @@ jobs:
               for (const ig of publishedIGs) {
                 body += `- **${ig.name}**: [View Published IG](${ig.url})\n`;
               }
-              body += '\n_These IGs are available at the URLs above (last build may have been from a previous commit)._\n';
             }
             
             if (unchangedIGs.length > 0) {
-              body += '\n#### ℹ️ Not yet published:\n\n';
+              body += '\n#### ℹ️ Skipped (no changes in input/):\n\n';
               for (const ig of unchangedIGs) {
                 body += `- **${ig.name}**: No changes detected - build skipped\n`;
               }
-              body += '\n_Note: Use "Force build" option in workflow dispatch to build these IGs._\n';
+              body += '\n_Note: Use "Force build" option in workflow dispatch to rebuild these IGs._\n';
             }
             
             // Try to find an open PR for this branch
