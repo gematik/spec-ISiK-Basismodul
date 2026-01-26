@@ -1,4 +1,3 @@
-# Akteure und Interaktionen
 
 Innerhalb des ISiK-Moduls Medikation kann ein beteiligtes System verschiedene Rollen einnehmen und somit unterschiedliche Aufgaben übernehmen. 
 

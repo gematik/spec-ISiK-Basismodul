@@ -1,4 +1,4 @@
-## Informationsmodell
+
 
 **Vereinfachtes Informationsmodell**
 

@@ -1,4 +1,4 @@
-## Use Case Diagramm
+
 Im Folgenden wird ein grafischer Überblick über Anwendungsfälle (Use Cases) gegeben, die in diesem Modul relevant sind. Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und dafür hinreichende Funktionen dargestellt:
 * Allgemeine und intuitiv verständliche Use Cases.
   * Kombinationen und weitere Details sind möglich.
