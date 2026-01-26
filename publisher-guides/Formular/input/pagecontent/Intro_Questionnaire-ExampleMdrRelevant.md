@@ -1,0 +1,1 @@
+<iframe src="https://gematik.github.io/poc-isik-formular/?base=https://fhir.simplifier.net/isik-stufe-5/&id=ExampleMdrRelevant&minimal=true" style="width:100%; height:400px; border:none; display:block;"></iframe>

@@ -1,0 +1,1 @@
+<iframe src="https://gematik.github.io/poc-isik-formular/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-stufe-5%2F&id=ExampleEntryValidationDecimal&minimal=true" style="width:100%; height:300px; border:none; display:block;"></iframe>
