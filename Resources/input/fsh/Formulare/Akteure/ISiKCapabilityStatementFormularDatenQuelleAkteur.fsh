@@ -16,7 +16,7 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementCompositionKonsumentenRolle)
   * insert ExpectationImports(#SHALL)
-* imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
+/** imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#MAY)
 * imports[+] = Canonical(ISiKCapabilityStatementGesundheitsstatusRolle)
   * insert ExpectationImports(#MAY)
@@ -31,7 +31,7 @@ Usage: #definition
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceMinimalRolle)
   * insert ExpectationImports(#MAY)
 * imports[+] = Canonical(ISiKCapabilityStatementKlinischeRolle)
-  * insert ExpectationImports(#MAY)
+  * insert ExpectationImports(#MAY)*/
 
 * rest.mode = #server
 
