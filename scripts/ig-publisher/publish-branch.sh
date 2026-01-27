@@ -34,4 +34,22 @@ if git diff --cached --quiet; then
   exit 0
 fi
 git commit -m "chore: update ${branch_name}/${IG_NAME} pages"
-git push origin gh-pages
+max_attempts=3
+attempt=1
+while [ "$attempt" -le "$max_attempts" ]; do
+  git fetch origin gh-pages
+  if git rebase origin/gh-pages; then
+    if git push origin gh-pages; then
+      echo "Published to gh-pages on attempt ${attempt}."
+      break
+    fi
+  fi
+
+  git rebase --abort || true
+  if [ "$attempt" -eq "$max_attempts" ]; then
+    echo "Failed to publish to gh-pages after ${max_attempts} attempts."
+    exit 1
+  fi
+  attempt=$((attempt + 1))
+  sleep 2
+done
