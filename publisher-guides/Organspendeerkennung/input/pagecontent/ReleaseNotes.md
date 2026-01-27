@@ -14,6 +14,6 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 
 Datum: tbd.
 
-* Initiale Version des Implementierungsleitfadens zur Organspendeerkennung im Rahmen von ISiK
+* Initialer Draft des Implementierungsleitfadens zur Organspendeerkennung im Rahmen von ISiK
 
 
