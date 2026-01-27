@@ -34,8 +34,7 @@ Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumente
 
 Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code "422 - Unprocessable Entity" zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code ["processing"](https://hl7.org/fhir/R4/codesystem-issue-type.html) verwendet werden.
 
-Das Bundle MUSS folgendem Profil entsprechen:
-{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle, hybrid}}  
+Das Bundle MUSS folgendem Profil entsprechen: [ISiKBerichtBundle](https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle)
 
 Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten).
 
@@ -51,7 +50,12 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
 4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.
 5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/main-isik-stufe-3/Material/images/diagrams/Composition_Bundle.svg" alt="Composition Bundle" width="100%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Composition_Bundle.svg" alt="Composition Bundle" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Composition Bundle Zuordnung </figcaption>
+</figure>
 
 Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.
 
