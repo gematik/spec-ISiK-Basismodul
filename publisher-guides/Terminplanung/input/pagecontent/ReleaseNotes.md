@@ -1,17 +1,16 @@
-# Release Notes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
-## Version 5.1.1
+### Version 5.1.1
 
 Datum: 17.12.2025
 
 * `improve` alle Elemente sind mit short-description versehen https://github.com/gematik/spec-ISiK-Basismodul/pull/928
 * `documentation` Korrektur IHE Canonical in Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/948
 
-## Version 5.1.0
+### Version 5.1.0
 
 Datum: 23.10.2025
 
@@ -25,7 +24,7 @@ Datum: 23.10.2025
 * `documentation` Durch Entfernung des Abschnittes "Übersicht der Akteure" den Abschnitt Akteure klarer gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/848
 
 
-## Version 5.0.0
+### Version 5.0.0
 
 Datum: 26.06.2025
 
@@ -36,14 +35,14 @@ Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-## Version 5.0.0-rc2 (Benehmensherstellung)
+### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
 * `documentation` Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745
 
 
-## Version 5.0.0-rc
+### Version 5.0.0-rc
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
@@ -60,7 +59,7 @@ Datum: 09.04.2025
 
 ---
 
-## Version 4.0.3
+### Version 4.0.3
 
 Datum: 08.04.2025
 
@@ -70,7 +69,7 @@ Datum: 08.04.2025
 
 ---
 
-## Version 4.0.2
+### Version 4.0.2
 
 Datum: 20.02.2025
 
@@ -87,7 +86,7 @@ Statt dessen wird der neue verbindliche Suchparameter `patient` eingeführt. Die
 
 ---
 
-## Version 4.0.1
+### Version 4.0.1
 
 Datum: 02.12.2024
 
@@ -106,7 +105,7 @@ Datum: 02.12.2024
 
 ----
 
-## Version 4.0.0
+### Version 4.0.0
 
 Datum: 01.10.2024
 
@@ -114,7 +113,7 @@ Datum: 01.10.2024
 
 ----
 
-## Version 4.0.0-rc2
+### Version 4.0.0-rc2
 
 Datum: 26.6.2024
 
@@ -126,7 +125,7 @@ Datum: 26.6.2024
 
 ----
 
-## Version 4.0.0-rc
+### Version 4.0.0-rc
 
 Datum: 4.4.2024
 
@@ -143,13 +142,13 @@ Datum: 4.4.2024
 
 ----
 
-## Version: 3.0.4
+### Version: 3.0.4
 
 Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 (4.0.0-rc2) eingebracht sind.
 
 ---
 
-## Version: 3.0.3
+### Version: 3.0.3
 
 Datum: 25.3.2024
 
@@ -161,7 +160,7 @@ Datum: 25.3.2024
 
 ----
 
-## Version: 3.0.2
+### Version: 3.0.2
 
 Datum: 03.01.2024
 
@@ -172,7 +171,7 @@ Datum: 03.01.2024
 * Klärung zur Nutzung der ISiKNachricht;  Feature/clarify bidirectional anfisk 178 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/160
 
 ----
-## Version: 3.0.1
+### Version: 3.0.1
 
 Datum: 30.10.2023
 
@@ -194,14 +193,14 @@ Mit dem Release der Stufe 3.0.1 werden die unten gelisteten Änderungen normativ
 * `improve` Enhancement Appointment and Slot reference MS by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/133
 
 ----
-## Version: 3.0.0
+### Version: 3.0.0
 
 Datum: 01.07.2023
 
 * Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
 
 ----
-## Version: 3.0.0-rc2
+### Version: 3.0.0-rc2
 
 Datum: 31.05.2023
 
@@ -217,7 +216,7 @@ Datum: 31.05.2023
   * return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93
 
 ----
-## Version: 3.0.0-rc1
+### Version: 3.0.0-rc1
 
 Datum: 04.04.2023
 
@@ -234,7 +233,7 @@ Datum: 04.04.2023
   * in Enhancement/appointment by @jcaumann in <https://github.com/gematik/spec-ISiK-Terminplanung/pull/79>
 
 ____
-## Version: 2.0.3
+### Version: 2.0.3
 
 Datum: 24.03.2023
 
@@ -246,7 +245,7 @@ Datum: 24.03.2023
 **Full Changelog**: https://github.com/gematik/spec-ISiK-Terminplanung/compare/v2.0.2...v.2.0.3
 
 ----
-## Version: 2.0.2
+### Version: 2.0.2
 
 Datum: 31.01.2023
 
@@ -257,21 +256,21 @@ Datum: 31.01.2023
 - weitere Änderungen an IG (informativ)
 
 ----
-## Version: 2.0.1
+### Version: 2.0.1
 
 Datum: 31.10.2022
 
 - Update Basismodul Dependency -> 2.0.2
 
 ----
-## Version: 2.0.0
+### Version: 2.0.0
 
 Datum: 30.06.2022
 
 - Initialer Release
 
 ----
-## Version: 2.0.0 (Ballotierung)
+### Version: 2.0.0 (Ballotierung)
 
 Datum: 31.03.2022
  - Initiale Ballotierungsversion für ISiK Stufe 2
