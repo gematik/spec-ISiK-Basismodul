@@ -55,6 +55,7 @@ Darüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: 
 
 Instance: CodeSystemExample
 InstanceOf: ISiKCodeSystem
+Description: "Beispiel-CodeSystem zur Demonstration des ISiKCodeSystem-Profils."
 Usage: #example
 * insert MetaInstance
 * url = "http://example.org/fhir/CodeSystem/TestKatalog"
