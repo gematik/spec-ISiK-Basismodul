@@ -13,7 +13,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 
 Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.  
 Die folgenden Profile vom Typ `Observation` sind spezifische Profile im oben genannten Sinn:  
-* {{pagelink:Schwangerschaftsstatus-Profil}}
+* [Schwangerschaftsstatus-Profil]](ISiKSchwangerschaftsstatus.html)
 * {{pagelink:ErwarteterEntbindungstermin-Profil}}
 * {{pagelink:Stillstatus-Profil}} 
 * {{pagelink:AlkoholAbusus-Profil}} 
