@@ -2,10 +2,6 @@
 topic: ImplementationGuide-markdown-Einfuehrung
 ---
 
-Version: 6.0.0-rc
-
-Datum: tbd
-
 Status: Aktiv
 
 Realm: Deutschland
