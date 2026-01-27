@@ -52,6 +52,7 @@ Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
 
 ValueSet: ISiKLocationPhysicalType
 Id: ISiKLocationPhysicalType
+Description: "Dieses Valueset beinhaltet die für ISiK Kodierbaren Standort-Typen"
 * insert Meta
 * LocationType#bd "Bed"
 * LocationType#ro "Room"
