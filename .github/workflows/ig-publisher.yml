@@ -7,6 +7,8 @@ name: Build and Publish IG
 #   - ig_name:   A unique identifier / display name (e.g. Organspendeerkennung)
 #   - ig_dir:    Directory under `publisher-guides` (e.g. publisher-guides/Organspendeerkennung)
 #   - capability_statement_urls: A YAML list with one or more CapabilityStatement URLs
+#   - import_cps_filter: Optional filter for import expectation level: SHALL, SHOULD, or MAY.
+#     Includes all higher expectations (e.g. MAY -> SHALL + SHOULD + MAY).
 #
 # Example (add to the matrix below):
 #   - ig_name: My-IG
@@ -14,6 +16,7 @@ name: Build and Publish IG
 #     capability_statement_urls:
 #       - https://example.com/CapabilityStatement/Server
 #       - https://example.com/CapabilityStatement/Client
+#     import_cps_filter: SHOULD
 #
 # Note: The matrix controls which parallel build jobs are created. Edit that
 # list to add or remove IGs or to specify multiple CapabilityStatements per IG.
@@ -102,6 +105,8 @@ jobs:
           # ig_name: Name of the IG (used for artifact names and publishing)
           # ig_dir: Directory of the IG within publisher-guides
           # capability_statement_urls: List of CapabilityStatement URLs to expand (YAML list)
+          # import_cps_filter: Optional filter for import expectation level (SHALL, SHOULD, MAY).
+          # Includes all higher expectations (e.g. MAY -> SHALL + SHOULD + MAY).
           #   - For a single URL:
           #       capability_statement_urls:
           #         - https://example.com/CapabilityStatement/Server
@@ -121,8 +126,9 @@ jobs:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
           #   capability_statement_urls:
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
+          #   import_cps_filter: SHOULD
     env:
       SUSHI_INPUT_DIR: Resources
       IG_PUBLISHER_DIR: ${{ matrix.ig_dir }}
@@ -177,6 +183,7 @@ jobs:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
+          expectation_filter: ${{ matrix.import_cps_filter }}
 
       # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
