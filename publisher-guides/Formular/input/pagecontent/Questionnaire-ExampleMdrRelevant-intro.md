@@ -1,1 +1,8 @@
-<iframe src="https://gematik.github.io/poc-isik-formular/?base=https://fhir.simplifier.net/isik-stufe-5/&id=ExampleMdrRelevant&minimal=true" style="width:100%; height:400px; border:none; display:block;"></iframe>
+<iframe id="formularIframe" style="width:100%; height:300px; border:none; display:block;"></iframe>
+<script>
+  (function() {
+    var currentUrl = window.location.href.replace('.html', '.json');
+    var iframeSrc = 'https://gematik.github.io/poc-isik-formular/?q=' + encodeURIComponent(currentUrl) + '&minimal=true';
+    document.getElementById('formularIframe').src = iframeSrc;
+  })();
+</script>

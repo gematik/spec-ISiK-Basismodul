@@ -1,3 +1,10 @@
 Das Feature wird von LHC-Forms zum aktuellen Zeitpunkt noch nicht unterstützt. Aus dem Grund wird im gerenderten Formular die Validierung noch nicht korrekt ausgeführt.
 
-<iframe src="https://gematik.github.io/poc-isik-formular/?q=https://fhir.simplifier.net/isik-stufe-5/Questionnaire/ExampleInputPatternValidation&minimal=true" style="width:100%; height:200px; border:none; display:block;"></iframe>
+<iframe id="formularIframe" style="width:100%; height:300px; border:none; display:block;"></iframe>
+<script>
+  (function() {
+    var currentUrl = window.location.href.replace('.html', '.json');
+    var iframeSrc = 'https://gematik.github.io/poc-isik-formular/?q=' + encodeURIComponent(currentUrl) + '&minimal=true';
+    document.getElementById('formularIframe').src = iframeSrc;
+  })();
+</script>
