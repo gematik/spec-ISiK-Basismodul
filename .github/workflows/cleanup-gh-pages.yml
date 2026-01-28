@@ -72,10 +72,9 @@ jobs:
             dir=$(dirname "$metadata")
             dir_no_prefix=${dir#./}
           
-            # Extract branch name from path (first directory level)
+            # Use full branch name from marker to support branch names with slashes
             # Structure is: branch_name/ig_name/.branch-name
-            branch_dir=$(echo "$dir_no_prefix" | cut -d'/' -f1)
-            ig_dir=$(echo "$dir_no_prefix" | cut -d'/' -f2)
+            branch_dir="$branch"
 
             if [ -z "$branch" ]; then
               echo "⚠️  Skipping $dir because branch marker is empty."
