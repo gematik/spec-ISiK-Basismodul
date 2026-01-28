@@ -167,6 +167,13 @@ jobs:
           path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
           retention-days: 1
 
+      - name: Cleanup expanded resources directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf "${{ env.IG_PUBLISHER_DIR }}/input/resources"
+      
+
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
       # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
