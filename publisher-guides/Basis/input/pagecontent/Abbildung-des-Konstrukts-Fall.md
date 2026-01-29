@@ -28,7 +28,7 @@ Wichtig ist die Herausstellung, dass "Besuch" und "Fall" wechselseitig keine syn
 ---
 
 ### Der Begriff "Fall" im Kontext der Medizininformatik-Initiative
-In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/MedizininformatikInitiative-ModulFall-ImplementationGuide-backup/EinfachesAufbaumodell) wird der Encounter in drei verschiedenen Ebenen verwendet:
+In dem [von der Medizininformatik-Initiative zur Kontaktverfolgung (Infektionsketten) des Patienten entworfenen Modell](https://simplifier.net/guide/mii-ig-modul-fall-2025/MIIIGModulFall/BeschreibungModul/EinfachesAufbaumodell.page.md) wird der Encounter in drei verschiedenen Ebenen verwendet:
 
 * **Einrichtungskontakt:**
 Als Kontakt eines Patienten mit einer Einrichtung (z.B. Klinik) gruppiert mehrere Besuche bei einer Einrichtung als gemeinsamen Behandlungskontext.
