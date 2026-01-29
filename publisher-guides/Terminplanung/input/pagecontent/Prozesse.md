@@ -16,18 +16,33 @@ Ein Terminbuchungsprozess in einem Krankenhaus kann sowohl automatisierte als au
 
 Ein grobes Prozessmodell gewährt eine Übersicht zu drei möglichen Sub-Prozessen der Terminbuchung:
 
-{{render:Material/Terminplanung/images/diagrams/process-allgemein-bpmn.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="process-allgemein-bpmn.png" alt="Allgemeiner Prozess" style="width: 100%;">
+    </div>
+   
+</figure>
 
 ### Registrierung und Terminbuchung (happy path)
 
 Folgendes BPMN-Diagramm gibt eine Übersicht zu einer Terminbuchung durch einen User mittels Patientenportal:
 
-{{render:Material/Terminplanung/images/diagrams/buchung-termin-portal.drawio.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="buchung-termin-portal.drawio.png" alt="Buchung Termin Portal" style="width: 100%;">
+    </div>
+   
+</figure>
 
 Folgendes Sequenzdiagramm detailliert den Ablauf unter Berücksichtigung der Akteure Termin-Requestor (z.B. Patientenportal) und Termin-Repository (z.B. KIS); 
 offen bleibt hier allerdings noch der Ablauf zum Austausch von Patientendaten zwischen den Systemen:
  
-{{render:Material/Terminplanung/images/diagrams/patient-buchung-sequenz.png}}
+ <figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="patient-buchung-sequenz.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+    </div>
+    
+</figure>
 
 Einzelne Interaktionen, die in diesem Sequenzdiagramm skizziert werden und für die der vorliegende Implementierungsleitfaden spezifischere Festlegungen trifft, sind unter {{pagelink:Interaktionen, text:Interaktionen}} gelistet.
 
@@ -44,12 +59,22 @@ Insbesondere zur nahtlosen Integration von Prozessen über verschiedene Systeme 
 
 Folgende Alternativen zur Erbringung eines Identitätsnachweises können schematisch angeführt werden:
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-bpmn.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="identitaetsnachweis-bpmn.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+    </div>
+   
+</figure>
 
 Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im Patientenportal soll hier ein Workflow vorgestellt werden, der einem künftigen Happy Path zur Terminbuchung samt Datenaustausch über eine validierte Patienten-Identität und zugehöriger Daten (in Portal und KIS) entspricht. 
 Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unter der Annahme von Read-Only Operationen (GET) zwischen den daten-führenden Systemen zur Übernahme sowie vorgelagerter Identifizierung eines Patienten mittels IDP (z.B. mittels GesundheitsID) skizzieren (Annahme: Patientendaten liegen bereits intern im Basis-Server vor, da Patient bereits Kontakt mit dem Krankenhaus hatte):
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-happy-path-patient.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="identitaetsnachweis-sequenz-happy-path-patient.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+    </div>
+  
+</figure>
 
 **Hinweis zur Abfolge von Terminbuchung und Registrierung:**
 Explizit soll eine Registrierung erst bei tatsächlicher Buchung erfolgen – nicht bereits zur Anzeige verfügbarer Termine. So ist es möglich Absprungraten zu senken, die digitale Zugänglichkeit zu steigern sowie die Nutzerakzeptanz allgemein zu verbessern. Auch der Vorsatz der Datenminimierung kann besser eingehalten werden.
@@ -58,7 +83,12 @@ Zudem ist naheliegend, dass Patienten sich zunächst unverbindlich orientieren m
 
 Zur Darstellung des Sachverhalts einer Buchung durch Angehörige kann folgendes Diagramm dienen:
 
-{{render:Material/Terminplanung/images/diagrams/identitaetsnachweis-sequenz-angehoeriger.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="identitaetsnachweis-sequenz-angehoeriger.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+    </div>
+  
+</figure>
 
 In diesem Kontext sollte gelten:
 - Die Registrierung im Patientenportal bezieht sich ausschließlich auf die buchende Person. Ihre Identität und Kontaktdaten werden zur Nutzerführung, Kommunikation und ggf. Authentifizierung verwendet.
