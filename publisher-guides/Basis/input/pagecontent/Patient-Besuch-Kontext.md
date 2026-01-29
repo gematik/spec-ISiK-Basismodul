@@ -22,8 +22,8 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 **1. SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte)). 
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; margin-bottom: 30px;">
-        <img src="Ampel auf Gruen_Blau_gematik.svg" alt="gematik logo" style="width: 100%;">
+    <div class="gem-ig-img-container" style="--box-width: 75px; ">
+        <img src="Ampel auf Gruen_Blau_gematik.svg"  style="width: 100%;">
     </div>
 </figure>
 **Best Practice Empfehlung:** Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.
@@ -32,8 +32,8 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 
 **Diskussion**
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; margin-bottom: 30px;">
-        <img src="Betriebskoordination_Hellblau_gematik.svg" alt="gematik logo" style="width: 100%;">
+    <div class="gem-ig-img-container" style="--box-width: 75px; ">
+        <img src="Betriebskoordination_Hellblau_gematik.svg"  style="width: 100%;">
     </div>
 </figure>
 **Kontexterstellung über logische Identifier:** Derzeit wird in der Entwickler-Community der Bedarf diskutiert, den Patienten- und Fallkontext auch ausschließlich auf Basis einer bekannten (Abrechnungs-)Fall und Patientennummer zuzuordnen, was insbesondere die Zuordnung von Ressourcen erleichtert, die aus HL7 V2-Datenströmen erzeugt werden. Ein Beitrag zu dieser Diskussion kann auf [chat.fhir.org](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) geleistet werden. 
@@ -44,8 +44,8 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 
 **Warnung**
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; margin-bottom: 30px;">
-        <img src="Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" style="width: 100%;">
+    <div class="gem-ig-img-container" style="--box-width: 75px; ">
+        <img src="Ampel%20auf%20Rot_Blau_gematik.svg"  style="width: 100%;">
     </div>
 </figure>
 **Gefahr fehlerhafter Zuordnung:** Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.
