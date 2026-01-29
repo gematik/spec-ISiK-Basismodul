@@ -5,11 +5,9 @@ canonical: https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook
 
 Es gelten die allgemeinen Vorgaben der FHIR-Kernspezifikation für die Ausführung von [Custom Operations](https://www.hl7.org/fhir/R4/operations.html).
 
----
-
 ### Buchung eines Termins
 
-{{render:ISiKAppointmentBookOperation}}
+Nähere Informationen zu der Custom-Operation zur Buchung eines Termins bitte hier entnehmen: [ISiKAppointmentBookOperation](https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook)
 
 ### Übersicht Interaktion Termin-Requestor mit Termin-Repository
 
@@ -198,8 +196,6 @@ Antwort des Termin-Repository:
 
 Für den Fall, dass ein Termin-Repository zum aktuellen Zeitpunkt keine Terminbestätigung geben kann, wird in der Antwortnachricht zurückgegebenen Appointment-Ressource der Wert von "Appointment.status" auf "pending" gesetzt. Als HTTP-Status-Code MUSS das Termin-Repository "202 - Accepted" zurückgeben.
 Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status "pending" seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf "booked" bzw. "cancelled" stellen. Sofern dieses unterstützt wird, SOLL eine Benachrichtigung des Termin-Consumers per Push-Mechanismus erfolgen (siehe auch nächster Abschnitt). In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.
-
----
 
 ### Aktualisierung / Absage eines Termins
 
