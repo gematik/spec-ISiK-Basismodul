@@ -2,8 +2,6 @@
 topic: Prozesse
 ---
 
-# {{page-title}}
-
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
 **Diskussion**: Dieser Abschnitt fasst einen Diskussionsstand mit beteiligten Stakeholdern zusammen und enthält keine normativen Festlegungen.
@@ -14,13 +12,13 @@ topic: Prozesse
 Ein Terminbuchungsprozess in einem Krankenhaus kann sowohl automatisierte als auch manuelle Zwischenschritte umfassen, um eine nahtlose Terminbuchung und Terminwahrnehmung für Patienten zu gewährleisten. Hier finden sich Skizzen zu entsprechenden Prozessen.
 
 
-## Allgemeiner Prozess (Übersicht)
+### Allgemeiner Prozess (Übersicht)
 
 Ein grobes Prozessmodell gewährt eine Übersicht zu drei möglichen Sub-Prozessen der Terminbuchung:
 
 {{render:Material/Terminplanung/images/diagrams/process-allgemein-bpmn.png}}
 
-## Registrierung und Terminbuchung (happy path)
+### Registrierung und Terminbuchung (happy path)
 
 Folgendes BPMN-Diagramm gibt eine Übersicht zu einer Terminbuchung durch einen User mittels Patientenportal:
 
@@ -40,7 +38,7 @@ Der Anteil an Buchungen durch Dritte ist relevant und kann in bestimmten Versorg
 **Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin buchen können.
 
 
-## Identitätsnachweis der Patienten
+### Identitätsnachweis der Patienten
 
 Insbesondere zur nahtlosen Integration von Prozessen über verschiedene Systeme (z.B. Patientenportal und KIS), die sich in gekapselten Zugriffsumgebungen befinden, sind Workflows zum Identitätsnachweis von Patienten unabdinglich.
 
