@@ -1,14 +1,14 @@
 ---
 topic: ImplementationGuide-markdown-UseCasesAnwendung-UseCases
 ---
-# Use Cases
+### Use Cases
 
-## Use Cases - Übergang zwischen Akut- und Normalversorgung
+#### Use Cases - Übergang zwischen Akut- und Normalversorgung
 Es gibt zahlreiche Use Cases rund um den Überleitungsprozess zwischen einer Intensiv- und einer Normalstation  (bidirektional) innerhalb eines Krankenhauses. Neben illustrierenden User Stories wird an dieser Stelle auch eine Workflow-Perspektive eingenommen.
 
 Zum jetzigen Stand kann die Spezifikation keine umfassende Abdeckung eines Überleitungsprozesses vorweisen. Vielmehr wird die Überleitung zwischen Intensiv- und Normalversorgung (bidirektional) auf der Ebene eines Informations- und Daten-Workflows abgebildet; d.h. der Fokus liegt auf der Kommunikation relevanter Daten aus Normalversorgung (KIS) und Intensivversorgung (PDMS) zwischen den entsprechenden Systemen.
 
-### Werte aus KIS und PDMS
+##### Werte aus KIS und PDMS
 
 Datenquellen für die hier betrachteten Fälle sind KIS und PDMS.
 Einige Use Stories, die diesen Kontext illustrieren sind folgende:
@@ -22,7 +22,7 @@ Hintergrund: fachlich wäre hier auch eine Blutdruckabfrage relevant - auch dies
 **UC-VIT-ICU-NORM-003**: Eine Medizinische Fachangestellte (MFA) sendet vor der Überleitung in die Intensivstation Daten aus dem normalstationären Aufenthalt an ein PDMS-Frontend. Ausgelöst wird der Versand per Button im KIS-Frontend. Relevant sind dabei Daten zum Blutdruck, damit der Beginn der Urosepsis später in der Intensivversrogung zeitlich feststellbar ist. Auf Normalstation war der Patient Aufgrund eines Harnwegs-Infektes.
 
 
-### Laborwerte
+##### Laborwerte
 Einige Werte, die für den geschilderten Kontext relevant sind, stammen aus einem Labor Informations System (LIS). Hierzu illustrierend:
 
 **UC-VIT-ICU-NORM-LAB-001**: Während einer Kontrolle auf der Normalstation nutzt eine Ärztin das KIS mit elektronischer Kurvenansicht, um rückblickend Serumkreatininwerte eines Patienten einzusehen. Ziel ist es, die Stabilität der Nierenfunktion über die glomeruläre Filtrationsrate abzusichern. Die Daten stammen aus einem intensiv-stationären Aufenthalt, den der Patient aufgrund eines akuten Nierenversagens durchlaufen hat.
