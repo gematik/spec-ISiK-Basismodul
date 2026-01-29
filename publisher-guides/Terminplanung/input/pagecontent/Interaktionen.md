@@ -17,7 +17,7 @@ Zudem kann die Situation eintreten, dass ein System die Aufgaben eines Termin Re
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen.png" alt="1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen" style="width: 100%;">
+        <img src="Interaktionen/1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen.png" alt="1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen</figcaption>
 </figure>
@@ -33,7 +33,7 @@ Siehe  [Anlage einer Patient-Ressource](Operations.md) für die technische Umset
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/2. Verfügbare Behandlungsleistungen abrufen.png" alt="2. Verfügbare Behandlungsleistungen abrufen" style="width: 100%;">
+        <img src="Interaktionen/2. Verfügbare Behandlungsleistungen abrufen.png" alt="2. Verfügbare Behandlungsleistungen abrufen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>2. Verfügbare Behandlungsleistungen abrufen</figcaption>
 </figure>
@@ -46,7 +46,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Medizi
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/3. Verfügbare Terminlisten abrufen.png" alt="3. Verfügbare Terminlisten abrufen" style="width: 100%;">
+        <img src="Interaktionen/3. Verfügbare Terminlisten abrufen.png" alt="3. Verfügbare Terminlisten abrufen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>3. Verfügbare Terminlisten abrufen</figcaption>
 </figure>
@@ -59,7 +59,7 @@ Siehe {{pagelink: guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalen
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/4. Abfrage von (verfübaren) Terminblöcken.png" alt="4. Abfrage von (verfübaren) Terminblöcken" style="width: 100%;">
+        <img src="Interaktionen/4. Abfrage von (verfübaren) Terminblöcken.png" alt="4. Abfrage von (verfübaren) Terminblöcken" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>4. Abfrage von (verfübaren) Terminblöcken</figcaption>
 </figure>
@@ -72,7 +72,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen.png" alt="5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen" style="width: 100%;">
+        <img src="Interaktionen/5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen.png" alt="5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen</figcaption>
 </figure>
@@ -91,14 +91,14 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/6.1 Termin absagen (ausgehend vom Client).png" alt="6.1 Termin absagen (ausgehend vom Client)" style="width: 100%;">
+        <img src="Interaktionen/6.1 Termin absagen (ausgehend vom Client).png" alt="6.1 Termin absagen (ausgehend vom Client)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>6.1 Termin absagen (ausgehend vom Client)</figcaption>
 </figure>
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/6.2 Termin absagen (ausgehend vom terminführenden System).png" alt="6.2 Termin absagen (ausgehend vom terminführenden System)" style="width: 100%;">
+        <img src="Interaktionen/6.2 Termin absagen (ausgehend vom terminführenden System).png" alt="6.2 Termin absagen (ausgehend vom terminführenden System)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>6.2 Termin absagen (ausgehend vom terminführenden System)</figcaption>
 </figure>
@@ -115,14 +115,14 @@ Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Ter
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/7.1 Termin verschieben (ausgehend vom Client).png" alt="7.1 Termin verschieben (ausgehend vom Client)" style="width: 100%;">
+        <img src="Interaktionen/7.1 Termin verschieben (ausgehend vom Client).png" alt="7.1 Termin verschieben (ausgehend vom Client)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>7.1 Termin verschieben (ausgehend vom Client)</figcaption>
 </figure>
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/7.2 Termin verschieben (ausgehend vom Termin Repository).png" alt="7.2 Termin verschieben (ausgehend vom Termin Repository)" style="width: 100%;">
+        <img src="Interaktionen/7.2 Termin verschieben (ausgehend vom Termin Repository).png" alt="7.2 Termin verschieben (ausgehend vom Termin Repository)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>7.2 Termin verschieben (ausgehend vom Termin Repository)</figcaption>
 </figure>
@@ -135,14 +135,14 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client).png" alt="8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client)" style="width: 100%;">
+        <img src="Interaktionen/8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client).png" alt="8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client)</figcaption>
 </figure>
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository).png" alt="8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository)" style="width: 100%;">
+        <img src="Interaktionen/8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository).png" alt="8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository)" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository)</figcaption>
 </figure>
@@ -157,7 +157,7 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="../images/Interaktionen/9. Abfrage von (verinbarten) Terminen.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+        <img src="Interaktionen/9. Abfrage von (verinbarten) Terminen.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>9. Abfrage von (verinbarten) Terminen</figcaption>
 </figure>
