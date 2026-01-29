@@ -17,7 +17,7 @@ Zudem kann die Situation eintreten, dass ein System die Aufgaben eines Termin Re
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="Interaktionen/1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen.png" alt="1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen" style="width: 100%;">
+        <img src="Interaktionen/1.Uebermittlung_Patienteninformationen_zum_Termin_zugehoerige_Vorabinformationen.png" alt="1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung:</strong>1. Übermittelung Patienteninformationen - zum Termin zugehörige Vorabinformationen</figcaption>
 </figure>
