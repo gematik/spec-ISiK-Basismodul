@@ -4,10 +4,10 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur"
 * name = "ISiK-CapabilityStatementBasisServerAkteur"
-* title = "Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;"
+* title = "Akteur ISiKCapabilityStatementBasisServerAkteur"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = """   
-  CapabilityStatement für den Akteur &quot;ISiKCapabilityStatementBasisServerAkteur&quot;.
+  CapabilityStatement für den Akteur ISiKCapabilityStatementBasisServerAkteur.
   Dieser Akteur aggregiert die Rollen zur Abfrage von Stammdaten, Erweiterte Stammdaten, Aufbau-Struktur, Terminologie, klinischen Daten, Abrechnungsinformationen und Gesundheitsstatus.
   """
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)

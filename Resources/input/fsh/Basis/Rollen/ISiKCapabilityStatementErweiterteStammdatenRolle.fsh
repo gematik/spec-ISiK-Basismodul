@@ -4,10 +4,10 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle"
 * name = "ISiKCapabilityStatementErweiterteStammdatenRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;"
+* title = "CapabilityStatement für Rolle ISiKCapabilityStatementErweiterteStammdatenRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
-CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementErweiterteStammdatenRolle&quot;.
+CapabilityStatement für die Rolle ISiKCapabilityStatementErweiterteStammdatenRolle.
 Diese Rolle stellt erweiterte Interaktionen zur Abfrage von Stammdaten bereit.
 "
 * rest
