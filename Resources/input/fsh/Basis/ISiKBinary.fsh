@@ -22,7 +22,7 @@ Das Profil ist Teil des ISIK Basismoduls, da es im [Modul Dokumentenaustausch](h
 * insert CommonElements
 * contentType 1..1 MS
   * ^short = "MimeType der Binärdaten"
-  * ^comment = "z.B. &quot;application/pdf&quot; oder &quot;image/jpeg&quot;  
+  * ^comment = "z.B. 'application/pdf' oder 'image/jpeg'  
     **Begründung Pflichtfeld:** Ohne Kenntnis des MimeTypes sind die Base65-codierten Daten in `data` nicht interpretierbar"
 * data 1..1 MS
   * ^short = "Base64-codierte Binärdaten"
