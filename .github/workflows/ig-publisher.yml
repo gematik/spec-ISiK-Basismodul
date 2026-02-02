@@ -83,7 +83,7 @@ jobs:
         id: sushi_changes
         shell: bash
         run: |
-          if git diff --quiet -- "${{ env.SUSHI_INPUT_DIR }}"; then
+          if git -C "${GITHUB_WORKSPACE}" diff --quiet -- "${{ env.SUSHI_INPUT_DIR }}"; then
             echo "sushi_changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "sushi_changed=true" >> "$GITHUB_OUTPUT"
