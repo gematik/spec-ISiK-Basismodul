@@ -33,3 +33,15 @@ und welche nicht.
 ### Übergreifende Festlegungen
 
 Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 5](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
+
+### Begriffe und Abkürzungen
+
+|Begriff|Erläuterung|
+|-|-|
+|FormularDefinition|Die FHIR-Ressourcen ["Questionnaire"](https://hl7.org/fhir/R4/questionnaire.html)|
+|{{pagelink:FormularDaten}}| Die FHIR-Ressource ["QuestionnaireResponse" ](https://hl7.org/fhir/R4/questionnaireresponse.html)|
+|SDC|Der Implementierungsleitfaden ["Structured Data Capture"](https://build.fhir.org/ig/HL7/sdc/)|
+|Vorbelegung|Der Vorgang des Vorbefüllens einer QuestionnaireResponse mit Daten, die über eine FHIR-API abgerufen werden können|
+|Extraktion|Der Vorgang des Extrahierens von FHIR-Ressourcen aus einer QuestionnaireResponse|
+|FHIRPath|Formale Sprache, um durch die Elemente einer FHIR-Ressource zu navigieren, um z.B. auf ein konkretes Element zu zeigen, das zur Vorbefüllung eines Formularfeldes verwendet werden soll|
+|Validierung|Prüfung der Konsistenz und Korrektheit der Formularantworten (QuestionnaireResponse) auf Basis der Definition (Questionnaire)|

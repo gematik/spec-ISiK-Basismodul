@@ -2,15 +2,7 @@
 topic: Einfuehrung
 ---
 
-Version: 5.1.1
-
-Datum: 17.12.2025
-
 Realm: Deutschland
-
-### Hinweis zum Status
-
-Der Implementierungsleitfaden zum Modul „ISiK Formulare“ liegt derzeit in einer Entwurfsfassung vor und wird im Rahmen der Erarbeitung von ISiK Stufe 6 in Arbeitsgruppen sowie in bilateralen Gesprächen mit relevanten Stakeholdern fortlaufend weiterentwickelt. Eine aktive Mitwirkung ist ausdrücklich erwünscht; Anregungen, Hinweise und Vorschläge können über die im Abschnitt „Mitwirkung“ (siehe unten) aufgeführten Kanäle eingereicht werden. Für das Modul besteht in ISiK Stufe 5 keine Bestätigungsrelevanz.
 
 ### Motivation "ISiK Formulare"
 Der überwiegende Teil der Datenerfassung im Gesundheitswesen geschieht formularbasiert. Bislang fehlt es jedoch an einem standardisierten Verfahren, um Fragebögen und Formulare zwischen Systemen austauschen und mit den bereits vorhandenen, standardisierten Daten in den Systemen der Anwender zu verknüpfen.
