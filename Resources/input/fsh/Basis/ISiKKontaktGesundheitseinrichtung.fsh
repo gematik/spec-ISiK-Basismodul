@@ -209,7 +209,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
-  * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. &quot;Aufnahmediagnose&quot;   
+  * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   
   **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element 
   der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von `Encounter.diagnosis` auf Condition/Procedure wird *nur dann* verwendet, 
   wenn einer Diagnose bzw. Prozedur *im Kontext eines Aufenthaltes* eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).  
@@ -237,7 +237,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * coding[DiagnosesubTyp] from http://fhir.de/ValueSet/Diagnosesubtyp (required)
       * ^short = "Diagnosesubtyp"
       * ^comment = "An deutschen Kodierrichtlinien orientierte, feingranulare Unterscheidung von Diagnose-Rollen, 
-      z.B. &quot;Fachabteilungshauptdiagnose&quot;, &quot;Todesursache&quot; etc."
+      z.B. 'Fachabteilungshauptdiagnose', 'Todesursache' etc."
   * rank MS
 * account 0.. MS
   * ^short = "Abrechnungskontext"
@@ -275,7 +275,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   * admitSource 0..1 MS
   * admitSource from AufnahmeanlassVS (extensible)
     * ^short = "Aufnahmeanlass"
-    * ^comment = "Anlass der stationären Aufnahme, z.B. &quot;Einweisung&quot;, &quot;Notfall&quot; etc.  
+    * ^comment = "Anlass der stationären Aufnahme, z.B. 'Einweisung', 'Notfall' etc.  
       Begründung MS: Zur Harmonisierung den Festlegungen der Medizininformatik-Initiative"
   * dischargeDisposition MS
     * ^short = "Entlassungsart bzw. -grund"
