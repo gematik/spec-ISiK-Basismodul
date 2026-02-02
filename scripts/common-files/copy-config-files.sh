@@ -1,85 +1,92 @@
 #!/usr/bin/env bash
 # Script to copy files specified in config.json to the respective IG directories
 
-set -u
+set -euo pipefail
 
 CONFIG_FILE="scripts/common-files/config.json"
 
+echo "=== Copy Config Files Script ==="
+echo "IG: $IG_NAME"
+echo "IG Directory: $IG_PUBLISHER_DIR"
+echo "Working Directory: $(pwd)"
+echo ""
+
 if [ ! -f "$CONFIG_FILE" ]; then
-  echo "Config file $CONFIG_FILE not found - skipping"
-  exit 0
+  echo "ERROR: Config file $CONFIG_FILE not found"
+  exit 1
 fi
 
-echo "Processing config.json entries for IG: $IG_NAME"
-echo "IG_PUBLISHER_DIR: $IG_PUBLISHER_DIR"
-echo "Current working directory: $(pwd)"
+echo "Reading config from: $CONFIG_FILE"
 echo ""
 
-# Debug: Show raw content
-echo "DEBUG: Raw config.json content:"
-cat "$CONFIG_FILE"
+# Extract all "file" values into an array
+mapfile -t files < <(grep -oP '"file"\s*:\s*"\K[^"]+' "$CONFIG_FILE")
+
+# Extract all "target" values into an array
+mapfile -t targets < <(grep -oP '"target"\s*:\s*"\K[^"]+' "$CONFIG_FILE")
+
+# Check if we found any entries
+if [ ${#files[@]} -eq 0 ]; then
+  echo "ERROR: No file entries found in $CONFIG_FILE"
+  exit 1
+fi
+
+if [ ${#files[@]} -ne ${#targets[@]} ]; then
+  echo "ERROR: Mismatch between number of files (${#files[@]}) and targets (${#targets[@]})"
+  exit 1
+fi
+
+echo "Found ${#files[@]} file(s) to copy"
 echo ""
 
-# Create temp file for processed JSON
-temp_file="/tmp/config_processed_$$.txt"
-sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g' > "$temp_file"
-
-echo "DEBUG: Processed items from $temp_file:"
-cat "$temp_file"
-echo ""
-
-# Process line by line without subshell
-while IFS= read -r item; do
-  # Skip empty lines and array markers
-  [ -z "$item" ] && continue
-  [[ "$item" == *\[* ]] && continue
-  [[ "$item" == *\]* ]] && continue
+# Process each file/target pair
+success_count=0
+for i in "${!files[@]}"; do
+  src="${files[$i]}"
+  target_dir_rel="${targets[$i]}"
   
-  echo "DEBUG: Processing item: $item"
+  echo "[$((i+1))/${#files[@]}] Processing: $src -> $target_dir_rel"
   
-  # Extract "file" value
-  src=$(echo "$item" | sed -n 's/.*"file"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
-  
-  # Extract "target" value
-  target=$(echo "$item" | sed -n 's/.*"target"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
-  
-  echo "DEBUG: Extracted src='$src' target='$target'"
-  
-  if [ -z "$src" ] || [ -z "$target" ]; then
-    echo "DEBUG: Skipping - src or target is empty"
-    continue
-  fi
-  
-  echo "Processing: src=$src target=$target"
-  
+  # Check if source file exists
   if [ ! -f "$src" ]; then
-    echo "Error: Source file '$src' not found (pwd: $(pwd))"
-    continue
+    echo "  ERROR: Source file not found: $src"
+    echo "  Absolute path would be: $(pwd)/$src"
+    exit 1
   fi
   
-  # Get filename from source
+  # Get filename
   filename=$(basename "$src")
   
-  # Resolve target directory relative to IG_PUBLISHER_DIR
-  target_dir="${IG_PUBLISHER_DIR}/${target}"
+  # Construct target path
+  target_dir="${IG_PUBLISHER_DIR}/${target_dir_rel}"
   target_path="${target_dir}/${filename}"
   
-  echo "Creating directory: $target_dir"
-  mkdir -p "$target_dir" || {
-    echo "Error: Failed to create directory $target_dir"
-    continue
-  }
+  echo "  Source: $src"
+  echo "  Target: $target_path"
   
-  echo "Copying $src to $target_path"
-  cp "$src" "$target_path" || {
-    echo "Error: Failed to copy $src to $target_path"
-    continue
-  }
-  echo "Successfully copied $filename to $target_dir"
+  # Create target directory
+  if ! mkdir -p "$target_dir"; then
+    echo "  ERROR: Failed to create directory: $target_dir"
+    exit 1
+  fi
   
-done < "$temp_file"
+  # Copy file
+  if ! cp "$src" "$target_path"; then
+    echo "  ERROR: Failed to copy file"
+    exit 1
+  fi
+  
+  # Verify copy
+  if [ ! -f "$target_path" ]; then
+    echo "  ERROR: File was not copied successfully"
+    exit 1
+  fi
+  
+  echo "  SUCCESS: Copied $filename"
+  success_count=$((success_count + 1))
+  echo ""
+done
 
-# Cleanup
-rm -f "$temp_file"
-
-echo "Config files processed successfully"
+echo "=== Summary ==="
+echo "Successfully copied $success_count file(s)"
+echo "==============="
