@@ -12,7 +12,7 @@ den Server vorgegeben, keine Nutzung der Basic Ressource), Bundle (für Benachri
 Parameters (für Statusmeldungen).
 
 Hinweis zur Profilkompatibilität:
-Die in Version 1.1.0 des Subscriptions-Backport IGs enthaltenen Profile
+Die in Version 1.1.0 des Subscriptions-Backport IGs enthaltenen Profile 
 backport-subscription-notification-r4 und backport-subscription-status-r4 weisen technische Mängel
 auf, die eine direkte Wiederverwendung in produktiven Systemen verhindern.
 
