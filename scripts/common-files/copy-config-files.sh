@@ -13,12 +13,27 @@ fi
 echo "Processing config.json entries for IG: $IG_NAME"
 echo "IG_PUBLISHER_DIR: $IG_PUBLISHER_DIR"
 
+# Debug: Show raw content
+echo "DEBUG: Raw config.json content:"
+cat "$CONFIG_FILE"
+echo ""
+
 # Remove whitespace and newlines, then split by closing braces
-sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g' | while read -r item; do
+echo "DEBUG: Processing JSON..."
+processed=$(sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g')
+echo "DEBUG: Processed items:"
+echo "$processed"
+echo ""
+
+item_count=0
+echo "$processed" | while read -r item; do
   # Skip empty lines and array markers
   [ -z "$item" ] && continue
   [[ "$item" == *\[* ]] && continue
   [[ "$item" == *\]* ]] && continue
+  
+  item_count=$((item_count + 1))
+  echo "DEBUG: Item $item_count: $item"
   
   # Extract "file" value
   src=$(echo "$item" | sed -n 's/.*"file"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
@@ -26,7 +41,10 @@ sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g' | whil
   # Extract "target" value
   target=$(echo "$item" | sed -n 's/.*"target"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
   
+  echo "DEBUG: src='$src' target='$target'"
+  
   if [ -z "$src" ] || [ -z "$target" ]; then
+    echo "DEBUG: Skipping - src or target is empty"
     continue
   fi
   
