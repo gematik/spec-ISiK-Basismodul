@@ -87,7 +87,7 @@ jobs:
         git push https://x-access-token:${{ secrets.WORKFLOW_PERMISSION_GITHUB }}@github.com/${{ github.repository }}.git update-dependency-${LATEST_VERSION_FIRELY}-${LATEST_VERSION_SUSHI}
 
     - name: Create Pull Request
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       with:
         github-token: ${{ secrets.WORKFLOW_PERMISSION_GITHUB }}
         script: |
