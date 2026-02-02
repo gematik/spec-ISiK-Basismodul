@@ -136,7 +136,7 @@ jobs:
 
       # Download the FHIR package cache from prepare job
       - name: Download FHIR Package Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -153,7 +153,7 @@ jobs:
 
       # Download the fsh-generated artifact from prepare job
       - name: Download FSH Generated Resources
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -272,14 +272,14 @@ jobs:
 
       # Download SUSHI-generated ImplementationGuides (only)
       - name: Download SUSHI-generated ImplementationGuides
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: sushi-generated-ig-*
           path: artifacts
 
       # Download expanded resources from build jobs (these are required)
       - name: Download Expanded Resources
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: expanded-resources-*
           path: artifacts
@@ -297,7 +297,7 @@ jobs:
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
         if: github.event_name == 'pull_request'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: ig-url-*
           path: ig-urls
