@@ -32,16 +32,28 @@ sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g' | whil
   
   echo "Processing: src=$src target=$target"
   
-  # Resolve paths relative to IG_PUBLISHER_DIR
-  target_path="${IG_PUBLISHER_DIR}/${target}"
-  
-  if [ -f "$src" ]; then
-    echo "Copying $src to $target_path"
-    mkdir -p "$(dirname "$target_path")" || echo "Failed to create directory"
-    cp "$src" "$target_path" || echo "Failed to copy file"
-  else
-    echo "Warning: Source file $src not found"
+  if [ ! -f "$src" ]; then
+    echo "Error: Source file $src not found"
+    continue
   fi
+  
+  # Get filename from source
+  filename=$(basename "$src")
+  
+  # Resolve target directory relative to IG_PUBLISHER_DIR
+  target_dir="${IG_PUBLISHER_DIR}/${target}"
+  target_path="${target_dir}/${filename}"
+  
+  echo "Copying $src to $target_path"
+  mkdir -p "$target_dir" || {
+    echo "Error: Failed to create directory $target_dir"
+    continue
+  }
+  cp "$src" "$target_path" || {
+    echo "Error: Failed to copy $src to $target_path"
+    continue
+  }
+  echo "Successfully copied $filename to $target_dir"
 done
 
 echo "Config files processed successfully"
