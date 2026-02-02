@@ -7,7 +7,7 @@ Usage: #definition
 * title = "ISiK CapabilityStatement Medikationsverordnung Server Akteur"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement bündelt alle Rollen die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverordnung' zu bestehen.
+* purpose = "Das vorliegende CapabilityStatement bündelt alle Rollen, die ein ISiK-konformes System unterstützen muss, um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverordnung' zu bestehen.
   
 **HISTORIE:**    
 
