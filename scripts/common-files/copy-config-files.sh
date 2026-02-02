@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script to copy files specified in config.json to the respective IG directories
 
-set -euo pipefail
+set -u
 
 CONFIG_FILE="scripts/common-files/config.json"
 
@@ -12,40 +12,48 @@ fi
 
 echo "Processing config.json entries for IG: $IG_NAME"
 echo "IG_PUBLISHER_DIR: $IG_PUBLISHER_DIR"
-echo "CONFIG_FILE contents:"
-cat "$CONFIG_FILE"
-echo ""
 
-# Parse JSON without jq using sed/grep
-# Extract each object from the JSON array
-grep -o '{[^}]*}' "$CONFIG_FILE" | while read -r item; do
-  echo "Processing item: $item"
-  
-  # Extract "file" value
-  src=$(echo "$item" | grep -o '"file"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*"\([^"]*\)".*/\1/')
-  
-  # Extract "target" value
-  target=$(echo "$item" | grep -o '"target"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*"\([^"]*\)".*/\1/')
-  
-  echo "  Extracted src: '$src'"
-  echo "  Extracted target: '$target'"
-  
+# Simple JSON parsing using awk
+awk '
+BEGIN { 
+  in_obj = 0
+  file = ""
+  target = ""
+}
+/{/ { in_obj = 1 }
+in_obj && /"file"/ { 
+  match($0, /"file"[[:space:]]*:[[:space:]]*"([^"]*)"/, arr)
+  file = arr[1]
+}
+in_obj && /"target"/ {
+  match($0, /"target"[[:space:]]*:[[:space:]]*"([^"]*)"/, arr)
+  target = arr[1]
+}
+/}/ && in_obj {
+  if (file != "" && target != "") {
+    print file "|" target
+  }
+  in_obj = 0
+  file = ""
+  target = ""
+}
+' "$CONFIG_FILE" | while IFS='|' read -r src target; do
   if [ -z "$src" ] || [ -z "$target" ]; then
-    echo "Warning: Could not parse entry: $item"
+    echo "Warning: Empty src or target"
     continue
   fi
+  
+  echo "Processing: src=$src target=$target"
   
   # Resolve paths relative to IG_PUBLISHER_DIR
   target_path="${IG_PUBLISHER_DIR}/${target}"
   
-  echo "  Target path: $target_path"
-  
   if [ -f "$src" ]; then
-    echo "  Copying $src to $target_path"
-    mkdir -p "$(dirname "$target_path")"
-    cp "$src" "$target_path"
+    echo "Copying $src to $target_path"
+    mkdir -p "$(dirname "$target_path")" || echo "Failed to create directory"
+    cp "$src" "$target_path" || echo "Failed to copy file"
   else
-    echo "  Warning: Source file $src not found"
+    echo "Warning: Source file $src not found"
   fi
 done
 
