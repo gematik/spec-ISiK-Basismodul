@@ -169,7 +169,7 @@ jobs:
       - name: Write IG dir metadata (SUSHI)
         shell: bash
         run: |
-          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/.ig-dir"
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/ig-dir.txt"
 
       - name: Upload SUSHI-generated ImplementationGuide
         uses: actions/upload-artifact@v4
@@ -231,7 +231,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
-          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/.ig-dir"
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/ig-dir.txt"
 
       - name: Upload Expanded Resources
         uses: actions/upload-artifact@v4

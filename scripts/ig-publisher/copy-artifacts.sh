@@ -10,9 +10,9 @@ for dir in "${artifacts_dir}"/sushi-generated-ig-*/; do
   echo "Processing SUSHI-generated artifact $base for IG: $ig_name"
 
   ig_path=""
-  if [ -f "$dir/.ig-dir" ]; then
-    ig_path=$(cat "$dir/.ig-dir")
-    rm -f "$dir/.ig-dir"
+  if [ -f "$dir/ig-dir.txt" ]; then
+    ig_path=$(cat "$dir/ig-dir.txt")
+    rm -f "$dir/ig-dir.txt"
   fi
   if [ -z "$ig_path" ]; then
     ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
@@ -35,9 +35,9 @@ for dir in "${artifacts_dir}"/expanded-resources-*/; do
   echo "Processing expanded-resources artifact $base for IG: $ig_name"
 
   ig_path=""
-  if [ -f "$dir/.ig-dir" ]; then
-    ig_path=$(cat "$dir/.ig-dir")
-    rm -f "$dir/.ig-dir"
+  if [ -f "$dir/ig-dir.txt" ]; then
+    ig_path=$(cat "$dir/ig-dir.txt")
+    rm -f "$dir/ig-dir.txt"
   fi
   if [ -z "$ig_path" ]; then
     ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
