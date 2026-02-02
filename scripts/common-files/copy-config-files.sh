@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to copy files specified in config.json to the respective IG directories
 
 set -euo pipefail
@@ -12,10 +12,19 @@ fi
 
 echo "Processing config.json entries for IG: $IG_NAME"
 
-# Parse JSON and copy files
-jq -c '.[]' "$CONFIG_FILE" | while read -r item; do
-  src=$(echo "$item" | jq -r '.file')
-  target=$(echo "$item" | jq -r '.target')
+# Parse JSON without jq using sed/grep
+# Extract each object from the JSON array
+grep -o '{[^}]*}' "$CONFIG_FILE" | while read -r item; do
+  # Extract "file" value
+  src=$(echo "$item" | grep -o '"file"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*"\([^"]*\)".*/\1/')
+  
+  # Extract "target" value
+  target=$(echo "$item" | grep -o '"target"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*"\([^"]*\)".*/\1/')
+  
+  if [ -z "$src" ] || [ -z "$target" ]; then
+    echo "Warning: Could not parse entry: $item"
+    continue
+  fi
   
   # Resolve paths relative to IG_PUBLISHER_DIR
   target_path="${IG_PUBLISHER_DIR}/${target}"
