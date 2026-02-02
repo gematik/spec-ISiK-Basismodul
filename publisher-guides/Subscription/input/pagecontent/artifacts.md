@@ -1,3 +1,7 @@
+---
+topic: ImplementationGuide-markdown-Artifacts
+---
+
 Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.
 
 Dieses ISiK-Modul zur themenbasierten Ereignisbenachrichtigung in FHIR R4 basiert auf dem
