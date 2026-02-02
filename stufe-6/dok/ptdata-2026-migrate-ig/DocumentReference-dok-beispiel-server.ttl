@@ -1,0 +1,124 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/DocumentReference/dok-beispiel-server> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "dok-beispiel-server"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten>
+     ] ) ;
+     fhir:security ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
+       ] ;
+       fhir:code [ fhir:v "HTEST" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference dok-beispiel-server</b></p><a name=\"dok-beispiel-server\"> </a><a name=\"hcdok-beispiel-server\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKDokumentenMetadaten.html\">Erforderliche Metadaten für Dokumentenaustausch in ISiK</a></p><p style=\"margin-bottom: 0px\">Security Label: test health data (Details: ActReason code HTEST = 'test health data')</p></div><p><b>masterIdentifier</b>: <a href=\"http://terminology.hl7.org/6.3.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt #xD;#xA;#xD;#xA;This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: #xD;#xA;#xD;#xA;Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.#xD;#xA;#xD;#xA;This OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340</p><p><b>status</b>: Current</p><p><b>type</b>: <span title=\"Codes:{http://dvmd.de/fhir/CodeSystem/kdl PT130102}, {http://ihe-d.de/CodeSystems/IHEXDStypeCode PATH}\">Molekularpathologiebefund</span></p><p><b>category</b>: <span title=\"Codes:{http://ihe-d.de/CodeSystems/IHEXDSclassCode BEF}\">Befundbericht</span></p><p><b>subject</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Patient/PatientinMusterfrau\">Patient/PatientinMusterfrau</a></p><p><b>securityLabel</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-Confidentiality N}\">normal</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Language</b></td><td><b>Url</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>application/pdf</td><td>German</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf\">https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf</a></td><td>Molekularpathologiebefund vom 31.12.21</td><td>2020-12-31 23:50:50-0500</td></tr></table><p><b>format</b>: <a href=\"https://profiles.ihe.net/fhir/ihe.formatcode.fhir/1.4.0/CodeSystem-formatcode.html#formatcode-urn.58ihe.58iti.58xds.582017.58mimeTypeSufficient\">IHE Format Code set for use with Document Sharing: urn:ihe:iti:xds:2017:mimeTypeSufficient</a> (Format aus MIME Type ableitbar)</p></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Encounter</b></td><td><b>FacilityType</b></td><td><b>PracticeSetting</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Encounter/FachabteilungskontaktNormal\">Encounter/FachabteilungskontaktNormal</a></td><td><span title=\"Codes:{http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung KHS}\">Krankenhaus</span></td><td><span title=\"Codes:{http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen ALLG}\">Allgemeinmedizin</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:masterIdentifier [
+     fhir:system [
+       fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ;
+       fhir:l <urn:ietf:rfc:3986>
+     ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340" ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://dvmd.de/fhir/CodeSystem/kdl"^^xsd:anyURI ;
+         fhir:l <http://dvmd.de/fhir/CodeSystem/kdl>
+       ] ;
+       fhir:code [ fhir:v "PT130102" ] ;
+       fhir:display [ fhir:v "Molekularpathologiebefund" ]
+     ] [
+       fhir:system [
+         fhir:v "http://ihe-d.de/CodeSystems/IHEXDStypeCode"^^xsd:anyURI ;
+         fhir:l <http://ihe-d.de/CodeSystems/IHEXDStypeCode>
+       ] ;
+       fhir:code [ fhir:v "PATH" ] ;
+       fhir:display [ fhir:v "Pathologiebefundberichte" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://ihe-d.de/CodeSystems/IHEXDSclassCode"^^xsd:anyURI ;
+         fhir:l <http://ihe-d.de/CodeSystems/IHEXDSclassCode>
+       ] ;
+       fhir:code [ fhir:v "BEF" ] ;
+       fhir:display [ fhir:v "Befundbericht" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <https://gematik.de/fhir/isik/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:securityLabel ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-Confidentiality>
+       ] ;
+       fhir:code [ fhir:v "N" ]
+     ] )
+  ] ) ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "application/pdf" ] ;
+       fhir:language [ fhir:v "de" ] ;
+       fhir:url [
+         fhir:v "https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf"^^xsd:anyURI ;
+         fhir:l <https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf>
+       ] ;
+       fhir:title [ fhir:v "Molekularpathologiebefund vom 31.12.21" ] ;
+       fhir:creation [ fhir:v "2020-12-31T23:50:50-05:00"^^xsd:dateTime ]
+     ] ;
+     fhir:format [
+       fhir:system [
+         fhir:v "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode"^^xsd:anyURI ;
+         fhir:l <http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode>
+       ] ;
+       fhir:code [ fhir:v "urn:ihe:iti:xds:2017:mimeTypeSufficient" ] ;
+       fhir:display [ fhir:v "Format aus MIME Type ableitbar" ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:encounter ( [
+       fhir:l <https://gematik.de/fhir/isik/Encounter/FachabteilungskontaktNormal> ;
+       fhir:reference [ fhir:v "Encounter/FachabteilungskontaktNormal" ]
+     ] ) ;
+     fhir:facilityType [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung"^^xsd:anyURI ;
+           fhir:l <http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung>
+         ] ;
+         fhir:code [ fhir:v "KHS" ] ;
+         fhir:display [ fhir:v "Krankenhaus" ]
+       ] )
+     ] ;
+     fhir:practiceSetting [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"^^xsd:anyURI ;
+           fhir:l <http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen>
+         ] ;
+         fhir:code [ fhir:v "ALLG" ]
+       ] )
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

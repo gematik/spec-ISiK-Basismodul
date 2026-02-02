@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKDiagnose" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose" />
+  <version value="1.0" />
+  <name value="ISiKDiagnose" />
+  <status value="active" />
+  <description value="Dieses Profil ermöglicht die Nutzung von Diagnosen in ISiK Szenarien." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition">
+      <path value="Condition" />
+      <constraint>
+        <key value="isik-con1" />
+        <severity value="error" />
+        <human value="Falls eine kodierte Diagnose vorliegt muss der dazugehörige Einrichtungskontakt angegeben werden" />
+        <expression value="code.coding.exists() implies encounter.exists()" />
+      </constraint>
+    </element>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:ReferenzPrimaerdiagnose">
+      <path value="Condition.extension" />
+      <sliceName value="ReferenzPrimaerdiagnose" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/condition-related" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:ReferenzPrimaerdiagnose.value[x].reference">
+      <path value="Condition.extension.value[x].reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <min value="1" />
+      <constraint>
+        <key value="icd-text-1" />
+        <severity value="error" />
+        <human value="Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt." />
+        <expression value="coding.exists().not() implies text.exists()" />
+        <source value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDiagnose" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM">
+      <path value="Condition.code.coding" />
+      <sliceName value="ICD-10-GM" />
+      <max value="1" />
+      <type>
+        <code value="Coding" />
+        <profile value="http://fhir.de/StructureDefinition/CodingICD10GM" />
+      </type>
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension">
+      <path value="Condition.code.coding.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Mehrfachcodierungs-Kennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Diagnosesicherheit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:Alpha-ID">
+      <path value="Condition.code.coding" />
+      <sliceName value="Alpha-ID" />
+      <max value="1" />
+      <type>
+        <code value="Coding" />
+        <profile value="http://fhir.de/StructureDefinition/CodingAlphaID" />
+      </type>
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/bfarm/alpha-id" />
+      </patternCoding>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/bfarm/alpha-id" />
+      </binding>
+    </element>
+    <element id="Condition.code.coding:Alpha-ID.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:Alpha-ID.code">
+      <path value="Condition.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:SNOMED-CT">
+      <path value="Condition.code.coding" />
+      <sliceName value="SNOMED-CT" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://snomed.info/sct" />
+      </patternCoding>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://gematik.de/fhir/ISiK/ValueSet/diagnoses-sct" />
+      </binding>
+    </element>
+    <element id="Condition.code.coding:SNOMED-CT.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:SNOMED-CT.code">
+      <path value="Condition.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:Orphanet">
+      <path value="Condition.code.coding" />
+      <sliceName value="Orphanet" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://www.orpha.net" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:Orphanet.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:Orphanet.code">
+      <path value="Condition.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.reference">
+      <path value="Condition.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetPeriod" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.start.extension">
+      <path value="Condition.onset[x].start.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.start.extension:Lebensphase-Start">
+      <path value="Condition.onset[x].start.extension" />
+      <sliceName value="Lebensphase-Start" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/lebensphase" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.end.extension">
+      <path value="Condition.onset[x].end.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.end.extension:Lebensphase-Ende">
+      <path value="Condition.onset[x].end.extension" />
+      <sliceName value="Lebensphase-Ende" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/lebensphase" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

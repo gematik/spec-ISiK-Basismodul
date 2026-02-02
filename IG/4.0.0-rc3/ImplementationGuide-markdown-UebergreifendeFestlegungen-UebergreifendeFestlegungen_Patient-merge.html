@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dad0fdbc947080" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Patient-merge.html">
+                                            Patient-Merge
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Observation.html">
+                                            Observation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="patient-merge-und-notification">Patient merge und Notification</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Im Rahmen von Krankenhausbesuchen umfassen u.a. die Aufnahme-Workflows regelmäßig die manuelle Bearbeitung von Patientenstammdaten. Daher ist hier das Risiko redundant persistierter Patientendaten stets vorhanden. Dies hat auch zur Folge, dass Zusammenführungen von Patientendaten in Krankenhäusern an der Tagesordnung stehen.</p>
+<p>Die Patientendatenzusammenführung (Patient merge) bezeichnet den Workflow der Bereinigung redundanter Patienten-Instanzen innerhalb eines KIS oder einer KH-IT-Umgebung. Die Bereinigung geschieht erfahrungsgemäß als halb-automatisierter Prozess, für den dedizierte Komponenten eingesetzt werden können (d.h. Master-Patient-Index).</p>
+<p>Im Kontext verteilter Systeme ist es entscheidend, dass ein patientenführendes System/Server (KIS) einen Client über einen Patient merge benachrichtigt (Patient merge Notification), damit der Client weiterhin auf eine korrekte Patienteninstanz zugreifen kann. Daher trifft dieser Abschnitt eine Festlegung zur Umsetzung einer Patient merge Notification auf Basis von FHIR.</p>
+<h2 id="normativer-status">Normativer Status</h2>
+<p>Alle hier getroffenen Festlegungen haben den normativen Status einer KANN-Anforderung. Werden allerdings die hier festgelegten Lösungen genutzt, so SOLLEN die hier angeführten Vorgaben (inklusive Profil-Ebene) eingehalten werden.</p>
+<p>Eine Prüfung im Rahmen des Bestätigungsverfahrens zur Patient merge Notification ist in der jetzigen Entwicklungsstufe nicht vorgesehen.</p>
+<h2 id="zweck-und-definition-patient-merge-notification">Zweck und Definition 'Patient merge Notification'</h2>
+<p>Zweck dieses Abschnitts ist eine Festlegung darüber zu treffen, wie externe Clients Patient-merge-Vorgänge nachvollziehen und entsprechend verarbeiten können.
+Entsprechend wird hier eine Festlegung zur Kommunikation eines stattgefundenen Patient merges (Patient merge Notification) gegenüber einem Subsystem oder einem externen Service - u.a. mittels FHIR Subscriptions - festgelegt.</p>
+<p><strong>Definition</strong>: Der Workflow 'Patient merge Notification' entspricht der Benachrichtigung angeschlossener Systeme  über den erfolgreichen Patient merge. Die Benachrichtigung unterstützt das Kernziel einer reibungslosen Kommunikation zwischen zwei Systemen, nachdem ein Patient merge stattgefunden hat. Durch die Benachrichtigung wird ein fehlerhafter Abruf oder falsche Referenzierung einer alten Patientenressource von Seiten des Clients verhindert oder zumindest vorgebeugt und damit eine Verbesserung der Qualität hinsichtlich Robustheit und damit auch eine Stärkung der Praxistauglichkeit von ISiK als Schnittstellen-Lösung erreicht.</p>
+<h2 id="festlegungen-zu-patient-merge-notification">Festlegungen zu 'Patient merge Notification'</h2>
+<p>Falls eine Patient merge Notification im Rahmen von ISIK bereitgestellt wird, gelten folgende Festlegungen:</p>
+<p>Das patientenführende System SOLL einen Client mittels FHIR Subscription über einen erfolgten Patienten merge informieren können. Dieser Mechanismus basiert auf dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/channels.html">Subscriptions R5 Backport IG</a> und nutzt das Konzept der &quot;Topic-Based Subscription&quot; aus FHIR R5.</p>
+<p>Hierfür wurde das Subscription Topic: <em><a href="https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge">https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge</a></em> definiert.</p>
+<p>Das patientenführende System SOLL den Support dieser Subscription innerhalb des CapabilityStatements bekannt geben.</p>
+<p>Weitere Informationen zum Subscription Workflow finden sich hier:</p>
+<p><a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/workflow.html">Subscription Workflow - Subscriptions R5 Backport</a></p>
+<h3 id="prove-of-concept-implementierung">Prove of Concept Implementierung</h3>
+<p>Zur Illustration der technischen Umsetzung für die Patient merge Notification dient ein <a href="https://github.com/gematik/poc-isik-patient-merge">Prove of Concept (POC) mit Anleitung</a>.</p>
+<h3 id="notification-channel-types">Notification Channel Types</h3>
+<p>Notifications über einen Patient-merge-Vorgang können per <em>rest-hook</em> oder <em>websocket</em> an das subscribende System versandt werden. Im <em>rest-hook</em> Fall postet das patientenführende System ein NotificationBundle an den in <code>Subscription.channel.endpoint</code> definierten REST Endpunkt. Bei einer <em>websocket</em> Notification geschieht das über einen Websocket-Channel. Die Websocket URL, sowie ein Access Token können mittels <a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/OperationDefinition-backport-subscription-get-ws-binding-token.html"><code>$get-ws-binding-token</code> Operation</a>  vom Server abgerufen werden.</p>
+<h2 id="abgrenzung-zu-patient-merge">Abgrenzung zu 'Patient merge'</h2>
+<p>Das Mergen von Patientendaten ist Aufgabe des bestätigungsrelevanten Systems (d.h. hier des patientenführenden Systems / KIS).
+Ein externes Starten eines Patient merge - bspw. durch die <a href="https://hl7.org/fhir/R5/patient-operation-merge.html">$patient-merge Operation aus R5</a> - MUSS von einem bestätigungsrelevanten System NICHT unterstützt werden.</p>
+<p><strong>Hinweis</strong>: Die Patienten-Ressource, die nicht weiter verwendet werden soll, nennen wir im Folgenden die &quot;obsolete Ressource&quot;. Die Ressource, die erhalten bleiben soll, nennen wir &quot;resultierende Ressource&quot;.</p>
+<h3 id="obsolete-patienten-ressource">Obsolete Patienten-Ressource</h3>
+<p>Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISiKPatient Profilanforderungen hinaus.</p>
+<p>Allerdings KANN das patientenführende System die obsolete Patienten-Ressource weiter vorhalten. Ein Entfernen der obsoleten Ressource ist ebenfalls erlaubt.</p>
+<p>Falls die obsolete Ressource nach einem merge weiter vorgehalten wird, SOLLEN die Elemente der obsoleten Ressource folgendermaßen befüllt werden, um sicherzustellen, dass die obsolete Ressource auf die resultieren Ressource verweist und dass die obsolete Ressource als inaktiv gekennzeichnet ist:</p>
+<ul>
+<li>.active = false</li>
+<li>.link.other = Reference(auf “resultierenden” Patient)</li>
+<li>.link.type = “replaced-by”</li>
+</ul>
+<h3 id="resultierende-patienten-ressource">Resultierende Patienten-Ressource</h3>
+<p>Es gelten keine gesonderten Anforderungen an eine obsolete Patienten-Ressource über die ISIKPatient Profilanforderungen hinaus.</p>
+<p>Allerdings SOLL das patientenführende System nach einem merge die Elemente der resultierenden Ressource folgendermaßen befüllen, um sicherzustellen, dass die resultierende Ressource auf die obsolete Ressource verweist:</p>
+<ul>
+<li>.link.other = Reference.identifier (logische Referenz mittels Patientennummer Identifier auf “obsoleten” Patient)</li>
+<li>.link.type = “replaces”</li>
+</ul>
+<p>Siehe auch: <a href="ImplementationGuide-markdown-Patient-Patient_Profil.html" title='ImplementationGuide/markdown/Patient/Patient_Profil.md'>Patienten Profil</a></p>
+<h3 id="referenzen-auf-das-patientenobjekt">Referenzen auf das Patientenobjekt</h3>
+<p>Es gilt folgende Annahme: Das patientenführende System SOLL sicherstellen, dass alle auf die obsolete Ressource referenzierenden FHIR-Ressourcen nach dem Patient merge auf die resultierende Ressource referenzieren.</p>
+<h2 id="hinweise-zum-client-system">Hinweise zum Client-System</h2>
+<h3 id="recovery-mechanismus">Recovery Mechanismus</h3>
+<p>Ein Recovery Mechanismus wird benötigt, damit im Falle einer ausgebliebenen Patient merge Notification ein Client die aktuelle Patienteninstanz auffinden und erneut referenzieren kann.</p>
+<p>Folgender Hinweis dient der Einhaltung eines Recovery Mechanismus:</p>
+<p>Client-Systeme SOLLEN den Status einer gecachten Patienteninstanz vor der Interaktion mit einem patientenführenden System per READ auf das Patientenobjekt überprüfen.
+Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den status <code>active=false</code> haben, kann das Patientenobjekt mittels Suche auf einen bekannten und stabilen Identifier, bspw. die gesetzliche Krankenversichertennummer, neu geladen werden.</p>
+<h3 id="datensicherheit-client">Datensicherheit Client</h3>
+<p><strong>Hinweis</strong>: Die &quot;patient-merge Subscription-Notification&quot; kann personenbezogene Daten versenden, falls man &quot;full-resource&quot; als Content-Code gewählt hat. Für den REST-Hook sollte daher stets ein HTTPS-Endpunkt genutzt werden. Zusätzlich kann Subscription.channel.header genutzt werden, um einen Autorisierungs-Header an den Endpunkt zu übertragen.<br />
+Siehe auch: <a href="https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html">Safety and Security, Subscription Backport IG</a></p>
+<p>In jedem Fall sind auch Client-seitig die notwendigen Maßnahmen zu ergreifen, um eine sichere Kommunikation personenbezogener Daten zu gewährleisten.</p>
+<h3 id="websocket">Websocket</h3>
+<p>Hier muss sich der Client per <a href="https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html"><code>$get-ws-binding-token</code> Operation</a> einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die Expiration-Dauer, sowie der Websocket-Endpunkt enthalten.<br />
+Siehe auch: <a href="https://hl7.org/fhir/uv/subscriptions-backport/channels.html#websockets">Subscriptions R5 Backport IG, Websocket</a></p>
+<h2 id="beispiele">Beispiele</h2>
+<p>Die Patient merge Notification kann folgendermaßen illustriert werden:</p>
+<p>Es existieren fälschlicherweise zwei Instanzen im patientenführenden System, die sich lediglich hinsichtlich der organisationsspezifischen Patienten-ID unterscheiden.
+Diese sind:</p>
+<p>&quot;Quell&quot; Patienten-Ressource:<br />
+<pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DorisQuelle</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MR</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">654321</span><span class="string">&quot;</span>
+        <span class="brace">}</span><span class="symbol">,</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/gkv/kvid-10</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">KVZ10</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">A123456789</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">use</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">official</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Duplikat</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">given</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Doris</span><span class="string">&quot;</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">active</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">gender</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">female</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">birthDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1964-08-12</span><span class="string">&quot;</span>
+<span class="brace">}</span></pre></pre></p>
+<p>und</p>
+<p>&quot;Ziel&quot; Patienten-Ressource:<br />
+<pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DorisZiel</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MR</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">123456</span><span class="string">&quot;</span>
+        <span class="brace">}</span><span class="symbol">,</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/gkv/kvid-10</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">KVZ10</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">A123456789</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">use</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">official</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Duplikat</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">given</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Doris</span><span class="string">&quot;</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">active</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">gender</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">female</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">birthDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1964-08-12</span><span class="string">&quot;</span>
+<span class="brace">}</span></pre></pre></p>
+<p>Mittels eines Patient merge wird die &quot;Ziel&quot; Patienten-Ressource ausgewählt und beide Ressourcen entsprechend modifiziert. Daraus entsteht die resultierende Patienten-Instanz:
+<pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DorisZiel</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MR</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">123456</span><span class="string">&quot;</span>
+        <span class="brace">}</span><span class="symbol">,</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/gkv/kvid-10</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">KVZ10</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/identifier-type-de-basis</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">A123456789</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">use</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">official</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Duplikat</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">given</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Doris</span><span class="string">&quot;</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">active</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">gender</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">female</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">birthDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1964-08-12</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">link</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">other</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.krankenhaus.example/sid/PID</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">654321</span><span class="string">&quot;</span>
+                <span class="brace">}</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">replaces</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre></p>
+<p>Da sich ein Client am patientenführenden System für das dedizierte SubscriptionTopic (<a href="http://hl7.org/SubscriptionTopic/patient-merge">http://hl7.org/SubscriptionTopic/patient-merge</a>) registriert hat, erhält der Client eine Benachrichtigung in Form eines Bundles mit Verweis auf die resultierende Ressource.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

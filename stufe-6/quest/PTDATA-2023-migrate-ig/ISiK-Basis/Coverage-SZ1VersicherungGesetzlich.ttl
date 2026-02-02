@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Coverage/SZ1VersicherungGesetzlich> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SZ1VersicherungGesetzlich"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage SZ1VersicherungGesetzlich</b></p><a name=\"SZ1VersicherungGesetzlich\"> </a><a name=\"hcSZ1VersicherungGesetzlich\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.html\">ISiKVersicherungsverhaeltnisGesetzlich</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/versicherungsart-de-basis GKV}\">gesetzliche Krankenversicherung</span></p><p><b>subscriber</b>: <a href=\"RelatedPerson-SZ1Mutter.html\">RelatedPerson Mama Musterfrau (official)</a></p><p><b>beneficiary</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><p><b>payor</b>: TKKG (Identifier: Organization identifier/260326822)</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/versicherungsart-de-basis"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/versicherungsart-de-basis>
+       ] ;
+       fhir:code [ fhir:v "GKV" ]
+     ] )
+  ] ; # 
+  fhir:subscriber [
+     fhir:l <https://gematik.de/fhir/isik/RelatedPerson/SZ1Mutter> ;
+     fhir:reference [ fhir:v "RelatedPerson/SZ1Mutter" ] ;
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://fhir.de/CodeSystem/identifier-type-de-basis"^^xsd:anyURI ;
+             fhir:l <http://fhir.de/CodeSystem/identifier-type-de-basis>
+           ] ;
+           fhir:code [ fhir:v "KVZ10" ]
+         ] )
+       ] ;
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "A987654321" ]
+     ]
+  ] ; # 
+  fhir:beneficiary [
+     fhir:l <https://gematik.de/fhir/isik/Patient/SZ1Patient> ;
+     fhir:reference [ fhir:v "Patient/SZ1Patient" ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:identifier [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+           ] ;
+           fhir:code [ fhir:v "XX" ]
+         ] )
+       ] ;
+       fhir:system [
+         fhir:v "http://fhir.de/sid/arge-ik/iknr"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/arge-ik/iknr>
+       ] ;
+       fhir:value [ fhir:v "260326822" ]
+     ] ;
+     fhir:display [ fhir:v "TKKG" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

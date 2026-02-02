@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKPatient" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+  <version value="1.0" />
+  <name value="ISiKPatient" />
+  <status value="active" />
+  <description value="Dieses Profil die Nutzung von administrativen Patientendaten in ISiK Szenarien." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient">
+      <path value="Patient" />
+      <constraint>
+        <key value="isik-pat-1" />
+        <severity value="error" />
+        <human value="Falls die Geschlechtsangabe 'other' gewählt wird, muss die amtliche Differenzierung per Extension angegeben werden" />
+        <expression value="gender.exists() and gender='other' implies gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').exists()" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </constraint>
+    </element>
+    <element id="Patient.id">
+      <path value="Patient.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer-GKV">
+      <path value="Patient.identifier" />
+      <sliceName value="Versichertennummer-GKV" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10" />
+      </type>
+      <patternIdentifier>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+            <code value="GKV" />
+          </coding>
+        </type>
+      </patternIdentifier>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer-GKV.type">
+      <path value="Patient.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer-GKV.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer-GKV.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer">
+      <path value="Patient.identifier" />
+      <sliceName value="Patientennummer" />
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-pid" />
+      </type>
+      <patternIdentifier>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+            <code value="MR" />
+          </coding>
+        </type>
+      </patternIdentifier>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer.type">
+      <path value="Patient.identifier.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV">
+      <path value="Patient.identifier" />
+      <sliceName value="Versichertennummer_PKV" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-pkv" />
+      </type>
+      <patternIdentifier>
+        <type>
+          <coding>
+            <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+            <code value="PKV" />
+          </coding>
+        </type>
+      </patternIdentifier>
+      <mustSupport value="false" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.use">
+      <path value="Patient.identifier.use" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.type">
+      <path value="Patient.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner">
+      <path value="Patient.identifier.assigner" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner.identifier.system">
+      <path value="Patient.identifier.assigner.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner.identifier.value">
+      <path value="Patient.identifier.assigner.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner.display">
+      <path value="Patient.identifier.assigner.display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.active">
+      <path value="Patient.active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <comment value="In order to maintain the differntiations of name parts as given in the VSDM dataset or qualify prefixes as academic titles, vendors can opt to support the extensions specified in the German HumanName Base Profile https://simplifier.net/basisprofil-de-r4/humannamedebasis&#xD;&#xA;This is however not required within the scope of this specification." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name">
+      <path value="Patient.name" />
+      <sliceName value="Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <patternHumanName>
+        <use value="official" />
+      </patternHumanName>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.use">
+      <path value="Patient.name.use" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.family">
+      <path value="Patient.name.family" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.family.extension">
+      <path value="Patient.name.family.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name:Name.family.extension:namenszusatz">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="namenszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.family.extension:nachname">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="nachname" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.family.extension:vorsatzwort">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="vorsatzwort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.given">
+      <path value="Patient.name.given" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.prefix">
+      <path value="Patient.name.prefix" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.prefix.extension">
+      <path value="Patient.name.prefix.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name:Name.prefix.extension:prefix-qualifier">
+      <path value="Patient.name.prefix.extension" />
+      <sliceName value="prefix-qualifier" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.prefix.extension:prefix-qualifier.value[x]">
+      <path value="Patient.name.prefix.extension.value[x]" />
+      <fixedCode value="AC" />
+    </element>
+    <element id="Patient.name:Geburtsname">
+      <path value="Patient.name" />
+      <sliceName value="Geburtsname" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <patternHumanName>
+        <use value="maiden" />
+      </patternHumanName>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.use">
+      <path value="Patient.name.use" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.family">
+      <path value="Patient.name.family" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.family.extension">
+      <path value="Patient.name.family.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name:Geburtsname.family.extension:namenszusatz">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="namenszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.family.extension:nachname">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="nachname" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.family.extension:vorsatzwort">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="vorsatzwort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Geburtsname.given">
+      <path value="Patient.name.given" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:Geburtsname.prefix">
+      <path value="Patient.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom.value">
+      <path value="Patient.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender.extension">
+      <path value="Patient.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.gender.extension:Geschlecht-Administrativ">
+      <path value="Patient.gender.extension" />
+      <sliceName value="Geschlecht-Administrativ" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate">
+      <path value="Patient.birthDate" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate.extension">
+      <path value="Patient.birthDate.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.birthDate.extension:Data-Absent-Reason">
+      <path value="Patient.birthDate.extension" />
+      <sliceName value="Data-Absent-Reason" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate.extension:Data-Absent-Reason.value[x]">
+      <path value="Patient.birthDate.extension.value[x]" />
+      <fixedCode value="unknown" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <comment value="In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.&#xD;&#xA;Such differentiations are however not required within the scope of this specification." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift">
+      <path value="Patient.address" />
+      <sliceName value="Strassenanschrift" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <patternAddress>
+        <type value="both" />
+      </patternAddress>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.extension">
+      <path value="Patient.address.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Strassenanschrift.extension:Stadtteil">
+      <path value="Patient.address.extension" />
+      <sliceName value="Stadtteil" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.type">
+      <path value="Patient.address.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line">
+      <path value="Patient.address.line" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension">
+      <path value="Patient.address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Strasse">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Strasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Hausnummer">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Hausnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Postfach">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Postfach" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.city">
+      <path value="Patient.address.city" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.postalCode">
+      <path value="Patient.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.country">
+      <path value="Patient.address.country" />
+      <min value="1" />
+      <constraint>
+        <key value="pat-cnt-2or3-char" />
+        <severity value="warning" />
+        <human value="The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2." />
+        <expression value="country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach">
+      <path value="Patient.address" />
+      <sliceName value="Postfach" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <patternAddress>
+        <type value="postal" />
+      </patternAddress>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.extension">
+      <path value="Patient.address.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Postfach.extension:Stadtteil">
+      <path value="Patient.address.extension" />
+      <sliceName value="Stadtteil" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Patient.address:Postfach.type">
+      <path value="Patient.address.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.line">
+      <path value="Patient.address.line" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.line.extension">
+      <path value="Patient.address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Postfach.line.extension:Strasse">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Strasse" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address:Postfach.line.extension:Hausnummer">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Hausnummer" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address:Postfach.line.extension:Adresszusatz">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address:Postfach.line.extension:Postfach">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Postfach" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.city">
+      <path value="Patient.address.city" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.postalCode">
+      <path value="Patient.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.country">
+      <path value="Patient.address.country" />
+      <min value="1" />
+      <constraint>
+        <key value="pat-cnt-2or3-char" />
+        <severity value="warning" />
+        <human value="The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2." />
+        <expression value="country.empty() or (country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-2') or country.memberOf('http://hl7.org/fhir/ValueSet/iso3166-1-3'))" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

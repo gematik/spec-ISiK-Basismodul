@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Terminplanung</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Terminplanung
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Akteure.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Interaktionen.html">
+                                            Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Prozesse.html">
+                                            Prozesse
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Architekturoptionen.html">
+                                            Architekturoptionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Operations.html">
+                                            Operation: $book
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Kalender.html">
+                                            ISiKKalender (Schedule)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Terminblock.html">
+                                            ISiKTerminblock (Slot)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Termin.html">
+                                            ISiKTermin (Appointment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedizinischeBehandlungseinheit.html">
+                                            ISiKMedizinischeBehandlungseinheit (HealthcareService)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+        <div class="col-md-6">
+            <ul class="nav nav-pills nav-stacked affix-top">
+                    <li>
+                        <a title="Akteur: ISiKCapabilityStatementTerminRepository" href="#ISiKCapabilityStatementTerminRepositoryAkteur">Akteur: ISiKCapabilityStatementTerminRepository</a>
+                    </li>
+                    <li>
+                        <a title="Rolle: ISiKCapabilityStatementTerminRepository" href="#ISiKCapabilityStatementTerminRepositoryRolle">Rolle: ISiKCapabilityStatementTerminRepository</a>
+                    </li>
+            </ul>
+        </div>
+
+    <div class="col-md-18">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">CapabilityStatements</h2>
+
+
+                    <div id="ISiKCapabilityStatementTerminRepositoryAkteur">
+                        <h2 id="isik-capabilitystatement-termin-repository-akteur-konformitatserklarung-capabilitystatement">ISiK CapabilityStatement Termin-Repository Akteur - Konformitätserklärung <a href="https://hl7.org/fhir/R4/capabilitystatement.html">(CapabilityStatement)</a></h2>
+<table  class='table table-bordered fql-table'><thead><tr><th>Beschreibung</th></tr></thead><tbody><tr><td><p>Dieses CapabilityStatement beschreibt alle Interaktionen,
+die ein System unterstützen MUSS, welches diesen Akteur implementiert.</p>
+<p>Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
+Hierzu MUSS die <a href="https://hl7.org/fhir/R4/http.html#capabilities">capabilities-Interaktion gemäß FHIR-Kernspezifikation</a> unterstützt werden.
+Der <code>MODE</code>-Parameter kann ignoriert werden.<br />
+Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (<code>kind = requirements</code>).
+Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN,
+wird die <a href="https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation">CapabilityStatement-Imports-Expectation-Extension</a> mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.</p>
+<p>Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom <code>kind = instance</code> liefern und im Element <code>software</code> den Namen
+und die Versionsnummer angeben.<br />
+Darüber hinaus MÜSSEN in <code>CapabilityStatement.instantiates</code> sämtliche Canonical URLs der implementierten Rollen angegeben werden.
+Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.</p>
+<p>Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit <code>SHALL</code> gekennzeichnet sind.
+Das CapabilityStatement KANN darüber hinaus die mit <code>MAY</code> gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten,
+sofern diese in der Instanz implementiert wurden.</p>
+<p>Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.</p>
+</td></tr>
+</tbody></table>
+<table  class='table table-bordered fql-table'><thead><tr><th>Zweck</th></tr></thead><tbody><tr><td><p>Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur 'Termin-Repository' zur Unterstützung des Termin-Workflows implementieren muss.</p>
+</td></tr>
+</tbody></table>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur</a></td><tr><th><b>Intention</b></th><td>requirements</td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td></table>
+<h3 id="zu-importierende-rollen">Zu importierende Rollen</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>SHALL Rollen</th></tr></thead><tbody><tr><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle</a>, <a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementStammdatenRolle</a>, <a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle</a></td></tr>
+</tbody></table>
+
+                    </div>
+                    <div id="ISiKCapabilityStatementTerminRepositoryRolle">
+                        <h2 id="isik-capabilitystatement-termin-repository-rolle-konformitatserklarung-capabilitystatement">ISiK CapabilityStatement Termin-Repository Rolle - Konformitätserklärung <a href="https://hl7.org/fhir/R4/capabilitystatement.html">(CapabilityStatement)</a></h2>
+<table  class='table table-bordered fql-table'><thead><tr><th>Beschreibung</th></tr></thead><tbody><tr><td><p>Dieses CapabilityStatement beschreibt alle Interaktionen,
+die ein System unterstützen MUSS, welches diese Rolle implementiert.</p>
+<p>Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (<code>kind = requirements</code>).
+Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN,
+wird die <a href="https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">CapabilityStatement-Expectation-Extension</a> mit den möglichen Werten <code>SHALL</code> (=MUSS) und <code>MAY</code> (=KANN) verwendet.</p>
+</td></tr>
+</tbody></table>
+<table  class='table table-bordered fql-table'><thead><tr><th>Zweck</th></tr></thead><tbody><tr><td><p>Das vorliegende CapabilityStatement beschreibt Interaktionen für ein System, das Termin-Repository-Daten exponiert.</p>
+</td></tr>
+</tbody></table>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>CanonicalURL</b></th><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryRolle</a></td><tr><th><b>Intention</b></th><td>requirements</td><tr><th><b>Status</b></th><td>active</td><tr><th><b>Version</b></th><td>5.0.0</td></table>
+<h3 id="anforderungen-an-die-fhir-api">Anforderungen an die FHIR-API</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Modus</b></th><td>server</td></table>
+<h4 id="interaktionen">Interaktionen</h4>
+<table  class='table table-bordered fql-table'><thead><tr><th>Ressourcentyp</th><th>Verbindlichkeit</th><th>READ</th><th>SEARCH</th></tr></thead><tbody><tr><td>Appointment</td><td>SHALL</td><td>SHALL</td><td>SHALL</td></tr>
+<tr><td>HealthcareService</td><td>SHALL</td><td>SHALL</td><td>SHALL</td></tr>
+<tr><td>Schedule</td><td>SHALL</td><td>SHALL</td><td>SHALL</td></tr>
+<tr><td>Slot</td><td>SHALL</td><td>SHALL</td><td>SHALL</td></tr>
+</tbody></table>
+<h4 id="profile">Profile</h4>
+<table  class='table table-bordered fql-table'><thead><tr><th>Ressourcentyp</th><th>Profile</th></tr></thead><tbody><tr><td>Appointment</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin'>https://gematik.de/fhir/isik/StructureDefinition/ISiKTermin</a></td></tr>
+<tr><td>HealthcareService</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit'>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit</a></td></tr>
+<tr><td>Schedule</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender'>https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender</a></td></tr>
+<tr><td>Slot</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock'>https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminblock</a></td></tr>
+</tbody></table>
+<h4 id="ressourcentyp-spezifische-operations">Ressourcentyp-spezifische Operations</h4>
+<table  class='table table-bordered fql-table'><thead><tr><th>RessourcenTyp</th><th>Name</th><th>Spezifikation</th><th>Verbindlichkeit</th></tr></thead><tbody><tr><td>Appointment</td><td>book</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook'>https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook</a></td><td>SHALL</td></tr>
+</tbody></table> 
+<h4 id="globale-operations">Globale Operations</h4>
+<h4 id="dokumenten-endpunkt">Dokumenten-Endpunkt</h4>
+<h4 id="suchparameter">Suchparameter</h4>
+<table  class='table table-bordered fql-table'><thead><tr><th>RessourcenTyp</th><th>SuchParameter</th><th>Verbindlichkeit</th><th>Hinweise</th><th>Definition</th></tr></thead><tbody><tr><td>Schedule</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Schedule</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Schedule</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Schedule</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Schedule</td><td>active</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Schedule?active=true</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Schedule-active'>http://hl7.org/fhir/SearchParameter/Schedule-active</a></td></tr>
+<tr><td>Schedule</td><td>service-type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Schedule?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Schedule-service-type'>http://hl7.org/fhir/SearchParameter/Schedule-service-type</a></td></tr>
+<tr><td>Schedule</td><td>specialty</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Schedule?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Schedule-specialty'>http://hl7.org/fhir/SearchParameter/Schedule-specialty</a></td></tr>
+<tr><td>Schedule</td><td>actor</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Schedule?actor=Practitioner/ISiKPractitionerExample</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Schedule-actor'>http://hl7.org/fhir/SearchParameter/Schedule-actor</a></td></tr>
+<tr><td>Slot</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Slot</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Slot</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Slot</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Slot</td><td>schedule</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Slot?schedule=Schedule/ISiKKalenderExample&amp;start=2022-12-10T09:00:00Z</code><br />
+<code>GET [base]/Slot?schedule=Schedule/ISiKKalenderExample</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Suchparameter <code>schedule</code> MUSS in Kombination mit einem definierten Startzeitpunkt mittels Suchparameter <code>start</code> unterstützt werden.
+Der Suchparameter <code>schedule</code> KANN alleinstehend unterstützt werden. Beim Fehlen des <code>start</code>-Suchparameters SOLL der aktuelle Zeitpunkt des Servers
+als Startzeitpunkt per Default verwendet werden.
+In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich:<br />
+<code>GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=https://example.org/fhir/CodeSystem/Behandlungsleistung|CT</code><br />
+Dies kann notwendig sein, falls interdisziplinäre Kalender durch das Termin-Repository gepflegt werden (z.B. ein Kalender pro Station).
+In solchen Fälle wäre es sinnvoll, wenn das Termin-Repository einem Termin-Requestor eine Verknüpfung zwischen Kalender (Schedule)
+und Behandlungsleistung (HealthcareService) bereitstellen würde.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Slot-schedule'>http://hl7.org/fhir/SearchParameter/Slot-schedule</a></td></tr>
+<tr><td>Slot</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Slot?status=free&amp;schedule=Schedule/ISiKTerminExample</code>
+<code>GET [base]/Slot?status=free&amp;schedule.actor:Practitioner.name=Musterarzt</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Suchparameter <code>status</code> MUSS in Kombination ('&amp;') mit dem Parameter <code>schedule</code> unterstützt werden.
+Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.
+Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.<br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Slot-status'>http://hl7.org/fhir/SearchParameter/Slot-status</a></td></tr>
+<tr><td>Slot</td><td>start</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule=Schedule/ISiKTerminExample</code><br />
+<code>GET [base]/Slot?start=2022-12-10T09:00:00Z&amp;schedule.actor:Practitioner.name=Musterarzt</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Suchparameter <code>start</code> MUSS in Kombination ('&amp;') mit dem Parameter <code>schedule</code> unterstützt werden.
+Diese Abfrage KANN entweder eine direkte Angabe einer Referenz oder eine Angabe von weiteren Chaining-Parametern sein.
+Der Suchparameter MUSS NICHT alleinstehend unterstützt werden.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Slot-start'>http://hl7.org/fhir/SearchParameter/Slot-start</a></td></tr>
+<tr><td>Appointment</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Appointment</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Appointment</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Appointment</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Appointment</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?status=booked</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-status'>http://hl7.org/fhir/SearchParameter/Appointment-status</a></td></tr>
+<tr><td>Appointment</td><td>service-type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Anwendungshinweise: Bei einer Suche mit dem <code>:not</code>-Modifier MÜSSEN Ressourcen, die keinen Wert für <code>Appointment.serviceType</code> enthalten,
+im Suchergebnis enthalten sein.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-service-type'>http://hl7.org/fhir/SearchParameter/Appointment-service-type</a></td></tr>
+<tr><td>Appointment</td><td>specialty</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br />
+<strong>Anwendungshinweis:</strong>
+Anwendungshinweise: Bei einer Suche mit dem <code>:not</code>-Modifier MÜSSEN Ressourcen, die keinen Wert für <code>Appointment.specialty</code> enthalten,
+im Suchergebnis enthalten sein.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-service-type'>http://hl7.org/fhir/SearchParameter/Appointment-service-type</a></td></tr>
+<tr><td>Appointment</td><td>date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?date=2022-12-10T09:00:00Z</code><br />
+<strong>Anwendungshinweis:</strong>
+Die Suche wird gegen das Element <code>Appointment.start</code> ausgewertet.<br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-date'>http://hl7.org/fhir/SearchParameter/Appointment-date</a></td></tr>
+<tr><td>Appointment</td><td>slot</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?slot=Slot/ISiKSlotExample</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-slot'>http://hl7.org/fhir/SearchParameter/Appointment-slot</a></td></tr>
+<tr><td>Appointment</td><td>actor</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Appointment?actor=Patient/ISiKPatientExample</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Appointment-actor'>http://hl7.org/fhir/SearchParameter/Appointment-actor</a></td></tr>
+<tr><td>HealthcareService</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_id=103270</code>
+<strong>Anwendungshinweis:</strong>
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>HealthcareService</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>HealthcareService</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong>
+<code>GET [base]/[Resourcetype]?_count=100</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>HealthcareService</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code>
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code>
+<strong>Anwendungshinweis:</strong>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>HealthcareService</td><td>active</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/HealthcareService?active=true</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/HealthcareService-active'>http://hl7.org/fhir/SearchParameter/HealthcareService-active</a></td></tr>
+<tr><td>HealthcareService</td><td>service-type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/HealthcareService?service-type=http://example.org/fhir/CodeSystem/ScheduleServiceType|CT</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/HealthcareService-service-type'>http://hl7.org/fhir/SearchParameter/HealthcareService-service-type</a></td></tr>
+<tr><td>HealthcareService</td><td>specialty</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/HealthcareService?specialty=urn:oid:1.2.276.0.76.5.114|535</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/HealthcareService-specialty'>http://hl7.org/fhir/SearchParameter/HealthcareService-specialty</a></td></tr>
+<tr><td>HealthcareService</td><td>name</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/HealthcareService?name=Medizinische Behandlungseinheit Des Fachbereichs 0100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=package:de.gematik.isik@5.0.0&canonical=http://hl7.org/fhir/SearchParameter/HealthcareService-name'>http://hl7.org/fhir/SearchParameter/HealthcareService-name</a></td></tr>
+</tbody></table>
+<h4 id="reverse-include">(Reverse-)Include</h4>
+<table  class='table table-bordered fql-table'><thead><tr><th>RessourcenTyp</th><th>table</th></tr></thead><tbody><tr><td>Schedule</td><td><table ><tbody></tbody></table></td></tr>
+<tr><td>Slot</td><td><table ><tbody><tr><td>Slot:schedule (MAY)</td><td><table ><tbody></tbody></table></td></tr>
+</tbody></table></td></tr>
+<tr><td>Appointment</td><td><table ><tbody><tr><td>Appointment:slot (MAY)</td><td><table ><tbody></tbody></table></td></tr>
+<tr><td>Appointment:actor (MAY)</td><td><table ><tbody></tbody></table></td></tr>
+</tbody></table></td></tr>
+<tr><td>HealthcareService</td><td><table ><tbody><tr><td>Schedule:actor (MAY)</td><td><table ><tbody></tbody></table></td></tr>
+<tr><td>Appointment:actor (MAY)</td><td><table ><tbody></tbody></table></td></tr>
+</tbody></table></td></tr>
+</tbody></table>
+
+                    </div>
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

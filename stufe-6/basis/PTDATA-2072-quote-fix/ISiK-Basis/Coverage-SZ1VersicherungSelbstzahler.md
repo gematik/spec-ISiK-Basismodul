@@ -1,0 +1,55 @@
+# Example Coverage - SZ1VersicherungSelbstzahler - ISiK Basis Implementierungsleitfaden v6.0.0-rc
+
+ISiK Basis Implementierungsleitfaden
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Example Coverage - SZ1VersicherungSelbstzahler**
+
+## Example Coverage: Example Coverage - SZ1VersicherungSelbstzahler
+
+Profile: [ISiKVersicherungsverhaeltnisSelbstzahler](StructureDefinition-ISiKVersicherungsverhaeltnisSelbstzahler.md)
+
+**status**: Active
+
+**type**: Selbstzahler
+
+**beneficiary**: [Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)](Patient-SZ1Patient.md)
+
+**payor**: [RelatedPerson Mama Musterfrau (official)](RelatedPerson-SZ1Mutter.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Coverage",
+  "id" : "SZ1VersicherungSelbstzahler",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
+    ]
+  },
+  "status" : "active",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://fhir.de/CodeSystem/versicherungsart-de-basis",
+        "code" : "SEL"
+      }
+    ]
+  },
+  "beneficiary" : {
+    "reference" : "Patient/SZ1Patient"
+  },
+  "payor" : [
+    {
+      "reference" : "RelatedPerson/SZ1Mutter"
+    }
+  ]
+}
+
+```

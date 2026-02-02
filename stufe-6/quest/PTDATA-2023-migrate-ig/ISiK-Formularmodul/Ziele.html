@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Ziele - ISiK Formularmodul Implementation Guide v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Ziele.html">Ziele</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="AkteureOhneCpS.html">Festlegungen Akteure ohne CapabilityStatement</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikationen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_BestPractice.html">Best Practice für FormularDefinitionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Begriffsdefinitionen.html">Begriffsdefinitionen</a>
+      </li>
+      <li><a name="l233">​</a>
+        <a href="extensions.html">Extensions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Formularmodul Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Ziele</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Ziele</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#best-practices-für-formular-autoren" id="markdown-toc-best-practices-für-formular-autoren">Best Practices für Formular-Autoren</a></li>
+  <li><a href="#integration-von-n-in-isik-konforme-anwendungssysteme" id="markdown-toc-integration-von-n-in-isik-konforme-anwendungssysteme">Integration von n in ISiK-konforme Anwendungssysteme</a></li>
+  <li><a href="#auffindbarkeit-von-formularen" id="markdown-toc-auffindbarkeit-von-formularen">Auffindbarkeit von Formularen</a></li>
+  <li><a href="#darstellung-und-verhalten-von-formularen" id="markdown-toc-darstellung-und-verhalten-von-formularen">Darstellung und Verhalten von Formularen</a></li>
+  <li><a href="#vorbelegung-von-formularen" id="markdown-toc-vorbelegung-von-formularen">Vorbelegung von Formularen</a></li>
+  <li><a href="#validierung-von-formulardaten" id="markdown-toc-validierung-von-formulardaten">Validierung von FormularDaten</a></li>
+  <li><a href="#extraktion-von-formulardaten-in-fhir-ressourcen" id="markdown-toc-extraktion-von-formulardaten-in-fhir-ressourcen">Extraktion von FormularDaten in FHIR-Ressourcen</a></li>
+  <li><a href="#rückübermittlung-von-formulardaten-und-extraktions-ergebnissen" id="markdown-toc-rückübermittlung-von-formulardaten-und-extraktions-ergebnissen">Rückübermittlung von FormularDaten und Extraktions-Ergebnissen</a></li>
+  <li><a href="#beispiel-szenarien-und--formular-definitionen" id="markdown-toc-beispiel-szenarien-und--formular-definitionen">Beispiel-Szenarien und -Formular-Definitionen</a></li>
+</ul>
+
+</div>
+
+<p>Dieses Modul soll die zahlreichen, teilweise sehr komplexen Funktionalitäten, die im SDC-Leitfaden beschreiben sind, auf ein überschaubares aber dennoch nutzenbringendes Minimum reduzieren, um einen leichten Einstieg in die Welt der FHIR-basierten Formulare zu ermöglichen. Die Integration von Tools, die die Nutzung von Formularen ermöglichen (sog. “”) soll - soweit möglich - nur mit den bereits vorhandenen Funktionalitäten ISiK-konformer<sup id="fnref:1"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> Anwendungssysteme ermöglicht werden.</p>
+
+<p>Das ISIK-Formular-Modul ist ein Work-in-Progress und derzeit weder final noch verbindlich. Gemeinsam mit interessierten Herstellern soll ein Modul entwickelt werden, das folgende Ziele erfüllt und anschließend verbindlich festgelegt werden kann.
+Die Publikation in Stufe 5 stellt einen ersten Entwurf des Moduls dar, der als Diskussionsgrundlage für die weitere Entwicklung und als Basis für erste, prototypische Implementierungen und Connectathons dienen soll.</p>
+
+<h3 id="best-practices-für-formular-autoren">Best Practices für Formular-Autoren</h3>
+<ul>
+  <li>Für  werden klare Vorgaben gemacht werden, was bei der Ausarbeitung standardisierter und austauschbarer en zu beachten ist, um deren Interoperabilität bestmöglich zu unterstützen.</li>
+  <li>Es werden überprüfbare Qualitätsstandards für ISIK-konforme<sup id="fnref:1:1"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> FormularDefinitionen erarbeitet werden.</li>
+  <li>Es werden verlässliche Mindestfunktionalitäten festgelegt werden, die von jedem ISIK-konformen<sup id="fnref:1:2"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup>  implementiert sind und von den Autoren verwendet werden können, ohne befürchten zu müssen, dass die Funktionalität des Formuars in einzelnen Systemen eingeschränkt ist.</li>
+</ul>
+
+<h3 id="integration-von-n-in-isik-konforme-anwendungssysteme">Integration von n in ISiK-konforme<sup id="fnref:1:3"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> Anwendungssysteme</h3>
+<p>Dieses Modul wird verbindliche Festlegungen treffen, die es beliebigen ISiK-konformen<sup id="fnref:1:4"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> Anwendungssystemen erlaubt, als  beliebige, ISiK-konforme<sup id="fnref:1:5"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup>  mittels standardisierter Verfahren zu integrieren und den Anwendern einen möglichst nahtlosen, redundanzfreien Workflow zu ermöglichen.</p>
+
+<h3 id="auffindbarkeit-von-formularen">Auffindbarkeit von Formularen</h3>
+<p>Dieses Modul wird verbindliche Festlegungen für Formular-Metadaten treffen, die die Auffindbarkeit, Selektion und Filterung von en ermöglicht, um Anwendern relevante Formulare schnell zur Verfügung stellen zu können.</p>
+
+<h3 id="darstellung-und-verhalten-von-formularen">Darstellung und Verhalten von Formularen</h3>
+<p>Dieses Modul wird verbindliche  Mindestanforderungen für die Darstellung und das dynamische Verhalten von en in n vorgeben.</p>
+
+<h3 id="vorbelegung-von-formularen">Vorbelegung von Formularen</h3>
+<p>Diese Modul wird verbindliche Festlegungen für eine verlässliche Vorbelegung von  anhand entsprechender Annotationen in den Formular-Definitionen und durch Zugriff auf vorhandene Daten im aufrufenden, ISiK-konformen<sup id="fnref:1:6"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> Anwendungssystem treffen.</p>
+
+<h3 id="validierung-von-formulardaten">Validierung von FormularDaten</h3>
+<p>Dieses Modul wird verbindliche Vorgaben enthalten, wie  die erhobenen Daten gegen die  validieren</p>
+
+<h3 id="extraktion-von-formulardaten-in-fhir-ressourcen">Extraktion von FormularDaten in FHIR-Ressourcen</h3>
+<p>Dieses Modul wird verbindliche Festlegungen für eine verlässliche Extraktion von validen  in wiederverwendbare FHIR-Ressourcen anhand entsprechender Annotationen in den Formular-Definitionen treffen.</p>
+
+<h3 id="rückübermittlung-von-formulardaten-und-extraktions-ergebnissen">Rückübermittlung von FormularDaten und Extraktions-Ergebnissen</h3>
+<p>Dieses Modul wird verbindliche Festlegungen für eine verlässliche Rückübermittlung von validen  sowie FHIR-Ressourcen, die durch Extraktion entstanden sind, vom  an das aufrufende, ISIK-konforme<sup id="fnref:1:7"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup> Anwendungssystem treffen.</p>
+
+<h3 id="beispiel-szenarien-und--formular-definitionen">Beispiel-Szenarien und -Formular-Definitionen</h3>
+<p>Diese Modul wird diverse Beispielszenarien für die Nutzung von FHIR-Questionnaires enthalten sowie Beispiel-Daten, die Entwickler bei der Implementierung ISiK-konformer<sup id="fnref:1:8"><a role="doc-noteref" rel="footnote" href="#fn:1" class="footnote">1</a></sup>  unterstützen sollen.</p>
+
+<ul>
+  <li><a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements#ISiKCapabilityStatementStammdatenRolle">ISiKStammdatenRolle</a></li>
+  <li><a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?#ISiKCapabilityStatementCompositionKonsumentenRolle">ISiKCompositionKonsumentenRolle</a></li>
+</ul>
+
+<div role="doc-endnotes" class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Unter einem ISiK-konformen (klinischen) Anwendungssystem ist hier ein beliebiges Softwaresystem zu verstehen, das <strong>mindestens</strong> die folgenden Rollen implementiert:&nbsp;<a role="doc-backlink" href="#fnref:1" class="reversefootnote">↩</a>&nbsp;<a role="doc-backlink" href="#fnref:1:1" class="reversefootnote">↩<sup>2</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:2" class="reversefootnote">↩<sup>3</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:3" class="reversefootnote">↩<sup>4</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:4" class="reversefootnote">↩<sup>5</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:5" class="reversefootnote">↩<sup>6</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:6" class="reversefootnote">↩<sup>7</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:7" class="reversefootnote">↩<sup>8</sup></a>&nbsp;<a role="doc-backlink" href="#fnref:1:8" class="reversefootnote">↩<sup>9</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket formular#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 2, 2026 09:10+0000">2026-02-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

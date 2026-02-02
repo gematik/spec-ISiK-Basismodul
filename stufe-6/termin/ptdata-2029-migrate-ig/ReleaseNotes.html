@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Release Notes - ISiK Terminplanung Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">UseCases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UseCases.html">UseCases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität zu anderen nationalen FHIR-basierten Spezifikationen</a>
+      </li>
+      <li>
+        <a href="Prozesse.html">Prozesse</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+      <li>
+        <a href="Architekturoptionen.html">Architekturoptionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Operations.html">Operation $book</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Terminplanung Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Release Notes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Release Notes</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#version-511" id="markdown-toc-version-511">Version 5.1.1</a></li>
+  <li><a href="#version-510" id="markdown-toc-version-510">Version 5.1.0</a></li>
+  <li><a href="#version-500" id="markdown-toc-version-500">Version 5.0.0</a></li>
+  <li><a href="#version-500-rc2-benehmensherstellung" id="markdown-toc-version-500-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</a></li>
+  <li><a href="#version-500-rc" id="markdown-toc-version-500-rc">Version 5.0.0-rc</a></li>
+  <li><a href="#version-403" id="markdown-toc-version-403">Version 4.0.3</a></li>
+  <li><a href="#version-402" id="markdown-toc-version-402">Version 4.0.2</a></li>
+  <li><a href="#version-401" id="markdown-toc-version-401">Version 4.0.1</a></li>
+  <li><a href="#version-400" id="markdown-toc-version-400">Version 4.0.0</a></li>
+  <li><a href="#version-400-rc2" id="markdown-toc-version-400-rc2">Version 4.0.0-rc2</a></li>
+  <li><a href="#version-400-rc" id="markdown-toc-version-400-rc">Version 4.0.0-rc</a></li>
+  <li><a href="#version-304" id="markdown-toc-version-304">Version: 3.0.4</a></li>
+  <li><a href="#version-303" id="markdown-toc-version-303">Version: 3.0.3</a></li>
+  <li><a href="#version-302" id="markdown-toc-version-302">Version: 3.0.2</a></li>
+  <li><a href="#version-301" id="markdown-toc-version-301">Version: 3.0.1</a></li>
+  <li><a href="#version-300" id="markdown-toc-version-300">Version: 3.0.0</a></li>
+  <li><a href="#version-300-rc2" id="markdown-toc-version-300-rc2">Version: 3.0.0-rc2</a></li>
+  <li><a href="#version-300-rc1" id="markdown-toc-version-300-rc1">Version: 3.0.0-rc1</a></li>
+  <li><a href="#version-203" id="markdown-toc-version-203">Version: 2.0.3</a></li>
+  <li><a href="#version-202" id="markdown-toc-version-202">Version: 2.0.2</a></li>
+  <li><a href="#version-201" id="markdown-toc-version-201">Version: 2.0.1</a></li>
+  <li><a href="#version-200" id="markdown-toc-version-200">Version: 2.0.0</a></li>
+  <li><a href="#version-200-ballotierung" id="markdown-toc-version-200-ballotierung">Version: 2.0.0 (Ballotierung)</a></li>
+</ul>
+
+</div>
+
+<p>Im Rahmen der ISiK-Veröffentlichungen wird das <a href="https://semver.org/lang/de/">Semantic Versioning</a> verwendet.</p>
+
+<h3 id="version-511">Version 5.1.1</h3>
+
+<p>Datum: 17.12.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> alle Elemente sind mit short-description versehen https://github.com/gematik/spec-ISiK-Basismodul/pull/928</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Korrektur IHE Canonical in Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/948</li>
+</ul>
+
+<h3 id="version-510">Version 5.1.0</h3>
+
+<p>Datum: 23.10.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Handhabung von Create-Interaktionen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/792</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung zur Fallunterscheidung bei der Patienteninstanz-Übergabe und Begründung sowie Hinweis hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/793</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung zum Fehlercode bei nicht unterstütztem alleinstehendem Parameter ‘start’ https://github.com/gematik/spec-ISiK-Basismodul/pull/797 und Vorgabe zur error Code 422 gelockert (SOLL statt MUSS) https://github.com/gematik/spec-ISiK-Basismodul/pull/805</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> id-Elemente sind in <em>allen</em> Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet. https://github.com/gematik/spec-ISiK-Basismodul/pull/799</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung welche Fehler zu einem HTTP 422 Response Code bei der Verarbeitung der $book-Operation führen</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Durch Entfernung des Abschnittes “Übersicht der Akteure” den Abschnitt Akteure klarer gestaltet https://github.com/gematik/spec-ISiK-Basismodul/pull/848</li>
+</ul>
+
+<h3 id="version-500">Version 5.0.0</h3>
+
+<p>Datum: 26.06.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation und Klarstellung zur Verwendung des Akteurs “Buchender” (als Patient und Angehöriger) in Prozessen https://github.com/gematik/spec-ISiK-Basismodul/pull/763</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Ausdifferenzierung der Prozesse rund um die Registrierung und den Identitätsnachweis bei Terminbuchung https://github.com/gematik/spec-ISiK-Basismodul/pull/764/files`</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Entfernen der modulübergreifenden Terminologieseite, da nicht zielführend https://github.com/gematik/spec-ISiK-Basismodul/pull/767</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Satz zur Übergabe von Appointments mit einer id klarer formuliert https://github.com/gematik/spec-ISiK-Basismodul/pull/773</li>
+</ul>
+
+<p>Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.</p>
+
+<h3 id="version-500-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</h3>
+
+<p>Datum: 5.6.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation zu den Interaktionen entsprechend der $book-Operation zur Terminverschiebung angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/745</li>
+</ul>
+
+<h3 id="version-500-rc">Version 5.0.0-rc</h3>
+
+<p>Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.</p>
+
+<p>Datum: 09.04.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Communication aus dem Modul Terminplanung entfernt zur Vermeidung einer Überlappung mit der Verwendung weiterer TI-Produkte (z.B. TI-Messenger und KIM-Nachrichten) https://github.com/gematik/spec-ISiK-Basismodul/pull/607</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Migration des IG auf die neue IG Struktur basierend auf FQL Templates, die für ISiK-Basis erstellt wurden https://github.com/gematik/spec-ISiK-Terminplanung/pull/277</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKKalender enthielt ein required Binding auf ein VS welches auf ein <code class="language-plaintext highlighter-rouge">fragment</code>
+CodeSystem
+referenziert (Schedule.specialty.coding:ErweiterterFachabteilungsschluessel). Dies wurde durch ein
+extensible Binding und ein Pattern auf .system ersetzt um die Validierbarkeit des Feldes zu
+ermöglichen. https://github.com/gematik/spec-ISiK-Basismodul/pull/613</li>
+</ul>
+
+<hr />
+
+<h3 id="version-403">Version 4.0.3</h3>
+
+<p>Datum: 08.04.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Verbesserung der Dokumentation der Interaktionen auf der Communication-Ressource nach Anpassung der Suchparameter <code class="language-plaintext highlighter-rouge">subject</code> und <code class="language-plaintext highlighter-rouge">patient</code>  https://github.com/gematik/spec-ISiK-Terminplanung/pull/273</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Erweiterung zur Übergabe einer Patienten- und RelatedPerson-Instanz mittels Parameters in $book https://github.com/gematik/spec-ISiK-Terminplanung/pull/269  und https://github.com/gematik/spec-ISiK-Terminplanung/commit/7f13332c26269ca95c024cf1167c2e8a7239681c</li>
+</ul>
+
+<hr />
+
+<h3 id="version-402">Version 4.0.2</h3>
+
+<p>Datum: 20.02.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Die Verbindlichkeit des Suchparameters <code class="language-plaintext highlighter-rouge">subject</code> in Communication wurde von SHALL auf MAY reduziert. https://github.com/gematik/spec-ISiK-Terminplanung/pull/247
+Statt dessen wird der neue verbindliche Suchparameter <code class="language-plaintext highlighter-rouge">patient</code> eingeführt. Die geschieht zur Harmonisierung der Suchparameter mit den anderen ISiK-Modulen.</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Falscher Satz über keine notwendige Verbindlichkeit entfernt und Formulierung verbessert https://github.com/gematik/spec-ISiK-Terminplanung/pull/248</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Display Values ISiKTerminCancelationReason https://github.com/gematik/spec-ISiK-Terminplanung/pull/264</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Reiter-Struktur vereinfacht https://github.com/gematik/spec-ISiK-Terminplanung/pull/266</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue Seite zur Zusammenfassung rund um Prozesse des Patient-Onboardings https://github.com/gematik/spec-ISiK-Terminplanung/pull/267</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Anpassung Kardinalität Appointment.start/end https://github.com/gematik/spec-ISiK-Terminplanung/pull/260</li>
+</ul>
+
+<hr />
+
+<h3 id="version-401">Version 4.0.1</h3>
+
+<p>Datum: 02.12.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Implizites ValueSet expandiert https://github.com/gematik/spec-ISiK-Terminplanung/pull/207</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation zur Begründung der Kardinalitäten und Must-Support-Flags ergänzt https://github.com/gematik/spec-ISiK-Terminplanung/pull/209</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Für ISiKTermin Verschiebung des Slicing auf .specialty.coding. https://github.com/gematik/spec-ISiK-Terminplanung/pull/204</li>
+  <li>Kardinalität für Schedule.actor.display geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/206</li>
+  <li>Anforderungen an die Kodierung von Appointment/Schedule.serviceType geschwächt https://github.com/gematik/spec-ISiK-Terminplanung/pull/227</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Schwächung der Kardinalität von actor.display im Profil StructureDefinition-ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/233</li>
+  <li>Ergänzung von Anforderungen an Akteure https://github.com/gematik/spec-ISiK-Terminplanung/pull/236</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix der Canonical URL im Capability-Statement des Terminplanungsserver https://github.com/gematik/spec-ISiK-Terminplanung/pull/238</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen der Extension “Appointment Replaces” zum Profil ISiKTermin https://github.com/gematik/spec-ISiK-Terminplanung/pull/242</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update der Dependency de.ihe-d.terminology auf Version 3.0.1 https://github.com/gematik/spec-ISiK-Terminplanung/pull/240</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Korrektur des Extension Kontext in ISiKKalender https://github.com/gematik/spec-ISiK-Terminplanung/pull/239</li>
+  <li>Aktualisierung der Operation ISiKBookOperation https://github.com/gematik/spec-ISiK-Terminplanung/pull/245</li>
+</ul>
+
+<hr />
+
+<h3 id="version-400">Version 4.0.0</h3>
+
+<p>Datum: 01.10.2024</p>
+
+<ul>
+  <li>Aktive Version ohne weitere Änderungen</li>
+</ul>
+
+<hr />
+
+<h3 id="version-400-rc2">Version 4.0.0-rc2</h3>
+
+<p>Datum: 26.6.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Schwächung der Anforderung für ISiKBinary (entspricht Änderung in TC 3.0.4) https://github.com/gematik/spec-ISiK-Terminplanung/pull/187</li>
+  <li>Anpassen der MS-Definition für Appointment.communication https://github.com/gematik/spec-ISiK-Terminplanung/pull/191</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update der IHE ValueSets zu “practiceSetting” in ISiKTermin, ISiKKalender und ISiK MedizinischeBehandlungseinheit https://github.com/gematik/spec-ISiK-Terminplanung/pull/184/files</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung , dass unbekannte Kodierungen in .serviceType abgewiesen werden können https://github.com/gematik/spec-ISiK-Terminplanung/pull/195</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Änderung der Anforderung für Suchanfrage zu Terminblöcken aus Kalendern https://github.com/gematik/spec-ISiK-Terminplanung/pull/193</li>
+</ul>
+
+<hr />
+
+<h3 id="version-400-rc">Version 4.0.0-rc</h3>
+
+<p>Datum: 4.4.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Location als Aktuer eines Kalenders hinzugefügt, da in ISiK Basis Stufe 4 vorhanden by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/178</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update $book: Verschiebung eines Termins by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/174</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Dependency zu IHE-Package zwecks Auflösung von ValueSets hinzugefügt https://github.com/gematik/spec-ISiK-Terminplanung/pull/175</li>
+  <li>Erweiterung von ISiKTermin zur Abdeckung der Kommunikations-Use-Cases und Hinweise zu letzteren https://github.com/gematik/spec-ISiK-Terminplanung/pull/173</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung hinzugefügt, dass Terminkalender im Kontext eines Leistungserbringers abgefragt werden können
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Behandlers @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87</li>
+    </ul>
+  </li>
+  <li>Präzisierung book-Operation https://github.com/gematik/spec-ISiK-Terminplanung/pull/177</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Abfrage von Behandlungsleistungen im Kontext eines Leistungserbringers by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/144</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix CpS by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/179</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung cancelled-appt-id by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/177</li>
+</ul>
+
+<hr />
+
+<h3 id="version-304">Version: 3.0.4</h3>
+
+<p>Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 (4.0.0-rc2) eingebracht sind.</p>
+
+<hr />
+
+<h3 id="version-303">Version: 3.0.3</h3>
+
+<p>Datum: 25.3.2024</p>
+
+<ul>
+  <li>Reduzierung der Anforderung für ISiKNachricht https://github.com/gematik/spec-ISiK-Terminplanung/pull/172</li>
+  <li>Präzisieren der Suchparameter-Anforderungen für Slot : https://github.com/gematik/spec-ISiK-Terminplanung/pull/168</li>
+  <li>Präzisieren der Anforderungen für Encounter: https://github.com/gematik/spec-ISiK-Terminplanung/commit/d596744d910fd39b421fc7f6f97f73edf471d47a</li>
+  <li>Präzisierung informativ zu ISiKMedizinischeBehandlungseinheit (HealthcareService) https://github.com/gematik/spec-ISiK-Terminplanung/pull/176</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update Dependency des Basismoduls auf 3.0.4</li>
+</ul>
+
+<hr />
+
+<h3 id="version-302">Version: 3.0.2</h3>
+
+<p>Datum: 03.01.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update ISiK Basismodul Dependency -&gt; 3.0.1</li>
+  <li>Klärung zur Verwendung der Binary: add link for clarification by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/156</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> CapabilityStatement Anforderungen entsprechend angepasst: fix CpS Encounter Read and Search interaction by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/154</li>
+  <li>Klärung zur Verwendung der Ressourcen aus dem Basismodul: Feature/ptdata 723 update interactions by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/158</li>
+  <li>Klärung zur Nutzung der ISiKNachricht;  Feature/clarify bidirectional anfisk 178 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/160</li>
+</ul>
+
+<hr />
+<h3 id="version-301">Version: 3.0.1</h3>
+
+<p>Datum: 30.10.2023</p>
+
+<p>Mit dem Release der Stufe 3.0.1 werden die unten gelisteten Änderungen normativ festgesetzt.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fixing KalenderName extension name ISiKKalenderSchedule.md by @alexey-tschudnowsky in https://github.com/gematik/spec-ISiK-Terminplanung/pull/110</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix Suchparameter “content-mode” zu “context-type-value” by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/120</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anpassung CapabilityStatement an die textuelle Beschreibung der verpflichtenden Interaktionen by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/125</li>
+  <li>Informative Anmerkung für den Fall, dass .extenstion:name nicht verfügbar ist by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/129</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anpassung Sequenzdiagramme by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/127</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Example Canonical für Behandlungsleistung angepasst by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/134</li>
+  <li>Abfrage aller verfügbaren Slots für Kalender durch Termin-Requestor by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/135</li>
+  <li>Verwendung realistische Dauer für einen Slot in den Beispielen by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/137</li>
+  <li>Angleichung der Regeln zu meta.tag in Appointments by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/136</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix HTTP return code by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/131</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Abfrage von Behandlungsleistungen hinzugefügt by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/139</li>
+  <li>BookOperation Anforderung von KANN zu SOLLTE by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/143</li>
+  <li>Austausch der Communication/Binary-Ressourcen genauer beschrieben by @alexzautke in https://github.com/gematik/spec-ISiK-Terminplanung/pull/140</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Enhancement Appointment and Slot reference MS by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/133</li>
+</ul>
+
+<hr />
+<h3 id="version-300">Version: 3.0.0</h3>
+
+<p>Datum: 01.07.2023</p>
+
+<ul>
+  <li>Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.</li>
+</ul>
+
+<hr />
+<h3 id="version-300-rc2">Version: 3.0.0-rc2</h3>
+
+<p>Datum: 31.05.2023</p>
+
+<ul>
+  <li>ISiKTerminAppointment   * Änderung zu Appointment.serviceType aus 3.0.0-rc1 (Kommentierung) wurde zurückgezogen
+    <ul>
+      <li>wurde revert Changes for Appointment.serviceType #88 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/89</li>
+      <li><code class="language-plaintext highlighter-rouge">documentation</code> Eine IG Seite zur Encounter Beschreibung für Terminplanung wurde hinzugefügt
+        <ul>
+          <li>Encounter Beschreibung für Terminplanung by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/87</li>
+        </ul>
+      </li>
+      <li>Mehrere Slots müssen nicht mehr  ein und denselben Schedule referenzieren
+        <ul>
+          <li>rm cosntraint: allow different Schedules #82 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/92</li>
+        </ul>
+      </li>
+      <li>Die Änderung zu Appointment.specialty wurde um eine textuelle Vorgabe zum MS ergänzt
+        <ul>
+          <li>MS + textual constraint #72 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/91</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Operations statt eines Bundle reicht als Return-Wert ein Appointment
+    <ul>
+      <li>return Ressources #85 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/93</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-300-rc1">Version: 3.0.0-rc1</h3>
+
+<p>Datum: 04.04.2023</p>
+
+<ul>
+  <li>ISiKTerminKontaktMitGesundheitseinrichtung - by @f-peverali in <a href="https://github.com/gematik/spec-ISiK-Terminplanung/commit/9f523157682bd26a304f388a6f0d7c91a91811da">https://github.com/gematik/spec-ISiK-Terminplanung/commit/9f523157682bd26a304f388a6f0d7c91a91811da</a> : Entfernen des Profils da kein integraler Use Case für Terminvereinbarung und Inkompatibilität zum ISiK Basisprofil</li>
+  <li>ISiKNachricht Hinweis zum Thema Sicherheit eingefügt. Ohne weitere Maßnahmen können über ISiKNachricht keine medizinischen Daten ausgetauscht werden. Hierfür sollte daher bevorzugt die ePA verwendet werden.</li>
+  <li>ISiKTermin - Enhancement /appointment by @jcaumann in <a href="https://github.com/gematik/spec-ISiK-Terminplanung/pull/79">https://github.com/gematik/spec-ISiK-Terminplanung/pull/79</a> :
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">improve</code> Kardinalität der Elemente Appointment.specialty und Appointment.serviceType von 1..* auf 0..* geändert . MustSupport dieser Elemente von “true” auf “false” geändert.
+        <ul>
+          <li>FHIR erlaubt die Anlage von Appointments ohne Bindung an einen Slot und außerhalb des Worksflows über einen Kalender. Dies kann z.B. auch dann erforderlich sein, wenn ein Termin außerhalb der definierten Slots per Telefon vereinbart und dann in das System eingespeist wird. In diesem Fall findet keine “Vererbung” von serviceType und specialty aus einem Kalender statt. Die Person, die den Termin in das System einträgt sollte hier selbst entscheiden können, welche Attribute sie explizit angibt und welche sich implizit aus dem Kontext erschließen.</li>
+          <li>ISiK Terminblöcke referenzieren auf Kalender, die auch andere als ISIK Kalender sein können. Damit ist nicht sichergestellt, dass eine durchgängige, automatische “Vererbung” von specialty und serviceType über Schedule und Slot in ein Appointment möglich ist (in FHIR Schedule und ISiK Terminblock ist die Kardinalität jeweils “0..*”, d.h. diese Angaben können auch gänzlich fehlen).</li>
+        </ul>
+      </li>
+      <li>Kongruenz der Angaben in Appointment.start/end und Appointment.slot.start/end von MUSS auf SOLL herabgestuft.
+        <ul>
+          <li>s .o. Bei off-band-Buchungen wird eine gewisse Flexibilität im Umgang mit dem Kalender benötigt.</li>
+        </ul>
+      </li>
+      <li>Hinweise zu den erwarteten Ergebnissen bei Suchanfragen auf “sepcialty” und “serviceType” in Fällen, bei denen diese Elemente keinen Wert haben.</li>
+    </ul>
+  </li>
+  <li>ISiKBookOperation Für die Abbildung eines manuellen Buchungsprozesses wurden die Vorgaben zu den Return Values beim Appointment.status um “pending” erweitert
+    <ul>
+      <li>in Enhancement/appointment by @jcaumann in <a href="https://github.com/gematik/spec-ISiK-Terminplanung/pull/79">https://github.com/gematik/spec-ISiK-Terminplanung/pull/79</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-203">Version: 2.0.3</h3>
+
+<p>Datum: 24.03.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> enhancement backport extension r5 by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/61
+    <ul>
+      <li>ISiKKalender - Harmonisierung mit den Empfehlungen der Basisprofile DE</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> quickfix typo IG by @f-peverali in https://github.com/gematik/spec-ISiK-Terminplanung/pull/63</li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/gematik/spec-ISiK-Terminplanung/compare/v2.0.2…v.2.0.3</p>
+
+<hr />
+<h3 id="version-202">Version: 2.0.2</h3>
+
+<p>Datum: 31.01.2023</p>
+
+<ul>
+  <li>ISiKTerminblock
+    <ul>
+      <li>Reference(Schedule) statt Reference(ISiKKalender). Reference-Element erweitert auf die Kernspezifikation (entspricht allgemeinem Design-Prinzip), damit die Profile auch außerhalb des ISiK-Kontextes nutzbar sind.</li>
+    </ul>
+  </li>
+  <li>Update Basismodul Dependency -&gt; 2.0.4</li>
+  <li>weitere Änderungen an IG (informativ)</li>
+</ul>
+
+<hr />
+<h3 id="version-201">Version: 2.0.1</h3>
+
+<p>Datum: 31.10.2022</p>
+
+<ul>
+  <li>Update Basismodul Dependency -&gt; 2.0.2</li>
+</ul>
+
+<hr />
+<h3 id="version-200">Version: 2.0.0</h3>
+
+<p>Datum: 30.06.2022</p>
+
+<ul>
+  <li>Initialer Release</li>
+</ul>
+
+<hr />
+<h3 id="version-200-ballotierung">Version: 2.0.0 (Ballotierung)</h3>
+
+<p>Datum: 31.03.2022</p>
+<ul>
+  <li>Initiale Ballotierungsversion für ISiK Stufe 2</li>
+</ul>
+
+<hr />
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket terminplanung#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 2, 2026 09:52+0000">2026-02-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Beispiele</h2>
+<h3 id="valides-minimalbeispiel">Valides Minimalbeispiel:</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#13ec403c-a8d3-41c7-b882-859f73b7e866" aria-controls="13ec403c-a8d3-41c7-b882-859f73b7e866" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#33a224b2-fdae-48d2-bd57-f1c5fc07fc17" aria-controls="33a224b2-fdae-48d2-bd57-f1c5fc07fc17" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#3c0f5fc5-7525-4e79-844d-661612a2a0f1" aria-controls="3c0f5fc5-7525-4e79-844d-661612a2a0f1" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#2a2c0a8c-8fea-4712-a28f-79b810679058" aria-controls="2a2c0a8c-8fea-4712-a28f-79b810679058" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="13ec403c-a8d3-41c7-b882-859f73b7e866">
+    <div class="stu3-treetable" id="2b1bc3d933344503abc20f9564d57a23" data-level="1"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>RelatedPerson</b></td></tr><tr class="collapsed" data-id="e2690f252b494e3697beb3c3b5f6312d" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ISiKAngehoerigerMustermann</span></td></tr>
+<tr class="collapsed" data-id="ade7b613a8414e0fb19420abe5ca22f2" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="498a96d73b2c4c66a2bc1e7ef580acc8" data-parentId="ade7b613a8414e0fb19420abe5ca22f2"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger</span></td></tr>
+
+<tr class="collapsed" data-id="2fe6b14e25a8421e86e10d709579129a" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>patient</b></td></tr><tr class="collapsed" data-id="6327d12bf7eb4092acee7d39a4919a98" data-parentId="2fe6b14e25a8421e86e10d709579129a"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr>
+
+<tr class="collapsed" data-id="c4e97ff25a764e78b29e64028151c90f" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>relationship</b></td></tr><tr class="collapsed" data-id="3da8820f249d443d886d5161f1d3a983" data-parentId="c4e97ff25a764e78b29e64028151c90f"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="8ed400cdb0e845689532b6d0b306ebe1" data-parentId="3da8820f249d443d886d5161f1d3a983"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v3-RoleCode</span></td></tr>
+<tr class="collapsed" data-id="0063a387ee2f46eaa78771f6626ba024" data-parentId="3da8820f249d443d886d5161f1d3a983"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>DAUC</span></td></tr>
+
+
+<tr class="collapsed" data-id="4517be06fe0b4c7480d927d8dfc832b6" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>name</b></td></tr><tr class="collapsed" data-id="bbc53c7178d94ec0a00a908605cd5f52" data-parentId="4517be06fe0b4c7480d927d8dfc832b6"><td class="instance"><span class="baseIcon primitive"></span><b>family : </b><span>Mustermann</span></td></tr>
+<tr class="collapsed" data-id="3a0fa8ddeacc412e82b20b1b6c29ad93" data-parentId="4517be06fe0b4c7480d927d8dfc832b6"><td class="instance"><span class="baseIcon primitive"></span><b>given : </b><span>Maxine</span></td></tr>
+
+<tr class="collapsed" data-id="6e96a9ed524745fa84cbd18dd7c8fa91" data-parentId="f8843ff11bde4685964545feca648924"><td class="instance"><span class="baseIcon primitive"></span><b>address</b></td></tr><tr class="collapsed" data-id="2dd79aedc8754e6f965285d33ec54902" data-parentId="6e96a9ed524745fa84cbd18dd7c8fa91"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>both</span></td></tr>
+<tr class="collapsed" data-id="96d3ced2db534ace81112c9903f5a9f5" data-parentId="6e96a9ed524745fa84cbd18dd7c8fa91"><td class="instance"><span class="baseIcon primitive"></span><b>line : </b><span>Milchstr. 42</span></td></tr>
+<tr class="collapsed" data-id="f9f54c6bd4744961bd1ef7a845d50361" data-parentId="6e96a9ed524745fa84cbd18dd7c8fa91"><td class="instance"><span class="baseIcon primitive"></span><b>city : </b><span>Beispielstadt</span></td></tr>
+<tr class="collapsed" data-id="c066198407ed4a4ebfcc576020411068" data-parentId="6e96a9ed524745fa84cbd18dd7c8fa91"><td class="instance"><span class="baseIcon primitive"></span><b>postalCode : </b><span>78143</span></td></tr>
+<tr class="collapsed" data-id="04a70501175b40aa96cd0ec28a4f5f8a" data-parentId="6e96a9ed524745fa84cbd18dd7c8fa91"><td class="instance"><span class="baseIcon primitive"></span><b>country : </b><span>DE</span></td></tr>
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable2b1bc3d933344503abc20f9564d57a23 = new InstanceTree();
+resourceTreeTable2b1bc3d933344503abc20f9564d57a23.init("2b1bc3d933344503abc20f9564d57a23");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="33a224b2-fdae-48d2-bd57-f1c5fc07fc17">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson" >RelatedPerson</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ISiKAngehoerigerMustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.patient" >patient</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.patient.reference" >reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">patient</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.relationship" >relationship</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.relationship.coding" >coding</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.relationship.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-RoleCode</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.relationship.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DAUC</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">relationship</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.name" >name</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.name.family" >family</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Mustermann</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.name.given" >given</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Maxine</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">name</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address" >address</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">both</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address.line" >line</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Milchstr. 42</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address.city" >city</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Beispielstadt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address.postalCode" >postalCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">78143</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKAngehoeriger
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKAngehoeriger.json" href="artifacts/package/StructureDefinition-ISiKAngehoeriger.json#RelatedPerson.address.country" >country</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">address</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">RelatedPerson</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="3c0f5fc5-7525-4e79-844d-661612a2a0f1">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">RelatedPerson</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ISiKAngehoerigerMustermann</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">patient</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">reference</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Mustermann</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">given</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Maxine</span><span class="string">&quot;</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">address</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">both</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">line</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Milchstr. 42</span><span class="string">&quot;</span>
+            <span class="brace">]</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">city</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Beispielstadt</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">postalCode</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">78143</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">country</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DE</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">relationship</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DAUC</span><span class="string">&quot;</span><span class="symbol">,</span>
+                    <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v3-RoleCode</span><span class="string">&quot;</span>
+                <span class="brace">}</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="2a2c0a8c-8fea-4712-a28f-79b810679058">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/RelatedPerson-ISiKAngehoerigerMustermann.json'>Maxine Mustermann</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

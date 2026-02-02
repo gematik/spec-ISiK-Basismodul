@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Must-Support-Flags - ISiK Basis Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"15"}
+    h3,h4,h5,h6{--heading-prefix:"15"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_Festlegungen.html">Festlegungen</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_FHIR_Artefakte.html">Umgang mit FHIR-Artefakten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Basis Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Must-Support-Flags</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Must-Support-Flags</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<p>Das <a href="https://hl7.org/fhir/R4/profiling.html#mustsupport">Must-Support-Flag</a> (MS-Flag) kennzeichnet Elemente, die auf bestimmte Weise unterstützt werden müssen. Sowohl für die Erstellung - d.h. das Exponieren der Ressource -, als auch für die Verarbeitung - d.h. den Umgang beim Eingang von extern - greifen die MS-Flag Festlegungen. 
+Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens folgende Bedeutung:</p>
+
+<ol>
+  <li>
+    <p>Im Kontext der Erstellung von FHIR-Ressourcen:</p>
+
+    <p>Elemente, die mit MS gekennzeichnet sind, MÜSSEN vom erstellenden System implementiert werden. Dies bedeutet:</p>
+    <ul>
+      <li>Systeme MÜSSEN die entsprechenden Elemente in der eigenen Persistenz-Ebene vorhalten können.</li>
+      <li>Systeme MÜSSEN die entsprechenden Elemente in den entsprechenden Profil-Instanzen bei Abfrage über eine FHIR-Schnittstelle befüllen und ausgeben können.</li>
+      <li>Systeme MÜSSEN die entsprechenden Elemente zur Anzeige bringen können (ausgenommen davon sind Systeme mit reiner Middleware-Funktion, die über keine grafische Nutzeroberfläche verfügen).</li>
+      <li>MS-Elemente, die als optional gekennzeichnet sind (0..-Kardinalität) KÖNNEN bei der Erstellung einer FHIR-Instanz fehlen, wenn die entsprechende Information im Einzelfall unbekannt, nicht zutreffend ist oder (noch) nicht erhoben wurde.</li>
+    </ul>
+
+    <p>Eine <strong>Ausnahme</strong> stellen implizit vorhandene Informationen dar, die nicht aus der Persistenz-Ebene sondern nur aus dem Kontext des erstellenden Systems entnommen werden können. Beispiel: In einem System werden stets nur Informationen aktiver Patienten vorgehalten (inaktive Patienten werden verschoben/archiviert/gelöscht). Der Status eines Patienten wird daher nicht explizit angezeigt und in der Persistenz-Ebene gespeichert, sondern ergibt sich allein aus der Existenz des Datensatzes in diesem System. In solchen Fällen gilt:</p>
+    <ul>
+      <li>Bei lediglich implizit vorhandenen Informationen KANN der Inhalt eines MS-Elementes in der Schnittstelle hartkodiert werden (sofern gesichert ist, dass der entsprechende Wert des Elementes ausnahmslos auf alle Instanzen zutrifft, die dieses System erstellt).</li>
+    </ul>
+
+    <p>Insbesondere für solche implizit vorhandene Informationen, können in den Profilen auf der Ebene einzelner, mit MS-Flag versehener Elemente konkretere Hinweise zur Implementierung enthalten sein, die die übergreifende Definition zu Must-Support für den Einzelfall konkretisieren, zum Beispiel zur Klarstellung wo und unter welchen Umständen hartkodierte Werte erlaubt sind.
+Ob für ein MS-Flag konkrete Ausnahmen gelten, in denen ein impliziter Wert hartcodiert gesetzt werden darf oder das MS-Flag nur unter bestimmten Bedingungen gilt, ist der Definition des jeweiligen Elementes zu entnehmen.</p>
+
+    <p>Hinweis: Bei den Testszenarien von READ-Interaktionen im Rahmen des Bestätigungsverfahrens werden für MS-Elemente Informationen vorgegeben, die in den Systemen erfasst und über die FHIR-Schnittstelle reproduziert werden MÜSSEN, unabhängig von der angegebenen Kardinalität.</p>
+  </li>
+  <li>
+    <p>Im Kontext der Verarbeitung von FHIR-Ressourcen:</p>
+
+    <p>Elemente, die mit MS gekennzeichnet sind, MÜSSEN vom empfangenden System verarbeitet werden. Dies bedeutet:</p>
+    <ul>
+      <li>Das System MUSS in der Lage sein, diese Elemente in der eigenen Persistenz-Ebene zu speichern</li>
+      <li>Das System MUSS bei einer erneuten Abfrage der Information über die FHIR-Schnittstelle in der Lage sein diese Information zu reproduzieren.</li>
+      <li>Systeme MÜSSEN die entsprechenden Elemente zur Anzeige bringen können (ausgenommen davon sind Systeme mit reiner Middleware-Funktion, die über keine grafische Nutzeroberfläche verfügen).</li>
+      <li>Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.</li>
+      <li>MS-Elemente, die als optional gekennzeichnet sind (0..-Kardinalität) KÖNNEN bei der Übermittlung einer Instanz fehlen, wenn die entsprechende Information im sendenden System unbekannt, nicht zutreffend ist oder (noch) nicht erhoben wurde. Das Fehlen optionaler MS-Elemente DARF bei der Verarbeitung NICHT zu einem Fehler führen.</li>
+    </ul>
+
+    <p>Hinweis: Bei den Testszenarien von WRITE/UPDATE-Interaktionen im Rahmen des Bestätigungsverfahrens werden Instanzen an das zu testende System übermittelt, in denen alle MS-Elemente, unabhängig von Ihrer Kardinalität, gegeben sind. Diese MÜSSEN von den getesteten Systemen in einer anschließenden READ-Interaktion vollständig über die FHIR-Schnittstelle reproduziert werden können.</p>
+  </li>
+</ol>
+
+<p>Wenn ein Hersteller neben den in ISiK geforderten Elementen die Verarbeitung <em>weiterer</em> Elemente unterstützt, so sollte dies durch abgeleitete Profile, in denen die zusätzlichen Elemente ebenfalls als MS gekennzeichnet sind, dokumentiert und im Rahmen der Schnittstellendokumentation publiziert werden.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket basis#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jan 30, 2026 14:44+0000">2026-01-30</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

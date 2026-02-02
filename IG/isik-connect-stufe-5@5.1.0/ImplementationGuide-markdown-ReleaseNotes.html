@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="release-notes">Release Notes</h1>
+<p>Im Rahmen der ISiK-Veröffentlichungen wird das <a href="https://semver.org/lang/de/">Semantic Versioning</a> verwendet.</p>
+<p>Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.</p>
+<h2 id="version-5.1.0">Version 5.1.0</h2>
+<p>Datum: 23.10.2025</p>
+<p>Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.</p>
+<h2 id="version-5.0.0">Version 5.0.0</h2>
+<p>Datum: 26.06.2025</p>
+<p>Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.</p>
+<h2 id="version-5.0.0-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</h2>
+<p>Datum: 5.6.2025</p>
+<ul>
+<li><code>improve</code> Implementierungshinweise für ISiK-Ressourcenserver hinzugefügt <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/697">https://github.com/gematik/spec-ISiK-Basismodul/pull/697</a></li>
+<li><code>improve</code> SMART 2.0 Versionsupdate auf 2.2 <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files">https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files</a></li>
+</ul>
+<h2 id="version-5.0.0-rc1">Version 5.0.0-rc1</h2>
+<p>Datum: 13.05.2025</p>
+<ul>
+<li><code>improve</code> Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/696">https://github.com/gematik/spec-ISiK-Basismodul/pull/696</a></li>
+</ul>
+<h2 id="version-5.0.0-rc-kommentierung">Version 5.0.0-rc (Kommentierung)</h2>
+<p>Datum: 09.04.2025</p>
+<ul>
+<li><code>improve</code> Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/565">https://github.com/gematik/spec-ISiK-Basismodul/pull/565</a></li>
+<li><code>improve</code> Abschnitt zu Backend-Services hinzugefügt <a href="https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459">https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459</a></li>
+</ul>
+<hr />
+<p>Version: 3.0.0</p>
+<p>Datum: 01.07.2023</p>
+<ul>
+<li>Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.</li>
+</ul>
+<hr />
+<p>Version: 3.0.0-rc5</p>
+<p>Datum: 21.06.2023</p>
+<ul>
+<li>Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments</li>
+</ul>
+<hr />
+<p>Version: 3.0.0-rc4</p>
+<p>Datum: 01.06.2023</p>
+<ul>
+<li><code>documentation</code> Die über die Interaktion mit dem Ressourcen-Server hinausgehenden Teile von ISiK-Sicherheit aus ISiK Stufe 2 wurden als informative Erläuterungen wieder hinzugefügt. Hersteller oder Krankenhäuser, die <em>SMART on FHIR</em> vollständig umsetzen wollen, erhalten so Hinweise, wie dieses kongruent zu den sonstigen ISiK-Vorgaben möglich ist.</li>
+<li><code>improve</code> Die Hinweise zu einem break-the-glass-Szenario wurden gestrichen, da hier die regulativen Rahmenbedingungen in Deutschland deutlich von den Annahmen in den referenzierten, auf das amerikanische Gesundheitssystem fokussierenden Quellen abweichen.</li>
+<li><code>improve</code> Hinweis auf den Aufrufparameter &quot;ISS_IDP&quot; hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.</li>
+</ul>
+<hr />
+<p>Version: 3.0.0-rc3</p>
+<p>Datum: 25.04.2023</p>
+<ul>
+<li><code>improve</code> ReleaseNotes added</li>
+</ul>
+<hr />
+<p>Version: 3.0.0-rc2</p>
+<p>Datum: 24.04.2023</p>
+<p>Wesentliche Änderungen gegenüber der Version 2.0.1 sind in folgendem Pull-Request erfolgt:</p>
+<ul>
+<li>Jca_smart_light by @jcaumann in <a href="https://github.com/gematik/spec-ISiK-Sicherheit/pull/46">https://github.com/gematik/spec-ISiK-Sicherheit/pull/46</a></li>
+</ul>
+<p>Die Änderungen sind folgende:</p>
+<ul>
+<li>Für ISIK Stufe 2 waren insbesondere EHR/KIS als bestätigungsrelevante Systeme definiert; in ISiK Stufe 3 sind nur noch Ressourcen-Server für ISiK-Security bestätigungsrelevant. Die Motivationen für diese stärkere Fokussierung sind die dadurch konsistentere Fortschreibung von ISiK-Basis sowie die fehlenden Rückmeldungen aus dem ISiK-2-Kommentierungsverfahren zu dem ISiK Stufe 2 zugrunde liegenden Plattformkonzept von <em>SMART on FHIR</em>.</li>
+<li>ISiK Security in ISiK Stufe 3 stellt einen Bezug zwischen SMART Kontexten und FHIR Compartment-Definitionen her. ISiK-Ressourcen-Server müssen die Zugehörigkeit einer angefragten Ressource zu einem Kontext durch Abgleich mit der passenden <em>CompartmentDefinition</em> sicherstellen.</li>
+<li>Die verpflichtenden Vorgaben zu den Inhalten der <em>SMART Configuration</em> wurden in ISiK-Sicherheit in ISiK Stufe 3 auf die Elemente reduziert, die unmittelbar aus dem OAuth2-Standard abgeleitete Informationen betreffen und für einen interoperablen Austausch von Informationen zu den an den Client delegierten Berechtigungen erforderlich sind. Allein für einen <em>SMART App Launch</em> relevante Elemente sind zunächst lediglich optional.</li>
+<li>Für die Kodierung der <em>Scopes</em> wurde in ISiK Stufe 2 die Unterstützung der SMART-on-FHIR-Syntax in den Versionen 1 und 2 verpflichtend vorgegeben. In Stufe 3 ist nur noch die v2-Syntax verpflichtend. Hiermit sollen Deployments vereinfacht werden, bei denen die Durchsetzung der (delegierten) Berechtigungen über ein vorgelagertes API-Gateway bzw.- einen Reverse Proxy erfolgt.</li>
+</ul>
+<hr />
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Datenübermittlung aus Subsystemen - ISiK Basis Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_Festlegungen.html">Festlegungen</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_FHIR_Artefakte.html">Umgang mit FHIR-Artefakten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Basis Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Datenübermittlung aus Subsystemen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Datenübermittlung aus Subsystemen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#interaktionen" id="markdown-toc-interaktionen">Interaktionen</a></li>
+  <li><a href="#verarbeitung-des-dokumentes" id="markdown-toc-verarbeitung-des-dokumentes">Verarbeitung des Dokumentes</a></li>
+  <li><a href="#hinweise-zum-umgang-mit-der-menschenlesbaren-repräsentation" id="markdown-toc-hinweise-zum-umgang-mit-der-menschenlesbaren-repräsentation">Hinweise zum Umgang mit der menschenlesbaren Repräsentation</a></li>
+  <li><a href="#extraktion-der-patient--und-encounter-ressource-im-document-bundle" id="markdown-toc-extraktion-der-patient--und-encounter-ressource-im-document-bundle">Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle</a></li>
+  <li><a href="#persistierung-der-menschenlesbaren-repräsentation" id="markdown-toc-persistierung-der-menschenlesbaren-repräsentation">Persistierung der menschenlesbaren Repräsentation</a></li>
+  <li><a href="#hinweise-zum-umgang-mit-strukturierten-daten" id="markdown-toc-hinweise-zum-umgang-mit-strukturierten-daten">Hinweise zum Umgang mit strukturierten Daten</a></li>
+</ul>
+
+</div>
+
+<p>In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:</p>
+
+<ol>
+  <li>Die Daten in Subsystemen sind sehr heterogen und können hochspezialisiert sein.</li>
+  <li>Bei der Nutzung dieser Subsysteme besteht häufig ein Interesse, auf die menschenlesbare Repräsentation der strukturierten Daten einwirken zu können.</li>
+  <li>Künftig ist mit Szenarien zu rechnen, bei denen Befunde aus Subsystemen in eine elektronische Patientenakte übertragen werden sollen.</li>
+  <li>Aktuell werden Befunde, obwohl diese in den Subsystemen in hochstrukturierter Form vorliegen, nur als PDF an das Primärsystem übermittelt. Oft weil kein strukturiertes Format spezifiziert ist, das sowohl versendendes Subsystem als auch empfangendes Primärsystem implementiert haben.</li>
+  <li>Der Umfang, in dem eine Datenübernahme in ein Primärsystem möglich ist, variiert stark zwischen den Systemen oder Installationen, z.B. abhängig davon, ob ein Modul für Vitalparameter installiert ist.</li>
+</ol>
+
+<p>Die ISiK-Spezifikation begegnet diesen Herausforderungen, indem sie die Übermittlung von Ergebnissen aus Subsystemen an die Primärsysteme in Form von strukturierten Dokumenten erfordert, die über eine menschenlesbare Repräsentation verfügen. Diese strukturierten Dokumente werden im ISiK-Kontext als Berichte bezeichnet. Dabei sind die strukturierten Inhalte der Berichte harmonisiert mit den verbreiteten Formaten für Primärsysteme.</p>
+
+<p>In der aktuellen Ausbaustufe von ISiK ist lediglich die Übernahme und Anzeige der Dokument-Metadaten (z.B. Dokumenttyp, Dokumentdatum, Quelle) und der menschenlesbaren HTML-Repräsentation in die Primärsysteme erforderlich.</p>
+
+<p>In weiteren Ausbaustufen von ISiK soll darüber hinaus eine Übernahme der strukturierten Anteile der Dokumente möglich sein, die den ISiK-Spezifikationen entsprechen, z.B. Diagnosen und Prozeduren.</p>
+
+<p>Es obliegt dabei dem Ermessen des Herstellers, ob die Übernahme strukturierter Daten in das Primärsystem automatisch erfolgt, oder durch den Benutzer initiiert wird.</p>
+
+<p>Die Berichte werden, wie von der <a href="https://www.hl7.org/fhir/R4/composition.html">FHIR Spezifikation für die Composition Ressource vorgesehen</a>, in einem FHIR-Bundle versendet.</p>
+
+<h3 id="interaktionen">Interaktionen</h3>
+
+<p>Die Rückübermittlung eines Document-Bundles an ein Primärsystem erfolgt mittels einer ‘POST’-Interaktion auf den Endpunkt des Primärsystems.</p>
+
+<p>Beispiele:</p>
+
+<p><code class="language-plaintext highlighter-rouge">POST [base]/</code> mit einer FHIR-Bundle Ressource im Request-Body.</p>
+
+<p>Anwendungshinweise: Weitere Informationen zu den verschiedenen Endpunkten für Dokumente finden sich in der <a href="https://www.hl7.org/fhir/R4/documents.html#bundle">FHIR-Basisspezifikation - Abschnitt “Document End-Points”</a>.</p>
+
+<p>Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren Entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.</p>
+
+<p>Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-Ressource nicht anhand der Business-Identifier oder anderer Matching-Kriterien im empfangenden System gefunden werden kann (d.h. der Patient oder der Encounter existiert im empfangenden System noch nicht), MUSS als Antwort der HTTP Status Code “422 - Unprocessable Entity” zurückgegeben werden. Im Body der Response ist eine OperationOutcome zurückzugeben, welche ein Issue mit dem Verweis auf die nicht auflösbare Referenz enthält. Zur Kodierung von OperationOutcome.issue.code MUSS als Code <a href="https://hl7.org/fhir/R4/codesystem-issue-type.html">“processing”</a> verwendet werden.</p>
+
+<p>Das Bundle MUSS folgendem Profil entsprechen: <a href="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle">ISiKBerichtBundle</a></p>
+
+<p>Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul <a href="https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten">ISiK Dokumentenaustausch</a>.</p>
+
+<h3 id="verarbeitung-des-dokumentes">Verarbeitung des Dokumentes</h3>
+
+<p><strong>Hinweis:</strong> Die nachfolgenden Regeln für die Verarbeitung eines Dokumentes gelten nur für Document-Bundles, die an den oben genannten Endpunkt gesendet werden. Weitere ISiK-Module können Regeln für die Verarbeitung von anderen Bundle-Typen (z.B. ‘transaction’) aufstellen.</p>
+
+<p>In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden Schritten verarbeitet werden:</p>
+
+<ol>
+  <li>Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand eines eindeutigen Identifiers (‘Patient.identifier’) oder ähnlichen identifizierenden Merkmalen</li>
+  <li>Extraktion der Encounter-Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Abrechnungsfallnummer (‘Encounter.account.identifier’) oder ähnlichen identifizierenden Merkmalen</li>
+  <li>Extraktion der Composition-Ressource aus dem Bundle und Auslesen der mit ‘mustSupport’ gekennzeichneten Meta-Daten, sowie der menschenlesbaren Repräsentation des Dokumentes (‘Composition.text’, ‘Composition.section.text’, ‘Composition.section.section.text’)</li>
+  <li>Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten.</li>
+  <li>Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten</li>
+</ol>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Composition_Bundle.svg" alt="Composition Bundle" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong>Composition Bundle Zuordnung </figcaption>
+</figure>
+
+<p>Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.</p>
+
+<h3 id="hinweise-zum-umgang-mit-der-menschenlesbaren-repräsentation">Hinweise zum Umgang mit der menschenlesbaren Repräsentation</h3>
+
+<p>Die menschenlesbare Repräsentation (“Narrative”) eines Dokumentes setzt sich zusammen aus dem Inhalt von ‘Composition.text’, einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, Datum) sowie der Aggregation der Inhalte von ‘Composition.section’, wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
+Die einzelnen Bestandteile des Narratives KÖNNEN mit &lt;div&gt;-Elementen zusammengefügt werden.</p>
+
+<h3 id="extraktion-der-patient--und-encounter-ressource-im-document-bundle">Extraktion der Patient-/ und Encounter-Ressource im Document-Bundle</h3>
+
+<p>Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:</p>
+
+<ul>
+  <li>Die aufzulösende Referenz ist eine URN (immer absolut, z. B. “urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12”):
+    <ul>
+      <li>Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt</li>
+      <li>Wenn einer gefunden wird, ist die Auflösung erfolgreich (und endet hier)</li>
+      <li>Andernfalls schlägt die Auflösung fehl (und endet hier). Die Referenz hat in dieser Spezifikation keine definierte Bedeutung.</li>
+    </ul>
+  </li>
+  <li>Wenn die Referenz eine absolute URL ist (z. B. “https://fhir.example.org/base/Patient/123”, “https://fhir.example.org/base/Patient/123/_history/a”):
+    <ul>
+      <li>Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt</li>
+      <li>Wenn einer gefunden wird, ist die Auflösung hier erfolgreich (und endet)</li>
+      <li>Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)</li>
+    </ul>
+  </li>
+  <li>Wenn die Referenz die Form “[Typ]/[id]” hat (z. B. “Patient/123”)
+    <ul>
+      <li>Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem <a href="https://hl7.org/fhir/R4/references.html#regex">RESTful-URL-Regex</a> entspricht (z. B. “https://fhir.example.org/Observation/456”):
+        <ul>
+          <li>Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammengefügt (z. B. “https://fhir.example.org/” + “Patient/123” –&gt; “https://fhir.example.org/Patient/123”)</li>
+          <li>Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="persistierung-der-menschenlesbaren-repräsentation">Persistierung der menschenlesbaren Repräsentation</h3>
+
+<p>Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
+Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe <a href="https://www.hl7.org/fhir/R4/documentreference-mappings.html#fhircomposition">Abschnitt “2.42.8.7 FHIR Composition”</a>.</p>
+
+<p>Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.</p>
+
+<p><strong>Hinweis:</strong> Es ist zu beachten, dass in einem Attachment-Datentyp im Element “url” eine absolute URL anzugeben ist. Somit muss zunächst das Binary auf dem externen System per POST angelegt werden. Der hieraus resultierende Link kann anschließend im Attachment verwendet werden.</p>
+
+<p>Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt wird, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben wird.</p>
+
+<h3 id="hinweise-zum-umgang-mit-strukturierten-daten">Hinweise zum Umgang mit strukturierten Daten</h3>
+
+<p>Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket basis#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jan 30, 2026 14:10+0000">2026-01-30</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKProzedur" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur" />
+  <version value="1.0" />
+  <name value="ISiKProzedur" />
+  <status value="active" />
+  <description value="Diese Profil ermöglicht die Nutzung von Prozedur-bezogenen Informationen in ISiK Szenarien." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Procedure" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Procedure">
+      <path value="Procedure" />
+      <constraint>
+        <key value="proc-ISiK-1" />
+        <severity value="error" />
+        <human value="Falls die Prozedur per OPS kodiert wird, MUSS eine SNOMED-CT kodierte Category abgebildet werden" />
+        <expression value="code.coding.where(system = 'http://fhir.de/CodeSystem/dimdi/ops').exists() implies category.coding.where(system = 'http://snomed.info/sct').exists()" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur" />
+      </constraint>
+      <constraint>
+        <key value="proc-ISiK-2" />
+        <severity value="error" />
+        <human value="Falls eine codierte Prozedur vorliegt MUSS eine kodierte Category abgebildet werden" />
+        <expression value="code.coding.exists() implies category.coding.exists()" />
+        <source value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur" />
+      </constraint>
+    </element>
+    <element id="Procedure.id">
+      <path value="Procedure.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension">
+      <path value="Procedure.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.extension:Dokumentationsdatum">
+      <path value="Procedure.extension" />
+      <sliceName value="Dokumentationsdatum" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.status">
+      <path value="Procedure.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.category">
+      <path value="Procedure.category" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.category.coding">
+      <path value="Procedure.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.category.coding:SNOMED-CT">
+      <path value="Procedure.category.coding" />
+      <sliceName value="SNOMED-CT" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="preferred" />
+        <valueSet value="https://gematik.de/fhir/ISiK/ValueSet/ProzedurenKategorie-SCT" />
+      </binding>
+    </element>
+    <element id="Procedure.category.coding:SNOMED-CT.system">
+      <path value="Procedure.category.coding.system" />
+      <min value="1" />
+      <patternUri value="http://snomed.info/sct" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.category.coding:SNOMED-CT.code">
+      <path value="Procedure.category.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code">
+      <path value="Procedure.code" />
+      <constraint>
+        <key value="sct-ops-1" />
+        <severity value="error" />
+        <human value="Falls die Prozedur kodiert vorliegt, SOLL mindestens ein OPS oder SNOMED-CT Code angegeben werden. Ansonsten Freitext." />
+        <expression value="coding.where(system = 'http://snomed.info/sct').exists() or coding.where(system = 'http://fhir.de/CodeSystem/dimdi/ops').exists() or text.exists()" />
+        <source value="http://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur" />
+      </constraint>
+      <constraint>
+        <key value="proc-ISiK-3" />
+        <severity value="error" />
+        <human value="Entweder MUSS eine kodierte Prozedur vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt." />
+        <expression value="coding.exists().not() implies text.exists()" />
+        <source value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKProzedur" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding">
+      <path value="Procedure.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS">
+      <path value="Procedure.code.coding" />
+      <sliceName value="OPS" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/dimdi/ops" />
+      </binding>
+    </element>
+    <element id="Procedure.code.coding:OPS.extension">
+      <path value="Procedure.code.coding.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation">
+      <path value="Procedure.code.coding.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/seitenlokalisation" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.system">
+      <path value="Procedure.code.coding.system" />
+      <min value="1" />
+      <patternUri value="http://fhir.de/CodeSystem/dimdi/ops" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.version">
+      <path value="Procedure.code.coding.version" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED-CT">
+      <path value="Procedure.code.coding" />
+      <sliceName value="SNOMED-CT" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://gematik.de/fhir/ISiK/ValueSet/ProzedurenCodes-SCT" />
+      </binding>
+    </element>
+    <element id="Procedure.code.coding:SNOMED-CT.system">
+      <path value="Procedure.code.coding.system" />
+      <min value="1" />
+      <patternUri value="http://snomed.info/sct" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED-CT.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.text">
+      <path value="Procedure.code.text" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.subject">
+      <path value="Procedure.subject" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.subject.reference">
+      <path value="Procedure.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.encounter">
+      <path value="Procedure.encounter" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performed[x]">
+      <path value="Procedure.performed[x]" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.note">
+      <path value="Procedure.note" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

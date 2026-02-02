@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/test-Organspendeerkennung-ig/SearchParameter/Encounter-end-date> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Encounter-end-date"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter Encounter-end-date</b></p><a name=\"Encounter-end-date\"> </a><a name=\"hcEncounter-end-date\"> </a><h2>EndDate</h2><p>Parameter <code>end-date</code>:<code>date</code></p><div><p>The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/encounter.html\">Encounter</a></td></tr><tr><td>Expression</td><td><code>Encounter.period.end</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true</li></ul></td></tr><tr><td>Comparators</td><td>Allowed: eq, ne, gt, ge, lt, le, sa, eb, ap</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date>
+  ] ; # 
+  fhir:version [ fhir:v "0.0.1-rc"] ; # 
+  fhir:name [ fhir:v "EndDate"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-17"^^xsd:date] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."] ; # 
+  fhir:code [ fhir:v "end-date"] ; # 
+  fhir:base ( [ fhir:v "Encounter"] ) ; # 
+  fhir:type [ fhir:v "date"] ; # 
+  fhir:expression [ fhir:v "Encounter.period.end"] ; # 
+  fhir:comparator ( [ fhir:v "eq"] [ fhir:v "ne"] [ fhir:v "gt"] [ fhir:v "ge"] [ fhir:v "lt"] [ fhir:v "le"] [ fhir:v "sa"] [ fhir:v "eb"] [ fhir:v "ap"] ) . # 
+
+# -------------------------------------------------------------------------------------
+

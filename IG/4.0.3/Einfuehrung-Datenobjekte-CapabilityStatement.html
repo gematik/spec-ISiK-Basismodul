@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="konformitatserklarung-capabilitystatement">Konformitätserklärung <a href="https://hl7.org/fhir/R4/capabilitystatement.html">(CapabilityStatement)</a></h2>
+<table class='table table-bordered scrollbar '><thead><tr><th>Beschreibung</th></tr></thead><tbody><tr><td><p>Dieses CapabilityStatement beschreibt alle Interaktionen,
+die ein ISiK-konformes System unterstützen MUSS bzw. KANN,
+um das Bestätigungsverfahren für dieses Modul zu bestehen.</p>
+<p>Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.
+Hierzu MUSS die <a href="https://hl7.org/fhir/R4/http.html#capabilities">capabilities-Interaktion gemäß FHIR-Kernspezifikation</a> unterstützt werden.
+Der <code>MODE</code>-Parameter kann ignoriert werden.<br />
+Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (<code>kind = requirements</code>).
+Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN,
+wird die <a href="https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">CapabilityStatement-Expectation-Extension</a> mit den möglichen Werten <code>SHALL</code> (=MUSS) und <code>MAY</code> (=KANN) verwendet.</p>
+<p>Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom <code>kind = instance</code> liefern und im Element <code>software</code> den Namen
+und die Versionsnummer angeben.
+Darüber hinaus MUSS in <code>CapabilityStatement.instantiates</code> die Canonical URL des nachfolgenden CapabilityStatements angegeben werden.</p>
+<p>Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement mit <code>SHALL</code> gekennzeichnet sind.
+Das CapabilityStatement KANN darüber hinaus die mit <code>MAY</code> gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten,
+sofern diese in der Instanz implementiert wurden.</p>
+<p>Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.</p>
+<p><strong>HISTORIE:</strong></p>
+<p><em>Version 4.0.2</em></p>
+<ul>
+<li><code>change</code> Die Verbindlichkeit des Suchparameters <code>subject</code> wurde von SHALL auf MAY reduziert, da der Suchparameter <code>patient</code> für ISiK-Zwecke ausreichend ist.</li>
+</ul>
+<p><em>Version 4.0.1</em></p>
+<ul>
+<li><code>change</code> Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter <code>patient</code> und <code>encounter</code>, da diese für ISiK-Zwecke ausreichend sind.</li>
+</ul>
+</td></tr>
+</tbody></table>
+<table class='table table-bordered scrollbar '><tbody><tr><th>CanonicalURL</th><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer'>https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServer</a></td></tr><tr><th>Intention</th><td>requirements</td></tr><tr><th>Status</th><td>active</td></tr><tr><th>Version</th><td>4.0.3</td></tr></tbody></table>
+<h3 id="anforderungen-an-die-fhir-api">Anforderungen an die FHIR-API</h3>
+<table class='table table-bordered scrollbar '><tbody><tr><th>Modus</th><td>server</td></tr></tbody></table>
+<h4 id="interaktionen">Interaktionen</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>Ressourcentyp</th><th>Profile</th><th>Verbindlichkeit</th><th>READ</th><th>CREATE</th><th>SEARCH</th><th>UPDATE</th><th>DELETE</th></tr></thead><tbody><tr><td>Account</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall'>https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>AllergyIntolerance</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit'>https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Bundle</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle'>https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle</a></td><td>MAY</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CodeSystem</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem'>https://gematik.de/fhir/isik/StructureDefinition/ISiKCodeSystem</a></td><td>MAY</td><td>MAY</td><td></td><td>MAY</td><td></td><td></td></tr>
+<tr><td>Composition</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme'>https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme</a></td><td>MAY</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Condition</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose'>https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Coverage</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich'>https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler'>https://gematik.de/fhir/isik/StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Encounter</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung'>https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Location</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortRaum</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz</a></td><td>MAY</td><td>SHOULD</td><td></td><td>SHOULD</td><td>SHOULD</td><td></td></tr>
+<tr><td>Observation</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand'>https://gematik.de/fhir/isik/StructureDefinition/ISiKLebensZustand</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus'>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin'>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus'>https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus'>https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus'>https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Organization</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation'>https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisation</a>; <a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung'>https://gematik.de/fhir/isik/StructureDefinition/ISiKOrganisationFachabteilung</a></td><td>MAY</td><td>SHOULD</td><td></td><td>SHOULD</td><td></td><td></td></tr>
+<tr><td>Patient</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient'>https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Practitioner</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf'>https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Procedure</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur'>https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>RelatedPerson</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger'>https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger</a></td><td>SHALL</td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+<tr><td>Subscription</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKPatientMergeSubscription'>https://gematik.de/fhir/isik/StructureDefinition/ISiKPatientMergeSubscription</a></td><td>MAY</td><td>MAY</td><td>MAY</td><td></td><td>MAY</td><td>MAY</td></tr>
+<tr><td>ValueSet</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet'>https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet</a></td><td></td><td>SHALL</td><td></td><td>SHALL</td><td></td><td></td></tr>
+</tbody></table>
+<h4 id="ressourcentyp-spezifische-operations">Ressourcentyp-spezifische Operations</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>RessourcenTyp</th><th>Name</th><th>Spezifikation</th><th>Verbindlichkeit</th></tr></thead><tbody><tr><td>Subscription</td><td>$get-ws-binding-token</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token'>http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token</a></td><td>MAY</td></tr>
+</tbody></table> 
+<!--#### Globale Operations 
+
+-->
+<h4 id="dokumenten-endpunkt">Dokumenten-Endpunkt</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>Modus</th><th>Verbindlichkeit</th><th>Dokumentation</th><th>Profil</th></tr></thead><tbody><tr><td>consumer</td><td>SHALL</td><td><p>Endpunkt zur Entgegennahme von Subsystem-Berichten in Form eines ISiKBerichtBundles. Weitere Hinweise siehe <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html" title='Einfuehrung/Datenobjekte/Datenobjekte_BerichtSubsystem'>Bericht aus Subsystemen (Composition)</a></p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle'>https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle</a></td></tr>
+</tbody></table>
+<h4 id="suchparameter">Suchparameter</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>RessourcenTyp</th><th>SuchParameter</th><th>Verbindlichkeit</th><th>Hinweise</th><th>Definition</th></tr></thead><tbody><tr><td>Patient</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Patient</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Patient</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Patient</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Patient</td><td>identifier</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?identifier=http://fhir.krankenhaus.example|1032702</code><br />
+<code>GET [base]/Patient?identifier=1032702</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Patient-identifier'>http://hl7.org/fhir/SearchParameter/Patient-identifier</a></td></tr>
+<tr><td>Patient</td><td>family</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?family=Musterfrau</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-family'>http://hl7.org/fhir/SearchParameter/individual-family</a></td></tr>
+<tr><td>Patient</td><td>given</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?given=Erika</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-given'>http://hl7.org/fhir/SearchParameter/individual-given</a></td></tr>
+<tr><td>Patient</td><td>birthdate</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?birthdate=1964-12-08</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-birthdate'>http://hl7.org/fhir/SearchParameter/individual-birthdate</a></td></tr>
+<tr><td>Patient</td><td>gender</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?birthdate=1964-12-08</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-gender'>http://hl7.org/fhir/SearchParameter/individual-gender</a></td></tr>
+<tr><td>Patient</td><td>name</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?name=Erika</code><br />
+<code>GET [base]/Patient?name=Erika</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Patient-name'>http://hl7.org/fhir/SearchParameter/Patient-name</a></td></tr>
+<tr><td>Patient</td><td>address</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?address=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address'>http://hl7.org/fhir/SearchParameter/individual-address</a></td></tr>
+<tr><td>Patient</td><td>address-city</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?address-city=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-city'>http://hl7.org/fhir/SearchParameter/individual-address-city</a></td></tr>
+<tr><td>Patient</td><td>address-country</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?address-country=DE</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-country'>http://hl7.org/fhir/SearchParameter/individual-address-country</a></td></tr>
+<tr><td>Patient</td><td>address-postalcode</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?address-postalcode=10117</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-postalcode'>http://hl7.org/fhir/SearchParameter/individual-address-postalcode</a></td></tr>
+<tr><td>Patient</td><td>active</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?active=true</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Patient-active'>http://hl7.org/fhir/SearchParameter/Patient-active</a></td></tr>
+<tr><td>Patient</td><td>telecom</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Patient?telecom=phone|+49152236898</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-telecom'>http://hl7.org/fhir/SearchParameter/individual-telecom</a></td></tr>
+<tr><td>Encounter</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Encounter</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Encounter</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Encounter</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Encounter</td><td>identifier</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-identifier'>http://hl7.org/fhir/SearchParameter/clinical-identifier</a></td></tr>
+<tr><td>Encounter</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?status=finished</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-status'>http://hl7.org/fhir/SearchParameter/Encounter-status</a></td></tr>
+<tr><td>Encounter</td><td>class</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?class=IMP</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-class'>http://hl7.org/fhir/SearchParameter/Encounter-class</a></td></tr>
+<tr><td>Encounter</td><td>type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?type=http://fhir.de/CodeSystem/kontaktart-de|stationaer</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-type'>http://hl7.org/fhir/SearchParameter/clinical-type</a></td></tr>
+<tr><td>Encounter</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>Encounter</td><td>subject</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?subject=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-subject'>http://hl7.org/fhir/SearchParameter/Encounter-subject</a></td></tr>
+<tr><td>Encounter</td><td>account</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?account=Account/123</code><br />
+<code>GET [base]/Encounter?account:identifier=123456</code><br />
+<code>GET [base]/Encounter?account:identifier=https://example.org/fhir/sid/abrechnungsfallnr|123456</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-account'>http://hl7.org/fhir/SearchParameter/Encounter-account</a></td></tr>
+<tr><td>Encounter</td><td>date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?date=lt2020-26-10</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.<br />
+Bei der Formulierung der Suche sollten die Vorgaben aus der Definition der
+<a href="https://hl7.org/fhir/R4/search.html#prefix">Such-Prefixe</a>
+- und hier insbesondere die Unterschiede zwischen <code>lt</code> und <code>eb</code> bzw. <code>gt</code> und <code>sa</code> - beachtet werden.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-date'>http://hl7.org/fhir/SearchParameter/clinical-date</a></td></tr>
+<tr><td>Encounter</td><td>date-start</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?end-date=lt2020-26-10</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.<br />
+Bei diesem Suchparameter handelt es sich um eine Präadoption
+<a href="https://hl7.org/fhir/R5/SearchParameter/Encounter-date-start">eines Suchparameters, der in FHIR R5 hinzugefügt wurde</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start'>https://gematik.de/fhir/isik/SearchParameter/Encounter-date-start</a></td></tr>
+<tr><td>Encounter</td><td>end-date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?end-date=lt2020-26-10</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.<br />
+Bei diesem Suchparameter handelt es sich um eine Präadoption
+<a href="https://hl7.org/fhir/R5/SearchParameter/Encounter-end-date">eines Suchparameters, der in FHIR R5 hinzugefügt wurde</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date'>https://gematik.de/fhir/isik/SearchParameter/Encounter-end-date</a></td></tr>
+<tr><td>Encounter</td><td>location</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?location=Location/test</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-location'>http://hl7.org/fhir/SearchParameter/Encounter-location</a></td></tr>
+<tr><td>Encounter</td><td>service-provider</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Encounter?service-provider=Organization/test</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Encounter-service-provider'>http://hl7.org/fhir/SearchParameter/Encounter-service-provider</a></td></tr>
+<tr><td>Account</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Account</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Account</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Account</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Account</td><td>identifier</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Account?identifier=http://test.krankenhaus.de/fhir/sid/fallnr|123456</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-identifier'>http://hl7.org/fhir/SearchParameter/clinical-identifier</a></td></tr>
+<tr><td>Account</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Account?status=active</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Account-status'>http://hl7.org/fhir/SearchParameter/Account-status</a></td></tr>
+<tr><td>Account</td><td>type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Account?type=http://terminology.hl7.org/CodeSystem/v3-ActCode|AMB</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-type'>http://hl7.org/fhir/SearchParameter/clinical-type</a></td></tr>
+<tr><td>Account</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Account?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>Condition</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Condition</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Condition</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Condition</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Condition</td><td>clinical-status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?clincial-status=active</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Condition-clinical-status'>http://hl7.org/fhir/SearchParameter/Condition-clinical-status</a></td></tr>
+<tr><td>Condition</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>Condition</td><td>subject</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?subject=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Condition-subject'>http://hl7.org/fhir/SearchParameter/Condition-subject</a></td></tr>
+<tr><td>Condition</td><td>encounter</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?encounter=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Condition-encounter'>http://hl7.org/fhir/SearchParameter/Condition-encounter</a></td></tr>
+<tr><td>Condition</td><td>recorded-date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?recorded-date=2015-01-01</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Condition-recorded-date'>http://hl7.org/fhir/SearchParameter/Condition-recorded-date</a></td></tr>
+<tr><td>Condition</td><td>related</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?related=Condition/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>
+und <a href="https://ig.fhir.de/basisprofile-de/1.2.0/Ressourcen-DiagnosenCondition.html">Deutsche Basisprofile R4 - Doppel-/Mehrfachkodierte ICD-Codes</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://fhir.de/SearchParameter/Condition-related'>http://fhir.de/SearchParameter/Condition-related</a></td></tr>
+<tr><td>Condition</td><td>category</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Condition?category=http://hl7.org/fhir/ValueSet/condition-category|problem-list-item</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE QEDm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Condition-category'>http://hl7.org/fhir/SearchParameter/Condition-category</a></td></tr>
+<tr><td>Procedure</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Procedure</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Procedure</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Procedure</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Procedure</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?status=http://hl7.org/fhir/event-status|entered-in-error</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Procedure-status'>http://hl7.org/fhir/SearchParameter/Procedure-status</a></td></tr>
+<tr><td>Procedure</td><td>category</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?category=http://snomed.info/sct|387713003</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Procedure-category'>http://hl7.org/fhir/SearchParameter/Procedure-category</a></td></tr>
+<tr><td>Procedure</td><td>code</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-code'>http://hl7.org/fhir/SearchParameter/clinical-code</a></td></tr>
+<tr><td>Procedure</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>Procedure</td><td>subject</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?subject=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Procedure-subject'>http://hl7.org/fhir/SearchParameter/Procedure-subject</a></td></tr>
+<tr><td>Procedure</td><td>encounter</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?encounter=Encounter/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-encounter'>http://hl7.org/fhir/SearchParameter/clinical-encounter</a></td></tr>
+<tr><td>Procedure</td><td>date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Procedure?date=lt2020-26-10</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-date'>http://hl7.org/fhir/SearchParameter/clinical-date</a></td></tr>
+<tr><td>Coverage</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Coverage</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Coverage</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Coverage</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Coverage</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Coverage?status=active</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Coverage-status'>http://hl7.org/fhir/SearchParameter/Coverage-status</a></td></tr>
+<tr><td>Coverage</td><td>type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Coverage?type=http://fhir.de/CodeSystem/versicherungsart-de-basis|GKV</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Coverage-type'>http://hl7.org/fhir/SearchParameter/Coverage-type</a></td></tr>
+<tr><td>Coverage</td><td>beneficiary</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Coverage?beneficiary=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Coverage-beneficiary'>http://hl7.org/fhir/SearchParameter/Coverage-beneficiary</a></td></tr>
+<tr><td>Coverage</td><td>payor</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Coverage?payor:identifier=0123456789</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Coverage-payor'>http://hl7.org/fhir/SearchParameter/Coverage-payor</a></td></tr>
+<tr><td>Coverage</td><td>subscriber</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Coverage?subscriber=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Coverage-subscriber'>http://hl7.org/fhir/SearchParameter/Coverage-subscriber</a></td></tr>
+<tr><td>RelatedPerson</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>RelatedPerson</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>RelatedPerson</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>RelatedPerson</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>RelatedPerson</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/RelatedPerson-patient'>http://hl7.org/fhir/SearchParameter/RelatedPerson-patient</a></td></tr>
+<tr><td>RelatedPerson</td><td>name</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?name=Heidi</code><br />
+<code>GET [base]/RelatedPerson?name=Alpenzauber</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/RelatedPerson-name'>http://hl7.org/fhir/SearchParameter/RelatedPerson-name</a></td></tr>
+<tr><td>RelatedPerson</td><td>address</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?address=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address'>http://hl7.org/fhir/SearchParameter/individual-address</a></td></tr>
+<tr><td>RelatedPerson</td><td>address-city</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?address-city=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-city'>http://hl7.org/fhir/SearchParameter/individual-address-city</a></td></tr>
+<tr><td>RelatedPerson</td><td>address-country</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?address-country=DE</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-country'>http://hl7.org/fhir/SearchParameter/individual-address-country</a></td></tr>
+<tr><td>RelatedPerson</td><td>address-postalcode</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/RelatedPerson?address-postalcode=10117</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address-postalcode'>http://hl7.org/fhir/SearchParameter/individual-address-postalcode</a></td></tr>
+<tr><td>Practitioner</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Practitioner</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Practitioner</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Practitioner</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Practitioner</td><td>identifier</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?identifier=42</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Practitioner-identifier'>http://hl7.org/fhir/SearchParameter/Practitioner-identifier</a></td></tr>
+<tr><td>Practitioner</td><td>family</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?family=Alpenzauber</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-family'>http://hl7.org/fhir/SearchParameter/individual-family</a></td></tr>
+<tr><td>Practitioner</td><td>given</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?given=Heidi</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-given'>http://hl7.org/fhir/SearchParameter/individual-given</a></td></tr>
+<tr><td>Practitioner</td><td>name</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?name=Heidi</code>
+<code>GET [base]/Practitioner?name=Alpenzauber</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Practitioner-name'>http://hl7.org/fhir/SearchParameter/Practitioner-name</a></td></tr>
+<tr><td>Practitioner</td><td>address</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?address=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-address'>http://hl7.org/fhir/SearchParameter/individual-address</a></td></tr>
+<tr><td>Practitioner</td><td>gender</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Practitioner?gender=female</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/individual-gender'>http://hl7.org/fhir/SearchParameter/individual-gender</a></td></tr>
+<tr><td>CodeSystem</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>CodeSystem</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>CodeSystem</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>CodeSystem</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>CodeSystem</td><td>url</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/CodeSystem?url=http://example.org/fhir/CodeSystem/test</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#uri">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-url'>http://hl7.org/fhir/SearchParameter/conformance-url</a></td></tr>
+<tr><td>ValueSet</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>ValueSet</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>ValueSet</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>ValueSet</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>ValueSet</td><td>url</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/ValueSet?url=http://example.org/fhir/ValueSet/test</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#uri">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-url'>http://hl7.org/fhir/SearchParameter/conformance-url</a></td></tr>
+<tr><td>ValueSet</td><td>name</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/ValueSet?name=TestValueSet</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-name'>http://hl7.org/fhir/SearchParameter/conformance-name</a></td></tr>
+<tr><td>ValueSet</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/ValueSet?status=active</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-status'>http://hl7.org/fhir/SearchParameter/conformance-status</a></td></tr>
+<tr><td>ValueSet</td><td>version</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/ValueSet?version=1.0.0</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-version'>http://hl7.org/fhir/SearchParameter/conformance-version</a></td></tr>
+<tr><td>ValueSet</td><td>context-type-value</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:<br />
+* Hausinternen Prozeduren/Diagnosen-Codes
+* Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)<br />
+Use Cases im Zusammenhang:<br />
+(A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet
+bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der <a href="https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte-Operations?version=current">Terminvereinbarung durch einen Termin-Requestor</a> genutzt.<br />
+(B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.<br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#composite">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-context-type-value'>http://hl7.org/fhir/SearchParameter/conformance-context-type-value</a></td></tr>
+<tr><td>Observation</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Observation</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Observation</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Observation</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Observation</td><td>status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?status=http://hl7.org/fhir/observation-status|final</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-status'>http://hl7.org/fhir/SearchParameter/Observation-status</a></td></tr>
+<tr><td>Observation</td><td>category</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|social-history</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-category'>http://hl7.org/fhir/SearchParameter/Observation-category</a></td></tr>
+<tr><td>Observation</td><td>code</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?code=http://loinc.org|82810-3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-code'>http://hl7.org/fhir/SearchParameter/clinical-code</a></td></tr>
+<tr><td>Observation</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>Observation</td><td>subject</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?subject=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-subject'>http://hl7.org/fhir/SearchParameter/Observation-subject</a></td></tr>
+<tr><td>Observation</td><td>date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?date=ge2013-01-14&amp;date=le2021-12-31</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-date'>http://hl7.org/fhir/SearchParameter/clinical-date</a></td></tr>
+<tr><td>Observation</td><td>combo-code</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?combo-code=85354-9</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-combo-code'>http://hl7.org/fhir/SearchParameter/Observation-combo-code</a></td></tr>
+<tr><td>Observation</td><td>combo-code-value-quantity</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$120|http://unitsofmeasure.org|mm[Hg]</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#composite">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity'>http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity</a></td></tr>
+<tr><td>Observation</td><td>component-code</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?component-code=http://loinc.org|85354-9</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Observation-component-code'>http://hl7.org/fhir/SearchParameter/Observation-component-code</a></td></tr>
+<tr><td>Observation</td><td>encounter</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Observation?encounter=Encounter/234</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-encounter'>http://hl7.org/fhir/SearchParameter/clinical-encounter</a></td></tr>
+<tr><td>Location</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Location</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Location</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Location</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Location</td><td>identifier</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Location?identifier=http://fhir.krankenhaus.example|260120196</code><br />
+<code>GET [base]/Location?identifier=345678975</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-identifier'>http://hl7.org/fhir/SearchParameter/Location-identifier</a></td></tr>
+<tr><td>Location</td><td>address</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Location?address=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-address'>http://hl7.org/fhir/SearchParameter/Location-address</a></td></tr>
+<tr><td>Location</td><td>operational-status</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Location?operational-status=Unoccupied</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-operational-status'>http://hl7.org/fhir/SearchParameter/Location-operational-status</a></td></tr>
+<tr><td>Location</td><td>organization</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Location?organization=AbteilungAllgemeinchirurgieOrganisationBeispiel</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-organization'>http://hl7.org/fhir/SearchParameter/Location-organization</a></td></tr>
+<tr><td>Location</td><td>type</td><td>MAY</td><td><p><strong>Beispiel zur Suche nach Typ eines Standorts:</strong><br />
+<code>GET [base]/Location?type=bed</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-type'>http://hl7.org/fhir/SearchParameter/Location-type</a></td></tr>
+<tr><td>Location</td><td>partof</td><td>MAY</td><td><p><strong>Beispiel zur Suche nach Standort-Zugehörigkeit eines Raums (Zu welcher Abteilung gehört dieser Raum?):</strong><br />
+<code>[base]/Location?partof=RaumStandortBeispiel</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-partof'>http://hl7.org/fhir/SearchParameter/Location-partof</a></td></tr>
+<tr><td>Location</td><td>near</td><td>MAY</td><td><p><strong>Beispiel zur Suche nach Standort nahe (100m) Koordinaten:</strong><br />
+<code>GET [base]/Location?near=52.525851|13.37774|100|m</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#special">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Location-near'>http://hl7.org/fhir/SearchParameter/Location-near</a></td></tr>
+<tr><td>Organization</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>Organization</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>Organization</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>Organization</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>Organization</td><td>identifier</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?identifier=http://fhir.de/sid/arge-ik/iknr|260120196</code>
+<code>GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-bsnr|345678975</code>
+<code>GET [base]/Organization?identifier=345678975</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-identifier'>http://hl7.org/fhir/SearchParameter/Organization-identifier</a></td></tr>
+<tr><td>Organization</td><td>active</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?active=true</code>
+<code>GET [base]/Organization?active=false</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. -
+erscheint es erforderlich nach Ressourcen nicht aktiver Organisationseinheiten suchen zu können.
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-active'>http://hl7.org/fhir/SearchParameter/Organization-active</a></td></tr>
+<tr><td>Organization</td><td>type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?type=dept</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-type'>http://hl7.org/fhir/SearchParameter/Organization-type</a></td></tr>
+<tr><td>Organization</td><td>name</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?name=FA-Gynäkologie</code><br />
+<code>GET [base]/Organization?name=GYN</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-name'>http://hl7.org/fhir/SearchParameter/Organization-name</a></td></tr>
+<tr><td>Organization</td><td>address</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?address=Berlin</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#string">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-address'>http://hl7.org/fhir/SearchParameter/Organization-address</a></td></tr>
+<tr><td>Organization</td><td>partof</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?partof:identifier=260120196</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-partof'>http://hl7.org/fhir/SearchParameter/Organization-partof</a></td></tr>
+<tr><td>Organization</td><td>endpoint</td><td>MAY</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/Organization?endpoint:identifier=123456</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Organization-endpoint'>http://hl7.org/fhir/SearchParameter/Organization-endpoint</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>_id</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_id=103270</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Der Parameter <code>_id</code> wird selten alleinstehend verwendet, da sich zum Abruf einer Ressource
+anhand der <code>id</code>  die <code>READ</code>-Interaktion besser anbietet. Der Parameter kann jedoch verwendet werden,
+um den Abruf einer Ressource bspw. mit einem <code>_include</code> weiterer Ressourcen zu verbinden,
+z.B. zum Abruf eines Encounters in Verbindung mit dem zugehörigen Patienten:<br />
+<code>GET [base]/Encounter?_id=103270&amp;_include=Encounter:patient</code>
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>.<br />
+Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-id'>http://hl7.org/fhir/SearchParameter/Resource-id</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>_tag</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#all">Parameters for all resources</a>
+sowie Abschnitt <a href="https://www.hl7.org/fhir/R4/resource.html#simple-tags">Tags</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/Resource-tag'>http://hl7.org/fhir/SearchParameter/Resource-tag</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>_count</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/[Resourcetype]?_count=100</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://www.hl7.org/fhir/R4/search.html#count">Page Count</a>.</p>
+</td><td></td></tr>
+<tr><td>AllergyIntolerance</td><td>_has</td><td>MAY</td><td><p><strong>Beispiel:</strong> Suche nach allen Patienten, die eine Observation  mit dem Code '1234-5' haben<br />
+<code>GET [base]/Patient?_has:Observation:patient:code=1234-5</code><br />
+<strong>Beispiel:</strong> Suche nach allen Encountern, bei denen die Diagnose 'A12.3' gestellt wurde<br />
+<code>GET [base]/Encounter?_has:Condition:encounter:code=A12.3</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe FHIR-Kernspezifikation, Abschnitt <a href="https://hl7.org/fhir/R4/search.html#has">Reverse Chaining</a>.</p>
+</td><td></td></tr>
+<tr><td>AllergyIntolerance</td><td>clinical-status</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?clinical-status=active</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status'>http://hl7.org/fhir/SearchParameter/AllergyIntolerance-clinical-status</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>patient</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?patient=Patient/123</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#reference">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-patient'>http://hl7.org/fhir/SearchParameter/clinical-patient</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>onset</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?onset=2015-01-01T12:00:23Z+02:00</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset'>http://hl7.org/fhir/SearchParameter/AllergyIntolerance-onset</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>date</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?date=2015-01-01T12:00:23Z+02:00</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#date">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/conformance-date'>http://hl7.org/fhir/SearchParameter/conformance-date</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>category</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?category=environment</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category'>http://hl7.org/fhir/SearchParameter/AllergyIntolerance-category</a></td></tr>
+<tr><td>AllergyIntolerance</td><td>type</td><td>SHALL</td><td><p><strong>Beispiel:</strong><br />
+<code>GET [base]/AllergyIntolerance?type=allergy</code><br />
+<strong>Anwendungshinweis:</strong><br />
+Weitere Details siehe <a href="https://hl7.org/fhir/R4/search.html#token">FHIR-Kernspezifikation</a>.</p>
+</td><td><a target='_blank' href='/resolve?&scope=de.gematik.isik-basismodul@4.0.3&canonical=http://hl7.org/fhir/SearchParameter/clinical-type'>http://hl7.org/fhir/SearchParameter/clinical-type</a></td></tr>
+</tbody></table>
+<h4 id="reverse-include">(Reverse-)Include</h4>
+<table class='table table-bordered scrollbar '><thead><tr><th>RessourcenTyp</th><th>Include (SHALL)</th><th>Include (MAY)</th><th>Reverse Include (MAY)</th></tr></thead><tbody><tr><td>Patient</td><td></td><td></td><td>Composition:patient; Composition:subject; Composition:author; Condition:patient; Condition:subject; Procedure:patient; Procedure:subject; Encounter:patient; Encounter:subject; Coverage:beneficiary; Coverage:subscriber; Coverage:patient; Coverage:payor; Account:subject; Account:patient; AllergyIntolerance:patient; Observation:patient</td></tr>
+<tr><td>Encounter</td><td>Encounter:patient</td><td>Encounter:subject; Encounter:part-of; Encounter:diagnosis; Encounter:account</td><td>Encounter:part-of; Condition:encounter; Composition:encounter; Procedure:encounter</td></tr>
+<tr><td>Account</td><td></td><td></td><td></td></tr>
+<tr><td>Condition</td><td>Condition:patient; Condition:encounter</td><td>Condition:subject</td><td>Encounter:diagnosis</td></tr>
+<tr><td>Procedure</td><td>Procedure:patient; Procedure:encounter</td><td>Procedure:subject</td><td>Encounter:diagnosis</td></tr>
+<tr><td>Coverage</td><td>Coverage:patient</td><td>Coverage:subscriber; Coverage:payor; Coverage:beneficiary</td><td></td></tr>
+<tr><td>RelatedPerson</td><td>RelatedPerson:patient</td><td></td><td>Coverage:subscriber; Coverage:payor</td></tr>
+<tr><td>Practitioner</td><td></td><td></td><td></td></tr>
+<tr><td>CodeSystem</td><td></td><td></td><td></td></tr>
+<tr><td>ValueSet</td><td></td><td></td><td></td></tr>
+<tr><td>Composition</td><td></td><td></td><td></td></tr>
+<tr><td>Bundle</td><td></td><td></td><td></td></tr>
+<tr><td>Observation</td><td>Observation:encounter; Observation:patient</td><td>Observation:subject</td><td></td></tr>
+<tr><td>Location</td><td></td><td></td><td></td></tr>
+<tr><td>Organization</td><td></td><td></td><td></td></tr>
+<tr><td>AllergyIntolerance</td><td>AllergyIntolerance:patient; AllergyIntolerance:encounter</td><td>AllergyIntolerance:recorder; AllergyIntolerance:asserter</td><td></td></tr>
+<tr><td>Subscription</td><td></td><td></td><td></td></tr>
+</tbody></table>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

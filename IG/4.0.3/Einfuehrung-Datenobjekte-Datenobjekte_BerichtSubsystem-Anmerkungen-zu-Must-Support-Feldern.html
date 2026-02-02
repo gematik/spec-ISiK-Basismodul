@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="anmerkungen-zu-must-support-feldern">Anmerkungen zu Must-Support-Feldern</h3>
+<table class='table table-bordered scrollbar '><thead><tr><th>Feldname</th><th>Kurzbeschreibung</th><th>Hinweise</th></tr></thead><tbody><tr><td>Composition.text</td><td>Narrativ</td><td><p>HTML-Repräsentation des Dokumenten-Headers.<br />
+Bitte Hinweise unter <a href="https://hl7.org/fhir/documents.html#presentation">Document Presentation</a> beachten.<br />
+Der DokumentenHeader muss mindestens die folgenden Informationen enthalten:</p>
+<ul>
+<li><code>Composition.subject:Patient.name.family</code></li>
+<li><code>Composition.subject:Patient.birthDate</code></li>
+<li><code>Composition.subject:Patient.identifier:pid</code></li>
+<li><code>Composition.status</code></li>
+<li><code>Composition.type.text</code></li>
+<li><code>Composition.date</code></li>
+<li><code>Composition.title</code></li>
+<li><code>Composition.author.display</code></li>
+</ul>
+</td></tr>
+<tr><td>Composition.text.status</td><td></td><td></td></tr>
+<tr><td>Composition.text.div</td><td></td><td></td></tr>
+<tr><td>Composition.identifier</td><td>Eindeutige Dokumenten-ID</td><td><p>Eine vom erzeugenden Subsystem vergebene, eindeutige DokumentenID.<br />
+Wenn es sich bei dem verwendeten Identifier um eine OID oder UUID handelt, so ist hier der Wert <code>urn:ietf:rfc:3986</code> anzugeben und in <code>Identifier.value</code> das jeweilige Präfix <code>urn:uuid:</code> bzw. <code>urn:oid:</code> zu verwenden.<br />
+Beispiel:</p>
+<pre><code class="language-xml">&lt;identifier&gt; 
+    &lt;system value=&quot;urn:ietf:rfc:3986&quot;&gt;  
+    &lt;value value=&quot;urn:oid:2.16.840.1.113883.6.96&quot;&gt; 
+&lt;/identifier&gt;
+</code></pre>
+</td></tr>
+<tr><td>Composition.identifier.system</td><td>Namensraum des Identifiers</td><td><p>Hier ist stets der eindeutige Name (URL) des Namensraums anzugeben,
+aus dem der Identifier stammt.
+Hinweise zur Festlegung der URLs für lokale Namensräume sind in den
+<a href="https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Terminologie-Namensraeume?version=current">Deutschen Basisprofilen</a> beschrieben.<br />
+<strong>Begründung Pflichtfeld:</strong> <code>system</code> stellt in Kombination mit <code>value</code> die Eindeutigkeit eines Identifiers sicher.</p>
+</td></tr>
+<tr><td>Composition.identifier.value</td><td></td><td><p>Enthält den eigentlichen Wert des Identifiers.<br />
+<strong>Begründung Pflichtfeld:</strong> Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.</p>
+</td></tr>
+<tr><td>Composition.status</td><td>Status des Dokumentes</td><td><p>Im Kontext diese Moduls ist nur der Austausch finaler Berichte vorgesehen.
+Ein Mechanismus zur Änderung oder Ersetzung bereits übermittelter Daten ist derzeit nicht spezifiziert.
+Hier ist stets der Wert <code>final</code> anzugeben.</p>
+</td></tr>
+<tr><td>Composition.type</td><td>Dokumenttyp</td><td><p>Das Dokument KANN z.B. mittels LOINC, KDL oder IHE-D-XDS-Typecodes klassifiziert werden.<br />
+Derzeit MUSS lediglich eine textuelle Beschreibung des Dokumenttyps angegeben werden.</p>
+</td></tr>
+<tr><td>Composition.type.coding</td><td></td><td></td></tr>
+<tr><td>Composition.type.coding:LOINC</td><td></td><td></td></tr>
+<tr><td>Composition.type.coding:KDL</td><td></td><td></td></tr>
+<tr><td>Composition.type.coding:IHE</td><td></td><td></td></tr>
+<tr><td>Composition.type.text</td><td>Dokumenttyp (Freitext)</td><td><p>Freitextliche Beschreibung oder assoziierter Displaywert der primären Codierung des Dokumenttyps.</p>
+</td></tr>
+<tr><td>Composition.category</td><td>Dokument-Kategorie</td><td><p>Das Dokument KANN z.B. mittels LOINC oder IHE-D-XDS-Classcodes klassifiziert werden.</p>
+</td></tr>
+<tr><td>Composition.category.coding</td><td></td><td></td></tr>
+<tr><td>Composition.category.coding:LOINC</td><td></td><td></td></tr>
+<tr><td>Composition.category.coding:IHE</td><td></td><td></td></tr>
+<tr><td>Composition.subject</td><td>Patientenbezug</td><td></td></tr>
+<tr><td>Composition.subject.reference</td><td>Patienten-Link</td><td><p><strong>Begründung Pflichtfeld:</strong> Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung des Dokumentes zu einem Patienten
+und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.</p>
+</td></tr>
+<tr><td>Composition.encounter</td><td>Aufenthaltsbezug</td><td></td></tr>
+<tr><td>Composition.encounter.reference</td><td>Encounter-Link</td><td><p><strong>Begründung Pflichtfeld:</strong> Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt
+und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.<br />
+<strong>WICHTIGER Hinweis für Implementierer:</strong> Die Zuordnung MUSS auf auf einen Encounter der Ebene &quot;Abteilungskontakt&quot; (siehe hierzu <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html" title='Einfuehrung/UseCasesAnwendung/Abbildung-des-Konstrukts-Fall.page.md'>Abbildung des Konstrukts "Fall"</a>) erfolgen.
+Bei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)&quot;Fallnummer&quot; (hier: <code>Encounter.account</code>)
+unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)</p>
+</td></tr>
+<tr><td>Composition.date</td><td>Dokumentendatum</td><td><p>Datum der letzten Änderung des Dokumentes</p>
+</td></tr>
+<tr><td>Composition.author</td><td>Verfasser/Ersteller des Dokumentes (Person oder Subsystem/Gerät)</td><td><p>In der aktuellen Ausbaustufe von ISiK ist die Verwendung der textuellen Repräsentation (display)
+von Autor und Subsystem ausreichend.
+Die darüber hinausgehende Verlinkung auf Practitioner bzw. Device-Ressourcen
+KANN implementiert werden.</p>
+</td></tr>
+<tr><td>Composition.author.display</td><td>Bezeichnung des Verfassers (Freitext)</td><td><p>Freitextliche Bezeichnung des Verfassers (Person oder Subsystem/Gerät)</p>
+</td></tr>
+<tr><td>Composition.title</td><td>Dokumentenbezeichnung</td><td><p>Die Dokumentenbezeichnung dient der Darstellung des Dokumentes in einer Übersicht,
+z.B. in einer Patientenakte, und KANN der schnellen Auffindbarkeit
+eines gesuchten Dokumentes dienen.
+Geeignete Bezeichnungen sind zum Beispiel:</p>
+<ul>
+<li>&quot;Kleines Blutbild vom 13.10.2020&quot;</li>
+<li>&quot;Pathologiebefund (Abstrich) vom 13.10.2020&quot;</li>
+<li>&quot;Blutgasmessung vom 13.10.2020 14:14h&quot;</li>
+</ul>
+</td></tr>
+<tr><td>Composition.section</td><td>Kapitel</td><td><p>Das Dokument kann in mehrere Kapitel und Unterkapitel gegliedert werden.</p>
+</td></tr>
+<tr><td>Composition.section.title</td><td>Kapitelbezeichnung</td><td></td></tr>
+<tr><td>Composition.section.text</td><td>Narrativ</td><td><p>menschenlesbare HTML-Repräsentation des Inhalts dieses Kapitels.<br />
+Hinweise: Für Aggregation einer vollständigen menschenlesbaren Repräsentation
+MÜSSEN die Repräsentationen der einzelnen Kapitel an die Repräsentation
+der Metadaten (Composition.text) angehängt werden.
+Für die Separierung KÖNNEN einfache &lt;div&gt;-Tags verwendet werden.
+Es ist zu beachten, dass Kapitel auch Unterkapitel enthalten KÖNNEN
+(Composition.section.section), die bei der Aggregation entsprechend
+berücksichtigt werden MÜSSEN.<br />
+Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfasst folgende Informationen:</p>
+<ul>
+<li><code>section.title</code> + Freitext oder</li>
+<li><code>section.title</code> + <code>Resource.text</code> der referenzierten Ressource oder</li>
+<li><code>section.title</code> + eine aggregierte Repräsentation von <code>Resource.text</code>,
+wenn in einer Section mehrere Ressourcen referenziert werden
+(z.B. eine tabellarische Auflistung mehrere Blutdruckmesswerte, Diagnosen oder Allergien).</li>
+</ul>
+</td></tr>
+<tr><td>Composition.section.section</td><td>Unterkapitel</td><td></td></tr>
+</tbody></table>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

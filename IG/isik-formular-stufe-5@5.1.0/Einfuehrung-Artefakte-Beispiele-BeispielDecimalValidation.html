@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Formular-Modul</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Formular-Modul
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-Ziele.html">
+                                Ziele
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Spezifikation <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation.html">
+                                            Spezifikation
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-AkteureOrdner.html">
+                                            Akteure
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-FunktionenInteraktionen.html">
+                                            Funktionen und Interaktionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-BestPractice.html">
+                                            Best Practice f&#xFC;r FormularDefinitionen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Spezifikation-Begriffsdefinitionen.html">
+                                            Begriffsdefinitionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen.html">
+                                            Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Festlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t zu SDC
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDefinition.html">
+                                            FormularDefinition
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-FormularDaten.html">
+                                            FormularDaten
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Beispiele.html">
+                                            Beispiele
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="questionnaire">Questionnaire</h2>
+<h3 id="metadaten">Metadaten</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Name</b></th><td>ExampleEntryValidationDecimal</td><tr><th><b>URL</b></th><td><a target='_blank' href='/resolve?&scope=project:isik-stufe-5&canonical=https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal'>https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal</a></td><tr><th><b>Beschreibung</b></th><td><h3>Beispiel-Questionnaire Validierung von Dezimalwerten</h3>
+<ul>
+<li>Vorgabe des Eingabeformates mittels <a href="https://hl7.org/fhir/R4/extension-entryformat.html">entryFormat</a>-Extension</li>
+<li>Limitierung der Dezimalstellen mittels <a href="https://hl7.org/fhir/R4/extension-maxdecimalplaces.html">maxDecimalPlaces</a>-Extension</li>
+<li>Limitierung des Wertebereiches mittels <a href="https://hl7.org/fhir/R4/extension-minvalue.html">minValue</a>
+und <a href="https://hl7.org/fhir/R4/extension-maxvalue.html">maxValue</a>-Extension</li>
+<li>Vorgabe der anzugebenden Maßeinheit mittels <a href="https://hl7.org/fhir/R4/extension-questionnaire-unit.html">questionnaire-unit</a>-Extension</li>
+</ul>
+</td></table>
+<h3 id="gerendertes-formular">Gerendertes Formular</h3>
+<iframe src="https://gematik.github.io/poc-isik-formular/?base=https%3A%2F%2Ffhir.simplifier.net%2Fisik-stufe-5%2F&id=ExampleEntryValidationDecimal&minimal=true" style="width:100%; height:300px; border:none; display:block;"></iframe>
+<h3 id="globale-extensions">Globale Extensions</h3>
+<h3 id="item-definitionen">Item-Definitionen</h3>
+<table  class='table table-bordered fql-table'><thead><tr><th>ID</th><th>Text</th><th>Type</th><th>Validierung</th></tr></thead><tbody><tr><td>4</td><td>Körpermaße</td><td>group</td><td><table ><thead><tr></tr></thead><tbody></tbody></table></td></tr>
+<tr><td>4.1</td><td>Körpergewicht in kg (muss zwischen 20 und 300kg liegen)</td><td>decimal</td><td><table ><thead><tr><th>Extension</th><th>Wert</th></tr></thead><tbody><tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">questionnaire-unit</a></p>
+</td><td>kg</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/maxValue">maxValue</a></p>
+</td><td>300</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/minValue">minValue</a></p>
+</td><td>20</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces">maxDecimalPlaces</a></p>
+</td><td>1</td></tr>
+</tbody></table></td></tr>
+<tr><td>4.2</td><td>Körpergröße in m (muss zwischen 1m und 2.50m liegen)</td><td>decimal</td><td><table ><thead><tr><th>Extension</th><th>Wert</th></tr></thead><tbody><tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">questionnaire-unit</a></p>
+</td><td>m</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/entryFormat">entryFormat</a></p>
+</td><td>x.xx</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/maxValue">maxValue</a></p>
+</td><td>2.5</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/minValue">minValue</a></p>
+</td><td>1</td></tr>
+<tr><td><p><a href="http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces">maxDecimalPlaces</a></p>
+</td><td>3</td></tr>
+</tbody></table></td></tr>
+</tbody></table>
+<h3 id="quellcode">Quellcode</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#001c1300-7b04-42d6-9513-85b566f3f707" aria-controls="001c1300-7b04-42d6-9513-85b566f3f707" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#5781ad0b-15c1-4e0d-bcb5-3d1e6714c6a4" aria-controls="5781ad0b-15c1-4e0d-bcb5-3d1e6714c6a4" role="tab" data-toggle="tab">JSON</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="001c1300-7b04-42d6-9513-85b566f3f707">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire" title="Questionnaire" target="_blank">Questionnaire</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleEntryValidationDecimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">0.1.0</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleEntryValidationDecimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Validierung von Dezimalen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">draft</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gematik GmbH</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">### Beispiel-Questionnaire Validierung von Dezimalwerten  \n* Vorgabe des Eingabeformates mittels [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html)-Extension\n* Limitierung der Dezimalstellen mittels [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)-Extension\n* Limitierung des Wertebereiches mittels [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) \n   und [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)-Extension\n* Vorgabe der anzugebenden Ma&#223;einheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">group</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">false</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">kg</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxValue</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">300</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/minValue</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">20</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueInteger</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergewicht in kg (muss zwischen 20 und 300kg liegen)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">decimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.system" title="Questionnaire" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value.code" title="Questionnaire" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">m</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/entryFormat</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">x.xx</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxValue</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2.5</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/minValue</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.value" title="Questionnaire" target="_blank">valueInteger</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">3</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in m (muss zwischen 1m und 2.50m liegen)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">decimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Questionnaire</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="5781ad0b-15c1-4e0d-bcb5-3d1e6714c6a4">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.resourceType" title="Questionnaire" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Questionnaire</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.id" title="Questionnaire" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleEntryValidationDecimal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta" title="Questionnaire" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.meta.profile" title="Questionnaire" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.subjectType" title="Questionnaire" target="_blank">subjectType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">Patient</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.name" title="Questionnaire" target="_blank">name</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleEntryValidationDecimal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.version" title="Questionnaire" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">0.1.0</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.status" title="Questionnaire" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">draft</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.experimental" title="Questionnaire" target="_blank">experimental</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.publisher" title="Questionnaire" target="_blank">publisher</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gematik GmbH</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.title" title="Questionnaire" target="_blank">title</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Validierung von Dezimalen</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.description" title="Questionnaire" target="_blank">description</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">### Beispiel-Questionnaire Validierung von Dezimalwerten  \n* Vorgabe des Eingabeformates mittels [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html)-Extension\n* Limitierung der Dezimalstellen mittels [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html)-Extension\n* Limitierung des Wertebereiches mittels [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) \n   und [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html)-Extension\n* Vorgabe der anzugebenden Ma&#223;einheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">group</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.required" title="Questionnaire" target="_blank">required</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">false</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item" title="Questionnaire" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding" title="Questionnaire" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">kg</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxValue</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueDecimal" title="Questionnaire" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">300</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/minValue</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueDecimal" title="Questionnaire" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">20</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueInteger" title="Questionnaire" target="_blank">valueInteger</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergewicht in kg (muss zwischen 20 und 300kg liegen)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">decimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension" title="Questionnaire" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding" title="Questionnaire" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.code" title="Questionnaire" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">m</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueCoding.system" title="Questionnaire" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/entryFormat</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueString" title="Questionnaire" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">x.xx</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxValue</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueDecimal" title="Questionnaire" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">2.5</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/minValue</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueDecimal" title="Questionnaire" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.url" title="Questionnaire" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.extension.valueInteger" title="Questionnaire" target="_blank">valueInteger</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">3</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.linkId" title="Questionnaire" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.text" title="Questionnaire" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in m (muss zwischen 1m und 2.50m liegen)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDefinition.json#Questionnaire.item.item.type" title="Questionnaire" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">decimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div>
+  </div>
+</div>  
+<h2 id="questionnaireresponse">QuestionnaireResponse</h2>
+<p><h3 id="beispiel-vollstandig-und-valide-ausgefulltes-formular">Beispiel: vollständig und valide ausgefülltes Formular</h3>
+<table  class='table table-bordered fql-table transposed'><tr><th><b>Titel</b></th><td>Validierung von Dezimalen</td><tr><th><b>Datum</b></th><td>2025-01-01</td><tr><th><b>Patient</b></th><td>Patient/PatientinMinimal</td><tr><th><b>Autor</b></th><td>Patient/PatientinMinimal</td></table>
+<table  class='table table-bordered fql-table'><thead><tr><th>ID</th><th>Frage</th><th>Antwort</th></tr></thead><tbody><tr><td>4</td><td>Körpermaße</td><td></td></tr>
+<tr><td>4.1</td><td>Körpergewicht in kg (muss zwischen 20 und 300kg liegen)</td><td>66</td></tr>
+<tr><td>4.2</td><td>Körpergröße in m (muss zwischen 1m und 2.50m liegen)</td><td>1.66</td></tr>
+</tbody></table>
+<h3 id="quellcode">Quellcode</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#4358d716-d104-42a0-b721-aede931e2564" aria-controls="4358d716-d104-42a0-b721-aede931e2564" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#92e004b4-8ed8-4120-a844-d318f4c49a92" aria-controls="92e004b4-8ed8-4120-a844-d318f4c49a92" role="tab" data-toggle="tab">JSON</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="4358d716-d104-42a0-b721-aede931e2564">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse" title="ToDo" target="_blank">QuestionnaireResponse</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.id" title="ToDo" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleEntryValidationDecimalResponse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta" title="ToDo" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta.profile" title="ToDo" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.questionnaire" title="ToDo" target="_blank">questionnaire</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.questionnaire.extension" title="ToDo" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/display</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.questionnaire.extension.value" title="ToDo" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Validierung von Dezimalen</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">questionnaire</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.status" title="ToDo" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">completed</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject" title="ToDo" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject.reference" title="ToDo" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.authored" title="ToDo" target="_blank">authored</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2025-01-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author" title="ToDo" target="_blank">author</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author.reference" title="ToDo" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">author</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item" title="ToDo" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.linkId" title="ToDo" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.text" title="ToDo" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item" title="ToDo" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergewicht in kg (muss zwischen 20 und 300kg liegen)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.value" title="ToDo" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">66</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">answer</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item" title="ToDo" target="_blank">item</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">4.2</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in m (muss zwischen 1m und 2.50m liegen)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.value" title="ToDo" target="_blank">valueDecimal</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1.66</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">answer</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">item</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">QuestionnaireResponse</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="92e004b4-8ed8-4120-a844-d318f4c49a92">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.resourceType" title="ToDo" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">QuestionnaireResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.id" title="ToDo" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleEntryValidationDecimalResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta" title="ToDo" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.meta.profile" title="ToDo" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.questionnaire" title="ToDo" target="_blank">questionnaire</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/Questionnaire/ExampleEntryValidationDecimal</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire" title="ToDo" target="_blank">_questionnaire</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension" title="ToDo" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension.url" title="ToDo" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/display</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse._questionnaire.extension.valueString" title="ToDo" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Validierung von Dezimalen</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.status" title="ToDo" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">completed</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject" title="ToDo" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.subject.reference" title="ToDo" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author" title="ToDo" target="_blank">author</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.author.reference" title="ToDo" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMinimal</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.authored" title="ToDo" target="_blank">authored</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2025-01-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item" title="ToDo" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rperma&#223;e</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item" title="ToDo" target="_blank">item</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergewicht in kg (muss zwischen 20 und 300kg liegen)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.valueDecimal" title="ToDo" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">66</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.linkId" title="ToDo" target="_blank">linkId</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">4.2</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.text" title="ToDo" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">K&#246;rpergr&#246;&#223;e in m (muss zwischen 1m und 2.50m liegen)</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer" title="ToDo" target="_blank">answer</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/Resources/fsh-generated/resources/StructureDefinition-ISiKFormularDaten.json#QuestionnaireResponse.item.item.answer.valueDecimal" title="ToDo" target="_blank">valueDecimal</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1.66</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div>
+  </div>
+</div>
+</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

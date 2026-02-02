@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="ExampleISiKMedikament2"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">Beispiel für eine Infusionslösung</div>
+  </text>
+  <code>
+    <text value="Infusion bestehend aus 85mg Doxorubicin aufgelöst zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionslösung"/>
+  </code>
+  <status value="active"/>
+  <form>
+    <coding>
+      <system value="http://standardterms.edqm.eu"/>
+      <code value="11210000"/>
+      <display value="Solution for infusion"/>
+    </coding>
+  </form>
+  <ingredient>
+    <extension url="http://fhir.de/StructureDefinition/WirkstofftypEX">
+      <valueCoding>
+        <system value="http://fhir.de/CodeSystem/WirkstofftypCS"/>
+        <code value="IN"/>
+      </valueCoding>
+    </extension>
+    <itemCodeableConcept>
+      <coding>
+        <system value="http://fhir.de/CodeSystem/bfarm/atc"/>
+        <version value="2024"/>
+        <code value="L01DB01"/>
+        <display value="Doxorubicin"/>
+      </coding>
+    </itemCodeableConcept>
+    <isActive value="true"/>
+    <strength>
+      <numerator>
+        <value value="85"/>
+        <unit value="mg"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="mg"/>
+      </numerator>
+      <denominator>
+        <value value="250"/>
+        <unit value="Milliliter"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="mL"/>
+      </denominator>
+    </strength>
+  </ingredient>
+  <ingredient>
+    <itemReference>
+      <reference value="Medication/7f27cb8d-940b-43fd-ab8b-fee5b7a9b060"/>
+    </itemReference>
+    <isActive value="true"/>
+  </ingredient>
+</Medication>

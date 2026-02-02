@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>VS MII ICU Code Monitoring und Vitaldaten [LOINC] - ISiK Formularmodul Implementation Guide v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"12.129"}
+    h3,h4,h5,h6{--heading-prefix:"12.129"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav"><a name="l99">​</a>
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="Index.html">Index</a>
+  </li>
+  <li>
+    <a href="Ziele.html">Ziele</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="AkteureOhneCpS.html">Festlegungen Akteure ohne CapabilityStatement</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikationen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_BestPractice.html">Best Practice für FormularDefinitionen</a>
+      </li>
+      <li>
+        <a href="Spezifikationen_Begriffsdefinitionen.html">Begriffsdefinitionen</a>
+      </li>
+      <li><a name="l233">​</a>
+        <a href="extensions.html">Extensions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Formularmodul Implementation Guide<br/>
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>FHIR-Artefakte</b></a></li><li><b>VS MII ICU Code Monitoring und Vitaldaten [LOINC]</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-loinc.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-loinc.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-vs-mii-icu-code-monitoring-und-vitaldaten-loinc.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: VS MII ICU Code Monitoring und Vitaldaten [LOINC]
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc<button data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc" title="Click to copy URL" class="btn-copy"></button></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">6.0.0-rc<button data-clipboard-text="https://gematik.de/fhir/isik/ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc|6.0.0-rc" title="Click to copy versioned URL" class="btn-copy"></button></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2025-12-17
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">VS_MII_ICU_Code_Monitoring_und_Vitaldaten_LOINC</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-sd-mii-icu-monitoring-und-vitaldaten.html">SD MII ICU Monitoring und Vitaldaten</a></li>
+</ul>
+
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+  <!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div data-fhir="generated"><p class="res-header-id"></p><a name="vs-mii-icu-code-monitoring-und-vitaldaten-loinc"> </a><a name="hcvs-mii-icu-code-monitoring-und-vitaldaten-loinc"> </a>
+<ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/8867-4/">8867-4</a></td><td>Heart Rate</td></tr><tr><td><a href="https://loinc.org/8480-6/">8480-6</a></td><td>Systolic blood Pressure</td></tr><tr><td><a href="https://loinc.org/8478-0/">8478-0</a></td><td>Mean blood Pressure</td></tr><tr><td><a href="https://loinc.org/8462-4/">8462-4</a></td><td>Diastolic blood pressure</td></tr><tr><td><a href="https://loinc.org/60985-9/">60985-9</a></td><td>Central venous pressure (CVP)</td></tr><tr><td><a href="https://loinc.org/8440-0/">8440-0</a></td><td>Pulmonary artery Systolic blood pressure</td></tr><tr><td><a href="https://loinc.org/8414-5/">8414-5</a></td><td>Pulmonary artery Mean blood pressure</td></tr><tr><td><a href="https://loinc.org/8385-7/">8385-7</a></td><td>Pulmonary artery Diastolic blood pressure</td></tr><tr><td><a href="https://loinc.org/75994-4/">75994-4</a></td><td>Pulmonary artery wedge pressure</td></tr><tr><td><a href="https://loinc.org/8737-9/">8737-9</a></td><td>Left ventricular Cardiac output by Indicator dilution</td></tr><tr><td><a href="https://loinc.org/8751-0/">8751-0</a></td><td>Left ventricular Cardiac index by Indicator dilution</td></tr><tr><td><a href="https://loinc.org/8741-1/">8741-1</a></td><td>Left ventricular Cardiac output</td></tr><tr><td><a href="https://loinc.org/75919-1/">75919-1</a></td><td>Left ventricular Cardiac index</td></tr><tr><td><a href="https://loinc.org/8837-7/">8837-7</a></td><td>Systemic vascular Resistance index</td></tr><tr><td><a href="https://loinc.org/8834-4/">8834-4</a></td><td>Pulmonary vascular Resistance index</td></tr><tr><td><a href="https://loinc.org/8771-8/">8771-8</a></td><td>Left ventricular Stroke volume by Indicator dilution</td></tr><tr><td><a href="https://loinc.org/8791-6/">8791-6</a></td><td>Left ventricular Stroke volume index by Indicator dilution</td></tr><tr><td><a href="https://loinc.org/20562-5/">20562-5</a></td><td>Left ventricular Stroke volume</td></tr><tr><td><a href="https://loinc.org/76297-1/">76297-1</a></td><td>Left ventricular Stroke volume index</td></tr><tr><td><a href="https://loinc.org/8329-5/">8329-5</a></td><td>Body temperature - Core</td></tr><tr><td><a href="https://loinc.org/59408-5/">59408-5</a></td><td>Oxygen saturation in Arterial blood by Pulse oximetry</td></tr><tr><td><a href="https://loinc.org/59418-4/">59418-4</a></td><td>Oxygen saturation in Blood Postductal by Pulse oximetry</td></tr><tr><td><a href="https://loinc.org/59407-7/">59407-7</a></td><td>Oxygen saturation in Blood Preductal by Pulse oximetry</td></tr><tr><td><a href="https://loinc.org/60956-0/">60956-0</a></td><td>Intracranial pressure (ICP)</td></tr><tr><td><a href="https://loinc.org/8404-6/">8404-6</a></td><td>Left ventricular Intrachamber mean pressure</td></tr><tr><td><a href="https://loinc.org/8406-1/">8406-1</a></td><td>Right ventricular Intrachamber mean pressure</td></tr><tr><td><a href="https://loinc.org/8430-1/">8430-1</a></td><td>Left ventricular Intrachamber systolic pressure</td></tr><tr><td><a href="https://loinc.org/8432-7/">8432-7</a></td><td>Right ventricular Intrachamber systolic pressure</td></tr><tr><td><a href="https://loinc.org/8375-8/">8375-8</a></td><td>Left ventricular Intrachamber diastolic pressure</td></tr><tr><td><a href="https://loinc.org/8377-4/">8377-4</a></td><td>Right ventricular Intrachamber diastolic pressure</td></tr><tr><td><a href="https://loinc.org/60998-2/">60998-2</a></td><td>Right atrial pressure Systolic</td></tr><tr><td><a href="https://loinc.org/60989-1/">60989-1</a></td><td>Left atrial pressure Systolic</td></tr><tr><td><a href="https://loinc.org/8399-8/">8399-8</a></td><td>Left atrial Intrachamber mean pressure</td></tr><tr><td><a href="https://loinc.org/8400-4/">8400-4</a></td><td>Right atrial Intrachamber mean pressure</td></tr><tr><td><a href="https://loinc.org/75933-2/">75933-2</a></td><td>Left atrial pressure Diastolic</td></tr><tr><td><a href="https://loinc.org/60997-4/">60997-4</a></td><td>Right atrial pressure Diastolic</td></tr><tr><td><a href="https://loinc.org/29463-7/">29463-7</a></td><td>Body weight</td></tr><tr><td><a href="https://loinc.org/50064-5/">50064-5</a></td><td>Ideal body weight</td></tr><tr><td><a href="https://loinc.org/8302-2/">8302-2</a></td><td>Body height</td></tr><tr><td><a href="https://loinc.org/8303-0/">8303-0</a></td><td>Body height [Percentile]</td></tr><tr><td><a href="https://loinc.org/8336-0/">8336-0</a></td><td>Body weight [Percentile] Per age</td></tr><tr><td><a href="https://loinc.org/8333-7/">8333-7</a></td><td>Tympanic membrane temperature</td></tr><tr><td><a href="https://loinc.org/8332-9/">8332-9</a></td><td>Rectal temperature</td></tr><tr><td><a href="https://loinc.org/60836-4/">60836-4</a></td><td>Esophageal temperature</td></tr><tr><td><a href="https://loinc.org/8334-5/">8334-5</a></td><td>Body temperature - Urinary bladder</td></tr><tr><td><a href="https://loinc.org/8328-7/">8328-7</a></td><td>Axillary temperature</td></tr><tr><td><a href="https://loinc.org/8331-1/">8331-1</a></td><td>Oral temperature</td></tr><tr><td><a href="https://loinc.org/60834-9/">60834-9</a></td><td>Blood temperature</td></tr><tr><td><a href="https://loinc.org/60955-2/">60955-2</a></td><td>Airway temperature</td></tr><tr><td><a href="https://loinc.org/61009-7/">61009-7</a></td><td>Myocardial temperature</td></tr><tr><td><a href="https://loinc.org/76010-8/">76010-8</a></td><td>Nasal temperature</td></tr><tr><td><a href="https://loinc.org/8310-5/">8310-5</a></td><td>Body temperature</td></tr><tr><td><a href="https://loinc.org/60838-0/">60838-0</a></td><td>Nasopharyngeal temperature</td></tr><tr><td><a href="https://loinc.org/104063-3/">104063-3</a></td><td>Body temperature - Groin</td></tr></table></li></ul></div>
+
+  <p>&nbsp;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div data-fhir="generated"><p class="res-header-id"></p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on Loinc v2.81<span class="copy-text-inline"><button data-clipboard-text="http://loinc.org|2.81" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 54 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://loinc.org-8867-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8867-4/">8867-4</a></td><td>Heart rate</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8867-4&quot;, &quot;display&quot;: &quot;Heart rate&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8867-4&quot;&gt;&lt;display value=&quot;Heart rate&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8480-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8480-6/">8480-6</a></td><td>Systolic blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8480-6&quot;, &quot;display&quot;: &quot;Systolic blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8480-6&quot;&gt;&lt;display value=&quot;Systolic blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8478-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8478-0/">8478-0</a></td><td>Mean blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8478-0&quot;, &quot;display&quot;: &quot;Mean blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8478-0&quot;&gt;&lt;display value=&quot;Mean blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8462-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8462-4/">8462-4</a></td><td>Diastolic blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8462-4&quot;, &quot;display&quot;: &quot;Diastolic blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8462-4&quot;&gt;&lt;display value=&quot;Diastolic blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60985-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60985-9/">60985-9</a></td><td>Central venous pressure (CVP)</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60985-9&quot;, &quot;display&quot;: &quot;Central venous pressure (CVP)&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60985-9&quot;&gt;&lt;display value=&quot;Central venous pressure (CVP)&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8440-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8440-0/">8440-0</a></td><td>Pulmonary artery Systolic blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8440-0&quot;, &quot;display&quot;: &quot;Pulmonary artery Systolic blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8440-0&quot;&gt;&lt;display value=&quot;Pulmonary artery Systolic blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8414-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8414-5/">8414-5</a></td><td>Pulmonary artery Mean blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8414-5&quot;, &quot;display&quot;: &quot;Pulmonary artery Mean blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8414-5&quot;&gt;&lt;display value=&quot;Pulmonary artery Mean blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8385-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8385-7/">8385-7</a></td><td>Pulmonary artery Diastolic blood pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8385-7&quot;, &quot;display&quot;: &quot;Pulmonary artery Diastolic blood pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8385-7&quot;&gt;&lt;display value=&quot;Pulmonary artery Diastolic blood pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-75994-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/75994-4/">75994-4</a></td><td>Pulmonary artery wedge pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;75994-4&quot;, &quot;display&quot;: &quot;Pulmonary artery wedge pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;75994-4&quot;&gt;&lt;display value=&quot;Pulmonary artery wedge pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8737-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8737-9/">8737-9</a></td><td>Left ventricular Cardiac output by Indicator dilution</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8737-9&quot;, &quot;display&quot;: &quot;Left ventricular Cardiac output by Indicator dilution&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8737-9&quot;&gt;&lt;display value=&quot;Left ventricular Cardiac output by Indicator dilution&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8751-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8751-0/">8751-0</a></td><td>Left ventricular Cardiac index by Indicator dilution</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8751-0&quot;, &quot;display&quot;: &quot;Left ventricular Cardiac index by Indicator dilution&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8751-0&quot;&gt;&lt;display value=&quot;Left ventricular Cardiac index by Indicator dilution&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8741-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8741-1/">8741-1</a></td><td>Left ventricular Cardiac output</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8741-1&quot;, &quot;display&quot;: &quot;Left ventricular Cardiac output&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8741-1&quot;&gt;&lt;display value=&quot;Left ventricular Cardiac output&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-75919-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/75919-1/">75919-1</a></td><td>Left ventricular Cardiac index</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;75919-1&quot;, &quot;display&quot;: &quot;Left ventricular Cardiac index&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;75919-1&quot;&gt;&lt;display value=&quot;Left ventricular Cardiac index&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8837-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8837-7/">8837-7</a></td><td>Systemic vascular Resistance index</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8837-7&quot;, &quot;display&quot;: &quot;Systemic vascular Resistance index&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8837-7&quot;&gt;&lt;display value=&quot;Systemic vascular Resistance index&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8834-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8834-4/">8834-4</a></td><td>Pulmonary vascular Resistance index</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8834-4&quot;, &quot;display&quot;: &quot;Pulmonary vascular Resistance index&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8834-4&quot;&gt;&lt;display value=&quot;Pulmonary vascular Resistance index&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8771-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8771-8/">8771-8</a></td><td>Left ventricular Stroke volume by Indicator dilution</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8771-8&quot;, &quot;display&quot;: &quot;Left ventricular Stroke volume by Indicator dilution&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8771-8&quot;&gt;&lt;display value=&quot;Left ventricular Stroke volume by Indicator dilution&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8791-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8791-6/">8791-6</a></td><td>Left ventricular Stroke volume index by Indicator dilution</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8791-6&quot;, &quot;display&quot;: &quot;Left ventricular Stroke volume index by Indicator dilution&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8791-6&quot;&gt;&lt;display value=&quot;Left ventricular Stroke volume index by Indicator dilution&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-20562-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/20562-5/">20562-5</a></td><td>Left ventricular Stroke volume</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;20562-5&quot;, &quot;display&quot;: &quot;Left ventricular Stroke volume&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;20562-5&quot;&gt;&lt;display value=&quot;Left ventricular Stroke volume&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76297-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/76297-1/">76297-1</a></td><td>Left ventricular Stroke volume index</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;76297-1&quot;, &quot;display&quot;: &quot;Left ventricular Stroke volume index&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;76297-1&quot;&gt;&lt;display value=&quot;Left ventricular Stroke volume index&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8329-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8329-5/">8329-5</a></td><td>Body temperature - Core</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8329-5&quot;, &quot;display&quot;: &quot;Body temperature - Core&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8329-5&quot;&gt;&lt;display value=&quot;Body temperature - Core&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-59408-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/59408-5/">59408-5</a></td><td>Oxygen saturation in Arterial blood by Pulse oximetry</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;59408-5&quot;, &quot;display&quot;: &quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;59408-5&quot;&gt;&lt;display value=&quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-59418-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/59418-4/">59418-4</a></td><td>Oxygen saturation in Blood Postductal by Pulse oximetry</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;59418-4&quot;, &quot;display&quot;: &quot;Oxygen saturation in Blood Postductal by Pulse oximetry&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;59418-4&quot;&gt;&lt;display value=&quot;Oxygen saturation in Blood Postductal by Pulse oximetry&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-59407-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/59407-7/">59407-7</a></td><td>Oxygen saturation in Blood Preductal by Pulse oximetry</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;59407-7&quot;, &quot;display&quot;: &quot;Oxygen saturation in Blood Preductal by Pulse oximetry&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;59407-7&quot;&gt;&lt;display value=&quot;Oxygen saturation in Blood Preductal by Pulse oximetry&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60956-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60956-0/">60956-0</a></td><td>Intracranial pressure (ICP)</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60956-0&quot;, &quot;display&quot;: &quot;Intracranial pressure (ICP)&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60956-0&quot;&gt;&lt;display value=&quot;Intracranial pressure (ICP)&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8404-6"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8404-6/">8404-6</a></td><td>Left ventricular Intrachamber mean pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8404-6&quot;, &quot;display&quot;: &quot;Left ventricular Intrachamber mean pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8404-6&quot;&gt;&lt;display value=&quot;Left ventricular Intrachamber mean pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8406-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8406-1/">8406-1</a></td><td>Right ventricular Intrachamber mean pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8406-1&quot;, &quot;display&quot;: &quot;Right ventricular Intrachamber mean pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8406-1&quot;&gt;&lt;display value=&quot;Right ventricular Intrachamber mean pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8430-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8430-1/">8430-1</a></td><td>Left ventricular Intrachamber systolic pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8430-1&quot;, &quot;display&quot;: &quot;Left ventricular Intrachamber systolic pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8430-1&quot;&gt;&lt;display value=&quot;Left ventricular Intrachamber systolic pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8432-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8432-7/">8432-7</a></td><td>Right ventricular Intrachamber systolic pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8432-7&quot;, &quot;display&quot;: &quot;Right ventricular Intrachamber systolic pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8432-7&quot;&gt;&lt;display value=&quot;Right ventricular Intrachamber systolic pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8375-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8375-8/">8375-8</a></td><td>Left ventricular Intrachamber diastolic pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8375-8&quot;, &quot;display&quot;: &quot;Left ventricular Intrachamber diastolic pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8375-8&quot;&gt;&lt;display value=&quot;Left ventricular Intrachamber diastolic pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8377-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8377-4/">8377-4</a></td><td>Right ventricular Intrachamber diastolic pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8377-4&quot;, &quot;display&quot;: &quot;Right ventricular Intrachamber diastolic pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8377-4&quot;&gt;&lt;display value=&quot;Right ventricular Intrachamber diastolic pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60998-2"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60998-2/">60998-2</a></td><td>Right atrial pressure Systolic</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60998-2&quot;, &quot;display&quot;: &quot;Right atrial pressure Systolic&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60998-2&quot;&gt;&lt;display value=&quot;Right atrial pressure Systolic&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60989-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60989-1/">60989-1</a></td><td>Left atrial pressure Systolic</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60989-1&quot;, &quot;display&quot;: &quot;Left atrial pressure Systolic&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60989-1&quot;&gt;&lt;display value=&quot;Left atrial pressure Systolic&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8399-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8399-8/">8399-8</a></td><td>Left atrial Intrachamber mean pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8399-8&quot;, &quot;display&quot;: &quot;Left atrial Intrachamber mean pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8399-8&quot;&gt;&lt;display value=&quot;Left atrial Intrachamber mean pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8400-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8400-4/">8400-4</a></td><td>Right atrial Intrachamber mean pressure</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8400-4&quot;, &quot;display&quot;: &quot;Right atrial Intrachamber mean pressure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8400-4&quot;&gt;&lt;display value=&quot;Right atrial Intrachamber mean pressure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-75933-2"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/75933-2/">75933-2</a></td><td>Left atrial pressure Diastolic</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;75933-2&quot;, &quot;display&quot;: &quot;Left atrial pressure Diastolic&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;75933-2&quot;&gt;&lt;display value=&quot;Left atrial pressure Diastolic&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60997-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60997-4/">60997-4</a></td><td>Right atrial pressure Diastolic</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60997-4&quot;, &quot;display&quot;: &quot;Right atrial pressure Diastolic&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60997-4&quot;&gt;&lt;display value=&quot;Right atrial pressure Diastolic&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-29463-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/29463-7/">29463-7</a></td><td>Body weight</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;29463-7&quot;, &quot;display&quot;: &quot;Body weight&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;29463-7&quot;&gt;&lt;display value=&quot;Body weight&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-50064-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/50064-5/">50064-5</a></td><td>Ideal body weight</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;50064-5&quot;, &quot;display&quot;: &quot;Ideal body weight&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;50064-5&quot;&gt;&lt;display value=&quot;Ideal body weight&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8302-2"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8302-2/">8302-2</a></td><td>Body height</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8302-2&quot;, &quot;display&quot;: &quot;Body height&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8302-2&quot;&gt;&lt;display value=&quot;Body height&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8303-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8303-0/">8303-0</a></td><td>Body height [Percentile]</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8303-0&quot;, &quot;display&quot;: &quot;Body height [Percentile]&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8303-0&quot;&gt;&lt;display value=&quot;Body height [Percentile]&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8336-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8336-0/">8336-0</a></td><td>Body weight [Percentile] Per age</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8336-0&quot;, &quot;display&quot;: &quot;Body weight [Percentile] Per age&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8336-0&quot;&gt;&lt;display value=&quot;Body weight [Percentile] Per age&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8333-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8333-7/">8333-7</a></td><td>Tympanic membrane temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8333-7&quot;, &quot;display&quot;: &quot;Tympanic membrane temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8333-7&quot;&gt;&lt;display value=&quot;Tympanic membrane temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8332-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8332-9/">8332-9</a></td><td>Rectal temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8332-9&quot;, &quot;display&quot;: &quot;Rectal temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8332-9&quot;&gt;&lt;display value=&quot;Rectal temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60836-4"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60836-4/">60836-4</a></td><td>Esophageal temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60836-4&quot;, &quot;display&quot;: &quot;Esophageal temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60836-4&quot;&gt;&lt;display value=&quot;Esophageal temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8334-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8334-5/">8334-5</a></td><td>Body temperature - Urinary bladder</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8334-5&quot;, &quot;display&quot;: &quot;Body temperature - Urinary bladder&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8334-5&quot;&gt;&lt;display value=&quot;Body temperature - Urinary bladder&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8328-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8328-7/">8328-7</a></td><td>Axillary temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8328-7&quot;, &quot;display&quot;: &quot;Axillary temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8328-7&quot;&gt;&lt;display value=&quot;Axillary temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8331-1"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8331-1/">8331-1</a></td><td>Oral temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8331-1&quot;, &quot;display&quot;: &quot;Oral temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8331-1&quot;&gt;&lt;display value=&quot;Oral temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60834-9"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60834-9/">60834-9</a></td><td>Blood temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60834-9&quot;, &quot;display&quot;: &quot;Blood temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60834-9&quot;&gt;&lt;display value=&quot;Blood temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60955-2"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60955-2/">60955-2</a></td><td>Airway temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60955-2&quot;, &quot;display&quot;: &quot;Airway temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60955-2&quot;&gt;&lt;display value=&quot;Airway temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-61009-7"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/61009-7/">61009-7</a></td><td>Myocardial temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;61009-7&quot;, &quot;display&quot;: &quot;Myocardial temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;61009-7&quot;&gt;&lt;display value=&quot;Myocardial temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-76010-8"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/76010-8/">76010-8</a></td><td>Nasal temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;76010-8&quot;, &quot;display&quot;: &quot;Nasal temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;76010-8&quot;&gt;&lt;display value=&quot;Nasal temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-8310-5"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/8310-5/">8310-5</a></td><td>Body temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;8310-5&quot;, &quot;display&quot;: &quot;Body temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;8310-5&quot;&gt;&lt;display value=&quot;Body temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-60838-0"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/60838-0/">60838-0</a></td><td>Nasopharyngeal temperature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;60838-0&quot;, &quot;display&quot;: &quot;Nasopharyngeal temperature&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;60838-0&quot;&gt;&lt;display value=&quot;Nasopharyngeal temperature&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://loinc.org-104063-3"> </a><code>http://loinc.org</code></td><td style="white-space:nowrap">&nbsp;&nbsp;<a href="https://loinc.org/104063-3/">104063-3</a></td><td>Body temperature - Groin</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.81&quot;, &quot;code&quot;: &quot;104063-3&quot;, &quot;display&quot;: &quot;Body temperature - Groin&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;&gt;&lt;version value=&quot;2.81&quot;&gt;&lt;code value=&quot;104063-3&quot;&gt;&lt;display value=&quot;Body temperature - Groin&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+    <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket formular#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jan 26, 2026 12:32+0000">2026-01-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

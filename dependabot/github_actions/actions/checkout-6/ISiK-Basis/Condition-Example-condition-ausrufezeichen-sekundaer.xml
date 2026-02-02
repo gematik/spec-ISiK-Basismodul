@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="Example-condition-ausrufezeichen-sekundaer"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Condition Example-condition-ausrufezeichen-sekundaer</b></p><a name="Example-condition-ausrufezeichen-sekundaer"> </a><a name="hcExample-condition-ausrufezeichen-sekundaer"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKDiagnose.html">ISiKDiagnose</a></p></div><p><b>Condition Related</b>: <a href="Condition-Example-condition-ausrufezeichen-primaer.html">Condition Psychische und Verhaltensstörungen durch Halluzinogene: Schädlicher Gebrauch</a></p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical recurrence}">Recurrence</span></p><p><b>code</b>: <span title="Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm U69.32}">Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen</span></p><p><b>subject</b>: <a href="Patient-PatientinMusterfrau.html">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href="Encounter-Fachabteilungskontakt.html">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>recordedDate</b>: 2021-05-24</p><p><b>note</b>: </p><blockquote><div><p>Beispiel für eine Anmerkung</p>
+</div></blockquote></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/condition-related">
+    <valueReference>
+      <reference value="Condition/Example-condition-ausrufezeichen-primaer"/>
+    </valueReference>
+  </extension>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="recurrence"/>
+    </coding>
+  </clinicalStatus>
+  <code>
+    <coding>
+      <extension url="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen">
+        <valueCoding>
+          <system value="http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"/>
+          <code value="!"/>
+        </valueCoding>
+      </extension>
+      <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+      <version value="2024"/>
+      <code value="U69.32"/>
+      <display value="Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientinMusterfrau"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/Fachabteilungskontakt"/>
+  </encounter>
+  <recordedDate value="2021-05-24"/>
+  <note>
+    <text value="Beispiel für eine Anmerkung"/>
+  </note>
+</Condition>

@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Condition/Example-condition-ausrufezeichen-sekundaer> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-condition-ausrufezeichen-sekundaer"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition Example-condition-ausrufezeichen-sekundaer</b></p><a name=\"Example-condition-ausrufezeichen-sekundaer\"> </a><a name=\"hcExample-condition-ausrufezeichen-sekundaer\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKDiagnose.html\">ISiKDiagnose</a></p></div><p><b>Condition Related</b>: <a href=\"Condition-Example-condition-ausrufezeichen-primaer.html\">Condition Psychische und Verhaltensstörungen durch Halluzinogene: Schädlicher Gebrauch</a></p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical recurrence}\">Recurrence</span></p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/bfarm/icd-10-gm U69.32}\">Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen</span></p><p><b>subject</b>: <a href=\"Patient-PatientinMusterfrau.html\">Erika Fürstin von Musterfrau (official) Female, DoB: 1964-08-12 ( Private Krankenversicherung (use: secondary, ))</a></p><p><b>encounter</b>: <a href=\"Encounter-Fachabteilungskontakt.html\">Encounter: extension = ; identifier = Visit number; status = finished; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt,Operation; serviceType = Innere Medizin; period = 2021-02-12 --&gt; 2021-02-13</a></p><p><b>recordedDate</b>: 2021-05-24</p><p><b>note</b>: </p><blockquote><div><p>Beispiel für eine Anmerkung</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/condition-related"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/condition-related>
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Condition/Example-condition-ausrufezeichen-primaer> ;
+       fhir:reference [ fhir:v "Condition/Example-condition-ausrufezeichen-primaer" ]
+     ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-clinical>
+       ] ;
+       fhir:code [ fhir:v "recurrence" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen>
+         ] ;
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [
+             fhir:v "http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"^^xsd:anyURI ;
+             fhir:l <http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen>
+           ] ;
+           fhir:code [ fhir:v "!" ]
+         ]
+       ] ) ;
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/bfarm/icd-10-gm"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/bfarm/icd-10-gm>
+       ] ;
+       fhir:version [ fhir:v "2024" ] ;
+       fhir:code [ fhir:v "U69.32" ] ;
+       fhir:display [ fhir:v "Sekundäre Schlüsselnummern für die Art des Konsums psychotroper Substanzen bei durch diese verursachten psychischen und Verhaltensstörungen:Intravenöser Konsum sonstiger psychotroper Substanzen" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Patient/PatientinMusterfrau> ;
+     fhir:reference [ fhir:v "Patient/PatientinMusterfrau" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Encounter/Fachabteilungskontakt> ;
+     fhir:reference [ fhir:v "Encounter/Fachabteilungskontakt" ]
+  ] ; # 
+  fhir:recordedDate [ fhir:v "2021-05-24"^^xsd:date] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Beispiel für eine Anmerkung" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

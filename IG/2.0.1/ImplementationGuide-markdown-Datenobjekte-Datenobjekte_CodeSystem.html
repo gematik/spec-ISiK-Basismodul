@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Basismodul Stufe 2</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/project/ImplementationGuide/style/style.css?v=1d8d41008d26500" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Basismodul Stufe 2
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Versicherungsverhaeltnis.html">
+                                            Versicherungsverh&#xE4;ltnis (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-stacked affix-top">
+                        <li>
+                            <a title="Motivation" href="#ImplementationGuide-markdown-Katalog-CodeSystem-Motivation">Motivation</a>
+                        </li>
+                        <li>
+                            <a title="Profil" href="#ImplementationGuide-markdown-Katalog-CodeSystem-Profil">Profil</a>
+                        </li>
+                        <li>
+                            <a title="Interaktionen" href="#ImplementationGuide-markdown-Katalog-CodeSystem-Interaktionen">Interaktionen</a>
+                        </li>
+                        <li>
+                            <a title="Anmerkungen" href="#I-markdown-Katalog-CodeSystem-AnmerkungenZuDenMustSupportFeldern">Anmerkungen</a>
+                        </li>
+                        <li>
+                            <a title="Anmerkungen" href="#ImplementationGuide-markdown-Katalog-CodeSystem-Beispiele">Anmerkungen</a>
+                        </li>
+                </ul>
+            </div>
+
+        <div class="col-md-18">
+
+            <div id="preview-content">
+
+                <h2 id="katalog-codesystem">Katalog <a href="http://hl7.org/fhir/codesystem.html">(CodeSystem)</a></h2>
+<hr />
+
+
+                        <div id="ImplementationGuide-markdown-Katalog-CodeSystem-Motivation">
+                            <h3 id="motivation">Motivation</h3>
+<p>ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / Systeminterne Kodierungen.
+Eine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients dazugehörige Anzeigetext und Definitionen zu verarbeiten.</p>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-Katalog-CodeSystem-Profil">
+                            <h3 id="fhir-profil">FHIR-Profil</h3>
+<table class='table table-bordered '><thead><tr><th>Name</th><th>Canonical</th></tr></thead><tbody><tr><td>ISiKCodeSystem</td><td><a target='_blank' href='https://simplifier.net/resolve?canonical=https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKCodeSystem&scope=IsiK@current'>https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKCodeSystem</a></td></tr>
+</tbody></table>
+<div id="70c97d6a6f294fc7b924ce971251bb02" data-level="1" class="stu3-treetable"><div class="treetable-wrapper hybrid"><div class="treetable-left-panel"><table class="treetable"><tr data-id="c14489e2-2d23-42ba-97ba-70d44377c315" class="collapsed constraints"><td class="profile"><span class="baseIcon resource"></span><span class="constraints">CodeSystem</span></td><td class="profile"><span title="This element has or is affected by some invariants">I</span></td><td></td><td class="profile"><a title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codesystem.json" >CodeSystem</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem</pre></p></div><span><b>Short description </b></span><p><span>Declares the existence of and describes a code system or code system supplement</span></p><span><b>Definition </b></span><div class="markdown"><p>The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.</p>
+</div><span><b>Data Type </b></span><p><a title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codesystem.json" >CodeSystem</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>dom-2:</b>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/><code>contained.contained.empty()</code></li><li class=""><b>dom-4:</b>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/><code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code></li><li class=""><b>dom-3:</b>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/><code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code></li><li class=""><b>dom-6:</b>A resource should have narrative for robust management<br/><code>text.`div`.exists()</code></li><li class=""><b>dom-5:</b>If a resource is contained in another resource, it SHALL NOT have a security label<br/><code>contained.meta.security.empty()</code></li><li class=""><b>csd-1:</b>Within a code system definition, all the codes SHALL be unique<br/><code>concept.code.combine($this.descendants().concept.code).isDistinct()</code></li><li class=""><b>csd-0:</b>Name should be usable as an identifier for the module by machine processing applications such as code generation<br/><code>name.matches('[A-Z]([A-Za-z0-9_]){0,254}')</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>Entity. Role, or Act</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="CodeSystem.id" data-id="e46b1299-65ab-4572-9b83-ff1c8c8f12c0" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon datatype"></span><span class="constraints">id</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><span title="True primitive, so no extensions or ids allowed">System.String</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.id</pre></p></div><span><b>Short description </b></span><p><span>Logical id of this artifact</span></p><span><b>Definition </b></span><div class="markdown"><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</div><span><b>Data Type </b></span><p><span title="True primitive, so no extensions or ids allowed">System.String</span></p></td></tr><tr id="CodeSystem.url" data-id="fa7292c2-6013-4439-8efb-bf4e794d3c51" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">url</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.url</pre></p></div><span><b>Short description </b></span><p><span>Canonical identifier for this code system, represented as a URI (globally unique) (Coding.system)</span></p><span><b>Definition </b></span><div class="markdown"><p>An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in <a href="datatypes.html#Coding">Coding</a>.system.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Allows the code system to be referenced by a single globally unique identifier.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.</p>
+<p>The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in <a href="resource.html#versions">Technical and Business Versions</a>.</p>
+<p>In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the <a href="resource.html#meta">meta.source</a> element to indicate where the current master source of the resource can be found.</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.url</li><li class=""><b>w5:</b>FiveWs.identifier</li></ul></td></tr><tr id="CodeSystem.identifier" data-id="f3d87fdd-e677-4918-bc7f-388c179bfa71" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon datatype"></span><span>identifier</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-identifier.json" >Identifier</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.identifier</pre></p></div><span><b>Short description </b></span><p><span>Additional identifier for the code system (business identifier)</span></p><span><b>Definition </b></span><div class="markdown"><p>A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Allows externally provided and/or usable business identifiers to be easily associated with the module.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this code system outside of FHIR, where it is not possible to use the logical URI.  Note that HL7 defines at least three identifiers for many of its code systems - the FHIR canonical URL, the OID and the V2 Table 0396 mnemonic code.</p>
+</div><span><b>Data Type </b></span><p><a title="Identifier
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Identifier.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-identifier.json" >Identifier</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CX / EI (occasionally, more often EI maps to a resource id or a URL)</li><li class=""><b>rim:</b>II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]</li><li class=""><b>servd:</b>Identifier</li><li class=""><b>workflow:</b>Definition.identifier</li><li class=""><b>w5:</b>FiveWs.identifier</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="CodeSystem.version" data-id="f87c4587-f53d-4c99-aff5-f7ad64c4a639" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">version</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.version</pre></p></div><span><b>Short description </b></span><p><span>Business version of the code system (Coding.version)</span></p><span><b>Definition </b></span><div class="markdown"><p>The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in <a href="datatypes.html#Coding">Coding</a>.version.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>There may be different code system instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the code system with the format [url]|[version].</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.version</li><li class=""><b>w5:</b>FiveWs.version</li></ul></td></tr><tr id="CodeSystem.name" data-id="cf11f8be-66e2-4a1d-a086-d48cbaeb34aa" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">name</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element has or is affected by some invariants">I</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.name</pre></p></div><span><b>Short description </b></span><p><span>Name for this code system (computer friendly)</span></p><span><b>Definition </b></span><div class="markdown"><p>A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Support human navigation and code generation.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.title" data-id="a72af8ad-7883-4d28-9676-64238790abdb" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>title</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.title</pre></p></div><span><b>Short description </b></span><p><span>Name for this code system (human friendly)</span></p><span><b>Definition </b></span><div class="markdown"><p>A short, descriptive, user-friendly title for the code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.title</li></ul></td></tr><tr id="CodeSystem.status" data-id="9a1c7cc7-c7c6-4717-a5fd-900a85473e5e" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">status</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span> <span title="This element is a modifying element">?!</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.status</pre></p></div><span><b>Short description </b></span><p><span>draft | active | retired | unknown</span></p><span><b>Definition </b></span><div class="markdown"><p>The date (and optionally time) when the code system resource was created or revised.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Allows filtering of code systems that are appropriate for use versus not.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The lifecycle status of an artifact.</span></p><a title="PublicationStatus
+hl7.fhir.r4.core 4.0.1
+ValueSet-publication-status.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-publication-status.json" >PublicationStatus</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.status</li><li class=""><b>w5:</b>FiveWs.status</li></ul></td></tr><tr id="CodeSystem.experimental" data-id="02533734-49c2-4d38-bf4a-4fc715264d00" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>experimental</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.experimental</pre></p></div><span><b>Short description </b></span><p><span>For testing purposes, not real usage</span></p><span><b>Definition </b></span><div class="markdown"><p>A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Enables experimental content to be developed following the same lifecycle that would be used for a production-level code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Allows filtering of code systems that are appropriate for use versus not.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.experimental</li><li class=""><b>w5:</b>FiveWs.class</li></ul></td></tr><tr id="CodeSystem.date" data-id="ac2da6f1-bb73-4062-9861-4ac284df0a62" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>date</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.date</pre></p></div><span><b>Short description </b></span><p><span>Date last changed</span></p><span><b>Alternate names </b></span><p><span>Revision Date</span></p><span><b>Definition </b></span><div class="markdown"><p>The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the code system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.</p>
+</div><span><b>Data Type </b></span><p><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.date</li><li class=""><b>w5:</b>FiveWs.recorded</li></ul></td></tr><tr id="CodeSystem.publisher" data-id="89e632c7-76fa-42aa-b5e5-753d4482e6bb" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>publisher</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.publisher</pre></p></div><span><b>Short description </b></span><p><span>Name of the publisher (organization or individual)</span></p><span><b>Definition </b></span><div class="markdown"><p>The name of the organization or individual that published the code system.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Helps establish the &quot;authority/credibility&quot; of the code system.  May also allow for contact.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Usually an organization but may be an individual. The publisher (or steward) of the code system is the organization or individual primarily responsible for the maintenance and upkeep of the code system. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the code system. This item SHOULD be populated unless the information is available from context.</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.publisher</li><li class=""><b>w5:</b>FiveWs.witness</li></ul></td></tr><tr id="CodeSystem.contact" data-id="028df739-dfb4-42ec-a7cd-1b6d30d68151" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon datatype"></span><span>contact</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="ContactDetail
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactDetail.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-contactdetail.json" >ContactDetail</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.contact</pre></p></div><span><b>Short description </b></span><p><span>Contact details for the publisher</span></p><span><b>Definition </b></span><div class="markdown"><p>Contact details to assist a user in finding and communicating with the publisher.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>May be a web site, an email address, a telephone number, etc.</p>
+</div><span><b>Data Type </b></span><p><a title="ContactDetail
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ContactDetail.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-contactdetail.json" >ContactDetail</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.contact</li></ul></td></tr><tr id="CodeSystem.description" data-id="06fa39fb-6e38-4dd0-8a1a-325af51a55dd" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>description</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.description</pre></p></div><span><b>Short description </b></span><p><span>Natural language description of the code system</span></p><span><b>Alternate names </b></span><p><span>Scope</span><span>, </span><span>Purpose</span></p><span><b>Definition </b></span><div class="markdown"><p>A free text natural language description of the code system from a consumer's perspective.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.description</li><li class=""><b>rim:</b>N/A</li></ul></td></tr><tr id="CodeSystem.useContext" data-id="d8155d6b-b871-475b-9d6d-0a8e850cace3" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon datatype"></span><span>useContext</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="UsageContext
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-UsageContext.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-usagecontext.json" >UsageContext</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.useContext</pre></p></div><span><b>Short description </b></span><p><span>The context that the content is intended to support</span></p><span><b>Definition </b></span><div class="markdown"><p>The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Assist in searching for appropriate content.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.</p>
+</div><span><b>Data Type </b></span><p><a title="UsageContext
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-UsageContext.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-usagecontext.json" >UsageContext</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.useContext</li></ul></td></tr><tr id="CodeSystem.jurisdiction" data-id="3db7166f-b6b7-400f-ac13-0c180ee0bebb" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon datatype"></span><span>jurisdiction</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json" >CodeableConcept</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.jurisdiction</pre></p></div><span><b>Short description </b></span><p><span>Intended jurisdiction for code system (if applicable)</span></p><span><b>Definition </b></span><div class="markdown"><p>A legal or geographic region in which the code system is intended to be used.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>It may be possible for the code system to be used in jurisdictions other than those for which it was originally designed or intended.</p>
+</div><span><b>Data Type </b></span><p><a title="CodeableConcept
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeableConcept.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codeableconcept.json" >CodeableConcept</a></p><span><b>Binding </b></span><p><p><span>Countries and regions within which this artifact is targeted for use.</span></p><a title="Jurisdiction ValueSet
+hl7.fhir.r4.core 4.0.1
+ValueSet-jurisdiction.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-jurisdiction.json" >Jurisdiction ValueSet</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the valueset does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CE/CNE/CWE</li><li class=""><b>rim:</b>CD</li><li class=""><b>orim:</b>fhir:CodeableConcept rdfs:subClassOf dt:CD</li><li class=""><b>workflow:</b>Definition.jurisdiction</li></ul></td></tr><tr id="CodeSystem.purpose" data-id="f59352fd-d411-427d-a92a-057eddf82a8c" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>purpose</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.purpose</pre></p></div><span><b>Short description </b></span><p><span>Why this code system is defined</span></p><span><b>Definition </b></span><div class="markdown"><p>Explanation of why this code system is needed and why it has been designed as it has.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>This element does not describe the usage of the code system. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this code system.</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.purpose</li><li class=""><b>w5:</b>FiveWs.why[x]</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="CodeSystem.copyright" data-id="279defde-b085-4c89-9c5d-cd3d968ed0bf" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>copyright</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.copyright</pre></p></div><span><b>Short description </b></span><p><span>Use and/or publishing restrictions</span></p><span><b>Alternate names </b></span><p><span>License</span><span>, </span><span>Restrictions</span></p><span><b>Definition </b></span><div class="markdown"><p>A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Consumers must be able to determine any legal restrictions on the use of the code system and/or its content.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
+Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.
+Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.</p>
+</div><span><b>Data Type </b></span><p><a title="markdown
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-markdown.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-markdown.json" >markdown</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>workflow:</b>Definition.copyright</li><li class=""><b>objimpl:</b>no-gen-base</li></ul></td></tr><tr id="CodeSystem.caseSensitive" data-id="ba9e8760-8148-43f4-a380-29960b6b44aa" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>caseSensitive</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.caseSensitive</pre></p></div><span><b>Short description </b></span><p><span>If code comparison is case sensitive</span></p><span><b>Definition </b></span><div class="markdown"><p>If code comparison is case sensitive when codes within this system are compared to each other.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If this value is missing, then it is not specified whether a code system is case sensitive or not. When the rule is not known, Postel's law should be followed: produce codes with the correct case, and accept codes in any case. This element is primarily provided to support validation software.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.valueSet" data-id="791b2d97-9cd6-49dc-ba95-fb2a703aa3e7" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueSet</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.valueSet</pre></p></div><span><b>Short description </b></span><p><span>Canonical reference to the value set with entire code system</span></p><span><b>Definition </b></span><div class="markdown"><p>Canonical reference to the value set that contains the entire code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The definition of the value set SHALL include all codes from this code system and only codes from this code system, and it SHALL be immutable.</p>
+</div><span><b>Data Type </b></span><p><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="ValueSet
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-ValueSet.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-valueset.json" >ValueSet</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.hierarchyMeaning" data-id="6f1c97da-1d05-43fe-a9e5-7cd1899b96ba" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>hierarchyMeaning</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.hierarchyMeaning</pre></p></div><span><b>Short description </b></span><p><span>grouped-by | is-a | part-of | classified-with</span></p><span><b>Definition </b></span><div class="markdown"><p>The meaning of the hierarchy of concepts as represented in this resource.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that other representations might have a different hierarchy or none at all, and represent the information using properties.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The meaning of the hierarchy of concepts in a code system.</span></p><a title="CodeSystemHierarchyMeaning
+hl7.fhir.r4.core 4.0.1
+ValueSet-codesystem-hierarchy-meaning.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-codesystem-hierarchy-meaning.json" >CodeSystemHierarchyMeaning</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.compositional" data-id="835e96f7-36c6-41e8-941c-809b3d209c94" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>compositional</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.compositional</pre></p></div><span><b>Short description </b></span><p><span>If code system defines a compositional grammar</span></p><span><b>Alternate names </b></span><p><span>grammar</span></p><span><b>Definition </b></span><div class="markdown"><p>The code system defines a compositional (post-coordination) grammar.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.versionNeeded" data-id="5ac2660f-72aa-4d1e-a335-549933621db2" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>versionNeeded</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.versionNeeded</pre></p></div><span><b>Short description </b></span><p><span>If definitions are not stable</span></p><span><b>Definition </b></span><div class="markdown"><p>This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Best practice is that code systems do not redefine concepts, or that if concepts are redefined, a new code system definition is created. But this is not always possible, so some code systems may be defined as 'versionNeeded'.</p>
+<p>Most code systems occasionally refine the displays defined for concepts between versions. Contexts in which the concept display values are validated may require that the version be specified for some code systems irrespective of the value of this property.</p>
+</div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.content" data-id="ef9e1f73-129d-4071-9323-3c08625f12d1" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">content</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span> <span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.content</pre></p></div><span><b>Short description </b></span><p><span>not-present | example | fragment | complete | supplement</span></p><span><b>Definition </b></span><div class="markdown"><p>The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The extent of the content of the code system (the concepts and codes it defines) are represented in a code system resource.</span></p><a title="CodeSystemContentMode
+hl7.fhir.r4.core 4.0.1
+ValueSet-codesystem-content-mode.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-codesystem-content-mode.json" >CodeSystemContentMode</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.supplements" data-id="a5cb9e55-4cd0-4068-84cc-535bc696f2a7" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>supplements</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codesystem.json" >CodeSystem</a><span>)</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.supplements</pre></p></div><span><b>Short description </b></span><p><span>Canonical URL of Code System this adds designations and properties to</span></p><span><b>Definition </b></span><div class="markdown"><p>The canonical URL of the code system that this code system supplement is adding designations and properties to.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The most common use of a code system supplement is to add additional language support.</p>
+</div><span><b>Data Type </b></span><p><a title="canonical
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-canonical.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-canonical.json" >canonical</a><span>(</span><a title="CodeSystem
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-CodeSystem.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-codesystem.json" >CodeSystem</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.count" data-id="f2d809f4-f1f1-4a1b-9cd7-428c714362b5" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class=""><td class="profile"><span class="baseIcon primitive"></span><span>count</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-unsignedint.json" >unsignedInt</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.count</pre></p></div><span><b>Short description </b></span><p><span>Total concepts in the code system</span></p><span><b>Definition </b></span><div class="markdown"><p>The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>The count of concepts defined in this resource cannot be more than this value but may be less for several reasons - see the content element.</p>
+</div><span><b>Data Type </b></span><p><a title="unsignedInt
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-unsignedInt.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-unsignedint.json" >unsignedInt</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.filter" data-id="e9b32ae2-ea6d-4a6e-a395-493faa9ff72c" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>filter</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.filter</pre></p></div><span><b>Short description </b></span><p><span>Filter that can be used in a value set</span></p><span><b>Definition </b></span><div class="markdown"><p>A filter that can be used in a value set compose statement when selecting concepts using a filter.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.filter.code" data-id="96e30d54-f7ca-4e3b-a2e2-c0db33315847" data-parentId="e9b32ae2-ea6d-4a6e-a395-493faa9ff72c" class=""><td class="profile"><span class="baseIcon primitive"></span><span>code</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.filter.code</pre></p></div><span><b>Short description </b></span><p><span>Code that identifies the filter</span></p><span><b>Definition </b></span><div class="markdown"><p>The code that identifies this filter when it is used as a filter in <a href="valueset.html#">ValueSet</a>.compose.include.filter.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.filter.description" data-id="f448bbee-834a-47a7-af9a-3b195b735c97" data-parentId="e9b32ae2-ea6d-4a6e-a395-493faa9ff72c" class=""><td class="profile"><span class="baseIcon primitive"></span><span>description</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.filter.description</pre></p></div><span><b>Short description </b></span><p><span>How or why the filter is used</span></p><span><b>Definition </b></span><div class="markdown"><p>A description of how or why the filter is used.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.filter.operator" data-id="dcc367b4-07f9-4633-975f-c7432b93f89d" data-parentId="e9b32ae2-ea6d-4a6e-a395-493faa9ff72c" class=""><td class="profile"><span class="baseIcon primitive"></span><span>operator</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>*</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.filter.operator</pre></p></div><span><b>Short description </b></span><p><span>= | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | exists</span></p><span><b>Definition </b></span><div class="markdown"><p>A list of operators that can be used with the filter.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The kind of operation to perform as a part of a property based filter.</span></p><a title="FilterOperator
+hl7.fhir.r4.core 4.0.1
+ValueSet-filter-operator.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-filter-operator.json" >FilterOperator</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.filter.value" data-id="085743ca-cd1d-48c5-971b-7c8902270869" data-parentId="e9b32ae2-ea6d-4a6e-a395-493faa9ff72c" class=""><td class="profile"><span class="baseIcon primitive"></span><span>value</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.filter.value</pre></p></div><span><b>Short description </b></span><p><span>What to use for the value</span></p><span><b>Definition </b></span><div class="markdown"><p>A description of what the value for the filter should be.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.property" data-id="493b6aa1-5d35-45d3-a495-2d79efff63d4" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>property</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.property</pre></p></div><span><b>Short description </b></span><p><span>Additional information supplied about each concept</span></p><span><b>Definition </b></span><div class="markdown"><p>A property defines an additional slot through which additional information can be provided about a concept.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.property.code" data-id="abfd4892-255a-4e5f-82f7-236a871e2d0e" data-parentId="493b6aa1-5d35-45d3-a495-2d79efff63d4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>code</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.property.code</pre></p></div><span><b>Short description </b></span><p><span>Identifies the property on the concepts, and when referred to in operations</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.property.uri" data-id="51af1aae-78e9-47d7-93b1-d7337a445d31" data-parentId="493b6aa1-5d35-45d3-a495-2d79efff63d4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>uri</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.property.uri</pre></p></div><span><b>Short description </b></span><p><span>Formal identifier for the property</span></p><span><b>Definition </b></span><div class="markdown"><p>Reference to the formal meaning of the property. One possible source of meaning is the <a href="codesystem-concept-properties.html">Concept Properties</a> code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>see http://en.wikipedia.org/wiki/Uniform_resource_identifier</p>
+</div><span><b>Data Type </b></span><p><a title="uri
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-uri.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-uri.json" >uri</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.property.description" data-id="0d78efb4-8132-4f52-a969-a380cc476bac" data-parentId="493b6aa1-5d35-45d3-a495-2d79efff63d4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>description</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.property.description</pre></p></div><span><b>Short description </b></span><p><span>Why the property is defined, and/or what it conveys</span></p><span><b>Definition </b></span><div class="markdown"><p>A description of the property- why it is defined, and how its value might be used.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.property.type" data-id="943d6c97-606d-49ca-a98e-1c71585e5b0e" data-parentId="493b6aa1-5d35-45d3-a495-2d79efff63d4" class=""><td class="profile"><span class="baseIcon primitive"></span><span>type</span></td><td class="profile"><span title="This element is an element that is part of the summary">Σ</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.property.type</pre></p></div><span><b>Short description </b></span><p><span>code | Coding | string | integer | boolean | dateTime | decimal</span></p><span><b>Definition </b></span><div class="markdown"><p>The type of the property value. Properties of type &quot;code&quot; contain a code defined by the code system (e.g. a reference to another defined concept).</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>The type of a property value.</span></p><a title="PropertyType
+hl7.fhir.r4.core 4.0.1
+ValueSet-concept-property-type.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-concept-property-type.json" >PropertyType</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified valueset" href="http://hl7.org/fhir/r4/terminologies.html#required" >required</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept" data-id="607f90c8-402f-41eb-b646-bdeb82a742a4" data-parentId="c14489e2-2d23-42ba-97ba-70d44377c315" class="collapsed constraints"><td class="profile"><span class="baseIcon backboneElement"></span><span class="constraints">concept</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept</pre></p></div><span><b>Short description </b></span><p><span>Concepts in the code system</span></p><span><b>Definition </b></span><div class="markdown"><p>Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meanings of the hierarchical relationships are.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If this is empty, it means that the code system resource does not represent the content of the code system.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.code" data-id="f2996ff7-4128-48c0-86e8-9c5ba712f442" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">code</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.code</pre></p></div><span><b>Short description </b></span><p><span>Code that identifies concept</span></p><span><b>Definition </b></span><div class="markdown"><p>A code - a text symbol - that uniquely identifies the concept within the code system.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.display" data-id="9c2c9bac-3680-4375-9c79-620345a2098a" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">display</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span class="constraints">1</span><span class="constraints">..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.display</pre></p></div><span><b>Short description </b></span><p><span>Text to display to the user</span></p><span><b>Definition </b></span><div class="markdown"><p>A human readable string that is the recommended default way to present this concept to a user.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.definition" data-id="11c03969-94ac-47d8-a288-b08c7f12bca1" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class="constraints"><td class="profile"><span class="baseIcon primitive"></span><span class="constraints">definition</span></td><td class="profile"><span class="mustsupport constraints" title="This element is an element that must be supported">S</span></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.definition</pre></p></div><span><b>Short description </b></span><p><span>Formal definition</span></p><span><b>Definition </b></span><div class="markdown"><p>The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.designation" data-id="04dbca6c-8dae-413d-a868-2aafa3815ae8" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>designation</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.designation</pre></p></div><span><b>Short description </b></span><p><span>Additional representations for the concept</span></p><span><b>Definition </b></span><div class="markdown"><p>Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.</p>
+</div><span><b>Requirements </b></span><div class="markdown"><p>Many concept definition systems support multiple representations, in multiple languages, and for multiple purposes.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Concepts have both a <code>display</code> and an array of <code>designation</code>. The display is equivalent to a special designation with an implied <code>designation.use</code> of &quot;primary code&quot; and a language equal to the <a href="resource.html#language">Resource Language</a>.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.designation.language" data-id="3fdd9176-2267-421e-bb4a-4af10acc4c2a" data-parentId="04dbca6c-8dae-413d-a868-2aafa3815ae8" class=""><td class="profile"><span class="baseIcon primitive"></span><span>language</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.designation.language</pre></p></div><span><b>Short description </b></span><p><span>Human language of the designation</span></p><span><b>Definition </b></span><div class="markdown"><p>The language this designation is defined for.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>In the absence of a language, the resource language applies.</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Binding </b></span><p><p><span>A human language.</span></p><a title="CommonLanguages
+hl7.fhir.r4.core 4.0.1
+ValueSet-languages.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-languages.json" >CommonLanguages</a><span> (</span><a title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant." href="http://hl7.org/fhir/r4/terminologies.html#preferred" >preferred</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.designation.use" data-id="30c3f00a-5ab3-44e4-af0c-515331e99531" data-parentId="04dbca6c-8dae-413d-a868-2aafa3815ae8" class=""><td class="profile"><span class="baseIcon datatype"></span><span>use</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>1</span></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a><span class="binding-label">Binding</span></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.designation.use</pre></p></div><span><b>Short description </b></span><p><span>Details how this designation would be used</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that details how this designation would be used.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>If no use is provided, the designation can be assumed to be suitable for general display to a human user.</p>
+</div><span><b>Data Type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a></p><span><b>Binding </b></span><p><p><span>Details of how a designation would be used.</span></p><a title="DesignationUse
+hl7.fhir.r4.core 4.0.1
+ValueSet-designation-use.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-designation-use.json" >DesignationUse</a><span> (</span><a title="To be conformant, instances of this element SHALL include a code from the specified value set if any of the codes within the value set can apply to the concept being communicated. If the valueset does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." href="http://hl7.org/fhir/r4/terminologies.html#extensible" >extensible</a><span>)</span></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li><li class=""><b>v2:</b>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</li><li class=""><b>rim:</b>CV</li><li class=""><b>orim:</b>fhir:Coding rdfs:subClassOf dt:CDCoding</li></ul></td></tr><tr id="CodeSystem.concept.designation.value" data-id="a00e6c81-d5d4-4d9b-82e6-3185b23c1cf5" data-parentId="04dbca6c-8dae-413d-a868-2aafa3815ae8" class=""><td class="profile"><span class="baseIcon primitive"></span><span>value</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.designation.value</pre></p></div><span><b>Short description </b></span><p><span>The text value for this designation</span></p><span><b>Definition </b></span><div class="markdown"><p>The text value for this designation.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.property" data-id="0c91c45b-835b-4df0-9503-150cad85fa08" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class="collapsed"><td class="profile"><span class="baseIcon backboneElement"></span><span>property</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile"><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.property</pre></p></div><span><b>Short description </b></span><p><span>Property value for the concept</span></p><span><b>Definition </b></span><div class="markdown"><p>A property value for this concept.</p>
+</div><span><b>Data Type </b></span><p><a title="BackboneElement
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-BackboneElement.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-backboneelement.json" >BackboneElement</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.property.code" data-id="591c4df3-a780-4587-8d46-ba0f9bc276b9" data-parentId="0c91c45b-835b-4df0-9503-150cad85fa08" class=""><td class="profile"><span class="baseIcon primitive"></span><span>code</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.property.code</pre></p></div><span><b>Short description </b></span><p><span>Reference to CodeSystem.property.code</span></p><span><b>Definition </b></span><div class="markdown"><p>A code that is a reference to CodeSystem.property.code.</p>
+</div><span><b>Comments </b></span><div class="markdown"><p>Note that FHIR strings SHALL NOT exceed 1MB in size</p>
+</div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.property.value[x]" data-id="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" data-parentId="0c91c45b-835b-4df0-9503-150cad85fa08" class="collapsed"><td class="profile"><span class="baseIcon valueX"></span><span>value[x]</span></td><td class="profile"></td><td class="profile"><span>1</span><span>..</span><span>1</span></td><td class="profile"></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.property.value[x]</pre></p></div><span><b>Short description </b></span><p><span>Value of the property for this concept</span></p><span><b>Definition </b></span><div class="markdown"><p>The value of this property.</p>
+</div><span><b>Constraints</b></span><div><ul><li class=""><b>ele-1:</b>All FHIR elements must have a @value or children<br/><code>hasValue() or (children().count() > id.count())</code></li></ul></div><span><b>Mappings</b></span><ul><li class=""><b>rim:</b>n/a</li></ul></td></tr><tr id="CodeSystem.concept.property.valueCode" data-id="cdcc1132-893e-4f4e-bfed-a5d38264cb0d" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueCode</span></td><td class="profile"></td><td></td><td class="profile"><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="code
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-code.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-code.json" >code</a></p></td></tr><tr id="CodeSystem.concept.property.valueCoding" data-id="bee0221b-90eb-4219-ae93-0a8913c771e8" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon datatype"></span><span>valueCoding</span></td><td class="profile"></td><td></td><td class="profile"><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="Coding
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-Coding.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-coding.json" >Coding</a></p></td></tr><tr id="CodeSystem.concept.property.valueString" data-id="008557f2-0f24-4edc-a9d0-a1392fa5d078" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueString</span></td><td class="profile"></td><td></td><td class="profile"><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="string
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-string.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-string.json" >string</a></p></td></tr><tr id="CodeSystem.concept.property.valueInteger" data-id="591bead3-57ff-421a-8feb-86c413a6bc54" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueInteger</span></td><td class="profile"></td><td></td><td class="profile"><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="integer
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-integer.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-integer.json" >integer</a></p></td></tr><tr id="CodeSystem.concept.property.valueBoolean" data-id="49616641-5787-48c0-90de-ad1d1bdc8789" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueBoolean</span></td><td class="profile"></td><td></td><td class="profile"><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="boolean
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-boolean.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-boolean.json" >boolean</a></p></td></tr><tr id="CodeSystem.concept.property.valueDateTime" data-id="772b2c2b-c356-4231-971b-7d163f305cf4" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueDateTime</span></td><td class="profile"></td><td></td><td class="profile"><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="dateTime
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-dateTime.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-datetime.json" >dateTime</a></p></td></tr><tr id="CodeSystem.concept.property.valueDecimal" data-id="6fa3c0f6-f236-49f5-b112-1ca0f90ada58" data-parentId="f09f8d9c-d208-4dd2-a34c-a28a4dce5b75" class=""><td class="profile"><span class="baseIcon primitive"></span><span>valueDecimal</span></td><td class="profile"></td><td></td><td class="profile"><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-decimal.json" >decimal</a></td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Data Type </b></span><p><a title="decimal
+hl7.fhir.r4.core 4.0.1
+StructureDefinition-decimal.json" href="/packages/hl7.fhir.r4.core/4.0.1/files/package/structuredefinition-decimal.json" >decimal</a></p></td></tr><tr id="CodeSystem.concept.concept" data-id="a77d510d-d65e-4161-b3ee-e9a04dce14a6" data-parentId="607f90c8-402f-41eb-b646-bdeb82a742a4" class=""><td class="profile"><span class="baseIcon nameReference"></span><span>concept</span></td><td class="profile"></td><td class="profile"><span>0</span><span>..</span><span>*</span></td><td class="profile">see (<a  href="#http://hl7.org/fhir/StructureDefinition/CodeSystem#CodeSystem.concept" >concept</a>)</td><td class="details hidden"><span class="pin-control"></span><div class="noconstraints"><span class="constraints">There are no (further) constraints on this element</span></div><span><b>Element Id</b></span><div><p><pre>CodeSystem.concept.concept</pre></p></div><span><b>Short description </b></span><p><span>Child Concepts (is-a/contains/categorizes)</span></p><span><b>Definition </b></span><div class="markdown"><p>Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.</p>
+</div></td></tr></table></div><div class="treetable-right-panel"></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable70c97d6a6f294fc7b924ce971251bb02 = new Stu3TreeTable(false);
+resourceTreeTable70c97d6a6f294fc7b924ce971251bb02.init("70c97d6a6f294fc7b924ce971251bb02");
+}
+})();
+</script>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-Katalog-CodeSystem-Interaktionen">
+                            <h3 id="interaktionen">Interaktionen</h3>
+<p>Für die Ressource CodeSystem MUSS die REST-Interaktion &quot;READ&quot; implementiert werden.</p>
+<p>Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:</p>
+<ol>
+<li><p>Der Suchparameter &quot;_id&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?_id=103270</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;_id&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#all">FHIR-Basisspezifikation - Abschnitt &quot;Parameters for all resources&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;url&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?url=http://example.org/fhir/CodeSystem/test</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.url&quot; finden sich in der <a href="https://www.hl7.org/fhir/search.html#uri">FHIR-Basisspezifikation - Abschnitt &quot;uri&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;name&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?name=TestCodeSystem</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.name&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#string">FHIR-Basisspezifikation - Abschnitt &quot;String Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;status&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?status=active</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.status&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;version&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?version=1.0.0</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.version&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+<li><p>Der Suchparameter &quot;content-mode&quot; MUSS unterstützt werden:</p>
+<p>Beispiele:</p>
+<p><code>GET [base]/CodeSystem?content-mode=complete</code></p>
+<p>Anwendungshinweise: Weitere Informationen zur Suche nach &quot;CodeSystem.content&quot; finden sich in der <a href="http://hl7.org/fhir/R4/search.html#token">FHIR-Basisspezifikation - Abschnitt &quot;Token Search&quot;</a>.</p>
+</li>
+</ol>
+<hr />
+
+                        </div>
+                        <div id="I-markdown-Katalog-CodeSystem-AnmerkungenZuDenMustSupportFeldern">
+                            <h3 id="anmerkungen-zu-must-support-feldern">Anmerkungen zu Must-Support-Feldern</h3>
+<h3 id="codesystem.url"><code>CodeSystem.url</code></h3>
+<p><strong>Bedeutung:</strong> Eindeutige Url zur Identifizierung des CodeSystems. Absolute Url sind zu bevorzugen.</p>
+<p><strong>Hinweise:</strong> OIDs SOLLTEN als weitere Identifier des CodeSystems verwendet werden. In jedem Fall SOLLTE ein Canonical Url vergeben werden.</p>
+<h3 id="codesystem.version"><code>CodeSystem.version</code></h3>
+<p><strong>Bedeutung:</strong> Version des CodeSystems</p>
+<p><strong>Hinweise:</strong> Jede Änderung des CodeSystems MUSS eine Änderung in der Version des CodeSystems und gebundenen ValueSets nach sich ziehen. Die Versionierung SOLLTE auf Basis von <a href="https://semver.org">Semantic Versioning</a> basieren.</p>
+<h3 id="codesystem.name"><code>CodeSystem.name</code></h3>
+<p><strong>Bedeutung:</strong> Maschinenlesbarer Name des CodeSystems</p>
+<p><strong>Hinweise:</strong> Der Constraint <a href="https://www.hl7.org/fhir/codesystem.html#invs">cps-0</a> ist hierbei zu beachten.</p>
+<h3 id="codesystem.status"><code>CodeSystem.status</code></h3>
+<p><strong>Bedeutung:</strong> Indikation, ob das CodeSystem in aktiver Verwendung ist.</p>
+<p><strong>Hinweise:</strong> Alle in einem System möglichen Status-Werte MÜSSEN über FHIR korrekt repräsentiert werden. KÖNNEN mindestens jedoch die Status-Werte &quot;active&quot; und &quot;retired&quot;. Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.</p>
+<h3 id="codesystem.content"><code>CodeSystem.content</code></h3>
+<p><strong>Bedeutung:</strong> Angabe, ob es sich um eine vollständige Repräsentation des CodeSystems oder nur um einen Auszug handelt.</p>
+<p><strong>Hinweise:</strong> Alle in einem System möglichen Status-Werte müssen über FHIR korrekt repräsentiert werden können, mindestens jedoch die Status-Werte &quot;fragment&quot; und &quot;complete&quot;. Deren korrekte Abbildung wird im Rahmen des Bestätigungsverfahrens überprüft.</p>
+<h3 id="codesystem.concept"><code>CodeSystem.concept</code></h3>
+<p><strong>Bedeutung:</strong> Angabe der Konzepte, aus denen sich das CodeSystem zusammensetzt.</p>
+<p><strong>Hinweise:</strong> Es MUSS mindestens ein Code und ein Anzeigetext spezifiziert werden.</p>
+<hr />
+
+                        </div>
+                        <div id="ImplementationGuide-markdown-Katalog-CodeSystem-Beispiele">
+                            <h3 id="beispiele">Beispiele</h3>
+<p>Valides Minimalbeispiel CodeSystem:</p>
+<p><pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CodeSystem</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">CodeSystemExample</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKCodeSystem</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://example.org/fhir/CodeSystem/TestKatalog</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1.0.0</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">TestKatalog</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">status</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">content</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">complete</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">concept</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">test</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Test</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">definition</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Dies ist ein Test-Code</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span>
+<span class="brace">}</span></pre></pre></p>
+
+                        </div>
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

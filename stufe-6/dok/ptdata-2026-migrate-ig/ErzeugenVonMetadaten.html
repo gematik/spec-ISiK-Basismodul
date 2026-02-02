@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Interaktion: Erzeugen von Metadaten - ISiK Dokumentenaustausch Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases und Akteure
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität und Interoperabilität mit IHE (MHD und XDS)</a>
+      </li>
+      <li>
+        <a href="Abgrenzung-Basis.html">Abgrenzung zu ISiK Basis bei Kommunikation strukturierter Daten</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Interaktion-Dokumentenbereitstellung.html">Interaktion: Dokumentenbereitstellung</a>
+      </li>
+      <li>
+        <a href="Dokumentenabfrage.html">Interaktion: Dokumentenabfrage und -Zugriff</a>
+      </li>
+      <li>
+        <a href="Update.html">Interaktion: Update von Metadaten</a>
+      </li>
+      <li>
+        <a href="ErzeugenVonMetadaten.html">Interaktion: Erzeugen von Metadaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Dokumentenaustausch Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Interaktion: Erzeugen von Metadaten</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Interaktion: Erzeugen von Metadaten</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#hinweise-und-anmerkungen-zur-implementierung-von-ihe-mhd-iti-106-generate-metadata" id="markdown-toc-hinweise-und-anmerkungen-zur-implementierung-von-ihe-mhd-iti-106-generate-metadata">Hinweise und Anmerkungen zur Implementierung von IHE MHD ITI-106 (Generate Metadata)</a></li>
+  <li><a href="#isik-spezifisches-mapping-composition---documentreference" id="markdown-toc-isik-spezifisches-mapping-composition---documentreference">ISiK-Spezifisches Mapping Composition -&gt; DocumentReference</a></li>
+</ul>
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hinweis</th>
+      <th>Breaking Change!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40" /></td>
+      <td>Die in der Stufe 3 erfolgte Umstellung der Definition von $generate-metadata von der in ISiK Stufe 2 spezifizierten OperationDefinition auf die in <a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html">IHE MHD ITI-106</a> spezifizierte Fassung ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-106 (Generate Metadata), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="hinweise-und-anmerkungen-zur-implementierung-von-ihe-mhd-iti-106-generate-metadata">Hinweise und Anmerkungen zur Implementierung von IHE MHD ITI-106 (Generate Metadata)</h3>
+<p>Für die Implementierung der Interaktion “Erzeugen von Dokumentenmetadaten” gelten die in IHE MHD festgelegten Vereinbarungen zu <a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html">ITI-106</a> (Generate Metadata) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt. Die verlinkte Webseite bietet weiterführende Informationen zur “Generate Metadata” Interaktion, einschließlich grafischer Darstellungen der Interaktionen.</p>
+
+<h4 id="2310641-generate-metadata-request-message"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#2310641-generate-metadata-request-message">2:3.106.4.1 Generate Metadata Request Message</a></h4>
+
+<h5 id="23106411-trigger-events"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106411-trigger-events">2:3.106.4.1.1 Trigger Events</a></h5>
+<p>Die Vereinbarungen gelten uneingeschränkt.</p>
+<h5 id="23106412-message-semantics"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106412-message-semantics">2:3.106.4.1.2 Message Semantics</a></h5>
+<p>Die Vereinbarungen gelten uneingeschränkt.</p>
+<h5 id="23106413-expected-actions"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106413-expected-actions">2:3.106.4.1.3 Expected Actions</a></h5>
+
+<p>Der Fokus für die Implementierung der Operation ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß <a href="https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem">Interaktion ISiK Modul Basis: Bericht aus Subsystem</a> liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -&gt; DocumentReference als Anhaltspunkt verwendet werden.</p>
+
+<p>Die Unterstützung weiterer Input-Formate (z.B. CDA oder andere FHIR-Dokumente, wie MIOs, eRezept, eAU etc.) ist optional.</p>
+
+<p>Alle weiteren Unterkapitel von 2:3.106.4.1.3 Expected Actions sind für den ISiK-Kontext nicht relevant.</p>
+
+<h4 id="2310642-generate-metadata-response-message"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#2310642-generate-metadata-response-message">2:3.106.4.2 Generate Metadata Response Message</a></h4>
+
+<h5 id="23106421-trigger-events"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106421-trigger-events">2:3.106.4.2.1 Trigger Events</a></h5>
+<p>Die Vereinbarungen gelten uneingeschränkt.</p>
+<h5 id="23106422-message-semantics"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106422-message-semantics">2:3.106.4.2.2 Message Semantics</a></h5>
+<p>Die Vereinbarungen gelten uneingeschränkt.</p>
+<h5 id="23106423-expected-actions"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106423-expected-actions">2:3.106.4.2.3 Expected Actions</a></h5>
+<p>Die Vereinbarungen gelten uneingeschränkt.</p>
+
+<h4 id="2310643-capabilitystatement-resource"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#2310643-capabilitystatement-resource">2:3.106.4.3 CapabilityStatement Resource</a></h4>
+<p>Es gelten die Vereinbarungen gemäß</p>
+
+<h4 id="231065-security-considerations"><a href="https://profiles.ihe.net/ITI/MHD/ITI-106.html#231065-security-considerations">2:3.106.5 Security Considerations</a></h4>
+
+<p>Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe <a href="https://simplifier.net/guide/isik-connect-stufe-5">Modul ISiK-Connect</a></p>
+
+<h3 id="isik-spezifisches-mapping-composition---documentreference">ISiK-Spezifisches Mapping Composition -&gt; DocumentReference</h3>
+<fql>
+      from StructureDefinition
+      where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten'
+      for differential.element
+      select
+        Path: id,
+        join mapping.where(identity = 'CompositionDocumentReferenceMapping') { map, comment }
+</fql>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.gematik.de">gematik GmbH</a>.  Paket dokumentenaustausch#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jan 29, 2026 08:59+0000">2026-01-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

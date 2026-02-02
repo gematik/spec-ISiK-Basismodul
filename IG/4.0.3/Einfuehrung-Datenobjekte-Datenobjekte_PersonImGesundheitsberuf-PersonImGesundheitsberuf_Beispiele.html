@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Basismodul (4.0.3)</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1db839194f2d780" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Basismodul (4.0.3)
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-UseCases.html">
+                                            Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Abbildung-des-Konstrukts-Fall.html">
+                                            Abbildung des Konstrukts &quot;Fall&quot;
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Daten&#xFC;bermittlung-aus-Subsystemen.html">
+                                            Daten&#xFC;bermittlung aus Subsystemen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Patientenzusammenf&#xFC;hrung.html">
+                                            Patientenzusammenf&#xFC;hrung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCasesAnwendung-Beispielszenarien.html">
+                                            Beispielszenarien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Must-Support-Flags.html">
+                                            Must-Support-Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Repraesentationsformate.html">
+                                            Repr&#xE4;sentationsformate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Suchparameter.html">
+                                            Suchparameter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-UebergreifendeFestlegungen_Rest.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Patient-Besuch-Kontext.html">
+                                            Herstellung von Patienten- und Besuchskontext
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Patient.html">
+                                            Patient (Patient)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Kontakt.html">
+                                            Kontakt/Fall (Encounter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Abrechnungsfall.html">
+                                            Abrechnungsfall (Account)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Diagnose.html">
+                                            Diagnose (Condition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_AllergieUnvertraeglichkeit.html">
+                                            Allergie/Unvertr&#xE4;glichkeit (AllergyIntolerance)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Lebenszustand.html">
+                                            Spezifische Lebenszust&#xE4;nde (Observation)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Prozedur.html">
+                                            Prozedur (Procedure)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungverh&#xE4;ltnis-Selbstzahler-privat-Coverage.html">
+                                            Versicherungverh&#xE4;ltnis Selbstzahler/privat (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Versicherungsverh&#xE4;ltnis-gesetzlich-Coverage.html">
+                                            Versicherungsverh&#xE4;ltnis gesetzlich (Coverage)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Angehoeriger.html">
+                                            Angeh&#xF6;riger (RelatedPerson)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_PersonImGesundheitsberuf.html">
+                                            PersonImGesundheitsberuf (Practitioner)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_BerichtSubsystem.html">
+                                            Bericht aus Subsystemen (Composition)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_CodeSystem.html">
+                                            Katalog (CodeSystem)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_ValueSet.html">
+                                            ValueSet (ValueSet)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Organisation.html">
+                                            Organisation (Organization)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Standort.html">
+                                            Standort (Location)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Binary.html">
+                                            Binary (Binary)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Datenobjekte_Subscription.html">
+                                            Subscription patient-merge (R5 Backport Subscription)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Datenobjekte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h2 id="page-title">Beispiele</h2>
+<h3 id="valides-minimalbeispiel">Valides Minimalbeispiel:</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#7ddaea64-9edc-405d-8120-661cd7c45cc8" aria-controls="7ddaea64-9edc-405d-8120-661cd7c45cc8" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#8829fae0-2ff1-423a-a936-844ac5a8a169" aria-controls="8829fae0-2ff1-423a-a936-844ac5a8a169" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#372eb33c-cf1b-4eb3-b3e1-2c0a369e2193" aria-controls="372eb33c-cf1b-4eb3-b3e1-2c0a369e2193" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#07306f85-352c-4ad8-825b-2b8cc56c94a9" aria-controls="07306f85-352c-4ad8-825b-2b8cc56c94a9" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="7ddaea64-9edc-405d-8120-661cd7c45cc8">
+    <div class="stu3-treetable" id="a7eb1d3b948e4dd6a44c4ba5e2106131" data-level="1"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tr data-id="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>Practitioner</b></td></tr><tr class="collapsed" data-id="85ff21ec8f8e4b05b3af89128085d7d7" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>PractitionerWalterArzt</span></td></tr>
+<tr class="collapsed" data-id="574ec71528bd442cbfd3dddcfd031386" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="5d6645c171bb4d6cba8203cd290cb171" data-parentId="574ec71528bd442cbfd3dddcfd031386"><td class="instance"><span class="baseIcon primitive"></span><b>source : </b><span>http://krankenhaus.de</span></td></tr>
+<tr class="collapsed" data-id="5ee4d397db544f17a7024b9c4c3667bc" data-parentId="574ec71528bd442cbfd3dddcfd031386"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf</span></td></tr>
+
+<tr class="collapsed" data-id="b44a1452ed274cad84fc53633df37ed4" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="06298447f8824f50a90300fdb8b0bad7" data-parentId="b44a1452ed274cad84fc53633df37ed4"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="a71220bc3c9645fabbef8856af0bafed" data-parentId="06298447f8824f50a90300fdb8b0bad7"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="96aa47d497af4f3bb86e1bddac718696" data-parentId="a71220bc3c9645fabbef8856af0bafed"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr>
+<tr class="collapsed" data-id="4c90ee3f448640df849067f60880b1b3" data-parentId="a71220bc3c9645fabbef8856af0bafed"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>LANR</span></td></tr>
+
+
+<tr class="collapsed" data-id="664ab27d552848b4b7cd19a5dfd7bc6c" data-parentId="b44a1452ed274cad84fc53633df37ed4"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR</span></td></tr>
+<tr class="collapsed" data-id="e8e3d88ff2064625870eb629f531b6d3" data-parentId="b44a1452ed274cad84fc53633df37ed4"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>123456789</span></td></tr>
+
+<tr class="collapsed" data-id="d7bb441167814814bfcad858dcb95850" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>identifier</b></td></tr><tr class="collapsed" data-id="5dc19dc3fdcd498d82bd2ccd12920332" data-parentId="d7bb441167814814bfcad858dcb95850"><td class="instance"><span class="baseIcon primitive"></span><b>type</b></td></tr><tr class="collapsed" data-id="4a2275d7a351428b9798608c44b80d03" data-parentId="5dc19dc3fdcd498d82bd2ccd12920332"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="e2483bbbf63b44a3ac764f4321c54d56" data-parentId="4a2275d7a351428b9798608c44b80d03"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://terminology.hl7.org/CodeSystem/v2-0203</span></td></tr>
+<tr class="collapsed" data-id="77a2091836ed46958c3b56b90160fad3" data-parentId="4a2275d7a351428b9798608c44b80d03"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>DN</span></td></tr>
+
+
+<tr class="collapsed" data-id="63a9ed7e52524b3b8452f158e36f2868" data-parentId="d7bb441167814814bfcad858dcb95850"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/sid/bundesaerztekammer/efn</span></td></tr>
+<tr class="collapsed" data-id="29d42e3f9c6e4174bef5660cf4c53f23" data-parentId="d7bb441167814814bfcad858dcb95850"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>123456789123456</span></td></tr>
+
+<tr class="collapsed" data-id="da1b43e6a4344206a32f3566929c0b89" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>active : </b><span>True</span></td></tr>
+<tr class="collapsed" data-id="d8f8869ee0f440c4a3a149df45daed75" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>name</b></td></tr><tr class="collapsed" data-id="4edf4aedae44474ab16bd966bb8ef5f3" data-parentId="d8f8869ee0f440c4a3a149df45daed75"><td class="instance"><span class="baseIcon primitive"></span><b>use : </b><span>official</span></td></tr>
+<tr class="collapsed" data-id="e71c34ee97474b3ab14957713bd3fbc9" data-parentId="d8f8869ee0f440c4a3a149df45daed75"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Walter Arzt</span></td></tr>
+<tr class="collapsed" data-id="6250a9cfed7b4499b3d62677e0b4e2ef" data-parentId="d8f8869ee0f440c4a3a149df45daed75"><td class="instance"><span class="baseIcon primitive"></span><b>family : </b><span>Arzt</span></td></tr><tr class="collapsed" data-id="57840be491d94de98e5fcbb23128bb6f" data-parentId="6250a9cfed7b4499b3d62677e0b4e2ef"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="0036af2afd9e47748224fa18a4d04637" data-parentId="57840be491d94de98e5fcbb23128bb6f"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/humanname-own-name</span></td></tr>
+<tr class="collapsed" data-id="33bc5d22f2d741a78e07e2fadca9e8b5" data-parentId="57840be491d94de98e5fcbb23128bb6f"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Arzt</span></td></tr>
+
+
+<tr class="collapsed" data-id="9e254cf7bea741a4a8f224013e57fdee" data-parentId="d8f8869ee0f440c4a3a149df45daed75"><td class="instance"><span class="baseIcon primitive"></span><b>given : </b><span>Walter</span></td></tr>
+
+<tr class="collapsed" data-id="ec281869a93546c7a0fa91a20e51674e" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>name</b></td></tr><tr class="collapsed" data-id="ca2bbbc30b2848238915720e3a43fd7a" data-parentId="ec281869a93546c7a0fa91a20e51674e"><td class="instance"><span class="baseIcon primitive"></span><b>use : </b><span>maiden</span></td></tr>
+<tr class="collapsed" data-id="17582b0b291d4472835127a5e372573b" data-parentId="ec281869a93546c7a0fa91a20e51674e"><td class="instance"><span class="baseIcon primitive"></span><b>text : </b><span>Gross</span></td></tr>
+<tr class="collapsed" data-id="cf0ed9862fdc4722b1e714272b7294af" data-parentId="ec281869a93546c7a0fa91a20e51674e"><td class="instance"><span class="baseIcon primitive"></span><b>family : </b><span>Gross</span></td></tr><tr class="collapsed" data-id="6d5e0f45a531450b9fbfa6400c202bb3" data-parentId="cf0ed9862fdc4722b1e714272b7294af"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="afffbe5daf1448e2b99f58f2b0edf3c4" data-parentId="6d5e0f45a531450b9fbfa6400c202bb3"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/humanname-own-name</span></td></tr>
+<tr class="collapsed" data-id="6d4f8e52a3c84a3eb69b5e64cd6663be" data-parentId="6d5e0f45a531450b9fbfa6400c202bb3"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Gross</span></td></tr>
+
+
+
+<tr class="collapsed" data-id="0c155f6d2076422e89c0c3141a510517" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>address</b></td></tr><tr class="collapsed" data-id="cd0027c80271455f8ded33bcd9221caa" data-parentId="0c155f6d2076422e89c0c3141a510517"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>both</span></td></tr>
+<tr class="collapsed" data-id="5fd1024e08934c87b1c649f1634ec5a0" data-parentId="0c155f6d2076422e89c0c3141a510517"><td class="instance"><span class="baseIcon primitive"></span><b>line : </b><span>Schmiedegasse 16</span></td></tr><tr class="collapsed" data-id="394c8c2a76b346ec96c79b3b41b91053" data-parentId="5fd1024e08934c87b1c649f1634ec5a0"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="f1294906fc924dc1962b28d33985a8b8" data-parentId="394c8c2a76b346ec96c79b3b41b91053"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span></td></tr>
+<tr class="collapsed" data-id="8f65f53b101e4aeeac71197dca70bdb2" data-parentId="394c8c2a76b346ec96c79b3b41b91053"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>16</span></td></tr>
+
+<tr class="collapsed" data-id="d753634aa6fb4e60999e939d35ad3def" data-parentId="5fd1024e08934c87b1c649f1634ec5a0"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="9f9d6fe0e58b4901af14236dc6825deb" data-parentId="d753634aa6fb4e60999e939d35ad3def"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span></td></tr>
+<tr class="collapsed" data-id="3368520ab7a245dc8f6b56f463df65c9" data-parentId="d753634aa6fb4e60999e939d35ad3def"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Schmiedegasse</span></td></tr>
+
+
+<tr class="collapsed" data-id="c34339b7b6d747c7bfeb6f58361aa487" data-parentId="0c155f6d2076422e89c0c3141a510517"><td class="instance"><span class="baseIcon primitive"></span><b>city : </b><span>Potsdam</span></td></tr>
+<tr class="collapsed" data-id="74193fa9c45647f2aa032849a43c9b4e" data-parentId="0c155f6d2076422e89c0c3141a510517"><td class="instance"><span class="baseIcon primitive"></span><b>postalCode : </b><span>14469</span></td></tr>
+<tr class="collapsed" data-id="776e65e1c43f40c8a2bb932c2c10924c" data-parentId="0c155f6d2076422e89c0c3141a510517"><td class="instance"><span class="baseIcon primitive"></span><b>country : </b><span>DE</span></td></tr>
+
+<tr class="collapsed" data-id="0f9db93da0914d33a623824fa5a810cb" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>gender : </b><span>male</span></td></tr>
+<tr class="collapsed" data-id="be6bd6b03e5a43daba825ac9eb07783a" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>birthDate</b></td></tr><tr class="collapsed" data-id="947247f5d23e46f49d4bb0df2081a7cc" data-parentId="be6bd6b03e5a43daba825ac9eb07783a"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="f3e051a26cf04734b1612dc26056fb89" data-parentId="947247f5d23e46f49d4bb0df2081a7cc"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>http://hl7.org/fhir/StructureDefinition/data-absent-reason</span></td></tr>
+<tr class="collapsed" data-id="4aeae146a52a47058db2934546262d45" data-parentId="947247f5d23e46f49d4bb0df2081a7cc"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>masked</span></td></tr>
+
+
+<tr class="collapsed" data-id="b9b5ac7993ed434d89ccbcd956613ee2" data-parentId="9b781e536e284d2d94f7c53aa699b23a"><td class="instance"><span class="baseIcon primitive"></span><b>qualification</b></td></tr><tr class="collapsed" data-id="66ef271c4fc041a195f3f05c82553636" data-parentId="b9b5ac7993ed434d89ccbcd956613ee2"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="ce414fc039994c75a2bbe7e309dfc648" data-parentId="66ef271c4fc041a195f3f05c82553636"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="775bb2fbdd5e4b98b4fb51238536dc7e" data-parentId="ce414fc039994c75a2bbe7e309dfc648"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://snomed.info/sct</span></td></tr>
+<tr class="collapsed" data-id="fbe35c7d40a54908a68646a30cff73e8" data-parentId="ce414fc039994c75a2bbe7e309dfc648"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>http://snomed.info/sct/900000000000207008/version/20200131</span></td></tr>
+<tr class="collapsed" data-id="009151ba6ff64340819fc5b287126abe" data-parentId="ce414fc039994c75a2bbe7e309dfc648"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>112247003</span></td></tr>
+<tr class="collapsed" data-id="eb9dbfe856b94440a773475284eaa44d" data-parentId="ce414fc039994c75a2bbe7e309dfc648"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Medical doctor (occupation)</span></td></tr>
+
+
+
+
+</table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTablea7eb1d3b948e4dd6a44c4ba5e2106131 = new InstanceTree();
+resourceTreeTablea7eb1d3b948e4dd6a44c4ba5e2106131.init("a7eb1d3b948e4dd6a44c4ba5e2106131");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="8829fae0-2ff1-423a-a936-844ac5a8a169">
+    <pre class="resource-validation-xml"><span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner" >Practitioner</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.id" >id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">PractitionerWalterArzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.meta" >meta</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.meta.source" >source</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://krankenhaus.de</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.meta.profile" >profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier" >identifier</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type" >type</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding" >coding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">LANR</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.value" >value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">123456789</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier" >identifier</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type" >type</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding" >coding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.type.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DN</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">type</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/sid/bundesaerztekammer/efn</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.identifier.value" >value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">123456789123456</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">identifier</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.active" >active</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name" >name</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.use" >use</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">official</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.text" >text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Walter Arzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family" >family</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Arzt</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family.extension.value" >valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Arzt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">family</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.given" >given</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Walter</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">name</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name" >name</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.use" >use</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">maiden</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.text" >text</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gross</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family" >family</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gross</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.name.family.extension.value" >valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Gross</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">family</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">name</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address" >address</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.type" >type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">both</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.line" >line</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Schmiedegasse 16</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.line.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.line.extension.value" >valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">16</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.line.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.line.extension.value" >valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Schmiedegasse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">line</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.city" >city</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Potsdam</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.postalCode" >postalCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">14469</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.address.country" >country</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">DE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">address</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.gender" >gender</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">male</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.birthDate" >birthDate</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.birthDate.extension" >extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/data-absent-reason</span><span class="symbol">&quot;</span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.birthDate.extension.value" >valueCode</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">masked</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">birthDate</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification" >qualification</a></span><span class="brace">&gt;</span>
+        <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code" >code</a></span><span class="brace">&gt;</span>
+            <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code.coding" >coding</a></span><span class="brace">&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code.coding.system" >system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code.coding.version" >version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://snomed.info/sct/900000000000207008/version/20200131</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code.coding.code" >code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">112247003</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+                <span class="brace">&lt;</span><span class="element"><a title="ISiKPersonImGesundheitsberuf
+de.gematik.isik-basismodul 4.0.3
+StructureDefinition-ISiKPersonImGesundheitsberuf.json" href="artifacts/package/StructureDefinition-ISiKPersonImGesundheitsberuf.json#Practitioner.qualification.code.coding.display" >display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Medical doctor (occupation)</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span>
+            <span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span>
+        <span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span>
+    <span class="brace">&lt;/</span><span class="element">qualification</span><span class="brace">&gt;</span>
+<span class="brace">&lt;/</span><span class="element">Practitioner</span><span class="brace">&gt;</span>
+</pre>
+</div><div role="tabpanel" class="tab-pane " id="372eb33c-cf1b-4eb3-b3e1-2c0a369e2193">
+    <pre class="resource-validation-xml"><pre><span class="brace">{</span>
+    <span class="element">&quot;</span><span class="element">resourceType</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Practitioner</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">id</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">PractitionerWalterArzt</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">meta</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">source</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://krankenhaus.de</span><span class="string">&quot;</span><span class="symbol">,</span>
+        <span class="element">&quot;</span><span class="element">profile</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf</span><span class="string">&quot;</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">name</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">use</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">official</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">text</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Walter Arzt</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Arzt</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">_family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">valueString</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Arzt</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">given</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Walter</span><span class="string">&quot;</span>
+            <span class="brace">]</span>
+        <span class="brace">}</span><span class="symbol">,</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">use</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">maiden</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">text</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gross</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gross</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">_family</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/humanname-own-name</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">valueString</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Gross</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">identifier</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">LANR</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">123456789</span><span class="string">&quot;</span>
+        <span class="brace">}</span><span class="symbol">,</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DN</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://terminology.hl7.org/CodeSystem/v2-0203</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/sid/bundesaerztekammer/efn</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">value</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">123456789123456</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">active</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">address</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">type</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">both</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">line</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="string">&quot;</span><span class="string">Schmiedegasse 16</span><span class="string">&quot;</span>
+            <span class="brace">]</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">_line</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                <span class="brace">{</span>
+                    <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                        <span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">valueString</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">16</span><span class="string">&quot;</span>
+                        <span class="brace">}</span><span class="symbol">,</span>
+                        <span class="brace">{</span>
+                            <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName</span><span class="string">&quot;</span><span class="symbol">,</span>
+                            <span class="element">&quot;</span><span class="element">valueString</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Schmiedegasse</span><span class="string">&quot;</span>
+                        <span class="brace">}</span>
+                    <span class="brace">]</span>
+                <span class="brace">}</span>
+            <span class="brace">]</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">city</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Potsdam</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">postalCode</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">14469</span><span class="string">&quot;</span><span class="symbol">,</span>
+            <span class="element">&quot;</span><span class="element">country</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">DE</span><span class="string">&quot;</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">gender</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">male</span><span class="string">&quot;</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">qualification</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+        <span class="brace">{</span>
+            <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">coding</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+                    <span class="brace">{</span>
+                        <span class="element">&quot;</span><span class="element">version</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct/900000000000207008/version/20200131</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">code</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">112247003</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">system</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://snomed.info/sct</span><span class="string">&quot;</span><span class="symbol">,</span>
+                        <span class="element">&quot;</span><span class="element">display</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Medical doctor (occupation)</span><span class="string">&quot;</span>
+                    <span class="brace">}</span>
+                <span class="brace">]</span>
+            <span class="brace">}</span>
+        <span class="brace">}</span>
+    <span class="brace">]</span><span class="symbol">,</span>
+    <span class="element">&quot;</span><span class="element">_birthDate</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span>
+        <span class="element">&quot;</span><span class="element">extension</span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace"> [</span>
+            <span class="brace">{</span>
+                <span class="element">&quot;</span><span class="element">url</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://hl7.org/fhir/StructureDefinition/data-absent-reason</span><span class="string">&quot;</span><span class="symbol">,</span>
+                <span class="element">&quot;</span><span class="element">valueCode</span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">masked</span><span class="string">&quot;</span>
+            <span class="brace">}</span>
+        <span class="brace">]</span>
+    <span class="brace">}</span>
+<span class="brace">}</span></pre></pre>
+</div><div role="tabpanel" class="tab-pane " id="07306f85-352c-4ad8-825b-2b8cc56c94a9">
+    <a  href='https://simplifier.net/resolve?scope=isik-basis-v4@current&filepath=Resources/fsh-generated/resources/Practitioner-PractitionerWalterArzt.json'>Walter Arzt</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

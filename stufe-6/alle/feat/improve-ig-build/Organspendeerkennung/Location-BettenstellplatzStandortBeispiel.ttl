@@ -1,0 +1,42 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Location/BettenstellplatzStandortBeispiel> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BettenstellplatzStandortBeispiel"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKStandortBettenstellplatz>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location BettenstellplatzStandortBeispiel</b></p><a name=\"BettenstellplatzStandortBeispiel\"> </a><a name=\"hcBettenstellplatzStandortBeispiel\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKStandortBettenstellplatz.html\">ISiKStandortBettenstellplatz</a></p></div><p><b>physicalType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}\">Bed</span></p><p><b>managingOrganization</b>: <a href=\"Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html\">Organization Allgemeinchirurgie</a></p><p><b>partOf</b>: <a href=\"Location-RaumStandortBeispiel.html\">Location: physicalType = Room</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:physicalType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/location-physical-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/location-physical-type>
+       ] ;
+       fhir:code [ fhir:v "bd" ] ;
+       fhir:display [ fhir:v "Bed" ]
+     ] )
+  ] ; # 
+  fhir:managingOrganization [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel> ;
+     fhir:reference [ fhir:v "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel" ]
+  ] ; # 
+  fhir:partOf [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Location/RaumStandortBeispiel> ;
+     fhir:reference [ fhir:v "Location/RaumStandortBeispiel" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
