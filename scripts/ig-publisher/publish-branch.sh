@@ -21,6 +21,12 @@ else
 fi
 
 branch_dir="gh-pages/${branch_name}/${IG_NAME}"
+case "${branch_dir}" in
+  gh-pages/IG|gh-pages/IG/*)
+    echo "Refusing to modify protected path: ${branch_dir}"
+    exit 1
+    ;;
+esac
 rm -rf "${branch_dir}"
 mkdir -p "${branch_dir}"
 cp -R "${IG_PUBLISHER_DIR}/output/." "${branch_dir}/"
@@ -28,28 +34,16 @@ cp -R "${IG_PUBLISHER_DIR}/output/." "${branch_dir}/"
 cd gh-pages
 git config user.name "${GIT_AUTHOR_NAME}"
 git config user.email "${GIT_AUTHOR_EMAIL}"
+if [ ! -f .nojekyll ]; then
+  touch .nojekyll
+fi
 git add --all
 if git diff --cached --quiet; then
   echo "No updates to publish."
   exit 0
 fi
+git checkout --orphan temp-gh-pages
+git add --all
 git commit -m "chore: update ${branch_name}/${IG_NAME} pages"
-max_attempts=3
-attempt=1
-while [ "$attempt" -le "$max_attempts" ]; do
-  git fetch origin gh-pages
-  if git rebase origin/gh-pages; then
-    if git push origin gh-pages; then
-      echo "Published to gh-pages on attempt ${attempt}."
-      break
-    fi
-  fi
-
-  git rebase --abort || true
-  if [ "$attempt" -eq "$max_attempts" ]; then
-    echo "Failed to publish to gh-pages after ${max_attempts} attempts."
-    exit 1
-  fi
-  attempt=$((attempt + 1))
-  sleep 2
-done
+git push --force origin HEAD:gh-pages
+echo "Published to gh-pages with a fresh orphan commit."

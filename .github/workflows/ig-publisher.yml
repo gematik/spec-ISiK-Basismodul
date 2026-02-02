@@ -101,7 +101,7 @@ jobs:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     strategy:
       matrix:
-        include:
+        include: &ig_matrix
           # ig_name: Name of the IG (used for artifact names and publishing)
           # ig_dir: Directory of the IG within publisher-guides
           # capability_statement_urls: List of CapabilityStatement URLs to expand (YAML list)
@@ -223,18 +223,6 @@ jobs:
           path: |
             ${{ env.IG_PUBLISHER_DIR }}/output
 
-      # Publish the IG output to a branch-specific directory on gh-pages
-      - name: Publish branch output to GitHub Pages
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
-        shell: bash
-        env:
-          REPO: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_AUTHOR_NAME: github-actions[bot]
-          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-          IG_NAME: ${{ matrix.ig_name }}
-        run: bash scripts/ig-publisher/publish-branch.sh
-
       - name: Announce published URL
         id: announce_url
         if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
@@ -307,3 +295,48 @@ jobs:
           script: |
             const run = require('./scripts/ig-publisher/update-pr-comment');
             await run({ github, context, core, branch: process.env.BRANCH_NAME });
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    concurrency:
+      group: gh-pages-publish
+      cancel-in-progress: false
+    strategy:
+      matrix:
+        include: *ig_matrix
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Build Results
+        uses: actions/download-artifact@v4
+        with:
+          name: fhir-ig-${{ matrix.ig_name }}
+          path: publish-output/${{ matrix.ig_name }}
+        continue-on-error: true
+
+      - name: Publish branch output to GitHub Pages
+        shell: bash
+        env:
+          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          IG_NAME: ${{ matrix.ig_name }}
+          IG_PUBLISHER_DIR: publish-output/${{ matrix.ig_name }}
+        run: |
+          if [ ! -d "${IG_PUBLISHER_DIR}" ] || [ -z "$(ls -A "${IG_PUBLISHER_DIR}")" ]; then
+            echo "No build output found for ${IG_NAME}; skipping publish."
+            exit 0
+          fi
+          mkdir -p "${IG_PUBLISHER_DIR}/output"
+          for item in "${IG_PUBLISHER_DIR}"/*; do
+            if [ "$(basename "${item}")" = "output" ]; then
+              continue
+            fi
+            mv "${item}" "${IG_PUBLISHER_DIR}/output/"
+          done
+          bash scripts/ig-publisher/publish-branch.sh
