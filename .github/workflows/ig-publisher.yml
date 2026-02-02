@@ -188,6 +188,13 @@ jobs:
           capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
           expectation_filter: ${{ matrix.import_cps_filter }}
 
+      # Copy files specified in config.json to the IG directory
+      - name: Copy common files from config.json
+        shell: bash
+        env:
+          IG_NAME: ${{ matrix.ig_name }}
+        run: bash scripts/common-files/copy-config-files.sh
+
       # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
         id: check_changes
