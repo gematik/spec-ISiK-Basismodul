@@ -119,7 +119,6 @@ jobs:
             ig_dir: publisher-guides/Basis
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-
           # Add more IGs here:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
@@ -182,6 +181,13 @@ jobs:
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
           capability_statement_url: ${{ toJSON(matrix.capability_statement_urls) }}
           expectation_filter: ${{ matrix.import_cps_filter }}
+
+      # Copy files specified in config.json to the IG directory
+      - name: Copy common files from config.json
+        shell: bash
+        env:
+          IG_NAME: ${{ matrix.ig_name }}
+        run: bash scripts/common-files/copy-config-files.sh
 
       # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
