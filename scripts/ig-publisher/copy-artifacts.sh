@@ -9,7 +9,14 @@ for dir in "${artifacts_dir}"/sushi-generated-ig-*/; do
   ig_name=$(echo "$base" | sed 's/sushi-generated-ig-//')
   echo "Processing SUSHI-generated artifact $base for IG: $ig_name"
 
-  ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  ig_path=""
+  if [ -f "$dir/.ig-dir" ]; then
+    ig_path=$(cat "$dir/.ig-dir")
+    rm -f "$dir/.ig-dir"
+  fi
+  if [ -z "$ig_path" ]; then
+    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  fi
   if [ -n "$ig_path" ]; then
     target_dir="$ig_path/fsh-generated"
     echo "Copying SUSHI-generated files to ${target_dir}/"
@@ -27,7 +34,14 @@ for dir in "${artifacts_dir}"/expanded-resources-*/; do
   ig_name=$(echo "$base" | sed 's/expanded-resources-//')
   echo "Processing expanded-resources artifact $base for IG: $ig_name"
 
-  ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  ig_path=""
+  if [ -f "$dir/.ig-dir" ]; then
+    ig_path=$(cat "$dir/.ig-dir")
+    rm -f "$dir/.ig-dir"
+  fi
+  if [ -z "$ig_path" ]; then
+    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  fi
   if [ -n "$ig_path" ]; then
     echo "Copying expanded resources to $ig_path/input/resources/"
     mkdir -p "$ig_path/input/resources"

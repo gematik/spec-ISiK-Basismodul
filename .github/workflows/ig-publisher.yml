@@ -167,6 +167,11 @@ jobs:
           sushi ${{ env.IG_PUBLISHER_DIR }}      
 
       # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
+      - name: Write IG dir metadata (SUSHI)
+        shell: bash
+        run: |
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/.ig-dir"
+
       - name: Upload SUSHI-generated ImplementationGuide
         uses: actions/upload-artifact@v4
         with:
@@ -216,6 +221,12 @@ jobs:
           retention-days: 1
 
       # Upload expanded resources for commit (always, not only when build runs)
+      - name: Write IG dir metadata (expanded resources)
+        shell: bash
+        run: |
+          mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/.ig-dir"
+
       - name: Upload Expanded Resources
         uses: actions/upload-artifact@v4
         with:
