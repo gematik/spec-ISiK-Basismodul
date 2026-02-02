@@ -1,12 +1,6 @@
 ---
 topic: ImplementationGuide-markdown-Einfuehrung
 ---
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
-
-----
-Version: 6.0.0-rc
-
-Datum: tbd
 
 Status: Aktiv
 
@@ -16,13 +10,13 @@ Realm: Deutschland
 
 Historische oder abgekündigte Versionen sowie Zwischenveröffentlichungen der Implementierungsleitfäden zur Basis finden Sie [hier](https://gematik.github.io/spec-ISiK-Basismodul/index.html).
 
-Unterschiedliche [Versionen zur Stufe 5 können Sie auf Simplifier abrufen](https://simplifier.net/published-guide/isik-basis-stufe-5/versions).
+Unterschiedliche [Versionen zur Stufe 6 können Sie gemSpec abrufen](https://gemspec.gematik.de/fhir/ig/).
 
 
 ----
 
 
-# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
 
