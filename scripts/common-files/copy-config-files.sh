@@ -12,28 +12,30 @@ fi
 
 echo "Processing config.json entries for IG: $IG_NAME"
 echo "IG_PUBLISHER_DIR: $IG_PUBLISHER_DIR"
+echo "Current working directory: $(pwd)"
+echo ""
 
 # Debug: Show raw content
 echo "DEBUG: Raw config.json content:"
 cat "$CONFIG_FILE"
 echo ""
 
-# Remove whitespace and newlines, then split by closing braces
-echo "DEBUG: Processing JSON..."
-processed=$(sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g')
-echo "DEBUG: Processed items:"
-echo "$processed"
+# Create temp file for processed JSON
+temp_file="/tmp/config_processed_$$.txt"
+sed 's/[[:space:]]\+/ /g' "$CONFIG_FILE" | tr -d '\n' | sed 's/}, /}\n/g' > "$temp_file"
+
+echo "DEBUG: Processed items from $temp_file:"
+cat "$temp_file"
 echo ""
 
-item_count=0
-echo "$processed" | while read -r item; do
+# Process line by line without subshell
+while IFS= read -r item; do
   # Skip empty lines and array markers
   [ -z "$item" ] && continue
   [[ "$item" == *\[* ]] && continue
   [[ "$item" == *\]* ]] && continue
   
-  item_count=$((item_count + 1))
-  echo "DEBUG: Item $item_count: $item"
+  echo "DEBUG: Processing item: $item"
   
   # Extract "file" value
   src=$(echo "$item" | sed -n 's/.*"file"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
@@ -41,7 +43,7 @@ echo "$processed" | while read -r item; do
   # Extract "target" value
   target=$(echo "$item" | sed -n 's/.*"target"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')
   
-  echo "DEBUG: src='$src' target='$target'"
+  echo "DEBUG: Extracted src='$src' target='$target'"
   
   if [ -z "$src" ] || [ -z "$target" ]; then
     echo "DEBUG: Skipping - src or target is empty"
@@ -51,7 +53,7 @@ echo "$processed" | while read -r item; do
   echo "Processing: src=$src target=$target"
   
   if [ ! -f "$src" ]; then
-    echo "Error: Source file $src not found"
+    echo "Error: Source file '$src' not found (pwd: $(pwd))"
     continue
   fi
   
@@ -62,16 +64,22 @@ echo "$processed" | while read -r item; do
   target_dir="${IG_PUBLISHER_DIR}/${target}"
   target_path="${target_dir}/${filename}"
   
-  echo "Copying $src to $target_path"
+  echo "Creating directory: $target_dir"
   mkdir -p "$target_dir" || {
     echo "Error: Failed to create directory $target_dir"
     continue
   }
+  
+  echo "Copying $src to $target_path"
   cp "$src" "$target_path" || {
     echo "Error: Failed to copy $src to $target_path"
     continue
   }
   echo "Successfully copied $filename to $target_dir"
-done
+  
+done < "$temp_file"
+
+# Cleanup
+rm -f "$temp_file"
 
 echo "Config files processed successfully"
