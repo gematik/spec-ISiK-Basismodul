@@ -54,5 +54,14 @@ fi
 git checkout --orphan temp-gh-pages
 git add --all
 git commit -m "chore: update ${branch_name}/${IG_NAME} pages"
-git push --force origin HEAD:gh-pages
-echo "Published to gh-pages with a fresh orphan commit."
+for attempt in 1 2 3; do
+  if git push --force origin HEAD:gh-pages; then
+    echo "Published to gh-pages with a fresh orphan commit."
+    exit 0
+  fi
+  echo "Push failed due to concurrent update; retrying (${attempt}/3)..."
+  git fetch origin gh-pages
+  sleep 2
+done
+echo "Failed to publish to gh-pages after retries."
+exit 1
