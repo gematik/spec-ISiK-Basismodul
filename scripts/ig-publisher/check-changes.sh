@@ -14,23 +14,35 @@ fi
 
 FSH_GEN_PATH="${IG_PUBLISHER_DIR}/fsh-generated"
 INPUT_PATH="${IG_PUBLISHER_DIR}/input"
+FSH_GEN_RESOURCES_PATH="${FSH_GEN_PATH}/resources"
+FSH_GEN_MENU_PATH="${FSH_GEN_PATH}/includes/menu.xml"
 
 echo "Checking for changes in:"
-echo "  - ${FSH_GEN_PATH}"
+echo "  - ${FSH_GEN_RESOURCES_PATH}"
+echo "  - ${FSH_GEN_MENU_PATH}"
 echo "  - ${INPUT_PATH}"
 echo ""
 
 has_changes=false
 
+status_out=""
+if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
+  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
+fi
+if [ -f "${FSH_GEN_MENU_PATH}" ]; then
+  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
+fi
 if [ -d "${INPUT_PATH}" ]; then
-  status_out=$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")
+  status_out="${status_out}"$'\n'"$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")"
+fi
 
-  if [ -n "$status_out" ]; then
-    has_changes=true
-    echo "Changes detected in ${INPUT_PATH}:"
-    echo "$status_out" | head -20
-    echo ""
-  fi
+status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d')
+
+if [ -n "$status_out" ]; then
+  has_changes=true
+  echo "Changes detected in checked paths:"
+  echo "$status_out" | head -20
+  echo ""
 fi
 
 if [ "$has_changes" = true ]; then
