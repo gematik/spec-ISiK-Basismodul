@@ -54,8 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
-    outputs:
-      sushi_changed: ${{ steps.sushi_changes.outputs.sushi_changed }}
     env:
       SUSHI_INPUT_DIR: Resources
 
@@ -77,18 +75,6 @@ jobs:
       - name: Run SUSHI
         run: |
           sushi ${{ env.SUSHI_INPUT_DIR }}
-
-      # Record whether SUSHI changed tracked Resources (used to skip Expansion later)
-      - name: Check SUSHI changes
-        id: sushi_changes
-        shell: bash
-        working-directory: ${{ github.workspace }}
-        run: |
-          if git diff --quiet -- "${{ env.SUSHI_INPUT_DIR }}"; then
-            echo "sushi_changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "sushi_changed=true" >> "$GITHUB_OUTPUT"
-          fi
 
       # Upload fsh-generated output for use by build jobs
       - name: Upload FSH Generated Resources
@@ -193,7 +179,6 @@ jobs:
       # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
         uses: Gefyra/capabilityStatement-expander@v0
-        if: needs.prepare.outputs.sushi_changed == 'true' || github.event.inputs.force_build == 'true'
         with:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
