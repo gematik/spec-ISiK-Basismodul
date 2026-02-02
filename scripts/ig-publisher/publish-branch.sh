@@ -4,6 +4,11 @@ set -euo pipefail
 branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
 remote_url="https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
 
+if [ -z "${branch_name}" ] || [ -z "${IG_NAME}" ]; then
+  echo "Missing branch name or IG name; refusing to publish."
+  exit 1
+fi
+
 rm -rf gh-pages
 
 if git ls-remote --heads "${remote_url}" gh-pages | grep -q "."; then
@@ -22,6 +27,10 @@ fi
 
 branch_dir="gh-pages/${branch_name}/${IG_NAME}"
 case "${branch_dir}" in
+  gh-pages|gh-pages/|gh-pages/.|gh-pages/..)
+    echo "Refusing to modify root path: ${branch_dir}"
+    exit 1
+    ;;
   gh-pages/IG|gh-pages/IG/*)
     echo "Refusing to modify protected path: ${branch_dir}"
     exit 1
