@@ -43,11 +43,59 @@ for dir in "${artifacts_dir}"/expanded-resources-*/; do
     ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
   fi
   if [ -n "$ig_path" ]; then
-    echo "Copying input files to $ig_path/input/"
-    mkdir -p "$ig_path/input"
-    rm -rf "$ig_path/input/resources" "$ig_path/input/includes" "$ig_path/input/pagecontent" || true
-    cp -r "$dir"* "$ig_path/input/" || true
+    echo "Copying expanded resources to $ig_path/input/resources/"
+    mkdir -p "$ig_path/input/resources"
+    rm -rf "$ig_path/input/resources/"* || true
+    cp -r "$dir"* "$ig_path/input/resources/" || true
   else
     echo "Warning: No matching directory found for $ig_name (expanded resources)"
+  fi
+done
+
+for dir in "${artifacts_dir}"/input-includes-*/; do
+  [ -d "$dir" ] || continue
+  base=$(basename "$dir")
+  ig_name=$(echo "$base" | sed 's/input-includes-//')
+  echo "Processing input-includes artifact $base for IG: $ig_name"
+
+  ig_path=""
+  if [ -f "$dir/ig-dir.txt" ]; then
+    ig_path=$(cat "$dir/ig-dir.txt")
+    rm -f "$dir/ig-dir.txt"
+  fi
+  if [ -z "$ig_path" ]; then
+    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  fi
+  if [ -n "$ig_path" ]; then
+    echo "Copying input includes to $ig_path/input/includes/"
+    mkdir -p "$ig_path/input/includes"
+    rm -rf "$ig_path/input/includes/"* || true
+    cp -r "$dir"* "$ig_path/input/includes/" || true
+  else
+    echo "Warning: No matching directory found for $ig_name (input includes)"
+  fi
+done
+
+for dir in "${artifacts_dir}"/input-pagecontent-*/; do
+  [ -d "$dir" ] || continue
+  base=$(basename "$dir")
+  ig_name=$(echo "$base" | sed 's/input-pagecontent-//')
+  echo "Processing input-pagecontent artifact $base for IG: $ig_name"
+
+  ig_path=""
+  if [ -f "$dir/ig-dir.txt" ]; then
+    ig_path=$(cat "$dir/ig-dir.txt")
+    rm -f "$dir/ig-dir.txt"
+  fi
+  if [ -z "$ig_path" ]; then
+    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
+  fi
+  if [ -n "$ig_path" ]; then
+    echo "Copying input pagecontent to $ig_path/input/pagecontent/"
+    mkdir -p "$ig_path/input/pagecontent"
+    rm -rf "$ig_path/input/pagecontent/"* || true
+    cp -r "$dir"* "$ig_path/input/pagecontent/" || true
+  else
+    echo "Warning: No matching directory found for $ig_name (input pagecontent)"
   fi
 done

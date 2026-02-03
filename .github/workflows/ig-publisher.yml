@@ -228,14 +228,44 @@ jobs:
       - name: Write IG dir metadata (expanded resources)
         shell: bash
         run: |
-          mkdir -p "${IG_PUBLISHER_DIR}/input"
-          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/ig-dir.txt"
+          mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/ig-dir.txt"
 
       - name: Upload Expanded Resources
         uses: actions/upload-artifact@v6
         with:
           name: expanded-resources-${{ matrix.ig_name }}
-          path: ${{ env.IG_PUBLISHER_DIR }}/input
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Write IG dir metadata (input includes)
+        shell: bash
+        run: |
+          if [ -d "${IG_PUBLISHER_DIR}/input/includes" ]; then
+            echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/includes/ig-dir.txt"
+          fi
+
+      - name: Upload Input Includes
+        uses: actions/upload-artifact@v6
+        with:
+          name: input-includes-${{ matrix.ig_name }}
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/includes
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Write IG dir metadata (input pagecontent)
+        shell: bash
+        run: |
+          if [ -d "${IG_PUBLISHER_DIR}/input/pagecontent" ]; then
+            echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/pagecontent/ig-dir.txt"
+          fi
+
+      - name: Upload Input Pagecontent
+        uses: actions/upload-artifact@v6
+        with:
+          name: input-pagecontent-${{ matrix.ig_name }}
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/pagecontent
           retention-days: 1
           if-no-files-found: warn
 
@@ -297,6 +327,18 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           pattern: expanded-resources-*
+          path: artifacts
+
+      - name: Download Input Includes
+        uses: actions/download-artifact@v7
+        with:
+          pattern: input-includes-*
+          path: artifacts
+
+      - name: Download Input Pagecontent
+        uses: actions/download-artifact@v7
+        with:
+          pattern: input-pagecontent-*
           path: artifacts
 
       # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
