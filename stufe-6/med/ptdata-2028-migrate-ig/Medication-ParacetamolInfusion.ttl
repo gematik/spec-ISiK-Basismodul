@@ -1,0 +1,122 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Medication/ParacetamolInfusion> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ParacetamolInfusion"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "additional" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><p><b>Motivation:</b> Dieses Beispiel zeigt, wie Rezepturen als ISiK-Medikation in FHIR R4 abgebildet werden können. Es demonstriert die Kombination eines Wirkstoffs mit einer Trägerlösung.</p><p><b>Medikament:</b> Paracetamol 10 mg/ml in Glukose 5 %</p><p><b>Form:</b> Infusionslösung</p><p><b>Wirkstoffe:</b></p><ul><li><b>Paracetamol:</b> 10 mg/ml (aktiv)</li><li><b>Glukose 5 %:</b> Trägerlösung (inaktiv)</li></ul><p><b>Gesamtmenge:</b> 100 ml (entspricht 1000 mg Paracetamol)</p><p><b>Hinweis:</b> Rezepturen bestehen aus mehreren Bestandteilen. Dieses Beispiel zeigt, wie man sie mit <code>Medication.ingredient</code> korrekt modelliert.</p></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:code [
+     fhir:text [ fhir:v "Paracetamol 10 mg/ml in Glukose 5 %" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://standardterms.edqm.eu"^^xsd:anyURI ;
+         fhir:l <http://standardterms.edqm.eu>
+       ] ;
+       fhir:code [ fhir:v "11210000" ] ;
+       fhir:display [ fhir:v "Solution for infusion" ]
+     ] ) ;
+     fhir:text [ fhir:v "Infusionslösung" ]
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mL" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mL" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "Beutel" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "1" ]
+     ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.de/StructureDefinition/WirkstofftypEX"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/StructureDefinition/WirkstofftypEX>
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/WirkstofftypCS"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/WirkstofftypCS>
+         ] ;
+         fhir:code [ fhir:v "IN" ]
+       ]
+     ] ) ;
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
+         ] ;
+         fhir:version [ fhir:v "2024" ] ;
+         fhir:code [ fhir:v "N02BE01" ] ;
+         fhir:display [ fhir:v "Paracetamol" ]
+       ] ) ;
+       fhir:text [ fhir:v "Paracetamol" ]
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "10"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mg" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mL" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mL" ]
+       ]
+     ]
+  ] [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+         ] ;
+         fhir:code [ fhir:v "03710676" ] ;
+         fhir:display [ fhir:v "Ecoflac® plus Glucose 5 % (100 ml)" ]
+       ] )
+     ] ;
+     fhir:isActive [ fhir:v false ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

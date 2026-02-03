@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Interaktionen - ISiK Terminplanung Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">UseCases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UseCases.html">UseCases</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="Interaktionen.html">Interaktionen</a>
+      </li>
+      <li>
+        <a href="Kompatibilitaet.html">Kompatibilität zu anderen nationalen FHIR-basierten Spezifikationen</a>
+      </li>
+      <li>
+        <a href="Prozesse.html">Prozesse</a>
+      </li>
+      <li>
+        <a href="Informationsmodell.html">Informationsmodell</a>
+      </li>
+      <li>
+        <a href="Architekturoptionen.html">Architekturoptionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="UebergreifendeFestlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+      <li>
+        <a href="Operations.html">Operation $book</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Terminplanung Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Interaktionen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Interaktionen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<p>Für folgende Interaktionen werden im vorliegenden Implementierungsleitfaden Vorgaben für die Umsetzung innerhalb der ISiK-Schnittstelle definiert:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteure</th>
+      <th>Transaktionen</th>
+      <th>Festlegungsstatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Termin-Repository</strong></td>
+      <td>- Übermittlung von Patienteninformationen <br /> - Verfügbare Behandlungsleistungen abrufen <br /> - Verfügbare Terminlisten abrufen <br /> - Abfrage von (verfügbaren) Terminblöcken <br /> - Termin neu buchen (Buchungsmanagement von verfügbaren Terminen) <br /> - Termin absagen (ausgehend vom Client) <br /> - Termin verschieben (ausgehend vom Client) <br /> - Terminzusatzinformationen aktualisieren (ausgehend vom Client)</td>
+      <td>Verplichtend</td>
+    </tr>
+    <tr>
+      <td><strong>Termin-Requestor</strong></td>
+      <td>- Übermittlung von Patienteninformationen <br /> - Verfügbare Behandlungsleistungen abrufen <br /> - Verfügbare Terminlisten abrufen <br /> - Abfrage von (verfügbaren) Terminblöcken <br /> - Termin neu buchen (Buchungsmanagement von verfügbaren Terminen) <br /> - Termin absagen (ausgehend vom Client) <br /> - Termin verschieben (ausgehend vom Client) <br /> - Terminzusatzinformationen aktualisieren (ausgehend vom Client)</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><strong>Termin-Consumer</strong></td>
+      <td>- Abfrage von (vereinbarten) Terminen</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Zudem kann die Situation eintreten, dass ein System die Aufgaben eines Termin Repositories übernimmt, jedoch kein terminführendes System ist (z. B. ein Patientenportal) und die Termine mit einem weiteren Termin-Repository synchronisiert (z. B. KIS). In diesem Fall übernimmt das System, welches Termine an das terminführende System sendet, die Rolle eines Termin-Requestors. Diese Option steht einem Termin-Repository offen, falls es für bestimmte Use Cases notwendig ist; jedoch ist dies nicht verpflichtend für die Rolle des Termin Repositories.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/1.Uebermittlung_Patienteninformationen_zum_Termin_zugehoerige_Vorabinformationen.png" alt=" 1. Übermittlung Patienteninformationen - zum Termin zugehörige Vorabinformationen" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 1. Übermittlung Patienteninformationen - zum Termin zugehörige Vorabinformationen</figcaption>
+</figure>
+
+<p>Für die Auswahl eines verfügbaren Terminblocks kann es notwendig sein, dass das Termin-Repository vorab durch den Termin-Requestor Vorabinformationen (z.B. für die Krankenversicherung) erhält. Diese können über eine schreibende Schnittstelle an das Termin-Repository übermittelt werden. Es ist zu beachten, dass das Termin-Repository gegebenenfalls diese Informationen separat von eigens erstellten Datenobjekten vorhält und/oder die Information dauerhaft erst nach einer manuellen Überprüfung durch einen Benutzer freigibt.</p>
+
+<p>Gleichermaßen können Informationen zum Patienten vorab übermittelt werden, sodass gewisse Basisangaben bereits im Terminrepository vorliegen.</p>
+
+<p>Siehe  <a href="Operations.md">Anlage einer Patient-Ressource</a> für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/2.Verfuegbare_Behandlungsleistungen_abrufen.png" alt="2. Verfügbare Behandlungsleistungen abrufen" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 2. Verfügbare Behandlungsleistungen abrufen</figcaption>
+</figure>
+
+<p>Als Einstiegspunkt in die Terminvereinbarung können durch den Termin Requestor alle verfügbaren Behandlungsleistungen (HealthcareServices) abgerufen werden, für die das Termin-Repository Informationen zu notwendigen Ressourcen (Räume, Personen, Geräte, etc.) bereitstellt.</p>
+
+<p>Siehe  für die technische Umsetzung. Es sind die Hinweise zum Abruf der ValueSets für die Kodierung der Medizinischen Behandlungseinheit zu beachten.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/3.Verfuegbare_Terminlisten_abrufen.png" alt="3. Verfügbare Terminlisten abrufen" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 3. Verfügbare Terminlisten abrufen</figcaption>
+</figure>
+
+<p>Der Termin-Requestor kann nach der Auswahl einer Behandlungsleistung verfügbare Terminlisten (Schedules) für diese im Termin-Repository abrufen. Die Terminlisten repräsentieren somit den “Kalender”, in dem Termine gebucht werden können.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/4.Abfrage_von_verfuegbaren_Terminbloecken.png" alt="4. Abfrage von (verfübaren) Terminblöcken" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 4. Abfrage von (verfübaren) Terminblöcken</figcaption>
+</figure>
+
+<p>Für einen jeweiligen Kalender kann der Termin-Requestor die darin definierten Terminblöcke abfragen. Diese können entsprechend eines Zeitraums und/oder Status (verfügbar, belegt) gefiltert werden.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/5.Termin_neu_buchen_Buchungsmanagemnent_von_verfuegbaren_Terminen.png" alt="5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 5. Termin neu buchen - Buchungsmanagemnent von verfügbaren Terminen</figcaption>
+</figure>
+
+<p>Für einen durch den Benutzer ausgewählten Terminblock bzw. mehreren aufeinander folgenden Terminblöcken kann durch den Termin-Requestor ein Termin angefragt werden. Dieser kann direkt oder erst nach manueller Bestätigung durch das Termin-Repository freigegeben werden.</p>
+
+<p>Es ist zu beachten, dass innerhalb dieser Aktion ein terminführendes Termin-Repository die Rolle des Termin-Requestors übernehmen kann und den neu-angelegten Termin in ein weiteres Terminrepository spiegelt.</p>
+
+<p>In diesem Kontext kann das Termin-Repsoitory zudem Zusatzinformationen (z.B. Lagepläne) an den Termin-Requestor übermitteln.</p>
+
+<p>Die Buchung eines Termins kann auch eine Aktualisierung eines Termins darstellen, indem für einen bestehenden Termin ein oder mehrere neu ausgewählte Terminblöcke an das Terminrepository übergeben werden.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/6.1_Termin_absagen_ausgehend_vom_Client.png" alt="6.1 Termin absagen (ausgehend vom Client)" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 6.1 Termin absagen (ausgehend vom Client)</figcaption>
+</figure>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/6.2_Termin_absagen_ausgehend_vom_terminführenden_System.png" alt="6.2 Termin absagen (ausgehend vom terminführenden System)" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 6.2 Termin absagen (ausgehend vom terminführenden System)</figcaption>
+</figure>
+
+<p>Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System abgesagt werden.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<p>Eine Verschiebeoperation kann im Normalfall als eine Neubuchung mit geändertem Zeitfenster ausgeführt werden (siehe Interaktion 5, bzw.  für die technische Umsetzung.)</p>
+
+<p>Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Termins notwendig werden, wenn ursprüngliche Ressourcen nicht mehr verfügbar sind für den neu zu belegenden Slot:</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/7.1_Termin_verschieben_ausgehend_vom_Client.png" alt="7.1 Termin verschieben (ausgehend vom Client)" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 7.1 Termin verschieben (ausgehend vom Client)</figcaption>
+</figure>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/7.2_Termin_verschieben_ausgehend_vom_Termin_Repository.png" alt="7.2 Termin verschieben (ausgehend vom Termin Repository)" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 7.2 Termin verschieben (ausgehend vom Termin Repository)</figcaption>
+</figure>
+
+<p>Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="geInteraktionen/8.1_Terminzusatzinformationen_aktualisieren_ausgehend_vom_Client.png" alt="8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client)" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong> 8.1 Terminzusatzinformationen aktualisieren (ausgehend vom Client)</figcaption>
+</figure>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/8.2_Terminzusatzinformationen_aktualisieren_ausgehend_vom_Termin_Repository.png" alt="8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository)" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin Repository)</figcaption>
+</figure>
+
+<p>Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System durch Zusatzinformationen (z.B. welche Teilnehmer oder Ressourcen sind Teil des Termins) erweitert werden.</p>
+
+<p>In diesem Kontext kann der Termin-Requestor zudem Zusatzinformationen (z.B. Einwilligungen) an das Termin-Repository übermitteln.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+<hr />
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen/9.Abfrage_von_verinbarten_Terminen.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung:</strong> 9. Abfrage von (verinbarten) Terminen</figcaption>
+</figure>
+
+<p>Der Termin-Requestor oder Termin-Consumer kann einen, mehrere oder alle Termine eines Termin Repositories abfragen.</p>
+
+<p>Siehe  für die technische Umsetzung.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket terminplanung#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 2, 2026 09:52+0000">2026-02-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

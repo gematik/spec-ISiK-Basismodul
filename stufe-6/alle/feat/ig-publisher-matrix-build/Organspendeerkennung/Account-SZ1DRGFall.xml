@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Account xmlns="http://hl7.org/fhir">
+  <id value="SZ1DRGFall"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Account SZ1DRGFall</b></p><a name="SZ1DRGFall"> </a><a name="hcSZ1DRGFall"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKAbrechnungsfall.html">ISiKAbrechnungsfall</a></p></div><p><b>identifier</b>: Account number/0123456789</p><p><b>status</b>: Active</p><p><b>type</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode IMP}">inpatient encounter</span></p><p><b>subject</b>: <a href="Patient-SZ1Patient.html">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-DRG">Abrechnungsart: DRG</a> (Diagnosebezogene Fallgruppen)</p><p><b>coverage</b>: <a href="Coverage-SZ1VersicherungGesetzlich.html">Coverage: status = active; type = gesetzliche Krankenversicherung</a></p></blockquote><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-SZ">Abrechnungsart: SZ</a> (Selbstzahlerrechnung)</p><p><b>coverage</b>: <a href="Coverage-SZ1VersicherungSelbstzahler.html">Coverage: status = active; type = Selbstzahler</a></p></blockquote></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="AN"/>
+      </coding>
+    </type>
+    <system value="http://beispiel-krankenhaus.de/sid/fallnummern"/>
+    <value value="0123456789"/>
+  </identifier>
+  <status value="active"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+      <code value="IMP"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/SZ1Patient"/>
+  </subject>
+  <coverage>
+    <extension url="http://fhir.de/StructureDefinition/ExtensionAbrechnungsart">
+      <valueCoding>
+        <system value="http://fhir.de/CodeSystem/dkgev/Abrechnungsart"/>
+        <code value="DRG"/>
+        <display value="Diagnosebezogene Fallgruppen"/>
+      </valueCoding>
+    </extension>
+    <coverage>
+      <reference value="Coverage/SZ1VersicherungGesetzlich"/>
+    </coverage>
+  </coverage>
+  <coverage>
+    <extension url="http://fhir.de/StructureDefinition/ExtensionAbrechnungsart">
+      <valueCoding>
+        <system value="http://fhir.de/CodeSystem/dkgev/Abrechnungsart"/>
+        <code value="SZ"/>
+        <display value="Selbstzahlerrechnung"/>
+      </valueCoding>
+    </extension>
+    <coverage>
+      <reference value="Coverage/SZ1VersicherungSelbstzahler"/>
+    </coverage>
+  </coverage>
+</Account>

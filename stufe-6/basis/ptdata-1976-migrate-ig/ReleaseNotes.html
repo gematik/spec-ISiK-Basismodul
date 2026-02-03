@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Release Notes - Basis Implementation Guide v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Index</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_UseCaseAnwendung.html">Index</a>
+      </li>
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_Festlegungen.html">Index</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Basis Implementation Guide<br />
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Release Notes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Release Notes</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#version-5xx" id="markdown-toc-version-5xx">Version 5.x.x</a></li>
+  <li><a href="#version-511" id="markdown-toc-version-511">Version 5.1.1</a></li>
+  <li><a href="#version-510" id="markdown-toc-version-510">Version 5.1.0</a></li>
+  <li><a href="#version-500" id="markdown-toc-version-500">Version 5.0.0</a></li>
+  <li><a href="#version-500-rc2-benehmensherstellung" id="markdown-toc-version-500-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</a></li>
+  <li><a href="#version-500-rc1" id="markdown-toc-version-500-rc1">Version 5.0.0-rc1</a></li>
+  <li><a href="#version-500-rc-kommentierung" id="markdown-toc-version-500-rc-kommentierung">Version 5.0.0-rc (Kommentierung)</a></li>
+  <li><a href="#version-403" id="markdown-toc-version-403">Version 4.0.3</a></li>
+  <li><a href="#version-402" id="markdown-toc-version-402">Version 4.0.2</a></li>
+  <li><a href="#version-401" id="markdown-toc-version-401">Version 4.0.1</a></li>
+  <li><a href="#version-400" id="markdown-toc-version-400">Version: 4.0.0</a></li>
+  <li><a href="#version-400-rc2" id="markdown-toc-version-400-rc2">Version: 4.0.0-rc2</a></li>
+  <li><a href="#version-305" id="markdown-toc-version-305">Version: 3.0.5</a></li>
+  <li><a href="#version-304" id="markdown-toc-version-304">Version: 3.0.4</a></li>
+  <li><a href="#version-303" id="markdown-toc-version-303">Version: 3.0.3</a></li>
+  <li><a href="#version-302" id="markdown-toc-version-302">Version: 3.0.2</a></li>
+  <li><a href="#version-301" id="markdown-toc-version-301">Version: 3.0.1</a></li>
+  <li><a href="#version-300" id="markdown-toc-version-300">Version: 3.0.0</a></li>
+  <li><a href="#version-300-rc3" id="markdown-toc-version-300-rc3">Version: 3.0.0-rc3</a></li>
+  <li><a href="#version-300-rc2" id="markdown-toc-version-300-rc2">Version: 3.0.0-rc2</a></li>
+  <li><a href="#version-300-rc1" id="markdown-toc-version-300-rc1">Version: 3.0.0-rc1</a></li>
+  <li><a href="#version-205" id="markdown-toc-version-205">Version: 2.0.5</a></li>
+  <li><a href="#version-204" id="markdown-toc-version-204">Version: 2.0.4</a></li>
+  <li><a href="#version-203" id="markdown-toc-version-203">Version: 2.0.3</a></li>
+  <li><a href="#version-202" id="markdown-toc-version-202">Version: 2.0.2</a></li>
+  <li><a href="#version-201" id="markdown-toc-version-201">Version: 2.0.1</a></li>
+  <li><a href="#version-200" id="markdown-toc-version-200">Version: 2.0.0</a></li>
+  <li><a href="#version-200-ballot" id="markdown-toc-version-200-ballot">Version: 2.0.0-ballot</a></li>
+  <li><a href="#initiale-ballotierungsversion-für-isik-stufe-2" id="markdown-toc-initiale-ballotierungsversion-für-isik-stufe-2">Initiale Ballotierungsversion für ISiK Stufe 2</a></li>
+</ul>
+
+</div>
+
+<p>Im Rahmen der ISiK-Veröffentlichungen wird das <a href="https://semver.org/lang/de/">Semantic Versioning</a> verwendet.</p>
+
+<p>Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.</p>
+
+<p>Die Tags werden folgendermaßen verwendet:</p>
+
+<ul>
+  <li>
+    <p>‘documentation’: um zu Kennzeichnen, dass hier nur etwas an der Dokumentation geändert oder hinzugefügt wurde, das sich nicht auf normative Aspekte auswirkt.</p>
+  </li>
+  <li>
+    <p>‘improve’  um Änderungen und neue Aspekte hinsichtlich normativer Inhalte (u. a. per Technical Correction (TC)) umzusetzen, die aber keine Fehler beheben.</p>
+  </li>
+  <li>
+    <p>‘fix’ sollte nur verwendet werden für Behebung von <strong>Fehlern</strong> an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.</p>
+  </li>
+</ul>
+
+<h3 id="version-5xx">Version 5.x.x</h3>
+
+<ul>
+  <li>fix: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein “*” verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.</li>
+</ul>
+
+<h3 id="version-511">Version 5.1.1</h3>
+
+<p>Datum: 17.12.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Die SnomedCT-Version muss sich auf eine konkrete deutsche Edition beziehen https://github.com/gematik/spec-ISiK-Basismodul/pull/911</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation hinzugefügt für die Nutzung von Encounter.location.identifier; zusätzlich Refactoring von Encounter.location-Slices https://github.com/gematik/spec-ISiK-Basismodul/pull/917</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Patient.telecom wurde auf MS gesetzt, da diese Information für die Kontaktaufnahme in verschiedenen Kontexten der Terminvereinbarung unerlässlich ist https://github.com/gematik/spec-ISiK-Basismodul/pull/915</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Für die Profile <code class="language-plaintext highlighter-rouge">ISiKPatient</code>, <code class="language-plaintext highlighter-rouge">ISiKAngehoeriger</code>, sowie <code class="language-plaintext highlighter-rouge">ISiKDiagnose</code> wurden für die jeweiligen Modifier-Elemente ein bedingtes Must-Support hinzugefügt, um die korrekte Verarbeitung der Ressourcen gewährleisten zu können https://github.com/gematik/spec-ISiK-Basismodul/pull/904</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Anpassung der package.json um nicht notwendige Dependency “dvmd.kdl.r4” zu entfernen https://github.com/gematik/spec-ISiK-Basismodul/pull/925</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Korrektur des Satzes zur Verwendung von ISiKBinary https://github.com/gematik/spec-ISiK-Basismodul/pull/930</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Beispiel für ein Dokument-Bundle zur Rückübermittelung aus Subsystemen mit ISiK-konformen Ressourcen und weiteren Ressourcen ohne ISiK-Entsprechung hinzugefügt</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Verbesserung der MS-Flags auf dem value[x]-Element für ISiKLebenszustandOberservation und setzen auf abstract des Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/945</li>
+</ul>
+
+<h3 id="version-510">Version 5.1.0</h3>
+
+<p>Datum: 23.10.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Beschreibungen für die Extensions in ISiK (auch Backports) hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/877</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Festlegungen für Verwendung von <code class="language-plaintext highlighter-rouge">Encounter.location.location.identifier</code> konkretisiert. https://github.com/gematik/spec-ISiK-Basismodul/pull/827</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Allgemeine Hinweise zum Umgang mit fehlenden Daten und Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen hinzugefügt</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> id-Elemente sind in <em>allen</em> Profilen dokumentiert und als bedingtes Pflicht-/MS-Feld gekennzeichnet.</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung, dass eine Versichertennummer_PKV neben einem KVNR-Identifier existieren kann. https://github.com/gematik/spec-ISiK-Basismodul/pull/814</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung für Einschränkung des Patterns auf Encounter.location.status https://github.com/gematik/spec-ISiK-Basismodul/pull/826</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Anpassung der Canonical des Valuesets <em>CurrentSmokingStatusUvIPS</em> auf der Seite des IGs https://github.com/gematik/spec-ISiK-Basismodul/pull/830</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zum Umgang mit in ISiK nicht spezifizierten Ressourcentypen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/817/files</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Umgang zum Scoping auf einen Patienten in Allgemeine Hinweise zu Suchparametern erweitert #878</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Beispiele für Encounter-Ressourcen zur Abbildung einer Verlegungskette hinzugefügt.  https://github.com/gematik/spec-ISiK-Basismodul/pull/881</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Handhabung von Encounter.location.status bei Verlegungen hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/881</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Die Profile <code class="language-plaintext highlighter-rouge">ISiKPatient</code>, <code class="language-plaintext highlighter-rouge">ÌSiKOrganization</code>, sowie <code class="language-plaintext highlighter-rouge">ISiKPersonImGesundheitsberuf</code> enthalten nun eine “impose-Profile”-Extension um die Kompatibilität mit den entsprechenden <a href="https://gemspec.gematik.de/ig/fhir/ti/1.1.1/index.html">TI-Commons-Profile</a> zu dokumentieren.</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Hinweise zur Kompatibilität des ISiKPatient-Profils zum EPAPatient-Profil der gematik hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/898</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Änderung an Coverage.subscriber.identifier wurde zurückgenommen https://github.com/gematik/spec-ISiK-Basismodul/pull/912</li>
+</ul>
+
+<h3 id="version-500">Version 5.0.0</h3>
+
+<p>Datum: 26.06.2025</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update Deutsche Basisprofile auf Version v1.5.4. Siehe Release Notes dort für weitere Details: https://simplifier.net/packages/de.basisprofil.r4/1.5.4 - https://github.com/gematik/spec-ISiK-Basismodul/pull/780</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen der Definition von DKG und KIG der ‘Bestätigungsrelevanten Systeme’ für ISiK Stufe 5 https://github.com/gematik/spec-ISiK-Basismodul/pull/784</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Darstellung des Bundle-Profils im IG https://github.com/gematik/spec-ISiK-Basismodul/pull/768</li>
+</ul>
+
+<p>Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.</p>
+
+<h3 id="version-500-rc2-benehmensherstellung">Version 5.0.0-rc2 (Benehmensherstellung)</h3>
+
+<p>Datum: 5.6.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anpassung der Anforderungen zum Serververhalten bei CREATE-Interaktionen: Nicht ISiK-konforme Ressourcen müssen nicht länger pauschal abgelehnt werden. https://github.com/gematik/spec-ISiK-Basismodul/pull/748</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anpassung der Anforderungen zum Servererhalten bei READ-Interaktionen: Bereitgestellte Instanzen müssen nicht länger pauschal ISiK-konform sein. https://github.com/gematik/spec-ISiK-Basismodul/pull/748</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Schwächung der Anforderung zur Rückgabe von HTTPS-Status-Codes https://github.com/gematik/spec-ISiK-Basismodul/pull/748</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> affectsState-Attribut der $update-Operation auf <code class="language-plaintext highlighter-rouge">true</code> gesetzt, in Folge dessen das Beispiel für den Aufruf auf die Verwendung von HTTP POST statt HTTP GET korrigiert.</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Typo in Canonical des Codesystems und Valuesets UnterbrechungReha korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/726</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Dem ISiK Bericht Bundle wurden zwei neue Slices hinzugefügt, welche Patient (verpflichtend) und Encounter (optional) hinzufügen, um die Nutzung des Bundle besser darzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/738</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Entfernen des LOINC-Patterns für genauere Kodierung im Profil ISiKBerichtSubSystem (Composition) und Update der Slices einschließlich detaillierte Beschreibung für .type https://github.com/gematik/spec-ISiK-Basismodul/pull/749</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update UebergreifendeFestlegungen Methodik https://github.com/gematik/spec-ISiK-Basismodul/pull/708</li>
+</ul>
+
+<h3 id="version-500-rc1">Version 5.0.0-rc1</h3>
+
+<p>Datum: 13.05.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix Pattern auf Composition.category https://github.com/gematik/spec-ISiK-Basismodul/pull/693</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Erläuternde Seite für das neue Akteur und Rollen Konzept https://github.com/gematik/spec-ISiK-Basismodul/pull/701</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Entfernen des Abschnitts “Verpflichtende Suchparameter”, da diese Information bereits im CapabilityStatement enthalten ist https://github.com/gematik/spec-ISiK-Basismodul/pull/709</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix fehlender Deklaration der Encounter-Ressource in CapabilityStatement LeistungserbringerRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/713</li>
+</ul>
+
+<h3 id="version-500-rc-kommentierung">Version 5.0.0-rc (Kommentierung)</h3>
+
+<p>Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.</p>
+
+<p>Datum: 09.04.2025</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Auslagern der Subscription Profile und UseCases in ein eigenes Modul
+Subscription https://github.com/gematik/spec-ISiK-Basismodul/pull/645</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Klarstellung zum Zweck des Account Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/632</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Coverage-Profil zur Abbildung sonstiger Kostenträger hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/602</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweise zur Abbildung des Aufnahmegrunds im Encounter hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/647</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Encounter aus dem Modul Terminplanung als Profil entfernt und in das Basismodul übertragen, dafür Capability Statement erweitert um entsprechende Rolle https://github.com/gematik/spec-ISiK-Basismodul/pull/604</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix Pattern auf Composition.type https://github.com/gematik/spec-ISiK-Basismodul/pull/598</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix Pattern auf patternCoding.system für AlphaID + Beispiel AlphaID hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/556</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Repräsentation einer PKV-VersichertenId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/587</li>
+</ul>
+
+<hr />
+
+<h3 id="version-403">Version 4.0.3</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> broken package</li>
+</ul>
+
+<hr />
+
+<h3 id="version-402">Version 4.0.2</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Anpassung Kardinalität von “ExtensionAbrechnungsart” unter Account.coverage https://github.com/gematik/spec-ISiK-Basismodul/pull/526</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> SearchParameter “contains” existiert nicht in FHIR R4, Suchparameter wird entfernt  https://github.com/gematik/spec-ISiK-Basismodul/pull/529</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter ‘near’ https://github.com/gematik/spec-ISiK-Basismodul/pull/533</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Die Verbindlichkeit des Suchparameters <code class="language-plaintext highlighter-rouge">subject</code> wurde von SHALL auf MAY reduziert, da der Suchparameter <code class="language-plaintext highlighter-rouge">patient</code> für ISiK-Zwecke ausreichend ist. https://github.com/gematik/spec-ISiK-Basismodul/pull/515</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst.  https://github.com/gematik/spec-ISiK-Basismodul/pull/539</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Schärfung von Kommentaren von MS-Feldern für das Datenobjekt ‘Practitioner’ https://github.com/gematik/spec-ISiK-Basismodul/pull/541</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Der Name, Id und Canonical des ISiKPatientMergeSubscription Profils wurde an das ISiK Namingschema angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/539</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Generalisierter Abschnitt zur Herstellung des Patienten- und Encounter-Kontextes hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/542</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Beispiele hinzugefügt für Patient, Condition, Encounter https://github.com/gematik/spec-ISiK-Basismodul/pull/520</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Groß- und kleinschreibung bei ISiK-eigenen CodeSystemen deaktiviert https://github.com/gematik/spec-ISiK-Basismodul/pull/532/files</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Korrektur eines Beispiels für eine GET-Abfrage zum Suchparameter ‘near’ https://github.com/gematik/spec-ISiK-Basismodul/pull/533</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Procedure-code existiert nicht, verwende clinical-code https://github.com/gematik/spec-ISiK-Basismodul/pull/531</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update Basisprofile-De Version auf 1.5.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/549</li>
+</ul>
+
+<hr />
+
+<h3 id="version-401">Version 4.0.1</h3>
+
+<p>Datum: 25.11.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Refactoring des ImplementationGuides</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Procedure.code zu Pflichfeld gemacht https://github.com/gematik/spec-ISiK-Basismodul/issues/454</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Condition.onset harmonisiert mit KBV-Profil und mit Condition.abatement https://github.com/gematik/spec-ISiK-Basismodul/issues/454</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Vereinheitlichung des Umgangs mit ressourcenübergreifenden Suchparametern 
+https://github.com/gematik/spec-ISiK-Basismodul/issues/438</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Anpassung der include/revinclude Anforderungen in den übergreifenden Festelegungen und dem CapabilityStatement</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> CodeSystem-Ressource wird im CapabilityStatement nun korrekt angezeigt
+https://github.com/gematik/spec-ISiK-Basismodul/issues/436</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> CapabilityStatement <em>near</em> SearchParameter type &amp; ResourceType Organization spelling, removed custom backport Extension - switched to the official backport mechanism, fixed Bindings to CodeSystems    https://github.com/gematik/spec-ISiK-Basismodul/commit/ae706142832e2059046ce978c4b0dc472c2375e6</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Handhabung von leeren Elementen und einem :not-Modifier hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/473 obsoleter PR, dafür umgesetzt hier: https://github.com/gematik/spec-ISiK-Basismodul/commit/e63cc68d311057f7b30b5b405c5533bef41e9d68</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Dependency zum R5 backporting IG auf das R4 only  package angepasst https://github.com/gematik/spec-ISiK-Basismodul/pull/479</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Formulierung zur Verwendung des Versorgungsstellenkontaktes https://github.com/gematik/spec-ISiK-Basismodul/pull/488</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Beispiel Station hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/546/files</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Harmonisierung von Encounter.type und Account.type https://github.com/gematik/spec-ISiK-Basismodul/pull/441</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Änderung der Kardinalität von Composition.type.text auf 1..1 https://github.com/gematik/spec-ISiK-Basismodul/pull/441</li>
+</ul>
+
+<h3 id="version-400">Version: 4.0.0</h3>
+
+<p>Datum: 30.8.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neudefinition der bestätigungsrelevanten Systeme https://github.com/gematik/spec-ISiK-Basismodul/pull/426</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Überarbeitung des Abschnitts zu Suchparametern mit Änderung der Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/411</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Überarbeitung der Must Support Definition: https://github.com/gematik/spec-ISiK-Basismodul/pull/412</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen von MS und weitere Anpassung von Encounter.location, um Abbildung von Standort-Historie zu ermöglichen: https://github.com/gematik/spec-ISiK-Basismodul/pull/407</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Added MS for Account.coverage.priority https://github.com/gematik/spec-ISiK-Basismodul/pull/405 and https://github.com/gematik/spec-ISiK-Basismodul/pull/406</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> Erläuterung zur Handhabung von Mime-Types im Fall der Rückgabe von Binaries in ihrer nativen Form hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/380</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen von MS für Coverage.subscriber.reference für Gesetzlich- und Privatversicherte https://github.com/gematik/spec-ISiK-Basismodul/pull/408</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen von Use Case Beschreibungen (nicht normativ) https://github.com/gematik/spec-ISiK-Basismodul/pull/399</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen einer Referenz zwischen Observation-Seiten und Profildarstellung</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Entfernen der MS-Flag für .id, da irreführend https://github.com/gematik/spec-ISiK-Basismodul/pull/414</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix Beispiel DorisResultat für patient-merge https://github.com/gematik/spec-ISiK-Basismodul/pull/415</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anforderung zu Procedure.Encounter hinzu https://github.com/gematik/spec-ISiK-Basismodul/pull/419</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Änderung der MS-Definition für Patient.active https://github.com/gematik/spec-ISiK-Basismodul/pull/421</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> SnomedCT Coding.version muss auf die German Edition zeigen https://github.com/gematik/spec-ISiK-Basismodul/pull/417</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKAngehoeriger hinzufügen von MS auf .relation &amp; .telecom, entfernen der gender extension https://github.com/gematik/spec-ISiK-Basismodul/pull/417</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKDiagnose hinzufügen von MS auf .bodySite incl. SnomedCT Slice zur Kodierung https://github.com/gematik/spec-ISiK-Basismodul/pull/417</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKOrganisation identifier:TelematikId hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/417</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Harmonisierung mit Anforderung mit Kontakt/Fall-Seite https://github.com/gematik/spec-ISiK-Basismodul/pull/424</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Definition für MS bei Condition.clinicalStatus geschwächt https://github.com/gematik/spec-ISiK-Basismodul/pull/422 und https://github.com/gematik/spec-ISiK-Basismodul/pull/423</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen von ValueSets zur Harmonisierung der Organisation mit den Anpassungen im Modul Terminplanung https://github.com/gematik/spec-ISiK-Basismodul/pull/418</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix des ValueSets für SNOMED-CT-Diagnosen (entspricht TC 3.0.5) https://github.com/gematik/spec-ISiK-Basismodul/pull/398</li>
+</ul>
+
+<hr />
+
+<h3 id="version-400-rc2">Version: 4.0.0-rc2</h3>
+
+<p>Datum: 4.4.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neues Feature: Patient merge Notification; Hinzufügen MustSupport für Patient.link &amp; patient-merge Subscription(Topic) https://github.com/gematik/spec-ISiK-Basismodul/pull/359</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue Profile für Standort und Organisation https://github.com/gematik/spec-ISiK-Basismodul/pull/358</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue Profile für Allergien https://github.com/gematik/spec-ISiK-Basismodul/pull/369</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue Profile für Lebenszustände - Schwangerschaftsstatus , SS-ET, Raucher &amp; Alkoholabususstatus by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/378
+    <ul>
+      <li>Hinzugefügt Lebenszustand markdown descriptions  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/379</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Feature Ptdata 827 reha entlassung by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/393</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Update Deutsche Basisprofile v1.5.0 by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/372</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Verwende IdentifierAbrechnungsnummer aus den Deutschen Basisprofilen by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/381</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Abkündigen der Slices zu VersichertenId-GKV und ersetzen mit generischer Versicherten-ID : https://github.com/gematik/spec-ISiK-Basismodul/pull/382/files</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Fix /canonical to new format by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/383</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Feature /ptdata 821 account abrechnungsart by @alexzautke in https://github.com/gematik/spec-ISiK-Basismodul/pull/386</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Feature /ptdata 671 // MS für coding.version  by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/390</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Feature added Allergyintollerance to CapStatement by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/385</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Lockerung der Anforderung für den Suchparameter “context-type-value” definiert für ISiKValueSet zu “KANN”</li>
+</ul>
+
+<hr />
+
+<h3 id="version-305">Version: 3.0.5</h3>
+
+<p>Diese Technical Correction entfällt für Stufe 4, da die Änderungen direkt in Stufe 4 eingebracht sind.</p>
+
+<hr />
+
+<h3 id="version-304">Version: 3.0.4</h3>
+
+<p>Datum: 1.3.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Entfernen der Festlegungen zum .identifier in ISiKVersicherungsverhaeltnisGesetzlich: https://github.com/gematik/spec-ISiK-Basismodul/pull/362</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Korrektur der Anforderung zur Encounter-Kontaktebene: https://github.com/gematik/spec-ISiK-Basismodul/pull/363</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Nutzung des Suchparameter “context-type-value” hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/367</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Änderung der Anforderung zu KANN für Profil ISIKKatalog: https://github.com/gematik/spec-ISiK-Basismodul/pull/367</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Lockerung für Extension Kardinalität in Account zu ..* und hinzufügen einer Beschreibung: https://github.com/gematik/spec-ISiK-Basismodul/pull/366</li>
+</ul>
+
+<hr />
+<h3 id="version-303">Version: 3.0.3</h3>
+
+<p>Datum: 15.01.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anpassung und Harmonisierung der Anforderungen zu HTTP-Responses: update HTTP response requirement #308 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/354</li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.2…v.3.0.3</p>
+
+<hr />
+<h3 id="version-302">Version: 3.0.2</h3>
+
+<p>Datum: 09.01.2024</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinzufügen optionaler Suchparameter für RelatedPerson: Add new optional SearchParameter for RelatedPerson.address - Feature /anfisk 146 search related person by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/346</li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.1…v.3.0.2</p>
+
+<hr />
+<h3 id="version-301">Version: 3.0.1</h3>
+
+<p>Datum: 05.12.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Obsoleter SNOMED Code ersetzt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d72f3a08a41b999074b4f33db299d5d71cd04be9</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Hinweis zur Nutzung der ISIKBinary-Ressource hinzugefügt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/7dc3026686856efd3e61660a37f1e15955d45a11</li>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Invariante zur Strassenanschrift modifiziert - <code class="language-plaintext highlighter-rouge">fix</code> invariant context #330: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/345d776f3b75442e391d8787c71a051628050b9e
+    <ul>
+      <li>hier auch Constraint bezüglich ISiKAngehoeriger aus Strassenanschrift entfernt</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Anforderungen im CapabilityStatement zum Account entsprechend der textuellen Anforderungen angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/ac4d2c730bb94dd50cc4f5deea8c2b1344329d2c</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue (klärende) Anforderung zum Versorgungsstellenkontakt: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/d7005923c4596f8a646468f20e1f9975f2489bef</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Öffnung der Festlegung einer Coverage-ID - <code class="language-plaintext highlighter-rouge">fix</code> identifier slices + add MS beneficiary + rm MS kvid: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/bd66cca38397b987581bece3d2e9f508813ff765</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Zielstellung zur Interoperabilität der Profile angepasst: https://github.com/gematik/spec-ISiK-Basismodul/pull/322/commits/3130973de182a078208f181a64ff1cfd8783493a</li>
+</ul>
+
+<p><strong>Full Changelog</strong>: https://github.com/gematik/spec-ISiK-Basismodul/compare/v.3.0.0…v.3.0.1</p>
+
+<hr />
+<h3 id="version-300">Version: 3.0.0</h3>
+
+<p>Datum: 01.07.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.</li>
+</ul>
+
+<hr />
+<h3 id="version-300-rc3">Version: 3.0.0-rc3</h3>
+
+<p>Datum: 30.05.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Allgemein Vorgaben zur Herkunftsausweisung/Provenance (meta.tag) gelockert
+    <ul>
+      <li>provenance constraints by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/263</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKCapabilityStatementBasisServer Read Shall für Composition entfernt
+    <ul>
+      <li>capability for Composition #259 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/260</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKAbrechnungsfall   * Änderung des Kodierungs-Pattern, Value Set hinzugefügt und Beispiel angepasst
+    <ul>
+      <li>Enhancement /account identifier by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/238</li>
+      <li>Update /identifier Abrechnungsnummer vs by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/269</li>
+      <li>Änderung der falschen Kardinalität
+        <ul>
+          <li>cardinality #258 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/262</li>
+        </ul>
+      </li>
+      <li>Nur der Patient als Subject zugelassen
+        <ul>
+          <li>Update /account.subject only patient #251 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/265</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiK Prozedur: MS für SNOMED-Codierung
+    <ul>
+      <li>MS for SNOMED by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/239</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKVersicherungsverhaeltnisSelbstzahler Organisation als zahlende Instanz hinzugefügt
+    <ul>
+      <li>organization as payor by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/236</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiK KontaktGesundheitseinrichtung: Suchparameter für Encounter.date start/end aus R5 übernommen
+    <ul>
+      <li>feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in https://github.com/gematik/spec-ISiK-Basismodul/pull/242</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKBerichtSubSysteme References generisch statt ISiK-spezifisch
+    <ul>
+      <li>Reference - Kommentierung Stufe 3 by @f-peverali in https://github.com/gematik/spec-ISiK-Basismodul/pull/256</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-300-rc2">Version: 3.0.0-rc2</h3>
+
+<p>Datum: 03.04.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> KontaktGesundheitseinrichtung SearchParameter aus FHIR-R5 für Encounter.period als Custom SearchParameter eingeführt, um die effektive Suche auf Encounter ohne abgeschlossene “period” zu ermöglichen
+    <ul>
+      <li>feat Encounter.date start/end SearchParameters backported from R5, e… by @patrick-werner in <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/242">https://github.com/gematik/spec-ISiK-Basismodul/pull/242</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-300-rc1">Version: 3.0.0-rc1</h3>
+
+<p>Datum: 31.03.2023</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKAbrechnungsfall Identifier-Pattern und Kodierung ersetzt durch Anpassung an das Basisprofil DE Pre-Release
+    <ul>
+      <li>Enhancement /account identifier by @f-peverali in <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/238">https://github.com/gematik/spec-ISiK-Basismodul/pull/238</a></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKProzedur SNOMED-Kodierung auf Must Support gesetzt
+    <ul>
+      <li>MS for SNOMED by @f-peverali in <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/239">https://github.com/gematik/spec-ISiK-Basismodul/pull/239</a></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKVersicherungsverhaeltnisSelbstzahler Organisation als möglicher ‘payor’ hinzugefügt (es gibt auch Konstellationen, in denen die Zahlung direkt über die PKV erfolgt)
+    <ul>
+      <li>organization as payor by @f-peverali in <a href="https://github.com/gematik/spec-ISiK-Basismodul/pull/236">https://github.com/gematik/spec-ISiK-Basismodul/pull/236</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-205">Version: 2.0.5</h3>
+
+<p>Datum: 24.03.2023</p>
+
+<ul>
+  <li>Änderungen am IG
+    <ul>
+      <li>Hinweis Inkompatibilität zu KBV Basisprofile bei Patient.Adress.country</li>
+      <li><code class="language-plaintext highlighter-rouge">improve</code> Einschränkung der Umsetzungspflicht für Suchparameter vom Typ “Token” auf Datentypen “code”, “Coding” oder “CodeableConcept”</li>
+    </ul>
+  </li>
+  <li>ISiKBerichtBundle   - Slicing -Korrektur - betrifft Validierung und erfordert keine Anpassung von Seiten der Implementierung</li>
+  <li>ISiKPatient (Beispiel - erfordert keine Anpassung von Seiten der Implementierung)
+    <ul>
+      <li>Fixed identifier-Slicing of Type VersichertenId-GKV</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-204">Version: 2.0.4</h3>
+
+<p>Datum: 31.01.2023</p>
+
+<ul>
+  <li>ISiKVersicherungsverhaeltnisGesetzlich   - <code class="language-plaintext highlighter-rouge">Reference</code> auf Kernspezifikation-Profil RelatedPerson statt ISiKAngehoeriger (entspricht allgemeinem Design-Prinzip)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Coverage.beneficiary.identifier</code> URL in <code class="language-plaintext highlighter-rouge">patternidentifier.system</code> ersetzt</li>
+    </ul>
+  </li>
+  <li>weitere Änderungen an Implementierungsleitfaeden (informativ)</li>
+</ul>
+
+<hr />
+<h3 id="version-203">Version: 2.0.3</h3>
+
+<p>Datum: 21.12.2022</p>
+
+<ul>
+  <li>CapabilityStatemtent   - Composition und Bundle-Parameter hinzugefügt</li>
+  <li>ISiKBerichtSubsystem   - <code class="language-plaintext highlighter-rouge">encounter</code> auf FHIR-Core gesetzt</li>
+  <li>ISiKBerichtBundle   - Beispiele hinzugefügt</li>
+  <li>Weitere geringfügige Änderungen am Implementierungsleitfaden</li>
+</ul>
+
+<hr />
+<h3 id="version-202">Version: 2.0.2</h3>
+
+<p>Datum: 31.10.2022</p>
+
+<ul>
+  <li>Bericht für Subsysteme
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">id</code> ist nun 0..1</li>
+    </ul>
+  </li>
+  <li>Kontakt   - <code class="language-plaintext highlighter-rouge">id</code> ist nun 0..1</li>
+  <li>Patient   - <code class="language-plaintext highlighter-rouge">id</code> ist nun 0..1
+    <ul>
+      <li>Der Identifier <code class="language-plaintext highlighter-rouge">Versichertennummer-GKV</code> wurde zu <code class="language-plaintext highlighter-rouge">VersichertenId-GKV</code></li>
+    </ul>
+  </li>
+  <li>Prozedur   - <code class="language-plaintext highlighter-rouge">id</code> ist nun 0..1</li>
+  <li>Versicherungeverhältnis Gesetzlich
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">id</code> ist nun 0..1</li>
+      <li><code class="language-plaintext highlighter-rouge">type.coding</code> ist nun Must Support</li>
+      <li><code class="language-plaintext highlighter-rouge">VersicherungsArtDeBasis</code> ist nun Must Support</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Invarianten wurden verbessert</li>
+</ul>
+
+<hr />
+<h3 id="version-201">Version: 2.0.1</h3>
+
+<p>Datum: 30.09.2022</p>
+
+<ul>
+  <li>ISiKPatient   * .address.Strassenanschrift.extension:Stadtteil, .type, .status nun Must Support</li>
+  <li>ISiKPersonImGesundheitsberuf   * .address.Strassenanschrift.extension:Stadtteil, nun Must Support</li>
+  <li>ISiKAngehöriger   * .address.Strassenanschrift.extension:Stadtteil, nun Must Support</li>
+  <li>ISiKAbrechnungsfall   * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer</li>
+  <li>ISiKKontaktGesundheitseinrichtung   * .identifier.system im Example nun https://test.krankenhaus.de/fhir/sid/besuchsnummer</li>
+  <li>ISiKVersicherungsverhaeltnisGesetzlich   * .type ist nun Must Support</li>
+  <li>ISiKVersicherungsverhaeltnisSelbstzahler   * .type und .status ist nun Must Support</li>
+</ul>
+
+<hr />
+<h3 id="version-200">Version: 2.0.0</h3>
+
+<p>Datum: 30.06.2022</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fix</code> Allgemein     * Alle Conformance Ressourcen enthalten den Prefix “https://gematik.de/fhir/isik/v2/Basismodul/” in ihrer Canonical URL
+    <ul>
+      <li>Erweiterung des Abschnittes “Verpflichtende Suchparameter (Alle Datenobjekte)” durch _tag, , _count, _include, _revinclude</li>
+      <li>Best Practice Empfehlungen für Standard-Suchfilter hinzugefügt</li>
+      <li>Verpflichtung type-Modifier auf Referenzen hinzugefügt</li>
+      <li>Aufhebung der Einschränkung von Chaining und Reverse Chaining auf die Referenzen “patient”, “subject” und “encounter”</li>
+      <li>Anpassung der Vorgaben für den “Self”-Link als Antwort auf eine Suchanfrage.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> Neue Profile hinzugefügt:
+    <ul>
+      <li>ISiKAbrechnungsfall     * ISiKBerichtBundle     * ISiKBinary     * ISiKCodeSystem     * ISiKValueSet * ISiKAngehöriger     * Target Profil Einschränkung auf ISiKPatient in RelatedPerson.patient aufgehoben</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKBerichtSubsystem     * Must -Support Flags hinzugefügt</li>
+  <li>ISiKDiagnose     * Beschreibung von “isik-con1”-Constraint korrigiert
+    <ul>
+      <li>Must Support Flag für Extension “related” hinzugefügt</li>
+    </ul>
+  </li>
+  <li>ISiKPatient     * Umbenennung Slice von “Patient.identifier:Versichertennummer-GKV in “Patient.identifier:VersichertenId-GKV”</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKPersonImGesundheitsberuf     * Element “Practitioner.identifier:TelematikId” hinzugefügt (must-support)</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKVersicherungsverhaeltnisGesetzlich     * Must -Support Flag auf “Coverage.payor.identifier.type” hinzugefügt</li>
+  <li><code class="language-plaintext highlighter-rouge">improve</code> ISiKKontaktGesundheitseinrichtung     * Constraints ISiK-enc-2 bis ISiK-enc-8 hinzugefügt
+    <ul>
+      <li>Extensions plannedStartDate, plannedEndDate und Wahlleistung hinzugefügt</li>
+      <li>Änderung Kardinalität von Element “Encounter.identifier:Aufnahmenummer.type” auf 1..1</li>
+      <li>Änderung Kardinalität von Element “Encounter.type:Kontaktebene” auf 1..1</li>
+      <li>Element “Encounter.serviceType.coding:ErweiterterFachabteilungsschluessel” hinzugefügt</li>
+      <li>Änderung Kardinalität von “Encounter.period” von 1..1 auf 0..1</li>
+      <li>Element “Encounter.diagnosis.use.coding:Diagnosetyp” und “Encounter.diagnosis.use.coding:DiagnosesubTyp” hinzugefügt</li>
+      <li>Must -Support Flag auf Element “Encounter.account” hinzugefügt</li>
+      <li>Änderung der Binding-Strength des Elementes “Encounter.hospitalization.admitSource” von “preferred” auf “extensible”</li>
+      <li>Extensible ValueSet zu Element “Encounter.location.physicalType” hinzugefügt</li>
+      <li>Anstelle von “Encounter.location.location.display” ist nun “Encounter.serviceProvider.identifier” zu verwenden</li>
+      <li>Must -Support-Flag entfernt auf Element “Encounter.partOf”</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="version-200-ballot">Version: 2.0.0-ballot</h3>
+
+<p>Datum: 08.04.2022</p>
+
+<ul>
+  <li>
+    <h2 id="initiale-ballotierungsversion-für-isik-stufe-2">Initiale Ballotierungsversion für ISiK Stufe 2</h2>
+  </li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket basis#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jan 21, 2026 13:41+0000">2026-01-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

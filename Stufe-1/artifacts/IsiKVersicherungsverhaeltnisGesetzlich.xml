@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ISiKVersicherungsverhaeltnisGesetzlich" />
+  <url value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich" />
+  <version value="1.0.3" />
+  <name value="ISiKVersicherungsverhaeltnisGesetzlich" />
+  <status value="active" />
+  <date value="2020-09-09" />
+  <publisher value="gematik GmbH" />
+  <description value="Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Coverage" />
+  <baseDefinition value="http://fhir.de/StructureDefinition/coverage-de-basis" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Coverage">
+      <path value="Coverage" />
+      <definition value="Kostenübernahme im Rahmen eines gesetzlichen Versicherungsverhältnisses in Deutschland." />
+    </element>
+    <element id="Coverage.id">
+      <path value="Coverage.id" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier">
+      <path value="Coverage.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="Primärer Identifier der Versicherung" />
+      <definition value="Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versichertennummer identifiziert werden. Ist diese nicht bekannt, so wird die 10-stellige VersichertenID statt dessen verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID">
+      <path value="Coverage.identifier" />
+      <sliceName value="Krankenversicherten-ID" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID.system">
+      <path value="Coverage.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID.value">
+      <path value="Coverage.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.status">
+      <path value="Coverage.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.type">
+      <path value="Coverage.type" />
+      <comment value="28.07.2017 (zulip): TC Konsens bzgl. Verwendung eines eigenen ValueSets anstelle des im Standrad definierten preferred bindings, da die dortigen Codes nicht passen." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.type.coding">
+      <path value="Coverage.type.coding" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.type.coding.system">
+      <path value="Coverage.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/versicherungsart-de-basis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.type.coding.code">
+      <path value="Coverage.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="GKV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriber">
+      <path value="Coverage.subscriber" />
+      <definition value="Hauptversicherte Person, wenn abweichend von beneficiary, z.B. bei Familienversicherung" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKAngehoeriger" />
+      </type>
+    </element>
+    <element id="Coverage.subscriber.identifier">
+      <path value="Coverage.subscriber.identifier" />
+      <short value="VersichertenID (10-stellig) des Hauptversicherten" />
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10" />
+      </type>
+      <patternIdentifier>
+        <system value="http://fhir.de/NamingSystem/gkv/kvid-10" />
+      </patternIdentifier>
+    </element>
+    <element id="Coverage.subscriber.display">
+      <path value="Coverage.subscriber.display" />
+      <short value="Name des Hauptversicherten" />
+    </element>
+    <element id="Coverage.beneficiary">
+      <path value="Coverage.beneficiary" />
+      <definition value="Benennt die versicherte Person." />
+      <comment value="Die Angabe der 10-stelligen Krankenversichertennummer ist verpflichtend. Durch die Referenz auf eine Patient-Resource können weitere Informationen zum Patienten hinterlegt werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKPatient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary.reference">
+      <path value="Coverage.beneficiary.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary.identifier">
+      <path value="Coverage.beneficiary.identifier" />
+      <short value="Identifier der versicherten Person" />
+      <patternIdentifier>
+        <system value="http://fhir.de/NamingSystem/gkv/kvid-10" />
+      </patternIdentifier>
+    </element>
+    <element id="Coverage.beneficiary.display">
+      <path value="Coverage.beneficiary.display" />
+      <short value="Name der Versicherten Person" />
+      <definition value="Die Angabe des Namens des Versicherten dient der geeigenten Darstellung für den Benutzer und hat keine technische Bedeutung." />
+    </element>
+    <element id="Coverage.period.start">
+      <path value="Coverage.period.start" />
+      <mapping>
+        <identity value="KVDT" />
+        <map value="4133" />
+      </mapping>
+    </element>
+    <element id="Coverage.period.end">
+      <path value="Coverage.period.end" />
+      <mapping>
+        <identity value="KVDT" />
+        <map value="4110" />
+      </mapping>
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor" />
+      <definition value="Gibt den Kostenträger des Versicherten an. Die Angabe der IK-Nummer als logische Referenz sowie des Namens als Display ist zwingend erforderlich.&#xD;&#xA;Die Referenz auf eine Resource vom Typ Organization, die weitere Details zur Versicherung enthalten kann (z.B. Adresse, Kontaktdaten) ist optional.&#xD;&#xA;Sofern eine zweite Referenz auf einen Kostenträger existiert, so handelt es sich hierbei um den abrechnenden Kostenträger" />
+      <comment value="Die Angabe der IK-Nummer des Versicherers in payor.identifier ist verpflichtend. Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier">
+      <path value="Coverage.payor.identifier" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-iknr" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.system">
+      <path value="Coverage.payor.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.value">
+      <path value="Coverage.payor.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.display">
+      <path value="Coverage.payor.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

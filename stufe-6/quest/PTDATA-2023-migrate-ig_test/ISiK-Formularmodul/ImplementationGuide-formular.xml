@@ -1,0 +1,3362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="formular"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide formular</b></p><a name="formular"> </a><a name="hcformular"> </a><h2>ISiKFormularmodul</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Formularmodul/ImplementationGuide/formular</pre><div><p>Implementation guide for the Formular module based on ISiK specifications.</p>
+</div></div>
+  </text>
+  <url value="https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Formularmodul/ImplementationGuide/formular"/>
+  <version value="6.0.0-rc"/>
+  <name value="ISiKFormularmodul"/>
+  <title value="ISiK Formularmodul Implementation Guide"/>
+  <status value="active"/>
+  <date value="2026-01-26T12:32:47+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Implementation guide for the Formular module based on ISiK specifications."/>
+  <packageId value="formular"/>
+  <license value="Apache-2.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.0.1"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_ips">
+    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
+    <packageId value="hl7.fhir.uv.ips"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_subscriptions_backport_r4">
+    <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
+    <packageId value="hl7.fhir.uv.subscriptions-backport.r4"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <dependsOn id="de_basisprofil_r4">
+    <uri value="http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4"/>
+    <packageId value="de.basisprofil.r4"/>
+    <version value="1.5.4"/>
+  </dependsOn>
+  <dependsOn id="de_ihe_d_terminology">
+    <uri value="http://fhir.de/packages/de.ihe-d.terminology"/>
+    <packageId value="de.ihe-d.terminology"/>
+    <version value="3.0.1"/>
+  </dependsOn>
+  <dependsOn id="ihe_formatcode_fhir">
+    <uri value="https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir"/>
+    <packageId value="ihe.formatcode.fhir"/>
+    <version value="1.4.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_sdc">
+    <uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
+    <packageId value="hl7.fhir.uv.sdc"/>
+    <version value="4.0.0-ballot"/>
+  </dependsOn>
+  <dependsOn id="de_gematik_terminology">
+    <uri value="https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology"/>
+    <packageId value="de.gematik.terminology"/>
+    <version value="1.0.6"/>
+  </dependsOn>
+  <dependsOn id="de_fhir_medication">
+    <uri value="http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication"/>
+    <packageId value="de.fhir.medication"/>
+    <version value="1.0.3"/>
+  </dependsOn>
+  <dependsOn id="de_gematik_ti">
+    <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
+    <packageId value="de.gematik.ti"/>
+    <version value="1.1.1"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2025+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/isik/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2025+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/isik/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ISiKAllergieUnvertraeglichkeitBeispiel1"/>
+      </reference>
+      <name value="Example AllergyIntolerance - ISiKAllergieUnvertraeglichkeitBeispiel1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile">
+        <valueCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile">
+        <valueCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile">
+        <valueCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile">
+        <valueCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/BundleExampleIntensivstation"/>
+      </reference>
+      <name value="Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile">
+        <valueCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtSubSysteme"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ISiKBundle-Example"/>
+      </reference>
+      <name value="Blutdruckmessung vom 3.5.2022 (Bundle)"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementAMTSRolle"/>
+      </reference>
+      <name value="ISiK CapabilityStatement AMTS Rolle"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;ISiKCapabilityStatementCompositionKonsumentenRolle&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleAkteur-expanded"/>
+      </reference>
+      <name value="Akteur &amp;quot;ISiKCapabilityStatementFormularDatenQuelleAkteur&amp;quot; (Expanded)"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   &#xA;&#xA;  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.&#xA;Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. &#xA;Der `MODE`-Parameter kann ignoriert werden.  &#xA;Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  &#xA;&#xA;Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen &#xA;und die Versionsnummer angeben.   &#xA;Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.&#xA;Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.&#xA;&#xA;Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. &#xA;Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, &#xA;sofern diese in der Instanz implementiert wurden.  &#xA;&#xA;Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleAkteur"/>
+      </reference>
+      <name value="Akteur &amp;quot;ISiKCapabilityStatementFormularDatenQuelleAkteur&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   &#xA;&#xA;  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.&#xA;Hierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. &#xA;Der `MODE`-Parameter kann ignoriert werden.  &#xA;Das CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  &#xA;&#xA;Eine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen &#xA;und die Versionsnummer angeben.   &#xA;Darüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.&#xA;Die mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.&#xA;&#xA;Das CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. &#xA;Das CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, &#xA;sofern diese in der Instanz implementiert wurden.  &#xA;&#xA;Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;FormularDatenQuelleRolle&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;ISiKCapabilityStatementGesundheitsstatusRolle&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementKlinischeRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;ISiKCapabilityStatementKlinischeRolle&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle"/>
+      </reference>
+      <name value="ISiK CapabilityStatement Labor Minimal Rolle"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"/>
+      </reference>
+      <name value="CapabilityStatement für Rolle &amp;quot;StammdatenRolle&amp;quot;"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedRolle"/>
+      </reference>
+      <name value="ISiK CapabilityStatement VitalSign ICU Source Extended"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalRolle"/>
+      </reference>
+      <name value="ISiK CapabilityStatement VitalSign ICU Source Minimal Rolle"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceRolle"/>
+      </reference>
+      <name value="ISiK CapabilityStatement VitalSign Standard Source Rolle"/>
+      <description value="Dieses CapabilityStatement beschreibt alle Interaktionen, &#xA;  die ein System unterstützen MUSS, welches diese Rolle implementiert.   &#xA;  &#xA;Die CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). &#xA;Zur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, &#xA;wird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/AltersbedingteKreislaufstoerung"/>
+      </reference>
+      <name value="Example Condition - AltersbedingteKreislaufstoerung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/BehandlungsDiagnoseFreitext"/>
+      </reference>
+      <name value="Example Condition - BehandlungsDiagnoseFreitext"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Example-condition-ausrufezeichen-primaer"/>
+      </reference>
+      <name value="Example Condition - Example-condition-ausrufezeichen-primaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Example-condition-ausrufezeichen-sekundaer"/>
+      </reference>
+      <name value="Example Condition - Example-condition-ausrufezeichen-sekundaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Example-condition-kreuz-stern-primaer"/>
+      </reference>
+      <name value="Example Condition - Example-condition-kreuz-stern-primaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Example-condition-kreuz-stern-sekundaer"/>
+      </reference>
+      <name value="Example Condition - Example-condition-kreuz-stern-sekundaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/MittelgradigeIntelligenzminderung"/>
+      </reference>
+      <name value="Example Condition - MittelgradigeIntelligenzminderung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PrimaereGonarthroseMinimal"/>
+      </reference>
+      <name value="Example Condition - PrimaereGonarthroseMinimal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PrimaereGonarthroseNormal"/>
+      </reference>
+      <name value="Example Condition - PrimaereGonarthroseNormal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/SZ2Primaerdiagnose"/>
+      </reference>
+      <name value="Example Condition - SZ2Primaerdiagnose"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/SZ2Sekundaerdiagnose"/>
+      </reference>
+      <name value="Example Condition - SZ2Sekundaerdiagnose"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Fachabteilungskontakt"/>
+      </reference>
+      <name value="Example Encounter - Fachabteilungskontakt"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktBettenverlegung"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktBettenverlegung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktEntlassung"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktEntlassung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktFachbereichswechsel1"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktFachbereichswechsel1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktFachbereichswechsel2"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktFachbereichswechsel2"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktMinimal2"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktMinimal2"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktNormal"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktNormal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktStationaereAufnahme"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktStationaereAufnahme"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktStationswechsel1"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktStationswechsel1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/FachabteilungskontaktStationswechsel2"/>
+      </reference>
+      <name value="Example Encounter - FachabteilungskontaktStationswechsel2"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/SZ1Nachstationaer"/>
+      </reference>
+      <name value="Example Encounter - SZ1Nachstationaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/SZ1Stationaer"/>
+      </reference>
+      <name value="Example Encounter - SZ1Stationaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/SZ1Vorstationaer"/>
+      </reference>
+      <name value="Example Encounter - SZ1Vorstationaer"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/SZ2Encounter"/>
+      </reference>
+      <name value="Example Encounter - SZ2Encounter"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungCRP1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungCRP1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungCRP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungGFR1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungGFR1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungGFR"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungHb1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungHb1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungHb"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungPCT1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungPCT1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungPCT"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungSerumkreatinin1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungSerumkreatinin1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungSerumkreatinin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungTSH1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungTSH1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTSH"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungThrombozyten1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungThrombozyten1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungThrombozyten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleISiKLaboruntersuchungTroponin1"/>
+      </reference>
+      <name value="Example Observation - ExampleISiKLaboruntersuchungTroponin1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTroponin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExtractedObservationKoerpergewicht"/>
+      </reference>
+      <name value="Example Observation - ExtractedObservationKoerpergewicht"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExtractedObservationKoerpergroesse"/>
+      </reference>
+      <name value="Example Observation - ExtractedObservationKoerpergroesse"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Herzzeitvolumen"/>
+      </reference>
+      <name value="Example Observation - Herzzeitvolumen"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-herzzeitvolumen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKAlkoholAbususBeispiel"/>
+      </reference>
+      <name value="Example Observation - ISiKAlkoholAbususBeispiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKAtemfrequenzExample"/>
+      </reference>
+      <name value="Example Observation - ISiKAtemfrequenzExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKAtemfrequenzMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKAtemfrequenzMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKAtemfrequenzMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKAtemfrequenzMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAtemfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKBlutdruckSystemischArteriellExample"/>
+      </reference>
+      <name value="Example Observation - ISiKBlutdruckSystemischArteriellExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKBlutdruckSystemischArteriellMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKBlutdruckSystemischArteriellMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKBlutdruckSystemischArteriellMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKBlutdruckSystemischArteriellMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKBlutdruckSystemischArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKEKGExample"/>
+      </reference>
+      <name value="Example Observation - ISiKEKGExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKEKGMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKEKGMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKEKGMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKEKGMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKEKG"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKGCSExample"/>
+      </reference>
+      <name value="Example Observation - ISiKGCSExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKGCSMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKGCSMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKGCSMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKGCSMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKHerzfrequenzExample"/>
+      </reference>
+      <name value="Example Observation - ISiKHerzfrequenzExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKHerzfrequenzMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKHerzfrequenzMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKHerzfrequenzMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKHerzfrequenzMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergewichtExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergewichtExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergewichtMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergewichtMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergewichtMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergewichtMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergroesseExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergroesseExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergroesseMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergroesseMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpergroesseMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpergroesseMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerperkerntemperaturExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerperkerntemperaturExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerperkerntemperaturMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerperkerntemperaturMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerperkerntemperaturMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerperkerntemperaturMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpertemperaturExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpertemperaturExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpertemperaturMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpertemperaturMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKoerpertemperaturMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKoerpertemperaturMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKopfumfangExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKopfumfangExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKopfumfangMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKopfumfangMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKKopfumfangMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKKopfumfangMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKRaucherStatusBeispiel"/>
+      </reference>
+      <name value="Example Observation - ISiKRaucherStatusBeispiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKSauerstoffsaettigungArteriellExample"/>
+      </reference>
+      <name value="Example Observation - ISiKSauerstoffsaettigungArteriellExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKSauerstoffsaettigungArteriellMaxExample"/>
+      </reference>
+      <name value="Example Observation - ISiKSauerstoffsaettigungArteriellMaxExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKSauerstoffsaettigungArteriellMinExample"/>
+      </reference>
+      <name value="Example Observation - ISiKSauerstoffsaettigungArteriellMinExample"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"/>
+      </reference>
+      <name value="Example Observation - ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKSchwangerschaftsstatusBeispiel"/>
+      </reference>
+      <name value="Example Observation - ISiKSchwangerschaftsstatusBeispiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ISiKStillstatusBeispiel"/>
+      </reference>
+      <name value="Example Observation - ISiKStillstatusBeispiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Ideales-Koerpergewicht"/>
+      </reference>
+      <name value="Example Observation - Ideales-Koerpergewicht"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-ideales-koerpergewicht"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Intrakranieller-Druck-ICP"/>
+      </reference>
+      <name value="Example Observation - Intrakranieller-Druck-ICP"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpergewicht-Percentile-altersabhaengig"/>
+      </reference>
+      <name value="Example Observation - Koerpergewicht-Percentile-altersabhaengig"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpergewicht-percentil-altersabhaengig"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpergroesse-Percentil"/>
+      </reference>
+      <name value="Example Observation - Koerpergroesse-Percentil"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpergroesse-percentil-altersabhaengig"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Achsel"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Achsel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-achsel"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Atemwege"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Atemwege"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-atemwege"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Blut"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Blut"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-blut"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Brust"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Brust"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brust"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Brustwirbelsaeule"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Brustwirbelsaeule"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Gelenk"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Gelenk"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Halswirbelsaeule"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Halswirbelsaeule"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-halswirbelsaeule"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Harnblase"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Harnblase"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-harnblase"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Kern"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Kern"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-kern"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Leiste"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Leiste"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-leiste"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Lendenwirbelsaeule"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Lendenwirbelsaeule"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-lendenwirbelsaeule"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Myokard"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Myokard"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-myokard"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Nasen-Rachen-Raum"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Nasen-Rachen-Raum"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Oral"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Oral"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-unter-der-zunge"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Speiseroehre"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Speiseroehre"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-speiseroehre"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Stirn"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Stirn"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-stirn"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-Trommelfell"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-Trommelfell"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-trommelfell"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-nasal"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-nasal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasal"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-rektal"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-rektal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-rektal"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Koerpertemperatur-vaginal"/>
+      </reference>
+      <name value="Example Observation - Koerpertemperatur-vaginal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksatrialer-Druck"/>
+      </reference>
+      <name value="Example Observation - Linksatrialer-Druck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksatrialer-druck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksvent-Schlagvolumenindex-Durch-Indikatorverduennung"/>
+      </reference>
+      <name value="Example Observation - Linksvent-Schlagvolumenindex-Durch-Indikatorverduennung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaerer-Druck"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaerer-Druck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-druck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaerer-Herzindex-Durch-Indikatorverduennung"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaerer-Herzindex-Durch-Indikatorverduennung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaerer-Herzindex"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaerer-Herzindex"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaeres-Herzzeitvolumen-durch-Indikatorverduennung"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaeres-Herzzeitvolumen-durch-Indikatorverduennung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaeres-Schlagvolumen-Durch-Indikatorverduennung"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaeres-Schlagvolumen-Durch-Indikatorverduennung"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaeres-Schlagvolumen"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaeres-Schlagvolumen"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Linksventrikulaeres-Schlagvolumenindex"/>
+      </reference>
+      <name value="Example Observation - Linksventrikulaeres-Schlagvolumenindex"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumenindex"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Pulmonalarterieller-Blutdruck"/>
+      </reference>
+      <name value="Example Observation - Pulmonalarterieller-Blutdruck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Pulmonalarterieller-wedge-Blutdruck"/>
+      </reference>
+      <name value="Example Observation - Pulmonalarterieller-wedge-Blutdruck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-wedge-druck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Pulmonalvaskulaerer-Widerstandsindex"/>
+      </reference>
+      <name value="Example Observation - Pulmonalvaskulaerer-Widerstandsindex"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalvaskulaerer-widerstandsindex"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Puls"/>
+      </reference>
+      <name value="Example Observation - Puls"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-puls"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Rechtsatrialer-Druck"/>
+      </reference>
+      <name value="Example Observation - Rechtsatrialer-Druck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsatrialer-druck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Rechtsventrikulaerer-Druck"/>
+      </reference>
+      <name value="Example Observation - Rechtsventrikulaerer-Druck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Sauerstoffsaettigung-im-Arteriellen-Blut-durch-Pulsoxymetrie"/>
+      </reference>
+      <name value="Example Observation - Sauerstoffsaettigung-im-Arteriellen-Blut-durch-Pulsoxymetrie"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Sauerstoffsaettigung-im-Blut-Postduktal-durch-Pulsoxymetrie"/>
+      </reference>
+      <name value="Example Observation - Sauerstoffsaettigung-im-Blut-Postduktal-durch-Pulsoxymetrie"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie"/>
+      </reference>
+      <name value="Example Observation - Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Systemischer-vaskulaerer-Widerstandsindex"/>
+      </reference>
+      <name value="Example Observation - Systemischer-vaskulaerer-Widerstandsindex"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-systemischer-vaskulaerer-widerstandsindex"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/Zentralvenoeser-Blutdruck"/>
+      </reference>
+      <name value="Example Observation - Zentralvenoeser-Blutdruck"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-zentralvenoeser-blutdruck"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/DorisQuelle"/>
+      </reference>
+      <name value="Example Patient - DorisQuelle"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/DorisZiel"/>
+      </reference>
+      <name value="Example Patient - DorisZiel"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/IsikPatientTemplate"/>
+      </reference>
+      <name value="Example Patient - IsikPatientTemplate"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientinMinimal"/>
+      </reference>
+      <name value="Example Patient - PatientinMinimal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientinMusterfrau"/>
+      </reference>
+      <name value="Example Patient - PatientinMusterfrau"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientinNormal"/>
+      </reference>
+      <name value="Example Patient - PatientinNormal"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/SZ1Patient"/>
+      </reference>
+      <name value="Example Patient - SZ1Patient"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/SZ2Patient"/>
+      </reference>
+      <name value="Example Patient - SZ2Patient"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/Appendektomie"/>
+      </reference>
+      <name value="Example Procedure - Appendektomie"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/ExampleEntryValidationDecimalResponse"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - ExampleEntryValidationDecimalResponse"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/ExampleExtractWithUnitResponse"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - ExampleExtractWithUnitResponse"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TestMaxDecimal0"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - TestMaxDecimal0"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TestMaxDecimal1"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - TestMaxDecimal1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TestMaxDecimal2"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - TestMaxDecimal2"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TestMaxDecimal3"/>
+      </reference>
+      <name value="Example QuestionnaireResponse - TestMaxDecimal3"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RiskAssessment"/>
+      </extension>
+      <reference>
+        <reference value="RiskAssessment/ExampleISiKAMTSBewertung1"/>
+      </reference>
+      <name value="Example RiskAssessment - ExampleISiKAMTSBewertung1"/>
+      <exampleCanonical value="https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/Encounter-date-start"/>
+      </reference>
+      <name value="DateStart"/>
+      <description value="The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/Encounter-end-date"/>
+      </reference>
+      <name value="EndDate"/>
+      <description value="The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"/>
+      </reference>
+      <name value="ISiK CapabilityStatement Imports Expectation"/>
+      <description value="Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKAMTSBewertung"/>
+      </reference>
+      <name value="ISiK AMTS-Bewertung"/>
+      <description value="Dieses Profil ermöglicht die Abbildung von Informationen zur Risikobeurteilung im Rahmen der Arzneimitteltherapiesicherheit (AMTS)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKAlkoholAbusus"/>
+      </reference>
+      <name value="ISiK Alkohol Abusus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKAllergieUnvertraeglichkeit"/>
+      </reference>
+      <name value="ISiKAllergieUnvertraeglichkeit"/>
+      <description value="Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.&#xA;### Motivation&#xA;&#xA;Die Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.&#xA;Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).&#xA;&#xA;In FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;&#xA;Für das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:&#xA;* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)&#xA;* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)&#xA;* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)&#xA;&#xA;Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKAtemfrequenz"/>
+      </reference>
+      <name value="ISiKAtemfrequenz"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.&#xA;&#xA;In FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKBerichtBundle"/>
+      </reference>
+      <name value="ISiKBerichtBundle"/>
+      <description value="Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. &#xA;Das Bundle entspricht den Anforderungen an ein [FHIR Document Bundle](https://hl7.org/fhir/R4/documents.html) : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. &#xA;Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKBlutdruckSystemischArteriell"/>
+      </reference>
+      <name value="ISiKBlutdruckSystemischArteriell"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.&#xA;&#xA;In FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.&#xA;&#xA;Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKDiagnose"/>
+      </reference>
+      <name value="ISiKDiagnose"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen &#xA;über die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  &#xA;### Motivation&#xA;Die Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, &#xA;ob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  &#xA;&#xA;In FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  &#xA;&#xA;Da die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. &#xA;Falls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), &#xA;ist alternativ eine Repräsentation als Freitext-Diagnose möglich.&#xA;&#xA;### Kompatibilität&#xA;Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:&#xA;* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)&#xA;* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  &#xA;Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKEKG"/>
+      </reference>
+      <name value="ISiKEKG"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über kurze, relevante EKG-Ausschnitte eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus). Es wurde entwickelt, um spezifische klinische Fragestellungen zu unterstützen, bei denen prägnante und gezielte EKG-Daten im Vordergrund stehen. Für vollständige und längere EKG-Aufzeichnungen sind alternative Formate vorgesehen, die für umfangreiche Daten besser geeignet sind.&#xA;### Motivation&#xA;Die Bereitstellung kurzer EKG-Ausschnitte ermöglicht eine präzise und effiziente Unterstützung bei der Diagnose akuter kardiologischer Fragestellungen, der Überwachung von Arrhythmien oder der Beurteilung bestimmter Ereignisse wie ST-Strecken-Veränderungen. Diese fokussierte Darstellung dient der Optimierung klinischer Entscheidungen und der schnellen Verarbeitung relevanter Daten.&#xA;&#xA;In FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezifische Anforderungen für die Darstellung und Kodierung der Daten in diesem Profil berücksichtigt werden.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKFormularDaten"/>
+      </reference>
+      <name value="Ausgefülltes ISiK-Formular"/>
+      <description value="Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.&#xA;Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezifikationen-&gt;Extensions beschrieben."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKGCS"/>
+      </reference>
+      <name value="ISiKGCS"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;&#xA;### Motivation&#xA;Die Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.&#xA;&#xA;In FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.&#xA;### Kompatibilität&#xA;Das Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKHerzfrequenz"/>
+      </reference>
+      <name value="ISiKHerzfrequenz"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Herzfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung der Herzfrequenz ist essenziell für die frühzeitige Erkennung von Herz-Kreislauf-Problemen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.&#xA;&#xA;In FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKoerpergewicht"/>
+      </reference>
+      <name value="ISiKKoerpergewicht"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.&#xA;&#xA;In FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKoerpergroesse"/>
+      </reference>
+      <name value="ISiKKoerpergroesse"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.&#xA;&#xA;In FHIR wird die Körpergröße mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKoerperkerntemperatur"/>
+      </reference>
+      <name value="ISiKKoerperkerntemperatur"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körperkerntemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den ISiK Vorgaben.  &#xA;Dieses Profil repräsentiert sowohl direkte als auch indirekte Messungen der Körperkerntemperatur.&#xA;### Motivation&#xA;Die Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.&#xA;In FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKKoerperkerntemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKoerpertemperatur"/>
+      </reference>
+      <name value="ISiKKoerpertemperatur"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.&#xA;&#xA;In FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+      </reference>
+      <name value="ISiKKontaktGesundheitseinrichtung"/>
+      <description value="Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.&#xA;### Motivation&#xA;Informationen über die Besuche des Patienten entlang seines &#xA;Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil &#xA;des einrichtungsinternen Datenaustausches. &#xA;Sie ermöglichen die Unterscheidung von stationären und ambulanten &#xA;sowie aufgenommenen und entlassenen Patienten. &#xA;Weiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort &#xA;des Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. &#xA;Klinische Ressourcen werden in FHIR durch Verlinkung auf die &#xA;Encounter-Ressource in einen Kontext zum Besuch gestellt. &#xA;Dieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen &#xA;und Abrechnungsprozessen.  &#xA;&#xA;Zu Beginn der meisten klinischen Workflows steht die Auswahl &#xA;des Besuchskontextes. &#xA;Dies geschieht bspw. durch das Suchen der Encounter-Ressource &#xA;anhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. &#xA;Daraufhin werden die zutreffenden Suchergebnisse angezeigt &#xA;und der gewünschte Besuch ausgewählt.&#xA;&#xA;In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.&#xA;&#xA;Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}&#xA;&#xA;### Kompatibilität&#xA;Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität &#xA;mit folgenden Profilen angestrebt; &#xA;allerdings kann nicht sichergestellt werden, dass Instanzen, &#xA;die gegen ISiKKontaktGesundheitseinrichtung valide sind, &#xA;auch valide sind gegen:&#xA;&#xA;* Profil [Kontakt mit einer Gesundheitseinrichtung &#xA;der Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)&#xA;&#xA;Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKKopfumfang"/>
+      </reference>
+      <name value="ISiKKopfumfang"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.&#xA;&#xA;In FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](&#xA;http://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchung"/>
+      </reference>
+      <name value="ISiKLaboruntersuchung"/>
+      <description value="Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.&#xA;&#xA;Viele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.&#xA;Jede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.&#xA;Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UseCases-AMTS?version=current).&#xA;&#xA;In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungCRP"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungCRP"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung CRP eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungGFR"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungGFR"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungHb"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungHb"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Hb eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungPCT"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungPCT"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung PCT eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungSerumkreatinin"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungSerumkreatinin"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumkreatinin eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungTSH"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungTSH"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungThrombozyten"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungThrombozyten"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLaboruntersuchungTroponin"/>
+      </reference>
+      <name value="ISiKLaboruntersuchungTroponin"/>
+      <description value="Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Troponin eines Patienten in ISiK Szenarien."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource:abstract"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKLebensZustand"/>
+      </reference>
+      <name value="ISiKLebensZustand"/>
+      <description value="Basisprofil für ISiKLebensZustand Observation &#xA;&#xA;### Motivation&#xA;&#xA;Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.&#xA;Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).&#xA;&#xA;In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert.&#xA;&#xA;Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.  &#xA;Die folgenden Profile vom Typ `Observation` sind spezifische Profile im oben genannten Sinn:  &#xA;* {{pagelink:Schwangerschaftsstatus-Profil}}&#xA;* {{pagelink:ErwarteterEntbindungstermin-Profil}}&#xA;* {{pagelink:Stillstatus-Profil}} &#xA;* {{pagelink:AlkoholAbusus-Profil}} &#xA;* {{pagelink:RaucherStatus-Profil}} &#xA;&#xA;### Kompatibilität&#xA;&#xA;Für Schwangerschaftsstatus &amp; Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden **IPS** Profilen angestrebt:&#xA;* [IPS Resource Profile: Observation - Pregnancy: EDD](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html). &#xA;* [IPS Resource Profile: Observation - Pregnancy: status](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-status-uv-ips.html)&#xA;&#xA;Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKPatient"/>
+      </reference>
+      <name value="ISiKPatient"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.&#xA;### Motivation  &#xA;Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  &#xA;In FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  &#xA;Die Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, &#xA;die Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  &#xA;&#xA;### Kompatibilität&#xA;Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:&#xA;&#xA;* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)&#xA;* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)&#xA;* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)&#xA;* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)&#xA;&#xA;Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:&#xA;&#xA;* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKProzedur"/>
+      </reference>
+      <name value="ISiKProzedur"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.&#xA;### Motivation&#xA;Die Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.&#xA;&#xA;In FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.&#xA;&#xA;Da die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.&#xA;&#xA;### Kompatibilität&#xA;Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:&#xA;&#xA;* [Profil Prozedur](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure) der Medizininformatik Initiative  &#xA;Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKRaucherStatus"/>
+      </reference>
+      <name value="ISiK Raucherstatus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKSauerstoffsaettigungArteriell"/>
+      </reference>
+      <name value="ISiKSauerstoffsaettigungArteriell"/>
+      <description value="Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK (Interoperable Schnittstelle im Krankenhaus).&#xA;### Motivation&#xA;Die Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.&#xA;&#xA;In FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.&#xA;&#xA;### Kompatibilität&#xA;Das Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin"/>
+      </reference>
+      <name value="ISiK Schwangerschaft - Erwarteter Entbindungstermin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKSchwangerschaftsstatus"/>
+      </reference>
+      <name value="ISiK Schwangerschaftsstatus"/>
+      <description value="Schwangerschaftsstatus einer Patientin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKStillstatus"/>
+      </reference>
+      <name value="ISiKStillstatus"/>
+      <description value="Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ISiKTerminPriorityExtension"/>
+      </reference>
+      <name value="ISiKTerminPriorityExtension"/>
+      <description value="Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-herzzeitvolumen"/>
+      </reference>
+      <name value="SD MII ICU Herzzeitvolumen"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des Herzzeitvolumens in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-ideales-koerpergewicht"/>
+      </reference>
+      <name value="SD MII ICU Ideales Koerpergewicht"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des idealen Körpergewichts in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-intrakranieller-druck-icp"/>
+      </reference>
+      <name value="SD MII ICU Intrakranieller Druck ICP"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des intrakraniellen Drucks (ICP) in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpergewicht-percentil-altersabhaengig"/>
+      </reference>
+      <name value="SD MII ICU Koerpergewicht Percentil Altersabhaengig"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergewicht-Perzentils in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpergroesse-percentil-altersabhaengig"/>
+      </reference>
+      <name value="SD MII ICU Koerpergroesse Percentil"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergrößen-Perzentils in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-achsel"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Achsel"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Achsel in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-atemwege"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Atemwege"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung in den Atemwegen in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-blut"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Blut"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen im Blut in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-brust"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Brust"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brust in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Brustwirbelsaeule"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Brustwirbelsäule in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Gelenk"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung am Gelenk in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-generisch"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Generisch"/>
+      <description value="Dieses Profil bietet eine abstrahierte Schicht zur Körpertemperaturmessung in der Akutmedizin. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer KörperKERNtemperatur zu verwenden (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-halswirbelsaeule"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Halswirbelsaeule"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Halswirbelsäule in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-harnblase"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Harnblase"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten Körperkerntemperatur gemessen in der Harnblase in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-kern"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Kern"/>
+      <description value="Dieses Profil bietet eine generische Abbildung der geschätzten KörperKERNtemperatur in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-leiste"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Leiste"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Leiste in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-lendenwirbelsaeule"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Lendenwirbelsaeule"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Bereich der Lendenwirbelsäule. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-myokard"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Myokard"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Myokard (Herzmuskel). Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-nasal"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur nasal"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Nasenbereich in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Nasen-Rachen-Raum"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung im Nasen-Rachen-Raum in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-rektal"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur rektal"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen rektal in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-speiseroehre"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Speiseroehre"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen in der Speiseröhre in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-stirn"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Stirn"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Körpertemperaturmessung an der Stirn in der Akutmedizin. Es dient nicht der Abbildung der KörperKERNtemperatur (siehe dafür Profile zu Körperkerntemperatur im generischen Modul Vitalparameter bzw. abgeleitete Profile im ICU-Bereich)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-trommelfell"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur Trommelfell"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen im Trommelfell in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-unter-der-zunge"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur unter der Zunge"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen unter der Zunge in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal"/>
+      </reference>
+      <name value="SD MII ICU Koerpertemperatur vaginal"/>
+      <description value="Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen vaginal in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksatrialer-druck"/>
+      </reference>
+      <name value="SD MII ICU Linksatrialer Druck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksatrialen Drucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaerer Herzindex durch Indikatorverduennung"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex durch Indikatorverdünnung in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzzeitvolumens durch Indikatorverdünnung in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaeres Schlagvolumen Durch Indikatorverduennung"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumens durch Indikatorverdünnung in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaerer Schlagvolumenindex Durch Indikatorverduennung"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumenindex durch Indikatorverdünnung in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventrikulaerer-druck"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaerer Druck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Drucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaerer Herzindex"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzindex in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaeres Schlagvolumen"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumens in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumenindex"/>
+      </reference>
+      <name value="SD MII ICU Linksventrikulaeres Schlagvolumenindex"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Schlagvolumenindex in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten"/>
+      </reference>
+      <name value="SD MII ICU Monitoring und Vitaldaten"/>
+      <description value="Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie"/>
+      </reference>
+      <name value="SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im arteriellen Blut durch Pulsoxymetrie in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie"/>
+      </reference>
+      <name value="SD MII ICU Sauerstoffsaettigung Im Blut Postduktal Durch Pulsoxymetrie"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie"/>
+      </reference>
+      <name value="SD MII ICU Sauerstoffsaettigung Im Blut Preduktal Durch Pulsoxymetrie"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung der Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck"/>
+      </reference>
+      <name value="SD MII ICU Pulmonalarterieller Blutdruck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Blutdrucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-pulmonalarterieller-wedge-druck"/>
+      </reference>
+      <name value="SD MII ICU Pulmonalarterieller Wedge Druck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des pulmonalarteriellen Wedge-Drucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-pulmonalvaskulaerer-widerstandsindex"/>
+      </reference>
+      <name value="SD MII ICU Pulmonalvaskulaerer Widerstandsindex"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des pulmonalvaskulären Widerstandsindex in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-puls"/>
+      </reference>
+      <name value="SD MII ICU Puls"/>
+      <description value="Dieses Profil repräsentiert Pulsuntersuchungen die nicht den Zweck einer Herzfrequenzmessung haben, sondern die Pulsfrequenz als eigenständige Vitalfunktion erfassen."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-rechtsatrialer-druck"/>
+      </reference>
+      <name value="SD MII ICU Rechtsatrialer Druck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des rechtsatrialen Drucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck"/>
+      </reference>
+      <name value="SD MII ICU Rechtsventrikulaerer Druck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des rechtsventrikulären Drucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-sonstige-pulsatile-druecke-generisch"/>
+      </reference>
+      <name value="SD MII ICU Sonstige pulsatile Druecke Generisch"/>
+      <description value="Dieses Profil bietet eine abstrahierte Schicht zur Abbildung sonstiger pulsatiler Drücke in der Akutmedizin. Es ist generisch im Sinne der Profil-Abstraktion, allerdings explizit nicht im Sinne einer Blutdruckmessung (siehe dafür Profile zu Blutdruck im generischen Modul Vitalparameter)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-systemischer-vaskulaerer-widerstandsindex"/>
+      </reference>
+      <name value="SD MII ICU Systemischer Vaskulaerer Widerstandsindex"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des systemisch-vaskulären Widerstandsindex in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sd-mii-icu-zentralvenoeser-blutdruck"/>
+      </reference>
+      <name value="SD MII ICU Zentralvenoeser Blutdruck"/>
+      <description value="Dieses Profil dient der spezialisierten Abbildung des zentralvenösen Blutdrucks in der Akutmedizin."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/DiagnosesSCT"/>
+      </reference>
+      <name value="DiagnosesSCT"/>
+      <description value="Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ISiKKernTempSctVS"/>
+      </reference>
+      <name value="ISiK  Kerntemperatur SnomedCT ValueSet"/>
+      <description value="ValueSet der Körperkerntemperatur SnomedCT Konzepte"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ISiKLocationPhysicalType"/>
+      </reference>
+      <name value="ISiKLocationPhysicalType"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ISiKSpecificGenericTempLoincVS"/>
+      </reference>
+      <name value="ISiK Specific Generische Koerpertemperatur LOINC Konzepte"/>
+      <description value="ValueSet der spezifischen generischen Körperkerntemperatur LOINC Konzepte die nicht dazu dienen eine Körperkerntemperatur zu messen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ISiKSpecificKernTempLoincVS"/>
+      </reference>
+      <name value="ISiK Specific Kerntemperatur LOINC ValueSet"/>
+      <description value="ValueSet der spezifischen Körperkerntemperatur LOINC Konzepte"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesCRP"/>
+      </reference>
+      <name value="ObservationCodesCRP"/>
+      <description value="Enthält LOINC-Codes für die Observation CRP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesGFR"/>
+      </reference>
+      <name value="ObservationCodesGFR"/>
+      <description value="Enthält LOINC-Codes für die Observation GFR"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesHb"/>
+      </reference>
+      <name value="ObservationCodesHb"/>
+      <description value="Enthält LOINC-Codes für die Observation Hb"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesPCT"/>
+      </reference>
+      <name value="ObservationCodesPCT"/>
+      <description value="Enthält LOINC-Codes für die Observation PCT"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesSerumkreatinin"/>
+      </reference>
+      <name value="ObservationCodesSerumkreatinin"/>
+      <description value="Enthält LOINC-Codes für die Observation Serumkreatinin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesTSH"/>
+      </reference>
+      <name value="ObservationCodesTSH"/>
+      <description value="Enthält LOINC-Codes für die Observation TSH"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesThrombozyten"/>
+      </reference>
+      <name value="ObservationCodesThrombozyten"/>
+      <description value="Enthält LOINC-Codes für die Observation Thrombozyten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationCodesTroponin"/>
+      </reference>
+      <name value="ObservationCodesTroponin"/>
+      <description value="Enthält LOINC-Codes für die Observation Troponin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsCRP"/>
+      </reference>
+      <name value="ObservationUnitsCRP"/>
+      <description value="Enthält UCUM-Einheiten für die Observation CRP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsGFR"/>
+      </reference>
+      <name value="ObservationUnitsGFR"/>
+      <description value="Enthält UCUM-Einheiten für die Observation GFR"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsHb"/>
+      </reference>
+      <name value="ObservationUnitsHb"/>
+      <description value="Enthält UCUM-Einheiten für die Observation Hb"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsPCT"/>
+      </reference>
+      <name value="ObservationUnitsPCT"/>
+      <description value="Enthält UCUM-Einheiten für die Observation PCT"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsSerumkreatinin"/>
+      </reference>
+      <name value="ObservationUnitsSerumkreatinin"/>
+      <description value="Enthält UCUM-Einheiten für die Observation Serumkreatinin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsTSH"/>
+      </reference>
+      <name value="ObservationUnitsTSH"/>
+      <description value="Enthält UCUM-Einheiten für die Observation TSH"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsThrombozyten"/>
+      </reference>
+      <name value="ObservationUnitsThrombozyten"/>
+      <description value="Enthält UCUM-Einheiten für die Observation Thrombozyten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ObservationUnitsTroponin"/>
+      </reference>
+      <name value="ObservationUnitsTroponin"/>
+      <description value="Enthält UCUM-Einheiten für die Observation Troponin"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ProzedurenCodesSCT"/>
+      </reference>
+      <name value="ProzedurenCodesSCT"/>
+      <description value="Enthaelt alle SNOMED Procedure Codes"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ProzedurenKategorieSCT"/>
+      </reference>
+      <name value="ProzedurenKategorieSCT"/>
+      <description value="Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/SchwangerschaftEtMethodeVS"/>
+      </reference>
+      <name value="Schwangerschaft Erwarteter Entbindungstermin Methode"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/SchwangerschaftsstatusVS"/>
+      </reference>
+      <name value="Schwangerschaftsstatus Valueset"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/StillstatusVS"/>
+      </reference>
+      <name value="Stillstatus LOINC Antwortoptionen"/>
+      <description value="Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/current-smoking-status-uv-ips"/>
+      </reference>
+      <name value="Current Smoking Status - IPS"/>
+      <description value="HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-bodysite-observation-blutdruck"/>
+      </reference>
+      <name value="VS MII ICU BodySite Observation Blutdruck"/>
+      <description value="Dieses ValueSet enthält Codes für bodySites von Blutdrücken (pulsatilen Drücken)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-bodysite-observation-monitoring-und-vitaldaten"/>
+      </reference>
+      <name value="VS MII ICU BodySite Observation Monitoring und Vitaldaten"/>
+      <description value="Dieses ValueSet enthält Codes für bodySites von Vitaldaten sowie Daten aus dem Patientenmonitoring."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-iso11073"/>
+      </reference>
+      <name value="VS MII ICU Code Monitoring und Vitaldaten [ISO11073]"/>
+      <description value="Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc"/>
+      </reference>
+      <name value="VS MII ICU Code Monitoring und Vitaldaten [LOINC]"/>
+      <description value="Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-snomed"/>
+      </reference>
+      <name value="VS MII ICU Code Monitoring und Vitaldaten [sct]"/>
+      <description value="Dieses ValueSet enthaelt Codes fuer Vitaldaten sowie Daten aus dem Patientenmonitoring."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-mii-icu-method-observation-blutdruck"/>
+      </reference>
+      <name value="VS MII ICU Method Observation Blutdruck"/>
+      <description value="Dieses ValueSet enthält Codes zur Angabe, ob ein Blutdruck invasiv oder nicht-invasiv gemessen ist."/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Index.html"/>
+        </extension>
+        <nameUrl value="Index.html"/>
+        <title value="Einführung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Ziele.html"/>
+        </extension>
+        <nameUrl value="Ziele.html"/>
+        <title value="Ziele"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ReleaseNotes.html"/>
+        </extension>
+        <nameUrl value="ReleaseNotes.html"/>
+        <title value="Release Notes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Festlegungen.html"/>
+        </extension>
+        <nameUrl value="Festlegungen.html"/>
+        <title value="Übergreifende Festlegungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="AkteureOhneCpS.html"/>
+        </extension>
+        <nameUrl value="AkteureOhneCpS.html"/>
+        <title value="Festlegungen Akteure ohne CapabilityStatement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Akteure.html"/>
+        </extension>
+        <nameUrl value="Akteure.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="FunktionenInteraktionen.html"/>
+        </extension>
+        <nameUrl value="FunktionenInteraktionen.html"/>
+        <title value="Funktionen und Interaktionen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Spezifikationen_Beispielszenarien.html"/>
+        </extension>
+        <nameUrl value="Spezifikationen_Beispielszenarien.html"/>
+        <title value="Beispielszenarien"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Spezifikationen_BestPractice.html"/>
+        </extension>
+        <nameUrl value="Spezifikationen_BestPractice.html"/>
+        <title value="Best Practice für FormularDefinitionen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Spezifikationen_Begriffsdefinitionen.html"/>
+        </extension>
+        <nameUrl value="Spezifikationen_Begriffsdefinitionen.html"/>
+        <title value="Begriffsdefinitionen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="Extensions.html"/>
+        </extension>
+        <nameUrl value="Extensions.html"/>
+        <title value="Extensions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="artifacts.html"/>
+        </extension>
+        <nameUrl value="artifacts.html"/>
+        <title value="FHIR-Artefakte"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

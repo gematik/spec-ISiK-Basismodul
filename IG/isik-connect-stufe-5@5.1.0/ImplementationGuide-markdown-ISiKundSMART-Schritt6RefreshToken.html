@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Connect</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Connect
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Akteure.html">
+                                Akteure
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen und Kompatibilit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen.html">
+                                            Festlegungen und Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kontext Smart-on-FHIR <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kontext.html">
+                                            Kontext Smart-on-FHIR
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR - App Launch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BackendServices.html">
+                                            SMART on FHIR - Backend Services
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Festlegungen Connect <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            Festlegungen Connect
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            Autorisierung
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Anforderungsuebersicht.html">
+                                Anforderungs&#xFC;bersicht
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h1 id="schritt-6-refresh-token-revocation">Schritt 6: Refresh Token &amp; Revocation</h1>
+<h2 id="refresh-tokens">Refresh Tokens</h2>
+<p>Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf <a href="https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2">RFC6819 - OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime</a> SOLL die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-21</a>) Das Gültigkeitsdatum wird im Access Token durch den Parameter &quot;expires_in&quot; angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.</p>
+<p>Um eine häufige Authentifizierung der Benutzer und/oder des Clients zu vermeiden, SOLL der Autorisierungsserver die Ausstellung von Refresh Tokens unterstützen. (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-22</a>)</p>
+<p>Folgende Anforderungen aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#refresh-access-token">SMART App Launch - 2.1.12 - Refresh access token</a> sind bei der Unterstützung eines Token Refresh zu beachten:</p>
+<ul>
+<li>Der &quot;offline_access&quot; Scope muss unterstützt werden, der &quot;online_access&quot; Scope soll unterstützt werden.</li>
+<li>Ein Refresh Token muss an die anfordernde Client Id gebunden werden, d.h. eine abweichende Client Id (übermittelt durch die Autorisierung des Clients) DARF NICHT verwendbar sein, um ein neues Access Token auszustellen.</li>
+<li>Der Autorisierungsserver muss bei der Ausstellung eines neuen Access Tokens sicherstellen, dass im Vergleich zum originalen Access Token nur ein Subset oder die gleiche Menge an Scopes erlaubt werden. Fordert der Client neue Scopes an, soll das System die Menge aller Scopes auf die zuvor erlaubten Scopes einschränken.</li>
+<li>Der Launch Context muss zurückgegeben werden, falls die entsprechenden Scopes durch den Client oder im originalen Access Token angefordert wurden.</li>
+</ul>
+<p>Alle verpflichtenden Implementierungsdetails aus <a href="https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#refresh-access-token">SMART App Launch - 2.1.12 - Refresh access token</a> MÜSSEN bei der Umsetzung eines Token Refresh durch den Autorisierungsserver unterstützt werden. (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-23</a>)</p>
+<hr />
+<h3 id="beispiel">Beispiel</h3>
+<h2 id="token-revocation">Token Revocation</h2>
+<p>Ein Access-Token MUSS zu einem beliebigen Zeitpunkt durch einen beliebigen Client per <a href="https://datatracker.ietf.org/doc/html/rfc7009">RFC7009 - OAuth 2.0 Token Revocation</a> zurückgezogen werden können. (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-24</a>)
+Es MUSS sichergestellt werden, dass kein zeitlicher Verzug zwischen der Bestätigung, der zuvorgenannten Anfrage und der Invalidierung des Tokens herrscht, d.h nach einer Revocation-Anfrage muss sichergestellt werden, dass Anfragen beim Ressourcen-Server mit einem entsprechenden Token zurückgewiesen werden. Hierzu wird die Verwendung eines Introspection-Endpunktes nach <a href="https://datatracker.ietf.org/doc/html/rfc7662">RFC7662 - OAuth 2.0 Token Introspection</a> empfohlen. (<a href="ImplementationGuide-markdown-Anforderungsuebersicht.html" title='ImplementationGuide/markdown/Anforderungsuebersicht.md'>ANF-CON-25</a>)</p>
+<hr />
+<h3 id="beispiel-1">Beispiel`</h3>
+<pre><code>GET /fhir/Patient
+Content-Type: application/x-www-form-urlencoded
+Host: server.example.com
+
+grant_type=refresh_token&amp;
+refresh_token=&lt;Refresh Token aus Schritt 4&gt;&amp;
+scope=&lt;Scopes aus Schritt 2&gt;
+</code></pre>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

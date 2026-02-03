@@ -1,0 +1,281 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Patient/IsikPatientTemplate> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [
+     fhir:v "IsikPatientTemplate" ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'resourceId').answer.value"
+       ]
+     ] )
+  ] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient IsikPatientTemplate</b></p><a name=\"IsikPatientTemplate\"> </a><a name=\"hcIsikPatientTemplate\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKPatient.html\">ISiKPatient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">null(official) Unknown, DoB:  ( Medical record number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Krankenversichertennummer/?ngen-9?</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: -unknown-</li><li>null null null DE </li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'patientId')"
+       ]
+     ] ) ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'patientId-system').answer.value"
+         ]
+       ] )
+     ] ;
+     fhir:value [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'patientId-value').answer.value"
+         ]
+       ] )
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/identifier-type-de-basis"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/identifier-type-de-basis>
+         ] ;
+         fhir:code [ fhir:v "KVZ10" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/sid/gkv/kvid-10>
+     ] ;
+     fhir:value [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'versichertenId').answer.value"
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:name ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'name')"
+       ]
+     ] ) ;
+     fhir:use [ fhir:v "official" ] ;
+     fhir:text [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'given' or linkId = 'family').answer.value.join(' ')"
+         ]
+       ] )
+     ] ;
+     fhir:family [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'family').answer.value.first()"
+         ]
+       ] )
+     ] ;
+     fhir:given ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'given').answer.value.first()"
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'telecom')"
+       ]
+     ] ) ;
+     fhir:system [
+       fhir:v "phone" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'telecom-system').answer.value"
+         ]
+       ] )
+     ] ;
+     fhir:value [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'telecom-value').answer.value"
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:gender [
+     fhir:v "unknown" ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'gender').answer.value.first().code"
+       ]
+     ] )
+  ] ; # 
+  fhir:birthDate [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'birthDate').answer.value.first()"
+       ]
+     ] )
+  ] ; # 
+  fhir:address ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "item.where(linkId = 'address')"
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'address-line').answer.value"
+         ]
+       ] )
+     ] ) ;
+     fhir:city [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'address-city').answer.value.first()"
+         ]
+       ] )
+     ] ;
+     fhir:postalCode [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'address-postalCode').answer.value.first()"
+         ]
+       ] )
+     ] ;
+     fhir:country [
+       fhir:v "DE" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "item.where(linkId = 'address-country').answer.value.first()"
+         ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

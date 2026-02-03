@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>BundleExampleIntensivstation - ISiK Organspendeerkennung v0.0.1-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7.58"}
+    h3,h4,h5,h6{--heading-prefix:"7.58"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_UseCaseAnwendung.html">Use Case</a>
+      </li>
+      <li>
+        <a href="ProzesseUndWorkflows.html">Prozesse und Workflows</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Organspendeerkennung
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.0.1-rc - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>BundleExampleIntensivstation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  
+
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Bundle-BundleExampleIntensivstation.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Bundle-BundleExampleIntensivstation.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Bundle-BundleExampleIntensivstation.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Bundle: BundleExampleIntensivstation</h2>
+
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <div data-fhir="generated"><div style="border: 1px solid maroon; padding: 10px; background-color: #f2faf9; min-height: 160px;"><p><b>Document Details</b></p><p class="res-header-id"/><a name="BundleExampleIntensivstation"> </a><a name="hcBundleExampleIntensivstation"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKBerichtBundle.html">ISiKBerichtBundle</a></p><p>Final Document at 2025-07-21 00:00:00+0200 by Dr. Alenia Vogt for <a href="Bundle-BundleExampleIntensivstation.html#urn-uuid-11c3de2f-d461-4063-a0c2-fde122e76a79">Thomas Müller (official) Male, DoB: 1965-04-11 ( Medical record number)</a>  in encounter <a href="Bundle-BundleExampleIntensivstation.html#urn-uuid-88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41">Encounter: identifier = Visit number; status = in-progress; class = inpatient encounter (ActCode#IMP); type = Abteilungskontakt; serviceType = Innere Medizin; period = 2025-07-21 00:00:00+0200 --&gt; (ongoing)</a></p></div></div><hr/><div style="border: 1px solid maroon; padding: 10px; background-color: #f2faf9; min-height: 160px;"><p><b>Document Subject</b></p><h3>Patient</h3><div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div><div><strong>Name:</strong><span> Thomas <b>MÜLLER</b></span></div><div><strong>Geschlecht:</strong><span>male</span></div><div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div></div><hr/><div style="border: 1px solid maroon; padding: 10px; background-color: #f2faf9; min-height: 160px;"><p><b>Document Content</b></p><h2>Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100</h2><div><strong>Dokument-ID:</strong><span>urn:uuid:54d0804f-c770-4b61-a175-28fa1875b2a9</span><span> (urn:ietf:rfc:3986)</span></div><div><strong>Status:</strong><span>final</span></div><div><strong>Dokumenttyp:</strong><span><span>Verlegungsbericht</span><span> (http://dvmd.de/fhir/CodeSystem/kdl)</span></span></div><div><strong>Erstellt am:</strong><span>21.07.2025 00:00</span></div><div><strong>Autor:</strong><ul><li><span>Dr. Alenia Vogt</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Fall:</strong><span>urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41</span></div><hr/><div><h2>Beatmungswerte (Unterstützungsdruck) vom 22.07.2025 - #1</h2></div><div><h3>Observation</h3><div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div><div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div><div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div></div><div><h2>Patient</h2></div><h3>Patient</h3><div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div><div><strong>Name:</strong><span> Thomas <b>MÜLLER</b></span></div><div><strong>Geschlecht:</strong><span>male</span></div><div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div><div><h2>Encounter</h2></div><h2>Encounter</h2><div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div><div><strong>Status:</strong><span>in-progress</span></div><div><strong>Kontaktart:</strong><span>inpatient encounter</span></div><div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div><div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div><div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div><div><h2>Observation</h2></div><h3>Observation</h3><div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div><div><strong>Messwerte:</strong><table style="border-collapse: collapse; width: 100%;"><thead><tr style="background-color: #f2f2f2;"><th style="border: 1px solid #ddd; padding: 8px;">Parameter</th><th style="border: 1px solid #ddd; padding: 8px;">Wert</th><th style="border: 1px solid #ddd; padding: 8px;">Einheit</th></tr></thead><tbody><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Systolisch</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>210</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Diastolisch</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>115</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Mittlerer arterieller Druck</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>140</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr></tbody></table></div><div><h2>Procedure</h2></div><h3>Prozedur</h3><div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Status:</strong><span>COMPLETED</span></div><div><strong>Kategorie:</strong><span/><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></div><hr/><h2>Additional Resources Included in Document</h2><a name="urn-uuid-11c3de2f-d461-4063-a0c2-fde122e76a79"> </a><a name="Patient_11c3de2f-d461-4063-a0c2-fde122e76a79"> </a><a name="hcPatient_11c3de2f-d461-4063-a0c2-fde122e76a79"> </a><hr/><p>Entry 2 - fullUrl = urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</p><p>Resource Patient:</p><blockquote><h3>Patient</h3><div><strong>ID:</strong><span>Patient/urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Patienten-Identifikator:</strong><ul><li><span><span>MR</span>: </span><span>1234567890</span><span> (https://example.org/fhir/sid/pid)</span></li></ul></div><div><strong>Name:</strong><span> Thomas <b>MÜLLER</b></span></div><div><strong>Geschlecht:</strong><span>male</span></div><div><strong>Geburtsdatum:</strong><span>11.04.1965</span></div></blockquote><a name="urn-uuid-88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"> </a><a name="Encounter_88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"> </a><a name="hcEncounter_88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41"> </a><hr/><p>Entry 3 - fullUrl = urn:uuid:88bdd3e7-fbd1-42b8-bd9f-9afdf1e31d41</p><p>Resource Encounter:</p><blockquote><h2>Encounter</h2><div><strong>Fallnummer:</strong><span><span>ICU-2025-001</span><span> (https://example.org/fhir/sid/encounter-id)</span></span></div><div><strong>Status:</strong><span>in-progress</span></div><div><strong>Kontaktart:</strong><span>inpatient encounter</span></div><div><strong>Typ:</strong><ul><li><span><span><span>Abteilungskontakt</span><span> (http://fhir.de/CodeSystem/Kontaktebene)</span></span></span></li></ul></div><div><strong>Abteilung:</strong><span><span>Innere Medizin</span><span> (Code: 0100)</span></span></div><div><strong>Einrichtung:</strong><span>Intensivstation - Innere Medizin</span></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></blockquote><a name="urn-uuid-880d8c69-fc05-4e1f-8203-a8ff40007f84"> </a><a name="Observation_880d8c69-fc05-4e1f-8203-a8ff40007f84"> </a><a name="hcObservation_880d8c69-fc05-4e1f-8203-a8ff40007f84"> </a><hr/><p>Entry 4 - fullUrl = urn:uuid:880d8c69-fc05-4e1f-8203-a8ff40007f84</p><p>Resource Observation:</p><blockquote><h3>Observation</h3><div><strong>Typ:</strong><span><span>85354-9</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>vital-signs</span><span> (http://terminology.hl7.org/CodeSystem/observation-category)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-22T14:10:00+02:00</span></div><div><strong>Messwerte:</strong><table style="border-collapse: collapse; width: 100%;"><thead><tr style="background-color: #f2f2f2;"><th style="border: 1px solid #ddd; padding: 8px;">Parameter</th><th style="border: 1px solid #ddd; padding: 8px;">Wert</th><th style="border: 1px solid #ddd; padding: 8px;">Einheit</th></tr></thead><tbody><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Systolisch</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>210</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Diastolisch</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>115</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px;"><span><span>Mittlerer arterieller Druck</span></span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>140</span></td><td style="border: 1px solid #ddd; padding: 8px;"><span>mmHg</span></td></tr></tbody></table></div></blockquote><a name="urn-uuid-61a2e9af-88f9-4ee2-a97f-c136530aadba"> </a><a name="Procedure_61a2e9af-88f9-4ee2-a97f-c136530aadba"> </a><a name="hcProcedure_61a2e9af-88f9-4ee2-a97f-c136530aadba"> </a><hr/><p>Entry 5 - fullUrl = urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</p><p>Resource Procedure:</p><blockquote><h3>Prozedur</h3><div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Status:</strong><span>COMPLETED</span></div><div><strong>Kategorie:</strong><span/><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div></blockquote><a name="urn-uuid-32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"> </a><a name="Observation_32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"> </a><a name="hcObservation_32bb8c8a-418c-4fc2-b1c7-c33f1a99a464"> </a><hr/><p>Entry 6 - fullUrl = urn:uuid:32bb8c8a-418c-4fc2-b1c7-c33f1a99a464</p><p>Resource Observation:</p><blockquote><h3>Observation</h3><div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div><div><strong>Status:</strong><span>FINAL</span></div><div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div><div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div><div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div><div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div><div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div></blockquote></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Paket Organspendeerkennung#0.0.1-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jan 26, 2026 15:49+0000">2026-01-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

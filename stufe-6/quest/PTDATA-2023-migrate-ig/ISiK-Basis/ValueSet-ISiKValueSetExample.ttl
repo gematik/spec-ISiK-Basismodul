@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/ValueSet/ISiKValueSetExample> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ISiKValueSetExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ISiKValueSetExample</b></p><a name=\"ISiKValueSetExample\"> </a><a name=\"hcISiKValueSetExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKValueSet.html\">ISiKValueSet</a></p></div><p>This value set expansion contains 1 concepts.</p><table class=\"codes\"><tr><td><b>System</b></td><td><b>Version</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a name=\"ISiKValueSetExample-http://example.org/fhir/CodeSystem/TestKatalog-test\"> </a><code>http://example.org/fhir/CodeSystem/TestKatalog</code></td><td>1.0.0</td><td style=\"white-space:nowrap\">  test</td><td>Test</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://example.org/fhir/ValueSet/TestValueSet"^^xsd:anyURI ;
+     fhir:l <http://example.org/fhir/ValueSet/TestValueSet>
+  ] ; # 
+  fhir:version [ fhir:v "6.0.0-rc"] ; # 
+  fhir:name [ fhir:v "TestValueSet"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-02-02T13:44:45+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
+       ] ;
+       fhir:code [ fhir:v "focus" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/resource-types"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/resource-types>
+         ] ;
+         fhir:code [ fhir:v "Encounter" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:expansion [
+     fhir:timestamp [ fhir:v "2022-03-30"^^xsd:date ] ;
+     fhir:contains ( [
+       fhir:system [
+         fhir:v "http://example.org/fhir/CodeSystem/TestKatalog"^^xsd:anyURI ;
+         fhir:l <http://example.org/fhir/CodeSystem/TestKatalog>
+       ] ;
+       fhir:version [ fhir:v "1.0.0" ] ;
+       fhir:code [ fhir:v "test" ] ;
+       fhir:display [ fhir:v "Test" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

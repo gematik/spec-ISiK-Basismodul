@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR-Artefakte - ISiK Subscription Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spezifikation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Patientenzusammenfuehrung.html">Patient merge und Notification</a>
+      </li>
+      <li>
+        <a href="Fallzusammenfuehrung.html">Encounter Merge Notification (Fallzusammenführung)</a>
+      </li>
+      <li>
+        <a href="UseCases.html">Use Cases - Übersicht</a>
+      </li>
+      <li>
+        <a href="Akteure.html">Akteure</a>
+      </li>
+      <li>
+        <a href="FunktionenInteraktionen.html">Funktionen und Interaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Festlegungen.html">Übergreifende Festlegungen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Subscription Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - STU1
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR-Artefakte</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>FHIR-Artefakte</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a></li>
+  <li><a href="#ressourcenprofile" id="markdown-toc-ressourcenprofile">Ressourcenprofile</a></li>
+  <li><a href="#terminologien" id="markdown-toc-terminologien">Terminologien</a></li>
+  <li><a href="#beispiele" id="markdown-toc-beispiele">Beispiele</a></li>
+</ul>
+
+</div>
+<p>Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.</p>
+
+<p>Dieses ISiK-Modul zur themenbasierten Ereignisbenachrichtigung in FHIR R4 basiert auf dem
+<a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/">Subscriptions-Backport ImplementationGuide STU1.1</a>,
+welcher das R5-Benachrichtigungsmodell auf FHIR R4
+überträgt. Es verwendet dieselben strukturellen Konzepte wie Subscription, SubscriptionTopic (durch
+den Server vorgegeben, keine Nutzung der Basic Ressource), Bundle (für Benachrichtigungen) und
+Parameters (für Statusmeldungen).</p>
+
+<p>Hinweis zur Profilkompatibilität:
+Die in Version 1.1.0 des Subscriptions-Backport IGs enthaltenen Profile
+backport-subscription-notification-r4 und backport-subscription-status-r4 weisen technische Mängel
+auf, die eine direkte Wiederverwendung in produktiven Systemen verhindern.</p>
+
+<p>Daher wurden diese beiden Profile im Rahmen dieses Leitfadens funktionsgleich nachgebildet und unter
+den Bezeichnungen:</p>
+
+<ul>
+  <li>BackportSubscriptionNotificationR4Fixed</li>
+  <li>BackportSubscriptionStatusR4Fixed</li>
+</ul>
+
+<p>lokal publiziert.</p>
+
+<p>Diese lokalen Definitionen dienen als temporärer Ersatz und werden zukünftig durch die offiziellen
+HL7-Profile ersetzt, sobald eine technisch korrigierte Version des Backport-IGs veröffentlicht
+wurde.</p>
+
+<p>Es gelten zur Umsetzung der Subscription Funktionalität CapabilityStatements (Akteure und Rollen)
+sowie Datenstrukturen entsprechend der folgenden Seite.</p>
+
+<h3 id="capabilitystatements">CapabilityStatements</h3>
+
+<h4 id="akteure">Akteure</h4>
+
+<p>Das CapabilityStatement mit der Kennzeichnung “Expanded” dient der direkten Übersicht aller zu implementierender Interaktionen und Profile.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementSubscriptionServerAkteur-expanded.html" title="CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur-expanded">
+                
+                    Akteur &quot;ISiKCapabilityStatementSubscriptionServerAkteur&quot; (Expanded)
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für den Akteur "ISiKCapabilityStatementBasisServerAkteur".</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementSubscriptionServerAkteur.html" title="CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur">
+                
+                    Akteur &quot;ISiKCapabilityStatementSubscriptionServerAkteur&quot;
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für den Akteur "ISiKCapabilityStatementBasisServerAkteur".</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
+
+<h4 id="rollen">Rollen</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementSubscriptionRolle.html" title="CapabilityStatement/ISiKCapabilityStatementSubscriptionRolle">
+                
+                    CapabilityStatement für Rolle &quot;Subscription&quot;
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle "ISiKCapabilityStatementSubscriptionRolle".
+Diese Rolle beschreibt die Fähigkeiten eines Systems zur Registrierung, Verwaltung und Verarbeitung von FHIR Subscriptions auf Basis themenbasierter Benachrichtigungen nach dem R5-Modell unter Verwendung der Subscriptions-Backport-Mechanismen in FHIR R4.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
+
+<h3 id="ressourcenprofile">Ressourcenprofile</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-BackportSubscriptionNotificationR4Fixed.html" title="StructureDefinition/BackportSubscriptionNotificationR4Fixed">
+                
+                    R4 Topic-Based Subscription Notification Bundle
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Profil auf der FHIR-R4-Resource Bundle, um R5-ähnliche, themenbasierte Subscription-Benachrichtigungen in FHIR R4 zu ermöglichen.</p>
+
+<p>Dieses Profil ist funktional identisch mit <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4</code>.<br />
+Die Version 1.1.0 des offiziellen Profils enthält jedoch technische Fehler. Daher wurde dieses Profil lokal als temporärer Workaround nachgebildet.
+Es wird durch das offizielle <code class="language-plaintext highlighter-rouge">backport-subscription-notification-r4</code> Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-BackportSubscriptionStatusR4Fixed.html" title="StructureDefinition/BackportSubscriptionStatusR4Fixed">
+                
+                    R4 Backported R5 SubscriptionStatus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Profil auf der FHIR-R4-Resource Parameters zur Unterstützung themenbasierter Subscription-Benachrichtigungen in R4.</p>
+
+<p>Dieses Profil ist funktional identisch mit <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4</code>.<br />
+Die Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Daher wurde es hier als Workaround erneut implementiert.
+Diese lokale Definition wird durch das offizielle <code class="language-plaintext highlighter-rouge">backport-subscription-status-r4</code> Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" title="StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation">
+                
+                    ISiK CapabilityStatement Imports Expectation
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to <em>not</em> support a feature.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKBerichtBundle.html" title="StructureDefinition/ISiKBerichtBundle">
+                
+                    ISiKBerichtBundle
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. 
+Das Bundle entspricht den Anforderungen an ein <a href="https://hl7.org/fhir/R4/documents.html">FHIR Document Bundle</a> : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
+Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKSubscription.html" title="StructureDefinition/ISiKSubscription">
+                
+                    ISiK Subscription
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>ISiK Subscription<br />
+Motivation</p>
+
+<p>Subscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html">Subscriptions R5 Backport Profil von HL7</a>.</p>
+
+<p>Um als Subsystem über ein Subsription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des <a href="https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html">Subscriptions R5 Backport IGs von HL7</a> genutzt werden.</p>
+
+<p>Kompatibilität</p>
+
+<p>Das Profil ISiKSubscription basiert auf dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html">Backport-Subscription Profil</a>.
+Der <a href="https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html">SubscriptionStatus</a>, sowie das <a href="https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html">Subscription Notification Bundle</a> werden unverändert direkt aus dem <a href="https://hl7.org/fhir/uv/subscriptions-backport/index.html">Subscriptions R5 Backport IG</a> genutzt.</p>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKTerminPriorityExtension.html" title="StructureDefinition/ISiKTerminPriorityExtension">
+                
+                    ISiKTerminPriorityExtension
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+
+<h3 id="terminologien">Terminologien</h3>
+
+<h4 id="value-sets">Value Sets</h4>
+
+<p>Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-FhirMimeTypeVS.html" title="ValueSet/FhirMimeTypeVS">
+                
+                    FhirMimeTypeVS
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>FHIR Mime Types</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ISiKSubscriptionTopicVS.html" title="ValueSet/ISiKSubscriptionTopicVS">
+                
+                    ISiKSubscriptionTopic ValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-subscription-notification-type.html" title="ValueSet/subscription-notification-type">
+                
+                    SubscriptionNotificationType
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>The type of notification represented by the status message.</p>
+            </td>
+            
+         </tr>
+         
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
+
+<h4 id="code-systems">Code Systems</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-ISiKSubscriptionTopic.html" title="CodeSystem/ISiKSubscriptionTopic">
+                
+                    ISiK-SubscriptionTopic
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-subscription-notification-type.html" title="CodeSystem/subscription-notification-type">
+                
+                    SubscriptionNotificationType
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>The type of notification represented by the status message.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
+
+<h3 id="beispiele">Beispiele</h3>
+
+<p><b>Subscription</b></p>
+
+<ul>
+          <li><a href="Subscription-PatientMergeSubscriptionExample.html">Example Subscription - PatientMergeSubscriptionExample</a></li>
+      </ul>
+
+<div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket subscription#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 2, 2026 12:16+0000">2026-02-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

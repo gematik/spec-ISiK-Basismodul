@@ -1,0 +1,34 @@
+# Resource BehandlungsDiagnoseFreitext
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Condition",
+  "id" : "BehandlungsDiagnoseFreitext",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+    ]
+  },
+  "clinicalStatus" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code" : "active"
+      }
+    ]
+  },
+  "code" : {
+    "text" : "Behandlungsdiagnose"
+  },
+  "subject" : {
+    "reference" : "Patient/PatientinMusterfrau"
+  },
+  "onsetDateTime" : "2019-09-02",
+  "recordedDate" : "2021-01-01"
+}
+
+```

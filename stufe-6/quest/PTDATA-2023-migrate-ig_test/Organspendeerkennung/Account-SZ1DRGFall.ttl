@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Account/SZ1DRGFall> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SZ1DRGFall"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account SZ1DRGFall</b></p><a name=\"SZ1DRGFall\"> </a><a name=\"hcSZ1DRGFall\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ISiKAbrechnungsfall.html\">ISiKAbrechnungsfall</a></p></div><p><b>identifier</b>: Account number/0123456789</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode IMP}\">inpatient encounter</span></p><p><b>subject</b>: <a href=\"Patient-SZ1Patient.html\">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-DRG\">Abrechnungsart: DRG</a> (Diagnosebezogene Fallgruppen)</p><p><b>coverage</b>: <a href=\"Coverage-SZ1VersicherungGesetzlich.html\">Coverage: status = active; type = gesetzliche Krankenversicherung</a></p></blockquote><blockquote><p><b>coverage</b></p><p><b>Abrechnungsart</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/CodeSystem/dkgev/Abrechnungsart#Abrechnungsart-SZ\">Abrechnungsart: SZ</a> (Selbstzahlerrechnung)</p><p><b>coverage</b>: <a href=\"Coverage-SZ1VersicherungSelbstzahler.html\">Coverage: status = active; type = Selbstzahler</a></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "AN" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://beispiel-krankenhaus.de/sid/fallnummern"^^xsd:anyURI ;
+       fhir:l <http://beispiel-krankenhaus.de/sid/fallnummern>
+     ] ;
+     fhir:value [ fhir:v "0123456789" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "IMP" ]
+     ] )
+  ] ; # 
+  fhir:subject ( [
+     fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Patient/SZ1Patient> ;
+     fhir:reference [ fhir:v "Patient/SZ1Patient" ]
+  ] ) ; # 
+  fhir:coverage ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/StructureDefinition/ExtensionAbrechnungsart>
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/dkgev/Abrechnungsart"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/dkgev/Abrechnungsart>
+         ] ;
+         fhir:code [ fhir:v "DRG" ] ;
+         fhir:display [ fhir:v "Diagnosebezogene Fallgruppen" ]
+       ]
+     ] ) ;
+     fhir:coverage [
+       fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Coverage/SZ1VersicherungGesetzlich> ;
+       fhir:reference [ fhir:v "Coverage/SZ1VersicherungGesetzlich" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://fhir.de/StructureDefinition/ExtensionAbrechnungsart"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/StructureDefinition/ExtensionAbrechnungsart>
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/dkgev/Abrechnungsart"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/dkgev/Abrechnungsart>
+         ] ;
+         fhir:code [ fhir:v "SZ" ] ;
+         fhir:display [ fhir:v "Selbstzahlerrechnung" ]
+       ]
+     ] ) ;
+     fhir:coverage [
+       fhir:l <https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/Coverage/SZ1VersicherungSelbstzahler> ;
+       fhir:reference [ fhir:v "Coverage/SZ1VersicherungSelbstzahler" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

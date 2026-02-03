@@ -1,0 +1,54 @@
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="encounter" />
+    <meta>
+        <profile value="https://gematik.de/fhir/ISiK/StructureDefinition/ISiKKontaktGesundheitseinrichtung" />
+    </meta>
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+                <code value="VN" />
+            </coding>
+        </type>
+        <system value="https://test.krankenhaus.de/fhir/sid/fallnr" />
+        <value value="0123456789" />
+    </identifier>
+    <status value="finished" />
+    <class>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+        <code value="IMP" />
+    </class>
+    <type>
+        <coding>
+            <system value="http://fhir.de/CodeSystem/kontaktart-de" />
+            <code value="operation" />
+        </coding>
+    </type>
+    <type>
+        <coding>
+            <system value="http://fhir.de/CodeSystem/Kontaktebene" />
+            <code value="versorgungsstellenkontakt" />
+        </coding>
+    </type>
+    <serviceType>
+        <coding>
+            <system value="http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel" />
+            <code value="0100" />
+        </coding>
+    </serviceType>
+    <subject>
+        <reference value="Patient/test" />
+    </subject>
+    <period>
+        <start value="2021-02-12" />
+        <end value="2021-02-13" />
+    </period>
+    <hospitalization>
+        <admitSource>
+            <coding>
+                <system value="http://fhir.de/CodeSystem/dgkev/Aufnahmeanlass" />
+                <code value="E" />
+            </coding>
+        </admitSource>
+    </hospitalization>
+</Encounter>

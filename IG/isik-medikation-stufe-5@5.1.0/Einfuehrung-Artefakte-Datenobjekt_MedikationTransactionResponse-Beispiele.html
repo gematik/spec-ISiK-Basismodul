@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Implementierungsleitfaden ISiK-Medikation</title>
+
+    <link rel="icon" href="static/styles/common/favicon.ico" />
+
+    <script src="static/styles/common/jquery/jquery.min.js"></script>
+    <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/common/main.min.css" />
+    <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" /> 
+
+    <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+    <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+    <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1dc4426dfe44b80" />
+
+</head>
+
+<body>
+
+    <div id="ig-viewer">
+
+        <div class="ig-view-content">
+
+            <div id="ig-view-twolevelmenu">
+
+                <div class="header" role="banner" aria-label="Header">
+                    
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="Einfuehrung.html">
+                    Implementierungsleitfaden ISiK-Medikation
+                </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Einfuehrung-ReleaseNotes.html">
+                                ReleaseNotes
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Use Cases <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases.html">
+                                            Use Cases
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-UebersichtAnwendungsfaelle.html">
+                                            &#xDC;bersicht Anwendungsf&#xE4;lle (Use Cases)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-Informationsmodell.html">
+                                            Informationsmodell
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UseCases-AMTS.html">
+                                            AMTS
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-RestApi.html">
+                                            REST-API
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-UebergreifendeFestlegungen-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Artefakte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte.html">
+                                            Artefakte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-CapabilityStatements.html">
+                                            CapabilityStatements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Extensions.html">
+                                            Extensions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_Medikament.html">
+                                            ISiKMedikament (Medication)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerordnung.html">
+                                            ISiKMedikationsVerordnung (MedicationRequest)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsInformation.html">
+                                            ISiKMedikationsInformation (MedicationStatement)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsListe.html">
+                                            ISiKMedikationsListe (List)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationsVerabreichung.html">
+                                            ISiKMedikationsVerabreichung (MedicationAdministration)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_AMTSBewertung.html">
+                                            ISiKAMTSBewertung (RiskAssessment)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransaction.html">
+                                            ISiKMedikationTransaction (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Datenobjekt_MedikationTransactionResponse.html">
+                                            ISiKMedikationTransactionResponse (Bundle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Einfuehrung-Artefakte-Terminologien.html">
+                                            Terminologien
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                </div>
+
+                <div class="content container" role="main" aria-label="Main content">
+                    
+
+
+<div class="row">
+
+
+    <div class="col-md-24">
+
+        <div id="preview-content">
+
+            <h3 id="beispiele">Beispiele</h3>
+<div class="cool-tabs">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+    <a href="#d5460df6-7edd-4fce-a740-e47176d2baac" aria-controls="d5460df6-7edd-4fce-a740-e47176d2baac" role="tab" data-toggle="tab">Übersicht</a>
+</li><li role="presentation" class="">
+    <a href="#6002bc3f-8bde-435e-9353-29f26f681511" aria-controls="6002bc3f-8bde-435e-9353-29f26f681511" role="tab" data-toggle="tab">XML</a>
+</li><li role="presentation" class="">
+    <a href="#5211467f-21d4-418c-bac7-9caab0025877" aria-controls="5211467f-21d4-418c-bac7-9caab0025877" role="tab" data-toggle="tab">JSON</a>
+</li><li role="presentation" class="">
+    <a href="#c158ab72-3056-465b-a6d0-0daedfbba850" aria-controls="c158ab72-3056-465b-a6d0-0daedfbba850" role="tab" data-toggle="tab">Link</a>
+</li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="d5460df6-7edd-4fce-a740-e47176d2baac">
+    <div class="stu3-treetable" id="2d6c33b575b649b78293d9a919215023" data-level="4"><div class="treetable-wrapper"><div class="treetable-left-panel"><table class="treetable instance-tree"><tbody><tr data-id="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>Bundle</b></td></tr><tr class="collapsed" data-id="fc4c71fd69fd4f02916af80345941e61" data-parentId="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ExampleISiKMedikationTransactionResponse</span></td></tr><tr class="collapsed" data-id="b6adf32257cc4c7eb097ff95138009bb" data-parentId="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="224e571f7ae046c49994ef80a9577e82" data-parentId="b6adf32257cc4c7eb097ff95138009bb"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransactionResponse</span></td></tr><tr class="collapsed" data-id="4fd20c1f0bb348628c56b0c69cbb1ff5" data-parentId="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>type : </b><span>transaction-response</span></td></tr><tr class="collapsed" data-id="601df173dfc34b8d8d9353e1a9dd48f7" data-parentId="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="e9595950368b45a48fc0533d5df0f404" data-parentId="601df173dfc34b8d8d9353e1a9dd48f7"><td class="instance"><span class="baseIcon primitive"></span><b>fullUrl : </b><span>http://my.target.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span></td></tr><tr class="collapsed" data-id="dd3582eaf11c4d089136dcd1e35b6f44" data-parentId="601df173dfc34b8d8d9353e1a9dd48f7"><td class="instance"><span class="baseIcon primitive"></span><b>resource</b></td></tr><tr class="collapsed" data-id="e4d90e11d8654a408548011ad9030275" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ExampleISiKMedikationsInformation1</span></td></tr><tr class="collapsed" data-id="0d5aa8023faf4b97bace8f6ec75b0ec7" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="8578b4568a6a40c2a77d040eb007ed34" data-parentId="0d5aa8023faf4b97bace8f6ec75b0ec7"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation</span></td></tr><tr class="collapsed" data-id="07711e685cb24cfebd8cac9ccb559764" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="e687104becbf44ab88439d5915201afd" data-parentId="07711e685cb24cfebd8cac9ccb559764"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk</span></td></tr><tr class="collapsed" data-id="0df9499e5d1c40aeaabcb3a793a50a0b" data-parentId="07711e685cb24cfebd8cac9ccb559764"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Erh&#246;htes Blutungsrisiko ist in diesem Fall vertretbar.</span></td></tr><tr class="collapsed" data-id="540be64fffdf41218613f47a16cc472b" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="081561c5517e4098878ee87212e393bb" data-parentId="540be64fffdf41218613f47a16cc472b"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</span></td></tr><tr class="collapsed" data-id="6068699ff79141b0b8f610b380688323" data-parentId="540be64fffdf41218613f47a16cc472b"><td class="instance"><span class="baseIcon primitive"></span><b>value</b></td></tr><tr class="collapsed" data-id="4d5ef3d050e2483d96a7f422dd8f58be" data-parentId="6068699ff79141b0b8f610b380688323"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span></td></tr><tr class="collapsed" data-id="835503c27ffe4398958a106a7f6c34d7" data-parentId="6068699ff79141b0b8f610b380688323"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>akut</span></td></tr><tr class="collapsed" data-id="f1e5dd728d49442ab9b363d5a6ea504a" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="dca40361943a476e992c31b1f777dc12" data-parentId="f1e5dd728d49442ab9b363d5a6ea504a"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKSelbstmedikation</span></td></tr><tr class="collapsed" data-id="6f63c4da752e41df93d37eedf2320bad" data-parentId="f1e5dd728d49442ab9b363d5a6ea504a"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>True</span></td></tr><tr class="collapsed" data-id="9b3e7f709d3e4a948b2fe3567b82525e" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>extension</b></td></tr><tr class="collapsed" data-id="ca62a5c52fd84ab78c5455193ebd3c49" data-parentId="9b3e7f709d3e4a948b2fe3567b82525e"><td class="instance"><span class="baseIcon primitive"></span><b>url : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel</span></td></tr><tr class="collapsed" data-id="3692124ebb634ffaa251204d9b5f018b" data-parentId="9b3e7f709d3e4a948b2fe3567b82525e"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>Schmerztherapie postoperativ</span></td></tr><tr class="collapsed" data-id="702a4f7c83e2440baefc834fd67d0b5a" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>active</span></td></tr><tr class="collapsed" data-id="b09891a4be7d46d4bd2247e760619cb4" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>medication</b></td></tr><tr class="collapsed" data-id="f31021d24d994860ab4a7976ff52b668" data-parentId="b09891a4be7d46d4bd2247e760619cb4"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Medication/ExampleISiKMedikament1</span></td></tr><tr class="collapsed" data-id="90a8db5021bd420ca1dd3471f35c91eb" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>subject</b></td></tr><tr class="collapsed" data-id="c31aa68280c849fd8ce4d140924092de" data-parentId="90a8db5021bd420ca1dd3471f35c91eb"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Patient/PatientinMusterfrau</span></td></tr><tr class="collapsed" data-id="412967b86d874daf8b7fcc7e2b749b1c" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>context</b></td></tr><tr class="collapsed" data-id="423b4007f93742dfba5963b0f9a10fb7" data-parentId="412967b86d874daf8b7fcc7e2b749b1c"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Encounter/Fachabteilungskontakt</span></td></tr><tr class="collapsed" data-id="d3d98b9f7ac44bb7a7bf4b448fd740fc" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>effective</b></td></tr><tr class="collapsed" data-id="8b9b16ba5b694e6eb18b4e60e08190fd" data-parentId="d3d98b9f7ac44bb7a7bf4b448fd740fc"><td class="instance"><span class="baseIcon primitive"></span><b>start : </b><span>2021-07-01</span></td></tr><tr class="collapsed" data-id="03a78e4461514a2793d86027149db293" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>dateAsserted : </b><span>2021-07-01</span></td></tr><tr class="collapsed" data-id="e8d6d65247a64beca8fd9526069e3a31" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>reasonReference</b></td></tr><tr class="collapsed" data-id="a0bba49397264c9da5f0b15a78275d64" data-parentId="e8d6d65247a64beca8fd9526069e3a31"><td class="instance"><span class="baseIcon primitive"></span><b>reference : </b><span>Condition/BehandlungsDiagnoseFreitext</span></td></tr><tr class="collapsed" data-id="3ab510a65fef40c9ad506738ec0d6733" data-parentId="dd3582eaf11c4d089136dcd1e35b6f44"><td class="instance"><span class="baseIcon primitive"></span><b>dosage</b></td></tr><tr class="collapsed" data-id="8e9d658246124aaabaf2f333fffa3626" data-parentId="3ab510a65fef40c9ad506738ec0d6733"><td class="instance"><span class="baseIcon primitive"></span><b>timing</b></td></tr><tr class="collapsed" data-id="c8d2248d9c1c43cf9d196b803f25f995" data-parentId="8e9d658246124aaabaf2f333fffa3626"><td class="instance"><span class="baseIcon primitive"></span><b>repeat</b></td></tr><tr class="collapsed" data-id="b45de789a95547aa9b6666cfd402068c" data-parentId="c8d2248d9c1c43cf9d196b803f25f995"><td class="instance"><span class="baseIcon primitive"></span><b>when : </b><span>MORN</span></td></tr><tr class="collapsed" data-id="6c5d89cb912940049d9c858ab7ea96d0" data-parentId="c8d2248d9c1c43cf9d196b803f25f995"><td class="instance"><span class="baseIcon primitive"></span><b>when : </b><span>NOON</span></td></tr><tr class="collapsed" data-id="40f861b6f315477e9006ade9f0d1c602" data-parentId="c8d2248d9c1c43cf9d196b803f25f995"><td class="instance"><span class="baseIcon primitive"></span><b>when : </b><span>EVE</span></td></tr><tr class="collapsed" data-id="0b372294bc7a49e999b2ae7f196cb7e1" data-parentId="3ab510a65fef40c9ad506738ec0d6733"><td class="instance"><span class="baseIcon primitive"></span><b>doseAndRate</b></td></tr><tr class="collapsed" data-id="15d576af375c4a62ab6e630a99361a5e" data-parentId="0b372294bc7a49e999b2ae7f196cb7e1"><td class="instance"><span class="baseIcon primitive"></span><b>dose</b></td></tr><tr class="collapsed" data-id="c95c610c21cb45afb4db87bd9df87c32" data-parentId="15d576af375c4a62ab6e630a99361a5e"><td class="instance"><span class="baseIcon primitive"></span><b>value : </b><span>1</span></td></tr><tr class="collapsed" data-id="bd8db61ea82a42f28fdfc8b45be0b370" data-parentId="15d576af375c4a62ab6e630a99361a5e"><td class="instance"><span class="baseIcon primitive"></span><b>unit : </b><span>Brausetablette</span></td></tr><tr class="collapsed" data-id="a1d62f016d7b43bb8511719ea187a619" data-parentId="15d576af375c4a62ab6e630a99361a5e"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://unitsofmeasure.org</span></td></tr><tr class="collapsed" data-id="9fb3b8ba11324d059d807e6482e8d9a5" data-parentId="15d576af375c4a62ab6e630a99361a5e"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>1</span></td></tr><tr class="collapsed" data-id="f27cff7350de40c79ee42e21b7ff18e5" data-parentId="601df173dfc34b8d8d9353e1a9dd48f7"><td class="instance"><span class="baseIcon primitive"></span><b>response</b></td></tr><tr class="collapsed" data-id="b72593137cd64574968ca490ee29db12" data-parentId="f27cff7350de40c79ee42e21b7ff18e5"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>201</span></td></tr><tr class="collapsed" data-id="5c637e13e80f4c65bde463c6d6b2613b" data-parentId="f27cff7350de40c79ee42e21b7ff18e5"><td class="instance"><span class="baseIcon primitive"></span><b>location : </b><span>http://my.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span></td></tr><tr class="collapsed" data-id="cedc64211d724c5ab982867dbff49b3a" data-parentId="a4739465526644dda17a7b5edb61a994"><td class="instance"><span class="baseIcon primitive"></span><b>entry</b></td></tr><tr class="collapsed" data-id="453f5dcc5b72462fa96ee38cb68de2dc" data-parentId="cedc64211d724c5ab982867dbff49b3a"><td class="instance"><span class="baseIcon primitive"></span><b>fullUrl : </b><span>http://my.target.fhir.server.local/Medication/ExampleISiKMedikament1</span></td></tr><tr class="collapsed" data-id="59d505bba62748b5869bab8be1462cff" data-parentId="cedc64211d724c5ab982867dbff49b3a"><td class="instance"><span class="baseIcon primitive"></span><b>resource</b></td></tr><tr class="collapsed" data-id="63589bfa79804c76a664c68ddaf8d82c" data-parentId="59d505bba62748b5869bab8be1462cff"><td class="instance"><span class="baseIcon primitive"></span><b>id : </b><span>ExampleISiKMedikament1</span></td></tr><tr class="collapsed" data-id="b30d2f9d3f5f42b78ba10ddd378968b7" data-parentId="59d505bba62748b5869bab8be1462cff"><td class="instance"><span class="baseIcon primitive"></span><b>meta</b></td></tr><tr class="collapsed" data-id="968dc28e1e164fae9d49b48a71f58503" data-parentId="b30d2f9d3f5f42b78ba10ddd378968b7"><td class="instance"><span class="baseIcon primitive"></span><b>profile : </b><span>https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament</span></td></tr><tr class="collapsed" data-id="245deb1d69654ab29a67b41a285223ea" data-parentId="59d505bba62748b5869bab8be1462cff"><td class="instance"><span class="baseIcon primitive"></span><b>text</b></td></tr><tr class="collapsed" data-id="9c990746a42644f582d99e31a4d75076" data-parentId="245deb1d69654ab29a67b41a285223ea"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>additional</span></td></tr><tr class="collapsed" data-id="a640968138e241368d57335fbea188d2" data-parentId="59d505bba62748b5869bab8be1462cff"><td class="instance"><span class="baseIcon primitive"></span><b>code</b></td></tr><tr class="collapsed" data-id="5c95eb65b1ac456f9a22ea2b578f3eba" data-parentId="a640968138e241368d57335fbea188d2"><td class="instance"><span class="baseIcon primitive"></span><b>coding</b></td></tr><tr class="collapsed" data-id="39e45148ffd347c1b28c3ad61f6032de" data-parentId="5c95eb65b1ac456f9a22ea2b578f3eba"><td class="instance"><span class="baseIcon primitive"></span><b>system : </b><span>http://fhir.de/CodeSystem/bfarm/atc</span></td></tr><tr class="collapsed" data-id="afa39e2d122646ebbbeb473a2c3482d4" data-parentId="5c95eb65b1ac456f9a22ea2b578f3eba"><td class="instance"><span class="baseIcon primitive"></span><b>version : </b><span>2024</span></td></tr><tr class="collapsed" data-id="6860d27638854442914dfdf0042511d3" data-parentId="5c95eb65b1ac456f9a22ea2b578f3eba"><td class="instance"><span class="baseIcon primitive"></span><b>code : </b><span>V03AB23</span></td></tr><tr class="collapsed" data-id="62ab2e48c2ca4962a9c5c92ac52f2667" data-parentId="5c95eb65b1ac456f9a22ea2b578f3eba"><td class="instance"><span class="baseIcon primitive"></span><b>display : </b><span>Acetylcystein</span></td></tr><tr class="collapsed" data-id="68b5a9f936bb40e28bfdd120bb7613e7" data-parentId="59d505bba62748b5869bab8be1462cff"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>active</span></td></tr><tr class="collapsed" data-id="15b2da14a430427386c011763fce2ec2" data-parentId="cedc64211d724c5ab982867dbff49b3a"><td class="instance"><span class="baseIcon primitive"></span><b>response</b></td></tr><tr class="collapsed" data-id="c3ac2a0f2b884d97a81631f926a827c0" data-parentId="15b2da14a430427386c011763fce2ec2"><td class="instance"><span class="baseIcon primitive"></span><b>status : </b><span>201</span></td></tr><tr class="collapsed" data-id="6f727484cf344fa198d7cada32c12b49" data-parentId="15b2da14a430427386c011763fce2ec2"><td class="instance"><span class="baseIcon primitive"></span><b>location : </b><span>http://my.fhir.server.local/Medication/ExampleISiKMedikament1</span></td></tr></tbody></table></div></div></div><script type="text/javascript">
+(function() {
+var isTreetableVisible = document.querySelector(".treetable") != null;
+if (isTreetableVisible) {
+var resourceTreeTable2d6c33b575b649b78293d9a919215023 = new InstanceTree();
+resourceTreeTable2d6c33b575b649b78293d9a919215023.init("2d6c33b575b649b78293d9a919215023");
+}
+})();
+</script>
+</div><div role="tabpanel" class="tab-pane " id="6002bc3f-8bde-435e-9353-29f26f681511">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">Bundle</a></span> <span class="attr">xmlns</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://hl7.org/fhir</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKMedikationTransactionResponse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransactionResponse</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.type" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">type</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">transaction-response</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.fullUrl" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">fullUrl</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://my.target.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resource</a></span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element">MedicationStatement</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKMedikationsInformation1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Erh&#246;htes Blutungsrisiko ist in diesem Fall vertretbar.</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueCoding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">akut</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">valueCoding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKSelbstmedikation</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueBoolean</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">true</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">extension</a></span> <span class="attr">url</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel</span><span class="symbol">&quot;</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueString</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Schmerztherapie postoperativ</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">extension</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.medication" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">medicationReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.medication.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Medication/ExampleISiKMedikament1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">medicationReference</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.subject" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">subject</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.subject.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">subject</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.context" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">context</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.context.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">context</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.effective" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">effectivePeriod</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.effective.start" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">start</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-07-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">effectivePeriod</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dateAsserted" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">dateAsserted</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2021-07-01</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.reasonReference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reasonReference</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.reasonReference.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Condition/BehandlungsDiagnoseFreitext</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">reasonReference</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">dosage</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">timing</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">repeat</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat.when" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">when</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">MORN</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat.when" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">when</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">NOON</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat.when" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">when</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">EVE</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">repeat</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">timing</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">doseAndRate</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.dose" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">doseQuantity</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.dose.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">value</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.dose.unit" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">unit</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Brausetablette</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.dose.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.dose.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">doseQuantity</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">doseAndRate</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">dosage</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">MedicationStatement</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">resource</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">response</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">201</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.location" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">location</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://my.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">response</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">entry</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.fullUrl" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">fullUrl</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://my.target.fhir.server.local/Medication/ExampleISiKMedikament1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resource</a></span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element">Medication</span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">ExampleISiKMedikament1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">meta</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.text" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">text</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.text.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">additional</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;Medikament codiert (Wirkstoff)&lt;/div&gt;</div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">text</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">coding</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/atc</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.version" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">version</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">2024</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">V03AB23</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.display" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">display</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">Acetylcystein</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">coding</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">code</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">active</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Medication</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">resource</span><span class="brace">&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">response</a></span><span class="brace">&gt;</span></div>
+<div class="indent">
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">201</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+<div class="line"><span class="brace">&lt;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.location" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">location</a></span> <span class="attr">value</span><span class="symbol">=</span><span class="symbol">&quot;</span><span class="string">http://my.fhir.server.local/Medication/ExampleISiKMedikament1</span><span class="symbol">&quot;</span><span class="brace"> /&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">response</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">entry</span><span class="brace">&gt;</span></div>
+</div>
+<div class="line"><span class="brace">&lt;/</span><span class="element">Bundle</span><span class="brace">&gt;</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="5211467f-21d4-418c-bac7-9caab0025877">
+    <div class="resource-validation-xml"><div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.resourceType" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Bundle</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKMedikationTransactionResponse</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransactionResponse</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.type" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">type</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">transaction-response</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">entry</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.fullUrl" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">fullUrl</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://my.target.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resource</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.resourceType" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">MedicationStatement</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKMedikationsInformation1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">extension</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.url" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueString" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Erh&#246;htes Blutungsrisiko ist in diesem Fall vertretbar.</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.url" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedikationsart</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueCoding" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueCoding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueCoding.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">akut</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueCoding.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/CodeSystem/ISiKMedikationsartCS</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.url" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKSelbstmedikation</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueBoolean" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueBoolean</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">true</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.url" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">url</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKBehandlungsziel</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.extension.valueString" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">valueString</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Schmerztherapie postoperativ</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">dosage</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">doseAndRate</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.doseQuantity" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">doseQuantity</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.doseQuantity.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://unitsofmeasure.org</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.doseQuantity.value" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">value</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">1</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.doseQuantity.unit" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">unit</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Brausetablette</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.doseAndRate.doseQuantity.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">timing</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">repeat</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dosage.timing.repeat.when" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">when</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">MORN</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="string">&quot;</span><span class="string">NOON</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="string">&quot;</span><span class="string">EVE</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.medicationReference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">medicationReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.medicationReference.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Medication/ExampleISiKMedikament1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.subject" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">subject</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.subject.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Patient/PatientinMusterfrau</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.context" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">context</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.context.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Encounter/Fachabteilungskontakt</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.effectivePeriod" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">effectivePeriod</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.effectivePeriod.start" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">start</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-07-01</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.dateAsserted" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">dateAsserted</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2021-07-01</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.reasonReference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reasonReference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.reasonReference.reference" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">reference</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Condition/BehandlungsDiagnoseFreitext</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">response</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">201</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.location" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">location</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://my.fhir.server.local/MedicationStatement/ExampleISiKMedikationsInformation1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.fullUrl" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">fullUrl</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://my.target.fhir.server.local/Medication/ExampleISiKMedikament1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resource</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.resourceType" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">resourceType</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Medication</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.id" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">id</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">ExampleISiKMedikament1</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">meta</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.meta.profile" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">profile</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="string">&quot;</span><span class="string">https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.text" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">text</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.text.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">additional</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.text.div" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">div</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Medikament codiert (Wirkstoff)&lt;/div&gt;</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">coding</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">[</span></div>
+<div class="indent">
+<div class="line"><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.system" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">system</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://fhir.de/CodeSystem/bfarm/atc</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.code" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">code</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">V03AB23</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.display" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">display</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">Acetylcystein</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.code.coding.version" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">version</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">2024</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.resource.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">active</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">response</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="brace">{</span></div>
+<div class="indent">
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.status" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">status</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">201</span><span class="string">&quot;</span><span class="symbol">,</span></div>
+<div class="line"><span class="element">&quot;</span><span class="element"><a href="artifacts/package/StructureDefinition-ISiKMedikationTransactionResponse.json#Bundle.entry.response.location" title="ISiK Medikation TransactionBundle-Response
+de.gematik.isik 5.0.0
+StructureDefinition-ISiKMedikationTransactionResponse.json" target="_blank">location</a></span><span class="element">&quot;</span><span class="symbol">: </span><span class="string">&quot;</span><span class="string">http://my.fhir.server.local/Medication/ExampleISiKMedikament1</span><span class="string">&quot;</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+<div class="line"><span class="brace">]</span></div>
+</div>
+<div class="line"><span class="brace">}</span></div>
+</div>
+</div><div role="tabpanel" class="tab-pane " id="c158ab72-3056-465b-a6d0-0daedfbba850">
+    <a  href='https://simplifier.net/resolve?scope=project:isik-stufe-5&filepath=Resources/fsh-generated/resources/Bundle-ExampleISiKMedikationTransactionResponse.json'>ExampleISiKMedikationTransactionResponse</a>
+</div>
+  </div>
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+            
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

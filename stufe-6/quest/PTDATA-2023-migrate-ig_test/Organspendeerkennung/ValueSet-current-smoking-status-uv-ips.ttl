@@ -1,0 +1,164 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/isik/Implementationguide/Organspendeerkennung/ValueSet/current-smoking-status-uv-ips> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "current-smoking-status-uv-ips"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/shareablevalueset"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet current-smoking-status-uv-ips</b></p><a name=\"current-smoking-status-uv-ips\"> </a><a name=\"hccurrent-smoking-status-uv-ips\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p></div><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/LA18976-3/\">LA18976-3</a></td><td>Current every day smoker</td></tr><tr><td><a href=\"https://loinc.org/LA18977-1/\">LA18977-1</a></td><td>Current some day smoker</td></tr><tr><td><a href=\"https://loinc.org/LA15920-4/\">LA15920-4</a></td><td>Former smoker</td></tr><tr><td><a href=\"https://loinc.org/LA18978-9/\">LA18978-9</a></td><td>Never smoker</td></tr><tr><td><a href=\"https://loinc.org/LA18979-7/\">LA18979-7</a></td><td>Smoker, current status unknown</td></tr><tr><td><a href=\"https://loinc.org/LA18980-5/\">LA18980-5</a></td><td>Unknown if ever smoked</td></tr><tr><td><a href=\"https://loinc.org/LA18981-3/\">LA18981-3</a></td><td>Heavy tobacco smoker</td></tr><tr><td><a href=\"https://loinc.org/LA18982-1/\">LA18982-1</a></td><td>Light tobacco smoker</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/isik/ValueSet/current-smoking-status-uv-ips>
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "http://art-decor.org/ns/oids/vs"^^xsd:anyURI ;
+       fhir:l <http://art-decor.org/ns/oids/vs>
+     ] ;
+     fhir:value [ fhir:v "2.16.840.1.113883.11.22.59" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.0.1-rc"] ; # 
+  fhir:name [ fhir:v "CurrentSmokingStatusUvIps"] ; # 
+  fhir:title [ fhir:v "Current Smoking Status - IPS"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-01-26T12:32:52+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/patientcare" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms."] ; # 
+  fhir:immutable [ fhir:v false] ; # 
+  fhir:copyright [ fhir:v "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:concept ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "1"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18976-3" ] ;
+         fhir:display [ fhir:v "Current every day smoker" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "2"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18977-1" ] ;
+         fhir:display [ fhir:v "Current some day smoker" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "3"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA15920-4" ] ;
+         fhir:display [ fhir:v "Former smoker" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "4"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18978-9" ] ;
+         fhir:display [ fhir:v "Never smoker" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "5"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18979-7" ] ;
+         fhir:display [ fhir:v "Smoker, current status unknown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "6"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18980-5" ] ;
+         fhir:display [ fhir:v "Unknown if ever smoked" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "7"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18981-3" ] ;
+         fhir:display [ fhir:v "Heavy tobacco smoker" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/ordinalValue"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/ordinalValue>
+           ] ;
+           fhir:value [
+             a fhir:Decimal ;
+             fhir:v "8"^^xsd:decimal
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "LA18982-1" ] ;
+         fhir:display [ fhir:v "Light tobacco smoker" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,61 @@
+# Resource SZ1Mutter
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "RelatedPerson",
+  "id" : "SZ1Mutter",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKAngehoeriger"
+    ]
+  },
+  "identifier" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "code" : "KVZ10"
+          }
+        ]
+      },
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "A987654321"
+    }
+  ],
+  "patient" : {
+    "reference" : "Patient/SZ1Patient"
+  },
+  "relationship" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code" : "MTH"
+        }
+      ]
+    }
+  ],
+  "name" : [
+    {
+      "use" : "official",
+      "family" : "Musterfrau",
+      "given" : ["Mama"]
+    }
+  ],
+  "address" : [
+    {
+      "type" : "both",
+      "line" : ["Milchstr. 42"],
+      "city" : "Beispielstadt",
+      "postalCode" : "78143",
+      "country" : "DE"
+    }
+  ]
+}
+
+```

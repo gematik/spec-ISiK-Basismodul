@@ -1,0 +1,4740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR-Artefakte - ISiK Basis Implementierungsleitfaden v6.0.0-rc</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"22"}
+    h3,h4,h5,h6{--heading-prefix:"22.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Einführung</a>
+  </li>
+  <li>
+    <a href="Motivation.html">Motivation</a>
+  </li>
+  <li>
+    <a href="ReleaseNotes.html">Release Notes</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Kontext und Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Abbildung-des-Konstrukts-Fall.html">Abbildung des Konstrukts &quot;Fall&quot;</a>
+      </li>
+      <li>
+        <a href="Datenuebermittlung-aus-Subsystemen.html">Datenübermittlung aus Subsystemen</a>
+      </li>
+      <li>
+        <a href="Erlaeuterung-Akteurs-und-Rollenmodell.html">Akteurs- und Rollenmodell</a>
+      </li>
+      <li>
+        <a href="Index_Beispielszenarien.html">Beispielszenarien</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Festlegungen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Index_Festlegungen.html">Festlegungen</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Methodik.html">Methodik</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html">Bestätigungsrelevante Systeme</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_Andere.html">Kompatibilität der gematik-Spezifikation Andere</a>
+      </li>
+      <li>
+        <a href="KompatibilitaetDerGematikSpezifikation_IHE.html">Kompatibilität der gematik-Spezifikation IHE</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Must-Support-Flags.html">Must-Support-Flags</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Repraesentationsformate.html">Repräsentationsformate</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Suchparameter.html">Suchparameter</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_Rest.html">REST-API</a>
+      </li>
+      <li>
+        <a href="Patient-Besuch-Kontext.html">Herstellung von Patienten- und Besuchskontext</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_UmgangFehlendeDaten.html">Umgang mit fehlenden Daten</a>
+      </li>
+      <li>
+        <a href="UebergreifendeFestlegungen_FHIR_Artefakte.html">Umgang mit FHIR-Artefakten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+ISiK Basis Implementierungsleitfaden
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 6.0.0-rc - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR-Artefakte</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>FHIR-Artefakte</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a></li>
+  <li><a href="#ressourcenprofile" id="markdown-toc-ressourcenprofile">Ressourcenprofile</a></li>
+  <li><a href="#terminologien" id="markdown-toc-terminologien">Terminologien</a></li>
+  <li><a href="#beispiele" id="markdown-toc-beispiele">Beispiele</a></li>
+</ul>
+
+</div>
+<p>Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.</p>
+
+<p>Es gelten zur Umsetzung der basalen Funktionalität und weiterer Use Cases in ISiK die Festlegungen zu CapabilityStatements <a href="Erlaeuterung-Akteurs-und-Rollenmodell.md">(Akteure und Rollen)</a> sowie Datenstrukturen entsprechend der folgenden Abschnitte.</p>
+
+<p>Softwareherstellern steht es frei, über die hier spezifizierten Profiltypen hinaus weitere FHIR-Profile zu nutzen, zu implementieren oder zu spezifizieren und über eine API bereitzustellen. Wir bitten in solchen Fällen jedoch um eine Meldung entsprechender Bedarfe über das <a href="https://service.gematik.de/servicedesk/customer/portal/16">ISiK Anfrageportal</a>, damit wir über mögliche Leerstellen der ISiK-Spezifikation in grundlegenden API-Funktionalitäten zur Abdeckung spezifischer Workflows informiert werden.</p>
+
+<h3 id="capabilitystatements">CapabilityStatements</h3>
+
+<h4 id="akteure">Akteure</h4>
+
+<p>Das CapabilityStatement mit der Kennzeichnung “Expanded” dient der direkten Übersicht aller zu implementierender Interaktionen und Profile.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur-expanded.html" title="CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur-expanded">
+                
+                    Akteur ISiKCapabilityStatementBasisServerAkteur (Expanded)
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für den Akteur ISiKCapabilityStatementBasisServerAkteur.
+Dieser Akteur aggregiert die Rollen zur Abfrage von Stammdaten, Erweiterte Stammdaten, Aufbau-Struktur, Terminologie, klinischen Daten, Abrechnungsinformationen und Gesundheitsstatus.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementBasisServerAkteur.html" title="CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur">
+                
+                    Akteur ISiKCapabilityStatementBasisServerAkteur
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für den Akteur ISiKCapabilityStatementBasisServerAkteur.
+Dieser Akteur aggregiert die Rollen zur Abfrage von Stammdaten, Erweiterte Stammdaten, Aufbau-Struktur, Terminologie, klinischen Daten, Abrechnungsinformationen und Gesundheitsstatus.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
+
+<h4 id="rollen">Rollen</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementAufbaustrukturRolle.html" title="CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle">
+                
+                    CapabilityStatement für Rolle AufbaustrukturRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementAufbaustrukturRolle.
+Diese Rolle stellt Interaktionen zur Abfrage von Informationen zur Aufbaustruktur bereit.
+Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuordnungen.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementCompositionKonsumentenRolle.html" title="CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementCompositionKonsumentenRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementCompositionKonsumentenRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKBerichtBundles.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementErweiterteStammdatenRolle.html" title="CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementErweiterteStammdatenRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementErweiterteStammdatenRolle.
+Diese Rolle stellt erweiterte Interaktionen zur Abfrage von Stammdaten bereit.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementGesundheitsstatusRolle.html" title="CapabilityStatement/ISiKCapabilityStatementGesundheitsstatusRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementGesundheitsstatusRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementGesundheitsstatusRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKObservation-Ressourcen.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementKlinischeRolle.html" title="CapabilityStatement/ISiKCapabilityStatementKlinischeRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementKlinischeRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für die Rolle ISiKCapabilityStatementKlinischeRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKProzeduren und ISiKDiagnosen.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementLeistungserbringerRolle.html" title="CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle">
+                
+                    CapabilityStatement für Rolle LeistungserbringerRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementLeistungserbringerRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKPersonen im Gesundheitsberuf.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.html" title="CapabilityStatement/ISiKCapabilityStatementStammdatenRolle">
+                
+                    CapabilityStatement für Rolle StammdatenRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementStammdatenRolle.
+Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegender Stammdaten.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementTerminologieRolle.html" title="CapabilityStatement/ISiKCapabilityStatementTerminologieRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementTerminologieRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                
+<p>CapabilityStatement für die Rolle ISiKCapabilityStatementTerminologieRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von Terminologie-Ressourcen.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ISiKCapabilityStatementVersicherungsverhaeltnisRolle.html" title="CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle">
+                
+                    CapabilityStatement für Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle
+                
+                </a>
+            </td>
+            
+            
+            <td>
+                <p>CapabilityStatement für die Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicherungsverhaeltnis-Ressourcen.</p>
+
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements - Rollen</figcaption></div>
+
+<h3 id="ressourcenprofile">Ressourcenprofile</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ExtensionISiKCapabilityStatementImportsExpectation.html" title="StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation">
+                
+                    ISiK CapabilityStatement Imports Expectation
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to <em>not</em> support a feature.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKAbrechnungsfall.html" title="StructureDefinition/ISiKAbrechnungsfall">
+                
+                    ISiKAbrechnungsfall
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.<br />
+Zugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde <em>nicht</em> primär zum Zweck der Abbildung von Abrechnungsprozessen definiert.</p>
+
+<p>Motivation
+Komplementär zum Datenobjekt ‘Kontakt - Encounter’ können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen 
+innerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.
+Ein solcher Abrechnungsfall kann mehrere Kontakte umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationärer Besuch).</p>
+
+<p>Gemeinsam mit dem Einrichtungskontakt bildet der Abrechnungsfall einen wichtigen Einstiegspunkt in die Dokumentation der Behandlungsleistungen der Patienten.
+Als Bindeglied zwischen den Kontakten und dem Versicherungsverhältnis erfolgt eine feingranulare Auflistung, 
+in welchen Zeiträumen ein Behandlungskontext zwischen einer Gesundheitseinrichtung und der Patienten bestand.
+Zudem werden Diagnosen abschließend / nachträglich dokumentiert, sodass eine Übersicht von relevanten (DRG)-Diagnosen ermöglicht wird, 
+ohne die Gesamtheit aller Kontakte betrachten zu müssen.</p>
+
+<p>In FHIR wird der Abrechnungsfall mit der <code class="language-plaintext highlighter-rouge">Account</code>-Ressource repräsentiert.</p>
+
+<p>Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}.</p>
+
+<p>Kompatibilität</p>
+<ul>
+  <li>zum Zeitpunkt der Veröffentlichung sind keine abweichenden Modellierungen der Account-Ressource bekannt.</li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKAlkoholAbusus.html" title="StructureDefinition/ISiKAlkoholAbusus">
+                
+                    ISiK Alkohol Abusus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der Abbildung des schädlichen Gebrauchs von Alkohol.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKAllergieUnvertraeglichkeit.html" title="StructureDefinition/ISiKAllergieUnvertraeglichkeit">
+                
+                    ISiKAllergieUnvertraeglichkeit
+                
+                </a>
+            </td>
+            
+            <td>
+                
+<p>Diese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.
+Motivation</p>
+
+<p>Die Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.
+Motivierender Use-Case zur Einführung dieser Profile ist die <a href="https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS">Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS</a>.</p>
+
+<p>In FHIR werden Allergien und Unverträglichkeiten mit der <a href="https://hl7.org/fhir/R4/allergyintolerance.html">AllergyIntolerance</a>-Ressource repräsentiert.</p>
+
+<p>Kompatibilität</p>
+
+<p>Für das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:</p>
+<ul>
+  <li><a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance">das Profil KBV_PR_Base_AllergyIntolerance der KBV</a></li>
+  <li><a href="https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance">das Profil EMDAF_PR_AllergyIntolerance der GEVKO</a></li>
+  <li><a href="http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips">das Profil AllergyIntolerance-uv-ips der International Patient Summary</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKAngehoeriger.html" title="StructureDefinition/ISiKAngehoeriger">
+                
+                    ISiKAngehoeriger
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.<br />
+Motivation
+Der Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,
+ in denen das Versicherungsverhältnis eine Rolle spielt. 
+ Hier können Angehörige, bspw. der hauptversicherte Elternteil 
+ eines minderjährigen Kindes, in der Familienversicherung sein. 
+ In Selbstzahler-Szenarien können Angehörige die Zahler für eine 
+ im Krankenhaus erbrachte Leistung sein.
+In FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.</p>
+
+<p>Kompatibilität
+Für das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.</p>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKBerichtBundle.html" title="StructureDefinition/ISiKBerichtBundle">
+                
+                    ISiKBerichtBundle
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Das Document-Bundle dient dem Transport von Berichten zwischen Subsystemen im Krankenhaus. 
+Das Bundle entspricht den Anforderungen an ein <a href="https://hl7.org/fhir/R4/documents.html">FHIR Document Bundle</a> : Alle referenzierten Ressourcen müssen als Einträge im Bundle enthalten sein. 
+Das Bundle unterstützt die Übermittlung einer menschenlesbaren Dokumentation (Narrative) und erlaubt zudem die Übernahme wichtiger Ressourcen (z. B. Diagnosen und Prozeduren), die einem Patienten und Fall (Patient, Encounter) zugeordnet sind.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKCodeSystem.html" title="StructureDefinition/ISiKCodeSystem">
+                
+                    ISiKCodeSystem
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die maschinenlesbare Repräsentation von 
+system-spezifischen Kodierungen in ISiK-Szenarien.</p>
+
+<p>Motivation</p>
+
+<p>ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte.</p>
+
+<p>Eine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.</p>
+
+<p>Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).
+Da ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.
+Darüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKDiagnose.html" title="StructureDefinition/ISiKDiagnose">
+                
+                    ISiKDiagnose
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen 
+über die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.<br />
+Motivation
+Die Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, 
+ob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.</p>
+
+<p>In FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.</p>
+
+<p>Da die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. 
+Falls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), 
+ist alternativ eine Repräsentation als Freitext-Diagnose möglich.</p>
+
+<p>Kompatibilität
+Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:</p>
+<ul>
+  <li>das <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose">Profil ProfileConditionDiagnose der Medizininformatik-Initative</a></li>
+  <li>das <a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis">Profil KBV_PR_Base_Condition_Diagnosis der KBV</a>]<br />
+Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</li>
+</ul>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKKontaktGesundheitseinrichtung.html" title="StructureDefinition/ISiKKontaktGesundheitseinrichtung">
+                
+                    ISiKKontaktGesundheitseinrichtung
+                
+                </a>
+            </td>
+            
+            <td>
+                
+<p>Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.
+Motivation
+Informationen über die Besuche des Patienten entlang seines 
+Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil 
+des einrichtungsinternen Datenaustausches. 
+Sie ermöglichen die Unterscheidung von stationären und ambulanten 
+sowie aufgenommenen und entlassenen Patienten. 
+Weiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort 
+des Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. 
+Klinische Ressourcen werden in FHIR durch Verlinkung auf die 
+Encounter-Ressource in einen Kontext zum Besuch gestellt. 
+Dieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen 
+und Abrechnungsprozessen.</p>
+
+<p>Zu Beginn der meisten klinischen Workflows steht die Auswahl 
+des Besuchskontextes. 
+Dies geschieht bspw. durch das Suchen der Encounter-Ressource 
+anhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. 
+Daraufhin werden die zutreffenden Suchergebnisse angezeigt 
+und der gewünschte Besuch ausgewählt.</p>
+
+<p>In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der <code class="language-plaintext highlighter-rouge">Encounter</code>-Ressource repräsentiert.</p>
+
+<p>Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}</p>
+
+<p>Kompatibilität
+Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
+mit folgenden Profilen angestrebt; 
+allerdings kann nicht sichergestellt werden, dass Instanzen, 
+die gegen ISiKKontaktGesundheitseinrichtung valide sind, 
+auch valide sind gegen:</p>
+
+<ul>
+  <li>Profil <a href="https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung">Kontakt mit einer Gesundheitseinrichtung 
+der Medizininformatik-Initiative</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKLebensZustand.html" title="StructureDefinition/ISiKLebensZustand">
+                
+                    ISiKLebensZustand
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Basisprofil für ISiKLebensZustand Observation</p>
+
+<p>Motivation</p>
+
+<p>Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.
+Motivierender Use-Case zur Einführung dieser Profile ist die <a href="https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS">Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS</a>.</p>
+
+<p>In FHIR werden Untersuchungen, bzw. Beobachtungen als <a href="https://hl7.org/fhir/R4/observation.html"><code class="language-plaintext highlighter-rouge">Observation</code></a>-Ressource repräsentiert.</p>
+
+<p>Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.<br />
+Die folgenden Profile vom Typ <code class="language-plaintext highlighter-rouge">Observation</code> sind spezifische Profile im oben genannten Sinn:</p>
+<ul>
+  <li>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus</li>
+  <li>https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin</li>
+  <li>https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus</li>
+  <li>https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus</li>
+  <li>https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus</li>
+</ul>
+
+<p>Kompatibilität</p>
+
+<p>Für Schwangerschaftsstatus &amp; Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden <strong>IPS</strong> Profilen angestrebt:</p>
+<ul>
+  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: EDD</a>.</li>
+  <li><a href="https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-status-uv-ips.html">IPS Resource Profile: Observation - Pregnancy: status</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKOrganisation.html" title="StructureDefinition/ISiKOrganisation">
+                
+                    ISiKOrganisation
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKOrganisationFachabteilung.html" title="StructureDefinition/ISiKOrganisationFachabteilung">
+                
+                    ISiKOrganisationFachabteilung
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.
+Motivation</p>
+
+<p>Die Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form.</p>
+
+<p>In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.</p>
+
+<p>Die Erfassung der Organisation in strukturierter Form ermöglicht u.a.:</p>
+<ul>
+  <li>Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements</li>
+  <li>Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)</li>
+</ul>
+
+<p>Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
+Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.<br />
+Kompatibilität</p>
+
+<p>Für das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:</p>
+<ul>
+  <li><a href="https://gematik.de/fhir/ti/StructureDefinition/ti-organization">Profil TIOrganization der gematik</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKPatient.html" title="StructureDefinition/ISiKPatient">
+                
+                    ISiKPatient
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.
+Motivation<br />
+Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.<br />
+In FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource ‘Patient’ in einen Patientenkontext gestellt.<br />
+Die Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, 
+die Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.</p>
+
+<p>Kompatibilität
+Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:</p>
+
+<ul>
+  <li><a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient">Profil KBV_PR_Base_Patient der KBV Basisprofile</a></li>
+  <li><a href="https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html">Profil Patient im International Patient Summary (IPS)</a></li>
+  <li><a href="https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient">Profil Patient der MI-Initiative</a></li>
+  <li><a href="https://gematik.de/fhir/ti/StructureDefinition/ti-patient">Profil TIPatient der gematik</a></li>
+</ul>
+
+<p>Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:</p>
+
+<ul>
+  <li><a href="https://gematik.de/fhir/epa/StructureDefinition/epa-patient">Profil EPAPatient der gematik</a>: In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.</li>
+</ul>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKPersonImGesundheitsberuf.html" title="StructureDefinition/ISiKPersonImGesundheitsberuf">
+                
+                    ISiKPersonImGesundheitsberuf
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen tätigen Personen in ISiK Szenarien.
+Motivation</p>
+
+<p>Das Profil ISIKPersonImGesundheitsberuf bildet alle denkbaren medizinischen Leistungserbringer und Fachexperten  ab. In den ISiK-FHIR-Profilen können PersonImGesundheitsberuf bspw. als Ausführende einer Prozedur auftreten, im Element <code class="language-plaintext highlighter-rouge">performer</code> der Procedure Ressource, oder als die Person, die eine Diagnose stellt, im Element <code class="language-plaintext highlighter-rouge">asserter</code> der Condition Ressource.</p>
+
+<p>In FHIR werden PersonImGesundheitsberuf mit der <a href="https://hl7.org/fhir/R4/practitioner.html"><code class="language-plaintext highlighter-rouge">Practitioner</code></a>-Ressource
+ repräsentiert.<br />
+ Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:</p>
+<ul>
+  <li><a href="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner">Profil KBV_PR_Base_Practitioner der KBV Basisprofile</a>.</li>
+  <li><a href="https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner">Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative </a></li>
+  <li><a href="https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner">Profil TIPractitioner der gematik</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKProzedur.html" title="StructureDefinition/ISiKProzedur">
+                
+                    ISiKProzedur
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.
+Motivation
+Die Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.</p>
+
+<p>In FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.</p>
+
+<p>Da die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.</p>
+
+<p>Kompatibilität
+Für das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:</p>
+
+<ul>
+  <li><a href="https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure">Profil Prozedur</a> der Medizininformatik Initiative<br />
+Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</li>
+</ul>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKRaucherStatus.html" title="StructureDefinition/ISiKRaucherStatus">
+                
+                    ISiK Raucherstatus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der Abbildung des Raucherstatus von Patienten.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKSchwangerschaftErwarteterEntbindungstermin.html" title="StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin">
+                
+                    ISiK Schwangerschaft - Erwarteter Entbindungstermin
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der Abbildung des erwarteten Entbindungstermins bei einer Schwangerschaft.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKSchwangerschaftsstatus.html" title="StructureDefinition/ISiKSchwangerschaftsstatus">
+                
+                    ISiK Schwangerschaftsstatus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil bildet den Schwangerschaftsstatus einer Patientin ab.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKStandort.html" title="StructureDefinition/ISiKStandort">
+                
+                    ISiKStandort
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der strukturierten Erfassung von Standortangaben eines 
+Krankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.<br />
+Motivation
+In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.</p>
+
+<p>Die Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form.</p>
+
+<p>Die Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:</p>
+<ul>
+  <li>Zuweisungen von Diensten an bestimmte Standorte im Rahmen des Terminmanagements</li>
+  <li>Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär) - u.a. für
+    <ul>
+      <li>Patientenportale im Rahmen der Terminbuchung, z.B. um den Wunsch nach Einzelbett, bzw. 1 oder 2 Betten abzubilden</li>
+      <li>KIS und weitere Subsysteme:
+        <ul>
+          <li>zur Patientenabholung und Information für den Transportdienst</li>
+          <li>Abbildung der Verfügbarkeit eines spezifischen Bettenstellplatzes (z.B. mit spezifischem Monitoring-Device)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Im Rahmen der Versorgung kann eine der folgenden Beispiel-Fragen beantworten werden:
+    <ul>
+      <li>Handelt es sich um ein Isolationszimmer?</li>
+      <li>Gibt es bestimmte Ausstattung, z.B. Beatmungsgeräte?</li>
+      <li>etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Dafür werden Standort-Profile in unterschiedlicher Granularität definiert.</p>
+
+<p>Kompatibilität
+Für das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der 
+Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.<br />
+Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKStandortBettenstellplatz.html" title="StructureDefinition/ISiKStandortBettenstellplatz">
+                
+                    ISiKStandortBettenstellplatz
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) 
+eines Krankenhauses.<br />
+Hinweis<br />
+Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource ‘Device’ abgebildet werden, 
+das einen Bettenstellplatz referenziert.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKStandortRaum.html" title="StructureDefinition/ISiKStandortRaum">
+                
+                    ISiKStandortRaum
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der strukturierten Erfassung von Räumen (als Standorten) eines Krankenhauses.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKStillstatus.html" title="StructureDefinition/ISiKStillstatus">
+                
+                    ISiKStillstatus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil dient der Abbildung des Stillstatus, d.h ob gestillt/Muttermilch abgepumpt und gefüttert wird.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKTerminPriorityExtension.html" title="StructureDefinition/ISiKTerminPriorityExtension">
+                
+                    ISiKTerminPriorityExtension
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKValueSet.html" title="StructureDefinition/ISiKValueSet">
+                
+                    ISiKValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes 
+für die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.
+Motivation</p>
+
+<p>ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.
+Mittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.
+Kompatibilität</p>
+
+<p>Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
+Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKVersicherungsverhaeltnisGesetzlich.html" title="StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich">
+                
+                    ISiKVersicherungsverhaeltnisGesetzlich
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.<br />
+Motivation
+ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.
+In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.<br />
+In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.</p>
+
+<p>Kompatibilität
+Das Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem <a href="http://fhir.de/StructureDefinition/coverage-de-basis">GKV-Profil der deutschen Basisprofile</a>. 
+Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen</p>
+
+<ul>
+  <li><a href="http://fhir.de/StructureDefinition/coverage-de-basis">GKV-Profil der deutschen Basisprofile</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKVersicherungsverhaeltnisSelbstzahler.html" title="StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler">
+                
+                    ISiKVersicherungsverhaeltnisSelbstzahler
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.<br />
+Motivation
+ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.
+In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.<br />
+In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.</p>
+
+<p>Kompatibilität
+Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem <a href="https://fhir.de/StructureDefinition/coverage-de-sel">Selbstzahler-Profil der deutschen Basisprofile</a>. 
+Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen</p>
+
+<ul>
+  <li><a href="https://fhir.de/StructureDefinition/coverage-de-sel">Selbstzahler-Profil der deutschen Basisprofile</a></li>
+</ul>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKVersicherungsverhaeltnisSonstige.html" title="StructureDefinition/ISiKVersicherungsverhaeltnisSonstige">
+                
+                    ISiKVersicherungsverhaeltnisSonstige
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.<br />
+Motivation
+ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, 
+bei denen es sich <em>weder</em> um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.
+In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.<br />
+In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.</p>
+
+<p>Kompatibilität
+Das Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem <a href="http://fhir.de/StructureDefinition/coverage-de-basis">Basis-Coverage-Profil der deutschen Basisprofile</a>.</p>
+
+<p>Hinweise zu Inkompatibilitäten können über die <a href="https://service.gematik.de/servicedesk/customer/portal/16">Portalseite</a> gemeldet werden.</p>
+
+            </td>
+            
+            
+         </tr>
+         
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+
+<h3 id="terminologien">Terminologien</h3>
+
+<h4 id="value-sets">Value Sets</h4>
+
+<p>Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKValueSet.html" title="StructureDefinition/ISiKValueSet">
+                
+                    ISiKValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes 
+für die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.
+### Motivation
+
+ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.
+Mittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.
+### Kompatibilität
+
+Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
+Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-DiagnosesSCT.html" title="ValueSet/DiagnosesSCT">
+                
+                    DiagnosesSCT
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthaelt alle SNOMED Clinical finding, Event und Situation with explicit context codes</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ISiKLocationPhysicalType.html" title="ValueSet/ISiKLocationPhysicalType">
+                
+                    ISiKLocationPhysicalType
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Valueset beinhaltet die für ISiK Kodierbaren Standort-Typen</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ISiKValueSetExample.html" title="ValueSet/ISiKValueSetExample">
+                
+                    TestValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ProzedurenCodesSCT.html" title="ValueSet/ProzedurenCodesSCT">
+                
+                    ProzedurenCodesSCT
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthaelt alle SNOMED Procedure Codes</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-ProzedurenKategorieSCT.html" title="ValueSet/ProzedurenKategorieSCT">
+                
+                    ProzedurenKategorieSCT
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-SchwangerschaftEtMethodeVS.html" title="ValueSet/SchwangerschaftEtMethodeVS">
+                
+                    Schwangerschaft Erwarteter Entbindungstermin Methode
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Valueset enthält die Codes zur Beschreibung der Methode zur Bestimmung des erwarteten Entbindungstermins bei einer Schwangerschaft.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-SchwangerschaftsstatusVS.html" title="ValueSet/SchwangerschaftsstatusVS">
+                
+                    Schwangerschaftsstatus Valueset
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Valueset enthält die Codes zur Beschreibung des Schwangerschaftsstatus einer Patientin.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-StillstatusVS.html" title="ValueSet/StillstatusVS">
+                
+                    Stillstatus LOINC Antwortoptionen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Valueset enthält die Codes zur Beschreibung von Stillstatus LOINC.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-current-smoking-status-uv-ips.html" title="ValueSet/current-smoking-status-uv-ips">
+                
+                    Current Smoking Status - IPS
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>HL7 LOINC value set for smoking status.  Based on the HL7 Vocab and Structured Doc WG (formerly TC) consensus - per US CDC submission 7/12/2012 for smoking status terms.</p>
+            </td>
+            
+         </tr>
+         
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
+
+<h4 id="code-systems">Code Systems</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-CodeSystemExample.html" title="CodeSystem/CodeSystemExample">
+                
+                    TestKatalog
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-ISiKCodeSystem.html" title="StructureDefinition/ISiKCodeSystem">
+                
+                    ISiKCodeSystem
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die maschinenlesbare Repräsentation von 
+system-spezifischen Kodierungen in ISiK-Szenarien.  
+
+### Motivation
+
+ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. 
+
+Eine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.
+
+Ein Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).
+Da ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.
+Darüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
+
+<h3 id="beispiele">Beispiele</h3>
+
+<p><b>Account</b></p>
+
+<ul>
+          <li><a href="Account-AbrechnungsfallDRG.html">Example Account - AbrechnungsfallDRG</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Account-AbrechnungsfallGonarthrose.html">Example Account - AbrechnungsfallGonarthrose</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Account-SZ1DRGFall.html">Example Account - SZ1DRGFall</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Account-SZ2DRGFall.html">Example Account - SZ2DRGFall</a></li>
+      </ul>
+
+<p><b>AllergyIntolerance</b></p>
+
+<ul>
+          <li><a href="AllergyIntolerance-ISiKAllergieUnvertraeglichkeitBeispiel1.html">Example AllergyIntolerance - ISiKAllergieUnvertraeglichkeitBeispiel1</a></li>
+      </ul>
+
+<p><b>Bundle</b></p>
+
+<ul>
+          <li><a href="Bundle-BundleExampleIntensivstation.html">Verlegungsbericht für Patient Herrn Thomas Müller (1234567890) - Intensivstation 0100 (Bundle)</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-ISiKBundle-Example.html">Blutdruckmessung vom 3.5.2022 (Bundle)</a></li>
+      </ul>
+
+<p><b>CodeSystem</b></p>
+
+<ul>
+          <li><a href="CodeSystem-CodeSystemExample.html">TestKatalog</a></li>
+      </ul>
+
+<p><b>Condition</b></p>
+
+<ul>
+          <li><a href="Condition-AltersbedingteKreislaufstoerung.html">Example Condition - AltersbedingteKreislaufstoerung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-BehandlungsDiagnoseFreitext.html">Example Condition - BehandlungsDiagnoseFreitext</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-Example-condition-ausrufezeichen-primaer.html">Example Condition - Example-condition-ausrufezeichen-primaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-Example-condition-ausrufezeichen-sekundaer.html">Example Condition - Example-condition-ausrufezeichen-sekundaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-Example-condition-kreuz-stern-primaer.html">Example Condition - Example-condition-kreuz-stern-primaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-Example-condition-kreuz-stern-sekundaer.html">Example Condition - Example-condition-kreuz-stern-sekundaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-MittelgradigeIntelligenzminderung.html">Example Condition - MittelgradigeIntelligenzminderung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-PrimaereGonarthroseMinimal.html">Example Condition - PrimaereGonarthroseMinimal</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-PrimaereGonarthroseNormal.html">Example Condition - PrimaereGonarthroseNormal</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-SZ2Primaerdiagnose.html">Example Condition - SZ2Primaerdiagnose</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Condition-SZ2Sekundaerdiagnose.html">Example Condition - SZ2Sekundaerdiagnose</a></li>
+      </ul>
+
+<p><b>Coverage</b></p>
+
+<ul>
+          <li><a href="Coverage-CoverageGesetzlich.html">Example Coverage - CoverageGesetzlich</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Coverage-CoveragePrivat.html">Example Coverage - CoveragePrivat</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Coverage-CoverageSonstige.html">Example Coverage - CoverageSonstige</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Coverage-SZ1VersicherungGesetzlich.html">Example Coverage - SZ1VersicherungGesetzlich</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Coverage-SZ1VersicherungSelbstzahler.html">Example Coverage - SZ1VersicherungSelbstzahler</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Coverage-SZ2VersicherungGesetzlich.html">Example Coverage - SZ2VersicherungGesetzlich</a></li>
+      </ul>
+
+<p><b>Encounter</b></p>
+
+<ul>
+          <li><a href="Encounter-Fachabteilungskontakt.html">Example Encounter - Fachabteilungskontakt</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktBettenverlegung.html">Example Encounter - FachabteilungskontaktBettenverlegung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktEntlassung.html">Example Encounter - FachabteilungskontaktEntlassung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktFachbereichswechsel1.html">Example Encounter - FachabteilungskontaktFachbereichswechsel1</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktFachbereichswechsel2.html">Example Encounter - FachabteilungskontaktFachbereichswechsel2</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktMinimal2.html">Example Encounter - FachabteilungskontaktMinimal2</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktNormal.html">Example Encounter - FachabteilungskontaktNormal</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktStationaereAufnahme.html">Example Encounter - FachabteilungskontaktStationaereAufnahme</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktStationswechsel1.html">Example Encounter - FachabteilungskontaktStationswechsel1</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-FachabteilungskontaktStationswechsel2.html">Example Encounter - FachabteilungskontaktStationswechsel2</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-SZ1Nachstationaer.html">Example Encounter - SZ1Nachstationaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-SZ1Stationaer.html">Example Encounter - SZ1Stationaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-SZ1Vorstationaer.html">Example Encounter - SZ1Vorstationaer</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Encounter-SZ2Encounter.html">Example Encounter - SZ2Encounter</a></li>
+      </ul>
+
+<p><b>Location</b></p>
+
+<ul>
+          <li><a href="Location-BettenstellplatzStandortBeispiel.html">Example Location - BettenstellplatzStandortBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Location-RaumStandortBeispiel.html">Example Location - RaumStandortBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Location-StationStandortBeispiel.html">Station A</a></li>
+      </ul>
+
+<p><b>Observation</b></p>
+
+<ul>
+          <li><a href="Observation-ISiKAlkoholAbususBeispiel.html">Example Observation - ISiKAlkoholAbususBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Observation-ISiKRaucherStatusBeispiel.html">Example Observation - ISiKRaucherStatusBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Observation-ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel.html">Example Observation - ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Observation-ISiKSchwangerschaftsstatusBeispiel.html">Example Observation - ISiKSchwangerschaftsstatusBeispiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Observation-ISiKStillstatusBeispiel.html">Example Observation - ISiKStillstatusBeispiel</a></li>
+      </ul>
+
+<p><b>Organization</b></p>
+
+<ul>
+          <li><a href="Organization-AbteilungAllgemeinchirurgieOrganisationBeispiel.html">Allgemeinchirurgie</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Organization-KrankenhausOrganisationBeispiel.html">Uniklinik Entenhausen</a></li>
+      </ul>
+
+<p><b>Patient</b></p>
+
+<ul>
+          <li><a href="Patient-DorisQuelle.html">Example Patient - DorisQuelle</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-DorisZiel.html">Example Patient - DorisZiel</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-IsikPatientTemplate.html">Example Patient - IsikPatientTemplate</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-PatientinMinimal.html">Example Patient - PatientinMinimal</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-PatientinMusterfrau.html">Example Patient - PatientinMusterfrau</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-PatientinNormal.html">Example Patient - PatientinNormal</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-SZ1Patient.html">Example Patient - SZ1Patient</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Patient-SZ2Patient.html">Example Patient - SZ2Patient</a></li>
+      </ul>
+
+<p><b>Practitioner</b></p>
+
+<ul>
+          <li><a href="Practitioner-PractitionerWalterArzt.html">Example Practitioner - PractitionerWalterArzt</a></li>
+      </ul>
+
+<p><b>Procedure</b></p>
+
+<ul>
+          <li><a href="Procedure-Appendektomie.html">Example Procedure - Appendektomie</a></li>
+      </ul>
+
+<p><b>RelatedPerson</b></p>
+
+<ul>
+          <li><a href="RelatedPerson-ISiKAngehoerigerMustermann.html">Example RelatedPerson - ISiKAngehoerigerMustermann</a></li>
+      </ul>
+
+<ul>
+          <li><a href="RelatedPerson-SZ1Mutter.html">Example RelatedPerson - SZ1Mutter</a></li>
+      </ul>
+
+<p><b>ValueSet</b></p>
+
+<ul>
+          <li><a href="ValueSet-ISiKValueSetExample.html">TestValueSet</a></li>
+      </ul>
+
+<div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket basis#6.0.0-rc basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 2, 2026 16:48+0000">2026-02-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

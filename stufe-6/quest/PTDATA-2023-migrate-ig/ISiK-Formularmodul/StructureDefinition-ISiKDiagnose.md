@@ -1,0 +1,561 @@
+# ISiKDiagnose - ISiK Formularmodul Implementation Guide v6.0.0-rc
+
+ISiK Formularmodul Implementation Guide
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **ISiKDiagnose**
+
+## Resource Profile: ISiKDiagnose 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose | *Version*:6.0.0-rc |
+| Active as of 2025-12-17 | *Computable Name*:ISiKDiagnose |
+
+ 
+Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik. 
+
+### Motivation
+
+ 
+Die Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, ob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf. 
+In FHIR werden Diagnosen mit der Condition-Ressource repräsentiert. 
+Da die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Diagnose möglich. 
+
+### Kompatibilität
+
+ 
+Für das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen: 
+* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]
+ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
+ 
+
+**Usages:**
+
+* Examples for this Profile: [Condition/AltersbedingteKreislaufstoerung](Condition-AltersbedingteKreislaufstoerung.md), [Condition/BehandlungsDiagnoseFreitext](Condition-BehandlungsDiagnoseFreitext.md), [Condition/Example-condition-ausrufezeichen-primaer](Condition-Example-condition-ausrufezeichen-primaer.md), [Condition/Example-condition-ausrufezeichen-sekundaer](Condition-Example-condition-ausrufezeichen-sekundaer.md)... Show 7 more, [Condition/Example-condition-kreuz-stern-primaer](Condition-Example-condition-kreuz-stern-primaer.md), [Condition/Example-condition-kreuz-stern-sekundaer](Condition-Example-condition-kreuz-stern-sekundaer.md), [Condition/MittelgradigeIntelligenzminderung](Condition-MittelgradigeIntelligenzminderung.md), [Condition/PrimaereGonarthroseMinimal](Condition-PrimaereGonarthroseMinimal.md), [Condition/PrimaereGonarthroseNormal](Condition-PrimaereGonarthroseNormal.md), [Condition/SZ2Primaerdiagnose](Condition-SZ2Primaerdiagnose.md) and [Condition/SZ2Sekundaerdiagnose](Condition-SZ2Sekundaerdiagnose.md)
+* CapabilityStatements using this Profile: [Akteur "ISiKCapabilityStatementFormularDatenQuelleAkteur" (Expanded)](CapabilityStatement-ISiKCapabilityStatementFormularDatenQuelleAkteur-expanded.md) and [CapabilityStatement für Rolle ISiKCapabilityStatementKlinischeRolle](CapabilityStatement-ISiKCapabilityStatementKlinischeRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/formular|current/StructureDefinition/ISiKDiagnose)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKDiagnose.csv), [Excel](StructureDefinition-ISiKDiagnose.xlsx), [Schematron](StructureDefinition-ISiKDiagnose.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKDiagnose",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
+  "version" : "6.0.0-rc",
+  "name" : "ISiKDiagnose",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-12-17",
+  "publisher" : "gematik GmbH",
+  "contact" : [
+    {
+      "name" : "gematik GmbH",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://gematik.de"
+        }
+      ]
+    }
+  ],
+  "description" : "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \nüber die Diagnosen eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.  \n### Motivation\nDie Möglichkeit, auf eine Übersicht der Diagnosen eines Patienten zuzugreifen, Patienten anhand ihrer Diagnose zu suchen oder zu prüfen, \nob eine konkrete Diagnose bei einem Patienten vorliegt, sind wichtige Funktionen im klinischen Behandlungsablauf.  \n\nIn FHIR werden Diagnosen mit der Condition-Ressource repräsentiert.  \n\nDa die Diagnosen in klinischen Primärsystemen in der Regel in ICD-10-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. \nFalls eine Diagnose zwar dokumentiert, aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), \nist alternativ eine Repräsentation als Freitext-Diagnose möglich.\n\n### Kompatibilität\nFür das Profil ISiKDiagnose wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKDiagnose valide sind, auch valide sind gegen:\n* das [Profil ProfileConditionDiagnose der Medizininformatik-Initative](https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)\n* das [Profil KBV_PR_Base_Condition_Diagnosis der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)]  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "workflow",
+      "uri" : "http://hl7.org/fhir/workflow",
+      "name" : "Workflow Pattern"
+    },
+    {
+      "identity" : "sct-concept",
+      "uri" : "http://snomed.info/conceptdomain",
+      "name" : "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity" : "v2",
+      "uri" : "http://hl7.org/v2",
+      "name" : "HL7 v2 Mapping"
+    },
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    },
+    {
+      "identity" : "w5",
+      "uri" : "http://hl7.org/fhir/fivews",
+      "name" : "FiveWs Pattern Mapping"
+    },
+    {
+      "identity" : "sct-attr",
+      "uri" : "http://snomed.org/attributebinding",
+      "name" : "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Condition",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Condition",
+        "path" : "Condition",
+        "constraint" : [
+          {
+            "key" : "isik-con1",
+            "severity" : "error",
+            "human" : "Falls eine kodierte Diagnose vorliegt muss angegeben werden durch welchen Kontakt diese Dokumentation erfolgte.",
+            "expression" : "code.coding.exists() implies encounter.exists()",
+            "source" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+          }
+        ]
+      },
+      {
+        "id" : "Condition.id",
+        "path" : "Condition.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.meta.versionId",
+        "path" : "Condition.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "Condition.meta.lastUpdated",
+        "path" : "Condition.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "Condition.extension",
+        "path" : "Condition.extension",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "value",
+              "path" : "url"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.extension:related",
+        "path" : "Condition.extension",
+        "sliceName" : "related",
+        "short" : "Verknüpfte Diagnose",
+        "comment" : " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, \n  ICD-10-Codierte Diagnosen miteinander zu verknüpfen ('Kreuz-Stern-Ausrufezeichen-Notation'), \n  diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.\n  Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.\n  Statt dessen müssen sie zwei eigenständige Condition-Ressourcen abgebildet werden, die mit Hilfe der `related`-Extension miteinander verknüpft werden.  \n  Die Sekundärdiagnose verweist jeweils auf die Primärdiagnose.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : ["http://hl7.org/fhir/StructureDefinition/condition-related"]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.clinicalStatus",
+        "path" : "Condition.clinicalStatus",
+        "short" : "klinischer Status",
+        "comment" : "**Begründung MS:** Auch in Stufe 4 sind keine (client-seitigen) schreibenden Operationen für das Erstellen einer Condition-Ressource vorgesehen \n  (siehe CapabilityStatement). Das heißt, entweder führen KISe entsprechende Informationen und exponieren diese, \n  oder es gibt keinen pragmatischen Mechanismus (im ISIK-Kontext), um den Use Case einer zusätzlichen Annotation mittels Client zu erfüllen. \n  Da alle KIS-Hersteller, die sich zu Wort gemeldet haben, eine Befüllung von Condition.clinicalStatus NICHT unterstützen, \n  erscheint das MS nach übergreifender Definition und ein verpflichtender Testfall nicht angemessen.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur \n  zur Hinterlegung des Status einer Diagnose, so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch `clinicalStatus` befüllen, sofern die entsprechende Information verfügbar ist.  \n  **Hinweis:** Für Diagnosen aus der *ambulanten* Versorgung können die Werte für `clinicalStatus` und `verificationStatus` aus dem \n  [ICD-10-Zusatzkennzeichen für die Diagnosesicherheit](https://www.bfarm.de/DE/Kodiersysteme/Services/Kodierfragen/ICD-10-GM/Allgemeine-Kodierfragen/icd-10-gm-1010.html) abgeleitet werden.\n  Das entsprechende Mapping kann den [Deutschen Basisprofilen](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-DiagnosenCondition?version=current) entnommen werden.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.verificationStatus",
+        "path" : "Condition.verificationStatus",
+        "short" : "Bestätigungsstatus",
+        "comment" : "**Einschränkung der übergreifenden MS-Definition:** Die Implementierung dieses Elements ist für Server optional. Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Clients, die eine ISiKPatient-Instanz verarbeiten, SOLLEN den Wert dieses Elements vor der weiteren Verarbeitung prüfen.\n\n**WICHTIGER Hinweis für Implementierer:**  \n- Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.\n- Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code",
+        "path" : "Condition.code",
+        "short" : "Diagnose-Code",
+        "comment" : "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. \n  Ist keine Codierung möglich, MUSS statt dessen eine textuelle Beschreibung der Prozedur angegeben werden.  \n   **Begründung Pflichtfeld:** Ist *weder* eine Codierung *noch* eine textuelle Beschreibung vorhanden, besitzt diese Ressource keine medizinische Aussagefähigkeit.",
+        "min" : 1,
+        "constraint" : [
+          {
+            "key" : "icd-text-1",
+            "severity" : "error",
+            "human" : "Entweder MUSS eine kodierte Diagnose vorliegen oder eine textuelle Beschreibung. Stattdessen nur Extensions hinzuzufügen (vgl. https://www.hl7.org/fhir/element.html - ele-1), ist explizit nicht erlaubt.",
+            "expression" : "coding.exists().not() implies text.exists()",
+            "source" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding",
+        "path" : "Condition.code.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:ICD-10-GM",
+        "path" : "Condition.code.coding",
+        "sliceName" : "ICD-10-GM",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKICD10GMCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://fhir.de/CodeSystem/bfarm/icd-10-gm"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen",
+        "path" : "Condition.code.coding.extension",
+        "sliceName" : "Mehrfachcodierungs-Kennzeichen",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation",
+        "path" : "Condition.code.coding.extension",
+        "sliceName" : "Seitenlokalisation",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit",
+        "path" : "Condition.code.coding.extension",
+        "sliceName" : "Diagnosesicherheit",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:Alpha-ID",
+        "path" : "Condition.code.coding",
+        "sliceName" : "Alpha-ID",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : ["http://fhir.de/StructureDefinition/CodingAlphaID"]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://fhir.de/CodeSystem/bfarm/alpha-id"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:Alpha-ID.system",
+        "path" : "Condition.code.coding.system",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:Alpha-ID.code",
+        "path" : "Condition.code.coding.code",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:SNOMED-CT",
+        "path" : "Condition.code.coding",
+        "sliceName" : "SNOMED-CT",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "patternCoding" : {
+          "system" : "http://snomed.info/sct"
+        },
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://gematik.de/fhir/isik/ValueSet/DiagnosesSCT"
+        }
+      },
+      {
+        "id" : "Condition.code.coding:Orphanet",
+        "path" : "Condition.code.coding",
+        "sliceName" : "Orphanet",
+        "min" : 0,
+        "max" : "1",
+        "patternCoding" : {
+          "system" : "http://www.orpha.net"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:Orphanet.system",
+        "path" : "Condition.code.coding.system",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.code.coding:Orphanet.code",
+        "path" : "Condition.code.coding.code",
+        "min" : 1
+      },
+      {
+        "id" : "Condition.bodySite",
+        "path" : "Condition.bodySite",
+        "short" : "Körperstelle",
+        "comment" : "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.bodySite.coding",
+        "path" : "Condition.bodySite.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "system"
+            }
+          ],
+          "rules" : "open"
+        },
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.bodySite.coding:snomed-ct",
+        "path" : "Condition.bodySite.coding",
+        "sliceName" : "snomed-ct",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Coding",
+            "profile" : [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.subject",
+        "path" : "Condition.subject",
+        "short" : "Patientenbezug",
+        "comment" : "**Begründung Must-Support:** Ein Patientenbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.subject.reference",
+        "path" : "Condition.subject.reference",
+        "short" : "Patienten-Link",
+        "comment" : "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.encounter",
+        "path" : "Condition.encounter",
+        "short" : "Aufenthaltsbezug",
+        "comment" : "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.encounter.reference",
+        "path" : "Condition.encounter.reference",
+        "short" : "Encounter-Link",
+        "comment" : "**Begründung Pflichtfeld:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\n**WICHTIGER Hinweis für Implementierer:** Die Zuordnung MUSS auf einen Encounter der Ebene \"Abteilungskontakt\" (siehe hierzu Basismodul > UseCases > Abbildung des Konstruktes \"Fall\") erfolgen.  \nBei der Auswahl des Encounters ist zu beachten, dass unter einer (Abrechnungs-)\"Fallnummer\" (hier: `Encounter.account`) unter Umständen mehrere Encounter gruppiert sein können (z.B. stationärer Besuch mit mehreren vor- und nachstationären Aufenthalten.)\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.onset[x]",
+        "path" : "Condition.onset[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "short" : "Erkrankungsbeginn",
+        "comment" : "Datum oder Alter/Lebensphase des Erkrankungsbeginns\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "type" : [
+          {
+            "code" : "dateTime"
+          },
+          {
+            "code" : "Age"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.onset[x]:onsetDateTime",
+        "path" : "Condition.onset[x]",
+        "sliceName" : "onsetDateTime",
+        "short" : "Erkrankungsbeginn als Datum",
+        "comment" : "''Begründung MS:** Siehe onset[x]",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.onset[x]:onsetAge",
+        "path" : "Condition.onset[x]",
+        "sliceName" : "onsetAge",
+        "short" : "Erkrankungsbeginn als Alter",
+        "comment" : "''Begründung MS:** Siehe onset[x]",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Age"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.onset[x]:onsetAge.extension:Lebensphase-Beginn",
+        "path" : "Condition.onset[x].extension",
+        "sliceName" : "Lebensphase-Beginn",
+        "short" : "Lebensphase des Erkrankungsbeginns",
+        "comment" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+          }
+        ]
+      },
+      {
+        "id" : "Condition.abatement[x]",
+        "path" : "Condition.abatement[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "short" : "Klinische relevanter Zeitraum Ende",
+        "comment" : "Ende des klinisch relevanten Zeitraums der Diagnose  \n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
+        "type" : [
+          {
+            "code" : "dateTime"
+          },
+          {
+            "code" : "Age"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.abatement[x]:abatementAge",
+        "path" : "Condition.abatement[x]",
+        "sliceName" : "abatementAge",
+        "short" : "Klinische relevanter Zeitraum Ende als Alter",
+        "comment" : "''Begründung MS:** Siehe abatement[x]",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Age"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.abatement[x]:abatementAge.extension:Lebensphase-Ende",
+        "path" : "Condition.abatement[x].extension",
+        "sliceName" : "Lebensphase-Ende",
+        "short" : "Lebensphase des Erkrankungsendes",
+        "comment" : "Alternative Angabe, wenn genauere Eingrenzungen des Zeitraums nicht möglich sind, insbesondere im Kontext anamnestischer Diagnosen",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : ["http://fhir.de/StructureDefinition/lebensphase"]
+          }
+        ]
+      },
+      {
+        "id" : "Condition.abatement[x]:abatementDateTime",
+        "path" : "Condition.abatement[x]",
+        "sliceName" : "abatementDateTime",
+        "short" : "Klinische relevanter Zeitraum Ende als Datum",
+        "comment" : "''Begründung MS:** Siehe abatement[x]",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "dateTime"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.recordedDate",
+        "path" : "Condition.recordedDate",
+        "short" : "Dokumentationsdatum",
+        "comment" : "Datum, an dem die Diagnose dokumentiert wurde.   \n  **Begründung Pflichtfeld:** Das Dokumentationsdatum der Diagnose MUSS zu Qualitätssicherungszwecken angegeben werden. Dies ist das fachliche Dokumentationsdatum, \n  nicht zu verwechseln mit der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein.  \n  **Hinweis:** Das Recorded Date MUSS mindestens auf den Monat genau angegeben werden.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Condition.note",
+        "path" : "Condition.note",
+        "short" : "Notizen",
+        "comment" : "Ergänzende Hinweise und Anmerkungen zur Diagnose",
+        "mustSupport" : true
+      }
+    ]
+  }
+}
+
+```

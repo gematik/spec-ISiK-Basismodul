@@ -1,0 +1,185 @@
+# ISiKMedizinischeBehandlungseinheit - ISiK Terminplanung Implementierungsleitfaden v6.0.0-rc
+
+ISiK Terminplanung Implementierungsleitfaden
+
+Version 6.0.0-rc - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ISiKMedizinischeBehandlungseinheit**
+
+## Resource Profile: ISiKMedizinischeBehandlungseinheit 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit | *Version*:6.0.0-rc |
+| Active as of 2025-12-17 | *Computable Name*:ISiKMedizinischeBehandlungseinheit |
+
+ 
+Unter einer medizinischen Behandlungseinheit wird hier im weiteren Sinne eine Dienstleistung (diagnostisch, therapeutisch, im weiten Sinne gesundheitsfördernd etc.) zum Zweck einer Terminbuchung verstanden. Hierfür können von der Fachabteilung (Organization) unabhängige Kalender gepflegt werden. Im Kontext der Terminplanung können somit angebotene Leistungen (z.B. CT/MRT-Untersuchungen, chirurgische Eingriffe, Beratungsstunden zur Geburt etc.) abgebildet werden. 
+Der Kontext zu diesem Profil wird mit folgender User Story veranschaulicht: 
+**User Story**: Ein Patient erhält von seiner Hausärztin einen Überweisungsschein für eine weitere diagnostische Untersuchung in Form einer Kapselendoskopie der Speiseröhre. Der Patient nutzt ein Patientenportal, um unter Angabe der benötigten diagnostische Leistung nach einem verfügbaren Termin zu suchen und findet einen passenden Termin bei der Fachabteilung für Gastroenterologie eines örtlichen Krankenhauses. 
+Hintergrund: Die Suche nach verfügbaren Terminenblöcken (Slot) unter Einbeziehung der Dienstleistung entspricht der Angabe des Überweisungsscheins, ermöglicht hier zugleich eine präzisere Suche und vergrößert darüber hinaus den Raum möglicher Termine über verschiedene Abteilungen (und Institutionen im Patientenportal) hinweg. 
+
+**Usages:**
+
+* Examples for this Profile: [Allgemeine Beratungsstelle der Fachabteilung 0100](HealthcareService-ISiKMedizinischeBehandlungseinheitExample.md)
+* CapabilityStatements using this Profile: [ISiK CapabilityStatement Termin-Repository Akteur (Expanded)](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.md) and [ISiK CapabilityStatement Termin-Repository Rolle](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryRolle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/terminplanung|current/StructureDefinition/ISiKMedizinischeBehandlungseinheit)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-ISiKMedizinischeBehandlungseinheit.csv), [Excel](StructureDefinition-ISiKMedizinischeBehandlungseinheit.xlsx), [Schematron](StructureDefinition-ISiKMedizinischeBehandlungseinheit.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ISiKMedizinischeBehandlungseinheit",
+  "url" : "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedizinischeBehandlungseinheit",
+  "version" : "6.0.0-rc",
+  "name" : "ISiKMedizinischeBehandlungseinheit",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-12-17",
+  "publisher" : "gematik GmbH",
+  "contact" : [
+    {
+      "name" : "gematik GmbH",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://gematik.de"
+        }
+      ]
+    }
+  ],
+  "description" : "Unter einer medizinischen Behandlungseinheit wird hier im weiteren Sinne eine Dienstleistung (diagnostisch, therapeutisch, im weiten Sinne gesundheitsfördernd etc.) zum Zweck einer Terminbuchung verstanden. Hierfür können von der Fachabteilung (Organization) unabhängige Kalender gepflegt werden. Im Kontext der Terminplanung können somit angebotene Leistungen (z.B. CT/MRT-Untersuchungen, chirurgische Eingriffe, Beratungsstunden zur Geburt etc.) abgebildet werden.\n\nDer Kontext zu diesem Profil wird mit folgender User Story veranschaulicht: \n\n**User Story**: Ein Patient erhält von seiner Hausärztin einen Überweisungsschein für eine weitere diagnostische Untersuchung in Form einer Kapselendoskopie der Speiseröhre. Der Patient nutzt ein Patientenportal, um unter Angabe der benötigten diagnostische Leistung nach einem verfügbaren Termin zu suchen und findet einen passenden Termin bei der Fachabteilung für Gastroenterologie eines örtlichen Krankenhauses.\n\nHintergrund: Die Suche nach verfügbaren Terminenblöcken (Slot) unter Einbeziehung der Dienstleistung entspricht der Angabe des Überweisungsscheins, ermöglicht hier zugleich eine präzisere Suche und vergrößert darüber hinaus den Raum möglicher Termine über verschiedene Abteilungen (und Institutionen im Patientenportal) hinweg.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [
+    {
+      "identity" : "rim",
+      "uri" : "http://hl7.org/v3",
+      "name" : "RIM Mapping"
+    },
+    {
+      "identity" : "w5",
+      "uri" : "http://hl7.org/fhir/fivews",
+      "name" : "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "HealthcareService",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "HealthcareService",
+        "path" : "HealthcareService"
+      },
+      {
+        "id" : "HealthcareService.id",
+        "path" : "HealthcareService.id",
+        "short" : "serverseitige, interne ID des Datensatzes",
+        "comment" : "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport" : true
+      },
+      {
+        "id" : "HealthcareService.meta.versionId",
+        "path" : "HealthcareService.meta.versionId",
+        "short" : "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id" : "HealthcareService.meta.lastUpdated",
+        "path" : "HealthcareService.meta.lastUpdated",
+        "short" : "Zeitpunkt der letzten Änderung",
+        "comment" : "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id" : "HealthcareService.active",
+        "path" : "HealthcareService.active",
+        "short" : "Gibt an, ob die Behandlungseinheit aktiv ist",
+        "comment" : "Bedeutung: Ist der HealthcareService in aktiver Verwendung.\n  \n  Hinweis: Historische HealthcareServices können ebenfalls über die ISiK-Schnittstelle ausgetauscht werden. Für diese dürfen jedoch keine Termine vereinbart werden. Das terminführende System MUSS dies bei der Buchung überprüfen.\n  \n  Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität 1..1 und das Must-Support-Flag (MS) für das 'active'-Element stellen sicher, dass jede Behandlungseinheit eindeutig als aktiv oder inaktiv gekennzeichnet ist. Dies ist entscheidend für die Ressourcenplanung und Verfügbarkeit von Behandlungseinheiten.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "HealthcareService.type",
+        "path" : "HealthcareService.type",
+        "short" : "Die Art der Behandlungsleistung welche durch die Behandlungseinheit erbracht wird",
+        "comment" : "**Bedeutung:** Klassifikation der Behandlungsleistung welche durch den HealthcareService erbracht wird\n\n**Hinweis:** Diese Klassifikation SOLL stets auch in Appointment.serviceType und Schedule.serviceType angegeben werden. Seitens der aktuellen Spezifikation werden keine Vorgaben bezüglich der zu verwendenden Terminologie gemacht. Entsprechend verwendete Kataloge müssen als CodeSystem- und ValueSet-Ressourcen exponiert werden. Siehe [Suchparameter 'context-type-value' in ISiK Basis - Datenobjekt ValueSet](https://simplifier.net/resolve?&scope=isik-basis-v4@current&canonical=https://gematik.de/fhir/isik/StructureDefinition/ISiKValueSet).\n\n**Begründung Kardinalität:** Eine Behandlungseinheit muss mindestens einen Typ haben, sodass im Rahmen der Terminplanung ermittelt werden kann, welcher Akteur für die Durchführung eines Termins zur Verfügung steht.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "HealthcareService.specialty",
+        "path" : "HealthcareService.specialty",
+        "short" : "Die Fachrichtung der Behandlungsleistung welche durch die Behandlungseinheit erbracht wird",
+        "comment" : "**Bedeutung:** Fachrichtung der Behandlungsleistung welche durch den HealthcareService erbracht wird\n\n**Hinweis:** Diese Fachrichtung SOLL stets auch in Appointment.specialty und Schedule.specialty angegeben werden.\n  \n**Begründung Kardinalität:** Eine Behandlungseinheit kann multiprofessionell sein und mehere Fachbereiche abdecken. Sie muss jedoch mindestens einem Fachbereich zugeordnet sein, sodass die Behandlungseinheit während der Terminplanung als Akteur für passende Termine miteinbezogen wird.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "HealthcareService.specialty.coding",
+        "path" : "HealthcareService.specialty.coding",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "comment" : "**Begründung Kardinalität Fachrichtung:** Die Kardinalität der Fachrichtung-Eigenschaft wird auf 1..1 festgelegt, um sicherzustellen, dass genau eine Fachrichtung per IHE-XDS-Kodierung vorhanden ist. Dies ist notwendig, um die Spezialisierung der Behandlungseinheit eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.\n  \n  **Begründung Kardinalität ErweiterterFachabteilungsschluessel:** Die Kardinalität der ErweiterterFachabteilungsschluessel-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass optional ein erweiterter Fachabteilungsschlüssel vorhanden sein kann.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "HealthcareService.specialty.coding:Fachrichtung",
+        "path" : "HealthcareService.specialty.coding",
+        "sliceName" : "Fachrichtung",
+        "comment" : "Die Wahl des hinterlegten ValueSets (http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode) wurde mit einem Mitglied der IHE Deutschland Arbeitsgruppe XDS ValueSets (https://www.ihe-d.de/projekte/xds-value-sets-fuer-deutschland/) sowie mit der KBV abgestimmt (Stand:13.6.2024).",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
+        }
+      },
+      {
+        "id" : "HealthcareService.specialty.coding:ErweiterterFachabteilungsschluessel",
+        "path" : "HealthcareService.specialty.coding",
+        "sliceName" : "ErweiterterFachabteilungsschluessel",
+        "comment" : "Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern.",
+        "min" : 0,
+        "max" : "1",
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert"
+        }
+      },
+      {
+        "id" : "HealthcareService.name",
+        "path" : "HealthcareService.name",
+        "comment" : "**Bedeutung:** Informeller Name der Behandlungseinheit\n\n**Hinweis:** Es wird im Rahmen dieser Spezifikation davon ausgegangen, dass für einen HealthcareService keine natürlichen Identifier vorliegen, die in einem realen Kontext vergeben werden. Somit kann durch den Namen ein informeller, jedoch identifizierender Bezeichner vergeben werden.\n\n**Begründung Kardinalität:** Eine Behandlungseinheit muss mindestens einen Namen haben, um eine Wiedererkennbarkeit im Rahmen der Terminplanung zu gewährleisten.",
+        "min" : 1,
+        "mustSupport" : true
+      }
+    ]
+  }
+}
+
+```

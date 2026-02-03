@@ -1,0 +1,532 @@
+{
+  "package": "formular",
+  "version": "6.0.0-rc",
+  "fhirVersion": "4.0.1",
+  "extensions": [
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation",
+      "title": "ISiK CapabilityStatement Imports Expectation",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
+      "title": "ISiKTerminPriorityExtension",
+      "types": [
+        "CodeableConcept"
+      ]
+    }
+  ],
+  "profiles": {
+    "RiskAssessment": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung",
+        "title": "ISiK AMTS-Bewertung"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus",
+        "title": "ISiK Raucherstatus"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell",
+        "title": "ISiKSauerstoffsaettigungArteriell"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin",
+        "title": "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus",
+        "title": "ISiK Schwangerschaftsstatus"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus",
+        "title": "ISiKStillstatus"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-herzzeitvolumen",
+        "title": "SD MII ICU Herzzeitvolumen"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-ideales-koerpergewicht",
+        "title": "SD MII ICU Ideales Koerpergewicht"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp",
+        "title": "SD MII ICU Intrakranieller Druck ICP"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpergewicht-percentil-altersabhaengig",
+        "title": "SD MII ICU Koerpergewicht Percentil Altersabhaengig"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpergroesse-percentil-altersabhaengig",
+        "title": "SD MII ICU Koerpergroesse Percentil"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-achsel",
+        "title": "SD MII ICU Koerpertemperatur Achsel"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-atemwege",
+        "title": "SD MII ICU Koerpertemperatur Atemwege"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-blut",
+        "title": "SD MII ICU Koerpertemperatur Blut"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brust",
+        "title": "SD MII ICU Koerpertemperatur Brust"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-brustwirbelsaeule",
+        "title": "SD MII ICU Koerpertemperatur Brustwirbelsaeule"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-gelenk",
+        "title": "SD MII ICU Koerpertemperatur Gelenk"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-generisch",
+        "title": "SD MII ICU Koerpertemperatur Generisch"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-halswirbelsaeule",
+        "title": "SD MII ICU Koerpertemperatur Halswirbelsaeule"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-harnblase",
+        "title": "SD MII ICU Koerpertemperatur Harnblase"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-kern",
+        "title": "SD MII ICU Koerpertemperatur Kern"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-leiste",
+        "title": "SD MII ICU Koerpertemperatur Leiste"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-lendenwirbelsaeule",
+        "title": "SD MII ICU Koerpertemperatur Lendenwirbelsaeule"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-myokard",
+        "title": "SD MII ICU Koerpertemperatur Myokard"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasal",
+        "title": "SD MII ICU Koerpertemperatur nasal"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum",
+        "title": "SD MII ICU Koerpertemperatur Nasen-Rachen-Raum"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-rektal",
+        "title": "SD MII ICU Koerpertemperatur rektal"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-speiseroehre",
+        "title": "SD MII ICU Koerpertemperatur Speiseroehre"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-stirn",
+        "title": "SD MII ICU Koerpertemperatur Stirn"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-trommelfell",
+        "title": "SD MII ICU Koerpertemperatur Trommelfell"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-unter-der-zunge",
+        "title": "SD MII ICU Koerpertemperatur unter der Zunge"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-vaginal",
+        "title": "SD MII ICU Koerpertemperatur vaginal"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksatrialer-druck",
+        "title": "SD MII ICU Linksatrialer Druck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzindex-durch-indikatorverduennung",
+        "title": "SD MII ICU Linksventrikulaerer Herzindex durch Indikatorverduennung"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd",
+        "title": "SD MII ICU Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-schlagvolumen-durch-indikatorverduennung",
+        "title": "SD MII ICU Linksventrikulaeres Schlagvolumen Durch Indikatorverduennung"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-schlagvolumenindex-durch-indikatorverd",
+        "title": "SD MII ICU Linksventrikulaerer Schlagvolumenindex Durch Indikatorverduennung"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-druck",
+        "title": "SD MII ICU Linksventrikulaerer Druck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaerer-herzindex",
+        "title": "SD MII ICU Linksventrikulaerer Herzindex"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumen",
+        "title": "SD MII ICU Linksventrikulaeres Schlagvolumen"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventrikulaeres-schlagvolumenindex",
+        "title": "SD MII ICU Linksventrikulaeres Schlagvolumenindex"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten",
+        "title": "SD MII ICU Monitoring und Vitaldaten"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-arteriellen-blut-durch-pulsoxymetrie",
+        "title": "SD MII ICU Sauerstoffsaettigung Im Arteriellen Blut Durch Pulsoxymetrie"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie",
+        "title": "SD MII ICU Sauerstoffsaettigung Im Blut Postduktal Durch Pulsoxymetrie"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie",
+        "title": "SD MII ICU Sauerstoffsaettigung Im Blut Preduktal Durch Pulsoxymetrie"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-blutdruck",
+        "title": "SD MII ICU Pulmonalarterieller Blutdruck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-wedge-druck",
+        "title": "SD MII ICU Pulmonalarterieller Wedge Druck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalvaskulaerer-widerstandsindex",
+        "title": "SD MII ICU Pulmonalvaskulaerer Widerstandsindex"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-puls",
+        "title": "SD MII ICU Puls"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsatrialer-druck",
+        "title": "SD MII ICU Rechtsatrialer Druck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-rechtsventrikulaerer-druck",
+        "title": "SD MII ICU Rechtsventrikulaerer Druck"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-sonstige-pulsatile-druecke-generisch",
+        "title": "SD MII ICU Sonstige pulsatile Druecke Generisch"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-systemischer-vaskulaerer-widerstandsindex",
+        "title": "SD MII ICU Systemischer Vaskulaerer Widerstandsindex"
+      },
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-zentralvenoeser-blutdruck",
+        "title": "SD MII ICU Zentralvenoeser Blutdruck"
+      }
+    ],
+    "AllergyIntolerance": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAllergieUnvertraeglichkeit",
+        "title": "ISiKAllergieUnvertraeglichkeit"
+      }
+    ],
+    "Bundle": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle",
+        "title": "ISiKBerichtBundle"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
+        "title": "ISiKDiagnose"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDaten",
+        "title": "Ausgefülltes ISiK-Formular"
+      }
+    ],
+    "Questionnaire": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
+        "title": "ISiKFormularDefinition"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
+        "title": "ISiKKontaktGesundheitseinrichtung"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient",
+        "title": "ISiKPatient"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
+        "title": "ISiKProzedur"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.de/StructureDefinition/Aufnahmegrund": [
+      "Encounter"
+    ],
+    "http://fhir.de/StructureDefinition/Entlassungsgrund": [
+      "Encounter.hospitalization.dischargeDisposition"
+    ],
+    "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum": [
+      "Procedure"
+    ],
+    "http://fhir.de/StructureDefinition/Wahlleistung": [
+      "Encounter.hospitalization"
+    ],
+    "http://fhir.de/StructureDefinition/gender-amtlich-de": [
+      "Patient.gender"
+    ],
+    "http://fhir.de/StructureDefinition/humanname-namenszusatz": [
+      "Patient.name.family"
+    ],
+    "http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen": [
+      "Condition.code.coding"
+    ],
+    "http://fhir.de/StructureDefinition/lebensphase": [
+      "Condition.abatement[x]",
+      "Condition.onset[x]"
+    ],
+    "http://fhir.de/StructureDefinition/seitenlokalisation": [
+      "Procedure.code.coding"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate": [
+      "Encounter"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate": [
+      "Encounter"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.document",
+      "CapabilityStatement.rest.interaction",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.searchInclude",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.searchRevInclude",
+      "CapabilityStatement.rest.resource.supportedProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-related": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Patient.birthDate"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/display": [
+      "QuestionnaireResponse.questionnaire"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.differential.element.constraint",
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/entryFormat": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-name": [
+      "Patient.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
+      "Patient.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Patient.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Patient.address.line",
+      "StructureDefinition.snapshot.element.example.valueString"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox": [
+      "Patient.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct": [
+      "Patient.address"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Patient.address.line",
+      "StructureDefinition.snapshot.element.example.valueString"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier": [
+      "Patient.name.prefix"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/maxValue": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/minLength": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/minValue": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/ordinalValue": [
+      "ValueSet.compose.include.concept"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs": [
+      "Questionnaire.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs": [
+      "Questionnaire.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-unit": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/targetConstraint": [
+      "Questionnaire.item"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract": [
+      "Questionnaire.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext": [
+      "Patient.address",
+      "Patient.identifier",
+      "Patient.name",
+      "Patient.telecom",
+      "Questionnaire.contained.address",
+      "Questionnaire.contained.identifier",
+      "Questionnaire.contained.name",
+      "Questionnaire.contained.telecom"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue": [
+      "Patient.address.city",
+      "Patient.address.country",
+      "Patient.address.line",
+      "Patient.address.postalCode",
+      "Patient.birthDate",
+      "Patient.gender",
+      "Patient.id",
+      "Patient.identifier.system",
+      "Patient.identifier.value",
+      "Patient.name.family",
+      "Patient.name.given",
+      "Patient.name.text",
+      "Patient.telecom.system",
+      "Patient.telecom.value",
+      "Questionnaire.contained.address.city",
+      "Questionnaire.contained.address.country",
+      "Questionnaire.contained.address.line",
+      "Questionnaire.contained.address.postalCode",
+      "Questionnaire.contained.birthDate",
+      "Questionnaire.contained.gender",
+      "Questionnaire.contained.id",
+      "Questionnaire.contained.identifier.system",
+      "Questionnaire.contained.identifier.value",
+      "Questionnaire.contained.name.family",
+      "Questionnaire.contained.name.given",
+      "Questionnaire.contained.name.text",
+      "Questionnaire.contained.telecom.system",
+      "Questionnaire.contained.telecom.value"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKAcceptedRisk": [
+      "RiskAssessment"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation": [
+      "CapabilityStatement.imports"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKRehaEntlassung": [
+      "Encounter.hospitalization.dischargeDisposition"
+    ],
+    "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension": [
+      "Questionnaire",
+      "QuestionnaireResponse"
+    ]
+  }
+}

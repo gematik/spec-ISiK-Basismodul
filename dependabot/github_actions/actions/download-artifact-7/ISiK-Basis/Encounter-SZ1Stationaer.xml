@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="SZ1Stationaer"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Encounter SZ1Stationaer</b></p><a name="SZ1Stationaer"> </a><a name="hcSZ1Stationaer"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ISiKKontaktGesundheitseinrichtung.html">ISiKKontaktGesundheitseinrichtung</a></p></div><p><b>identifier</b>: Visit number/0123456789-2</p><p><b>status</b>: Finished</p><p><b>class</b>: <a href="http://terminology.hl7.org/7.0.1/CodeSystem-v3-ActCode.html#v3-ActCode-IMP">ActCode: IMP</a> (inpatient encounter)</p><p><b>type</b>: <span title="Codes:{http://fhir.de/CodeSystem/Kontaktebene abteilungskontakt}">Abteilungskontakt</span>, <span title="Codes:{http://fhir.de/CodeSystem/kontaktart-de normalstationaer}">Normalstationär</span></p><p><b>subject</b>: <a href="Patient-SZ1Patient.html">Töchterchen Musterfrau (official) Female, DoB: 2010-01-01 ( Medical record number)</a></p><p><b>period</b>: 2024-10-07 --&gt; 2024-10-10</p><p><b>account</b>: <a href="Account-SZ1DRGFall.html">Account: identifier = Account number; status = active; type = inpatient encounter</a></p><h3>Hospitalizations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Extension</b></td></tr><tr><td style="display: none">*</td><td/></tr></table><blockquote><p><b>location</b></p><p><b>location</b>: Bettenstellplatz 123 (Identifier: <code>http://beispiel-krankenhaus.de/sid/betten</code>/123)</p><p><b>status</b>: Active</p><p><b>physicalType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type bd}">Bed</span></p></blockquote><blockquote><p><b>location</b></p><p><b>location</b>: Zimmer 12 (Identifier: <code>http://beispiel-krankenhaus.de/sid/zimmer</code>/12)</p><p><b>status</b>: Active</p><p><b>physicalType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/location-physical-type ro}">Room</span></p></blockquote></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="VN"/>
+      </coding>
+    </type>
+    <system value="http://beispiel-krankenhaus.de/sid/besuchsnummer"/>
+    <value value="0123456789-2"/>
+  </identifier>
+  <status value="finished"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/Kontaktebene"/>
+      <code value="abteilungskontakt"/>
+    </coding>
+  </type>
+  <type>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/kontaktart-de"/>
+      <code value="normalstationaer"/>
+      <display value="Normalstationär"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/SZ1Patient"/>
+  </subject>
+  <period>
+    <start value="2024-10-07"/>
+    <end value="2024-10-10"/>
+  </period>
+  <account>
+    <reference value="Account/SZ1DRGFall"/>
+    <identifier>
+      <system value="http://beispiel-krankenhaus.de/sid/fallnummern"/>
+      <value value="0123456789"/>
+    </identifier>
+  </account>
+  <hospitalization>
+    <extension url="http://fhir.de/StructureDefinition/Wahlleistung">
+      <valueCoding>
+        <system value="http://fhir.de/CodeSystem/wahlleistungen-de"/>
+        <code value="unterkunft-und-verpflegung-begleitperson-kinder-ohne-med-begruedung"/>
+        <display value="Unterkunft und Verpflegung einer Begleitperson ohne med. Begründung"/>
+      </valueCoding>
+    </extension>
+  </hospitalization>
+  <location>
+    <location>
+      <identifier>
+        <system value="http://beispiel-krankenhaus.de/sid/betten"/>
+        <value value="123"/>
+      </identifier>
+      <display value="Bettenstellplatz 123"/>
+    </location>
+    <status value="active"/>
+    <physicalType>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+        <code value="bd"/>
+        <display value="Bed"/>
+      </coding>
+    </physicalType>
+  </location>
+  <location>
+    <location>
+      <identifier>
+        <system value="http://beispiel-krankenhaus.de/sid/zimmer"/>
+        <value value="12"/>
+      </identifier>
+      <display value="Zimmer 12"/>
+    </location>
+    <status value="active"/>
+    <physicalType>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+        <code value="ro"/>
+        <display value="Room"/>
+      </coding>
+    </physicalType>
+  </location>
+</Encounter>
