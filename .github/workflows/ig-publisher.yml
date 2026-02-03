@@ -306,7 +306,7 @@ jobs:
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         with:
