@@ -5,14 +5,28 @@ artifacts_dir="${ARTIFACTS_DIR:-artifacts}"
 
 echo "Artifacts directory: ${artifacts_dir}"
 if [ -d "${artifacts_dir}" ]; then
-  ls -la "${artifacts_dir}" || true
   echo "Artifacts subdirectories:"
   find "${artifacts_dir}" -maxdepth 2 -type d -print | head -40 || true
 else
   echo "Artifacts directory does not exist."
 fi
 
-for dir in "${artifacts_dir}"/sushi-generated-ig-*/; do
+get_artifact_dirs() {
+  local base_dir="$1"
+  local pattern="$2"
+
+  if compgen -G "${base_dir}/${pattern}" > /dev/null; then
+    printf '%s\n' "${base_dir}"/${pattern}
+    return 0
+  fi
+
+  if [ -d "${base_dir}" ] && [ -n "$(ls -A "${base_dir}" 2>/dev/null)" ]; then
+    printf '%s\n' "${base_dir}"
+    return 0
+  fi
+}
+
+while IFS= read -r dir; do
   [ -d "$dir" ] || continue
   base=$(basename "$dir")
   ig_name=$(echo "$base" | sed 's/sushi-generated-ig-//')
@@ -35,9 +49,9 @@ for dir in "${artifacts_dir}"/sushi-generated-ig-*/; do
   else
     echo "Warning: No matching directory found for $ig_name (SUSHI artifact)"
   fi
-done
+done < <(get_artifact_dirs "${artifacts_dir}/sushi-generated-ig" "sushi-generated-ig-*/")
 
-for dir in "${artifacts_dir}"/expanded-resources-*/; do
+while IFS= read -r dir; do
   [ -d "$dir" ] || continue
   base=$(basename "$dir")
   ig_name=$(echo "$base" | sed 's/expanded-resources-//')
@@ -59,9 +73,9 @@ for dir in "${artifacts_dir}"/expanded-resources-*/; do
   else
     echo "Warning: No matching directory found for $ig_name (expanded resources)"
   fi
-done
+done < <(get_artifact_dirs "${artifacts_dir}/expanded-resources" "expanded-resources-*/")
 
-for dir in "${artifacts_dir}"/input-includes-*/; do
+while IFS= read -r dir; do
   [ -d "$dir" ] || continue
   base=$(basename "$dir")
   ig_name=$(echo "$base" | sed 's/input-includes-//')
@@ -83,9 +97,9 @@ for dir in "${artifacts_dir}"/input-includes-*/; do
   else
     echo "Warning: No matching directory found for $ig_name (input includes)"
   fi
-done
+done < <(get_artifact_dirs "${artifacts_dir}/input-includes" "input-includes-*/")
 
-for dir in "${artifacts_dir}"/input-pagecontent-*/; do
+while IFS= read -r dir; do
   [ -d "$dir" ] || continue
   base=$(basename "$dir")
   ig_name=$(echo "$base" | sed 's/input-pagecontent-//')
@@ -107,4 +121,4 @@ for dir in "${artifacts_dir}"/input-pagecontent-*/; do
   else
     echo "Warning: No matching directory found for $ig_name (input pagecontent)"
   fi
-done
+done < <(get_artifact_dirs "${artifacts_dir}/input-pagecontent" "input-pagecontent-*/")
