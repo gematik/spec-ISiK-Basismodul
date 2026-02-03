@@ -2,6 +2,13 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+
+#### Version 6.0.0-rc
+
+Datum: tbd.
+
+* `documentation` Initialisierung einer IG Publisher Guide Struktur für ISiK Connect
+
 #### Version 5.X.X
 
 Datum: XX.XX.2025
