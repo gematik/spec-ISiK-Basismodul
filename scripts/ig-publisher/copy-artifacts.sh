@@ -49,12 +49,16 @@ copy_from_artifact_group() {
     return 1
   fi
 
+  if [ -f "${group_dir}/ig-dir.txt" ]; then
+    copy_from_artifact "${group_dir}" "${dest_dir}"
+    return 0
+  fi
+
   local found=false
-  for dir in "${group_dir}"/*; do
-    [ -d "${dir}" ] || continue
+  while IFS= read -r ig_dir_file; do
     found=true
-    copy_from_artifact "${dir}" "${dest_dir}"
-  done
+    copy_from_artifact "$(dirname "${ig_dir_file}")" "${dest_dir}"
+  done < <(find "${group_dir}" -mindepth 2 -maxdepth 2 -name ig-dir.txt)
 
   if [ "${found}" = false ]; then
     echo "No artifacts found in ${group_dir}"
