@@ -158,25 +158,6 @@ jobs:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
-      # generate Implementationguide resource & menu
-      - name: Run SUSHI (IG local)
-        run: |
-          sushi ${{ env.IG_PUBLISHER_DIR }}      
-
-      # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
-      - name: Write IG dir metadata (SUSHI)
-        shell: bash
-        run: |
-          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/ig-dir.txt"
-
-      - name: Upload SUSHI-generated ImplementationGuide
-        uses: actions/upload-artifact@v6
-        with:
-          name: sushi-generated-ig-${{ matrix.ig_name }}
-          # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
-          path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
-          retention-days: 1
-
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
       # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
@@ -193,6 +174,25 @@ jobs:
         env:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/common-files/copy-config-files.sh
+
+      # generate Implementationguide resource & menu (after inputs are ready)
+      - name: Run SUSHI (IG local)
+        run: |
+          sushi ${{ env.IG_PUBLISHER_DIR }}
+
+      # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
+      - name: Write IG dir metadata (SUSHI)
+        shell: bash
+        run: |
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/ig-dir.txt"
+
+      - name: Upload SUSHI-generated ImplementationGuide
+        uses: actions/upload-artifact@v6
+        with:
+          name: sushi-generated-ig-${{ matrix.ig_name }}
+          # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
+          path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
+          retention-days: 1
 
       # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
@@ -321,7 +321,6 @@ jobs:
         with:
           pattern: sushi-generated-ig-*
           path: artifacts/sushi-generated-ig
-          merge-multiple: true
 
       # Download expanded resources from build jobs (these are required)
       - name: Download Expanded Resources
@@ -329,21 +328,18 @@ jobs:
         with:
           pattern: expanded-resources-*
           path: artifacts/expanded-resources
-          merge-multiple: true
 
       - name: Download Input Includes
         uses: actions/download-artifact@v7
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
-          merge-multiple: true
 
       - name: Download Input Pagecontent
         uses: actions/download-artifact@v7
         with:
           pattern: input-pagecontent-*
           path: artifacts/input-pagecontent
-          merge-multiple: true
 
       # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
       - name: Copy SUSHI-generated IGs and Expanded Resources

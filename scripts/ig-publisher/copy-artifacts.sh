@@ -40,7 +40,29 @@ copy_from_artifact() {
   cp -r "${source_dir}/"* "${ig_path}/${dest_dir}/" || true
 }
 
-copy_from_artifact "${artifacts_dir}/sushi-generated-ig" "fsh-generated"
-copy_from_artifact "${artifacts_dir}/expanded-resources" "input/resources"
-copy_from_artifact "${artifacts_dir}/input-includes" "input/includes"
-copy_from_artifact "${artifacts_dir}/input-pagecontent" "input/pagecontent"
+copy_from_artifact_group() {
+  local group_dir="$1"
+  local dest_dir="$2"
+
+  if [ ! -d "${group_dir}" ]; then
+    echo "Missing artifact group directory: ${group_dir}"
+    return 1
+  fi
+
+  local found=false
+  for dir in "${group_dir}"/*; do
+    [ -d "${dir}" ] || continue
+    found=true
+    copy_from_artifact "${dir}" "${dest_dir}"
+  done
+
+  if [ "${found}" = false ]; then
+    echo "No artifacts found in ${group_dir}"
+    return 1
+  fi
+}
+
+copy_from_artifact_group "${artifacts_dir}/sushi-generated-ig" "fsh-generated"
+copy_from_artifact_group "${artifacts_dir}/expanded-resources" "input/resources"
+copy_from_artifact_group "${artifacts_dir}/input-includes" "input/includes"
+copy_from_artifact_group "${artifacts_dir}/input-pagecontent" "input/pagecontent"
