@@ -4,121 +4,41 @@ set -euo pipefail
 artifacts_dir="${ARTIFACTS_DIR:-artifacts}"
 
 echo "Artifacts directory: ${artifacts_dir}"
-if [ -d "${artifacts_dir}" ]; then
-  echo "Artifacts subdirectories:"
-  find "${artifacts_dir}" -maxdepth 2 -type d -print | head -40 || true
-else
+if [ ! -d "${artifacts_dir}" ]; then
   echo "Artifacts directory does not exist."
+  exit 1
 fi
 
-get_artifact_dirs() {
-  local base_dir="$1"
-  local pattern="$2"
+copy_from_artifact() {
+  local source_dir="$1"
+  local dest_dir="$2"
 
-  if compgen -G "${base_dir}/${pattern}" > /dev/null; then
-    printf '%s\n' "${base_dir}"/${pattern}
+  if [ ! -d "${source_dir}" ]; then
+    echo "Skipping missing artifact: ${source_dir}"
     return 0
   fi
 
-  if [ -d "${base_dir}" ] && [ -n "$(ls -A "${base_dir}" 2>/dev/null)" ]; then
-    printf '%s\n' "${base_dir}"
-    return 0
+  local ig_dir_file="${source_dir}/ig-dir.txt"
+  if [ ! -f "${ig_dir_file}" ]; then
+    echo "Missing ig-dir.txt in ${source_dir}"
+    return 1
   fi
+
+  local ig_path
+  ig_path=$(cat "${ig_dir_file}")
+
+  if [ -z "${ig_path}" ]; then
+    echo "Empty ig-dir.txt in ${source_dir}"
+    return 1
+  fi
+
+  echo "Copying ${source_dir} to ${ig_path}/${dest_dir}/"
+  mkdir -p "${ig_path}/${dest_dir}"
+  rm -rf "${ig_path:?}/${dest_dir}/"* || true
+  cp -r "${source_dir}/"* "${ig_path}/${dest_dir}/" || true
 }
 
-while IFS= read -r dir; do
-  [ -d "$dir" ] || continue
-  base=$(basename "$dir")
-  ig_name=$(echo "$base" | sed 's/sushi-generated-ig-//')
-  echo "Processing SUSHI-generated artifact $base for IG: $ig_name"
-
-  ig_path=""
-  if [ -f "$dir/ig-dir.txt" ]; then
-    ig_path=$(cat "$dir/ig-dir.txt")
-    rm -f "$dir/ig-dir.txt"
-  fi
-  if [ -z "$ig_path" ]; then
-    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
-  fi
-  if [ -n "$ig_path" ]; then
-    target_dir="$ig_path/fsh-generated"
-    echo "Copying SUSHI-generated files to ${target_dir}/"
-    mkdir -p "${target_dir}"
-    rm -rf "${target_dir:?}/*" || true
-    cp -r "$dir"* "${target_dir}/" || true
-  else
-    echo "Warning: No matching directory found for $ig_name (SUSHI artifact)"
-  fi
-done < <(get_artifact_dirs "${artifacts_dir}/sushi-generated-ig" "sushi-generated-ig-*/")
-
-while IFS= read -r dir; do
-  [ -d "$dir" ] || continue
-  base=$(basename "$dir")
-  ig_name=$(echo "$base" | sed 's/expanded-resources-//')
-  echo "Processing expanded-resources artifact $base for IG: $ig_name"
-
-  ig_path=""
-  if [ -f "$dir/ig-dir.txt" ]; then
-    ig_path=$(cat "$dir/ig-dir.txt")
-    rm -f "$dir/ig-dir.txt"
-  fi
-  if [ -z "$ig_path" ]; then
-    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
-  fi
-  if [ -n "$ig_path" ]; then
-    echo "Copying expanded resources to $ig_path/input/resources/"
-    mkdir -p "$ig_path/input/resources"
-    rm -rf "$ig_path/input/resources/"* || true
-    cp -r "$dir"* "$ig_path/input/resources/" || true
-  else
-    echo "Warning: No matching directory found for $ig_name (expanded resources)"
-  fi
-done < <(get_artifact_dirs "${artifacts_dir}/expanded-resources" "expanded-resources-*/")
-
-while IFS= read -r dir; do
-  [ -d "$dir" ] || continue
-  base=$(basename "$dir")
-  ig_name=$(echo "$base" | sed 's/input-includes-//')
-  echo "Processing input-includes artifact $base for IG: $ig_name"
-
-  ig_path=""
-  if [ -f "$dir/ig-dir.txt" ]; then
-    ig_path=$(cat "$dir/ig-dir.txt")
-    rm -f "$dir/ig-dir.txt"
-  fi
-  if [ -z "$ig_path" ]; then
-    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
-  fi
-  if [ -n "$ig_path" ]; then
-    echo "Copying input includes to $ig_path/input/includes/"
-    mkdir -p "$ig_path/input/includes"
-    rm -rf "$ig_path/input/includes/"* || true
-    cp -r "$dir"* "$ig_path/input/includes/" || true
-  else
-    echo "Warning: No matching directory found for $ig_name (input includes)"
-  fi
-done < <(get_artifact_dirs "${artifacts_dir}/input-includes" "input-includes-*/")
-
-while IFS= read -r dir; do
-  [ -d "$dir" ] || continue
-  base=$(basename "$dir")
-  ig_name=$(echo "$base" | sed 's/input-pagecontent-//')
-  echo "Processing input-pagecontent artifact $base for IG: $ig_name"
-
-  ig_path=""
-  if [ -f "$dir/ig-dir.txt" ]; then
-    ig_path=$(cat "$dir/ig-dir.txt")
-    rm -f "$dir/ig-dir.txt"
-  fi
-  if [ -z "$ig_path" ]; then
-    ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
-  fi
-  if [ -n "$ig_path" ]; then
-    echo "Copying input pagecontent to $ig_path/input/pagecontent/"
-    mkdir -p "$ig_path/input/pagecontent"
-    rm -rf "$ig_path/input/pagecontent/"* || true
-    cp -r "$dir"* "$ig_path/input/pagecontent/" || true
-  else
-    echo "Warning: No matching directory found for $ig_name (input pagecontent)"
-  fi
-done < <(get_artifact_dirs "${artifacts_dir}/input-pagecontent" "input-pagecontent-*/")
+copy_from_artifact "${artifacts_dir}/sushi-generated-ig" "fsh-generated"
+copy_from_artifact "${artifacts_dir}/expanded-resources" "input/resources"
+copy_from_artifact "${artifacts_dir}/input-includes" "input/includes"
+copy_from_artifact "${artifacts_dir}/input-pagecontent" "input/pagecontent"
