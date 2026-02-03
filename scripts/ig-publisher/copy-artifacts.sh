@@ -14,8 +14,8 @@ copy_from_artifact() {
   local dest_dir="$2"
 
   if [ ! -d "${source_dir}" ]; then
-    echo "Skipping missing artifact: ${source_dir}"
-    return 0
+    echo "Missing artifact directory: ${source_dir}"
+    return 1
   fi
 
   local ig_dir_file="${source_dir}/ig-dir.txt"
