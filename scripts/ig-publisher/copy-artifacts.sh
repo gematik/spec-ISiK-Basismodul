@@ -3,6 +3,15 @@ set -euo pipefail
 
 artifacts_dir="${ARTIFACTS_DIR:-artifacts}"
 
+echo "Artifacts directory: ${artifacts_dir}"
+if [ -d "${artifacts_dir}" ]; then
+  ls -la "${artifacts_dir}" || true
+  echo "Artifacts subdirectories:"
+  find "${artifacts_dir}" -maxdepth 2 -type d -print | head -40 || true
+else
+  echo "Artifacts directory does not exist."
+fi
+
 for dir in "${artifacts_dir}"/sushi-generated-ig-*/; do
   [ -d "$dir" ] || continue
   base=$(basename "$dir")
