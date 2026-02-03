@@ -19,6 +19,6 @@ Folgende Rollen entsprechen einem Client, wofür in diesem Implementierungsleitf
 
 Die Interaktionen sind somit in allen drei Bereichen äquivalent:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/Interaktionen.svg" class="center" alt="Interaktionen" width="90%"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/Interaktionen.svg" class="center" alt="Interaktionen" width="100%"/>
 
 Zum AMTS-Akteur siehe den entsprechenden Abschnitt unter Use Cases.
