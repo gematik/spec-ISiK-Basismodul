@@ -12,7 +12,7 @@ Version 6.0.0-rc - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Formularmodul/ImplementationGuide/formular | *Version*:6.0.0-rc |
-| Active as of 2026-02-02 | *Computable Name*:ISiKFormularmodul |
+| Active as of 2026-02-03 | *Computable Name*:ISiKFormularmodul |
 
 Realm: Deutschland
 
@@ -74,7 +74,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "ISiKFormularmodul",
   "title" : "ISiK Formularmodul Implementation Guide",
   "status" : "active",
-  "date" : "2026-02-02T13:44:41+00:00",
+  "date" : "2026-02-03T13:26:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -4690,10 +4690,10 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "artifacts.html"
+              "valueUrl" : "artifacts-isik.html"
             }
           ],
-          "nameUrl" : "artifacts.html",
+          "nameUrl" : "artifacts-isik.html",
           "title" : "FHIR-Artefakte",
           "generation" : "markdown"
         }

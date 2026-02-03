@@ -5,7 +5,7 @@ ISiK Formularmodul Implementation Guide
 Version 6.0.0-rc - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**FHIR-Artefakte**](artifacts.md)
+* [**Artifacts Summary**](artifacts.md)
 * **Formular aus einem Medizinprodukt**
 
 ## Questionnaire: Formular aus einem Medizinprodukt 
@@ -13,7 +13,7 @@ Version 6.0.0-rc - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/Questionnaire/ExampleMdrRelevant | *Version*:6.0.0-rc |
-| Draft as of 2026-02-02 | *Computable Name*:ExampleMdrRelevant |
+| Draft as of 2026-02-03 | *Computable Name*:ExampleMdrRelevant |
 
  
 
@@ -56,7 +56,7 @@ Version 6.0.0-rc - ci-build
   "status" : "draft",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-02-02T13:44:41+00:00",
+  "date" : "2026-02-03T13:26:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {

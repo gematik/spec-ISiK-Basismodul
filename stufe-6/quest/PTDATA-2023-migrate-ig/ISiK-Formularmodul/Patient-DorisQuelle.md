@@ -5,7 +5,7 @@ ISiK Formularmodul Implementation Guide
 Version 6.0.0-rc - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**FHIR-Artefakte**](artifacts.md)
+* [**Artifacts Summary**](artifacts.md)
 * **Example Patient - DorisQuelle**
 
 ## Example Patient: Example Patient - DorisQuelle

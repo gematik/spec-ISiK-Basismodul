@@ -5,7 +5,7 @@ ISiK Formularmodul Implementation Guide
 Version 6.0.0-rc - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**FHIR-Artefakte**](artifacts.md)
+* [**Artifacts Summary**](artifacts.md)
 * **Vorbelegung von Observations**
 
 ## Questionnaire: Vorbelegung von Observations 
@@ -13,7 +13,7 @@ Version 6.0.0-rc - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/Questionnaire/ExamplePrePopObservation | *Version*:6.0.0-rc |
-| Draft as of 2026-02-02 | *Computable Name*:ExamplePrePopObservation |
+| Draft as of 2026-02-03 | *Computable Name*:ExamplePrePopObservation |
 
  
 
@@ -150,7 +150,7 @@ Zur korrekten Darstellung dieses Beispiels wird eine externe Anfrage in Richtung
   "status" : "draft",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-02-02T13:44:41+00:00",
+  "date" : "2026-02-03T13:26:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {

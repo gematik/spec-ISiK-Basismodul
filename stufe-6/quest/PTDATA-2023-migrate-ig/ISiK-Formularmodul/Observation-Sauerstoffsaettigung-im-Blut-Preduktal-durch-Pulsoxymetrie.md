@@ -5,7 +5,7 @@ ISiK Formularmodul Implementation Guide
 Version 6.0.0-rc - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**FHIR-Artefakte**](artifacts.md)
+* [**Artifacts Summary**](artifacts.md)
 * **Example Observation - Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie**
 
 ## Example Observation: Example Observation - Sauerstoffsaettigung-im-Blut-Preduktal-durch-Pulsoxymetrie
