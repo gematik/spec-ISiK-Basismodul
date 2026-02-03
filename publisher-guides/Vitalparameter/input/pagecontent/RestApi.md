@@ -1,8 +1,8 @@
-# REST-API
+### REST-API
 
 Es gelten die Festlegungen aus dem [Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest.page.md).
 
-## Datenübernahme - Zusammenspiel von KIS & Patientendatenmanagementsystem (PDMS)
+#### Datenübernahme - Zusammenspiel von KIS & Patientendatenmanagementsystem (PDMS)
 
 Jedes System ist für seine eigenen Daten verantwortlich, ein aktives Pushen per `POST` Interaktion ist nicht vorgesehen. Im Falle einer gewollten Datenübernahme zwischen Systemen greifen diese gegenseitig mittels `GET` Interaktion aufeinander zu und fragen die zu übernehmenden Daten selbstständig ab.
 

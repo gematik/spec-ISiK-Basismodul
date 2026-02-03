@@ -1,9 +1,3 @@
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/main-stufe-3/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
-
-----
-Version: 5.1.1
-
-Datum: 17.12.2025
 
 Status: Aktiv
 
@@ -11,7 +5,7 @@ Realm: Deutschland
 
 ----
 
-# Motivation - ISiK Vitalparameter
+### Motivation - ISiK Vitalparameter
 
 Die Erhebung und Verarbeitung von Vitalparametern und Körpermaßen ist ein essentieller Bestandteil der medizinischen Versorgung und spielt insbesondere in Krankenhäusern eine wichtige Rolle. Durch Vitalparameter wird eine initiale Einschätzung der Gesundheit von Patienten ermöglicht und sie enthalten wichtige Hinweise auf potenzielle Krankheitsbilder. Vitalparameter können als begleitende Informationen bei der Anforderung von Untersuchungen oder der Verordnung von Medikamenten verwendet werden. Auch während der Genesung können Vitalparameter wichtige Anhaltspunkte bezüglich des Fortschritts geben. Durch die weite Verbreitung von Wearables haben Patienten heutzutage zusätzlich die Möglichkeit, ihre Vitalparameter tagesaktuell zu teilen. 
 
@@ -19,7 +13,7 @@ Um Vitalparameter und Körpermaße in verschiedenen Systemen verwenden zu könne
 
 
 
-# Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
+### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. Dieser FHIR ImplementationGuide (IG) beschreibt die für diesen Zweck entwickelten FHIR Profile und das [REST](https://de.wikipedia.org/wiki/Representational_State_Transfer)-basierte Application Programming Interface (API). Die REST-API wird im Wesentlichen [vom FHIR Standard vorgegeben](https://www.hl7.org/fhir/R4/http.html). Dieser Leitfaden konkretisiert die ISiK-relevanten Funktionen der Standard-REST-API und trifft inhaltliche Festlegungen zu den ISiK-relevanten Ressourcen in Form von Ressourcen-Profilen.
 
