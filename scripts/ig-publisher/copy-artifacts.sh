@@ -32,6 +32,8 @@ copy_from_artifact() {
     return 1
   fi
 
+  rm -f "${ig_dir_file}" || true
+
   echo "Copying ${source_dir} to ${ig_path}/${dest_dir}/"
   mkdir -p "${ig_path}/${dest_dir}"
   rm -rf "${ig_path:?}/${dest_dir}/"* || true
