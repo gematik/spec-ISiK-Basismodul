@@ -4,10 +4,10 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle"
 * name = "ISiKCapabilityStatementAufbaustrukturRolle"
-* title = "CapabilityStatement für Rolle &quot;AufbaustrukturRolle&quot;"
+* title = "CapabilityStatement für Rolle AufbaustrukturRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
-CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementAufbaustrukturRolle&quot;.
+CapabilityStatement für die Rolle ISiKCapabilityStatementAufbaustrukturRolle.
 Diese Rolle stellt Interaktionen zur Abfrage von Informationen zur Aufbaustruktur bereit.
 Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuordnungen.
 "
