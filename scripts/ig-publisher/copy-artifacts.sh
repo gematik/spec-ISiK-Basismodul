@@ -43,10 +43,10 @@ for dir in "${artifacts_dir}"/expanded-resources-*/; do
     ig_path=$(find publisher-guides -maxdepth 1 -type d -name "*$ig_name*" -print -quit)
   fi
   if [ -n "$ig_path" ]; then
-    echo "Copying expanded resources to $ig_path/input/resources/"
-    mkdir -p "$ig_path/input/resources"
-    rm -rf "$ig_path/input/resources/"* || true
-    cp -r "$dir"* "$ig_path/input/resources/" || true
+    echo "Copying input files to $ig_path/input/"
+    mkdir -p "$ig_path/input"
+    rm -rf "$ig_path/input/resources" "$ig_path/input/includes" "$ig_path/input/pagecontent" || true
+    cp -r "$dir"* "$ig_path/input/" || true
   else
     echo "Warning: No matching directory found for $ig_name (expanded resources)"
   fi
