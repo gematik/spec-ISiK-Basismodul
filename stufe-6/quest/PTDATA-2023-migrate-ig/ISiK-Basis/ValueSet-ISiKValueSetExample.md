@@ -13,7 +13,7 @@ Version 6.0.0-rc - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/ValueSet/TestValueSet | *Version*:6.0.0-rc |
-| Active as of 2026-02-02 | *Computable Name*:TestValueSet |
+| Active as of 2026-02-03 | *Computable Name*:TestValueSet |
 | **Usage:**Clinical Focus: Encounter | |
 
  **References** 
@@ -58,7 +58,7 @@ No formal definition provided for this value set
   "version" : "6.0.0-rc",
   "name" : "TestValueSet",
   "status" : "active",
-  "date" : "2026-02-02T13:44:45+00:00",
+  "date" : "2026-02-03T13:26:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {

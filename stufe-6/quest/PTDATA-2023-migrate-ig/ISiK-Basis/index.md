@@ -12,7 +12,7 @@ Version 6.0.0-rc - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/isik/ImplementationGuide/basis | *Version*:6.0.0-rc |
-| Draft as of 2026-02-02 | *Computable Name*:ISiKBasisImplementationGuide |
+| Draft as of 2026-02-03 | *Computable Name*:ISiKBasisImplementationGuide |
 
 Status: Aktiv
 
@@ -63,7 +63,7 @@ Zugunsten des Leseflusses wird in dieser Publikation meist die männliche Form v
   "name" : "ISiKBasisImplementationGuide",
   "title" : "ISiK Basis Implementierungsleitfaden",
   "status" : "draft",
-  "date" : "2026-02-02T13:44:45+00:00",
+  "date" : "2026-02-03T13:26:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
