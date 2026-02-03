@@ -1,6 +1,6 @@
-# Schritt 6: Refresh Token & Revocation
+### Schritt 6: Refresh Token & Revocation
 
-## Refresh Tokens
+#### Refresh Tokens
 
 Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 - OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLL die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-21}}) Das Gültigkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.
 
@@ -17,16 +17,16 @@ Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.1.12 - Re
 
 ----
 
-### Beispiel
+##### Beispiel
 
-## Token Revocation
+#### Token Revocation
 
 Ein Access-Token MUSS zu einem beliebigen Zeitpunkt durch einen beliebigen Client per [RFC7009 - OAuth 2.0 Token Revocation](https://datatracker.ietf.org/doc/html/rfc7009) zurückgezogen werden können. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-24}})
 Es MUSS sichergestellt werden, dass kein zeitlicher Verzug zwischen der Bestätigung, der zuvorgenannten Anfrage und der Invalidierung des Tokens herrscht, d.h nach einer Revocation-Anfrage muss sichergestellt werden, dass Anfragen beim Ressourcen-Server mit einem entsprechenden Token zurückgewiesen werden. Hierzu wird die Verwendung eines Introspection-Endpunktes nach [RFC7662 - OAuth 2.0 Token Introspection](https://datatracker.ietf.org/doc/html/rfc7662) empfohlen. ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-25}})
 
 ----
 
-### Beispiel`
+##### Beispiel`
 ```
 GET /fhir/Patient
 Content-Type: application/x-www-form-urlencoded

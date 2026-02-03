@@ -1,28 +1,28 @@
-# Release Notes
+### Release Notes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-## Version 5.X.X
+#### Version 5.X.X
 
 Datum: XX.XX.2025
 
 * `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888
 
 
-## Version 5.1.0
+#### Version 5.1.0
 
 Datum: 23.10.2025
 
 Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
 
 
-## Version 5.0.0
+#### Version 5.0.0
 
 Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-## Version 5.0.0-rc2 (Benehmensherstellung)
+#### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
@@ -30,13 +30,13 @@ Datum: 5.6.2025
 * `improve` SMART 2.0 Versionsupdate auf 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files
 
 
-## Version 5.0.0-rc1
+#### Version 5.0.0-rc1
 
 Datum: 13.05.2025
 
 * `improve` Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt https://github.com/gematik/spec-ISiK-Basismodul/pull/696
 
-## Version 5.0.0-rc (Kommentierung)
+#### Version 5.0.0-rc (Kommentierung)
 
 Datum: 09.04.2025
 

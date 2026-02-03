@@ -1,10 +1,10 @@
-# Schritt 3: Abruf Access Token
+### Schritt 3: Abruf Access Token
 
 SMART Backend Services gelten, wie in der Einleitung beschrieben, als Systeme, die Interaktionen ohne menschliche Anwender durchführen. Diese Interaktionen sind nicht an ein spezifisches Benutzerprofil gekoppelt und erfolgen ohne Authentifizierung über einen Login. Durch die Hinterlegung von Schlüsselinformationen aus Schritt 2 sichert der Ressourcen-Server ein Vertrauensverhältnis zwischen Backend Service und Ressourcen-Server zu. Dies bedeutet, dass ein Client ohne weiteren Zwischenschritt ein Access Token für den Ressourcen-Server am Autorisierungsserver anfragen kann. Dies erfolgt per [RFC6749 - Abschnitt 4.4 Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4).
 
 ----
 
-## JWT Client Assertions
+#### JWT Client Assertions
 
 Bei der Generierung einer Client Assertion entsprechend der Vorgaben aus [SMART App Launch - 4.1.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) ist zu beachten, dass der "aud"-Parameter die URL des Autorisierungsservers enthält und nicht die des Ressourcenservers. Entsprechend der Vorgaben der Kernspezifikation DARF der "exp" NICHT länger als fünf Minuten gewählt werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-040}}). Der Autorisierungsserver MUSS für die sichere Authentifizierung des Clients die JWT Client Assertion validieren, siehe [SMART App Launch - 4.1.5.2.1 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#signature-verification) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-041}}).
 
@@ -12,13 +12,13 @@ Die Client Assertion ist nach der Signierung durch den Client als Teil eines ``a
 
 ----
 
-## Hinweise zu verwendeten Scopes
+#### Hinweise zu verwendeten Scopes
 
 Als Teil der Registierung des Clients SOLLTE festgelegt werden, welche Scopes der Client anfragen und verwenden darf. Da wäre des Token-Requests kein Benutzerkontext hergestellt werden kann, SOLLTEN nur "system"-Level Scopes verwendet werden. "Patient"- und "User"-Level Scopes KÖNNEN verwendet werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-042}}). Hier bedarf es jedoch einen proprietären Austausch des Kontexts zwischen dem Client und dem Autorisierungsserver. Falls Scopes durch den Client angefragt werden, die nicht durch die Registrierung des Clients abgedeckt sind, MUSS dies durch den Autorisierungsserver abgewiesen werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-043}}). Die erteilten Scopes MÜSSEN in der Antwort auf die Token-Annfrage als "scope"-Parameter durch den Autorisierungsserver an den Client übergeben werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-044}}).
 
 ----
 
-## Beispiel
+#### Beispiel
 
 Request:
 

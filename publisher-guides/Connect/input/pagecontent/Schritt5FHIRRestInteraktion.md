@@ -1,4 +1,4 @@
-# Schritt 5: FHIR Restful Interaktion
+### Schritt 5: FHIR Restful Interaktion
 
 Das erhaltene Access Token kann durch den Client am FHIR-Endpunkt des EHR oder eines Ressourcenservers eingelöst werden. Hierzu ist bei jeder RESTful Interaktion ein Authorization-Header mitzusenden. Das Token ist per [RFC6750 -  The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://datatracker.ietf.org/doc/html/rfc6750) zu kodieren.
 
@@ -10,7 +10,7 @@ Bei der Verarbeitung des Access Token sind die Anforderungen nach [SMART App Lau
 
 ----
 
-## Beispiel
+#### Beispiel
 
 ```
 GET /fhir/Patient

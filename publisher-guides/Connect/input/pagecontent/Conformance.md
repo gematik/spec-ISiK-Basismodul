@@ -1,7 +1,7 @@
-# Connect Festlegungen
+### Connect Festlegungen
 
 ---
-### Normativ
+##### Normativ
 ---
 
 Die verbindlichen Vorgaben von ISiK-Connect betreffen in ISiK Connect ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers:

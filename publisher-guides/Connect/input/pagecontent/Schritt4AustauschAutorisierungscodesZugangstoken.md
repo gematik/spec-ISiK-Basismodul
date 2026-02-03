@@ -1,14 +1,14 @@
-# Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken
+### Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken
 
 Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet, um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.
 
 ----
 
-## Authentifizierung der Clients
+#### Authentifizierung der Clients
 
 Confidential Clients MÜSSEN sich gegenüber dem "Token"-Endpunkt des Autorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten unterstützt werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-017}}):
 
-### JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
+##### JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
 
 Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu MÜSSEN folgende Schritte unterstützt werden:
 
@@ -34,13 +34,13 @@ Die verwendeten JSON Web Keys sollen regelmäßig gewechselt werden, um einem Sc
 
 3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART App Launch - 4.1.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2.2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) definierten Vorgaben und verwendet dies als "client_assertion".
 
-### HTTP Basic Authentication:
+##### HTTP Basic Authentication:
 
 Der Client tauscht während der Registrierung (siehe {{pagelink:ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistrierungClient.md, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem EHR aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" muss die Client Id verwendet werden. Als Passwort muss das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 
-## Austausch des Autorisierungscodes für ein Zugangstoken
+#### Austausch des Autorisierungscodes für ein Zugangstoken
 
 In Abschnitt [SMART App Launch - 2.1.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#obtain-access-token) werden alle notwendigen Parameter definiert, durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" unterstützt werden MÜSSEN ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-018}}). Ein id_token muss ausgestellt werden, wenn der Client einen "openid fhirUser" Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im EHR nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
 
@@ -50,7 +50,7 @@ Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikati
 
 ----
 
-## Beispiel
+#### Beispiel
 
 1. Generierung Public/Private Key:
 

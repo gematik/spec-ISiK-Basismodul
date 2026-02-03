@@ -1,4 +1,4 @@
-# Schritt 1: Registrierung eines SMART Clients mit dem EHR
+### Schritt 1: Registrierung eines SMART Clients mit dem EHR
 
 Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann, muss der Client beim Autorisierungsserver des EHR registriert werden. Per Abschnitt [SMART App Launch - 2.1.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-1-register) ist ihm freigestellt, wie diese Registrierung durchgeführt wird.
 
@@ -16,7 +16,7 @@ Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](ht
 
 ----
 
-## Beispiel
+#### Beispiel
 
 Folgender Request stellt beispielhaft dar, welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:
 

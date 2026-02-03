@@ -1,4 +1,4 @@
-# Schritt 2: App bittet um Autorisierung
+### Schritt 2: App bittet um Autorisierung
 
 Im nachfolgenden Schritt wird durch den Client an dem "authorize"-Endpunkt des Autorisierungsservers ein Autorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
@@ -6,7 +6,7 @@ Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_
 
 ----
 
-## EHR Launch
+#### EHR Launch
 
 Der EHR (KIS, Portal, etc.) MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-009}}). Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:ImplementationGuide/markdown/Kontext.md, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
@@ -14,13 +14,13 @@ Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Pa
 
 ----
 
-## Standalone Launch Sequence
+#### Standalone Launch Sequence
 
 Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-045}}). Beispielsweise kann, äquivalent zum EHR Launch, der Patienten- und/oder Kontakt/Fall-Kontext angefordert werden. Die Kodierung der Scopes ist im normativen Teil von ISiK-Connect auf der Seite {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:Scopes und Compartments}} beschrieben. 
 
 ----
 
-## Parameter Autorisierungsanfrage
+#### Parameter Autorisierungsanfrage
 
 Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-010}}). Insbesondere gilt dies für die Unterstützung von HTTP POST-basierten Autorisierungsanfragen und der Unterstützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
 
@@ -28,25 +28,25 @@ Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichen
 
 ----
 
-## TLS
+#### TLS
 
 Alle Autorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichbar sein. Im Echtbetrieb muss die Kommunikation ausschließlich per HTTPS erfolgen. Vorgaben zur einzusetzenden TLS Version, siehe [Sicherheitsaspekte](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest) ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-011}}).
 
 ----
 
-## Abruf SMART Configuration
+#### Abruf SMART Configuration
 
 Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR Endpunktes bekannt gegeben werden ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-012}}). Anschließend erfolgt eine Abfrage des ".well-known/smart-configuration" Dokumentes, welche durch den FHIR Endpunkt bereitgestellt werden MUSS ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-013}}). Vorgaben zum Format sind dem Abschnitt {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md, text:SMART Capabilities}} zu entnehmen. Hierdurch erhält der Client dynamisch die Adresse des Autorisierungsservers inkl. "authorize" und "token" Endpunkt. Falls durch das bestätigungsrelevante System OAuth 2.0 Endpunkte optional über das CapabilityStatement des FHIR-Endpunktes zur Verfügung gestellt werden, MÜSSEN diese Inhalte identisch zu den Inhalten des ".well-known/smart-configuration" Dokumentes sein ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-014}}).
 
 ----
 
-## Hinweise zu Identity Scopes
+#### Hinweise zu Identity Scopes
 
 Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. EHR MÜSSEN die Vorgaben nach [2.2.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2.2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen ({{pagelink:ImplementationGuide/markdown/Anforderungsuebersicht.md, text:ANF-CON-015}}). Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden.  
 
 ----
 
-## Hinweise zu Access Scopes
+#### Hinweise zu Access Scopes
 
 Innerhalb des Scope Parameters, welcher als Teil der Autorisierungsanfrage versendet wird, kann der Client dem Server mitteilen, welche Scopes zur korrekten Ausführung notwendig sind, d.h. welche FHIR-Restful Interaktionen vom Client benötigt werden. Diese Scopes repräsentieren die Menge aller Scopes, welche durch den Client gewünscht werden, jedoch nicht notwendigerweise durch den Server unterstüzt und/oder erlaubt werden. Es steht dem Autorisierungsserver frei diese Scopes einzuschränken, falls der Client für die Anforderung der Scopes nicht berechtigt ist. Weitere Details zur Syntax der Access Scopes siehe {{pagelink:ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md, text:Scopes und Compartments}}.
 
@@ -57,7 +57,7 @@ Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client
 
 ----
 
-## Beispiel
+#### Beispiel
 
 POST /authorize HTTP/1.1<br>
 Content-Type: application/x-www-form-urlencoded<br>
