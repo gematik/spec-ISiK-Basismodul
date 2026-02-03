@@ -422,7 +422,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Download Build Marker
+        uses: actions/download-artifact@v7
+        with:
+          name: build-ran-${{ matrix.ig_name }}
+          path: build-markers
+        continue-on-error: true
+
+      - name: Check Build Marker
+        id: marker
+        shell: bash
+        run: |
+          if [ -f "build-markers/${{ matrix.ig_name }}.txt" ]; then
+            echo "has_marker=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_marker=false" >> "$GITHUB_OUTPUT"
+            echo "No build marker for ${IG_NAME}; skipping publish."
+          fi
+
       - name: Download Build Results
+        if: steps.marker.outputs.has_marker == 'true'
         uses: actions/download-artifact@v4
         with:
           name: fhir-ig-${{ matrix.ig_name }}
@@ -438,6 +457,7 @@ jobs:
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           IG_NAME: ${{ matrix.ig_name }}
           IG_PUBLISHER_DIR: publish-output/${{ matrix.ig_name }}
+        if: steps.marker.outputs.has_marker == 'true'
         run: |
           if [ ! -d "${IG_PUBLISHER_DIR}" ] || [ -z "$(ls -A "${IG_PUBLISHER_DIR}")" ]; then
             echo "No build output found for ${IG_NAME}; skipping publish."
