@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Download dependencies via FHIR Package Tool using sushi-config.yaml from Resources
       - name: Download Dependencies
@@ -76,7 +76,7 @@ jobs:
 
       # Upload fsh-generated output for use by build jobs
       - name: Upload FSH Generated Resources
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -84,7 +84,7 @@ jobs:
 
       # Upload FHIR package cache for use by build jobs
       - name: Upload FHIR Package Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -137,11 +137,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Download the FHIR package cache from prepare job
       - name: Download FHIR Package Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -158,7 +158,7 @@ jobs:
 
       # Download the fsh-generated artifact from prepare job
       - name: Download FSH Generated Resources
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -170,7 +170,7 @@ jobs:
 
       # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
       - name: Upload SUSHI-generated ImplementationGuide
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sushi-generated-ig-${{ matrix.ig_name }}
           # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
@@ -211,7 +211,7 @@ jobs:
 
       # Upload expanded resources for commit (always, not only when build runs)
       - name: Upload Expanded Resources
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: expanded-resources-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
@@ -228,7 +228,7 @@ jobs:
       # Upload the IG build output as an artifact
       - name: Upload Build Results
         if: steps.check_changes.outputs.has_changes == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: fhir-ig-${{ matrix.ig_name }}
           path: |
@@ -256,7 +256,7 @@ jobs:
 
       - name: Upload IG URL metadata
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ig-url-${{ matrix.ig_name }}
           path: ${{ github.workspace }}/.ig-urls-temp/urls.txt
@@ -270,21 +270,21 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # Download SUSHI-generated ImplementationGuides (only)
       - name: Download SUSHI-generated ImplementationGuides
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: sushi-generated-ig-*
           path: artifacts
 
       # Download expanded resources from build jobs (these are required)
       - name: Download Expanded Resources
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: expanded-resources-*
           path: artifacts
@@ -302,7 +302,7 @@ jobs:
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
         if: github.event_name == 'pull_request'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: ig-url-*
           path: ig-urls
@@ -311,7 +311,7 @@ jobs:
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         with:
