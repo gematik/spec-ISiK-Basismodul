@@ -321,6 +321,7 @@ jobs:
         with:
           pattern: sushi-generated-ig-*
           path: artifacts/sushi-generated-ig
+          merge-multiple: true
 
       # Download expanded resources from build jobs (these are required)
       - name: Download Expanded Resources
@@ -328,18 +329,21 @@ jobs:
         with:
           pattern: expanded-resources-*
           path: artifacts/expanded-resources
+          merge-multiple: true
 
       - name: Download Input Includes
         uses: actions/download-artifact@v7
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
+          merge-multiple: true
 
       - name: Download Input Pagecontent
         uses: actions/download-artifact@v7
         with:
           pattern: input-pagecontent-*
           path: artifacts/input-pagecontent
+          merge-multiple: true
 
       # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
       - name: Copy SUSHI-generated IGs and Expanded Resources
