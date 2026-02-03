@@ -12,6 +12,8 @@ Die Verwendung der genannten Ressourcen in diesem Modul bedeutet: Wenn ein Profi
 
 #### Akteure
 
+Das CapabilityStatement mit der Kennzeichnung “Expanded” dient der direkten Übersicht aller zu implementierender Interaktionen und Profile.
+
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Akteur" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
 
