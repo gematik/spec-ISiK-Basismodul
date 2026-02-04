@@ -61,9 +61,8 @@ Folgende Alternativen zur Erbringung eines Identitätsnachweises können schemat
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="identitaetsnachweis-bpmn.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+        <img src="identitaetsnachweis-bpmn.png" alt="9. Abfrage von (vereinbarten) Terminen" style="width: 100%;">
     </div>
-   
 </figure>
 
 Insbesondere für die Verifizierung des Patienten im Laufe der Registrierung im Patientenportal soll hier ein Workflow vorgestellt werden, der einem künftigen Happy Path zur Terminbuchung samt Datenaustausch über eine validierte Patienten-Identität und zugehöriger Daten (in Portal und KIS) entspricht. 

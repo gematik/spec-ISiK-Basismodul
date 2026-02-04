@@ -38,7 +38,7 @@ Als Termin-Requestor (in Anlehnung an die IHE Terminologie auch als Termin Sourc
 
 **Definition:**
 
-Als Termin-Consumer werden alle System definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt über keine permanente Persistierung der abgefragten Informationen. Durch den Termin-Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der anderen Akteure.
+Als Termin-Consumer werden alle Systeme definiert, die Termininformationen abfragen, um diese einem Benutzer zu präsentieren. Ein Termin-Consumer verfügt über keine permanente Persistierung der abgefragten Informationen. Durch den Termin-Consumer erfolgt explizit nur die Aufbereitung und Präsentation der Termininformationen. Eine anderweitige Verarbeitung der Termininformationen fällt in die Kategorie der anderen Akteure.
 
 **Beispielsysteme:**
 

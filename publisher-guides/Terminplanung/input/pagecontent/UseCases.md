@@ -2,8 +2,8 @@
 topic: UseCases
 ---
 
-Das Modul Terminplanung umfasst die Datenobjekte die notwendig sind, um eine Abfrage für eine Behandlungsleistung inkl. anschließender Terminvereinbarung durchzuführen. 
-Die Terminvereinbarung ist durchführbar durch die Patientinnen und Patienten oder deren vorgelagerten Leistungserbringern.
+Das Modul Terminplanung umfasst die Datenobjekte, die notwendig sind, um eine Abfrage für eine Behandlungsleistung inkl. anschließender Terminvereinbarung durchzuführen. 
+Die Terminvereinbarung kann durch die Patienten oder durch die für sie zuständigen Leistungserbringer erfolgen.
 
 Dies umfasst:
 
