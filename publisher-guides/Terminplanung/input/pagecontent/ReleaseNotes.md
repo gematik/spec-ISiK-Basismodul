@@ -1,6 +1,13 @@
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+
+### Version 6.0.0-rc
+
+Datum: tbd.
+
+* `documentation` Initiale Anpassung der IG-Struktur auf Basis des IG Publishers für ISiK-Basis Stufe 6
+
 ### Version 5.1.1
 
 Datum: 17.12.2025
