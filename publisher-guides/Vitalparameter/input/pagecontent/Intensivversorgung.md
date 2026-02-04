@@ -1,4 +1,3 @@
-### Überleitung Intensivversorgung im Krankenhaus
 
 Ein Kontext, der durch eine Schnittstelle zur Übermittlung von Vitalparametern insbesondere unterstützt werden soll, betrifft den
 Übergang zwischen Akut- und Normalversorgung. 
