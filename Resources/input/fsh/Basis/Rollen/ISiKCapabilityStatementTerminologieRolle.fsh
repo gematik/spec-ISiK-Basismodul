@@ -3,11 +3,11 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminologieRolle"
-* name = "ISiKCapabilityISiKCapabilityStatementTerminologieRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;"
+* name = "ISiKCapabilityStatementTerminologieRolle"
+* title = "CapabilityStatement für Rolle ISiKCapabilityStatementTerminologieRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
-CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementTerminologieRolle&quot;.
+CapabilityStatement für die Rolle ISiKCapabilityStatementTerminologieRolle.
 Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von Terminologie-Ressourcen.
 "
 * rest

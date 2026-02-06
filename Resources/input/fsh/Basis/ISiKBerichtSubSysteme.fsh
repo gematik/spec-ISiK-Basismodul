@@ -158,9 +158,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   z.B. in einer Patientenakte, und KANN der schnellen Auffindbarkeit 
   eines gesuchten Dokumentes dienen. 
   Geeignete Bezeichnungen sind zum Beispiel:  
-* &quot;Kleines Blutbild vom 13.10.2020&quot;
-* &quot;Pathologiebefund (Abstrich) vom 13.10.2020&quot;
-* &quot;Blutgasmessung vom 13.10.2020 14:14h&quot;"
+* 'Kleines Blutbild vom 13.10.2020'
+* 'Pathologiebefund (Abstrich) vom 13.10.2020'
+* 'Blutgasmessung vom 13.10.2020 14:14h'"
 * section 1.. MS
   * ^short = "Kapitel"
   * ^comment = "Das Dokument kann in mehrere Kapitel und Unterkapitel gegliedert werden."
