@@ -10,5 +10,10 @@ Weitere Informationen zum Use-Case AMTS sind dem [AMTS Implementierungsleitfaden
 
 **Use Case Digramm**
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/usecases.svg" alt="Use Case Diagrams" width="90%"/>
 
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="usecases.svg" aalt="Use Case Diagrams" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Generische Fall Abbildung </figcaption>
+</figure>
