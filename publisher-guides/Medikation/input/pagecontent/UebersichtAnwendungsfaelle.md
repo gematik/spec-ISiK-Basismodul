@@ -13,7 +13,6 @@ Weitere Informationen zum Use-Case AMTS sind dem [AMTS Implementierungsleitfaden
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="usecases.svg" aalt="Use Case Diagrams" style="width: 100%;">
+        <img src="usecases.svg" alt="Use Case Diagrams" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Generische Fall Abbildung </figcaption>
 </figure>

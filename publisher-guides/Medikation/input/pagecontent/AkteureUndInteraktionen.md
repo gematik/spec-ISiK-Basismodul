@@ -21,4 +21,10 @@ Die Interaktionen sind somit in allen drei Bereichen äquivalent:
 
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/Interaktionen.svg" class="center" alt="Interaktionen" width="100%"/>
 
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Interaktionen.svg" alt="Interaktionen" style="width: 100%;">
+    </div>
+</figure>
+
 Zum AMTS-Akteur siehe den entsprechenden Abschnitt unter Use Cases.
