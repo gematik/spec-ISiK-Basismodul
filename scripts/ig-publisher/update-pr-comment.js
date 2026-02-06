@@ -13,17 +13,28 @@ module.exports = async function run({ github, context, core, branch }) {
 
   try {
     if (fs.existsSync(igUrlsDir)) {
+      const directUrlFile = path.join(igUrlsDir, 'urls.txt');
+      const urlFiles = [];
+
+      if (fs.existsSync(directUrlFile)) {
+        urlFiles.push(directUrlFile);
+      }
+
       const artifacts = fs.readdirSync(igUrlsDir);
       for (const artifact of artifacts) {
         const urlFile = path.join(igUrlsDir, artifact, 'urls.txt');
         if (fs.existsSync(urlFile)) {
-          const content = fs.readFileSync(urlFile, 'utf8');
-          const lines = content.trim().split('\n');
-          for (const line of lines) {
-            const [igName, url] = line.split('|');
-            if (igName && url) {
-              igUrls.push({ name: igName.trim(), url: url.trim() });
-            }
+          urlFiles.push(urlFile);
+        }
+      }
+
+      for (const urlFile of urlFiles) {
+        const content = fs.readFileSync(urlFile, 'utf8');
+        const lines = content.trim().split('\n');
+        for (const line of lines) {
+          const [igName, url] = line.split('|');
+          if (igName && url) {
+            igUrls.push({ name: igName.trim(), url: url.trim() });
           }
         }
       }
