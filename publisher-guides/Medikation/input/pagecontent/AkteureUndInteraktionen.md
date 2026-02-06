@@ -5,9 +5,9 @@ In Anlehnung an IHE HMW werden im Folgenden diese Rollen mithilfe der Definition
 
 Hierbei wird wiederum unterschieden zwischen den folgenden drei Bereichen:
 
-* **Medication Summary (Medikationsinformationen, "Medikationspläne"):** Bildet den Medikationsstatus eines Patienten ab, z.B. Informationen über Dauermedikation oder Selbstmedikation. In diesem Kontext wird häufig noch eine Liste verwendet, in der die einzelnen Medikationsinformationen strukturiert sind - siehe {{pagelink: ISiKCapabilityStatementMedikationInformationAkteur, text: Capability Statement}}.
-* **Medication Order (Medikations-Verordnungen):** Informationen über die Verordnung von Medikamenten im Rahmen des medizinischen Workflows - {{pagelink: ISiKCapabilityStatementMedikationVerordnungAkteur, text: Capability Statement}}.
-* **Administered Medication (Medikations-Verabreichungen):** Informationen über die (erfolgte) Verabreichung bzw. Einnahme von Medikamenten im Rahmen des medizinischen Workflows - {{pagelink: ISiKCapabilityStatementMedikationVerabreichungAkteur, text: Capability Statement}}.
+* **Medication Summary (Medikationsinformationen, "Medikationspläne"):** Bildet den Medikationsstatus eines Patienten ab, z.B. Informationen über Dauermedikation oder Selbstmedikation. In diesem Kontext wird häufig noch eine Liste verwendet, in der die einzelnen Medikationsinformationen strukturiert sind - siehe [Capability Statement](CapabilityStatement-ISiKCapabilityStatementMedikationInformationAkteur-expanded.html).
+* **Medication Order (Medikations-Verordnungen):** Informationen über die Verordnung von Medikamenten im Rahmen des medizinischen Workflows - [Capability Statement](CapabilityStatement-ISiKCapabilityStatementMedikationVerordnungAkteur-expanded.html).
+* **Administered Medication (Medikations-Verabreichungen):** Informationen über die (erfolgte) Verabreichung bzw. Einnahme von Medikamenten im Rahmen des medizinischen Workflows - [Capability Statement](CapabilityStatement-ISiKCapabilityStatementMedikationVerabreichungAkteur-expanded.html).
 
 Für jeden dieser Bereiche wurden jeweils drei Systemrollen identifiziert, die in einem oder mehreren Systemen implementiert sein können:
 
