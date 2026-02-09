@@ -18,11 +18,14 @@ echo "input/resources directories:"
 find publisher-guides -type d -path "*/input/resources" -exec ls -la {} \; 2>/dev/null | head -20 || echo "No input/resources directories"
 echo ""
 
-echo "=== Staging publisher-guides/*/fsh-generated ==="
-git add publisher-guides/*/fsh-generated || true
+echo "=== Staging publisher-guides/*/fsh-generated/resources ==="
+git add publisher-guides/*/fsh-generated/resources || true
 
-echo "=== Staging publisher-guides/*/input/resources ==="
-git add publisher-guides/*/input/resources || true
+echo "=== Staging publisher-guides/*/fsh-generated/includes/menu.xml ==="
+git add publisher-guides/*/fsh-generated/includes/menu.xml || true
+
+echo "=== Staging publisher-guides/*/input ==="
+git add publisher-guides/*/input || true
 
 echo "=== Staged changes ==="
 git diff --name-only --cached || true
