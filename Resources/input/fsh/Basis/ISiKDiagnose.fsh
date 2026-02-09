@@ -30,7 +30,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * extension[related]
   * ^short = "Verknüpfte Diagnose"
   * ^comment = " Die Deutschen Kodierrichtlinien und die 'German Modification' ermöglichen es teilweise, 
-  ICD-10-Codierte Diagnosen miteinander zu verknüpfen (&quot;Kreuz-Stern-Ausrufezeichen-Notation&quot;), 
+  ICD-10-Codierte Diagnosen miteinander zu verknüpfen ('Kreuz-Stern-Ausrufezeichen-Notation'), 
   diese aber dennoch wie eigenständige Diagnosen (mit jeweils eigener Diagnosesicherheit oder -Lokalisation) zu kommunizieren.
   Daher ist es in Deutschland nicht möglich, dem internationalen Usus zu folgen und verknüpfte Diagnosen als postkoordinierten Code *einer* Condition-Ressource aufzufassen.
   Statt dessen müssen sie zwei eigenständige Condition-Ressourcen abgebildet werden, die mit Hilfe der `related`-Extension miteinander verknüpft werden.  

@@ -69,6 +69,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 Instance: ISiKValueSetExample
 InstanceOf: ISiKValueSet
+Description: "Beispiel-ValueSet zur Demonstration des ISiKValueSet-Profils."
+Title: "ISiK ValueSet Beispiel"
 Usage: #example
 * url = "http://example.org/fhir/ValueSet/TestValueSet"
 * version = "2.0.2"
