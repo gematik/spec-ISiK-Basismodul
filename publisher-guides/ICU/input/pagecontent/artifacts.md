@@ -1,3 +1,7 @@
+---
+topic: ImplementationGuide-markdown-Artifacts
+---
+
 Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.
 
 ### CapabilityStatements
@@ -27,7 +31,6 @@ Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten fes
 
 {% include artifacts-table-generator.html resourceType="ValueSet" %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
-
 
 #### Code Systems
 
