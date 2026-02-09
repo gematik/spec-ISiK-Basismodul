@@ -22,8 +22,9 @@ Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-001** als BPMN-
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Abfrage-aus-ICU.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Normalstation" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung: Nachträgliche Blutdruck-Abfrage aus Normalstation</figcaption>
+    <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Normalstation</figcaption>
 </figure>
+
 
 **Hinweis:** hier agiert das KIS als Client. 
 
@@ -34,7 +35,7 @@ Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-002** als BPMN-
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Abfrage-aus-Normal.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Intensivstation" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung: Nachträgliche Blutdruck-Abfrage aus Intensivstation</figcaption>
+    <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Intensivstation</figcaption>
 </figure>
 
 
@@ -46,7 +47,7 @@ Denkbar sind auch Workflows, bei denen erhobene Daten aus einem System vor der V
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Uebermittlung-an-ICU.PNG" alt="Vorgelagerte Übermittlung an Intensivstation" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung: Vorgelagerte Übermittlung an Intensivstation</figcaption>
+    <figcaption>Abbildung: Vorgelagerte Übermittlung an Intensivstation</figcaption>
 </figure>
 
 Eine Abfrage per HTTP GET allein reicht nicht aus, um die benötigten Daten rechtzeitig zu übermitteln. Stattdessen muss eine Vorab-Übermittlung durch einen anderen Mechanismus erfolgen. Sobald diese angestoßen wurde, kann das PDMS die vollständigen Daten per GET abrufen. An dieser Stelle werden keine weiteren Festlegungen zur vorgelagerten Übermittlung der  Daten erhoben und es wird keine direkte Schreiboperation auf FHIR-Basis des KIS im PDMS für diesen Fall gefordert. Die Vorab-Übermittlung könnte durch verschiedene Mechanismen unterstützt werden:
