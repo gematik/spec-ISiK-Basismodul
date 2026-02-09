@@ -226,7 +226,7 @@ jobs:
         id: check_changes
         shell: bash
         env:
-          FORCE_BUILD: ${{ github.event.inputs.force_build }}
+          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/check-changes.sh
 
