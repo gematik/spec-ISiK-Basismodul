@@ -26,14 +26,14 @@ Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische 
 * Profile: Profile MI-I
 * Interaction: READ, SEARCH
 
-Zur genauen Liste der Interaktionen siehe {{pagelink:ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur,text:CapabilityStatement-Minimal-ICU}}. 
+Zur genauen Liste der Interaktionen siehe [CapabilityStatement-Minimal-ICU](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur-expanded.html). 
 
 #### Akteur - VitalSign ICU Source Extended
 
 Profile: Profile MI-I
 Interaction: READ, SEARCH
 
-Zur genauen Beschreibung und Liste der Interaktionen siehe  {{pagelink:ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur, text:CapabilityStatement-Extended-ICU}}.
+Zur genauen Beschreibung und Liste der Interaktionen siehe [CapabilityStatement-Extended-ICU](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html).
 
 #### Erklärung zu weiteren Capability Statements
 
@@ -45,13 +45,13 @@ Eine Festlegung zur Implementierung erfolgt im Rahmen der Definition der bestät
 
 <!-- ANF-ICU-001 -->
 Basis-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
-- [Akteur - VitalSign ICU Source Minimal](https://simplifier.net/isik-stufe-5/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur/~json) 
+- [Akteur - VitalSign ICU Source Minimal](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur-expanded.html) 
 
 
 
 <!-- ANF-ICU-002 -->
 Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
-- [Akteur - VitalSign ICU Source Extended](https://simplifier.net/isik-stufe-5/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur/~json)
+- [Akteur - VitalSign ICU Source Extended]((CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html)
 
 Primär hervorzuheben sind entsprechend der Definition der DKG dabei.
 
