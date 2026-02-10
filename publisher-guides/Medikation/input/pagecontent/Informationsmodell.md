@@ -1,0 +1,9 @@
+
+
+**Vereinfachtes Informationsmodell**
+
+Das ursprüngliche Informationsmodell (ohne Berücksichtigung des AMTS-Use-Cases).  
+
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/simple_infomodel.svg" alt="Vereinfachtes Informationsmodell" width="90%"/>
+
+

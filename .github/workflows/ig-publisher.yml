@@ -26,6 +26,11 @@ on:
   # Run on pull request events only
   pull_request:
 
+  # Run on pushes to main release branches
+  push:
+    branches:
+      - main-stufe-*
+
   # Allow manual triggering for production builds or testing
   workflow_dispatch:
     inputs:
@@ -101,7 +106,7 @@ jobs:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
     strategy:
       matrix:
-        include:
+        include: &ig_matrix
           # ig_name: Name of the IG (used for artifact names and publishing)
           # ig_dir: Directory of the IG within publisher-guides
           # capability_statement_urls: List of CapabilityStatement URLs to expand (YAML list)
@@ -115,14 +120,32 @@ jobs:
           #         - https://example.com/CS1
           #         - https://example.com/CS2
           #         - https://example.com/CS3
+
+          - ig_name: ISiK-Medikation
+            ig_dir: publisher-guides/Medikation
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungAkteur
+
           - ig_name: ISiK-Basis
             ig_dir: publisher-guides/Basis
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+
           - ig_name: ISiK-Vitalparameter
             ig_dir: publisher-guides/Vitalparameter
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
+
+
+          # - ig_name: ICU
+          #   ig_dir: publisher-guides/ICU
+          #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+
           - ig_name: ISiK-Subscriptions
             ig_dir: publisher-guides/Subscription
             capability_statement_urls:
@@ -132,6 +155,7 @@ jobs:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
           #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
           #   import_cps_filter: SHOULD
@@ -167,24 +191,11 @@ jobs:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
 
-      # generate Implementationguide resource & menu
-      - name: Run SUSHI (IG local)
-        run: |
-          sushi ${{ env.IG_PUBLISHER_DIR }}      
-
-      # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
-      - name: Upload SUSHI-generated ImplementationGuide
-        uses: actions/upload-artifact@v6
-        with:
-          name: sushi-generated-ig-${{ matrix.ig_name }}
-          # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
-          path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
-          retention-days: 1
-
       # Expand CapabilityStatement(s) and copy referenced resources to IG Publisher input directory
       # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
         uses: Gefyra/capabilityStatement-expander@v0
+        if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
         with:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
@@ -198,12 +209,31 @@ jobs:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/common-files/copy-config-files.sh
 
+      # generate Implementationguide resource & menu (after inputs are ready)
+      - name: Run SUSHI (IG local)
+        run: |
+          sushi ${{ env.IG_PUBLISHER_DIR }}
+
+      # Upload SUSHI-generated ImplementationGuide(s) so the commit job can persist them
+      - name: Write IG dir metadata (SUSHI)
+        shell: bash
+        run: |
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/fsh-generated/ig-dir.txt"
+
+      - name: Upload SUSHI-generated ImplementationGuide
+        uses: actions/upload-artifact@v6
+        with:
+          name: sushi-generated-ig-${{ matrix.ig_name }}
+          # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
+          path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
+          retention-days: 1
+
       # Check if there are changes that warrant rebuilding this IG
       - name: Check for input changes
         id: check_changes
         shell: bash
         env:
-          FORCE_BUILD: ${{ github.event.inputs.force_build }}
+          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/check-changes.sh
 
@@ -213,12 +243,63 @@ jobs:
         run: |
           igpublisher -ig ${{ env.IG_PUBLISHER_DIR }}/ig.ini
 
+      - name: Mark Build Ran
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          mkdir -p build-markers
+          echo "${{ matrix.ig_name }}" > "build-markers/${{ matrix.ig_name }}.txt"
+
+      - name: Upload Build Marker
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: actions/upload-artifact@v6
+        with:
+          name: build-ran-${{ matrix.ig_name }}
+          path: build-markers/${{ matrix.ig_name }}.txt
+          retention-days: 1
+
       # Upload expanded resources for commit (always, not only when build runs)
+      - name: Write IG dir metadata (expanded resources)
+        shell: bash
+        run: |
+          mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
+          echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/ig-dir.txt"
+
       - name: Upload Expanded Resources
         uses: actions/upload-artifact@v6
         with:
           name: expanded-resources-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Write IG dir metadata (input includes)
+        shell: bash
+        run: |
+          if [ -d "${IG_PUBLISHER_DIR}/input/includes" ]; then
+            echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/includes/ig-dir.txt"
+          fi
+
+      - name: Upload Input Includes
+        uses: actions/upload-artifact@v6
+        with:
+          name: input-includes-${{ matrix.ig_name }}
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/includes
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Write IG dir metadata (input pagecontent)
+        shell: bash
+        run: |
+          if [ -d "${IG_PUBLISHER_DIR}/input/pagecontent" ]; then
+            echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/pagecontent/ig-dir.txt"
+          fi
+
+      - name: Upload Input Pagecontent
+        uses: actions/upload-artifact@v6
+        with:
+          name: input-pagecontent-${{ matrix.ig_name }}
+          path: ${{ env.IG_PUBLISHER_DIR }}/input/pagecontent
           retention-days: 1
           if-no-files-found: warn
 
@@ -238,28 +319,15 @@ jobs:
           path: |
             ${{ env.IG_PUBLISHER_DIR }}/output
 
-      # Publish the IG output to a branch-specific directory on gh-pages
-      - name: Publish branch output to GitHub Pages
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
-        shell: bash
-        env:
-          REPO: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_AUTHOR_NAME: github-actions[bot]
-          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-          IG_NAME: ${{ matrix.ig_name }}
-        run: bash scripts/ig-publisher/publish-branch.sh
-
       - name: Announce published URL
         id: announce_url
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         env:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/announce-url.sh
 
       - name: Upload IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: ig-url-${{ matrix.ig_name }}
@@ -269,8 +337,9 @@ jobs:
 
   # Commit all expanded resources in one go
   commit:
-    needs: build
+    needs: [build, publish_gate]
     runs-on: ubuntu-latest
+    if: needs.publish_gate.outputs.should_publish == 'true'
 
     steps:
       - name: Checkout
@@ -284,14 +353,26 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           pattern: sushi-generated-ig-*
-          path: artifacts
+          path: artifacts/sushi-generated-ig
 
       # Download expanded resources from build jobs (these are required)
       - name: Download Expanded Resources
         uses: actions/download-artifact@v7
         with:
           pattern: expanded-resources-*
-          path: artifacts
+          path: artifacts/expanded-resources
+
+      - name: Download Input Includes
+        uses: actions/download-artifact@v7
+        with:
+          pattern: input-includes-*
+          path: artifacts/input-includes
+
+      - name: Download Input Pagecontent
+        uses: actions/download-artifact@v7
+        with:
+          pattern: input-pagecontent-*
+          path: artifacts/input-pagecontent
 
       # Copy SUSHI-generated ImplementationGuides and expanded resources to their respective directories
       - name: Copy SUSHI-generated IGs and Expanded Resources
@@ -305,12 +386,16 @@ jobs:
 
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/download-artifact@v7
         with:
           pattern: ig-url-*
           path: ig-urls
         continue-on-error: true
+
+      - name: Write IG URL summary
+        env:
+          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+        run: node scripts/ig-publisher/write-summary.js
 
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
@@ -322,3 +407,63 @@ jobs:
           script: |
             const run = require('./scripts/ig-publisher/update-pr-comment');
             await run({ github, context, core, branch: process.env.BRANCH_NAME });
+
+  publish_gate:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    outputs:
+      should_publish: ${{ steps.publish_check.outputs.should_publish }}
+    steps:
+      - name: Download build markers
+        id: download_markers
+        uses: actions/download-artifact@v4
+        with:
+          pattern: build-ran-*
+          path: build-markers
+          merge-multiple: true
+        continue-on-error: true
+
+      - name: Decide whether to publish
+        id: publish_check
+        shell: bash
+        run: |
+          if [ -d build-markers ] && [ -n "$(ls -A build-markers 2>/dev/null)" ]; then
+            echo "Build markers found:"
+            ls -1 build-markers | sed 's/\.txt$//' || true
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+            echo "Publish gate: yes (at least one IG build ran)"
+          else
+            echo "No build markers found."
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+            echo "Publish gate: no (no IG build ran)"
+          fi
+
+  publish:
+    needs: [build, publish_gate]
+    runs-on: ubuntu-latest
+    if: needs.publish_gate.outputs.should_publish == 'true' && (github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    concurrency:
+      group: gh-pages-publish
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Build Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fhir-ig-*
+          path: publish-output
+        continue-on-error: true
+
+      - name: Publish branch output to GitHub Pages
+        shell: bash
+        env:
+          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          PUBLISH_OUTPUT_DIR="publish-output" bash scripts/ig-publisher/publish-branch.sh
