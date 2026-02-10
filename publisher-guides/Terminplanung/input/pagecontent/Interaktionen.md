@@ -4,14 +4,21 @@ topic: Interaktionen
 
 Für folgende Interaktionen werden im vorliegenden Implementierungsleitfaden Vorgaben für die Umsetzung innerhalb der ISiK-Schnittstelle definiert:
 
+* Übermittlung von Patienteninformationen
+* Verfügbare Behandlungsleistungen abrufen
+* Verfügbare Terminlisten abrufen 
+* Abfrage von (verfügbaren) Terminblöcken 
+* Termin neu buchen (Buchungsmanagement von verfügbaren Terminen) 
+* Termin absagen (ausgehend vom Client) 
+* Termin verschieben (ausgehend vom Client) 
+* Terminzusatzinformationen aktualisieren (ausgehend vom Client)
 
-| Akteure             | Transaktionen                                                                                                                   | Festlegungsstatus |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------|
-| **Termin-Repository** | - Übermittlung von Patienteninformationen <br> - Verfügbare Behandlungsleistungen abrufen <br> - Verfügbare Terminlisten abrufen <br> - Abfrage von (verfügbaren) Terminblöcken <br> - Termin neu buchen (Buchungsmanagement von verfügbaren Terminen) <br> - Termin absagen (ausgehend vom Client) <br> - Termin verschieben (ausgehend vom Client) <br> - Terminzusatzinformationen aktualisieren (ausgehend vom Client) | Verplichtend           |
-| **Termin-Requestor**  | - Übermittlung von Patienteninformationen <br> - Verfügbare Behandlungsleistungen abrufen <br> - Verfügbare Terminlisten abrufen <br> - Abfrage von (verfügbaren) Terminblöcken <br> - Termin neu buchen (Buchungsmanagement von verfügbaren Terminen) <br> - Termin absagen (ausgehend vom Client) <br> - Termin verschieben (ausgehend vom Client) <br> - Terminzusatzinformationen aktualisieren (ausgehend vom Client) | Optional           |
-| **Termin-Consumer**   | - Abfrage von (vereinbarten) Terminen                                                                                      | Optional           |
+Nähere Informationen zur technischen Festlegung der oben genannten Interaktionen sind hier zu finden:
 
-Zudem kann die Situation eintreten, dass ein System die Aufgaben eines Termin-Repositories übernimmt, jedoch kein terminführendes System ist (z. B. ein Patientenportal) und die Termine mit einem weiteren Termin-Repository synchronisiert (z. B. KIS). In diesem Fall übernimmt das System, welches Termine an das terminführende System sendet, die Rolle eines Termin-Requestors. Diese Option steht einem Termin-Repository offen, falls es für bestimmte Use Cases notwendig ist; jedoch ist dies nicht verpflichtend für die Rolle des Termin-Repositories.
+* [Book-Operation](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html)
+* [CapabilityStatement Termin-Repository Akteur](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html)
+
+Die folgenden Diagramme verdeutlichen das Zusammenspiel der Akteure in Bezug auf die oben genannten Interaktionen:
 
 ---
 
@@ -40,7 +47,7 @@ Siehe  [Anlage einer Patient-Ressource](Operations.md) für die technische Umset
 
 Als Einstiegspunkt in die Terminvereinbarung können durch den Termin-Requestor alle verfügbaren Behandlungsleistungen (HealthcareServices) abgerufen werden, für die das Termin-Repository Informationen zu notwendigen Ressourcen (Räume, Personen, Geräte, etc.) bereitstellt.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_MedizinischeBehandlungseinheit/Interaktionen.page.md, text: ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen}} für die technische Umsetzung. Es sind die Hinweise zum Abruf der ValueSets für die Kodierung der Medizinischen Behandlungseinheit zu beachten.
+Siehe [ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html#HealthcareService1-8) für die technische Umsetzung. Es sind die Hinweise zum Abruf der ValueSets für die Kodierung der Medizinischen Behandlungseinheit zu beachten.
 
 ---
 

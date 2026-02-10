@@ -13,7 +13,7 @@ Dies umfasst:
 - Benachrichtigungen bei Terminänderungen
 - Anlage eines neues Patienten im KIS
 
-Eine grafische Übersicht über die Use Cases und ihre Zusammenhänge bietet folgendes Diagramm:
+Eine grafische Übersicht über mögliche Use Cases und ihre Zusammenhänge bietet folgendes Diagramm:
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
