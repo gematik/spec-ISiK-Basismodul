@@ -60,7 +60,7 @@ Siehe [ISiKMedizinischeBehandlungseinheit (HealthcareService) - Interaktionen](C
 
 Der Termin-Requestor kann nach der Auswahl einer Behandlungsleistung verfügbare Terminlisten (Schedules) für diese im Termin-Repository abrufen. Die Terminlisten repräsentieren somit den "Kalender", in dem Termine gebucht werden können.
 
-Siehe {{pagelink: guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalender/Interaktionen.page.md, text: ISiKKalender (Schedule) - Interaktionen}} für die technische Umsetzung.
+Siehe [ISiKKalender (Schedule) - Interaktionen](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html#Schedule1-5) für die technische Umsetzung.
 
 ---
 
@@ -73,7 +73,7 @@ Siehe {{pagelink: guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Kalen
 
 Für einen jeweiligen Kalender kann der Termin-Requestor die darin definierten Terminblöcke abfragen. Diese können entsprechend eines Zeitraums und/oder Status (verfügbar, belegt) gefiltert werden.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Terminblock/Interaktionen.page.md, text: ISiKTerminblock (Slot) - Interaktionen}} für die technische Umsetzung.
+Siehe [ISiKTerminblock (Slot) - Interaktionen](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html#Slot1-6) für die technische Umsetzung.
 
 ---
 
@@ -92,7 +92,7 @@ In diesem Kontext kann das Termin-Repository zudem Zusatzinformationen (z.B. Lag
 
 Die Buchung eines Termins kann auch eine Aktualisierung eines Termins darstellen, indem für einen bestehenden Termin ein oder mehrere neu ausgewählte Terminblöcke an das Termin-Repository übergeben werden.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
+Siehe [Buchung eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
 ---
 
@@ -112,11 +112,11 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System abgesagt werden.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
+Siehe [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
 ---
 
-Eine Verschiebeoperation kann im Normalfall als eine Neubuchung mit geändertem Zeitfenster ausgeführt werden (siehe Interaktion 5, bzw. {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.)
+Eine Verschiebeoperation kann im Normalfall als eine Neubuchung mit geändertem Zeitfenster ausgeführt werden (siehe Interaktion 5, bzw.  [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.)
 
 Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Termins notwendig werden, wenn ursprüngliche Ressourcen nicht mehr verfügbar sind für den neu zu belegenden Slot:
 
@@ -136,7 +136,7 @@ Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Ter
 
 Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Buchung eines Termins}} für die technische Umsetzung.
+Siehe [Buchung eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
 ---
 
@@ -157,7 +157,7 @@ Termine können sowohl durch den Termin-Requestor als Client oder durch das Term
 
 In diesem Kontext kann der Termin-Requestor zudem Zusatzinformationen (z.B. Einwilligungen) an das Termin-Repository übermitteln.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} für die technische Umsetzung.
+Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
 ---
 
@@ -170,4 +170,4 @@ Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page
 
 Der Termin-Requestor oder Termin-Consumer kann einen, mehrere oder alle Termine eines Termin-Repositories abfragen.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Artefakte/Datenobjekt_Termin/Interaktionen.page.md, text: ISiKTermin (Appointment) - Interaktionen}} für die technische Umsetzung.
+Siehe [ISiKTermin (Appointment) - Interaktionen](CapabilityStatement-ISiKCapabilityStatementTerminRepositoryAkteur-expanded.html#Appointment1-7) für die technische Umsetzung.
