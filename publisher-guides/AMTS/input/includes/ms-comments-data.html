@@ -1,0 +1,15 @@
+{% sqlToData ms_comments with targets as (
+    select Url, Json
+    from Resources
+    where Type = 'StructureDefinition'
+  )
+  select
+    targets.Url as ProfileUrl,
+    json_extract(elem.value, '$.id') as Element,
+    json_extract(elem.value, '$.short') as Short,
+    json_extract(elem.value, '$.comment') as Comment
+  from targets,
+       json_each(targets.Json, '$.differential.element') as elem
+  where coalesce(json_extract(elem.value, '$.mustSupport'), 0) = 1
+  order by ProfileUrl, Element
+%}
