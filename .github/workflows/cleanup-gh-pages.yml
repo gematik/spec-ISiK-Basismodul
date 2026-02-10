@@ -1,0 +1,71 @@
+name: Cleanup Branch Pages
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only log what would be deleted'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: gh-pages-publish
+      cancel-in-progress: false
+    steps:
+      - name: Check gh-pages branch
+        id: gh-pages
+        uses: actions/github-script@v8
+        with:
+          script: |
+            try {
+              await github.rest.repos.getBranch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                branch: 'gh-pages',
+              });
+              core.setOutput('exists', 'true');
+            } catch (error) {
+              if (error.status === 404) {
+                core.warning('gh-pages branch does not exist yet. Nothing to clean.');
+                core.setOutput('exists', 'false');
+              } else {
+                throw error;
+              }
+            }
+
+      - name: Checkout default branch (scripts)
+        if: steps.gh-pages.outputs.exists == 'true'
+        uses: actions/checkout@v6
+        with:
+          path: repo
+
+      - name: Checkout gh-pages
+        if: steps.gh-pages.outputs.exists == 'true'
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+          path: gh-pages
+
+      - name: Prune deleted branch directories
+        if: steps.gh-pages.outputs.exists == 'true'
+        shell: bash
+        working-directory: gh-pages
+        env:
+          REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          CLEANUP_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: bash ../repo/scripts/cleanup-gh-pages/cleanup.sh
