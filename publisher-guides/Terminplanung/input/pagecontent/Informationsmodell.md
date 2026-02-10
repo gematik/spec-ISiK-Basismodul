@@ -1,3 +1,7 @@
 **Vereinfachtes Informationsmodell**
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/main-stufe-5/Material/Terminplanung/ISiK_Terminplanung_ER_Diagram.svg" width="90%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="ISiK_Terminplanung_ER_Diagram.svg"  style="width: 100%;">
+    </div>
+</figure>

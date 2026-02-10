@@ -39,19 +39,15 @@ offen bleibt hier allerdings noch der Ablauf zum Austausch von Patientendaten zw
  
  <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="patient-buchung-sequenz.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+        <img src="patient-buchung-sequenz.png" style="width: 100%;">
     </div>
     
 </figure>
 
-Einzelne Interaktionen, die in diesem Sequenzdiagramm skizziert werden und für die der vorliegende Implementierungsleitfaden spezifischere Festlegungen trifft, sind unter {{pagelink:Interaktionen, text:Interaktionen}} gelistet.
+Einzelne Interaktionen, die in diesem Sequenzdiagramm skizziert werden und für die der vorliegende Implementierungsleitfaden spezifischere Festlegungen trifft, sind unter [Interaktionen](Interaktionen.md) gelistet.
 
 **Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin bucht.
 Der Anteil an Buchungen durch Dritte ist relevant und kann in bestimmten Versorgungs-Settings sogar die Regel darstellen. Entsprechend sollten auch die Registrierungs-, Authentifizierungs und die Patientendatenübermittlung gestaltet werden.
-
-
-**Hinweis:** Es sei darauf hingewiesen, dass hier explizit der UML-Akteur **'Buchender'** genutzt wurde, wobei dies sowohl einen **Patienten** als auch eine **angehörige Person** bedeuten kann, die im Namen des Patienten einen Termin buchen können.
-
 
 ### Identitätsnachweis der Patienten
 
@@ -61,7 +57,7 @@ Folgende Alternativen zur Erbringung eines Identitätsnachweises können schemat
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="identitaetsnachweis-bpmn.png" alt="9. Abfrage von (vereinbarten) Terminen" style="width: 100%;">
+        <img src="identitaetsnachweis-bpmn.png" style="width: 100%;">
     </div>
 </figure>
 
@@ -70,7 +66,7 @@ Der Nachweis-Workflow soll die Übernahme validierter Patienten-Identitäten unt
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="identitaetsnachweis-sequenz-happy-path-patient.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+        <img src="identitaetsnachweis-sequenz-happy-path-patient.png" style="width: 100%;">
     </div>
   
 </figure>
@@ -84,7 +80,7 @@ Zur Darstellung des Sachverhalts einer Buchung durch Angehörige kann folgendes 
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="identitaetsnachweis-sequenz-angehoeriger.png" alt="9. Abfrage von (verinbarten) Terminen" style="width: 100%;">
+        <img src="identitaetsnachweis-sequenz-angehoeriger.png" style="width: 100%;">
     </div>
   
 </figure>

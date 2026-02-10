@@ -157,7 +157,7 @@ Termine können sowohl durch den Termin-Requestor als Client oder durch das Term
 
 In diesem Kontext kann der Termin-Requestor zudem Zusatzinformationen (z.B. Einwilligungen) an das Termin-Repository übermitteln.
 
-Siehe {{pagelink:guides/Terminplanung-5/Einfuehrung/Festlegungen/Operations.page.md, text:Aktualisierung / Absage eines Termins}} [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
+Siehe [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
 ---
 
