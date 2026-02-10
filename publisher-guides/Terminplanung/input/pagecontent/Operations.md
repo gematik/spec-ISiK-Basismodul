@@ -19,41 +19,41 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
 
 1. Abfrage aller Kodierungen der angebotenen gesundheitlichen Dienstleistungen durch den Termin-Requestor: `GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|HealthcareService` bzw. `GET https://example.org/fhir/CodeSystem?context-type-value=https://gematik.de/fhir/isik/CodeSystem/ContextType|ResourceUsage$http://hl7.org/fhir/resource-types|Schedule`
 
-Das Termin-Repository MUSS alle CodeSysteme exponieren, welche für die Kodierung einer verfügbaren gesundheitlichen Dienstleistungen relevant sind. Die Anfrage ist nicht auf HealthcareService beschränkt. Weitere Ressourcen-Kontexte können hierfür relevant sein. Beispielsweise erfolgt die Kodierung der Leistungen für einen Behandler im Kontext eines Schedules (vgl. [Schedule.serviceType](StructureDefinition-ISiKKalender.html)). Alle verwendeten CodeSysteme MÜSSEN exponiert werden, insoweit diese sich als CodeSystem-Ressourcen ausdrücken lassen.
+    Das Termin-Repository MUSS alle CodeSysteme exponieren, welche für die Kodierung einer verfügbaren gesundheitlichen Dienstleistungen relevant sind. Die Anfrage ist nicht auf HealthcareService beschränkt. Weitere Ressourcen-Kontexte können hierfür relevant sein. Beispielsweise erfolgt die Kodierung der Leistungen für einen Behandler im Kontext eines Schedules (vgl. [Schedule.serviceType](StructureDefinition-ISiKKalender.html)). Alle verwendeten CodeSysteme MÜSSEN exponiert werden, insoweit diese sich als CodeSystem-Ressourcen ausdrücken lassen.
 
-Hinweis: Diese Abfrage ist für eine Initialisierung des Termin-Requestors gedacht. Es ist davon auszugehen, dass diese Auswahlliste nicht dynamisch angepasst wird durch das Termin-Repository und nicht bei jeder Terminbuchung erneut abgefragt werden muss.
+    Hinweis: Diese Abfrage ist für eine Initialisierung des Termin-Requestors gedacht. Es ist davon auszugehen, dass diese Auswahlliste nicht dynamisch angepasst wird durch das Termin-Repository und nicht bei jeder Terminbuchung erneut abgefragt werden muss.
 
-1. Abfrage aller verfügbaren Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Schedule` bzw. `GET https://example.org/fhir/Schedule?actor=Practitioner/ISiKPractitionerExample`
+2. Abfrage aller verfügbaren Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Schedule` bzw. `GET https://example.org/fhir/Schedule?actor=Practitioner/ISiKPractitionerExample`
 
-Der Termin-Requestor KANN durch die Abfrage aller verfügbaren Kalender alle Ressourcen abfragen, für die eine Terminbuchung zur Verfügung steht. Diese Abfrage kann auf ein oder mehrere Akteure eingeschränkt werden.
+    Der Termin-Requestor KANN durch die Abfrage aller verfügbaren Kalender alle Ressourcen abfragen, für die eine Terminbuchung zur Verfügung steht. Diese Abfrage kann auf ein oder mehrere Akteure eingeschränkt werden.
 
-1. Abfrage aller verfügbaren Slots für einen Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Slot?schedule=<Schedule/ISiKKalenderExample>&status=free`
+3. Abfrage aller verfügbaren Slots für einen Kalender durch den Termin-Requestor: `GET https://example.org/fhir/Slot?schedule=<Schedule/ISiKKalenderExample>&status=free`
 
-In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT`
+    In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT`
 
-1. Anlage einer Patient-Ressource durch den Termin-Requestor: `POST https://example.org/fhir/Patient`
+4. Anlage einer Patient-Ressource durch den Termin-Requestor: `POST https://example.org/fhir/Patient`
 
-```json
-{
-    "resourceType": "Patient",
-    "meta": {
-        "tag": [
-            {
-                "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
-                "code": "external"
-            }
-        ]
+    ```json
+    {
+        "resourceType": "Patient",
+        "meta": {
+            "tag": [
+                {
+                    "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
+                    "code": "external"
+                }
+            ]
+        }
+        [...]
     }
-    [...]
-}
-```
+    ```
 
-Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der ``patient``-Parameter in der ``$book``-Operation zu verwenden.
+    Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der ``patient``-Parameter in der ``$book``-Operation zu verwenden.
 
-1. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
+5. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
 
-```json
-{
+    ```json
+    {
   "resourceType": "Appointment",
   "id": "ISiKTerminExample",
   "meta": {
@@ -104,28 +104,28 @@ Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das 
       "status": "accepted"
     }
   ],
-  "_priority": {
-    "extension": [
-      {
-        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "code": "25876001",
-              "system": "http://snomed.info/sct"
+      "_priority": {
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "25876001",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       }
-    ]
-  }
-}
-```
+    }
+    ```
 
-Antwort des Termin-Repository:
+    Antwort des Termin-Repository:
 
-```json
-{
+    ```json
+    {
   "resourceType": "Appointment",
   "id": "ISiKTerminExample",
   "meta": {
@@ -176,26 +176,26 @@ Antwort des Termin-Repository:
       "status": "accepted"
     }
   ],
-  "_priority": {
-    "extension": [
-      {
-        "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "code": "25876001",
-              "system": "http://snomed.info/sct"
+      "_priority": {
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKTerminPriorityExtension",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "25876001",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       }
-    ]
-  }
-}
-```
+    }
+    ```
 
-Für den Fall, dass ein Termin-Repository zum aktuellen Zeitpunkt keine Terminbestätigung geben kann, wird in der Antwortnachricht zurückgegebenen Appointment-Ressource der Wert von "Appointment.status" auf "pending" gesetzt. Als HTTP-Status-Code MUSS das Termin-Repository "202 - Accepted" zurückgeben.
-Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status "pending" seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf "booked" bzw. "cancelled" stellen. Sofern dieses unterstützt wird, SOLL eine Benachrichtigung des Termin-Consumers per Push-Mechanismus erfolgen (siehe auch nächster Abschnitt). In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.
+    Für den Fall, dass ein Termin-Repository zum aktuellen Zeitpunkt keine Terminbestätigung geben kann, wird in der Antwortnachricht zurückgegebenen Appointment-Ressource der Wert von "Appointment.status" auf "pending" gesetzt. Als HTTP-Status-Code MUSS das Termin-Repository "202 - Accepted" zurückgeben.
+    Beispielsweise kann dies der Fall sein, falls ein Termin zunächst manuell im Termin-Repository bestätigt werden muss. Sobald ein Termin im Status "pending" seitens des Termin-Repository bestätigt oder abgesagt wurde, MUSS das Termin-Repository den Status des Termins auf "booked" bzw. "cancelled" stellen. Sofern dieses unterstützt wird, SOLL eine Benachrichtigung des Termin-Consumers per Push-Mechanismus erfolgen (siehe auch nächster Abschnitt). In jedem Fall MUSS der Termin-Consumer über eine Lese- oder Such-Anfrage jederzeit den aktuellen Status der Terminbuchung ermitteln können.
 
 ### Aktualisierung / Absage eines Termins
 
@@ -245,11 +245,9 @@ Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten
 
 Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patient-Ressource im Kontext der Terminbuchung zu erstellen oder zu übermitteln:
 
-- Direkte Erstellung über Create-Interaktion:
-  Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest).  
-  Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.  
+- Direkte Erstellung über Create-Interaktion: Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest). Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.
 
-  > **Hintergrund**: Ein Update der Patient-Ressource über den `patient`-Parameter in der `$book`-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.
+    > **Hintergrund**: Ein Update der Patient-Ressource über den `patient`-Parameter in der `$book`-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.
 
 - Übergabe innerhalb der `$book`-Operation:
   Das Termin-Repository unterstützt die Übergabe einer Patient-Instanz mittels des dafür vorgesehenen Parameters innerhalb der `$book`-Operation.
