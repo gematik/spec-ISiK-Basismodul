@@ -78,6 +78,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "HealthcareService/ISiKMedizinischeBehandlungseinheitExample"
+        },
+        "exampleBoolean": false,
+        "name": "Allgemeine Beratungsstelle der Fachabteilung 0100"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/AppointmentReplaces"
         },
         "description": "Mit dieser Erweiterung kann eine neue Appointment-Ressource auf eine frühere, ersetzte Appointment-Ressource verweisen, z. B. bei einer Terminverschiebung oder -umbuchung. Dies erleichtert die Nachverfolgung von Terminänderungen und stellt sicher, dass der Zusammenhang zwischen ursprünglichem und aktuellem Termin eindeutig dokumentiert ist.",
@@ -118,6 +125,20 @@
       },
       {
         "reference": {
+          "reference": "Patient/DorisQuelle"
+        },
+        "exampleBoolean": false,
+        "name": "DorisQuelle"
+      },
+      {
+        "reference": {
+          "reference": "Patient/DorisZiel"
+        },
+        "exampleBoolean": false,
+        "name": "DorisZiel"
+      },
+      {
+        "reference": {
           "reference": "SearchParameter/Encounter-end-date"
         },
         "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
@@ -131,6 +152,76 @@
         "description": "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement.",
         "exampleBoolean": false,
         "name": "ExtensionISiKRehaEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Fachabteilungskontakt"
+        },
+        "exampleBoolean": false,
+        "name": "Fachabteilungskontakt"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktBettenverlegung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktBettenverlegung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktEntlassung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktMinimal2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktMinimal2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktNormal"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktNormal"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationaereAufnahme"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationaereAufnahme"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel2"
       },
       {
         "reference": {
@@ -230,6 +321,13 @@
       },
       {
         "reference": {
+          "reference": "Schedule/ISiKKalenderExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKKalenderExample"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
         "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
@@ -262,6 +360,13 @@
       },
       {
         "reference": {
+          "reference": "Patient/IsikPatientTemplate"
+        },
+        "exampleBoolean": false,
+        "name": "IsikPatientTemplate"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKTermin"
         },
         "description": "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin, sowie einen Terminvorschlag.",
@@ -278,11 +383,32 @@
       },
       {
         "reference": {
+          "reference": "Slot/ISiKTerminblockExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKTerminblockExample"
+      },
+      {
+        "reference": {
           "reference": "ValueSet/ISiKTerminCancelationReason"
         },
         "description": "Enthaelt alle erlaubten Gruende fuer eine Stornierung eines ISiKTermins",
         "exampleBoolean": false,
         "name": "ISiKTerminCancelationReason"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/ISiKTerminExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKTerminExample"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/ISiKTerminExampleExtendedICU"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKTerminExampleExtendedICU"
       },
       {
         "reference": {
@@ -326,6 +452,27 @@
       },
       {
         "reference": {
+          "reference": "Patient/PatientinMinimal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMinimal"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinMusterfrau"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMusterfrau"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinNormal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinNormal"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/PlannedEndDate"
         },
         "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
@@ -347,6 +494,48 @@
         "description": "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen.",
         "exampleBoolean": false,
         "name": "ScheduleName"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Nachstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Nachstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ1Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Patient"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Stationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Stationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Vorstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Vorstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ2Encounter"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Encounter"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ2Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Patient"
       },
       {
         "reference": {
