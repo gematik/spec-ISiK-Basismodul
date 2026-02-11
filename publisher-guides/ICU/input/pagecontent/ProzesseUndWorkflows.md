@@ -1,6 +1,6 @@
 ### Prozess Überleitung - Vorannahmen
 
-Vorannahmen zu den unten modellierten Workflows sind, dass die betroffenen Patienten einen Zugang- oder Entlassungsprozess im Kontext der Intesivversorgung durchlaufen haben, durchlaufen, oder in naher Zukunft durchlaufen werden. 
+Vorannahmen zu den unten modellierten Workflows sind, dass die betroffenen Patienten einen Zugang- oder Entlassungsprozess im Kontext der Intensivversorgung durchlaufen haben, durchlaufen, oder in naher Zukunft durchlaufen werden. 
 
 Die Illustration möglicher bidirektionaler Überleitungs-Prozesse (analog zum [spezifischen Zulassungsprozess hier](https://breathe.ersjournals.com/content/16/2/200062)) erscheint in diesem Kontext nicht zielführend.
 

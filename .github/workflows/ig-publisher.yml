@@ -226,7 +226,7 @@ jobs:
         id: check_changes
         shell: bash
         env:
-          FORCE_BUILD: ${{ github.event.inputs.force_build }}
+          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/check-changes.sh
 
@@ -314,14 +314,13 @@ jobs:
 
       - name: Announce published URL
         id: announce_url
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         env:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/announce-url.sh
 
       - name: Upload IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: ig-url-${{ matrix.ig_name }}
@@ -380,12 +379,16 @@ jobs:
 
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/download-artifact@v7
         with:
           pattern: ig-url-*
           path: ig-urls
         continue-on-error: true
+
+      - name: Write IG URL summary
+        env:
+          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+        run: node scripts/ig-publisher/write-summary.js
 
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs

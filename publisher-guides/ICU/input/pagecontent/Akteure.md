@@ -43,7 +43,7 @@ Basis-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme
 
 <!-- ANF-ICU-002 -->
 Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
-- [Akteur - VitalSign ICU Source Extended]((CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html)
+- [Akteur - VitalSign ICU Source Extended](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html)
 
 Primär hervorzuheben sind entsprechend der Definition der DKG dabei.
 
