@@ -3,7 +3,7 @@ Die Spezifikation richtet sich insbesondere an SW-Hersteller von 1) KIS,  2) zug
 
 Es handelt sich um eine technische Spezifikation, zu der keine weiteren medizinischen Fachexperten zu Rate gezogen werden müssen. Die sogenannten 'AMTS-Checks' - zur medizinischen und pharmakologischen Bewertung von AMTS - müssen durch die IS weiterhin selbst durchgeführt werden.
 
-#### User und Systeme im Fokus
+### User und Systeme im Fokus
 
 Primär zu berücksichtigende User sind
 * Krankenhausmitarbeiter (MFAs, Ärzte etc.)
@@ -20,7 +20,7 @@ Zudem sind hervorzuheben als mögliche Clients oder Subsysteme auch Datenbanken 
 * Indikationen, Kontraindikationen und Nebenwirkungen
 * Substitutionsmöglichkeiten und Generika
 
-#### Einordnung in die ISiK Landschaft
+### Einordnung in die ISiK Landschaft
 
 Als übergreifender Use Case ist AMTS grundsätzlich im Modul Medikation verankert. Dennoch werden AMTS-relevante Informationen aus weiteren ISiK-Modulen benötigt, die aus verschiedenen Gründen dort fachlich zugeordnet werden und verbleiben:
 
@@ -30,7 +30,7 @@ Als übergreifender Use Case ist AMTS grundsätzlich im Modul Medikation veranke
 - **ISiK Support Modul Labor: Mit Informationen aus der Labor Diagnostik** - In diesem Modul finden sich vor allem AMTS-relevante Beobachtungen und Messwerte, die als Ergebnis eines diagnostischen Prozesses oder einer Probe zugeordnet werden können.
 [ISiK Modul Labor](https://simplifier.net/guide/isik-labor-stufe-5)
  
-#### Weitere zu berücksichtigende Systeme und Standards
+### Weitere zu berücksichtigende Systeme und Standards
 
 Die Kompatibilitäten zu den [gelisteten Spezifikationen](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Kompatibilitaet) sollen weiterhin gewahrt bleiben.
 
