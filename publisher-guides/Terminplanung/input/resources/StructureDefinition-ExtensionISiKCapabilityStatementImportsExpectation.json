@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ExtensionISiKCapabilityStatementImportsExpectation",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation",
+  "version": "5.1.1",
+  "name": "ExtensionISiKCapabilityStatementImportsExpectation",
+  "title": "ISiK CapabilityStatement Imports Expectation",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-17",
+  "publisher": "gematik GmbH",
+  "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "CapabilityStatement.imports"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "SHALL | SHOULD | MAY |SHOULD-NOT",
+        "definition": "Defines the level of expectation associated with a given system capability.",
+        "comment": "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.hl7.org/ValueSet/conformance-expectation",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ConformanceExpectation"
+            }
+          ],
+          "description": "Indicates the degree of adherence to a specified behavior or capability expected for a system to be deemed conformant with a specification."
+        }
+      }
+    ]
+  }
+}
