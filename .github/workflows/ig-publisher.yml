@@ -26,6 +26,11 @@ on:
   # Run on pull request events only
   pull_request:
 
+  # Run on pushes to main release branches
+  push:
+    branches:
+      - main-stufe-*
+
   # Allow manual triggering for production builds or testing
   workflow_dispatch:
     inputs:
@@ -115,10 +120,25 @@ jobs:
           #         - https://example.com/CS1
           #         - https://example.com/CS2
           #         - https://example.com/CS3
+
+          - ig_name: ISiK-Medikation
+            ig_dir: publisher-guides/Medikation
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungAkteur
+
           - ig_name: ISiK-Basis
             ig_dir: publisher-guides/Basis
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+
+          # - ig_name: ICU
+          #   ig_dir: publisher-guides/ICU
+          #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
           - ig_name: ISiK-Subscriptions
             ig_dir: publisher-guides/Subscription
             capability_statement_urls:
@@ -128,6 +148,7 @@ jobs:
           # - ig_name: Basis-IG
           #   ig_dir: publisher-guides/Basis-IG
           #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
           #   import_cps_filter: SHOULD
@@ -167,6 +188,7 @@ jobs:
       # Note: This action supports multiple URLs via capability_statement_urls (JSON array).
       - name: Expand CapabilityStatement
         uses: Gefyra/capabilityStatement-expander@v0
+        if: ${{ toJSON(matrix.capability_statement_urls) != 'null' && toJSON(matrix.capability_statement_urls) != '[]' }}
         with:
           input_directory: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
           output_directory: ${{ env.IG_PUBLISHER_DIR }}/input/resources
@@ -204,7 +226,7 @@ jobs:
         id: check_changes
         shell: bash
         env:
-          FORCE_BUILD: ${{ github.event.inputs.force_build }}
+          FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/check-changes.sh
 
@@ -292,14 +314,13 @@ jobs:
 
       - name: Announce published URL
         id: announce_url
-        if: steps.check_changes.outputs.has_changes == 'true' && github.event_name == 'pull_request'
+        if: steps.check_changes.outputs.has_changes == 'true'
         shell: bash
         env:
           IG_NAME: ${{ matrix.ig_name }}
         run: bash scripts/ig-publisher/announce-url.sh
 
       - name: Upload IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: ig-url-${{ matrix.ig_name }}
@@ -358,12 +379,16 @@ jobs:
 
       # Download all IG URL metadata to create a unified PR comment
       - name: Download IG URL metadata
-        if: github.event_name == 'pull_request'
         uses: actions/download-artifact@v7
         with:
           pattern: ig-url-*
           path: ig-urls
         continue-on-error: true
+
+      - name: Write IG URL summary
+        env:
+          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+        run: node scripts/ig-publisher/write-summary.js
 
       # Create or update a single PR comment with all published IG URLs
       - name: Update PR comment with all published IGs
@@ -379,7 +404,7 @@ jobs:
   publish_gate:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     outputs:
       should_publish: ${{ steps.publish_check.outputs.should_publish }}
     steps:
@@ -410,14 +435,14 @@ jobs:
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && needs.publish_gate.outputs.should_publish == 'true'
+    if: needs.publish_gate.outputs.should_publish == 'true' && (github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     concurrency:
       group: gh-pages-publish
       cancel-in-progress: false
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Download Build Results
         uses: actions/download-artifact@v4
