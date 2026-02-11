@@ -1,6 +1,3 @@
-Version: 6.0.0-rc
-
-Datum: 17.12.2025
 
 Status: Aktiv
 
