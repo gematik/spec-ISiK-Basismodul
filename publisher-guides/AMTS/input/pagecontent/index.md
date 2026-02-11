@@ -24,7 +24,7 @@ Die genauere Zielstellung kann unter Einbeziehung der Stakeholder in der Evoluti
 #### Out-of-scope
 
 Aufgrund technischer Beschränkungen oder eines vorerst unnötigen Aufwands gibt es auch Aspekte, die aktuell noch außen vor bleiben müssen:
-1. Die Schaffung, Abstimmung und Spezifikation eines vollständigen ISiK Labor Moduls.
+1. Die Schaffung, Abstimmung und Spezifikation eines vollständigen ISiK Labor Moduls. **Link ISiK Labor**
 2. Medical Knowledge Management: Eine medizinische Wissensdatenbank ohne Patientenbezug, in der zum Beispiel Informationen zu bekannten Nebenwirkungen, Wechselwirkungen oder Kontra-Indikationen gespeichert werden (z.B. FHIR-R5 Ressource _ClinicalUseDefinition_). Leider stehen entsprechende Ressourcen erst in R5 zur Verfügung und es gibt kein einheitliches Bild wo eine solche Medical Knowledge Datenbank in der deutschen Gesundheitslandschaft (und in der Telematik Infrastruktur) zu verorten wäre.
 3. Die Einbeziehung eines Therapieziels (FHIR-R4 Ressource _Goal_), da dies sehr komplex ist und ein erheblicher Abstimmungsaufwand mit sich brächte.
 4. Die Einbeziehung eines Therapieplans (FHIR-R4 Ressource _Careplan_), da dieser ein neues Fachfeld braucht. Dieses Feld (Onkologie) würde ein neues ISiK Modul sowie IG begründen und benötigt eine eigene Arbeitsgruppe in einer zukünftigen Stufe.

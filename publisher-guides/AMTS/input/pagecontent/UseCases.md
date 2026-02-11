@@ -44,12 +44,9 @@ Ein geriatrischer Patient unterzieht sich einer geplanten Hüftersatzoperation:
 * Der Patient wird mit einem neuen Medikationsplan entlassen.
 
 
-
-
 ### Weitere implizite Annahmen und weitere Informationen
 
 *Annahmen:*
-* Ein beteiligtes und ISiK-AMTS-bestätigtes System verfügt über die grundlegende Funktion zur Durchführung eines AMTS-Checks. Wie ein AMTS-Check durchzuführen ist wird in diesem IG nicht beschrieben.
 * Ein beteiligtes und ISiK-AMTS-bestätigtes System erkennt selber, ob ein (erneuter) AMTS-Check notwendig wird, z.B. nach einer Arzneimittelsubstitution. Fachliche Systemführung, fachliche Trigger oder Listener-Observer-Pattern zur Festlegung der Reihenfolge der AMTS-Teilschritte werden in diesem IG nicht beschrieben.
 
 *Anmerkungen:*
