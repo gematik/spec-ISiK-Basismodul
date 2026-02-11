@@ -70,7 +70,7 @@
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
-        "name": "CapabilityStatement für Rolle &quot;StammdatenRolle&quot;"
+        "name": "CapabilityStatement für Rolle StammdatenRolle"
       },
       {
         "reference": {
@@ -157,6 +157,14 @@
         },
         "exampleBoolean": false,
         "name": "ExampleISiKLaboruntersuchungTSH1"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ExtensionISiKRehaEntlassung"
+        },
+        "description": "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement.",
+        "exampleBoolean": false,
+        "name": "ExtensionISiKRehaEntlassung"
       },
       {
         "reference": {
@@ -390,6 +398,38 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/ISiKBehandlungsergebnisRehaCS"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBehandlungsergebnisReha"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKBesondereBehandlungsformRehaCS"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBesondereBehandlungsformReha"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformRehaVS"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKBlutdruckSystemischArteriell"
         },
         "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.\n\nHinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.\n\n### Kompatibilität\nDas Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation.",
@@ -445,6 +485,22 @@
         },
         "exampleBoolean": false,
         "name": "ISiKEKGMinExample"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEntlassformRehaCS"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEntlassformReha"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformRehaVS"
       },
       {
         "reference": {
@@ -741,7 +797,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKPatient"
         },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n### Motivation  \nDer Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n### Kompatibilität\nFür das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n**Motivation**: Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n**Kompatibilität**: Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n\nGegen folgende Profile ist das Profil ISiKPatient unmittelbar kompatibel:\n\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
         "exampleBoolean": false,
         "name": "ISiKPatient"
       },
@@ -783,19 +839,19 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/ISiKTerminPriority"
+          "reference": "CodeSystem/ISiKUnterbrechungRehaCS"
         },
-        "description": "Enthaelt alle SNOMED Codes, die eine valide Priorität für den ISiKTermin sind",
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
         "exampleBoolean": false,
-        "name": "ISiKTerminPriority"
+        "name": "ISiKUnterbrechungReha"
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ISiKTerminPriorityExtension"
+          "reference": "ValueSet/ISiKUnterbrechungReha"
         },
-        "description": "Diese Extension ermöglicht die strukturierte Angabe der Dringlichkeit (Priorität) eines Termins. Dies ist wichtig, um Notfälle oder besonders dringliche Termine im Buchungs- und Verwaltungssystem deutlich zu kennzeichnen und eine priorisierte Bearbeitung zu ermöglichen.",
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
         "exampleBoolean": false,
-        "name": "ISiKTerminPriorityExtension"
+        "name": "ISiKUnterbrechungRehaVS"
       },
       {
         "reference": {
@@ -1162,6 +1218,22 @@
         },
         "exampleBoolean": false,
         "name": "PatientinNormal"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PlannedEndDate"
+        },
+        "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
+        "exampleBoolean": false,
+        "name": "PlannedEndDate"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PlannedStartDate"
+        },
+        "description": "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern.",
+        "exampleBoolean": false,
+        "name": "PlannedStartDate"
       },
       {
         "reference": {
@@ -1747,7 +1819,12 @@
         },
         {
           "nameUrl": "UseCases.html",
-          "title": "Use Cases",
+          "title": "Use Case - Übergang zwischen Akut- und Normalversorgung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "artifacts-isik.html",
+          "title": "FHIR-Artefakte",
           "generation": "markdown"
         }
       ]
