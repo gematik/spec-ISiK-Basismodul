@@ -121,17 +121,16 @@ jobs:
           #         - https://example.com/CS2
           #         - https://example.com/CS3
 
-          - ig_name: ISiK-Medikation
-            ig_dir: publisher-guides/Medikation
+          - ig_name: ISiK-AMTS
+            ig_dir: publisher-guides/AMTS
             capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationAkteur
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
+              
 
-          - ig_name: ISiK-Basis
-            ig_dir: publisher-guides/Basis
-            capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+          #- ig_name: ISiK-Basis
+          #  ig_dir: publisher-guides/Basis
+          #  capability_statement_urls:
+          #    - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
 
           # - ig_name: ICU
           #   ig_dir: publisher-guides/ICU
@@ -139,10 +138,10 @@ jobs:
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-          - ig_name: ISiK-Subscriptions
-            ig_dir: publisher-guides/Subscription
-            capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur
+          #- ig_name: ISiK-Subscriptions
+          #  ig_dir: publisher-guides/Subscription
+          #  capability_statement_urls:
+          #    - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur
 
           - ig_name: ISiK-Terminplanung
             ig_dir: publisher-guides/Terminplanung
@@ -446,7 +445,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Download Build Results
         uses: actions/download-artifact@v4
