@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
 
-## Version 6.0.0-rc
+### Version 6.0.0-rc
 
 Datum: tbd.
 
@@ -14,7 +14,7 @@ Datum: tbd.
 
 Mit der Stufe 6 werden alle Technical Corrections der Stufe 5 bindend.
 
-## Version 5.1.1
+### Version 5.1.1
 
 Datum: 17.12.2025
 
@@ -24,7 +24,7 @@ Datum: 17.12.2025
 
 ----
 
-## Version 5.1.0
+### Version 5.1.0
 
 Datum: 23.10.2025
 
@@ -32,13 +32,13 @@ Datum: 23.10.2025
 * `documentation` Rendering der im Modul verwendeten ValueSets https://github.com/gematik/spec-ISiK-Basismodul/pull/802
 * `fix` Dokumentation der Suchparameter (Beispiele) in CpS überführt. Darüber hinaus wurden einige Suchparameter, aus Stufe 3 in Stufe 5 übernommen https://github.com/gematik/spec-ISiK-Basismodul/pull/809
 
-## Version 5.0.0
+### Version 5.0.0
 
 Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-## Version 5.0.0-rc2 (Benehmensherstellung)
+### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
@@ -52,14 +52,14 @@ Datum: 5.6.2025
 
 ---
 
-## Version 5.0.0-rc
+### Version 5.0.0-rc
 
 Mit der Stufe 5 werden alle Technical Corrections der Stufe 4 bindend.
 
 Datum: 09.04.2025
 
 ---
-## Version: 4.0.0-rc
+### Version: 4.0.0-rc
 
 
 - Entfernen von MS von .id der Ressourcen https://github.com/gematik/spec-ISiK-Labor/pull/6
