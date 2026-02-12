@@ -1,40 +1,54 @@
-### Prozesse
+### Prozess Überleitung - Vorannahmen
 
-#### Prozess Überleitung
-
-Vorannahmen zu den unten modellierten Workflows sind, dass die betroffenen Patienten einen Zugang- oder Entlassungsprozess im Kontext der Intesivversorgung durchlaufen haben, durchlaufen, oder in naher Zukunft durchlaufen werden. 
+Vorannahmen zu den unten modellierten Workflows sind, dass die betroffenen Patienten einen Zugang- oder Entlassungsprozess im Kontext der Intensivversorgung durchlaufen haben, durchlaufen, oder in naher Zukunft durchlaufen werden. 
 
 Die Illustration möglicher bidirektionaler Überleitungs-Prozesse (analog zum [spezifischen Zulassungsprozess hier](https://breathe.ersjournals.com/content/16/2/200062)) erscheint in diesem Kontext nicht zielführend.
 
-#### Workflow - Support-Prozess zur Datenübermittlung bei Überleitung
+### Workflow - Support-Prozess zur Datenübermittlung bei Überleitung
 Zur Abbildung des bidirektionalen Überleitungsprozesses zwischen einer Intensiv- und einer Normalstation können KIS und PDMS jeweils die Rolle des KIS und Client einnehmen.
 
-##### Diagramme
 
 Der Workflow dient im Wesentlichen dazu, verschiedene Nutzungsmöglichkeiten der REST-Schnittstelle zur abfragebasierten Datenkommunikation im Rahmen der Workflow-Unterstützung darzustellen.
 
 Für Festlegungen zu REST-Abfragen siehe den [Abschnitt zur REST-API im Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest).
 
-###### Abfrage zeitlich folgend 
+#### Abfrage zeitlich folgend - Diagramm
+
 Folgende Diagramme illustrieren die Fälle, bei denen Daten zeitlich nach der Überleitung abgefragt werden (mittels HTTP GET).
 
 Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-001** als BPMN-Prozess:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/rc/main-stufe-4/Material/images/Abfrage-aus-ICU.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Normalstation" width="90%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Abfrage-aus-ICU.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Normalstation" style="width: 100%;">
+    </div>
+    <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Normalstation</figcaption>
+</figure>
+
 
 **Hinweis:** hier agiert das KIS als Client. 
 
 
 Folgendes Diagramm Illustriert den Workflow zu **UC-VIT-ICU-NORM-002** als BPMN-Prozess:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/rc/main-stufe-4/Material/images/Abfrage-aus-Normal.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Intensivstation" width="90%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Abfrage-aus-Normal.PNG" alt="Nachträgliche Blutdruck-Abfrage aus Intensivstation" style="width: 100%;">
+    </div>
+    <figcaption>Abbildung: Nachträgliche Blutdruck-Abfrage aus Intensivstation</figcaption>
+</figure>
 
 
-###### Übernahme zeitlich vorgelagert 
+#### Übernahme zeitlich vorgelagert - Diagramm
 
 Denkbar sind auch Workflows, bei denen erhobene Daten aus einem System vor der Verlegung übermittelt werden. Siehe z.B. den Workflow zu **UC-VIT-ICU-NORM-003** als BPMN-Prozess:
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/rc/main-stufe-4/Material/images/Uebermittlung-an-ICU.PNG" alt="Vorgelagerte Übermittlung an Intensivstation" width="90%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Uebermittlung-an-ICU.PNG" alt="Vorgelagerte Übermittlung an Intensivstation" style="width: 100%;">
+    </div>
+    <figcaption>Abbildung: Vorgelagerte Übermittlung an Intensivstation</figcaption>
+</figure>
 
 Eine Abfrage per HTTP GET allein reicht nicht aus, um die benötigten Daten rechtzeitig zu übermitteln. Stattdessen muss eine Vorab-Übermittlung durch einen anderen Mechanismus erfolgen. Sobald diese angestoßen wurde, kann das PDMS die vollständigen Daten per GET abrufen. An dieser Stelle werden keine weiteren Festlegungen zur vorgelagerten Übermittlung der  Daten erhoben und es wird keine direkte Schreiboperation auf FHIR-Basis des KIS im PDMS für diesen Fall gefordert. Die Vorab-Übermittlung könnte durch verschiedene Mechanismen unterstützt werden:
 
