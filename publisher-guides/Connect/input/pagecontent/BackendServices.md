@@ -9,7 +9,7 @@ Die SMART Backend Services spezifizieren ein standardisiertes Autorisierungsverf
 | **Monitoring- und Alert-System** | Überwachung von Echtzeit-Daten (z. B. Labordaten) mit automatischer Alarmierung bei Trigger-Ereignissen                    | FHIR API (Polling oder Event-Streaming)    |
 | **Datenintegrations- / Synchronisationsdienst** | Abgleich neuer Patientendaten zwischen EHR und externen Systemen                                                           | FHIR API-Queries                           |
 
-{% include  Schritt1RegistrierungBackendService.md}
+{% include Schritt1RegistrierungBackendService.md}
 {% include Schritt2AbrufSmartConfiguration.md}
 {% include Schritt3AbrufAccessToken.md}
 {% include Schritt4FHIRRestInteraktion.md}
