@@ -1,5 +1,3 @@
-### ISiK-Connect
-
 Konnektivität und Sicherheit haben im Zusammenhang mit einem interoperablen Datenaustausch in und mit Krankenhäusern viele Facetten: Nutzer müssen authentifiziert sein, Berechtigungen müssen definiert und durchgesetzt werden, Daten müssen gegen Verfälschung geschützt und verfügbar sein, Datenänderungen müssen nachvollziehbar sein etc. Hierzu können Technologien wie z. B. [_SAML_](https://saml.xml.org/saml-specifications) oder [_UMA_](https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html) genutzt werden. Diese Technologien basieren auf einem etablierten und erprobten Stack aus Standards wie [_ReST Representational State Transfer_](https://restfulapi.net/), [_OAuth2_](https://oauth.net/2/) oder , [_OpenID Connect_](https://openid.net/developers/specs/). Diese Standards sind domänenunabhängig spezifiziert und müssen daher für den Einsatz im deutschen Gesundheitswesen und ggf. auch für das Zusammenspiel mit dem HL7 FHIR-Standard profiliert werden. FHIR bietet hierzu unterstützende Ressourcen wie z. B. [_Consent_](https://hl7.org/fhir/R4/consent.html), [_AuditEvent_](https://hl7.org/fhir/R4/auditevent.html) oder [_CompartmentDefinition_](https://hl7.org/fhir/R4/compartmentdefinition.html) an, die eine Bindung zwischen FHIR und dedizierten Sicherheitsstandards herstellen können. Im Fall von ISiK sind zusätzlich im deutschen Gesundheitswesen bereits definierte Bausteine der Gesundheitstelematik wie z. B. sektorale Identitätsdienste oder Konnektoren/TI-Gateways zu berücksichtigen, die idealerweise für die Authentifizierung an Patienten- und Zuweiserportalen, dem Schutz von Gesundheitsdaten im Krankenhaus, einem Ende-zu-Ende gesicherten Datenaustausch mit Niedergelassenen und anderen potenziell ISiK-relevanten Themen genutzt werden sollen.
 
 
@@ -9,7 +7,7 @@ Ziel der vorliegenden Spezifikation ist es, per FHIR RESTful API formulierte Anf
 
 Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den {{pagelink: ImplementationGuide/markdown/Conformance.md, text:Festlegungen für Connect}} zu entnehmen. Diese sind durch die bestätitungsrelevanten Akteure umzusetzen. In den weiteren Abschnitten folgt zunächst eine Einführung in das Thema SMART on FHIR. Zudem werden weitere Implementierungshinweise geliefert.
 
-##### SMART on FHIR 
+### SMART on FHIR 
 
 Technische Systeme können in einer SMART-on-FHIR-konformen Umsetzung eines Autorisierungssystems eine oder mehrere der folgenden Rollen einnehmen:
 * Ressourcen-Server: IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.
@@ -21,7 +19,7 @@ Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispi
 
 Hieraus ergeben sich die {{pagelink: ImplementationGuide/markdown/Akteure.md, text:Akteure}} für das Modul ISiK Connect.
 
-##### SMART App Launch
+### SMART App Launch
 
 ISiK-Connect soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten [HL7 Implementierungsleitfadens _Smart App Launch_](https://hl7.org/fhir/smart-app-launch/STU2.2/index.html) ermöglichen. Ziel des _Smart App Launch_ ist es, ein Zugriffstoken von einem OAuth2-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein Client eine FHIR-RESTful-Interaktion gegen einen Ressourcen-Server durchführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugriffstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcen-Server zuzugreifen, sieht der _Smart App Launch_ die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.
 
@@ -38,7 +36,7 @@ ISiK-Connect soll durch eine wie oben skizzierte Integration verschiedener Syste
 
 Eine Übersicht des zusammenhängenden _SMART App Launch_ ist dem Abschnitt {{pagelink:ImplementationGuide/markdown/ISiKundSMART.md, text:ISiK Connect und SMART on FHIR}} zu entnehmen. 
 
-#### Vorgaben zur Autorisierung in ISiK Connect
+### Vorgaben zur Autorisierung in ISiK Connect
 
 Wie aus der Tabelle zu ersehen, betrifft das Gros der SMART-on-FHIR-Spezifikation das Zusammenspiel der Systeme in den Rollen des Clients und des Autorisierungsservers. Dieses wird zusätzlich stark geprägt durch den Kontext aus welchem bzw. in welchen der Client - d. h. die wiederverwendbare, austauschbare, modulare Anwendung - dynamisch gestartet wird:
 
@@ -54,7 +52,7 @@ Diese in ISiK Connect vorgenommene Profilierung des SMART-on-FHIR-API fokussiert
 
 Für ISiK Connect werden keine normativen Festlegungen getroffen, die andere Profile auf dem _OAuth2_-Standard wie z. B. _IHE IUA_ grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der Orientierungshilfe Krankenhausinformationssysteme (OH KIS)) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind. 
 
-#### Informative Hinweise zur weitergehenden Umsetzung von SMART on FHIR
+### Informative Hinweise zur weitergehenden Umsetzung von SMART on FHIR
 
 Für Hersteller von Autorisierungsservern, _SMART Client-Apps_, KIS sowie Patienten- und Zuweiserportalen kann es attraktiv sein, ihre Lösungen über die in ISiK Connect normativen API-Aufrufe gegenüber ISiK-Ressourcenservern hinaus am SMART-on-FHIR-Standard auszurichten. Auch Krankenhäuser können von den grundlegenden Ideen hinter _SMART on FHIR_ profitieren, z. B. indem funktionale Module von Drittherstellern über einen _Smart App Launch_ einfacher in bestehende Systemlandschaften integriert werden können.
 

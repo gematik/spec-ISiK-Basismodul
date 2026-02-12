@@ -1,11 +1,9 @@
-### Festlegungen und Anforderungsübersicht
 
-
-#### Normative Festlegungen
+### Normative Festlegungen
 
 Die normativen Festlegungen des Moduls ISiK Connect  sind im Wesentlichen der Seite zu den {{pagelink: ImplementationGuide/markdown/Conformance.md, text:Festlegungen für Connect}} zu entnehmen.
 
-#### Anforderungsübersicht 
+### Anforderungsübersicht 
 
 In dem nachfolgenden Abschnitt soll eine Übersicht zu Anforderungen im Implementierungsleitfaden bereitgehalten werden. Teilweise haben diese Anforderungen jedoch nur optionalen Charakter.
 

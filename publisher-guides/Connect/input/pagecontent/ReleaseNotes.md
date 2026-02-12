@@ -1,35 +1,34 @@
-### Release Notes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 
-#### Version 6.0.0-rc
+### Version 6.0.0-rc
 
 Datum: tbd.
 
 * `documentation` Initialisierung einer IG Publisher Guide Struktur für ISiK Connect
 
-#### Version 5.X.X
+### Version 5.X.X
 
 Datum: XX.XX.2025
 
 * `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888
 
 
-#### Version 5.1.0
+### Version 5.1.0
 
 Datum: 23.10.2025
 
 Im Rahmen dieser Technical Correction wurden keine Änderungen an diesem Implementation Guide vorgenommen. Daher sind keine Anpassungen durch Implementierende erforderlich, und die Rückwärtskompatibilität zum zuletzt veröffentlichten Package bleibt uneingeschränkt erhalten.
 
 
-#### Version 5.0.0
+### Version 5.0.0
 
 Datum: 26.06.2025
 
 Mit Inkrafttreten der Stufe 5 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
-#### Version 5.0.0-rc2 (Benehmensherstellung)
+### Version 5.0.0-rc2 (Benehmensherstellung)
 
 Datum: 5.6.2025
 
@@ -37,35 +36,35 @@ Datum: 5.6.2025
 * `improve` SMART 2.0 Versionsupdate auf 2.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/754/files
 
 
-#### Version 5.0.0-rc1
+### Version 5.0.0-rc1
 
 Datum: 13.05.2025
 
 * `improve` Kennzeichnung der normativen Passagen wurde ergänzt und informative Passagen wurden ersetzt https://github.com/gematik/spec-ISiK-Basismodul/pull/696
 
-#### Version 5.0.0-rc (Kommentierung)
+### Version 5.0.0-rc (Kommentierung)
 
 Datum: 09.04.2025
 
 * `improve` Motivation wurde auf aktualisierten Anwendungsfall hin angepasst. https://github.com/gematik/spec-ISiK-Basismodul/pull/565
 * `improve` Abschnitt zu Backend-Services hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/commit/a87b0f8c4a042f4893ea1621675c7b852491f459
 
-----
-Version: 3.0.0
+
+### Version: 3.0.0
 
 Datum: 01.07.2023
 
 * Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
 
-----
-Version: 3.0.0-rc5
+
+### Version: 3.0.0-rc5
 
 Datum: 21.06.2023
 
 * Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments
 
-----
-Version: 3.0.0-rc4
+
+### Version: 3.0.0-rc4
 
 Datum: 01.06.2023
 
@@ -73,15 +72,15 @@ Datum: 01.06.2023
 * `improve` Die Hinweise zu einem break-the-glass-Szenario wurden gestrichen, da hier die regulativen Rahmenbedingungen in Deutschland deutlich von den Annahmen in den referenzierten, auf das amerikanische Gesundheitssystem fokussierenden Quellen abweichen.
 * `improve` Hinweis auf den Aufrufparameter "ISS_IDP" hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.
 
-----
-Version: 3.0.0-rc3
+
+### Version: 3.0.0-rc3
 
 Datum: 25.04.2023
 
 * `improve` ReleaseNotes added
 
-----
-Version: 3.0.0-rc2
+
+### Version: 3.0.0-rc2
 
 Datum: 24.04.2023
 
