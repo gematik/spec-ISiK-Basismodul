@@ -144,7 +144,6 @@ jobs:
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
 
-
           # - ig_name: ICU
           #   ig_dir: publisher-guides/ICU
           #   capability_statement_urls:
@@ -161,14 +160,12 @@ jobs:
             ig_dir: publisher-guides/Terminplanung
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur
-          # Add more IGs here:
-          # - ig_name: Basis-IG
-          #   ig_dir: publisher-guides/Basis-IG
-          #   capability_statement_urls:
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
-          #   import_cps_filter: SHOULD
+
+          - ig_name: ISiK-Labor
+            ig_dir: publisher-guides/Labor
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle
+
     env:
       SUSHI_INPUT_DIR: Resources
       IG_PUBLISHER_DIR: ${{ matrix.ig_dir }}
