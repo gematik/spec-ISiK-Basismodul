@@ -1,4 +1,4 @@
-#### Auto-Provisioning von Zugriffsrechten auf Basis externer Authentifizierungsdienste
+### Auto-Provisioning von Zugriffsrechten auf Basis externer Authentifizierungsdienste
 
 Hinweis: Der nachfolgende Abschnitt dient ausschließlich als Implementierungsunterstützung; es ergeben sich keine Anforderungen an umsetzende Systeme.
 
