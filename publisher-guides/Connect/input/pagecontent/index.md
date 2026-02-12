@@ -1,7 +1,4 @@
 
-
-Version: 6.0.0-rc
-
 Realm: Deutschland
 
 ### Motivation - Connect Modul
