@@ -1,5 +1,5 @@
 
-Hinweis: Der nachfolgende Abschnitt dient ausschließlich als Implementierungsunterstützung; es ergeben sich keine Anforderungen an umsetzende Systeme.
+**Hinweis**: Der nachfolgende Abschnitt dient ausschließlich als Implementierungsunterstützung; es ergeben sich keine Anforderungen an umsetzende Systeme.
 
 Die Umsetzung eines Auto-Provisioning, d.h. Ausführung einer automatischen Benutzerbereitstellung samt Rechten und Zugriff auf FHIR-Ressourcen, ist für Use Cases hilfreich, in denen der intersektorale IdP der gematik eingebunden wird, um Patienten über eine einheitliche Identität Zugriff auf Systeme zu ermöglichen. Dies ist zum Beispiel hilfreich für die Bereitstellung von Accounts für Patientenportale bei einer Buchung von Terminen oder der stationären Aufnahme im Krankenhaus.
 
