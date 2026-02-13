@@ -5,6 +5,4 @@ Es gelten die übergreifenden Festlegungen aus dem Modul [ISiK Basis](https://si
 
 ### Kompatibilität - Connect
 
-In diesem Kapitel werden zudem Hinweise zur Kompatibilität für ISiK Connect festgehalten:
-
-{{index:current}}
+In diesem Kapitel werden zudem Hinweise zur Kompatibilität für ISiK Connect festgehalten: [Kompatibilität der gematik-Spezifikation](KompatibilitaetDerGematikSpezifikation.md)

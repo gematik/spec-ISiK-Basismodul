@@ -14,7 +14,7 @@ Der Autorisierungs-Server ist verantwortlich für die Authentifizierung und Auto
 ### ISiK-Ressourcen-Server
 Der Akteur ISiK-Ressourcen-Server stellt die ISiK-spezifischen FHIR-Ressourcen bereit und ermöglicht autorisierten Clients den Zugriff auf Gesundheitsdaten gemäß den ISiK-Connect-Spezifikationen.
 
-Für den Ressourcen-Server gelten die Festlegungen im Abschnitt {{pagelink:ImplementationGuide/markdown/Conformance.md, text:ISiK-Konformität}}.
+Für den Ressourcen-Server gelten die Festlegungen im Abschnitt [ISiK-Konformität](Conformance.md).
 
 ### Electronic Health Record (EHR)
 Ein Electronic Health Record (EHR) bündelt einen Ressourcen-Server, Autorisierungs-Server und SMART App Launcher (und ggf. weitere Systeme).
