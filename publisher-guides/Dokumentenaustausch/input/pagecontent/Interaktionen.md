@@ -15,5 +15,5 @@ Der Zugriff auf die von den DocumentReferences verlinkten Dokumente (z.B. im PDF
 **Use Case:** Ein Client möchte die Metadaten eines Dokumentes ändern, ohne den Inhalt des Dokumentes selbst zu beeinflussen oder eine neue Version des Dokumentes hochladen zu müssen. Dies ist nur für eine stark eingeschränkte Menge von Elementen möglich. Der Server stellt dafür eine Operation zur Verfügung, deren Parameter den änderbaren Elementen entsprechen.
 
 ### Erzeugen von Dokumentenmetadaten (optional)
-**Use Case:** Ein Client möchte ein gem. ISiK Basismodul erzeugtes, strukturiertes, FHIR-basiertes Dokument an einen Dokumentenserver übermitteln.
+**Use Case:** Ein Client möchte ein gemäß ISiK Basismodul erzeugtes, strukturiertes, FHIR-basiertes Dokument an einen Dokumentenserver übermitteln.
 Der Server stellt dazu eine Operation zur Verfügung, die aus den strukturierten Daten des Dokumentes die erforderlichen Metadaten extrahiert und dem Client eine entsprechend ausgefüllte `DocumentReference`-Ressource zurückgibt. Diese Operation kann von einem Dokumentenserver aber auch einem Drittsystem bereitgestellt werden.
