@@ -24,7 +24,7 @@ name: Build and Publish IG
 # Controls when the action will run.
 on:
   # Run on pull request events only
-  pull_request:
+  # pull_request:
 
   # Run on pushes to main release branches
   push:
@@ -464,7 +464,7 @@ jobs:
       # Collect build markers to determine whether any IG was rebuilt
       - name: Download build markers
         id: download_markers
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: build-ran-*
           path: build-markers
@@ -502,7 +502,7 @@ jobs:
 
       # Download all IG build outputs produced by the build job
       - name: Download Build Results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: fhir-ig-*
           path: publish-output
