@@ -455,6 +455,21 @@ jobs:
             const run = require('./scripts/ig-publisher/update-pr-comment.js');
             await run({ github, context, core });
 
+  cleanup_fhir_packages:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Delete fhir-packages artifact
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/delete-fhir-packages.js');
+            await run({ github, context, core });
+
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
