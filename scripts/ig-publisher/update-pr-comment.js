@@ -13,8 +13,6 @@ module.exports = async function run({ github, context, core, branch }) {
 
   const runId = context.runId;
   const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${runId}`;
-  const artifactsUrl = `${runUrl}/artifacts`;
-
   let artifacts = [];
   try {
     const response = await github.rest.actions.listWorkflowRunArtifacts({
@@ -30,26 +28,6 @@ module.exports = async function run({ github, context, core, branch }) {
 
   const buildArtifacts = artifacts.filter((artifact) => artifact.name.startsWith('fhir-ig-'));
 
-  let body = `${marker}\n### Build artifacts\n\n`;
-  body += `Run: [${runId}](${runUrl})\n`;
-  if (targetBranch) {
-    body += `Branch: \`${targetBranch}\`\n`;
-  }
-  body += '\n';
-
-  if (buildArtifacts.length > 0) {
-    body += 'Artifacts from "Upload Build Results":\n';
-    for (const artifact of buildArtifacts) {
-      const sizeBytes = Number.isFinite(artifact.size_in_bytes) ? artifact.size_in_bytes : 0;
-      const sizeLabel = formatBytes(sizeBytes);
-      body += `- **${artifact.name}** (${sizeLabel})\n`;
-    }
-    body += `\nDownload: ${artifactsUrl}\n`;
-  } else {
-    body += 'No build artifacts found. This usually means no IGs had changes and the build was skipped.\n';
-    body += `\nDetails: ${artifactsUrl}\n`;
-  }
-
   const { data: comments } = await github.rest.issues.listComments({
     owner,
     repo,
@@ -60,6 +38,68 @@ module.exports = async function run({ github, context, core, branch }) {
   const existingComments = comments.filter(
     (c) => typeof c.body === 'string' && c.body.includes(marker)
   );
+
+  const previousArtifacts = extractPreviousArtifacts(existingComments);
+
+  if (buildArtifacts.length === 0) {
+    if (Object.keys(previousArtifacts).length > 0) {
+      core.info('No new build artifacts; keeping existing PR comment unchanged.');
+      return;
+    }
+
+    let body = `${marker}\n### Build artifacts\n\n`;
+    body += `Run: [${runId}](${runUrl})\n`;
+    if (targetBranch) {
+      body += `Branch: \`${targetBranch}\`\n`;
+    }
+    body += '\n';
+    body += 'No build artifacts found for this PR yet.\n';
+
+    for (const existing of existingComments) {
+      await github.rest.issues.deleteComment({
+        owner,
+        repo,
+        comment_id: existing.id,
+      });
+      core.info(`Deleted old PR comment #${existing.id} on PR #${pr.number}`);
+    }
+
+    await github.rest.issues.createComment({
+      owner,
+      repo,
+      issue_number: pr.number,
+      body,
+    });
+    core.info(`Created new PR comment without artifacts on PR #${pr.number}`);
+    return;
+  }
+
+  const mergedArtifacts = { ...previousArtifacts };
+  for (const artifact of buildArtifacts) {
+    const sizeBytes = Number.isFinite(artifact.size_in_bytes) ? artifact.size_in_bytes : 0;
+    const sizeLabel = formatBytes(sizeBytes);
+    const artifactUrl = artifact.html_url || runUrl;
+    mergedArtifacts[artifact.name] = `- **${artifact.name}** (${sizeLabel}) - ${artifactUrl}`;
+  }
+
+  const sortedNames = Object.keys(mergedArtifacts).sort();
+  const updatedNames = buildArtifacts.map((artifact) => artifact.name).sort();
+
+  let body = `${marker}\n### Build artifacts\n\n`;
+  body += `Run: [${runId}](${runUrl})\n`;
+  if (targetBranch) {
+    body += `Branch: \`${targetBranch}\`\n`;
+  }
+  body += '\n';
+  body += 'Updated in this run:\n';
+  for (const name of updatedNames) {
+    body += `- **${name}**\n`;
+  }
+  body += '\n';
+  body += 'Artifacts from "Upload Build Results":\n';
+  for (const name of sortedNames) {
+    body += `${mergedArtifacts[name]}\n`;
+  }
 
   for (const existing of existingComments) {
     await github.rest.issues.deleteComment({
@@ -92,4 +132,25 @@ function formatBytes(bytes) {
   }
   const digits = value >= 10 || unitIndex === 0 ? 0 : 1;
   return `${value.toFixed(digits)} ${units[unitIndex]}`;
+}
+
+function extractPreviousArtifacts(existingComments) {
+  const artifacts = {};
+  for (const comment of existingComments) {
+    const body = comment.body || '';
+    for (const line of body.split('\n')) {
+      if (line.startsWith('- **') && line.includes(' - http')) {
+        const name = extractArtifactName(line);
+        if (name) {
+          artifacts[name] = line;
+        }
+      }
+    }
+  }
+  return artifacts;
+}
+
+function extractArtifactName(line) {
+  const match = line.match(/^\-\s\*\*([^*]+)\*\*/);
+  return match ? match[1].trim() : null;
 }
