@@ -446,6 +446,21 @@ jobs:
             echo "Publish gate: no (no IG build ran)"
           fi
 
+  comment_artifacts:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Comment PR with build artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/update-pr-comment.js');
+            await run({ github, context, core });
+
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest

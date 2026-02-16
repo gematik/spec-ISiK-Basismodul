@@ -50,7 +50,7 @@ Stages and commits the generated artifacts to the current branch.
 
 ### update-pr-comment.js
 
-Creates or replaces the PR comment that lists published IG URLs.
+Creates or replaces the PR comment that lists build artifacts from "Upload Build Results".
 
 **Inputs**
 - `BRANCH_NAME` (via env) or passed as `branch` when invoked from github-script
