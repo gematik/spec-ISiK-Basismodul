@@ -122,6 +122,15 @@ module.exports = async function run({ github, context, core, branch }) {
     body,
   });
   core.info(`Created new PR comment with ${buildArtifacts.length} build artifact(s) on PR #${pr.number}`);
+
+  await deleteOlderArtifacts({
+    github,
+    core,
+    owner,
+    repo,
+    targetBranch,
+    newArtifacts: buildArtifacts,
+  });
 };
 
 function formatBytes(bytes) {
@@ -165,4 +174,70 @@ function buildArtifactUrl({ owner, repo, runId, artifactId }) {
     return `https://github.com/${owner}/${repo}/actions/runs/${runId}`;
   }
   return `https://github.com/${owner}/${repo}/actions/runs/${runId}/artifacts/${artifactId}`;
+}
+
+async function deleteOlderArtifacts({ github, core, owner, repo, targetBranch, newArtifacts }) {
+  const names = new Set(newArtifacts.map((artifact) => artifact.name));
+  if (names.size === 0) {
+    return;
+  }
+
+  const currentIds = new Set(newArtifacts.map((artifact) => artifact.id));
+  const toDelete = [];
+
+  try {
+    const perPage = 100;
+    for (let page = 1; page <= 10; page += 1) {
+      const response = await github.rest.actions.listArtifactsForRepo({
+        owner,
+        repo,
+        per_page: perPage,
+        page,
+      });
+      const artifacts = response.data.artifacts || [];
+      if (artifacts.length === 0) {
+        break;
+      }
+
+      for (const artifact of artifacts) {
+        if (!names.has(artifact.name)) {
+          continue;
+        }
+        if (currentIds.has(artifact.id)) {
+          continue;
+        }
+        const artifactBranch =
+          artifact.workflow_run && artifact.workflow_run.head_branch
+            ? artifact.workflow_run.head_branch
+            : null;
+        if (targetBranch && artifactBranch && artifactBranch !== targetBranch) {
+          continue;
+        }
+        if (targetBranch && !artifactBranch) {
+          continue;
+        }
+        toDelete.push(artifact.id);
+      }
+
+      if (artifacts.length < perPage) {
+        break;
+      }
+    }
+  } catch (error) {
+    core.warning(`Failed to list artifacts for cleanup: ${error.message}`);
+    return;
+  }
+
+  for (const artifactId of toDelete) {
+    try {
+      await github.rest.actions.deleteArtifact({
+        owner,
+        repo,
+        artifact_id: artifactId,
+      });
+      core.info(`Deleted old artifact ${artifactId} for branch ${targetBranch || 'unknown'}`);
+    } catch (error) {
+      core.warning(`Failed to delete artifact ${artifactId}: ${error.message}`);
+    }
+  }
 }
