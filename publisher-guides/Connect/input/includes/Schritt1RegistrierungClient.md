@@ -10,7 +10,7 @@ Der Autorisierungsserver muss die [Anforderungen an die Registrierung von Launch
 
 Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect URLs (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
 
-Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client-Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access-Token-Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden. ([ANF-CON-008](Anforderungsuebersicht.md))
+Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client-Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access-Token-Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden. ([ANF-CON-008](Anforderungsuebersicht.html))
 
 Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen. Es wird hier die Verwendung des [Protected Dynamic Client Registration Prozesses](https://datatracker.ietf.org/doc/html/rfc7591#appendix-A.1.2) empfohlen, um ein unkontrolliertes Registrieren von Clients zu verhindern. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
 

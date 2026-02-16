@@ -38,7 +38,7 @@ Um eine sichere und interoperable Lösung zu ermöglichen, werden folgende Aspek
 * Standardisierte Autorisierungsprotokolle: Nutzung etablierter Protokolle wie OAuth2 und OpenID Connect zur sicheren Autorisierung und Authentifizierung.
 * Integration von Identitätsanbietern (IdPs): Untersuchung der Nutzung externer Identity Provider (IdPs), z. B. des Gematik-IdP, zur Verbesserung der Authentifizierung und Integration in bestehende Systeme.
 * Eindeutige Identitätszuordnung: Konzepte zur sicheren Verknüpfung von Identitäten zwischen Patientenportalen und den entsprechenden Patientenakten im Krankenhausinformationssystem.
-- Konsistente Definition zentraler Begriffe: Bereitstellung klarer Definitionen für Konzepte wie Identity Provider, Autorisierungsserver und Ressourcen-Server, um Missverständnisse zu vermeiden und eine einheitliche Kommunikation zu ermöglichen.
+
 
 ### Technischer Rahmen
 
@@ -48,7 +48,7 @@ Der IG baut auf bestehenden Standards auf, insbesondere:
 * FHIR R4: Sicherstellung der Kompatibilität mit der FHIR R4-Spezifikation.
 * OAuth2 & OpenID Connect: Verwendung bewährter Sicherheitsstandards für den Zugriff auf medizinische Systeme.
 
-Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den [Festlegungen für Connect](Conformance.md) zu entnehmen.
+Die normativen Festlegungen des Moduls ISiK Connect sind im Wesentlichen der Seite zu den [Festlegungen für Connect](Conformance.html) zu entnehmen.
 
 ### Bedeutung für das Gesundheitswesen
 
