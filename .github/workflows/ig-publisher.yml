@@ -163,6 +163,18 @@ jobs:
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
           #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
           #   import_cps_filter: SHOULD
+
+          - ig_name: ISiK-Connect
+            ig_dir: publisher-guides/Connect
+          #  capability_statement_urls:
+          #    - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+          # Add more IGs here:
+          # - ig_name: Basis-IG
+          #   ig_dir: publisher-guides/Basis-IG
+          #   capability_statement_urls:
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
+          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
+          #   import_cps_filter: SHOULD
     env:
       SUSHI_INPUT_DIR: Resources
       IG_PUBLISHER_DIR: ${{ matrix.ig_dir }}
@@ -478,7 +490,7 @@ jobs:
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: needs.publish_gate.outputs.should_publish == 'true' && (github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    if: needs.publish_gate.outputs.should_publish == 'true' || needs.publish_gate.outputs.should_publish == 'false' && (github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     concurrency:
       group: gh-pages-publish
       cancel-in-progress: false
