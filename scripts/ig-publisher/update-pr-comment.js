@@ -216,7 +216,7 @@ async function deleteOlderArtifacts({ github, core, owner, repo, targetBranch, n
         if (targetBranch && !artifactBranch) {
           continue;
         }
-        toDelete.push(artifact.id);
+        toDelete.push({ id: artifact.id, name: artifact.name });
       }
 
       if (artifacts.length < perPage) {
@@ -228,16 +228,18 @@ async function deleteOlderArtifacts({ github, core, owner, repo, targetBranch, n
     return;
   }
 
-  for (const artifactId of toDelete) {
+  for (const artifact of toDelete) {
     try {
       await github.rest.actions.deleteArtifact({
         owner,
         repo,
-        artifact_id: artifactId,
+        artifact_id: artifact.id,
       });
-      core.info(`Deleted old artifact ${artifactId} for branch ${targetBranch || 'unknown'}`);
+      core.info(
+        `Deleted old artifact ${artifact.id} (${artifact.name}) for branch ${targetBranch || 'unknown'}`
+      );
     } catch (error) {
-      core.warning(`Failed to delete artifact ${artifactId}: ${error.message}`);
+      core.warning(`Failed to delete artifact ${artifact.id}: ${error.message}`);
     }
   }
 }
