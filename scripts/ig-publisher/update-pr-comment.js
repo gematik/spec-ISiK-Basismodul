@@ -78,7 +78,12 @@ module.exports = async function run({ github, context, core, branch }) {
   for (const artifact of buildArtifacts) {
     const sizeBytes = Number.isFinite(artifact.size_in_bytes) ? artifact.size_in_bytes : 0;
     const sizeLabel = formatBytes(sizeBytes);
-    const artifactUrl = artifact.html_url || runUrl;
+    const artifactUrl = buildArtifactUrl({
+      owner,
+      repo,
+      runId,
+      artifactId: artifact.id,
+    });
     mergedArtifacts[artifact.name] = `- **${artifact.name}** (${sizeLabel}) - ${artifactUrl}`;
   }
 
@@ -96,7 +101,7 @@ module.exports = async function run({ github, context, core, branch }) {
     body += `- **${name}**\n`;
   }
   body += '\n';
-  body += 'Artifacts from "Upload Build Results":\n';
+  body += 'Download Build IGs:\n';
   for (const name of sortedNames) {
     body += `${mergedArtifacts[name]}\n`;
   }
@@ -153,4 +158,11 @@ function extractPreviousArtifacts(existingComments) {
 function extractArtifactName(line) {
   const match = line.match(/^\-\s\*\*([^*]+)\*\*/);
   return match ? match[1].trim() : null;
+}
+
+function buildArtifactUrl({ owner, repo, runId, artifactId }) {
+  if (!artifactId) {
+    return `https://github.com/${owner}/${repo}/actions/runs/${runId}`;
+  }
+  return `https://github.com/${owner}/${repo}/actions/runs/${runId}/artifacts/${artifactId}`;
 }
