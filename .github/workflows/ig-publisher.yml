@@ -23,8 +23,8 @@ name: Build and Publish IG
 
 # Controls when the action will run.
 on:
-  # Run on pull request events only
-  # pull_request:
+  # Run on pull request events (build only; no gh-pages deploy)
+  pull_request:
 
   # Run on pushes to main release branches
   push:
@@ -126,7 +126,7 @@ jobs:
             ig_dir: publisher-guides/AMTS
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
-              
+
 
           #- ig_name: ISiK-Basis
           #  ig_dir: publisher-guides/Basis
@@ -359,23 +359,6 @@ jobs:
           path: |
             ${{ env.IG_PUBLISHER_DIR }}/output
 
-      # Write the published IG URL into a temporary file and summary
-      - name: Announce published URL
-        id: announce_url
-        if: steps.check_changes.outputs.has_changes == 'true'
-        shell: bash
-        env:
-          IG_NAME: ${{ matrix.ig_name }}
-        run: bash scripts/ig-publisher/announce-url.sh
-
-      # Upload IG URL metadata for the unified PR comment
-      - name: Upload IG URL metadata
-        uses: actions/upload-artifact@v6
-        with:
-          name: ig-url-${{ matrix.ig_name }}
-          path: ${{ github.workspace }}/.ig-urls-temp/urls.txt
-          retention-days: 1
-          if-no-files-found: ignore
 
   # Commit all expanded resources in one go
   commit:
@@ -429,30 +412,6 @@ jobs:
         shell: bash
         run: bash scripts/ig-publisher/commit-artifacts.sh
 
-      # Download URL metadata from build jobs to build a unified summary
-      - name: Download IG URL metadata
-        uses: actions/download-artifact@v7
-        with:
-          pattern: ig-url-*
-          path: ig-urls
-        continue-on-error: true
-
-      # Create a workflow summary file listing published IG URLs
-      - name: Write IG URL summary
-        env:
-          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-        run: node scripts/ig-publisher/write-summary.js
-
-      # Update or create a PR comment that lists all published IG URLs
-      - name: Update PR comment with all published IGs
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v8
-        env:
-          BRANCH_NAME: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-        with:
-          script: |
-            const run = require('./scripts/ig-publisher/update-pr-comment');
-            await run({ github, context, core, branch: process.env.BRANCH_NAME });
 
   publish_gate:
     needs: build
@@ -490,7 +449,7 @@ jobs:
   publish:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: needs.publish_gate.outputs.should_publish == 'true' || needs.publish_gate.outputs.should_publish == 'false' && (github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    if: github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-') && needs.publish_gate.outputs.should_publish == 'true'
     concurrency:
       group: gh-pages-publish
       cancel-in-progress: false
