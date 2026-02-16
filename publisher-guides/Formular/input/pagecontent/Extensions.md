@@ -2,7 +2,7 @@
 topic: Extensions
 ---
 
-Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
+Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden verschiedene Extensions unterstützt. Im Folgenden sind pro Interaktion  alle Extensions aufgelistet, die in der aktuellen Ausbaustufen des ISiK-Formular-Moduls zum Einsatz kommen.
 
 ### Core Extensions (Questionnaire)
 
@@ -13,10 +13,10 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | FormularDatenValidierung | [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html) | Questionnaire.item | Setzt einen maximalen Wert für numerische Eingaben | SOLL |
 | FormularDatenValidierung | [minLength](https://hl7.org/fhir/R4/extension-minlength.html) | Questionnaire.item | Definiert die Mindestlänge für Texteingaben | SOLL |
 | FormularDatenValidierung | [minValue](https://hl7.org/fhir/R4/extension-minvalue.html) | Questionnaire.item | Setzt einen minimalen Wert für numerische Eingaben | SOLL |
-| FormularRendering | [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert maximale Vorkommen eines Items | SOLL |
-| FormularRendering | [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert minimale Vorkommen eines Items | SOLL |
+| FormularRendering | [questionnaire-maxOccurs](https://hl7.org/fhir/R4/extension-questionnaire-maxoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert das maximale Vorkommen eines Items | SOLL |
+| FormularRendering | [questionnaire-minOccurs](https://hl7.org/fhir/R4/extension-questionnaire-minoccurs.html) | Questionnaire.item, Questionnaire.item.item | Definiert das minimale Vorkommen eines Items | SOLL |
 | FormularRendering | [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html) | Questionnaire.item, Questionnaire.item.item | Definiert die Einheit für numerische Werte | SOLL |
-| FormularRendering | [questionnaire-hidden](https://hl7.org/fhir/R4/extension-questionnaire-hidden.html) | Questionnaire.item, Questionnaire.item.item | Ermöglicht das Ausblenden von Items |
+| FormularRendering | [questionnaire-hidden](https://hl7.org/fhir/R4/extension-questionnaire-hidden.html) | Questionnaire.item, Questionnaire.item.item | Ermöglicht das Ausblenden von Items | SOLL |
 | FormularDatenValidierung | [regex](https://hl7.org/fhir/R4/extension-regex.html) | Questionnaire.item | Fügt reguläre Ausdrücke für Validierung hinzu <br> Die Extension ist in zukünftigen Versionen deprecated. Aus dem Grund wird die Extension targetConstraint empfohlen zu nutzen. | KANN |
 | FormularDatenValidierung | [targetConstraint](http://hl7.org/fhir/StructureDefinition/targetConstraint) | Questionnaire.item | Fügt reguläre Ausdrücke für Validierung hinzu | SOLL |
 
@@ -26,7 +26,7 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 |--------|--------|---------|------------------|---|
 | FormularRendering | [Name des Questionnaire](http://hl7.org/fhir/StructureDefinition/display) | QuestionnaireResponse.questionnaire | Gibt den Namen des Questionnaire an, damit dieser im Falle des fehlenden Zugriff auf die Questionnaire Ressource mit angegeben werden kann | SOLL |
 
-### Core Extendion (Questionnaire und QuestionnaireResponse)
+### Core Extensions (Questionnaire und QuestionnaireResponse)
 
 | Rolle | Extension Name | Context | Beschreibung | Relevanz |
 |--------|--------|---------|------------------|---|
@@ -46,14 +46,14 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | FormularRendering | Form Control | [Launch Contexts](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-launchContext.html) | Questionnaire | Ressourcen, die Kontext für die Formularverarbeitungslogik bereitstellen | SOLL |
 | FormularDatenVorbelegung | Form Population | [Obervation link period](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-observationLinkPeriod.html) | Questionnaire.item | Gibt den Zeitraum an, in dem nach passenden Beobachtungen gesucht werden soll | SOLL |
 
-## Extensions Out-of-scope
+### Extensions Out-of-scope
 
 | Hinweis | Out-Of-Scope Extensions |
 |---------|---------------------|
 | <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die folgenden Extensions sind im Rahmen des Moduls out-of-scope und sollten nicht genutzt werden. Falls Extensions für einen bestimmten Use Case benötigt werden, soll bitte im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen werden. Abhängig von der Rückmeldung kann diese Extension in späteren Releases verbindlich gemacht werden. |
 
 
-### Core Extensions (Questionnaire)
+#### Core Extensions (Questionnaire)
 | Extension Name | Context | Beschreibung |
 |---------------|---------|--------------|
 | [11179-permitted-value-conceptmap](https://hl7.org/fhir/R4/extension-11179-permitted-value-conceptmap.html) | Questionnaire.item.answerValueSet | Verknüpft erlaubte Werte mit einer ConceptMap |
@@ -82,7 +82,7 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | [replaces](https://hl7.org/fhir/R4/extension-replaces.html) | Questionnaire | Gibt an, welche Ressource diese ersetzt |
 | [variable](https://hl7.org/fhir/R4/extension-variable.html) | Questionnaire, Questionnaire.item, Questionnaire.item.item | Definiert Variablen für dynamische Inhalte | 
 
-### Core Extension (QuestionnaireResponse)
+#### Core Extension (QuestionnaireResponse)
 
 | Extension Name | Context | Beschreibung |
 |---------------|---------|--------------|
@@ -95,7 +95,7 @@ Für die verschiedenen Interaktionen werden verschiedene Extensions unterstützt
 | [workflow-researchStudy](https://hl7.org/fhir/R4/extension-workflow-researchstudy.html) | QuestionnaireResponse | Verknüpft die Antwort mit einer Forschungsstudie |
 | [resource-pertainsToGoal](https://hl7.org/fhir/R4/extension-resource-pertainstogoal.html) | pertainsToGoal | Zeigt an, dass die Antwort mit einem bestimmten Ziel verbunden ist |
 
-### SDC Extensions
+#### SDC Extensions
 
 | Modul | Extension Name | Context | Beschreibung |
 |-------|---------------|---------|--------------|

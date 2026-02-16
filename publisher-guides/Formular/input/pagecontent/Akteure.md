@@ -1,4 +1,4 @@
-<div>
+<div style="width: 700px;">
 {% include akteure.svg %}
 </div>
 

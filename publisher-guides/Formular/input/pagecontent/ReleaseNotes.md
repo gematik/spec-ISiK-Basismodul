@@ -2,9 +2,9 @@
 topic: ReleaseNotes
 ---
 
-Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
+### Version 6.0.0-rc
 
-Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.4
+t.b.d.
 
 ### Version 5.1.1
 

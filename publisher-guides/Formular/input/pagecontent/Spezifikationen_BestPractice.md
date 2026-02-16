@@ -4,20 +4,20 @@ topic: BestPractice
 
 ### Funktionsumfang
 
-* FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
-Alle weiteren Funtionalitäten und Extensions müssen so verwendet werden, dass diese von einem {{pagelink:FormularRenderer}} gefahrlos ignoriert werden können, 
+FormularDefinitionen sollten sich auf den Umfang der in diesem Modul festgelegten Funktionalitäten und Extensions beschränken.
+Alle weiteren Funtionalitäten und Extensions müssen so verwendet werden, dass diese von einem [FormularRenderer](Akteure.html#FormularRenderer) gefahrlos ignoriert werden können, 
 ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 
 ### Annotation für die Vorbelegung
 
-* Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profiles repräsentiert werden können, müssen *zwingend* für die automatische Vorbelegung annotiert werden.
-* Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen *zwingend* in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.
+Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profiles repräsentiert werden können, müssen *zwingend* für die automatische Vorbelegung annotiert werden.
+Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen *zwingend* in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.
 
 ### Annotation für die Extraktion
 
-* Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten für die Extraktion annotiert werden.
-* Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf ein geeignetes nationales oder internationales Observation-Profil für die Extraktion verweisen.
-* Formulare, die sich im Bereich von ISiK-definierten Ressourcen (außer Observation) bewegen, sollten mit Template-based Extraction Annotationen versehen werden. Entsprechende Template Profile für die Basis sind vorhanden.   
+Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten für die Extraktion annotiert werden.
+Formularfelder, die Daten erheben, die durch eine Observation-Ressource repräsentiert werden können, sollten in item.definition auf ein geeignetes nationales oder internationales Observation-Profil für die Extraktion verweisen.
+Formulare, die sich im Bereich von ISiK-definierten Ressourcen (außer Observation) bewegen, sollten mit Template-based Extraction Annotationen versehen werden. Entsprechende Template Profile für die Basis sind vorhanden.   
 
 ### Vorbereitung für Definition-Based Extraction und Prepopulation
 
@@ -25,7 +25,7 @@ Obwohl die Definition-Based Extraction und Prepopulation derzeit nicht verbindli
 
 ### Launch-Kontext
 
-* FormularDefinitionen sollten immer das Vorhandensein eines Patienten- und Encounter-Kontextes annehmen und die Launch-Context-Extension entsprechend nutzen. 
+FormularDefinitionen sollten immer das Vorhandensein eines Patienten- und Encounter-Kontextes annehmen und die Launch-Context-Extension entsprechend nutzen. 
 
 ### Formulare im Kontext von Medizinprodukten
 Formulare, deren Einsatz eine Zweckbestimmung im Sinne der EU-Medizinprodukteverordnung (MDR) nach sich zieht und somit unter die entsprechende EU-Richtlinie für Medizinprodukte fallen, sollen ebenfalls über dieses Modul erstellt werden können.

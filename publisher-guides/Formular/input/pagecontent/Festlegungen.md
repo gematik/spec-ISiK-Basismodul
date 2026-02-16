@@ -39,7 +39,7 @@ Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 5](https://simplifier
 |Begriff|Erläuterung|
 |-|-|
 |FormularDefinition|Die FHIR-Ressourcen ["Questionnaire"](https://hl7.org/fhir/R4/questionnaire.html)|
-|{{pagelink:FormularDaten}}| Die FHIR-Ressource ["QuestionnaireResponse" ](https://hl7.org/fhir/R4/questionnaireresponse.html)|
+|FormularDaten| Die FHIR-Ressource ["QuestionnaireResponse" ](https://hl7.org/fhir/R4/questionnaireresponse.html)|
 |SDC|Der Implementierungsleitfaden ["Structured Data Capture"](https://build.fhir.org/ig/HL7/sdc/)|
 |Vorbelegung|Der Vorgang des Vorbefüllens einer QuestionnaireResponse mit Daten, die über eine FHIR-API abgerufen werden können|
 |Extraktion|Der Vorgang des Extrahierens von FHIR-Ressourcen aus einer QuestionnaireResponse|
