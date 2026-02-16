@@ -286,15 +286,15 @@ jobs:
           path: build-markers/${{ matrix.ig_name }}.txt
           retention-days: 1
 
-      # Tag expanded resources with their IG directory for later copy
-      - name: Write IG dir metadata (expanded resources)
+      # Tag /input/resources with their IG directory for later copy
+      - name: Write IG dir metadata (/input/resources)
         shell: bash
         run: |
           mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
           echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/ig-dir.txt"
 
-      # Upload expanded resources so they can be committed later
-      - name: Upload Expanded Resources
+      # Upload /input/resources so they can be committed later
+      - name: Upload /input/resources of IG
         uses: actions/upload-artifact@v6
         with:
           name: expanded-resources-${{ matrix.ig_name }}
@@ -302,16 +302,16 @@ jobs:
           retention-days: 1
           if-no-files-found: warn
 
-      # Tag input includes with their IG directory for later copy
-      - name: Write IG dir metadata (input includes)
+      # Tag /input/includes/ with their IG directory for later copy
+      - name: Write IG input dir metadata (/input/includes/)
         shell: bash
         run: |
           if [ -d "${IG_PUBLISHER_DIR}/input/includes" ]; then
             echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/includes/ig-dir.txt"
           fi
 
-      # Upload input includes so they can be committed later
-      - name: Upload Input Includes
+      # Upload /input/includes/ so they can be committed later
+      - name: Upload /input/includes of IG
         uses: actions/upload-artifact@v6
         with:
           name: input-includes-${{ matrix.ig_name }}
@@ -319,16 +319,16 @@ jobs:
           retention-days: 1
           if-no-files-found: warn
 
-      # Tag input page content with its IG directory for later copy
-      - name: Write IG dir metadata (input pagecontent)
+      # Tag /input/pagecontent/ with its IG directory for later copy
+      - name: Write IG dir metadata (/input/pagecontent/)
         shell: bash
         run: |
           if [ -d "${IG_PUBLISHER_DIR}/input/pagecontent" ]; then
             echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/pagecontent/ig-dir.txt"
           fi
 
-      # Upload input page content so it can be committed later
-      - name: Upload Input Pagecontent
+      # Upload /input/pagecontent so it can be committed later
+      - name: Upload /input/pagecontent/ of IG
         uses: actions/upload-artifact@v6
         with:
           name: input-pagecontent-${{ matrix.ig_name }}
@@ -344,8 +344,8 @@ jobs:
           branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           echo "${branch_name}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
-      # Upload the generated IG site output for publishing
-      - name: Upload Build Results
+      # Upload the generated IG  output for publishing
+      - name: Upload IG Build Results
         if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/upload-artifact@v6
         with:
@@ -354,7 +354,7 @@ jobs:
             ${{ env.IG_PUBLISHER_DIR }}/output
 
 
-  # Commit all expanded resources in one go
+  # Commit all input resources of IGs in one go
   commit:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
@@ -383,14 +383,14 @@ jobs:
           path: artifacts/expanded-resources
 
       # Download IG input includes from all build jobs
-      - name: Download Input Includes
+      - name: Download /input/includes
         uses: actions/download-artifact@v7
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
 
       # Download IG input page content from all build jobs
-      - name: Download Input Pagecontent
+      - name: Download /input/pagecontent
         uses: actions/download-artifact@v7
         with:
           pattern: input-pagecontent-*
