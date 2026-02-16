@@ -17,6 +17,9 @@ permissions:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    concurrency:
+      group: gh-pages-publish
+      cancel-in-progress: false
     steps:
       - name: Check gh-pages branch
         id: gh-pages
@@ -39,16 +42,24 @@ jobs:
               }
             }
 
+      - name: Checkout default branch (scripts)
+        if: steps.gh-pages.outputs.exists == 'true'
+        uses: actions/checkout@v6
+        with:
+          path: repo
+
       - name: Checkout gh-pages
         if: steps.gh-pages.outputs.exists == 'true'
         uses: actions/checkout@v6
         with:
           ref: gh-pages
           fetch-depth: 0
+          path: gh-pages
 
       - name: Prune deleted branch directories
         if: steps.gh-pages.outputs.exists == 'true'
         shell: bash
+        working-directory: gh-pages
         env:
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,4 +68,4 @@ jobs:
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           CLEANUP_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
-        run: bash scripts/cleanup-gh-pages/cleanup.sh
+        run: bash ../repo/scripts/cleanup-gh-pages/cleanup.sh
