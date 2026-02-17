@@ -37,6 +37,6 @@ fi
 
 echo "=== Committing changes ==="
 branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs [skip ci]"
+git commit -m "chore: update SUSHI-generated artifacts and expanded resources for all IGs"
 git push origin "HEAD:${branch_name}"
 echo "=== Commit and push completed ==="

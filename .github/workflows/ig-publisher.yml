@@ -127,25 +127,22 @@ jobs:
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
 
-<<<<<<< stufe-6/labor-migration-PTDATA-2024
+          - ig_name: ISiK-Basis
+            ig_dir: publisher-guides/Basis
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
+
+          - ig_name: ISiK-Vitalparameter
+            ig_dir: publisher-guides/Vitalparameter
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
+
           # - ig_name: ISiK-Medikation
           #   ig_dir: publisher-guides/Medikation
           #   capability_statement_urls:
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerordnungAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationInformationAkteur
           #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungAkteur
-=======
->>>>>>> main-stufe-6
-
-          #- ig_name: ISiK-Basis
-          #  ig_dir: publisher-guides/Basis
-          #  capability_statement_urls:
-          #    - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-
-          - ig_name: ISiK-Vitalparameter
-            ig_dir: publisher-guides/Vitalparameter
-            capability_statement_urls:
-              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
 
           # - ig_name: ICU
           #   ig_dir: publisher-guides/ICU
@@ -163,35 +160,15 @@ jobs:
             ig_dir: publisher-guides/Terminplanung
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminRepositoryAkteur
-<<<<<<< stufe-6/labor-migration-PTDATA-2024
 
           - ig_name: ISiK-Labor
             ig_dir: publisher-guides/Labor
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLaborMinimalRolle
 
-=======
-          # Add more IGs here:
-          # - ig_name: Basis-IG
-          #   ig_dir: publisher-guides/Basis-IG
-          #   capability_statement_urls:
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
-          #   import_cps_filter: SHOULD
-
           - ig_name: ISiK-Connect
             ig_dir: publisher-guides/Connect
-          #  capability_statement_urls:
-          #    - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
-          # Add more IGs here:
-          # - ig_name: Basis-IG
-          #   ig_dir: publisher-guides/Basis-IG
-          #   capability_statement_urls:
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Server
-          #     - https://gematik.de/fhir/isik/CapabilityStatement/Client
-          #   import_cps_filter: SHOULD
->>>>>>> main-stufe-6
+
     env:
       SUSHI_INPUT_DIR: Resources
       IG_PUBLISHER_DIR: ${{ matrix.ig_dir }}
@@ -309,15 +286,15 @@ jobs:
           path: build-markers/${{ matrix.ig_name }}.txt
           retention-days: 1
 
-      # Tag expanded resources with their IG directory for later copy
-      - name: Write IG dir metadata (expanded resources)
+      # Tag /input/resources with their IG directory for later copy
+      - name: Write IG dir metadata (/input/resources)
         shell: bash
         run: |
           mkdir -p "${IG_PUBLISHER_DIR}/input/resources"
           echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/resources/ig-dir.txt"
 
-      # Upload expanded resources so they can be committed later
-      - name: Upload Expanded Resources
+      # Upload /input/resources so they can be committed later
+      - name: Upload /input/resources of IG
         uses: actions/upload-artifact@v6
         with:
           name: expanded-resources-${{ matrix.ig_name }}
@@ -325,16 +302,16 @@ jobs:
           retention-days: 1
           if-no-files-found: warn
 
-      # Tag input includes with their IG directory for later copy
-      - name: Write IG dir metadata (input includes)
+      # Tag /input/includes/ with their IG directory for later copy
+      - name: Write IG input dir metadata (/input/includes/)
         shell: bash
         run: |
           if [ -d "${IG_PUBLISHER_DIR}/input/includes" ]; then
             echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/includes/ig-dir.txt"
           fi
 
-      # Upload input includes so they can be committed later
-      - name: Upload Input Includes
+      # Upload /input/includes/ so they can be committed later
+      - name: Upload /input/includes of IG
         uses: actions/upload-artifact@v6
         with:
           name: input-includes-${{ matrix.ig_name }}
@@ -342,16 +319,16 @@ jobs:
           retention-days: 1
           if-no-files-found: warn
 
-      # Tag input page content with its IG directory for later copy
-      - name: Write IG dir metadata (input pagecontent)
+      # Tag /input/pagecontent/ with its IG directory for later copy
+      - name: Write IG dir metadata (/input/pagecontent/)
         shell: bash
         run: |
           if [ -d "${IG_PUBLISHER_DIR}/input/pagecontent" ]; then
             echo "${IG_PUBLISHER_DIR}" > "${IG_PUBLISHER_DIR}/input/pagecontent/ig-dir.txt"
           fi
 
-      # Upload input page content so it can be committed later
-      - name: Upload Input Pagecontent
+      # Upload /input/pagecontent so it can be committed later
+      - name: Upload /input/pagecontent/ of IG
         uses: actions/upload-artifact@v6
         with:
           name: input-pagecontent-${{ matrix.ig_name }}
@@ -367,8 +344,8 @@ jobs:
           branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           echo "${branch_name}" > "${{ env.IG_PUBLISHER_DIR }}/output/.branch-name"
 
-      # Upload the generated IG site output for publishing
-      - name: Upload Build Results
+      # Upload the generated IG  output for publishing
+      - name: Upload IG Build Results
         if: steps.check_changes.outputs.has_changes == 'true'
         uses: actions/upload-artifact@v6
         with:
@@ -377,7 +354,7 @@ jobs:
             ${{ env.IG_PUBLISHER_DIR }}/output
 
 
-  # Commit all expanded resources in one go
+  # Commit all input resources of IGs in one go
   commit:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
@@ -406,14 +383,14 @@ jobs:
           path: artifacts/expanded-resources
 
       # Download IG input includes from all build jobs
-      - name: Download Input Includes
+      - name: Download /input/includes
         uses: actions/download-artifact@v7
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
 
       # Download IG input page content from all build jobs
-      - name: Download Input Pagecontent
+      - name: Download /input/pagecontent
         uses: actions/download-artifact@v7
         with:
           pattern: input-pagecontent-*
@@ -462,6 +439,36 @@ jobs:
             echo "should_publish=false" >> "$GITHUB_OUTPUT"
             echo "Publish gate: no (no IG build ran)"
           fi
+
+  comment_artifacts:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Comment PR with build artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/update-pr-comment.js');
+            await run({ github, context, core });
+
+  cleanup_fhir_packages:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Delete fhir-packages artifact
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/delete-fhir-packages.js');
+            await run({ github, context, core });
 
   publish:
     needs: [build, publish_gate]
