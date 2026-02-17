@@ -358,7 +358,7 @@ jobs:
   commit:
     needs: [build, publish_gate]
     runs-on: ubuntu-latest
-    if: needs.publish_gate.outputs.should_publish == 'true'
+    if: needs.publish_gate.outputs.should_publish == 'true' && !(github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-'))
 
     steps:
       # Check out the source branch so commits land in the right place
