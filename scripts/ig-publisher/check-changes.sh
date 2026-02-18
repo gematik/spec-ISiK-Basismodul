@@ -25,17 +25,27 @@ echo ""
 
 has_changes=false
 diff_range=""
+range_source=""
 
-if [ -n "${DIFF_BASE_SHA:-}" ] && [ -n "${DIFF_HEAD_SHA:-}" ]; then
-  diff_range="${DIFF_BASE_SHA}...${DIFF_HEAD_SHA}"
-elif [ -n "${DIFF_BASE_SHA:-}" ]; then
-  diff_range="${DIFF_BASE_SHA}...HEAD"
-elif [ "${GITHUB_EVENT_NAME:-}" = "pull_request" ] && [ -n "${GITHUB_BASE_REF:-}" ]; then
-  # Fallback for PRs when explicit SHAs are not provided.
-  diff_range="origin/${GITHUB_BASE_REF}...HEAD"
-elif git rev-parse --verify HEAD^ >/dev/null 2>&1; then
-  # Fallback for pushes/manual runs with at least two commits checked out.
-  diff_range="HEAD^...HEAD"
+head_sha="${DIFF_HEAD_SHA:-HEAD}"
+if ! git rev-parse --verify "${head_sha}^{commit}" >/dev/null 2>&1; then
+  echo "Warning: DIFF_HEAD_SHA is not available locally (${head_sha}). Falling back to HEAD."
+  head_sha="HEAD"
+fi
+
+if [ -n "${LAST_SUCCESS_SHA:-}" ]; then
+  if git rev-parse --verify "${LAST_SUCCESS_SHA}^{commit}" >/dev/null 2>&1 && \
+    git merge-base --is-ancestor "${LAST_SUCCESS_SHA}" "${head_sha}" >/dev/null 2>&1; then
+    diff_range="${LAST_SUCCESS_SHA}...${head_sha}"
+    range_source="last successful run"
+  else
+    echo "Warning: LAST_SUCCESS_SHA is not usable (${LAST_SUCCESS_SHA}); falling back to last commit."
+  fi
+fi
+
+if [ -z "${diff_range}" ] && git rev-parse --verify "${head_sha}^" >/dev/null 2>&1; then
+  diff_range="${head_sha}^...${head_sha}"
+  range_source="last commit"
 fi
 
 tracked_diff_out=""
@@ -43,7 +53,7 @@ tracked_history_out=""
 workspace_status_out=""
 
 if [ -n "${diff_range}" ]; then
-  echo "Comparing commit range: ${diff_range}"
+  echo "Comparing commit range (${range_source}): ${diff_range}"
   if ! git rev-list -1 "${diff_range}" >/dev/null 2>&1; then
     echo "Warning: invalid commit range (${diff_range}). Forcing build to avoid missing changes."
     echo "has_changes=true" >> "${GITHUB_OUTPUT}"
@@ -66,7 +76,9 @@ if [ -n "${diff_range}" ]; then
     tracked_history_out=""
   fi
 else
-  echo "No commit range available for tracked checks."
+  echo "No commit range available for tracked checks. Forcing build to avoid missing changes."
+  echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+  exit 0
 fi
 
 # Always check workspace changes too (tracked + untracked) in checked paths.

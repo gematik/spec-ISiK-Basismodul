@@ -13,11 +13,12 @@ Checks whether `fsh-generated` or `input` changed for the current IG and sets
 - net tracked changes in the commit range (`git diff`)
 - tracked files touched by commits in the range (`git log`)
 - workspace changes including untracked files (`git status`)
+If `LAST_SUCCESS_SHA` is unavailable or invalid, it falls back to the last commit (`HEAD^...HEAD`).
 
 **Inputs**
 - `IG_PUBLISHER_DIR`: IG directory under `publisher-guides`
 - `FORCE_BUILD`: `true` to force builds even without detected changes
-- `DIFF_BASE_SHA`: Base commit SHA for diff detection
+- `LAST_SUCCESS_SHA`: Head SHA from the previous successful workflow run on the same branch
 - `DIFF_HEAD_SHA`: Head commit SHA for diff detection (for PRs: `pull_request.head.sha`)
 
 ### publish-branch.sh
@@ -54,3 +55,8 @@ Creates or replaces the PR comment that lists build artifacts from "Upload Build
 ### delete-fhir-packages.js
 
 Deletes the temporary `fhir-packages` artifact after the workflow run.
+
+### resolve-last-success-sha.js
+
+Resolves the previous successful workflow run head SHA on the current branch and
+exposes it as `last_success_sha` output for later change detection.
