@@ -39,6 +39,26 @@ on:
         required: false
         type: boolean
         default: false
+      verbose_changes:
+        description: 'Print full change lists in check-changes logs'
+        required: false
+        type: boolean
+        default: false
+      ig_filter:
+        description: 'Limit manual build to a single IG matrix entry'
+        required: false
+        type: choice
+        default: ALL
+        options:
+          - ALL
+          - ISiK-AMTS
+          - ISiK-Formularmodul
+          - ISiK-Basis
+          - ISiK-Vitalparameter
+          - ISiK-Subscriptions
+          - ISiK-Terminplanung
+          - ISiK-Labor
+          - ISiK-Connect
 
 # Ensure only one workflow runs per branch at a time
 # New runs will cancel in-progress runs for the same branch
@@ -102,6 +122,7 @@ jobs:
   # ============================================
   build:
     needs: prepare
+    if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.ig_filter == 'ALL' || matrix.ig_name == github.event.inputs.ig_filter }}
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gefyra/ig-publisher-with-snapshot-support:latest
@@ -276,6 +297,7 @@ jobs:
         shell: bash
         env:
           FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
+          SHOW_ALL_CHANGES: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.verbose_changes == 'true' }}
           LAST_SUCCESS_SHA: ${{ steps.resolve_last_success.outputs.last_success_sha }}
           DIFF_HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
         run: bash scripts/ig-publisher/check-changes.sh
