@@ -20,7 +20,15 @@ Bei der Festlegung dieser Spezifikation findet das IHE-MHD-Profil eine besondere
 
 Der Fokus dieser Spezifikation liegt zunächst auf den Festlegungen zum Datenaustausch *innerhalb* einer Einrichtung, soll künftig jedoch auch Best Practice-Empfehlungen zur Einstellung von Dokumenten in die ePA eines Patienten, der Weiterleitung an andere Leistungserbringer via KIM oder dem einrichtungsübergreifenden Dokumentenaustausch via MHD/XDS enthalten.
 
-{{render:Material/Dokumentenaustausch/images/ISiKKontextUndErwScope.jpg}}
+{{render:Material/Dokumentenaustausch/images/}}
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="ISiKKontextUndErwScope.jpg" alt="ISiK Kontext Und Erweiterter Scope" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>ISiK Dokumentenmodul Kontext Und Erweiterter Scope </figcaption>
+</figure>
+
 
 ### Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 

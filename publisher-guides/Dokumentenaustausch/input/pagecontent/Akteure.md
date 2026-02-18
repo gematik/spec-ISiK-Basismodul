@@ -27,3 +27,10 @@ Der Client nimmt im IHE-MHD-Kontext die Rollen [Document Source](https://profile
 * Retrieve Document [ITI-68] (optional)
 
 {{render:Material/Dokumentenaustausch/images/ISiKPrimaerScope.jpg}} 
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="ISiKPrimaerScope.jpg" alt="ISiK Primärer Scope" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>ISiK Dokumentenmodul primärer Scope </figcaption>
+</figure>

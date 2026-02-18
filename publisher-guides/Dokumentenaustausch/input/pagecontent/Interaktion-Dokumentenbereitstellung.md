@@ -55,7 +55,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Die Vereinbarungen gelten uneingeschränkt.
 
 #### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
-Es gelten die Vereinbarungen gemäß {{pagelink:/Einfuehrung/Artefakte/CapabilityStatements}}
+Es gelten die Vereinbarungen gemäß [dem CapabilityStatement](CapabilityStatement-ISiKCapabilityStatementDokumentenServerAkteur-expanded.html).
 
 ### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
@@ -74,7 +74,7 @@ Typische UseCases hierfür sind u.A.:
 
 Server, die eine Zuordnung von Dokumenten mittels logischer Referenz erlauben, MÜSSEN dies im `CapabilityStatement` für den Ressourcentyp  `DocumentReference` unter CapabilityStatement.rest.resource.referencePolicy` kenntlich machen:
 
-* Der Code `resolves` ist zu verwenden wenn logical Identifier erlaubt sind, aber stets auflösbar sein müssen (Trifft ein Identifier aus einen oder mehrere Patienten zu, stellt dies einen Fehlerzustand dar.)
+* Der Code `resolves` ist zu verwenden wenn logical Identifier erlaubt sind, aber stets auflösbar sein müssen (Trifft ein Identifier auf einen oder mehrere Patienten zu, stellt dies einen Fehlerzustand dar.)
 * Der Code `logical` ist *zusätzlich* anzugeben, wenn der Server auch DocumentReferences akzeptiert, denen kein Patient zugeordnet werden kann (z.B. in Erwartung, dass dieser zu einem späteren Zeitpunkt ergänzt wird).
 * Clients sind verpflichtet *vor* der Verwendung von DocumentReferences mit logischen Referenzen anhand des CapabilityStatements zu überprüfen, ob ein konkreter Server diese Funktionalität unterstützt.
 
@@ -90,20 +90,7 @@ Weitere Hinweise siehe https://hl7.org/fhir/R4/references.html#logical
 
 `POST [base]/DocumentReference`
 
-<tabs>
-    <tab title="Übersicht">      
-        {{render:dok-beispiel-client-with-binary-jpeg-example-short}}
-    </tab>
-    <tab title="XML">      
-        {{xml:dok-beispiel-client-with-binary-jpeg-example-short}}
-    </tab>
-    <tab title="JSON">
-        {{json:dok-beispiel-client-with-binary-jpeg-example-short}}
-    </tab>
-    <tab title="Link">
-        {{link:dok-beispiel-client-with-binary-jpeg-example-short}}
-    </tab>
-</tabs>
+Siehe das [Beispiel hier](DocumentReference-dok-beispiel-client-with-binary-jpeg-example-short.html).
 
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
 
