@@ -24,24 +24,88 @@ echo "  - ${INPUT_PATH}"
 echo ""
 
 has_changes=false
+diff_range=""
+range_source=""
 
-status_out=""
-if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -f "${FSH_GEN_MENU_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -d "${INPUT_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")"
+head_sha="${DIFF_HEAD_SHA:-HEAD}"
+if ! git rev-parse --verify "${head_sha}^{commit}" >/dev/null 2>&1; then
+  echo "Warning: DIFF_HEAD_SHA is not available locally (${head_sha}). Falling back to HEAD."
+  head_sha="HEAD"
 fi
 
-status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d')
+if [ -n "${LAST_SUCCESS_SHA:-}" ]; then
+  if git rev-parse --verify "${LAST_SUCCESS_SHA}^{commit}" >/dev/null 2>&1 && \
+    git merge-base --is-ancestor "${LAST_SUCCESS_SHA}" "${head_sha}" >/dev/null 2>&1; then
+    diff_range="${LAST_SUCCESS_SHA}...${head_sha}"
+    range_source="last successful run"
+  else
+    echo "Warning: LAST_SUCCESS_SHA is not usable (${LAST_SUCCESS_SHA}); falling back to last commit."
+  fi
+fi
 
-if [ -n "$status_out" ]; then
+if [ -z "${diff_range}" ] && git rev-parse --verify "${head_sha}^" >/dev/null 2>&1; then
+  diff_range="${head_sha}^...${head_sha}"
+  range_source="last commit"
+fi
+
+tracked_diff_out=""
+tracked_history_out=""
+workspace_status_out=""
+
+if [ -n "${diff_range}" ]; then
+  echo "Comparing commit range (${range_source}): ${diff_range}"
+  if ! git rev-list -1 "${diff_range}" >/dev/null 2>&1; then
+    echo "Warning: invalid commit range (${diff_range}). Forcing build to avoid missing changes."
+    echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+    exit 0
+  fi
+  echo "Commits in range: $(git rev-list --count "${diff_range}" 2>/dev/null || echo unknown)"
+
+  if tracked_diff_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
+    :
+  else
+    echo "Warning: could not diff commit range ${diff_range}"
+    tracked_diff_out=""
+  fi
+
+  # Detect files that were touched by commits in the range, even if later reverted.
+  if tracked_history_out="$(git log --full-history --name-status --pretty=format: "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
+    :
+  else
+    echo "Warning: could not inspect commit history for range ${diff_range}"
+    tracked_history_out=""
+  fi
+else
+  echo "No commit range available for tracked checks. Forcing build to avoid missing changes."
+  echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+  exit 0
+fi
+
+# Always check workspace changes too (tracked + untracked) in checked paths.
+workspace_status_out="$(git status --porcelain --untracked-files=all -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null || true)"
+
+tracked_diff_out=$(echo "${tracked_diff_out}" | sed '/^[[:space:]]*$/d')
+tracked_history_out=$(echo "${tracked_history_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
+workspace_status_out=$(echo "${workspace_status_out}" | sed '/^[[:space:]]*$/d')
+
+if [ -n "${tracked_diff_out}" ]; then
   has_changes=true
-  echo "Changes detected in checked paths:"
-  echo "$status_out" | head -20
+  echo "Detected net tracked changes (git diff):"
+  echo "${tracked_diff_out}" | head -20
+  echo ""
+fi
+
+if [ -n "${tracked_history_out}" ]; then
+  has_changes=true
+  echo "Detected tracked files touched in commits (git log):"
+  echo "${tracked_history_out}" | head -20
+  echo ""
+fi
+
+if [ -n "${workspace_status_out}" ]; then
+  has_changes=true
+  echo "Detected workspace changes (git status, including untracked):"
+  echo "${workspace_status_out}" | head -20
   echo ""
 fi
 
@@ -52,23 +116,3 @@ fi
 
 echo "has_changes=false" >> "${GITHUB_OUTPUT}"
 echo "No changes detected - skipping IG build"
-
-mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-
-if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-  branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-  ig_name="${IG_NAME}"
-  repo_owner="${GITHUB_REPOSITORY_OWNER}"
-  repo_name="${GITHUB_REPOSITORY#*/}"
-  potential_url="https://${repo_owner}.github.io/${repo_name}/${branch_name}/${ig_name}/"
-
-  if curl --output /dev/null --silent --head --fail "${potential_url}index.html"; then
-    echo "Found existing published IG at ${potential_url}"
-    echo "${ig_name}|${potential_url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-  else
-    echo "No previous publication found - marking as NO_CHANGES"
-    echo "${ig_name}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-  fi
-else
-  echo "${IG_NAME}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-fi
