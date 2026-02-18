@@ -1,6 +1,6 @@
 name: Build and Publish IG
 
-# Workflow logic lives in scripts/ig-publisher/README.md and scripts/ig-publisher/*.sh.
+# Workflow logic lives in scripts/ig-publisher/README.md and scripts/ig-publisher/*.
 # IMPORTANT — Matrix build
 # The Implementation Guides (IGs) to be built are configured further down
 # in the `strategy.matrix.include` section. For each IG, provide these fields:
@@ -178,6 +178,8 @@ jobs:
       # Fetch the repository contents for the build container
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       # Pull the shared FHIR package cache from the prepare job
       - name: Download FHIR Package Cache
@@ -254,13 +256,23 @@ jobs:
           path: ${{ env.IG_PUBLISHER_DIR }}/fsh-generated
           retention-days: 1
 
+      # Resolve the previous successful head SHA on this branch
+      - name: Resolve previous successful head SHA
+        id: resolve_last_success
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = require('./scripts/ig-publisher/resolve-last-success-sha.js');
+            await run({ github, context, core });
+
       # Detect whether the IG needs rebuilding based on input changes
       - name: Check for input changes
         id: check_changes
         shell: bash
         env:
           FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
-          IG_NAME: ${{ matrix.ig_name }}
+          LAST_SUCCESS_SHA: ${{ steps.resolve_last_success.outputs.last_success_sha }}
+          DIFF_HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
         run: bash scripts/ig-publisher/check-changes.sh
 
       # Run the IG Publisher if changes warrant a rebuild
