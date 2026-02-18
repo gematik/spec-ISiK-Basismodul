@@ -18,6 +18,7 @@ If `LAST_SUCCESS_SHA` is unavailable or invalid, it falls back to the last commi
 **Inputs**
 - `IG_PUBLISHER_DIR`: IG directory under `publisher-guides`
 - `FORCE_BUILD`: `true` to force builds even without detected changes
+- `SHOW_ALL_CHANGES`: `true` to print full change lists instead of truncating to 20 lines per block
 - `LAST_SUCCESS_SHA`: Head SHA from the previous successful workflow run on the same branch
 - `DIFF_HEAD_SHA`: Head commit SHA for diff detection (for PRs: `pull_request.head.sha`)
 

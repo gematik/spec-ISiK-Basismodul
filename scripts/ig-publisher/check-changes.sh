@@ -26,6 +26,7 @@ echo ""
 has_changes=false
 diff_range=""
 range_source=""
+show_all_changes="${SHOW_ALL_CHANGES:-false}"
 
 head_sha="${DIFF_HEAD_SHA:-HEAD}"
 if ! git rev-parse --verify "${head_sha}^{commit}" >/dev/null 2>&1; then
@@ -88,25 +89,41 @@ tracked_diff_out=$(echo "${tracked_diff_out}" | sed '/^[[:space:]]*$/d')
 tracked_history_out=$(echo "${tracked_history_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
 workspace_status_out=$(echo "${workspace_status_out}" | sed '/^[[:space:]]*$/d')
 
+print_changes_block() {
+  local heading="$1"
+  local content="$2"
+  local max_lines=20
+
+  if [ -z "${content}" ]; then
+    return
+  fi
+
+  local total_lines
+  total_lines=$(printf '%s\n' "${content}" | wc -l | awk '{print $1}')
+
+  echo "${heading}"
+  if [ "${show_all_changes}" = "true" ] || [ "${total_lines}" -le "${max_lines}" ]; then
+    printf '%s\n' "${content}"
+  else
+    sed -n "1,${max_lines}p" <<< "${content}"
+    echo "... (${total_lines} total lines, showing first ${max_lines}; set SHOW_ALL_CHANGES=true for full output)"
+  fi
+  echo ""
+}
+
 if [ -n "${tracked_diff_out}" ]; then
   has_changes=true
-  echo "Detected net tracked changes (git diff):"
-  echo "${tracked_diff_out}" | head -20
-  echo ""
+  print_changes_block "Detected net tracked changes (git diff):" "${tracked_diff_out}"
 fi
 
 if [ -n "${tracked_history_out}" ]; then
   has_changes=true
-  echo "Detected tracked files touched in commits (git log):"
-  echo "${tracked_history_out}" | head -20
-  echo ""
+  print_changes_block "Detected tracked files touched in commits (git log):" "${tracked_history_out}"
 fi
 
 if [ -n "${workspace_status_out}" ]; then
   has_changes=true
-  echo "Detected workspace changes (git status, including untracked):"
-  echo "${workspace_status_out}" | head -20
-  echo ""
+  print_changes_block "Detected workspace changes (git status, including untracked):" "${workspace_status_out}"
 fi
 
 if [ "$has_changes" = true ]; then
