@@ -24,16 +24,36 @@ echo "  - ${INPUT_PATH}"
 echo ""
 
 has_changes=false
+diff_range=""
+
+if [ -n "${DIFF_BASE_SHA:-}" ] && [ -n "${DIFF_HEAD_SHA:-}" ]; then
+  diff_range="${DIFF_BASE_SHA}...${DIFF_HEAD_SHA}"
+elif [ -n "${DIFF_BASE_SHA:-}" ]; then
+  diff_range="${DIFF_BASE_SHA}...HEAD"
+elif [ "${GITHUB_EVENT_NAME:-}" = "pull_request" ] && [ -n "${GITHUB_BASE_REF:-}" ]; then
+  # Fallback for PRs when explicit SHAs are not provided.
+  diff_range="origin/${GITHUB_BASE_REF}...HEAD"
+elif git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+  # Fallback for pushes/manual runs with at least two commits checked out.
+  diff_range="HEAD^...HEAD"
+fi
 
 status_out=""
-if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -f "${FSH_GEN_MENU_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -d "${INPUT_PATH}" ]; then
-  status_out="${status_out}"$'\n'"$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")"
+
+if [ -n "${diff_range}" ]; then
+  echo "Comparing commit range: ${diff_range}"
+  status_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null || true)"
+else
+  echo "No commit range available; falling back to workspace status."
+  if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
+    status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
+  fi
+  if [ -f "${FSH_GEN_MENU_PATH}" ]; then
+    status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
+  fi
+  if [ -d "${INPUT_PATH}" ]; then
+    status_out="${status_out}"$'\n'"$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")"
+  fi
 fi
 
 status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d')
@@ -52,23 +72,3 @@ fi
 
 echo "has_changes=false" >> "${GITHUB_OUTPUT}"
 echo "No changes detected - skipping IG build"
-
-mkdir -p "${GITHUB_WORKSPACE}/.ig-urls-temp"
-
-if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-  branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-  ig_name="${IG_NAME}"
-  repo_owner="${GITHUB_REPOSITORY_OWNER}"
-  repo_name="${GITHUB_REPOSITORY#*/}"
-  potential_url="https://${repo_owner}.github.io/${repo_name}/${branch_name}/${ig_name}/"
-
-  if curl --output /dev/null --silent --head --fail "${potential_url}index.html"; then
-    echo "Found existing published IG at ${potential_url}"
-    echo "${ig_name}|${potential_url}" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-  else
-    echo "No previous publication found - marking as NO_CHANGES"
-    echo "${ig_name}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-  fi
-else
-  echo "${IG_NAME}|NO_CHANGES" >> "${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt"
-fi

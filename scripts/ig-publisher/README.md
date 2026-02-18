@@ -9,13 +9,13 @@ GitHub Actions job with the repository checked out.
 ### check-changes.sh
 
 Checks whether `fsh-generated` or `input` changed for the current IG and sets
-`has_changes` on `${GITHUB_OUTPUT}`. If no changes are found, it records an
-existing published URL (or `NO_CHANGES`) in `${GITHUB_WORKSPACE}/.ig-urls-temp/urls.txt`.
+`has_changes` on `${GITHUB_OUTPUT}`.
 
 **Inputs**
 - `IG_PUBLISHER_DIR`: IG directory under `publisher-guides`
-- `IG_NAME`: IG identifier used in URLs
 - `FORCE_BUILD`: `true` to force builds even without detected changes
+- `DIFF_BASE_SHA`: Base commit SHA for diff detection
+- `DIFF_HEAD_SHA`: Head commit SHA for diff detection
 
 ### publish-branch.sh
 
@@ -23,14 +23,7 @@ Publishes the IG output to the `gh-pages` branch under a branch-specific path.
 
 **Inputs**
 - `REPO`, `GITHUB_TOKEN`, `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`
-- `IG_NAME`, `IG_PUBLISHER_DIR`
-
-### announce-url.sh
-
-Writes the published URL to the job summary and records it for the PR comment.
-
-**Inputs**
-- `IG_NAME`
+- `PUBLISH_OUTPUT_DIR` (optional): Defaults to `publish-output`
 
 ### copy-artifacts.sh
 
@@ -54,3 +47,7 @@ Creates or replaces the PR comment that lists build artifacts from "Upload Build
 
 **Inputs**
 - `BRANCH_NAME` (via env) or passed as `branch` when invoked from github-script
+
+### delete-fhir-packages.js
+
+Deletes the temporary `fhir-packages` artifact after the workflow run.
