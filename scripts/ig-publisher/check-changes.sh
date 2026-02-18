@@ -44,6 +44,13 @@ workspace_status_out=""
 
 if [ -n "${diff_range}" ]; then
   echo "Comparing commit range: ${diff_range}"
+  if ! git rev-list -1 "${diff_range}" >/dev/null 2>&1; then
+    echo "Warning: invalid commit range (${diff_range}). Forcing build to avoid missing changes."
+    echo "has_changes=true" >> "${GITHUB_OUTPUT}"
+    exit 0
+  fi
+  echo "Commits in range: $(git rev-list --count "${diff_range}" 2>/dev/null || echo unknown)"
+
   if tracked_diff_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
     :
   else
@@ -52,7 +59,7 @@ if [ -n "${diff_range}" ]; then
   fi
 
   # Detect files that were touched by commits in the range, even if later reverted.
-  if tracked_history_out="$(git log --name-status --pretty=format: "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
+  if tracked_history_out="$(git log --full-history --name-status --pretty=format: "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
     :
   else
     echo "Warning: could not inspect commit history for range ${diff_range}"

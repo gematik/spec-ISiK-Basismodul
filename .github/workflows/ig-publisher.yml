@@ -263,7 +263,7 @@ jobs:
         env:
           FORCE_BUILD: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'main-stufe-')) || (github.event.inputs.force_build == 'true') }}
           DIFF_BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
-          DIFF_HEAD_SHA: ${{ github.sha }}
+          DIFF_HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
         run: bash scripts/ig-publisher/check-changes.sh
 
       # Run the IG Publisher if changes warrant a rebuild

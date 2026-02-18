@@ -18,7 +18,7 @@ Checks whether `fsh-generated` or `input` changed for the current IG and sets
 - `IG_PUBLISHER_DIR`: IG directory under `publisher-guides`
 - `FORCE_BUILD`: `true` to force builds even without detected changes
 - `DIFF_BASE_SHA`: Base commit SHA for diff detection
-- `DIFF_HEAD_SHA`: Head commit SHA for diff detection
+- `DIFF_HEAD_SHA`: Head commit SHA for diff detection (for PRs: `pull_request.head.sha`)
 
 ### publish-branch.sh
 
