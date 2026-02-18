@@ -9,7 +9,10 @@ GitHub Actions job with the repository checked out.
 ### check-changes.sh
 
 Checks whether `fsh-generated` or `input` changed for the current IG and sets
-`has_changes` on `${GITHUB_OUTPUT}`.
+`has_changes` on `${GITHUB_OUTPUT}`. It evaluates:
+- net tracked changes in the commit range (`git diff`)
+- tracked files touched by commits in the range (`git log`)
+- workspace changes including untracked files (`git status`)
 
 **Inputs**
 - `IG_PUBLISHER_DIR`: IG directory under `publisher-guides`

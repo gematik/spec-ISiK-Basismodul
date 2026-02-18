@@ -38,34 +38,55 @@ elif git rev-parse --verify HEAD^ >/dev/null 2>&1; then
   diff_range="HEAD^...HEAD"
 fi
 
-status_out=""
+tracked_diff_out=""
+tracked_history_out=""
 workspace_status_out=""
 
 if [ -n "${diff_range}" ]; then
   echo "Comparing commit range: ${diff_range}"
-  status_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null || true)"
+  if tracked_diff_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
+    :
+  else
+    echo "Warning: could not diff commit range ${diff_range}"
+    tracked_diff_out=""
+  fi
+
+  # Detect files that were touched by commits in the range, even if later reverted.
+  if tracked_history_out="$(git log --name-status --pretty=format: "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null)"; then
+    :
+  else
+    echo "Warning: could not inspect commit history for range ${diff_range}"
+    tracked_history_out=""
+  fi
 else
-  echo "No commit range available for tracked diff."
+  echo "No commit range available for tracked checks."
 fi
 
 # Always check workspace changes too (tracked + untracked) in checked paths.
-if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
-  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -f "${FSH_GEN_MENU_PATH}" ]; then
-  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
-fi
-if [ -d "${INPUT_PATH}" ]; then
-  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${INPUT_PATH}" 2>/dev/null || echo "")"
-fi
+workspace_status_out="$(git status --porcelain --untracked-files=all -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null || true)"
 
-status_out="${status_out}"$'\n'"${workspace_status_out}"
-status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
+tracked_diff_out=$(echo "${tracked_diff_out}" | sed '/^[[:space:]]*$/d')
+tracked_history_out=$(echo "${tracked_history_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
+workspace_status_out=$(echo "${workspace_status_out}" | sed '/^[[:space:]]*$/d')
 
-if [ -n "$status_out" ]; then
+if [ -n "${tracked_diff_out}" ]; then
   has_changes=true
-  echo "Changes detected in checked paths:"
-  echo "$status_out" | head -20
+  echo "Detected net tracked changes (git diff):"
+  echo "${tracked_diff_out}" | head -20
+  echo ""
+fi
+
+if [ -n "${tracked_history_out}" ]; then
+  has_changes=true
+  echo "Detected tracked files touched in commits (git log):"
+  echo "${tracked_history_out}" | head -20
+  echo ""
+fi
+
+if [ -n "${workspace_status_out}" ]; then
+  has_changes=true
+  echo "Detected workspace changes (git status, including untracked):"
+  echo "${workspace_status_out}" | head -20
   echo ""
 fi
 
