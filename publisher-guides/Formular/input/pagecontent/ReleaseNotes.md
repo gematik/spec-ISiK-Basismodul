@@ -4,7 +4,7 @@ topic: ReleaseNotes
 
 ### Version 6.0.0-rc
 
-t.b.d.
+t.b.d. (x)
 
 ### Version 5.1.1
 
