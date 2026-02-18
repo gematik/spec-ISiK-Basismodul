@@ -39,24 +39,28 @@ elif git rev-parse --verify HEAD^ >/dev/null 2>&1; then
 fi
 
 status_out=""
+workspace_status_out=""
 
 if [ -n "${diff_range}" ]; then
   echo "Comparing commit range: ${diff_range}"
   status_out="$(git diff --name-status "${diff_range}" -- "${FSH_GEN_RESOURCES_PATH}" "${FSH_GEN_MENU_PATH}" "${INPUT_PATH}" 2>/dev/null || true)"
 else
-  echo "No commit range available; falling back to workspace status."
-  if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
-    status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
-  fi
-  if [ -f "${FSH_GEN_MENU_PATH}" ]; then
-    status_out="${status_out}"$'\n'"$(git status --porcelain "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
-  fi
-  if [ -d "${INPUT_PATH}" ]; then
-    status_out="${status_out}"$'\n'"$(git status --porcelain "${INPUT_PATH}" 2>/dev/null || echo "")"
-  fi
+  echo "No commit range available for tracked diff."
 fi
 
-status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d')
+# Always check workspace changes too (tracked + untracked) in checked paths.
+if [ -d "${FSH_GEN_RESOURCES_PATH}" ]; then
+  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${FSH_GEN_RESOURCES_PATH}" 2>/dev/null || echo "")"
+fi
+if [ -f "${FSH_GEN_MENU_PATH}" ]; then
+  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${FSH_GEN_MENU_PATH}" 2>/dev/null || echo "")"
+fi
+if [ -d "${INPUT_PATH}" ]; then
+  workspace_status_out="${workspace_status_out}"$'\n'"$(git status --porcelain --untracked-files=all "${INPUT_PATH}" 2>/dev/null || echo "")"
+fi
+
+status_out="${status_out}"$'\n'"${workspace_status_out}"
+status_out=$(echo "${status_out}" | sed '/^[[:space:]]*$/d' | awk '!seen[$0]++')
 
 if [ -n "$status_out" ]; then
   has_changes=true
