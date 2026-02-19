@@ -2,7 +2,7 @@
 topic: Akteure
 ---
 
-<div style="width: 40"><% include Betriebskoordination_Gruen_gematik.svg %></div>
+<img src="images/Betriebskoordination_Gruen_gematik.svg" />
 
 **Diskussion**: Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. 
 
