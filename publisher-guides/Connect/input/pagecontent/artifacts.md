@@ -1,0 +1,1 @@
+Der IG Connect beschreibt die Spezifikationen für die Integration mittels Smart-on-FHIR von FHIR-basierten Anwendungen in Krankenhäusern - FHIR-Artefakte werden hierfür nicht definiert.

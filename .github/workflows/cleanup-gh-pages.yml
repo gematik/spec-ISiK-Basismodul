@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only log what would be deleted'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -11,10 +17,13 @@ permissions:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    concurrency:
+      group: gh-pages-publish
+      cancel-in-progress: false
     steps:
       - name: Check gh-pages branch
         id: gh-pages
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             try {
@@ -33,16 +42,24 @@ jobs:
               }
             }
 
+      - name: Checkout default branch (scripts)
+        if: steps.gh-pages.outputs.exists == 'true'
+        uses: actions/checkout@v6
+        with:
+          path: repo
+
       - name: Checkout gh-pages
         if: steps.gh-pages.outputs.exists == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
           fetch-depth: 0
+          path: gh-pages
 
       - name: Prune deleted branch directories
         if: steps.gh-pages.outputs.exists == 'true'
         shell: bash
+        working-directory: gh-pages
         env:
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,56 +67,5 @@ jobs:
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-        run: |
-          set -euo pipefail
-
-          if [ -z "$(git ls-files)" ]; then
-            echo "gh-pages branch is empty. Nothing to clean."
-            exit 0
-          fi
-
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
-
-          shopt -s globstar nullglob
-          removed=0
-
-          for metadata in **/.branch-name; do
-            branch=$(cat "$metadata" | tr -d '\r')
-            dir=$(dirname "$metadata")
-            dir_no_prefix=${dir#./}
-
-            if [ -z "$branch" ]; then
-              echo "Skipping $dir because branch marker is empty."
-              continue
-            fi
-
-            if [ -z "$dir_no_prefix" ] || [ "$dir_no_prefix" = "." ] || [ "$dir_no_prefix" = "IG" ] || [[ "$dir_no_prefix" == IG/* ]]; then
-              echo "Preserving $dir; skipping cleanup."
-              continue
-            fi
-
-            if git ls-remote --heads origin "$branch" | grep -q "."; then
-              echo "Branch '$branch' still exists. Keeping $dir."
-              continue
-            fi
-
-            echo "Branch '$branch' no longer exists. Removing $dir."
-            rm -rf "$dir"
-            removed=1
-          done
-
-          if [ "$removed" -eq 0 ]; then
-            echo "No stale branch directories found."
-            exit 0
-          fi
-
-          find . -mindepth 1 -type d -empty ! -path './IG' ! -path './IG/*' -delete
-
-          git add --all
-          if git diff --cached --quiet; then
-            echo "No changes to commit after cleanup."
-            exit 0
-          fi
-
-          git commit -m "chore: remove Pages for deleted branches"
-          git push origin gh-pages
+          CLEANUP_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: bash ../repo/scripts/cleanup-gh-pages/cleanup.sh

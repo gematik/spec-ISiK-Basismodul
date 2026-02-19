@@ -13,7 +13,7 @@ Hintergrund für solche Zusammenführungen können unterschiedliche Situationen 
 Die konkrete Umsetzung des Merge-Prozesses sowie die Logik zur Zusammenführung und zur Auflösung von Konflikten liegt vollständig in der Verantwortung der jeweiligen Systeme und ist nicht Bestandteil dieser Spezifikation.
 
 **Hinweis:**  
-Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Kontext. Zur begrifflichen Abgrenzung von Fall, Encounter, Account und EpisodeOfCare siehe die [ISiK-Basis-Stufe-5-Seite zur Fallabbildung](https://simplifier.net/guide/isik-basis-stufe-5/einfuehrung/usecasesanwendung/abbildung-des-konstrukt-fall?version=5.0.0-rc2).
+Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Kontext. Zur begrifflichen Abgrenzung von Fall, Encounter, Account und EpisodeOfCare siehe die [ISiK-Basis-Seite zur Fallabbildung](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/Abbildung-des-Konstrukts-Fall.html).
 
 ## User Story
 
@@ -41,7 +41,7 @@ Diese Seite bezieht sich ausschließlich auf Encounter (Kontakt/Fall) im ISiK-Ko
 
 ## Profilreferenz
 
-Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Kontext finden sich im [ISiK-Basis Encounter-Profil](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Kontakt?version=5.0.0-rc2).
+Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Kontext finden sich im [ISiK-Basis Encounter-Profil](https://gematik.github.io/spec-ISiK-Basismodul/stufe-5/basis/migrate-ig-to-ig-publisher-ptdata-1885/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html).
 
 ---
 

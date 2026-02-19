@@ -4,9 +4,9 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
 * name = "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;"
+* title = "CapabilityStatement für Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* purpose = "CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementVersicherungsverhaeltnisRolle&quot;.
+* purpose = "CapabilityStatement für die Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle.
 Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicherungsverhaeltnis-Ressourcen."
 * rest
   * mode = #server

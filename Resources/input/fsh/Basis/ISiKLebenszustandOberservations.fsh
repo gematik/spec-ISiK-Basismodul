@@ -13,11 +13,11 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
 
 Dieses Profil ist eine generische, ISiK-spezifische Observation für die Abbildung von Lebenszuständen.  
 Die folgenden Profile vom Typ `Observation` sind spezifische Profile im oben genannten Sinn:  
-* {{pagelink:Schwangerschaftsstatus-Profil}}
-* {{pagelink:ErwarteterEntbindungstermin-Profil}}
-* {{pagelink:Stillstatus-Profil}} 
-* {{pagelink:AlkoholAbusus-Profil}} 
-* {{pagelink:RaucherStatus-Profil}} 
+* https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftsstatus
+* https://gematik.de/fhir/isik/StructureDefinition/ISiKSchwangerschaftErwarteterEntbindungstermin
+* https://gematik.de/fhir/isik/StructureDefinition/ISiKStillstatus
+* https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus
+* https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus
 
 ### Kompatibilität
 
@@ -92,7 +92,7 @@ Profile: ISiKSchwangerschaftsstatus
 Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
-Description: "Schwangerschaftsstatus einer Patientin"
+Description: "Dieses Profil bildet den Schwangerschaftsstatus einer Patientin ab."
 * insert Meta
 * code = $loinc#82810-3
 * valueCodeableConcept 1.. MS
@@ -122,6 +122,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftErwarteterEntbindungstermin
+Description: "Dieses Profil dient der Abbildung des erwarteten Entbindungstermins bei einer Schwangerschaft."
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
 * code from SchwangerschaftEtMethodeVS
@@ -145,6 +146,7 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 Profile: ISiKAlkoholAbusus
 Parent: ISiKLebensZustand
 Id: ISiKAlkoholAbusus
+Description: "Dieses Profil dient der Abbildung des schädlichen Gebrauchs von Alkohol."
 Title: "ISiK Alkohol Abusus"
 * insert Meta
 * category = $observation-category#social-history
@@ -173,6 +175,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 Profile: ISiKRaucherStatus
 Parent: ISiKLebensZustand
 Id: ISiKRaucherStatus
+Description: "Dieses Profil dient der Abbildung des Raucherstatus von Patienten."
 Title: "ISiK Raucherstatus"
 * insert Meta
 * category = $observation-category#social-history
@@ -203,7 +206,7 @@ Profile: ISiKStillstatus
 Parent: ISiKLebensZustand
 Id: ISiKStillstatus
 Title: "ISiKStillstatus"
-Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefüttert wird"
+Description: "Dieses Profil dient der Abbildung des Stillstatus, d.h ob gestillt/Muttermilch abgepumpt und gefüttert wird."
 * insert Meta
 * code.coding[snomed-ct] = $sct#413712001
 * code.coding[loinc] = $loinc#63895-7
