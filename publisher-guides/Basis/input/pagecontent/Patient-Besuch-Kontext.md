@@ -22,7 +22,7 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 **1. SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte)). 
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
-  <img src="Ampel auf Gruen_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 100%; object-fit: contain; align-self: stretch;" />
+  <img src="Ampel auf Gruen_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
   <p style="margin: 0;"><strong>Best Practice Empfehlung: </strong>Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.</p>
 </div>
 
@@ -43,7 +43,7 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 **Warnung**
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
-  <img src="Ampel_auf_Rot_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 100%; object-fit: contain; align-self: stretch;" />
+  <img src="Ampel_auf_Rot_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
   <p style="margin: 0;"><strong>Gefahr fehlerhafter Zuordnung: </strong>Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.</p>
 </div>
 

@@ -3,7 +3,7 @@ topic: Prozesse
 ---
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
-  <img src="Betriebskoordination_Gruen_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 100%; object-fit: contain; align-self: stretch;" />
+    <img src="Betriebskoordination_Gruen_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
   <p style="margin: 0;"><strong>Diskussion: </strong>Dieser Abschnitt fasst einen Diskussionsstand mit beteiligten Stakeholdern zusammen und enthält keine normativen Festlegungen.</p>
 </div>
 
