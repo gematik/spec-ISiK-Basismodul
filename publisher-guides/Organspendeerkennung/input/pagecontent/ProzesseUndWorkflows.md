@@ -8,8 +8,13 @@
 
 Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organspendeerkennung dar:
 
-<img src="Material/Organspendeerkennung/diagrams/sequenz-workflow.png"/> <br/> 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/stufe-5/organspendedetektion/feature-init-draft-PTDATA-1927/Material/Organspendeerkennung/diagrams/sequenz-workflow.png" alt="Sequenz" width="600"/>  
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="sequenz-workflow.png" alt="Sequenzdiagram Organspendedetektion" style="width: 100%;">
+    </div>
+    
+</figure>
 
 Das Diagramm zeigt die Interaktionen zwischen den verschiedenen Akteuren und Systemen, die an der Abfrage der Parameter für die Organspendeerkennung beteiligt sind. Es verdeutlicht die Schritte, die unternommen werden, um die relevanten Daten zu sammeln und auszuwerten.
 

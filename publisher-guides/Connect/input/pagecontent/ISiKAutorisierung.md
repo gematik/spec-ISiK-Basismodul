@@ -6,7 +6,7 @@ ISiK-Connect konkretisiert in der aktuellen Stufe die Anforderungen an eine Auto
 |  | |
 |---------|---------------------|
 | **Hinweis an IT-Verantwortliche**
-<div style="width: 75"><% include Ampel_auf_Rot_Blau_gematik.svg %></div>
+<img src="Ampel_auf_Rot_Blau_gematik.svg" />
 |  **ISiK-Ressourcen-Server kein Standalone:** Die beschriebenen Autorisierungsszenarien funktionieren nur, wenn der ISiK-Ressourcenserver entweder gleichzeitig die Anforderungen eines ISiK-Autorisierungsservers erfüllt oder an einen Autorisierungsserver gekoppelt ist, der ISiK-Anforderungen erfüllt (Rolle ISiK-Autorisierungsserver). Dies ist bei der Integration von lokalen Systemen (z.B. eines zentralen Autorisierungsservers zu beachten).|
 
 ### Zugriffsrechte und Compartments
