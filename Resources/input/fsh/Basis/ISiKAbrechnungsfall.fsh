@@ -5,7 +5,7 @@ Description: "Dieses Profil ermöglicht die Gruppierung von medizinischen Leistu
 Zugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde *nicht* primär zum Zweck der Abbildung von Abrechnungsprozessen definiert. 
 
 ### Motivation
-Komplementär zum Datenobjekt &quot;Kontakt - Encounter&quot; können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen 
+Komplementär zum Datenobjekt 'Kontakt - Encounter' können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen 
 innerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.
 Ein solcher Abrechnungsfall kann mehrere Kontakte umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationärer Besuch).  
 
@@ -44,7 +44,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * identifier[Abrechnungsnummer] only IdentifierAbrechnungsnummer
   * ^short = "Abrechnungsfallnummer"
   * ^comment = "Im DRG-Kontext werden häufig sämtliche Besuche (`Encounter`), die unter einen gemeinsamen Abrechnungskontext zusammengefasst werden, 
-  unter einer &quot;Fallnummer&quot; geführt. In dieser Konstellation sind die Begriffe &quot;Fallnummer&quot; und &quot;Abrechnungsfallnummer&quot; gleichbedeutend.  
+  unter einer 'Fallnummer' geführt. In dieser Konstellation sind die Begriffe 'Fallnummer' und 'Abrechnungsfallnummer' gleichbedeutend.  
   Dies ist insbesondere im Kontext des Mappings zwischen HL7 V2 und HL7 FHIR zu beachten, da es in V2 Usus ist, 
   die Fallnummer (eigentlich Identifier des Abrechnungsfalles) im `PV1`-Segment (Patient Visit) zu übermitteln. 
   Es handelt sich dabei jedoch *nicht* um den Identifier des Besuchs (`Encounter`) sondern den des Abrechnungsfalles (`Account`), 

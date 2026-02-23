@@ -4,10 +4,10 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementLeistungserbringerRolle"
 * name = "ISiKCapabilityStatementLeistungserbringerRolle"
-* title = "CapabilityStatement für Rolle &quot;LeistungserbringerRolle&quot;"
+* title = "CapabilityStatement für Rolle LeistungserbringerRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
 * purpose = "
-CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementLeistungserbringerRolle&quot;.
+CapabilityStatement für die Rolle ISiKCapabilityStatementLeistungserbringerRolle.
 Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKPersonen im Gesundheitsberuf.
 "
 

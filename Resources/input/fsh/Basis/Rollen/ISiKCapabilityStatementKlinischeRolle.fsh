@@ -4,9 +4,9 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementKlinischeRolle"
 * name = "ISiKCapabilityStatementKlinischeRolle"
-* title = "CapabilityStatement für Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;"
+* title = "CapabilityStatement für Rolle ISiKCapabilityStatementKlinischeRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* purpose = "CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementKlinischeRolle&quot;.
+* purpose = "CapabilityStatement für die Rolle ISiKCapabilityStatementKlinischeRolle.
 Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitung von ISiKProzeduren und ISiKDiagnosen.
 "
 * rest

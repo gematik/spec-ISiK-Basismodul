@@ -1,0 +1,250 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "subscription",
+  "url": "https://gematik.de/fhir/isik/ImplementationGuide/subscription",
+  "version": "6.0.0-rc",
+  "name": "ISiKSubscriptionImplementationGuide",
+  "title": "ISiK Subscription Implementierungsleitfaden",
+  "status": "draft",
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "name": "gematik GmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://gematik.de"
+        }
+      ]
+    }
+  ],
+  "description": "Dieser Implementierungsleitfaden beschreibt eine ISiK-konforme Umsetzung der Subscription im Krankenhaus.",
+  "packageId": "subscription",
+  "license": "Apache-2.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.uv.ips",
+      "version": "1.1.0",
+      "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+      "id": "hl7_fhir_uv_ips"
+    },
+    {
+      "packageId": "hl7.fhir.uv.subscriptions-backport.r4",
+      "version": "1.1.0",
+      "uri": "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
+      "id": "hl7_fhir_uv_subscriptions_backport_r4"
+    },
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.5.4",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.ihe-d.terminology",
+      "version": "3.0.1",
+      "uri": "http://fhir.de/packages/de.ihe-d.terminology",
+      "id": "de_ihe_d_terminology"
+    },
+    {
+      "packageId": "dvmd.kdl.r4",
+      "version": "2025.0.1",
+      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
+      "id": "dvmd_kdl_r4"
+    },
+    {
+      "packageId": "ihe.formatcode.fhir",
+      "version": "1.4.0",
+      "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
+      "id": "ihe_formatcode_fhir"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "3.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "de.gematik.terminology",
+      "version": "1.0.6",
+      "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+      "id": "de_gematik_terminology"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+        "exampleBoolean": false,
+        "name": "Akteur &quot;ISiKCapabilityStatementSubscriptionServerAkteur&quot;"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementSubscriptionServerAkteur-expanded"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+        "exampleBoolean": false,
+        "name": "Akteur &quot;ISiKCapabilityStatementSubscriptionServerAkteur&quot; (Expanded)"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementSubscriptionRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle &quot;Subscription&quot;"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/FhirMimeTypeVS"
+        },
+        "description": "FHIR Mime Types",
+        "exampleBoolean": false,
+        "name": "FhirMimeTypeVS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
+        },
+        "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Imports Expectation"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSubscription"
+        },
+        "description": "ISiK Subscription  \n### Motivation\n\nSubscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).\n\nUm als Subsystem über ein Subsription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.\n\n### Kompatibilität\n\nDas Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).\nDer [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiK Subscription"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKSubscriptionTopic"
+        },
+        "description": "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.",
+        "exampleBoolean": false,
+        "name": "ISiK-SubscriptionTopic"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSubscriptionTopicVS"
+        },
+        "description": "ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält",
+        "exampleBoolean": false,
+        "name": "ISiKSubscriptionTopic ValueSet"
+      },
+      {
+        "reference": {
+          "reference": "Subscription/PatientMergeSubscriptionExample"
+        },
+        "exampleBoolean": false,
+        "name": "PatientMergeSubscriptionExample"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/BackportSubscriptionStatusR4Fixed"
+        },
+        "description": "Profil auf der FHIR-R4-Resource Parameters zur Unterstützung themenbasierter Subscription-Benachrichtigungen in R4.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4`.  \nDie Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Daher wurde es hier als Workaround erneut implementiert.\nDiese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
+        "exampleBoolean": false,
+        "name": "R4 Backported R5 SubscriptionStatus"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/BackportSubscriptionNotificationR4Fixed"
+        },
+        "description": "Profil auf der FHIR-R4-Resource Bundle, um R5-ähnliche, themenbasierte Subscription-Benachrichtigungen in FHIR R4 zu ermöglichen.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4`.  \nDie Version 1.1.0 des offiziellen Profils enthält jedoch technische Fehler. Daher wurde dieses Profil lokal als temporärer Workaround nachgebildet.\nEs wird durch das offizielle `backport-subscription-notification-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
+        "exampleBoolean": false,
+        "name": "R4 Topic-Based Subscription Notification Bundle"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Einführung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ReleaseNotes.html",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Patientenzusammenfuehrung.html",
+          "title": "Patient merge und Notification",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Fallzusammenfuehrung.html",
+          "title": "Encounter Merge Notification (Fallzusammenführung)",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "UseCases.html",
+          "title": "Use Cases - Übersicht",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Akteure.html",
+          "title": "Akteure",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "FunktionenInteraktionen.html",
+          "title": "Funktionen und Interaktionen",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Festlegungen.html",
+          "title": "Übergreifende Festlegungen",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "artifacts.html",
+          "title": "FHIR-Artefakte",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2026+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "STU1"
+      },
+      {
+        "code": "no-validate",
+        "value": "true"
+      }
+    ]
+  }
+}
