@@ -12,7 +12,7 @@
 * erforderliches Verhalten: das Dokument sowie seine Metadaten werden persistiert und über die API mittels der Interaktionen "Dokumentenabfrage" und "Dokumentenzugriff" bereitgestellt.
 
 ### Typische Szenarien mit Koexistenz beider Interaktionen:
-Der Empfänger eines Subsystem-Berichtes gem. Modul "Basis" möchte vor der Verarbeitung des Dokumenteninhalts das Original zur Archivierung an einen Dokumentenserver gem. Modul "Dokumentenaustausch" übermitteln und die Herkunft der extrahierten Daten aus dem Dokument nachvollziehbar machen.
+Der Empfänger eines Subsystem-Berichtes gem. Modul "Basis" möchte vor der Verarbeitung des Dokumenteninhalts das Original zur Archivierung an einen Dokumentenserver gemäß Modul "Dokumentenaustausch" übermitteln und die Herkunft der extrahierten Daten aus dem Dokument nachvollziehbar machen.
 
 Empfohlenes Vorgehen:
 1. Erzeugen einer DocumentReference-Ressource (siehe dazu $generate-metadata) 
