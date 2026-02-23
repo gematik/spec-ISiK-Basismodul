@@ -13,7 +13,7 @@ Dieses Profil basiert auf dem Profil [MHD DocumentReference Comprehensive UnCont
 
   #### Abweichungen vom IHE-Profil
 - Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.
-- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion {{pagelink: Dokumentenbereitstellung}} wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.
+- `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion [Dokumentenbereitstellung](Interaktion-Dokumentenbereitstellung.md.html) wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/%7Eresources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.
 - `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden
 
 #### Einschränkungen des IHE-Profils
