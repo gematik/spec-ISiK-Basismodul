@@ -6,6 +6,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
+* `documentation` Update und Verbesserung der Ressourcen-Angaben
 * `documentation` Initiale Anpassung der IG-Struktur auf Basis des IG Publishers für ISiK-Basis Stufe 6
 
 ### Version 5.1.1
