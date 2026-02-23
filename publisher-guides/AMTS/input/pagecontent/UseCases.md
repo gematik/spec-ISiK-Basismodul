@@ -66,8 +66,11 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 * Allgemeine und intuitiv Adverse Use Cases. Diese gilt es zu vermeiden.
 * In den Funktionen werde triviale Suchen einer Ressource anhand ihrer eigenen Properties nicht dargestellt, z.B. Suche einer Ressource anhand der ID, Name, Code usw.
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/amts_usecases.svg" alt="AMTS Use Cases" width="90%"/>
-
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="AMTS_UseCases.svg" alt="AMTS Use Cases" style="width: 100%;">
+    </div>
+</figure>
 
 ### Anwendungsfälle AMTS
 
@@ -75,12 +78,19 @@ Da es sich um eine Zusammenfassung handelt, werden nur folgende Use Case und daf
 
 Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push im Sinne eines Businessprozesses modelliert.
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_pull.svg" class="center" alt="AMTS Pull" width="100%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="AMTS_pull.svg" alt="AMTS Pull" style="width: 100%;">
+    </div>
+</figure>
 
 **AMTS Pull**
 
-
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/AMTS_push.svg" class="center" alt="AMTS Push" width="100%"/>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="AMTS_push.svg" alt="AMTS Push" style="width: 100%;">
+    </div>
+</figure>
 
 **AMTS Push**
 

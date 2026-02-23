@@ -21,12 +21,10 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 
 **1. SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://simplifier.net/guide/isik-connect-stufe-5/ImplementationGuide-markdown-Conformance-ConformanceScopesKontexte)). 
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; ">
-        <img src="Ampel auf Gruen_Blau_gematik.svg"  style="width: 100%;">
-    </div>
-</figure>
-**Best Practice Empfehlung:** Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.
+<div style="display: flex; align-items: stretch; gap: 1rem;">
+  <img src="Ampel auf Gruen_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
+  <p style="margin: 0;"><strong>Best Practice Empfehlung: </strong>Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.</p>
+</div>
 
 **2. Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus dem Feldinhalt von PV1.#19). Anhand dieser kann der Client die im Modul Basis beschriebenen Suchfunktionen für die Encounter-Ressource verwenden, um passende Aufenthalte zu identifizieren (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. (Siehe Modul [Basis - Encounter Interkationen](https://simplifier.net/guide/isik-basis-stufe-5/einfuehrung/artefakte/datenobjekte_kontakt#Encounter_Interaktionen)
 
@@ -43,12 +41,11 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 **4. Manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Patient#Patient_Interaktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client, mithilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Kontakt#Encounter_Interaktionen), die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand von `Encounter.period`, `Encounter.class` und/oder `Encounter.status` gefiltert werden). Der Anwender wählt den zutreffenden Encounter aus.
 
 **Warnung**
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; ">
-        <img src="Ampel%20auf%20Rot_Blau_gematik.svg"  style="width: 100%;">
-    </div>
-</figure>
-**Gefahr fehlerhafter Zuordnung:** Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.
+
+<div style="display: flex; align-items: stretch; gap: 1rem;">
+  <img src="Ampel_auf_Rot_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
+  <p style="margin: 0;"><strong>Gefahr fehlerhafter Zuordnung: </strong>Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.</p>
+</div>
 
 ### Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen
 

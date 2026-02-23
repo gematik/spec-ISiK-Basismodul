@@ -4,6 +4,10 @@
 
 Das ursprüngliche Informationsmodell (ohne Berücksichtigung des AMTS-Use-Cases).  
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/diagrams/simple_infomodel.svg" alt="Vereinfachtes Informationsmodell" width="90%"/>
-
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="simple_infomodel.svg" alt="Vereinfachtes Informationsmodell" style="width: 100%;">
+    </div>
+    
+</figure>
 
