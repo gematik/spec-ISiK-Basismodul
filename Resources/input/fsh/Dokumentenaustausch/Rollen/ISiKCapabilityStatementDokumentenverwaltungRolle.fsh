@@ -30,6 +30,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
     * code = #search-type
   * insert CommonSearchParameters
 
+
   * searchParam[+]
     * insert Expectation (#SHALL)
     * name = "status"
@@ -130,3 +131,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
     Falls ein solcher Accept-Header durch einen Client verwendet wird, MUSS  bestätigungsrelevante System (Server)
     das Binary in seiner nativen Form (definiert durch Binary.contentType) zurückgeben."
 
+* rest.resource[+]
+  * insert Expectation (#SHALL)
+  * type = #Bundle
+  * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenSuchergebnisse"
+    * insert Expectation (#SHALL)
