@@ -13,7 +13,7 @@ Title: "update-metadata"
 Die Operation ``UpdateMetadata`` ermöglicht es, unkritische Metadaten gezielt und kontrolliert zu aktualisieren oder vorläufige Dokumente durch Setzen des Status entered-in-error zuverlässig zu löschen, ohne ein neues Dokument anlegen zu müssen.
 
 ### Herstellung von Dokumentenkontext
-Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das Update angewendet werden soll. Hierzu kann die Interaktion {{pagelink:Dokumentenabfrage, text:Dokumentenabfrage}} verwendet werden.
+Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das Update angewendet werden soll. Hierzu kann die Interaktion [Dokumentenabfrage](Dokumentenabfrage.html) verwendet werden.
 
 ### Metadatenupdate
 Das Update der Metadaten erfolgt mittels der `$update-metadata` Operation.
