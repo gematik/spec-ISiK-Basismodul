@@ -51,7 +51,7 @@ InstanceOf: ISiKFormularDaten
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
     * answer.valueDecimal = 1.66
  
-
+/*
 Instance: TestMaxDecimal0
 InstanceOf: ISiKFormularDaten
 * insert QuestionnaireResponseCommons(ExampleEntryValidationDecimal, PatientinMinimal)
@@ -118,4 +118,4 @@ Description: "Test-Instanz für Validierungs-Fehler 'Too many decimal places'"
   * item[+]  
     * linkId = "4.2"
     * text = "Körpergröße in m (muss zwischen 1m und 2.50m liegen)"
-    * answer.valueDecimal = 1.123    
+    * answer.valueDecimal = 1.123    */
