@@ -4,6 +4,8 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 #### Akteure
 
+Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übersicht aller zu implementierender Interaktionen und Profile.
+
 {% include artifacts-table-generator-isik.html resourceType="CapabilityStatement" nameContains="Akteur" withPurpose=true %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements - Akteure</figcaption></div>
 
