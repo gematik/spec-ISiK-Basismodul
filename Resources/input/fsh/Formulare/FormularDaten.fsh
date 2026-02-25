@@ -6,7 +6,7 @@ Profile: ISiKFormularDaten
 Parent: QuestionnaireResponse
 Title: "Ausgefülltes ISiK-Formular"
 Description: "Im Profil `ISiKFormularDaten` sind Mindestanforderungen an ISiK kompatible, ausgefüllte Formulare definiert.
-Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter [Artefakte->Extensions](https://simplifier.net/guide/isik-formular-stufe-5/Einfuehrung/Artefakte/Extensions.page.md?version=current) beschrieben."
+Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezifikationen->Extensions beschrieben."
 * insert Meta
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
