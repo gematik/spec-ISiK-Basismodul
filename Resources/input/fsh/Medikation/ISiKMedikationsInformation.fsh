@@ -181,15 +181,14 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
-    * repeat MS
+    * repeat 
       * ^short = "Wiederholungs-Angaben"
-      * boundsDuration MS
+      * boundsDuration 
         * ^short = "Begrenzung der Dauer"
         * ^patternDuration.system = $cs-ucum
-        * value 1..1 MS
-        * unit MS
-        * system 1..1 MS
-        * code 1..1 MS
+        * value 1..1 
+        * system 1..1 
+        * code 1..1 
       * boundsRange MS
         * ^short = "Bereich für die Begrenzung"
         * low MS
@@ -218,21 +217,21 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         * ^short = "maximale Dauer der Verabreichung"
       * durationUnit MS
         * ^short = "Einheit der Dauer"
-      * frequency MS
+      * frequency
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
-      * period MS
+      * period 
         * ^short = "Zeitperiode zur Frequenz"
       * periodMax MS
         * ^short = "maximale Zeitperiode zur Frequenz"
-      * periodUnit MS
+      * periodUnit 
         * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek MS
+      * dayOfWeek 
         * ^short = "Wochentag"
-      * timeOfDay MS
+      * timeOfDay 
         * ^short = "Tageszeit"
-      * when MS
+      * when 
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
@@ -272,7 +271,6 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * low only MedicationQuantity
       * high MS
       * high only MedicationQuantity
-    * doseQuantity MS
     * doseQuantity only MedicationQuantity
       * ^short = "Dosis"
     * rateRatio MS
