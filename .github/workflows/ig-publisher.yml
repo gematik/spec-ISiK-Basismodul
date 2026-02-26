@@ -200,7 +200,7 @@ jobs:
 
       # Pull the shared FHIR package cache from the prepare job
       - name: Download FHIR Package Cache
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -217,7 +217,7 @@ jobs:
 
       # Pull the shared FSH conversion output from the prepare job
       - name: Download FSH Generated Resources
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -400,28 +400,28 @@ jobs:
 
       # Download SUSHI-generated IGs from all build jobs
       - name: Download SUSHI-generated ImplementationGuides
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: sushi-generated-ig-*
           path: artifacts/sushi-generated-ig
 
       # Download expanded resources from all build jobs
       - name: Download Expanded Resources
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: expanded-resources-*
           path: artifacts/expanded-resources
 
       # Download IG input includes from all build jobs
       - name: Download /input/includes
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
 
       # Download IG input page content from all build jobs
       - name: Download /input/pagecontent
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: input-pagecontent-*
           path: artifacts/input-pagecontent
@@ -447,7 +447,7 @@ jobs:
       # Collect build markers to determine whether any IG was rebuilt
       - name: Download build markers
         id: download_markers
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: build-ran-*
           path: build-markers
@@ -515,7 +515,7 @@ jobs:
 
       # Download all IG build outputs produced by the build job
       - name: Download Build Results
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: fhir-ig-*
           path: publish-output
