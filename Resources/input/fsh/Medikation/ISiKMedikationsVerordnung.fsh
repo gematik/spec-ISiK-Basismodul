@@ -144,7 +144,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
-    * repeat MS
+    * repeat 
       * ^short = "Wiederholungs-Angaben"
       * boundsDuration MS
         * ^short = "Begrenzung der Dauer"
@@ -167,21 +167,21 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * ^short = "maximale Dauer der Verabreichung"
       * durationUnit MS
         * ^short = "Einheit der Dauer"
-      * frequency MS
+      * frequency
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
-      * period MS
+      * period 
         * ^short = "Zeitperiode zur Frequenz"
       * periodMax MS
         * ^short = "maximale Zeitperiode zur Frequenz"
-      * periodUnit MS
+      * periodUnit 
         * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek MS
+      * dayOfWeek 
         * ^short = "Wochentag"
-      * timeOfDay MS
+      * timeOfDay 
         * ^short = "Tageszeit"
-      * when MS
+      * when 
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
