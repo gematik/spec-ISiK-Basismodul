@@ -261,7 +261,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * ^comment = "Begründung des Must-Support: Alignment mit dem (E-)Rezept"
   * allowedBoolean MS
 * priorPrescription 
-  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie"
+  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie" 
   * ^comment = "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.
 
   Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
