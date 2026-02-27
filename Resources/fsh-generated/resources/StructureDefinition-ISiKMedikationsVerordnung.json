@@ -21,20 +21,20 @@
         "id": "MedicationRequest.id",
         "path": "MedicationRequest.id",
         "short": "serverseitige, interne ID des Datensatzes",
-        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.meta.versionId",
         "path": "MedicationRequest.meta.versionId",
         "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
       },
       {
         "id": "MedicationRequest.meta.lastUpdated",
         "path": "MedicationRequest.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
-        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\r\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
         "id": "MedicationRequest.extension",
@@ -56,7 +56,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "acceptedRisk",
         "short": "akzeptiertes (in Kauf genommenes) Risiko",
-        "comment": "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein\r\n\r\n  Hinweis: Hier kann ein im Rahmen der Medikation festgestelltes, aber in Kauf genommenes Risiko dokumentiert werden, speziell auch die Begründung und ggf. erforderliche Begleitmaßnahmen.",
+        "comment": "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein\n\n  Hinweis: Hier kann ein im Rahmen der Medikation festgestelltes, aber in Kauf genommenes Risiko dokumentiert werden, speziell auch die Begründung und ggf. erforderliche Begleitmaßnahmen.",
         "min": 0,
         "max": "1",
         "type": [
@@ -79,7 +79,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "medikationsart",
         "short": "Therapieart der Medikation",
-        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\r\n\r\n  Hinweis: Angabe Akut- oder Dauermedikation.",
+        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Angabe Akut- oder Dauermedikation.",
         "min": 0,
         "max": "1",
         "type": [
@@ -112,7 +112,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "behandlungsziel",
         "short": "Behandlungsziel (textuell)",
-        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\r\n\r\n  Hinweis: Freitext-Beschreibung des Behandlungsziels.",
+        "comment": "Begründung des Must-Support: von der Fachseite gewünschte Angabe\n\n  Hinweis: Freitext-Beschreibung des Behandlungsziels.",
         "min": 0,
         "max": "1",
         "type": [
@@ -135,7 +135,7 @@
         "path": "MedicationRequest.extension",
         "sliceName": "medicationRequestReplaces",
         "short": "Welche Medikationsverordnung wird ersetzt?",
-        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.\r\n\r\n    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.\r\n    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung.",
+        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.\n\n    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.\n    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung.",
         "min": 0,
         "max": "1",
         "type": [
@@ -162,14 +162,14 @@
         "id": "MedicationRequest.status",
         "path": "MedicationRequest.status",
         "short": "Status der Verordnungsinformation",
-        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.\r\n  \r\n  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.\r\n  ",
+        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.\n  \n  Hinweis für Implementierende: Im Falle einer create-Operation kann der Server den .code in .status zunächst auf 'on-hold' setzen, z. B. im Falle einer asynchronen Prüfung, die im Rahmen einer textuellen Übergabe möglich ist. Ggf. kann hier zusätzlich ein Mechanismus etabliert werden, der eine anschließende Änderung des Status an den Client kommuniziert. Der Server kann zusätzlich den .code in .statusReason auf 'clarif' setzen ('Clarification is required before the order can be acted upon.'), um anzuzeigen, dass eine Klärung erforderlich ist, bevor die Verordnung ausgeführt werden kann.\n  ",
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.intent",
         "path": "MedicationRequest.intent",
         "short": "Ziel der Verordnungsinformation",
-        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard\r\n\r\n  Hinweis: i.d.R. 'order'",
+        "comment": "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard\n\n  Hinweis: i.d.R. 'order'",
         "mustSupport": true
       },
       {
@@ -197,7 +197,7 @@
         "path": "MedicationRequest.medication[x]",
         "sliceName": "medicationCodeableConcept",
         "short": "Medikament in codierter Form oder ggf. als Freitext",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n\r\n  Hinweis: kann verwendet werden, wenn keine detaillierten Informationen zum Medikament (z.B. Rezepturen) existieren.",
+        "comment": "Begründung des Must-Support: Basisinformation\n\n  Hinweis: kann verwendet werden, wenn keine detaillierten Informationen zum Medikament (z.B. Rezepturen) existieren.",
         "min": 0,
         "max": "1",
         "type": [
@@ -290,7 +290,7 @@
         "path": "MedicationRequest.medication[x]",
         "sliceName": "medicationReference",
         "short": "Referenz auf das Medikament (Medication-Ressource)",
-        "comment": "Begründung des Must-Support: Basisinformation\r\n\r\n  Hinweis: wird verwendet, wenn detaillierte Informationen zum Medikament vorliegen",
+        "comment": "Begründung des Must-Support: Basisinformation\n\n  Hinweis: wird verwendet, wenn detaillierte Informationen zum Medikament vorliegen",
         "min": 0,
         "max": "1",
         "type": [
@@ -328,7 +328,7 @@
         "id": "MedicationRequest.subject.reference",
         "path": "MedicationRequest.subject.reference",
         "short": "Patienten-Link",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -342,7 +342,7 @@
       {
         "id": "MedicationRequest.encounter.reference",
         "path": "MedicationRequest.encounter.reference",
-        "comment": "**Begründung MS:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\r\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\r\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
+        "comment": "**Begründung MS:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.\nIm ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.\nJenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -370,7 +370,7 @@
         "id": "MedicationRequest.reasonCode",
         "path": "MedicationRequest.reasonCode",
         "short": "Grund der Medikation (codiert)",
-        "comment": "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\r\nBegründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest",
+        "comment": "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\nBegründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationRequest",
         "mustSupport": true
       },
       {
@@ -408,7 +408,7 @@
         "id": "MedicationRequest.reasonReference",
         "path": "MedicationRequest.reasonReference",
         "short": "Grund der Medikation (Referenz)",
-        "comment": "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\r\n  Begründung zu Must-Support: Konsolidierung mit MII.",
+        "comment": "Festlegung zum MS: Die Elemente .reasonCode und .reasonReference MÜSSEN nach OR-Logik in der Ausgabe verwendet werden, d.h. nur eines MUSS geliefert werden können. Weiterhin MÜSSEN beide Elemente interpretiert werden können.\n  Begründung zu Must-Support: Konsolidierung mit MII.",
         "mustSupport": true
       },
       {
@@ -436,7 +436,7 @@
         "id": "MedicationRequest.dosageInstruction",
         "path": "MedicationRequest.dosageInstruction",
         "short": "Dosierungsangaben",
-        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.\r\n  \r\n  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.\r\n  ",
+        "comment": "Begründung des Must-Support: Basisinformation. Zur vollständig strukturierten Abbildung der zahlreichen Möglichkeiten sind die hier mit Must-Support gekennzeichneten Unterelemente erforderlich gemäß Konsens der ISiK AG Medikation.\n  \n  **Hinweis:** Zahlreiche [Beispiele zur Dosierungsanweisung sind im Implementierungsleitfaden Medikament von HL7 Deutschland](https://ig.fhir.de/igs/medication/dosierung-beispiele.html) dokumentiert.\n  ",
         "type": [
           {
             "code": "Dosage",
@@ -450,7 +450,7 @@
       {
         "id": "MedicationRequest.dosageInstruction.text",
         "path": "MedicationRequest.dosageInstruction.text",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\r\n        \r\n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\r\n    \r\n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\r\n    \r\n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
       },
       {
         "id": "MedicationRequest.dosageInstruction.patientInstruction",
@@ -1020,7 +1020,7 @@
         "id": "MedicationRequest.priorPrescription",
         "path": "MedicationRequest.priorPrescription",
         "short": "Vorherige Verordnung bei fortgesetzter Therapie",
-        "comment": "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.\r\n\r\n  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
+        "comment": "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.\n\n  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
       }
     ]
   }
