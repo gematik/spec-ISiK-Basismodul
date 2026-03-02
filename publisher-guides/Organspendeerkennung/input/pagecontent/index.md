@@ -15,7 +15,7 @@ Realm: Deutschland
 
 
 ### Organspendeerkennung
-Die frühzeitige Erkennung potentieller Organspender*innen ist ein wesentlicher Bestandteil in der intensivmedizinischen Behandlung. Können Patienten, die möglicherweise für eine Organentnahme in Frage kommen, rechtzeitig erkannt werden, kann die Versorgung des Patienten in Hinblick auf seine Patientenwünsche angepasst, Angehörige psychologisch betreut und die organisatorischen Schritte für eine erfolgreiche Organtransplantation eingeleitet werden. Zwingende Voraussetzung ist dabei die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
+Die frühzeitige Erkennung von Personen, die für eine Organspende in Frage kommen, ist ein wesentlicher Bestandteil in der intensivmedizinischen Behandlung. Können Patienten, die möglicherweise für eine Organentnahme in Frage kommen, rechtzeitig erkannt werden, kann die Versorgung des Patienten in Hinblick auf seine Patientenwünsche angepasst, Angehörige psychologisch betreut und die organisatorischen Schritte für eine erfolgreiche Organtransplantation eingeleitet werden. Zwingende Voraussetzung ist dabei die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
 
 #### Motivation und Hintergrund
 Es existiert ein Erkennungsdefizit bei der Diagnose des irreversiblen Hirnfunktionsausfalls, zeigt eine [retrospektive Analyse](https://link.springer.com/article/10.1007/s00101-018-0510-x). Ein erheblicher Anteil an Patienten verstirbt aufgrund einer Therapielimitierung nach infauster Prognose, ohne dass die Option Organspende zuvor evaluiert wurde. Die Diagnose eines irreversiblen Hirnfunktionsausfalls ist ein seltenes Ereignis auf Intensivstationen. Die Aufmerksamkeit auf etwaige Indikatoren ist beim medizinischen Personal entsprechend gering. 
