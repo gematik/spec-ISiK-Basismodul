@@ -15,12 +15,12 @@ Realm: Deutschland
 
 
 ### Organspendeerkennung
-Die frühzeitige Erkennung von Personen, die für eine Organspende in Frage kommen, ist ein wesentlicher Bestandteil in der intensivmedizinischen Behandlung. Können Patienten, die möglicherweise für eine Organentnahme in Frage kommen, rechtzeitig erkannt werden, kann die Versorgung des Patienten in Hinblick auf seine Patientenwünsche angepasst, Angehörige psychologisch betreut und die organisatorischen Schritte für eine erfolgreiche Organtransplantation eingeleitet werden. Zwingende Voraussetzung ist dabei die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
+Die frühzeitige Erkennung von Personen, die für eine Organspende in Frage kommen, ist ein wesentlicher Bestandteil in der intensivmedizinischen Behandlung. Können Patienten, die möglicherweise für eine Organentnahme in Frage kommen, rechtzeitig erkannt werden, kann die Versorgung des Patienten in Hinblick auf seine Patientenwünsche angepasst, Angehörige psychologisch betreut und die organisatorischen Schritte für eine erfolgreiche Organtransplantation eingeleitet werden. Zwingende Voraussetzung ist dabei die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA).
 
 #### Motivation und Hintergrund
-Es existiert ein Erkennungsdefizit bei der Diagnose des irreversiblen Hirnfunktionsausfalls, zeigt eine [retrospektive Analyse](https://link.springer.com/article/10.1007/s00101-018-0510-x). Ein erheblicher Anteil an Patienten verstirbt aufgrund einer Therapielimitierung nach infauster Prognose, ohne dass die Option Organspende zuvor evaluiert wurde. Die Diagnose eines irreversiblen Hirnfunktionsausfalls ist ein seltenes Ereignis auf Intensivstationen. Die Aufmerksamkeit auf etwaige Indikatoren ist beim medizinischen Personal entsprechend gering. 
+Es existiert ein Erkennungsdefizit bei der Diagnose des irreversiblen Hirnfunktionsausfalls, zeigt eine [retrospektive Analyse](https://link.springer.com/article/10.1007/s00101-018-0510-x). Ein erheblicher Anteil an Patienten verstirbt aufgrund einer Therapielimitierung nach infauster Prognose, ohne dass die Option Organspende zuvor evaluiert wurde. Die Diagnose eines irreversiblen Hirnfunktionsausfalls ist ein seltenes Ereignis auf Intensivstationen. Die Aufmerksamkeit auf etwaige Indikatoren ist beim medizinischen Personal entsprechend gering.
 
-Mit organisatorisch unterstützenden Softwarelösungen können relevante Fälle in den Fokus gesetzt werden. In einer [prospektiven Studie](https://www.aerzteblatt.de/archiv/automatisiertes-elektronisches-screeningtool-detect-zur-erkennung-des-potenziell-irreversiblen-hirnfunktionsausfalls-cbec861b-c7e2-42c9-9e95-3f609d9e6855) wurde der positive Einfluss auf die Organspendezahlen nachgewiesen. Als relevant gilt ein Fall, wenn Parameter, die für eine IHA-Diagnostik wesentlich sind, in einem kritischen Bereich liegen. 
+Mit organisatorisch unterstützenden Softwarelösungen können relevante Fälle in den Fokus gesetzt werden. In einer [prospektiven Studie](https://www.aerzteblatt.de/archiv/automatisiertes-elektronisches-screeningtool-detect-zur-erkennung-des-potenziell-irreversiblen-hirnfunktionsausfalls-cbec861b-c7e2-42c9-9e95-3f609d9e6855) wurde der positive Einfluss auf die Organspendezahlen nachgewiesen. Als relevant gilt ein Fall, wenn Parameter, die für eine IHA-Diagnostik wesentlich sind, in einem kritischen Bereich liegen.
 
 Die flächendeckende Einführung einer solchen Anwendung hängt insbesondere von der Nutzbarkeit vorhandener Daten aus dedizierten Systemen ab. Offene Schnittstellen und einheitliche Datenformate sind ein Multiplikator für die Integration in die IT-Infrastuktur der Krankenhäuser und damit für die Verbesserung der Organspendeerkennung. Deshalb werden in diesem Implementierungsleitfaden Prozesse, spezifizierte REST-Abfragen und FHIR-Profile beschrieben, die durch ein PDMS bereitgestellt werden müssen, um die Integration eines entsprechenden Softwaresystems zu ermöglichen.
 
@@ -31,24 +31,24 @@ Es handelt sich um eine technische Spezifikation, die keinerlei Vorgaben zur kli
 
 Die Spezifikation ist in enger Kooperation mit der Deutschen Stiftung Organtransplantation (DSO) sowie dem Datenintegrationszentrum der Uniklinik Dresden (DIZ UKDD) und auch den [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html) entstanden.
 
-Eine medizinische Validierung der Profile erfolgte durch die gematik nicht. 
+Eine medizinische Validierung der Profile erfolgte durch die gematik nicht.
 
-Allerdings sind bestimmte Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden. 
+Allerdings sind bestimmte Profile, die relevant sind für die Umsetzung des Workflows, unter Federführung unserer Kooperationspartner, der [Verantwortlichen des 'Kerndatensatzes Erweiterungsmodul Intensivmedizin' der Medizininformatik Initiative (MII)](https://simplifier.net/guide/Medizininformatik-Initiative-Modul-ICU-ImplementationGuide-DE/MII-IG-Modul-ICU?version=current), einer medizinischen Validierung unterzogen worden.
 Die klinische Qualitätssicherung soll die Wahrscheinlichkeit von Fehlern reduzieren, kann Fehler aber nicht ausschließen.
 
-Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK. 
+Die Profile werden mit den Kooperationspartnern der MII, des DIZ UKDD und der DSO weiter in enger Kooperation gepflegt. Das Packaging der Profile erfolgt mittels ISiK.
 
 #### User
 Primär zu berücksichtigende User sind:
 * transplantationsbeauftragte Ärztinnen und Ärzte
 
 #### Einordnung in die ISiK Landschaft
-Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparameter verankert. 
+Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparameter verankert.
 
 Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
 
 * **ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen** - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung)
- 
+
 #### Out-of-Scope
 Es werden keine Vorgaben zur konkreten technischen Umsetzung des Workflows gemacht, sondern lediglich die notwendigen Schnittstellen (inklusive Profile) spezifiziert.
 
