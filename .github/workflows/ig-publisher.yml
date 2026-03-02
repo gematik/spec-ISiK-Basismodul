@@ -126,11 +126,18 @@ jobs:
           #         - https://example.com/CS1
           #         - https://example.com/CS2
           #         - https://example.com/CS3
-
           - ig_name: ISiK-AMTS
             ig_dir: publisher-guides/AMTS
             capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAMTSAkteur
+          
+          - ig_name: ISiK-Formularmodul
+            ig_dir: publisher-guides/Formular
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDatenQuelleAkteur
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDefinitionsVerwalterAkteur
+            import_cps_filter: SHOULD
 
           - ig_name: ISiK-Basis
             ig_dir: publisher-guides/Basis

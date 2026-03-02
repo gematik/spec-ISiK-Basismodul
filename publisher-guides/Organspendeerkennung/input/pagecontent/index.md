@@ -13,17 +13,16 @@ Realm: Deutschland
 
 ----
 
-###  Organspendeerkennung
 
-Die Organspendeerkennung, die mit der Feststellung eines Irreversiblen Hirnfunktionsausfalls (IHA) eng zusammenhängt, ist ein kritischer Prozess in der Intensivmedizin, der darauf abzielt, potenzielle Organspender frühzeitig zu identifizieren und die notwendigen Schritte für eine erfolgreiche Organtransplantation einzuleiten.
+### Organspendeerkennung
+Die frühzeitige Erkennung von Personen, die für eine Organspende in Frage kommen, ist ein wesentlicher Bestandteil in der intensivmedizinischen Behandlung. Können Patienten, die möglicherweise für eine Organentnahme in Frage kommen, rechtzeitig erkannt werden, so kann die Versorgung des Patienten in Hinblick auf seine Patientenwünsche angepasst, Angehörige psychologisch betreut und die organisatorischen Schritte für eine erfolgreiche Organtransplantation eingeleitet werden. Zwingende Voraussetzung ist dabei die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
 
-####  Motivation und Hintergrund
-Dieser Implementierungsleitfaden beschreibt Prozesse und spezifiziert REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen. Ziel ist es, die Integration von Anwendungen zu ermöglichen, die eine informationstechnische Unterstützung der Organspendeerkennung ermöglichen.
+#### Motivation und Hintergrund
+Es existiert ein Erkennungsdefizit bei der Diagnose des irreversiblen Hirnfunktionsausfalls, zeigt eine [retrospektive Analyse](https://link.springer.com/article/10.1007/s00101-018-0510-x). Ein erheblicher Anteil an Patienten verstirbt aufgrund einer Therapielimitierung nach infauster Prognose, ohne dass die Option Organspende zuvor evaluiert wurde. Die Diagnose eines irreversiblen Hirnfunktionsausfalls ist ein seltenes Ereignis auf Intensivstationen. Die Aufmerksamkeit auf etwaige Indikatoren ist beim medizinischen Personal entsprechend gering. 
 
-Bei der unterstützenden Software geht es insbesondere um organisatorisch unterstützende Tools, welche die klinischen Daten von intensivmedizinisch behandelten Patienten nach relevanten Parametern  durchsuchen. Relevant sind dabei Parameter, welche auf einen möglicherweise bevorstehenden IHA hinweisen. Die Software analysiert diese Parameter und stellt die gefundenen Fälle in den Fokus der zuständigen Transplantationsbeauftragten.
+Mit organisatorisch unterstützenden Softwarelösungen können relevante Fälle in den Fokus gesetzt werden. In einer [prospektiven Studie](https://www.aerzteblatt.de/archiv/automatisiertes-elektronisches-screeningtool-detect-zur-erkennung-des-potenziell-irreversiblen-hirnfunktionsausfalls-cbec861b-c7e2-42c9-9e95-3f609d9e6855) wurde der positive Einfluss auf die Organspendezahlen nachgewiesen. Als relevant gilt ein Fall, wenn Parameter, die für eine IHA-Diagnostik wesentlich sind, in einem kritischen Bereich liegen. 
 
-Fachlich begründet sich die Notwendigkeit dieser Spezifikation aus der Herausforderung, dass bei der Organspendeerkennung ein Detektionssproblem besteht. So zeigt eine [Studie](https://link.springer.com/article/10.1007/s00101-018-0510-x), dass ein erheblicher Anteil potenzieller Organspender nicht erkannt wird.
-Der Einsatz von Software, die mittels offener Schnittstellen die in dedizierten Systemen vorliegenden Daten nutzt, kann hierbei die Transplantationsbeauftragten in Form von Mitteilungen unterstützen und somit einen Beitrag leisten, die wenigen in Frage kommenden Patienten zu erkennen und folglich die Anzahl der möglichen Organspenden zu erhöhen.
+Die flächendeckende Einführung einer solchen Anwendung hängt insbesondere von der Nutzbarkeit vorhandener Daten aus dedizierten Systemen ab. Offene Schnittstellen und einheitliche Datenformate sind ein Multiplikator für die Integration in die IT-Infrastruktur der Krankenhäuser und damit für die Verbesserung der Organspendeerkennung. Deshalb werden in diesem Implementierungsleitfaden Prozesse, spezifizierte REST-Abfragen und FHIR-Profile beschrieben, die durch ein PDMS bereitgestellt werden müssen, um die Integration eines entsprechenden Softwaresystems zu ermöglichen.
 
 #### Stakeholder
 Die Spezifikation richtet sich insbesondere an SW-Hersteller von PDMS.
