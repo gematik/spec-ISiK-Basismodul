@@ -101,6 +101,16 @@
       {
         "id": "Encounter.extension",
         "path": "Encounter.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -507,7 +517,7 @@
         "id": "Encounter.diagnosis",
         "path": "Encounter.diagnosis",
         "short": "Falldiagnosen/-prozeduren",
-        "comment": "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. &quot;Aufnahmediagnose&quot;   \n  **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element \n  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von `Encounter.diagnosis` auf Condition/Procedure wird *nur dann* verwendet, \n  wenn einer Diagnose bzw. Prozedur *im Kontext eines Aufenthaltes* eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).  \n  Hier werden Diagnosen und Prozeduren nur nach ihrer *medizinschen* Relevanz bezüglich eines Aufenthaltes qualifiziert. \n  Die Qualifikation von Diagnosen und Prozeduren im Kontext der *Abrechnung* erfolgt in der `Account`-Ressource!"
+        "comment": "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   \n  **WICHTIGER Hinweis für Implementierer:**   Der Fallbezug von Diagnosen und Prozeduren wird über das jeweilige `encounter`-Element \n  der Condition bzw. Procedure-Ressource hinreichend etabliert.  Die *zusätzliche* Rückverlinkung von `Encounter.diagnosis` auf Condition/Procedure wird *nur dann* verwendet, \n  wenn einer Diagnose bzw. Prozedur *im Kontext eines Aufenthaltes* eine besondere Rolle zugewiesen werden soll, z.B. Haupt-/Neben-/Aufnahme- oder Überweisungsdiagnose).  \n  Hier werden Diagnosen und Prozeduren nur nach ihrer *medizinschen* Relevanz bezüglich eines Aufenthaltes qualifiziert. \n  Die Qualifikation von Diagnosen und Prozeduren im Kontext der *Abrechnung* erfolgt in der `Account`-Ressource!"
       },
       {
         "id": "Encounter.diagnosis.condition",
@@ -565,7 +575,7 @@
         "path": "Encounter.diagnosis.use.coding",
         "sliceName": "DiagnosesubTyp",
         "short": "Diagnosesubtyp",
-        "comment": "An deutschen Kodierrichtlinien orientierte, feingranulare Unterscheidung von Diagnose-Rollen, \n      z.B. &quot;Fachabteilungshauptdiagnose&quot;, &quot;Todesursache&quot; etc.",
+        "comment": "An deutschen Kodierrichtlinien orientierte, feingranulare Unterscheidung von Diagnose-Rollen, \n      z.B. 'Fachabteilungshauptdiagnose', 'Todesursache' etc.",
         "min": 0,
         "max": "*",
         "mustSupport": true,
@@ -623,6 +633,20 @@
         "mustSupport": true
       },
       {
+        "id": "Encounter.hospitalization.extension",
+        "path": "Encounter.hospitalization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
         "id": "Encounter.hospitalization.extension:Wahlleistung",
         "path": "Encounter.hospitalization.extension",
         "sliceName": "Wahlleistung",
@@ -644,7 +668,7 @@
         "id": "Encounter.hospitalization.admitSource",
         "path": "Encounter.hospitalization.admitSource",
         "short": "Aufnahmeanlass",
-        "comment": "Anlass der stationären Aufnahme, z.B. &quot;Einweisung&quot;, &quot;Notfall&quot; etc.  \n      Begründung MS: Zur Harmonisierung den Festlegungen der Medizininformatik-Initiative",
+        "comment": "Anlass der stationären Aufnahme, z.B. 'Einweisung', 'Notfall' etc.  \n      Begründung MS: Zur Harmonisierung den Festlegungen der Medizininformatik-Initiative",
         "mustSupport": true,
         "binding": {
           "strength": "extensible",
