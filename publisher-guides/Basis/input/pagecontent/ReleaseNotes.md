@@ -12,6 +12,10 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+### Version 6.0.0-rc
+
+* `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
+
 ### Version 5.x.x
 
 * fix: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
