@@ -155,6 +155,15 @@ Usage: #definition
       * code = #patch
     * insert CommonSearchParameters    
     * searchParam[+]
+      * insert Expectation (#SHALL)
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Appointment?_tag=https://example.org/codes|needs-review`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all) sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags)."
       * insert Expectation (#SHALL) 
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/Appointment-status"
