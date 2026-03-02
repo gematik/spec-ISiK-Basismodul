@@ -69,7 +69,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"
-      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden"
+      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden. 
+      
+      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * system MS
       * ^short = "Namensraum des Prozeduren-Codes"
       * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/bfarm/ops` anzugeben."
@@ -104,6 +106,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.
   **Begründung Pflichtfeld:** Die zeitliche Einordnung einer Prozedur ist in vielen Fällen maßgeblich für deren medizinische Relevanz."
 * performed[x] only dateTime or Period
+* insert EU-BodySiteExtension
 * note MS
   * ^short = "Notizen"
   * ^comment = "Ergänzende Hinweise und Anmerkungen zur Prozedur"

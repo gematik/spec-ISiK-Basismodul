@@ -75,7 +75,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[ICD-10-GM] only ISiKICD10GMCoding
     * ^patternCoding.system = $icd-10-gm
     * extension[Mehrfachcodierungs-Kennzeichen] MS
-    * extension[Seitenlokalisation] MS
+    * extension[Seitenlokalisation] MS      
+      * ^short = "Seitenlokalisation"
+      * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
+      
+      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = $alphaid-cs
@@ -147,6 +151,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * bodySite MS
   * ^short = "Körperstelle"
   * ^comment = "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)"
+* insert EU-BodySiteExtension
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern
 * bodySite.coding ^slicing.discriminator.path = "system"
