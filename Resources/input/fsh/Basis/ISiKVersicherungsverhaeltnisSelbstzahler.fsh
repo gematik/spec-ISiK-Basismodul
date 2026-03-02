@@ -1,13 +1,16 @@
 Profile: ISiKVersicherungsverhaeltnisSelbstzahler
 Parent: http://fhir.de/StructureDefinition/coverage-de-sel
 Id: ISiKVersicherungsverhaeltnisSelbstzahler
-Description: "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  
-### Motivation
+Description: "Dieses Profil ermöglicht die Darstellung eines privaten Versicherungsverhältnisses, bzw. eines Selbstzahler-Verhältnisses in ISiK Szenarien.  
+
+### **Motivation:**
+
 ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.
 In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  
 In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.
 
-### Kompatibilität
+### **Kompatibilität:**
+
 Das Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel). 
 Instanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen
 
