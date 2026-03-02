@@ -8,7 +8,7 @@ Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden vers
 
 | Rolle | Extension Name | Context | Beschreibung | Relevanz |
 |--------|---------------|---------|--------------|---|
-| FormularRendering | [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html) | Questionnaire.item | Definiert das Eingabeformat für ein Item | SOLL |
+| FormularRendering | [entryFormat](https://hl7.org/fhir/R4/extension-entryformat.html) | Questionnaire.item | §render-2?^FormularDatenRenderer^extension,frontend:Definiert das Eingabeformat für ein Item **SHALL**§ | SOLL |
 | FormularDatenValidierung | [maxDecimalPlaces](https://hl7.org/fhir/R4/extension-maxdecimalplaces.html) | Questionnaire.item | Begrenzt die Anzahl der Dezimalstellen | SOLL |
 | FormularDatenValidierung | [maxValue](https://hl7.org/fhir/R4/extension-maxvalue.html) | Questionnaire.item | Setzt einen maximalen Wert für numerische Eingaben | SOLL |
 | FormularDatenValidierung | [minLength](https://hl7.org/fhir/R4/extension-minlength.html) | Questionnaire.item | Definiert die Mindestlänge für Texteingaben | SOLL |
