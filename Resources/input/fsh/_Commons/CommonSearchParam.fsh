@@ -16,7 +16,7 @@ RuleSet: CommonSearchParameters
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all).
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 * searchParam[+]
-  * insert CapabilityStatementExpectationExt(SHALL)
+  * insert CapabilityStatementExpectationExt(MAY)
   * name = "_tag"
   * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
   * type = #token

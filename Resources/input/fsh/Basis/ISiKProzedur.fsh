@@ -65,7 +65,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
   * coding[OPS] only CodingOPS
-  * coding[OPS] from OpsVS (required)
+  * coding[OPS]
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"
@@ -116,9 +116,8 @@ Usage: #example
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
 * code.coding[0] = $sct#80146002 "Excision of appendix (procedure)"
-* code.coding[+].version = "2020"
-* code.coding[=] = $ops#5-470 "Appendektomie"
 * code.coding[+].version = "2024"
+* code.coding[=] = $ops#5-470 "Appendektomie"
 * code.text = "Entfernung des Blinddarms"
 * subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2020-04-23"
