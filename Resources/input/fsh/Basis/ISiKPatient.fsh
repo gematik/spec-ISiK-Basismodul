@@ -24,7 +24,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 
 * insert Meta
 * insert CommonElements
-* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPatient|1.1.1)
+* ^extension[$compliesWith][+].valueCanonical = Canonical(TIPatient|1.1.1)
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
