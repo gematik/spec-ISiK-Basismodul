@@ -303,5 +303,5 @@ Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert we
 
 RuleSet: Complies-With(name)
 * ^extension[+]
-  * ^url = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+  * ^url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
   * ^valueCanonical = Canonical({name})
