@@ -41,6 +41,8 @@ Usage: #definition
       * insert CapabilityStatementExpectationExt(SHALL)
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungTSH)
       * insert CapabilityStatementExpectationExt(SHALL)
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungSerumnatrium)
+      * insert CapabilityStatementExpectationExt(SHOULD)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
