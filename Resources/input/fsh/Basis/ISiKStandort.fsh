@@ -29,6 +29,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 "
 * insert Meta
 * insert CommonElements
+* ^extension[$compliesWithProfile][+].valueCanonical = Canonical(location-eu-core|0.1.0)
 * identifier MS 
   * ^short = "Eindeutiger Identifier des Standorts"
   * ^slicing.discriminator.type = #pattern
