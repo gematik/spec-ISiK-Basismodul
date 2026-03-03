@@ -8,6 +8,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
+* `improve` Hinzufügen eines Profils zum Richmond Agitation-Sedation Scale (RASS); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
 * Initiales Draft der Stufe 6
 * Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 
