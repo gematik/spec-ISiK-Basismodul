@@ -5,6 +5,7 @@ topic: ReleaseNotes
 ### Version 6.0.0-rc
 
 t.b.d. (x)
+* `improve` Das pattern auf `Patient` im subjectType von FormularDefinition wurde entfernt, damit auch weitere Use Cases mit dem Modul umsetzbar sind. Die Anforderungen und Einschränkungen, die in diesem IG für ISiK-Formulare definiert sind, beziehen sich trotzdem weiterhin auf Formulare mit subjectType `Patient`.
 
 ### Version 5.1.1
 

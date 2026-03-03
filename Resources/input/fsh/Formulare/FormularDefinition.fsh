@@ -40,13 +40,10 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^comment = "Die im ISiK-Kontext bereitgestellten Formulare sollten final ausspezifiziert sein und daher den Status 'active' haben. 
   Formulare, die zurückgezogen oder durch neuere Versionen ersetzt wurden, können mit 'retired' gekennzeichnet werden."
 * subjectType 1..1 MS
-* subjectType = #Patient
   * ^short = "Subject, über das in diesem Formular berichtet wird."
-  * ^comment = "**Begründung Pflichtfeld:**  
-  Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen. 
-  Dabei ist stets davon auszugehen, dass der Patient, für den dieses Formular ausgefüllt wird, 
-  identisch ist, mit dem Patient, der im Launch-Kontext übergeben wird. 
-  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  * ^comment = "**Begründung Pflichtfeld:** Die in diesem Modul beschriebenen Funktionen und Interaktionen beziehen sich auf den subjectType `Patient`. Ist hier ein anderer subjectType angegeben, so unterliegt das Formular nicht den Einschränkungen und Anforderungen, die in diesem IG für ISiK-Formulare definiert sind. Um dennoch eine Validität zum Profil herzustellen, wurde das Pattern entfernt.
+  
+  **Hinweis:** Ist der subjectType `Patient` gesetzt, ist stets davon auszugehen, dass der Patient, für den dieses Formular ausgefüllt wird, identisch ist, mit dem Patient, der im Launch-Kontext übergeben wird."
 * description 1..1 MS 
   * ^short = "Formularbeschreibung"
   * ^comment = "**Begründung Pflichtfeld:**  

@@ -39,10 +39,15 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^short = "Subject (Patient), über das in diesem Formular berichtet wird."
   * ^comment = "**Begründung Pflichtfeld:**  
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
-  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.
+  
+  **Hinweis:** In manchen Kontexten ist eine Instanz nicht im Kontext, um auf eine existierende Patient-Ressource zu referenzieren. In diesem Fall kann hier auch ein eindeutiger Identifier wie eine KVNR oder eine andere Patienten-ID angegeben werden, um die Zuordnung zu einem Patienten zu ermöglichen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung MS)
+  * identifier ..1 MS
+    * ^short = "eindeutiger Patienten-Identifier (bspw. KVNR)"
+    * ^comment = "**Begründung MS:** Ein eindeutiger Patienten-Identifier ermöglicht die Zuordnung der FormularDaten zu einem bestimmten Patienten, auch wenn keine direkte Referenz auf eine Patient-Ressource besteht."
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 
