@@ -24,6 +24,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 "
 * insert Meta
 * insert CommonElements
+* insert Complies-With(organization-eu)
 * ^extension[$imposeProfile][+].valueCanonical = Canonical(TIOrganization|1.1.1)
 * identifier 1..* MS
   * ^short = "Identifikatoren der Fachabteilung"
