@@ -18,8 +18,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-//* insert Complies-With(practitioner-eu)
-* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile][+].valueCanonical = Canonical(practitioner-eu)
+* ^extension[$compliesWith][+].valueCanonical = Canonical(practitioner-eu)
 * ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPractitioner|1.1.1)
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
