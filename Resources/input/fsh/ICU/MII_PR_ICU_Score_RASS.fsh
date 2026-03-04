@@ -69,6 +69,7 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"
 * valueCodeableConcept.coding ^slicing.rules = #open
 * valueCodeableConcept.coding contains loinc 1..1
+* valueCodeableConcept.coding[loinc].system = $loinc
 
 * bodySite 0..0
 * specimen 0..0
