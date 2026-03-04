@@ -22,7 +22,8 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "identifier"
@@ -94,7 +95,8 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
       * code = #search-type
       * insert Expectation (#SHALL)
 
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
