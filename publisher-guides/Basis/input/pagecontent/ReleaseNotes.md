@@ -16,6 +16,7 @@ Tags werden folgendermaßen verwendet:
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
+* `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 
 ### Version 5.x.x
 
