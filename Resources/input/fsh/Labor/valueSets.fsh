@@ -229,7 +229,6 @@ Id: ObservationUnitsSerumnatrium
 Description: "Enthält UCUM-Einheiten für die Observation Serumnatrium"
 * insert Meta
 * $cs-ucum#mmol/L "millimol per liter"
-* $cs-ucum#nmol/L "nanomol per liter"
 
 ValueSet: ObservationCodesThrombozyten
 Id: ObservationCodesThrombozyten
