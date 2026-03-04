@@ -28,7 +28,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "active"
@@ -85,7 +86,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters    
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter    
     * searchParam[+]
       * insert Expectation (#SHALL) 
       * name = "schedule"
@@ -153,7 +155,7 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #patch
-    * insert CommonSearchParameters    
+    * insert CommonSearchParameters 
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "_tag"
@@ -164,6 +166,7 @@ Usage: #definition
         `GET [base]/Appointment?_tag=https://example.org/codes|needs-review`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#all) sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags)."
+    * searchParam[+]  
       * insert Expectation (#SHALL) 
       * name = "status"
       * definition = "http://hl7.org/fhir/SearchParameter/Appointment-status"
@@ -250,7 +253,8 @@ Usage: #definition
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters  
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter  
     * searchParam[+]
       * insert Expectation (#SHALL) 
       * name = "active"
