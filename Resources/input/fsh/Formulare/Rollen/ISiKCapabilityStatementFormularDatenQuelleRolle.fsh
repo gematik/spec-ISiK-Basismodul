@@ -23,7 +23,8 @@ Diese Rolle stellt Interaktionen zur Abfrage von FormularenDaten bereit. Hierbei
       * insert Expectation(#SHALL)
       * code = #search-type   
 
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "identifier"
