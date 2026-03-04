@@ -1,5 +1,5 @@
 Profile: MII_PR_ICU_MUV_zerebraler_Perfusionsdruck
-Parent: $sd-mii-icu-monitoring-und-vitaldaten
+Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
 Id: mii-pr-icu-muv-zerebraler-perfusionsdruck
 Title: "MII PR ICU MUV zerebraler Perfusionsdruck"
 Description: "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (ICP) in der Akutmedizin.
@@ -11,6 +11,6 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * code.coding[sct] = $sct#250846007
 * code.coding[loinc] = $loinc#61017-0
 * code.coding[IEEE-11073] = urn:iso:std:iso:11073:10101#153604
-* value[x] = $ucum#mm[Hg] "millimeter Mercury column"
+* value[x] = $cs-ucum#mm[Hg] "millimeter Mercury column"
 * value[x].unit 1..
 * bodySite = $sct#263353005
