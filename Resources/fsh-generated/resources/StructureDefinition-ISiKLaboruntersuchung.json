@@ -37,6 +37,64 @@
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Analyse-Befund-Code",
+        "definition": "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung.",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.type",
+        "path": "Observation.identifier.type",
+        "short": "Art des Identifiers",
+        "comment": "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.system",
+        "path": "Observation.identifier.system",
+        "short": "Namensraum des Identifiers",
+        "definition": "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.value",
+        "path": "Observation.identifier.value",
+        "short": "Der eigentliche Identifier-Wert",
+        "definition": "**Begründung MS**: Der Wert ist die konkrete Kennung der Laboruntersuchung und muss in ihrem Namensraum eindeutig sein.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode",
+        "path": "Observation.identifier",
+        "sliceName": "analyseBefundCode",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "OBI",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
         "id": "Observation.status",
         "path": "Observation.status",
         "short": "Status der Laboruntersuchung",

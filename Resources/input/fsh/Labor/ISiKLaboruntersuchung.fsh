@@ -10,6 +10,28 @@ Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmittelther
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
 * insert CommonElements
+* identifier MS
+  * ^short = "Eindeutiger Identifier der Laboruntersuchung"
+  * ^comment = "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laboruntersuchungen über verschiedene Systeme hinweg."
+  * type 1.. MS
+    * ^short = "Art des Identifiers"
+    * ^comment = "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds."
+    * coding 1.. MS
+      * ^short = "Kodierung des Identifier-Typs"
+      * ^definition = "**Begründung MS**: Die Kodierung des Identifier-Typs ermöglicht die eindeutige Identifikation der Art des Identifiers."
+  * system 1.. MS
+    * ^short = "Namensraum des Identifiers"
+    * ^definition = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an"
+  * value 1.. MS
+    * ^short = "Der eigentliche Identifier-Wert"
+    * ^definition = "**Begründung MS**: Der Wert ist die konkrete Kennung der Laboruntersuchung und muss in ihrem Namensraum eindeutig sein."
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier contains analyseBefundCode 0..1 MS
+  * ^short = "Analyse-Befund-Code"
+  * ^definition = "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung."
+* identifier[analyseBefundCode] ^patternIdentifier.type = $v2-0203#OBI
 * status MS
   * ^short = "Status der Laboruntersuchung"
   * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation einer Untersuchung. **WICHTIGER Hinweis für Implementierer**:  
