@@ -42,7 +42,7 @@ Usage: #definition
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungTSH)
       * insert CapabilityStatementExpectationExt(SHALL)
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungSerumnatrium)
-      * insert CapabilityStatementExpectationExt(SHOULD)
+      * insert CapabilityStatementExpectationExt(MAY)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
