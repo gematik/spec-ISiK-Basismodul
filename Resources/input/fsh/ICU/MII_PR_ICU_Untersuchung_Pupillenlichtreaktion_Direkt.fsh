@@ -47,6 +47,4 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 Invariant: pupil-comp-val-or-dar
 Description: "Component must have either value or dataAbsentReason."
 * severity = #error
-* expression = "value.exists() xor dataAbsentReason.exists()"
-* xpath = "@value|f:*|h:div"
-* source = "http://hl7.org/fhir/StructureDefinition/Element"
+* expression = "valueCodeableConcept.exists() xor dataAbsentReason.exists()"
