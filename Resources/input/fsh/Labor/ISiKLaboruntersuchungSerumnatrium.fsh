@@ -7,7 +7,6 @@ Eine eindeutige Kennzeichnung für die Differenzierung hinsichtlich der Erhebung
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesSerumnatrium
-* insert LaboratorySnomedSliceRuleSet
 * code.coding[snomed] = $sct#25197003
 * valueQuantity from ObservationUnitsSerumnatrium
 * referenceRange MS
