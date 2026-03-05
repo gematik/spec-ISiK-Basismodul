@@ -7,7 +7,7 @@ Dieses Profil dient der Abbildung der direkten Pupillenlichtreaktion.
 
 In ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.
 
-Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 4.3.2026.
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.
 """
 * insert Meta
 * insert CommonElements
@@ -28,12 +28,13 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * code.coding.code = #45832002 (exactly)
 * code.coding.display = "Pupil afferent light reaction"
 
+* value[x] 0..1 MS
+* value[x] only CodeableConcept
 * valueCodeableConcept 0..1 MS
-* valueCodeableConcept only CodeableConcept
 * valueCodeableConcept obeys pupil-comp-val-or-dar
-* valueCodeableConcept ^sliceName = "valueCodeableConcept"
 * valueCodeableConcept.coding ^slicing.discriminator.type = #pattern
-* valueCodeableConcept.coding ^slicing.discriminator.path = "code"
+* valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* valueCodeableConcept.coding ^slicing.ordered = false
 * valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding contains Loinc 1..1 MS
 * valueCodeableConcept.coding[Loinc] from MII_VS_ICU_Code_Observation_Pupillenlichtreaktion (required)
