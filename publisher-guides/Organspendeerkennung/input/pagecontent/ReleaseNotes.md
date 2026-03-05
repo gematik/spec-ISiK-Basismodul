@@ -5,7 +5,7 @@ topic: ImplementationGuide-markdown-ReleaseNotes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
-Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung gemäß Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0)
+Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionierung nach Semver des Implementierungsleitfadens gemäß des Major Releases im Zuge dessen der Implementierungsleitfaden entstanden ist (X.0.0)
 
 #### Version 6.0.0-rc
 
