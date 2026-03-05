@@ -58,8 +58,6 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
 * value[x] ^short = "RASS value"
-* value[x].coding.code 1..1 MS
-* value[x].coding.system 1..1 MS
 
 * valueCodeableConcept 1..1 MS
 //* valueCodeableConcept from http://loinc.org/vs/LL6536-8 (required)
@@ -69,6 +67,9 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"
 * valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding contains loinc 1..1
+
+* valueCodeableConcept.coding.code 1..1 MS
+* valueCodeableConcept.coding.system 1..1 MS
 
 * bodySite 0..0
 * specimen 0..0
