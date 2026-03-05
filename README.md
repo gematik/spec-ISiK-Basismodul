@@ -22,18 +22,18 @@ The ISiK Basis Stufe 5 branch contains all ISiK modules that were maintained in 
 
 For full information and details, see [Simplifier Project Page for ISiK Stufe 5 - all modules](https://simplifier.net/isik-stufe-5/~introduction)
 
-CI-builds:
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ICU
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-AMTS
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Basis
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Connect
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Dokumentenaustausch
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Formularmodul
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Labor
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Medikation
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Subscriptions
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Terminplanung
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Vitalparameter
+CI-builds:  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ICU  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-AMTS  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Basis  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Connect   
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Dokumentenaustausch  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Formularmodul  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Labor  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Medikation  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Subscriptions  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Terminplanung  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Vitalparameter  
 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.

@@ -49,5 +49,6 @@ Usage: #definition
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
