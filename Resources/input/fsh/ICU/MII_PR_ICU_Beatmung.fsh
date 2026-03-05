@@ -1,5 +1,5 @@
 Profile: MII_PR_ICU_Beatmung
-Parent: ISiKProzedur 
+Parent: https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure
 Id: mii-pr-icu-vent-beatmung
 Title: "MII PR ICU Beatmung"
 Description: """Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.
