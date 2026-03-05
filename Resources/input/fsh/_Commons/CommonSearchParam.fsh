@@ -46,3 +46,18 @@ RuleSet: CommonSearchParameters
         `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`
         **Anwendungshinweis:**
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+
+* searchParam[+]
+  * insert CapabilityStatementExpectationExt(SHALL)
+  * name = "_lastUpdated"
+  * type = #date
+  * documentation =
+        "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:
+        `GET [base]/Patient?_lastUpdated=ge2026-01-01`
+        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:
+        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`
+        **Anwendungshinweis:**
+        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.
+        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode "too-costly" beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist
+        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.
+        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
