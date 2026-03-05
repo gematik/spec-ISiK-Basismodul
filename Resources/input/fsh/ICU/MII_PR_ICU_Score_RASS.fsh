@@ -7,7 +7,7 @@ Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedatio
 
 In ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.
 
-Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026.
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.
 """
 * insert Meta
 * insert CommonElements
@@ -67,9 +67,8 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * valueCodeableConcept ^comment = "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8)."
 * valueCodeableConcept.coding ^slicing.discriminator.type = #pattern
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"
-* valueCodeableConcept.coding ^slicing.rules = #open
+* valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding contains loinc 1..1
-* valueCodeableConcept.coding[loinc].system = $loinc
 
 * bodySite 0..0
 * specimen 0..0
