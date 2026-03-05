@@ -4,7 +4,9 @@ Id: mii-pr-icu-vent-beatmung
 Title: "MII PR ICU Beatmung"
 Description: """Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.
 
-Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 4.3.2026.
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. 
+Als Parent wurde der letzte Stand des Prozedurprofils der MII gewählt nach dem gleichnamigen Modul/Package. 
+Stand 4.3.2026.
 """
 * insert Meta
 * insert CommonElements
