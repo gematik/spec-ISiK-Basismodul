@@ -11,9 +11,9 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 
 * partOf only Reference(Procedure or Observation)
 * category 1..
-* category.coding[sct] from mii-vs-icu-category-procedure-beatmung-snomed (required)
+* category.coding[sct] from MII_VS_ICU_Category_Procedure_Beatmung_SNOMED (required)
 * category.coding[sct].display MS
-* code.coding[sct] from mii-vs-icu-code-procedure-beatmung-snomed (required)
+* code.coding[sct] from MII_VS_ICU_Code_Procedure_Beatmung_SNOMED (required)
 * code.coding[sct] ^patternCoding.system = $sct
 * code.coding[sct].display MS
 * subject only Reference(Patient)
