@@ -39,6 +39,20 @@ Description: "Enthaelt alle SNOMED Procedure Codes"
 * insert Meta
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
+ValueSet: ProzedurenReanimationCodesSCT
+Id: ProzedurenReanimationCodesSCT
+Description: "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* include codes from system SNOMED_CT where concept descendent-of #439569004
+
+ValueSet: ProzedurenReanimationCodesOPS
+Id: ProzedurenReanimationCodesOPS
+Description: "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
+* $ops#8-772 "Operative Reanimation"
+* $ops#8-779 "Andere Reanimationsmaßnahmen"
+
 ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
