@@ -112,10 +112,9 @@
           {
             "key": "pupil-comp-val-or-dar",
             "human": "Component must have either value or dataAbsentReason.",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt",
             "severity": "error",
-            "expression": "value.exists() xor dataAbsentReason.exists()",
-            "xpath": "@value|f:*|h:div"
+            "expression": "valueCodeableConcept.exists() xor dataAbsentReason.exists()"
           }
         ],
         "mustSupport": true
