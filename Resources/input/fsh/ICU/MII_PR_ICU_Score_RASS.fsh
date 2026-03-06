@@ -63,11 +63,6 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 //* valueCodeableConcept from http://loinc.org/vs/LL6536-8 (required)
 * valueCodeableConcept from MII_VS_ICU_Score_RASS (required)
 * valueCodeableConcept ^comment = "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8)."
-* valueCodeableConcept.coding ^slicing.discriminator.type = #pattern
-* valueCodeableConcept.coding ^slicing.discriminator.path = "system"
-* valueCodeableConcept.coding ^slicing.rules = #closed
-* valueCodeableConcept.coding contains loinc 1..1
-
 * valueCodeableConcept.coding.code 1..1 MS
 * valueCodeableConcept.coding.system 1..1 MS
 
