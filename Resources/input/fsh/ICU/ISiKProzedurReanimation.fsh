@@ -20,7 +20,7 @@ Usage: #example
 * extension.valueDateTime = "2026-04-23"
 * status = #completed
 * code.coding[0] = $sct#89666000 "Cardiopulmonary resuscitation (procedure)"
-* code.coding[=].version = "2024"
+* code.coding[=].version = "http://snomed.info/sct/11000274103/2025-11-15"
 * code.coding[+] = $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
 * code.coding[=].version = "2026"
 * code.text = "Herz-Lungen-Wiederbelebung"
