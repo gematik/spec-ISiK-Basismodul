@@ -8,6 +8,7 @@ Description: """Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - i
 * insert CommonElements
 
 * category = $sct#373110003 "Emergency procedure (procedure)"
+* code.coding[SNOMED-CT] only ISiKSnomedCTCoding
 * code.coding[SNOMED-CT] from ProzedurenReanimationCodesSCT (required)
 * code.coding[SNOMED-CT] ^patternCoding.system = $sct
 * code.coding[OPS] from ProzedurenReanimationCodesOPS (required)
@@ -20,9 +21,9 @@ Usage: #example
 * extension.valueDateTime = "2026-04-23"
 * status = #completed
 * code.coding[0] = $sct#89666000 "Kardiopulmonale Reanimation"
-* code.coding[=].version = "http://snomed.info/sct/11000274103/2025-11-15"
+* code.coding[=].version = "http://snomed.info/sct/11000274103/20251115"
 * code.coding[+] = $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
-* code.coding[=].version = "2026"
+* code.coding[=].version = "2024"
 * code.text = "Herz-Lungen-Wiederbelebung"
 * subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2026-04-23"
