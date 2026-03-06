@@ -8,8 +8,8 @@ Description: """Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - i
 * insert CommonElements
 
 * category = $sct#373110003 "Emergency procedure (procedure)"
-* code.coding[SNOMED_CT] from ProzedurenReanimationCodesSCT (required)
-* code.coding[SNOMED_CT] ^patternCoding.system = $sct
+* code.coding[SNOMED-CT] from ProzedurenReanimationCodesSCT (required)
+* code.coding[SNOMED-CT] ^patternCoding.system = $sct
 * code.coding[OPS] from ProzedurenReanimationCodesOPS (required)
 * code.coding[OPS] ^patternCoding.system = $ops
 
