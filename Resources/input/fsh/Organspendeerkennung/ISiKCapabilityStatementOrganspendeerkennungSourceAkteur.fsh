@@ -21,11 +21,16 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 * format[+] = #application/fhir+json
 * rest.mode = #server
 
-// Administative Daten
+// Administative Daten - Suchparameter Patient (.name + .given), Encounter.account.identifier
 * imports[+] = Canonical(ISiKCapabilityStatementStammdatenRolle)
   * insert ExpectationImports(#SHALL)
+
+//Administrative Daten - Encounter.location
+* imports[+] = Canonical(ISiKCapabilityStatementErweiterteStammdatenRolle)
+  * insert ExpectationImports(#SHALL)
+
 // MII-ICU backport profiles minimal (übergreifend)
-* imports[+] = Canonical(ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementOrganspendeerkennungSourceRolle)
   * insert ExpectationImports(#SHALL)
   
 // TODO Location
