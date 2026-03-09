@@ -63,6 +63,6 @@ Wird ein FormularRenderer in der Stand-Alone-Variante implementiert, so muss die
 
 #### FormularRendering
 
-§render-1?^FormularDatenRenderer^frontend,backend:Ein System, welches die Funktionalität zum Rendern von FormularDefinitionen bereitstellt, muss (**SHALL**) alle unterschiedlichen Funktionalitäten anbieten, die im Profil [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) mit Must-Support gekennzeichnet, oder auf der Seite [Extensions](extensions.html) nicht als Out-of-scope Extension gelistet sind.§
+Ein System, welches die Funktionalität zum Rendern von FormularDefinitionen bereitstellt, muss alle unterschiedlichen Funktionalitäten anbieten, die im Profil [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) mit Must-Support gekennzeichnet, oder auf der Seite [Extensions](extensions.html) nicht als Out-of-scope Extension gelistet sind.
 
 #### FormularDatenVorbelegung

@@ -19,9 +19,9 @@ Unter einer Formular-Datenquelle ist in diesem Modul eine Software zu verstehen,
 Unter einem FormularDefinitions-Ersteller ist in diesem Modul eine Software oder eine Person zu verstehen, die folgende Interaktionen implementiert oder durchführt:
 * FormularPublikation in der Rolle "Autor"
 
-Die Methode, wie Autoren [FormularDefinition](Spezifikationen_Begriffsdefinitionen.html)en publizieren, ist in dieser Ausbaustufe nicht definiert. Es wird davon ausgegangen, dass [FormularDefinitionsVerwalter](#formulardefinitionsverwalter) zunächst eine manuell zusammengetragene und kuratierte Auswahl von [FormularDefinition](Spezifikationen_Begriffsdefinitionen.html)en verschiedener Autoren bereitstellen.
+Die Methode, wie Autoren [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)en publizieren, ist in dieser Ausbaustufe nicht definiert. Es wird davon ausgegangen, dass [FormularDefinitionsVerwalter](#formulardefinitionsverwalter) zunächst eine manuell zusammengetragene und kuratierte Auswahl von [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)en verschiedener Autoren bereitstellen.
 
-Funktionell ist der Akteur "FormularDefinitionsErsteller" out-of-scope für diese Ausbaustufe, jedoch richten sich die [Best-Practice](Spezifikationen_BestPractice.html)-Empfehlungen für die Erstellung von [FormularDefinition](Spezifikationen_Begriffsdefinitionen.html)en an alle Personen und SoftwareSysteme, die die Rolle eines Autors einnehmen.
+Funktionell ist der Akteur "FormularDefinitionsErsteller" out-of-scope für diese Ausbaustufe, jedoch richten sich die [Best-Practice](Spezifikationen_BestPractice.html)-Empfehlungen für die Erstellung von [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)en an alle Personen und SoftwareSysteme, die die Rolle eines Autors einnehmen.
 
 Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (FSH) ISiK-konforme Questionnaire-Ressourcen modellieren als auch  Hersteller von Software-Lösungen, die eine UI-gestützte Erstellung ISiK-konformer Questionnaires anbieten möchten.
 

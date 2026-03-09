@@ -8,4 +8,14 @@ Kandidaten:
 * Ausfüllen eines Fragebogens bei der Terminbuchung eines Patienten in einem Patientenportal
 * PROMS(Patient Reported Outcome Measures) der Medizininformatik-Initiative
 
+### TI-Messenger (TI-M)
 
+Das ISiK Formularmodul bietet neben der Möglichkeiten und Integrationen in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Diagramm zeigt eine beispielhafte Nutzung der im Modul beschriebenen Funktionen und Interaktionen im Kontext des TI-Messengers.
+
+<div style="width: 700px;">
+{% include akteure_tim.svg %}
+</div>
+
+Im Diagramm nicht abgebildet ist der Akteur des FormularLaunchers, welcher in diesem Kontext als Standalone anzunehmen ist und durch das interne Protokoll des TI-M getriggert wird. Wichtig ist, dass trotzdem der Patient-Kontext vorhanden ist, der in den [FormularDaten](StructureDefinition-ISiKFormularDaten.html) genutzt werden kann.
+
+Die FormularDatenExtraktion ist in diesem Use Case nicht im FormularRenderer verortet, sondern wird durch den "TI-M Pro Client" durchgeführt bei potenzieller Integration in die Leistungserbringer-Infrastruktur.
