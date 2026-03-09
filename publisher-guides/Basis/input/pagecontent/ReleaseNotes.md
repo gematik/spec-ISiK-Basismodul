@@ -14,11 +14,12 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0-rc
 
-<<<<<<< stufe-6/all/tag-parameter-to-may-ptdata-2051
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
-=======
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
->>>>>>> main-stufe-6
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
+* `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1046
+
 
 ### Version 5.x.x
 

@@ -31,7 +31,8 @@ Diese Rolle beschreibt die Fähigkeiten eines Systems zur Registrierung, Verwalt
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation (#SHALL)
       * name = "criteria"
