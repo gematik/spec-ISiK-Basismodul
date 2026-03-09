@@ -61,6 +61,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
+    * ^comment = "**Hinweis EHDS:** In der HL7 Europe HDR Spezifikation ist ein Binding von Snomed-CT mit der Stärke preferred gesetzt. Dies schließt sich nicht mit der hier vorgenommenen Profilierung aus, und auch eine reine OPS Abbildung spricht nicht gegen diese Anforderung. Allerdings möchten wir darauf hinweisen, dass es in Zukunft möglicherweise sinnvoll sein könnte, die Nutzung von SNOMED-CT Kodierung zur Darstellung einer Prozedur zu nutzen, um die Interoperabilität mit dem HDR zu erhöhen."
   * coding contains
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
