@@ -10,6 +10,7 @@ Description: """Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - i
 * category = $sct#373110003 "Emergency procedure (procedure)"
 * code.coding[SNOMED-CT] only ISiKSnomedCTCoding
 * code.coding[SNOMED-CT] from ProzedurenReanimationCodesSCT (required)
+* code.coding[OPS] only ISiKCoding
 * code.coding[OPS] from ProzedurenReanimationCodesOPS (required)
 * code.coding[OPS] ^patternCoding.system = $ops
 
@@ -26,4 +27,4 @@ Usage: #example
 * code.text = "Herz-Lungen-Wiederbelebung"
 * subject = Reference(PatientinMusterfrau)
 * performedDateTime = "2026-04-23"
-* note.text = "Reanimationsmaßnahme mit erfolgreichem Ausgang"
+* note.text = "Reanimationsmaßnahme mit erfolgreichem Ausgang. Dieses Beispiel dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin."
