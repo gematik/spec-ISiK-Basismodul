@@ -1,12 +1,12 @@
-Instance: ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceMinimalAkteur
+Instance: ISiKCapabilityStatementOrganspendeerkennungSourceAkteur
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Akteur
-* name = "ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceMinimalAkteur"
-* title = "ISiK CapabilityStatement Vitalparameter Server Minimal"
+* name = "ISiKCapabilityStatementOrganspendeerkennungSourceAkteur"
+* title = "ISiK CapabilityStatement Organspendeerkennung Server"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur für die Organspendeerkennung zur Unterstützung des Organspendeerkennungs-Workflows implementieren muss
+* purpose = "Das vorliegende CapabilityStatement fasst die Rollen (und entsprechende Interaktionen) zusammen, die ein Akteur für die Organspendeerkennung zur Unterstützung des Organspendeerkennungs-Workflows implementieren muss.
 
 Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden Rollen (siehe 'imports' in der CapabilityStatement-Ressource) zu beachten.
 
@@ -27,3 +27,6 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 // MII-ICU backport profiles minimal (übergreifend)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceRolle)
   * insert ExpectationImports(#SHALL)
+  
+// TODO Location
+// TODO Suchparameter codi:in VS

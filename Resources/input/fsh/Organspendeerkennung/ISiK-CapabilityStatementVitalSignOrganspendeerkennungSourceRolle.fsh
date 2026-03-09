@@ -1,12 +1,12 @@
-Instance: ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceRolle
+Instance: ISiKCapabilityStatementOrganspendeerkennungSourceRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
-* name = "ISiKCapabilityStatementVitalSignOrganspendeerkennungSourceRolle"
-* title = "ISiK CapabilityStatement VitalSign Organspendeerkennung Source Rolle"
+* name = "ISiKCapabilityStatementOrganspendeerkennungSourceRolle"
+* title = "ISiK CapabilityStatement Organspendeerkennung Source Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement beschreibt verpflichtende Interaktionen, die ein ISiK-konformes System oder eine Systemkomponenten in der Rolle 'VitalSign Organspendeerkennung Source Minimal' zur Unterstützung des Organspendeerkennungs-Workflows implementieren muss.
+* purpose = "Das vorliegende CapabilityStatement beschreibt verpflichtende Interaktionen, die ein ISiK-konformes System oder eine Systemkomponenten in der Rolle 'Organspendeerkennung Source Minimal' zur Unterstützung des Organspendeerkennungs-Workflows implementieren muss.
 
 Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine IHA-Diagnostik wesentlich sind.
   
