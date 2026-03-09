@@ -92,7 +92,6 @@
         },
         "short": "Offizieller Name der angehörigen Person",
         "comment": "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, \n  ist die Angabe des offiziellen Namens relevant.\n  Wenn kein Name vorliegt, MUSS die [data-absent-reason-Extension](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html) eingesetzt werden.   \n  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)",
-        "min": 1,
         "mustSupport": true
       },
       {
@@ -101,7 +100,7 @@
         "sliceName": "Name",
         "short": "Slice für den offiziellen Namen der angehörigen Person",
         "comment": "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.\n  **Begründung MS:** Siehe untergeordnete Elemente",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -127,13 +126,13 @@
         "id": "RelatedPerson.name:Name.family",
         "path": "RelatedPerson.name.family",
         "short": "Nachname",
-        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  \n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.",
         "mustSupport": true
       },
       {
         "id": "RelatedPerson.name:Name.given",
         "path": "RelatedPerson.name.given",
-        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.",
         "mustSupport": true
       },
       {
