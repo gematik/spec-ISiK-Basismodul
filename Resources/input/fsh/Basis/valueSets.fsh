@@ -43,9 +43,6 @@ ValueSet: ProzedurenReanimationCodesSCT
 Id: ProzedurenReanimationCodesSCT
 Description: "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen"
 * insert Meta
-* compose.include.system = $sct
-* compose.include.version = obeys sct-version-de
-//* compose.include.version = "http://snomed.info/sct/11000274103/20251115"
 * include codes from system SNOMED_CT where concept descendent-of #439569004
 
 ValueSet: ProzedurenReanimationCodesOPS
