@@ -1,0 +1,132 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKLeistungserbringerrolle",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLeistungserbringerrolle",
+  "version": "5.1.1",
+  "name": "ISiKLeistungserbringerrolle",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-17",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen \nüber die Rolle eines Leistungserbringers im Rahmen des Bestätigungsverfahrens der gematik.  \n### Motivation\ndie Rolle von Leistungserbringern innerhalb einer Organisation (z.B. Fachabteilung, Praxis, Krankenhaus) ist eine wichtige Information in Bezug auf die Leistungen, die\ndurch diese Person erbracht werden.\n\nIn FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert.  \n",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole.id",
+        "path": "PractitionerRole.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.meta.versionId",
+        "path": "PractitionerRole.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "PractitionerRole.meta.lastUpdated",
+        "path": "PractitionerRole.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "PractitionerRole.active",
+        "path": "PractitionerRole.active",
+        "short": "Aktiv/Inaktiv Status",
+        "comment": "Motivation MS: Ein System muss prüfen können, ob die Rolle eines Leistungserbringers aktiv oder inaktiv ist.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "short": "Leistungserbringer",
+        "comment": "Motivation MS: Ein System muss die Informationen über den Leistungserbringer, der die Rolle innehat, bereitstellen können.",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.organization",
+        "path": "PractitionerRole.organization",
+        "short": "Organisation",
+        "comment": "Motivation MS: Ein System muss die Informationen über die Organisation, der der Leistungserbringer angehört, bereitstellen können.",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.code",
+        "path": "PractitionerRole.code",
+        "short": "Rolle des Leistungserbringers",
+        "comment": "Motivation MS: Ein System muss die Informationen über die Rolle des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen zu verstehen.",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.code.coding",
+        "path": "PractitionerRole.code.coding",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKCoding"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty",
+        "path": "PractitionerRole.specialty",
+        "short": "Fachgebiet des Leistungserbringers",
+        "comment": "Motivation MS: Ein System muss die Informationen über das Fachgebiet des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen besser zu verstehen.",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.specialty.coding",
+        "path": "PractitionerRole.specialty.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty.coding:IHEPracticeSetting",
+        "path": "PractitionerRole.specialty.coding",
+        "sliceName": "IHEPracticeSetting",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty.coding:Fachabteilungsschluessel",
+        "path": "PractitionerRole.specialty.coding",
+        "sliceName": "Fachabteilungsschluessel",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert"
+        }
+      }
+    ]
+  }
+}
