@@ -84,6 +84,8 @@ Unter einem Formular-Renderer ist in diesem Modul eine Software zu verstehen, da
 * [FormularDatenExtraktion](FunktionenInteraktionen.html#interaktion-formulardatenextraktion)
 * [FormularDatenRückübermittlung](FunktionenInteraktionen.html#interaktion-formulardaten-r%C3%BCck%C3%BCbermittlung) in der Rolle "Sender"
 
+Einige aufgeführte Funktionen können auch in eigene Akteure ausgelagert werden. Dies betrifft insbesondere die Funktionen FormularDatenVorbelegung und FormularDatenExtraktion. Dies ist meist sinnvoll zur Verschlankung von FormularRenderern, bspe. im mobilen Einsatz oder ohne Zugriff auf die Leistungserbringer-Infrastriuktur. Auf der Seite [Beispielszenarien](Spezifikationen_Beispielszenarien.html) wird eine Nutzung der Funktion FormularDatenExtraktion durch einen eigenständigen Akteur im Kontext des TI-Messengers beschrieben.
+
 #### Aufgaben des Formular-Renderers
 
 Gemäß diesem Modul übernimmt der FormularRenderer insbesondere folgende Aufgaben:
@@ -132,3 +134,13 @@ Ein Narrative SOLL:
 - Gruppen- und Wiederholungsstrukturen (z. B. bei mehreren Einträgen) klar kenntlich machen
 - in einem HTML- oder XHTML-kompatiblen Format vorliegen
 - sich für die Anzeige innerhalb eines klinischen Informationssystems eignen
+
+### (optional) FormularDatenExtraktor
+
+Wie im Abschnitt [FormularRenderer](#formularrenderer) beschrieben, können Funktionen wie die FormularDatenExtraktion auch in eigenständige Akteure ausgelagert werden. In diesem Fall ist die Nutzung der SDC Operation [$extract](http://hl7.org/fhir/uv/sdc/OperationDefinition/QuestionnaireResponse-extract) sinnvoll, um die Extraktion mittels der Kombination aus Questionnaire und QuestionnaireResponse durchzuführen.
+Im Anschluss kann kann entweder die Rückübermittlung der extrahierten Daten mittels der beschriebenen Interaktion [FormularDatenRückübermittlung](FunktionenInteraktionen.html#interaktion-formulardaten-r%C3%BCck%C3%BCbermittlung) erfolgen oder die Daten können über andere, UseCase-spezifische Interaktionen weiterverarbeitet werden.
+
+### (optional) FormularDatenVorbeleger
+
+Wie im Abschnitt [FormularRenderer](#formularrenderer) beschrieben, können Funktionen wie die FormularDatenVorbelegung auch in eigenständige Akteure ausgelagert werden. In diesem Fall ist die Nutzung der SDC Operation [$populate](http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-populate) sinnvoll, um die Vorbefüllung durchzuführen.
+Hierbei muss ein Zugriff auf den Akteur FormularDatenQuelle gegeben sein. Alternativ kann die FormularDatenQuelle auch die Operation $populate selber implementieren.

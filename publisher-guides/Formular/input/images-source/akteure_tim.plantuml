@@ -3,16 +3,16 @@ scale max 700 width
 box "Leistungserbringer Infrastruktur" #LightGrey
     participant "FormularDatenQuelle" as FDQ
 end box
-participant "FormularDefinitionsVerwalter\n(TI-M Pro Client)" as FDV #LightYellow
+participant "FormularDefinitionsVerwalter\nFormularDatenVorbeleger\nFormularDatenExtraktor\n(TI-M Pro Client)" as FDV #LightYellow
 participant "FormularRenderer\n(TI-M ePA Client)" as FR #LightGreen
 FDV -> FDV : Workflow-Start
 group Nur bei Integration in die Leistungserbringer Infrastruktur
     FDV <-> FDQ: FormularDatenVorbelegung
 end
-FDV -> FR : Versand FormularDefinition\nund vorbefüllte FormularDaten\n(TI-M spezifisches Protokoll)
-FR -> FR : FormularRendering mit\nFormularDaten für Vorbelegung
+FDV -> FR : Launch\nVersand FormularDefinition\nund vorbefüllte FormularDaten\n(TI-M spezifisches Protokoll)
+FR -> FR : FormularRendering mit\noptionaler Vorbelegung
 FR -> FR : FormularDatenValidierung
-FR -> FDV : Versand FormularDaten\n(TI-M spezifisches Protokoll)
+FR -> FDV : FormularDatenRückübermittlung\nVersand FormularDaten\n(TI-M spezifisches Protokoll)
 group Nur bei Integration in die Leistungserbringer Infrastruktur
     FDV -> FDV : FormularDatenExtraktion
     FDV -> FDQ: FormularDatenRückübermittlung

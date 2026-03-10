@@ -18,4 +18,4 @@ Das ISiK Formularmodul bietet neben der Möglichkeiten und Integrationen in Kran
 
 Im Diagramm nicht abgebildet ist der Akteur des FormularLaunchers, welcher in diesem Kontext als Standalone anzunehmen ist und durch das interne Protokoll des TI-M getriggert wird. Wichtig ist, dass trotzdem der Patient-Kontext vorhanden ist, der in den [FormularDaten](StructureDefinition-ISiKFormularDaten.html) genutzt werden kann.
 
-Die FormularDatenExtraktion ist in diesem Use Case nicht im FormularRenderer verortet, sondern wird durch den "TI-M Pro Client" durchgeführt bei potenzieller Integration in die Leistungserbringer-Infrastruktur.
+Die FormularDatenVorbelegung und -Extraktion sind in diesem Use Case nicht im FormularRenderer verortet, sondern werden durch den "TI-M Pro Client" durchgeführt bei potenzieller Integration in die Leistungserbringer-Infrastruktur.

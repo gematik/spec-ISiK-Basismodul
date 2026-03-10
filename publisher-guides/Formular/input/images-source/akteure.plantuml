@@ -7,13 +7,12 @@ end box
 box "FormularRenderer" #LightGreen
 participant FormularRenderer
 participant FormularDefinitionsVerwalter
-participant FormularExtraktor
 end box
 FormularLauncher -> FormularRenderer : Launch 
 FormularRenderer <-> FormularDefinitionsVerwalter : FormularDefintionsVerwaltung 
 FormularRenderer <-> FormularDatenQuelle :  FormularDatenVorbelegung 
 FormularRenderer -> FormularRenderer : FormularRendering
 FormularRenderer -> FormularRenderer : FormularDatenValidierung
-FormularRenderer <-> FormularExtraktor : FormularDatenExtraktion
+FormularRenderer -> FormularRenderer : FormularDatenExtraktion
 FormularRenderer -> FormularDatenQuelle : FormularDatenRückübermittlung 
 @enduml
