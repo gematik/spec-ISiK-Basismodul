@@ -3,7 +3,7 @@ Id: mii-vs-prozedur-opskategorien-snomedct
 Title: "MII VS Prozedur OPS Kategorien [SNOMED CT]"
 Description: "Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel.
 
-Entnommmen von der MII und Anpassung von Metadaten."
+Entnommen von der MII und Anpassung von Metadaten."
 * insert Meta
 
 * $sct#165197003 "Diagnostic assessment"
