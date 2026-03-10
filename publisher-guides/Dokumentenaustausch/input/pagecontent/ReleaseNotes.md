@@ -9,6 +9,8 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 ### Version 6.0.0-rc
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+
 
 ### Version 5.1.1
 
