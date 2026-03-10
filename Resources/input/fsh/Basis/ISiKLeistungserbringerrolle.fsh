@@ -35,8 +35,8 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
     * ^slicing.rules = #open
     * ^slicing.ordered = false
   * coding contains
-    IHEPracticeSetting MS and
-    Fachabteilungsschluessel MS
+    IHEPracticeSetting 0..* MS and
+    Fachabteilungsschluessel 0..* MS
   * coding[IHEPracticeSetting] from $IHEpracticeSettingVS (required)
   * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
 /*
