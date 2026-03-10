@@ -218,9 +218,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * doseQuantity MS
       * ^short = "Dosis"
     * rateRatio MS
@@ -233,9 +233,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * rateRange MS
       * ^short = "Raten-Bereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * rateQuantity MS
     * rateQuantity only MedicationQuantity
       * ^short = "Rate"
@@ -243,17 +243,17 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerPeriod MS
     * ^short = "Maximaldosis (Zähler) pro Zeitraum (Nenner)"
     * numerator 1.. MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator 1.. MS
     * denominator only MedicationQuantity
   * maxDosePerAdministration MS
-  * maxDosePerAdministration only MedicationQuantity
+  * maxDosePerAdministration only MedicationQuantityDoseForm
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
   * ^short = "angeforderte Abgabemenge"
   * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
-  * quantity only MedicationQuantity
+  * quantity only MedicationQuantityDoseForm
     * ^short = "angeforderte Abgabemenge"
     * ^comment = "Begründung des Must-Support: Basisinformation"
 * substitution MS
@@ -261,7 +261,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * ^comment = "Begründung des Must-Support: Alignment mit dem (E-)Rezept"
   * allowedBoolean MS
 * priorPrescription 
-  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie" 
+  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie"
   * ^comment = "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.
 
   Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
