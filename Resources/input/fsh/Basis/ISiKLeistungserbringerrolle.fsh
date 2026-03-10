@@ -9,10 +9,8 @@ durch diese Person erbracht werden.
 
 In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert.  
 "
-
 * insert Meta
 * insert CommonElements
-
 * active 1.. MS
   * ^short = "Aktiv/Inaktiv Status"
   * ^comment = "Motivation MS: Ein System muss prüfen können, ob die Rolle eines Leistungserbringers aktiv oder inaktiv ist."
@@ -39,8 +37,8 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
   * coding contains
     IHEPracticeSetting MS and
     Fachabteilungsschluessel MS
-  * coding [IHEPracticeSetting] from $IHEpracticeSettingVS (required)
-  * coding [Fachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
+  * coding[IHEPracticeSetting] from $IHEpracticeSettingVS (required)
+  * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
 /*
 Instance: LeistungserbringerrolleAllgemeinchirurgieBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
