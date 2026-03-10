@@ -17,6 +17,8 @@ Datum: 17.12.2025
   angepasst (falls es keine Instanz der Zielinstanz gab). https://github.com/gematik/spec-ISiK-Basismodul/pull/929
 * `documentation` Fehlende Begründungen für MS-Elemente
   nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
+* `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+
 
 ### Version 5.1.0
 
