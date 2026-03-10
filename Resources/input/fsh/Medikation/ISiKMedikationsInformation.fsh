@@ -268,24 +268,22 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
-    * doseQuantity only MedicationQuantity
-      * ^short = "Dosis"
+      * high only MedicationQuantityDoseForm
     * rateRatio MS
       * ^short = "Raten-Verhältnis"
       * ^comment = "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können."
       * numerator 1.. MS
-      * numerator only MedicationQuantity
+      * numerator only MedicationQuantityDoseForm
       * denominator 1.. MS
       * denominator only MedicationQuantity
     * rateRange MS
       * ^short = "Raten-Bereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * rateQuantity MS
     * rateQuantity only MedicationQuantity
       * ^short = "Rate"
@@ -293,11 +291,11 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   * maxDosePerPeriod MS
     * ^short = "Maximaldosis (Zähler) pro Zeitraum (Nenner)"
     * numerator MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator MS
     * denominator only MedicationQuantity
   * maxDosePerAdministration MS
-  * maxDosePerAdministration only MedicationQuantity
+  * maxDosePerAdministration only MedicationQuantityDoseForm
     * ^short = "Maximaldosis pro Verabreichung"
 
 Instance: ExampleISiKMedikationsInformation1
