@@ -19,7 +19,6 @@ Usage: #example
 * subject = Reference(PatientinMusterfrau)
 * category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2951-2
-* code.coding[snomed] = $sct#25197003 "Sodium measurement"
 * valueQuantity = 140 $cs-ucum#mmol/L
 * referenceRange
   * low = 135 $cs-ucum#mmol/L
