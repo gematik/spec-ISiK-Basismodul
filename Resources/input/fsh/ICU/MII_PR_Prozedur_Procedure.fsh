@@ -4,9 +4,11 @@ Id: mii-pr-prozedur-procedure
 Title: "MII PR Prozedur Procedure"
 Description: """Dieses Profil übernimmt die Vorgaben des Profils Prozedur der Medizininformatik-Initiative, um einzelne Profile für den Einsatz in ISiK zu spezifizieren, insbesondere die Beatmung aus dem MII Modul ICU.
 Wesentliche Änderungen:
+- Metadaten an ISiK angepasst
 - Translation Entfernt
 """
-
+* insert Meta
+* insert CommonElements
 * obeys proc-mii-1
 * id MS
 * meta MS
