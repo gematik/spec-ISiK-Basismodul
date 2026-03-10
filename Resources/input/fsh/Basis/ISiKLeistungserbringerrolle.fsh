@@ -38,7 +38,9 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
     IHEPracticeSetting 0..* MS and
     Fachabteilungsschluessel 0..* MS
   * coding[IHEPracticeSetting] from $IHEpracticeSettingVS (required)
+  * coding[IHEPracticeSetting] only ISiKCoding
   * coding[Fachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
+  * coding[Fachabteilungsschluessel] only ISiKCoding
 
 Instance: LeistungserbringerrolleAllgemeinchirurgieBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
