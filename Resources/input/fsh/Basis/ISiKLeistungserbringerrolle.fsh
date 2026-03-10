@@ -30,10 +30,11 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
 * specialty MS
   * ^short = "Fachgebiet des Leistungserbringers"
   * ^comment = "Motivation MS: Ein System muss die Informationen über das Fachgebiet des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen besser zu verstehen."
-  * coding ^slicing.discriminator.type = #pattern
-  * coding ^slicing.discriminator.path = "$this"
-  * coding ^slicing.rules = #open
-  * coding ^slicing.ordered = false
+  * coding 
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
   * coding contains
     IHEPracticeSetting MS and
     Fachabteilungsschluessel MS
@@ -47,8 +48,8 @@ Usage: #example
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
 * code.text = "Facharzt/Fachaerztin"
-* specialty.coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
-* specialty.coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
+* specialty[0].coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
+* specialty[1].coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
 
 Instance: LeistungserbringerrolleInnereMedizinBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
@@ -57,7 +58,7 @@ Usage: #example
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(KrankenhausOrganisationBeispiel)
 * code.text = "Assistenzarzt/Assistenzaerztin"
-* specialty.coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
-* specialty.coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
+* specialty[0].coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
+* specialty[1].coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
 
   
