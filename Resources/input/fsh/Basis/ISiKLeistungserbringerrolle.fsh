@@ -1,5 +1,5 @@
 Profile: ISiKLeistungserbringerrolle
-Parent: Condition
+Parent: PractitionerRole
 Id: ISiKLeistungserbringerrolle
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen 
 über die Rolle eines Leistungserbringers im Rahmen des Bestätigungsverfahrens der gematik.  
