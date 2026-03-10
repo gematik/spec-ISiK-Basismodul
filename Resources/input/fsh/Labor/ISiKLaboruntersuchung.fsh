@@ -38,6 +38,7 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
       * ^short = "Anzeige-/Bezeichnungstext für den Laborparameter-Code"
   * text MS
   * coding contains loinc 1.. MS
+  * coding[loinc] only ISiKLoincCoding
   * coding[loinc] ^patternCoding.system = $loinc
 * subject only Reference(Patient)  
 * subject 1.. MS

@@ -57,5 +57,6 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
