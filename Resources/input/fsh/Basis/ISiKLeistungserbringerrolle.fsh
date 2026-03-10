@@ -40,7 +40,7 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
     Fachabteilungsschluessel MS
   * coding [IHEPracticeSetting] from $IHEpracticeSettingVS (required)
   * coding [Fachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
-
+/*
 Instance: LeistungserbringerrolleAllgemeinchirurgieBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
 Usage: #example
@@ -60,5 +60,5 @@ Usage: #example
 * code.text = "Assistenzarzt/Assistenzaerztin"
 * specialty[0].coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
 * specialty[1].coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
-
+*/
   
