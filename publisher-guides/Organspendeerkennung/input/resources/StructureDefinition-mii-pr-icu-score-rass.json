@@ -1,0 +1,171 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-icu-score-rass",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-score-rass",
+  "version": "6.0.0-rc",
+  "name": "MII_PR_ICU_Score_RASS",
+  "title": "MII PR ICU Score RASS",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedation Scale (RASS) Scores in der Akutmedizin.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.id",
+        "path": "Observation.id",
+        "short": "serverseitige, interne ID des Datensatzes",
+        "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta.versionId",
+        "path": "Observation.meta.versionId",
+        "short": "Eindeutiger Name der serverseitigen Version des Datensatzes",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. "
+      },
+      {
+        "id": "Observation.meta.lastUpdated",
+        "path": "Observation.meta.lastUpdated",
+        "short": "Zeitpunkt der letzten Änderung",
+        "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "survey",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "comment": "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally.",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1345050000",
+              "system": "http://snomed.info/sct",
+              "display": "Richmond Agitation Sedation Scale score (observable entity)"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Patient being assessed",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "short": "Encounter during which score was assessed",
+        "definition": "The encounter context in which the score was determined",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Time of score assessment",
+        "definition": "The time or time period when the score was assessed",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.issued",
+        "path": "Observation.issued",
+        "short": "Date/Time this observation was made available",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Who performed the score assessment",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "RASS value",
+        "comment": "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8).",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass"
+        }
+      },
+      {
+        "id": "Observation.value[x].coding.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding.code",
+        "path": "Observation.value[x].coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKLoincCoding",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLoincCoding",
+  "version": "6.0.0-rc",
+  "name": "ISiKLoincCoding",
+  "title": "ISiKLoincCoding",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Data Type profile for LOINC Codings in ISiK",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Coding",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKCoding",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coding.system",
+        "path": "Coding.system",
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Coding.version",
+        "path": "Coding.version",
+        "short": "Version",
+        "comment": "Motivation MS: Version des kodierten Wertes.",
+        "mustSupport": true
+      }
+    ]
+  }
+}
