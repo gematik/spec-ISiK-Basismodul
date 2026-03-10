@@ -171,17 +171,17 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
-      * period 
+      * period
         * ^short = "Zeitperiode zur Frequenz"
       * periodMax MS
         * ^short = "maximale Zeitperiode zur Frequenz"
       * periodUnit 
         * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek 
+      * dayOfWeek
         * ^short = "Wochentag"
-      * timeOfDay 
+      * timeOfDay
         * ^short = "Tageszeit"
-      * when 
+      * when
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"

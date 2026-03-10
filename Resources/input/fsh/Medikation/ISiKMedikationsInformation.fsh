@@ -217,7 +217,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         * ^short = "maximale Dauer der Verabreichung"
       * durationUnit MS
         * ^short = "Einheit der Dauer"
-      * frequency 
+      * frequency
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
@@ -229,7 +229,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         * ^short = "Einheit der Zeitperiode"
       * dayOfWeek 
         * ^short = "Wochentag"
-      * timeOfDay MS
+      * timeOfDay
         * ^short = "Tageszeit"
       * when 
         * ^short = "Tageszeitpunkt codiert"
