@@ -36,6 +36,11 @@ RuleSet: CommonObservationSearchParameters
   * type = #reference
 * searchParam[+]
   * insert CapabilityStatementExpectationExt(SHALL)
+  * name = "code-value-quantity"
+  * definition = "http://hl7.org/fhir/SearchParameter/Observation-code-value-quantity"
+  * type = #composite
+* searchParam[+]
+  * insert CapabilityStatementExpectationExt(SHALL)
   * name = "combo-code"
   * definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code"
   * type = #token
