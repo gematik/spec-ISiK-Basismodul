@@ -54,6 +54,7 @@ Alias: $ProzedurenCodesSCT = https://gematik.de/fhir/isik/ValueSet/ProzedurenCod
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $kvid10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $kvnr30 = http://fhir.de/sid/gkv/kvnr-30
+Alias: $KBV_VS_Base_Role_Care = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care
 
 Alias: $patient-merge-topic = https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge
 Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
