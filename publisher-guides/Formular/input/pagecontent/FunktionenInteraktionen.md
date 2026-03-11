@@ -106,12 +106,26 @@ Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe r
 
 ### Interaktion: FormularDaten-Rückübermittlung
 
-Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md)
+TODO: Links auf Stufe 6 passend...
+
+Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
 
 <div>
 {% include formDatRueckuebermittlung.svg %}
 </div>
 
-| **Work in Progress** | **Fehlendes Artefakt** |
-|-|-|
-|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | In der weiteren Entwicklung dieses Moduls wird ein Dokumenten-Profil festgelegt, das die Rückübermittlung von FormularDaten, FormularDefintionen und Strukturierten Inhalten, sowie die Erstellung von Narrativen für die menschenlesbare Darstellung von Formularinhalten spezifiziert |
+Das Bundle für die Rückübermittlung MUSS folgendem Profil entsprechen: [FormularDatenRueckuebermittlungBundle](StructureDefinition-FormularDatenRueckuebermittlungBundle.html)
+
+Dieses Bundle enthält neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich:
+
+- [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) (0..1) - die Referenz auf die FormularDefinition, die der Rückübermittlung zugrunde liegt (optional, falls bereits im Zielsystem vorhanden)
+- [FormularDaten](StructureDefinition-ISiKFormularDaten.html) (1..1) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
+- FormularDatenExtrakt (..*) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
+
+**Hinweis zur menschenlesbaren Repräsentation:**
+In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative (Composition.text und Composition.section.text) vollständig und korrekt ausgefüllt wird. Alle im Formular ausgefüllten Informationen MÜSSEN in der menschenlesbaren Repräsentation sichtbar sein, da Primärsysteme derzeit lediglich verpflichtet sind, diese anzuzeigen.
+
+**Hinweis zu strukturierten Daten:**
+Primärsysteme müssen in der aktuellen Stufe die strukturierten Anteile (FormularDaten und FormularDatenExtrakt) nicht übernehmen. Es wird jedoch empfohlen, das vollständige Bundle zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner strukturierter Daten möglich ist, diese auch rückwirkend erfolgen kann.
+
+Weitere Details zu Interaktionen und Verarbeitung finden sich in [ISiK Basis: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
