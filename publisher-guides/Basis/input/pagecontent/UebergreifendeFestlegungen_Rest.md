@@ -137,16 +137,35 @@ Hierunter fallen insbesondere:
 Für P3-Endpunkte sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
 
 #### Rollen
-Zuordnung von Performance-Kategorien zu bestehenden Rollen:
 
-Rolle: ISiKCapabilityStatementAufbaustrukturRolle ->  klinisch
-Rolle: ISiKCapabilityStatementCompositionKonsumentenRolle  -> administrativ
-Rolle: ISiKCapabilityStatementErweiterteStammdatenRolle -> administrativ
-Rolle: ISiKCapabilityStatementGesundheitsstatusRolle ->  klinisch
-Rolle: ISiKCapabilityStatementKlinischeRolle ->  klinisch
-Rolle: ISiKCapabilityStatementLeistungserbringerRolle ->  klinisch
-Rolle: ISiKCapabilityStatementStammdatenRolle -> hochkritisch
-Rolle: ISiKCapabilityStatementTerminologieRolle ->  klinisch
-Rolle: ISiKCapabilityStatementVersicherungsverhaeltnisRolle -> administrativ
+Zuordnung von Performance-Kategorien zu bestehenden Rollenfür den Akteur [Basis-Server](https://simplifier.net/resolve?&scope=package:de.gematik.isik@5.1.1&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur):
+
+- **Rolle:** `ISiKCapabilityStatementStammdatenRolle` → **hochkritisch**  
+  *Begründung:* Stammdaten (z.B. Identität, Patientenbasisdaten) sind für jede klinische Aktion grundlegend; Verzögerungen wirken sich unmittelbar auf alle nachfolgenden hochkritischen Interaktionen aus.
+
+- **Rolle:** `ISiKCapabilityStatementAufbaustrukturRolle` → **klinisch**  
+  *Begründung:* Die Aufbaustruktur dient der klinischen Dokumentation und Navigation, ist behandlungsnah, aber nicht in jeder Situation unmittelbar lebensentscheidend.
+
+  - **Rolle:** `ISiKCapabilityStatementGesundheitsstatusRolle` → **klinisch**  
+  *Begründung:* Informationen zum Gesundheitsstatus fließen in klinische Entscheidungen ein, sind behandlungsrelevant, müssen aber nicht in jeder Situation unter strengsten Latenzanforderungen bereitstehen.
+
+- **Rolle:** `ISiKCapabilityStatementKlinischeRolle` → **klinisch**  
+  *Begründung:* Diese Rolle steht direkt für die Nutzung klinischer Inhalte im Versorgungskontext und erfordert daher zügige, aber nicht zwingend maximal priorisierte Antwortzeiten.
+
+- **Rolle:** `ISiKCapabilityStatementLeistungserbringerRolle` → **klinisch**  
+  *Begründung:* Informationen über Leistungserbringer unterstützen den klinischen Behandlungsprozess (Zuständigkeiten, Zuordnung), sind klinisch relevant, aber nicht akut lebensentscheidend.
+
+- **Rolle:** `ISiKCapabilityStatementTerminologieRolle` → **klinisch**  
+  *Begründung:* Terminologieservices (z.B. Codes, Kataloge) werden in klinischen Workflows zur sicheren Dokumentation und Interpretation verwendet und sollten zügig, aber nicht zwingend höchstprioritär reagieren.
+
+- **Rolle:** `ISiKCapabilityStatementCompositionKonsumentenRolle` → **administrativ**  
+  *Begründung:* Die konsumierende Nutzung von Composition-Ressourcen ist typischerweise für Dokumentation, Auswertung und Sekundärnutzung relevant und nicht unmittelbar zeitkritisch für die akute Behandlung.
+
+- **Rolle:** `ISiKCapabilityStatementErweiterteStammdatenRolle` → **administrativ**  
+  *Begründung:* Erweiterte Stammdaten werden primär für Verwaltung, Strukturierung und Kontextinformationen genutzt und sind daher vorwiegend administrativ geprägt.
+
+- **Rolle:** `ISiKCapabilityStatementVersicherungsverhaeltnisRolle` → **administrativ**  
+  *Begründung:* Versicherungsverhältnisse betreffen primär Abrechnung, Kostenträgerzuordnung und Verwaltung und sind damit klar administrativ einzuordnen.
+
 
 
