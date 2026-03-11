@@ -78,16 +78,6 @@ Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfa
 
 Für jede Performance-Kategorie und Nutzerrolle werden konkrete Zielwerte (z.B. Perzentile der Response Antwortzeiten) im Dokument „Performance-Testkonzept“ festgelegt.
 
-#### Performance Kategorien
-Die Performance-Kategorien sind:
-
-P1) `hochkritisch`
-P2) `klinisch`
-P3) `Administrativ`
-
-Als hochkritisch (P1) gelten Rollen, die Interaktionen für die Performance-Kategorie klinisch (P2) ermöglichen -  darunter fallen  Abfragen zu einzelnen Patienten- und Fallkontakt-Instanzen (Encounter).
-
-
 #### Performance-Kategorien
 
 Die Performance-Kategorien sind:
