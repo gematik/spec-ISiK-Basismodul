@@ -17,17 +17,6 @@ RuleSet: CommonSearchParameters
         Dieser Suchparameter ist für die Umsetzung des IHE PDQm Profils verpflichtend."
 * searchParam[+]
   * insert CapabilityStatementExpectationExt(SHALL)
-  * name = "_tag"
-  * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
-  * type = #token
-  * documentation =
-        "**Beispiel:**
-        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`
-        **Anwendungshinweis:**
-        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)
-        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
-* searchParam[+]
-  * insert CapabilityStatementExpectationExt(SHALL)
   * name = "_count"
   * type = #number
   * documentation =
@@ -46,3 +35,32 @@ RuleSet: CommonSearchParameters
         `GET [base]/Encounter?_has:Condition:encounter:code=A12.3`
         **Anwendungshinweis:**
         Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has).  "
+
+RuleSet: OptionalTagSearchParameter
+* searchParam[+]
+  * insert CapabilityStatementExpectationExt(MAY)
+  * name = "_tag"
+  * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+  * type = #token
+  * documentation =
+        "**Beispiel:**
+        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`
+        **Anwendungshinweis:**
+        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)
+        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
+
+
+* searchParam[+]
+  * insert CapabilityStatementExpectationExt(SHALL)
+  * name = "_lastUpdated"
+  * type = #date
+  * documentation = 
+        "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  
+        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  
+        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  
+        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  
+        **Anwendungshinweis:**
+        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.
+        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist
+        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.
+        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "

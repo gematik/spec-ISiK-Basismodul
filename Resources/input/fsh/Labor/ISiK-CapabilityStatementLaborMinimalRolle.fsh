@@ -41,11 +41,14 @@ Usage: #definition
       * insert CapabilityStatementExpectationExt(SHALL)
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungTSH)
       * insert CapabilityStatementExpectationExt(SHALL)
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchungSerumnatrium)
+      * insert CapabilityStatementExpectationExt(MAY)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
