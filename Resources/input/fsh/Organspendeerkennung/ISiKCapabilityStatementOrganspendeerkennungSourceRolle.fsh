@@ -31,8 +31,6 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
 
-    //TODO Serumnatrium
-
     // Optionale Parameter
     // MII
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, MAY)
@@ -40,7 +38,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
     // ISiK
     * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, MAY)
-    
+    * insert SupportedProfileCapExpectationExt(ISiKLaboruntersuchungSerumnatrium, MAY)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
