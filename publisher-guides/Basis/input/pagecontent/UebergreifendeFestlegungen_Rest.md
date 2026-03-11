@@ -87,7 +87,66 @@ P3) `Administrativ`
 
 Als hochkritisch (P1) gelten Rollen, die Interaktionen für die Performance-Kategorie klinisch (P2) ermöglichen -  darunter fallen  Abfragen zu einzelnen Patienten- und Fallkontakt-Instanzen (Encounter).
 
-#### Rollen
 
-#### Antwortzeiten
+#### Performance-Kategorien
+
+Die Performance-Kategorien sind:
+
+- P1) `hochkritisch`
+- P2) `klinisch`
+- P3) `administrativ`
+
+Konkrete Zielwerte (Antwortzeiten, Lasten, Durchsatz etc.) werden rollen- und szenario-basiert in der Test-Dokumentation definiert. Für die Perfromance-Kategorien gilt:
+
+**P1 – hochkritisch (`hochkritisch`)**  
+Als hochkritisch gelten REST-Endpunkte und Endpunktgruppen,  
+- die von klinischen Rollen (z.B. Ärztinnen/Ärzte, Pflegekräfte, Notaufnahmepersonal, Intensivpflege) in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und  
+- deren verzögerte Bereitstellung die sichere und zeitgerechte Versorgung der Patientinnen und Patienten beeinträchtigen kann.  
+
+Hierunter fallen insbesondere:  
+- Abfragen zu einzelnen Patienten-Instanzen (z.B. `GET /Patient/{id}`) mit aktuellen, für die Behandlung relevanten Informationen (Stammdaten, Diagnosen, Allergien, Medikation, Alerts),  
+- Abfragen zu einzelnen Fallkontakt-/Encounter-Instanzen (z.B. `GET /Encounter/{id}`) mit aktuellen Vitalparametern, Anordnungen, Ergebnissen und Statusinformationen,  
+- weitere Endpunkte, die in Primärprozessen am Patientenbett, in der Notaufnahme, im OP und auf Intensivstationen direkt zur Entscheidungsfindung herangezogen werden.  
+
+Für P1-Endpunkte sind sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben. 
+
+**P2 – klinisch (`klinisch`)**  
+Als klinisch gelten REST-Endpunkte und Endpunktgruppen,  
+- die in der unmittelbaren Behandlung und Dokumentation verwendet werden,  
+- deren verzögerte Bereitstellung typischerweise keine sofortige Gefährdung der Patientensicherheit bewirkt, jedoch Arbeitsabläufe im klinischen Alltag merklich beeinträchtigen kann.  
+
+Hierunter fallen insbesondere:  
+- Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten, Aufgaben- und Worklisten, Befundübersichten),  
+- Abfragen klinischer Verlaufsdokumentation (z.B. Kurven, Verlaufsnotizen, Pflegeberichte),  
+- Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne, OP- und Untersuchungsplanung),  
+- Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation).  
+
+Für P2-Endpunkte sind zügige Antwortzeiten erforderlich; kurze Verzögerungen sind akzeptabel, wenn sie den klinischen Workflow nicht wesentlich stören. 
+
+**P3 – administrativ (`administrativ`)**  
+Als administrativ gelten REST-Endpunkte und Endpunktgruppen,  
+- die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden und  
+- deren Bearbeitungsdauer keine unmittelbaren Auswirkungen auf die laufende Patientenversorgung hat.  
+
+Hierunter fallen insbesondere:  
+- Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext,  
+- Reporting- und Statistik-Endpunkte (inkl. Aggregationen und Auswertungen mit großen Datenmengen),  
+- Import-/Export- sowie andere Batch-orientierte oder langlaufende Operationen,  
+- technische Administrations- und Konfigurations-Endpunkte.  
+
+Für P3-Endpunkte sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
+
+#### Rollen
+Zuordnung von Performance-Kategorien zu bestehenden Rollen:
+
+Rolle: ISiKCapabilityStatementAufbaustrukturRolle ->  klinisch
+Rolle: ISiKCapabilityStatementCompositionKonsumentenRolle  -> administrativ
+Rolle: ISiKCapabilityStatementErweiterteStammdatenRolle -> administrativ
+Rolle: ISiKCapabilityStatementGesundheitsstatusRolle ->  klinisch
+Rolle: ISiKCapabilityStatementKlinischeRolle ->  klinisch
+Rolle: ISiKCapabilityStatementLeistungserbringerRolle ->  klinisch
+Rolle: ISiKCapabilityStatementStammdatenRolle -> hochkritisch
+Rolle: ISiKCapabilityStatementTerminologieRolle ->  klinisch
+Rolle: ISiKCapabilityStatementVersicherungsverhaeltnisRolle -> administrativ
+
 
