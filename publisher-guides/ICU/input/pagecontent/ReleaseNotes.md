@@ -8,6 +8,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
+* `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend)  https://github.com/gematik/spec-ISiK-Basismodul/pull/1048
 * `improve` Hinzufügen eines Profils zum zerebralen Perfusionsdrucks (ICP); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
 * `improve` Hinzufügen eines Profils zum Richmond Agitation-Sedation Scale (RASS); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
 * Initiales Draft der Stufe 6
