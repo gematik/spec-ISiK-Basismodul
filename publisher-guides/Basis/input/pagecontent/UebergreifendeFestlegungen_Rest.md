@@ -156,5 +156,7 @@ Zuordnung von Performance-Kategorien zu bestehenden Rollenfür den Akteur [Basis
 - **Rolle:** `ISiKCapabilityStatementVersicherungsverhaeltnisRolle` → **administrativ**  
   *Begründung:* Versicherungsverhältnisse betreffen primär Abrechnung, Kostenträgerzuordnung und Verwaltung und sind damit klar administrativ einzuordnen.
 
+#### Rollen für weitere Akteure
 
+Die Zuordnung von Performance-Kategorien zu anderen Rollen spezifischer Akteure erfolgt in den entsprechenden Implementierungsleitfäden.
 
