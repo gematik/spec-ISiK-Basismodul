@@ -520,6 +520,14 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Organspendeerkennung Source Rolle"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
@@ -573,6 +581,14 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "ISiK CapabilityStatement VitalSign Standard Source Rolle"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKProzedurReanimation"
+        },
+        "description": "Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin.",
+        "exampleBoolean": false,
+        "name": "ISiK Prozedur Reanimation"
       },
       {
         "reference": {
@@ -1591,6 +1607,94 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-vent-beatmung"
+        },
+        "description": "Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. \nAls Parent wurde der letzte Stand des Prozedur-Profils der MII gewählt. \nStand 4.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Beatmung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-muv-zerebraler-perfusionsdruck"
+        },
+        "description": "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (ICP) in der Akutmedizin.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Monitoring%20und%20Vitaldaten/MII_PR_ICU_MUV_zerebraler_Perfusionsdruck.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU MUV zerebraler Perfusionsdruck"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-score-rass"
+        },
+        "description": "Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedation Scale (RASS) Scores in der Akutmedizin.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Score RASS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt"
+        },
+        "description": "Dieses Profil dient der Abbildung der direkten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-prozedur-procedure"
+        },
+        "description": "Dieses Profil übernimmt die Vorgaben des Profils Prozedur der Medizininformatik-Initiative, um einzelne Profile für den Einsatz in ISiK zu spezifizieren, insbesondere die Beatmung aus dem MII Modul ICU.\nWesentliche Änderungen:\n- Metadaten an ISiK angepasst\n- Translation Entfernt",
+        "exampleBoolean": false,
+        "name": "MII PR Prozedur Procedure"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund"
+        },
+        "description": " Zulaessige Koerperstellen fuer lateralisierte Pupillenbefunde: linke oder rechte Pupille.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_BodySite_Observation_Pupillenbefund.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU BodySite Observation Pupillenbefund"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Category_Beatmung_SNOMED.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Category Procedure Beatmung SNOMED"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-pupillenlichtreaktion"
+        },
+        "description": "Subset der LOINC AnswerList LL3762-3 fuer die Pupillen-Lichtreaktion: reaktiv, traege reaktiv, nicht reaktiv.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Pupillenlichtreaktion"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-procedure-beatmung-snomed"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Procedure_Beatmung_SNOMED.fsh# - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Procedure Beatmung SNOMED"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-score-rass"
+        },
+        "description": "Value set for RASS Score\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Score RASS"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-prozedur-opskategorien-snomedct"
+        },
+        "description": "Enthaelt alle SNOMED CT Codes für ein Mapping der OPS Klassentitel.\n\nEntnommen von der MII und Anpassung von Metadaten.",
+        "exampleBoolean": false,
+        "name": "MII VS Prozedur OPS Kategorien [SNOMED CT]"
+      },
+      {
+        "reference": {
           "reference": "Condition/MittelgradigeIntelligenzminderung"
         },
         "exampleBoolean": false,
@@ -1816,6 +1920,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ProzedurenReanimationCodesOPS"
+        },
+        "description": "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen",
+        "exampleBoolean": false,
+        "name": "ProzedurenReanimationCodesOPS"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProzedurenReanimationCodesSCT"
+        },
+        "description": "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen",
+        "exampleBoolean": false,
+        "name": "ProzedurenReanimationCodesSCT"
+      },
+      {
+        "reference": {
           "reference": "Observation/Pulmonalarterieller-Blutdruck"
         },
         "exampleBoolean": false,
@@ -1848,6 +1968,13 @@
         },
         "exampleBoolean": false,
         "name": "RaumStandortBeispiel"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/ReanimationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "ReanimationBeispiel"
       },
       {
         "reference": {
