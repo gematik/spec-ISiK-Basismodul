@@ -68,3 +68,26 @@ Alle REST-Interaktionen müssen sowohl mittels HTTP als auch HTTPS (TLS-Verschl�
 Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 
 Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
+
+### Performance-Aspekte
+
+Für alle REST-Endpunkte MUSS die Performance - bei Antwortzeiten, Lasten, Durchsatz und Skalierbarkeit - so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z.B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
+
+Daher werden Systemfunktionen entlang der definierten Rollen in Performance-Kategorien eingeteilt.  
+Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens angemessene Performance-Anforderungen implementiert.
+
+Für jede Performance-Kategorie und Nutzerrolle werden konkrete Zielwerte (z.B. Perzentile der Response Antwortzeiten) im Dokument „Performance-Testkonzept“ festgelegt.
+
+#### Performance Kategorien
+Die Performance-Kategorien sind:
+
+P1) `hochkritisch`
+P2) `klinisch`
+P3) `Administrativ`
+
+Als hochkritisch (P1) gelten Rollen, die Interaktionen für die Performance-Kategorie klinisch (P2) ermöglichen -  darunter fallen  Abfragen zu einzelnen Patienten- und Fallkontakt-Instanzen (Encounter).
+
+#### Rollen
+
+#### Antwortzeiten
+
