@@ -76,7 +76,6 @@ Für alle REST-Endpunkte MUSS die Performance - bei Antwortzeiten, Lasten, Durch
 Daher werden Systemfunktionen entlang der definierten Rollen in Performance-Kategorien eingeteilt.  
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens angemessene Performance-Anforderungen implementiert.
 
-Für jede Performance-Kategorie und Nutzerrolle werden konkrete Zielwerte (z.B. Perzentile der Response Antwortzeiten) im Dokument „Performance-Testkonzept“ festgelegt.
 
 #### Performance-Kategorien
 
