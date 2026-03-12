@@ -11,7 +11,7 @@ In diesen Anwendungsszenarien wird die `Coverage`-Ressource verwendet, um bspw. 
 ### **Abgrenzung:**
 Das Selbstzahler-Profil gilt für Szenarien, in denen der Patient selbst (oder eine abweichende natürliche oder juristische Person) als Kostenträger auftritt.
 Für PKV-Verhältnisse, in denen die Kosten *unmittelbar* von einer privaten Versicherung übernommen werden (ohne dass der Patient in Vorleistung geht), KANN das Profil 
-[Versicherungsdaten PKV aus der jeweils geltenden VSDM 2.0 Spezifikation](https://simplifier.net/vsdm2/vsdmcoveragepkv) verwendet werden. 
+[Versicherungsdaten PKV](https://simplifier.net/vsdm2/vsdmcoveragepkv) aus der jeweils geltenden VSDM 2.0 Spezifikation verwendet werden. 
 
 
 ### **Kompatibilität:**
