@@ -10,6 +10,7 @@ Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionie
 #### Version 6.0.0-rc
 
 * `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047 
+* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 
 #### Version 0.0.1-rc
 

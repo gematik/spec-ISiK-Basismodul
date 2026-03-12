@@ -10,6 +10,7 @@ Datum: tbd.
 * `documentation` Initiale Anpassung der IG-Struktur auf Basis des IG Publishers für ISiK-Basis Stufe 6
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 
 
 ### Version 5.1.1
