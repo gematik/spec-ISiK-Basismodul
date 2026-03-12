@@ -100,7 +100,8 @@ Hierunter fallen insbesondere:
 Für P1-Endpunkte sind sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben. 
 
 **P2 – klinisch (`klinisch`)**  
-Als klinisch gelten REST-Endpunkte und Endpunktgruppen,  
+Als klinisch gelten REST-Endpunkte und Endpunktgruppen, 
+- die für die Behandlung relevante Informationen (Stammdaten, Diagnosen, Allergien, Medikation, Alerts) abfragen,
 - die in der unmittelbaren Behandlung und Dokumentation verwendet werden,  
 - deren verzögerte Bereitstellung typischerweise keine sofortige Gefährdung der Patientensicherheit bewirkt, jedoch Arbeitsabläufe im klinischen Alltag merklich beeinträchtigen kann.  
 
