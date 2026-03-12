@@ -18,6 +18,7 @@ Datum: 17.12.2025
 * `documentation` Fehlende Begründungen für MS-Elemente
   nachgepflegt https://github.com/gematik/spec-ISiK-Basismodul/pull/919
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
 
 
 ### Version 5.1.0
