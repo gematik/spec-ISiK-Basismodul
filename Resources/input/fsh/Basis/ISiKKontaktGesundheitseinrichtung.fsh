@@ -296,7 +296,6 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "**Begründung MS:**  Vom Patienten gebuchte Wahlleistungen (z.B. Chefarztbehandlung, Einzelzimmer) 
     sind häufig system- und abteilungsübergreifend zu beachten und sollten daher über die Schnittstelle kommuniziert werden können."  
 * location MS
-  * physicalType from ISiKLocationPhysicalType (extensible)
 * location ^slicing.discriminator[+].type = #pattern
 * location ^slicing.discriminator[=].path = "physicalType"
 * location ^slicing.discriminator[+].type = #pattern
