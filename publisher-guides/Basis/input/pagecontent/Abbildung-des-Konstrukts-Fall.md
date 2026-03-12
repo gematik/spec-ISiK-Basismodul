@@ -289,7 +289,8 @@ Dieser zwei-Schritt-Prozess stellt sicher, dass alle relevanten klinischen Daten
 
 #### Wichtige Hinweise
 
-* **Vor jeder Abfrage klinischer Ressourcen** sollte Schritt 1 ausgeführt werden, um sicherzustellen, dass alle aktuellen Abteilungskontakte berücksichtigt werden.
+* Vor (fast) jeder Abfrage klinischer Ressourcen sollte Schritt 1 ausgeführt werden, um sicherzustellen, dass alle aktuellen Abteilungskontakte berücksichtigt werden.
+* Es gibt Abfragen von klinischen Ressourcen, bei denen eine Einschränkung auf den Fall über die Encounter-Referenzen nicht sinnvoll ist, bspw. die Abfrage von Allergien. In diesen Fällen kann direkt über die Patient-Referenz abgefragt werden, ohne die Encounter-IDs zu berücksichtigen.
 * Die Anzahl der Encounter-Referenzen in Schritt 2 kann je nach Komplexität des Falls variieren. Bei Patienten mit vielen Abteilungswechseln kann die Liste entsprechend länger werden.
 * Bestätigungsrelevante Systeme müssen den `account:identifier` Suchparameter für Encounter unterstützen.
 * Die Fallnummer ist im `Encounter.account.identifier` als logische Referenz verpflichtend mitzuführen, auch wenn die Account-Ressource selbst vom anfragenden System nicht implementiert wird.
