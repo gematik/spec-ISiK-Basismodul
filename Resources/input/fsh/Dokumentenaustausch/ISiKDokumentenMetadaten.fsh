@@ -114,14 +114,14 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * reference 0.. MS
     * ^short = "Patienten-Link"
     * ^comment = "**Bedingtes Pflichtfeld:** Clients und Server sind verpflichtet, Dokumente stets mit einem Bezug zu einem Patienten zu versehen.  
-Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}
+Leer bleiben darf dieses Element einzig im Kontext der Dokumentenbereitstellung in Verbindung mit der Patientenzuordnung über logische Referenzen, siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Interaktion-Dokumentenbereitstellung.html#herstellung-von-patient--und-encounterkontext)
 
 Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
   * identifier MS
     * ^short = "Patienten-Link (logische Referenz)"
-    * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: {{pagelink:Dokumentenbereitstellung text:Interaktion:Dokumentenbereitstellung > Herstellung von Patienten- und Encounterkontext > Option 5}}"
+    * ^comment = "**Bedingtes Must Support:** Logische Referenzen KÖNNEN als Alternative zur Verlinkung über `reference`genutzt werden. BITTE HINWEISE BEACHTEN: [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Interaktion-Dokumentenbereitstellung.html#herstellung-von-patient--und-encounterkontext)"
     * system 1.. MS
     * value 1.. MS
 
