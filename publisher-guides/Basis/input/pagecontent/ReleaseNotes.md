@@ -20,6 +20,7 @@ Tags werden folgendermaßen verwendet:
 * `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `documentation` Dokumentation zur Abfrage von Fall-Daten über FHIR-Search hinzugefügt, inklusive Hinweisen zur Abfrage von Allergien und zum optionalen Einsatz von Encounter.partOf bei Einrichtungskontakten https://github.com/gematik/spec-ISiK-Basismodul/pull/1069
 
 ### Version 5.x.x
 
