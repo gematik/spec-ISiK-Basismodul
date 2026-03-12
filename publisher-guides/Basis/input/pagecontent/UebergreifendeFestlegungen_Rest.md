@@ -74,7 +74,7 @@ Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungs
 Für alle REST-Endpunkte MUSS die Performance - bei Antwortzeiten, Lasten, Durchsatz und Skalierbarkeit - so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z.B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
 
 Daher werden Systemfunktionen entlang der definierten Rollen in Performance-Kategorien eingeteilt.  
-Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens angemessene Performance-Anforderungen implementiert.
+Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens angemessene Performance-Anforderungen (z.B. Perzentile der Antwortzeiten) dokumentiert und implementiert.
 
 
 #### Performance-Kategorien
@@ -93,9 +93,8 @@ Als hochkritisch gelten REST-Endpunkte und Endpunktgruppen,
 - deren verzögerte Bereitstellung die sichere und zeitgerechte Versorgung der Patientinnen und Patienten beeinträchtigen kann.  
 
 Hierunter fallen insbesondere:  
-- Abfragen zu einzelnen Patienten-Instanzen (z.B. `GET /Patient/{id}`) mit aktuellen, für die Behandlung relevanten Informationen (Stammdaten, Diagnosen, Allergien, Medikation, Alerts),  
-- Abfragen zu einzelnen Fallkontakt-/Encounter-Instanzen (z.B. `GET /Encounter/{id}`) mit aktuellen Vitalparametern, Anordnungen, Ergebnissen und Statusinformationen,  
-- weitere Endpunkte, die in Primärprozessen am Patientenbett, in der Notaufnahme, im OP und auf Intensivstationen direkt zur Entscheidungsfindung herangezogen werden.  
+- Abfragen zu einzelnen Patienten-Instanzen (z.B. `GET /Patient/{id}`) mit aktuellen, für die Behandlung relevanten Informationen (Stammdaten, Alerts),  
+- Abfragen zu einzelnen Fallkontakt-/Encounter-Instanzen (z.B. `GET /Encounter/{id}`) mit aktuellen Statusinformationen,  
 
 Für P1-Endpunkte sind sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben. 
 
