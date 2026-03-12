@@ -92,7 +92,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
   Die Angabe der IK-Nummer des Versicherers in payor.identifier ist verpflichtend. 
   Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird.  
-**Historie:** Erhöhung der Kardinalität von `payor` auf ..2 in ISIK Stufe 6 zur Harmonisierung mit dem GKV-Coverage-Profil der TI-Anwendung `VSDM 2.0`. Dort *kann* als zweiter payor ein *abrechnender Kostenträger* übermittelt werden.
+**Historie:** Erhöhung der Kardinalität von `payor` auf ..2 zur Harmonisierung mit dem GKV-Coverage-Profil der TI-Anwendung `VSDM 2.0`. Dort *kann* als zweiter payor ein *abrechnender Kostenträger* übermittelt werden.
 Dieser soll nicht aus einer Coverage-Instanz entfernt werden müssen, um ISIK-Konformität herzustellen. Die Unterstützung von abrechnenden Kostenträgern ist jedoch in ISiK NICHT gefordert.
 "
   * identifier only IdentifierIknr
