@@ -27,6 +27,9 @@ In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encou
 
 Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}
 
+### Ambulanter Kontext im Krankenhaus
+In vielen Krankenhäusern werden neben stationären auch ambulante Leistungen erbracht. Dies sind dann punktuelle Kontakte, welche auch mit diesem Profil abgebildet werden können. Dafür wurde der KontaktArt-Slice im `type`-Element um passende Typen erweitert. Verschiedene Elemente haben außerdem textuelle Beschreibungen erhalten, um die Abbildung von ambulanten Kontakten zu erleichtern.
+
 ### Kompatibilität
 Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
 mit folgenden Profilen angestrebt; 
@@ -152,7 +155,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "Hier ist stets der Wert `abteilungskontakt` anzugeben."
-* type[KontaktArt] from KontaktartDe (required)
+* type[KontaktArt] from ISiKEncounterTypeErweiterungVS (required)
   * ^short = "Kontaktart"
   * ^comment = "Die Kontaktart dient der feingranularen Differenzierung unterschiedlicher stationärer 
   und ambulanter Fallarten gemäß der in Deutschland üblichen regulatorischen 
