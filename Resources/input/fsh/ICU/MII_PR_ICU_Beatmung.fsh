@@ -1,5 +1,5 @@
 Profile: MII_PR_ICU_Beatmung
-Parent: MII_PR_Prozedur_Procedure
+Parent: MII_PR_Prozedur_Procedure //TODO Frage: hier ggf. ISIKProzedur als Parent wählen?
 //Parent: https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure //lieber dies als Basis?
 Id: mii-pr-icu-vent-beatmung
 Title: "MII PR ICU Beatmung"
