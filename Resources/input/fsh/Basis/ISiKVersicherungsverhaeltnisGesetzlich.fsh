@@ -13,7 +13,7 @@ Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind au
 
 * [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)
 
-Instanzen, die gegen [VSDM 2.0 Versciherungsdaten GKV](https://simplifier.net/vsdm2/vsdmcoveragegkv) valide sind, sind auch valide gegen dieses Profil
+Instanzen, die gegen [VSDM 2.0 Versicherungsdaten GKV](https://simplifier.net/vsdm2/vsdmcoveragegkv) valide sind, sind auch valide gegen dieses Profil
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 * insert Meta
