@@ -56,7 +56,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
     * interaction[+]
-      * insert CapabilityStatementExpectationExt(SHALL)
+      * insert CapabilityStatementExpectationExt(MAY)
       * code = #search-type
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
