@@ -101,11 +101,11 @@ Für P1-Endpunkte sind sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung a
 
 **P2 – klinisch (`klinisch`)**  
 Als klinisch gelten REST-Endpunkte und Endpunktgruppen, 
-- die für die Behandlung relevante Informationen (Stammdaten, Diagnosen, Allergien, Medikation, Alerts) abfragen,
 - die in der unmittelbaren Behandlung und Dokumentation verwendet werden,  
 - deren verzögerte Bereitstellung typischerweise keine sofortige Gefährdung der Patientensicherheit bewirkt, jedoch Arbeitsabläufe im klinischen Alltag merklich beeinträchtigen kann.  
 
 Hierunter fallen insbesondere:  
+- für die Behandlung relevante Informationen (Vitalparameter, Anordnungen, Ergebnisse, Diagnosen, Allergien, Medikation, Alerts),
 - Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten, Aufgaben- und Worklisten, Befundübersichten),  
 - Abfragen klinischer Verlaufsdokumentation (z.B. Kurven, Verlaufsnotizen, Pflegeberichte),  
 - Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne, OP- und Untersuchungsplanung),  
@@ -128,7 +128,7 @@ Für P3-Endpunkte sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu
 
 #### Rollen und Performance der Basis
 
-Zuordnung von Performance-Kategorien zu bestehenden Rollenfür den Akteur [Basis-Server](https://simplifier.net/resolve?&scope=package:de.gematik.isik@5.1.1&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur):
+Zuordnung von Performance-Kategorien zu bestehenden Rollen für den Akteur [Basis-Server](https://simplifier.net/resolve?&scope=package:de.gematik.isik@5.1.1&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur):
 
 - **Rolle:** `ISiKCapabilityStatementStammdatenRolle` → **hochkritisch**  
   *Begründung:* Stammdaten (z.B. Identität, Patientenbasisdaten) sind für jede klinische Aktion grundlegend; Verzögerungen wirken sich unmittelbar auf alle nachfolgenden hochkritischen Interaktionen aus.
