@@ -252,6 +252,10 @@ RuleSet: CommonElements
   * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
   * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
   Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+* implicitRules ..0
+  * ^short = "Verweis auf die Regeln, nach denen die Ressource erstellt wurde"
+  * ^comment = "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.
+  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebig Menge an Regeln, wodurch  nicht sichegestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können." 
 
 RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
 * location 1.. MS
