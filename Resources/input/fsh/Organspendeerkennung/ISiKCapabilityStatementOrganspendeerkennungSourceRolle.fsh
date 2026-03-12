@@ -35,10 +35,10 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     // MII
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, MAY)
-    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
+    
     // ISiK
-    * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, MAY)
     * insert SupportedProfileCapExpectationExt(ISiKLaboruntersuchungSerumnatrium, MAY)
+
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
@@ -48,3 +48,41 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
+
+  * resource[+]
+    * type = #Procedure
+    * insert CapabilityStatementExpectationExt(MAY)
+    * insert Expectation(#MAY)
+    * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
+    * interaction[+]
+      * insert CapabilityStatementExpectationExt(SHALL)
+      * code = #search-type
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
+    * interaction[+]
+      * insert Expectation (#MAY)
+      * code = #read
+    * interaction[+]
+      * insert Expectation (#MAY)
+      * code = #search-type
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "code"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Procedure?patient=Patient/123`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
