@@ -69,3 +69,6 @@ Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 
 Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
 
+### Paging
+
+Suchergebnisse können auch bei Abfragen zu einzelnen Patient- und Encounter-Instanzen zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen.
