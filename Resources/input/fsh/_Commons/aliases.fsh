@@ -123,3 +123,6 @@ Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
+
+Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinition/bodySite
+Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE

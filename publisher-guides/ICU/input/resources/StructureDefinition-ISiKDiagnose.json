@@ -103,6 +103,16 @@
         "mustSupport": true
       },
       {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "comment": "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `category` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "comment": "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `severity` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
+      },
+      {
         "id": "Condition.code",
         "path": "Condition.code",
         "short": "Diagnose-Code",
@@ -131,6 +141,7 @@
           ],
           "rules": "open"
         },
+        "comment": "**Hinweis EHDS:** In der HL7 Europe EPS und HDR Spezifikation ist ein Binding von Snomed-CT mit der Stärke preferred gesetzt. Dies schließt sich nicht mit der hier vorgenommenen Profilierung aus, und auch eine reine ICD-10 Abbildung spricht nicht gegen diese Anforderung. Allerdings möchten wir darauf hinweisen, dass es in Zukunft möglicherweise sinnvoll sein könnte, die Nutzung von SNOMED-CT Kodierung zur Darstellung einer Diagnose zu nutzen, um die Interoperabilität mit der EPS zu erhöhen.",
         "mustSupport": true
       },
       {
@@ -162,6 +173,8 @@
         "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation",
         "path": "Condition.code.coding.extension",
         "sliceName": "Seitenlokalisation",
+        "short": "Seitenlokalisation",
+        "comment": "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.\n      \n      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html).",
         "mustSupport": true
       },
       {
@@ -250,6 +263,23 @@
         "short": "Körperstelle",
         "comment": "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)",
         "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite.extension:BodyStructureReference",
+        "path": "Condition.bodySite.extension",
+        "sliceName": "BodyStructureReference",
+        "short": "Referenz auf eine BodyStructure-Ressource",
+        "comment": "Im Kontext des Allingments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe wurde diese Extenion hinzugefügt. Es besteht aber noch keine Must-Support Anforderung, da die Abbildung der Lateralität noch in der Diskussion ist und somit keine klare Vorgabe für die Nutzung der Extension gegeben werden kann. Sobald dies geklärt ist, wird die Anforderung entsprechend angepasst. Eine referenzierte BodyStructure-Ressource sollte valide gegen [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html) sein.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/bodySite"
+            ]
+          }
+        ]
       },
       {
         "id": "Condition.bodySite.coding",
