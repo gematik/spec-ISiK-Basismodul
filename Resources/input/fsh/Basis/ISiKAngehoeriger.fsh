@@ -62,7 +62,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * name contains
-    Name 1..1 MS 
+    Name ..1 MS 
 * name[Name] only HumannameDeBasis
   * ^patternHumanName.use = #official
   * ^short = "Slice für den offiziellen Namen der angehörigen Person"
@@ -73,14 +73,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "Verwendungszweck des Namens. Der präferierte Namen für die Brief- und Rechnungszustellung SOLLTE als `official`
     gekennzeichnet werden und mindestens über einen Vor- und Nachnamen verfügen.    
     **Begründung MS:** Dient als Unterscheidungs- und Auswahlkriterium"  
-  * family  MS
+  * family MS
     * ^short = "Nachname"
-    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  
-      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
-  * given  MS
+    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze."
+  * given MS
     * ^short = "Vorname"
-    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
-      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
+    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden."
   * prefix MS
     * ^short = "Präfix"
     * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
