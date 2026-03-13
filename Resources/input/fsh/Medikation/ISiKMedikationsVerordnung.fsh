@@ -1,4 +1,4 @@
-﻿Profile: ISiKMedikationsVerordnung
+Profile: ISiKMedikationsVerordnung
 Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."

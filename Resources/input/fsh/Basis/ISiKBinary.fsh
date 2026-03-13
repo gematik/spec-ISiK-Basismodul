@@ -1,4 +1,4 @@
-﻿Profile: ISiKBinary
+Profile: ISiKBinary
 Parent: Binary
 Id: ISiKBinary
 Title: "ISiKBinary"

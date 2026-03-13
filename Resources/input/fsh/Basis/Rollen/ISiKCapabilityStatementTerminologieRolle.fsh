@@ -1,4 +1,4 @@
-﻿Instance: ISiKCapabilityStatementTerminologieRolle
+Instance: ISiKCapabilityStatementTerminologieRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle

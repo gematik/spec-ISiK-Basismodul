@@ -1,4 +1,4 @@
-﻿Profile: ISiKMedikationsInformation
+Profile: ISiKMedikationsInformation
 Parent: MedicationStatement
 Id: ISiKMedikationsInformation
 Description: "Dieses Profil ermöglicht die Abbildung von Informationen zur Medikation eines Patienten in ISiK Szenarien.
