@@ -1,4 +1,4 @@
-﻿Profile: ISiKLebensZustand
+Profile: ISiKLebensZustand
 Parent: Observation
 Id: ISiKLebensZustand
 Title: "ISiKLebensZustand"

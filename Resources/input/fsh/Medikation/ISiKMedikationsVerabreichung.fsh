@@ -1,4 +1,4 @@
-﻿Profile: ISiKMedikationsVerabreichung
+Profile: ISiKMedikationsVerabreichung
 Parent: MedicationAdministration
 Id: ISiKMedikationsVerabreichung
 Description: "Dieses Profil ermöglicht die Abbildung der Verabreichung von Medikamenten für einen Patienten in ISiK Szenarien. 

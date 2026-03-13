@@ -1,4 +1,4 @@
-﻿Profile: ISiKKontaktGesundheitseinrichtung
+Profile: ISiKKontaktGesundheitseinrichtung
 Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "

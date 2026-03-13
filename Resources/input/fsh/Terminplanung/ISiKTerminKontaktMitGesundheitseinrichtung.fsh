@@ -1,4 +1,4 @@
-﻿Profile: ISiKTerminKontaktMitGesundheitseinrichtung
+Profile: ISiKTerminKontaktMitGesundheitseinrichtung
 Parent: ISiKKontaktGesundheitseinrichtung
 Id: ISiKTerminKontaktMitGesundheitseinrichtung
 Description: "Das Datenobjekt ISiKKontaktMitGesundheitseinrichtung dient der Verknüpfung des ISiK-Basis-Encounters (ISiKKontaktMitGesundheitseinrichtung) mit einem Termin (Appointment) und - darauf aufbauend - der Dokumentenkommunikation.

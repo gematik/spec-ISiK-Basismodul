@@ -1,4 +1,4 @@
-﻿Profile: ISiKAllergieUnvertraeglichkeit
+Profile: ISiKAllergieUnvertraeglichkeit
 Parent: AllergyIntolerance
 Id: ISiKAllergieUnvertraeglichkeit
 Description: "
