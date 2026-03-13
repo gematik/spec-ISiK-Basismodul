@@ -21,9 +21,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+/*
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr"
+*/
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value
