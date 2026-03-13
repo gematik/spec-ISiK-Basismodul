@@ -1,4 +1,4 @@
-#### Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
+﻿#### Konformitätserklärung [(CapabilityStatement)](https://hl7.org/fhir/R4/capabilitystatement.html)
 
 Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine [CapabilityStatement](https://hl7.org/fhir/R4/capabilitystatement.html)-Ressource bereitstellen.
 
@@ -17,4 +17,4 @@ Implementiert ein System mehr als einen der drei Bereiche dieser Spezifikation, 
 
 Die Verwendung der [CapabilityStatement-Expectation](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.
 
-Die für dieses Modul bestätigungsrelevanten Teile des [Moduls "Basis"](https://simplifier.net/guide/isik-basis-stufe-5) sind in den CapabilityStatements ebenfalls enthalten.
+Die für dieses Modul bestätigungsrelevanten Teile des [Moduls "Basis"](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html) sind in den CapabilityStatements ebenfalls enthalten.
