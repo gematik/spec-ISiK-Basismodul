@@ -170,5 +170,5 @@ Id: ISiKEncounterTypeErweiterungVS
 Title: "ISiKEncounterTypeErweiterungVS"
 Description: "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
 * insert Meta
-* include codes from system http://fhir.de/ValueSet/kontaktart-de
+* include codes from system http://fhir.de/CodeSystem/kontaktart-de
 * include codes from system ISiKEncounterTypeErweiterung
