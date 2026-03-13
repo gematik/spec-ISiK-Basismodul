@@ -28,7 +28,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #search-type
-  * insert CommonSearchParameters
+  * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
 
   * searchParam[+]
     * insert Expectation (#SHALL)

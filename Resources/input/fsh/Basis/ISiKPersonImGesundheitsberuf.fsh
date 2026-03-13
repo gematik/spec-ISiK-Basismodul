@@ -60,10 +60,21 @@ Während die Deutschen Basisprofile hier die Abkürzung LANR verwenden, ist im K
   * ^comment = "Der Name des Arztes MUSS in konkreten Anwendungen angezeigt werden können. Es MUSS nach dem Namen des Arztes gesucht werden können."
   * ^patternHumanName.use = #official
   * use 1.. MS
+    * ^short = "Verwendungszweck"
+    * ^comment = "Hier ist stets der Wert `official` anzugeben.
+      **Begründung Pflichtfeld:** Dient als Unterscheidungs- und Auswahlkriterium"  
   * use = #official (exactly)
   * family 1.. MS
+    * ^short = "Nachname"
+    * ^comment = "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * given 1.. MS
+    * ^short = "Vorname"
+    * ^comment = "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.
+      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind."   
   * prefix MS
+    * ^short = "Präfix"
+    * ^comment = "Präfix, z.B. akademischer Titel od. militärischer Rang"   
 * name[Geburtsname] only HumannameDeBasis
   * ^patternHumanName.use = #maiden
   * use 1.. MS
