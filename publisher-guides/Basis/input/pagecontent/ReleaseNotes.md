@@ -20,6 +20,7 @@ Tags werden folgendermaßen verwendet:
 * `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
 
 ### Version 5.x.x
 
