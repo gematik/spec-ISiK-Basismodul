@@ -28,6 +28,8 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementCompositionKonsumentenRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementAmbulanteStammdatenRolle)
+  * insert ExpectationImports(#SHOULD)
 
 
 * rest.mode = #server
