@@ -11,6 +11,8 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * code.coding[sct] = $sct#250846007
 * code.coding[loinc] = $loinc#61017-0
 * code.coding[IEEE-11073] = urn:iso:std:iso:11073:10101#153604
+
 * value[x] = $cs-ucum#mm[Hg] "millimeter Mercury column"
 * value[x].unit 1..
+
 * bodySite = $sct#263353005
