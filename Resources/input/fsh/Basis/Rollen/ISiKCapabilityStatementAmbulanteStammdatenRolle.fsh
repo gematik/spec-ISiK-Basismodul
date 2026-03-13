@@ -2,12 +2,12 @@ Instance: ISiKCapabilityStatementAmbulanteStammdatenRolle
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
-* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
-* name = "ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
-* title = "CapabilityStatement für Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle"
+* url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAmbulanteStammdatenRolle"
+* name = "ISiKCapabilityStatementAmbulanteStammdatenRolle"
+* title = "CapabilityStatement für Rolle ISiKCapabilityStatementAmbulanteStammdatenRolle"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Basismodul"
-* purpose = "CapabilityStatement für die Rolle ISiKCapabilityStatementVersicherungsverhaeltnisRolle.
-Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKVersicherungsverhaeltnis-Ressourcen."
+* purpose = "CapabilityStatement für die Rolle ISiKCapabilityStatementAmbulanteStammdatenRolle.
+Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf von ISiKAmbulanteStammdaten-Ressourcen."
 * rest
   * mode = #server
   * resource[+]
