@@ -144,7 +144,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
-    * repeat MS
+    * repeat 
       * ^short = "Wiederholungs-Angaben"
       * boundsDuration MS
         * ^short = "Begrenzung der Dauer"
@@ -167,21 +167,21 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * ^short = "maximale Dauer der Verabreichung"
       * durationUnit MS
         * ^short = "Einheit der Dauer"
-      * frequency MS
+      * frequency
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
-      * period MS
+      * period
         * ^short = "Zeitperiode zur Frequenz"
       * periodMax MS
         * ^short = "maximale Zeitperiode zur Frequenz"
-      * periodUnit MS
+      * periodUnit 
         * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek MS
+      * dayOfWeek
         * ^short = "Wochentag"
-      * timeOfDay MS
+      * timeOfDay
         * ^short = "Tageszeit"
-      * when MS
+      * when
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
@@ -218,9 +218,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * doseQuantity MS
       * ^short = "Dosis"
     * rateRatio MS
@@ -233,9 +233,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * rateRange MS
       * ^short = "Raten-Bereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * rateQuantity MS
     * rateQuantity only MedicationQuantity
       * ^short = "Rate"
@@ -243,17 +243,17 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerPeriod MS
     * ^short = "Maximaldosis (Zähler) pro Zeitraum (Nenner)"
     * numerator 1.. MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator 1.. MS
     * denominator only MedicationQuantity
   * maxDosePerAdministration MS
-  * maxDosePerAdministration only MedicationQuantity
+  * maxDosePerAdministration only MedicationQuantityDoseForm
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
   * ^short = "angeforderte Abgabemenge"
   * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
-  * quantity only MedicationQuantity
+  * quantity only MedicationQuantityDoseForm
     * ^short = "angeforderte Abgabemenge"
     * ^comment = "Begründung des Must-Support: Basisinformation"
 * substitution MS
