@@ -4,92 +4,92 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Performanc
 
 ### Performance-Aspekte
 
-Für alle REST-Endpunkte MUSS die Performance - bei Antwortzeiten, Lasten, Durchsatz und Skalierbarkeit - so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z.B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
+Für alle REST-Endpunkte muss die Performance - bei Antwortzeiten - so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Dies soll ebenfalls für Lasten, Durchsatz und Skalierbarkeit gelten. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
 
-Daher werden Systemfunktionen entlang der in ISiK definierten Rollen in Performance-Kategorien eingeteilt.  
-Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens angemessene Performance-Anforderungen (z.B. Perzentile der Antwortzeiten) dokumentiert und implementiert.
-
+Zur Gewährleistung davon abgeleiteter Performance-Anforderungen während der Entwicklung tragen sowohl Client- als auch Server-Hersteller bei, wobei konkrete Anforderungen in ISiK für letztere formuliert werden (siehe Hinweise zur Client-Implementierung unten)
 
 #### Performance-Kategorien
 
-Die Performance-Kategorien sind:
+Als kritisch (PK1 bis Pk4) gelten REST-Abfragen, die von klinischen Nutzern in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und  deren verzögerte Bereitstellung die sichere und zeitgerechte Versorgung der Patientinnen und Patienten beeinträchtigen kann.  
+Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben.
 
-- P1) `hochkritisch`
-- P2) `klinisch`
-- P3) `administrativ`
+Für diese Performance-Kategorien gilt :
 
-Konkrete Zielwerte (Antwortzeiten, Lasten, Durchsatz etc.) werden rollen- und szenario-basiert in der Test-Dokumentation definiert. Für die Performance-Kategorien gilt:
+- PK1: Request-Anfrage von Ressourcen unter bekannter ID 
+  - Kontext: 
+  - Anforderung: "unter einer Sekunde"
+  - Beispiel: GET /ressource/id 
+  - Ausnahme: DOcREf mit attachment und Binary ausnehmen?
+  - Begründung: ...
+- PK2: Suchanfragen zum Auffinden von Ressourcen auf Basis von konkreten Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
+  - Anforderung "unter einer Sekunde"
+  - Beispielanfrage basURl/Patient?identifier=12345 
+  - Beispielanfrage baseUrl/Patient?birthdate=13-1
+  - Beispielanfrage - Medikationslisten der einzelnen Patienten für eine Station: 
+  - Ausnahme: -
+- PK3: Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen  (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass Patient.id bekannt.
+  - Anforderung: "unter 2 Sekunden"
+  - Beispielanfrage: basURl/Condition?code=Kopfschmerz|ICD:R10.0&patient.id=12345
+  - Beispielanfrage: basURl/Condition?patient.id=12345
+- PK4: Suchanfragen auf ->  /Patient? + /Encounter? unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
+  - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten),
+  - Anforderung: "unter 5 Sekunden"
+  - Beispielanfrage alle Patienten mit dem Namen Müller: baseUrl/Patient?name.family=Müller
 
-**P1 – hochkritisch (`hochkritisch`)**  
-Als hochkritisch gelten REST-Endpunkte und Endpunktgruppen,  
-- die von klinischen Rollen (z.B. Ärztinnen/Ärzte, Pflegekräfte, Notaufnahmepersonal, Intensivpflege) in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und  
-- deren verzögerte Bereitstellung die sichere und zeitgerechte Versorgung der Patientinnen und Patienten beeinträchtigen kann.  
+Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
+- im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
+-  Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation),
+- die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder
+- Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext
 
-Hierunter fallen insbesondere:  
-- Abfragen zu einzelnen Patienten-Instanzen (z.B. `GET /Patient/{id}`) mit aktuellen, für die Behandlung relevanten Informationen (Stammdaten, Alerts),  
-- Abfragen zu einzelnen Fallkontakt-/Encounter-Instanzen (z.B. `GET /Encounter/{id}`) mit aktuellen Statusinformationen,  
+- PK5: weitere Suchanfragen bzw. Operationen.
+  - Anforderung: "Unter 60 Sekunden"
+  - Medikamenten-Listen für eine Station -> Frage: geht das?
+  - Medikamenten-Listen für das gesamtes KH
+  - für weitere vgl. https://service.gematik.de/browse/PTDATA-1900 
+- PK6: weitere suchanfragen und Custom-Operation -> nicht geprüft
+  - Beispiel: book operation 
+  - Abfragen mit gröberer Granularität nicht 
+  - Begründung: ... TODO sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
 
-Für P1-Endpunkte sind sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben. 
+Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 
-**P2 – klinisch (`klinisch`)**  
-Als klinisch gelten REST-Endpunkte und Endpunktgruppen, 
-- die in der unmittelbaren Behandlung und Dokumentation verwendet werden,  
-- deren verzögerte Bereitstellung typischerweise keine sofortige Gefährdung der Patientensicherheit bewirkt, jedoch Arbeitsabläufe im klinischen Alltag merklich beeinträchtigen kann.  
 
-Hierunter fallen insbesondere:  
-- für die Behandlung relevante Informationen (Vitalparameter, Anordnungen, Ergebnisse, Diagnosen, Allergien, Medikation, Alerts),
-- Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten, Aufgaben- und Worklisten, Befundübersichten),  
-- Abfragen klinischer Verlaufsdokumentation (z.B. Kurven, Verlaufsnotizen, Pflegeberichte),  
-- Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne, OP- und Untersuchungsplanung),  
-- Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation).  
+#### Client-Implementierung
 
-Für P2-Endpunkte sind zügige Antwortzeiten erforderlich; kurze Verzögerungen sind akzeptabel, wenn sie den klinischen Workflow nicht wesentlich stören. 
+Auch Client-Hersteller tragen eine eigene Verantwortung bei der Gewährleistung der Performance für den Betrieb der definierter API-Schnittstelle.
+Dazu gehören insbesondere eine effiziente Abfragestrategie (z. B. Paging statt großer Ergebnismengen), fachlich sinnvolle Suchfilter (z. B. Zeiträume und Organisationseinheiten), die Vermeidung unnötiger Wiederholungsabfragen sowie die Nutzung geeigneter Caching- und Aktualisierungsmechanismen (z. B. ETag/If-None-Match). Ziel ist, nur die für den jeweiligen Anwendungsfall unmittelbar benötigten Daten in angemessener Zeit zu laden.
 
-**P3 – administrativ (`administrativ`)**  
-Als administrativ gelten REST-Endpunkte und Endpunktgruppen,  
-- die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden und  
-- deren Bearbeitungsdauer keine unmittelbaren Auswirkungen auf die laufende Patientenversorgung hat.  
+**Beispiel** für eine Vitalparameter-App (ein Patient) unter dem Szenario:
+Beim Öffnen der Patientenakte soll die App die zuletzt dokumentierten Vitalparameter (Puls, Blutdruck, Temperatur) schnell anzeigen und anschließend bei Bedarf den Zeitraum erweitern.
 
-Hierunter fallen insbesondere:  
-- Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext,  
-- Reporting- und Statistik-Endpunkte (inkl. Aggregationen und Auswertungen mit großen Datenmengen),  
-- Import-/Export- sowie andere Batch-orientierte oder langlaufende Operationen,  
-- technische Administrations- und Konfigurations-Endpunkte.  
+Konkrete Umsetzung der Performance-Aspekte:
 
-Für P3-Endpunkte sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
+1. Effiziente Abfragestrategie (klein starten, dann erweitern)
+- Initial nur der klinisch relevante Kurzzeitbereich, z. B. letzte 24 Stunden.
+- Vorteil: schnelle Erstanzeige statt großer Datenmengen beim Start.
 
-#### Rollen und Performance der Basis
+2. Paging statt Gesamtliste
+- Ergebnisse seitenweise laden, z. B. 50 Werte pro Seite.
+- Bei Verlaufsgrafik nur weitere Seiten nachladen, wenn der Nutzer den Zeitraum vergrößert oder scrollt.
+- Vorteil: geringere Antwortzeiten und weniger Speicherverbrauch im Client.
 
-Zuordnung von Performance-Kategorien zu bestehenden Rollen für den Akteur [Basis-Server](https://simplifier.net/resolve?&scope=package:de.gematik.isik@5.1.1&canonical=https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementBasisServerAkteur):
+3. Sinnvolle Suchfilter
+- Immer Patient, Kategorie, relevante Codes und Zeitraum einschränken.
+- Vorteil: weniger irrelevante Daten und stabilere Performance.
 
-- **Rolle:** `ISiKCapabilityStatementStammdatenRolle` → **hochkritisch**  
-  *Begründung:* Stammdaten (z.B. Identität, Patientenbasisdaten) sind für jede klinische Aktion grundlegend; Verzögerungen wirken sich unmittelbar auf alle nachfolgenden hochkritischen Interaktionen aus.
+4. Vermeidung unnötiger Wiederholungsabfragen
+- Bereits geladene Seiten pro Patient und Zeitraum im Arbeitsspeicher halten.
+- Wechselt der Nutzer zwischen Tabs, keine neue Anfrage, solange Daten noch gültig sind.
+- Such-/Filtereingaben mit kurzer Verzögerung (z. B. 300 ms Debounce), damit nicht jede Eingabe einen Request auslöst.
 
-- **Rolle:** `ISiKCapabilityStatementAufbaustrukturRolle` → **klinisch**  
-  *Begründung:* Die Aufbaustruktur dient der klinischen Dokumentation und Navigation, ist behandlungsnah, aber nicht in jeder Situation unmittelbar lebensentscheidend.
+5. Caching und bedingte Aktualisierung (ETag/If-None-Match)
+- Nach erster Antwort ETag aus Header speichern.
+- Folgeaufruf mit If-None-Match senden.
+- Bei 304 Not Modified keine erneute Datenübertragung
+- Vorteil: weniger Netzlast bei häufigem Öffnen derselben Patientenkurve, UI bleibt schnell.
 
-  - **Rolle:** `ISiKCapabilityStatementGesundheitsstatusRolle` → **klinisch**  
-  *Begründung:* Informationen zum Gesundheitsstatus fließen in klinische Entscheidungen ein, sind behandlungsrelevant, müssen aber nicht in jeder Situation unter strengsten Latenzanforderungen bereitstehen.
-
-- **Rolle:** `ISiKCapabilityStatementKlinischeRolle` → **klinisch**  
-  *Begründung:* Diese Rolle steht direkt für die Nutzung klinischer Inhalte im Versorgungskontext und erfordert daher zügige, aber nicht zwingend maximal priorisierte Antwortzeiten.
-
-- **Rolle:** `ISiKCapabilityStatementLeistungserbringerRolle` → **klinisch**  
-  *Begründung:* Informationen über Leistungserbringer unterstützen den klinischen Behandlungsprozess (Zuständigkeiten, Zuordnung), sind klinisch relevant, aber nicht akut lebensentscheidend.
-
-- **Rolle:** `ISiKCapabilityStatementTerminologieRolle` → **klinisch**  
-  *Begründung:* Terminologieservices (z.B. Codes, Kataloge) werden in klinischen Workflows zur sicheren Dokumentation und Interpretation verwendet und sollten zügig, aber nicht zwingend höchstprioritär reagieren.
-
-- **Rolle:** `ISiKCapabilityStatementCompositionKonsumentenRolle` → **administrativ**  
-  *Begründung:* Die konsumierende Nutzung von Composition-Ressourcen ist typischerweise für Dokumentation, Auswertung und Sekundärnutzung relevant und nicht unmittelbar zeitkritisch für die akute Behandlung.
-
-- **Rolle:** `ISiKCapabilityStatementErweiterteStammdatenRolle` → **administrativ**  
-  *Begründung:* Erweiterte Stammdaten werden primär für Verwaltung, Strukturierung und Kontextinformationen genutzt und sind daher vorwiegend administrativ geprägt.
-
-- **Rolle:** `ISiKCapabilityStatementVersicherungsverhaeltnisRolle` → **administrativ**  
-  *Begründung:* Versicherungsverhältnisse betreffen primär Abrechnung, Kostenträgerzuordnung und Verwaltung und sind damit klar administrativ einzuordnen.
-
-#### Rollen für weitere Akteure
-
-Die Zuordnung von Performance-Kategorien zu anderen Rollen spezifischer Akteure erfolgt in den entsprechenden Implementierungsleitfäden.
-
+6. Aktualisierungsstrategie für Live-Betrieb
+- Nicht dauerhaft neu laden, sondern intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.
+- Nur den neuen Zeitraum nachladen, z. B. ab letztem bekannten Messzeitpunkt.
+- Vorteil: aktuelle Anzeige ohne unnötige Dauerlast.
