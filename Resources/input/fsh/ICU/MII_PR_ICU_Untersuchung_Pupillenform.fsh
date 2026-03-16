@@ -11,10 +11,9 @@ Profile: MII_PR_ICU_Untersuchung_Pupillenform
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillenform
 Title: "MII PR ICU Untersuchung Pupillenform"
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-untersuchung-pupillenform"
-* ^status = #draft
+
+* insert Meta
+* insert CommonElements
 
 * id MS
 * meta MS

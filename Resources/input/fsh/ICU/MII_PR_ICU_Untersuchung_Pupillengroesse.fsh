@@ -13,10 +13,9 @@ Profile: MII_PR_ICU_Untersuchung_Pupillengroesse
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillengroesse
 Title: "MII PR ICU Untersuchung Pupillengroesse"
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse"
-* ^status = #draft
+
+* insert Meta
+* insert CommonElements
 
 * id MS
 * meta MS

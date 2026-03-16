@@ -7,10 +7,9 @@ Profile: MII_PR_ICU_Untersuchung_Pupillenbefund
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillenbefund
 Title: "MII PR ICU Untersuchung Pupillenbefund"
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-untersuchung-pupillenbefund"
-* ^status = #draft
+
+* insert Meta
+* insert CommonElements
 
 * id MS
 * meta MS
