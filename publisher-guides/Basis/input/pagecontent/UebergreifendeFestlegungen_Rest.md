@@ -71,4 +71,4 @@ Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungs
 
 ### Paging
 
-Suchergebnisse können auch bei Abfragen zu einzelnen Patient- und Encounter-Instanzen zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen.
+Suchergebnisse können auch bei Abfragen zu den Compartments einzelner Patient- und Encounter-Instanzen zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen. Issues vom Schweregrad `error` oder `fatal` sind bei Paging unzulässig.
