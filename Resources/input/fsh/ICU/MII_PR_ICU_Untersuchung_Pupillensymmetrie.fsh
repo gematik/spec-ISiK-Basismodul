@@ -12,9 +12,10 @@ Profile: MII_PR_ICU_Untersuchung_Pupillensymmetrie
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillensymmetrie
 Title: "MII PR ICU Untersuchung Pupillensymmetrie"
-
-* insert Meta
-* insert CommonElements
+* insert PR_CS_VS_Version
+* insert Publisher
+* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie"
+* ^status = #draft
 
 * id MS
 * meta MS
@@ -45,3 +46,7 @@ Title: "MII PR ICU Untersuchung Pupillensymmetrie"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept
 * valueCodeableConcept from MII_VS_ICU_Code_Observation_Pupillensymmetrie (required)
+* valueCodeableConcept.coding ^slicing.discriminator.type = #pattern
+* valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* valueCodeableConcept.coding ^slicing.ordered = false
+* valueCodeableConcept.coding ^slicing.rules = #closed
