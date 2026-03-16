@@ -6,7 +6,7 @@ Im Folgenden wird ein grafischer Überblick über Anwendungsfälle (Use Cases) g
 * Allgemeine und intuitiv Adverse Use Cases (diese gilt es zu vermeiden)
 * In den Funktionen werden triviale Suchen einer Ressource anhand ihrer eigenen Properties nicht dargestellt, z.B. Suche einer Ressource anhand der ID, Name, Code usw.
 
-Weitere Informationen zum Use-Case AMTS sind dem [AMTS Implementierungsleitfaden](https://gemspec.gematik.de/fhir/ig/isik/amts) zu entnehmen.
+Der Use-Case zum Thema Arzneimitteltherapiesicherheit (AMTS) wurde in einem eigenen Implementation Guide ausgelagert. Der Implementation Guide ist über folgenden Link erreichbar: [AMTS Implementierungsleitfaden](https://gemspec.gematik.de/fhir/ig/isik/amts/6.0.0-rc)
 
 **Use Case Digramm**
 
