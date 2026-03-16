@@ -156,13 +156,13 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * dose MS
-  * dose only MedicationQuantity
+  * dose only MedicationQuantityDoseForm
     * ^short = "verabreichte Dosis"
   * rateRatio MS
     * ^short = "Verabreichungs-Rate (Verhältnis)"
     * ^comment = "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können."
     * numerator 1.. MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator 1.. MS
     * denominator only MedicationQuantity
   * rateQuantity MS
