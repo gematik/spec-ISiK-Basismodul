@@ -32,12 +32,6 @@
       "id": "hl7_fhir_uv_ips"
     },
     {
-      "packageId": "hl7.fhir.uv.subscriptions-backport.r4",
-      "version": "1.1.0",
-      "uri": "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
-      "id": "hl7_fhir_uv_subscriptions_backport_r4"
-    },
-    {
       "packageId": "de.basisprofil.r4",
       "version": "1.5.4",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
@@ -200,20 +194,6 @@
       },
       {
         "reference": {
-          "reference": "ActorDefinition/FormularDatenQuelleAkteur"
-        },
-        "name": "FormularDatenQuelleAkteur",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ActorDefinition/FormularDatenRendererAkteur"
-        },
-        "name": "FormularDatenRendererAkteur",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
         },
         "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
@@ -250,6 +230,20 @@
         "description": "Data Type profile for Codings in ISiK",
         "exampleBoolean": false,
         "name": "ISiKCoding"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/IsikFormularConformanceCategory"
+        },
+        "name": "IsikFormularConformanceCategory",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/IsikFormularConformanceCategoryVS"
+        },
+        "name": "IsikFormularConformanceCategoryVS",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -293,7 +287,7 @@
         "reference": {
           "reference": "Questionnaire/ExampleExtractWithUnit"
         },
-        "description": "### Beispiel-Questionnaire mit Observation Based Extraction von Dezimalwerten mit Maßeinheiten  \n  * Vorgabe der anzugebenden Maßeinheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension\n  * Annotation zur Extraktion mittels [observationExtract](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract)\n  * Annotation zum Setzen der category bei Extraktion mittels [observationExtractCategory](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract-category)",
+        "description": "### Beispiel-Questionnaire mit Observation Based Extraction von Dezimalwerten mit Maßeinheiten  \n  * Vorgabe der anzugebenden Maßeinheit mittels [questionnaire-unit](https://hl7.org/fhir/R4/extension-questionnaire-unit.html)-Extension\n  * Annotation zur Extraktion mittels [observationExtract](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract)\n  * Annotation zum Setzen der category bei Extraktion mittels [observationExtractCategory](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category)",
         "exampleBoolean": false,
         "name": "Observation Based Extraction bei quantitativen Angaben"
       },
@@ -377,11 +371,6 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "conformanceSummary.html",
-          "title": "Konformitätszusammenfassung",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "Akteure.html",
           "title": "Akteure",
           "generation": "markdown"
@@ -425,10 +414,6 @@
       {
         "code": "no-validate",
         "value": "true"
-      },
-      {
-        "code": "requirements-category-vs",
-        "value": "https://gematik.de/fhir/isik/ValueSet/IsikFormularConformanceCategoryVS"
       }
     ]
   }
