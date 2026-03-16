@@ -20,6 +20,7 @@ Tags werden folgendermaßen verwendet:
 * `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength https://github.com/gematik/spec-ISiK-Basismodul/pull/1074
 
 ### Version 5.x.x
 
