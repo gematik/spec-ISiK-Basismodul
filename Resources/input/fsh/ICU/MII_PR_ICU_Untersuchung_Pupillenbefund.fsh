@@ -7,6 +7,13 @@ Profile: MII_PR_ICU_Untersuchung_Pupillenbefund
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillenbefund
 Title: "MII PR ICU Untersuchung Pupillenbefund"
+Description: """
+Dieses Profil dient der Abbildung eines Pupillenbefunds, der als Panel die einzelnen Befunde zur Pupillenuntersuchung bündelt (Pupillengröße, Pupillenform, Pupillenlichtreaktion direkt/indirekt, Pupillensymmetrie).
+
+In ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.
+
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.
+"""
 
 * insert Meta
 * insert CommonElements
