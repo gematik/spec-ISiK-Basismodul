@@ -13,6 +13,8 @@ Instanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind au
 
 * [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)
 
+Instanzen, die gegen [VSDM 2.0 Versicherungsdaten GKV](https://simplifier.net/vsdm2/vsdmcoveragegkv) valide sind, sind auch valide gegen dieses Profil
+
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 * insert Meta
 * status MS
@@ -82,14 +84,17 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "Patienten-Link"
     * ^comment = "Die Verlinkung auf eine Patienten-Ressource dient der technischen Zuordnung der Dokumentation zu einem Patienten 
     und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc."
-* payor ..1 MS
+* payor ..2 MS
 * payor only Reference(Organization)
-  * ^short = "Kostenträger"
+  * ^short = "Kostenträger (Haupt- sowie ggf. abrechnender Kostenträger)"
   * ^comment = "Die Angabe der IK-Nummer in `payor.identifier` sowie des Namens der Versicherung in `payor.display` ist zwingend erforderlich.  
   Die Referenz auf eine Resource vom Typ `Organization` in `payor.reference`, die weitere Details zur Versicherung enthalten kann (z.B. Adresse, Kontaktdaten) ist optional.  
 
   Die Angabe der IK-Nummer des Versicherers in payor.identifier ist verpflichtend. 
-  Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird."
+  Weitere Angaben zum Versicherer (Name, Adresse) können in einer Organization-Resource hinterlegt werden, auf die hier referenziert wird.  
+**Historie:** Erhöhung der Kardinalität von `payor` auf ..2 zur Harmonisierung mit dem GKV-Coverage-Profil der TI-Anwendung `VSDM 2.0`. Dort *kann* als zweiter payor ein *abrechnender Kostenträger* übermittelt werden.
+Dieser soll nicht aus einer Coverage-Instanz entfernt werden müssen, um ISIK-Konformität herzustellen. Die Unterstützung von abrechnenden Kostenträgern ist jedoch in ISiK NICHT gefordert.
+"
   * identifier only IdentifierIknr
     * ^short = "Institutskennzeichern der Versicherung"
     * ^comment = "**Begründung Pflichtfeld:** Als eindeutiger Identifikator der Versicherung ist in vielen Fällen das Institutskennzeichen ausreichend."

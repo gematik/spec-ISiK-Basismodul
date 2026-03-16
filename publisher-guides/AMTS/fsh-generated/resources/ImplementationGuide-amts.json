@@ -1343,7 +1343,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKVersicherungsverhaeltnisGesetzlich"
         },
-        "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen\n\n* [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "Dieses Profil ermöglicht die Darstellung eines gesetzlichen Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisGesetzlich basiert auf dem [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisGesetzlich valide sind, sind auch valide gegen\n\n* [GKV-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis)\n\nInstanzen, die gegen [VSDM 2.0 Versicherungsdaten GKV](https://simplifier.net/vsdm2/vsdmcoveragegkv) valide sind, sind auch valide gegen dieses Profil\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKVersicherungsverhaeltnisGesetzlich"
       },
@@ -1351,7 +1351,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKVersicherungsverhaeltnisSelbstzahler"
         },
-        "description": "Dieses Profil ermöglicht die Darstellung eines privaten Versicherungsverhältnisses, bzw. eines Selbstzahler-Verhältnisses in ISiK Szenarien.  \n\n### **Motivation:**\n\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### **Kompatibilität:**\n\nDas Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen\n\n* [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "Dieses Profil ermöglicht die Darstellung eines privaten Versicherungsverhältnisses, bzw. eines Selbstzahler-Verhältnisses in ISiK Szenarien.  \n\n### **Motivation:**\n\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.\nIn diesen Anwendungsszenarien wird die `Coverage`-Ressource verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift des Kostenträgers zu ermitteln.  \n\n### **Abgrenzung:**\nDas Selbstzahler-Profil gilt für Szenarien, in denen der Patient selbst (oder eine abweichende natürliche oder juristische Person) als Kostenträger auftritt.\nFür PKV-Verhältnisse, in denen die Kosten *unmittelbar* von einer privaten Versicherung übernommen werden (ohne dass der Patient in Vorleistung geht), KANN das Profil \n[Versicherungsdaten PKV](https://simplifier.net/vsdm2/vsdmcoveragepkv) aus der jeweils geltenden VSDM 2.0 Spezifikation verwendet werden. \n\n\n### **Kompatibilität:**\n\nDas Profil ISiKVersicherungsverhaeltnisSelbstzahler basiert auf dem [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel). \nInstanzen, die gegen ISiKVersicherungsverhaeltnisSelbstzahler valide sind, sind auch valide gegen\n\n* [Selbstzahler-Profil der deutschen Basisprofile](https://fhir.de/StructureDefinition/coverage-de-sel)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKVersicherungsverhaeltnisSelbstzahler"
       },
@@ -1370,6 +1370,14 @@
         "description": "Quantity Datentyp der die Nutzung von UCUM vorgibt. Bei dimensionslosen Einheiten wie 'Tablette' wird ein code von '1' erwartet, 'Tablette' kann als String in Unit hinterlegt werden.",
         "exampleBoolean": false,
         "name": "Medication Quantity"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MedicationQuantityDoseForm"
+        },
+        "description": "Quantity Datentyp für Dosage Informationen, der die Nutzung des VS DosageDoseQuantityDE vorgibt.",
+        "exampleBoolean": false,
+        "name": "Medication Quantity Dose Form"
       },
       {
         "reference": {
