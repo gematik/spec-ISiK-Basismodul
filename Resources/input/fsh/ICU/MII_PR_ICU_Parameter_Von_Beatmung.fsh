@@ -15,7 +15,7 @@ Title: "MII PR ICU Parameter von Beatmung"
 * partOf ^definition = "Dasjenige extrakorporale Verfahren, im Rahmen dessen der vorliegende Parameter (die Daten dieser Observation-Ressource) erhoben wurden."
 * status MS
 * category 1..1 MS
-* category from mii-vs-icu-category-procedure-beatmung-snomed (required)
+* category from MII_PR_ICU_Unterstuezungsdruck_Beatmung (required)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -29,21 +29,21 @@ Title: "MII PR ICU Parameter von Beatmung"
 * code.coding ^slicing.ordered = false
 * code.coding ^slicing.rules = #open
 * code.coding contains sct 0..
-* code.coding[sct] from mii-vs-icu-code-observation-beatmung-snomed  (required)
+* code.coding[sct] from MII_VS_ICU_Code_Observation_Beatmung_SNOMED  (required)
 * code.coding[sct].system = "http://snomed.info/sct"
 * code.coding[sct] MS
 * code.coding[sct].system 1..1 MS
 * code.coding[sct].code 1..1 MS
 * code.coding[sct].display MS
 * code.coding contains loinc 0..
-* code.coding[loinc] from mii-vs-icu-code-observation-beatmung-loinc  (required)
+* code.coding[loinc] from MII_VS_ICU_Code_Observation_Beatmung_LOINC  (required)
 * code.coding[loinc].system = "http://loinc.org"
 * code.coding[loinc] MS
 * code.coding[loinc].system 1..1 MS
 * code.coding[loinc].code 1..1 MS
 * code.coding[loinc].display MS
 * code.coding contains IEEE-11073 0..
-* code.coding[IEEE-11073] from mii-vs-icu-code-observation-beatmung-loinc-iso11073 (required)
+* code.coding[IEEE-11073] from MII_VS_ICU_Code_Observation_Beatmung_ISO11073 (required)
 * code.coding[IEEE-11073].system = "urn:iso:std:iso:11073:10101"
 * code.coding[IEEE-11073] MS
 * code.coding[IEEE-11073].system 1..1 MS
@@ -64,6 +64,6 @@ Title: "MII PR ICU Parameter von Beatmung"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code 1.. MS
 * dataAbsentReason MS
-* bodySite from mii-vs-icu-body-site-observation-beatmung (extensible)
+* bodySite from MII_VS_ICU_BodySite_Observation_Beatmung (extensible)
 * device only Reference(MII_PR_ICU_Devicemetric_Eingestellte_Gemessene_Parameter_Beatmung)
 * device MS
