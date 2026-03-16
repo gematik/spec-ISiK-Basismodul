@@ -41,7 +41,7 @@ Für diese Performance-Kategorien gilt :
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: "unter 5 Sekunden"
   - Beispielanfrage - alle Patienten mit dem Namen Müller: baseUrl/Patient?name=Schulz
-  - Beispielanfrage - alle Patienten auf der Station: baseURL/Patient?location=Location/12345 
+  - Beispielanfrage - alle Patienten auf der Station "123": baseURL/_has:Encounter:patient:location=Location/ward123
 
 Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
@@ -49,20 +49,22 @@ Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
 - die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder
 - Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext
 
-Für die Performance-Kategorien gilt:
+Für diese Performance-Kategorien längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
+
+Für diese Performance-Kategorien gilt:
 
 - PK5: weitere Suchanfragen bzw. Operationen.
   - Anforderung: "Unter 60 Sekunden"
-  - Medikamenten-Listen für eine Station -> Frage: geht das?
-  - Medikamenten-Listen für das gesamtes KH
-  - für weitere vgl. https://service.gematik.de/browse/PTDATA-1900 
-- PK6: weitere suchanfragen und Custom-Operation -> nicht geprüft
-  - Beispiel: book operation 
-  - Abfragen mit gröberer Granularität nicht 
-  - Begründung: ... TODO sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
+  - Beispielanfrage - Prozeduren für eine Station: baseURL/Procedure?encounter.location=Location/ward123
+  - Beispielanfrage - Liste aller Stationen: baseURL/Location?type=http://terminology.hl7.org/CodeSystem/location-physical-type|wa
+  - Beispielanfrage - Niereninsuffizienz Screening mittels Serumkreatinin: baseURL/Observation?code=http://loinc.org|2160-0&combo-code-value-quantity=gt1.0|mg/dL
+
+- PK6: weitere Suchanfragen und Custom-Operation
+  - Anforderung: nicht geprüft
+  - Beispiel - Operation zur Terminbuchung in ISiK : baseURL/$book 
+  - Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): baseURL/MedicationRequest
 
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
-
 
 #### Client-Implementierung
 
