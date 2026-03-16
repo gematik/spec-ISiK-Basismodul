@@ -70,6 +70,11 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
 
+    // MII Beatmung
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Unterstuezungsdruck_Beatmung, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemfrequenz_Beatmet, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemzugvolumen, SHALL)
+
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read

@@ -17,6 +17,7 @@ Datum: tbd.
     * `improve` Hinzufügen eines Profils zum zerebralen Perfusionsdrucks (ICP); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
     * `improve` Hinzufügen eines Profils zum Richmond Agitation-Sedation Scale (RASS); aus den MII Profilen entnommen; dient dem Implementierungsleitfaden zur Organspendeerkennung
     * `improve` Erweiterung des Akteurs zur ICU extended um verpflichtende Profile zur Pupillenuntersuchung (Pupillenform, Pupillensymmetrie, Pupillenlichtreaktion indirekt) und zu den Prozeduren (Beatmung und reanimation); dient auch dem Implementierungsleitfaden zur Organspendeerkennung
+    * `improve` Erweiterung des Akteurs zur ICU extended um verpflichtende Profile zur Beatmung (Unterstützungsdruck, spontane Atemfrequenz, spontanes Atemzugvolumen); dient auch dem Implementierungsleitfaden zur Organspendeerkennung
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064

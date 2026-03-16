@@ -2,10 +2,10 @@ Profile: MII_PR_ICU_Spontanes_Atemzugvolumen
 Parent: MII_PR_ICU_Parameter_Von_Beatmung
 Id: mii-pr-icu-vent-spontanes-atemzugvolumen
 Title: "MII PR ICU Spontanes Atemzugvolumen"
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-spontanes-atemzugvolumen"
-* ^status = #active
+Description: """Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026"""
+
+* insert Meta
+
 
 * code.coding 2..
 * code.coding[sct] 1..1

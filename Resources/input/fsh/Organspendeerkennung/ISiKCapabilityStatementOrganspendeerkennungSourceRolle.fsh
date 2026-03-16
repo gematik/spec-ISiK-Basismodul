@@ -39,6 +39,12 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, MAY)
+
+    // MII Beatmung
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Unterstuezungsdruck_Beatmung, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemfrequenz_Beatmet, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemzugvolumen, MAY)
+
     
     // ISiK
     * insert SupportedProfileCapExpectationExt(ISiKLaboruntersuchungSerumnatrium, MAY)
