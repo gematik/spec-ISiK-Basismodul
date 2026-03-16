@@ -2,12 +2,9 @@ Profile: MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt
 Parent: Observation
 Id: mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt
 Title: "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt"
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt"
-* ^status = #draft
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "https://www.medizininformatik-initiative.de"
+
+* insert Meta
+* insert CommonElements
 
 * id MS
 * meta MS
@@ -33,9 +30,9 @@ Title: "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt"
 * valueCodeableConcept.coding ^slicing.ordered = false
 * valueCodeableConcept.coding ^slicing.rules = #closed
 * valueCodeableConcept.coding contains Loinc 1..1 MS
-* valueCodeableConcept.coding[Loinc] from $mii-vs-icu-code-observation-pupillenlichtreaktion (required)
+* valueCodeableConcept.coding[Loinc] from MII_VS_ICU_Code_Observation_Pupillenlichtreaktion (required)
 
 * dataAbsentReason 0..1 MS
 
 * bodySite 1..1 MS
-* bodySite from $mii-vs-icu-bodysite-observation-pupillenbefund (required)
+* bodySite from MII_VS_ICU_BodySite_Observation_Pupillenbefund (required)
