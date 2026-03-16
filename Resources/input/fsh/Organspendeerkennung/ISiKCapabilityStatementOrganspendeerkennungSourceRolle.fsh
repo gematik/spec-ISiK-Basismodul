@@ -60,7 +60,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert CommonObservationSearchParameters
 
     * searchParam[+]
-      * insert Expectation(#MAY)
+      * insert Expectation(#MAY) // ggf. SHALL ?
       * name = "code:in"
       * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
       * type = #token
