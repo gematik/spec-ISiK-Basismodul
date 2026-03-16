@@ -31,26 +31,7 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
 
     In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT`
 
-4. Anlage einer Patient-Ressource durch den Termin-Requestor: `POST https://example.org/fhir/Patient`
-
-    ```json
-    {
-        "resourceType": "Patient",
-        "meta": {
-            "tag": [
-                {
-                    "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
-                    "code": "external"
-                }
-            ]
-        }
-        [...]
-    }
-    ```
-
-    Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der ``patient``-Parameter in der ``$book``-Operation zu verwenden.
-
-5. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
+4. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
 
     ```json
     {
@@ -119,7 +100,20 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
           }
         ]
       }
+    },
+    {
+        "resourceType": "Patient",
+        "meta": {
+            "tag": [
+                {
+                    "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
+                    "code": "external"
+                }
+            ]
+        }
+        [...]
     }
+  
     ```
 
     Antwort des Termin-Repository:
