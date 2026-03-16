@@ -2,13 +2,10 @@ ValueSet: MII_VS_ICU_Code_Observation_Beatmung_SNOMED
 Id: mii-vs-icu-code-observation-beatmung-snomed
 Title: "MII VS ICU Code Observation Beatmung SNOMED"
 Description: "Dieses ValueSet enthält Codes für die im Kontext einer Bilanz verwendeten Parameter."
-* insert PR_CS_VS_Version
-* insert Publisher
-* ^url = "https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/ValueSet/mii-vs-icu-code-observation-beatmung-snomed"
-* ^version = "2026.0.0"
-* ^status = #active
-* ^date = "2025-02-11"
-* ^experimental = false
+Description: """
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026"""
+
+* insert Meta
 
 * include $sct#250822000 "Inspiration/expiration time ratio (observable entity)"
 * include $sct#416811008 "Tidal volume setting (observable entity)"
