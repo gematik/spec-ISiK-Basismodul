@@ -1,0 +1,16 @@
+{% sqlToData composition_mapping with target as (
+    select Url, Json
+    from Resources
+    where Type = 'StructureDefinition'
+      and Url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten'
+  )
+  select
+    json_extract(elem.value, '$.id') as Path,
+    json_extract(mapping.value, '$.map') as Map,
+    json_extract(mapping.value, '$.comment') as Comment
+  from target,
+       json_each(target.Json, '$.differential.element') as elem,
+       json_each(elem.value, '$.mapping') as mapping
+  where json_extract(mapping.value, '$.identity') = 'CompositionDocumentReferenceMapping'
+  order by Path
+%}
