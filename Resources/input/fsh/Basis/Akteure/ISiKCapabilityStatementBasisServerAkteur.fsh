@@ -29,7 +29,7 @@ Usage: #definition
 * imports[+] = Canonical(ISiKCapabilityStatementCompositionKonsumentenRolle)
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementAmbulanteStammdatenRolle)
-  * insert ExpectationImports(#SHOULD)
+  * insert ExpectationImports(#SHALL)
 
 
 * rest.mode = #server
