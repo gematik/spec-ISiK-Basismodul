@@ -30,11 +30,15 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(ISiKGCS, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
-
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillengroesse, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
     // Optionale Parameter
     // MII
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, MAY)
     
     // ISiK
     * insert SupportedProfileCapExpectationExt(ISiKLaboruntersuchungSerumnatrium, MAY)
