@@ -4,7 +4,7 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Performanc
 
 ### Performance-Aspekte
 
-Für alle REST-Endpunkte muss die Performance - bei Antwortzeiten - so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Dies soll ebenfalls für Lasten, Durchsatz und Skalierbarkeit gelten. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
+Für alle REST-Endpunkte muss die Performance bei **Antwortzeiten** so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Dies soll ebenfalls für Lasten, Durchsatz und Skalierbarkeit gelten. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
 
 Zur Gewährleistung davon abgeleiteter Performance-Anforderungen während der Entwicklung tragen sowohl Client- als auch Server-Hersteller bei, wobei konkrete Anforderungen in ISiK für letztere formuliert werden (siehe Hinweise zur Client-Implementierung unten)
 
@@ -13,34 +13,43 @@ Zur Gewährleistung davon abgeleiteter Performance-Anforderungen während der En
 Als kritisch (PK1 bis Pk4) gelten REST-Abfragen, die von klinischen Nutzern in unmittelbar behandlungsrelevanten, zeitkritischen Situationen genutzt werden und  deren verzögerte Bereitstellung die sichere und zeitgerechte Versorgung der Patientinnen und Patienten beeinträchtigen kann.  
 Daher sind hierfür sehr kurze Antwortzeiten ohne wahrnehmbare Verzögerung anzustreben.
 
+Die Antwortzeit bezeichnet einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst /und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert.
+
 Für diese Performance-Kategorien gilt :
 
-- PK1: Request-Anfrage von Ressourcen unter bekannter ID 
-  - Kontext: 
+- PK1: Request-Anfrage von Ressourcen unter bekannter ID
   - Anforderung: "unter einer Sekunde"
-  - Beispiel: GET /ressource/id 
-  - Ausnahme: DOcREf mit attachment und Binary ausnehmen?
-  - Begründung: ...
+  - Beispiel: GET baseURL/Patient/89186842
+  - Beispiel: GET baseURL/Observation/67890
+  - Beispiel: GET baseURL/DocumentReference/54321
+  - Ausnahme: DocumentReference-Ressource mit Attachment bzw. Binary
+
 - PK2: Suchanfragen zum Auffinden von Ressourcen auf Basis von konkreten Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
   - Anforderung "unter einer Sekunde"
-  - Beispielanfrage basURl/Patient?identifier=12345 
-  - Beispielanfrage baseUrl/Patient?birthdate=13-1
-  - Beispielanfrage - Medikationslisten der einzelnen Patienten für eine Station: 
-  - Ausnahme: -
-- PK3: Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen  (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass Patient.id bekannt.
+  - Beispielanfrage baseURL/Patient?identifier=12345 
+  - Beispielanfrage baseURL/Patient?birthdate=1982-01-13
+  - Beispielanfrage - Medikationsliste der einzelnen Patienten für eine Station: baseURL/MedicationRequest?patient=Patient/89186842
+  - Ausnahme: DocumentReference-Ressource mit Attachment bzw. Binary
+
+- PK3: Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass Patient.id bekannt.
   - Anforderung: "unter 2 Sekunden"
-  - Beispielanfrage: basURl/Condition?code=Kopfschmerz|ICD:R10.0&patient.id=12345
-  - Beispielanfrage: basURl/Condition?patient.id=12345
-- PK4: Suchanfragen auf ->  /Patient? + /Encounter? unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
-  - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten),
+  - Beispielanfrage: baseURL/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|R10.0&patient=89186842
+  - Beispielanfrage: baseURL/Condition?patient=Patient/89186842
+  - Ausnahme: DocumentReference-Ressource mit Attachment bzw. Binary
+
+- PK4: Suchanfragen auf Patient und Encounter unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
+  - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: "unter 5 Sekunden"
-  - Beispielanfrage alle Patienten mit dem Namen Müller: baseUrl/Patient?name.family=Müller
+  - Beispielanfrage - alle Patienten mit dem Namen Müller: baseUrl/Patient?name=Schulz
+  - Beispielanfrage - alle Patienten auf der Station: baseURL/Patient?location=Location/12345 
 
 Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
 -  Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation),
 - die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder
 - Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext
+
+Für die Performance-Kategorien gilt:
 
 - PK5: weitere Suchanfragen bzw. Operationen.
   - Anforderung: "Unter 60 Sekunden"
