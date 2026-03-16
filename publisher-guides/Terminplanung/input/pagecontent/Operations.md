@@ -31,7 +31,7 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
 
     In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT`
 
-4. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
+4. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`. Hierbei wird neben der Appointment-Instanz eine Patienten-Instanz an das Termin-Repository übergeben.
 
     ```json
     {
