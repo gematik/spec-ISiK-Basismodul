@@ -58,18 +58,17 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Speiseroehre, SHALL)
 
-    // Paraemter aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sein können
-        // Optionale Parameter
+    // Paraemter aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
     // MII
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillengroesse, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
-     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillengroesse, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
 
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
@@ -82,8 +81,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert CommonObservationSearchParameters
 
 
-  // Procedure-Profile aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sein können
-  //TODO ändern zu ISiK * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
+  // Procedure-Profile aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
   * resource[+]
     * type = #Procedure
     * insert CapabilityStatementExpectationExt(SHALL)
