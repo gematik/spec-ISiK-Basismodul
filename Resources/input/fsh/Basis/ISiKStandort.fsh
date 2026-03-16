@@ -59,7 +59,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * physicalType 1..1 MS
   * ^short = "Physikalischer Typ des Standorts"
   * ^comment = "Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist."
-* physicalType only $LocationPhysicalTypeVS (extensible)
+* physicalType from $LocationPhysicalTypeVS (extensible)
 * position MS 
   * ^short = "Geodaten eines Standorts"
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
