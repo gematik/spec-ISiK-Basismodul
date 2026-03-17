@@ -46,6 +46,7 @@ Für diese Performance-Kategorien gilt:
   - Anforderung: "unter 2 Sekunden"
   - Beispielanfrage: baseURL/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|R10.0&patient=89186842
   - Beispielanfrage: baseURL/Condition?patient=Patient/89186842
+  - Beispielanfrage: baseURL/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&patient=Patient/89186842
   - Ausnahme: DocumentReference-Ressource mit Attachment bzw. Binary
 
 - PK4: Suchanfragen auf Patient und Encounter unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
