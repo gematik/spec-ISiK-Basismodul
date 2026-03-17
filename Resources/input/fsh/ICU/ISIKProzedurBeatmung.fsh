@@ -12,8 +12,9 @@ Stand 4.3.2026.
 * insert CommonElements
 
 * category 1..
-* category.coding[sct] from MII_VS_ICU_Category_Procedure_Beatmung_SNOMED (required)
-* category.coding[sct].display MS
-* code.coding[sct] from MII_VS_ICU_Code_Procedure_Beatmung_SNOMED (required)
-* code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct].display MS
+* category.coding[SNOMED-CT] from MII_VS_ICU_Category_Procedure_Beatmung_SNOMED (required)
+* category.coding[SNOMED-CT].display MS
+* category.coding[SNOMED-CT] ^patternCoding.system = $sct
+* code.coding[SNOMED-CT] from MII_VS_ICU_Code_Procedure_Beatmung_SNOMED (required)
+* code.coding[SNOMED-CT] ^patternCoding.system = $sct
+* code.coding[SNOMED-CT].display MS

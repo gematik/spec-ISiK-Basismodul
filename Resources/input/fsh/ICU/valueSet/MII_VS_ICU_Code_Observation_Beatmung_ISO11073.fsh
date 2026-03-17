@@ -1,7 +1,7 @@
 ValueSet: MII_VS_ICU_Code_Observation_Beatmung_ISO11073
 Id: mii-vs-icu-code-observation-beatmung-loinc-iso11073
 Title: "MII VS ICU Code Observation Beatmung ISO11073"
-Description: "Dieses ValueSet enthält Codes für die im Kontext einer Bilanz verwendeten Parameter.
+Description: """Dieses ValueSet enthält Codes für die im Kontext einer Bilanz verwendeten Parameter.
 
 Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026"""
 
