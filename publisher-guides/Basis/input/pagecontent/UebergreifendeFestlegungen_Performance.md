@@ -52,7 +52,7 @@ Für diese Performance-Kategorien gilt:
 - PK4: Suchanfragen auf Patient und Encounter unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
   - Anforderung: "unter 5 Sekunden"
-  - Beispielanfrage - alle Patienten mit dem Namen Müller: baseUrl/Patient?name=Schulz
+  - Beispielanfrage - alle Patienten mit dem Namen Müller: baseURL/Patient?name=Müller
   - Beispielanfrage - alle Patienten auf der Station "123": baseURL/_has:Encounter:patient:location=Location/ward123
 
 Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
