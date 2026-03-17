@@ -218,6 +218,17 @@ Description: "Enthält UCUM-Einheiten für die Observation Serumkreatinin"
 * $cs-ucum#mg/dL "milligram per deciliter"
 * $cs-ucum#umol/L "micromol per liter"
 
+ValueSet: ObservationCodesSerumnatrium
+Id: ObservationCodesSerumnatrium
+Description: "Enthält LOINC-Codes für die Observation Serumnatrium"
+* insert Meta
+* $loinc#2951-2 "Sodium [Moles/volume] in Serum or Plasma"
+
+ValueSet: ObservationUnitsSerumnatrium
+Id: ObservationUnitsSerumnatrium
+Description: "Enthält UCUM-Einheiten für die Observation Serumnatrium"
+* insert Meta
+* $cs-ucum#mmol/L "millimol per liter"
 
 ValueSet: ObservationCodesThrombozyten
 Id: ObservationCodesThrombozyten
