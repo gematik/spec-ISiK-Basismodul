@@ -8,9 +8,11 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 Datum: tbd.
 
+* `improve` Hinzufügen eines Profils zur Abbildung von Serumnatrium aus dem Kontext der Organspendeerkennung auf Intensivstationen https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
 * Initiales Draft für die Stufe 6
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
 
 
 Mit der Stufe 6 werden alle Technical Corrections der Stufe 5 bindend.

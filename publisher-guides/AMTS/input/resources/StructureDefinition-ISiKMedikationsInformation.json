@@ -883,14 +883,43 @@
         "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
         "sliceName": "doseQuantity",
         "short": "Dosis",
+        "comment": "Das Must-Support-Flag auf doseQuantity bedeutet, dass produzierende Systeme zur Kodierung der Dosisangaben nach eigenem Ermessen entweder den Datentyp Quantity oder Ratio verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können.",
         "type": [
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
             ]
           }
         ]
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.value",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].value",
+        "short": "Dosiswert",
+        "comment": "**Begründung MS:** Der Dosiswert ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.unit",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].unit",
+        "short": "Menschenlesbare Dosis-Einheit",
+        "comment": "**Begründung MS:** Die menschenlesbare Dosis-Einheit ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.system",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].system",
+        "short": "CodeSystem der Dosisangabe",
+        "comment": "**Begründung MS:** Das CodeSystem der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.code",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].code",
+        "short": "Code der Dosisangabe",
+        "comment": "**Begründung MS:** Der Code der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
       },
       {
         "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseRange",
@@ -913,7 +942,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -926,7 +955,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -969,7 +998,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -1010,7 +1039,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -1023,7 +1052,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -1060,7 +1089,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -1087,7 +1116,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],

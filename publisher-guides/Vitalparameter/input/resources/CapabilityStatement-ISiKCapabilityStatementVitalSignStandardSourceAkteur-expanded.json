@@ -68,7 +68,8 @@
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTroponin",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungGFR",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungThrombozyten",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTSH"
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungTSH",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungSerumnatrium"
           ],
           "_supportedProfile": [
             {
@@ -212,6 +213,14 @@
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
                 }
               ]
             }
@@ -370,6 +379,17 @@
               "name": "encounter",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-encounter",
               "type": "reference"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "code-value-quantity",
+              "definition": "http://hl7.org/fhir/SearchParameter/Observation-code-value-quantity",
+              "type": "composite"
             },
             {
               "extension": [
