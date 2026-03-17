@@ -29,3 +29,10 @@ Description: "Enthaelt alle SNOMED Codes, die eine valide Priorität für den IS
 * $sct#416774000 "Scheduled - priority"
 * $sct#49499008 "Stat"
 * $sct#103391001 "Urgent"
+
+ValueSet: ISiKSubscriptionTopicAppointmentVS
+Id: ISiKSubscriptionTopicAppointmentVS
+Description: "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind."
+* insert Meta
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-change "appointment-change"
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel"
