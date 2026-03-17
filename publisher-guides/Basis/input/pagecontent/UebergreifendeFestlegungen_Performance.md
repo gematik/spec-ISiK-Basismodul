@@ -4,7 +4,11 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Performanc
 
 ### Performance-Aspekte
 
-Für alle REST-Endpunkte muss die Performance bei **Antwortzeiten** so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Dies soll ebenfalls für Lasten, Durchsatz und Skalierbarkeit gelten. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
+Alle beteiligten Akteure (Server wie Clients) tragen eine (Teil-)Verantwortung für die Sicherstellung einer performanten REST-API. Zweck einer performanten REST-API ist, dass die typischen Arbeitsabläufe der jeweiligen Nutzer (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
+
+Zur Sicherstellung dieser Performance-Bedarfe können in einem ersten Schritt die Antwortzeiten der REST-Endpunkte (Server) als Baseline geprüft werden - d. h. im Best-Case und unabhängig von Last-Anforderungen.
+Weitere Performance-Aspekte für Server zu Antwortzeiten unter Last, Lasten und Durchsatz sollten diesen Baseline Anforderungen folgen.
+
 
 Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgende Festlegungen gelten dagegen für Server.
 
