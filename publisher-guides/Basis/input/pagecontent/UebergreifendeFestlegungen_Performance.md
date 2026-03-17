@@ -61,7 +61,7 @@ Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder
 - Abfragen und Operationen zur Stammdatenpflege ohne unmittelbaren Behandlungskontext
 
-Für diese Performance-Kategorien längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
+Für diese Performance-Kategorien sind längere Antwortzeiten grundsätzlich tolerierbar; bei zu erwartenden längeren Laufzeiten sind asynchrone Verfahren möglich.
 
 Für diese Performance-Kategorien gilt:
 
@@ -80,8 +80,8 @@ Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfa
 
 #### Client-Implementierung
 
-Auch Client-Hersteller tragen eine eigene Verantwortung bei der Gewährleistung der Performance für den Betrieb der definierter API-Schnittstelle.
-Dazu gehören insbesondere eine effiziente Abfragestrategie (z. B. Paging statt großer Ergebnismengen), fachlich sinnvolle Suchfilter (z. B. Zeiträume und Organisationseinheiten), die Vermeidung unnötiger Wiederholungsabfragen sowie die Nutzung geeigneter Caching- und Aktualisierungsmechanismen (z. B. ETag/If-None-Match). Ziel ist, nur die für den jeweiligen Anwendungsfall unmittelbar benötigten Daten in angemessener Zeit zu laden.
+Auch Client-Hersteller tragen eine eigene Verantwortung bei der Gewährleistung der Performance für den Betrieb der definierten API-Schnittstelle.
+Dazu gehören insbesondere eine effiziente Abfragestrategie (z. B. Paging statt großer Ergebnismengen), fachlich sinnvolle Suchfilter (z. B. Zeiträume und Organisationseinheiten), die Vermeidung unnötiger Wiederholungsabfragen sowie die Nutzung geeigneter Caching- und Aktualisierungsmechanismen (z. B. ETag/If-None-Match). Ziel ist, nur die für den eigenen Anwendungsfall benötigten Daten in angemessener Zeit zu laden.
 
 **Beispiel** für eine Vitalparameter-App (ein Patient) unter dem Szenario:
 Beim Öffnen der Patientenakte soll die App die zuletzt dokumentierten Vitalparameter (Puls, Blutdruck, Temperatur) schnell anzeigen und anschließend bei Bedarf den Zeitraum erweitern.
@@ -98,13 +98,14 @@ Konkrete Umsetzung der Performance-Aspekte:
 - Vorteil: geringere Antwortzeiten und weniger Speicherverbrauch im Client.
 
 3. Sinnvolle Suchfilter
-- Immer Patient, Kategorie, relevante Codes und Zeitraum einschränken.
+- Wo möglich Patient, Kategorie, relevante Codes und Zeitraum einschränken.
 - Vorteil: weniger irrelevante Daten und stabilere Performance.
 
 4. Vermeidung unnötiger Wiederholungsabfragen
-- Bereits geladene Seiten pro Patient und Zeitraum im Arbeitsspeicher halten.
+- Bereits geladene Seiten pro Patient und Zeitraum im Cache halten.
 - Wechselt der Nutzer zwischen Tabs, keine neue Anfrage, solange Daten noch gültig sind.
 - Such-/Filtereingaben mit kurzer Verzögerung (z. B. 300 ms Debounce), damit nicht jede Eingabe einen Request auslöst.
+- Nutzung des `_lastUpdated` Suchparameter, um nur neue oder aktualisierte Daten seit der letzten Abfrage zu erhalten.
 
 5. Caching und bedingte Aktualisierung (ETag/If-None-Match)
 - Nach erster Antwort ETag aus Header speichern.
@@ -113,6 +114,6 @@ Konkrete Umsetzung der Performance-Aspekte:
 - Vorteil: weniger Netzlast bei häufigem Öffnen derselben Patientenkurve, UI bleibt schnell.
 
 6. Aktualisierungsstrategie für Live-Betrieb
-- Nicht dauerhaft neu laden, sondern intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.
+- Nicht dauerhaft neu laden, sondern über [Subscriptions](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc) intervallbasiert (z. B. alle 60 Sekunden) oder bei explizitem Nutzer-Refresh.
 - Nur den neuen Zeitraum nachladen, z. B. ab letztem bekannten Messzeitpunkt.
 - Vorteil: aktuelle Anzeige ohne unnötige Dauerlast.
