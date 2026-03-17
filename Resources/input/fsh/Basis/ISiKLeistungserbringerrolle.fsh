@@ -24,6 +24,7 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
   * ^short = "Rolle des Leistungserbringers"
   * ^comment = "Motivation MS: Ein System muss die Informationen über die Rolle des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen zu verstehen."
   * coding MS
+  * coding from $KBV_VS_Base_Role_CareVS (extensible)
   * coding only ISiKCoding
 * specialty MS
   * ^short = "Fachgebiet des Leistungserbringers"
