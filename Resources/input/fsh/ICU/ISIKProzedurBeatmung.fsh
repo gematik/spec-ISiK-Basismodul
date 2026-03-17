@@ -1,5 +1,5 @@
 Profile: ISIKProzedurBeatmung
-Parent: ISIKProzedur
+Parent: ISiKProzedur
 Id: isik-prozedur-beatmung
 Title: "isik-prozedur-beatmung"
 Description: """Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.

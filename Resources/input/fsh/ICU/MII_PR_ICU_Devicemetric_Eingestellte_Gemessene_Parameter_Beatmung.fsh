@@ -13,6 +13,6 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * type.coding ^patternCoding.system = "http://snomed.info/sct"
 * type.coding.system 1.. MS
 * type.coding.code 1.. MS
-* source only Reference(MII_PR_ICU_Device)
+// * source only Reference(MII_PR_ICU_Device) - ausgeklammert, um weitere Abhängikgieten zu vermeiden.
 * source MS
 * category MS
