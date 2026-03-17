@@ -1,6 +1,12 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKLaboruntersuchung",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile",
+      "valueCanonical": "http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-resultslab-eu-lab"
+    }
+  ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung",
   "version": "5.1.1",
   "name": "ISiKLaboruntersuchung",
@@ -17,6 +23,26 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "constraint": [
+          {
+            "key": "isik-obs-1",
+            "severity": "error",
+            "human": "Wenn der Status der Observation nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\".",
+            "expression": "(status in ('registered' | 'cancelled' | 'entered-in-error')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          },
+          {
+            "key": "isik-obs-2",
+            "severity": "error",
+            "human": "Wenn die Observation Komponenten enthält und der Status nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein.",
+            "expression": "component.exists() implies ((status in ('registered' | 'cancelled' | 'entered-in-error')) or component.value.exists() or component.dataAbsentReason.exists())",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          }
+        ]
+      },
       {
         "id": "Observation.id",
         "path": "Observation.id",
@@ -50,6 +76,7 @@
         },
         "short": "Analyse-Befund-Code",
         "definition": "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung.",
+        "comment": "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laboruntersuchungen über verschiedene Systeme hinweg.",
         "mustSupport": true
       },
       {
@@ -57,6 +84,14 @@
         "path": "Observation.identifier.type",
         "short": "Art des Identifiers",
         "comment": "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.type.coding",
+        "path": "Observation.identifier.type.coding",
+        "short": "Kodierung des Identifier-Typs",
+        "definition": "**Begründung MS**: Die Kodierung des Identifier-Typs ermöglicht die eindeutige Identifikation der Art des Identifiers.",
         "min": 1,
         "mustSupport": true
       },
@@ -226,7 +261,8 @@
           "rules": "open"
         },
         "short": "Zeitpunkt der Untersuchung",
-        "comment": "**Begründung Must Support**:\nDas Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:\n\n* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),\n* Verlaufsauswertungen und Trendanalysen,\n* zeitlich abhängige Entscheidungsunterstützung,\n* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts.",
+        "comment": "**Begründung Must Support**:\nDie EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -247,6 +283,14 @@
         "path": "Observation.issued",
         "short": "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses",
         "comment": "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte.",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Verantwortliche Person oder Organisation für die Untersuchung",
+        "comment": "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich. \n  **Begründung Kardinalität**: Die EHDS Kombatiblität erfordert mindestens einen Performer. ",
+        "min": 1,
         "mustSupport": true
       },
       {

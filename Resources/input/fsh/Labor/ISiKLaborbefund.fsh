@@ -6,170 +6,109 @@ Description: "Dieses Profil ermöglicht die Abbildung von Laborbefunden eines Pa
 * insert CommonElements
 * identifier MS
   * ^short = "Eindeutiger Identifier des Laborbefunds"
-  * ^definition = "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laborbefunden über verschiedene Systeme hinweg."
+  * ^comment = "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laborbefunden über verschiedene Systeme hinweg."
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds."  
   * system 1.. MS
     * ^short = "Namensraum des Identifiers"
-    * ^definition = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an"
+    * ^comment = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an"
   * value 1.. MS
     * ^short = "Der eigentliche Identifier-Wert"
-    * ^definition = "**Begründung MS**: Der Wert ist die konkrete Kennung der Laborbefunde und muss in ihrem Namensraum eindeutig sein."
-* insert Translation(identifier ^short, de-DE, Identifikator)
-* insert Translation(identifier ^short, en-US, Identifier)
-* insert Translation(identifier ^definition, de-DE, [[Eindeutige Identifikatoren, unter denen dieser Laborbefund geführt wird.]])
-* insert Translation(identifier ^definition, en-US, [[Identifier(s) by which this laboratory report is known.]])
+    * ^comment = "**Begründung MS**: Der Wert ist die konkrete Kennung der Laborbefunde und muss in ihrem Namensraum eindeutig sein."
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains befund 1..1 MS
 * identifier[befund] ^short = "Filler-Identifikator"
-* identifier[befund] ^definition = "Identifikator, der vom Laborinformationssystem (Filler) vergeben wurde."
-* insert Translation(identifier[befund] ^short, de-DE, Filler-Identifikator)
-* insert Translation(identifier[befund] ^short, en-US, Filler identifier)
-* insert Translation(identifier[befund] ^definition, de-DE, [[Identifikator, der vom Laborinformationssystem (Filler) vergeben wurde.]])
-* insert Translation(identifier[befund] ^definition, en-US, [[Identifier assigned by the laboratory information system (Filler).]])
+* identifier[befund] ^comment = "**Begründung MS**: Der Filler-Identifikator ist der vom Labor (Filler) vergebene, eindeutige Identifier eines Laborbefunds und dient zur zuverlässigen Zuordnung und Nachverfolgung dieses Befunds in anderen Systemen (z. B. LIS)."
 * identifier[befund].type 1.. MS
 * identifier[befund].type = $v2-0203#FILL
-* identifier[befund].type.coding MS
-* identifier[befund].type.coding ^slicing.discriminator.type = #value
-* identifier[befund].type.coding ^slicing.discriminator.path = "system"
-* identifier[befund].type.coding ^slicing.rules = #open
-* identifier[befund].type.coding contains fillerV2 1..1 MS
-* identifier[befund].type.coding[fillerV2].system 1.. MS
-* identifier[befund].type.coding[fillerV2].system = "http://terminology.hl7.org/CodeSystem/v2-0203" (exactly)
-* identifier[befund].type.coding[fillerV2].code 1.. MS
-* identifier[befund].type.coding[fillerV2].code = #FILL (exactly)
-* identifier[befund].system 1.. MS
-* identifier[befund].value 1.. MS
-* identifier[befund].assigner 1.. MS
-* basedOn 1.. MS
-  * ^short = "basiert auf"
-  * ^definition = "Bezug zum Laborauftrag, auf dem dieser Laborbefund basiert."
-  * reference MS
-  * identifier MS
-* insert Translation(basedOn ^short, de-DE, Basiert auf)
-* insert Translation(basedOn ^short, en-US, Based on)
-* insert Translation(basedOn ^definition, de-DE, [[Bezug zum Laborauftrag, auf dem dieser Laborbefund basiert.]])
-* insert Translation(basedOn ^definition, en-US, Reference to the laboratory order on which this laboratory report is based.)
 * status MS
-  * ^short = "Status"
-  * ^definition = "registriert | teilweise | vorläufig | final"
-* insert Translation(status ^short, de-DE, Status)
-* insert Translation(status ^short, en-US, Status)
-* insert Translation(status ^definition, de-DE, registriert | teilweise | vorläufig | final)
-* insert Translation(status ^definition, en-US, registered | partial | preliminary | final)
+  * ^short = "Status des Befunds"
+  * ^comment = "**Begründung MS**: Der Status ist unerlässlich für die korrekte Interpretation eines Befunds. **WICHTIGER Hinweis für Implementierer**:  
+  * Alle server-seitigen Implementierungen MÜSSEN in der Lage sein, 
+  die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens jedoch die Werte `final` und `unknown`.
+  * Alle client-seitigen Implementierungen MÜSSEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können, 
+  beispielsweise durch Ausblenden/Durchstreichen von Befunden mit dem status `entered-in-error`"
 * category 1.. MS
-  * ^short = "Kategorie"
-  * ^definition = "Klassifikation des Befunds"
-* insert Translation(category ^short, de-DE, Kategorie)
-* insert Translation(category ^short, en-US, Category)
-* insert Translation(category ^definition, de-DE, Klassifikation des Befunds)
-* insert Translation(category ^definition, en-US, Classification of the report)
+  * ^short = "Befund-Kategorie"
+  * ^comment = "**Begründung MS**: Die Kategorisierung eines Befunds dient der fachlichen Einordnung und erleichtert die Suche und Filterung von Befunden."
+  * system 1.. MS
+    * ^short = "Kodiersystem für die Kategorie"
+    * ^comment = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Kategoriecodes an."
+  * code 1.. MS
+    * ^short = "Kategoriecode"
+    * ^comment = "**Begründung MS**: Der Code dient zur fachlichen Unterscheidung verschiedener Kategorien eines Befunds."
+  * display MS
+    * ^short = "Anzeigename der Kategorie"
+    * ^comment = "**Begründung MS**: Der Anzeigename bietet eine lesbare Darstellung der Kategorie für Benutzer."
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category contains lab-category 1..1 MS
 * category[lab-category] ^short = "Labor-Kategorie"
-* category[lab-category] ^definition = "Kategorie-Slice für Laborbefunde"
-* category[lab-category] ^patternCodeableConcept.coding[0] = $loinc#26436-6
-* category[lab-category] ^patternCodeableConcept.coding[+] = $v2-0074#LAB
-* category[lab-category].coding 2.. MS
-  * system 1.. MS
-  * code 1.. MS
-  * display MS
+* category[lab-category] ^comment = "**Begründung MS**: Kategorie-Slice für Laborbefunde"
+* category[lab-category] = $v2-0074#LAB
 * code MS
   * ^short = "Code"
-  * ^definition = "LOINC Code zur Identifikation des Befunds als Laborbefund."
+  * ^comment = "**Begründung MS**: Der Code ist unerlässlich für die korrekte Interpretation eines Befunds, da er die Art des Befunds angibt."
   * coding MS
+    * ^short = "Codierte Darstellung des Befunds"
+    * ^comment = "**Begründung MS**: Eine codierte Darstellung ermöglicht die maschinelle Verarbeitung und erleichtert die Suche und Filterung von Befunden."
     * system 1.. MS
+      * ^short = "Kodiersystem für den Befundcode"
+      * ^comment = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Befundcodes an."
     * code 1.. MS
+      * ^short = "Befundcode"
+      * ^comment = "**Begründung MS**: Der Code dient zur fachlichen Unterscheidung verschiedener Befunde."
     * display MS
-* insert Translation(code ^short, de-DE, Code)
-* insert Translation(code ^short, en-US, Code)
-* insert Translation(code ^definition, de-DE, LOINC Code zur Identifikation des Befunds als Laborbefund.)
-* insert Translation(code ^definition, en-US, A LOINC code identifying the report as laboratory report.)
+      * ^short = "Anzeigename des Befunds"
+      * ^comment = "**Begründung MS**: Der Anzeigename bietet eine lesbare Darstellung des Befundcodes für Benutzer."
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains loinc-labReport 1..1 MS
 * code.coding[loinc-labReport] = $loinc#11502-2
-* subject 1.. MS
-  * reference MS
-  * identifier MS
-* subject ^short = "Subjekt"
-* subject ^definition = "Subjekt, auf welches sich der Laborbefund bezieht"
-* insert Translation(subject ^short, de-DE, Subjekt)
-* insert Translation(subject ^short, en-US, Subject)
-* insert Translation(subject ^definition, de-DE, [[Subjekt, auf welches sich der Laborbefund bezieht]])
-* insert Translation(subject ^definition, en-US, [[Subject to whom the laboratory report refers]])
+  * ^short = "LOINC-Code für Laborbefund"
+  * ^comment = "**Begründung MS**: Der LOINC-Code 11502-2 ist der etablierte Standardcode für die Kategorie 'Laborbefund' und ermöglicht eine konsistente und interoperable Kennzeichnung von Laborbefunden über verschiedene Systeme hinweg."
+* subject only Reference(Patient)
+* subject 1..1 MS
+  * ^short = "Patientenbezug"
+  * ^comment = "**Begründung Pflichtfeld:** Ein Patientenbezug des Falls muss stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * reference 1.. MS
+    * ^short = "Patienten-Link"
+    * insert Comment-Reference-Subject(Begründung Pflichtfeld)
 * encounter MS
-  * reference MS
-  * identifier MS
-* encounter ^short = "Fall oder Kontakt"
-* encounter ^definition = "Fall oder Kontakt, in dem der Laborbefund erstellt wurde."
-* insert Translation(encounter ^short, de-DE, Fall oder Kontakt)
-* insert Translation(encounter ^short, en-US, Encounter)
-* insert Translation(encounter ^definition, de-DE, [[Fall oder Kontakt, in dem der Laborbefund erstellt wurde.]])
-* insert Translation(encounter ^definition, en-US, [[Encounter during which the laboratory report was created.]])
-* effective[x] 1.. MS
+  * ^short = "Aufenthaltsbezug"
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * reference 1.. MS
+    * ^short = "Encounter-Link"
+    * insert Comment-Reference-Encounter-with-hint(Begründung Pflichtfeld)
+* effective[x] MS
   * ^short = "Klinisches Bezugsdatum"
-  * ^definition = """
-    Zeitpunkt, zu dem die gemessene Eigenschaft im Probenmaterial (e.g. Analytkonzentration) mutmaßlich der Eigenschaft im Patienten entsprach. 
-    Wenn der Zeitpunkt der Probenentnahme angegeben ist, wird meist dieser Zeitpunkt verwendet. 
-    Andernfalls wird zumeist behelfsmäßig der Probeneingang im Labor gewählt. 
-    Dieses Element ist wichtig um verschiedene Analysen im Zeitverlauf sortieren zu können.
-    """
-* insert Translation(effective[x] ^short, de-DE, Klinisches Bezugsdatum)
-* insert Translation(effective[x] ^short, en-US, Clinical reference Date)
-* insert Translation(effective[x] ^definition, de-DE, [[Zeitpunkt, zu dem die gemessene Eigenschaft im Probenmaterial e.g. Analytkonzentration mutmaßlich der Eigenschaft im Patienten entsprach.]])
-* insert Translation(effective[x] ^definition, en-US, [[The time when the measured property in the specimen material e.g. analyte concentration is presumed to pertain to the patient.]])
-* effective[x] only dateTime
-* effective[x].extension contains mii-ex-labor-quelle-klinisches-bezugsdatum named QuelleKlinischesBezugsdatum 0..1 MS
-* effective[x].extension[QuelleKlinischesBezugsdatum] ^short = "Quelle des klinischen Bezugsdatums"
-* effective[x].extension[QuelleKlinischesBezugsdatum] ^definition = "Datum der Probenentnahme | Datum des Eingangs der Probe im Labor"
-* insert Translation(effective[x].extension[QuelleKlinischesBezugsdatum] ^short, de-DE, Quelle des klinischen Bezugsdatums)
-* insert Translation(effective[x].extension[QuelleKlinischesBezugsdatum] ^short, en-US, Source of clinical reference date)
-* insert Translation(effective[x].extension[QuelleKlinischesBezugsdatum] ^definition, de-DE, Datum der Probenentnahme | Datum des Eingangs der Probe im Labor)
-* insert Translation(effective[x].extension[QuelleKlinischesBezugsdatum] ^definition, en-US, Specimen collection date | Date sample received in laboratory)
-* issued 1.. MS
-  * ^short = "Dokumentationsdatum"
-  * ^definition = "Zeitpunkt, an dem der Laborbefund dokumentiert wurde."
-* insert Translation(issued ^short, de-DE, Dokumentationsdatum)
-* insert Translation(issued ^short, en-US, Issued)
-* insert Translation(issued ^definition, de-DE, [[Zeitpunkt, an dem der Laborbefund dokumentiert wurde.]])
-* insert Translation(issued ^definition, en-US, [[The time when the laboratory report was documented.]])
+  * ^comment = "**Begründung Must Support**: Das Datum und die Uhrzeit der Untersuchungen des Befundes sind für die Interpretation der Untersuchungsergebnisse relevant. Sie ermöglichen die zeitliche Einordnung der Ergebnisse, was insbesondere bei Verlaufsauswertungen, Trendanalysen und zeitabhängiger Entscheidungsunterstützung von großer Bedeutung ist."
+* effectiveDateTime MS
+  * ^short = "Zeitpunkt (Datum oder Datum + Uhrzeit)"
+  * ^comment = "**Begründung MS**: Das Element `effectiveDateTime` ermöglicht die Angabe eines konkreten Zeitpunkts (Datum oder Datum + Uhrzeit) für das klinische Bezugsdatum eines Befunds. Es ist von zentraler Bedeutung, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen und die klinische Relevanz der Ergebnisse zu bewerten."
+* issued MS
+  * ^short = "Zeitpunkt der Verfügbarkeit des Befunds"
+  * ^comment = "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden."
 * performer MS
   * ^short = "Ausführende*r"
-  * ^definition = "Verantwortliche Person oder Organisation, die für die Ausstellung des Befunds verantwortlich ist."
+  * ^comment = "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich."
   * reference MS
-  * identifier MS
-* insert Translation(performer ^short, de-DE, Ausführende*r)
-* insert Translation(performer ^short, en-US, Performer)
-* insert Translation(performer ^definition, de-DE, [[Verantwortliche Person oder Organisation, die für die Ausstellung des Befunds verantwortlich ist.]])
-* insert Translation(performer ^definition, en-US, [[Person or organization responsible for issuing the report.]])
+    * ^short = "Performer-Link"
+    * ^comment = "**Begründung MS**: Die Referenz ermöglicht die Verknüpfung mit der ausführenden Person oder Organisation"
 * specimen MS
   * ^short = "Probenmaterial"
-  * ^definition = "Bioproben, auf denen dieser Laborbefund basiert."
+  * ^comment = "**Begründung MS**: Das Probenmaterial, auf dem die Laboruntersuchungen basieren, ist für die Interpretation der Ergebnisse von großer Bedeutung. Es ermöglicht die Nachvollziehbarkeit und Validierung der Befunde, da bestimmte Ergebnisse nur in Bezug auf spezifische Probenmaterialien korrekt interpretiert werden können."
   * reference MS
-  * identifier MS
-* insert Translation(specimen ^short, de-DE, Probenmaterial)
-* insert Translation(specimen ^short, en-US, Specimen)
-* insert Translation(specimen ^definition, de-DE, [[Bioproben, auf denen dieser Laborbefund basiert.]])
-* insert Translation(specimen ^definition, en-US, [[Details about the specimen on which this diagnostic report is based.]])
+    * ^short = "Specimen-Link"
+    * ^comment = "**Begründung MS**: Die Referenz ermöglicht die Verknüpfung mit dem Probenmaterial."
 * result 1.. MS
   * ^short = "Ergebnis"
-  * ^definition = "Laborergebnisse, die Teil dieses Laborbefunds sind."
+  * ^comment = "**Begründung MS**: Die Laboruntersuchungen eines Befunds müssen mit ihren Ergebnissen verknüpft werden, um eine vollständige und aussagekräftige Dokumentation der Befunde zu gewährleisten."
   * reference MS
-* insert Translation(result ^short, de-DE, Ergebnis)
-* insert Translation(result ^short, en-US, Result)
-* insert Translation(result ^definition, de-DE, [[Laborergebnisse, die Teil dieses Laborbefunds sind.]])
-* insert Translation(result ^definition, en-US, [[Laboratory test results that are part of this diagnostic report.]])
-* conclusion MS
-  * ^short = "Schlussfolgerung"
-  * ^definition = "Klinische Schlussfolgerung/Interpretation der Testergebnisse"
-* insert Translation(conclusion ^short, de-DE, Schlussfolgerung)
-* insert Translation(conclusion ^short, en-US, Conclusion)
-* insert Translation(conclusion ^definition, de-DE, [[Klinische Schlussfolgerung/Interpretation der Testergebnisse]])
-* insert Translation(conclusion ^definition, en-US, [[Clinical conclusion/interpretation of test results]])
+    * ^short = "Ergebnis-Link"
+    * ^comment = "**Begründung MS**: Die Referenz ermöglicht die Verknüpfung mit den Laborergebnissen, die Teil dieses Laborbefunds sind."

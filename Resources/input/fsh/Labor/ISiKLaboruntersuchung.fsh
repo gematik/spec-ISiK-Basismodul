@@ -10,6 +10,8 @@ Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmittelther
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
 * insert CommonElements
+* insert CompliesWith(ObservationResultsLaboratoryEu)
+* obeys isik-obs-1 and isik-obs-2
 * identifier MS
   * ^short = "Eindeutiger Identifier der Laboruntersuchung"
   * ^comment = "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laboruntersuchungen über verschiedene Systeme hinweg."
@@ -73,16 +75,15 @@ In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl
   * ^comment = "**Begründung MS**: Dient der Einordnung in den klinischen Verlauf und ermöglicht Kontextinformationen wie Aufnahmediagnose oder behandelnde Abteilung."
   * reference MS
     * insert Comment-Reference-Encounter(Begründung MS)
-* effective[x] MS
+* effective[x] 1.. MS
   * ^short = "Zeitpunkt der Untersuchung"
   * ^comment = "**Begründung Must Support**:
-Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:
-
-* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),
-* Verlaufsauswertungen und Trendanalysen,
-* zeitlich abhängige Entscheidungsunterstützung,
-* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts."
+Die EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen."
 * effectiveDateTime MS
+* performer 1.. MS
+  * ^short = "Verantwortliche Person oder Organisation für die Untersuchung"
+  * ^comment = "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich. 
+  **Begründung Kardinalität**: Die EHDS Kombatiblität erfordert mindestens einen Performer. "
 * issued MS
   * ^short = "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses"
   * ^comment = "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte."
@@ -100,7 +101,7 @@ Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Labo
     * ^short = "Kodiersystem für die Einheit (UCUM)"
   * system = $cs-ucum
   * code 1.. MS
-    * ^short = "UCUM-Code der Einheit"
+    * ^short = "UCUM-Code der Einheit"    
 * dataAbsentReason MS
   * ^short = "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt"
   * ^comment = "**Begründung Must Support**:
@@ -171,3 +172,13 @@ Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf d
     * high MS
   * text MS
     * ^short = "Freitextbeschreibung des Referenzbereichs"
+
+Invariant: isik-obs-1
+Description: "Wenn der Status der Observation nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\"."
+Expression: "(status in ('registered' | 'cancelled' | 'entered-in-error')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()"
+Severity: #error
+
+Invariant: isik-obs-2
+Description: "Wenn die Observation Komponenten enthält und der Status nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein."
+Expression: "component.exists() implies ((status in ('registered' | 'cancelled' | 'entered-in-error')) or component.value.exists() or component.dataAbsentReason.exists())"
+Severity: #error
