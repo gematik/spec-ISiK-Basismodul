@@ -14,7 +14,7 @@ Description: """Die Datenstruktur wurde dem laufenden Stand der Entwicklung des 
 * partOf ^definition = "Dasjenige extrakorporale Verfahren, im Rahmen dessen der vorliegende Parameter (die Daten dieser Observation-Ressource) erhoben wurden."
 * status MS
 * category 1..1 MS
-* category from MII_PR_ICU_Unterstuezungsdruck_Beatmung (required)
+* category from MII_VS_ICU_Category_Procedure_Beatmung_SNOMED (required)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open

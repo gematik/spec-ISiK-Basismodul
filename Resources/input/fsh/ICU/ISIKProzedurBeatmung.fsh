@@ -1,4 +1,4 @@
-Profile: ISIKProzedurBeatmung
+Profile: ISiKProzedurBeatmung
 Parent: ISiKProzedur
 Id: isik-prozedur-beatmung
 Title: "isik-prozedur-beatmung"

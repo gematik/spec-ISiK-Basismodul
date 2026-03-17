@@ -72,7 +72,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
 
     // MII Beatmung
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Unterstuezungsdruck_Beatmung, SHALL)
-    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemfrequenz_Beatmet, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontane_Atemfrequenz_Beatmet, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemzugvolumen, SHALL)
 
     * interaction[+]
