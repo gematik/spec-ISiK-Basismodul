@@ -55,7 +55,7 @@ Für diese Performance-Kategorien gilt:
   - Beispielanfrage - alle Patienten mit dem Namen Müller: baseURL/Patient?name=Müller
   - Beispielanfrage - alle Patienten auf der Station "123": baseURL/_has:Encounter:patient:location=Location/ward123
 
-Als vorwiegend unkritisch gelten Abfragen (PK - PK6), die z. B.
+Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
 -  Schreiboperationen, die nicht in der akuten Entscheidungssituation, sondern zeitnah im Verlauf erforderlich sind (z.B. Nachdokumentation),
 - die überwiegend für Verwaltung, Abrechnung, Controlling, Stammdatenpflege, Reporting oder technische Administration genutzt werden oder
