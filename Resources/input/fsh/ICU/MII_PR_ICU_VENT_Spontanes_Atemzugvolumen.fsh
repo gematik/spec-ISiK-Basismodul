@@ -17,4 +17,4 @@ Description: """Die Datenstruktur wurde dem laufenden Stand der Entwicklung des 
 * code.coding[IEEE-11073] ..0
 * code.coding[IEEE-11073] ^patternCoding.system = "urn:iso:std:iso:11073:10101"
 * effective[x] 1..
-* valueQuantity = $ucum#mL
+* valueQuantity = $cs-ucum#mL
