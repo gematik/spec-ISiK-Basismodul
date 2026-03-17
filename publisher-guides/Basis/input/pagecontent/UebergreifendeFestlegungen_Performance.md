@@ -36,7 +36,7 @@ Für diese Performance-Kategorien gilt:
     - oder : baseURL/DocumentReference?_id=54321
   - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
 
-- PK2: Suchanfragen zum Auffinden von Ressourcen auf Basis von konkreten Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
+- PK2: Suchanfragen zum Auffinden von Ressourcen auf Basis von weitestgehend eindeutigen Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
   - Anforderung "unter einer Sekunde"
   - Beispielanfrage baseURL/Patient?identifier=12345 
   - Beispielanfrage baseURL/Patient?birthdate=1982-01-13
