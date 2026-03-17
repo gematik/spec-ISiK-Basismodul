@@ -19,6 +19,19 @@
   "differential": {
     "element": [
       {
+        "id": "Observation",
+        "path": "Observation",
+        "constraint": [
+          {
+            "key": "obs-value-or-dataAbsentReason",
+            "human": "Observation must have either value or dataAbsentReason.",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-score-rass",
+            "severity": "error",
+            "expression": "value.exists() xor dataAbsentReason.exists()"
+          }
+        ]
+      },
+      {
         "id": "Observation.id",
         "path": "Observation.id",
         "short": "serverseitige, interne ID des Datensatzes",
@@ -40,30 +53,61 @@
       {
         "id": "Observation.category",
         "path": "Observation.category",
-        "min": 1,
-        "patternCodeableConcept": {
-          "coding": [
+        "slicing": {
+          "discriminator": [
             {
-              "code": "survey",
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              "type": "pattern",
+              "path": "$this"
             }
-          ]
-        }
+          ],
+          "rules": "open"
+        },
+        "min": 1
       },
       {
-        "id": "Observation.code",
-        "path": "Observation.code",
-        "comment": "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally.",
+        "id": "Observation.category:exam",
+        "path": "Observation.category",
+        "sliceName": "exam",
+        "min": 1,
+        "max": "1",
         "patternCodeableConcept": {
           "coding": [
             {
-              "code": "1345050000",
-              "system": "http://snomed.info/sct",
-              "display": "Richmond Agitation Sedation Scale score (observable entity)"
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
             }
           ]
         },
         "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "fixedUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "comment": "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally.",
+        "fixedCode": "1345050000"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "path": "Observation.code.coding.display",
+        "patternString": "Richmond Agitation Sedation Scale score (observable entity)"
       },
       {
         "id": "Observation.subject",
@@ -115,9 +159,8 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "short": "RASS value",
+        "short": "RASS Value",
         "comment": "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8).",
-        "min": 1,
         "type": [
           {
             "code": "CodeableConcept"
@@ -130,13 +173,38 @@
         }
       },
       {
-        "id": "Observation.value[x].coding.system",
+        "id": "Observation.value[x].coding",
+        "path": "Observation.value[x].coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x].coding:Loinc",
+        "path": "Observation.value[x].coding",
+        "sliceName": "Loinc",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://loinc.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].coding:Loinc.system",
         "path": "Observation.value[x].coding.system",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding.code",
+        "id": "Observation.value[x].coding:Loinc.code",
         "path": "Observation.value[x].coding.code",
         "min": 1,
         "mustSupport": true

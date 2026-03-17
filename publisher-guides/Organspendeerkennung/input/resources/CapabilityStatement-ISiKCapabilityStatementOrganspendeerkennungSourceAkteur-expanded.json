@@ -536,8 +536,16 @@
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-score-rass",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-intrakranieller-druck-icp",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-muv-zerebraler-perfusionsdruck",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenform",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenbefund",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-unterstuezungsdruck-beatmung",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-spontane-atemfrequenz-beatmet",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-spontanes-atemzugvolumen",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchungSerumnatrium"
           ],
           "_supportedProfile": [
@@ -562,6 +570,70 @@
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
                 }
               ]
             },
@@ -788,6 +860,18 @@
               "name": "component-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-component-code",
               "type": "token"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "name": "code:in",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
+              "type": "token",
+              "documentation": "**Hintergrund:**  \n        Der Modifier ermöglicht die Suche nach `Observation.code`-Codes, die in einem angegebenen ValueSet enthalten sind. Insbesondere bei der Suche nach dem Vorhandensein von bestimmten Prozeduren (Beatmung, Reanimation) im Kontext der IHA-Diagnostik ist dies von Bedeutung.\n\n        **Beispiel:**    \n        `GET [base]/Observation?code:in=https://example.org/fhir/ValueSet/observation-codes`    \n        **Anwendungshinweis:**   \n        Der Modifier `:in` filtert nach `Observation.code`-Codes, die in dem angegebenen ValueSet enthalten sind (kanonische ValueSet-URL).  \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#in)."
             }
           ]
         },
@@ -805,7 +889,7 @@
           ],
           "supportedProfile": [
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurReanimation",
-            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-beatmung"
+            "https://gematik.de/fhir/isik/StructureDefinition/isik-prozedur-beatmung"
           ],
           "_supportedProfile": [
             {
