@@ -10,7 +10,7 @@ Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmittelther
 In FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen."
 * insert Meta
 * insert CommonElements
-* insert CompliesWith(ObservationResultsLaboratoryEu)
+//* insert CompliesWith(ObservationResultsLaboratoryEu)
 * obeys isik-obs-1 and isik-obs-2
 * identifier MS
   * ^short = "Eindeutiger Identifier der Laboruntersuchung"

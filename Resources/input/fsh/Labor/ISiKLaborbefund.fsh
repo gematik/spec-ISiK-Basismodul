@@ -34,15 +34,18 @@ Description: "Dieses Profil ermöglicht die Abbildung von Laborbefunden eines Pa
 * category 1.. MS
   * ^short = "Befund-Kategorie"
   * ^comment = "**Begründung MS**: Die Kategorisierung eines Befunds dient der fachlichen Einordnung und erleichtert die Suche und Filterung von Befunden."
-  * system 1.. MS
-    * ^short = "Kodiersystem für die Kategorie"
-    * ^comment = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Kategoriecodes an."
-  * code 1.. MS
-    * ^short = "Kategoriecode"
-    * ^comment = "**Begründung MS**: Der Code dient zur fachlichen Unterscheidung verschiedener Kategorien eines Befunds."
-  * display MS
-    * ^short = "Anzeigename der Kategorie"
-    * ^comment = "**Begründung MS**: Der Anzeigename bietet eine lesbare Darstellung der Kategorie für Benutzer."
+  * coding MS
+    * ^short = "Codierte Darstellung der Befund-Kategorie"
+    * ^comment = "**Begründung MS**: Eine codierte Darstellung ermöglicht die maschinelle Verarbeitung und erleichtert die Suche und Filterung von Befunden."
+    * system 1.. MS
+      * ^short = "Kodiersystem für die Kategorie"
+      * ^comment = "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Kategoriecodes an."
+    * code 1.. MS
+      * ^short = "Kategoriecode"
+      * ^comment = "**Begründung MS**: Der Code dient zur fachlichen Unterscheidung verschiedener Kategorien eines Befunds."
+    * display MS
+      * ^short = "Anzeigename der Kategorie"
+      * ^comment = "**Begründung MS**: Der Anzeigename bietet eine lesbare Darstellung der Kategorie für Benutzer."
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -112,3 +115,23 @@ Description: "Dieses Profil ermöglicht die Abbildung von Laborbefunden eines Pa
   * reference MS
     * ^short = "Ergebnis-Link"
     * ^comment = "**Begründung MS**: Die Referenz ermöglicht die Verknüpfung mit den Laborergebnissen, die Teil dieses Laborbefunds sind."
+
+Instance: ExampleISiKLaborbefund1
+InstanceOf: ISiKLaborbefund
+Usage: #example
+* identifier[befund].type = $v2-0203#FILL
+* identifier[befund].system = "https://example.org/fhir/sid/laborberichte"
+* identifier[befund].value = "0987654321"
+* status = #final
+* category[lab-category] = $v2-0074#LAB
+* code.coding[loinc-labReport] = $loinc#11502-2
+* subject = Reference(PatientinMusterfrau)
+* encounter = Reference(Fachabteilungskontakt)
+* effectiveDateTime = "2021-09-01T12:00:00Z"
+* issued = "2021-09-01T12:30:00Z"
+* performer = Reference(PractitionerWalterArzt)
+* result[0] = Reference(ExampleISiKLaboruntersuchungCRP1)
+* result[1] = Reference(ExampleISiKLaboruntersuchungHb1)
+* result[2] = Reference(ExampleISiKLaboruntersuchungThrombozyten1)
+* result[3] = Reference(ExampleISiKLaboruntersuchungSerumkreatinin1)
+* result[4] = Reference(ExampleISiKLaboruntersuchungGFR1)
