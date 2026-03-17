@@ -6,7 +6,7 @@ topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Performanc
 
 Für alle REST-Endpunkte muss die Performance bei **Antwortzeiten** so ausgelegt sein, dass die typischen Arbeitsabläufe der jeweiligen Nutzerrolle (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Dies soll ebenfalls für Lasten, Durchsatz und Skalierbarkeit gelten. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
 
-Zur Gewährleistung davon abgeleiteter Performance-Anforderungen während der Entwicklung tragen sowohl Client- als auch Server-Hersteller bei, wobei konkrete Anforderungen in ISiK für letztere formuliert werden (siehe Hinweise zur Client-Implementierung unten)
+Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgende Festlegungen gelten dagegen für Server.
 
 #### Performance-Kategorien
 
