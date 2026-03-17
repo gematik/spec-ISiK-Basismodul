@@ -125,9 +125,11 @@ RuleSet: ISiKVitalsignCommons
     * ^comment = "Motivation MS: Semantische Kodierung"
     * ^short = "Coding"
   * coding[loinc] MS
+  * coding[loinc] only ISiKLoincCoding
     * ^short = "LOINC Kodierung"
     * ^comment = "Motivation MS: Kodierung des Vitalparameters mittels LOINC."
   * coding[snomed] MS
+  * coding[snomed] only ISiKSnomedCTCoding
     * ^short = "SNOMED CT Kodierung"
     * ^comment = "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT."
 * subject MS
@@ -298,6 +300,12 @@ RuleSet: Comment-Reference-Encounter(Einleitung)
 * ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
+RuleSet: EU-BodySiteExtension
+* bodySite.extension contains $BodyStructureReferenceExtension named BodyStructureReference ..1
+* bodySite.extension[BodyStructureReference]
+  * ^short = "Referenz auf eine BodyStructure-Ressource"
+  * ^comment = "Im Kontext des Allingments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe wurde diese Extenion hinzugefügt. Es besteht aber noch keine Must-Support Anforderung, da die Abbildung der Lateralität noch in der Diskussion ist und somit keine klare Vorgabe für die Nutzung der Extension gegeben werden kann. Sobald dies geklärt ist, wird die Anforderung entsprechend angepasst. Eine referenzierte BodyStructure-Ressource sollte valide gegen [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html) sein."
 
 RuleSet: CompliesWith(canonical)
 * ^extension[$compliesWith][+].valueCanonical = Canonical({canonical})

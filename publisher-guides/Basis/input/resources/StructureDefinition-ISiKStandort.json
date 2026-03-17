@@ -1,6 +1,12 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKStandort",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile",
+      "valueCanonical": "http://hl7.eu/fhir/base/StructureDefinition/location-eu-core"
+    }
+  ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort",
   "version": "5.1.1",
   "name": "ISiKStandort",
@@ -116,7 +122,11 @@
         "short": "Physikalischer Typ des Standorts",
         "comment": "Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist.",
         "min": 1,
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-physical-type"
+        }
       },
       {
         "id": "Location.position",

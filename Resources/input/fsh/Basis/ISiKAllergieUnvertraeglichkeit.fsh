@@ -68,12 +68,12 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
   * coding[snomed-ct] MS
   * coding[snomed-ct] only ISiKSnomedCTCoding
   * coding[ask] MS
-  * coding[ask] only CodingASK
+  * coding[ask] only ISiKASKCoding
     * system MS
     * code MS
     * display MS
   * coding[atc] MS
-  * coding[atc] only CodingATC
+  * coding[atc] only ISiKATCCoding
     * system MS
     * version MS
     * code MS

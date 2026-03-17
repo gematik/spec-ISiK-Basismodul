@@ -121,9 +121,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * category.coding contains
     LOINC 0..1 MS and
     IHE 0..1 MS
+* category.coding[LOINC] only ISiKLoincCoding
 * category.coding[LOINC] ^patternCoding.system = $loinc
-  * system 1..
-  * code 1..
 * category.coding[IHE] ^patternCoding.system = "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
   * system 1..
   * code 1..
