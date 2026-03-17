@@ -13,7 +13,10 @@ Weitere Performance-Aspekte für Server zu Antwortzeiten unter Last, Lasten und 
 Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgenden Festlegungen gelten dagegen für Server.
 
 #### Performance-Kategorien
-Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jetzigen Zeitpunkt alle auf den Aspekt **Antwortzeit als Baseline ohne signifikante Lasteinwirkung**.
+Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jetzigen Zeitpunkt alle auf den Aspekt **Antwortzeit als Baseline**.
+
+Die Antwortzeit bezeichnet dabei  einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.
+
 
 Die Antwortzeit dabei bezeichnet einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert.
 
