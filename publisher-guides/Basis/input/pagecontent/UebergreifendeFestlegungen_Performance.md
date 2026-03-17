@@ -10,7 +10,7 @@ Zur Sicherstellung dieser Performance-Bedarfe können in einem ersten Schritt di
 Weitere Performance-Aspekte für Server zu Antwortzeiten unter Last, Lasten und Durchsatz sollten diesen Baseline Anforderungen folgen.
 
 
-Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgende Festlegungen gelten dagegen für Server.
+Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- als auch Server-Hersteller beitragen müssen, werden unten weitere Hinweise zur Client-Implementierung formuliert. Die folgenden Festlegungen gelten dagegen für Server.
 
 #### Performance-Kategorien
 Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jetzigen Zeitpunkt alle auf den Aspekt **Antwortzeit als Baseline ohne signifikante Lasteinwirkung**.
