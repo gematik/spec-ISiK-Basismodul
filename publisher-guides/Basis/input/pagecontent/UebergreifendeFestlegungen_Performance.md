@@ -41,7 +41,7 @@ Für diese Performance-Kategorien gilt:
   - Beispielanfrage baseURL/Patient?identifier=12345 
   - Beispielanfrage baseURL/Patient?birthdate=1982-01-13
   - Beispielanfrage - Medikationsliste der einzelnen Patienten für eine Station: baseURL/MedicationRequest?patient=Patient/89186842
-  - Ausnahme: DocumentReference-Ressource mit Attachment bzw. Binary
+  - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
 
 - PK3: Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass Patient.id bekannt.
   - Anforderung: "unter 2 Sekunden"
