@@ -78,6 +78,14 @@ Für diese Performance-Kategorien gilt:
 
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 
+
+**Hinweis zur Server-Implementierung bei Patienten- und Encounter-unabhängigen Suchen:**
+
+Bei den Patienten- und Encounter-unabhängigen Suchen DARF ab einer bestimmten Komplexität der Suchanfrage ein Server OperationOutcomes mit Codes wie z.B. `too-costly` zurückgeben (es liegt also im Ermessen des Herstellers).
+Vor einer solchen Lösung SOLLEN aber geeignete Mechanismen - wie Pagination - in Betracht gezogen werden.
+
+Ein Beispiel für too-costly - alle Observations der letzten Jahre : baseURL/Observation?_lastUpdated=ge2020
+
 #### Client-Implementierung
 
 Auch Client-Hersteller tragen eine eigene Verantwortung bei der Gewährleistung der Performance für den Betrieb der definierten API-Schnittstelle.
@@ -94,8 +102,8 @@ Konkrete Umsetzung der Performance-Aspekte:
 
 2. Paging statt Gesamtliste
 - Ergebnisse seitenweise laden, z. B. 50 Werte pro Seite.
-- Bei Verlaufsgrafik nur weitere Seiten nachladen, wenn der Nutzer den Zeitraum vergrößert oder scrollt.
-- Vorteil: geringere Antwortzeiten und weniger Speicherverbrauch im Client.
+- Bei Verlaufsgrafik weitere Seiten im Hintergrund im Voraus nachladen, z. B. wenn der Nutzer scrollt.
+- Vorteil: Anzeigezeit geringer im Frontend.
 
 3. Sinnvolle Suchfilter
 - Wo möglich Patient, Kategorie, relevante Codes und Zeitraum einschränken.
