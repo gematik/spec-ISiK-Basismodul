@@ -124,5 +124,78 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * insert Expectation(#SHALL)
     * searchRevInclude = "Encounter:part-of"
       * insert Expectation(#SHALL)
-
+  * resource[+]
+    * type = #PractitionerRole
+    * insert Expectation(#MAY)
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKLeistungserbringerrolle"
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "active"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-active"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?active=true`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?identifier=42`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "organization"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-organization"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?organization=Organization/test`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "practitioner"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?practitioner=Practitioner/test`        
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "        
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "role"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-role"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?role=doctor`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "specialty"
+      * definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-specialty"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/PractitionerRole?specialty=cardiology`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+  
   
