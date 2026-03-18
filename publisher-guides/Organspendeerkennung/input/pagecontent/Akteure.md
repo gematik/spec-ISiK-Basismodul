@@ -1,4 +1,4 @@
----
+﻿---
 topic: Akteure
 ---
 
@@ -33,7 +33,7 @@ Dieser Akteur ist der umfassendste Akteur im Kontext der Organspendeerkennung. E
 Profile: Profile aus dem Modul Vitalparameter (MI-I) - beinhaltet neben zahlreichen weiteren Profilen auch Profile aus dem Modul Organspende
 Interaction: READ, SEARCH
 
-Zur genauen Beschreibung und Liste der Interaktionen siehe [hier](https://simplifier.net/guide/isik-icu-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?#ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur).
+Zur genauen Beschreibung und Liste der Interaktionen siehe [hier](https://gemspec.gematik.de/ig/fhir/isik/icu/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur.html).
 
 #### Erklärung zu weiteren Capability Statements
 
@@ -44,7 +44,7 @@ Um eine Minimalliste der zu implementierenden Profile einzusehen, sind die impor
 Eine Festlegung zur Implementierung erfolgt im Rahmen der Definition der bestätigungsrelevanten Systeme.
 
 <!-- ANF-ICU-002 -->
-Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
+Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html) MÜSSEN folgenden Akteur implementieren:
 - [Akteur - VitalSign ICU Source Extended](https://simplifier.net/isik-stufe-5/ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur/~json)
 
 Primär hervorzuheben sind entsprechend der Definition der DKG dabei.

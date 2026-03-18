@@ -62,7 +62,7 @@ Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSyst
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
-Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+Alias: $compliesWith = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $vs-ti-medication-snomed-ct = https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs
