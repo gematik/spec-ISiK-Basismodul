@@ -14,8 +14,6 @@ Das Profi ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welche
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
-
-
 * criteria from ISiKSubscriptionTopicAppointmentVS (required)
 
 
