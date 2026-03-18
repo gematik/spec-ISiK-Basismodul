@@ -6,6 +6,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * `documentation` Update und Verbesserung der Ressourcen-Angaben
 * `documentation` Initiale Anpassung der IG-Struktur auf Basis des IG Publishers für ISiK-Basis Stufe 6
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
