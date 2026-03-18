@@ -1,0 +1,40 @@
+Profile: ISiKImplantat
+Parent: Device
+Id: ISiKImplantat
+Description: "
+Dieses Profil ermöglicht die strukturierte Abbildung von Implantaten eines Patienten in ISiK-Szenarien.
+Implantate stellen dauerhaft oder langfristig im Körper befindliche Medizinprodukte dar und sind häufig von hoher klinischer Relevanz, da sie Diagnostik, Therapieentscheidungen sowie zukünftige Behandlungsmaßnahmen unmittelbar beeinflussen können.
+
+### Motivation
+
+Die standardisierte Bereitstellung von Implantatinformationen unterstützt insbesondere:
+
+    die eindeutige Identifikation implantierter Medizinprodukte,
+
+    die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen,
+
+    die Nachverfolgbarkeit im Rahmen von Sicherheitsmeldungen und Rückrufaktionen sowie
+
+    die Dokumentation wesentlicher Implantatmerkmale (z. B. Hersteller, Modell, Seriennummer).
+
+Darüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.
+Als Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.
+
+Fokus auf Implantate, da Hilfsmittels außerhalb eines Entlassbriefes kaum Relevanz für eine Patient-Summary haben. Diese werden höchstwahrscheinlich auch nicht sauber dokumentiert.
+"
+* insert Meta
+* insert CommonElements
+* insert CompliesWith(DeviceEUHdr)
+* status 1.. MS
+  * ^short = "Status des Implantats"
+  * ^comment = "Begründung MS: Der Status gibt an, ob das Implantat aktuell im Körper des Patienten vorhanden ist oder nicht 
+  und stellt somit eine überaus wichtige medizinische Information dar, die unmittelbar Einfluss auf Diagnostik, Therapieentscheidungen und zukünftige Behandlungsmaßnahmen haben kann. 
+  Daher ist die Angabe des Status zwingend erforderlich."
+* type 1.. MS
+  * ^short = "Art des Implantats"
+  * ^comment = "Begründung MS: Die Angabe der Art des Implantats ermöglicht eine eindeutige Identifikation und Klassifizierung des implantierten Medizinprodukts, 
+  was für die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen von entscheidender Bedeutung ist. 
+  Daher ist die Angabe der Art des Implantats zwingend erforderlich."
+* patient 1..1 MS
+  * ^short = "Patient mit Implantat"
+  * ^comment = "Begründung MS: Die Zuordnung zu einem Patient ist für den Datenaustausch im Rahmen von ISiK-Szenarien unerlässlich."
