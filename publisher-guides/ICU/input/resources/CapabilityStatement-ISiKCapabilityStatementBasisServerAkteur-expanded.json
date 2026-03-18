@@ -1324,10 +1324,10 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "name": "combo-code",
-              "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code",
-              "type": "token",
-              "documentation": "**Beispiel:**    \n        `GET [base]/Observation?combo-code=85354-9`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+              "name": "code-value-concept",
+              "definition": "http://hl7.org/fhir/SearchParameter/Observation-code-value-concept",
+              "type": "composite",
+              "documentation": "**Beispiel:**    \n        `GET [base]/Observation?code-value-concept=http://loinc.org|72166-2$http://loinc.org|LA15920-4`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
             },
             {
               "extension": [
@@ -1336,10 +1336,10 @@
                   "valueCode": "SHALL"
                 }
               ],
-              "name": "combo-code-value-quantity",
-              "definition": "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity",
+              "name": "code-value-date",
+              "definition": "http://hl7.org/fhir/SearchParameter/Observation-code-value-date",
               "type": "composite",
-              "documentation": "**Beispiel:**    \n        `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$120|http://unitsofmeasure.org|mm[Hg]`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/Observation?code-value-date=http://loinc.org|11779-6$2024-08-01`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
             },
             {
               "extension": [
@@ -2293,7 +2293,7 @@
               "name": "context-type-value",
               "definition": "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
               "type": "composite",
-              "documentation": "**Beispiel:**    \n        `GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter`    \n        **Anwendungshinweis:**  \n        Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:  \n        * Hausinternen Prozeduren/Diagnosen-Codes\n        * Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)  \n        Use Cases im Zusammenhang:    \n        (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet \n        bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte-Operations?version=current) genutzt.  \n        (B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.  \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
+              "documentation": "**Beispiel:**    \n        `GET [base]/ValueSet?context-type-value=http://terminology.hl7.org/CodeSystem/usage-context-type|focus$http://hl7.org/fhir/resource-types|Encounter`    \n        **Anwendungshinweis:**  \n        Mit dieser Abfrage können hausinterne Kataloge anhand des Ressource-Typs ermittelt werden. Diese Informationen sind u.a. relevant im Kontext von:  \n        * Hausinternen Prozeduren/Diagnosen-Codes\n        * Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)  \n        Use Cases im Zusammenhang:    \n        (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet \n        bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor](https://gemspec.gematik.de/ig/fhir/isik/terminplanung/6.0.0-rc/Operations.html) genutzt.  \n        (B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.  \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
             }
           ]
         },

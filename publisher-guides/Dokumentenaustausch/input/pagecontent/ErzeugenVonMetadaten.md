@@ -1,10 +1,14 @@
----
+﻿---
 topic: AkteureUndInteraktionen-AkteureUndInteraktionen-ErzeugenVonMetadaten
 ---
+
+<div style="width: 68%;">
 
 | Hinweis | Breaking Change!|
 |---------|---------------------|
 | <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/>  | Die in der Stufe 3 erfolgte Umstellung der Definition von $generate-metadata von der in ISiK Stufe 2 spezifizierten OperationDefinition auf die in [IHE MHD ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) spezifizierte Fassung ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-106 (Generate Metadata), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
+
+</div>
 
 ### Hinweise und Anmerkungen zur Implementierung von IHE MHD ITI-106 (Generate Metadata)
 Für die Implementierung der Interaktion "Erzeugen von Dokumentenmetadaten" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) (Generate Metadata) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt. Die verlinkte Webseite bietet weiterführende Informationen zur "Generate Metadata" Interaktion, einschließlich grafischer Darstellungen der Interaktionen.
@@ -17,7 +21,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.106.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106413-expected-actions)
 
-Der Fokus für die Implementierung der Operation im ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem) liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
+Der Fokus für die Implementierung der Operation im ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKBerichtSubSysteme.html) liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
 
 
 Die Unterstützung weiterer Input-Formate (z.B. CDA oder andere FHIR-Dokumente, wie MIOs, eRezept, eAU etc.) ist optional.
@@ -38,19 +42,31 @@ Es gelten die Vereinbarungen gemäß [dem CapabilityStatement](CapabilityStateme
 
 #### [2:3.106.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-106.html#231065-security-considerations)
 
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html)
 
 
 
 ### ISiK-Spezifisches Mapping Composition -> DocumentReference
-<fql>
-      from StructureDefinition
-      where url = 'https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten'
-      for differential.element
-      select
-        Path: id,
-        join mapping.where(identity = 'CompositionDocumentReferenceMapping') { map, comment }
-</fql>
+{% include composition-mapping-data.html %}
+
+<table class="lines">
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Map</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in site.data.composition_mapping %}
+    <tr>
+      <td>{{ row.Path }}</td>
+      <td>{{ row.Map }}</td>
+      <td>{{ row.Comment | markdownify }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 
 
