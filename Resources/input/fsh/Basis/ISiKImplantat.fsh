@@ -38,3 +38,27 @@ Fokus auf Implantate, da Hilfsmittels außerhalb eines Entlassbriefes kaum Relev
 * patient 1..1 MS
   * ^short = "Patient mit Implantat"
   * ^comment = "Begründung MS: Die Zuordnung zu einem Patient ist für den Datenaustausch im Rahmen von ISiK-Szenarien unerlässlich."
+
+Instance: ISiKImplantatHerzschrittmacher
+InstanceOf: ISiKImplantat
+Usage: #example
+* status = #active
+* type = $sct#14106009 "Cardiac pacemaker, device (physical object)"
+* deviceName
+  * name = "Evoque DR"
+  * type = #manufacturer-name
+* modelNumber = "EV-DR-01"
+* serialNumber = "SN-2024-00471"
+* manufacturer = "Medtronic GmbH"
+* manufactureDate = "2023-06-15"
+* udiCarrier
+  * deviceIdentifier = "00380740006918"
+  * carrierHRF = "(01)00380740006918(11)230615(21)SN-2024-00471"
+* patient = Reference(PatientinMusterfrau)
+
+Instance: ISiKImplantatHueftprothese
+InstanceOf: ISiKImplantat
+Usage: #example
+* status = #active
+* type = $sct#10796001 "Hip joint prosthesis (physical object)"
+* patient = Reference(PatientinMusterfrau)
