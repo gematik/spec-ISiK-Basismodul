@@ -11,6 +11,7 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
 "
 * insert Meta
 * insert CommonElements
+// * insert compliesWithProfile(PractitionerRoleEu)
 * active 1.. MS
   * ^short = "Aktiv/Inaktiv Status"
   * ^comment = "Motivation MS: Ein System muss prüfen können, ob die Rolle eines Leistungserbringers aktiv oder inaktiv ist."
