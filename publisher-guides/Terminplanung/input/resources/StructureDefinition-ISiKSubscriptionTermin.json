@@ -1,0 +1,27 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKSubscriptionTermin",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscriptionTermin",
+  "name": "ISiKSubscriptionTermin",
+  "title": "ISiK Subscription Termine",
+  "status": "draft",
+  "description": "ISiK Subscription  \n### Motivation\n\nDie Subscription Ressource für Appointments unterstützt den Informationsaustausch von Termininformationen, die ausgehend vom Termin Repository eine Änderung erfahren haben.\nHierdurch können Client-Systeme über relevante Terminänderungen informiert werden, um beispielsweise die Anzeige von Termininformationen zu aktualisieren oder Benachrichtigungen (bspw. im Fall von abgesagten Terminen) an Patienten zu senden.\n\n### Kompatibilität\n\nDas Profi ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welches wiederum auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html) basiert.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Subscription",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Subscription.criteria",
+        "path": "Subscription.criteria",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKSubscriptionTopicAppointmentVS"
+        }
+      }
+    ]
+  }
+}
