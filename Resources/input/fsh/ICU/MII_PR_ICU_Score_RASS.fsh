@@ -7,18 +7,27 @@ Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedatio
 
 In ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.
 
-Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 5.3.2026.
+Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.
 """
 * insert Meta
 * insert CommonElements
 
 * status 1..
 * category 1..
-* category = $observation-category#survey
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category contains exam 1..1 MS
+* category[exam] = $observation-category#exam "Exam"
+
+* obeys obs-value-or-dataAbsentReason
 
 * code 1..1 MS
-* code = $sct#1345050000 "Richmond Agitation Sedation Scale score (observable entity)"
-* code ^comment = "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally."
+* code.coding 1..1 MS
+* code.coding.system = $sct (exactly)
+* code.coding.code = #1345050000 (exactly)
+* code.coding.display = "Richmond Agitation Sedation Scale score (observable entity)"
+* code.coding.code ^comment = "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally."
 
 // Subject must be a patient
 * subject 1.. MS
@@ -40,7 +49,7 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * performer ^short = "Who performed the score assessment"
 
 // Data absent reason for missing values
-* dataAbsentReason MS
+* dataAbsentReason 0..1 MS
 
 // Interpretation of the score
 * interpretation MS
@@ -55,16 +64,20 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * effective[x] ^definition = "The time or time period when the score was assessed"
 
 // Total score value
-* value[x] 1..1 MS
+* value[x] 0..1 MS
 * value[x] only CodeableConcept
-* value[x] ^short = "RASS value"
+* value[x] ^short = "RASS Value"
 
-* valueCodeableConcept 1..1 MS
-//* valueCodeableConcept from http://loinc.org/vs/LL6536-8 (required)
 * valueCodeableConcept from MII_VS_ICU_Score_RASS (required)
 * valueCodeableConcept ^comment = "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8)."
-* valueCodeableConcept.coding.code 1..1 MS
-* valueCodeableConcept.coding.system 1..1 MS
+* valueCodeableConcept.coding ^slicing.discriminator.type = #pattern
+* valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* valueCodeableConcept.coding ^slicing.rules = #closed
+* valueCodeableConcept.coding contains Loinc 1..1 MS
+
+* valueCodeableConcept.coding[Loinc] ^patternCoding.system = $loinc
+* valueCodeableConcept.coding[Loinc].system 1..1 MS
+* valueCodeableConcept.coding[Loinc].code 1..1 MS
 
 * bodySite 0..0
 * specimen 0..0

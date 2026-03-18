@@ -30,11 +30,21 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert SupportedProfileCapExpectationExt(ISiKGCS, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
-
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillengroesse, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
     // Optionale Parameter
     // MII
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, MAY)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, MAY)
+
+    // MII Beatmung
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Unterstuezungsdruck_Beatmung, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontane_Atemfrequenz_Beatmet, MAY)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemzugvolumen, MAY)
+
     
     // ISiK
     * insert SupportedProfileCapExpectationExt(ISiKLaboruntersuchungSerumnatrium, MAY)
@@ -49,12 +59,27 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
     * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
 
+    * searchParam[+]
+      * insert Expectation(#MAY) // ggf. SHALL ?
+      * name = "code:in"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+      * type = #token
+      * documentation =
+        "**Hintergrund:**  
+        Der Modifier ermöglicht die Suche nach `Observation.code`-Codes, die in einem angegebenen ValueSet enthalten sind. Insbesondere bei der Suche nach dem Vorhandensein von bestimmten Prozeduren (Beatmung, Reanimation) im Kontext der IHA-Diagnostik ist dies von Bedeutung.
+
+        **Beispiel:**    
+        `GET [base]/Observation?code:in=https://example.org/fhir/ValueSet/observation-codes`    
+        **Anwendungshinweis:**   
+        Der Modifier `:in` filtert nach `Observation.code`-Codes, die in dem angegebenen ValueSet enthalten sind (kanonische ValueSet-URL).  
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#in)."
+
   * resource[+]
     * type = #Procedure
     * insert CapabilityStatementExpectationExt(MAY)
     * insert Expectation(#MAY)
     * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, MAY)
-    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Beatmung, MAY)
+    * insert SupportedProfileCapExpectationExt(ISiKProzedurBeatmung, MAY)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(MAY)
       * code = #search-type
