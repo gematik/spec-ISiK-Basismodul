@@ -24,14 +24,14 @@ Fokus auf Implantate, da Hilfsmittels außerhalb eines Entlassbriefes kaum Relev
 "
 * insert Meta
 * insert CommonElements
-* insert CompliesWith(DeviceEUHdr)
+//* insert CompliesWith(DeviceEuHdr)
 * status 1.. MS
   * ^short = "Status des Implantats"
   * ^comment = "Begründung MS: Der Status gibt an, ob das Implantat aktuell im Körper des Patienten vorhanden ist oder nicht 
   und stellt somit eine überaus wichtige medizinische Information dar, die unmittelbar Einfluss auf Diagnostik, Therapieentscheidungen und zukünftige Behandlungsmaßnahmen haben kann. 
   Daher ist die Angabe des Status zwingend erforderlich."
 * type 1.. MS
-  * ^short = "Art des Implantats"
+  * ^short = "Art des Implantats" 
   * ^comment = "Begründung MS: Die Angabe der Art des Implantats ermöglicht eine eindeutige Identifikation und Klassifizierung des implantierten Medizinprodukts, 
   was für die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen von entscheidender Bedeutung ist. 
   Daher ist die Angabe der Art des Implantats zwingend erforderlich."
