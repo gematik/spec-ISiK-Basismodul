@@ -9,7 +9,10 @@ Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionie
 
 #### Version 6.0.0-rc
 
-* `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047 
+* `improve` Einführung zahlreicher Profile zur Abdeckung des geschilderten Use Cases: Neben den Verpflichtenden Profilen (GCS, RASS, Pupillenlichtreaktion - direkt und indirekt, und Pupillengroesse) weitere optional umzusetzende Profile. https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 
+    * vgl. auch Vorgaben und Releasenotes zum IG "ICU"
+* `improve`Einführung eines neuen freiwilligen Suchparameters `code_in` zur Erleichterung der Auffindbarkeit von Prozeduren (z. B. Beatmung und Reanimation) https://github.com/gematik/spec-ISiK-Basismodul/pull/1048
+* `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
 
 #### Version 0.0.1-rc
 
