@@ -306,13 +306,10 @@ Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundhe
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
 
 RuleSet: CompliesWith(canonical)
-* ^extension[$compliesWith][+].valueCanonical = Canonical({canonical})
+* ^extension[$compliesWithProfile][+].valueCanonical = Canonical({canonical})
 
 RuleSet: EU-BodySiteExtension
 * bodySite.extension contains $BodyStructureReferenceExtension named BodyStructureReference ..1
 * bodySite.extension[BodyStructureReference]
   * ^short = "Referenz auf eine BodyStructure-Ressource"
   * ^comment = "Im Kontext des Allingments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe wurde diese Extenion hinzugefügt. Es besteht aber noch keine Must-Support Anforderung, da die Abbildung der Lateralität noch in der Diskussion ist und somit keine klare Vorgabe für die Nutzung der Extension gegeben werden kann. Sobald dies geklärt ist, wird die Anforderung entsprechend angepasst. Eine referenzierte BodyStructure-Ressource sollte valide gegen [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html) sein."
-
-RuleSet: CompliesWith(canonical)
-* ^extension[$compliesWithProfile][+].valueCanonical = Canonical({canonical})
