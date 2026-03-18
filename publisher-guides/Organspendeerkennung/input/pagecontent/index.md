@@ -1,4 +1,4 @@
----
+﻿---
 topic: ImplementationGuide-markdown-Einfuehrung
 ---
 
@@ -47,7 +47,7 @@ Als Use Case (bzw. Workflow) ist die Organspendeerkennung im Modul Vitalparamete
 
 Fachlich relevant sind im ISiK-Kontext für die Intensivversorgung ebenfalls:
 
-* **ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen** - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung)
+* **ISiK Basismodul: Mit Informationen zum Patienten und Diagnosen** - Hier sind Patientenstammdaten, Diagnosen und Prozeduren verortet. Siehe [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html)
  
 #### Out-of-Scope
 Es werden keine Vorgaben zur konkreten technischen Umsetzung des Workflows gemacht, sondern lediglich die notwendigen Schnittstellen (inklusive Profile) spezifiziert.

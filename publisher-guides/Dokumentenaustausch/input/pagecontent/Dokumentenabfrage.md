@@ -1,4 +1,4 @@
----
+﻿---
 topic: Dokumentenabfrage
 ---
 
@@ -22,7 +22,7 @@ Für die Implementierung der Interaktion "Dokumentenabfrage" gelten die in IHE M
 Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.67.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-67.html#2367412-message-semantics)
-Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Suchparameter)
+Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html)
 
 ##### [2:3.67.4.1.2.1 Query Search Parameters](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters)
 Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:DocumentReference_Interaktionen}}
@@ -63,7 +63,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Es gelten die Vereinbarungen gemäß [CapabilityStatements](artifacts.html#capabilitystatements)
 
 #### [2:3.67.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23675-security-considerations)
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/guide/isik-connect-stufe-5).
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html).
 
 #### Beispiele
 * Suche anhand von Patientenkontext (PID) und Dokumentendatum:
@@ -91,7 +91,7 @@ Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben kön
 
 Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](https://hl7.org/fhir/R4/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
 
-* Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als [Binary-Ressource im angeforderten Format](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Binary) zurückgegeben werden.
+* Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als [Binary-Ressource im angeforderten Format](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/StructureDefinition-ISiKBinary.html) zurückgegeben werden.
 * Wenn der Zugriff mit einem *anderen* Accept-Header als `application/fhir+xml` oder `application/fhir+json` erfolgt, so soll das Dokument im angeforderten Format zurückgegeben werden,
 z.B. MUSS bei Zugriffen mit Accept-Header `application/pdf` das Dokument unmittelbar als PDF zurückgegeben werden, sofern dies dem Content-Type der Binary-Ressource entspricht.
 
@@ -112,5 +112,5 @@ Die Vereinbarungen gelten uneingeschränkt.
 Es gelten die Vereinbarungen gemäß {{pagelink:/Einfuehrung/Artefakte/CapabilityStatements}}
 
 #### [2:3.68.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23685-security-considerations)
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/guide/isik-connect-stufe-5)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html)
 
