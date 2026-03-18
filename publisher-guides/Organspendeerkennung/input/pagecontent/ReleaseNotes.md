@@ -13,6 +13,7 @@ Datum: tbd.
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047 
+* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 
 ### Version 0.0.1-rc
 
