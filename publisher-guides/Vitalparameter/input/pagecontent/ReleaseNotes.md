@@ -1,4 +1,4 @@
-Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
+﻿Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 ### Version 6.0.0-rc
 
@@ -114,12 +114,12 @@ Datum: 26.6.2024
 Datum: 4.4.2024
 
 * Klärung datenuebernahme pdms kis by @patrick-werner in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/154
-* `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-UebergreifendeUseCases-Intensivversorgung 
+* `documentation` Hinzufügen eines IG Abschnitts zur Abdeckung der ICU-Normal-Überleitung - siehe https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/Intensivversorgung.html 
 * `improve` Hinzufügen der MII-ICU-Profile https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/150 
 * `improve` Update der ISIk Basis Dependency: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `improve` Hinzufügen von SnomedCT Coding Slices: [update dependency ISIK Basis](https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/156)
 * `improve` Hinzufügen von MS für einzelne Components : https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/138
-* `improve` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://simplifier.net/guide/isik-vitalparameter-v4/ImplementationGuide-markdown-Datenobjekte-Laborprofile
+* `improve` Hinweis zu Profilen aus ISiK Support-Modul Labor hinzugefügt - siehe https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/artifacts_isik.html
 * `fix` Fix CpS rendering by @alexzautke in https://github.com/gematik/spec-ISiK-Vitalparameter-und-Koerpermasze/pull/161 
 
 ----

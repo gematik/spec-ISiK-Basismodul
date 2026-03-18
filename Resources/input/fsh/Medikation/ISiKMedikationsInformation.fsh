@@ -172,7 +172,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
     
     Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.
 "
@@ -265,6 +265,21 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * doseAndRate 
+    * doseQuantity MS
+      * ^short = "Dosis"
+      * ^comment = "Das Must-Support-Flag auf doseQuantity bedeutet, dass produzierende Systeme zur Kodierung der Dosisangaben nach eigenem Ermessen entweder den Datentyp Quantity oder Ratio verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können."
+      * value MS
+        * ^short = "Dosiswert"
+        * ^comment = "**Begründung MS:** Der Dosiswert ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * unit MS
+        * ^short = "Menschenlesbare Dosis-Einheit"
+        * ^comment = "**Begründung MS:** Die menschenlesbare Dosis-Einheit ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * system MS
+        * ^short = "CodeSystem der Dosisangabe"
+        * ^comment = "**Begründung MS:** Das CodeSystem der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * code MS
+        * ^short = "Code der Dosisangabe"
+        * ^comment = "**Begründung MS:** Der Code der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS

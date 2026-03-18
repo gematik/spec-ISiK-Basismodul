@@ -1,4 +1,4 @@
----
+﻿---
 topic: ISiKAppointmentBookOperation
 canonical: https://gematik.de/fhir/isik/OperationDefinition/AppointmentBook
 ---
@@ -13,7 +13,7 @@ Nähere Informationen zu der Custom-Operation zur Buchung eines Termins bitte hi
 
 Folgende Schritte KÖNNEN notwendig sein, sodass ein Termin durch einen Termin-Requestor innerhalb eines Termin-Repository eingestellt wird. Es ist zu beachten, dass für spezielle Implementierungen nicht alle Schritte hiervon relevant sind und übersprungen werden können.
 
-Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://simplifier.net/guide/isik-connect-stufe-5) verwiesen.
+Generell wird darauf hingewiesen, dass abhängig davon, welcher Client oder Benutzer eine Interaktion ausführt, unterschiedliche Ergebnisse zurückgeliefert werden können. Die vorliegende Spezifikation macht keine Vorgaben, wie eine Authentifizierung und Autorisierung zu implementieren ist. Es wird hierzu auf das [ISiK-Modul 'Connect'](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html) verwiesen.
 
 User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Patientenportal einen Termin in der allgemeinmedizinischen Ambulanz eines Krankenhauses. Da der Patient seit Tagen Bauchschmerzen hat, die in den letzten Stunden stärker werden, wählt er die Priorität "Notfall".
 
@@ -31,26 +31,7 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
 
     In diesem Fall ist auch ein Chaining auf weitere verknüpfte Akteure möglich: `GET https://example.org/fhir/Slot?schedule.actor:HealthcareService.type=http://dicom.nema.org/resources/ontology/DCM|CT`
 
-4. Anlage einer Patient-Ressource durch den Termin-Requestor: `POST https://example.org/fhir/Patient`
-
-    ```json
-    {
-        "resourceType": "Patient",
-        "meta": {
-            "tag": [
-                {
-                    "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
-                    "code": "external"
-                }
-            ]
-        }
-        [...]
-    }
-    ```
-
-    Hinweis: Dieser Schritt ist optional und kann nur ausgeführt werden, falls das Termin-Repository eine Create-Interaktion für Patient-Ressourcen erlaubt. Andernfalls ist der ``patient``-Parameter in der ``$book``-Operation zu verwenden.
-
-5. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`
+4. Aufruf der $book-Operation durch den Termin-Requestor: `POST https://example.org/fhir/Appointment/$book`. Hierbei wird neben der Appointment-Instanz eine Patienten-Instanz an das Termin-Repository übergeben.
 
     ```json
     {
@@ -119,7 +100,20 @@ User Story für die folgenden Beispiele: Ein Patient bucht über ein externes Pa
           }
         ]
       }
+    },
+    {
+        "resourceType": "Patient",
+        "meta": {
+            "tag": [
+                {
+                    "system": "http://fhir.de/CodeSystem/common-meta-tag-de",
+                    "code": "external"
+                }
+            ]
+        }
+        [...]
     }
+  
     ```
 
     Antwort des Termin-Repository:
@@ -245,7 +239,7 @@ Falls die Aktualisierung eines Termins die Veränderung eines der oben genannten
 
 Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patient-Ressource im Kontext der Terminbuchung zu erstellen oder zu übermitteln:
 
-- Direkte Erstellung über Create-Interaktion: Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest). Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.
+- Direkte Erstellung über Create-Interaktion: Das Termin-Repository unterstüzt die Anlage einer Patient-Ressource über eine FHIR-Create-Interaktion – gemäß den Vorgaben des [ISiK-Basismoduls](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html). Um auch eine Aktualisierung von Patienteninformationen zu ermöglichen, SOLLTE zusätzlich die Unterstützung einer Update-Interaktion bereitgestellt werden.
 
     > **Hintergrund**: Ein Update der Patient-Ressource über den `patient`-Parameter in der `$book`-Operation ist technisch aufwändiger, da das Termin-Repository hierzu zunächst die interne ID der bestehenden Instanz mittels Patient-Matching ermitteln müsste. Dies ist bei unvollständigen oder minimalen Patientenangaben häufig nicht zuverlässig möglich.
 
