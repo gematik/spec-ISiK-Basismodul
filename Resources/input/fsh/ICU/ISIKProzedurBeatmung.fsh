@@ -1,7 +1,7 @@
 Profile: ISiKProzedurBeatmung
 Parent: ISiKProzedur
-Id: isik-prozedur-beatmung
-Title: "isik-prozedur-beatmung"
+Id: ISiKProzedurBeatmung
+Title: "ISiK Prozedur Beatmung"
 Description: """Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.
 
 Die verwendeten ValueSets in diesem Profil wurden dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. 
