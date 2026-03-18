@@ -14,7 +14,7 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0-rc
 
-* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068 - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
 * `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1046
