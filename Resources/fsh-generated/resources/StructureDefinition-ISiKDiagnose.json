@@ -52,6 +52,15 @@
       {
         "id": "Condition.extension",
         "path": "Condition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -113,7 +122,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "mustSupport": true
       },
@@ -245,7 +254,7 @@
               "path": "system"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "mustSupport": true
       },
@@ -306,7 +315,7 @@
             }
           ],
           "ordered": false,
-          "rules": "closed"
+          "rules": "open"
         },
         "short": "Erkrankungsbeginn",
         "comment": "Datum oder Alter/Lebensphase des Erkrankungsbeginns\n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",
@@ -378,7 +387,7 @@
             }
           ],
           "ordered": false,
-          "rules": "closed"
+          "rules": "open"
         },
         "short": "Klinische relevanter Zeitraum Ende",
         "comment": "Ende des klinisch relevanten Zeitraums der Diagnose  \n  **Begründung MS:** Die Kenntnis des Erkrankungszeitraumes ist wichtig für die korrekte Einschätzung der medizinischen Relevanz einer Erkraknung.  \n  **Einschränkung der übergreifenden MS-Definition:** Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Erkrankungszeitraumes,\n  so MUSS dieses System die Information NICHT abbilden. \n  Das System MUSS jedoch klinischen Status (`active`/`inactive`/`resolved`...) der Diagnose korrekt angeben, sofern die Information verfügbar ist.",

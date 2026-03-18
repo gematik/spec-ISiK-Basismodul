@@ -65,7 +65,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "Eindeutiger Identifier der Person",
         "min": 1,
@@ -180,7 +180,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "Namen der Person",
         "min": 1,
@@ -298,7 +298,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification.",
         "mustSupport": true
@@ -465,6 +465,20 @@
         "short": "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden.",
         "comment": "Geschlecht der Person",
         "mustSupport": true
+      },
+      {
+        "id": "Practitioner.gender.extension",
+        "path": "Practitioner.gender.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ",

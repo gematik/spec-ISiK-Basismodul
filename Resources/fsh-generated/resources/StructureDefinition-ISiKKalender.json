@@ -39,6 +39,16 @@
       {
         "id": "Schedule.extension",
         "path": "Schedule.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -102,7 +112,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "Begründung Kardinalität Fachrichtung: Die Kardinalität der Fachrichtung-Eigenschaft wird auf 1..1 festgelegt, um sicherzustellen, dass genau eine Fachrichtung per IHE-XDS-Kodierung vorhanden ist. Dies ist notwendig, um die Spezialisierung des Kalenders eindeutig zu definieren und eine korrekte Zuordnung zu gewährleisten.\n  \n  Begründung Kardinalität ErweiterterFachabteilungsschluessel: Die Kardinalität der ErweiterterFachabteilungsschluessel-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass optional ein erweiterter Fachabteilungsschlüssel vorhanden sein kann.",
         "min": 1,
@@ -146,7 +156,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "short": "Der Akteur, der dem Kalender zugeordnet ist",
         "comment": "Begründung Kardinalität und Must-Support-Flag (MS): Die Kardinalität der Akteur-Eigenschaft wird auf 0..1 festgelegt, um sicherzustellen, dass ein  Akteur eindeutig ist, falls dieser vorhanden ist. Durch das MS wird sichergestellt, dass Systeme in der Lage sind, einen Akteur zu unterstützen, wenn er vorhanden ist.",

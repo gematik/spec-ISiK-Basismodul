@@ -65,7 +65,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "mustSupport": true
       },
@@ -84,6 +84,16 @@
       {
         "id": "Appointment.extension",
         "path": "Appointment.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "comment": "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können.",
         "mustSupport": true
       },
@@ -149,7 +159,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "min": 1,
         "mustSupport": true
@@ -188,6 +198,16 @@
       {
         "id": "Appointment.priority.extension",
         "path": "Appointment.priority.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "comment": "Hinweis: In R5 ist die Priority ein CodeableConcept. \n  \n  Begründung zu Must Support: Dieses Element ist optional (0..1), muss jedoch implementiert werden (MS), um besonders einen Notfall als solchen ausweisen zu können.",
         "mustSupport": true
       },
@@ -258,7 +278,7 @@
               "path": "actor.resolve()"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "short": "Teilnehmer des Termins",
         "comment": "Hinweis: Die Kardinalität von actor.display und das MS-Flag von .status wird an die Slices vererbt und diese sind entsprechend zu implementieren.\n\nBegründung zu Kardinalität und Must Support: Die Teilnehmer eines Termins sind von entscheidender Bedeutung, um die Verfügbarkeit und Planung des Termins zu gewährleisten. Daher muss dieses Feld unterstützt werden (MS).",

@@ -59,6 +59,15 @@
       {
         "id": "Procedure.extension",
         "path": "Procedure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -103,7 +112,7 @@
               "path": "system"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         }
       },
       {
@@ -160,7 +169,7 @@
               "path": "system"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "short": "Codierte Darstellung der Prozedur",
         "mustSupport": true

@@ -66,7 +66,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "Begründung des Must-Support: Medikamente MÜSSEN kodiert werden, hierfür kann eine PZN, ATC-Code oder SnomedCT Code verwendet werden",
         "mustSupport": true
@@ -178,7 +178,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "comment": "Begründung des Must-Support: EDQM definiert eine einheitliche DoseForm auf europäischer Ebene",
         "mustSupport": true
@@ -250,6 +250,16 @@
       {
         "id": "Medication.ingredient.extension",
         "path": "Medication.ingredient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Wirkstofftyp",
         "comment": "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
         "mustSupport": true
@@ -281,7 +291,7 @@
             }
           ],
           "ordered": false,
-          "rules": "closed"
+          "rules": "open"
         }
       },
       {
@@ -309,7 +319,7 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "rules": "open"
         },
         "mustSupport": true
       },
