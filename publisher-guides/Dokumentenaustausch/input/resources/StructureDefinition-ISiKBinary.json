@@ -9,7 +9,7 @@
   "experimental": false,
   "date": "2026-04-03",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil ermöglicht die Darstellung von FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) in ISiK Szenarien. \n\n### Motivation\nFür FHIR-fremde Formate werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen (z.B. Patient und Encounter) gestellt. \n\n### Kompatibilität\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n### Hinweis\n\nDas ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul.\nDas Profil ist Teil des ISIK Basismoduls, da es im [Modul Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Artefakte/Datenobjekte_ISiKBinary) implementiert werden muss und ein hohes Potential für die Wiederverwednung in anderen Modulen naheliegt.  ",
+  "description": "Dieses Profil ermöglicht die Darstellung von FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) in ISiK Szenarien. \n\n### Motivation\nFür FHIR-fremde Formate werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen (z.B. Patient und Encounter) gestellt. \n\n### Kompatibilität\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n### Hinweis\n\nDas ISIK-Binary-Profil ist *nicht* Bestandteil der Implementierung und des Bestätigungsverfahrens zum ISIK Basismodul.\nDas Profil ist Teil des ISIK Basismoduls, da es im [Modul Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/StructureDefinition-ISiKBinary.html) implementiert werden muss und ein hohes Potential für die Wiederverwednung in anderen Modulen naheliegt.  ",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -36,6 +36,13 @@
         "path": "Binary.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Binary.implicitRules",
+        "path": "Binary.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
       },
       {
         "id": "Binary.contentType",

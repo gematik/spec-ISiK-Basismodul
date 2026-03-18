@@ -37,6 +37,13 @@
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
+        "id": "MedicationRequest.implicitRules",
+        "path": "MedicationRequest.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
+      },
+      {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
         "slicing": {
@@ -450,7 +457,7 @@
       {
         "id": "MedicationRequest.dosageInstruction.text",
         "path": "MedicationRequest.dosageInstruction.text",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
       },
       {
         "id": "MedicationRequest.dosageInstruction.patientInstruction",
@@ -778,7 +785,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -791,7 +798,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -875,7 +882,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -888,7 +895,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -926,7 +933,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -954,7 +961,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -976,7 +983,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],

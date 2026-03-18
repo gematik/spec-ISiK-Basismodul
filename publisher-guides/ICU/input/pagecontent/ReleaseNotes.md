@@ -11,6 +11,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd.
 
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * Initiales Draft der Stufe 6
 * `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend)  https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 - weitere Changes
     * `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend) 
@@ -21,6 +22,7 @@ Datum: tbd.
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
+* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 
 ### Version 5.1.1
 

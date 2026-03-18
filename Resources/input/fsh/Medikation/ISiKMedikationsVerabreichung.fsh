@@ -125,7 +125,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' 
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.' 
     
     Zum Beispiel kann die textuelle Information '1L Infusion mit Rate 50ml/h' in eine entsprechende, strukturierte Form überführt werden - d.h. in die Angabe von 'dose' und 'rateQuantity'."
   * site MS
@@ -156,13 +156,13 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * dose MS
-  * dose only MedicationQuantity
+  * dose only MedicationQuantityDoseForm
     * ^short = "verabreichte Dosis"
   * rateRatio MS
     * ^short = "Verabreichungs-Rate (Verhältnis)"
     * ^comment = "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können."
     * numerator 1.. MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator 1.. MS
     * denominator only MedicationQuantity
   * rateQuantity MS

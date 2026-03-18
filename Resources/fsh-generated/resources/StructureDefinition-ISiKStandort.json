@@ -1,12 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKStandort",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile",
-      "valueCanonical": "http://hl7.eu/fhir/base/StructureDefinition/location-eu-core"
-    }
-  ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort",
   "version": "6.0.0-rc",
   "name": "ISiKStandort",
@@ -41,6 +35,13 @@
         "path": "Location.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Location.implicitRules",
+        "path": "Location.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
       },
       {
         "id": "Location.identifier",
@@ -122,7 +123,11 @@
         "short": "Physikalischer Typ des Standorts",
         "comment": "Motivation: entspricht der MII Vorgabe -  siehe https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location. Ein System muss den physikalischen Typ eines Standorts zum Abruf bereitstellen, da ansonsten der Typus des Standorts nicht maschinenlesbar definiert ist.",
         "min": 1,
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-physical-type"
+        }
       },
       {
         "id": "Location.position",

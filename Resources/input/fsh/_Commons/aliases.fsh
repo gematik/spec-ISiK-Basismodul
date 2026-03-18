@@ -60,7 +60,7 @@ Alias: $vsAllergyIntoleranceClinicalStatus = http://terminology.hl7.org/CodeSyst
 Alias: $vsAllergyIntoleranceVerificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 
 Alias: $imposeProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile
-Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+Alias: $compliesWith = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
 Alias: $GEM_PR_KIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-kim
 Alias: $GEM_PR_TIM_AdressIdentifier = https://gematik.de/fhir/atf/StructureDefinition/identifier-address-tim
 Alias: $vs-ti-medication-snomed-ct = https://gematik.de/fhir/terminology/ValueSet/ti-medication-snomed-ct-vs
@@ -93,6 +93,7 @@ Alias: $IHEpracticeSettingVS = http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCo
 Alias: $IHEAerztlicheFachrichtungen = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen
 
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
+Alias: $LocationPhysicalTypeVS = 	http://hl7.org/fhir/ValueSet/location-physical-type
 Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 
@@ -124,3 +125,6 @@ Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-ca
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
 Alias: $ieee-11073 = urn:iso:std:iso:11073:10101 // mii alias - redundant, da bereits $IEEE11073 definiert, aber in einigen Profilen verwendet
+
+Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinition/bodySite
+Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE
