@@ -59,6 +59,8 @@ Was wird getan / wie wird es gelöst?>
 Was: 
 - Stationen werden als Organization mit dem `type`-Code `department` abgebildet.
 - Die Suche nach Stationen erfolgt über den `type`-Code `department` in der Ressource Organization.
+    - hierfür Suchparameter im entsprechenden CapabilityStatement definieren, damit die Suche nach Stationen möglich ist.
+    - Die für Basis-Server und für die Rolle Organspendeerkennung - bzw. zusätzlich für ICU-expanded
 - Die Verknüpfung von Leistungserbringern mit Stationen erfolgt über die Ressource PractitionerRole, die mit der entsprechenden Organization (Station) verknüpft ist.
 - Patienten werden über die Ressource Patient mit der entsprechenden Station (Organization) verknüpft.
 - Die Location (ggf. Station als Standort) wird nicht verpflichtend für die Abbildung von Stationen genutzt, sondern kann optional ergänzend verwendet werden, wenn weitere Informationen zum Standort der Station erforderlich sind.
