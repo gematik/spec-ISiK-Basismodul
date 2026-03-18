@@ -68,3 +68,7 @@ Alle REST-Interaktionen müssen sowohl mittels HTTP als auch HTTPS (TLS-Verschl�
 Im Echtbetrieb MUSS die Kommunikation ausschließlich per HTTPS erfolgen.
 Weiterhin sind geeignete Maßnahmen zur Risiko-Minimierung (z.B. Benutzerautorisierung / -authentifikation) zu treffen, siehe http://build.fhir.org/security.html#6.1.0. 
 Diese sind in der jetzigen Stufe des ISiK Basismoduls jedoch nicht bestätigungsrelevant.
+
+### Paging
+
+Suchergebnisse können auch bei Abfragen zu den Compartments einzelner Patient- und Encounter-Instanzen zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen. Issues vom Schweregrad `error` oder `fatal` sind bei Paging unzulässig.
