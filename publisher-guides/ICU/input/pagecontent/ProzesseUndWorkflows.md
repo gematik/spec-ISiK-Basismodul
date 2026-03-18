@@ -1,4 +1,4 @@
-### Prozess Überleitung - Vorannahmen
+﻿### Prozess Überleitung - Vorannahmen
 
 Vorannahmen zu den unten modellierten Workflows sind, dass die betroffenen Patienten einen Zugang- oder Entlassungsprozess im Kontext der Intensivversorgung durchlaufen haben, durchlaufen, oder in naher Zukunft durchlaufen werden. 
 
@@ -10,7 +10,7 @@ Zur Abbildung des bidirektionalen Überleitungsprozesses zwischen einer Intensiv
 
 Der Workflow dient im Wesentlichen dazu, verschiedene Nutzungsmöglichkeiten der REST-Schnittstelle zur abfragebasierten Datenkommunikation im Rahmen der Workflow-Unterstützung darzustellen.
 
-Für Festlegungen zu REST-Abfragen siehe den [Abschnitt zur REST-API im Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest).
+Für Festlegungen zu REST-Abfragen siehe den [Abschnitt zur REST-API im Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html).
 
 #### Abfrage zeitlich folgend - Diagramm
 
@@ -52,9 +52,9 @@ Denkbar sind auch Workflows, bei denen erhobene Daten aus einem System vor der V
 
 Eine Abfrage per HTTP GET allein reicht nicht aus, um die benötigten Daten rechtzeitig zu übermitteln. Stattdessen muss eine Vorab-Übermittlung durch einen anderen Mechanismus erfolgen. Sobald diese angestoßen wurde, kann das PDMS die vollständigen Daten per GET abrufen. An dieser Stelle werden keine weiteren Festlegungen zur vorgelagerten Übermittlung der  Daten erhoben und es wird keine direkte Schreiboperation auf FHIR-Basis des KIS im PDMS für diesen Fall gefordert. Die Vorab-Übermittlung könnte durch verschiedene Mechanismen unterstützt werden:
 
-- FHIR Subscription (vgl. im ISiK Kontext [Patient merge Notification](https://simplifier.net/guide/isik-subscription-stufe-5/Einfuehrung/Spezifikation/Patientenzusammenführung)
-- Create-Interaktion (POST) (vgl. im ISiK Kontext [REST-API](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest))
+- FHIR Subscription (vgl. im ISiK Kontext [Patient merge Notification](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/Patientenzusammenfuehrung.html)
+- Create-Interaktion (POST) (vgl. im ISiK Kontext [REST-API](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html))
 - HL7 v2 Messaging
-- Rückübermittelung als FHIR Document per [ISiKBerichtSubSysteme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem)
+- Rückübermittelung als FHIR Document per [ISiKBerichtSubSysteme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKBerichtSubSysteme.html)
 
 - etc.
