@@ -32,7 +32,9 @@ Description: "Liste der aller SubscriptionTopics, die in ISiK verwendet werden k
 * #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Schedule "Schedule"
 * #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Slot "Slot"
 * #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/Subscription "Subscription"
-* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet "ValueSet"
+* #https://gematik.de/fhir/isik/SubscriptionTopic/Resource/ValueSet "ValueSet"^
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-change "appointment-change"
+* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel"
 
 ValueSet: ISiKSubscriptionTopicVS
 Id: ISiKSubscriptionTopicVS

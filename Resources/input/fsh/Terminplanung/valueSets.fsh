@@ -34,5 +34,5 @@ ValueSet: ISiKSubscriptionTopicAppointmentVS
 Id: ISiKSubscriptionTopicAppointmentVS
 Description: "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind."
 * insert Meta
-* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-change "appointment-change"
-* #https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel"
+* ISiKSubscriptionTopic#https://gematik.de/fhir/isik/SubscriptionTopic/appointment-change "appointment-change"
+* ISiKSubscriptionTopic#https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel "appointment-cancel"
