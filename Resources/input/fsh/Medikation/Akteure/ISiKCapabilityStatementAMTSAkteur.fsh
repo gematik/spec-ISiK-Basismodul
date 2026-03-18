@@ -33,6 +33,8 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMedikationVerabreichungRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementMedikationVerabreichungWRITERolle)
+  * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMedikationInformationRolle) 
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementMedikationVerordnungRolle)
