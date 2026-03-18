@@ -107,7 +107,7 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
 
 ### Die Repräsentation von ambulanten Fällen im Krankenhaus
 
-Neben der stationären Versorgung gibt es im Krankenhaus einen zunehmend wachsenden Teil an ambulanter Versorgung. Ob Chefarztambulanzen, Hochschulambulanzen oder ambulantes Operieren - diese Fälle kommen im Krankenhaus vor und sind teilweise auch in den Primär- und Subsystemen vorhanden. Deshalb wird in ISiK Stufe 6 die Möglichkeit ergänzt, auch ambulante Fälle in den Fall-bezogenen Ressourcen abzubilden.
+Neben der stationären Versorgung gibt es im Krankenhaus einen zunehmend wachsenden Teil an ambulanter Versorgung. Ob Chefarztambulanzen, Hochschulambulanzen oder ambulantes Operieren - diese Fälle kommen im Krankenhaus vor und sind teilweise auch in den Primär- und Subsystemen vorhanden. Deshalb wird ab ISiK Stufe 6 die Möglichkeit ergänzt, auch ambulante Fälle in den Fall-bezogenen Ressourcen abzubilden.
 
 Zum einen wird ein neues Account-Profil "AbrechnungsfallAmbulant" eingeführt, welches vom ISiKAbrechnungsfall ableitet und diesen um die Möglichkeit erweitert, ambulante "Schein"-Nummern zu repräsentieren, einen Gültigkeitszeitraum anzugeben und Informationen über die durchführende Ambulanz zu hinterlegen.
 
