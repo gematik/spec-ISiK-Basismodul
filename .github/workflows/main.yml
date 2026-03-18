@@ -90,6 +90,12 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
+            # examples contain sdc extensions which creates an error as this extension is not defined in ISiK
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.gender.extension[0]
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
+
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:
