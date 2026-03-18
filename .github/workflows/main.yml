@@ -90,6 +90,10 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
+            # Bundle contains more than specified as slices, which is ok
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[3]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[4]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[5]
             # examples contain sdc extensions which creates an error as this extension is not defined in ISiK
             Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.gender.extension[0]
             Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
