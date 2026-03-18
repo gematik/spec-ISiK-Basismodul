@@ -301,6 +301,9 @@ RuleSet: Comment-Reference-Encounter(Einleitung)
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
 
+RuleSet: CompliesWith(canonical)
+* ^extension[$compliesWith][+].valueCanonical = Canonical({canonical})
+
 RuleSet: EU-BodySiteExtension
 * bodySite.extension contains $BodyStructureReferenceExtension named BodyStructureReference ..1
 * bodySite.extension[BodyStructureReference]
