@@ -322,11 +322,22 @@ InstanceOf: ISiKOrganisationFachabteilung
 Usage: #example
 * identifier[Abteilungsidentifikator]
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
-  * value = "123456"
+  * value = "FA-CHIR-01"
 * identifier[TelematikID].value = "1234567890"
 * name = "Allgemeinchirurgie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
+* partOf = Reference(KrankenhausOrganisationBeispiel)
+
+Instance: KlinikPaediatrieOrganisationBeispiel
+InstanceOf: ISiKOrganisation
+Usage: #example
+* identifier[Abteilungsidentifikator]
+  * system = "https://fhir.krankenhaus.example/sid/OrgaID"
+  * value = "klinik-Paed-01"
+* name = "Klinik Pädiatrie"
+* type[organisationstyp] = $organization_type#dept
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertC#1000	"Pädiatrie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
 
 
@@ -335,7 +346,7 @@ InstanceOf: ISiKOrganisation
 Usage: #example
 * identifier[Abteilungsidentifikator]
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
-  * value = "icu01"
+  * value = "sta-icu-01"
 * name = "Intensivstation-01"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600	"Intensivmedizin"

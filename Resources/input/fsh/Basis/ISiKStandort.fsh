@@ -187,7 +187,7 @@ Usage: #example
 * address.city = "Musterstadt"
 * address.postalCode = "12345"
 * physicalType = $LocationPhysicalType#wa "Ward"
-* managingOrganization = Reference(IntensivStationBeispiel)
+* managingOrganization = Reference(KlinikPaediatrieOrganisationBeispiel)
 // * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
 
 * hoursOfOperation[0].daysOfWeek = #mon
