@@ -110,7 +110,7 @@ Siehe [Buchung eines Termins](OperationDefinition-ISiKAppointmentBookOperation.h
     <figcaption><strong>Abbildung:</strong> 6.2 Termin absagen (ausgehend vom terminführenden System)</figcaption>
 </figure>
 
-Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System abgesagt werden. Im Falle, dass das Termin Repository den Termin absagt, ist der Termin-Consumer darüber zu benachrichtigen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschrieben Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISikSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung.
+Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System abgesagt werden. Im Falle, dass das Termin Repository den Termin absagt, ist der Termin-Consumer darüber zu benachrichtigen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschrieben Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISiKSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung.
 
 Siehe [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
