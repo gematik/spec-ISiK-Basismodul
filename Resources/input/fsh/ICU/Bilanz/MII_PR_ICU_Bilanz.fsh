@@ -67,3 +67,18 @@ Title: "MII PR ICU Bilanz"
 * specimen MS
 * device MS
 * referenceRange MS
+
+Instance: BilanzBeispiel
+InstanceOf: MII_PR_ICU_Bilanz
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#251856003 "Fluid balance status (observable entity)"
+* code.coding[loinc] = $loinc#9097-7 "Fluid balance 24 hour"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T06:00:00+02:00"
+* valueQuantity.value = -200
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

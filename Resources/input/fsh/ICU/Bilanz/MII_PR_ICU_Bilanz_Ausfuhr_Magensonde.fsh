@@ -29,3 +29,18 @@ Title: "MII PR ICU Bilanz Ausfuhr Magensonde"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzAusfuhrMagensondeBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Magensonde
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#1162665001 "Volume of drainage of gastric contents (observable entity)"
+* code.coding[loinc] = $loinc#79561-7 "Fluid output enteral tube [Volume] Measured"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T16:00:00+02:00"
+* valueQuantity.value = 250
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

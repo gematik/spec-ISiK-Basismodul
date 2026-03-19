@@ -27,3 +27,19 @@ Title: "MII PR ICU Bilanz Ausfuhr Drainage Generisch"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzAusfuhrDrainageGenerischBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Drainage_Generisch
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#251843005 "Fluid output from drain"
+* code.coding[IEEE-11073].system = "urn:iso:std:iso:11073:10101"
+* code.coding[IEEE-11073].code = #26668
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T10:00:00+02:00"
+* valueQuantity.value = 120
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

@@ -25,3 +25,17 @@ Title: "MII PR ICU Bilanz Ausfuhr OP Drainage"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzAusfuhrOPDrainageBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_OP_Drainage
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#251844004 "Fluid output from surgical drain (observable entity)"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T18:00:00+02:00"
+* valueQuantity.value = 180
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

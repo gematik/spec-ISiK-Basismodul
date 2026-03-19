@@ -29,3 +29,18 @@ Title: "MII PR ICU Bilanz Ausfuhr Urin"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzAusfuhrUrinBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Urin
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#364201005 "Urine output observable (observable entity)"
+* code.coding[loinc] = $loinc#9187-6 "Urine output"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T06:00:00+02:00"
+* valueQuantity.value = 1200
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

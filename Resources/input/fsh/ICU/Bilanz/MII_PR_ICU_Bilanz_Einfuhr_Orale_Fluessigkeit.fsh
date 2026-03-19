@@ -29,3 +29,18 @@ Title: "MII PR ICU Bilanz Einfuhr Orale Fluessigkeit"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzEinfuhrOraleFluessigkeitBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Orale_Fluessigkeit
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#251853006 "Oral fluid input (observable entity)"
+* code.coding[loinc] = $loinc#9000-1 "Fluid intake oral Measured"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T13:00:00+02:00"
+* valueQuantity.value = 800
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

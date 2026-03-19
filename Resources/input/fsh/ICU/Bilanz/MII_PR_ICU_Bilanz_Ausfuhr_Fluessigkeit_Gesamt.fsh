@@ -29,3 +29,19 @@ Title: "MII PR ICU Bilanz Ausfuhr Fluessigkeit Gesamt"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzAusfuhrFluessigkeitGesamtBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Fluessigkeit_Gesamt
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#251847006 "Total fluid loss"
+* code.coding[loinc] = $loinc#9257-7 "Fluid output total Measured"
+* subject = Reference(PatientinMusterfrau)
+* effectivePeriod.start = "2025-07-15T06:00:00+02:00"
+* effectivePeriod.end = "2025-07-16T06:00:00+02:00"
+* valueQuantity.value = 2400
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

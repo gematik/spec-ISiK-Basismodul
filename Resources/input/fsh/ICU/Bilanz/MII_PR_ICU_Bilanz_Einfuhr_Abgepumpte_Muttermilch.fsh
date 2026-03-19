@@ -25,3 +25,17 @@ Title: "MII PR ICU Bilanz Einfuhr Abgepumpte Muttermilch"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzEinfuhrAbgepumpteMuttermilchBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Abgepumpte_Muttermilch
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#819975003 "Intake of maternal expressed breast milk (observable entity)"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T09:30:00+02:00"
+* valueQuantity.value = 60
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL

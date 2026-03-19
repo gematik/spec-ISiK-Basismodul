@@ -25,3 +25,17 @@ Title: "MII PR ICU Bilanz Einfuhr Saeuglingsnahrung"
 * valueQuantity.unit ^definition = "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'."
 * valueQuantity.unit ^example[0].label = "Preferred display"
 * valueQuantity.unit ^example[0].valueString = "ml"
+
+Instance: BilanzEinfuhrSaeuglingsnahrungBeispiel
+InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Saeuglingsnahrung
+Usage: #example
+* status = #final
+* category.coding[hl7-category] = $observation-category#exam
+* category.coding[kdsicu-category] = $sct#364396009
+* code.coding[sct] = $sct#1204305004 "Measured volume of intake of infant formula"
+* subject = Reference(PatientinMusterfrau)
+* effectiveDateTime = "2025-07-15T11:00:00+02:00"
+* valueQuantity.value = 120
+* valueQuantity.unit = "ml"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mL
