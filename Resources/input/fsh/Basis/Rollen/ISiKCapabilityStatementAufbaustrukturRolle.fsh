@@ -15,22 +15,20 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
   * mode = #server
   * resource[+]
     * type = #Organization
-    * insert Expectation(#MAY)
+    * insert Expectation(#SHALL)
     * supportedProfile[+] = Canonical(ISiKOrganisation)
-      * insert Expectation(#MAY)
+      * insert Expectation(#SHALL)
     * supportedProfile[+] = Canonical(ISiKOrganisationFachabteilung)
-      * insert Expectation(#MAY)
+      * insert Expectation(#SHALL)
 
     * interaction[+]
-      * insert Expectation(#SHOULD)
+      * insert Expectation(#SHALL)
       * code = #read
-      * documentation = "Sofern die Ressource `Organization` unterstützt wird, SOLL die REST-Interaktion `read` implementiert werden."
+      * documentation = "Die Ressource `Organization` MUSS unterstützt werden, da sie notwendig ist zur Abbildung der Aufbaustruktur und insbesondere zur Ausgabe von Angaben zu Fachbereichen und Stationen."
     * interaction[+]
-      * insert Expectation(#SHOULD)
+      * insert Expectation(#SHALL)
       * code = #search-type   
-      * documentation = "Sofern die Ressource `Organization` unterstützt wird, SOLL die REST-Interaktion `search` implementiert werden."
-    
-
+      * documentation = "Die REST-Interaktion `search` MUSS implementiert werden, um die Suche nach Organisationseinheiten, Fachbereichen und Stationen zu ermöglichen."
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * searchParam[+]
@@ -95,7 +93,8 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
       * definition = "http://hl7.org/fhir/SearchParameter/Organization-partof"
       * type = #reference
       * documentation = 
-        "**Beispiel:**    
+        "Begründung: Die Suche nach übergeordneten Organisationseinheiten (z.B. Zugehörigkeit einer Station zu einem Fachbereich) ist eine zentrale Anforderung für die Abbildung der Aufbaustruktur.
+        **Beispiel:**    
         `GET [base]/Organization?partof:identifier=260120196`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
@@ -192,16 +191,6 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
 
-    * searchParam[+]
-      * insert Expectation(#MAY)
-      * name = "type"
-      * definition = "http://hl7.org/fhir/SearchParameter/Location-type"
-      * type = #token
-      * documentation = 
-        "**Beispiel zur Suche nach Typ eines Standorts:**    
-        `GET [base]/Location?type=bed`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "partof"
