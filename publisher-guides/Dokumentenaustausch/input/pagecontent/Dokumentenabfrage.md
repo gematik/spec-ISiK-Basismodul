@@ -3,7 +3,7 @@ topic: Dokumentenabfrage
 ---
 
 ### Dokumentenabfrage (IHE MHD ITI-67 (Find DocumentReferences))
-Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im [CapabilityStatement DokuementverwaltungRolle](CapabilityStatement-ISiKCapabilityStatementDokumentenverwaltungRolle.html#DocumentReference1-1)
+Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im [CapabilityStatement DokumentverwaltungRolle](CapabilityStatement-ISiKCapabilityStatementDokumentenverwaltungRolle.html#DocumentReference1-1)
 mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systemen steht es frei, darüber hinaus weitere FHIR-konforme Suchparameter zu implementieren.
 
 Die Ergebnisse einer Suchanfrage werden in Form eines Searchset-Bundles zurückgegeben. 
