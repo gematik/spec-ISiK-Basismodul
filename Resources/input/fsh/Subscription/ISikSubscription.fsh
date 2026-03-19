@@ -30,7 +30,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * criteria MS
 * criteria from ISiKSubscriptionTopicVS (extensible)
   * ^short = "Canonical URL des SubscriptionTopic welches man abonnieren möchte."
-  * ^comment = "Enthält eines der in ISiK vereinbarten Subsription Topics."
+  * ^comment = "Enthält eines der in ISiK vereinbarten Subscription Topics."
   * extension[filterCriteria] MS
     * ^short = "Filterkriterium."
     * ^comment = "**Bedeutung:** Filterkriterium für die Subscription. Dieses Feld ist optional und kann genutzt werden, um die Subscription auf bestimmte Events zu filtern."
