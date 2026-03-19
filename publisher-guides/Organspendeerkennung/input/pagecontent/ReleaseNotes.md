@@ -13,6 +13,7 @@ Datum: tbd.
 
 * `improve` Einführung zahlreicher Profile zur Abdeckung des geschilderten Use Cases: Neben den Verpflichtenden Profilen (GCS, RASS, Pupillenlichtreaktion - direkt und indirekt, und Pupillengroesse) weitere optional umzusetzende Profile. https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 
     * vgl. auch Vorgaben und Release Notes zum IG "ICU"
+    * Einführung von Profil Organization und Suchparametern zur Abfrage einer Stationsliste für Vitalparameter-Server https://github.com/gematik/spec-ISiK-Basismodul/pull/1094
 * `improve`Einführung eines neuen freiwilligen Suchparameters `code_in` zur Erleichterung der Auffindbarkeit von Prozeduren (z. B. Beatmung und Reanimation) https://github.com/gematik/spec-ISiK-Basismodul/pull/1048
 * `improve` Optionales Profil zur Abbildung von Serumnatrium hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075

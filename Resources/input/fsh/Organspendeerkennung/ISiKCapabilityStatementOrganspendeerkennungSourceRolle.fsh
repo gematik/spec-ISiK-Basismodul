@@ -22,6 +22,72 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
 * format[+] = #application/fhir+json
 * rest
   * mode = #server
+
+  * resource[+]
+      * type = #Organization
+      * insert Expectation(#SHALL)
+      * supportedProfile[+] = Canonical(ISiKOrganisation)
+        * insert Expectation(#SHALL)
+      * supportedProfile[+] = Canonical(ISiKOrganisationFachabteilung)
+        * insert Expectation(#SHALL)
+
+      * interaction[+]
+        * insert Expectation(#SHALL)
+        * code = #read
+        * documentation = "Die Ressource `Organization` MUSS unterstützt werden, da sie notwendig ist zur Abbildung der Aufbaustruktur und insbesondere zur Ausgabe von Angaben zu Fachbereichen und Stationen."
+      * interaction[+]
+        * insert Expectation(#SHALL)
+        * code = #search-type   
+        * documentation = "Die REST-Interaktion `search` MUSS implementiert werden, um die Suche nach Organisationseinheiten, Fachbereichen und Stationen zu ermöglichen."
+      * insert CommonSearchParameters 
+      * insert OptionalTagSearchParameter
+      * searchParam[+]
+        * insert Expectation(#SHALL)
+        * name = "identifier"
+        * definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+        * type = #token
+        * documentation = 
+          "**Beispiel:**    
+          `GET [base]/Organization?identifier=http://fhir.de/sid/arge-ik/iknr|260120196` 
+          `GET [base]/Organization?identifier=http://fhir.de/StructureDefinition/identifier-bsnr|345678975` 
+          `GET [base]/Organization?identifier=345678975`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      * searchParam[+]
+        * insert Expectation(#MAY)
+        * name = "active"
+        * definition = "http://hl7.org/fhir/SearchParameter/Organization-active"
+        * type = #token
+        * documentation = 
+          "**Beispiel:**    
+          `GET [base]/Organization?active=true` 
+          `GET [base]/Organization?active=false`    
+          **Anwendungshinweis:**   
+          Insbesondere für die Suche nach Daten historischer Organisationsstrukturen - z.B. nach Schließung, Zusammenlegung von Fachabteilungen etc. - 
+          erscheint es erforderlich nach Ressourcen nicht aktiver Organisationseinheiten suchen zu können.
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      * searchParam[+]
+        * insert Expectation(#SHALL)
+        * name = "type"
+        * definition = "http://hl7.org/fhir/SearchParameter/Organization-type"
+        * type = #token
+        * documentation = 
+          "**Beispiel:**    
+          `GET [base]/Organization?type=dept`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+      * searchParam[+]
+        * insert Expectation(#SHALL)
+        * name = "name"
+        * definition = "http://hl7.org/fhir/SearchParameter/Organization-name"
+        * type = #string
+        * documentation = 
+          "**Beispiel:**    
+          `GET [base]/Organization?name=FA-Gynäkologie`  
+          `GET [base]/Organization?name=GYN`    
+          **Anwendungshinweis:**   
+          Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#string).  "
+          
   * resource[+]
     * type = #Observation
     * insert CapabilityStatementExpectationExt(SHALL)
