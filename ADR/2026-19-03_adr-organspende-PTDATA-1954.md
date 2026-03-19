@@ -18,16 +18,17 @@ Relevante Anforderungen, Randbedingungen, Annahmen.>
 
 Aktuell werden die beiden Profile Organization und Location nicht verpflichtend durch Basis-Server oder andere ISiK-Systeme unterstützt. Spätestens für den Organspende Use-Case werden Abfragen auf diese Profile aber benötigt - insbesondere Abfragen  auf Vitalparameter-Server (z. B. PDMS).
 
-Bedarf-01: Für den Use Case Organspendeerkennung MUSS ein Client eine Liste aller Stationen aus einem Vitalparameter-Server abfragen können, um Client-Seitig die Zuweisung von Leistungserbringern zu Stationen zu ermöglichen (Eine Server-Seitige Zuweisung wird nicht Benötigt).
+Anforderung-01: Für den Use Case Organspendeerkennung MUSS ein Client eine Liste aller Stationen aus einem Vitalparameter-Server abfragen können, um Client-Seitig die Zuweisung von Leistungserbringern zu Stationen zu ermöglichen (Annahme: Eine Server-Seitige Zuweisung wird nicht benötigt).
 
-Anforderung-021: Für den Use Case Organspendeerkennung MUSS in einem Vitalparameter-Server die Zuordnung von Patienten zu einer Station möglich sein, um die Abfrage von Patienten auf einer Station zu ermöglichen.
+Anforderung-021: Für den Use Case Organspendeerkennung MUSS in einem Vitalparameter-Server die Zuordnung von Patienten zu einer Station möglich sein, um die Abfrage von Patienten auf einer Station zu ermöglichen. 
+Annahme: Diese Zuordnung ist Über die Relation Patient -> Encounter -> Organization bereits gegeben.
 
-Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die Umsetzung des Use Cases notwendig, aber derzeit noch nicht gegeben. 
+Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die Umsetzung des Use Cases notwendig, aber derzeit noch nicht gegeben.
 
 ## Optionen für die Abbildung von Stationen in ISIK Ressourcen
-- sowohl als Organization als auch Location, mit Verlinkung zwischen beiden Ressourcen
+- Station sowohl als Organization als auch Location, mit Verlinkung zwischen beiden Ressourcen
     - Pro: 
-        - ermöglicht die Nutzung der bereits vorhandenen Ressourcen und deren Verlinkung (Patient -> Organization) bzw. vorgesehener Ressource (PractitionerRole -> Organization), um die Stationen abzubilden - ggf. Verknüpft mit anderen Organisationseinheiten.
+        - ermöglicht die Nutzung der bereits vorhandenen Ressourcen und deren Verlinkung (optional auch: Patient -> Organization - für diesen UC aber nicht benötigt), um die Stationen abzubilden - ggf. Verknüpft mit anderen Organisationseinheiten.
         - ermöglicht bestehende Suchmöglichkeiten auf Organization zu nutzen, ohne neue Custom-Suchparameter zu definieren.
     - Contra:
         - erfordert ggf. die Pflege von zwei Ressourcen (Organization und Location) für jede Station
@@ -36,6 +37,7 @@ Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die
     - Daher verworfen
 - als Location allein
     - Contra: Verkompliziert die Lösung, da eine direkte Zuweisung von Patienten nicht möglich (im Gegensatz zur Location)
+        - trägt auch nicht der Tatsache Rechnung, dass eine Station als Organisationseinheit ggf. verschiedene Stationen (Location) beaufsichtigt.
     - Daher verworfen
 
 
@@ -44,7 +46,7 @@ Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die
     - Pro: die Suche nach dem `type`-Code `hospital` oder `department` in der Ressource Organization ist bereits möglich, da es sich um den physicalType handelt.
 - Suche der Location per type
     - Contra: der Suchparameter `type` kann NICHT genutzt werden, da es sich nicht um den physical Type handelt.
-    - Die Definition eines eigenen Suchparameters `location-type` für die Ressource Location erscheint für den Use Case nicht angebracht.
+    - Die Definition eines eigenen Suchparameters `location-physicalType` für die Ressource Location erscheint für den Use Case nicht angebracht.
     - Daher Verworfen
 
 ## Entscheidung
@@ -68,6 +70,8 @@ Weitere TODOS:
 
 Offene Fragen: 
 - Für die weitere Konsolidierung innerhalb der gematik (i. e. mit VZD) kann die Profilierung eines Sub-Organization Profils (mit Parent ISiKOrganization) sinnvoll sein.
+- Encounter.serviceProvider: hier Suchabfrage per Referenz möglich oder nur .identifier? Was ist hier sinnvoll?
+- Ggf. Location.type als MS entfernen?
 
 ## Konsequenzen
 [//]: # (
