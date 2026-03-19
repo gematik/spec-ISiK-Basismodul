@@ -60,12 +60,14 @@ Was wird getan / wie wird es gelöst?>
 - Patienten werden über die Ressource Patient mit der entsprechenden Station (Organization) verknüpft.
 - Die Location (ggf. Station als Standort) wird nicht verpflichtend für die Abbildung von Stationen genutzt, sondern kann optional ergänzend verwendet werden, wenn weitere Informationen zum Standort der Station erforderlich sind.
 
-Weitere TODOS:
+Umgesetzt:
 - Der Worfklow der Organspende muss angepasst werden - d.h. die Abfragen dort zur Stationsliste und zur Abfrage von Patienten
-- Zumindest ein beispiel für die Station als Organization mit dem `type`-Code `department` muss definiert werden (ggf. sogar ein abgeleitetes Profil?)
-- MS auf Patient.managingOrganization muss definiert werden, um die Verknüpfung von Patienten mit Stationen zu ermöglichen
 
-- Offene Fragen: für die weitere Konsolidierung innerhalb der gematik (i. e. mit VZD) kann die Profilierung eines Sub-Organization Profils (mit Parent ISiKOrganization) sinnvoll sein.
+Weitere TODOS:
+- Zumindest ein beispiel für die Station als Organization mit dem `type`-Code `department` muss definiert werden (ggf. sogar ein abgeleitetes Profil?)
+
+Offene Fragen: 
+- Für die weitere Konsolidierung innerhalb der gematik (i. e. mit VZD) kann die Profilierung eines Sub-Organization Profils (mit Parent ISiKOrganization) sinnvoll sein.
 
 ## Konsequenzen
 [//]: # (
@@ -80,4 +82,5 @@ Auswirkungen auf Qualitätseigenschaften, Kosten, Risiken, Betrieb, Wartung.>
 <Verweise auf Dokumente, Prototypen o.Ä.>
 )
 
+- Siehe Update zum Sequenzdiagramm mit Organisationsbezug: Material\Organspendeerkennung\diagrams\sequenzdiagramm-abfragen-org-based.mermaid
     - 
