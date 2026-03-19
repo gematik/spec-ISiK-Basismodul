@@ -38,3 +38,5 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 //Support für generische Vitalparameter (wie Körpergewicht, Größe etc.)
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignStandardSourceRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementVitalSignICUSourceBilanzRolle)
+  * insert ExpectationImports(#SHALL)
