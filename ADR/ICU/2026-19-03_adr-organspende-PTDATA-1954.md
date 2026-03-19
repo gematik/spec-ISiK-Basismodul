@@ -18,10 +18,14 @@ Relevante Anforderungen, Randbedingungen, Annahmen.>
 
 Aktuell werden die beiden Profile Organization und Location nicht verpflichtend durch Basis-Server oder andere ISiK-Systeme unterstützt. Spätestens für den Organspende Use-Case werden Abfragen auf diese Profile aber benötigt - insbesondere Abfragen  auf Vitalparameter-Server (z. B. PDMS).
 
-Anforderung-01: Für den Use Case Organspendeerkennung MUSS ein Client eine Liste aller Stationen aus einem Vitalparameter-Server abfragen können, um Client-Seitig die Zuweisung von Leistungserbringern zu Stationen zu ermöglichen (Annahme: Eine Server-Seitige Zuweisung wird nicht benötigt).
+Anforderungen: 
+    - Für den Use Case Organspendeerkennung MUSS ein Client eine Liste aller Stationen aus einem Vitalparameter-Server abfragen können, um Client-Seitig die Zuweisung von Leistungserbringern zu Stationen zu ermöglichen (Annahme: Eine Server-Seitige Zuweisung wird nicht benötigt).
+    - Für den Use Case Organspendeerkennung MUSS in einem Vitalparameter-Server die Zuordnung von Patienten zu einer Station möglich sein, um die Abfrage von Patienten auf einer Station zu ermöglichen. 
 
-Anforderung-021: Für den Use Case Organspendeerkennung MUSS in einem Vitalparameter-Server die Zuordnung von Patienten zu einer Station möglich sein, um die Abfrage von Patienten auf einer Station zu ermöglichen. 
-Annahme: Diese Zuordnung ist Über die Relation Patient -> Encounter -> Organization bereits gegeben.
+Annahmen: 
+    - Eine Station ist sowohl eine Organisationseinheit als auch ein Standort eines Krankenhauses.
+    - Die Zuordnung von Patienten zur Station ist Über die Relation Patient -> Encounter -> Organization bereits gegeben.
+
 
 Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die Umsetzung des Use Cases notwendig, aber derzeit noch nicht gegeben.
 
