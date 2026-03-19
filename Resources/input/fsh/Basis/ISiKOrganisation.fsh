@@ -325,3 +325,15 @@ Usage: #example
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
+
+
+Instance: IntensivStationBeispiel
+InstanceOf: ISiKOrganisation
+Usage: #example
+* identifier[Abteilungsidentifikator]
+  * system = "https://fhir.krankenhaus.example/sid/OrgaID"
+  * value = "icu01"
+* name = "Intensivstation-01"
+* type[organisationstyp] = $organization_type#dept
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600	"Intensivmedizin"
+* partOf = Reference(KrankenhausOrganisationBeispiel)
