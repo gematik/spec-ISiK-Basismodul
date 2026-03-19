@@ -73,6 +73,7 @@ Offene Fragen:
 - Für die weitere Konsolidierung innerhalb der gematik (i. e. mit VZD) kann die Profilierung eines Sub-Organization Profils (mit Parent ISiKOrganization) sinnvoll sein.
 - Encounter.serviceProvider: hier Suchabfrage per Referenz möglich oder nur .identifier? Was ist hier sinnvoll?
 - Ggf. Location.type als MS entfernen?
+- eine klare Abgrenzung zwischen fachbereich und Station als ORganization - z. B. über Kodierung eines Elements - derzeit nicht gegeben; ist das ein Problem?
 
 ## Konsequenzen
 [//]: # (
