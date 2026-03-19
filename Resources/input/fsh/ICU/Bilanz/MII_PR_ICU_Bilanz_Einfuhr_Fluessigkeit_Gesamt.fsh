@@ -3,7 +3,7 @@ Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt
 Title: "MII PR ICU Bilanz Einfuhr Fluessigkeit Gesamt"
 * insert Meta
-* insert CommonElementse
+* insert CommonElements
 
 * category.coding[hl7-category].code = #exam
 
