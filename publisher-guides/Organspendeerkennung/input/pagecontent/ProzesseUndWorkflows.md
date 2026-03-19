@@ -1,10 +1,6 @@
 ### Prozesse
 
-#### Ein Prozess zur Organspendeerkennung
-
-#TODO: Diagramm ergänzen
-
-#### Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung
+**Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung**
 
 Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organspendeerkennung dar:
 

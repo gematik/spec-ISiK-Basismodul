@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "isik-prozedur-beatmung",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/isik-prozedur-beatmung",
+  "version": "6.0.0-rc",
+  "name": "ISiKProzedurBeatmung",
+  "title": "isik-prozedur-beatmung",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.\n\nDie verwendeten ValueSets in diesem Profil wurden dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. \nAls Parent wurde der letzte Stand des Prozedur-Profils der MII gewählt. \nStand 4.3.2026.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "min": 1
+      },
+      {
+        "id": "Procedure.category.coding:SNOMED-CT",
+        "path": "Procedure.category.coding",
+        "sliceName": "SNOMED-CT",
+        "patternCoding": {
+          "system": "http://snomed.info/sct"
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+        }
+      },
+      {
+        "id": "Procedure.code.coding:SNOMED-CT",
+        "path": "Procedure.code.coding",
+        "sliceName": "SNOMED-CT",
+        "patternCoding": {
+          "system": "http://snomed.info/sct"
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-procedure-beatmung-snomed"
+        }
+      }
+    ]
+  }
+}
