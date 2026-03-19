@@ -59,14 +59,13 @@ Was wird getan / wie wird es gelöst?>
     - z. B. https://hapi.fhir.org/baseR4/Organization?type=department
     - hierfür Suchparameter im entsprechenden CapabilityStatement definieren, damit die Suche nach Stationen möglich ist.
         - für Basis-Server und für die Rolle Organspendeerkennung - bzw. zusätzlich für ICU-expanded
-- Patienten werden über die Ressource Patient mit der entsprechenden Station (Organization) verknüpft.
+- Patienten werden über die Ressource Patient mit der entsprechenden Station (Organization) verknüpft. 
+    - Die geschieht vermittelt über den Encounter
 - Die Location (ggf. Station als Standort) wird nicht verpflichtend für die Abbildung von Stationen genutzt, sondern kann optional ergänzend verwendet werden, wenn weitere Informationen zum Standort der Station erforderlich sind.
 - Ressource ISiKStandort (Location) bleibt allgemein MAY.
 
 Umgesetzt:
 - Der Workflow der Organspende muss angepasst werden - d.h. die Abfragen dort zur Stationsliste und zur Abfrage von Patienten
-
-Weitere TODOS:
 - Zumindest ein beispiel für die Station als Organization mit dem `type`-Code `department` muss definiert werden (ggf. sogar ein abgeleitetes Profil?)
 
 Offene Fragen: 
