@@ -1,4 +1,4 @@
----
+﻿---
 topic: Dokumentenbereitstellung
 ---
 
@@ -58,12 +58,12 @@ Die Vereinbarungen gelten uneingeschränkt.
 Es gelten die Vereinbarungen gemäß [dem CapabilityStatement](CapabilityStatement-ISiKCapabilityStatementDokumentenServerAkteur-expanded.html).
 
 ### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html)
 
 ### Herstellung von Patient- und Encounterkontext
 Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
 Zur Herstellung des Kontextes sind die in ISiK Basis beschriebenen  Verfahren möglich:
-https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UebergreifendeFestlegungen/Patient-Besuch-Kontext  
+https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html  
 
 Zusätzlich kann der Bezug mit Hilfe einer Logischen Referenz hergestellt werden. Dieses Verfahren ist experimentell und derzeit nur auf die Herstellung des Patientenkontextes begrenzt: 
 

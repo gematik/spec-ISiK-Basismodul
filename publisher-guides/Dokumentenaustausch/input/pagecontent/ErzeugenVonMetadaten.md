@@ -1,4 +1,4 @@
----
+﻿---
 topic: AkteureUndInteraktionen-AkteureUndInteraktionen-ErzeugenVonMetadaten
 ---
 
@@ -21,7 +21,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.106.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106413-expected-actions)
 
-Der Fokus für die Implementierung der Operation im ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem) liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
+Der Fokus für die Implementierung der Operation im ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKBerichtSubSysteme.html) liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
 
 
 Die Unterstützung weiterer Input-Formate (z.B. CDA oder andere FHIR-Dokumente, wie MIOs, eRezept, eAU etc.) ist optional.
@@ -42,7 +42,7 @@ Es gelten die Vereinbarungen gemäß [dem CapabilityStatement](CapabilityStateme
 
 #### [2:3.106.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-106.html#231065-security-considerations)
 
-Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://simplifier.net/guide/isik-connect-stufe-5)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Connect](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/index.html)
 
 
 
