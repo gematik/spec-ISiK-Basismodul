@@ -49,8 +49,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^short = "Modus des Standorts"
   * ^comment = "Motivation: Die Einschränkung auf \"instance\" erfolgt, da im  ISiK-Kontext ausschließlich konkrete Standorte übertragen werden sollen. Hiermit wird zusätzlich die Kompatibilität zur MII-Spezifikation eines Standortes gewahrt https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
 * mode = #instance
-* type
-  * ^comment = "Motivation: Zur Ausweisung des Typs des Standorts SOLL der .physicalType verwendet werden."
+* type MS
+  * ^short = "Typ des Standorts"
+  * ^comment = "Motivation: Ein System muss den Typ eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * address MS
   * ^short = "Adresse des Standorts"
   * ^comment = "Motivation: Bei Verfügbarkeit einer Adresse muss ein System diese Information bereitstellen. Darüber hinaus muss das abrufende System diese Information verarbeiten können."
@@ -123,6 +124,8 @@ Usage: #example
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
+* type = $v3-RoleCode#_LocationIdentifiedEntityRoleCode 
+// überprüfen
 * address.line = "Krankenhausstraße 123"
 * address.city = "Musterstadt"
 * address.postalCode = "12345"
