@@ -3,7 +3,7 @@ Id: mii-vs-icu-code-observation-bilanzen-snomed
 Title: "MII VS ICU Code Observation Bilanzen SNOMED"
 Description: "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten SNOMED-Parameter."
 * insert Meta
-* insert CommonElements
+
 
 * include $cs-sct#1162665001 "Volume of drainage of gastric contents (observable entity)"
 * include $cs-sct#1162667009 "Volume of drainage of bile duct (observable entity)"

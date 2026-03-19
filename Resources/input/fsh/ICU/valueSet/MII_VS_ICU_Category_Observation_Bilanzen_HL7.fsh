@@ -3,7 +3,7 @@ Id: mii-vs-icu-category-observation-bilanzen-hl7
 Title: "MII VS ICU Category Observation Bilanzen HL7"
 Description: "ValueSet defining HL7 observation categories for ICU Bilanzen"
 * insert Meta
-* insert CommonElements
+
 
 * include $observation-category#vital-signs "Vital-Signs"
 * include $observation-category#exam "Exam"

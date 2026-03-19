@@ -3,7 +3,7 @@ Id: mii-vs-icu-code-observation-bilanzen-loinc
 Title: "MII VS ICU Code Observation Bilanzen LOINC"
 Description: "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten LOINC-Parameter."
 * insert Meta
-* insert CommonElements
+
 
 * include $cs-loinc#79561-7 "Fluid output enteral tube [Volume] Measured"
 * include $cs-loinc#81661-1 "Blood loss [Volume] Measured"
