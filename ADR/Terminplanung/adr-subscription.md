@@ -45,7 +45,6 @@ Zusaetzlich wird ein abgeleitetes Subscription-Profil erstellt, das ein minimale
 
 Der technische Ablauf wird im IG konkret beschrieben. Insbesondere wird festgelegt, dass Patientenportale sich beim Termin-Repository registrieren muessen, um Push-Benachrichtigungen zu erhalten.
 
-Hinweis: Der in Stufe 5 verwendete Begriff `appointment-change` ist mit der finalen Benennung fuer Stufe 6 abzugleichen (`appointment-update`).
 
 ## Konsequenzen
 
@@ -53,7 +52,7 @@ Hinweis: Der in Stufe 5 verwendete Begriff `appointment-change` ist mit der fina
 - Patientenportale erhalten eine klare technische Integrationsvorgabe zur Registrierung und zum Empfang von Ereignissen.
 - Die Interoperabilitaet zwischen Repository und Portal steigt, da Ereignisse fuer Absage und Aenderung standardisiert sind.
 - Der Implementierungsaufwand bei Repositories steigt durch neue Rolle, Profilumsetzung und Betriebsaspekte.
-- Offener Abgleichpunkt: konsistente Namensgebung der Topics (`appointment-change` vs. `appointment-update`) in allen Artefakten.
+
 
 ## Anhänge (optional)
 
