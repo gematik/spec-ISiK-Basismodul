@@ -7,7 +7,7 @@ Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spez
 mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systemen steht es frei, darüber hinaus weitere FHIR-konforme Suchparameter zu implementieren.
 
 Die Ergebnisse einer Suchanfrage werden in Form eines Searchset-Bundles zurückgegeben. 
-Weitere Informationen sind den [Übergreifenden Festlegungen Rest](UebergreifendeFestlegungen_Rest.html) zu entnehmen
+Weitere Informationen sind den [Übergreifenden Festlegungen Rest](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html) zu entnehmen.
 
 ### Hinweise und Anmerkungen zur Implementierung von [IHE MHD ITI-67 (Find DocumentReferences)](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
 
