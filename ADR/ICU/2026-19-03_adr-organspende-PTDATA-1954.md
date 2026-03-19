@@ -3,7 +3,7 @@
 
 Datum: 19.03.2026  
 
-Status: Vorgeschlagen
+Status: Angenommen
 
 [//]: #  (Status: <Vorgeschlagen | Angenommen | Abgelehnt | Verworfen | Ersetzt durch ADR-…)
 
