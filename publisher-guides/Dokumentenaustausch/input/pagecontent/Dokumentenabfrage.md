@@ -3,14 +3,11 @@ topic: Dokumentenabfrage
 ---
 
 ### Dokumentenabfrage (IHE MHD ITI-67 (Find DocumentReferences))
-Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:DocumentReference_Interaktionen}}
+Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im [CapabilityStatement DokuementverwaltungRolle](CapabilityStatement-ISiKCapabilityStatementDokumentenverwaltungRolle.html#DocumentReference1-1)
 mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systemen steht es frei, darüber hinaus weitere FHIR-konforme Suchparameter zu implementieren.
 
-Die Ergebnisse einer Suchanfrage werden in Form eines Bundles zurückgegeben:
-{{tree:https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenSuchergebnisse, buttons}}
-
-Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen.
-Issues vom Schweregrad `error` oder `fatal` sind unzulässig.
+Die Ergebnisse einer Suchanfrage werden in Form eines Searchset-Bundles zurückgegeben. 
+Weitere Informationen sind den [Übergreifenden Festlegungen Rest](UebergreifendeFestlegungen_Rest.html) zu entnehmen
 
 ### Hinweise und Anmerkungen zur Implementierung von [IHE MHD ITI-67 (Find DocumentReferences)](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
 
