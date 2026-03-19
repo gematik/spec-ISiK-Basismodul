@@ -4,7 +4,7 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * name = "ISiKCapabilityStatementMedikationVerabreichungWRITERolle"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementMedikationVerabreichungWRITERolle"
-* title = "ISiK CapabilityStatement Medikationsverabreichung WRITERolle"
+* title = "ISiK CapabilityStatement Medikationsverabreichung WRITE Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden modifizierenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'Medikationsverabreichung' zu bestehen.
