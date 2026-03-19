@@ -124,8 +124,7 @@ Usage: #example
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
-* type = $v3-RoleCode#_LocationIdentifiedEntityRoleCode 
-// überprüfen
+* type = $v3-RoleCode#HU "Hospital Unit"
 * address.line = "Krankenhausstraße 123"
 * address.city = "Musterstadt"
 * address.postalCode = "12345"
@@ -133,6 +132,62 @@ Usage: #example
 * position.latitude = 52.5200
 * position.longitude = 13.4050
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
+// * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+
+* hoursOfOperation[0].daysOfWeek = #mon
+* hoursOfOperation[0].daysOfWeek = #tue
+* hoursOfOperation[0].daysOfWeek = #wed
+* hoursOfOperation[0].daysOfWeek = #thu
+* hoursOfOperation[0].daysOfWeek = #fri
+* hoursOfOperation[0].allDay = true
+* hoursOfOperation[1].daysOfWeek = #sat
+* hoursOfOperation[1].daysOfWeek = #sun
+
+Instance: StationICUStandortBeispiel
+InstanceOf: ISiKStandort 
+Usage: #example
+//  noch kein eigenes Profil vorhanden
+* identifier[standortnummer-dkg]
+  * value = "123456" 
+* operationalStatus = $v2-0116#O "Occupied" 
+// bei Raum & Bettenstellplatz MS, nicht bei Standort
+* name = "Station A"
+* mode = #instance
+* type = $v3-RoleCode#ICU "Intensive care unit"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#wa "Ward"
+* position.latitude = 52.5200
+* position.longitude = 13.4050
+* managingOrganization = Reference(IntensivStationBeispiel)
+// * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+
+* hoursOfOperation[0].daysOfWeek = #mon
+* hoursOfOperation[0].daysOfWeek = #tue
+* hoursOfOperation[0].daysOfWeek = #wed
+* hoursOfOperation[0].daysOfWeek = #thu
+* hoursOfOperation[0].daysOfWeek = #fri
+* hoursOfOperation[0].allDay = true
+* hoursOfOperation[1].daysOfWeek = #sat
+* hoursOfOperation[1].daysOfWeek = #sun
+
+Instance: StationPediaICUStandortBeispiel
+InstanceOf: ISiKStandort 
+Usage: #example
+//  noch kein eigenes Profil vorhanden
+* identifier[standortnummer-dkg]
+  * value = "123456" 
+* operationalStatus = $v2-0116#O "Occupied" 
+// bei Raum & Bettenstellplatz MS, nicht bei Standort
+* name = "Station A"
+* mode = #instance
+* type = $v3-RoleCode#PEDICU "Pediatric intensive care unit"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#wa "Ward"
+* managingOrganization = Reference(IntensivStationBeispiel)
 // * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
 
 * hoursOfOperation[0].daysOfWeek = #mon
