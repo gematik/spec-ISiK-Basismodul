@@ -1,10 +1,10 @@
-# ADR-XXX: Entfernen des ISiK-Dokumentensuchergebnisse-Bundle-Profils
+# ADR-2110: Entfernen des ISiK-Dokumentensuchergebnisse-Bundle-Profils
 
 Datum: 2026-03-19
 
 Status: Angenommen
 
-Ticket: PTDATA-XYZ
+Ticket: PTDATA-2110
 
 ## Kontext
 
