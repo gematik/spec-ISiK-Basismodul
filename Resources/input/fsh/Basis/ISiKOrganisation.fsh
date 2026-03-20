@@ -15,7 +15,7 @@ Die Erfassung der Organisation in strukturierter Form ermöglicht u.a.:
 Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
 Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  
 
-Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits - wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.
+Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.
 
 ### Kompatibilität
 
