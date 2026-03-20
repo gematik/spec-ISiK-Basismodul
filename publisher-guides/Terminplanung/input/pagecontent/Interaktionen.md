@@ -134,7 +134,7 @@ Bei einer Verschiebung kann allerdings auch eine Absage und Neubuchung eines Ter
     <figcaption><strong>Abbildung:</strong> 7.2 Termin verschieben (ausgehend vom Termin-Repository)</figcaption>
 </figure>
 
-Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschrieben Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISikSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung. 
+Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System verschoben werden. Im Falle, dass das Termin-Repository den Termin verschiebt ist der Termin-Consumer darüber zu benachrichtigen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschrieben Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISiKSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung. 
 
 Siehe [Buchung eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
@@ -153,7 +153,7 @@ Siehe [Buchung eines Termins](OperationDefinition-ISiKAppointmentBookOperation.h
     <figcaption><strong>Abbildung:</strong> 8.2 Terminzusatzinformationen aktualisieren (ausgehend vom Termin-Repository)</figcaption>
 </figure>
 
-Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System durch Zusatzinformationen (z.B. welche Teilnehmer oder Ressourcen sind Teil des Termins) erweitert werden. Aktualisierungen an Terminzusatzinformationen ausgehend vom Termin Repository sind dem Termin Consumer mitzuteilen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschrieben Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISikSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung.
+Termine können sowohl durch den Termin-Requestor als Client oder durch das Termin-Repository als terminführendes System durch Zusatzinformationen (z.B. welche Teilnehmer oder Ressourcen sind Teil des Termins) erweitert werden. Aktualisierungen an Terminzusatzinformationen ausgehend vom Termin Repository sind dem Termin Consumer mitzuteilen. Hierfür ist das im [ISiK Subscription Implementation Guide](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/index.html) beschriebene Vorgehen anzuwenden. Für diesen speziellen Use-Case steht darüber hinaus das Subscription Profil [ISikSubscriptionTermin](ISiKSubscriptionTermin.html) zur Verfügung.
 
 Siehe [Aktualisierung / Absage eines Termins](OperationDefinition-ISiKAppointmentBookOperation.html) für die technische Umsetzung.
 
