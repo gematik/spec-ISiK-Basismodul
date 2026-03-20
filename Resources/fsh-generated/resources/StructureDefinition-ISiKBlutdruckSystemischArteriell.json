@@ -37,6 +37,13 @@
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
+        "id": "Observation.implicitRules",
+        "path": "Observation.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
+      },
+      {
         "id": "Observation.status",
         "path": "Observation.status",
         "short": "Untersuchungsstatus",
@@ -78,6 +85,14 @@
         "sliceName": "loinc",
         "short": "LOINC Kodierung",
         "comment": "Motivation MS: Kodierung des Vitalparameters mittels LOINC.",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKLoincCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -86,6 +101,14 @@
         "sliceName": "snomed",
         "short": "SNOMED CT Kodierung",
         "comment": "Motivation MS: Kodierung des Vitalparameters mittels SNOMED CT.",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKSnomedCTCoding"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -220,6 +243,7 @@
         },
         "short": "Coding",
         "comment": "Motivation MS: Semantische Kodierung",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -242,6 +266,17 @@
         "patternCoding": {
           "code": "271649006",
           "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "8480-6",
+          "system": "http://loinc.org"
         }
       },
       {
@@ -326,6 +361,7 @@
         },
         "short": "Coding",
         "comment": "Motivation MS: Semantische Kodierung",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -348,6 +384,17 @@
         "patternCoding": {
           "code": "271650006",
           "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "8462-4",
+          "system": "http://loinc.org"
         }
       },
       {
@@ -434,6 +481,7 @@
         },
         "short": "Coding",
         "comment": "Motivation MS: Semantische Kodierung",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -456,6 +504,17 @@
         "patternCoding": {
           "code": "6797001",
           "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.component:meanBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "8478-0",
+          "system": "http://loinc.org"
         }
       },
       {

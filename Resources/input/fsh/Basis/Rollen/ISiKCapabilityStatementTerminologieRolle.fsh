@@ -22,7 +22,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * code = #search-type
       * insert Expectation(#MAY)
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "url"
@@ -43,7 +44,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type   
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "url"
@@ -98,6 +100,6 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
         * Kodierung von Encounter-Informationen (z.B. Wahlleistungen, Orttypen)  
         Use Cases im Zusammenhang:    
         (A) Zur Konfigurationszeit können passende ValueSets von einem Server spezifisch für einen Ressourcentyp abgerufen und vorbereitend auf eine Systemintegration begutachtet 
-        bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor](https://simplifier.net/guide/isik-terminplanung-v4/ImplementationGuide-markdown-Datenobjekte-Operations?version=current) genutzt.  
+        bzw. in Client-Systeme eingebunden werden. In diesem Sinne wird die Abfrage im Kontext der [Terminvereinbarung durch einen Termin-Requestor](https://gemspec.gematik.de/ig/fhir/isik/terminplanung/6.0.0-rc/Operations.html) genutzt.  
         (B) Zur Laufzeit können spezifische ValueSets synchronisiert bzw. direkt in die Eingabemasken von Clients eingebunden werden.  
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "

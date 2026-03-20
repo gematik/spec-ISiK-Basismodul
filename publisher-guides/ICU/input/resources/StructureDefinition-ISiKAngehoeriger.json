@@ -50,6 +50,13 @@
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
       },
       {
+        "id": "RelatedPerson.implicitRules",
+        "path": "RelatedPerson.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
+      },
+      {
         "id": "RelatedPerson.active",
         "path": "RelatedPerson.active",
         "short": "Status des Datensatzes",
@@ -92,7 +99,6 @@
         },
         "short": "Offizieller Name der angehörigen Person",
         "comment": "Aufgrund der primären Nutzung von Angehörigen-Informationen im ISiK-Kontext als Brief- und Rechnungsempfänger, \n  ist die Angabe des offiziellen Namens relevant.\n  Wenn kein Name vorliegt, MUSS die [data-absent-reason-Extension](https://www.hl7.org/fhir/R4/extension-data-absent-reason.html) eingesetzt werden.   \n  **Weitere Hinweise:** siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-Patient?version=current#ig-markdown-Ressourcen-Patient-Name)",
-        "min": 1,
         "mustSupport": true
       },
       {
@@ -101,7 +107,7 @@
         "sliceName": "Name",
         "short": "Slice für den offiziellen Namen der angehörigen Person",
         "comment": "Basierend auf dem Pattern .use = official wird dieser Slice gewählt.\n  **Begründung MS:** Siehe untergeordnete Elemente",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -127,13 +133,13 @@
         "id": "RelatedPerson.name:Name.family",
         "path": "RelatedPerson.name.family",
         "short": "Nachname",
-        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.  \n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Vollständiger Nachname bzw. Familienname der Person, einschließlich Vor- und Zusätze.",
         "mustSupport": true
       },
       {
         "id": "RelatedPerson.name:Name.given",
         "path": "RelatedPerson.name.given",
-        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.\n      **Begründung Pflichtfeld:** Ein offizieller Name ist nur zulässig, wenn der Nachname und mindestens ein Vorname angegeben sind.",
+        "comment": "Kann mehrfach verwendet werden, um den Rufnamen sowie weitere Vornamen, Mittelnamen oder Mittel-Initialen abzubilden.",
         "mustSupport": true
       },
       {

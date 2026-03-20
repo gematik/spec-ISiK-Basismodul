@@ -136,7 +136,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         
     Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.
     
-    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
+    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'
     
     Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
   * patientInstruction MS
@@ -144,7 +144,7 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * timing 
     * event MS
       * ^short = "fester Zeitpunkt"
-    * repeat MS
+    * repeat 
       * ^short = "Wiederholungs-Angaben"
       * boundsDuration MS
         * ^short = "Begrenzung der Dauer"
@@ -167,21 +167,21 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
         * ^short = "maximale Dauer der Verabreichung"
       * durationUnit MS
         * ^short = "Einheit der Dauer"
-      * frequency MS
+      * frequency
         * ^short = "Frequenz (Anzahl der Gaben pro Periode)"
       * frequencyMax MS
         * ^short = "maximale Frequenz"
-      * period MS
+      * period
         * ^short = "Zeitperiode zur Frequenz"
       * periodMax MS
         * ^short = "maximale Zeitperiode zur Frequenz"
-      * periodUnit MS
+      * periodUnit 
         * ^short = "Einheit der Zeitperiode"
-      * dayOfWeek MS
+      * dayOfWeek
         * ^short = "Wochentag"
-      * timeOfDay MS
+      * timeOfDay
         * ^short = "Tageszeit"
-      * when MS
+      * when
         * ^short = "Tageszeitpunkt codiert"
       * offset MS
         * ^short = "zeitlicher Abstand der Gabe zum beschriebenen Zeitpunkt"
@@ -218,9 +218,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * doseQuantity MS
       * ^short = "Dosis"
     * rateRatio MS
@@ -233,9 +233,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
     * rateRange MS
       * ^short = "Raten-Bereich"
       * low MS
-      * low only MedicationQuantity
+      * low only MedicationQuantityDoseForm
       * high MS
-      * high only MedicationQuantity
+      * high only MedicationQuantityDoseForm
     * rateQuantity MS
     * rateQuantity only MedicationQuantity
       * ^short = "Rate"
@@ -243,17 +243,17 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * maxDosePerPeriod MS
     * ^short = "Maximaldosis (Zähler) pro Zeitraum (Nenner)"
     * numerator 1.. MS
-    * numerator only MedicationQuantity
+    * numerator only MedicationQuantityDoseForm
     * denominator 1.. MS
     * denominator only MedicationQuantity
   * maxDosePerAdministration MS
-  * maxDosePerAdministration only MedicationQuantity
+  * maxDosePerAdministration only MedicationQuantityDoseForm
     * ^short = "Maximaldosis pro Verabreichung"
 * dispenseRequest MS
   * ^short = "angeforderte Abgabemenge"
   * ^comment = "Begründung des Must-Support: Basisinformation"
   * quantity MS
-  * quantity only MedicationQuantity
+  * quantity only MedicationQuantityDoseForm
     * ^short = "angeforderte Abgabemenge"
     * ^comment = "Begründung des Must-Support: Basisinformation"
 * substitution MS

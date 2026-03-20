@@ -8,7 +8,7 @@
   "experimental": false,
   "date": "2025-12-17",
   "publisher": "gematik GmbH",
-  "description": "\nDiese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n### Motivation\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n### Kompatibilität\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+  "description": "\nDiese Profil ermöglicht die Dokumentation von Allergien und Unverträglichkeiten in ISiK Szenarien.\n### Motivation\n\nDie Möglichkeit, auf eine Übersicht der Allergien und Unverträglichkeiten eines Patienten zuzugreifen, ist eine wichtige Funktion im klinischen Behandlungsablauf. Dies gilt insbesondere, aber nicht ausschließlich, im Bereich der Arzneimitteltherapiesicherheit.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Allergien und Unverträglichkeiten mit der [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html)-Ressource repräsentiert.\n\n### Kompatibilität\n\nFür das Profil ISiKAllergieUnvertraeglichkeit wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKAllergieUnvertraeglichkeit valide sind, auch valide sind gegen:\n* [das Profil KBV_PR_Base_AllergyIntolerance der KBV](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)\n* [das Profil EMDAF_PR_AllergyIntolerance der GEVKO](https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)\n* [das Profil AllergyIntolerance-uv-ips der International Patient Summary](http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -35,6 +35,13 @@
         "path": "AllergyIntolerance.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "AllergyIntolerance.implicitRules",
+        "path": "AllergyIntolerance.implicitRules",
+        "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
+        "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
+        "max": "0"
       },
       {
         "id": "AllergyIntolerance.clinicalStatus",
@@ -158,25 +165,10 @@
           {
             "code": "Coding",
             "profile": [
-              "http://fhir.de/StructureDefinition/CodingASK"
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKASKCoding"
             ]
           }
         ],
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:ask.system",
-        "path": "AllergyIntolerance.code.coding.system",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:ask.code",
-        "path": "AllergyIntolerance.code.coding.code",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:ask.display",
-        "path": "AllergyIntolerance.code.coding.display",
         "mustSupport": true
       },
       {
@@ -189,30 +181,15 @@
           {
             "code": "Coding",
             "profile": [
-              "http://fhir.de/StructureDefinition/CodingATC"
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKATCCoding"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "AllergyIntolerance.code.coding:atc.system",
-        "path": "AllergyIntolerance.code.coding.system",
-        "mustSupport": true
-      },
-      {
         "id": "AllergyIntolerance.code.coding:atc.version",
         "path": "AllergyIntolerance.code.coding.version",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:atc.code",
-        "path": "AllergyIntolerance.code.coding.code",
-        "mustSupport": true
-      },
-      {
-        "id": "AllergyIntolerance.code.coding:atc.display",
-        "path": "AllergyIntolerance.code.coding.display",
         "mustSupport": true
       },
       {

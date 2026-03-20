@@ -36,7 +36,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
       * insert Expectation(#SHALL)
       * code = #search-type       
     
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "status"
@@ -99,22 +100,22 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#date).  "
     * searchParam[+]
       * insert Expectation(#SHALL)
-      * name = "combo-code"
-      * definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Observation?combo-code=85354-9`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
-    * searchParam[+]
-      * insert Expectation(#SHALL)
-      * name = "combo-code-value-quantity"
-      * definition = "http://hl7.org/fhir/SearchParameter/Observation-combo-code-value-quantity"
+      * name = "code-value-concept"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-code-value-concept"
       * type = #composite
       * documentation = 
         "**Beispiel:**    
-        `GET [base]/Observation?combo-code-value-quantity=http://loinc.org|8480-6$120|http://unitsofmeasure.org|mm[Hg]`    
+        `GET [base]/Observation?code-value-concept=http://loinc.org|72166-2$http://loinc.org|LA15920-4`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "code-value-date"
+      * definition = "http://hl7.org/fhir/SearchParameter/Observation-code-value-date"
+      * type = #composite
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Observation?code-value-date=http://loinc.org|11779-6$2024-08-01`    
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#composite).  "
     * searchParam[+]
@@ -155,7 +156,8 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type
-    * insert CommonSearchParameters
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
     * searchParam[+]
       * insert Expectation(#SHALL)
       * name = "clinical-status"

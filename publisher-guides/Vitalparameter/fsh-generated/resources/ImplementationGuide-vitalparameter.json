@@ -139,6 +139,13 @@
       },
       {
         "reference": {
+          "reference": "Observation/ExampleISiKLaboruntersuchungSerumnatrium1"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKLaboruntersuchungSerumnatrium1"
+      },
+      {
+        "reference": {
           "reference": "Observation/ExampleISiKLaboruntersuchungThrombozyten1"
         },
         "exampleBoolean": false,
@@ -382,6 +389,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKCoding"
+        },
+        "description": "Data Type profile for Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKCoding"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKEKG"
         },
         "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über kurze, relevante EKG-Ausschnitte eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK. Es wurde entwickelt, um spezifische klinische Fragestellungen zu unterstützen, bei denen prägnante und gezielte EKG-Daten im Vordergrund stehen. Für vollständige und längere EKG-Aufzeichnungen sind alternative Formate vorgesehen, die für umfangreiche Daten besser geeignet sind.\n### Motivation\nDie Bereitstellung kurzer EKG-Ausschnitte ermöglicht eine präzise und effiziente Unterstützung bei der Diagnose akuter kardiologischer Fragestellungen, der Überwachung von Arrhythmien oder der Beurteilung bestimmter Ereignisse wie ST-Strecken-Veränderungen. Diese fokussierte Darstellung dient der Optimierung klinischer Entscheidungen und der schnellen Verarbeitung relevanter Daten.\n\nIn FHIR wird das EKG durch die Observation-Ressource repräsentiert, wobei spezifische Anforderungen für die Darstellung und Kodierung der Daten in diesem Profil berücksichtigt werden.\n\n### Kompatibilität\nDas Profil ISiKEKG ist vom Profil [EkgDE](http://fhir.de/StructureDefinition/observation-de-ekg) aus den deutschen Basisprofilen abgeleitet.",
@@ -611,7 +626,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchung"
         },
-        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UseCases-AMTS?version=current).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchung"
       },
@@ -657,6 +672,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKLaboruntersuchungSerumnatrium"
+        },
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil wird u. A. im Use Case zur Unterstützung von Transplantationsbeauftragten bei der Organspendeerkennung eingesetzt; besonders in diesem Kontext muss es auch Werte abbilden, die im Rahmen von Messungen mittels Point-of-Care-Testing erhoben wurden. Das Profil ist auch geeignet, um Serumnatrium Werte abzubilden, die mittels Laboruntersuchung erhoben wurden.\n\nEine eindeutige Kennzeichnung für die Differenzierung hinsichtlich der Erhebungsmethode ist derzeit über dieses Profil nicht vorgesehen. Es kann jedoch das Element .method verwendet werden. Die Differenzierung aufgrund der Methode kann unter Umständen sinnvoll sein, wenn im Falle einer Laboruntersuchung ein Arzt die Werte zuerst sichten und bestätigen müsste, bevor sie im PDMS als 'final' für den Patienten hinterlegt werden. ",
+        "exampleBoolean": false,
+        "name": "ISiKLaboruntersuchungSerumnatrium"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchungThrombozyten"
         },
         "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Thrombozyten eines Patienten in ISiK Szenarien.",
@@ -681,11 +704,11 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/ISiKLocationPhysicalType"
+          "reference": "StructureDefinition/ISiKLoincCoding"
         },
-        "description": "Dieses Valueset beinhaltet die für ISiK Kodierbaren Standort-Typen",
+        "description": "Data Type profile for LOINC Codings in ISiK",
         "exampleBoolean": false,
-        "name": "ISiKLocationPhysicalType"
+        "name": "ISiKLoincCoding"
       },
       {
         "reference": {
@@ -730,6 +753,14 @@
         },
         "exampleBoolean": false,
         "name": "ISiKSauerstoffsaettigungArteriellMinExample"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSnomedCTCoding"
+        },
+        "description": "Data Type profile for Snomed-CT Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKSnomedCTCoding"
       },
       {
         "reference": {
@@ -786,6 +817,14 @@
         "description": "Enthält LOINC-Codes für die Observation Serumkreatinin",
         "exampleBoolean": false,
         "name": "ObservationCodesSerumkreatinin"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ObservationCodesSerumnatrium"
+        },
+        "description": "Enthält LOINC-Codes für die Observation Serumnatrium",
+        "exampleBoolean": false,
+        "name": "ObservationCodesSerumnatrium"
       },
       {
         "reference": {
@@ -850,6 +889,14 @@
         "description": "Enthält UCUM-Einheiten für die Observation Serumkreatinin",
         "exampleBoolean": false,
         "name": "ObservationUnitsSerumkreatinin"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ObservationUnitsSerumnatrium"
+        },
+        "description": "Enthält UCUM-Einheiten für die Observation Serumnatrium",
+        "exampleBoolean": false,
+        "name": "ObservationUnitsSerumnatrium"
       },
       {
         "reference": {
