@@ -20,7 +20,7 @@ Die standardisierte Bereitstellung von Implantatinformationen unterstützt insbe
 Darüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.
 Als Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.
 
-Fokus auf Implantate, da Hilfsmittels außerhalb eines Entlassbriefes kaum Relevanz für eine Patient-Summary haben. Diese werden höchstwahrscheinlich auch nicht sauber dokumentiert.
+Fokus auf Implantate, da Hilfsmittel außerhalb eines Entlassbriefes kaum Relevanz für eine Patient-Summary haben. Diese werden höchstwahrscheinlich auch nicht sauber dokumentiert.
 "
 * insert Meta
 * insert CommonElements
