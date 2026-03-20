@@ -9,7 +9,8 @@ Anforderungen als Ausdruck normativer Festlegungen werden durch die dem [RFC2119
 
 SHALL/MUSS drückt in ISiK entsprechend eine notwendig zu erfüllende Anforderung aus. Die Anforderung wird über einen oder mehrere Tests abgedeckt, sodass ein System für das betreffende Modul nicht zertifiziert werden kann, wenn ein System einen Test zur Anforderungsabdeckung nicht erfolgreich durchläuft.
 
-Eine Anforderung mit dem Ausdruck SHOULD/SOLL ist im Testkontext gleichbedeutend mit einer MAY/KANN Anforderung; jedoch wird dringend geraten die Anforderung zu implementieren.
+Das Weglassen einer SHOULD‑Anforderung ist nur zulässig, wenn der Hersteller im Rahmen des Zertifizierungsverfahrens eine klare, schriftliche und überprüfbare Begründung liefert, die nachweist, dass die entsprechende Anforderung oder das entsprechende Datenelement dauerhaft nicht implementierbar ist, das diese aufgrund der Zweckbestimmung des Systems niemals innerhalb des deklarierten Interoperabilitätsumfangs des Systems unterstützt werden können.
+Fehlt eine akzeptable Begründung, gilt die Nichterfüllung einer SHOULD‑Anforderung als Nichtkonformität.
 
 MAY/KANN drückt in ISiK eine freiwillig zu erfüllende Anforderung aus. Die Anforderung wird über einen Test abgedeckt, dessen Ergebnis ist jedoch nicht maßgeblich für die Zertifizierung eines Systems gegen das betreffende Modul.
 Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung, erscheint das Ergebnis im Testbericht.
