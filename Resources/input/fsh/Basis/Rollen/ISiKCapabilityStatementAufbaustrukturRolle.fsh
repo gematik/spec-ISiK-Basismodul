@@ -24,7 +24,7 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #read
-      * documentation = "Die Ressource `Organization` MUSS unterstützt werden, da sie notwendig ist zur Abbildung der Aufbaustruktur und insbesondere zur Ausgabe von Angaben zu Fachbereichen und Stationen."
+      * documentation = "Die Ressource `Organization` MUSS unterstützt werden, da sie notwendig ist zur Abbildung der Aufbaustruktur und insbesondere zur Ausgabe von Angaben zu Fachbereichen."
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #search-type   
