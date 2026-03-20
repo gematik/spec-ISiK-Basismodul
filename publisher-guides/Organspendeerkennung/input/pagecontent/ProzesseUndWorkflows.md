@@ -7,7 +7,7 @@ Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organs
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="sequenzdiagramm-abfragen-org-based.svg" alt="Sequenzdiagram Organspendedetektion" style="width: 100%;">
+        <img src="sequenzdiagramm-abfragen.svg" alt="Sequenzdiagram Organspendedetektion" style="width: 100%;">
     </div>
     
 </figure>
