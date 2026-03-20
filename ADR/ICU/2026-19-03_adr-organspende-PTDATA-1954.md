@@ -83,5 +83,5 @@ Auswirkungen auf Qualitätseigenschaften, Kosten, Risiken, Betrieb, Wartung.>
 <Verweise auf Dokumente, Prototypen o.Ä.>
 )
 
-- Siehe Update zum Sequenzdiagramm mit Organisationsbezug: Material\Organspendeerkennung\diagrams\sequenzdiagramm-abfragen-org-based.mermaid
+
     - 
