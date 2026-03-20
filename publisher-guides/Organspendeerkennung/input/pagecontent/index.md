@@ -16,25 +16,25 @@ Realm: Deutschland
 
 ### Organspendererkennung
 
-Eine der vielfältigen Aufgaben von Ärzt:innen im intensivmedizinischen Alltag und zentrale Aufgabe von Transplantationsbeauftragten, ist die Erkennung von potenziellen Organspender:innen.
-In der konsequenten und frühzeitigen Erkennung von möglichen Organspender:innen liegt ein entscheidender Schlüssel zur Ausschöpfung des Organspendepotentials sowie zur Umsetzung des Patientenwillens am Lebensende. 
-Werden Patient:innen, die für eine Organspende in Frage kommen könnten, rechtzeitig erkannt, kann die medizinische Behandlung frühzeitig im Sinne des Patientenwillens angepasst, Angehörige frühzeitig und gegebenenfalls psychologisch begleitet und die notwendigen organisatorischen Schritte für eine erfolgreiche Organspende und Transplantation eingeleitet werden. Zwingende Voraussetzung hierfür ist in Deutschland die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
+Eine der vielfältigen Aufgaben von Ärzten im intensivmedizinischen Alltag und zentrale Aufgabe von Transplantationsbeauftragten, ist die Erkennung von potenziellen Organspendern.
+In der konsequenten und frühzeitigen Erkennung von möglichen Organspendern liegt ein entscheidender Schlüssel zur Ausschöpfung des Organspendepotentials sowie zur Umsetzung des Patientenwillens am Lebensende. 
+Werden Patienten, die für eine Organspende in Frage kommen könnten, rechtzeitig erkannt, kann die medizinische Behandlung frühzeitig im Sinne des Patientenwillens angepasst, Angehörige frühzeitig und gegebenenfalls psychologisch begleitet und die notwendigen organisatorischen Schritte für eine erfolgreiche Organspende und Transplantation eingeleitet werden. Zwingende Voraussetzung hierfür ist in Deutschland die Feststellung des irreversiblen Hirnfunktionsausfalls (IHA). 
 
 
 #### Motivation und Hintergrund
 
-[Wissenschaftliche Daten](https://link.springer.com/article/10.1007/s00101-018-0510-x) zeigen ein relevantes Erkennungsdefizit bei Patient:innen, die im Verlauf einen IHA erleiden könnten.
-Ein erheblicher Anteil dieser Patient:innen verstirbt im Rahmen einer Therapielimitierung nach Feststellung einer infausten Prognose aufgrund einer schweren Hirnschädigung, ohne dass die Option einer Organspende zuvor evaluiert wurde.
+[Wissenschaftliche Daten](https://link.springer.com/article/10.1007/s00101-018-0510-x) zeigen ein relevantes Erkennungsdefizit bei Patienten, die im Verlauf einen IHA erleiden könnten.
+Ein erheblicher Anteil dieser Patienten verstirbt im Rahmen einer Therapielimitierung nach Feststellung einer infausten Prognose aufgrund einer schweren Hirnschädigung, ohne dass die Option einer Organspende zuvor evaluiert wurde.
  
 Der IHA ist insgesamt ein sehr seltenes Ereignis auf Intensivstationen und erfordert daher eine besonders hohe Aufmerksamkeit des medizinischen Personals für entsprechende klinische Indikatoren.
 
 Organisatorisch unterstützende Softwarelösungen können dazu beitragen, potenzielle relevante Fälle gezielt zu erkennen und in den klinischen Fokus zu rücken. 
 In einer [wissenschaftlichen Studie](https://pubmed.ncbi.nlm.nih.gov/37626244/) konnte die Genauigkeit des hier beschriebenen Screening-Algorithmus nachgewiesen werden.
-Eine weitere [Untersuchung](https://www.aerzteblatt.de/archiv/automatisiertes-elektronisches-screeningtool-detect-zur-erkennung-des-potenziell-irreversiblen-hirnfunktionsausfalls-cbec861b-c7e2-42c9-9e95-3f609d9e6855) zeigte zudem einen positiven Einfluss auf die Erkennung von Patient:innen mit drohendem IHA.
+Eine weitere [Untersuchung](https://www.aerzteblatt.de/archiv/automatisiertes-elektronisches-screeningtool-detect-zur-erkennung-des-potenziell-irreversiblen-hirnfunktionsausfalls-cbec861b-c7e2-42c9-9e95-3f609d9e6855) zeigte zudem einen positiven Einfluss auf die Erkennung von Patienten mit drohendem IHA.
 Als relevant gilt ein Fall, wenn spezifische, im intensivmedizinischen Kontext erhobene Parameter auf eine schwerste Hirnschädigung in einem kritischen Bereich hinweisen.
 
 
-Die flächendeckende Einführung einer solchen Anwendung hängt insbesondere von der Nutzbarkeit vorhandener Daten aus dedizierten Systemen ab. Offene Schnittstellen und einheitliche Datenformate stellen dabei einen zentralen Multiplikator für die Integration in die klinische IT-Infrastruktur der Krankenhäuser dar und sind entscheidend für die Verbesserung der Erkennung potenzieller Organspender:innen.  Dieser Implementierungsleitfaden beschreibt daher die notwendigen Prozesse, spezifizierten REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen, um die Integration eines entsprechenden Softwaresystems zu ermöglichen.
+Die flächendeckende Einführung einer solchen Anwendung hängt insbesondere von der Nutzbarkeit vorhandener Daten aus dedizierten Systemen ab. Offene Schnittstellen und einheitliche Datenformate stellen dabei einen zentralen Multiplikator für die Integration in die klinische IT-Infrastruktur der Krankenhäuser dar und sind entscheidend für die Verbesserung der Erkennung potenzieller Organspender.  Dieser Implementierungsleitfaden beschreibt daher die notwendigen Prozesse, spezifizierten REST-Abfragen und FHIR-Profile, die durch ein PDMS bereitgestellt werden müssen, um die Integration eines entsprechenden Softwaresystems zu ermöglichen.
 
 
 #### Stakeholder
