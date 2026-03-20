@@ -175,11 +175,11 @@ Das verwendete Mess- oder Analysegerät kann einen entscheidenden Einfluss auf d
     * ^short = "Freitextbeschreibung des Referenzbereichs"
 
 Invariant: isik-obs-1
-Description: "Wenn der Status der Observation nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\"."
-Expression: "(status in ('registered' | 'cancelled' | 'entered-in-error')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()"
+Description: "Wenn der Status der Observation nicht \"registered\" oder \"cancelled\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\"."
+Expression: "(status in ('registered' | 'cancelled')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()"
 Severity: #error
 
 Invariant: isik-obs-2
-Description: "Wenn die Observation Komponenten enthält und der Status nicht \"registered\", \"cancelled\" oder \"entered-in-error\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein."
-Expression: "component.exists() implies ((status in ('registered' | 'cancelled' | 'entered-in-error')) or component.value.exists() or component.dataAbsentReason.exists())"
+Description: "Wenn die Observation Komponenten enthält und der Status nicht \"registered\" oder \"cancelled\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein."
+Expression: "component.exists() implies ((status in ('registered' | 'cancelled')) or component.value.exists() or component.dataAbsentReason.exists())"
 Severity: #error
