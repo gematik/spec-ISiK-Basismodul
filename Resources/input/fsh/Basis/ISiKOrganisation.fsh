@@ -14,6 +14,9 @@ Die Erfassung der Organisation in strukturierter Form ermöglicht u.a.:
 
 Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
 Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  
+
+Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits - wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.
+
 ### Kompatibilität
 
 Für das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
@@ -230,10 +233,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_typeVS (required)
   * ^short = "Allgemeiner Organisationstyp"
-  * ^comment = """Definiert den allgemeinen Typ der Organisation.
-  
-  Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits - wird über die unterschiedliche Ressourcen-Abbildung gewährleistet. 
-  Im Sinne des Recalls (Auffindbarkeit) MUSS, sowohl für Fachabteilungen als auch für Stationen zumindest der Code 'dept' aus dem ValueSet organization-type genutzt werden."""
+  * ^comment = """Definiert den allgemeinen Typ der Organisation."""
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
@@ -340,14 +340,3 @@ Usage: #example
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertC#1000	"Pädiatrie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
 
-
-Instance: IntensivStationBeispiel
-InstanceOf: ISiKOrganisation
-Usage: #example
-* identifier[Abteilungsidentifikator]
-  * system = "https://fhir.krankenhaus.example/sid/OrgaID"
-  * value = "sta-icu-01"
-* name = "Intensivstation-01"
-* type[organisationstyp] = $organization_type#dept
-* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600	"Intensivmedizin"
-* partOf = Reference(KrankenhausOrganisationBeispiel)
