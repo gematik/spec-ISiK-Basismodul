@@ -199,14 +199,17 @@ Usage: #example
 * hoursOfOperation[1].daysOfWeek = #sat
 * hoursOfOperation[1].daysOfWeek = #sun
 
-Instance: location-characteristic
+Instance: Location-characteristic
 InstanceOf: SearchParameter
 Usage: #definition
 
-* name = "characteristic" //entsprechend R& build: https://build.fhir.org/location-search.html#Location-characteristic
+* insert MetaInstance
+* name = "characteristic"
 * status = #active
+* description = "Search by physicalType of a Location (e.g. wa = ward). 
 
-* description = "Search by physicalType of a Location (e.g. wa = ward)"
+This SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).
+"
 * code = #physical-type
 * base = #Location
 * type = #token

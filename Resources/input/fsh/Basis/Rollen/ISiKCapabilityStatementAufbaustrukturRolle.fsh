@@ -202,7 +202,7 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
 
 //Folgender Suchparameter ist in ISiK als Custom-Suchparameter vorgesehen, da er für die Anforderungen der Stationsabfrage relevant ist; zugleich wird er in FHIR R6 als Standard-Parameter für Location eingeführt.
     * searchParam[+]
-      * insert Expectation(#MAY)
+      * insert Expectation(#SHALL)
       * name = "characteristic"
       * definition = "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic"
       * type = #token
