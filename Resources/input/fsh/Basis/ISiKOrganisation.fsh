@@ -232,7 +232,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * ^short = "Allgemeiner Organisationstyp"
   * ^comment = """Definiert den allgemeinen Typ der Organisation.
   
-  Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen und Stationen ist zum Zeitpunkt der Festlegung auf Grundlage entsprechender Codes nicht möglich. 
+  Anforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits - wird über die unterschiedliche Ressourcen-Abbildung gewährleistet. 
   Im Sinne des Recalls (Auffindbarkeit) MUSS, sowohl für Fachabteilungen als auch für Stationen zumindest der Code 'dept' aus dem ValueSet organization-type genutzt werden."""
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
