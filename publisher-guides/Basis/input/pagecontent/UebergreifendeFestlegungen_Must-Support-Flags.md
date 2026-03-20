@@ -17,7 +17,24 @@ Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens 
     - Bei lediglich implizit vorhandenen Informationen KANN der Inhalt eines MS-Elementes in der Schnittstelle hartkodiert werden (sofern gesichert ist, dass der entsprechende Wert des Elementes ausnahmslos auf alle Instanzen zutrifft, die dieses System erstellt).
 
     Insbesondere für solche implizit vorhandene Informationen, können in den Profilen auf der Ebene einzelner, mit MS-Flag versehener Elemente konkretere Hinweise zur Implementierung enthalten sein, die die übergreifende Definition zu Must-Support für den Einzelfall konkretisieren, zum Beispiel zur Klarstellung wo und unter welchen Umständen hartkodierte Werte erlaubt sind.
-Ob für ein MS-Flag konkrete Ausnahmen gelten, in denen ein impliziter Wert hartcodiert gesetzt werden darf oder das MS-Flag nur unter bestimmten Bedingungen gilt, ist der Definition des jeweiligen Elementes zu entnehmen.
+    Ob für ein MS-Flag konkrete Ausnahmen gelten, in denen ein impliziter Wert hartcodiert gesetzt werden darf oder das MS-Flag nur unter bestimmten Bedingungen gilt, ist der Definition des jeweiligen Elementes zu entnehmen.
+
+    Beispiel: Im Rahmen einer Fallbasierten Suchabfrage von Patientenressourcen (bspw. Condition) kann davon ausgegangen werden, dass alle Conditions, die diesem Fall (Abteilungskontakt/ Encounter) zugeordnet sind, ausgegeben werden.
+
+    Beispielhafte Abfrage in zwei Schritten: 
+    
+    - Suche eines speziellen Encounter
+    ```http
+    GET [BASE_URL]/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
+    &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
+    ```
+    
+    - Suche der zugehörigen Diagnosen
+    ```http
+    GET [BASE_URL]/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
+    ```
+
+    Die Ergebnisliste gibt alle Diagnosen zurück, die diesem Fall zugeordnet sind.
 
     Hinweis: Bei den Testszenarien von READ-Interaktionen im Rahmen des Bestätigungsverfahrens werden für MS-Elemente Informationen vorgegeben, die in den Systemen erfasst und über die FHIR-Schnittstelle reproduziert werden MÜSSEN, unabhängig von der angegebenen Kardinalität.
 
