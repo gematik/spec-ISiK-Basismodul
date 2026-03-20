@@ -76,6 +76,19 @@
               "code": "search-type"
             }
           ],
+          "operation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "Patient-everything",
+              "definition": "http://hl7.org/fhir/OperationDefinition/Patient-everything",
+              "documentation": "In der Operation ist die Ergebnismenge wie folgt definiert: 'The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments.'. Im Kontext von ISiK ist das so zu interpretieren, dass ein Akteur alle Ressourcen, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Patient-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-patient.html) sind, zurückgeben MUSS. Inklusive aller Ressourcen, die von diesen Ressourcen referenziert werden, einschließlich Binaries und Attachments.\n  \n  Ein ISiK Akteur MUSS nur das das Instance-Level (`[base]/Patient/[id]/$everything`) unterstützen, nicht jedoch die Type-Level Operation (`[base]/Patient/$everything`).\n  \n  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definierten, wie die Forcierung von Pagination über den Parameter `_count` oder die die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
+            }
+          ],
           "searchParam": [
             {
               "extension": [
@@ -225,6 +238,19 @@
                   "valueCode": "SHALL"
                 }
               ]
+            }
+          ],
+          "operation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "Encounter-everything",
+              "definition": "http://hl7.org/fhir/OperationDefinition/Encounter-everything",
+              "documentation": "In der Operation ist die Ergebnismenge wie folgt definiert: \n  The server SHOULD return all resources it has that:\n    - are included in the encounter compartment for the identified encounter (have a reference to the encounter)\n    - are referenced by the standard extenstion for associating an encounter (where no reference element exists) http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter\n    - the server believes are relevant to the context of the encounter for any other reason (internally defined/decided)\n    - any resource referenced by the above, including binaries and attachments (to make a more complete package)\n    \n  Dies ist im Kontext von ISiK wie folgt zu interpretieren:\n  \n    - Ein Akteur MUSS alle Ressourcen zurückgeben, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Encounter-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) sind.\n    - Im Kontext von ISiK werden assoziierte Encounter über die Verknüpfung mit dem selben Abrechnungsfall dargestellt. Aus dem Grund MÜSSEN alle Ressourcen beinhaltet sein, die auch auf Encounter verweisen, welche mit dem selben Abrechnungsfall (`Encounter.account.identifier`) verknüpft sind. Auf diese Encounter wird die selbe Logik wie in Punkt 1 und den folgenden Punkten angewendet.\n    - Als Vorgabe in ISiK werden als weitere relevante Ressource innerhalb eines Encounter-Kontext alle Ressourcen von den folgenden Typen angesehen. Wichtig ist dabei nur, dass sie auf die selbe Patient-Instanz verweisen, wie der angefragte Encounter.\n    Liste: AllergyIntolerance (Allergien)\n    - Es müssen alle Ressourcen inkludiert werden, die aus den oben identifizierten Ressourcen referenziert werden, einschließlich Binaries und Attachments.\n    \n  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definierten, wie die Forcierung von Pagination über den Parameter `_count` oder die die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
             }
           ],
           "searchParam": [
