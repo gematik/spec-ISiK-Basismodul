@@ -63,9 +63,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * position MS 
   * ^short = "Geodaten eines Standorts"
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-* managingOrganization 1..1 MS 
+* managingOrganization MS 
   * ^short = "Verwaltende Organisation des Standorts"
-  * ^comment = "Motivation: entspricht https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"
+  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert."
+  
+  Hintergrund: Vergleiche https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"""
 * partOf MS
   * ^short = "Organisationale Zugehörigkeit"
   * ^comment = "Motivation: Ein System muss die organisationale Zugehörigkeit eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
@@ -101,6 +103,23 @@ das einen Bettenstellplatz referenziert.
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Bettenstellplatz zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'. Im Sinne der Interoperabilität ist das ValueSet verpflichtend."
 
 
+Instance: KrankenhausStandortBeispiel
+InstanceOf: ISiKStandort
+Usage: #example
+* identifier[standortnummer-dkg]
+  * value = "123456"
+* operationalStatus = $v2-0116#O "Occupied"
+* name = "Krankenhaus Standort"
+* mode = #instance
+* type = $v3-RoleCode#HOSP "Hospital"
+* address.line = "Krankenhausstraße 123"
+* address.city = "Musterstadt"
+* address.postalCode = "12345"
+* physicalType = $LocationPhysicalType#bu "Building"
+* position.latitude = 52.5200
+* position.longitude = 13.4050
+* managingOrganization = Reference(KrankenhausOrganisationBeispiel)
+
 Instance: RaumStandortBeispiel
 InstanceOf: ISiKStandortRaum
 Usage: #example
@@ -117,7 +136,7 @@ Usage: #example
 Instance: StationStandortBeispiel
 InstanceOf: ISiKStandort 
 Usage: #example
-//  noch kein eigenes Profil vorhanden
+// kein eigenes Profil vorhanden
 * identifier[standortnummer-dkg]
   * value = "123456" 
 * operationalStatus = $v2-0116#O "Occupied" 
@@ -132,7 +151,7 @@ Usage: #example
 * position.latitude = 52.5200
 * position.longitude = 13.4050
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
-// * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
 
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
@@ -161,7 +180,7 @@ Usage: #example
 * position.latitude = 52.5200
 * position.longitude = 13.4050
 * managingOrganization = Reference(IntensivStationBeispiel)
-// * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
 
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
@@ -188,7 +207,7 @@ Usage: #example
 * address.postalCode = "12345"
 * physicalType = $LocationPhysicalType#wa "Ward"
 * managingOrganization = Reference(KlinikPaediatrieOrganisationBeispiel)
-// * partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
 
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
