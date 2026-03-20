@@ -20,7 +20,7 @@ Die standardisierte Bereitstellung von Implantatinformationen unterstützt insbe
 Darüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.
 Als Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.
 
-Fokus auf Implantate, da Hilfsmittels außerhalb eines Entlassbriefes kaum Relevanz für eine Patient-Summary haben. Diese werden höchstwahrscheinlich auch nicht sauber dokumentiert.
+Da Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Aufnahme in ISiK sinnvoll, um die Verfügbarkeit von Implantatinformationen in verschiedenen Anwendungsfällen zu gewährleisten, insbesondere in solchen, die über die Dokumentation in einem Entlassbrief hinausgehen.
 "
 * insert Meta
 * insert CommonElements
