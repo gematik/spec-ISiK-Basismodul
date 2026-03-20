@@ -199,3 +199,16 @@ Usage: #example
 * hoursOfOperation[1].daysOfWeek = #sat
 * hoursOfOperation[1].daysOfWeek = #sun
 
+Instance: location-characteristic
+InstanceOf: SearchParameter
+Usage: #definition
+
+* name = "characteristic" //entsprechend R& build: https://build.fhir.org/location-search.html#Location-characteristic
+* status = #active
+
+* description = "Search by physicalType of a Location (e.g. wa = ward)"
+* code = #physical-type
+* base = #Location
+* type = #token
+* expression = "Location.physicalType"
+* xpathUsage = #normal

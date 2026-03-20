@@ -111,26 +111,26 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
 
   * resource[+]
     * type = #Location
-    * insert Expectation(#MAY)
+    * insert Expectation(#SHALL)
     * supportedProfile[+] = Canonical(ISiKStandort)
-      * insert Expectation(#MAY)
+      * insert Expectation(#SHALL)
     * supportedProfile[+] = Canonical(ISiKStandortRaum)
       * insert Expectation(#MAY)
     * supportedProfile[+] = Canonical(ISiKStandortBettenstellplatz)
       * insert Expectation(#MAY)
 
     * interaction[+]
-      * insert Expectation(#SHOULD)
+      * insert Expectation(#SHALL)
       * code = #read
-      * documentation = "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `read` implementiert werden."
+      * documentation = "Begründung: Die REST-Interaktion `read` muss implementiert werden, um einzelne Ressourcen abzurufen."
     * interaction[+]
-      * insert Expectation(#SHOULD)
+      * insert Expectation(#SHALL)
       * code = #search-type   
-      * documentation = "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `search` implementiert werden."
+      * documentation = "Begründung: Die REST-Interaktion `search` muss implementiert werden, um Ressourcen nach bestimmten Kriterien zu suchen."
     * interaction[+]
       * insert Expectation(#SHOULD)
       * code = #update
-      * documentation = "Sofern die Ressourcen zum Standort unterstützt werden, `update` implementiert werden. 
+      * documentation = "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `update` implementiert werden. 
       Diese dient insbesondere dem Synchronisieren des Status (`Location.operationalStatus`) der abgeleiteten 
       Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichnung als 
       'Frei', 'Besetzt', 'Kontaminiert', 'Isoliert', in 'Reinigung' etc."        
@@ -138,7 +138,7 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * searchParam[+]
-      * insert Expectation(#MAY)
+      * insert Expectation(#SHALL)
       * name = "identifier"
       * definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
       * type = #token
@@ -179,18 +179,6 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
 
-//Warum ist "characteristic" ein Suchparameter!? Das Element gibt es nicht mal in der Ressourcen-Definition!!
-/*     * searchParam[+]
-      * insert Expectation(#MAY)
-      * name = "characteristic"
-      * definition = "http://hl7.org/fhir/SearchParameter/Location-characteristic"
-      * type = #token
-      * documentation = 
-        "**Beispiel:**    
-        `GET [base]/Observation?component-code=http://loinc.org|85354-9`    
-        **Anwendungshinweis:**   
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " */
-
     * searchParam[+]
       * insert Expectation(#MAY)
       * name = "partof"
@@ -212,3 +200,16 @@ Die Aufbaustruktur umfasst die Organisationseinheiten, Standorte und deren Zuord
         **Anwendungshinweis:**   
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#special).  "
 
+//Folgender Suchparameter ist in ISiK als Custom-Suchparameter vorgesehen, da er für die Anforderungen der Stationsabfrage relevant ist; zugleich wird er in FHIR R6 als Standard-Parameter für Location eingeführt.
+    * searchParam[+]
+      * insert Expectation(#MAY)
+      * name = "characteristic"
+      * definition = "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic"
+      * type = #token
+      * documentation = 
+        "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    
+        
+        **Beispiel:**    
+        `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` 
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 

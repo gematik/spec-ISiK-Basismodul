@@ -63,8 +63,9 @@ Was wird getan / wie wird es gelöst?>
     - Die geschieht vermittelt über den Encounter
 - Die Location (ggf. Station als Standort) wird  verpflichtend für die Abbildung von Stationen genutzt, sondern kann optional ergänzend verwendet werden, wenn weitere Informationen zum Standort der Station erforderlich sind.
 - Ressource ISiKStandort (Location) wird allgemein verpflichtend (MUSS).
+- Auch die Organization wird allgemein Verpflichtend (für Basis-Server), da analoge Abfragen von Fachbereichen auch möglich sein müssen.
 
-Offene Fragen: 
+## Offene Fragen: 
 - Die Zuordnung zwischen Location und Organization (ggf. FA) sollte weiter geklärt werden.
 - Für die weitere Konsolidierung innerhalb der gematik (i. e. mit VZD) kann die Profilierung eines Sub-Organization Profils (mit Parent ISiKOrganization) sinnvoll sein.
 - Encounter.serviceProvider: hier Suchabfrage per Referenz möglich oder nur .identifier? Was ist hier sinnvoll?
