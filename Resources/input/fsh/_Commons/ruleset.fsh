@@ -330,14 +330,7 @@ RuleSet: OperationEncounterEverything
   * insert Expectation(#SHALL)
   * name = "Encounter-everything"
   * definition = "http://hl7.org/fhir/OperationDefinition/Encounter-everything"
-  * documentation = "In der Operation ist die Ergebnismenge wie folgt definiert: 
-  The server SHOULD return all resources it has that:
-    - are included in the encounter compartment for the identified encounter (have a reference to the encounter)
-    - are referenced by the standard extenstion for associating an encounter (where no reference element exists) http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter
-    - the server believes are relevant to the context of the encounter for any other reason (internally defined/decided)
-    - any resource referenced by the above, including binaries and attachments (to make a more complete package)
-    
-  Dies ist im Kontext von ISiK wie folgt zu interpretieren:
+  * documentation = "Im Kontext von ISiK werden auf Basis der [Core-Definition der Operation Encounter-everything](http://hl7.org/fhir/R4/operation-encounter-everything.html) folgende Festlegungen getroffen:
   
     - Ein Akteur MUSS alle Ressourcen zurückgeben, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Encounter-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) sind.
     - Im Kontext von ISiK werden assoziierte Encounter über die Verknüpfung mit dem selben Abrechnungsfall dargestellt. Aus dem Grund MÜSSEN alle Ressourcen beinhaltet sein, die auch auf Encounter verweisen, welche mit dem selben Abrechnungsfall (`Encounter.account.identifier`) verknüpft sind. Auf diese Encounter wird die selbe Logik wie in Punkt 1 und den folgenden Punkten angewendet.
