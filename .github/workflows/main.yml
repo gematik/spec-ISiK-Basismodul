@@ -51,7 +51,7 @@ jobs:
         if: github.event_name != 'pull_request'
 
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.8.2
+        uses: FirelyTeam/firely-terminal-pipeline@v0.8.4
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: false
@@ -70,6 +70,7 @@ jobs:
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
           SUSHI_ENABLED: true
           TERMINOLOGY_SERVICE_BFARM_ENABLED: true
+          CLOSE_SLICING_FOR_VALIDATION: true
           SUSHI_OPTIONS: Resources/
           EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
 
@@ -89,6 +90,16 @@ jobs:
           include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
+            # Bundle contains more than specified as slices, which is ok
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[3]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[4]
+            Bundle-BundleExampleIntensivstation.json|Validation_VAL_Profile_NotSlice||Bundle.entry[5]
+            # examples contain sdc extensions which creates an error as this extension is not defined in ISiK
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.gender.extension[0]
+            Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
+
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.0
         with:
