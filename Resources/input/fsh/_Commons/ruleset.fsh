@@ -334,8 +334,8 @@ RuleSet: OperationEncounterEverything
   
     - Ein Akteur MUSS alle Ressourcen zurückgeben, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Encounter-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) sind.
     - Im Kontext von ISiK werden assoziierte Encounter über die Verknüpfung mit dem selben Abrechnungsfall dargestellt. Aus dem Grund MÜSSEN alle Ressourcen beinhaltet sein, die auch auf Encounter verweisen, welche mit dem selben Abrechnungsfall (`Encounter.account.identifier`) verknüpft sind. Auf diese Encounter wird die selbe Logik wie in Punkt 1 und den folgenden Punkten angewendet.
-    - Als Vorgabe in ISiK werden als weitere relevante Ressource innerhalb eines Encounter-Kontext alle Ressourcen von den folgenden Typen angesehen. Wichtig ist dabei nur, dass sie auf die selbe Patient-Instanz verweisen, wie der angefragte Encounter.
-    Liste: AllergyIntolerance (Allergien)
+    - Zusätzlich (zum Encounter-Compartment) sind Ressourcen OHNE Fallbezug, die dem gleichen Patienten zugeordnet sind, einzubeziehen:
+      - AllergyIntolerances
     - Es müssen alle Ressourcen inkludiert werden, die aus den oben identifizierten Ressourcen referenziert werden, einschließlich Binaries und Attachments.
     
   Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definierten, wie die Forcierung von Pagination über den Parameter `_count` oder die die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
