@@ -4,12 +4,28 @@ topic: ReleaseNotes
 
 ### Version 6.0.0-rc
 
-t.b.d. (x)
 * `improve` Das pattern auf `Patient` im subjectType von FormularDefinition wurde entfernt, damit auch weitere Use Cases mit dem Modul umsetzbar sind. Die Anforderungen und Einschränkungen, die in diesem IG für ISiK-Formulare definiert sind, beziehen sich trotzdem weiterhin auf Formulare mit subjectType `Patient`.
 
+* `improve` Das Akteursmodell wurde um zwei neue optionale Akteure erweitert: `FormularDatenExtraktor` und `FormularDatenVorbeleger`. Diese eigenständigen Akteure können Teilfunktionen (Extraktion bzw. Vorbelegung) aus dem FormularRenderer auslagern. Dies ermöglicht schlankere Renderer-Implementierungen, insbesondere im mobilen Umfeld oder für Szenarien ohne direkten Leistungserbringer-Infrastrukturzugriff (z.B. TI-Messenger).
+
+* `improve` Neues Beispielszenario für den TI-Messenger (TI-M) hinzugefügt: Die Seite Beispielszenarien beschreibt, wie das Formularmodul  im Kontext des TI-Messengers genutzt werden kann, inklusive Verlagerung von Vorbelegung und Extraktion in den "TI-M Pro Client".
+
+* `improve` Neue Anforderung an den FormularRenderer: Bei der Rückübermittlung SOLL ein menschenlesbares Narrative erzeugt werden, das alle ausgefüllten Formularinhalte darstellt. Das Narrative kann entweder als `QuestionnaireResponse.text` oder als Bestandteil des Document-Bundles gemäß ISiK-Dokumentenaustausch übermittelt werden. Dies sichert Anzeigefähigkeit in Primärsystemen ohne FHIR-Formular-Unterstützung.
+
+* `improve` Die Interaktion FormularDatenRückübermittlung wurde durch ein neues Profil `FormularDatenRueckuebermittlungBundle` konkretisiert. Das Bundle enthält neben Composition, Patient und Encounter nun zusätzlich die FormularDefinition (optional), die FormularDaten (verpflichtend) sowie ggf. extrahierte FHIR-Ressourcen (FormularDatenExtrakt). Primärsysteme müssen die strukturierten Anteile in der aktuellen Stufe noch nicht übernehmen, sollten das Bundle jedoch vollständig persistieren.
+
+* `improve` Neue Festlegungen zur Versionierung von Formulardefinitionen: FormularDefinitionen SOLLTEN nach dem SemVer-Verfahren versioniert werden. Major-, Minor- und Patch-Inkremente sind mit klarer Semantik bezüglich Rückwärtskompatibilität definiert.
+
+* `improve` Der Abschnitt zur MDR-Relevanz von Formularen (Best Practice) wurde inhaltlich überarbeitet und präzisiert: Es wird erklärt, unter welchen Bedingungen eine anzeigende oder berechnende Software unter die EU-Medizinprodukteverordnung fällt. Die zugehörige Extension wurde umbenannt (`ISiKMDRRelevanzFormularExtension` → `ISiKMpFormularExtension`) und als Modifier-Extension modelliert.
+
+* `improve` Neue Seite mit expliziten Implementierungsanforderungen (SHALL/SHOULD/MAY) für Akteure, die nicht über CapabilityStatements abgebildet werden: FormularLauncher (Fremdaufruf-Parameter), FormularDefinitionsErsteller (Gültigkeitsprüfung generierter Questionnaires) und FormularRenderer (Stand-Alone-Launch, Rendering, Vorbelegung).
+
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
+
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 
 

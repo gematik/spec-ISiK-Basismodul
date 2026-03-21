@@ -4,7 +4,13 @@ topic: Einfuehrung
 
 Realm: Deutschland
 
+### Hinweis zum Status
+
+Der Implementierungsleitfaden zum Modul „ISiK Formulare“ liegt derzeit in einer Entwurfsfassung vor und wird im Rahmen der Erarbeitung von ISiK Stufe 7 in Arbeitsgruppen sowie in bilateralen Gesprächen mit relevanten Stakeholdern fortlaufend weiterentwickelt. Eine aktive Mitwirkung ist ausdrücklich erwünscht; Anregungen, Hinweise und Vorschläge können über die im Abschnitt „Mitwirkung“ (siehe unten) aufgeführten Kanäle eingereicht werden. Für das Modul besteht in ISiK Stufe 6 keine Bestätigungsrelevanz.
+Das Modul wurde vom Stufe 5 auf Stufe 6 an verschiedenen Stellen überarbeitet. Gerade in Hinblick auf die Nutzung durch den TI-Messenger wurde das Akteursmodel erweitert. Es ist daher ratsam, die Spezifikationen und BestPractices sorgfältig zu lesen, um die Änderungen zu verstehen und entsprechend umzusetzen. Hinweise zu Änderungen sind aus den [Release Notes](ReleseNotes.html) ersichtlich.
+
 ### Motivation "ISiK Formulare"
+
 Der überwiegende Teil der Datenerfassung im Gesundheitswesen geschieht formularbasiert. Bislang fehlt es jedoch an einem standardisierten Verfahren, um Fragebögen und Formulare zwischen Systemen austauschen und mit den bereits vorhandenen, standardisierten Daten in den Systemen der Anwender zu verknüpfen.
 Die Folge sind lange Latenzen, bis die Formulare den Anwendern zur Verfügung stehen, hohe Kosten für die individuelle Implementierung und Konfiguration in den proprietären Formulareditoren der einzelnen Systeme,
 und redundante Datenerfassung aufgrund der fehlenden Verknüpfungen zu den bereits vorhandenen Daten. 
