@@ -93,25 +93,25 @@
         }
       },
       {
-        "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant",
+        "id": "QuestionnaireResponse.modifierExtension:MpFormular",
         "path": "QuestionnaireResponse.modifierExtension",
-        "sliceName": "MDR-Relevant",
-        "short": "MPG-Relevanz der Formulardaten",
-        "comment": "**Begründung MS:**\n  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor.",
+        "sliceName": "MpFormular",
+        "short": "Zurgrundeliegendes Formular wird in einem Medizinprodukt eingesetzt",
+        "comment": "**Begründung MS:**\n  In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen.",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension"
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension"
             ]
           }
         ],
         "mustSupport": true
       },
       {
-        "id": "QuestionnaireResponse.modifierExtension:MDR-Relevant.value[x]",
+        "id": "QuestionnaireResponse.modifierExtension:MpFormular.value[x]",
         "path": "QuestionnaireResponse.modifierExtension.value[x]",
         "mustSupport": true
       },
