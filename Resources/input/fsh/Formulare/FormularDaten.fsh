@@ -11,12 +11,12 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
-* modifierExtension[MDR-Relevant]
-  * ^short = "MPG-Relevanz der Formulardaten"
+  ISiKMpFormularExtension named MpFormular 0..1 MS
+* modifierExtension[MpFormular]
+  * ^short = "Zurgrundeliegendes Formular wird in einem Medizinprodukt eingesetzt"
   * ^comment = "**Begründung MS:**
-  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
-* modifierExtension[MDR-Relevant].valueCoding MS
+  In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
+* modifierExtension[MpFormular].valueString MS
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
   * ^comment = "**Begründung MS:**

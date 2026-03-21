@@ -30,7 +30,7 @@ Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden vers
 
 | Rolle | Extension Name | Context | Beschreibung | Relevanz |
 |--------|--------|---------|------------------|---|
-| FormularRendering | [Medizin-produkt Kontext](https://gematik.de/fhir/isik/StructureDefinition/ISiKMDRRelevanzFormularExtension) | QuestionnaireResponse, Questionnaire | Mit der Extension wird die Medizinprodukt-Relevanz angegeben. Ist die Extension nicht vorhanden, ist nichts in Richtung der MDR zu beachten. Sobald sie vorhanden ist, müssen ggf. Voraussetzung zur Befüllung oder Anzeige erfüllt sein. Im aktuellen Rahmen des Moduls sind diese aber nicht weiter spezifiziert. <br><img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="20"/> Hier freuen wir uns über Feedback. | SOLL |
+| FormularRendering | [Medizin-produkt Kontext](https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension) | QuestionnaireResponse, Questionnaire | Mit dieser Extension besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und eine Zweckbestimmung anzugeben. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller! | SOLL |
 
 ### SDC Extensions (Questionnaire)
 

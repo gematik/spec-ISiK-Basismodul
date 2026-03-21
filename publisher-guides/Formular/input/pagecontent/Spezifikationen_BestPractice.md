@@ -28,9 +28,16 @@ Obwohl die Definition-Based Extraction und Prepopulation derzeit nicht verbindli
 FormularDefinitionen sollten immer das Vorhandensein eines Patienten- und Encounter-Kontextes annehmen und die Launch-Context-Extension entsprechend nutzen. 
 
 ### Formulare im Kontext von Medizinprodukten
-Formulare, deren Einsatz eine Zweckbestimmung im Sinne der EU-Medizinprodukteverordnung (MDR) nach sich zieht und somit unter die entsprechende EU-Richtlinie für Medizinprodukte fallen, sollen ebenfalls über dieses Modul erstellt werden können.
-Solche Formulare müssen jedoch eine spezielle Extension enthalten, die sie eindeutig als medizinproduktrelevante Formulare kennzeichnet.
-Die Anzeige und Verarbeitung dieser Formulare darf ausschließlich im Rahmen ihrer definierten Zweckbestimmung erfolgen. Die Verantwortung für die Prüfung und Freigabe dieser Formulare liegt beim jeweiligen Hersteller.
+Erfüllt eine Software ein Kriterium aus der MDR Art. 2, wird sie zum Medizinprodukt. Formulare sind kein Medizinprodukt, es kann allerdings Einsatzzwecke geben, bei denen die Kriterien der MDR erfüllt sind. Konkretes Beispiel wäre die Nutzung von Berechnungen auf deren Basis z.B. Entscheidungen am individuellen Patienten abgeleitet werden. Die Verantwortlichkeit für die Inverkehrbringung liegt hierbei beim Hersteller der Software. Aus diesem Grund ist es wichtig, sich Gedanken über den Einsatzzweck zu machen und diesen festzulegen. Ist ein Formular für eine statistische Auswertung im Forschungskontext gedacht, kann es durch eine Software angezeigt, berechnet und verarbeitet werden, ohne unter die MDR zu fallen. Ist das selbe Formular aber mit medizinischem Zweck am individuellen Patienten im Einsatz, kann die anzeigende, berechnende und verarbeitende Software durchaus unter die MDR fallen.
+
+Aus diesem Grund soll im Rahmen des Moduls die Möglichkeit gegeben werden, die Zweckbestimmung eines Formulars mit zu erfassen und so teilweise strukturiert anzugeben, ob das Formular ohne vorheriges Auseinandersetzen mit der MDR angezeigt, berechnet und verarbeitet werden darf, oder ob hier gewissen Bedingungen erfüllt werden müssen. Für weitere Informationen zu diesem Thema verweisen wir auf die [Richtlinie](https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf).
+
+
+Mit der Extension [ISiKMpFormularExtension](StructureDefinition-ISiKMpFormularExtension.html) besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und zusätzlich eine Zweckbestimmung anzugeben. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller!
+
+Formular-Renderer, die kein Medizinprodukt sind, müssen aufgrund dieser Extension keine ISiK-spezifischen Anpassungen implementieren.
+Da die Extension als Modifier-Extension modelliert ist, gelten die grundsätzlichen Regeln der FHIR-Spezifikation für den Umgang: http://hl7.org/fhir/extensibility.html#modifierExtension.
+
 
 | **Work in Progress** | **Unvollständige Inhalte** |
 |-|-|
