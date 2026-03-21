@@ -22,7 +22,7 @@ Ambulante-Abrechnungsfall-Angaben unterscheiden sich von stationären im Kranken
   * ^short = "Nummer des Scheins"
   * ^comment = "Die Scheinnummer ist eine Nummer, die in der ambulanten Versorgung in Deutschland verwendet wird. Da im Krankenhaus und in den zum Einsatz kommenden Primärsystemen auch ambulante Leistungen erbracht und dokumentieert werden, kann es also vorkommen, dass neben einer Fallnummer auch eine Scheinnummer vorliegt. Diese ist allerdings vom System selber vergeben und wie die Fall- bzw. Patientennummer nicht eindeutig über Systemgrenzen hinweg.
   
-  Im Kontext eines ambulanten BG Falls gibt es keine Scheinnummer (Quelle: DGUV)"
+  **Hinweis:**Im Kontext eines ambulanten BG Falls gibt es keine Scheinnummer."
   * ^patternIdentifier.type = ISiKIdentifierTypeErweiterung#ASN
   * type MS
     * coding
