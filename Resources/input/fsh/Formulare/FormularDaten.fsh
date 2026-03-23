@@ -41,7 +41,7 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
   Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.
   
-  **Hinweis:** In manchen Kontexten ist eine Instanz nicht im Kontext, um auf eine existierende Patient-Ressource zu referenzieren. In diesem Fall kann hier auch ein eindeutiger Identifier wie eine KVNR oder eine andere Patienten-ID angegeben werden, um die Zuordnung zu einem Patienten zu ermöglichen."
+  **Hinweis:** In manchen Fällen kann eine Instanz nicht auf eine existierende Patient-Ressurces referenzieren. In diesen Fällen kann hier auch ein eindeutiger Identifier wie eine KVNR oder eine andere Patienten-ID angegeben werden, um die Zuordnung zu einem Patienten zu ermöglichen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung MS)
