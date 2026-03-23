@@ -39,6 +39,23 @@ Description: "Enthaelt alle SNOMED Procedure Codes"
 * insert Meta
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
+ValueSet: ProzedurenReanimationCodesSCT
+Id: ProzedurenReanimationCodesSCT
+Description: "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+//* compose.include.system = $sct
+//* compose.include.version = obeys sct-version-de //erwünschtes Verhalten: das VS soll der invariante für ISIKSNOMEDCT Coding entsprechende Version des SNOMED CT verwenden
+//* compose.include.version = "http://snomed.info/sct/11000274103/20251115"
+* include codes from system SNOMED_CT where concept descendent-of #439569004
+
+ValueSet: ProzedurenReanimationCodesOPS
+Id: ProzedurenReanimationCodesOPS
+Description: "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
+* $ops#8-772 "Operative Reanimation"
+* $ops#8-779 "Andere Reanimationsmaßnahmen"
+
 ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
@@ -156,3 +173,11 @@ Description: "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab an
 * $loinc#LA18982-1 "Light tobacco smoker"
 * $loinc#LA18982-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
 * $loinc#LA18982-1 ^extension[=].valueDecimal = 8
+
+ValueSet: ISiKEncounterTypeErweiterungVS
+Id: ISiKEncounterTypeErweiterungVS
+Title: "ISiKEncounterTypeErweiterungVS"
+Description: "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
+* insert Meta
+* include codes from system http://fhir.de/CodeSystem/kontaktart-de
+* include codes from system ISiKEncounterTypeErweiterung
