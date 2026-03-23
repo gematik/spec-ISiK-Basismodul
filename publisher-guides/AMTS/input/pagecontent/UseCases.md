@@ -1,4 +1,4 @@
-Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis *Analyse der Medikationsprozesse* des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
+﻿Im Positionspapier [Digital gestützte Medikationsprozesse](https://www.ina.gematik.de/fileadmin/Arbeitskreisdokumente/Ergebnisdokumente/Analyse_der_Medikationsprozesse/Positionspapier_Analyse_der_Medikationsprozesse.pdf) aus dem Arbeitskreis *Analyse der Medikationsprozesse* des Interop Councils sind unter anderem Anwendungsfälle und Versorgungsprozesse für den stationären Sektor aufgeführt. Dieser ist für einen detaillierten Einstieg und Auseinandersetzung mit dem Thema geeignet und bildet die fachliche Grundlage (Motivation) des vorliegenden IG AMTS.
 
 
 ### User Stories und Use Cases
@@ -98,13 +98,13 @@ Im Folgenden sind exemplarisch die Interaktionen für einen AMTS Pull und -Push 
 ### FHIR-Profile des Anwendungsfalls AMTS
 
 Dieser Übergreifende Use Case umfasst mehrere Profile aus verschiedenen Modulen. Die Einzelbeschreibungen sind im Folgenden verlinkt:
-- Die [AMTS Bewertung der Medikation](https://simplifier.net/guide/isik-medikation-stufe-5/Einfuehrung/Artefakte/Datenobjekt_AMTSBewertung) zur Persistierung des Ergebnisses eines AMTS-Checks.
-- Die [Allergien und Unverträglichkeiten der Basis](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_AllergieUnvertraeglichkeit) zur Synchronisation der patientenbezogenen Intoleranzfaktoren.
-- Verschiedene [Untersuchungsergebnisse des Labors](https://simplifier.net/guide/isik-labor-stufe-5/Einfuehrung/Artefakte/Datenobjekt_Laboruntersuchung) zur Erfassung fallbezogener Einflussfaktoren.
-- Verschiedene [Lebenszustände der Basis](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_Lebenszustand) zur Erfassung aktueller (zeitbezogener) Zustände oder Konditionen, insbesondere:
+- Die [AMTS Bewertung der Medikation](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/StructureDefinition-ISiKAMTSBewertung.html) zur Persistierung des Ergebnisses eines AMTS-Checks.
+- Die [Allergien und Unverträglichkeiten der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKAllergieUnvertraeglichkeit.html) zur Synchronisation der patientenbezogenen Intoleranzfaktoren.
+- Verschiedene [Untersuchungsergebnisse des Labors](https://gemspec.gematik.de/ig/fhir/isik/labor/6.0.0-rc/StructureDefinition-ISiKLaboruntersuchung.html) zur Erfassung fallbezogener Einflussfaktoren.
+- Verschiedene [Lebenszustände der Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKLebensZustand.html) zur Erfassung aktueller (zeitbezogener) Zustände oder Konditionen, insbesondere:
   - Schwangerschaft,
   - Alkoholabusus,
   - Raucherstatus.
-- Verschiedene aktuelle [Merkmale der Vitalparameter](https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte) zur Erfassung von Einflussfaktoren, welche die physische Kondition des Patienten betreffen, insbesondere.
+- Verschiedene aktuelle [Merkmale der Vitalparameter](https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/artifacts_isik.html) zur Erfassung von Einflussfaktoren, welche die physische Kondition des Patienten betreffen, insbesondere.
   - Körpergewicht,
   - Körpergröße.

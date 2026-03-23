@@ -20,6 +20,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/procedure-obl-eu-hdr"
+//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/procedure-eu-eps"
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
 * extension MS
@@ -64,6 +66,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "system"
     * ^slicing.rules = #open
+    * ^comment = "**Hinweis EHDS:** In der HL7 Europe HDR Spezifikation ist ein Binding von Snomed-CT mit der Stärke preferred gesetzt. Dies schließt sich nicht mit der hier vorgenommenen Profilierung aus, und auch eine reine OPS Abbildung spricht nicht gegen diese Anforderung. Allerdings möchten wir darauf hinweisen, dass es in Zukunft möglicherweise sinnvoll sein könnte, die Nutzung von SNOMED-CT Kodierung zur Darstellung einer Prozedur zu nutzen, um die Interoperabilität mit dem HDR zu erhöhen."
   * coding contains
       OPS 0..1 MS and
       SNOMED-CT 0..1 MS
@@ -72,7 +75,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^short = "OPS-codierte Darstellung der Prozedur"
     * extension[Seitenlokalisation] MS
       * ^short = "Seitenlokalisation"
-      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden"
+      * ^comment = "**Begründung MS:** Bei OPS-codierten Prozeduren an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden. 
+      
+      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * system MS
       * ^short = "Namensraum des Prozeduren-Codes"
       * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/bfarm/ops` anzugeben."
@@ -107,6 +112,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Es muss mindestens entweder ein (partielles) Durchführungsdatum oder der Beginn des Durchführungszeitraumes angegeben werden.
   **Begründung Pflichtfeld:** Die zeitliche Einordnung einer Prozedur ist in vielen Fällen maßgeblich für deren medizinische Relevanz."
 * performed[x] only dateTime or Period
+* insert EU-BodySiteExtension
 * note MS
   * ^short = "Notizen"
   * ^comment = "Ergänzende Hinweise und Anmerkungen zur Prozedur"

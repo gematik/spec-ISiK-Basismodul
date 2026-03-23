@@ -6,8 +6,13 @@ Description: "Dieses Profil ermöglicht die Darstellung eines privaten Versicher
 ### **Motivation**:
 
 ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden.
-In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  
-In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.
+In diesen Anwendungsszenarien wird die `Coverage`-Ressource verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift des Kostenträgers zu ermitteln.  
+
+### **Abgrenzung:**
+Das Selbstzahler-Profil gilt für Szenarien, in denen der Patient selbst (oder eine abweichende natürliche oder juristische Person) als Kostenträger auftritt.
+Für PKV-Verhältnisse, in denen die Kosten *unmittelbar* von einer privaten Versicherung übernommen werden (ohne dass der Patient in Vorleistung geht), KANN das Profil 
+[Versicherungsdaten PKV](https://simplifier.net/vsdm2/vsdmcoveragepkv) aus der jeweils geltenden VSDM 2.0 Spezifikation verwendet werden. 
+
 
 ### **Kompatibilität**:
 

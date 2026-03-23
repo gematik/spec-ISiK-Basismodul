@@ -24,6 +24,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+/*
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr"
+*/
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value
@@ -60,6 +65,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     - Alle server-seitigen Implementierungen SOLLEN in der Lage sein, die systemintern möglichen Statuswerte korrekt in FHIR abzubilden, mindestens aber den Status 'confirmed'.
     - Alle client-seitigen Implementierungen SOLLEN in der Lage sein, sämtliche Status-Codes zu interpretieren und dem Anwender in angemessener Form darstellen zu können.
     """
+* category
+  * ^comment = "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `category` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
+* severity
+  * ^comment = "**Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, weisen wir darauf hin, dass in der EPS das Element `severity` mittels Obligation gefordert wird. Da Obligations im EU Kontext noch nicht final und stabil definiert sind, ergänzen wir kein MS in ISiK Stufe 6."
 * code 1.. MS
   * ^short = "Diagnose-Code"
   * ^comment = "Diagnosen SOLLEN mindestens entweder mit einem der angebenen standardisierten Codier-Verfahren codiert werden. 
@@ -70,6 +79,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "$this"
     * ^slicing.rules = #open
+    * ^comment = "**Hinweis EHDS:** In der HL7 Europe EPS und HDR Spezifikation ist ein Binding von Snomed-CT mit der Stärke preferred gesetzt. Dies schließt sich nicht mit der hier vorgenommenen Profilierung aus, und auch eine reine ICD-10 Abbildung spricht nicht gegen diese Anforderung. Allerdings möchten wir darauf hinweisen, dass es in Zukunft möglicherweise sinnvoll sein könnte, die Nutzung von SNOMED-CT Kodierung zur Darstellung einer Diagnose zu nutzen, um die Interoperabilität mit der EPS zu erhöhen."
   * coding contains
       ICD-10-GM 0..1 MS and
       Alpha-ID 0..1 MS and
@@ -78,7 +88,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * coding[ICD-10-GM] only ISiKICD10GMCoding
     * ^patternCoding.system = $icd-10-gm
     * extension[Mehrfachcodierungs-Kennzeichen] MS
-    * extension[Seitenlokalisation] MS
+    * extension[Seitenlokalisation] MS      
+      * ^short = "Seitenlokalisation"
+      * ^comment = "**Begründung MS:** Bei ICD-10-codierten Diagnosen an paarigen Organen oder Körperteilen müssen die Zusatzkennzeichen für die Seitigkeit (R, L oder B) angeben werden.
+      
+      **Hinweis EHDS:** Im Kontext des Alignments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe, wird für die Kodierung der Lateralität aktuell die Nutzung einer BodyStructure-Ressource inkl. einer Snomet-CT Kodierung diskutiert. Siehe [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html)."
     * extension[Diagnosesicherheit] MS
   * coding[Alpha-ID] only CodingAlphaID
     * ^patternCoding.system = $alphaid-cs
@@ -150,6 +164,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * bodySite MS
   * ^short = "Körperstelle"
   * ^comment = "**Begründung MS:** Harmonisierung mit KBV-Profil (KBV_PR_Base_Condition_Diagnosis)"
+* insert EU-BodySiteExtension
 * bodySite.coding MS
 * bodySite.coding ^slicing.discriminator.type = #pattern
 * bodySite.coding ^slicing.discriminator.path = "system"
