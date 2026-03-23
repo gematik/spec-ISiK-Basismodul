@@ -8,6 +8,9 @@ Die Rolle von Leistungserbringern innerhalb einer Organisation (z.B. Fachabteilu
 durch diese Person erbracht werden.
 
 In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert.  
+
+**HISTORIE:**
+- Dieses Profil wird vor dem Hintergrund von FHIR-Profilierungen im Kontext des EHDS in Stufe 6 initial eingebracht.
 "
 * insert Meta
 * insert CommonElements
