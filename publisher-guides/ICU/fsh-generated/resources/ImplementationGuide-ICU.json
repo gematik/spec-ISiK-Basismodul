@@ -66,6 +66,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "Account/AbrechnungsfallAmbulantMvzImKrankenhaus"
+        },
+        "exampleBoolean": false,
+        "name": "AbrechnungsfallAmbulantMvzImKrankenhaus"
+      },
+      {
+        "reference": {
           "reference": "Account/AbrechnungsfallDRG"
         },
         "exampleBoolean": false,
@@ -150,6 +157,22 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "CapabilityStatement für Rolle AufbaustrukturRolle"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementImplantatRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle ImplantatRolle"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementAmbulanteStammdatenRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle ISiKCapabilityStatementAmbulanteStammdatenRolle"
       },
       {
         "reference": {
@@ -281,6 +304,14 @@
         "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
         "exampleBoolean": false,
         "name": "EndDate"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
       },
       {
         "reference": {
@@ -467,6 +498,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant"
+        },
+        "description": "Diese Extension erlaubt es, angelehnt an die Basisprofil Extension [Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren](http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur), Diagnosen und Prozeduren als abrechnungsrelevant in einem Fallkontext anzugeben. Allerdings ohne die Verpflichtung, einen Use anzugeben. Dies ist im ambulanten Kontext nicht üblich.",
+        "exampleBoolean": false,
+        "name": "Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren"
+      },
+      {
+        "reference": {
           "reference": "Observation/Herzzeitvolumen"
         },
         "exampleBoolean": false,
@@ -621,6 +660,14 @@
         "description": "Dieses Profil ermöglicht die Gruppierung von medizinischen Leistungen zu einem gemeinsamen Abrechnungskontext.  \nZugleich dient es im Kontext von ISiK derzeit im Wesentlichen der Abbildung einer Fallnummer, über die im Krankenhaus unterschiedliche Prozesse - auch administrativer Natur - abgewickelt werden. Das Profil wurde *nicht* primär zum Zweck der Abbildung von Abrechnungsprozessen definiert. \n\n### Motivation\nKomplementär zum Datenobjekt 'Kontakt - Encounter' können Fälle, im Sinne einer Gruppierung von medizinischen Leistungen \ninnerhalb eines gemeinsamen Kontextes, zu einem Abrechnungsfall zusammengefasst werden.\nEin solcher Abrechnungsfall kann mehrere Kontakte umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationärer Besuch).  \n\nGemeinsam mit dem Einrichtungskontakt bildet der Abrechnungsfall einen wichtigen Einstiegspunkt in die Dokumentation der Behandlungsleistungen der Patienten.\nAls Bindeglied zwischen den Kontakten und dem Versicherungsverhältnis erfolgt eine feingranulare Auflistung, \nin welchen Zeiträumen ein Behandlungskontext zwischen einer Gesundheitseinrichtung und der Patienten bestand.\nZudem werden Diagnosen abschließend / nachträglich dokumentiert, sodass eine Übersicht von relevanten (DRG)-Diagnosen ermöglicht wird, \nohne die Gesamtheit aller Kontakte betrachten zu müssen.\n\nIn FHIR wird der Abrechnungsfall mit der `Account`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}.\n\n### Kompatibilität\n* zum Zeitpunkt der Veröffentlichung sind keine abweichenden Modellierungen der Account-Ressource bekannt.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKAbrechnungsfall"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKAbrechnungsfallAmbulant"
+        },
+        "description": "Dieses Profil spezifiziert die Anforderungen an die Abbildung von ambulanten Abrechnungsfällen im Krankenhauskontext. Es handelt sich dabei um eine Spezialisierung des ISiK Abrechnungsfall-Profils, das allgemeine Anforderungen an die Abbildung von Abrechnungsfällen definiert.\n\nAmbulante-Abrechnungsfall-Angaben unterscheiden sich von stationären im Krankenhaus im Wesentlichen durch die Angabe von:\n\n- die Extenion `AbrechnungsDiagnoseProzedurAmbulant` wurde ergänzt, um die Angabe von abrechnungsrelevanten Diagnosen und Prozeduren zu ermöglichen, ohne dass diese in Haupt- und Nebendiagnosen aufgeteilt werden müssen. Eine Aufteilung ist im ambulanten Kontext nicht üblich, aber da es dennoch in der Praxis vorkommen kann, wurde die ursprüngliche Extension `AbrechnungsDiagnoseProzedur` nicht ausgeschlossen, sondern die neue Extension als Ergänzung hinzugefügt.\n- die Angabe einer Scheinnummer als Identifier. Amulante Fälle werden meist über die Existenz eines so genannten Scheins definiert. Die Scheinnummer ist eine Nummer, die innerhalb einer Einrichtung diesen Schein eindeutig identifiziert. Da es häufig auch noch eine klassische Fallnummer gibt, sind beide Identifier vorgesehen und kommen auch vor.\n- die Angabe eines `servicePeriod` als Gültigkeitszeitraum des ambulanten Abrechnungsfalls, da es sich hierbei um punktuelle Kontakte handelt und der Zeitraum der Gültigkeit nicht direkt aus den zugeordneten Encountern ableitbar ist.\n- die Angabe eines `owner`, um die Ambulanz als verantwortliche Organisation zu dokumentieren.",
+        "exampleBoolean": false,
+        "name": "ISiKAbrechnungsfallAmbulant"
       },
       {
         "reference": {
@@ -843,6 +890,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/ISiKEntlassformRehaCS"
         },
         "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
@@ -922,6 +977,28 @@
         "description": "Data Type profile for ICD10-GM Codings in ISiK",
         "exampleBoolean": false,
         "name": "ISiKICD10GMCoding"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKImplantat"
+        },
+        "description": "\nDieses Profil ermöglicht die strukturierte Abbildung von Implantaten eines Patienten in ISiK-Szenarien.\nImplantate stellen dauerhaft oder langfristig im Körper befindliche Medizinprodukte dar und sind häufig von hoher klinischer Relevanz, da sie Diagnostik, Therapieentscheidungen sowie zukünftige Behandlungsmaßnahmen unmittelbar beeinflussen können.\n\n### Motivation\n\nDie standardisierte Bereitstellung von Implantatinformationen unterstützt insbesondere:\n\n    die eindeutige Identifikation implantierter Medizinprodukte,\n\n    die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen,\n\n    die Nachverfolgbarkeit im Rahmen von Sicherheitsmeldungen und Rückrufaktionen sowie\n\n    die Dokumentation wesentlicher Implantatmerkmale (z. B. Hersteller, Modell, Seriennummer).\n\nDarüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.\nAls Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.\n\nDa Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Aufnahme in ISiK sinnvoll, um die Verfügbarkeit von Implantatinformationen in verschiedenen Anwendungsfällen zu gewährleisten, insbesondere in solchen, die über die Dokumentation in einem Entlassbrief hinausgehen.\n",
+        "exampleBoolean": false,
+        "name": "ISiKImplantat"
+      },
+      {
+        "reference": {
+          "reference": "Device/ISiKImplantatHerzschrittmacher"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKImplantatHerzschrittmacher"
+      },
+      {
+        "reference": {
+          "reference": "Device/ISiKImplantatHueftprothese"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKImplantatHueftprothese"
       },
       {
         "reference": {
@@ -1012,38 +1089,9 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ISiKKoerpertemperatur"
-        },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperatur"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturExample"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMaxExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMaxExample"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMinExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMinExample"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
-        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Ambulanter Kontext im Krankenhaus\nIn vielen Krankenhäusern werden neben stationären auch ambulante Leistungen erbracht. Dies sind dann punktuelle Kontakte, welche auch mit diesem Profil abgebildet werden können. Dafür wurde der KontaktArt-Slice im `type`-Element um passende Typen erweitert. Verschiedene Elemente haben außerdem textuelle Beschreibungen erhalten, um die Abbildung von ambulanten Kontakten zu erleichtern.\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKKontaktGesundheitseinrichtung"
       },
@@ -1377,6 +1425,13 @@
         },
         "exampleBoolean": false,
         "name": "Koerpergroesse-Percentil"
+      },
+      {
+        "reference": {
+          "reference": "Observation/Koerperkerntemperatur-stirn"
+        },
+        "exampleBoolean": false,
+        "name": "Koerperkerntemperatur-stirn"
       },
       {
         "reference": {
@@ -1931,6 +1986,14 @@
         "description": "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergrößen-Perzentils in der Akutmedizin.",
         "exampleBoolean": false,
         "name": "SD MII ICU Koerpergroesse Percentil"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-icu-koerperkerntemperatur-stirn"
+        },
+        "description": "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen an der Stirn in der Akutmedizin.",
+        "exampleBoolean": false,
+        "name": "SD MII ICU Koerperkerntemperatur Stirn"
       },
       {
         "reference": {
