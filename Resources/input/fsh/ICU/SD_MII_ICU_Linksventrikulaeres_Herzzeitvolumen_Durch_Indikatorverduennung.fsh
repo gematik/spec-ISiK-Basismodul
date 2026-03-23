@@ -1,8 +1,10 @@
 Profile: SD_MII_ICU_Linksventrikulaeres_Herzzeitvolumen_Durch_Indikatorverduennung
 Parent: SD_MII_ICU_Monitoring_Und_Vitaldaten
-Id: sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd
+Id: sd-mii-icu-lv-herzzeitvolumen-durch-indikator
 Title: "SD MII ICU Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung"
 Description: "Dieses Profil dient der spezialisierten Abbildung des linksventrikulären Herzzeitvolumens durch Indikatorverdünnung in der Akutmedizin."
+// pw 23.03.26: fixed url and changed id to fix ig publisher error: Error generating combined package: file name 'package/StructureDefinition-sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd-6.0.0-rc.json' is too long ( > 100 bytes) (00:34.570 / 07:16.127, 1Gb)
+* ^url = "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-linksventri-herzzeitvolumen-durch-indikatorverd"
 * insert Meta
 * insert CommonElements
 * code

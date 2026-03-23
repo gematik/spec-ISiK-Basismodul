@@ -30,8 +30,8 @@ Instance: BilanzEinfuhrSaeuglingsnahrungBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Saeuglingsnahrung
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#1204305004 "Measured volume of intake of infant formula"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T11:00:00+02:00"

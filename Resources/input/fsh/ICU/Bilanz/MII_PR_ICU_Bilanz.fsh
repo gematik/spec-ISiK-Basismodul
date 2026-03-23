@@ -73,8 +73,8 @@ Instance: BilanzBeispiel
 InstanceOf: MII_PR_ICU_Bilanz
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251856003 "Fluid balance status (observable entity)"
 * code.coding[loinc] = $loinc#9097-7 "Fluid balance 24 hour"
 * subject = Reference(PatientinMusterfrau)

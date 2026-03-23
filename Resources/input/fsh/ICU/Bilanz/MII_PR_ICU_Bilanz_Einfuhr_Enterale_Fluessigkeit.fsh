@@ -34,8 +34,8 @@ Instance: BilanzEinfuhrEnteraleFluessigkeitBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Enterale_Fluessigkeit
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251854000 "Enteral fluid input (observable entity)"
 * code.coding[loinc] = $loinc#8953-2 "Fluid intake enteral tube Measured"
 * subject = Reference(PatientinMusterfrau)

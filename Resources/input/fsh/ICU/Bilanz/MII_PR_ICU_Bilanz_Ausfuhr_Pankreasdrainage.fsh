@@ -30,8 +30,8 @@ Instance: BilanzAusfuhrPankreasdrainageBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Pankreasdrainage
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#1162668004 "Volume of drainage of pancreatic fluid (observable entity)"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T09:00:00+02:00"

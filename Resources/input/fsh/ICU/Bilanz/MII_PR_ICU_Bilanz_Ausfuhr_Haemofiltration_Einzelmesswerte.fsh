@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrHaemofiltrationBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Haemofiltration_Einzelmesswerte
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251850009 "Ultrafiltrate fluid loss (observable entity)"
 * code.coding[loinc] = $loinc#99741-1 "Ultrafiltrate volume removed"
 * subject = Reference(PatientinMusterfrau)

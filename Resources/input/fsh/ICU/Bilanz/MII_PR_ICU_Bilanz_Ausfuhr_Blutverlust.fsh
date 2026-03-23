@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrBlutverlustBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Blutverlust
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#250771004 "Actual blood loss"
 * code.coding[loinc] = $loinc#81661-1 "Blood loss [Volume] Measured"
 * subject = Reference(PatientinMusterfrau)

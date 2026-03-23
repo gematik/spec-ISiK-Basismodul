@@ -30,8 +30,8 @@ Instance: BilanzEinfuhrMuttermilchBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Muttermilch
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#1204299001 "Measured volume of intake of breast milk (observable entity)"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T08:00:00+02:00"

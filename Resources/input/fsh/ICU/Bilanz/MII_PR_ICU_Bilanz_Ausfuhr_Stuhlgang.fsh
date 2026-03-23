@@ -29,8 +29,8 @@ Instance: BilanzAusfuhrStuhlgangBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Stuhlgang
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[loinc] = $loinc#9217-1 "Output.stool [Volume]"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T07:00:00+02:00"

@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrUrinBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Urin
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#364201005 "Urine output observable (observable entity)"
 * code.coding[loinc] = $loinc#9187-6 "Urine output"
 * subject = Reference(PatientinMusterfrau)

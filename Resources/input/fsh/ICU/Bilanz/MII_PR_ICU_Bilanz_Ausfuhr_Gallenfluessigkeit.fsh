@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrGallenfluessigkeitBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Gallenfluessigkeit
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#1162667009 "Volume of drainage of bile duct (observable entity)"
 * code.coding[loinc] = $loinc#9113-2 "Fluid output biliary drain"
 * subject = Reference(PatientinMusterfrau)

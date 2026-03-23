@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrMagensondeBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Magensonde
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#1162665001 "Volume of drainage of gastric contents (observable entity)"
 * code.coding[loinc] = $loinc#79561-7 "Fluid output enteral tube [Volume] Measured"
 * subject = Reference(PatientinMusterfrau)

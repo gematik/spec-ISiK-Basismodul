@@ -34,8 +34,8 @@ Instance: BilanzEinfuhrFluessigkeitGesamtBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Fluessigkeit_Gesamt
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251852001 "Total fluid input (observable entity)"
 * code.coding[loinc] = $loinc#9103-3 "Fluid intake total Measured"
 * subject = Reference(PatientinMusterfrau)

@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrWunddrainageBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Wunddrainage
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251845003 "Fluid output from wound drain (observable entity)"
 * code.coding[loinc] = $loinc#9203-1 "Fluid output wound drain"
 * subject = Reference(PatientinMusterfrau)

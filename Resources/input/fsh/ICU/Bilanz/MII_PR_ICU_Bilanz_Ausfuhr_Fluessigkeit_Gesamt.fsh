@@ -34,8 +34,8 @@ Instance: BilanzAusfuhrFluessigkeitGesamtBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Fluessigkeit_Gesamt
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251847006 "Total fluid loss"
 * code.coding[loinc] = $loinc#9257-7 "Fluid output total Measured"
 * subject = Reference(PatientinMusterfrau)

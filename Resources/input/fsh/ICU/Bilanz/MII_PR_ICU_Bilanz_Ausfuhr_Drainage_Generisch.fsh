@@ -32,8 +32,8 @@ Instance: BilanzAusfuhrDrainageGenerischBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Ausfuhr_Drainage_Generisch
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251843005 "Fluid output from drain"
 * code.coding[IEEE-11073] = $IEEE11073#157740 "Drainage volume in bag"
 * subject = Reference(PatientinMusterfrau)

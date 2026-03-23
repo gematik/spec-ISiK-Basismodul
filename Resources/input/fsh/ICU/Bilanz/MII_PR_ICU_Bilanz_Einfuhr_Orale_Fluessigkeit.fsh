@@ -34,8 +34,8 @@ Instance: BilanzEinfuhrOraleFluessigkeitBeispiel
 InstanceOf: MII_PR_ICU_Bilanz_Einfuhr_Orale_Fluessigkeit
 Usage: #example
 * status = #final
-* category.coding[hl7-category] = $observation-category#exam
-* category.coding[kdsicu-category] = $sct#364396009
+* category.coding[hl7-category] = $observation-category#exam "Exam"
+* category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
 * code.coding[sct] = $sct#251853006 "Oral fluid input (observable entity)"
 * code.coding[loinc] = $loinc#9000-1 "Fluid intake oral Measured"
 * subject = Reference(PatientinMusterfrau)
