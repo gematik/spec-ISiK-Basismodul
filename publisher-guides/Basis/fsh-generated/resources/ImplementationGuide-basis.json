@@ -240,6 +240,14 @@
       },
       {
         "reference": {
+          "reference": "SearchParameter/Location-characteristic"
+        },
+        "description": "Search by physicalType of a Location (e.g. wa = ward). \n\nThis SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).\n",
+        "exampleBoolean": false,
+        "name": "characteristic"
+      },
+      {
+        "reference": {
           "reference": "Coverage/CoverageGesetzlich"
         },
         "exampleBoolean": false,
@@ -705,7 +713,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKOrganisationFachabteilung"
         },
-        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
+        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n\nAnforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.\n\n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
         "exampleBoolean": false,
         "name": "ISiKOrganisationFachabteilung"
       },
@@ -858,6 +866,27 @@
       },
       {
         "reference": {
+          "reference": "Organization/KlinikIntensivAnaesthesieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik für Intensivmedizin und Anästhesiologie"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikPaediatrieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik Pädiatrie"
+      },
+      {
+        "reference": {
+          "reference": "Location/KrankenhausStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Krankenhaus Standort"
+      },
+      {
+        "reference": {
           "reference": "Condition/MittelgradigeIntelligenzminderung"
         },
         "exampleBoolean": false,
@@ -959,6 +988,20 @@
         "description": "Dieses Valueset enthält die Codes zur Beschreibung des Schwangerschaftsstatus einer Patientin.",
         "exampleBoolean": false,
         "name": "Schwangerschaftsstatus Valueset"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationPediaICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
       },
       {
         "reference": {

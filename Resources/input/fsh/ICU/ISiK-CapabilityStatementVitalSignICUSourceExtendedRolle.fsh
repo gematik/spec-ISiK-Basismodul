@@ -57,6 +57,24 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Blut, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Speiseroehre, SHALL)
+
+    // Paraemter aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
+    // MII
+    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Intrakranieller_Druck_Icp, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_MUV_zerebraler_Perfusionsdruck, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Indirekt, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenform, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillensymmetrie, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenbefund, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillengroesse, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Score_RASS, SHALL)
+
+    // MII Beatmung
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Unterstuezungsdruck_Beatmung, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontane_Atemfrequenz_Beatmet, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Spontanes_Atemzugvolumen, SHALL)
+
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
@@ -66,3 +84,43 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * insert CommonObservationSearchParameters
+
+
+  // Procedure-Profile aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
+  * resource[+]
+    * type = #Procedure
+    * insert CapabilityStatementExpectationExt(SHALL)
+    * insert Expectation(#SHALL)
+    * insert SupportedProfileCapExpectationExt(ISiKProzedurReanimation, SHALL)
+    * insert SupportedProfileCapExpectationExt(ISiKProzedurBeatmung, SHALL)
+    * interaction[+]
+      * insert CapabilityStatementExpectationExt(SHALL)
+      * code = #search-type
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
+    * interaction[+]
+      * insert Expectation (#SHALL)
+      * code = #read
+    * interaction[+]
+      * insert Expectation (#SHALL)
+      * code = #search-type
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "code"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Procedure?code=http://fhir.de/CodeSystem/bfarm/ops|5-470`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "patient"
+      * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+      * type = #reference
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Procedure?patient=Patient/123`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "

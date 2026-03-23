@@ -222,6 +222,14 @@
       },
       {
         "reference": {
+          "reference": "SearchParameter/Location-characteristic"
+        },
+        "description": "Search by physicalType of a Location (e.g. wa = ward). \n\nThis SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).\n",
+        "exampleBoolean": false,
+        "name": "characteristic"
+      },
+      {
+        "reference": {
           "reference": "Coverage/CoverageGesetzlich"
         },
         "exampleBoolean": false,
@@ -1281,7 +1289,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKOrganisationFachabteilung"
         },
-        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
+        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n\nAnforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.\n\n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
         "exampleBoolean": false,
         "name": "ISiKOrganisationFachabteilung"
       },
@@ -1439,6 +1447,27 @@
         "description": "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, \nbei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem [Basis-Coverage-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKVersicherungsverhaeltnisSonstige"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikIntensivAnaesthesieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik für Intensivmedizin und Anästhesiologie"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikPaediatrieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik Pädiatrie"
+      },
+      {
+        "reference": {
+          "reference": "Location/KrankenhausStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Krankenhaus Standort"
       },
       {
         "reference": {
@@ -1726,6 +1755,20 @@
         "description": "Enthaelt alle SNOMED CT Administrationsarten",
         "exampleBoolean": false,
         "name": "SctRouteOfAdministration"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationPediaICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
       },
       {
         "reference": {
