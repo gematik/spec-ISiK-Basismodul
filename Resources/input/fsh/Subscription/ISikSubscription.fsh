@@ -7,7 +7,7 @@ Description: "ISiK Subscription
 
 Subscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).
 
-Um als Subsystem über ein Subsription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.
+Um als Subsystem über ein Subscription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.
 
 ### Kompatibilität
 
@@ -30,7 +30,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * criteria MS
 * criteria from ISiKSubscriptionTopicVS (extensible)
   * ^short = "Canonical URL des SubscriptionTopic welches man abonnieren möchte."
-  * ^comment = "Enthält eines der in ISiK vereinbarten Subsription Topics."
+  * ^comment = "Enthält eines der in ISiK vereinbarten Subscription Topics."
   * extension[filterCriteria] MS
     * ^short = "Filterkriterium."
     * ^comment = "**Bedeutung:** Filterkriterium für die Subscription. Dieses Feld ist optional und kann genutzt werden, um die Subscription auf bestimmte Events zu filtern."
