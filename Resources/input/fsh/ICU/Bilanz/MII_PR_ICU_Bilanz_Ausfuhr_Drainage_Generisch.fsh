@@ -35,8 +35,7 @@ Usage: #example
 * category.coding[hl7-category] = $observation-category#exam
 * category.coding[kdsicu-category] = $sct#364396009
 * code.coding[sct] = $sct#251843005 "Fluid output from drain"
-* code.coding[IEEE-11073]= $IEEE11073#157740 "Drainage volume in bag"
-* code.coding[IEEE-11073].code =
+* code.coding[IEEE-11073] = $IEEE11073#157740 "Drainage volume in bag"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T10:00:00+02:00"
 * valueQuantity.value = 120
