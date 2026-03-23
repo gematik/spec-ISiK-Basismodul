@@ -117,7 +117,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   erfolgt im Vorgriff auf eine entsprechende Anpassung in FHIR R5."
   * ^binding.description = "Eingeschränkter Status vgl. FHIR R5"
 * class MS
-* class from EncounterClassDE (required)
+* class from ISiKEncounterClassDE (required)
   * ^short = "Fallart"
   * ^comment = "Die Klassifikation von Encountern nach Fallarten folgt den internationalen Vorgaben und 
   dient der groben Unterscheidung von Besuchen mit und ohne Bettendisposition (ambulant/stationär). 
@@ -184,6 +184,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
     * ^short = "Fachabteilungsschlüssel"
     * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
+* priority MS
+  * ^short = "Aufnahmepriorität"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
 * subject 1.. MS
   * ^short = "Patientenbezug"
   * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
@@ -208,6 +211,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
+* reasonCode MS
+  * ^short = "Grund des Aufenthalts"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   

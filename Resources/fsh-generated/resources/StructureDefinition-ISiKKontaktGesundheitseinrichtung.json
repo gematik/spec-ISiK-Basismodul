@@ -317,7 +317,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://fhir.de/ValueSet/EncounterClassDE"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE"
         }
       },
       {
@@ -469,6 +469,13 @@
         }
       },
       {
+        "id": "Encounter.priority",
+        "path": "Encounter.priority",
+        "short": "Aufnahmepriorität",
+        "comment": "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR).",
+        "mustSupport": true
+      },
+      {
         "id": "Encounter.subject",
         "path": "Encounter.subject",
         "short": "Patientenbezug",
@@ -510,6 +517,13 @@
         "path": "Encounter.period.end",
         "short": "Entlassdatum",
         "comment": "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.\n    *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.reasonCode",
+        "path": "Encounter.reasonCode",
+        "short": "Grund des Aufenthalts",
+        "comment": "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR).",
         "mustSupport": true
       },
       {

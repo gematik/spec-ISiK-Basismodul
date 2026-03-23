@@ -157,6 +157,16 @@ Description: "HL7 LOINC value set for smoking status.  Based on the HL7 Vocab an
 * $loinc#LA18982-1 ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/ordinalValue"
 * $loinc#LA18982-1 ^extension[=].valueDecimal = 8
 
+ValueSet: ISiKEncounterClassDE
+Id: ISiKEncounterClassDE
+Title: "ISiKEncounterClassDE"
+Description: "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht."
+* insert Meta
+* include codes from valueset EncounterClassDE
+* $v3-ActCode#ACUTE "inpatient acute"
+* $v3-ActCode#NONAC "inpatient non-acute"
+* $v3-ActCode#OBSENC "observation encounter"
+
 ValueSet: ISiKEncounterTypeErweiterungVS
 Id: ISiKEncounterTypeErweiterungVS
 Title: "ISiKEncounterTypeErweiterungVS"
