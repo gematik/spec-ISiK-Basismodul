@@ -333,10 +333,6 @@ Usage: #example
 Instance: KlinikPaediatrieOrganisationBeispiel
 InstanceOf: ISiKOrganisation
 Usage: #example
-* identifier[Abteilungsidentifikator]
-  * system = "https://fhir.krankenhaus.example/sid/OrgaID"
-  * value = "klinik-Paed-01"
-  * type = $sct#225746001
 * name = "Klinik Pädiatrie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1000	"Pädiatrie"
