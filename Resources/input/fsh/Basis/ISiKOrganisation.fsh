@@ -340,3 +340,13 @@ Usage: #example
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1000	"Pädiatrie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
 
+Instance: KlinikIntensivAnaesthesieOrganisationBeispiel
+InstanceOf: ISiKOrganisation
+Usage: #example
+* identifier[IKNR].value = "260120196"
+* identifier[BSNR].value = "345678975"
+* name = "Klinik für Intensivmedizin und Anästhesiologie"
+* type[organisationstyp] = $organization_type#dept
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600	"Intensivmedizin"
+* partOf = Reference(KrankenhausOrganisationBeispiel)
+

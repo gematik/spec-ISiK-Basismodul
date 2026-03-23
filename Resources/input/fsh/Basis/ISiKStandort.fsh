@@ -178,7 +178,7 @@ Usage: #example
 * physicalType = $LocationPhysicalType#wa "Ward"
 * position.latitude = 52.5200
 * position.longitude = 13.4050
-* managingOrganization = Reference(IntensivStationBeispiel)
+* managingOrganization = Reference(KlinikIntensivAnaesthesieOrganisationBeispiel)
 * partOf = Reference(KrankenhausStandortBeispiel)
 
 * hoursOfOperation[0].daysOfWeek = #mon
