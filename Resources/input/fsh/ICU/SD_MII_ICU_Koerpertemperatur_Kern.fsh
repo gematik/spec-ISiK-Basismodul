@@ -9,6 +9,7 @@ Description: "Dieses Profil bietet eine generische Abbildung der gesch√§tzten K√
   * insert MII_SpecificIEEE-11073Slice
   * coding[snomed] 1..1
   * coding[snomed] = $sct#276885007 //"Core body temperature"
+  * coding[IEEE11073] 1..
   * coding[specific-loinc] ..0
   * coding[specific-IEEE-11073] ..0
 
