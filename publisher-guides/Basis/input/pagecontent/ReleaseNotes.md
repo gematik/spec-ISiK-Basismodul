@@ -14,6 +14,7 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0-rc
 
+* `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068 - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
 * `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1046
@@ -21,6 +22,8 @@ Tags werden folgendermaßen verwendet:
 * `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `documentation` Dokumentation zur Abfrage von Fall-Daten über FHIR-Search hinzugefügt, inklusive Hinweisen zur Abfrage von Allergien und zum optionalen Einsatz von Encounter.partOf bei Einrichtungskontakten https://github.com/gematik/spec-ISiK-Basismodul/pull/1069
+* `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength https://github.com/gematik/spec-ISiK-Basismodul/pull/1074
 * `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
 

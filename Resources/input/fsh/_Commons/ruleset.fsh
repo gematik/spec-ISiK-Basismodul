@@ -252,6 +252,10 @@ RuleSet: CommonElements
   * ^short = "Eindeutiger Name der serverseitigen Version des Datensatzes"
   * ^comment = "Alle von einem Server bereitgestellten Ressourcen SOLLEN über eine `versionID` verfügen.
   Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `versionID`verfügen. " 
+* implicitRules ..0
+  * ^short = "Verweis auf die Regeln, nach denen die Ressource erstellt wurde"
+  * ^comment = "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.
+  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können."
 
 RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
 * location 1.. MS
@@ -300,6 +304,9 @@ RuleSet: Comment-Reference-Encounter(Einleitung)
 * ^comment = "**{Einleitung}:** Die Verlinkung auf eine Encounter-Ressource dient der technischen Zuordnung der Dokumentation zu einem Aufenthalt und ermöglicht wichtige API-Funktionen wie verkettete Suche, (Reverse-)Include etc.
 Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung) sein.
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
+
+RuleSet: CompliesWith(canonical)
+* ^extension[$compliesWithProfile][+].valueCanonical = Canonical({canonical})
 
 RuleSet: EU-BodySiteExtension
 * bodySite.extension contains $BodyStructureReferenceExtension named BodyStructureReference ..1

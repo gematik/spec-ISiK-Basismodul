@@ -1,4 +1,4 @@
-### Interaktion ISiK Modul Basis: Bericht aus Subsystem
+﻿### Interaktion ISiK Modul Basis: Bericht aus Subsystem
 * UseCase: Client übermittelt diverse strukturierte Informationen in Form eines Dokumentes an einen Empfänger. Der Empfänger (oder ggf. dessen Benutzer) kann selbst entscheiden, welche Informationen übernommen und ggf. weiterverarbeitet werden können/sollen. Als Minimum muss die Narrative (die HTML-Repräsentation des gesamten Dokumentes) übernommen werden.
 * HTTP-verb: POST auf [base]
 * Content: Bundle vom Typ `document`
@@ -24,7 +24,7 @@ Der Sender eines Subsystem-Berichtes gem. Modul "Basis" möchte parallel zur Üb
 Empfohlenes Vorgehen:
 1. Erzeugen einer DocumentReference-Ressource (siehe dazu $generate-metadata) 
 2. Übermittlung der DocumentReference sowie des Base64-codierten Bundles gemäß [Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung](Interaktion-Dokumentenbereitstellung.html)
-3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/Datenobjekte_BerichtSubsystem)
+3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis: Bericht aus Subsystem](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKBerichtSubSysteme.html)
 
 
 Der Empfänger eines Dokumentes gem. Modul "Dokumentenaustausch" möchte neben der Archivierung des Dokumentes auch dessen Inhalte weiterverarbeiten.
