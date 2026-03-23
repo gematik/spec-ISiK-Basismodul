@@ -16,7 +16,7 @@ Diese Rolle stellt Interaktionen zur Abfrage von Informationen zu Implantaten be
     * type = #Device
     * insert Expectation(#MAY)
     * supportedProfile[+] = Canonical(ISiKImplantat)
-       * insert Expectation(#MAY)
+      * insert Expectation(#MAY)
    
     * interaction[+]
       * insert Expectation(#MAY)
