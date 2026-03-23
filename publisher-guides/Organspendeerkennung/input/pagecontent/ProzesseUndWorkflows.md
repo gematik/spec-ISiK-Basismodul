@@ -1,17 +1,13 @@
 ### Prozesse
 
-#### Ein Prozess zur Organspendeerkennung
-
-#TODO: Diagramm ergänzen
-
-#### Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung
+**Ein Workflow zur Abfrage der Parameter für die Organspendeerkennung**
 
 Folgendes Diagramm stellt den Workflow zur Abfrage der Parameter für die Organspendeerkennung dar:
 
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="sequenz-workflow.png" alt="Sequenzdiagram Organspendedetektion" style="width: 100%;">
+        <img src="sequenzdiagramm-abfragen.svg" alt="Sequenzdiagram Organspendedetektion" style="width: 100%;">
     </div>
     
 </figure>

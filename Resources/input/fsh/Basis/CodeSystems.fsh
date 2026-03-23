@@ -56,3 +56,20 @@ Description: "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe eine
 * #05 "Erkrankung (ohne Krankenhausbehandlung)"
 * #06 "Belastungserprobung im häuslichen Umfeld"
 * #09 "Sonstiger Grund, der zur Unterbrechung der Pflegekosten führt"
+
+CodeSystem: ISiKIdentifierTypeErweiterung
+Id: ISiKIdentifierTypeErweiterungCS
+Title: "Erweiterung von identifier.type in ISiK"
+Description: "ISiK definiert an dieser Stelle einen eigene Identifier Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
+* insert Meta
+* ^caseSensitive = false
+* #ASN "Ambulante Scheinnummer"
+
+CodeSystem: ISiKEncounterTypeErweiterung
+Id: ISiKEncounterTypeErweiterungCS
+Title: "Erweiterung von Encounter.type in ISiK"
+Description: "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen."
+* insert Meta
+* ^caseSensitive = false
+* #ambulant "Ambulanter Kontakt"
+* #virtuell "Virtueller Kontakt"

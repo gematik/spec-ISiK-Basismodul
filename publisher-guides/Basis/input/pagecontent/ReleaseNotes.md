@@ -22,9 +22,14 @@ Tags werden folgendermaßen verwendet:
 * `improve` Kompatibilität des Profils ISiKPatient zum EHDS EU Base Patienten Profil wurde mittels `compliesWith`-Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1050
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1058
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
+* `documentation` Dokumentation zur Abfrage von Fall-Daten über FHIR-Search hinzugefügt, inklusive Hinweisen zur Abfrage von Allergien und zum optionalen Einsatz von Encounter.partOf bei Einrichtungskontakten https://github.com/gematik/spec-ISiK-Basismodul/pull/1069
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength https://github.com/gematik/spec-ISiK-Basismodul/pull/1074
 * `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
+* `improve` Änderungen der Profil- und Suchparameter-Vorgaben zu Organization und Location - auch aus dem Kontext des Use Cases Organspendeerkennung - https://github.com/gematik/spec-ISiK-Basismodul/pull/1094 
+  - Profile Station und Organization und spezielle Suchparameter verpflichtend
+  - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
+* `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
 
 ### Version 5.x.x
 

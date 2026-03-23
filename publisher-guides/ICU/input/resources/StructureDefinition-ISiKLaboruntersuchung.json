@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKLaboruntersuchung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung",
-  "version": "5.1.1",
+  "version": "6.0.0-rc",
   "name": "ISiKLaboruntersuchung",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-17",
+  "date": "2026-04-03",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
   "fhirVersion": "4.0.1",
@@ -17,6 +17,26 @@
   "derivation": "constraint",
   "differential": {
     "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "constraint": [
+          {
+            "key": "isik-obs-1",
+            "severity": "error",
+            "human": "Wenn der Status der Observation nicht \"registered\" oder \"cancelled\" ist, muss mindestens eines der folgenden Elemente vorhanden sein: \"value\", \"dataAbsentReason\", \"hasMember\" oder \"component\".",
+            "expression": "(status in ('registered' | 'cancelled')) or value.exists() or hasMember.exists() or component.exists() or dataAbsentReason.exists()",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          },
+          {
+            "key": "isik-obs-2",
+            "severity": "error",
+            "human": "Wenn die Observation Komponenten enthält und der Status nicht \"registered\" oder \"cancelled\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein.",
+            "expression": "component.exists() implies ((status in ('registered' | 'cancelled')) or component.value.exists() or component.dataAbsentReason.exists())",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung"
+          }
+        ]
+      },
       {
         "id": "Observation.id",
         "path": "Observation.id",
@@ -42,6 +62,73 @@
         "short": "Verweis auf die Regeln, nach denen die Ressource erstellt wurde",
         "comment": "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.\n  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können.",
         "max": "0"
+      },
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Analyse-Befund-Code",
+        "definition": "**Begründung MS**: Der Analyse-Befund-Code ermöglicht die eindeutige Identifikation der Laboruntersuchung.",
+        "comment": "**Begründung MS**: Ein eindeutiger Identifier ermöglicht die zuverlässige Referenzierung und Nachverfolgung von Laboruntersuchungen über verschiedene Systeme hinweg.",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.type",
+        "path": "Observation.identifier.type",
+        "short": "Art des Identifiers",
+        "comment": "**Begründung MS**: Der Identifier-Typ dient zur fachlichen Unterscheidung verschiedener Identifikatoren eines Laborbefunds.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.type.coding",
+        "path": "Observation.identifier.type.coding",
+        "short": "Kodierung des Identifier-Typs",
+        "definition": "**Begründung MS**: Die Kodierung des Identifier-Typs ermöglicht die eindeutige Identifikation der Art des Identifiers.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.system",
+        "path": "Observation.identifier.system",
+        "short": "Namensraum des Identifiers",
+        "definition": "**Begründung MS**: Das System gibt den Kontext oder die Quelle des Identifiers an",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier.value",
+        "path": "Observation.identifier.value",
+        "short": "Der eigentliche Identifier-Wert",
+        "definition": "**Begründung MS**: Der Wert ist die konkrete Kennung der Laboruntersuchung und muss in ihrem Namensraum eindeutig sein.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode",
+        "path": "Observation.identifier",
+        "sliceName": "analyseBefundCode",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "code": "OBI",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
       },
       {
         "id": "Observation.status",
@@ -183,7 +270,8 @@
           "rules": "open"
         },
         "short": "Zeitpunkt der Untersuchung",
-        "comment": "**Begründung Must Support**:\nDas Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen. Es stellt sicher, dass Systeme erkennen können, wann eine Untersuchung durchgeführt oder ein Zustand beobachtet wurde. Dies ist entscheidend für:\n\n* die klinische Relevanz des Ergebnisses (z.B. aktueller vs. älterer Befund),\n* Verlaufsauswertungen und Trendanalysen,\n* zeitlich abhängige Entscheidungsunterstützung,\n* eine valide Anzeige im zeitlichen Kontext des Patientenaufenthalts.",
+        "comment": "**Begründung Must Support**:\nDie EHDS Kombatiblität erfordert die Angabe von effective. Das Element effective[x] ist zentral, um die Beobachtung - insbesondere bei Laborbefunden - zeitlich korrekt einzuordnen.",
+        "min": 1,
         "mustSupport": true
       },
       {
@@ -204,6 +292,14 @@
         "path": "Observation.issued",
         "short": "Zeitpunkt der Verfügbarkeit des Untersuchungsergebnisses",
         "comment": "**Begründung MS**: Relevant zur Nachvollziehbarkeit und Validierung von Befunden, z.B. wann eine Entscheidung darauf basierte.",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Verantwortliche Person oder Organisation für die Untersuchung",
+        "comment": "**Begründung MS**: Die durchführende Person oder Organisation ist für die Validität und Verantwortlichkeit des Befunds maßgeblich. \n  **Begründung Kardinalität**: Die EHDS Kombatiblität erfordert mindestens einen Performer. ",
+        "min": 1,
         "mustSupport": true
       },
       {
