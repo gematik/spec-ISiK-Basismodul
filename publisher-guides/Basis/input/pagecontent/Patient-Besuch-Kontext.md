@@ -10,7 +10,7 @@ Dabei ist es den Herstellern von nicht-patientenführenden Systemen ("Subsysteme
 Dies kann zum Beispiel über folgende Mechanismen erfolgen:
 * durch die Entgegennahme und Verarbeitung von HL7 V2 ADT-Nachrichten aus dem patientenführenden System
 * mittels zyklischer Abfragen des Ressourcentyp- oder Server-Level _history-Endpoints unter Nutzung von "_since"-Parametern (oder "_lastUpdated") können sowohl neue als auch geänderte Patientendaten ermittelt und abgeholt werden (derzeit in ISiK nicht spezifiziert) 
-* mit Hilfe von Subscription (derzeit in Ausarbeitung für ISiK Stufe 5)
+* mit Hilfe von Subscription (derzeit in Ausarbeitung für ISiK Stufe 5) !!!TODO, noch aktuell?!!!
 
 #### Fassadenimplementierung
 Alternativ können Subsysteme die benötigten Informationen ad hoc aus dem Primärsystem beziehen, wenn sie von einem Client angefragt werden. In diesem Fall kann das Subsystem die Suchanfrage eines Clients nach Patienten- oder Encounter-Ressourcen an das patientenführende System delegieren und dem Client die gelieferten Antworten durchreichen. Suchtreffer können in der Datenbank des Subystems gecached oder erneut abgerufen und persistiert werden, wenn ein Client eine Interaktion mit Bezug zu einer dieser Ressourcen ausführen möchte (z.B. durch POSTen einer patientenbezogenen Ressource (Observation, DocumentReference) mit Referenz auf den Patienten bzw. Encounter).

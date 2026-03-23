@@ -1,6 +1,6 @@
 ﻿Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen dieses Implementation Guide definiert werden.
 
-Folgende Datenobjekte aus dem Modul [ISiK Basis Stufe 5](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html) werden in diesem Modul verwendet:
+Folgende Datenobjekte aus dem Modul [ISiK Basis Stufe 6](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/index.html) werden in diesem Modul verwendet:
 * [Patient](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKPatient.html)
 * [Practitioner](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKPersonImGesundheitsberuf.html)
 * [Encounter](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html)
