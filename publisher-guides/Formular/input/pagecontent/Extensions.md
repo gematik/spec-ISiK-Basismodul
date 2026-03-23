@@ -30,7 +30,7 @@ Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden vers
 
 | Rolle | Extension Name | Context | Beschreibung | Relevanz |
 |--------|--------|---------|------------------|---|
-| FormularRendering | [Medizin-produkt Kontext](https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension) | QuestionnaireResponse, Questionnaire | Mit dieser Extension besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und eine Zweckbestimmung anzugeben. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller! | SOLL |
+| FormularRendering | [Medizin-produkt Kontext](https://gematik.de/fhir/isik/StructureDefinition/ISiKMpFormularExtension) | QuestionnaireResponse, Questionnaire | Mit dieser Extension besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und eine Zweckbestimmung anzugeben ist. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller! | SOLL |
 
 ### SDC Extensions (Questionnaire)
 
