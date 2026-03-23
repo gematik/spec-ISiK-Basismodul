@@ -22,6 +22,50 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für eine
 * format[+] = #application/fhir+json
 * rest
   * mode = #server
+
+  * resource[+]
+    * type = #Location
+    * insert Expectation(#SHALL)
+    * supportedProfile[+] = Canonical(ISiKStandort)
+      * insert Expectation(#SHALL)
+
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #read
+      * documentation = "Begründung: Die REST-Interaktion `read` muss implementiert werden, um einzelne Ressourcen abzurufen."
+    * interaction[+]
+      * insert Expectation(#SHALL)
+      * code = #search-type   
+      * documentation = "Begründung: Die REST-Interaktion `search` muss implementiert werden, um Ressourcen nach bestimmten Kriterien zu suchen."
+
+    * insert CommonSearchParameters 
+    * insert OptionalTagSearchParameter
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "identifier"
+      * definition = "http://hl7.org/fhir/SearchParameter/Location-identifier"
+      * type = #token
+      * documentation = 
+        "**Beispiel:**    
+        `GET [base]/Location?identifier=http://fhir.krankenhaus.example|260120196`  
+        `GET [base]/Location?identifier=345678975`    
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
+
+//Folgender Suchparameter ist in ISiK als Custom-Suchparameter vorgesehen, da er für die Anforderungen der Stationsabfrage relevant ist; zugleich wird er in FHIR R6 als Standard-Parameter für Location eingeführt.
+    * searchParam[+]
+      * insert Expectation(#SHALL)
+      * name = "characteristic"
+      * definition = "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic"
+      * type = #token
+      * documentation = 
+        "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    
+        
+        **Beispiel:**    
+        `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` 
+        **Anwendungshinweis:**   
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  " 
+          
   * resource[+]
     * type = #Observation
     * insert CapabilityStatementExpectationExt(SHALL)
