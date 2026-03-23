@@ -1,0 +1,856 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "Organspendeerkennung",
+  "url": "https://gematik.de/fhir/isik//ImplementationGuide/Organspendeerkennung",
+  "version": "6.0.0-rc",
+  "name": "ISiKOrganspendeerkennungImplementationGuide",
+  "title": "ISiK Organspendeerkennung",
+  "status": "draft",
+  "description": "Dieser Implementierungsleitfaden spezifiziert eine ISiK-konforme Umsetzung der Organspendeerkennung im Krankenhaus.",
+  "packageId": "Organspendeerkennung",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.uv.ips",
+      "version": "1.1.0",
+      "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+      "id": "hl7_fhir_uv_ips"
+    },
+    {
+      "packageId": "hl7.fhir.uv.subscriptions-backport.r4",
+      "version": "1.1.0",
+      "uri": "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport",
+      "id": "hl7_fhir_uv_subscriptions_backport_r4"
+    },
+    {
+      "packageId": "de.basisprofil.r4",
+      "version": "1.5.4",
+      "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.ihe-d.terminology",
+      "version": "3.0.1",
+      "uri": "http://fhir.de/packages/de.ihe-d.terminology",
+      "id": "de_ihe_d_terminology"
+    },
+    {
+      "packageId": "dvmd.kdl.r4",
+      "version": "2025.0.1",
+      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
+      "id": "dvmd_kdl_r4"
+    },
+    {
+      "packageId": "ihe.formatcode.fhir",
+      "version": "1.4.0",
+      "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
+      "id": "ihe_formatcode_fhir"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "3.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "de.gematik.terminology",
+      "version": "1.0.6",
+      "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
+      "id": "de_gematik_terminology"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Procedure/Appendektomie"
+        },
+        "exampleBoolean": false,
+        "name": "Appendektomie"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementErweiterteStammdatenRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle ISiKCapabilityStatementErweiterteStammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementStammdatenRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Encounter-date-start"
+        },
+        "description": "The actual start date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+        "exampleBoolean": false,
+        "name": "DateStart"
+      },
+      {
+        "reference": {
+          "reference": "Patient/DorisQuelle"
+        },
+        "exampleBoolean": false,
+        "name": "DorisQuelle"
+      },
+      {
+        "reference": {
+          "reference": "Patient/DorisZiel"
+        },
+        "exampleBoolean": false,
+        "name": "DorisZiel"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Encounter-end-date"
+        },
+        "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
+        "exampleBoolean": false,
+        "name": "EndDate"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ExampleISiKLaboruntersuchungSerumnatrium1"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKLaboruntersuchungSerumnatrium1"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ExtensionISiKRehaEntlassung"
+        },
+        "description": "Extension zur Dokumentation von Informationen nach §301 (4 und 4a) SGB V, entsprechend dem ärztliche Reha-Entlassungsbericht. Mit dieser Extension können spezifische Entlassungsinformationen im Kontext einer Rehabilitationsmaßnahme angegeben werden. Dies ist besonders relevant für Einrichtungen, die Leistungen im Bereich Rehabilitation erbringen, und unterstützt die strukturierte Kommunikation im Entlassmanagement.",
+        "exampleBoolean": false,
+        "name": "ExtensionISiKRehaEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Fachabteilungskontakt"
+        },
+        "exampleBoolean": false,
+        "name": "Fachabteilungskontakt"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktBettenverlegung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktBettenverlegung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktEntlassung"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktEntlassung"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktFachbereichswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktFachbereichswechsel2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktMinimal2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktMinimal2"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktNormal"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktNormal"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationaereAufnahme"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationaereAufnahme"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel1"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel1"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/FachabteilungskontaktStationswechsel2"
+        },
+        "exampleBoolean": false,
+        "name": "FachabteilungskontaktStationswechsel2"
+      },
+      {
+        "reference": {
+          "reference": "Observation/Intrakranieller-Druck-ICP"
+        },
+        "exampleBoolean": false,
+        "name": "Intrakranieller-Druck-ICP"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
+        },
+        "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Imports Expectation"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceAkteur"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Organspendeerkennung Server"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceAkteur-expanded"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diesen Akteur implementiert.   \n\n  Jede Instanz eines bestätigungsrelevanten Systems MUSS an ihrem Endpunkt eine CapabilityStatement-Ressource bereitstellen.\nHierzu MUSS die [capabilities-Interaktion gemäß FHIR-Kernspezifikation](https://hl7.org/fhir/R4/http.html#capabilities) unterstützt werden. \nDer `MODE`-Parameter kann ignoriert werden.  \nDas CapabilityStatement in dieser Spezifikation stellt die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Rollen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Imports-Expectation-Extension](https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation) mit den möglichen Werten 'SHALL' (=MUSS)  'SHOULD' (=SOLL)  'MAY' (=KANN) 'SHOULD-NOT' (=SOLL NICHT) verwendet.  \n\nEine Server-Instanz MUSS ihrerseits ein CapabilityStatement vom `kind = instance` liefern und im Element `software` den Namen \nund die Versionsnummer angeben.   \nDarüber hinaus MÜSSEN in `CapabilityStatement.instantiates` sämtliche Canonical URLs der implementierten Rollen angegeben werden.\nDie mindestens zu implementierenden Profile für einen Akteur und Interaktionen entsprechen daher den aggregierten Anforderungen der einzelnen Rolle (per 'imports'). In den CapabilityStatements zu den Rollen sind die Anforderungen tabellarisch gelistet und weisen so die zu implementierenden Profile aus.\n\nDas CapabilityStatement der Instanz MUSS alle Funktionalitäten auflisten, die im folgenden CapabilityStatement (bzw. der in ihm importierten Rollen - siehe 'imports') mit `SHALL` gekennzeichnet sind. \nDas CapabilityStatement KANN darüber hinaus die mit `MAY` gekennzeichneten Funktionalitäten, sowie weitere Funktionalitäten auflisten, \nsofern diese in der Instanz implementiert wurden.  \n\nDie Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilityStatement der Server-Instanz nicht erforderlich.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Organspendeerkennung Server (Expanded)"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "ISiK CapabilityStatement Organspendeerkennung Source Rolle"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKProzedurBeatmung"
+        },
+        "description": "Dieses Profil dient der Abbildung von Beatmungsmaßnahmen in der Akutmedizin.\n\nDie verwendeten ValueSets in diesem Profil wurden dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte/MII_PR_ICU_Beatmung.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. \nAls Parent wurde der letzte Stand des Prozedur-Profils der MII gewählt. \nStand 4.3.2026.",
+        "exampleBoolean": false,
+        "name": "ISiK Prozedur Beatmung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKProzedurReanimation"
+        },
+        "description": "Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin.",
+        "exampleBoolean": false,
+        "name": "ISiK Prozedur Reanimation"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKBehandlungsergebnisRehaCS"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBehandlungsergebnisReha"
+        },
+        "description": "Behandlungsergebnis Reha gemäß §301(4 UND 4A) SGB V. Diagnosenbezogene Bewertung des Behandlungsergebnisses für einen Versicherten/Berechtigten bei Entlassung aus der Reha-Maßnahme bzw. Stellung eines Antrags auf Verlängerung. Vgl. Schlüsseltabelle 2.71 Diagnose - Behandlungsergebnis.",
+        "exampleBoolean": false,
+        "name": "ISiKBehandlungsergebnisRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKBesondereBehandlungsformRehaCS"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKBesondereBehandlungsformReha"
+        },
+        "description": "Besondere Behandlungsform der Reha gemäß §301(4 UND 4A) SGB V. Vgl. Schlüsseltabelle 2.51 Besondere Behandlungsformen.",
+        "exampleBoolean": false,
+        "name": "ISiKBesondereBehandlungsformRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKCoding"
+        },
+        "description": "Data Type profile for Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKCoding"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEntlassformRehaCS"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEntlassformReha"
+        },
+        "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
+        "exampleBoolean": false,
+        "name": "ISiKEntlassformRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKGCS"
+        },
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Glasgow Coma Scale (GCS) Score eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n\n### Motivation\nDie Erfassung und Überwachung des Bewusstseinszustands anhand des GCS ist essenziell für die Beurteilung neurologischer Funktionen, die Überwachung von Patienten mit Schädel-Hirn-Trauma oder anderen neurologischen Erkrankungen sowie die Unterstützung klinischer Entscheidungen.\n\nIn FHIR wird der GCS-Score mit der Observation-Ressource repräsentiert, wobei die einzelnen Komponenten der Skala - Augenöffnung, verbale Reaktion und motorische Reaktion - als Component-Elemente abgebildet werden.\n### Kompatibilität\nDas Profil ISiKGCS ist vom Profil [ScoreDE_GCS](http://fhir.de/StructureDefinition/observation-de-score-gcs) aus den deutschen Basisprofilen abgeleitet.",
+        "exampleBoolean": false,
+        "name": "ISiKGCS"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ISiKGCSExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKGCSExample"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ISiKGCSMaxExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKGCSMaxExample"
+      },
+      {
+        "reference": {
+          "reference": "Observation/ISiKGCSMinExample"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKGCSMinExample"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+        },
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiKKontaktGesundheitseinrichtung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKLaboruntersuchung"
+        },
+        "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
+        "exampleBoolean": false,
+        "name": "ISiKLaboruntersuchung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKLaboruntersuchungSerumnatrium"
+        },
+        "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung Serumnatrium eines Patienten in ISiK Szenarien. Das Profil wird u. A. im Use Case zur Unterstützung von Transplantationsbeauftragten bei der Organspendeerkennung eingesetzt; besonders in diesem Kontext muss es auch Werte abbilden, die im Rahmen von Messungen mittels Point-of-Care-Testing erhoben wurden. Das Profil ist auch geeignet, um Serumnatrium Werte abzubilden, die mittels Laboruntersuchung erhoben wurden.\n\nEine eindeutige Kennzeichnung für die Differenzierung hinsichtlich der Erhebungsmethode ist derzeit über dieses Profil nicht vorgesehen. Es kann jedoch das Element .method verwendet werden. Die Differenzierung aufgrund der Methode kann unter Umständen sinnvoll sein, wenn im Falle einer Laboruntersuchung ein Arzt die Werte zuerst sichten und bestätigen müsste, bevor sie im PDMS als 'final' für den Patienten hinterlegt werden. ",
+        "exampleBoolean": false,
+        "name": "ISiKLaboruntersuchungSerumnatrium"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKLoincCoding"
+        },
+        "description": "Data Type profile for LOINC Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKLoincCoding"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKPatient"
+        },
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.\n**Motivation**: Der Austausch administrativer Patientendaten ist eine der grundlegenden Funktionalitäten beim Datenaustausch in der klinischen Versorgung.  \nIn FHIR werden sämtliche klinischen Ressourcen durch Verlinkung auf die Ressource 'Patient' in einen Patientenkontext gestellt.  \nDie Herstellung des korrekten Patientenkontextes durch Suchen der Patientenressource anhand von Eigenschaften wie Aufnahmenummer, Name oder Geburtsdatum, \ndie Anzeige der zutreffenden Suchergebnisse und der Auswahl bzw. Bestätigung des richtigen Datensatzes durch den Anwender steht am Beginn der meisten klinischen Workflows.  \n\n**Kompatibilität**: Für das Profil ISIKPatient wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n\n* [Profil KBV_PR_Base_Patient der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient)\n* [Profil Patient im International Patient Summary (IPS)](https://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)\n* [Profil Patient der MI-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient)\n\nGegen folgende Profile ist das Profil ISiKPatient unmittelbar kompatibel:\n\n* [Profil TIPatient der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-patient)\n\nEs ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit folgenden Profilen ist:\n\n* [Profil EPAPatient der gematik](https://gematik.de/fhir/epa/StructureDefinition/epa-patient): In ISiK ist die Angabe einer KVNR nicht verpflichtend, da in vielen Use Cases bereits eine PID ausreichend ist. Außerdem ist in ISiK keine verpflichtende Versionierung über meta.versionId vorgesehen.",
+        "exampleBoolean": false,
+        "name": "ISiKPatient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/IsikPatientTemplate"
+        },
+        "exampleBoolean": false,
+        "name": "IsikPatientTemplate"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKProzedur"
+        },
+        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Behandlungen/Prozeduren eines Patienten im Rahmen des Bestätigungsverfahrens der gematik.\n### Motivation\nDie Möglichkeit auf eine Übersicht der Prozeduren eines Patienten zuzugreifen, Patienten anhand durchgeführter oder geplanter Prozeduren zu suchen, oder zu prüfen, ob eine konkrete Prozedur bei einem Patienten durchgeführt wurde, sind wichtige Funktionen im klinischen Behandlungsablauf.\n\nIn FHIR werden Prozeduren mit der Procedure-Ressource repräsentiert.\n\nDa die Prozeduren in klinischen Primärsystemen, in der Regel, in OPS-codierter Form vorliegen, fordert ISiK in erster Linie diese Form des Austausches. Falls eine Prozedur zwar dokumentiert aber noch nicht codiert wurde (z.B. wenn die Kodierung erst nach der Entlassung erfolgt), ist alternativ eine Repräsentation als Freitext-Prozedur möglich.\n\n### Kompatibilität\nFür das Profil ISIKProzedur wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKProzedur valide sind, auch valide sind gegen:\n\n* [Profil Prozedur](https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure) der Medizininformatik Initiative  \nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiKProzedur"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSnomedCTCoding"
+        },
+        "description": "Data Type profile for Snomed-CT Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKSnomedCTCoding"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKUnterbrechungRehaCS"
+        },
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+        "exampleBoolean": false,
+        "name": "ISiKUnterbrechungReha"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKUnterbrechungReha"
+        },
+        "description": "ISiK Unterbrechung Reha. Dokumentiert die relevanten Gründe einer Unterbrechung einer Rehabilitationsmaßnahme im Einzelfall. Vgl. Schlüsseltabelle 2.111 Erläuterung zur Unterbrechung.",
+        "exampleBoolean": false,
+        "name": "ISiKUnterbrechungRehaVS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-muv-zerebraler-perfusionsdruck"
+        },
+        "description": "Dieses Profil dient der spezialisierten Abbildung des zerebralen Perfusionsdrucks (ICP) in der Akutmedizin.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Monitoring%20und%20Vitaldaten/MII_PR_ICU_MUV_zerebraler_Perfusionsdruck.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU MUV zerebraler Perfusionsdruck"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Parameter von Beatmung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-score-rass"
+        },
+        "description": "Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedation Scale (RASS) Scores in der Akutmedizin.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Score RASS"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-vent-spontane-atemfrequenz-beatmet"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Spontane Atemfrequenz Beatmet"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-vent-spontanes-atemzugvolumen"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Spontanes Atemzugvolumen"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-vent-unterstuezungsdruck-beatmung"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Unterstuezungsdruck Beatmung"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillenbefund"
+        },
+        "description": "Dieses Profil dient der Abbildung eines Pupillenbefunds, der als Panel die einzelnen Befunde zur Pupillenuntersuchung bündelt (Pupillengröße, Pupillenform, Pupillenlichtreaktion direkt/indirekt, Pupillensymmetrie).\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillenbefund"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillenform"
+        },
+        "description": "Dieses Profil dient der Abbildung der Pupillenform.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillenform"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse"
+        },
+        "description": "Dieses Profil dient der Abbildung der Pupillengröße.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillengroesse"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt"
+        },
+        "description": "Dieses Profil dient der Abbildung der direkten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt"
+        },
+        "description": "Dieses Profil dient der Abbildung der indirekten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillenlichtreaktion Indirekt"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie"
+        },
+        "description": "Dieses Profil dient der Abbildung der Pupillensymmetrie.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Untersuchung Pupillensymmetrie"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-body-site-observation-beatmung"
+        },
+        "description": "Dieses ValueSet enthält Codes für bodySites für die im Kontext einer Beatmung eingestellten oder gemessenen Parametern.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU BodySite Observation Beatmung"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund"
+        },
+        "description": " Zulaessige Koerperstellen fuer lateralisierte Pupillenbefunde: linke oder rechte Pupille.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_BodySite_Observation_Pupillenbefund.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU BodySite Observation Pupillenbefund"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Category_Beatmung_SNOMED.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Category Procedure Beatmung SNOMED"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-beatmung-loinc-iso11073"
+        },
+        "description": "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Beatmung ISO11073"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-beatmung-loinc"
+        },
+        "description": "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Beatmung LOINC"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-beatmung-snomed"
+        },
+        "description": "Dieses ValueSet enthält Codes für die im Kontext einer Beatmung verwendeten Parameter.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Beatmung SNOMED"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-oservation-pupillenform-loinc"
+        },
+        "description": "Kategoriale Beurteilung der Pupillenform/Regularitaet: regelmaessig (rund) oder unregelmaessig. Zulaessig sind SNOMED-Findings und/oder LOINC-Antwortcodes.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Pupillenform LOINC"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-pupillengroesse"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Pupillengroesse"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-pupillenlichtreaktion"
+        },
+        "description": "Subset der LOINC AnswerList LL3762-3 fuer die Pupillen-Lichtreaktion: reaktiv, traege reaktiv, nicht reaktiv.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Pupillenlichtreaktion"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-observation-pupillensymmetrie"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Observation_Pupillenlichtreaktion.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Observation Pupillensymmetrie"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-code-procedure-beatmung-snomed"
+        },
+        "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Code_Procedure_Beatmung_SNOMED.fsh# - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 04.03.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Code Procedure Beatmung SNOMED"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mii-vs-icu-score-rass"
+        },
+        "description": "Value set for RASS Score\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026",
+        "exampleBoolean": false,
+        "name": "MII VS ICU Score RASS"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ObservationCodesSerumnatrium"
+        },
+        "description": "Enthält LOINC-Codes für die Observation Serumnatrium",
+        "exampleBoolean": false,
+        "name": "ObservationCodesSerumnatrium"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ObservationUnitsSerumnatrium"
+        },
+        "description": "Enthält UCUM-Einheiten für die Observation Serumnatrium",
+        "exampleBoolean": false,
+        "name": "ObservationUnitsSerumnatrium"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinMinimal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMinimal"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinMusterfrau"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinMusterfrau"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientinNormal"
+        },
+        "exampleBoolean": false,
+        "name": "PatientinNormal"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PlannedEndDate"
+        },
+        "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
+        "exampleBoolean": false,
+        "name": "PlannedEndDate"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PlannedStartDate"
+        },
+        "description": "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern.",
+        "exampleBoolean": false,
+        "name": "PlannedStartDate"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProzedurenCodesSCT"
+        },
+        "description": "Enthaelt alle SNOMED Procedure Codes",
+        "exampleBoolean": false,
+        "name": "ProzedurenCodesSCT"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProzedurenKategorieSCT"
+        },
+        "description": "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel",
+        "exampleBoolean": false,
+        "name": "ProzedurenKategorieSCT"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProzedurenReanimationCodesOPS"
+        },
+        "description": "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen",
+        "exampleBoolean": false,
+        "name": "ProzedurenReanimationCodesOPS"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProzedurenReanimationCodesSCT"
+        },
+        "description": "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen",
+        "exampleBoolean": false,
+        "name": "ProzedurenReanimationCodesSCT"
+      },
+      {
+        "reference": {
+          "reference": "Procedure/ReanimationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "ReanimationBeispiel"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-icu-intrakranieller-druck-icp"
+        },
+        "description": "Dieses Profil dient der spezialisierten Abbildung des intrakraniellen Drucks (ICP) in der Akutmedizin.",
+        "exampleBoolean": false,
+        "name": "SD MII ICU Intrakranieller Druck ICP"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-icu-monitoring-und-vitaldaten"
+        },
+        "description": "Dieses Profil dient als Abstraktionsprofil für verschiedene spezialisierte Beobachtungen in der Akutmedizin zur Abbildung von Monitoring- und Vitaldaten.",
+        "exampleBoolean": false,
+        "name": "SD MII ICU Monitoring und Vitaldaten"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Nachstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Nachstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ1Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Patient"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Stationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Stationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ1Vorstationaer"
+        },
+        "exampleBoolean": false,
+        "name": "SZ1Vorstationaer"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/SZ2Encounter"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Encounter"
+      },
+      {
+        "reference": {
+          "reference": "Patient/SZ2Patient"
+        },
+        "exampleBoolean": false,
+        "name": "SZ2Patient"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-mii-icu-bodysite-observation-monitoring-und-vitaldaten"
+        },
+        "description": "Dieses ValueSet enthält Codes für bodySites von Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+        "exampleBoolean": false,
+        "name": "VS MII ICU BodySite Observation Monitoring und Vitaldaten"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-iso11073"
+        },
+        "description": "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+        "exampleBoolean": false,
+        "name": "VS MII ICU Code Monitoring und Vitaldaten [ISO11073]"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-loinc"
+        },
+        "description": "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+        "exampleBoolean": false,
+        "name": "VS MII ICU Code Monitoring und Vitaldaten [LOINC]"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-mii-icu-code-monitoring-und-vitaldaten-snomed"
+        },
+        "description": "Dieses ValueSet enthaelt Codes fuer Vitaldaten sowie Daten aus dem Patientenmonitoring.",
+        "exampleBoolean": false,
+        "name": "VS MII ICU Code Monitoring und Vitaldaten [sct]"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Einführung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ReleaseNotes.html",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Index_UseCaseAnwendung.html",
+          "title": "Use Cases und Anwendungskontexte",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ProzesseUndWorkflows.html",
+          "title": "Prozesse und Workflows",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Akteure.html",
+          "title": "Akteure",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Festlegungen.html",
+          "title": "Festlegungen",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "artifacts.html",
+          "title": "FHIR-Artefakte",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2026+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "STU1"
+      },
+      {
+        "code": "no-validate",
+        "value": "true"
+      }
+    ]
+  }
+}
