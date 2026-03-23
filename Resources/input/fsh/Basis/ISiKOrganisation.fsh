@@ -334,7 +334,7 @@ Instance: KlinikPaediatrieOrganisationBeispiel
 InstanceOf: ISiKOrganisation
 Usage: #example
 * identifier[IKNR].value = "260120196"
-* identifier[BSNR].value = "345678975"s
+* identifier[BSNR].value = "345678975"
 * name = "Klinik Pädiatrie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1000	"Pädiatrie"
