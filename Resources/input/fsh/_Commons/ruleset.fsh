@@ -255,7 +255,7 @@ RuleSet: CommonElements
 * implicitRules ..0
   * ^short = "Verweis auf die Regeln, nach denen die Ressource erstellt wurde"
   * ^comment = "Begründung Constraint: In ISiK existiert kein Use-Case für dieses Element. Da es sich um ein Modifying Element handelt, wird es daher ausgeschlossen.
-  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können." 
+  Darüber hinaus werden die Regeln als URI vorgehalten. Dies führt dazu, dass sich hinter der URI eine beliebige Menge an Regeln befinden kann; wodurch  nicht sichergestellt werden kann, dass alle Clients die Regeln korrekt interpretieren können."
 
 RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
 * location 1.. MS
@@ -306,7 +306,7 @@ Im ISik Kontext MUSS die referenzierte Ressource konform zu [ISiKKontaktGesundhe
 Jenseits von ISiK KÖNNEN weitere Instanzen mit anderen Profilen referenziert werden."
 
 RuleSet: CompliesWith(canonical)
-* ^extension[$compliesWith][+].valueCanonical = Canonical({canonical})
+* ^extension[$compliesWithProfile][+].valueCanonical = Canonical({canonical})
 
 RuleSet: EU-BodySiteExtension
 * bodySite.extension contains $BodyStructureReferenceExtension named BodyStructureReference ..1
