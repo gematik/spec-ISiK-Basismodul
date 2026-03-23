@@ -10,6 +10,7 @@ t.b.d. (x)
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
+* `improve` Ergänzung der Operationen Patient-everything und Encounter-everything im ISiK CpS der Rolle Stammdaten https://github.com/gematik/spec-ISiK-Basismodul/pull/1096
 
 
 ### Version 5.1.1
