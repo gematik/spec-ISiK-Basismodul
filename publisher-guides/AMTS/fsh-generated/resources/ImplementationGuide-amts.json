@@ -142,6 +142,14 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementImplantatRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle ImplantatRolle"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementAmbulanteStammdatenRolle"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
@@ -211,6 +219,14 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Location-characteristic"
+        },
+        "description": "Search by physicalType of a Location (e.g. wa = ward). \n\nThis SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).\n",
+        "exampleBoolean": false,
+        "name": "characteristic"
       },
       {
         "reference": {
@@ -1039,6 +1055,28 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKImplantat"
+        },
+        "description": "\nDieses Profil ermöglicht die strukturierte Abbildung von Implantaten eines Patienten in ISiK-Szenarien.\nImplantate stellen dauerhaft oder langfristig im Körper befindliche Medizinprodukte dar und sind häufig von hoher klinischer Relevanz, da sie Diagnostik, Therapieentscheidungen sowie zukünftige Behandlungsmaßnahmen unmittelbar beeinflussen können.\n\n### Motivation\n\nDie standardisierte Bereitstellung von Implantatinformationen unterstützt insbesondere:\n\n    die eindeutige Identifikation implantierter Medizinprodukte,\n\n    die Berücksichtigung implantatspezifischer Besonderheiten bei weiteren diagnostischen oder therapeutischen Maßnahmen,\n\n    die Nachverfolgbarkeit im Rahmen von Sicherheitsmeldungen und Rückrufaktionen sowie\n\n    die Dokumentation wesentlicher Implantatmerkmale (z. B. Hersteller, Modell, Seriennummer).\n\nDarüber hinaus ermöglicht das Profil eine interoperable und maschinenlesbare Darstellung implantatrelevanter Informationen und trägt zur Verbesserung der Patientensicherheit sowie zur Vermeidung von Risiken und Fehlentscheidungen im Behandlungsprozess bei.\nAls Bestandteil interoperabler Patientendaten stellt es sicher, dass relevante Implantatvorinformationen systemübergreifend verfügbar sind.\n\nDa Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Aufnahme in ISiK sinnvoll, um die Verfügbarkeit von Implantatinformationen in verschiedenen Anwendungsfällen zu gewährleisten, insbesondere in solchen, die über die Dokumentation in einem Entlassbrief hinausgehen.\n",
+        "exampleBoolean": false,
+        "name": "ISiKImplantat"
+      },
+      {
+        "reference": {
+          "reference": "Device/ISiKImplantatHerzschrittmacher"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKImplantatHerzschrittmacher"
+      },
+      {
+        "reference": {
+          "reference": "Device/ISiKImplantatHueftprothese"
+        },
+        "exampleBoolean": false,
+        "name": "ISiKImplantatHueftprothese"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKKoerpergewicht"
         },
         "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über das Körpergewicht eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung des Körpergewichts ist essenziell für die Beurteilung des Ernährungszustands, die Überwachung von Veränderungen im Rahmen der Therapie sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird das Körpergewicht mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpergewicht ist vom Profil [VitalSignDE_Koerpergewicht](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergewicht) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Weight Profile](http://hl7.org/fhir/StructureDefinition/bodyweight) aus der FHIR R4 Spezifikation.",
@@ -1251,7 +1289,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKOrganisationFachabteilung"
         },
-        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
+        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n\nAnforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.\n\n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
         "exampleBoolean": false,
         "name": "ISiKOrganisationFachabteilung"
       },
@@ -1409,6 +1447,27 @@
         "description": "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, \nbei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem [Basis-Coverage-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKVersicherungsverhaeltnisSonstige"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikIntensivAnaesthesieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik für Intensivmedizin und Anästhesiologie"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikPaediatrieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik Pädiatrie"
+      },
+      {
+        "reference": {
+          "reference": "Location/KrankenhausStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Krankenhaus Standort"
       },
       {
         "reference": {
@@ -1696,6 +1755,20 @@
         "description": "Enthaelt alle SNOMED CT Administrationsarten",
         "exampleBoolean": false,
         "name": "SctRouteOfAdministration"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationPediaICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
       },
       {
         "reference": {

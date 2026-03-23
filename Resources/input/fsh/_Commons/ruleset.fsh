@@ -1,18 +1,18 @@
-Alias: $ISIKVersion = 5.1.1
+Alias: $ISIKVersion = 6.0.0-rc
 
 RuleSet: Meta
 * ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-12-17"
+* ^date = "2026-04-03"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-12-17"
+* date = "2026-04-03"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"

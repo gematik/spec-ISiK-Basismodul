@@ -39,6 +39,23 @@ Description: "Enthaelt alle SNOMED Procedure Codes"
 * insert Meta
 * include codes from system SNOMED_CT where concept descendent-of #71388002
 
+ValueSet: ProzedurenReanimationCodesSCT
+Id: ProzedurenReanimationCodesSCT
+Description: "Enthaelt alle SNOMED Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+//* compose.include.system = $sct
+//* compose.include.version = obeys sct-version-de //erwünschtes Verhalten: das VS soll der invariante für ISIKSNOMEDCT Coding entsprechende Version des SNOMED CT verwenden
+//* compose.include.version = "http://snomed.info/sct/11000274103/20251115"
+* include codes from system SNOMED_CT where concept descendent-of #439569004
+
+ValueSet: ProzedurenReanimationCodesOPS
+Id: ProzedurenReanimationCodesOPS
+Description: "Enthaelt alle OPS Procedure Codes für Reanimationsmaßnahmen"
+* insert Meta
+* $ops#8-771 "Kardiale oder kardiopulmonale Reanimation"
+* $ops#8-772 "Operative Reanimation"
+* $ops#8-779 "Andere Reanimationsmaßnahmen"
+
 ValueSet: ProzedurenKategorieSCT
 Id: ProzedurenKategorieSCT
 Description: "Enthaelt alle SNOMED Codes für ein Mapping der OPS Klassentitel"
