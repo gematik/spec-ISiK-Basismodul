@@ -3,14 +3,14 @@ Parent: http://fhir.de/StructureDefinition/coverage-de-basis
 Id: ISiKVersicherungsverhaeltnisSonstige
 Description: "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  
 
-### **Motivation**
+**Motivation**
 
 ISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, 
 bei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.
 In diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  
 In FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.
 
-### **Kompatibilität**
+**Kompatibilität**
 
 Das Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem [Basis-Coverage-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). 
 

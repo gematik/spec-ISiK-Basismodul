@@ -4,7 +4,7 @@ Id: ISiKLebensZustand
 Title: "ISiKLebensZustand"
 Description: "Basisprofil für ISiKLebensZustand Observation 
 
-### **Motivation**
+**Motivation**
 
 Viele medizinischen Entscheidungen benötigen Informationen zu den Lebensumständen eines Patienten. Hierzu gehören eine aktuelle Schwangerschaft, Raucherstatus sowie der Alkoholabususstatus.
 Motivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://simplifier.net/guide/isik-medikation-v4/ImplementationGuide-markdown-UebergreifendeUseCases-AMTS).
@@ -19,7 +19,7 @@ Die folgenden Profile vom Typ `Observation` sind spezifische Profile im oben gen
 * https://gematik.de/fhir/isik/StructureDefinition/ISiKAlkoholAbusus
 * https://gematik.de/fhir/isik/StructureDefinition/ISiKRaucherStatus
 
-### **Kompatibilität**
+**Kompatibilität**
 
 Für Schwangerschaftsstatus & Erwarteter Geburtstermin wird eine Kompatibilität mit folgenden **IPS** Profilen angestrebt:
 * [IPS Resource Profile: Observation - Pregnancy: EDD](https://hl7.org/fhir/uv/ips/STU1.1/StructureDefinition-Observation-pregnancy-edd-uv-ips.html). 

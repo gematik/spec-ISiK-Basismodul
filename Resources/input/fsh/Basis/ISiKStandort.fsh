@@ -4,7 +4,7 @@ Id: ISiKStandort
 Description: "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines 
 Krankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  
 
-### **Motivation**
+**Motivation**
 
 In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.
 
@@ -24,7 +24,7 @@ Die Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:
 
 Dafür werden Standort-Profile in unterschiedlicher Granularität definiert. 
 
-### **Kompatibilität**
+**Kompatibilität**
 
 Für das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der 
 Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  
