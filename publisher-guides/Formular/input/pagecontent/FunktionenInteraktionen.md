@@ -34,7 +34,7 @@ Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheit
 
 ### Interaktion: FormularRendering
 
-Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) in einem [FormularRenderer](Akteure.html#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.html) zu erheben. Datei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.html) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind.
+Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) in einem [FormularRenderer](Akteure.html#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.html) zu erheben. Dabei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.html) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind.
 Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering ein QuestionnaireResponse entgegen genommen werden können, der im Rahmen der Vorbelegunmg erstellt wurde und die entsprechenden Daten bereits enthält, damit diese im Formular dargestellt werden können.
 
 
