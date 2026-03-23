@@ -2,9 +2,20 @@
 topic: UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter
 ---
 
-Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) - wo möglich - gefordert wird. Entsprechend sollten sich Abfragen durch Clients in der Regel auf *eine einzelne* Patient- und/oder Encounter-Ressource begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK; jedoch können sie notwendig sein, z. B. für die Abfrage von Patientenlisten einer Station). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
+Originäre ISiK Use Cases sind versorgungsorientiert und patientenorientiert. Dies resultiert darin, dass in der Profilierung der ISiK-Datenobjekte das Vorhandensein einer Referenz auf ISiKPatient (Patient) und ISiKKontaktGesundheitseinrichtung (Encounter) - wo möglich - gefordert wird. Entsprechend sollten sich Abfragen durch Clients in der Regel auf *eine einzelne* Patient- und/oder Encounter-Ressource begrenzen (Abfragen auf Patientenkohorten oder sonstige Forschungsabfragen sind nicht im Fokus von ISiK; s. u. zu Ausnahmen). Dies kann beispielsweise dadurch erreicht werden, dass der Client innerhalb einer Suchanfrage explizit eine Patient-ID übergibt oder dass die Einschränkung aus relevanten Claims eines Access-Tokens extrahiert wird.
 
 Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausgehen, dass alle vorliegenden referenzierten bzw. referenzierenden Ressourcen aus dem Kontext der genannten Ressourcen-Typen abrufbar sind. Durch das Vorliegen der Referenzen erfolgt die Dokumentation aller Datenobjekte stets im korrekten Patientenkontext. Zudem liegen für den jeweiligen Kontext relevante Informationen zur Interpretation der Dokumentation und Sicherstellung der Datenintegrität vor. 
+
+Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in bestimmten Kontexten) bereitstellende Systeme auch generische Abfragen wie folgende unterstützen:
+- Stationslisten 
+    - Beispielabruf: GET baseURL/Location?characteristic=wa
+- Patienten je Station
+    - Beispielabruf: GET baseURL/Patient?location=Location/123
+- Alle zur Verfügung stehenden Medikamente
+    - Beispielabruf: GET baseURL/Medication
+- Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevantbei auffälligen Medikationschargen)
+    - Beispielabruf: GET baseURL/MedicationAdministration
+    - Beispielabruf: GET baseURL/MedicationRequest
 
 Auf der Seite (Artefakte)[artifacts.md] werden für alle innerhalb dieses Implementierungsleitfadens spezifizierten FHIR-Ressourcen Suchparameter bestimmt, welche im Rahmen des Bestätigungsverfahrens von ISiK unterstützt werden MÜSSEN.
 
