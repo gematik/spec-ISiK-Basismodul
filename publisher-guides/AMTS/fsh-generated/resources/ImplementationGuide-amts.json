@@ -48,6 +48,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "Account/AbrechnungsfallAmbulantMvzImKrankenhaus"
+        },
+        "exampleBoolean": false,
+        "name": "AbrechnungsfallAmbulantMvzImKrankenhaus"
+      },
+      {
+        "reference": {
           "reference": "Account/AbrechnungsfallDRG"
         },
         "exampleBoolean": false,
@@ -143,6 +150,14 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementAmbulanteStammdatenRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle ISiKCapabilityStatementAmbulanteStammdatenRolle"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementCompositionKonsumentenRolle"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
@@ -204,6 +219,14 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/Location-characteristic"
+        },
+        "description": "Search by physicalType of a Location (e.g. wa = ward). \n\nThis SearchParameter is defined based on the R6 (build) equivalent (https://build.fhir.org/location-search.html#Location-characteristic).\n",
+        "exampleBoolean": false,
+        "name": "characteristic"
       },
       {
         "reference": {
@@ -271,6 +294,14 @@
         "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
         "exampleBoolean": false,
         "name": "EndDate"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
       },
       {
         "reference": {
@@ -660,6 +691,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant"
+        },
+        "description": "Diese Extension erlaubt es, angelehnt an die Basisprofil Extension [Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren](http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur), Diagnosen und Prozeduren als abrechnungsrelevant in einem Fallkontext anzugeben. Allerdings ohne die Verpflichtung, einen Use anzugeben. Dies ist im ambulanten Kontext nicht üblich.",
+        "exampleBoolean": false,
+        "name": "Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ExtensionISiKAcceptedRisk"
         },
         "description": "Extension zur Dokumentation eines im Rahmen der AMTS bewusst eingegangenen Risikos. In diesem Freitext kann die Begründung und ggf. zu treffende besondere Maßnahmen dokumentiert werden.",
@@ -844,6 +883,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ISiKAbrechnungsfallAmbulant"
+        },
+        "description": "Dieses Profil spezifiziert die Anforderungen an die Abbildung von ambulanten Abrechnungsfällen im Krankenhauskontext. Es handelt sich dabei um eine Spezialisierung des ISiK Abrechnungsfall-Profils, das allgemeine Anforderungen an die Abbildung von Abrechnungsfällen definiert.\n\nAmbulante-Abrechnungsfall-Angaben unterscheiden sich von stationären im Krankenhaus im Wesentlichen durch die Angabe von:\n\n- die Extenion `AbrechnungsDiagnoseProzedurAmbulant` wurde ergänzt, um die Angabe von abrechnungsrelevanten Diagnosen und Prozeduren zu ermöglichen, ohne dass diese in Haupt- und Nebendiagnosen aufgeteilt werden müssen. Eine Aufteilung ist im ambulanten Kontext nicht üblich, aber da es dennoch in der Praxis vorkommen kann, wurde die ursprüngliche Extension `AbrechnungsDiagnoseProzedur` nicht ausgeschlossen, sondern die neue Extension als Ergänzung hinzugefügt.\n- die Angabe einer Scheinnummer als Identifier. Amulante Fälle werden meist über die Existenz eines so genannten Scheins definiert. Die Scheinnummer ist eine Nummer, die innerhalb einer Einrichtung diesen Schein eindeutig identifiziert. Da es häufig auch noch eine klassische Fallnummer gibt, sind beide Identifier vorgesehen und kommen auch vor.\n- die Angabe eines `servicePeriod` als Gültigkeitszeitraum des ambulanten Abrechnungsfalls, da es sich hierbei um punktuelle Kontakte handelt und der Zeitraum der Gültigkeit nicht direkt aus den zugeordneten Encountern ableitbar ist.\n- die Angabe eines `owner`, um die Ambulanz als verantwortliche Organisation zu dokumentieren.",
+        "exampleBoolean": false,
+        "name": "ISiKAbrechnungsfallAmbulant"
+      },
+      {
+        "reference": {
           "reference": "Observation/ISiKAlkoholAbususBeispiel"
         },
         "exampleBoolean": false,
@@ -976,6 +1023,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/ISiKEntlassformRehaCS"
         },
         "description": "ISiK Entlassform Reha. Beschreibt Form und ggf. Weiterbehandlung der Entlassung eines Versicherten/Berechtigten aus verwaltungs- und medizinischer Sicht. Vgl. Schlüsseltabelle 2.107 Entlassungsform.",
@@ -1082,7 +1137,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
-        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Ambulanter Kontext im Krankenhaus\nIn vielen Krankenhäusern werden neben stationären auch ambulante Leistungen erbracht. Dies sind dann punktuelle Kontakte, welche auch mit diesem Profil abgebildet werden können. Dafür wurde der KontaktArt-Slice im `type`-Element um passende Typen erweitert. Verschiedene Elemente haben außerdem textuelle Beschreibungen erhalten, um die Abbildung von ambulanten Kontakten zu erleichtern.\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKKontaktGesundheitseinrichtung"
       },
@@ -1234,7 +1289,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKOrganisationFachabteilung"
         },
-        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
+        "description": "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.\n### Motivation\n\nDie Abbildung der Aufbauorganisation eines Krankenhauses dient der Festlegung von Zuständigkeiten und (Entscheidungs-)Verantwortungen von Organisationseinheiten (z.B. Fachkliniken, Fachabteilungen und -bereichen etc.) in strukturierter Form. \n\nIn FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.\n\nDie Erfassung der Organisation in strukturierter Form ermöglicht u.a.:\n- Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements\n- Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)\n\nAuch die Erfassung des Krankenhauses als Ganzem ist relevant.\nEntsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  \n\nAnforderung und Hinweis zur Implementierung: Eine einheitliche Differenzierung zwischen Fachabteilungen, Fachbereichen (Organization) einerseits und Stationen (Location) andererseits wird über die unterschiedliche Ressourcen-Abbildung gewährleistet.\n\n### Kompatibilität\n\nFür das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:\n* [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.\n\n",
         "exampleBoolean": false,
         "name": "ISiKOrganisationFachabteilung"
       },
@@ -1392,6 +1447,27 @@
         "description": "Dieses Profil ermöglicht die Darstellung sonstiger Versicherungsverhältnisses in ISiK Szenarien.  \n### Motivation\nISiK unterstützt Anwendungsszenarien, in denen durch das Krankenhaus erbrachte Leistungen erfasst oder gegenüber Kostenträgern abgerechnet werden, \nbei denen es sich *weder* um gesetzliche Versicherungen noch Selbstzahlerverhältnisse handelt.\nIn diesen Anwendungsszenarien wird das Versicherungsverhältnis verwendet, um bspw. den Versicherungsstatus oder die Rechnungsanschrift der Versicherung zu ermitteln.  \nIn FHIR werden Versicherungsverhältnisse mit der Coverage-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKVersicherungsverhaeltnisSonstige basiert auf dem [Basis-Coverage-Profil der deutschen Basisprofile](http://fhir.de/StructureDefinition/coverage-de-basis). \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKVersicherungsverhaeltnisSonstige"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikIntensivAnaesthesieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik für Intensivmedizin und Anästhesiologie"
+      },
+      {
+        "reference": {
+          "reference": "Organization/KlinikPaediatrieOrganisationBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Klinik Pädiatrie"
+      },
+      {
+        "reference": {
+          "reference": "Location/KrankenhausStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Krankenhaus Standort"
       },
       {
         "reference": {
@@ -1679,6 +1755,20 @@
         "description": "Enthaelt alle SNOMED CT Administrationsarten",
         "exampleBoolean": false,
         "name": "SctRouteOfAdministration"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
+      },
+      {
+        "reference": {
+          "reference": "Location/StationPediaICUStandortBeispiel"
+        },
+        "exampleBoolean": false,
+        "name": "Station A"
       },
       {
         "reference": {

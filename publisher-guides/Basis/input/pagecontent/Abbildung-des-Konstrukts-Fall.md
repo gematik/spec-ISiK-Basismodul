@@ -13,6 +13,10 @@ Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer G
 Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die [Ressource Account](https://hl7.org/fhir/R4/account.html) repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
 {{render:Material/Basis/images/Encounter/Encounter-Modell-Abrechnung.png}}
 
+    * **AbrechnungsfallAmbulant (Account):**
+    Diese Spezialisierung des ISiK Abrechnungsfall-Profils ist für die Abbildung von ambulanten Abrechnungsfällen im Krankenhaus vorgesehen. Auch dieser Abrechnungsfall kann mehrere Encounter umfassen, diese stellen in dem Fall aber punktuelle Besuche dar.
+
+
 * **Medizinischer Fall (EpisodeOfCare):**
 Der medizinische Fall gruppiert Informationen, die im Kontext einer gemeinsamen (Dauer-)Diagnose stehen und wird in FHIR durch die [Ressource EpisodeOfCare](https://hl7.org/fhir/R4/episodeofcare.html) dargestellt.
 
@@ -102,6 +106,18 @@ Um insbesondere Subsysteme von der Pflicht zu entbinden, die Account-Ressource z
 
 ---
 
+### Die Repräsentation von ambulanten Fällen im Krankenhaus
+
+Neben der stationären Versorgung gibt es im Krankenhaus einen zunehmend wachsenden Teil an ambulanter Versorgung. Ob Chefarztambulanzen, Hochschulambulanzen oder ambulantes Operieren - diese Fälle kommen im Krankenhaus vor und sind teilweise auch in den Primär- und Subsystemen vorhanden. Deshalb wird ab ISiK Stufe 6 die Möglichkeit ergänzt, auch ambulante Fälle in den Fall-bezogenen Ressourcen abzubilden.
+
+Zum einen wird ein neues Account-Profil "AbrechnungsfallAmbulant" eingeführt, welches vom ISiKAbrechnungsfall ableitet und diesen um die Möglichkeit erweitert, ambulante "Schein"-Nummern zu repräsentieren, einen Gültigkeitszeitraum anzugeben und Informationen über die durchführende Ambulanz zu hinterlegen.
+
+Zum anderen wird der ISiKKontaktGesundheitseinrichtung so erweitert, dass jetzt auch ambulante Besuche als Kontaktarten abgebildet werden können.
+
+Bei ambulanten Fällen spielen noch weitere Informationen eine Rolle, wie z.B. EBM-Ziffern. Da das ISiK-Basismodul allerdings kein Abrechnungsmodul ist, wurden diese Informationen bewusst nicht abgebildet. Für EBM-Ziffern verweisen wir auf die Profilierung eines ChargeItem in den deutschen Basisprofilen: [ChargeItem für EBM-Ziffer als Abrechnungsposition](http://fhir.de/StructureDefinition/chargeitem-de-ebm).
+
+---
+
 ### Abfrage von "Fall"-Daten über FHIR-Search
 
 Im ISiK-Modell sind klinische Ressourcen an Abteilungskontakte geknüpft. Die Abfrage von klinischen Daten erfolgt daher in der Regel in einem zwei-Schritt-Prozess:
@@ -110,8 +126,6 @@ Im ISiK-Modell sind klinische Ressourcen an Abteilungskontakte geknüpft. Die Ab
 2. **Abfrage der klinischen Ressourcen** über die ermittelten Encounter-Referenzen
 
 Dieser Ansatz gewährleistet, dass klinische Daten eindeutig dem korrekten Abteilungskontakt zugeordnet werden können und berücksichtigt, dass ein Abrechnungsfall mehrere Abteilungskontakte umfassen kann.
-
----
 
 #### Schritt 1: Ermittlung der relevanten Encounter
 
@@ -284,8 +298,6 @@ GET [BASE_URL]/Condition?encounter=Encounter/enc-innere-medizin,Encounter/enc-in
 ```
 
 Dieser zwei-Schritt-Prozess stellt sicher, dass alle relevanten klinischen Daten eines Abrechnungsfalls korrekt ermittelt werden, auch wenn der Patient während des Aufenthalts mehrere Fachabteilungen durchlaufen hat.
-
----
 
 #### Wichtige Hinweise
 
