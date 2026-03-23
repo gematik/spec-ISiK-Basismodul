@@ -51,6 +51,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Harnblase, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Rektal, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Trommelfell, SHALL)
+    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerperkerntemperatur_Stirn, SHALL)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read

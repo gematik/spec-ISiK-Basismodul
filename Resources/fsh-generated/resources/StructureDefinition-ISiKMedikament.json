@@ -250,6 +250,16 @@
       {
         "id": "Medication.ingredient.extension",
         "path": "Medication.ingredient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Wirkstofftyp",
         "comment": "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
         "mustSupport": true
