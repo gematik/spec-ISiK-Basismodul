@@ -151,8 +151,7 @@ Usage: #example
 * position.latitude = 52.5200
 * position.longitude = 13.4050
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
-* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
-
+* partOf = Reference(KrankenhausStandortBeispiel)
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
 * hoursOfOperation[0].daysOfWeek = #wed
@@ -180,7 +179,7 @@ Usage: #example
 * position.latitude = 52.5200
 * position.longitude = 13.4050
 * managingOrganization = Reference(IntensivStationBeispiel)
-* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
+* partOf = Reference(KrankenhausStandortBeispiel)
 
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
@@ -194,11 +193,9 @@ Usage: #example
 Instance: StationPediaICUStandortBeispiel
 InstanceOf: ISiKStandort 
 Usage: #example
-//  noch kein eigenes Profil vorhanden
 * identifier[standortnummer-dkg]
   * value = "123456" 
 * operationalStatus = $v2-0116#O "Occupied" 
-// bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
 * type = $v3-RoleCode#PEDICU "Pediatric intensive care unit"
@@ -207,8 +204,7 @@ Usage: #example
 * address.postalCode = "12345"
 * physicalType = $LocationPhysicalType#wa "Ward"
 * managingOrganization = Reference(KlinikPaediatrieOrganisationBeispiel)
-* partOf = Reference(KrankenhausStandortBeispiel) - noch kein entsprechendes Beispiel vorhanden
-
+* partOf = Reference(KrankenhausStandortBeispiel) 
 * hoursOfOperation[0].daysOfWeek = #mon
 * hoursOfOperation[0].daysOfWeek = #tue
 * hoursOfOperation[0].daysOfWeek = #wed
