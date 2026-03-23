@@ -3,11 +3,13 @@ Parent: ValueSet
 Id: ISiKValueSet
 Description: "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes 
 für die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.
-### Motivation
+
+### **Motivation**
 
 ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.
 Mittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.
-### Kompatibilität
+
+### **Kompatibilität**
 
 Für das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."

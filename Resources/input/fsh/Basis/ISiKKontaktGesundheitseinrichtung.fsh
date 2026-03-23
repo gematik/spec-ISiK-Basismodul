@@ -3,7 +3,9 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "
 Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.
-### Motivation
+
+### **Motivation**
+
 Informationen über die Besuche des Patienten entlang seines 
 Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil 
 des einrichtungsinternen Datenaustausches. 
@@ -27,7 +29,8 @@ In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encou
 
 Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).
 
-### Kompatibilität
+### **Kompatibilität**
+
 Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
 mit folgenden Profilen angestrebt; 
 allerdings kann nicht sichergestellt werden, dass Instanzen, 

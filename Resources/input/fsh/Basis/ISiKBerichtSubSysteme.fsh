@@ -4,7 +4,9 @@ Id: ISiKBerichtSubSysteme
 Description: 
 "Dieses Profil ermöglicht die krankenhaus-interne Übermittlung eines Berichtes bestehend aus beliebigen strukturierten FHIR-Ressourcen 
 sowie einer textuellen HTML-Repräsentation (Narrative) an einen ISiK-Basis-kompatiblen Server.
-### Motivation
+
+### **Motivation**
+
 In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:
 
 Die Daten in Subsystemen sind sehr heterogen und können hochspezialisiert sein.
@@ -29,7 +31,8 @@ In der aktuellen Ausbaustufe von ISiK ist lediglich die Übernahme und Anzeige d
 
 In weiteren Ausbaustufen von ISiK soll darüber hinaus eine Übernahme der strukturierten Anteile der Dokumente möglich sein, die den ISiK-Spezifikationen entsprechen, z.B. Diagnosen und Prozeduren.  
 
-### Kompatibilität  
+### **Kompatibilität**  
+
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."
 
 * insert Meta

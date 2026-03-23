@@ -2,12 +2,15 @@ Profile: ISiKHerzfrequenz
 Parent: VitalSignDE_Herzfrequenz
 Id: ISiKHerzfrequenz
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Herzfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+### **Motivation**
+
 Die Erfassung und Überwachung der Herzfrequenz ist essenziell für die frühzeitige Erkennung von Herz-Kreislauf-Problemen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.
 
 In FHIR wird die Herzfrequenz mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+### **Kompatibilität**
+
 Das Profil ISiKHerzfrequenz ist vom Profil [VitalSignDE_Herzfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-herzfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/heartrate) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements

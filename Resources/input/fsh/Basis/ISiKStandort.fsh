@@ -3,7 +3,9 @@ Parent: Location
 Id: ISiKStandort
 Description: "Dieses Profil dient der strukturierten Erfassung von Standortangaben eines 
 Krankenhauses oder von Organisationseinheiten innerhalb eines Krankenhauses in ISiK-Szenarien.  
-### Motivation
+
+### **Motivation**
+
 In FHIR wird die Organisation (Organization) vom Standort (Location) eindeutig abgegrenzt.
 
 Die Abbildung von Standorten in einem Krankenhaus unterstützt u.a. die Raum- und Bettenbelegung in strukturierter Form. 
@@ -22,7 +24,8 @@ Die Erfassung des Standortes in strukturierter Form soll u.a. ermöglichen:
 
 Dafür werden Standort-Profile in unterschiedlicher Granularität definiert. 
 
-### Kompatibilität
+### **Kompatibilität**
+
 Für das Profil ISiKStandort wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der 
 Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.  
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
@@ -90,7 +93,9 @@ Parent: ISiKStandort
 Id: ISiKStandortBettenstellplatz
 Description: "Dieses Profil dient der strukturierten Erfassung von Bettenstellplätzen (als Standorten) 
 eines Krankenhauses.  
+
 ### Hinweis  
+
 Ein einzelnes Bett als Gegenstand kann als FHIR-Ressource 'Device' abgebildet werden, 
 das einen Bettenstellplatz referenziert.
 "

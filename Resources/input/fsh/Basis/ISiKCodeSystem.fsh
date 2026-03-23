@@ -4,7 +4,7 @@ Id: ISiKCodeSystem
 Description: "Dieses Profil beschreibt die maschinenlesbare Repräsentation von 
 system-spezifischen Kodierungen in ISiK-Szenarien.  
 
-### Motivation
+### **Motivation**
 
 ISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. 
 

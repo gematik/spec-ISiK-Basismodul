@@ -2,12 +2,15 @@ Profile: ISiKKopfumfang
 Parent: VitalSignDE_Kopfumfang
 Id: ISiKKopfumfang
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Kopfumfang eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+### **Motivation**
+
 Die Erfassung und Überwachung des Kopfumfangs ist essenziell für die Beurteilung von Wachstumsprozessen, insbesondere bei Säuglingen und Kleinkindern, sowie für die frühzeitige Erkennung von Entwicklungsauffälligkeiten oder neurologischen Erkrankungen.
 
 In FHIR wird der Kopfumfang mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+### **Kompatibilität**
+
 Das Profil ISiKKopfumfang ist vom Profil [VitalSignDE_Kopfumfang](http://fhir.de/StructureDefinition/observation-de-vitalsign-kopfumfang) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Head Circumference Profile](
 http://hl7.org/fhir/StructureDefinition/headcircum) aus der FHIR R4 Spezifikation."
 * insert Meta

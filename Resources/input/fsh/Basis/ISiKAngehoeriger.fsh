@@ -2,7 +2,9 @@ Profile: ISiKAngehoeriger
 Parent: RelatedPerson
 Id: ISiKAngehoeriger
 Description: "Dieses Profil ermöglicht die Darstellung von Angehörigen in ISiK Szenarien.  
-### Motivation
+
+### **Motivation**
+
 Der Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet,
  in denen das Versicherungsverhältnis eine Rolle spielt. 
  Hier können Angehörige, bspw. der hauptversicherte Elternteil 
@@ -11,7 +13,8 @@ Der Angehörige wird vor allem im Zusammenhang mit Anwendungsszenarien verwendet
  im Krankenhaus erbrachte Leistung sein.
 In FHIR werden Angehörige von Patienten mit der RelatedPerson-Ressource repräsentiert.
 
-### Kompatibilität
+### **Kompatibilität**
+
 Für das Profil ISiKAngehoeriger wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden."

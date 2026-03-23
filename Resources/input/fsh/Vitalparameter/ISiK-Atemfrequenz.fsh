@@ -2,12 +2,15 @@ Profile: ISiKAtemfrequenz
 Parent: VitalSignDE_Atemfrequenz
 Id: ISiKAtemfrequenz
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Atemfrequenz eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+### **Motivation**
+
 Die Erfassung und Überwachung der Atemfrequenz ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.
 
 In FHIR wird die Atemfrequenz mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+### **Kompatibilität**
+
 Das Profil ISiKAtemfrequenz ist vom Profil [VitalSignDE_Atemfrequenz](http://fhir.de/StructureDefinition/observation-de-vitalsign-atemfrequenz) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Respiratory Rate Profile](http://hl7.org/fhir/StructureDefinition/resprate) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements
