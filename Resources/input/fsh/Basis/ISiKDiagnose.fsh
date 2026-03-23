@@ -224,7 +224,7 @@ Usage: #example
 * recordedDate = "2021-05-24"
 * note.text = "Beispiel für eine Anmerkung"
 * bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 
 Instance: MittelgradigeIntelligenzminderung
 InstanceOf: ISiKDiagnose
