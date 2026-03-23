@@ -33,6 +33,6 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 
