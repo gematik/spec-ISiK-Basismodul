@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ISiKEncounterClassDE",
+  "id": "ISiKEncounterClassDE",
+  "title": "ISiKEncounterClassDE",
+  "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+  "version": "6.0.0-rc",
+  "url": "https://gematik.de/fhir/isik/ValueSet/ISiKEncounterClassDE",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2026-04-03",
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://fhir.de/ValueSet/EncounterClassDE"
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "concept": [
+          {
+            "code": "ACUTE",
+            "display": "inpatient acute"
+          },
+          {
+            "code": "NONAC",
+            "display": "inpatient non-acute"
+          },
+          {
+            "code": "OBSENC",
+            "display": "observation encounter"
+          }
+        ]
+      }
+    ]
+  }
+}
