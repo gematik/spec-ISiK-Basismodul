@@ -4,7 +4,7 @@ Id: ISiKLeistungserbringerrolle
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen 
 über die Rolle eines Leistungserbringers im Rahmen des Bestätigungsverfahrens der gematik.  
 ### Motivation
-die Rolle von Leistungserbringern innerhalb einer Organisation (z.B. Fachabteilung, Praxis, Krankenhaus) ist eine wichtige Information in Bezug auf die Leistungen, die
+Die Rolle von Leistungserbringern innerhalb einer Organisation (z.B. Fachabteilung, Praxis, Krankenhaus) ist eine wichtige Information in Bezug auf die Leistungen, die
 durch diese Person erbracht werden.
 
 In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert.  
