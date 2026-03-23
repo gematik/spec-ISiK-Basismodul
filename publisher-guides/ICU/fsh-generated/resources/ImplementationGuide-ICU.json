@@ -1012,35 +1012,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ISiKKoerpertemperatur"
-        },
-        "description": "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpertemperatur eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.\n### Motivation\nDie Erfassung und Überwachung der Körpertemperatur ist essenziell für die frühzeitige Erkennung von Infektionen, die Beurteilung des Gesundheitszustands sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.\n\nIn FHIR wird die Körpertemperatur mit der Observation-Ressource repräsentiert.\n\n### Kompatibilität\nDas Profil ISiKKoerpertemperatur ist vom Profil [VitalSignDE_Koerpertemperatur](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpertemperatur) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [OObservation Body Temperature Profile](http://hl7.org/fhir/StructureDefinition/bodytemp) aus der FHIR R4 Spezifikation.",
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperatur"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturExample"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMaxExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMaxExample"
-      },
-      {
-        "reference": {
-          "reference": "Observation/ISiKKoerpertemperaturMinExample"
-        },
-        "exampleBoolean": false,
-        "name": "ISiKKoerpertemperaturMinExample"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/ISiKKontaktGesundheitseinrichtung"
         },
         "description": "\nDieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.\n### Motivation\nInformationen über die Besuche des Patienten entlang seines \nBehandlungspfades im Krankenhaus sind ein wichtiger Bestandteil \ndes einrichtungsinternen Datenaustausches. \nSie ermöglichen die Unterscheidung von stationären und ambulanten \nsowie aufgenommenen und entlassenen Patienten. \nWeiterhin ist aus den Besuchsinformationen der aktuelle Aufenthaltsort \ndes Patienten (Fachabteilung, Station, Bettplatz) ermittelbar. \nKlinische Ressourcen werden in FHIR durch Verlinkung auf die \nEncounter-Ressource in einen Kontext zum Besuch gestellt. \nDieser Kontext ist wichtig für die Steuerung von Zugriffsberechtigungen \nund Abrechnungsprozessen.  \n\nZu Beginn der meisten klinischen Workflows steht die Auswahl \ndes Besuchskontextes. \nDies geschieht bspw. durch das Suchen der Encounter-Ressource \nanhand von Eigenschaften wie Aufnahmenummer, Fallart oder Aufnahmedatum. \nDaraufhin werden die zutreffenden Suchergebnisse angezeigt \nund der gewünschte Besuch ausgewählt.\n\nIn FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.\n\nWeitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}\n\n### Kompatibilität\nFür das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität \nmit folgenden Profilen angestrebt; \nallerdings kann nicht sichergestellt werden, dass Instanzen, \ndie gegen ISiKKontaktGesundheitseinrichtung valide sind, \nauch valide sind gegen:\n\n* Profil [Kontakt mit einer Gesundheitseinrichtung \nder Medizininformatik-Initiative](https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
@@ -1377,6 +1348,13 @@
         },
         "exampleBoolean": false,
         "name": "Koerpergroesse-Percentil"
+      },
+      {
+        "reference": {
+          "reference": "Observation/Koerperkerntemperatur-stirn"
+        },
+        "exampleBoolean": false,
+        "name": "Koerperkerntemperatur-stirn"
       },
       {
         "reference": {
@@ -1931,6 +1909,14 @@
         "description": "Dieses Profil dient der spezialisierten Abbildung des altersabhängigen Körpergrößen-Perzentils in der Akutmedizin.",
         "exampleBoolean": false,
         "name": "SD MII ICU Koerpergroesse Percentil"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-icu-koerperkerntemperatur-stirn"
+        },
+        "description": "Dieses Profil bietet eine spezialisierte Abbildung der geschätzten KörperKERNtemperatur gemessen an der Stirn in der Akutmedizin.",
+        "exampleBoolean": false,
+        "name": "SD MII ICU Koerperkerntemperatur Stirn"
       },
       {
         "reference": {
