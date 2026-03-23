@@ -22,6 +22,9 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
     * interaction[+]
       * insert Expectation (#SHALL)
       * code = #search-type
+
+    * insert OperationPatientEverything
+    
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
     * searchParam[+]
@@ -94,6 +97,8 @@ Diese Rolle beschreibt Interaktionen zum Abruf und der Verarbeitung grundlegende
     * interaction[+]
       * code = #search-type
       * insert Expectation (#SHALL)
+
+    * insert OperationEncounterEverything
 
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter
