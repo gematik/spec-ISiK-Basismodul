@@ -10,7 +10,7 @@ Kandidaten:
 
 ### TI-Messenger (TI-M)
 
-Das ISiK Formularmodul bietet neben der Möglichkeiten und Integrationen in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Diagramm zeigt eine beispielhafte Nutzung der im Modul beschriebenen Funktionen und Interaktionen im Kontext des TI-Messengers.
+Das ISiK Formularmodul bietet neben der Integration in Krankenhausinfrastrukturen auch die Möglichkeit, Formulare über den TI-Messenger (TI-M) bereitzustellen. Das folgende Diagramm zeigt eine beispielhafte Nutzung der im Modul beschriebenen Funktionen und Interaktionen im Kontext des TI-Messengers.
 
 <div style="width: 700px;">
 {% include akteure_tim.svg %}
