@@ -337,6 +337,6 @@ Usage: #example
   * value = "klinik-Paed-01"
 * name = "Klinik Pädiatrie"
 * type[organisationstyp] = $organization_type#dept
-* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertC#1000	"Pädiatrie"
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1000	"Pädiatrie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
 
