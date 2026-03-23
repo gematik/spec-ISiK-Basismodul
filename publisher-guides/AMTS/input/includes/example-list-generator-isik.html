@@ -1,45 +1,4 @@
 {%- comment -%}
-  DEBUG/CUSTOM example-list-generator.html
-  =========================================
-  PROBLEM: The original template used `r.example` from site.data.artifacts,
-  but newer IG Publisher versions no longer populate this flag.
-  Also, site.data.pages no longer has "title" for example resource pages.
-
-  NEW APPROACH: Use site.data.resources instead.
-  Entries WITHOUT a "url" property are example instances
-  (Bundle, Composition, QuestionnaireResponse, etc.).
-  Conformance/definition resources always have a canonical "url".
-
-  The debug block below (inside <details>) shows diagnostic output.
-  Once confirmed working it can be removed.
-{%- endcomment -%}
-
-<details>
-<summary><strong>DEBUG: Example-List diagnostics (zum Entfernen nach Test)</strong></summary>
-<p><strong>Artifacts-Einträge mit .example=true (alter Ansatz):</strong>
-{% assign old_ex_count = 0 %}
-{%- for r_hash in site.data.artifacts -%}
-  {%- assign r = r_hash[1] -%}
-  {%- if r.example -%}{% assign old_ex_count = old_ex_count | plus: 1 %}{%- endif -%}
-{%- endfor -%}
-{{ old_ex_count }} (erwartet: 0 → Bestätigung dass das der Bug ist)</p>
-
-<p><strong>Resources ohne .url (neuer Ansatz = Beispiel-Instanzen):</strong></p>
-<ul>
-{%- for r_hash in site.data.resources -%}
-  {%- assign r_key = r_hash[0] -%}
-  {%- assign r = r_hash[1] -%}
-  {%- assign r_type = r_key | split: '/' | first -%}
-  {%- unless r.url -%}
-    {%- unless r_type == "ImplementationGuide" -%}
-      <li>{{ r_key }} → path: {{ r.path }}{% if r.title %} | title: {{ r.title }}{% endif %}</li>
-    {%- endunless -%}
-  {%- endunless -%}
-{%- endfor -%}
-</ul>
-</details>
-
-{%- comment -%}
   Neue Beispiel-Liste: iteriert site.data.resources, filtert Einträge ohne url
 {%- endcomment -%}
 
