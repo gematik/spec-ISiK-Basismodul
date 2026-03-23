@@ -32,6 +32,12 @@ Beim Stand-Alone Launch startet der Benutzer den Formular-Renderer ohne Kontext.
 
 Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheitsmechanismus zum Einsatz kommt, damit bestehende Berechtigungsstrukturen nicht außer Kraft gesetzt werden.
 
+### Interaktion: FormularRendering
+
+Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) in einem [FormularRenderer](Akteure.html#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.html) zu erheben. Datei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.html) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind.
+Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering ein QuestionnaireResponse entgegen genommen werden können, der im Rahmen der Vorbelegunmg erstellt wurde und die entsprechenden Daten bereits enthält, damit diese im Formular dargestellt werden können.
+
+
 ### Interaktion: FormularDefinitionsVerwaltung
 Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen.
 In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.html#FormularRenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.

@@ -6,7 +6,7 @@ Realm: Deutschland
 
 ### Hinweis zum Status
 
-Der Implementierungsleitfaden zum Modul „ISiK Formulare“ liegt derzeit in einer Entwurfsfassung vor und wird im Rahmen der Erarbeitung von ISiK Stufe 7 in Arbeitsgruppen sowie in bilateralen Gesprächen mit relevanten Stakeholdern fortlaufend weiterentwickelt. Eine aktive Mitwirkung ist ausdrücklich erwünscht; Anregungen, Hinweise und Vorschläge können über die im Abschnitt „Mitwirkung“ (siehe unten) aufgeführten Kanäle eingereicht werden. Für das Modul besteht in ISiK Stufe 6 keine Bestätigungsrelevanz.
+Der Implementierungsleitfaden zum Modul „ISiK Formulare“ liegt derzeit in einer Entwurfsfassung vor und wird im Rahmen der Erarbeitung von ISiK Stufe 7 in Arbeitsgruppen sowie in bilateralen Gesprächen mit relevanten Stakeholdern fortlaufend weiterentwickelt. Eine aktive Mitwirkung ist ausdrücklich erwünscht; Anregungen, Hinweise und Vorschläge können über die im Abschnitt „Mitwirkung“ (siehe unten) aufgeführten Kanäle eingereicht werden. **Für das Modul besteht in ISiK Stufe 6 keine Bestätigungsrelevanz.**
 Das Modul wurde vom Stufe 5 auf Stufe 6 an verschiedenen Stellen überarbeitet. Gerade in Hinblick auf die Nutzung durch den TI-Messenger wurde das Akteursmodel erweitert. Es ist daher ratsam, die Spezifikationen und BestPractices sorgfältig zu lesen, um die Änderungen zu verstehen und entsprechend umzusetzen. Hinweise zu Änderungen sind aus den [Release Notes](ReleseNotes.html) ersichtlich.
 
 ### Motivation "ISiK Formulare"

@@ -1,8 +1,4 @@
-﻿---
-topic: Ziele
----
-
-Dieses Modul soll die zahlreichen, teilweise sehr komplexen Funktionalitäten, die im SDC-Leitfaden beschreiben sind, auf ein überschaubares aber dennoch nutzenbringendes Minimum reduzieren, um einen leichten Einstieg in die Welt der FHIR-basierten Formulare zu ermöglichen. Die Integration von Tools, die die Nutzung von Formularen ermöglichen (sog. ["FormularRenderer"](Akteure.html#formularrenderer)) soll - soweit möglich - nur mit den bereits vorhandenen Funktionalitäten ISiK-konformer[^1] Anwendungssysteme ermöglicht werden.
+﻿Dieses Modul soll die zahlreichen, teilweise sehr komplexen Funktionalitäten, die im SDC-Leitfaden beschreiben sind, auf ein überschaubares aber dennoch nutzenbringendes Minimum reduzieren, um einen leichten Einstieg in die Welt der FHIR-basierten Formulare zu ermöglichen. Die Integration von Tools, die die Nutzung von Formularen ermöglichen (sog. ["FormularRenderer"](Akteure.html#formularrenderer)) soll - soweit möglich - nur mit den bereits vorhandenen Funktionalitäten ISiK-konformer[^1] Anwendungssysteme ermöglicht werden.
 
 Das ISIK-Formular-Modul ist ein Work-in-Progress und derzeit weder final noch verbindlich. Gemeinsam mit interessierten Herstellern soll ein Modul entwickelt werden, das folgende Ziele erfüllt und anschließend verbindlich festgelegt werden kann.
 Die Publikation in Stufe 5 stellt einen ersten Entwurf des Moduls dar, der als Diskussionsgrundlage für die weitere Entwicklung und als Basis für erste, prototypische Implementierungen und Connectathons dienen soll.
