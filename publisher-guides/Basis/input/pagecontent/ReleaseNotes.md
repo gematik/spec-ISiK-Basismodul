@@ -28,7 +28,8 @@ Tags werden folgendermaßen verwendet:
 * `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
 * `improve` Änderungen der Profil- und Suchparameter-Vorgaben zu Organization und Location - auch aus dem Kontext des Use Cases Organspendeerkennung - https://github.com/gematik/spec-ISiK-Basismodul/pull/1094 
   - Profile Station und Organization und spezielle Suchparameter verpflichtend
-    - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
+  - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
+* `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
 
 ### Version 5.x.x
 
