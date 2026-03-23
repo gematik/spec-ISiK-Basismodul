@@ -33,7 +33,7 @@ Erfüllt eine Software ein Kriterium aus der MDR Art. 2, wird sie zum Medizinpro
 Aus diesem Grund soll im Rahmen des Moduls die Möglichkeit gegeben werden, die Zweckbestimmung eines Formulars mit zu erfassen und so teilweise strukturiert anzugeben, ob das Formular ohne vorheriges Auseinandersetzen mit der MDR angezeigt, berechnet und verarbeitet werden darf, oder ob hier gewissen Bedingungen erfüllt werden müssen. Für weitere Informationen zu diesem Thema verweisen wir auf die [Richtlinie](https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf).
 
 
-Mit der Extension [ISiKMpFormularExtension](StructureDefinition-ISiKMpFormularExtension.html) besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und zusätzlich eine Zweckbestimmung anzugeben. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller!
+Mit der Extension [ISiKMpFormularExtension](StructureDefinition-ISiKMpFormularExtension.html) besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und zusätzlich eine Zweckbestimmung anzugeben ist. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller!
 
 Formular-Renderer, die kein Medizinprodukt sind, müssen aufgrund dieser Extension keine ISiK-spezifischen Anpassungen implementieren.
 Da die Extension als Modifier-Extension modelliert ist, gelten die grundsätzlichen Regeln der FHIR-Spezifikation für den Umgang: http://hl7.org/fhir/extensibility.html#modifierExtension.
