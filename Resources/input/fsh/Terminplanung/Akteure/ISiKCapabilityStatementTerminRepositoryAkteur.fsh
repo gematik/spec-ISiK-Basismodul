@@ -21,6 +21,8 @@ Usage: #definition
   * insert ExpectationImports(#SHALL)
 * imports[+] = Canonical(ISiKCapabilityStatementTerminRepositoryRolle)
   * insert ExpectationImports(#SHALL)
+* imports[+] = Canonical(ISiKCapabilityStatementTerminSubscriptionRolle)
+  * insert ExpectationImports(#SHALL)
 
 * rest.mode = #server
   

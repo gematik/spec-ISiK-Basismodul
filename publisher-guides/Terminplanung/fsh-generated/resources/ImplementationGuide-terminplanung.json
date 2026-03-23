@@ -101,6 +101,14 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementTerminSubscriptionRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle &quot;Termin Subscription&quot;"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementTerminologieRolle"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
@@ -144,6 +152,14 @@
         "description": "The actual end date of the Encounter (Backport from R5). The parameter cannot repeat or have multiple values.",
         "exampleBoolean": false,
         "name": "EndDate"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKEncounterTypeErweiterungCS"
+        },
+        "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "Erweiterung von Encounter.type in ISiK"
       },
       {
         "reference": {
@@ -225,6 +241,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/FhirMimeTypeVS"
+        },
+        "description": "FHIR Mime Types",
+        "exampleBoolean": false,
+        "name": "FhirMimeTypeVS"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ExtensionISiKCapabilityStatementImportsExpectation"
         },
         "description": "Defines the level of expectation associated with a given system capability. See the capabilitystatement-prohibited modifier extension to set expectations to *not* support a feature.",
@@ -254,6 +278,30 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "ISiK CapabilityStatement Termin-Repository Rolle"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSubscription"
+        },
+        "description": "ISiK Subscription  \n### Motivation\n\nSubscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).\n\nUm als Subsystem über ein Subscription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.\n\n### Kompatibilität\n\nDas Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).\nDer [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiK Subscription"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKSubscriptionTermin"
+        },
+        "description": "ISiK Subscription  \n### Motivation\n\nDie Subscription Ressource für Appointments unterstützt den Informationsaustausch von Termininformationen, die ausgehend vom Termin Repository eine Änderung erfahren haben.\nHierdurch können Client-Systeme über relevante Terminänderungen informiert werden, um beispielsweise die Anzeige von Termininformationen zu aktualisieren oder Benachrichtigungen (bspw. im Fall von abgesagten Terminen) an Patienten zu senden.\n\n### Kompatibilität\n\nDas Profi ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welches wiederum auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html) basiert.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "exampleBoolean": false,
+        "name": "ISiK Subscription Termine"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ISiKSubscriptionTopic"
+        },
+        "description": "Liste der aller SubscriptionTopics, die in ISiK verwendet werden können. Neben den merge-SubscriptionTopics sind auch die SubscriptionTopics für Updates der Ressourcen enthalten, die in ISiK verwendet werden können.",
+        "exampleBoolean": false,
+        "name": "ISiK-SubscriptionTopic"
       },
       {
         "reference": {
@@ -294,6 +342,14 @@
         "description": "Dieses Profil beschreibt die maschinenlesbare Repräsentation von \nsystem-spezifischen Kodierungen in ISiK-Szenarien.  \n\n**Motivation**\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. \n\nEine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.\n\nEin Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).\nDa ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.\nDarüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. ",
         "exampleBoolean": false,
         "name": "ISiKCodeSystem"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterTypeErweiterungVS"
+        },
+        "description": "ISiK vereint hierbei das ValueSet [KontaktArtDe](http://fhir.de/CodeSystem/kontaktart-de) aus dem deutschen Basisprofil und die übergangsweise hinzugefügten Codes für den ambulanten Kontakt im Krankenhaus. Dieses ValueSet ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterTypeErweiterungVS"
       },
       {
         "reference": {
@@ -356,6 +412,22 @@
         },
         "exampleBoolean": false,
         "name": "IsikPatientTemplate"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSubscriptionTopicVS"
+        },
+        "description": "ValueSet, das alle Codes des ISiKSubscriptionTopic CodeSystems enthält",
+        "exampleBoolean": false,
+        "name": "ISiKSubscriptionTopic ValueSet"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKSubscriptionTopicAppointmentVS"
+        },
+        "description": "Enthaelt die Codes der Subscription Topics, die für die Absage- bzw. Änderung von Terminen relevant sind.",
+        "exampleBoolean": false,
+        "name": "ISiKSubscriptionTopicAppointmentVS"
       },
       {
         "reference": {
@@ -465,6 +537,13 @@
       },
       {
         "reference": {
+          "reference": "Subscription/PatientMergeSubscriptionExample"
+        },
+        "exampleBoolean": false,
+        "name": "PatientMergeSubscriptionExample"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/PlannedEndDate"
         },
         "description": "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen.",
@@ -481,11 +560,43 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/BackportSubscriptionStatusR4Fixed"
+        },
+        "description": "Profil auf der FHIR-R4-Resource Parameters zur Unterstützung themenbasierter Subscription-Benachrichtigungen in R4.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4`.  \nDie Version 1.1.0 des offiziellen Profils weist jedoch technische Fehler auf. Daher wurde es hier als Workaround erneut implementiert.\nDiese lokale Definition wird durch das offizielle `backport-subscription-status-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
+        "exampleBoolean": false,
+        "name": "R4 Backported R5 SubscriptionStatus"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/BackportSubscriptionNotificationR4Fixed"
+        },
+        "description": "Profil auf der FHIR-R4-Resource Bundle, um R5-ähnliche, themenbasierte Subscription-Benachrichtigungen in FHIR R4 zu ermöglichen.\n\nDieses Profil ist funktional identisch mit `http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4`.  \nDie Version 1.1.0 des offiziellen Profils enthält jedoch technische Fehler. Daher wurde dieses Profil lokal als temporärer Workaround nachgebildet.\nEs wird durch das offizielle `backport-subscription-notification-r4` Profil ersetzt, sobald eine korrigierte Version veröffentlicht wurde.",
+        "exampleBoolean": false,
+        "name": "R4 Topic-Based Subscription Notification Bundle"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ScheduleName"
         },
         "description": "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen.",
         "exampleBoolean": false,
         "name": "ScheduleName"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/subscription-notification-type"
+        },
+        "description": "The type of notification represented by the status message.",
+        "exampleBoolean": false,
+        "name": "SubscriptionNotificationType"
       },
       {
         "reference": {

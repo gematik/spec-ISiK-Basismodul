@@ -2,10 +2,6 @@
 topic: ImplementationGuide-markdown-Einfuehrung
 ---
 
-----
-Version: 0.0.1-rc
-
-Datum: tbd.
 
 Status: DRAFT
 

@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKProzedurReanimation",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedurReanimation",
+  "version": "6.0.0-rc",
+  "name": "ISiKProzedurReanimation",
+  "title": "ISiK Prozedur Reanimation",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Dieses Profil dient der Abbildung von Reanimationsmaßnahmen - insbesondere in der Akutmedizin.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/ISiKProzedur",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "373110003",
+              "system": "http://snomed.info/sct",
+              "display": "Emergency procedure (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Procedure.code.coding:OPS",
+        "path": "Procedure.code.coding",
+        "sliceName": "OPS",
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/bfarm/ops"
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenReanimationCodesOPS"
+        }
+      },
+      {
+        "id": "Procedure.code.coding:SNOMED-CT",
+        "path": "Procedure.code.coding",
+        "sliceName": "SNOMED-CT",
+        "patternCoding": {
+          "system": "http://snomed.info/sct"
+        },
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ProzedurenReanimationCodesSCT"
+        }
+      }
+    ]
+  }
+}

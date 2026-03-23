@@ -232,7 +232,7 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   ErweiterterFachabteilungsschluessel 0..1 MS
 * type[organisationstyp] from $organization_typeVS (required)
   * ^short = "Allgemeiner Organisationstyp"
-  * ^comment = "Definiert den allgemeinen Typ der Organisation."
+  * ^comment = """Definiert den allgemeinen Typ der Organisation."""
 * type[organisationstyp].coding.system 1.. MS
 * type[organisationstyp].coding.code 1.. MS
 * type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS (required)
@@ -321,9 +321,31 @@ InstanceOf: ISiKOrganisationFachabteilung
 Usage: #example
 * identifier[Abteilungsidentifikator]
   * system = "https://fhir.krankenhaus.example/sid/OrgaID"
-  * value = "123456"
+  * value = "FA-CHIR-01"
+  * type = $sct#225746001
 * identifier[TelematikID].value = "1234567890"
 * name = "Allgemeinchirurgie"
 * type[organisationstyp] = $organization_type#dept
 * type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500	"Allgemeine Chirurgie"
 * partOf = Reference(KrankenhausOrganisationBeispiel)
+
+Instance: KlinikPaediatrieOrganisationBeispiel
+InstanceOf: ISiKOrganisation
+Usage: #example
+* identifier[IKNR].value = "260120196"
+* identifier[BSNR].value = "345678975"
+* name = "Klinik Pädiatrie"
+* type[organisationstyp] = $organization_type#dept
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1000	"Pädiatrie"
+* partOf = Reference(KrankenhausOrganisationBeispiel)
+
+Instance: KlinikIntensivAnaesthesieOrganisationBeispiel
+InstanceOf: ISiKOrganisation
+Usage: #example
+* identifier[IKNR].value = "260120196"
+* identifier[BSNR].value = "345678975"
+* name = "Klinik für Intensivmedizin und Anästhesiologie"
+* type[organisationstyp] = $organization_type#dept
+* type[ErweiterterFachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600	"Intensivmedizin"
+* partOf = Reference(KrankenhausOrganisationBeispiel)
+

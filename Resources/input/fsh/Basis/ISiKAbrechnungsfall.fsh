@@ -125,7 +125,6 @@ Usage: #example
   * system = "https://test.krankenhaus.de/fhir/sid/abrechnungsnummer"
   * value = "0123456789"
 * status = #active
-* type = $v3-ActCode#IMP
 * subject = Reference(PatientinMusterfrau)
 * coverage
   * extension[Abrechnungsart]
@@ -141,5 +140,4 @@ Usage: #example
   * value = "1234567891"
   * type = $v2-0203#AN
 * status = #active
-* type = $v3-ActCode#IMP
 * subject = Reference(PatientinNormal)

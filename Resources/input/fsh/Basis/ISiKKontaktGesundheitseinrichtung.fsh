@@ -155,18 +155,16 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "Hier ist stets der Wert `abteilungskontakt` anzugeben."
-* type[KontaktArt] from KontaktartDe (required)
+* type[KontaktArt] from ISiKEncounterTypeErweiterungVS (required)
   * ^short = "Kontaktart"
   * ^comment = "Die Kontaktart dient der feingranularen Differenzierung unterschiedlicher stationärer 
   und ambulanter Fallarten gemäß der in Deutschland üblichen regulatorischen 
   und abrechnungsrelevanten Rahmenbedingungen.  
   Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `type` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
-  * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
   * coding
     * ^short = "Codierte Darstellung der Kontaktart"
     * system 1.. MS
       * ^short = "Codier-Schema"
-      * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/kontaktart-de` anzugeben." 
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"
