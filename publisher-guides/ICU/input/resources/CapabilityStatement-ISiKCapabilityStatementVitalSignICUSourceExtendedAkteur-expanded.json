@@ -1290,18 +1290,6 @@
               "name": "component-code",
               "definition": "http://hl7.org/fhir/SearchParameter/Observation-component-code",
               "type": "token"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "name": "code:in",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
-              "type": "token",
-              "documentation": "**Hintergrund:**  \n        Der Modifier ermöglicht die Suche nach `Observation.code`-Codes, die in einem angegebenen ValueSet enthalten sind. Insbesondere bei der Suche nach dem Vorhandensein von bestimmten Prozeduren (Beatmung, Reanimation) im Kontext der IHA-Diagnostik ist dies von Bedeutung.\n\n        **Beispiel:**    \n        `GET [base]/Observation?code:in=https://example.org/fhir/ValueSet/observation-codes`    \n        **Anwendungshinweis:**   \n        Der Modifier `:in` filtert nach `Observation.code`-Codes, die in dem angegebenen ValueSet enthalten sind (kanonische ValueSet-URL).  \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#in)."
             }
           ]
         },
