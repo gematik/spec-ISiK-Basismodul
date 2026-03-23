@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant",
+  "version": "5.1.1",
+  "name": "ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant",
+  "title": "Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-17",
+  "publisher": "gematik GmbH",
+  "description": "Diese Extension erlaubt es, angelehnt an die Basisprofil Extension [Fallbezogene Abrechnungsrelevanz von Diagnosen und Prozeduren](http://fhir.de/StructureDefinition/ExtensionAbrechnungsDiagnoseProzedur), Diagnosen und Prozeduren als abrechnungsrelevant in einem Fallkontext anzugeben. Allerdings ohne die Verpflichtung, einen Use anzugeben. Dies ist im ambulanten Kontext nicht üblich.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/ISiKExtensionAbrechnungsDiagnoseProzedurAmbulant"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Condition",
+              "http://hl7.org/fhir/StructureDefinition/Procedure"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
