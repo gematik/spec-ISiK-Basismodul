@@ -21,7 +21,6 @@ Auf dieser Seite befindet sich eine Liste der FHIR-Artefakte, welche im Rahmen d
 
 #### Value Sets
 
-Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.
 
 {% include artifacts-table-generator.html resourceType="ValueSet" %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
