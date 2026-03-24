@@ -23,6 +23,7 @@ Datum: tbd.
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
+* `improve` Erweiterung um zahlreiche profile zu (Flüssigkeits-) Bilanzierung - aus dem MII Modul Kerndatensatz ICU entnommen https://github.com/gematik/spec-ISiK-Basismodul/pull/1093
 
 ### Version 5.1.1
 
