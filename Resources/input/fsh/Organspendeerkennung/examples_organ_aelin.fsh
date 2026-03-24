@@ -31,10 +31,10 @@ Usage: #example
 Title: "ISiKEncounter Beispielinstanz aus Organ-Daten"
 Description: "Beispiel-Encounter für Patientin Aelin Sternenfall, PID 156722, auf der Intensivstation Anaesthesie"
 * id = "isik-encounter-Sternenfall"
-* identifier[encounter-nummer-dkg]
+* identifier[Aufnahmenummer]
+  * type = $v2-0203#VN
+  * system = "https://test.krankenhaus.de/fhir/sid/aufnahmenummer"
   * value = "Sternenfall-20200310-001"
-  * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
-  * code = "VN"
 * status = #in-progress
 * class = $v3-ActCode#IMP "Inpatient"
 * subject = Reference(ExampleOrganPatientSternenfall)
@@ -52,6 +52,7 @@ Usage: #example
 Title: "Direkte Pupillenlichtreaktion links"
 Description: "Pupillenreaktion links nicht messbar am 2020-03-11T20:17:06+01:00"
 * status = #final
+* code.coding = $sct#45832002 "Pupil afferent light reaction"
 * category = $observation-category#exam "Exam"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * effectiveDateTime = "2020-03-11T20:17:06+01:00"
@@ -65,6 +66,7 @@ Usage: #example
 Title: "Direkte Pupillenlichtreaktion rechts"
 Description: "Pupillenreaktion rechts nicht messbar am 2020-03-11T20:17:06+01:00"
 * status = #final
+* code.coding = $sct#45832002 "Pupil afferent light reaction"
 * category = $observation-category#exam "Exam"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * effectiveDateTime = "2020-03-11T20:17:06+01:00"
@@ -78,10 +80,11 @@ Usage: #example
 Title: "RASS-Wert"
 Description: "RASS -4 am 2020-03-11T20:17:06+01:00"
 * status = #final
+* code.coding = $sct#1345050000 "Richmond Agitation Sedation Scale score (observable entity)"
 * category[exam] = $observation-category#exam "Exam"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * effectiveDateTime = "2020-03-11T20:17:06+01:00"
-* code.coding = $loinc#LA33966-5 "Deep sedation -4"
+* valueCodeableConcept.coding[Loinc] = $loinc#LA33966-5 "Deep sedation -4"
 
 Instance: ExampleOrganSerumNatrium202003110104
 InstanceOf: ISiKLaboruntersuchungSerumnatrium
@@ -91,9 +94,10 @@ Description: "Serumnatriumwert 130 mmol/L am 2020-03-11T01:04:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
 * category.coding[0] = $cs-observation-category#laboratory
-* code.coding = $loinc#2951-2
+* code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 130 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T01:04:00+01:00"
+* performer = Reference(PractitionerWalterArzt)
 
 Instance: ExampleOrganSerumNatrium202003110159
 InstanceOf: ISiKLaboruntersuchungSerumnatrium
@@ -103,9 +107,10 @@ Description: "Serumnatriumwert 133 mmol/L am 2020-03-11T01:59:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
 * category.coding[0] = $cs-observation-category#laboratory
-* code.coding = $loinc#2951-2
+* code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 133 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T01:59:00+01:00"
+* performer = Reference(PractitionerWalterArzt)
 
 Instance: ExampleOrganSerumNatrium202003110306
 InstanceOf: ISiKLaboruntersuchungSerumnatrium
@@ -115,9 +120,10 @@ Description: "Serumnatriumwert 130 mmol/L am 2020-03-11T03:06:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
 * category.coding[0] = $cs-observation-category#laboratory
-* code.coding = $loinc#2951-2
+* code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 130 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T03:06:00+01:00"
+* performer = Reference(PractitionerWalterArzt)
 
 Instance: ExampleOrganVentilationMode20200311
 InstanceOf: ISiKProzedurBeatmung
@@ -125,8 +131,8 @@ Usage: #example
 Title: "Beatmungsmodus DUO-PAP"
 Description: "Beatmungsmodus DUO-PAP am 2020-03-11T20:17:06+01:00"
 * status = #in-progress
-* category = $sct#40617009 "Artificial ventilation (regime/therapy)"
-* code.coding = $sct#243142003 "Dual pressure spontaneous ventilation support(regime/therapy)" // TODO prüfen - entspricht das "DUO-Pap"?
-* code.text = "DUO-PAP" 
+* category.coding[SNOMED-CT] = $sct#40617009 "Artificial ventilation (regime/therapy)"
+* code.coding[SNOMED-CT] = $sct#243142003 "Dual pressure spontaneous ventilation support(regime/therapy)"
+* code.text = "DUO-PAP"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * performedDateTime = "2020-03-11T20:17:06+01:00"
