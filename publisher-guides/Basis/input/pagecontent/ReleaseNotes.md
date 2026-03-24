@@ -30,6 +30,7 @@ Tags werden folgendermaßen verwendet:
   - Profile Station und Organization und spezielle Suchparameter verpflichtend
   - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
 * `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
+* `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
 
 ### Version 5.x.x
 
