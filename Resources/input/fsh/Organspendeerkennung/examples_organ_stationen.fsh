@@ -1,7 +1,7 @@
 // Ward example
 
 Instance: ExampleITSStationAnaesthesie
-InstanceOf: ISiKStation
+InstanceOf: ISiKStandort
 Usage: #example
 Title: "ISiKStation Beispielinstanz aus Organ-Daten"
 Description: "Beispielstation Anaesthesie"
