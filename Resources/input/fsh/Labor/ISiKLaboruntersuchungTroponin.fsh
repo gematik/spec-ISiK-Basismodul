@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungTroponin
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#42757-5
 * code.coding[snomed] = $sct#105000003 "Troponin measurement"
 * valueQuantity = 0.1 $cs-ucum#ug/L

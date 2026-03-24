@@ -280,10 +280,10 @@ RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
     * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 
 RuleSet: ISiKMedikament-CodingPZNComment
-* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z.B. existieren für Aspirin 3 verschiedene Packungsgrößen."
 
 RuleSet: ISiKMedikament-CodingATCComment
-* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z.B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
 
 
 RuleSet: Comment-Reference-Subject(Einleitung)

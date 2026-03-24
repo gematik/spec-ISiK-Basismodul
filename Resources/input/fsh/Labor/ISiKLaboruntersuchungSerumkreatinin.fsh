@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungSerumkreatinin
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2160-0
 * code.coding[snomed] = $sct#70901006 "Creatinine measurement"
 * valueQuantity = 0.7 $cs-ucum#mg/dL
