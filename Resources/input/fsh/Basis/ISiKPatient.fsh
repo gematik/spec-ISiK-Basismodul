@@ -365,7 +365,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     * ^comment = "**Begründung Pflichtfeld:** Ohne diese Angabe ist die Adresse nicht zustellbar."
 * link MS
   * ^short = "Link"
-  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter {{pagelink:Patient-merge}} befüllt werden. 
+  * ^comment = "Dieses und untergeordnete Elemente KÖNNEN bei einem erfolgten Patient merge entsprechend der Festlegungen unter [Patient-merge](https://gemspec.gematik.de/ig/fhir/isik/subscriptions/6.0.0-rc/Patientenzusammenfuehrung.html) befüllt werden. 
   Da das Element der Unterstützung der Patient merge Notification dient, 
   MUSS es im Rahmen des Bestätigungsverfahrens NICHT unterstützt werden (Stand: Stufe 4)."
   * other MS

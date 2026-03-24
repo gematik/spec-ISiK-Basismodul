@@ -129,3 +129,5 @@ Alias: $ieee-11073 = urn:iso:std:iso:11073:10101 // mii alias - redundant, da be
 
 Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinition/bodySite
 Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE
+
+Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
