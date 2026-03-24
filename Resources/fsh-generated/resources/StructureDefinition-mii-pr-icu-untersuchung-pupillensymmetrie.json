@@ -1,15 +1,15 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt",
-  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt",
+  "id": "mii-pr-icu-untersuchung-pupillensymmetrie",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie",
   "version": "6.0.0-rc",
-  "name": "MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt",
-  "title": "MII PR ICU Untersuchung Pupillenlichtreaktion Direkt",
+  "name": "MII_PR_ICU_Untersuchung_Pupillensymmetrie",
+  "title": "MII PR ICU Untersuchung Pupillensymmetrie",
   "status": "active",
   "experimental": false,
   "date": "2026-04-03",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil dient der Abbildung der direkten Pupillenlichtreaktion.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+  "description": "Dieses Profil dient der Abbildung der Pupillensymmetrie.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -25,7 +25,7 @@
           {
             "key": "obs-value-or-dataAbsentReason",
             "human": "Observation must have either value or dataAbsentReason.",
-            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-direkt",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillensymmetrie",
             "severity": "error",
             "expression": "value.exists() xor dataAbsentReason.exists()"
           }
@@ -113,16 +113,26 @@
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
-        "fixedCode": "45832002"
+        "fixedCode": "301942005"
       },
       {
         "id": "Observation.code.coding.display",
         "path": "Observation.code.coding.display",
-        "patternString": "Pupil afferent light reaction"
+        "patternString": "Finding of proportion of pupil (finding)"
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "type": [
           {
             "code": "CodeableConcept"
@@ -131,7 +141,24 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding",
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillensymmetrie"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding",
         "path": "Observation.value[x].coding",
         "slicing": {
           "discriminator": [
@@ -142,19 +169,6 @@
           ],
           "ordered": false,
           "rules": "closed"
-        },
-        "min": 1
-      },
-      {
-        "id": "Observation.value[x].coding:Loinc",
-        "path": "Observation.value[x].coding",
-        "sliceName": "Loinc",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillenlichtreaktion"
         }
       },
       {
@@ -166,11 +180,29 @@
         "id": "Observation.bodySite",
         "path": "Observation.bodySite",
         "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund"
-        }
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.bodySite.coding",
+        "path": "Observation.bodySite.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.bodySite.coding.system",
+        "path": "Observation.bodySite.coding.system",
+        "fixedUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.bodySite.coding.code",
+        "path": "Observation.bodySite.coding.code",
+        "fixedCode": "67019001"
+      },
+      {
+        "id": "Observation.bodySite.coding.display",
+        "path": "Observation.bodySite.coding.display",
+        "patternString": "Structure of pupil of both eyes (body structure)"
       }
     ]
   }

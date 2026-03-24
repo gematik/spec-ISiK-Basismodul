@@ -1,6 +1,6 @@
 {
   "resourceType": "Location",
-  "id": "StationStandortBeispiel",
+  "id": "KrankenhausStandortBeispiel",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKStandort"
@@ -18,14 +18,14 @@
     "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
     "display": "Occupied"
   },
-  "name": "Station A",
+  "name": "Krankenhaus Standort",
   "type": [
     {
       "coding": [
         {
-          "code": "HU",
+          "code": "HOSP",
           "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "display": "Hospital Unit"
+          "display": "Hospital"
         }
       ]
     }
@@ -40,9 +40,9 @@
   "physicalType": {
     "coding": [
       {
-        "code": "wa",
+        "code": "bu",
         "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-        "display": "Ward"
+        "display": "Building"
       }
     ]
   },
@@ -51,22 +51,6 @@
     "longitude": 13.405
   },
   "managingOrganization": {
-    "reference": "Organization/AbteilungAllgemeinchirurgieOrganisationBeispiel"
-  },
-  "partOf": {
-    "reference": "Location/KrankenhausStandortBeispiel"
-  },
-  "hoursOfOperation": [
-    {
-      "daysOfWeek": [
-        "fri"
-      ],
-      "allDay": true
-    },
-    {
-      "daysOfWeek": [
-        "sun"
-      ]
-    }
-  ]
+    "reference": "Organization/KrankenhausOrganisationBeispiel"
+  }
 }

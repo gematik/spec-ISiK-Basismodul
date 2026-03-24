@@ -1,15 +1,15 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "mii-pr-icu-score-rass",
-  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-score-rass",
+  "id": "mii-pr-icu-untersuchung-pupillengroesse",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse",
   "version": "6.0.0-rc",
-  "name": "MII_PR_ICU_Score_RASS",
-  "title": "MII PR ICU Score RASS",
+  "name": "MII_PR_ICU_Untersuchung_Pupillengroesse",
+  "title": "MII PR ICU Untersuchung Pupillengroesse",
   "status": "active",
   "experimental": false,
   "date": "2026-04-03",
   "publisher": "gematik GmbH",
-  "description": "Dieses Profil dient der spezialisierten Abbildung des Richmond Agitation Sedation Scale (RASS) Scores in der Akutmedizin.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Scores/MII_PR_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 13.3.2026.",
+  "description": "Dieses Profil dient der Abbildung der Pupillengröße.\n\nIn ISiK wird das Profil verwendet im Kontext des Implementierungsleitfadens zur Organspendeerkennung.\n\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Untersuchung/ - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.3.2026.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -25,7 +25,7 @@
           {
             "key": "obs-value-or-dataAbsentReason",
             "human": "Observation must have either value or dataAbsentReason.",
-            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-score-rass",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillengroesse",
             "severity": "error",
             "expression": "value.exists() xor dataAbsentReason.exists()"
           }
@@ -36,6 +36,11 @@
         "path": "Observation.id",
         "short": "serverseitige, interne ID des Datensatzes",
         "comment": "**bedingtes Pflichtfeld/bedingtes MS:** Alle von einem Server bereitgestellten Ressourcen MÜSSEN über eine `id` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über eine `id`verfügen. ",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta",
+        "path": "Observation.meta",
         "mustSupport": true
       },
       {
@@ -58,35 +63,35 @@
         "max": "0"
       },
       {
-        "id": "Observation.category",
-        "path": "Observation.category",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "pattern",
-              "path": "$this"
-            }
-          ],
-          "rules": "open"
-        },
-        "min": 1
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "mustSupport": true
       },
       {
-        "id": "Observation.category:exam",
-        "path": "Observation.category",
-        "sliceName": "exam",
-        "min": 1,
-        "max": "1",
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "code": "exam",
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "display": "Exam"
-            }
-          ]
-        },
+        "id": "Observation.status",
+        "path": "Observation.status",
         "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding.system",
+        "path": "Observation.category.coding.system",
+        "patternUri": "http://terminology.hl7.org/CodeSystem/observation-category"
+      },
+      {
+        "id": "Observation.category.coding.code",
+        "path": "Observation.category.coding.code",
+        "patternCode": "exam"
+      },
+      {
+        "id": "Observation.category.coding.display",
+        "path": "Observation.category.coding.display",
+        "patternString": "Exam"
       },
       {
         "id": "Observation.code",
@@ -108,79 +113,54 @@
       {
         "id": "Observation.code.coding.code",
         "path": "Observation.code.coding.code",
-        "comment": "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally.",
-        "fixedCode": "1345050000"
+        "fixedCode": "363953003"
       },
       {
         "id": "Observation.code.coding.display",
         "path": "Observation.code.coding.display",
-        "patternString": "Richmond Agitation Sedation Scale score (observable entity)"
-      },
-      {
-        "id": "Observation.subject",
-        "path": "Observation.subject",
-        "short": "Patient being assessed",
-        "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.encounter",
-        "path": "Observation.encounter",
-        "short": "Encounter during which score was assessed",
-        "definition": "The encounter context in which the score was determined",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.effective[x]",
-        "path": "Observation.effective[x]",
-        "short": "Time of score assessment",
-        "definition": "The time or time period when the score was assessed",
-        "min": 1,
-        "type": [
-          {
-            "code": "dateTime"
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.issued",
-        "path": "Observation.issued",
-        "short": "Date/Time this observation was made available",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.performer",
-        "path": "Observation.performer",
-        "short": "Who performed the score assessment",
-        "mustSupport": true
+        "patternString": "Size of pupil"
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "short": "RASS Value",
-        "comment": "Answer is a LOINC LA-code from the RASS Answer List (LL6536-8).",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
           }
         ],
-        "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-score-rass"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-code-observation-pupillengroesse"
         }
       },
       {
-        "id": "Observation.value[x].coding",
+        "id": "Observation.value[x]:valueCodeableConcept.coding",
         "path": "Observation.value[x].coding",
         "slicing": {
           "discriminator": [
@@ -189,31 +169,46 @@
               "path": "$this"
             }
           ],
+          "ordered": false,
           "rules": "closed"
-        },
-        "min": 1
+        }
       },
       {
-        "id": "Observation.value[x].coding:Loinc",
-        "path": "Observation.value[x].coding",
-        "sliceName": "Loinc",
-        "min": 1,
+        "id": "Observation.value[x]:valueQuantity",
+        "path": "Observation.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
         "max": "1",
-        "patternCoding": {
-          "system": "http://loinc.org"
-        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.value",
+        "path": "Observation.value[x].value",
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding:Loinc.system",
-        "path": "Observation.value[x].coding.system",
+        "id": "Observation.value[x]:valueQuantity.unit",
+        "path": "Observation.value[x].unit",
         "min": 1,
+        "patternString": "mm",
         "mustSupport": true
       },
       {
-        "id": "Observation.value[x].coding:Loinc.code",
-        "path": "Observation.value[x].coding.code",
+        "id": "Observation.value[x]:valueQuantity.system",
+        "path": "Observation.value[x].system",
         "min": 1,
+        "patternUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.code",
+        "path": "Observation.value[x].code",
+        "min": 1,
+        "patternCode": "mm",
         "mustSupport": true
       },
       {
@@ -222,24 +217,14 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.interpretation",
-        "path": "Observation.interpretation",
-        "mustSupport": true
-      },
-      {
-        "id": "Observation.note",
-        "path": "Observation.note",
-        "mustSupport": true
-      },
-      {
         "id": "Observation.bodySite",
         "path": "Observation.bodySite",
-        "max": "0"
-      },
-      {
-        "id": "Observation.specimen",
-        "path": "Observation.specimen",
-        "max": "0"
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-bodysite-observation-pupillenbefund"
+        }
       }
     ]
   }

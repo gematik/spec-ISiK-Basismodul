@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-icu-vent-dm-eingestellte-gemessene-parameter-beatmung",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-vent-dm-eingestellte-gemessene-parameter-beatmung",
+  "version": "6.0.0-rc",
+  "name": "MII_PR_ICU_Devicemetric_Eingestellte_Gemessene_Parameter_Beatmung",
+  "title": "MII PR ICU DeviceMetric Eingestellte Gemessene Parameter Beatmung",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/profiles/Beatmungswerte - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 16.03.2026",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DeviceMetric",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DeviceMetric",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DeviceMetric.type",
+        "path": "DeviceMetric.type",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-category-procedure-beatmung-snomed"
+        }
+      },
+      {
+        "id": "DeviceMetric.type.coding",
+        "path": "DeviceMetric.type.coding",
+        "patternCoding": {
+          "system": "http://snomed.info/sct"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceMetric.type.coding.system",
+        "path": "DeviceMetric.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceMetric.type.coding.code",
+        "path": "DeviceMetric.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceMetric.source",
+        "path": "DeviceMetric.source",
+        "mustSupport": true
+      },
+      {
+        "id": "DeviceMetric.category",
+        "path": "DeviceMetric.category",
+        "mustSupport": true
+      }
+    ]
+  }
+}
