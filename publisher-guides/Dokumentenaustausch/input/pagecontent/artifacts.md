@@ -43,6 +43,6 @@ Darüber hinaus gelten die [übergreifenden Festlegungen zu FHIR-Artefakten aus 
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 

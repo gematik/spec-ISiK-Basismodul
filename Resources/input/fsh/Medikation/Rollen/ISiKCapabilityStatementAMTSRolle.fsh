@@ -7,10 +7,11 @@ Usage: #definition
 * title = "ISiK CapabilityStatement AMTS Rolle"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
-* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
+* purpose = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden lesenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls 'Medikation', Bereich 'AMTS' zu bestehen.
   
 **HISTORIE:**    
 
+* `change` Alle modifizierenden Interaktionen (z.B. `update`, `create`, `transaction`) wurden entfernt aus dieser Rolle und ausgelagert in eine dedizierte Rolle.
 * `change` Die Verbindlichkeit des Suchparameters `subject` wurde von SHALL auf MAY reduziert, da der Suchparameter `patient` für ISiK-Zwecke ausreichend ist.   
 * `change` Die Verbindlichkeit von Include und RevInclude wurde von SHALL auf MAY reduziert, außer bei den Parameter `patient` und `encounter`, da diese für ISiK-Zwecke ausreichend sind.  
 "
@@ -31,17 +32,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -129,12 +120,6 @@ Usage: #definition
         **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).
 
         "
-  * interaction[+]
-    * extension
-      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-      * valueCode = #SHALL
-    * code = #transaction
-    * documentation = "Transaktions-Bundle gemäß Profil https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransaction - Transaktions-Antwort-Bundle gemäß Profil https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationTransactionResponse"
   * resource[+]
     * extension
       * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -145,17 +130,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -232,17 +207,7 @@ Usage: #definition
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
-      * code = #create
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
       * code = #read
-    * interaction[+]
-      * extension
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #SHALL
-      * code = #update
     * interaction[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
