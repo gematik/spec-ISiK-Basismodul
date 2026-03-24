@@ -197,3 +197,18 @@ Invariant: isik-obs-2
 Description: "Wenn die Observation Komponenten enthält und der Status nicht \"registered\" oder \"cancelled\" ist, muss in mindestens einer Observation.component entweder \"value\" oder \"dataAbsentReason\" vorhanden sein."
 Expression: "component.exists() implies ((status in ('registered' | 'cancelled')) or component.value.exists() or component.dataAbsentReason.exists())"
 Severity: #error
+
+Instance: ExampleISiKLaboruntersuchungMaximal
+InstanceOf: ISiKLaboruntersuchung
+Usage: #example
+Title: "Beispiel ISiKLaboruntersuchung (Maximal) - MRSA Screening"
+Description: "Maximalbeispiel zur Demonstration optionaler Elemente: Laborbereich-Kategorie, kodiertes Ergebnis (valueCodeableConcept) und Untersuchungsmethode."
+* status = #final
+* subject = Reference(PatientinMusterfrau)
+* category[observation-category] = $cs-observation-category#laboratory
+* category[laborbereich] = $loinc#18727-8 "Serologische Untersuchungen"
+* code.coding[loinc] = $loinc#13317-3	"	Staphylococcus aureus.Methicillin-resistent isoliert"
+* valueCodeableConcept = $sct#10828004 "Positiv"
+* method = $sct#726446007 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
+* note.text = "MRSA-Nachweis positiv. Isolat zur weiteren Typisierung eingesandt."
+* insert EffectiveAndPerformer

@@ -232,7 +232,6 @@ RuleSet: EffectiveAndPerformer
 * performer = Reference(PractitionerWalterArzt)
 * effectiveDateTime = 2021-09-01T12:00:00Z
 
-
 // ruleset for ICU-Normalstation Workflow IG
 RuleSet: MII_SpecificIEEE-11073Slice
 * coding contains 
