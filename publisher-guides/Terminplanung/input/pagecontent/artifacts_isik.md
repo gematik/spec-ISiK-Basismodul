@@ -47,6 +47,6 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 

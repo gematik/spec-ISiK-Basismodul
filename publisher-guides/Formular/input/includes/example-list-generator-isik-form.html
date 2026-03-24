@@ -1,0 +1,55 @@
+{%- comment -%}
+  Schritt 1: Typen aller einzuschließenden Einträge sammeln
+{%- endcomment -%}
+{%- assign ex_types = "" -%}
+{%- for r_hash in site.data.resources -%}
+  {%- assign r_key = r_hash[0] -%}
+  {%- assign r = r_hash[1] -%}
+  {%- assign r_type = r_key | split: '/' | first -%}
+  {%- assign include_entry = false -%}
+  {%- unless r.url -%}
+    {%- unless r_type == "ImplementationGuide" -%}
+      {%- assign include_entry = true -%}
+    {%- endunless -%}
+  {%- endunless -%}
+  {%- if r_type == "Questionnaire" -%}{%- assign include_entry = true -%}{%- endif -%}
+  {%- if include_entry -%}
+    {%- assign ex_types = ex_types | append: "," | append: r_type -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign ex_type_array = ex_types | split: "," | sort | uniq -%}
+
+{%- comment -%}
+  Schritt 2: Pro Typ eine Gruppe mit Links ausgeben
+{%- endcomment -%}
+{%- assign lhtype = "" -%}
+{%- for t in ex_type_array offset:1 -%}
+  {%- if lhtype != t -%}
+    {%- assign lhtype = t %}
+<b>{{ lhtype }}</b>
+  {%- endif %}
+  <ul>
+  {%- for r_hash in site.data.resources -%}
+    {%- assign r_key = r_hash[0] -%}
+    {%- assign r = r_hash[1] -%}
+    {%- assign r_type = r_key | split: '/' | first -%}
+    {%- assign include_entry = false -%}
+    {%- unless r.url -%}
+      {%- unless r_type == "ImplementationGuide" -%}
+        {%- assign include_entry = true -%}
+      {%- endunless -%}
+    {%- endunless -%}
+    {%- if r_type == "Questionnaire" -%}{%- assign include_entry = true -%}{%- endif -%}
+    {%- if include_entry and r_type == t -%}
+      {%- assign r_id = r_key | split: '/' | last -%}
+      {%- if r.title -%}
+        {%- assign display = r.title -%}
+      {%- else -%}
+        {%- assign display = r_id -%}
+      {%- endif -%}
+      <li><a href="{{ r.path }}">{{ display }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ul>
+{%- endfor %}
