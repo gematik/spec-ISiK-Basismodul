@@ -39,3 +39,6 @@ Zur Implementierung der Interaktionen sind insbesondere die zu implementierenden
 * imports[+] = Canonical(ISiKCapabilityStatementVitalSignStandardSourceRolle)
   * insert ExpectationImports(#SHALL)
 
+//Support für Organspendeerkennung (inkl. MII-ICU backport Profile)
+* imports[+] = Canonical(ISiKCapabilityStatementOrganspendeerkennungSourceRolle)
+  * insert ExpectationImports(#SHALL)

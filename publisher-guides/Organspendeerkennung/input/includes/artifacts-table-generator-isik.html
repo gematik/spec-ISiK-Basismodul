@@ -1,0 +1,68 @@
+
+{% assign renderList = include.render | strip_newlines | strip | split: ',' %}
+<table class="grid">
+    <colgroup>
+        <col style="width:20%">
+    </colgroup>
+    <tbody>
+    {% assign with_desc = true %}
+    {% if include.withDesc == false %}
+        {% assign with_desc = false %}
+    {% endif %}
+    {% assign with_purp = false %}
+    {% if include.withPurpose == true %}
+        {% assign with_purp = true %}
+        {% assign with_desc = false %}
+    {% endif %}
+    {% for resource in site.data.resources %}
+        {% assign allowed = false %}
+        {% if renderList.size > 0 %}
+            {% if renderList contains resource[0] %}
+                {% assign allowed = true %}
+            {% endif%}
+        {% elsif include.resourceType %}
+            {% if resource[0] contains include.resourceType %}
+                {% assign allowed = true %}
+            {% endif %}
+        {% else %}
+            {% assign allowed = true %}
+        {% endif %}
+        {% if allowed == true and include.nameContains %}
+            {% if resource[0] contains include.nameContains %}
+                {% assign allowed = true %}
+            {% else %}
+                {% assign allowed = false %}
+            {% endif %}
+        {% endif %}
+        {% if allowed == true and include.nameExcludes %}
+            {% if resource[0] contains include.nameExcludes %}
+                {% assign allowed = false %}
+            {% endif %}
+        {% endif %}
+        {% if allowed == true %}
+         <tr>
+            <td style="column-width:30%">
+                <a href="{{ resource[1].path | default "-" }}" title="{{ resource[0] }}">
+                {% if resource[1].title %}
+                    {{ resource[1].title }}
+                {% else %}
+                    {{ resource[1].name | default: "-"  }}
+                {% endif %}
+                </a>
+            </td>
+            {% if with_desc %}
+            <td>
+                {{ resource[1].description | default: "-" | replace: "###### ", "" | replace: "##### ", "" | replace: "#### ", "" | replace: "### ", "" | replace: "## ", "" | replace: "# ", "" | markdownify }}
+            </td>
+            {% endif %}
+            {% if with_purp %}
+            <td>
+                {{ resource[1].purpose | default: "-" | replace: "###### ", "" | replace: "##### ", "" | replace: "#### ", "" | replace: "### ", "" | replace: "## ", "" | replace: "# ", "" | markdownify }}
+            </td>
+            {% endif %}
+         </tr>
+         {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+ 
