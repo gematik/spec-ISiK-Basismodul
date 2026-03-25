@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKLaboruntersuchung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKLaboruntersuchung",
-  "version": "5.1.1",
+  "version": "6.0.0-rc",
   "name": "ISiKLaboruntersuchung",
   "status": "active",
   "experimental": false,
-  "date": "2025-12-17",
+  "date": "2026-04-03",
   "publisher": "gematik GmbH",
   "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
   "fhirVersion": "4.0.1",
@@ -140,9 +140,28 @@
       {
         "id": "Observation.category",
         "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
         "short": "Kategorie der Laboruntersuchung",
-        "comment": "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z. B. LOINC-Kategorie „laboratory“) zu befüllen.",
+        "comment": "**Begründung MS**: Ermöglicht das Filtern, Sortieren und Gruppieren von Befunden. Für Laboruntersuchungen ist die Kategorie zwingend mit dem entsprechenden Code (z.B. LOINC-Kategorie „laboratory“) zu befüllen.",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category:observation-category",
+        "path": "Observation.category",
+        "sliceName": "observation-category",
+        "short": "Festlegung der Kategorie 'laboratory'",
+        "comment": "**Begründung MS**: Pflicht-Slice zur Kennzeichnung als Laboruntersuchung.",
+        "min": 1,
+        "max": "1",
         "patternCodeableConcept": {
           "coding": [
             {
@@ -152,6 +171,19 @@
           ]
         },
         "mustSupport": true
+      },
+      {
+        "id": "Observation.category:laborbereich",
+        "path": "Observation.category",
+        "sliceName": "laborbereich",
+        "short": "Fachlicher Laborbereich",
+        "comment": "Optionaler Slice zur weiteren Einordnung der Laboruntersuchung in einen LOINC-Fachbereich (z. B. Hematologie, Klinische Chemie). Die Fachbereiche Mikrobiologie, Humangenetik sowie Zytologie sind ausgeschlossen, da sie eine spezialisierte Abbildung mit differenzierter Terminologie und Struktur erfordern.",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKLaborbereichVS"
+        }
       },
       {
         "id": "Observation.code",
@@ -179,7 +211,7 @@
       {
         "id": "Observation.code.coding.system",
         "path": "Observation.code.coding.system",
-        "short": "System, aus dem der Code für den Laborparameter stammt (z. B. LOINC)",
+        "short": "System, aus dem der Code für den Laborparameter stammt (z.B. LOINC)",
         "min": 1,
         "mustSupport": true
       },
@@ -213,7 +245,11 @@
         "patternCoding": {
           "system": "http://loinc.org"
         },
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips"
+        }
       },
       {
         "id": "Observation.code.text",
@@ -344,7 +380,7 @@
       {
         "id": "Observation.value[x]:valueQuantity.unit",
         "path": "Observation.value[x].unit",
-        "short": "Einheit des Messwertes (z. B. mg/dL)",
+        "short": "Einheit des Messwertes (z.B. mg/dL)",
         "mustSupport": true
       },
       {
@@ -363,6 +399,24 @@
         "mustSupport": true
       },
       {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "short": "Kodierter Ergebniswert",
+        "comment": "Slice für kodierte Ergebnisse (z.B. positiv/negativ). Das Binding auf das IPS-ValueSet dient der Sicherstellung der Kompatibilität mit IPS und EHDS, die beide dieses ValueSet verwenden.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips"
+        }
+      },
+      {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
         "short": "Angabe eines Grundes weshalb kein Ergebniss der Laboruntersuchung vorliegt",
@@ -373,13 +427,13 @@
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
         "short": "Interpretation oder Bewertung des Messergebnisses (z.B. „hoch“, „niedrig“, „normal“)",
-        "comment": "Begründung MS: Unterstützt die klinische Interpretation, insbesondere bei komplexen Parametern und automatisierten Auswertungen.",
+        "comment": "**Begründung MS**: Die Angabe einer Interpretation ist für die klinische Einordnung von Messergebnissen essenziell und wird in vielen Anwendungsfällen (z. B. Entscheidungsunterstützung, Anzeige in Primärsystemen) benötigt.",
         "mustSupport": true
       },
       {
         "id": "Observation.note",
         "path": "Observation.note",
-        "short": "Freitextnotiz oder Kommentar zur Beobachtung (z. B. Hinweise des Labors)",
+        "short": "Freitextnotiz oder Kommentar zur Beobachtung (z.B. Hinweise des Labors)",
         "comment": "**Begründung MS**: Dient zur Dokumentation abweichender Umstände, Freitextbefundung oder ergänzender Laborkommentare.",
         "mustSupport": true
       },
@@ -387,12 +441,16 @@
         "id": "Observation.method",
         "path": "Observation.method",
         "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der zugrundeliegenden Methode, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Untersuchungsmethode einer Laboruntersuchung ist eine relevante medizinische Information: Unterschiedliche Methoden können unterschiedliche Resultate liefern. Die Methode ist daher für Transparenz und Vergleichbarkeit entscheidend.\n   Da diese Information aktuell häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird.",
-        "mustSupport": true
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKLaborMethodeVS"
+        }
       },
       {
         "id": "Observation.specimen",
         "path": "Observation.specimen",
-        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe (z. B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.\n   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
+        "comment": "**Einschränkung der übergreifenden MS-Definition:** \n  Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung der Laboruntersuchung zugrundeliegenden Probe, so MUSS dieses System\n   die Information NICHT abbilden. \n   \n   Motivation zum eingeschränkten MS: Die Probe (z.B. Serum, Urin) ist zentral für die korrekte Bewertung des Ergebnisses. Die Unterscheidung von Materialtypen ist oft diagnostisch ausschlaggebend.\n   Da die Information aktuell jedoch häufig nicht übergeben wird, wird das MS eingeschränkt. Es ist dennoch wünschenswert, dass die Probe in der Zukunft übergeben wird",
         "mustSupport": true
       },
       {
@@ -427,7 +485,7 @@
       {
         "id": "Observation.referenceRange",
         "path": "Observation.referenceRange",
-        "short": "Referenzbereich zur Interpretation des Messergebnisses (z. B. Normalwerte)",
+        "short": "Referenzbereich zur Interpretation des Messergebnisses (z.B. Normalwerte)",
         "comment": "**Begründung MS**: Referenzbereiche erlauben die sofortige klinische Bewertung eines Wertes",
         "mustSupport": true
       },
@@ -494,7 +552,7 @@
       {
         "id": "Observation.referenceRange.type",
         "path": "Observation.referenceRange.type",
-        "short": "Art des Referenzbereichs (z. B. normal, kritisch)",
+        "short": "Art des Referenzbereichs (z.B. normal, kritisch)",
         "mustSupport": true
       },
       {
@@ -527,7 +585,7 @@
       {
         "id": "Observation.referenceRange.appliesTo",
         "path": "Observation.referenceRange.appliesTo",
-        "short": "Für wen der Referenzbereich gilt (z. B. Geschlecht, Alter)",
+        "short": "Für wen der Referenzbereich gilt (z.B. Geschlecht, Alter)",
         "mustSupport": true
       },
       {

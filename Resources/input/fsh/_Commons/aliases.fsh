@@ -111,6 +111,8 @@ Alias: $cs-ucum = http://unitsofmeasure.org
 Alias: $cs-wg14 = http://fhir.de/CodeSystem/abdata/wg14
 Alias: $vs-edqm-doseform = http://hl7.org/fhir/uv/ips/ValueSet/medicine-doseform
 Alias: $vs-edqm-route = http://hl7.org/fhir/uv/ips/ValueSet/medicine-route-of-administration
+Alias: $vs-results-laboratory-pathology-observations = http://hl7.org/fhir/uv/ips/ValueSet/results-laboratory-pathology-observations-uv-ips
+Alias: $vs-results-coded-values-laboratory = http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-uv-ips
 Alias: $vs-observation-codes = http://hl7.org/fhir/ValueSet/observation-codes
 Alias: $ext-data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $ext-mii-wirkstofftyp = https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp
@@ -127,6 +129,9 @@ Alias: $appointmentStatus = http://hl7.org/fhir/appointmentstatus
 Alias: $cancelationReason = http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason
 
 Alias: $IEEE11073 = urn:iso:std:iso:11073:10101
+Alias: $ieee-11073 = urn:iso:std:iso:11073:10101 // mii alias - redundant, da bereits $IEEE11073 definiert, aber in einigen Profilen verwendet
 
 Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinition/bodySite
 Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE
+
+Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
