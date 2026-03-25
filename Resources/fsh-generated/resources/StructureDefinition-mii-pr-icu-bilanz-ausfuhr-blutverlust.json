@@ -1,0 +1,93 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-pr-icu-bilanz-ausfuhr-blutverlust",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-blutverlust",
+  "version": "5.1.1",
+  "name": "MII_PR_ICU_Bilanz_Ausfuhr_Blutverlust",
+  "title": "MII PR ICU Bilanz Ausfuhr Blutverlust",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-17",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category.coding:hl7-category",
+        "path": "Observation.category.coding",
+        "sliceName": "hl7-category"
+      },
+      {
+        "id": "Observation.category.coding:hl7-category.code",
+        "path": "Observation.category.coding.code",
+        "patternCode": "exam"
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "min": 2
+      },
+      {
+        "id": "Observation.code.coding:sct",
+        "path": "Observation.code.coding",
+        "sliceName": "sct",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "250771004",
+          "display": "Actual blood loss"
+        }
+      },
+      {
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "system": "http://loinc.org",
+          "code": "81661-1",
+          "display": "Blood loss [Volume] Measured"
+        }
+      },
+      {
+        "id": "Observation.code.coding:IEEE-11073",
+        "path": "Observation.code.coding",
+        "sliceName": "IEEE-11073",
+        "max": "0"
+      },
+      {
+        "id": "Observation.value[x].unit",
+        "path": "Observation.value[x].unit",
+        "short": "Display unit (SI)",
+        "definition": "Human-readable display for the unit. SI display unit SHALL be 'ml', independent of whether code is 'mL' or 'ml'.",
+        "min": 1,
+        "patternString": "ml",
+        "example": [
+          {
+            "label": "Preferred display",
+            "valueString": "ml"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x].code",
+        "path": "Observation.value[x].code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-icu-unit-equivalent-ucum-milliliter",
+          "description": "equivalent codes for milliliter"
+        }
+      }
+    ]
+  }
+}
