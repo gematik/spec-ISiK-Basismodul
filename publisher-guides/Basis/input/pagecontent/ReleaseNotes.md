@@ -33,6 +33,7 @@ Tags werden folgendermaßen verwendet:
   - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
 * `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
 * `change` `ISiKKoerpertemperatur` wurde entfernt; das Profil wurde ausschließlich als Zwischenstufe für `ISiKKoerperkerntemperatur` genutzt, diese obsolete Zwischenebene entfällt https://github.com/gematik/spec-ISiK-Basismodul/pull/1104
+* `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
 
 ### Version 5.x.x
 
