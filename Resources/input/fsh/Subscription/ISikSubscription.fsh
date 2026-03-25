@@ -8,7 +8,7 @@ Description: "ISiK Subscription
 
 Subscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).
 
-Um als Subsystem über ein Subscription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.
+Um als Subsystem über ein Subscription-Event informiert zu werden, MUSS der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) vom Subscription Server Akteur unterstützt werden.
 
 **Kompatibilität**
 
@@ -58,13 +58,14 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
     * ^comment = "**Bedeutung:** Format in dem Subscription Notifications versendet werden sollen (JSON oder XML)."
   * payload from FhirMimeTypeVS
     * extension[content] MS
+      * valueCode = #id-only (exactly)
       * ^short = "Inhalt der Nutzdaten"
-      * ^comment = "**Bedeutung:** Welcher Ressourceninhalt in der Nutzlast der Benachrichtigung geliefert werden soll.  
-      Zur Auswahl stehen eine leere Nutzlast (`empty`), nur die Ressourcen-id (`id-only`) oder der gesamte Inhalt der Ressource (`full-resource`)."
+      * ^comment = "**Bedeutung:** Ressourceninhalt, der in der Nutzlast der Benachrichtigung geliefert wird.  
+      ISiK-konforme Subscription-Notifications MÜSSEN `id-only` verwenden. Die Notification enthält die ID der geänderten Ressource, jedoch keine vollständigen Ressourcendaten. Der Client kann anhand der ID gezielt die aktuelle Version der Ressource abrufen (Pull-Prinzip)."
   * header MS
     * ^short = "Falls eine REST-Enpunkt einen Authorization-Header benötigt, kann dieser hier gesetzt werden"
-    * ^comment = "**Bedeutung:** http-Header welcher dazu genutzt werden kann einen Authorization-header zu setzen. Dies ist nur für rest-hook Subscriptions relevant.  
-    **Hinweise:** ACHTUNG: dieses Datenfeld muss bei READ-Interaktionen maskiert werden! Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)"
+    * ^comment = "**Bedeutung:** HTTP-Header, der dazu genutzt werden kann, einen Authorization-Header zu setzen (z.B. für HTTP Basic Authentication mit statischem Secret).
+    **Hinweise:** Dieses Feld ist Write-Only: Secrets können bei Erstellung/Aktualisierung übermittelt werden, MÜSSEN vom Server bei READ-Interaktionen jedoch maskiert werden (z.B. `Authorization: Basic ****last4`). In der Subscription DÜRFEN keine Klartext-Secrets dauerhaft gespeichert sein. Siehe [R4 Subscriptions](https://hl7.org/fhir/R4/subscription.html)"
 
 Profile: ISiKSubscriptionStatus
 Parent: BackportSubscriptionStatusR4Fixed
@@ -92,7 +93,7 @@ Usage: #example
   * type = #rest-hook
   * endpoint = "http://localhost:8081/fhir/Bundle"
   * payload = #application/fhir+json
-    * extension[content].valueCode = #full-resource
+    * extension[content].valueCode = #id-only
   * header = "Authorization: Bearer xxxxxxxxxx"
 
 Instance: SubscriptionNotificationBundleExample
@@ -104,11 +105,6 @@ Usage: #example
 * entry[=].request.method = #GET
 * entry[=].request.url = "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge/$status"
 * entry[=].response.status = "200"
-* entry[+].fullUrl = "http://example.org/fhir/Patient/DorisQuelle"
-* entry[=].resource = DorisQuelle
-* entry[=].request.method = #PUT
-* entry[=].request.url = "Patient"
-* entry[=].response.status = "201"
 
 Instance: ISiKSubscriptionStatusExample
 InstanceOf: ISiKSubscriptionStatus
