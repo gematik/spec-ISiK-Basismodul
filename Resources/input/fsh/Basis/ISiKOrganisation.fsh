@@ -26,8 +26,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 "
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(organization-eu)
-//* insert CompliesWith(TIOrganization|1.1.1)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/organization-eu)
+// * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-organization)
 * identifier 1..* MS
   * ^short = "Identifikatoren der Fachabteilung"
   * ^comment = "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden."
