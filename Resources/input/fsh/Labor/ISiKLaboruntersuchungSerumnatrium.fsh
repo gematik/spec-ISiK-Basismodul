@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungSerumnatrium
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 140 $cs-ucum#mmol/L
 * referenceRange
