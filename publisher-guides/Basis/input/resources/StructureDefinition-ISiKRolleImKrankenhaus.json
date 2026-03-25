@@ -74,6 +74,24 @@
       {
         "id": "PractitionerRole.code.coding",
         "path": "PractitionerRole.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.code.coding:KBVRoleCare",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "KBVRoleCare",
+        "min": 0,
+        "max": "1",
         "type": [
           {
             "code": "Coding",
@@ -84,7 +102,7 @@
         ],
         "mustSupport": true,
         "binding": {
-          "strength": "extensible",
+          "strength": "required",
           "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_Base_Role_Care"
         }
       },
