@@ -12,9 +12,15 @@ In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressou
 * insert Meta
 * insert CommonElements
 // * insert compliesWithProfile(PractitionerRoleEu)
-* active 1.. MS
+* active MS
   * ^short = "Aktiv/Inaktiv Status"
-  * ^comment = "Motivation MS: Ein System muss prüfen können, ob die Rolle eines Leistungserbringers aktiv oder inaktiv ist."
+  * ^comment = "Motivation MS: Ein System muss prüfen können, ob die Rolle eines Leistungserbringers aktiv oder inaktiv ist.
+  **Einschränkung der übergreifenden MS-Definition**:
+Verfügt ein bestätigungsrelevantes System nicht über die Datenstruktur zur Hinterlegung des Aktivitätsstatus einer 
+PractitionerRole-Ressource, so MUSS dieses System die Information NICHT abbilden. Das System SOLL jedoch den Aktivitätsstatus hart kodieren
+ in der PractitionerRole-Instanz (PractitionerRole.active auf 'true'), 
+sodass Clients nicht missverständlich mit einer inaktiven PractitionerRole-Ressource interagieren.
+  "
 * practitioner MS
   * ^short = "Leistungserbringer"
   * ^comment = "Motivation MS: Ein System muss die Informationen über den Leistungserbringer, der die Rolle innehat, bereitstellen können."
