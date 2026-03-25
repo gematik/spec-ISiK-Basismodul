@@ -512,6 +512,13 @@
       },
       {
         "reference": {
+          "reference": "Observation/ExampleISiKLaboruntersuchungMaximal"
+        },
+        "exampleBoolean": false,
+        "name": "ExampleISiKLaboruntersuchungMaximal"
+      },
+      {
+        "reference": {
           "reference": "Observation/ExampleISiKLaboruntersuchungPCT1"
         },
         "exampleBoolean": false,
@@ -768,6 +775,22 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "ISiK CapabilityStatement VitalSign Standard Source Rolle"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKLaborMethodeVS"
+        },
+        "description": "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+        "exampleBoolean": false,
+        "name": "ISiK Labor Methode"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKLaborbereichVS"
+        },
+        "description": "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+        "exampleBoolean": false,
+        "name": "ISiK Laborbereich"
       },
       {
         "reference": {
@@ -1059,6 +1082,14 @@
         },
         "exampleBoolean": false,
         "name": "ISiKEKGMinExample"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterClassDE"
+        },
+        "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterClassDE"
       },
       {
         "reference": {
@@ -1855,6 +1886,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Bilanzierung von Patienten. Es ermöglicht die Erfassung von Einfuhr und Ausfuhr von Flüssigkeiten, Nahrungsmitteln und anderen relevanten Substanzen, um eine umfassende Dokumentation der Bilanzierung zu gewährleisten.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz"
       },
@@ -1862,6 +1894,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-blutverlust"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung des Blutverlusts als Teil der Ausfuhr in der Bilanzierung von Patienten.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Blutverlust"
       },
@@ -1869,6 +1902,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-drainage-generisch"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Drainagen als Teil der Ausfuhr in der Bilanzierung von Patienten. Es ermöglicht die Erfassung von Drainagevolumina, unabhängig von der spezifischen Art der Drainage, und bietet somit eine flexible Lösung für die Dokumentation verschiedener Drainagetypen.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Drainage Generisch"
       },
@@ -1876,6 +1910,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-fluessigkeit-gesamt"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, einschließlich Urin, Drainagen, Blutverlust und anderen Flüssigkeitsverlusten. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Fluessigkeit Gesamt"
       },
@@ -1883,6 +1918,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-gallenfluessigkeit"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Gallenflüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Gallenflüssigkeit, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Gallenfluessigkeit"
       },
@@ -1890,6 +1926,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-haemofiltration-einzelmesswerte"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Einzelmesswerten der Ausfuhr durch Hämo(dia)filtration als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung von spezifischen Volumina, die durch Hämo(dia)filtration aus dem Körper eines Patienten entfernt wurden, und bietet somit eine detaillierte Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Haemofiltration Einzelmesswerte"
       },
@@ -1897,6 +1934,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-magensonde"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Magensonde als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Magensonde ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Magensonde"
       },
@@ -1904,6 +1942,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-op-drainage"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine OP-Drainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine OP-Drainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr OP Drainage"
       },
@@ -1911,6 +1950,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-pankreasdrainage"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Pankreasdrainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Pankreasdrainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Pankreasdrainage"
       },
@@ -1918,6 +1958,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-stuhlgang"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Stuhlausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge des Stuhlgangs, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Stuhlgang"
       },
@@ -1925,6 +1966,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-urin"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Urinausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge des Urins, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Urin"
       },
@@ -1932,6 +1974,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-ausfuhr-wunddrainage"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine Wunddrainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine Wunddrainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Ausfuhr Wunddrainage"
       },
@@ -1939,6 +1982,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-abgepumpte-muttermilch"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von abgepumpter Muttermilch als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der abgepumpten Muttermilch, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Abgepumpte Muttermilch"
       },
@@ -1946,6 +1990,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-enterale-fluessigkeit"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von enteraler Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der enteralen Flüssigkeit, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Enterale Fluessigkeit"
       },
@@ -1953,6 +1998,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitseinfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen bestimmten Zeitraum verabreicht wurden, einschließlich enteraler und parenteraler Flüssigkeiten, sowie anderer Flüssigkeitszufuhren. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Fluessigkeit Gesamt"
       },
@@ -1960,6 +2006,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-muttermilch"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Muttermilch als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Muttermilch, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Muttermilch"
       },
@@ -1967,6 +2014,7 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-orale-fluessigkeit"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von oraler Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der oralen Flüssigkeit, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Orale Fluessigkeit"
       },
@@ -1974,13 +2022,23 @@
         "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-saeuglingsnahrung"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Säuglingsnahrung als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Säuglingsnahrung, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Einfuhr Saeuglingsnahrung"
       },
       {
         "reference": {
+          "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-spendermilch"
+        },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Spendermilch als Teil der Bilanzierung.",
+        "exampleBoolean": false,
+        "name": "MII PR ICU Bilanz Einfuhr Spendermilch"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/mii-pr-icu-bilanz-tagesbilanz-fluessigkeit"
         },
+        "description": "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Tagesbilanz von Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen Zeitraum von 24 Stunden verabreicht wurden, sowie der Gesamtmenge aller Flüssigkeiten, die ein Patient über denselben Zeitraum ausgeschieden hat. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der täglichen Flüssigkeitsbilanz.",
         "exampleBoolean": false,
         "name": "MII PR ICU Bilanz Tagesbilanz Fluessigkeit"
       },
@@ -2215,13 +2273,6 @@
         "description": "Dieses ValueSet enthält äquivalente Codes für Milliliter.",
         "exampleBoolean": false,
         "name": "MII VS ICU Unit equivalent UCUM milliliter"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/mii-pr-icu-bilanz-einfuhr-spendermilch"
-        },
-        "exampleBoolean": false,
-        "name": "MII_PR_ICU_Bilanz_Einfuhr_Spendermilch"
       },
       {
         "reference": {
