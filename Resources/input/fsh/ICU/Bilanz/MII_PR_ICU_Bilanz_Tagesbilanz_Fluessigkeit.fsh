@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Tagesbilanz_Fluessigkeit
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-tagesbilanz-fluessigkeit
 Title: "MII PR ICU Bilanz Tagesbilanz Fluessigkeit"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Tagesbilanz von Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen Zeitraum von 24 Stunden verabreicht wurden, sowie der Gesamtmenge aller Flüssigkeiten, die ein Patient über denselben Zeitraum ausgeschieden hat. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der täglichen Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

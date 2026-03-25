@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Drainage_Generisch
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-drainage-generisch
 Title: "MII PR ICU Bilanz Ausfuhr Drainage Generisch"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Drainagen als Teil der Ausfuhr in der Bilanzierung von Patienten. Es ermöglicht die Erfassung von Drainagevolumina, unabhängig von der spezifischen Art der Drainage, und bietet somit eine flexible Lösung für die Dokumentation verschiedener Drainagetypen."
 * insert Meta
 * insert CommonElements
 * category.coding[hl7-category].code = #exam

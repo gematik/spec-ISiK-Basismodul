@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Stuhlgang
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-stuhlgang
 Title: "MII PR ICU Bilanz Ausfuhr Stuhlgang"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Stuhlausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge des Stuhlgangs, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 * category.coding[hl7-category].code = #exam

@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_OP_Drainage
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-op-drainage
 Title: "MII PR ICU Bilanz Ausfuhr OP Drainage"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Ausfuhr über eine OP-Drainage als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Flüssigkeit, die ein Patient über eine OP-Drainage ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

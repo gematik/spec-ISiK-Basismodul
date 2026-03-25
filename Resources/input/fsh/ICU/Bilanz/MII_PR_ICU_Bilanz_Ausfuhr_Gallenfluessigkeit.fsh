@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Gallenfluessigkeit
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-gallenfluessigkeit
 Title: "MII PR ICU Bilanz Ausfuhr Gallenfluessigkeit"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Gallenflüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der Gallenflüssigkeit, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

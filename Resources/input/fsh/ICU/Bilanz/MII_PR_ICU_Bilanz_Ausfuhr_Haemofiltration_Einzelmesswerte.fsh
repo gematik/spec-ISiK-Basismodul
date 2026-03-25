@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Haemofiltration_Einzelmesswerte
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-haemofiltration-einzelmesswerte
 Title: "MII PR ICU Bilanz Ausfuhr Haemofiltration Einzelmesswerte"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung von Einzelmesswerten der Ausfuhr durch Hämo(dia)filtration als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung von spezifischen Volumina, die durch Hämo(dia)filtration aus dem Körper eines Patienten entfernt wurden, und bietet somit eine detaillierte Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz." 
 * insert Meta
 * insert CommonElements
 

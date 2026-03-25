@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Einfuhr_Orale_Fluessigkeit
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-einfuhr-orale-fluessigkeit
 Title: "MII PR ICU Bilanz Einfuhr Orale Fluessigkeit"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von oraler Flüssigkeit als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der oralen Flüssigkeit, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

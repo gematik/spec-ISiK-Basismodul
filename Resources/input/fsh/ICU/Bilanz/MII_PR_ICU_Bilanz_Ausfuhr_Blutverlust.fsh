@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Blutverlust
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-blutverlust
 Title: "MII PR ICU Bilanz Ausfuhr Blutverlust"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung des Blutverlusts als Teil der Ausfuhr in der Bilanzierung von Patienten."
 * insert Meta
 * insert CommonElements
 

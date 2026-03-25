@@ -1,6 +1,8 @@
 Profile: MII_PR_ICU_Bilanz_Einfuhr_Spendermilch
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-einfuhr-spendermilch
+Title: "MII PR ICU Bilanz Einfuhr Spendermilch"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von Spendermilch als Teil der Bilanzierung."
 * insert Meta
 * insert CommonElements
 

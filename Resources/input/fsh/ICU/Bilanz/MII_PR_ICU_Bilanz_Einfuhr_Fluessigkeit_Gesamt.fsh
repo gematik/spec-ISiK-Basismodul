@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Einfuhr_Fluessigkeit_Gesamt
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt
 Title: "MII PR ICU Bilanz Einfuhr Fluessigkeit Gesamt"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitseinfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die einem Patienten über einen bestimmten Zeitraum verabreicht wurden, einschließlich enteraler und parenteraler Flüssigkeiten, sowie anderer Flüssigkeitszufuhren. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

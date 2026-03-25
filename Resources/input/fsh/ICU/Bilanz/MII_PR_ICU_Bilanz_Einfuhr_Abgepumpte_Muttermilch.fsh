@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Einfuhr_Abgepumpte_Muttermilch
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-einfuhr-abgepumpte-muttermilch
 Title: "MII PR ICU Bilanz Einfuhr Abgepumpte Muttermilch"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der Einfuhr von abgepumpter Muttermilch als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Menge der abgepumpten Muttermilch, die einem Patienten verabreicht wurde, und bietet somit eine spezifische Lösung für die Dokumentation dieses Aspekts der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 

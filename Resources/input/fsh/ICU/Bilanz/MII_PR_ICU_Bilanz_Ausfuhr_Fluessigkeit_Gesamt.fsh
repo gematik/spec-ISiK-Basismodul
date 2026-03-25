@@ -2,6 +2,7 @@ Profile: MII_PR_ICU_Bilanz_Ausfuhr_Fluessigkeit_Gesamt
 Parent: MII_PR_ICU_Bilanz
 Id: mii-pr-icu-bilanz-ausfuhr-fluessigkeit-gesamt
 Title: "MII PR ICU Bilanz Ausfuhr Fluessigkeit Gesamt"
+Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der Abbildung der gesamten Flüssigkeitsausfuhr als Teil der Bilanzierung von Patienten. Es ermöglicht die Erfassung der Gesamtmenge aller Flüssigkeiten, die ein Patient über einen bestimmten Zeitraum ausgeschieden hat, einschließlich Urin, Drainagen, Blutverlust und anderen Flüssigkeitsverlusten. Dieses Profil bietet somit eine umfassende Lösung für die Dokumentation der Flüssigkeitsbilanz."
 * insert Meta
 * insert CommonElements
 
