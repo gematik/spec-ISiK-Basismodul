@@ -43,6 +43,7 @@ Es gelten die Anforderungen oben.
 
 Zusätzlich gilt für zwei Parameter:
 - Für die Pupillen-Reaktion MÜSSEN alle Parameter abgedeckt werden (aber es reicht für eine Seite - z.B. links oder rechts), aber es muss KEIN Patientenfall konstruiert werden.
+    -  Beide Seiten zumindest ein mal abgedeckt.
 - Die Beatmungsmodus Parameter-Ausprägungen MÜSSEN alle abgedeckt werden, aber es muss KEIN dedizierter Patientenfall konstruiert werden.
 
 ## Konsequenzen

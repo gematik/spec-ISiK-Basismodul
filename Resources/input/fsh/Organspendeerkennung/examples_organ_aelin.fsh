@@ -125,14 +125,5 @@ Description: "Serumnatriumwert 130 mmol/L am 2020-03-11T03:06:00+01:00"
 * effectiveDateTime = "2020-03-11T03:06:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 
-Instance: ExampleOrganVentilationMode20200311
-InstanceOf: ISiKProzedurBeatmung
-Usage: #example
-Title: "Beatmungsmodus DUO-PAP"
-Description: "Beatmungsmodus DUO-PAP am 2020-03-11T20:17:06+01:00"
-* status = #in-progress
-* category.coding[SNOMED-CT] = $sct#40617009 "Artificial ventilation (regime/therapy)"
-* code.coding[SNOMED-CT] = $sct#243142003 "Dual pressure spontaneous ventilation support(regime/therapy)"
-* code.text = "DUO-PAP"
-* subject = Reference(ExampleOrganPatientSternenfall)
-* performedDateTime = "2020-03-11T20:17:06+01:00"
+
+// zu Prozeduren Beatmung siehe andere Datei
