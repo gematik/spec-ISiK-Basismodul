@@ -20,11 +20,11 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #create
-    * documentation = "siehe {{pagelink:Dokumentenbereitstellung}}"
+    * documentation = "siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Interaktion-Dokumentenbereitstellung.html)"
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #read
-    * documentation = "siehe {{pagelink:Dokumentenabfrage}}"
+    * documentation = "siehe [Dokumentenabfrage](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Dokumentenabfrage.html)"
   * interaction[+]
     * insert Expectation (#SHALL)
     * code = #search-type
@@ -49,7 +49,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zur Erstellung, dem Abruf un
     * type = #token
     * documentation = "**Beispiel:**
     `GET [base]/DocumenReference?identifier=urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340`  
-    **Anwendungshinweis:
+    **Anwendungshinweis:**
     Durchsucht die Elemente `DocumentReference.identifier` und `DocumentReference.masterIdentifier` nach übereinstimmenden Dokumenten."
   * searchParam[+]
     * insert Expectation (#SHALL)

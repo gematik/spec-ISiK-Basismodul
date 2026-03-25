@@ -2,12 +2,15 @@ Profile: ISiKKoerpergroesse
 Parent: VitalSignDE_Koerpergroesse
 Id: ISiKKoerpergroesse
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die Körpergröße eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+**Motivation**
+
 Die Erfassung und Überwachung der Körpergröße ist essenziell für die Beurteilung von Wachstumsprozessen, die Berechnung wichtiger Indizes wie des Body-Mass-Index (BMI) sowie die Unterstützung klinischer Entscheidungen in der Patientenversorgung.
 
 In FHIR wird die Körpergröße mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+**Kompatibilität**
+
 Das Profil ISiKKoerpergroesse ist vom Profil [VitalSignDE_Koerpergroesse](http://fhir.de/StructureDefinition/observation-de-vitalsign-koerpergroesse) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Body Height Profile](http://hl7.org/fhir/StructureDefinition/bodyheight) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements

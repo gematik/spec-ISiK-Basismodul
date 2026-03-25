@@ -1,18 +1,18 @@
-Alias: $ISIKVersion = 5.1.1
+Alias: $ISIKVersion = 6.0.0-rc
 
 RuleSet: Meta
 * ^version = $ISIKVersion
 * ^status = #active
 * ^experimental = false
 * ^publisher = "gematik GmbH"
-* ^date = "2025-12-17"
+* ^date = "2026-04-03"
 
 RuleSet: MetaInstance
 * version = $ISIKVersion
 * status = #active
 * experimental = false
 * publisher = "gematik GmbH"
-* date = "2025-12-17"
+* date = "2026-04-03"
 * contact.telecom.system = #url
 * contact.telecom.value = "https://www.gematik.de"
 * jurisdiction = urn:iso:std:iso:3166#DE "Germany"
@@ -232,7 +232,6 @@ RuleSet: EffectiveAndPerformer
 * performer = Reference(PractitionerWalterArzt)
 * effectiveDateTime = 2021-09-01T12:00:00Z
 
-
 // ruleset for ICU-Normalstation Workflow IG
 RuleSet: MII_SpecificIEEE-11073Slice
 * coding contains 
@@ -280,10 +279,10 @@ RuleSet: ISiKKontaktGesundheitseinrichtung-Encounter.location-Slice
     * ^short = "(Menschenlesbarer) Name des Aufenthaltsortes"
 
 RuleSet: ISiKMedikament-CodingPZNComment
-* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z. B. existieren für Aspirin 3 verschiedene Packungsgrößen."
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere PZN-Codes existieren können, z.B. existieren für Aspirin 3 verschiedene Packungsgrößen."
 
 RuleSet: ISiKMedikament-CodingATCComment
-* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z. B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
+* ^comment = "Mehrfachcodierung ist zulässig, da für ein abstraktes Medikament auch mehrere ATC-Codes existieren können, z.B. existieren für Aspirin 4 verschiedene Codes, je nachdem wofür das Medikament angewendet wird."
 
 
 RuleSet: Comment-Reference-Subject(Einleitung)
@@ -313,3 +312,29 @@ RuleSet: EU-BodySiteExtension
 * bodySite.extension[BodyStructureReference]
   * ^short = "Referenz auf eine BodyStructure-Ressource"
   * ^comment = "Im Kontext des Allingments mit dem EHDS und den damit verbundenen Spezifikationen von HL7 Europe wurde diese Extenion hinzugefügt. Es besteht aber noch keine Must-Support Anforderung, da die Abbildung der Lateralität noch in der Diskussion ist und somit keine klare Vorgabe für die Nutzung der Extension gegeben werden kann. Sobald dies geklärt ist, wird die Anforderung entsprechend angepasst. Eine referenzierte BodyStructure-Ressource sollte valide gegen [bodyStructure-eu-core](https://hl7.eu/fhir/base/StructureDefinition-bodyStructure-eu-core.html) sein."
+
+RuleSet: OperationPatientEverything
+* operation[+]
+  * insert Expectation(#SHALL)
+  * name = "Patient-everything"
+  * definition = "http://hl7.org/fhir/OperationDefinition/Patient-everything"
+  * documentation = "In der Operation ist die Ergebnismenge wie folgt definiert: 'The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments.'. Im Kontext von ISiK ist das so zu interpretieren, dass ein Akteur alle Ressourcen, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Patient-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-patient.html) sind, zurückgeben MUSS. Inklusive aller Ressourcen, die von diesen Ressourcen referenziert werden, einschließlich Binaries und Attachments.
+  
+  Ein ISiK Akteur MUSS nur das das Instance-Level (`[base]/Patient/[id]/$everything`) unterstützen, nicht jedoch die Type-Level Operation (`[base]/Patient/$everything`).
+  
+  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter `_count` oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
+
+RuleSet: OperationEncounterEverything
+* operation[+]
+  * insert Expectation(#SHALL)
+  * name = "Encounter-everything"
+  * definition = "http://hl7.org/fhir/OperationDefinition/Encounter-everything"
+  * documentation = "Im Kontext von ISiK werden auf Basis der [Core-Definition der Operation Encounter-everything](http://hl7.org/fhir/R4/operation-encounter-everything.html) folgende Festlegungen getroffen:
+  
+    - Ein Akteur MUSS alle Ressourcen zurückgeben, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Encounter-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) sind.
+    - Im Kontext von ISiK werden assoziierte Encounter über die Verknüpfung mit dem selben Abrechnungsfall dargestellt. Aus dem Grund MÜSSEN alle Ressourcen beinhaltet sein, die auch auf Encounter verweisen, welche mit dem selben Abrechnungsfall (`Encounter.account.identifier`) verknüpft sind. Auf diese Encounter wird die selbe Logik wie in Punkt 1 und den folgenden Punkten angewendet.
+    - Zusätzlich (zum Encounter-Compartment) sind Ressourcen OHNE Fallbezug, die dem gleichen Patienten zugeordnet sind, einzubeziehen:
+      - AllergyIntolerances
+    - Es müssen alle Ressourcen inkludiert werden, die aus den oben identifizierten Ressourcen referenziert werden, einschließlich Binaries und Attachments.
+    
+  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter `_count` oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."

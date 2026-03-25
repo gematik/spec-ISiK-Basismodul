@@ -2,11 +2,11 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiKCapabilityStatementAufbaustrukturRolle",
   "url": "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementAufbaustrukturRolle",
-  "version": "5.1.1",
+  "version": "6.0.0-rc",
   "status": "active",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-12-17",
+  "date": "2026-04-03",
   "contact": [
     {
       "telecom": [
@@ -50,7 +50,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "MAY"
+              "valueCode": "SHALL"
             }
           ],
           "supportedProfile": [
@@ -62,7 +62,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ]
             },
@@ -70,7 +70,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ]
             }
@@ -80,21 +80,21 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
+                  "valueCode": "SHALL"
                 }
               ],
               "code": "read",
-              "documentation": "Sofern die Ressource `Organization` unterstützt wird, SOLL die REST-Interaktion `read` implementiert werden."
+              "documentation": "Die Ressource `Organization` MUSS unterstützt werden, da sie notwendig ist zur Abbildung der Aufbaustruktur und insbesondere zur Ausgabe von Angaben zu Fachbereichen."
             },
             {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
+                  "valueCode": "SHALL"
                 }
               ],
               "code": "search-type",
-              "documentation": "Sofern die Ressource `Organization` unterstützt wird, SOLL die REST-Interaktion `search` implementiert werden."
+              "documentation": "Die REST-Interaktion `search` MUSS implementiert werden, um die Suche nach Organisationseinheiten, Fachbereichen und Stationen zu ermöglichen."
             }
           ],
           "searchParam": [
@@ -153,7 +153,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -225,7 +225,7 @@
               "name": "partof",
               "definition": "http://hl7.org/fhir/SearchParameter/Organization-partof",
               "type": "reference",
-              "documentation": "**Beispiel:**    \n        `GET [base]/Organization?partof:identifier=260120196`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+              "documentation": "Begründung: Die Suche nach übergeordneten Organisationseinheiten (z.B. Zugehörigkeit einer Station zu einem Fachbereich) ist eine zentrale Anforderung für die Abbildung der Aufbaustruktur.\n        **Beispiel:**    \n        `GET [base]/Organization?partof:identifier=260120196`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
             },
             {
               "extension": [
@@ -246,7 +246,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "MAY"
+              "valueCode": "SHALL"
             }
           ],
           "supportedProfile": [
@@ -259,7 +259,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ]
             },
@@ -285,21 +285,21 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
+                  "valueCode": "SHALL"
                 }
               ],
               "code": "read",
-              "documentation": "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `read` implementiert werden."
+              "documentation": "Begründung: Die REST-Interaktion `read` muss implementiert werden, um einzelne Ressourcen abzurufen."
             },
             {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
+                  "valueCode": "SHALL"
                 }
               ],
               "code": "search-type",
-              "documentation": "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `search` implementiert werden."
+              "documentation": "Begründung: Die REST-Interaktion `search` muss implementiert werden, um Ressourcen nach bestimmten Kriterien zu suchen."
             },
             {
               "extension": [
@@ -309,7 +309,7 @@
                 }
               ],
               "code": "update",
-              "documentation": "Sofern die Ressourcen zum Standort unterstützt werden, `update` implementiert werden. \n      Diese dient insbesondere dem Synchronisieren des Status (`Location.operationalStatus`) der abgeleiteten \n      Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichnung als \n      'Frei', 'Besetzt', 'Kontaminiert', 'Isoliert', in 'Reinigung' etc."
+              "documentation": "Sofern die Ressourcen zum Standort unterstützt werden, SOLL die REST-Interaktion `update` implementiert werden. \n      Diese dient insbesondere dem Synchronisieren des Status (`Location.operationalStatus`) der abgeleiteten \n      Ressourcen ISiKStandortRaum und ISiKStandortBettenstellplatz - u.a. zur Kennzeichnung als \n      'Frei', 'Besetzt', 'Kontaminiert', 'Isoliert', in 'Reinigung' etc."
             }
           ],
           "searchParam": [
@@ -368,13 +368,13 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
+                  "valueCode": "SHALL"
                 }
               ],
               "name": "identifier",
@@ -425,18 +425,6 @@
                   "valueCode": "MAY"
                 }
               ],
-              "name": "type",
-              "definition": "http://hl7.org/fhir/SearchParameter/Location-type",
-              "type": "token",
-              "documentation": "**Beispiel zur Suche nach Typ eines Standorts:**    \n        `GET [base]/Location?type=bed`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
               "name": "partof",
               "definition": "http://hl7.org/fhir/SearchParameter/Location-partof",
               "type": "reference",
@@ -453,6 +441,18 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Location-near",
               "type": "special",
               "documentation": "**Beispiel zur Suche nach Standort nahe (100m) Koordinaten:**    \n        `GET [base]/Location?near=52.525851|13.37774|100|m`    \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#special).  "
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "characteristic",
+              "definition": "https://gematik.de/fhir/isik/SearchParameter/Location-characteristic",
+              "type": "token",
+              "documentation": "Begründung: Die Suche nach Stationen ist notwendig und wird über diesen Suchparameter ermöglicht.    \n        \n        **Beispiel:**    \n        `GET [base]/Location?characteristic=http://terminology.hl7.org/CodeSystem/location-physical-type|wa` \n        **Anwendungshinweis:**   \n        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#token).  "
             }
           ]
         }

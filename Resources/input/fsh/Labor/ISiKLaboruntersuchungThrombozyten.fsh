@@ -17,7 +17,7 @@ InstanceOf: ISiKLaboruntersuchungThrombozyten
 Usage: #example
 * status = #final
 * subject = Reference(PatientinMusterfrau)
-* category.coding[0] = $cs-observation-category#laboratory
+* category[observation-category] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#26515-7
 * code.coding[snomed] = $sct#365632008 "Platelet count - finding"
 * valueQuantity = 178 $cs-ucum#10*3/uL
