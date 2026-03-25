@@ -20,7 +20,7 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
   Wird stattdessen nur das `dosage`-Element verändert, ist keine zuverlässige Filterung möglich – alle `MedicationAdministrations` müssten abgerufen und manuell analysiert werden.
 
 - **Erhalt von Verlaufsinformationen:**  
-  Wenn z. B. auch ein `statusReason` (z. B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
+  Wenn z.B. auch ein `statusReason` (z.B. „pausiert wegen Nebenwirkungen“) dokumentiert wird, ginge diese Information bei einem Update der bestehenden Ressource verloren, sobald die Medikation fortgesetzt wird.  
   Durch neue `MedicationAdministration`-Einträge bleibt die Verlaufshistorie erhalten.  
   *(Dieser Anwendungsfall ist aktuell nicht gefordert, aber zukünftig denkbar.)*
 "
