@@ -35,8 +35,15 @@ sodass Clients nicht missverständlich mit einer inaktiven PractitionerRole-Ress
   * ^short = "Rolle des Leistungserbringers"
   * ^comment = "Motivation MS: Die Rolle in der ein Leistungserbringer innerhalb einer ausübt, muss exponiert und verarbeitet werden können."
   * coding MS
-  * coding from $KBV_VS_Base_Role_CareVS (extensible)
-  * coding only ISiKCoding
+  * coding
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
+  * coding contains
+    KBVRoleCare 0..1 MS
+  * coding[KBVRoleCare] from $KBV_VS_Base_Role_CareVS (required)  
+  * coding[KBVRoleCare] only ISiKCoding
 * specialty MS
   * ^short = "Fachgebiet des Leistungserbringers"
   * ^comment = "Motivation MS: Ein System muss die Informationen über das Fachgebiet des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen besser zu verstehen."
