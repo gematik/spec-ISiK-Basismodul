@@ -18,18 +18,20 @@ Für die Profile zur Organspendeerkennung sollen Beispielinstanzen erstellt werd
 
 Design-Entscheidungen bezüglich der Erstellung der Beispielinstanzen müssen getroffen werden, um sicherzustellen, dass die Instanzen konsistent, verständlich und repräsentativ für die Anwendungsfälle sind. Es müssen Entscheidungen getroffen werden bezüglich der Auswahl der Ressourcen und der abzubildenden Parameter-Ausprägungen.
 
-Es gelten folgende Anforderungen:
+Annahmen:
 - Es werden nur positive Beispiele erstellt, die die erwarteten Werte und Szenarien abbilden; d.h. KEINE Negativ-Beispiele mit falschen oder unvollständigen Daten.
-- Für jeden angegebenen Parameter in der Excel MUSS mindestens eine Beispiel-Instanz erstellt werden.
 
+Es gelten folgende Anforderungen:
+- Für jeden angegebenen Parameter in der Excel MUSS mindestens eine Beispiel-Instanz erstellt werden.
+- Bei der Erstellung der Beispielinstanzen soll sinnvoll zwischen Abdeckung und Menge der Instanzen abgewogen werden (da dies auch langfristig die Wartbarkeit der Instanzen beeinflusst).
+- Zumindest für einen Fall MUSS ein Umfängliches Beispiel mit allen Instanz-Verknüpfungen erstellt werden.
 
 
 ## Optionen
-- <Alternative 1 – kurz + warum verworfen>
 - Auswahl einer Abdeckung entlang bestimmter Parameter-Kombinationen
     - Vollständige Abdeckung reicht für einzelne Parameter.
 - Alle Instanzen auf Grundlage der 100 gelieferten Beispiele generieren
-    - Kontra: Produziert Overhead (ohne, dass systematische Abdeckung unbdeingt gewährleistet wäre).
+    - Kontra: Produziert Overhead (ohne, dass systematische Abdeckung unbedingt gewährleistet wäre).
 
 ## Entscheidung
 [//]: # (
@@ -38,9 +40,10 @@ Was wird getan / wie wird es gelöst?>
 )
 
 Es gelten die Anforderungen oben.
+
 Zusätzlich gilt für zwei Parameter:
-- Für die Pupillen-Reaktion MÜSSEN alle Parameter abgedeckt werden (aber es reicht für eine Seite - z.B. links oder rechts).
-- Die Beatmungsmodus Parameter-Ausprägungen MÜSSEN alle abgedeckt werden, aber es muss KEIN Patientenfall konstruiert werden
+- Für die Pupillen-Reaktion MÜSSEN alle Parameter abgedeckt werden (aber es reicht für eine Seite - z.B. links oder rechts), aber es muss KEIN Patientenfall konstruiert werden.
+- Die Beatmungsmodus Parameter-Ausprägungen MÜSSEN alle abgedeckt werden, aber es muss KEIN dedizierter Patientenfall konstruiert werden.
 
 ## Konsequenzen
 [//]: # (
