@@ -4,4 +4,4 @@ Title: "MII VS ICU Code Observation Bilanzen ISO11073"
 Description: "Dieses ValueSet enthaelt Codes fuer die im Kontext einer Bilanz verwendeten ISO/IEEE 11073-Parameter."
 * insert Meta
 
-* include $IEEE11073#26668 "Drainage volume in bag"
+* include $IEEE11073#157740 "Drainage volume in bag"

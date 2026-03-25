@@ -3,7 +3,9 @@ Parent: Encounter
 Id: ISiKKontaktGesundheitseinrichtung
 Description: "
 Dieses Profil ermöglicht die Abbildung von Besuchen/Aufenthalten eines Patienten in einer Gesundheitseinrichtung.
-### Motivation
+
+**Motivation**
+
 Informationen über die Besuche des Patienten entlang seines 
 Behandlungspfades im Krankenhaus sind ein wichtiger Bestandteil 
 des einrichtungsinternen Datenaustausches. 
@@ -25,9 +27,10 @@ und der gewünschte Besuch ausgewählt.
 
 In FHIR werden Besuche, Aufenthalte, aber auch virtuelle Kontakte mit der `Encounter`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter {{pagelink: Fall, text: Fall-Begriff in ISiK}}
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Abbildung-des-Konstrukts-Fall.html).
 
-### Kompatibilität
+**Kompatibilität**
+
 Für das Profil ISiKKontaktGesundheitseinrichtung wird eine Kompatibilität 
 mit folgenden Profilen angestrebt; 
 allerdings kann nicht sichergestellt werden, dass Instanzen, 
@@ -152,18 +155,16 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "Hier ist stets der Wert `abteilungskontakt` anzugeben."
-* type[KontaktArt] from KontaktartDe (required)
+* type[KontaktArt] from ISiKEncounterTypeErweiterungVS (required)
   * ^short = "Kontaktart"
   * ^comment = "Die Kontaktart dient der feingranularen Differenzierung unterschiedlicher stationärer 
   und ambulanter Fallarten gemäß der in Deutschland üblichen regulatorischen 
   und abrechnungsrelevanten Rahmenbedingungen.  
   Für ein korrektes Mapping der in Deutschland gebräuchlichen Fallarten auf `type` siehe [Deutsche Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-Ressourcen-AmbulanterStationaererFall?version=current)"
-  * ^patternCodeableConcept.coding.system = "http://fhir.de/CodeSystem/kontaktart-de"
   * coding
     * ^short = "Codierte Darstellung der Kontaktart"
     * system 1.. MS
       * ^short = "Codier-Schema"
-      * ^comment = "Hier ist stets der Wert `http://fhir.de/CodeSystem/kontaktart-de` anzugeben." 
     * code 1.. MS
       * ^short = "Code"
       * ^comment = "vorstationaer | nachstationaer | begleitperson | tagesklinik | +"

@@ -59,6 +59,17 @@
     //Filter Bug with coding pattern only containing the system in the java validate (Issue: https://github.com/hapifhir/org.hl7.fhir.core/issues/2108 - can't filter on path, so filtering on message id only)
     "Unknown_Code_in_Version",
     //Filter Bug with ignoring the display language '-langage de' (https://github.com/hapifhir/org.hl7.fhir.core/issues/2111 - can't filter on path, so filtering on message id only)
-   "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR"
+   "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR",
+    // filters errors caused by the ISiKMedikationsInformation profile only allowing Range for dose, but examples using Quantity
+    "Extension_PROF_Type@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity)",
+    "Extension_PROF_Type@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity)",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).value",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).unit",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).system",
+    "Validation_VAL_Profile_NotAllowed@MedicationStatement.dosage[0].doseAndRate[0].dose.ofType(Quantity).code",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).value",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).unit",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).system",
+    "Validation_VAL_Profile_NotAllowed@Bundle.entry[0].resource/*MedicationStatement/ExampleISiKMedikationsInformation1*/.dosage[0].doseAndRate[0].dose.ofType(Quantity).code"
   ]
 }

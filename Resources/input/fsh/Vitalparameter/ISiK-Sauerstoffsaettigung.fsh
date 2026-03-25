@@ -2,12 +2,15 @@ Profile: ISiKSauerstoffsaettigungArteriell
 Parent: VitalSignDE_Arterielle_Sauerstoffsaettigung
 Id: ISiKSauerstoffsaettigungArteriell
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über die arterielle Sauerstoffsättigung eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+**Motivation**
+
 Die Erfassung und Überwachung der arteriellen Sauerstoffsättigung ist essenziell für die Beurteilung der respiratorischen Funktion, die Überwachung von Patienten mit Atemwegserkrankungen sowie die Unterstützung klinischer Entscheidungen, insbesondere in kritischen Versorgungssituationen.
 
 In FHIR wird die arterielle Sauerstoffsättigung mit der Observation-Ressource repräsentiert.
 
-### Kompatibilität
+**Kompatibilität**
+
 Das Profil ISiKSauerstoffsaettigungArteriell ist vom Profil [VitalSignDE_Arterielle_Sauerstoffsaettigung_Pulsoximetrie](http://fhir.de/StructureDefinition/observation-de-vitalsign-sauerstoffsaettigung-pulsoximetrie) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Oxygen Saturation Profile](http://hl7.org/fhir/StructureDefinition/oxygensat) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements

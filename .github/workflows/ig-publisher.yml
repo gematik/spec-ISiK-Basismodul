@@ -87,7 +87,7 @@ jobs:
 
       # Share the generated FSH output with parallel IG build jobs
       - name: Upload FSH Generated Resources
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -95,7 +95,7 @@ jobs:
 
       # Share the FHIR package cache with parallel IG build jobs
       - name: Upload FHIR Package Cache
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -149,6 +149,11 @@ jobs:
             capability_statement_urls:
               - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementVitalSignStandardSourceAkteur
 
+          - ig_name: ISiK-Organspendeerkennung
+            ig_dir: publisher-guides/Organspendeerkennung
+            capability_statement_urls:
+              - https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementOrganspendeerkennungSourceAkteur
+
           - ig_name: ISiK-Medikation
             ig_dir: publisher-guides/Medikation
             capability_statement_urls:
@@ -200,7 +205,7 @@ jobs:
 
       # Pull the shared FHIR package cache from the prepare job
       - name: Download FHIR Package Cache
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: fhir-packages
           path: /github/home/.fhir/packages
@@ -217,7 +222,7 @@ jobs:
 
       # Pull the shared FSH conversion output from the prepare job
       - name: Download FSH Generated Resources
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: fsh-generated
           path: ${{ env.SUSHI_INPUT_DIR }}/fsh-generated
@@ -266,7 +271,7 @@ jobs:
 
       # Upload per-IG SUSHI output so it can be committed later
       - name: Upload SUSHI-generated ImplementationGuide
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: sushi-generated-ig-${{ matrix.ig_name }}
           # upload the per-IG fsh-generated directory so the commit job can persist SUSHI outputs as-is
@@ -310,7 +315,7 @@ jobs:
       # Upload build markers for the publish gate decision
       - name: Upload Build Marker
         if: steps.check_changes.outputs.has_changes == 'true'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: build-ran-${{ matrix.ig_name }}
           path: build-markers/${{ matrix.ig_name }}.txt
@@ -325,7 +330,7 @@ jobs:
 
       # Upload /input/resources so they can be committed later
       - name: Upload /input/resources of IG
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: expanded-resources-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/resources
@@ -342,7 +347,7 @@ jobs:
 
       # Upload /input/includes/ so they can be committed later
       - name: Upload /input/includes of IG
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: input-includes-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/includes
@@ -359,7 +364,7 @@ jobs:
 
       # Upload /input/pagecontent so it can be committed later
       - name: Upload /input/pagecontent/ of IG
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: input-pagecontent-${{ matrix.ig_name }}
           path: ${{ env.IG_PUBLISHER_DIR }}/input/pagecontent
@@ -377,7 +382,7 @@ jobs:
       # Upload the generated IG  output for publishing
       - name: Upload IG Build Results
         if: steps.check_changes.outputs.has_changes == 'true'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: fhir-ig-${{ matrix.ig_name }}
           path: |
@@ -400,28 +405,28 @@ jobs:
 
       # Download SUSHI-generated IGs from all build jobs
       - name: Download SUSHI-generated ImplementationGuides
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: sushi-generated-ig-*
           path: artifacts/sushi-generated-ig
 
       # Download expanded resources from all build jobs
       - name: Download Expanded Resources
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: expanded-resources-*
           path: artifacts/expanded-resources
 
       # Download IG input includes from all build jobs
       - name: Download /input/includes
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: input-includes-*
           path: artifacts/input-includes
 
       # Download IG input page content from all build jobs
       - name: Download /input/pagecontent
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: input-pagecontent-*
           path: artifacts/input-pagecontent
@@ -447,7 +452,7 @@ jobs:
       # Collect build markers to determine whether any IG was rebuilt
       - name: Download build markers
         id: download_markers
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: build-ran-*
           path: build-markers
@@ -515,7 +520,7 @@ jobs:
 
       # Download all IG build outputs produced by the build job
       - name: Download Build Results
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           pattern: fhir-ig-*
           path: publish-output

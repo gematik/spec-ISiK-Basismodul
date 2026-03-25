@@ -2,14 +2,17 @@ Profile: ISiKBlutdruckSystemischArteriell
 Parent: VitalSignDE_Blutdruck
 Id: ISiKBlutdruckSystemischArteriell
 Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Bereitstellung von Informationen über den Blutdruck eines Patienten im Rahmen der interoperablen Kommunikation gemäß den Vorgaben der ISiK.
-### Motivation
+
+**Motivation**
+
 Die Erfassung und Überwachung des Blutdrucks ist essenziell für die frühzeitige Erkennung von Gesundheitsveränderungen, die Behandlungsbewertung und die Unterstützung klinischer Entscheidungen.
 
 In FHIR wird der Blutdruck mit der Observation-Ressource repräsentiert, die einzelnen Komponenten des Blutdrucks werden als Component-Elemente abgebildet.
 
 Hinweis: In Fällen, in denen fachlich motiviert ausschließlich ein systolischer Blutdruck erhoben wird (z.B. in der Intensivmedizin), kann für den Slice zur Diastole (DiastolicBP) das Element .dataAbsentReason (mit dem Code 'not-performed') verwendet werden.
 
-### Kompatibilität
+**Kompatibilität**
+
 Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruck](http://fhir.de/StructureDefinition/observation-de-vitalsign-blutdruck) aus den deutschen Basisprofilen abgeleitet. Es ist kompatibel mit dem Profil [Observation Blood Pressure Profile](http://hl7.org/fhir/StructureDefinition/bp) aus der FHIR R4 Spezifikation."
 * insert Meta
 * insert CommonElements
@@ -36,9 +39,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150017
     * coding[SCT] = $sct#271649006
+    * coding[LOINC] = $loinc#8480-6
 * component[DiastolicBP] MS
   * ^comment = "Motivation MS: Kodierung des diastolischen Blutdrucks."
   * ^short = "Diastolischer Blutdruck"
@@ -51,9 +56,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150018
     * coding[SCT] = $sct#271650006
+    * coding[LOINC] = $loinc#8462-4
   * dataAbsentReason MS
     * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
     * ^short = "Grund für fehlendes Untersuchungsergebniss"
@@ -75,9 +82,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150019
     * coding[SCT] = $sct#6797001
+    * coding[LOINC] = $loinc#8478-0
 
 Instance: ISiKBlutdruckSystemischArteriellExample
 InstanceOf: ISiKBlutdruckSystemischArteriell

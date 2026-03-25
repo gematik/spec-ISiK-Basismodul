@@ -29,7 +29,6 @@ Das CapabilityStatement mit der Kennzeichnung "Expanded" dient der direkten Übe
 
 #### Value Sets
 
-Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten festgelegt.
 
 {% include artifacts-table-generator.html resourceType="ValueSet" %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
@@ -42,6 +41,6 @@ Die folgenden Value Sets sind für die Audit-Event-Service-Funktionalitäten fes
 
 ### Beispiele
 
-{% include example-list-generator.html %}
+{% include example-list-generator-isik.html %}
 <div><figcaption><strong>Tabelle:</strong> Beispiel-Instanzen</figcaption></div>
 
