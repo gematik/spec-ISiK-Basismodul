@@ -207,7 +207,7 @@ Description: "Maximalbeispiel zur Demonstration optionaler Elemente: Laborbereic
 * subject = Reference(PatientinMusterfrau)
 * category[observation-category] = $cs-observation-category#laboratory
 * category[laborbereich] = $loinc#18727-8 "Serologische Untersuchungen"
-* code.coding[loinc] = $loinc#13317-3	"	Staphylococcus aureus.Methicillin-resistent isoliert"
+* code.coding[loinc] = $loinc#13317-3	"Staphylococcus aureus. Methicillin-resistent isoliert"
 * valueCodeableConcept = $sct#10828004 "Positiv"
 * method = $sct#726446007 "Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry technique"
 * note.text = "MRSA-Nachweis positiv. Isolat zur weiteren Typisierung eingesandt."
