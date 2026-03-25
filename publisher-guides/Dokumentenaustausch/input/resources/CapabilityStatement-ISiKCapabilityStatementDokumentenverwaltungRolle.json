@@ -75,7 +75,7 @@
                 }
               ],
               "code": "create",
-              "documentation": "siehe {{pagelink:Dokumentenbereitstellung}}"
+              "documentation": "siehe [Dokumentenbereitstellung](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Interaktion-Dokumentenbereitstellung.html)"
             },
             {
               "extension": [
@@ -85,7 +85,7 @@
                 }
               ],
               "code": "read",
-              "documentation": "siehe {{pagelink:Dokumentenabfrage}}"
+              "documentation": "siehe [Dokumentenabfrage](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/Dokumentenabfrage.html)"
             },
             {
               "extension": [
@@ -153,7 +153,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -177,7 +177,7 @@
               "name": "identifier",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-identifier",
               "type": "token",
-              "documentation": "**Beispiel:**\n    `GET [base]/DocumenReference?identifier=urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340`  \n    **Anwendungshinweis:\n    Durchsucht die Elemente `DocumentReference.identifier` und `DocumentReference.masterIdentifier` nach übereinstimmenden Dokumenten."
+              "documentation": "**Beispiel:**\n    `GET [base]/DocumenReference?identifier=urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340`  \n    **Anwendungshinweis:**\n    Durchsucht die Elemente `DocumentReference.identifier` und `DocumentReference.masterIdentifier` nach übereinstimmenden Dokumenten."
             },
             {
               "extension": [

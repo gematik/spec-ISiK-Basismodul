@@ -43,10 +43,12 @@
          <tr>
             <td style="column-width:30%">
                 <a href="{{ resource[1].path | default "-" }}" title="{{ resource[0] }}">
+                {% assign resourceId = resource[0] | split: "/" | last %}
+                {% assign structDef = site.data.structuredefinitions[resourceId] %}
                 {% if resource[1].title %}
-                    {{ resource[1].title }}
+                    {{ resource[1].title }}{% if structDef.basename %} ({{ structDef.basename }}){% endif %}
                 {% else %}
-                    {{ resource[1].name | default: "-"  }}
+                    {{ resource[1].name | default: "-"  }}{% if structDef.basename %} ({{ structDef.basename }}){% endif %}
                 {% endif %}
                 </a>
             </td>

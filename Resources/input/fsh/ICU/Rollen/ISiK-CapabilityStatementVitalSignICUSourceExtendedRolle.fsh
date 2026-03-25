@@ -57,6 +57,8 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Blut, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Nasen_Rachen_Raum, SHALL)
     * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerpertemperatur_Speiseroehre, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Bilanz_Ausfuhr_Gallenfluessigkeit, SHALL)
+    * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Bilanz_Ausfuhr_Haemofiltration_Einzelmesswerte, SHALL)
 
     // Paraemter aus dem Use Case Organspendeerkennung, die auch für den ICU-Normalstation-Workflow relevant sind
     // MII

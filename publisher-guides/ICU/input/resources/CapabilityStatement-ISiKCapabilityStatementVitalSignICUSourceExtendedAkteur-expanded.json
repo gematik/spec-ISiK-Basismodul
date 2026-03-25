@@ -73,6 +73,19 @@
               "code": "search-type"
             }
           ],
+          "operation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "Patient-everything",
+              "definition": "http://hl7.org/fhir/OperationDefinition/Patient-everything",
+              "documentation": "In der Operation ist die Ergebnismenge wie folgt definiert: 'The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments.'. Im Kontext von ISiK ist das so zu interpretieren, dass ein Akteur alle Ressourcen, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Patient-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-patient.html) sind, zurückgeben MUSS. Inklusive aller Ressourcen, die von diesen Ressourcen referenziert werden, einschließlich Binaries und Attachments.\n  \n  Ein ISiK Akteur MUSS nur das das Instance-Level (`[base]/Patient/[id]/$everything`) unterstützen, nicht jedoch die Type-Level Operation (`[base]/Patient/$everything`).\n  \n  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter `_count` oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
+            }
+          ],
           "searchParam": [
             {
               "extension": [
@@ -129,7 +142,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -224,6 +237,19 @@
               ]
             }
           ],
+          "operation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "Encounter-everything",
+              "definition": "http://hl7.org/fhir/OperationDefinition/Encounter-everything",
+              "documentation": "Im Kontext von ISiK werden auf Basis der [Core-Definition der Operation Encounter-everything](http://hl7.org/fhir/R4/operation-encounter-everything.html) folgende Festlegungen getroffen:\n  \n    - Ein Akteur MUSS alle Ressourcen zurückgeben, die laut seinem CapabilityStatement über seine API abrufbar sind und die Teil des [Encounter-CompartmentDefinition](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) sind.\n    - Im Kontext von ISiK werden assoziierte Encounter über die Verknüpfung mit dem selben Abrechnungsfall dargestellt. Aus dem Grund MÜSSEN alle Ressourcen beinhaltet sein, die auch auf Encounter verweisen, welche mit dem selben Abrechnungsfall (`Encounter.account.identifier`) verknüpft sind. Auf diese Encounter wird die selbe Logik wie in Punkt 1 und den folgenden Punkten angewendet.\n    - Zusätzlich (zum Encounter-Compartment) sind Ressourcen OHNE Fallbezug, die dem gleichen Patienten zugeordnet sind, einzubeziehen:\n      - AllergyIntolerances\n    - Es müssen alle Ressourcen inkludiert werden, die aus den oben identifizierten Ressourcen referenziert werden, einschließlich Binaries und Attachments.\n    \n  Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter `_count` oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
+            }
+          ],
           "searchParam": [
             {
               "extension": [
@@ -280,7 +306,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -431,7 +457,23 @@
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-harnblase",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-rektal",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-trommelfell",
-            "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerperkerntemperatur-stirn",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-blutverlust",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-drainage-generisch",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-fluessigkeit-gesamt",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-magensonde",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-op-drainage",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-pankreasdrainage",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-stuhlgang",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-urin",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-wunddrainage",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-abgepumpte-muttermilch",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-enterale-fluessigkeit",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-fluessigkeit-gesamt",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-muttermilch",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-orale-fluessigkeit",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-saeuglingsnahrung",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-einfuhr-spendermilch",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-tagesbilanz-fluessigkeit",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-pulmonalarterieller-wedge-druck",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-preduktal-durch-pulsoxymetrie",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-o2saettigung-im-blut-postduktal-durch-pulsoxymetrie",
@@ -460,6 +502,8 @@
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-blut",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-nasen-rachen-raum",
             "https://gematik.de/fhir/isik/StructureDefinition/sd-mii-icu-koerpertemperatur-speiseroehre",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-gallenfluessigkeit",
+            "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-bilanz-ausfuhr-haemofiltration-einzelmesswerte",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-muv-zerebraler-perfusionsdruck",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenlichtreaktion-indirekt",
             "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-icu-untersuchung-pupillenform",
@@ -485,7 +529,7 @@
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKHerzfrequenz",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergewicht",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpergroesse",
-            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerperkerntemperatur",
+            "https://gematik.de/fhir/isik/StructureDefinition/ISiKKoerpertemperatur",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKKopfumfang",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKSauerstoffsaettigungArteriell",
             "https://gematik.de/fhir/isik/StructureDefinition/ISiKGCS",
@@ -1016,6 +1060,150 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "MAY"
                 }
               ]
@@ -1177,7 +1365,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -1421,7 +1609,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [
@@ -1548,7 +1736,7 @@
               ],
               "name": "_lastUpdated",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdate=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
             },
             {
               "extension": [

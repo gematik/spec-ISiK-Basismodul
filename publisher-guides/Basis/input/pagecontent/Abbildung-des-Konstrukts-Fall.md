@@ -11,7 +11,12 @@ Der stationäre Aufenthalt oder der ambulante Kontakt eines Patienten in einer G
 
 * **Abrechnungsfall (Account):**
 Der Fall, im Sinne einer Gruppierung von medizinischen Leistungen, die in einem gemeinsamen Kontext abgerechnet werden, sind in FHIR durch die [Ressource Account](https://hl7.org/fhir/R4/account.html) repräsentiert. Ein Abrechnungsfall kann mehrere Encounter umfassen (z.B. vorstationärer Besuch, stationärer Aufenthalt und nachstationäre Besuche)
-{{render:Material/Basis/images/Encounter/Encounter-Modell-Abrechnung.png}}
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Encounter-Modell-Abrechnung.png" alt="Fall Abbildung generisch" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Generische Fall Abbildung </figcaption>
+</figure>
 
     * **AbrechnungsfallAmbulant (Account):**
     Diese Spezialisierung des ISiK Abrechnungsfall-Profils ist für die Abbildung von ambulanten Abrechnungsfällen im Krankenhaus vorgesehen. Auch dieser Abrechnungsfall kann mehrere Encounter umfassen, diese stellen in dem Fall aber punktuelle Besuche dar.
