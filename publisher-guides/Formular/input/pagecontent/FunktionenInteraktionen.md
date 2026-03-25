@@ -32,6 +32,12 @@ Beim Stand-Alone Launch startet der Benutzer den Formular-Renderer ohne Kontext.
 
 Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheitsmechanismus zum Einsatz kommt, damit bestehende Berechtigungsstrukturen nicht außer Kraft gesetzt werden.
 
+### Interaktion: FormularRendering
+
+Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) in einem [FormularRenderer](Akteure.html#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.html) zu erheben. Dabei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.html) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind.
+Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering ein QuestionnaireResponse entgegen genommen werden können, der im Rahmen der Vorbelegunmg erstellt wurde und die entsprechenden Daten bereits enthält, damit diese im Formular dargestellt werden können.
+
+
 ### Interaktion: FormularDefinitionsVerwaltung
 Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen.
 In der ersten Ausbaustufe dieses Moduls wird diese Funktionalität als integraler Bestandteil von FormularRenderern angenommen. Perspektivisch sollten [FormularRenderer](Akteure.html#FormularRenderer) jedoch in der Lage sein, auch auf externe Quellen, die als FormularDefinitionBereitsteller agieren, zugreifen zu können, beispielsweise auf nationale Formular-Verzeichnisse oder Formulardefintionen, die vom aufrufenden System (FormularLauncher) bereitgestellt werden.
@@ -112,6 +118,18 @@ Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten
 {% include formDatRueckuebermittlung.svg %}
 </div>
 
-| **Work in Progress** | **Fehlendes Artefakt** |
-|-|-|
-|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | In der weiteren Entwicklung dieses Moduls wird ein Dokumenten-Profil festgelegt, das die Rückübermittlung von FormularDaten, FormularDefintionen und Strukturierten Inhalten, sowie die Erstellung von Narrativen für die menschenlesbare Darstellung von Formularinhalten spezifiziert |
+Das Bundle für die Rückübermittlung MUSS folgendem Profil entsprechen: [FormularDatenRueckuebermittlungBundle](StructureDefinition-FormularDatenRueckuebermittlungBundle.html)
+
+Dieses Bundle enthält neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich:
+
+- [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) (0..1) - die Referenz auf die FormularDefinition, die der Rückübermittlung zugrunde liegt (optional, falls bereits im Zielsystem vorhanden)
+- [FormularDaten](StructureDefinition-ISiKFormularDaten.html) (1..1) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
+- FormularDatenExtrakt (..*) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
+
+**Hinweis zur menschenlesbaren Repräsentation:**
+In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative (Composition.text und Composition.section.text) vollständig und korrekt ausgefüllt wird. Alle im Formular ausgefüllten Informationen MÜSSEN in der menschenlesbaren Repräsentation sichtbar sein, da Primärsysteme derzeit lediglich verpflichtet sind, diese anzuzeigen.
+
+**Hinweis zu strukturierten Daten:**
+Primärsysteme müssen in der aktuellen Stufe die strukturierten Anteile (FormularDaten und FormularDatenExtrakt) nicht übernehmen. Es wird jedoch empfohlen, das vollständige Bundle zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner strukturierter Daten möglich ist, diese auch rückwirkend erfolgen kann.
+
+Weitere Details zu Interaktionen und Verarbeitung finden sich in [ISiK Basis: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
