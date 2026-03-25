@@ -18,7 +18,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-* ^extension[$imposeProfile][+].valueCanonical = Canonical(TIPractitioner|1.1.1)
+//* insert CompliesWith(practitioner-eu)
+//* insert CompliesWith(TIPractitioner|1.1.1)
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS

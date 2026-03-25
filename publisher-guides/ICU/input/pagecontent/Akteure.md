@@ -1,4 +1,4 @@
----
+﻿---
 topic: Akteure
 ---
 
@@ -6,7 +6,7 @@ topic: Akteure
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
   <img src="Betriebskoordination_Gruen_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
-  <p style="margin: 0;"><strong>Diskussion:</strong>Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext des <a href="https://simplifier.net/guide/isik-vitalparameter-stufe-5/Einfuehrung/Artefakte/CapabilityStatements">CapabilityStatements des Vitalparameter Implementierungsleitfadens</a> geführt werden, hier als 'Akteure' dargestellt und damit zur Umsetzung des ICU-Normalstation-Workflows definitorisch (informativ) präzisiert.</p>
+  <p style="margin: 0;"><strong>Diskussion:</strong>Dieser Abschnitt fasst einen laufenden Arbeitsstand zu einem Akteurs-Konzept in ISiK zusammen, sodass die hier getroffenen Festlegungen nicht als zusätzliche normative Festlegung (MUSS) zu verstehen sind. Vielmehr werden getroffene normative Festlegungen (MUSS), die im Kontext des <a href="https://gemspec.gematik.de/ig/fhir/isik/vitalparameter/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementVitalSignStandardSourceRolle.html">CapabilityStatements des Vitalparameter Implementierungsleitfadens</a> geführt werden, hier als 'Akteure' dargestellt und damit zur Umsetzung des ICU-Normalstation-Workflows definitorisch (informativ) präzisiert.</p>
 </div>
 
 Folgende Akteure dienen der Umsetzung der beschriebenen Workflows (schematische Darstellung - eine technische Detaillierung mit normativer Geltung wird im CapabilityStatement getroffen). 
@@ -34,13 +34,13 @@ Um eine Minimalliste der zu implementierenden Profile einzusehen, sind die impor
 Eine Festlegung zur Implementierung erfolgt im Rahmen der Definition der bestätigungsrelevanten Systeme.
 
 <!-- ANF-ICU-001 -->
-Basis-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
+Basis-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html) MÜSSEN folgenden Akteur implementieren:
 - [Akteur - VitalSign ICU Source Minimal](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceMinimalAkteur-expanded.html) 
 
 
 
 <!-- ANF-ICU-002 -->
-Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme) MÜSSEN folgenden Akteur implementieren:
+Vitalparameter-Server entsprechend der Definition zu den [bestätigungsrelevanten Systeme](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.html) MÜSSEN folgenden Akteur implementieren:
 - [Akteur - VitalSign ICU Source Extended](CapabilityStatement-ISiKCapabilityStatementVitalSignICUSourceExtendedAkteur-expanded.html)
 
 Primär hervorzuheben sind entsprechend der Definition der DKG dabei.

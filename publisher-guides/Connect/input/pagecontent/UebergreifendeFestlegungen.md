@@ -1,7 +1,7 @@
-
+﻿
 ### Übergreifende Festlegungen
 
-Es gelten die übergreifenden Festlegungen aus dem Modul [ISiK Basis](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen).
+Es gelten die übergreifenden Festlegungen aus dem Modul [ISiK Basis](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html).
 
 ### Kompatibilität - Connect
 

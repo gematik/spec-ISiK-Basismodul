@@ -1,5 +1,5 @@
-
-Es gelten grundsätzlich die [Allgemeinen Hinweise zur REST API aus dem Basismodul](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Festlegungen/UebergreifendeFestlegungen_Rest).
+﻿
+Es gelten grundsätzlich die [Allgemeinen Hinweise zur REST API aus dem Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Rest.html).
 
 Abweichend hiervon bzw. ergänzend hierzu gilt:
 

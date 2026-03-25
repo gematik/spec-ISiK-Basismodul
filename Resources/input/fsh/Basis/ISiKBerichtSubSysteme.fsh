@@ -192,7 +192,7 @@ Usage: #example
 * identifier[=].system = "https://fhir.krankenhaus.example/sid/system-a/berichtnummer"
 * identifier[=].value = "0123456789"
 * status = #final
-* type = $loinc#55112-7 
+* type = $kdl#AD010112
 * type.text = "Kurzbericht"
 * subject.reference = "urn:uuid:3bada18a-6fd2-11ed-a1eb-0242ac112345"
 * encounter.reference = "urn:uuid:74b46c1a-6fc9-11ed-a1eb-0242ac198765"

@@ -38,6 +38,12 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 Update für Stufe 3:
 In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
 "
+  * system MS
+    * ^short = "Namensraum des Identifiers"
+    * ^comment = "**Begründung MS:** Das System gibt den Kontext oder die Quelle des Identifiers an."
+  * value MS
+    * ^short = "Wert des Identifiers"
+    * ^comment = "**Begründung MS:** Der Wert ist die konkrete Kennung des Dokumentes und muss in ihrem Namensraum eindeutig sein."
 * status MS
   * ^short = "Status des Dokumentenmetadatensatzes"
   * ^comment = "Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt."

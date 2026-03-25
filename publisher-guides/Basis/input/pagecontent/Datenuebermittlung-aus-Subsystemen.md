@@ -1,4 +1,4 @@
----
+﻿---
 topic: DatenübermittlungSubsystem
 ---
 
@@ -36,7 +36,7 @@ Falls die im Dokumenten-Bundle enthaltene Patient-Ressource und/oder Encounter-R
 
 Das Bundle MUSS folgendem Profil entsprechen: [ISiKBerichtBundle](https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle)
 
-Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-stufe-5/Einfuehrung/Festlegungen/ErzeugenVonMetadaten).
+Unterscheidungshinweis: Informationen zu Interaktionen mit Dokument-Binaries finden sich im Modul [ISiK Dokumentenaustausch](https://gemspec.gematik.de/ig/fhir/isik/dokumentenaustausch/6.0.0-rc/ErzeugenVonMetadaten.html).
 
 ### Verarbeitung des Dokumentes
 

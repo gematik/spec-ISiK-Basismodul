@@ -1,4 +1,4 @@
----
+﻿---
 topic: Ziele
 ---
 
@@ -37,4 +37,4 @@ Dieses Modul wird verbindliche Festlegungen für eine verlässliche Rückübermi
 ### Beispiel-Szenarien und -Formular-Definitionen
 Diese Modul wird diverse Beispielszenarien für die Nutzung von FHIR-Questionnaires enthalten sowie Beispiel-Daten, die Entwickler bei der Implementierung ISiK-konformer[^1] [FormularRenderer](Akteure.html#formularrenderer) unterstützen sollen.
 
-[^1]: Unter einem ISiK-konformen (klinischen) Anwendungssystem ist hier ein beliebiges Softwaresystem zu verstehen, das **mindestens** die folgenden Rollen implementiert: [ISiKStammdatenRolle](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements#ISiKCapabilityStatementStammdatenRolle) oder [ISiKCompositionKonsumentenRolle](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/Artefakte/CapabilityStatements?#ISiKCapabilityStatementCompositionKonsumentenRolle)
+[^1]: Unter einem ISiK-konformen (klinischen) Anwendungssystem ist hier ein beliebiges Softwaresystem zu verstehen, das **mindestens** die folgenden Rollen implementiert: [ISiKStammdatenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementStammdatenRolle.html) oder [ISiKCompositionKonsumentenRolle](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/CapabilityStatement-ISiKCapabilityStatementCompositionKonsumentenRolle.html)
