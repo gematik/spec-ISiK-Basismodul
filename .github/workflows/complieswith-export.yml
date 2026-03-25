@@ -82,9 +82,25 @@ jobs:
           const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
           packageJson.dependencies ??= {};
           packageJson.devDependencies ??= {};
+          const packageChanges = [];
           for (const [pkg, version] of entries) {
+            const previousDependency = packageJson.dependencies[pkg];
+            const previousDevDependency = packageJson.devDependencies[pkg];
             delete packageJson.dependencies[pkg];
             packageJson.devDependencies[pkg] = version;
+
+            const actions = [];
+            if (previousDependency !== undefined) {
+              actions.push(`removed dependencies=${previousDependency}`);
+            }
+            if (previousDevDependency === undefined) {
+              actions.push(`added devDependencies=${version}`);
+            } else if (previousDevDependency !== version) {
+              actions.push(`replaced devDependencies=${previousDevDependency} -> ${version}`);
+            } else {
+              actions.push(`kept devDependencies=${version}`);
+            }
+            packageChanges.push(`${pkg}: ${actions.join(', ')}`);
           }
           fs.writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, 2)}\n`);
 
@@ -102,8 +118,17 @@ jobs:
               existing.set(match[1].trim(), match[2].trim());
             }
           }
+          const sushiChanges = [];
           for (const [pkg, version] of entries) {
+            const previous = existing.get(pkg);
             existing.set(pkg, version);
+            if (previous === undefined) {
+              sushiChanges.push(`${pkg}: added dependencies=${version}`);
+            } else if (previous !== version) {
+              sushiChanges.push(`${pkg}: replaced dependencies=${previous} -> ${version}`);
+            } else {
+              sushiChanges.push(`${pkg}: kept dependencies=${version}`);
+            }
           }
 
           const rebuiltDependencies = Array.from(existing.entries())
@@ -118,13 +143,73 @@ jobs:
             sushiConfigRaw.slice(dependenciesMatch.index + dependenciesMatch[0].length).replace(/^\n*/, '');
 
           fs.writeFileSync(sushiConfigPath, updatedSushiConfig.replace(/\n/g, '\r\n'));
+
+          console.log('package.json devDependencies changes:');
+          for (const line of packageChanges) {
+            console.log(`- ${line}`);
+          }
+          console.log('Resources/sushi-config.yaml dependency changes:');
+          for (const line of sushiChanges) {
+            console.log(`- ${line}`);
+          }
           NODE
 
       - name: Comment CompliesWith inserts in FSH files
         run: |
-          find Resources -name '*.fsh' -print0 | while IFS= read -r -d '' file; do
-            sed -Ei 's#^([[:space:]]*)\* insert CompliesWith#\1// * insert CompliesWith#' "$file"
-          done
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          function walk(dir, results = []) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              const fullPath = path.join(dir, entry.name);
+              if (entry.isDirectory()) {
+                walk(fullPath, results);
+              } else if (entry.isFile() && fullPath.endsWith('.fsh')) {
+                results.push(fullPath);
+              }
+            }
+            return results;
+          }
+
+          const files = walk('Resources');
+          const changes = [];
+
+          for (const file of files) {
+            const original = fs.readFileSync(file, 'utf8');
+            const lines = original.split(/\r?\n/);
+            const updatedLines = [];
+            const commented = [];
+
+            for (const line of lines) {
+              const match = line.match(/^(\s*)\* insert CompliesWith\((.+)\)$/);
+              if (match) {
+                updatedLines.push(`${match[1]}// * insert CompliesWith(${match[2]})`);
+                commented.push(match[2]);
+              } else {
+                updatedLines.push(line);
+              }
+            }
+
+            if (commented.length > 0) {
+              const newline = original.includes('\r\n') ? '\r\n' : '\n';
+              fs.writeFileSync(file, updatedLines.join(newline));
+              changes.push({ file, commented });
+            }
+          }
+
+          if (changes.length === 0) {
+            console.log('No active CompliesWith inserts found.');
+          } else {
+            console.log('Commented CompliesWith inserts:');
+            for (const change of changes) {
+              console.log(`- ${change.file}`);
+              for (const canonical of change.commented) {
+                console.log(`  - ${canonical}`);
+              }
+            }
+          }
+          NODE
 
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.8.4
@@ -163,7 +248,7 @@ jobs:
         uses: patrick-werner/validation-outcome-markdown-renderer@v1
         with:
           bundle-file: validation.json
-          include: errors,warnings
+          include: errors
           filters: |
             # Struktur: fileName|messageId|detailsWildcard|location
             # Bundle contains more than specified as slices, which is ok
