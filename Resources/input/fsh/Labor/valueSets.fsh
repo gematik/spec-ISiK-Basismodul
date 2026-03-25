@@ -321,3 +321,30 @@ Description: "Enthält UCUM-Einheiten für die Observation TSH"
 * insert Meta
 * $cs-ucum#m[IU]/L "milli IU per liter"
 * $cs-ucum#u[IU]/mL "micro IU per milliliter"
+
+ValueSet: ISiKLaborbereichVS
+Id: ISiKLaborbereichVS
+Title: "ISiK Laborbereich"
+Description: "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen."
+* insert Meta
+* $loinc#18717-9 "BLOOD BANK STUDIES"
+* $loinc#18718-7 "CELL MARKER STUDIES"
+* $loinc#18719-5 "CHEMISTRY STUDIES"
+* $loinc#18720-3 "COAGULATION STUDIES"
+* $loinc#18721-1 "THERAPEUTIC DRUG MONITORING STUDIES"
+* $loinc#18722-9 "FERTILITY STUDIES"
+* $loinc#18723-7 "HEMATOLOGY STUDIES"
+* $loinc#18727-8 "SEROLOGY STUDIES"
+* $loinc#18728-6 "TOXICOLOGY STUDIES"
+* $loinc#18729-4 "URINALYSIS STUDIES"
+* $loinc#18767-4 "BLOOD GAS STUDIES"
+* $loinc#18768-2 "CELL COUNTS+DIFFERENTIAL STUDIES"
+* $loinc#26436-6 "LABORATORY STUDIES"
+* $loinc#26437-4 "CHEMISTRY CHALLENGE STUDIES"
+
+ValueSet: ISiKLaborMethodeVS
+Id: ISiKLaborMethodeVS
+Title: "ISiK Labor Methode"
+Description: "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)')."
+* insert Meta
+* include codes from system http://snomed.info/sct where concept descendant-of #272394005
