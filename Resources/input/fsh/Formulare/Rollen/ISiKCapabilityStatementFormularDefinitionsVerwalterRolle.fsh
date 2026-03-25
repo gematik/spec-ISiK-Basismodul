@@ -4,10 +4,10 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementFormularDefinitionsVerwalterRolle"
 * name = "ISiKCapabilityStatementFormularDefinitionsVerwalterRolle"
-* title = "CapabilityStatement für Rolle &quot;FormularDefinitionsVerwalterRolle&quot;"
+* title = "CapabilityStatement für Rolle `FormularDefinitionsVerwalterRolle`"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Formularmodul"
 * purpose = "
-CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementFormularDefinitionsVerwalterRolle&quot;.
+CapabilityStatement für die Rolle `ISiKCapabilityStatementFormularDefinitionsVerwalterRolle`.
 Diese Rolle stellt Interaktionen zur Abfrage von Formularen bereit."
 * rest
   * mode = #server
