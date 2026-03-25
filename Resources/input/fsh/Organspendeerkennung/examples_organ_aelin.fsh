@@ -46,19 +46,7 @@ Description: "Beispiel-Encounter für Patientin Aelin Sternenfall, PID 156722, a
 
 //Parameter examples for Sternenfall
 
-Instance: ExampleOrganPupilLightReactionLeft20200311
-InstanceOf: MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt
-Usage: #example
-Title: "Direkte Pupillenlichtreaktion links"
-Description: "Pupillenreaktion links nicht messbar am 2020-03-11T20:17:06+01:00"
-* status = #final
-* code.coding = $sct#45832002 "Pupil afferent light reaction"
-* category = $observation-category#exam "Exam"
-* subject = Reference(ExampleOrganPatientSternenfall)
-* effectiveDateTime = "2020-03-11T20:17:06+01:00"
-* bodySite = $sct#16089004 "Structure of pupil of left eye"
-* dataAbsentReason = $data-absent-reason#unknown "Unknown"
-* note.text = "Quelle: left pupil reaction = nicht messbar"
+// zu Pupille siehe eigene Datei
 
 Instance: ExampleOrganPupilLightReactionRight20200311
 InstanceOf: MII_PR_ICU_Untersuchung_Pupillenlichtreaktion_Direkt
