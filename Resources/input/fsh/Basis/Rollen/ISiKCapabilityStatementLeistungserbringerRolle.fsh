@@ -127,7 +127,7 @@ Diese Rolle beschreibt verpflichtende Interaktionen zum Abruf und der Verarbeitu
   * resource[+]
     * type = #PractitionerRole
     * insert Expectation(#MAY)
-    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKLeistungserbringerrolle"
+    * supportedProfile = "https://gematik.de/fhir/isik/StructureDefinition/ISiKRolleImKrankenhaus"
     * interaction[+]
       * insert Expectation(#SHALL)
       * code = #read
