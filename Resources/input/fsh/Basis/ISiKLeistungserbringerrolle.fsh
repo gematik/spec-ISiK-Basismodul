@@ -7,7 +7,8 @@ Description: "Dieses Profil spezifiziert die Minimalanforderungen für die Berei
 Die Rolle von Leistungserbringern innerhalb einer Organisation (z.B. Fachabteilung, Praxis, Krankenhaus) ist eine wichtige Information in Bezug auf die Leistungen, die
 durch diese Person erbracht werden.
 
-In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert.  
+In FHIR wird die Rolle eines Leistungserbringers mit der PractitionerRole-Ressource repräsentiert und wir
+ausgehend vom PractitionerRole Profil aus dem EHDS in ISiK aufgenommen. 
 
 **HISTORIE:**
 - Dieses Profil wird vor dem Hintergrund von FHIR-Profilierungen im Kontext des EHDS in Stufe 6 initial eingebracht.
@@ -32,7 +33,7 @@ sodass Clients nicht missverständlich mit einer inaktiven PractitionerRole-Ress
   * ^comment = "Motivation MS: Ein System muss die Informationen über die Organisation, der der Leistungserbringer angehört, bereitstellen können."
 * code MS
   * ^short = "Rolle des Leistungserbringers"
-  * ^comment = "Motivation MS: Ein System muss die Informationen über die Rolle des Leistungserbringers bereitstellen können, um die Art der erbrachten Leistungen zu verstehen."
+  * ^comment = "Motivation MS: Die Rolle in der ein Leistungserbringer innerhalb einer ausübt, muss exponiert und verarbeitet werden können."
   * coding MS
   * coding from $KBV_VS_Base_Role_CareVS (extensible)
   * coding only ISiKCoding
