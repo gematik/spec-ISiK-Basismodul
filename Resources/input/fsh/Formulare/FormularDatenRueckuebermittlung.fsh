@@ -3,6 +3,7 @@ Parent: ISiKBerichtBundle
 Id: FormularDatenRueckuebermittlungBundle
 Title: "FormularDaten Rückübermittlung-Bundle"
 Description: "Auf Basis des [ISiKBerichtBundle](https://gematik.de/fhir/isik/StructureDefinition/ISiKBerichtBundle) wird hier das Bundle um die Daten der Rückübermittlung ergänzt."
+* insert Meta
 * entry contains FormularDefinition 0..1 MS
 * entry[FormularDefinition].resource only ISiKFormularDefinition
   * ^short = "Slice zur Hinterlegung einer ISiKFormularDefinition-Instanz"
