@@ -10,3 +10,4 @@ Datum: tbd.
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `fix` Ersetzen der Suchparameter `combo-code` und `combo-code-value-quantity` durch die neueren Suchparameter `code-value-concept` und `code-value-date` https://github.com/gematik/spec-ISiK-Basismodul/pull/1066
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
+* `documentation` Trennung der lesenden und schreibenden Interaktionen im Capability Statement als Refactoring https://github.com/gematik/spec-ISiK-Basismodul/pull/1088

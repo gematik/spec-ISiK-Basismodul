@@ -12,6 +12,7 @@ Datum: tbd.
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
+* `improve` Erweiterung um Subscription Profil zur Abbildung der Veränderung/Absage eines Termins durch ein Termin Repository https://github.com/gematik/spec-ISiK-Basismodul/pull/1087
 
 
 ### Version 5.1.1
