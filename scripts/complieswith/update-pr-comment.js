@@ -64,7 +64,7 @@ Es wurde keine \`validation.json\` erzeugt. Bitte den Workflow-Run prüfen.
     ? `HTML-Report wurde als Workflow-Artefakt erzeugt.`
     : `Kein \`validation.html\` im Workspace gefunden.`;
   const compliesWithTargets = collectExpectedCompliesWithTargets('Resources');
-  const compliesWithStatus = buildCompliesWithStatus({ issues, targets: compliesWithTargets });
+  const compliesWithStatus = buildCompliesWithStatus({ bundle, issues, targets: compliesWithTargets });
 
   let body = `${marker}
 ### CompliesWith validation
@@ -448,25 +448,139 @@ function walkFiles(dir, visit) {
   }
 }
 
-function buildCompliesWithStatus({ issues, targets }) {
+function buildCompliesWithStatus({ bundle, issues, targets }) {
   if (!Array.isArray(targets) || targets.length === 0) {
     return '';
   }
 
+  const fileIssues = buildIssuesByFile(bundle);
+  const failedIssues = [];
+  for (const [file, candidates] of fileIssues.entries()) {
+    for (const candidate of candidates) {
+      if (candidate.messageId === 'SD_EXTENSION_COMPLIES_WITH_ERROR' && (candidate.comparedProfile || candidate.profile)) {
+        failedIssues.push({ ...candidate, file });
+      }
+    }
+  }
   const failed = new Set(
-    issues
-      .filter((issue) => issue.messageId === 'SD_EXTENSION_COMPLIES_WITH_ERROR')
-      .map((issue) => issue.comparedProfile || issue.profile)
-      .filter(Boolean)
+    failedIssues.map((issue) => issue.comparedProfile || issue.profile)
   );
+  const additionalDetails = collectCompliesWithAdditionalDetails(fileIssues, failedIssues);
 
   return targets
-    .map((target) => `- ${escapeInline(target)} ${failed.has(target) ? '❌' : '✅'}`)
+    .map((target) => {
+      const lines = [`- ${escapeInline(target)} ${failed.has(target) ? '❌' : '✅'}`];
+      for (const detail of additionalDetails.get(target) || []) {
+        lines.push(`  - ${escapeInline(detail)}`);
+      }
+      return lines.join('\n');
+    })
     .join('\n');
 }
 
 function isPureCompliesWithProfile(entries) {
   return entries.every((issue) => issue.messageId === 'SD_EXTENSION_COMPLIES_WITH_ERROR');
+}
+
+function collectCompliesWithAdditionalDetails(fileIssues, failedIssues) {
+  const detailsByTarget = new Map();
+
+  for (const issue of failedIssues) {
+    const target = issue.comparedProfile || issue.profile;
+    if (!target || !issue.file) {
+      continue;
+    }
+
+    const candidates = (fileIssues.get(issue.file) || [])
+      .filter((candidate) => candidate.messageId !== 'SD_EXTENSION_COMPLIES_WITH_ERROR')
+      .filter((candidate) => !isNoiseIssue(candidate))
+      .map(formatAdditionalDetail);
+
+    const unique = [...new Set(candidates)].slice(0, 5);
+    if (unique.length > 0) {
+      detailsByTarget.set(target, unique);
+    }
+  }
+
+  return detailsByTarget;
+}
+
+function buildIssuesByFile(bundle) {
+  const byFile = new Map();
+  const entries = Array.isArray(bundle && bundle.entry) ? bundle.entry : [];
+
+  for (const entry of entries) {
+    const resource = entry && entry.resource;
+    if (!resource || resource.resourceType !== 'OperationOutcome') {
+      continue;
+    }
+
+    const file = getOperationOutcomeFile(resource);
+    if (!file) {
+      continue;
+    }
+
+    const issues = Array.isArray(resource.issue) ? resource.issue : [];
+    for (const rawIssue of issues) {
+      const normalized = normalizeIssue(rawIssue);
+      if (!byFile.has(file)) {
+        byFile.set(file, []);
+      }
+      byFile.get(file).push({
+        ...normalized,
+        file,
+      });
+    }
+  }
+
+  return byFile;
+}
+
+function getOperationOutcomeFile(resource) {
+  const extensions = Array.isArray(resource && resource.extension) ? resource.extension : [];
+  for (const extension of extensions) {
+    if (
+      extension &&
+      extension.url === 'http://hl7.org/fhir/StructureDefinition/operationoutcome-file' &&
+      typeof extension.valueString === 'string'
+    ) {
+      return extension.valueString.trim();
+    }
+  }
+  return '';
+}
+
+function isNoiseIssue(issue) {
+  const noisyIds = new Set([
+    'VALIDATION_VAL_PROFILE_SIGNPOST',
+    'VALIDATION_VAL_PROFILE_SIGNPOST_META',
+    'VALIDATION_VAL_PROFILE_SIGNPOST_OBS',
+    'VALUESET_CODE_CONCEPT_HINT',
+    'MSG_DRAFT',
+    'NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK',
+  ]);
+
+  if (noisyIds.has(issue.messageId)) {
+    return true;
+  }
+
+  return false;
+}
+
+function formatAdditionalDetail(issue) {
+  const parts = [];
+  if (issue.location) {
+    parts.push(`Pfad: ${issue.location}`);
+  }
+  if (issue.messageId) {
+    parts.push(`ID: ${issue.messageId}`);
+  }
+
+  if (parts.length === 0) {
+    return issue.message;
+  }
+
+  return `${issue.message} (${parts.join(', ')})`;
 }
 
 function getExtensionValueMap(extensions) {
