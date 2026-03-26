@@ -4,15 +4,17 @@ Title: "ISiK  Kerntemperatur SnomedCT ValueSet"
 Description: "ValueSet der Körperkerntemperatur SnomedCT Konzepte"
 * insert Meta
 * $sct#276885007 "Core body temperature"
-* $sct#415882003 "Estimated core body temperature measured in axillary region"
 * $sct#1222808002 "Core body temperature measured in blood"
 * $sct#698832009 "Core body temperature measured at urinary bladder"
-* $sct#415929009 "Estimated core body temperature measured in inguinal region"
-* $sct#415945006 "Estimated core body temperature measured in sublingual space"
 * $sct#307047009 "Core body temperature measured in rectum"
 * $sct#431598003 "Core body temperature measured in esophagus"
 * $sct#415974002 "Core body temperature measured at tympanic membrane"
 * $sct#364246006 "Core body temperature measured vaginally"
+* $sct#415929009 "Estimated core body temperature measured in inguinal region"
+* $sct#415945006 "Estimated core body temperature measured in sublingual space"
+* $sct#415882003 "Estimated core body temperature measured in axillary region"
+* $sct#1366425007 "Estimated core body temperature measured on forehead"
+
 
 ValueSet: ISiKSpecificKernTempLoincVS
 Id: ISiKSpecificKernTempLoincVS

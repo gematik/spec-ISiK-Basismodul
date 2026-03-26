@@ -35,7 +35,7 @@ Usage: #definition
     * insert SupportedProfileCapExpectationExt(ISiKHerzfrequenz, SHALL)
     * insert SupportedProfileCapExpectationExt(ISiKKoerpergewicht, SHALL)
     * insert SupportedProfileCapExpectationExt(ISiKKoerpergroesse, SHALL)
-    * insert SupportedProfileCapExpectationExt(ISiKKoerpertemperatur, SHALL)
+    * insert SupportedProfileCapExpectationExt(ISiKKoerperkerntemperatur, SHALL)
     * insert SupportedProfileCapExpectationExt(ISiKKopfumfang, SHALL)
     * insert SupportedProfileCapExpectationExt(ISiKSauerstoffsaettigungArteriell, SHALL)
     * insert SupportedProfileCapExpectationExt(ISiKGCS, SHALL)

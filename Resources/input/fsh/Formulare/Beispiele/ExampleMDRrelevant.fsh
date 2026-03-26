@@ -5,7 +5,7 @@ InstanceOf: ISiKFormularDefinition
 * description = "### Beispiel-Questionnaire, welches eine MDR-Relevanz ausweist
 * Angabe der MDR-Relevanz mittels [ISiKMDRRelevanzFormular](https://simplifier.net/isik-stufe-5/isikmdrrelevanzformularextension)-Extension
 Disclaimer: Dies ist ein simples fantasie Beispiel und hat keine medizinische Aussagekraft. Das erwartete Verhalten von Systemen, die mit diesem Questionnaire testen wäre, dass das Formular mit einer Fehlermeldung *nicht* rendert!"
-* modifierExtension[MDR-Relevant].valueCoding = ISiKMDRRelevanzFormular#rel
+* modifierExtension[MpFormular].valueString = "SINNVOLLE ZWECKBESTIMMUNG HIER EINFÜGEN!"
 * item[+]
   * type = #group
   * linkId = "1"
