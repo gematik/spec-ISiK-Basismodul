@@ -55,7 +55,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     * ^comment = "Hier ist stets der Code `KVZ10` 
     aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
     **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen  
-    **In früheren Stufen von ISiK (<6) wurde noch der Type-Code `GKV` gefordert. Da die Versichertennummer aber seit 2024 auch für Privatversicherte gilt, 
+    **Hinweis für Entwickler:** In früheren Stufen von ISiK (<6) wurde noch der Type-Code `GKV` gefordert. Da die Versichertennummer aber seit 2024 auch für Privatversicherte gilt, 
     ist dieser Code in den Deutschen Basisprofilen ab Version 1.6 als `deprecated` gekennzeichnet. Aus Gründen der Abwärtskompatibilität KANN der Code `GKV` aber weiterhin als *zusätzliches* Coding übermittelt werden."  
   * system MS
     * ^short = "Namensraum der Versichertennummer"
