@@ -13,6 +13,7 @@ Datum: tbd.
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Erweiterung um Subscription Profil zur Abbildung der Veränderung/Absage eines Termins durch ein Termin Repository https://github.com/gematik/spec-ISiK-Basismodul/pull/1087
+* `improve` Beschreibung und Einordnung des `$book`-Parameters `patientSubmittedInformation` zur Übermittlung zusätzlicher Patientenangaben als `QuestionnaireResponse` ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1116
 
 
 ### Version 5.1.1

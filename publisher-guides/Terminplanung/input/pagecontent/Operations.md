@@ -246,6 +246,14 @@ Mindestens einer der nachfolgenden Wege MUSS unterstützt werden, um eine Patien
 - Übergabe innerhalb der `$book`-Operation:
   Das Termin-Repository unterstützt die Übergabe einer Patient-Instanz mittels des dafür vorgesehenen Parameters innerhalb der `$book`-Operation.
 
+### Übermittlung zusätzlicher Patientenangaben
+
+Zusätzlich KANN innerhalb der `$book`-Operation über den Parameter `patientSubmittedInformation` eine `QuestionnaireResponse`-Ressource übermittelt werden, um patientenseitig erhobene Angaben im Rahmen der Terminbuchung zu übertragen. Dies ermöglicht es insbesondere Portalsystemen, abhängig vom Anwendungsfall oder von der Terminart unterschiedliche Fragen zu stellen, ohne dass hierfür Änderungen an der Spezifikation erforderlich sind.
+
+Im ersten Ausbauschritt genügt es, wenn die `QuestionnaireResponse` die Fragen und Antworten selbst enthält. Eine Auflösung oder Mitlieferung der zugrundeliegenden `Questionnaire`-Definition ist hierfür nicht erforderlich. Das Element `QuestionnaireResponse.questionnaire` SOLL jedoch befüllt sein, damit unterschiedlich strukturierte Antworten unterschieden und perspektivisch automatisiert verarbeitet werden können. Das Element `QuestionnaireResponse.text` MUSS befüllt sein, damit die Inhalte durch das empfangende System unmittelbar dargestellt werden können.
+
+Die Vorgaben aus dem [ISiK-Formularmodul](https://gemspec.gematik.de/ig/fhir/isik/formularmodul/6.0.0-rc/index.html) sind für die `QuestionnaireResponse`-Ressource entsprechend anzuwenden, insbesondere hinsichtlich der Kodierung von Fragen und Antworten.  
+
 ### Asynchrone Ausführung $book
 
 Die Operation zur Buchung eines Termins MUSS ebenfalls asynchron ausgeführt werden können, falls ein Termin-Repository keine Zusagen zu Antwortzeiten machen kann und somit das Problem besteht, dass der Client in einen Timeout läuft. Beispielsweise kann dies der Fall sein, wenn die Buchungsanfrage im Termin-Repository asynchrone Anfragen an andere Systeme auslöst und der Termin erst bestätigt werden kann, wenn diese durchgelaufen sind. Es gelten die Regeln der [FHIR Kernspezifikation - Abschnitt 3.2.0.7 Executing an Operation Asynchronously](https://www.hl7.org/fhir/r4/operations.html):
