@@ -66,7 +66,7 @@ Usage: #example
 * active = true
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
-* code.coding[KBVRoleCare] = $KBV_CS_Base_Role_Care#FA "Facharzt/Fachärztin"
+* code.coding[KBVRoleCare] = $KBV_CS_Base_Role_Care#FA "Fachärzt:in"
 * specialty.coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
 * specialty.coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
 
@@ -76,7 +76,7 @@ Usage: #example
 * active = false
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(KrankenhausOrganisationBeispiel)
-* code.coding[KBVRoleCare] = $KBV_CS_Base_Role_Care#AA "Assistenzarzt/Assistenzärztin"
+* code.coding[KBVRoleCare] = $KBV_CS_Base_Role_Care#AA "Assistenzärzt:in"
 * specialty.coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#INTM "Intensivmedizin"
 * specialty.coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
 
