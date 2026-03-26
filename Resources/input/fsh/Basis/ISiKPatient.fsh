@@ -49,7 +49,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)  
     **Hinweis für Entwickler:** in früheren Versionen von ISiK (< Stufe 5) bzw. den Deutschen Basisprofilen (< 1.6) wurde der Versichertennummer der Type-Code `GKV` zugeordnet. Dies ist mit der Ausweitung der Versichertennummer
     auf Privatversicherte ab 2024 jedoch nicht mehr zutreffend, daher wurde der Type-Code durch `KVZ10` ersetzt. Für robuste Implementierungen ist es daher empfehlenswert, die Erkennung der Versichertennummer
-    an der Canonical-URL in `system` festzumachen, nicht am Coding in `type`.
+    an der Canonical-URL in `system` festzumachen, nicht am Coding in `type`."
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `KVZ10` 
