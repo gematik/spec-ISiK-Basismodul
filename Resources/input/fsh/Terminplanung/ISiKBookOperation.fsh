@@ -51,6 +51,12 @@ Usage: #example
   * documentation	= "Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine RelatedPerson-Ressource, die eine Person identifiziert, die den Termin im Namen des Patienten bucht. Die Ressource KANN vom ISiKRelatedPerson-Profil abweichen, falls für die Terminbuchung irrelevante Pflichtangaben aus dem Profil nicht bekannt sind. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (siehe Form der Ablehnung unten). Dieser Parameter dient der Übermittlung der RelatedPerson-Informationen, falls diese dem Termin-Repository noch nicht bekannt sind. Das Termin-Repository SOLL im bestätigten Termin eine Referenz auf eine RelatedPerson zurückgeben, sofern keine RelatedPerson unter Appointment.participant im 'appt-resource'-Parameter referenziert ist."
   * type = #Patient
 * parameter[+]
+  * name = #patientSubmittedInformation
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Dieser Parameter KANN durch einen Client und MUSS durch ein Termin-Repository unterstützt werden. Wird der Parameter unterstützt, dann gelten folgende Festlegungen: Eine QuestionnaireResponse-Ressource KANN übergeben werden, um patientenseitig erhobene Angaben im Rahmen der Terminbuchung zu übermitteln. Dies ermöglicht eine dynamische Ausgestaltung der $book-Operation für unterschiedliche Anwendungsfälle, ohne dass Änderungen an der Spezifikation erforderlich sind. Die Inhalte KÖNNEN insbesondere anamnestische Informationen, Angaben zum Bedarf an Mobilitätshilfen oder Übersetzungsleistungen sowie Bestätigungen zur Kenntnisnahme von Informationen oder zur Kostenübernahme umfassen. Das Portalsystem MUSS im ersten Ausbauschritt mindestens die Fragen und Antworten innerhalb der QuestionnaireResponse übermitteln; die zugrundeliegende Questionnaire-Definition MUSS nicht mitgeliefert oder durch das empfangende System aufgelöst werden. Das Element QuestionnaireResponse.questionnaire SOLL jedoch befüllt sein, damit unterschiedlich strukturierte QuestionnaireResponses unterschieden und perspektivisch automatisiert verarbeitet werden können. Das Element QuestionnaireResponse.text MUSS befüllt sein, damit die übermittelten Informationen durch das empfangende System unmittelbar gerendert werden können. Invalide Ressourcen MÜSSEN vom Termin-Repository abgelehnt werden (zur Form der Ablehnung s.u.)."
+* parameter[+]
   * name = #return
   * use = #out
   * min = 0
