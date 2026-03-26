@@ -22,6 +22,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 module.exports = async function run({ github, context, core }) {
   const pr = context.payload && context.payload.pull_request;
@@ -62,6 +63,8 @@ Es wurde keine \`validation.json\` erzeugt. Bitte den Workflow-Run prüfen.
   const htmlArtifactLine = fs.existsSync(validationHtmlPath)
     ? `HTML-Report wurde als Workflow-Artefakt erzeugt.`
     : `Kein \`validation.html\` im Workspace gefunden.`;
+  const compliesWithTargets = collectExpectedCompliesWithTargets('Resources');
+  const compliesWithStatus = buildCompliesWithStatus({ issues, targets: compliesWithTargets });
 
   let body = `${marker}
 ### CompliesWith validation
@@ -80,10 +83,18 @@ ${htmlArtifactLine}
 
   body += `\n${issues.length} Fehler gefunden.\n`;
   body += '\nSortierung: Profil -> verglichenes Profil.\n';
+  if (compliesWithStatus) {
+    body += `\n### CompliesWith Status\n\n${compliesWithStatus}\n`;
+  }
 
   for (const profileName of Object.keys(grouped).sort(compareText)) {
     const comparedGroups = grouped[profileName];
     const profileIssues = Object.values(comparedGroups).reduce((sum, list) => sum + list.length, 0);
+    const profileEntries = Object.values(comparedGroups).flat();
+    if (isPureCompliesWithProfile(profileEntries)) {
+      continue;
+    }
+
     body += `\n<details>\n<summary><strong>${escapeInline(profileName)}</strong> (${profileIssues})</summary>\n\n`;
 
     for (const comparedName of Object.keys(comparedGroups).sort(compareText)) {
@@ -140,6 +151,7 @@ function looksLikeIssue(node) {
 }
 
 function normalizeIssue(issue) {
+  const extensionMap = getExtensionValueMap(issue.extension);
   const location = firstNonEmpty(
     issue.location,
     issue.expression,
@@ -148,6 +160,7 @@ function normalizeIssue(issue) {
   const file = firstNonEmpty(
     issue.file,
     issue.filename,
+    extensionMap['http://hl7.org/fhir/StructureDefinition/operationoutcome-file'],
     findFileName(issue),
     findFileName(location)
   );
@@ -161,16 +174,21 @@ function normalizeIssue(issue) {
     issue.messageId,
     issue.msgId,
     issue.id,
+    extensionMap['http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id'],
     extractMessageId(message)
   );
 
   const profile = firstNonEmpty(
     issue.profile,
     issue.sourceProfile,
+    extensionMap['http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context'],
     extractProfile(message, [
+      /defined in the profile\s+([A-Za-z0-9:/|._-]+)/i,
+      /defined in\s+([A-Za-z0-9:/|._-]+)/i,
+      /conforms to profile\s+([A-Za-z0-9:/|._-]+)/i,
       /profile\s+'([^']+)'/i,
       /profile\s+"([^"]+)"/i,
-      /Profile\s+([A-Za-z0-9:/._-]+)/,
+      /profile\s+([A-Za-z0-9:/|._-]+)/i,
     ]),
     file,
     'Unbekanntes Profil'
@@ -395,4 +413,83 @@ function compareText(a, b) {
 
 function escapeInline(value) {
   return String(value || '').replace(/`/g, '\\`');
+}
+
+function collectExpectedCompliesWithTargets(rootDir) {
+  const targets = new Set();
+  if (!fs.existsSync(rootDir)) {
+    return [];
+  }
+
+  walkFiles(rootDir, (filePath) => {
+    if (!filePath.endsWith('.fsh')) {
+      return;
+    }
+    const content = fs.readFileSync(filePath, 'utf8');
+    for (const match of content.matchAll(/^\s*(?:\/\/\s*)?\*\s+insert\s+CompliesWith\(([^)]+)\)\s*$/gm)) {
+      const canonical = (match[1] || '').trim();
+      if (canonical) {
+        targets.add(canonical);
+      }
+    }
+  });
+
+  return [...targets].sort(compareText);
+}
+
+function walkFiles(dir, visit) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walkFiles(fullPath, visit);
+    } else if (entry.isFile()) {
+      visit(fullPath);
+    }
+  }
+}
+
+function buildCompliesWithStatus({ issues, targets }) {
+  if (!Array.isArray(targets) || targets.length === 0) {
+    return '';
+  }
+
+  const failed = new Set(
+    issues
+      .filter((issue) => issue.messageId === 'SD_EXTENSION_COMPLIES_WITH_ERROR')
+      .map((issue) => issue.comparedProfile || issue.profile)
+      .filter(Boolean)
+  );
+
+  return targets
+    .map((target) => `- ${escapeInline(target)} ${failed.has(target) ? '❌' : '✅'}`)
+    .join('\n');
+}
+
+function isPureCompliesWithProfile(entries) {
+  return entries.every((issue) => issue.messageId === 'SD_EXTENSION_COMPLIES_WITH_ERROR');
+}
+
+function getExtensionValueMap(extensions) {
+  const values = {};
+  if (!Array.isArray(extensions)) {
+    return values;
+  }
+
+  for (const extension of extensions) {
+    if (!extension || typeof extension !== 'object' || !extension.url) {
+      continue;
+    }
+
+    for (const [key, value] of Object.entries(extension)) {
+      if (key.startsWith('value')) {
+        const normalized = stringifySingle(value);
+        if (normalized) {
+          values[extension.url] = normalized;
+          break;
+        }
+      }
+    }
+  }
+
+  return values;
 }
