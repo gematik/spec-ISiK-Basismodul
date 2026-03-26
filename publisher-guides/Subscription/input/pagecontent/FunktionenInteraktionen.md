@@ -71,7 +71,7 @@ GET [base]/Subscription/[id]/$status
 Der Server MUSS die Operation `$events` unter `[base]/Subscription/[id]/$events` unterstützen,
 um verpasste Ereignisse nachzuliefern.
 
-Die Filterparameter `eventsSinceNumber` und `eventsUntilNumber` MÜSSEN unterstützt werden.
+Die Filterparameter `eventsSinceNumber` und `eventsUntilNumber` MÜSSEN dabei unterstützt werden.
 
 ```
 GET [base]/Subscription/[id]/$events?eventsSinceNumber=5&eventsUntilNumber=10
