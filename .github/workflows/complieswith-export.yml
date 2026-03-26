@@ -41,6 +41,8 @@ jobs:
         run: node scripts/complieswith/uncomment-inserts.js
 
       - name: Firely.Terminal (GitHub Actions)
+        id: firely_terminal
+        continue-on-error: true
         uses: FirelyTeam/firely-terminal-pipeline@v0.8.4
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
@@ -61,10 +63,22 @@ jobs:
           SUSHI_ENABLED: true
           TERMINOLOGY_SERVICE_BFARM_ENABLED: true
           CLOSE_SLICING_FOR_VALIDATION: true
-          SUSHI_OPTIONS: Resources/
+          SUSHI_OPTIONS: Resources/ -s
           EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
 
+      - name: Check validation outputs
+        id: validation_outputs
+        if: always()
+        shell: bash
+        run: |
+          if [ -f validation.json ]; then
+            echo "has_validation_json=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_validation_json=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Upload validation artifacts
+        if: always() && steps.validation_outputs.outputs.has_validation_json == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: complieswith-export-validation-results
@@ -72,18 +86,13 @@ jobs:
             validation.json
             validation.html
           retention-days: 1
+          if-no-files-found: warn
 
       - name: Extract validation filters from main workflow
         id: validation_filters
+        if: always()
         shell: bash
         run: node scripts/complieswith/extract-validation-filters.js >> "$GITHUB_OUTPUT"
-
-      - name: Convert Validation Report
-        uses: patrick-werner/validation-outcome-markdown-renderer@v1
-        with:
-          bundle-file: validation.json
-          include: errors
-          filters: ${{ steps.validation_filters.outputs.filters }}
 
       - name: Comment validation results on PR
         if: always() && github.event_name == 'pull_request'
