@@ -3,7 +3,7 @@
 
 Datum: 20.03.2026  
 
-Status: Vorgeschlagen
+Status: Angenommen
 
 [//]: #  (Status: <Vorgeschlagen | Angenommen | Verworfen | Ersetzt durch ADR-…)
 
@@ -54,14 +54,14 @@ Eine Festlegung wie Stationen in ISIK Ressourcen abgebildet werden, ist für die
 <Konzise Beschreibung der getroffenen Entscheidung.  
 Was wird getan / wie wird es gelöst?>
 )
-- Stationen werden als Locarion mit dem `physicalType`-Code `ward` abgebildet.
-- Die Suche nach Stationen erfolgt über den `physicalTypetype`-Code `department` in der Ressource Location.
+- Stationen werden als Location mit dem `physicalType`-Code `ward` abgebildet.
+- Die Suche nach Stationen erfolgt über den `physicalType`-Code `department` in der Ressource Location.
     - hierfür Custom-Suchparameter definieren und
     - im entsprechenden CapabilityStatement festlegen, damit die Suche nach Stationen möglich ist.
         - für Basis-Server und für die Rolle Organspendeerkennung - bzw. zusätzlich für ICU-expanded
 - Patienten werden über die Ressource Patient mit der entsprechenden Station (Location) verknüpft. 
-    - Die geschieht vermittelt über den Encounter
-- Die Location (ggf. Station als Standort) wird  verpflichtend für die Abbildung von Stationen genutzt, sondern kann optional ergänzend verwendet werden, wenn weitere Informationen zum Standort der Station erforderlich sind.
+    - Dies geschieht vermittelt über den Encounter
+- Die Location (ggf. Station als Standort) wird  verpflichtend für die Abbildung von Stationen genutzt
 - Ressource ISiKStandort (Location) wird allgemein verpflichtend (MUSS).
 - Auch die Organization wird allgemein Verpflichtend (für Basis-Server), da analoge Abfragen von Fachbereichen auch möglich sein müssen.
 
