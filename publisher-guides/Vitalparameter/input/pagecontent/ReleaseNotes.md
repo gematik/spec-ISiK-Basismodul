@@ -9,6 +9,7 @@ Datum: tbd.
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
+* `change` `ISiKKoerpertemperatur` wurde entfernt; das Profil wurde ausschließlich als Zwischenstufe für `ISiKKoerperkerntemperatur` genutzt, diese obsolete Zwischenebene entfällt https://github.com/gematik/spec-ISiK-Basismodul/pull/1104
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 

@@ -12,6 +12,8 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Datum: tbd.
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
+* `change` `ISiKKoerpertemperatur` wurde analog zur Umbenennung in den deutschen Basisprofilen in `ISiKKoerperkerntemperatur` umbenannt https://github.com/gematik/spec-ISiK-Basismodul/pull/1104
+* `add` Neues ICU-Profil `SD_MII_ICU_Koerperkerntemperatur_Stirn` für die Stirntemperaturmessung zur Abschätzung der Körperkerntemperatur ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1104
 * Initiales Draft der Stufe 6
 * `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend)  https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 - weitere Changes
     * `improve` Hinzufügen eines Akteurs zur Organspendeerkennung für ICU (alle PDMS betreffend) 
