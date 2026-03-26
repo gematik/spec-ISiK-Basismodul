@@ -77,7 +77,7 @@ Usage: #example
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(KrankenhausOrganisationBeispiel)
 * code.coding[0] = $KBV_CS_Base_Role_Care#AA "Assistenzarzt/Assistenzärztin"
-* specialty.coding[0] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
+* specialty.coding[0] = $IHEAerztlicheFachrichtungen#INTM "Intensivmedizin"
 * specialty.coding[+] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
 
   

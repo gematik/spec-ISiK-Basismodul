@@ -95,6 +95,7 @@ Alias: $authorSpecialtyVS = http://ihe-d.de/ValueSets/IHEXDSauthorSpeciality
 Alias: $IHEpracticeSettingVS = http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode 
 Alias: $IHEAerztlicheFachrichtungen = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen
 
+
 Alias: $LocationPhysicalType = http://terminology.hl7.org/CodeSystem/location-physical-type
 Alias: $LocationPhysicalTypeVS = 	http://hl7.org/fhir/ValueSet/location-physical-type
 Alias: $identifier-type-de-basis = http://fhir.de/CodeSystem/identifier-type-de-basis
