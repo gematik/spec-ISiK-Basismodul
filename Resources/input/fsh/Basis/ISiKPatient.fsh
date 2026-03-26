@@ -46,14 +46,17 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
     Er gilt für alle Krankenversichertennummern, 
     unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  
-    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)"
+    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)  
+    **Hinweis für Entwickler:** in früheren Versionen von ISiK (< Stufe 5) bzw. den Deutschen Basisprofilen (< 1.6) wurde der Versichertennummer der Type-Code `GKV` zugeordnet. Dies ist mit der Ausweitung der Versichertennummer
+    auf Privatversicherte ab 2024 jedoch nicht mehr zutreffend, daher wurde der Type-Code durch `KVZ10` ersetzt. Für robuste Implementierungen ist es daher empfehlenswert, die Erkennung der Versichertennummer
+    an der Canonical-URL in `system` festzumachen, nicht am Coding in `type`.
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `KVZ10` 
     aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
     **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen  
     **In früheren Stufen von ISiK (<6) wurde noch der Type-Code `GKV` gefordert. Da die Versichertennummer aber seit 2024 auch für Privatversicherte gilt, 
-    ist dieser Code in den Deutschen Basisprofilen ab Version 1.6 als `deprecated`gekennzeichnet. Aus Gründen der Abwärtskompatibilität KANN der Code `GKV` aber weiterhin als *zusätzliches* Coding übermittelt werden."  
+    ist dieser Code in den Deutschen Basisprofilen ab Version 1.6 als `deprecated` gekennzeichnet. Aus Gründen der Abwärtskompatibilität KANN der Code `GKV` aber weiterhin als *zusätzliches* Coding übermittelt werden."  
   * system MS
     * ^short = "Namensraum der Versichertennummer"
     * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  
