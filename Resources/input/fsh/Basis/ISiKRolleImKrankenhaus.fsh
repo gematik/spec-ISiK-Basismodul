@@ -66,9 +66,9 @@ Usage: #example
 * active = true
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
-* code.coding = $KBV_VS_Base_Role_Care#Facharzt "Facharzt/Fachärztin"
-* specialty[0].coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
-* specialty[1].coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
+* code.coding[0] = $KBV_VS_Base_Role_Care#Facharzt "Facharzt/Fachärztin"
+* specialty[0].coding = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
+* specialty[+].coding = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
 
 Instance: RolleImKrankenhausInnereMedizinBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
@@ -76,8 +76,8 @@ Usage: #example
 * active = false
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(KrankenhausOrganisationBeispiel)
-* code.coding = $KBV_VS_Base_Role_Care#Assistenzarzt "Assistenzarzt/Assistenzärztin"
-* specialty[0].coding[IHEPracticeSetting] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
-* specialty[1].coding[Fachabteilungsschluessel] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
+* code.coding[0] = $KBV_VS_Base_Role_Care#Assistenzarzt "Assistenzarzt/Assistenzärztin"
+* specialty[0].coding = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
+* specialty[+].coding = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
 
   
