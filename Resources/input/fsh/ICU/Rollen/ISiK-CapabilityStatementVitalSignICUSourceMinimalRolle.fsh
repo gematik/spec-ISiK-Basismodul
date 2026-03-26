@@ -68,6 +68,7 @@ Die Interaktionen umfassen die Bereitstellung von Vitalparametern, die für die 
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Bilanz_Einfuhr_Saeuglingsnahrung, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Bilanz_Einfuhr_Spendermilch, SHALL)
     * insert SupportedProfileCapExpectationExt(MII_PR_ICU_Bilanz_Tagesbilanz_Fluessigkeit, SHALL)
+    * insert SupportedProfileCapExpectationExt(SD_MII_ICU_Koerperkerntemperatur_Stirn, SHALL)
     * interaction[+]
       * insert CapabilityStatementExpectationExt(SHALL)
       * code = #read
