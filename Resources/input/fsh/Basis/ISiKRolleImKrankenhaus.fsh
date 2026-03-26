@@ -71,7 +71,7 @@ Usage: #example
 * specialty.coding[+] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
 
 Instance: RolleImKrankenhausInnereMedizinBeispiel
-InstanceOf: ISiKLeistungserbringerrolle
+InstanceOf: ISiKRolleImKrankenhaus
 Usage: #example
 * active = false
 * practitioner = Reference(PractitionerWalterArzt)
