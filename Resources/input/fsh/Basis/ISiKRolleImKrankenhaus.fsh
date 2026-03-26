@@ -42,7 +42,7 @@ sodass Clients nicht missverständlich mit einer inaktiven PractitionerRole-Ress
     * ^slicing.ordered = false
   * coding contains
     KBVRoleCare 0..1 MS
-  * coding[KBVRoleCare] from $KBV_VS_Base_Role_CareVS (required)  
+  * coding[KBVRoleCare] from $KBV_VS_Base_Role_Care (required)  
   * coding[KBVRoleCare] only ISiKCoding
 * specialty MS
   * ^short = "Fachgebiet des Leistungserbringers"
@@ -66,9 +66,9 @@ Usage: #example
 * active = true
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
-* code.coding[0] = $KBV_VS_Base_Role_Care#Facharzt "Facharzt/Fachärztin"
-* specialty[0].coding = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
-* specialty[+].coding = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
+* code.coding[0] = $KBV_CS_Base_Role_Care#Facharzt "Facharzt/Fachärztin"
+* specialty.coding[0] = $IHEAerztlicheFachrichtungen#ALLG "Allgemeinmedizin"
+* specialty.coding[+] = $FachabteilungsschluesselErweitertCS#1500 "Allgemeine Chirurgie"
 
 Instance: RolleImKrankenhausInnereMedizinBeispiel
 InstanceOf: ISiKLeistungserbringerrolle
@@ -76,8 +76,8 @@ Usage: #example
 * active = false
 * practitioner = Reference(PractitionerWalterArzt)
 * organization = Reference(KrankenhausOrganisationBeispiel)
-* code.coding[0] = $KBV_VS_Base_Role_Care#Assistenzarzt "Assistenzarzt/Assistenzärztin"
-* specialty[0].coding = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
-* specialty[+].coding = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
+* code.coding[0] = $KBV_CS_Base_Role_Care#Assistenzarzt "Assistenzarzt/Assistenzärztin"
+* specialty.coding[0] = $IHEAerztlicheFachrichtungen#INTM "Innere Medizin"
+* specialty.coding[+] = $FachabteilungsschluesselErweitertCS#3600 "Intensivmedizin"
 
   
