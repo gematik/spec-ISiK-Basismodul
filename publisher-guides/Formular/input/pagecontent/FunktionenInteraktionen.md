@@ -133,3 +133,6 @@ In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative 
 Primärsysteme müssen in der aktuellen Stufe die strukturierten Anteile (FormularDaten und FormularDatenExtrakt) nicht übernehmen. Es wird jedoch empfohlen, das vollständige Bundle zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner strukturierter Daten möglich ist, diese auch rückwirkend erfolgen kann.
 
 Weitere Details zu Interaktionen und Verarbeitung finden sich in [ISiK Basis: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
+
+#### Übbermittlung von FormularDaten außerhalb der "Datenübermittlung aus Subsystemen"
+In bestimmten Anwendungsfällen kann es erforderlich sein, die Rückübermittlung von FormularDaten auch außerhalb der in ISiK Basis Stufe-6 beschriebenen "Datenübermittlung aus Subsystemen" durchzuführen. In diesem Fall ist die Nutzung von `QuestionnaireResponse.text` erforderlich, um eine menschenlesbare Repräsentation der Daten zu übermitteln. 

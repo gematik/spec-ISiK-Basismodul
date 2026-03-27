@@ -80,15 +80,15 @@ Sollte die Patienten-Ressource nicht mehr bereitstehen, oder die Ressource den s
 
 #### Datensicherheit Client
 
-**Hinweis**: Die "patient-merge Subscription-Notification" kann personenbezogene Daten versenden, falls man "full-resource" als Content-Code gewählt hat. Für den REST-Hook sollte daher stets ein HTTPS-Endpunkt genutzt werden. Zusätzlich kann Subscription.channel.header genutzt werden, um einen Autorisierungs-Header an den Endpunkt zu übertragen.   
+ISiK-konforme Subscription-Notifications MÜSSEN mit `payload=id-only` versendet werden.
+Die Notification enthält die ID der geänderten Ressource, jedoch keine vollständigen Ressourcendaten.
+Clients rufen die aktuelle Ressource nach Erhalt der Notification gezielt per ID über die reguläre
+FHIR-REST-API mit gültigem Autorisierungstoken ab (Pull-Prinzip).
+
+Optional KANN über `Subscription.channel.header` eine HTTP Basic Authentication mit statischem Secret konfiguriert
+werden. Dieses Feld MUSS vom Server bei READ-Interaktionen maskiert werden.
+
 Siehe auch: [Safety and Security, Subscription Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/safety_security.html)
-
-In jedem Fall sind auch Client-seitig die notwendigen Maßnahmen zu ergreifen, um eine sichere Kommunikation personenbezogener Daten zu gewährleisten.
-
-#### Websocket
-
-Hier muss sich der Client per [`$get-ws-binding-token` Operation](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition-backport-subscription-get-ws-binding-token.html) einen Token zum Zugriff auf den Websocket-Endpunkt des patientenführenden Systems holen. In der Operation-Response sind zusätzlich die Expiration-Dauer, sowie der Websocket-Endpunkt enthalten.  
-Siehe auch: [Subscriptions R5 Backport IG, Websocket](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#websockets)
 
 ### Beispiele
 Die *Patient merge Notification* kann folgendermaßen illustriert werden: 
