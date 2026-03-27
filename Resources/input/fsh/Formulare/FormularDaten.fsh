@@ -11,12 +11,16 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
 * insert CommonElements
 * obeys sdcqr-1 and sdcqr-2
 * modifierExtension contains
-  ISiKMDRRelevanzFormularExtension named MDR-Relevant 0..1 MS
-* modifierExtension[MDR-Relevant]
-  * ^short = "MPG-Relevanz der Formulardaten"
+  ISiKMpFormularExtension named MpFormular 0..1 MS
+* modifierExtension[MpFormular]
+  * ^short = "Zurgrundeliegendes Formular wird in einem Medizinprodukt eingesetzt"
   * ^comment = "**Begründung MS:**
-  In dieser Extension wird angegeben, dass die Formulardaten MDR-relevant sind. Für die Erhebung und/oder Darstellung müssen ggf. bestimmte Voraussetzungen erfüllt sein. Ist die Extension nicht vorhanden, liegt keine MDR-relevanmt vor."  
-* modifierExtension[MDR-Relevant].valueCoding MS
+  In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
+* modifierExtension[MpFormular].valueString MS
+* text MS
+  * ^short = "Menschlich lesbare Zusammenfassung der FormularDaten"
+  * ^comment = "**Begründung MS:**
+  Wird ein Formular nicht im Kontext der `Datenübermittlung aus Subsystemen` übertragen, wo ein Narrativ im Kontext der Composition gefordert wird, muss an dieser Stelle eine menschenlesbare Zusammenfassung der FormularDaten bereitgestellt werden, damit die Informationen auch ohne Zugriff auf die zugrunde liegende FormularDefinition und die strukturierte Darstellung der Formulardaten interpretiert werden können."
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
   * ^comment = "**Begründung MS:**
@@ -39,10 +43,15 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^short = "Subject (Patient), über das in diesem Formular berichtet wird."
   * ^comment = "**Begründung Pflichtfeld:**  
   Zur Vereinfachung des Workflows werden zunächst nur Formulare mit Patientenbezug zugelassen.  
-  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden."
+  Diese Anforderung kann in künftigen Ausbaustufen gelockert werden.
+  
+  **Hinweis:** In manchen Fällen kann eine Instanz nicht auf eine existierende Patient-Ressurces referenzieren. In diesen Fällen kann hier auch ein eindeutiger Identifier wie eine KVNR oder eine andere Patienten-ID angegeben werden, um die Zuordnung zu einem Patienten zu ermöglichen."
   * reference 1.. MS
     * ^short = "Patienten-Link"
     * insert Comment-Reference-Subject(Begründung MS)
+  * identifier ..1 MS
+    * ^short = "eindeutiger Patienten-Identifier (bspw. KVNR)"
+    * ^comment = "**Begründung MS:** Ein eindeutiger Patienten-Identifier ermöglicht die Zuordnung der FormularDaten zu einem bestimmten Patienten, auch wenn keine direkte Referenz auf eine Patient-Ressource besteht."
 * authored 1.. MS
   * ^short = "Datum der FormularDaten"
   * ^comment = "**Begründung Pflichtfeld:** 

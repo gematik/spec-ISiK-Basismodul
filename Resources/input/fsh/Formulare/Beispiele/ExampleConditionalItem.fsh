@@ -5,8 +5,8 @@ InstanceOf: ISiKFormularDefinition
 //Etablieren des Patientenkontextes aus SMART-Launch
 * title = "Bedingte Fragestellungen"
 * description = "### Beispiel-Questionnaire mit bedingten Fragestellungen/Items  
-Die zweite Frage &quot;Was ist denn los?&quot; soll nur gestellt werden, 
-wenn die erste Frage &quot;Wie geht's&quot; mit &quot;muss.&quot; beantwortet wurde."
+Die zweite Frage `Was ist denn los?` soll nur gestellt werden, 
+wenn die erste Frage `Wie geht's` mit `muss.` beantwortet wurde."
 
 
 //Teil 2: Bedingte Fragestellungen
