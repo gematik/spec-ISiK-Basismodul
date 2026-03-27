@@ -16,7 +16,7 @@ Die vorgeschlagenen Übergabe-Parameter sind:
 - [obligatorisch] Patientennummer (gängig PID; Identifier am [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient))
     - Ist für die Herstellung eines passenden Launch-Context nach SDC unabdingbar
 - [optional] Abrechnungsnummer (gängig Fallnummer; Identifier am [ISiKAbrechnungsfall](https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall))
-    - Mit der Abrechnungsnummer kann eingeschränkt werden, welche Encounter für die Extraktion von Daten ausgewählt werden können. Der richtige Encounter muss gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) manuell gewahlt werden
+    - Mit der Abrechnungsnummer kann eingeschränkt werden, welche Encounter für die Extraktion von Daten ausgewählt werden können. Der richtige Encounter muss gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) manuell gewählt werden
 - [optional] Aufnahmenummer (Identifier am [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung))
     - Mit der Aufnahmenummer kann der richtige Encounter bereits mit übergeben werden
 - [optional] Canonical der [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)
