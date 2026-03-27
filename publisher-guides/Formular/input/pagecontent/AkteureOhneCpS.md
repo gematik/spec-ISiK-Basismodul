@@ -1,4 +1,4 @@
-Auf der Seite [Akteure](Akteure.html) definiert finden sich Akteure im Kontext dieses Moduls, die nicht mittels eines CapabilityStatement definiert sind. Diese Akteure sind entweder nicht technisch über Interaktionen mit einzelnen FHIR-Ressourcen abbildbar, oder beschreiben Komponenten, die ein Frontend betreffen. Um eine vergleichbare Vorgabe zur Implementierung zu treffen, sind die Anforderungen im Folgenden aufgeführt.
+Auf der Seite [Akteure](Akteure.html) finden sich Akteure im Kontext dieses Moduls, die nicht mittels eines CapabilityStatement definiert sind. Diese Akteure sind entweder nicht technisch über Interaktionen mit einzelnen FHIR-Ressourcen abbildbar, oder beschreiben Komponenten, die ein Frontend betreffen. Um eine vergleichbare Vorgabe zur Implementierung zu treffen, sind die Anforderungen im Folgenden aufgeführt.
 
 ### Anforderungen FormularLauncher
 
