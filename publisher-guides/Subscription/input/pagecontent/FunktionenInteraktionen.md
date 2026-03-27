@@ -8,18 +8,43 @@ Der Subscription-Workflow umfasst die folgenden verpflichtenden Schritte:
 
 #### 1. Topic Discovery (MUSS)
 
-Clients MÜSSEN die vom Server unterstützten SubscriptionTopics abfragen können. Der Server MUSS die
-unterstützten Topics über die Extension
-[`capabilitystatement-subscriptiontopic-canonical`](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-capabilitystatement-subscriptiontopic-canonical.html)
+Clients sollen in der Lage sein, die vom Subscription Server unterstützten SubscriptionTopics abzufragen. Der Server MUSS die unterstützten Topics über die Extension[`capabilitystatement-subscriptiontopic-canonical`](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-capabilitystatement-subscriptiontopic-canonical.html)
 im CapabilityStatement bekannt geben.
 
+##### Abruf
 ```
 GET [base]/metadata
+```
+##### Antwort
+```json
+{
+  "resourceType": "CapabilityStatement",
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Subscription",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
+              "valueCanonical": "https://gematik.de/fhir/isik/SubscriptionTopic/patient-merge"
+            },
+            ...
+          ],
+          ...
+        }
+      ],
+      ...
+    }
+  ]
+}
 ```
 
 #### 2. Subscription-Anlage (MUSS)
 
-Das Anlegen einer Subscription MUSS folgende Angaben unterstützen:
+Clients können eine Subscription auf dem Subscription Server anlegen.
+Der Subscription Server MUSS dabei die folgenden Angaben unterstützen:
 
 - **Topic** (`Subscription.criteria`): Canonical URL eines unterstützten SubscriptionTopics aus dem ISiKSubscriptionTopic CodeSystem.
 - **Filterparameter** (`Subscription.criteria.extension:filterCriteria`): Optionale Einschränkung der Ereignisse.
@@ -33,33 +58,27 @@ POST [base]/Subscription
 #### 3. Kanal-Handshake / Aktivierung (MUSS)
 
 Nach der Anlage MUSS der Server einen Handshake-Aufruf am angegebenen REST-Hook-Endpunkt durchführen.
-Bei einer erfolgreichen Antwort (HTTP 200 OK) MUSS die Subscription von `requested` auf `active`
-gesetzt werden. Bei einem Fehler MUSS der Status auf `error` gesetzt werden.
+Bei erfolgreicher Verarbeitung der Anfrage (HTTP 200 OK) MUSS der Subscription Server den Status der Subscription von `requested` auf `active` aktualisieren.
+Tritt ein Fehler auf, MUSS der Subscription Server den Status auf `error` setzen.
 
-Optional KANN der Handshake eine HTTP Basic Authentication mit einem statischen Secret
-(`Subscription.channel.header`) verwenden.
+Der Subscription Server KANN optional beim Handshake eine HTTP Basic Authentication mit einem statischen Secret (Subscription.channel.header) verwenden.
 
 #### 4. Notifications (MUSS)
 
-Benachrichtigungen MÜSSEN als Bundle vom Typ `history` mit dem Entry `entry:subscriptionStatus`
-gesendet werden. Notifications MÜSSEN `payload=id-only` verwenden — die Notification enthält
-die ID(s) der geänderten Ressource(n), aber keine vollständigen Ressourcendaten.
+Der Subscription Server MUSS Benachrichtigungen als Bundle vom Typ `history` mit dem Entry `entry:subscriptionStatus` senden.
+Der Subscription Server MUSS dabei `payload=id-only` verwenden, sodass die Benachrichtigung nur die ID(s) der geänderten Ressource(n), jedoch keine vollständigen Ressourcendaten enthält.
 
-Anhand der übermittelten ID ruft der Client die aktuelle Version der Ressource über die reguläre
-FHIR-REST-API mit gültigem Autorisierungstoken ab (Pull-Prinzip).
+Anhand der übermittelten ID ruft der Client die aktuelle Version der Ressource über die reguläre FHIR-REST-API mit gültigem Autorisierungstoken ab (Pull-Prinzip).
 
 #### 5. Heartbeat (MUSS)
 
-Der Server MUSS einen Heartbeat senden, sobald die konfigurierte `heartbeatPeriod` seit der letzten
-erfolgreich zugestellten Benachrichtigung (Notification oder Heartbeat) abgelaufen ist und in diesem
-Zeitraum keine Notification erfolgt ist. Jede erfolgreiche Zustellung setzt den Zeitraum neu.
+Der Server MUSS einen Heartbeat senden, sobald die konfigurierte `heartbeatPeriod` seit der letzten erfolgreich zugestellten Benachrichtigung (Notification oder Heartbeat) abgelaufen ist und in diesem Zeitraum keine Notification erfolgt ist. Jede erfolgreiche Zustellung setzt den Zeitraum neu.
 
-Der Heartbeat MUSS als Bundle mit `type=history` und einem Entry SubscriptionStatus mit
-`notificationType=heartbeat` gesendet werden.
+Der Subscription Server MUSS den Heartbeat als Bundle mit `type=history` und einem Entry SubscriptionStatus mit `notificationType=heartbeat` senden.
 
 #### 6. `$status` Operation (MUSS)
 
-Der Server MUSS die Operation `$status` unter `[base]/Subscription/[id]/$status` implementieren,
+Der Subscription Server MUSS die Operation `$status` unter `[base]/Subscription/[id]/$status` implementieren,
 um Kanalzustand, letzte Events und Diagnosedaten zu prüfen.
 
 ```
@@ -86,32 +105,36 @@ setzen. Der Client KANN per `$status` den Fehler prüfen und den Kanal reaktivie
 
 ### Workflow-Sequenzen
 
+Der dargestellte Workflow orientiert sich am [Workflow](https://hl7.org/fhir/uv/subscriptions-backport/workflow.html#workflow-fhir-r4) des Subscription Backport Implementation Guide (R4) und fokussiert auf die für ISiK relevanten Aspekte und verpflichtenden Interaktionen.
+
 #### Normalfluss
 
 ```mermaid
 sequenceDiagram
     participant Client
-    participant Server
-    participant Endpoint as REST-Hook Endpoint
+    participant Endpoint as Client (REST-Hook Endpoint)
+    participant Subscription Server
 
-    Client->>Server: GET /metadata
-    Server-->>Client: CapabilityStatement (inkl. Topics)
+    rect rgb(230, 240, 255)
+    note over Client,Endpoint: Client-System
+    end
 
-    Client->>Server: POST /Subscription
-    Note right of Client: status=requested<br/>criteria=<topic><br/>channel.type=rest-hook<br/>payload=id-only
+    Client->>Subscription Server: GET /metadata
+    Subscription Server-->>Client: CapabilityStatement
 
-    Server->>Endpoint: POST Handshake
-    Endpoint-->>Server: HTTP 200 OK
+    Client->>Subscription Server: POST /Subscription
+    Subscription Server->>Endpoint: POST Handshake
+    Endpoint-->>Subscription Server: HTTP 200 OK
+    Subscription Server->>Subscription Server: Subscription.status = active
 
-    Server->>Server: set status=active
-
-    Server->>Endpoint: POST Notification Bundle (history, id-only)
-
-    Client->>Server: GET /[ResourceType]/[id]
-    Server-->>Client: Resource
-
-    alt keine Notification innerhalb heartbeatPeriod
-        Server->>Endpoint: POST Heartbeat Bundle
+    loop solange Subscription aktiv ist
+        alt relevantes Ereignis eingetreten
+            Subscription Server->>Endpoint: POST Notification Bundle (history, id-only)
+            Client->>Subscription Server: GET /[ResourceType]/[id]
+            Subscription Server-->>Client: Resource
+        else keine Notification innerhalb heartbeatPeriod
+            Subscription Server->>Endpoint: POST Heartbeat Bundle
+        end
     end
 ```
 
@@ -120,26 +143,44 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Client
-    participant Server
-    participant Endpoint as REST-Hook Endpoint
+    participant Endpoint as Client (REST-Hook Endpoint)
+    participant Subscription Server
 
-    Server->>Endpoint: POST Notification
-    Endpoint-->>Server: Fehler / keine Antwort
+    rect rgb(230, 240, 255)
+    note over Client,Endpoint: Client-System
+    end
 
-    Server->>Server: set status=error
+    loop solange Subscription aktiv und fehlerfrei ist
+        Subscription Server->>Endpoint: POST Notification Bundle
+        Endpoint-->>Subscription Server: HTTP 200 OK
+    end
 
-    Client->>Server: GET /Subscription/[id]/$status
-    Server-->>Client: Status + Diagnose
+    Subscription Server->>Endpoint: POST Notification Bundle
+    Endpoint-->>Subscription Server: Fehler / keine Antwort
+
+    Subscription Server->>Subscription Server: set Subscription.status = error
+    Note over Subscription Server,Endpoint: Weitere Notifications werden<br/> nicht regulär zugestellt
+
+    Client->>Subscription Server: GET /Subscription/[id]/$status
+    Subscription Server-->>Client: Status + Diagnose
 
     Client->>Endpoint: Endpunkt reaktivieren
 
-    Client->>Server: GET /Subscription/[id]/$events?eventsSinceNumber=X
-    Server-->>Client: Event-Übersicht
+    Client->>Subscription Server: PUT /Subscription/[id] (status=requested)
+    Subscription Server->>Endpoint: POST Handshake
+    Endpoint-->>Subscription Server: HTTP 200 OK
+    Subscription Server->>Subscription Server: set Subscription.status = active
 
-    Client->>Server: GET /[ResourceType]/[id]
-    Server-->>Client: Resource
+    Client->>Subscription Server: GET /Subscription/[id]/$events?eventsSinceNumber=X
+    Subscription Server-->>Client: Event-Übersicht / Nachlieferung
 
-    Note over Client,Server: Normalbetrieb wird fortgesetzt
+    Client->>Subscription Server: GET /[ResourceType]/[id]
+    Subscription Server-->>Client: Resource
+
+    loop Normalbetrieb
+        Subscription Server->>Endpoint: POST Notification Bundle
+        Endpoint-->>Subscription Server: HTTP 200 OK
+    end
 ```
 
 ---
@@ -149,7 +190,7 @@ sequenceDiagram
 #### Grundprinzipien (MUSS)
 
 - **id-only Payload in Notifications (MUSS)**: Benachrichtigungen enthalten die ID(s) der
-  geänderten Ressourcen, aber keine vollständigen PHI-Daten. Clients rufen die Ressource nach
+  geänderten Ressourcen, aber keine vollständigen FHIR Ressourcen. Clients rufen die Ressource nach
   Erhalt der Notification gezielt per ID ab (Pull-Prinzip). Der Wert `full-resource` ist nicht
   zulässig.
 

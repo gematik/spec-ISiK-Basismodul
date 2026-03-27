@@ -9,9 +9,8 @@ Zudem gelten die Festlegungen gemäß dem Abschnitt zu den [FHIR-Artefakten](art
 
 ### Normativer Status
 
-ISiK-konforme FHIR Subscriptions MÜSSEN vom Subscription Server Akteur verbindlich unterstützt werden,
-um ineffizientes Polling zu vermeiden und eine einheitliche, eventbasierte Kommunikation sicherzustellen.
-
+ISiK-konforme FHIR Subscriptions MÜSSEN durch den Akteur „Subscription Server“ unterstützt werden, um ineffizientes Polling zu vermeiden und eine einheitliche, ereignisbasierte Kommunikation sicherzustellen.
+Der Subscription-Server MUSS für jede FHIR-Ressource, die er gemäß seinem CapabilityStatement unterstützt, das entsprechende ISiK-SubscriptionTopic implementieren und über das CapabilityStatement bekannt geben. Die verfügbaren Topics sind im [ISiKSubscriptionTopic CodeSystem](CodeSystem-ISiKSubscriptionTopicCS.html) definiert.
 Die beschriebenen Strukturen und Profile basieren auf
 dem [Subscriptions-Backport ImplementationGuide STU1.1](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/),
 wobei die technisch fehlerhaften Profile backport-subscription-status-r4 und
@@ -32,12 +31,13 @@ folgenden Funktionalitäten aus dem Subscriptions-Backport IG unterstützt werde
   Aktivierung des Kommunikationskanals.
 
 * Heartbeat  
-  Der Server MUSS Heartbeat-Benachrichtigungen gemäß der konfigurierten `heartbeatPeriod` senden,
+  Der Subscription-Server MUSS Heartbeat-Benachrichtigungen gemäß der konfigurierten `heartbeatPeriod` senden,
   sofern in diesem Zeitraum keine regulären Notifications erfolgt sind.
 
 * `$events` Operation (Subscription/$events)  
   Bereitstellung von zuvor ausgelösten Subscription-Benachrichtigungen über eine dedizierte
   Operation. Dient insbesondere zur Synchronisation nach Systemunterbrechungen.
+  Die Filterparameter `eventsSinceNumber` und `eventsUntilNumber` MÜSSEN unterstützt werden.
 
 * `$status` Operation (Subscription/$status)  
   Abruf des aktuellen Zustands einer Subscription mittels Parameters-Struktur gemäß dem
@@ -56,3 +56,8 @@ folgenden Funktionalitäten aus dem Subscriptions-Backport IG unterstützt werde
 * R4 Backported R5 SubscriptionStatus (Parameters)  
   Die Rückmeldung zum Zustand einer Subscription MUSS in Form eines Parameters-Objekts erfolgen, das
   dem Profil `backport-subscription-status-r4` entspricht.
+
+* Fehler- und Statushandling  
+  Bei einem nicht erreichbaren REST-Hook-Endpunkt MUSS der Subscription-Server den `SubscriptionStatus`
+  auf `error` setzen. Der Subscription-Client KANN per `$status` den Fehler prüfen und die Subscription
+  durch ein erneutes `PUT` mit `status=requested` reaktivieren.

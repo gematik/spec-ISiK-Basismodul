@@ -1,4 +1,3 @@
 RuleSet: AddSubscriptionTopicCanonical(canonical)
-* rest.extension[+]
-  * url = $capabilitystatement-subscriptiontopic-canonical
-  * valueCanonical = {canonical}
+* extension[+].url = $capabilitystatement-subscriptiontopic-canonical
+* extension[=].valueCanonical = {canonical}
