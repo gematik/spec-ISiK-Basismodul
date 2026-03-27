@@ -85,6 +85,9 @@ Diese Rolle beschreibt die Fähigkeiten eines Systems zur Registrierung, Verwalt
         **Anwendungshinweis:**    
         Diese Operation wird verwendet, um nach SubscriptionNotifications zu suchen und diese zurückzugeben, die zuvor durch eine topic basierte Subscription in FHIR R4 ausgelöst wurden.   
         Weitere Details siehe [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events)."
+// Termin-Topics
+    * insert AddSubscriptionTopicCanonical("https://gematik.de/fhir/isik/SubscriptionTopic/appointment-update")
+    * insert AddSubscriptionTopicCanonical("https://gematik.de/fhir/isik/SubscriptionTopic/appointment-cancel")
   * resource[+]
     * type = #Parameters
     * insert Expectation (#SHALL)
