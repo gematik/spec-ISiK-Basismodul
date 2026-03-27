@@ -1,8 +1,5 @@
-### Connect Festlegungen
 
----
-#### Normativ
----
+### Normativ
 
 Die verbindlichen Vorgaben von ISiK-Connect betreffen in ISiK Connect ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers:
 * Bestätigungsrelevante ISiK-Ressourcen-Server MÜSSEN die in _SMART on FHIR_ definierten _Scopes_ unterstützen. Diese _Scopes_ legen Syntax und Semantik für die an den Client delegierten Zugriffsrechte auf FHIR-Ressourcen fest ([ANF-CON-26](Anforderungsuebersicht.html)). Für die Details, siehe [Conformance: Scopes und Kontexte](ConformanceScopesKontexte.html).
