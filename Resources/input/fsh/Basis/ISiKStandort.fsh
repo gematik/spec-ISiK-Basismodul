@@ -32,7 +32,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 "
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(LocationEuCore)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/location-eu-core)
 * identifier MS 
   * ^short = "Eindeutiger Identifier des Standorts"
   * ^slicing.discriminator.type = #pattern
