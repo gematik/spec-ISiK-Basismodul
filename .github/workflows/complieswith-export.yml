@@ -46,64 +46,52 @@ jobs:
       - name: Filter validation targets
         run: node scripts/complieswith/filter-validation-targets.js
 
-      - name: Firely.Terminal (GitHub Actions)
-        id: firely_terminal
-        continue-on-error: true
-        uses: FirelyTeam/firely-terminal-pipeline@v0.8.4
+      - name: Set up Java
+        uses: actions/setup-java@v5
         with:
-          PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/complieswith-validation/
-          DOTNET_VALIDATION_ENABLED: false
-          JAVA_VALIDATION_ENABLED: true
-          JAVA_VALIDATION_OPTIONS: >
-            -allow-example-urls true
-            -output validation.json
-            -html-output validation.html
-            -show-message-ids
-            -language de
-            -jurisdiction de
-            -display-issues-are-warnings
-            -advisor-file validator/advisor.json
-            -resolution-context file:Resources/fsh-generated/resources/
-          SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
-          SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
-          SUSHI_ENABLED: false
-          TERMINOLOGY_SERVICE_BFARM_ENABLED: true
-          CLOSE_SLICING_FOR_VALIDATION: true
-          EXPECTED_FAILS: VALIDATION_CONFORMANCE_JAVA VALIDATION_CONFORMANCE_DOTNET
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download Java validator
+        run: curl -L https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.8.1/validator_cli.jar -o validator_cli.jar
+
+      - name: Run Java validator for CompliesWith
+        id: java_validator
+        continue-on-error: true
+        env:
+          VALIDATOR_JAR: validator_cli.jar
+          VALIDATION_DIR: Resources/fsh-generated/complieswith-validation
+          RESOLUTION_CONTEXT_DIR: Resources/fsh-generated/resources
+          ADVISOR_FILE: validator/advisor.json
+          RAW_LOG_PATH: validation-raw.log
+          DETAILS_JSON_PATH: validation-details.json
+        run: node scripts/complieswith/run-java-validator.js
 
       - name: Check validation outputs
         id: validation_outputs
         if: always()
         shell: bash
         run: |
-          if [ -f validation.json ]; then
-            echo "has_validation_json=true" >> "$GITHUB_OUTPUT"
+          if [ -f validation-details.json ]; then
+            echo "has_validation_details=true" >> "$GITHUB_OUTPUT"
           else
-            echo "has_validation_json=false" >> "$GITHUB_OUTPUT"
+            echo "has_validation_details=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Upload validation artifacts
-        if: always() && steps.validation_outputs.outputs.has_validation_json == 'true'
+        if: always() && steps.validation_outputs.outputs.has_validation_details == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: complieswith-export-validation-results
           path: |
-            validation.json
-            validation.html
+            validation-details.json
+            validation-raw.log
           retention-days: 1
           if-no-files-found: warn
-
-      - name: Extract validation filters from main workflow
-        id: validation_filters
-        if: always()
-        shell: bash
-        run: node scripts/complieswith/extract-validation-filters.js >> "$GITHUB_OUTPUT"
 
       - name: Comment validation results on PR
         if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v8
-        env:
-          VALIDATION_FILTERS: ${{ steps.validation_filters.outputs.filters }}
         with:
           github-token: ${{ github.token }}
           script: |
