@@ -180,6 +180,11 @@ function extractCompliesWithEntries({ content, claimIndex }) {
 
   for (let i = 0; i < lines.length; i += 1) {
     const line = stripAnsi(lines[i]);
+    const sectionMatch = line.match(/--\s+.*\/([^/\s]+\.json)\s+-+$/);
+    if (sectionMatch) {
+      currentFile = sectionMatch[1].trim();
+      continue;
+    }
     const fileMatch = line.match(/Validate\s+.*\/([^/\s]+\.json)\s*$/);
     if (fileMatch) {
       currentFile = fileMatch[1].trim();
