@@ -52,49 +52,33 @@ function main() {
     throw new Error(`No validation targets found in ${validationDir}`);
   }
 
-  const rawLogLines = [];
-  const entries = [];
-  let fatalExecutionError = false;
+  const filePaths = files.map((fileName) => path.join(validationDir, fileName));
+  const metadataByFile = new Map();
+  const claimIndex = buildClaimIndex(filePaths, metadataByFile);
 
-  for (const fileName of files) {
-    const filePath = path.join(validationDir, fileName);
-    const metadata = readStructureDefinitionMetadata(filePath);
-    rawLogLines.push(`### FILE ${fileName}`);
-    rawLogLines.push(`### PROFILE ${metadata.profile}`);
+  const result = spawnSync('java', [...baseArgs, ...filePaths], {
+    cwd: root,
+    encoding: 'utf8',
+    maxBuffer: 1024 * 1024 * 200,
+  });
 
-    const result = spawnSync('java', [...baseArgs, filePath], {
-      cwd: root,
-      encoding: 'utf8',
-      maxBuffer: 1024 * 1024 * 50,
-    });
+  const stdout = result.stdout || '';
+  const stderr = result.stderr || '';
+  const combined = [stdout, stderr].filter(Boolean).join(stdout && stderr ? '\n' : '');
+  const fatalExecutionError = Boolean(result.error || looksLikeFatalExecutionError(combined));
+  const entries = extractCompliesWithEntries({
+    content: combined,
+    claimIndex,
+  });
 
-    const stdout = result.stdout || '';
-    const stderr = result.stderr || '';
-    const combined = [stdout, stderr].filter(Boolean).join(stdout && stderr ? '\n' : '');
-    rawLogLines.push(combined.trimEnd());
-    rawLogLines.push('');
-
-    if (result.error || looksLikeFatalExecutionError(combined)) {
-      fatalExecutionError = true;
-    }
-
-    const parsedEntries = extractCompliesWithEntries({
-      content: combined,
-      fileName,
-      profile: metadata.profile,
-      claimedProfiles: metadata.claimedProfiles,
-    });
-    entries.push(...parsedEntries);
-  }
-
-  fs.writeFileSync(rawLogPath, `${rawLogLines.join('\n')}\n`);
+  fs.writeFileSync(rawLogPath, `${combined.trimEnd()}\n`);
   fs.writeFileSync(detailsPath, `${JSON.stringify({
     fhirVersion,
     generatedAt: new Date().toISOString(),
     entries,
   }, null, 2)}\n`);
 
-  process.stdout.write(`Validated ${files.length} file(s).\n`);
+  process.stdout.write(`Validated ${files.length} file(s) in one Java validator run.\n`);
   process.stdout.write(`Found ${entries.length} CompliesWith error(s).\n`);
 
   if (fatalExecutionError) {
@@ -167,12 +151,30 @@ function readStructureDefinitionMetadata(filePath) {
     .filter(Boolean);
 
   return {
+    file: path.basename(filePath),
     profile: resource.url || resource.name || path.basename(filePath),
     claimedProfiles,
   };
 }
 
-function extractCompliesWithEntries({ content, fileName, profile, claimedProfiles }) {
+function buildClaimIndex(filePaths, metadataByFile) {
+  const claimIndex = new Map();
+
+  for (const filePath of filePaths) {
+    const metadata = readStructureDefinitionMetadata(filePath);
+    metadataByFile.set(metadata.file, metadata);
+    for (const claimedProfile of metadata.claimedProfiles) {
+      if (!claimIndex.has(claimedProfile)) {
+        claimIndex.set(claimedProfile, []);
+      }
+      claimIndex.get(claimedProfile).push(metadata);
+    }
+  }
+
+  return claimIndex;
+}
+
+function extractCompliesWithEntries({ content, claimIndex }) {
   const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
   const entries = [];
 
@@ -185,6 +187,7 @@ function extractCompliesWithEntries({ content, fileName, profile, claimedProfile
 
     const comparedProfile = match[1].trim();
     const details = [];
+    const source = resolveSourceMetadata(comparedProfile, claimIndex, details);
     let j = i + 1;
     while (j < lines.length) {
       const next = lines[j];
@@ -200,18 +203,36 @@ function extractCompliesWithEntries({ content, fileName, profile, claimedProfile
     }
 
     entries.push({
-      file: fileName,
-      profile,
+      file: source.file,
+      profile: source.profile,
       comparedProfile,
       messageId: match[2],
       summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
-      details: details.length > 0 ? details : fallbackDetails(comparedProfile, claimedProfiles),
+      details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
     });
 
     i = j - 1;
   }
 
   return entries;
+}
+
+function resolveSourceMetadata(comparedProfile, claimIndex, details) {
+  const candidates = claimIndex.get(comparedProfile) || [];
+  if (candidates.length === 1) {
+    return candidates[0];
+  }
+  if (candidates.length > 1) {
+    details.push(`Zuordnung nicht eindeutig: ${candidates.length} Profile deklarieren dieses claimed profile.`);
+  } else {
+    details.push('Quellprofil konnte aus dem Sammellog nicht eindeutig zugeordnet werden.');
+  }
+
+  return {
+    file: '',
+    profile: 'Unbekanntes Profil',
+    claimedProfiles: [],
+  };
 }
 
 function fallbackDetails(comparedProfile, claimedProfiles) {
