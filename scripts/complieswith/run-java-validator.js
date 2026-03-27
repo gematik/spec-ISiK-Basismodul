@@ -64,28 +64,32 @@ function main() {
   const stdout = result.stdout || '';
   const stderr = result.stderr || '';
   const combined = [stdout, stderr].filter(Boolean).join(stdout && stderr ? '\n' : '');
+  const normalized = stripAnsi(combined);
   const fatalExecutionError = Boolean(result.error || looksLikeFatalExecutionError(combined));
   const entries = extractCompliesWithEntries({
-    content: combined,
+    content: normalized,
     claimIndex,
   });
+  const recoveredEntries = entries.length === 0 && normalized.includes('SD_EXTENSION_COMPLIES_WITH_ERROR')
+    ? extractCompliesWithEntriesFromSections({ content: normalized, claimIndex })
+    : entries;
 
   fs.writeFileSync(rawLogPath, `${combined.trimEnd()}\n`);
   fs.writeFileSync(detailsPath, `${JSON.stringify({
     fhirVersion,
     generatedAt: new Date().toISOString(),
-    entries,
+    entries: recoveredEntries,
   }, null, 2)}\n`);
 
   process.stdout.write(`Validated ${files.length} file(s) in one Java validator run.\n`);
-  process.stdout.write(`Found ${entries.length} CompliesWith error(s).\n`);
+  process.stdout.write(`Found ${recoveredEntries.length} CompliesWith error(s).\n`);
 
   if (fatalExecutionError) {
     process.exitCode = 2;
     return;
   }
 
-  if (entries.length > 0) {
+  if (recoveredEntries.length > 0) {
     process.exitCode = 1;
   }
 }
@@ -179,7 +183,7 @@ function extractCompliesWithEntries({ content, claimIndex }) {
   let currentFile = '';
 
   for (let i = 0; i < lines.length; i += 1) {
-    const line = stripAnsi(lines[i]);
+    const line = lines[i];
     const sectionMatch = line.match(/--\s+.*\/([^/\s]+\.json)\s+-+$/);
     if (sectionMatch) {
       currentFile = sectionMatch[1].trim();
@@ -201,7 +205,7 @@ function extractCompliesWithEntries({ content, claimIndex }) {
     const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
     let j = i + 1;
     while (j < lines.length) {
-      const next = stripAnsi(lines[j]);
+      const next = lines[j];
       if (!next.trim()) {
         j += 1;
         continue;
@@ -233,6 +237,38 @@ function resolveSourceMetadata(comparedProfile, claimIndex, details) {
     return resolveSourceMetadataFromContext(comparedProfile);
   }
   return resolveSourceMetadataFromContext({ comparedProfile, currentFile: '', claimIndex, details });
+}
+
+function extractCompliesWithEntriesFromSections({ content, claimIndex }) {
+  const sections = String(content || '').split(/\n(?=--\s+.*\/[^/\s]+\.json\s+-+\s*$)/);
+  const entries = [];
+
+  for (const section of sections) {
+    const headerMatch = section.match(/--\s+.*\/([^/\s]+\.json)\s+-+\s*$/m);
+    const currentFile = headerMatch ? headerMatch[1].trim() : '';
+    const regex = /Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}([\s\S]*?)(?=\n\s{2}(?:Error|Warning|Information) @ |\n--\s+.*\/[^/\s]+\.json\s+-+|\s*$)/g;
+    let match;
+
+    while ((match = regex.exec(section)) !== null) {
+      const comparedProfile = match[1].trim();
+      const detailBlock = match[3] || '';
+      const details = detailBlock
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line.startsWith('slice error:'));
+      const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
+      entries.push({
+        file: source.file,
+        profile: source.profile,
+        comparedProfile,
+        messageId: match[2],
+        summary: `Dieses Profil erfüllt das deklarierte Profil nicht: ${comparedProfile}`,
+        details: details.length > 0 ? details : fallbackDetails(comparedProfile, source.claimedProfiles),
+      });
+    }
+  }
+
+  return entries;
 }
 
 function resolveSourceMetadataFromContext({ comparedProfile, currentFile, claimIndex, details }) {
@@ -278,7 +314,7 @@ function looksLikeFatalExecutionError(content) {
 }
 
 function stripAnsi(text) {
-  return String(text || '').replace(/\u001b\[[0-9;]*m/g, '');
+  return String(text || '').replace(/\u001b\[[0-9;]*[ -/]*[@-~]/g, '');
 }
 
 main();
