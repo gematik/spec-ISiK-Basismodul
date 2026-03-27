@@ -53,16 +53,21 @@ Weitere Details zur technischen Abbildung von Encounter-Ressourcen im ISiK-Konte
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKSubscription"
     ]
   },
-  "status": "active",
+  "status": "requested",
   "reason": "Benachrichtigung bei Encounter-Merge",
-  "criteria": {
-    "code": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge",
-    "display": "encounter-merge"
-  },
+  "criteria": "https://gematik.de/fhir/isik/SubscriptionTopic/encounter-merge",
   "channel": {
     "type": "rest-hook",
     "endpoint": "https://example.org/fhir/notification",
-    "payload": "application/fhir+json"
+    "payload": "application/fhir+json",
+    "_payload": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+          "valueCode": "id-only"
+        }
+      ]
+    }
   }
 }
 ```
