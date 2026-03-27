@@ -32,7 +32,7 @@ und welche nicht.
 
 ### Übergreifende Festlegungen
 
-Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 5](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html).
+Es gelten die Festlegungen aus dem Modul [ISiK Basis Stufe 6](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html).
 
 ### Begriffe und Abkürzungen
 
