@@ -30,6 +30,7 @@ function main() {
     fhirVersion,
     '-allow-example-urls',
     'true',
+    '-verbose',
     '-language',
     'de',
     '-jurisdiction',
