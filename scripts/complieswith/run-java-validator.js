@@ -5,6 +5,10 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const COMPLIES_WITH_URL = 'http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile';
+const EXCLUDED_PACKAGES = new Set([
+  'bfarm.terminologien.icd10gm',
+  'bfarm.terminologien.ops',
+]);
 
 function main() {
   const root = process.cwd();
@@ -129,7 +133,7 @@ function buildDependencyArgs(packageJson) {
   const args = [];
 
   for (const [pkg, version] of Object.entries(merged).sort((a, b) => a[0].localeCompare(b[0], 'de'))) {
-    if (!pkg || !version || pkg === corePackage) {
+    if (!pkg || !version || pkg === corePackage || EXCLUDED_PACKAGES.has(pkg)) {
       continue;
     }
     args.push('-ig', `${pkg}#${version}`);
