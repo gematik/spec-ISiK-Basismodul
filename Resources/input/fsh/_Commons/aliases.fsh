@@ -136,3 +136,4 @@ Alias: $BodyStructureReferenceExtension = http://hl7.org/fhir/StructureDefinitio
 Alias: $vs-dosage-dose-quantity-de = http://ig.fhir.de/igs/medication/ValueSet/DosageDoseQuantityDE
 
 Alias: $ISiKSubscriptionTopicCS = https://gematik.de/fhir/isik/CodeSystem/ISiKSubscriptionTopic
+Alias: $capabilitystatement-subscriptiontopic-canonical = http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical
