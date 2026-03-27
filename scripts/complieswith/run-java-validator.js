@@ -30,7 +30,6 @@ function main() {
     fhirVersion,
     '-allow-example-urls',
     'true',
-    '-show-message-ids',
     '-language',
     'de',
     '-jurisdiction',
@@ -177,9 +176,16 @@ function buildClaimIndex(filePaths, metadataByFile) {
 function extractCompliesWithEntries({ content, claimIndex }) {
   const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
   const entries = [];
+  let currentFile = '';
 
   for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
+    const line = stripAnsi(lines[i]);
+    const fileMatch = line.match(/Validate\s+.*\/([^/\s]+\.json)\s*$/);
+    if (fileMatch) {
+      currentFile = fileMatch[1].trim();
+      continue;
+    }
+
     const match = line.match(/Error @ StructureDefinition: This profile does not comply with claimed profile '([^']+)' \{(SD_EXTENSION_COMPLIES_WITH_ERROR)\}/);
     if (!match) {
       continue;
@@ -187,10 +193,10 @@ function extractCompliesWithEntries({ content, claimIndex }) {
 
     const comparedProfile = match[1].trim();
     const details = [];
-    const source = resolveSourceMetadata(comparedProfile, claimIndex, details);
+    const source = resolveSourceMetadata({ comparedProfile, currentFile, claimIndex, details });
     let j = i + 1;
     while (j < lines.length) {
-      const next = lines[j];
+      const next = stripAnsi(lines[j]);
       if (!next.trim()) {
         j += 1;
         continue;
@@ -218,7 +224,20 @@ function extractCompliesWithEntries({ content, claimIndex }) {
 }
 
 function resolveSourceMetadata(comparedProfile, claimIndex, details) {
+  if (typeof comparedProfile === 'object' && comparedProfile !== null) {
+    return resolveSourceMetadataFromContext(comparedProfile);
+  }
+  return resolveSourceMetadataFromContext({ comparedProfile, currentFile: '', claimIndex, details });
+}
+
+function resolveSourceMetadataFromContext({ comparedProfile, currentFile, claimIndex, details }) {
   const candidates = claimIndex.get(comparedProfile) || [];
+  if (currentFile) {
+    const exact = candidates.find((candidate) => candidate.file === currentFile);
+    if (exact) {
+      return exact;
+    }
+  }
   if (candidates.length === 1) {
     return candidates[0];
   }
@@ -243,7 +262,7 @@ function fallbackDetails(comparedProfile, claimedProfiles) {
 }
 
 function looksLikeFatalExecutionError(content) {
-  const text = String(content || '');
+  const text = stripAnsi(String(content || ''));
   return [
     'Error: Unable to access jarfile',
     'Could not find or load main class',
@@ -251,6 +270,10 @@ function looksLikeFatalExecutionError(content) {
     'No such file or directory',
     'Unable to resolve package id',
   ].some((pattern) => text.includes(pattern));
+}
+
+function stripAnsi(text) {
+  return String(text || '').replace(/\u001b\[[0-9;]*m/g, '');
 }
 
 main();
