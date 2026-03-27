@@ -112,7 +112,7 @@ Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe r
 
 ### Interaktion: FormularDaten-Rückübermittlung
 
-Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Datenuebermittlung-aus-Subsystemen.html)
+Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe 6: Datenübermittlung aus Subsystemen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Datenuebermittlung-aus-Subsystemen.html)
 
 <div>
 {% include formDatRueckuebermittlung.svg %}
