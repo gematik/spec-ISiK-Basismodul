@@ -7,7 +7,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 Datum: 02.04.2026
 
 * `documentation` Initialisierung einer IG Publisher Guide Struktur für ISiK Connect
-* * `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888 - Umgesetzt bereits in TC zu Stufe 5
+* `documentation` Informativer Abschnitt zur Implementierung eines Auto-Provisioning von Benutzeraccounts im Kontext der Verwendung von externen Identity Providern hinzugefügt. https://github.com/gematik/spec-ISiK-Basismodul/pull/888 - Umgesetzt bereits in TC zu Stufe 5
 
 
 ### Version 5.1.0
