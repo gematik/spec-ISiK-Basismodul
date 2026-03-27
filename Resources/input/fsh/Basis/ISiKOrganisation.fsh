@@ -18,7 +18,7 @@ Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenh
 
 **Kompatibilität**
 
-Für das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+Für das Profil ISiKOrganisationFachabteilung wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen das ISIK Profil valide sind, auch valide sind gegen:
 * [Profil TIOrganization der gematik](https://gematik.de/fhir/ti/StructureDefinition/ti-organization)  
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
@@ -102,9 +102,10 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Motivation: Ein Fachbereich muss als solcher hinsichtlich des Typs kodiert werden."
 * type[Fachbereich].coding.system 1.. MS
 * type[Fachbereich].coding.code 1.. MS
-* name  MS
+* name 1.. MS
   * ^short = "Name der Organisation"
-  * ^comment = "Motivation: Einer Organisation oder Organisationseinheit muss ein Name zugewiesen werden."
+  * ^comment = "Motivation: Einer Organisation oder Organisationseinheit muss ein Name zugewiesen werden.
+  Begründung Pflichtfeld: Da der Name sowohl im Kontext des EHDS als auch im Rahmen der ePA als verpflichtendes Element definiert ist, wird er in ISiK aus Gründen der Kompatibilität ebenfalls als Pflichtfeld festgelegt."
 * alias MS
   * ^short = "Alias der Organisation"
   * ^comment = "Hinweis: unter Umständen können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
@@ -245,9 +246,10 @@ Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten in
   * ^comment = "Beschreibt die Art der Einrichtung nach IHE XDS Standards."
 * type[EinrichtungsArt].coding.system 1.. MS
 * type[EinrichtungsArt].coding.code 1.. MS
-* name  MS
+* name 1.. MS
   * ^short = "Name der Organisation"
-  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.."
+  * ^comment = "Motivation: Ein System muss den Namen einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist.
+  Begründung Pflichtfeld: Da der Name sowohl im Kontext des EHDS als auch im Rahmen der ePA als verpflichtendes Element definiert ist, wird er in ISiK aus Gründen der Kompatibilität ebenfalls als Pflichtfeld festgelegt."
 * alias MS
   * ^short = "Alias der Organisation"
   * ^comment = "Hinweis: unter Umstaänden können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
