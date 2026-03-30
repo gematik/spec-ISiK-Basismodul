@@ -33,6 +33,7 @@ Tags werden folgendermaßen verwendet:
   - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
 * `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
 * `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
+* `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` https://github.com/gematik/spec-ISiK-Basismodul/pull/1120
 
 ### Version 5.x.x
 
