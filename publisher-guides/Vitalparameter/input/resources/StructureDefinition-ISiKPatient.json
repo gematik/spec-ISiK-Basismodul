@@ -77,7 +77,7 @@
         "path": "Patient.identifier",
         "sliceName": "VersichertenId",
         "short": "Lebenslange Krankenversichertennummer",
-        "comment": "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, \n    unveränderbare Teil der Versichertennummer, \n    der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.\n    Er gilt für alle Krankenversichertennummern, \n    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  \n    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)",
+        "comment": "Die als 'KVZ10' kodierte Versichertennummer ist der 10-stellige, \n    unveränderbare Teil der Versichertennummer, \n    der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.\n    Er gilt für alle Krankenversichertennummern, \n    unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  \n    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)  \n    **Hinweis für Entwickler:** in früheren Versionen von ISiK (< Stufe 5) bzw. den Deutschen Basisprofilen (< 1.6) wurde der Versichertennummer der Type-Code `GKV` zugeordnet. Dies ist mit der Ausweitung der Versichertennummer\n    auf Privatversicherte ab 2024 jedoch nicht mehr zutreffend, daher wurde der Type-Code durch `KVZ10` ersetzt. Für robuste Implementierungen ist es daher empfehlenswert, die Erkennung der Versichertennummer\n    an der Canonical-URL in `system` festzumachen, nicht am Coding in `type`.",
         "min": 0,
         "max": "1",
         "type": [
@@ -104,7 +104,7 @@
         "id": "Patient.identifier:VersichertenId.type",
         "path": "Patient.identifier.type",
         "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `KVZ10` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
+        "comment": "Hier ist stets der Code `KVZ10` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen  \n    **Hinweis für Entwickler:** In früheren Stufen von ISiK (<6) wurde noch der Type-Code `GKV` gefordert. Da die Versichertennummer aber seit 2024 auch für Privatversicherte gilt, \n    ist dieser Code in den Deutschen Basisprofilen ab Version 1.6 als `deprecated` gekennzeichnet. Aus Gründen der Abwärtskompatibilität KANN der Code `GKV` aber weiterhin als *zusätzliches* Coding übermittelt werden.",
         "min": 1,
         "mustSupport": true
       },
@@ -119,55 +119,6 @@
         "id": "Patient.identifier:VersichertenId.value",
         "path": "Patient.identifier.value",
         "short": "Lebenslange Krankenversichertennummer",
-        "comment": "Der 10-stellige, unveränderbare Teil der Versichertennummer.",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:VersichertenId-GKV",
-        "path": "Patient.identifier",
-        "sliceName": "VersichertenId-GKV",
-        "short": "Gesetzliche Krankenversichertennummer",
-        "comment": "**WARNUNG**: Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,\n  da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. \n  Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "http://fhir.de/StructureDefinition/identifier-kvid-10"
-            ]
-          }
-        ],
-        "patternIdentifier": {
-          "type": {
-            "coding": [
-              {
-                "code": "GKV",
-                "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
-              }
-            ]
-          }
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:VersichertenId-GKV.type",
-        "path": "Patient.identifier.type",
-        "short": "Art des Identifiers",
-        "comment": "Hier ist stets der Code `GKV` \n    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  \n    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:VersichertenId-GKV.system",
-        "path": "Patient.identifier.system",
-        "short": "Namensraum der Versichertennummer",
-        "comment": "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  \n    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher.",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:VersichertenId-GKV.value",
-        "path": "Patient.identifier.value",
         "comment": "Enthält den eigentlichen Wert des Identifiers.  \n    **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden.",
         "mustSupport": true
       },
