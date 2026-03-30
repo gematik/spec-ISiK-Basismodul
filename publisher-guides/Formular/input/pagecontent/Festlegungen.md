@@ -1,8 +1,4 @@
-﻿---
-topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen
----
-
-In diesem Kapitel werden die folgenden übergreifenden Festlegungen definiert, die generell für die weitere Spezifikation gelten.
+﻿In diesem Kapitel werden die folgenden übergreifenden Festlegungen definiert, die generell für die weitere Spezifikation gelten.
 
 ### Kompatibilität zu SDC (Structured Data Capture) 
 
