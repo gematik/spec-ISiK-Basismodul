@@ -1,12 +1,8 @@
-﻿---
-topic: AkteureUndInteraktionen-AkteureUndInteraktionen-ErzeugenVonMetadaten
----
+﻿<div style="width: 68%;">
 
-<div style="width: 68%;">
-
-| Hinweis | Breaking Change!|
+| Hinweis | Breaking Change! |
 |---------|---------------------|
-| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/>  | Die in der Stufe 3 erfolgte Umstellung der Definition von $generate-metadata von der in ISiK Stufe 2 spezifizierten OperationDefinition auf die in [IHE MHD ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) spezifizierte Fassung ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-106 (Generate Metadata), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
+| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" width="40"/> | Die in der Stufe 3 erfolgte Umstellung der Definition von $generate-metadata von der in ISiK Stufe 2 spezifizierten OperationDefinition auf die in [IHE MHD ITI-106](https://profiles.ihe.net/ITI/MHD/ITI-106.html) spezifizierte Fassung ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-106 (Generate Metadata), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand. |
 
 </div>
 
