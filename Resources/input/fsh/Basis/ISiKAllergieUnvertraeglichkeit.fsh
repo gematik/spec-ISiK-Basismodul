@@ -22,6 +22,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+// * insert CompliesWith(http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips)
+// * insert CompliesWith(https://fhir.gevko.de/StructureDefinition/EMDAF_PR_AllergyIntolerance)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance)
 
 /* 
 hier sollte genauer spezifiziert werden, welche Statuswerte  für clincial- und verificationStatus implementiert werden müssen, z.B. durch Hinzufügen folgenden Kommentars:    

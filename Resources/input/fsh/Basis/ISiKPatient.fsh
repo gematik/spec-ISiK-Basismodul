@@ -24,8 +24,8 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(TIPatient|1.1.1)
-//* insert CompliesWith(PatientEu)
+// * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-patient)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/patient-eu)
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS
@@ -35,7 +35,7 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
   * ^slicing.rules = #open
 * identifier contains
     VersichertenId 0..1 MS and
-    VersichertenId-GKV 0..1 MS and
+    // deprecated: VersichertenId-GKV 0..1 MS and
     Patientennummer 1..* MS and
     Versichertennummer_PKV 0..1
 * identifier[VersichertenId] only IdentifierKvid10
@@ -46,37 +46,26 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
     der lesbar auf die Elektronische Gesundheitskarte aufgedruckt ist.
     Er gilt für alle Krankenversichertennummern, 
     unabhängig davon, ob es sich um GKV, PKV oder Sonderkostenträger handelt. Für eine Weiterverarbeitung einer Patient-Ressource in der ePA ist dieser Identifier im EPAPatient-Profil ein Pflichtfeld.  
-    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)"
+    **Weitere Hinweise:** siehe [Deutschen Basisprofile](https://simplifier.net/guide/leitfaden-de-basis-r4/ig-markdown-LebenslangeKrankenversichertennummer10-stelligeKVID-Identifier?version=current)  
+    **Hinweis für Entwickler:** in früheren Versionen von ISiK (< Stufe 6) bzw. den Deutschen Basisprofilen (< 1.6) wurde der Versichertennummer der Type-Code `GKV` zugeordnet. Dies ist mit der Ausweitung der Versichertennummer
+    auf Privatversicherte ab 2024 jedoch nicht mehr zutreffend, daher wurde der Type-Code durch `KVZ10` ersetzt. Für robuste Implementierungen ist es daher empfehlenswert, die Erkennung der Versichertennummer
+    an der Canonical-URL in `system` festzumachen, nicht am Coding in `type`."
   * type 1.. MS
     * ^short = "Art des Identifiers"
     * ^comment = "Hier ist stets der Code `KVZ10` 
     aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
-    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"  
+    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen  
+    **Hinweis für Entwickler:** In früheren Stufen von ISiK (<6) wurde noch der Type-Code `GKV` gefordert. Da die Versichertennummer aber seit 2024 auch für Privatversicherte gilt, 
+    ist dieser Code in den Deutschen Basisprofilen ab Version 1.6 als `deprecated` gekennzeichnet. Aus Gründen der Abwärtskompatibilität KANN der Code `GKV` aber weiterhin als *zusätzliches* Coding übermittelt werden."  
   * system MS
     * ^short = "Namensraum der Versichertennummer"
     * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  
     **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
   * value MS 
     * ^short = "Lebenslange Krankenversichertennummer"
-    * ^comment = "Der 10-stellige, unveränderbare Teil der Versichertennummer."  
-* identifier[VersichertenId-GKV] only IdentifierKvid10
-  * ^patternIdentifier.type = $identifier-type-de-basis#GKV
-  * ^short = "Gesetzliche Krankenversichertennummer"
-  * ^comment = "**WARNUNG**: Die Verwendung der 'GKV'-Kodierung einer Versichertennummer ist abgekündigt,
-  da die lebenslangen Versichertennummer ab 2024 auch für PKV oder Sonderkostenträger eingeführt wird. 
-  Bitte statt dessen künftig den 'VersichertenId'-Slice verwenden."
-  * type 1.. MS
-    * ^short = "Art des Identifiers"
-    * ^comment = "Hier ist stets der Code `GKV` 
-    aus dem CodeSystem `http://fhir.de/CodeSystem/identifier-type-de-basis` anzugeben.  
-    **Begründung Pflichtfeld:** `type` dient der Unterscheidung verschiedener Identifier-Typen"
-  * system MS
-    * ^short = "Namensraum der Versichertennummer"
-    * ^comment = "Hier ist stets der Wert `http://fhir.de/sid/gkv/kvid-10` anzugeben.  
-    **Begründung Pflichtfeld:** `system` stellt in Kombination mit `value` die Eindeutigkeit eines Identifiers sicher."
-  * value MS
     * ^comment = "Enthält den eigentlichen Wert des Identifiers.  
     **Begründung Pflichtfeld:** Ist der Wert nicht bekannt, sollte der gesamte Slice weggelassen werden."
+
 * identifier[Patientennummer] only IdentifierPid
   * ^patternIdentifier.type = $v2-0203#MR
   * ^short = "Organisationsinterner Patienten-Identifier (PID)"

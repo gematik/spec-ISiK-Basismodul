@@ -18,8 +18,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(practitioner-eu)
-//* insert CompliesWith(TIPractitioner|1.1.1)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu)
+// * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner)
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS

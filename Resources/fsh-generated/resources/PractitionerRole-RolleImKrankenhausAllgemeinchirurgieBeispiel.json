@@ -1,9 +1,9 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "LeistungserbringerrolleAllgemeinchirurgieBeispiel",
+  "id": "RolleImKrankenhausAllgemeinchirurgieBeispiel",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/isik/StructureDefinition/ISiKLeistungserbringerrolle"
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKRolleImKrankenhaus"
     ]
   },
   "active": true,
@@ -15,7 +15,13 @@
   },
   "code": [
     {
-      "text": "Facharzt/Fachaerztin"
+      "coding": [
+        {
+          "code": "FA",
+          "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_Base_Role_Care",
+          "display": "Fachärzt:in"
+        }
+      ]
     }
   ],
   "specialty": [
@@ -25,11 +31,7 @@
           "code": "ALLG",
           "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen",
           "display": "Allgemeinmedizin"
-        }
-      ]
-    },
-    {
-      "coding": [
+        },
         {
           "code": "1500",
           "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
