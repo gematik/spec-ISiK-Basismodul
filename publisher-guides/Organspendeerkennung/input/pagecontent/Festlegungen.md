@@ -1,8 +1,4 @@
-﻿---
-topic: Festlegungen
----
-
-### Übergreifende Festlegungen
+﻿### Übergreifende Festlegungen
 
 Es gelten alle übergreifenden Festlegungen entsprechend dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html).
 
