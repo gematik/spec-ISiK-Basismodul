@@ -41,6 +41,13 @@ for dir in "${publish_output_dir}"/fhir-ig-*; do
   ig_name="${ig_name#fhir-ig-}"
   branch_dir="gh-pages/${branch_name}/${ig_name}"
   echo "Publishing ${ig_name} to ${branch_dir}/"
+
+  # Safety net: never publish oversized full-ig.zip bundles to gh-pages
+  while IFS= read -r zip_file; do
+    echo "Removing oversized artifact before publish: ${zip_file}"
+    rm -f "${zip_file}"
+  done < <(find "${dir}" -type f -name "full-ig.zip")
+
   case "${branch_dir}" in
     gh-pages|gh-pages/|gh-pages/.|gh-pages/..)
       echo "Refusing to modify root path: ${branch_dir}"
