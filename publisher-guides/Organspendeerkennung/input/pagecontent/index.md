@@ -1,4 +1,3 @@
-﻿Status: DRAFT
 
 Realm: Deutschland
 
