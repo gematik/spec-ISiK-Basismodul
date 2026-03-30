@@ -4,7 +4,7 @@ Usage: #definition
 * insert Meta-CapabilityStatement-Rolle
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementTerminSubscriptionRolle"
 * name = "ISiKCapabilityStatementTerminSubscriptionRolle"
-* title = "CapabilityStatement für Rolle &quot;Termin Subscription&quot;"
+* title = "CapabilityStatement für Rolle Termin Subscription"
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Terminplanung"
 * purpose = "
 CapabilityStatement für die Rolle &quot;ISiKCapabilityStatementTerminSubscriptionRolle&quot;.
