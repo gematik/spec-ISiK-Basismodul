@@ -27,20 +27,20 @@ Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (F
 
 | Hinweis | Umgang mit Sprachversionen |
 |---------|---------------------|
-| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Der Umgang mit Sprachversionen ist ein wichtiger Punkt, der im Rahmen dieser Spezifikation für ISiK-konforme Formulare festgelegt sein sollte. In der ersten Version ist dies noch nicht passiert, hierzu erfolgt nachgelagert eine Diskussion in der Community auf [Zulip im Stream von ISiK](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik). |
+| <img src="Betriebskoordination_Gruen_gematik.svg" width="40"/> | Der Umgang mit Sprachversionen ist ein wichtiger Punkt, der im Rahmen dieser Spezifikation für ISiK-konforme Formulare festgelegt sein sollte. In der ersten Version ist dies noch nicht passiert, hierzu erfolgt nachgelagert eine Diskussion in der Community auf [Zulip im Stream von ISiK](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik). |
 
 #### Versionierung
 
 Bei der Erstellung und späteren Bearbeitung einer Formulardefinition ist es wichtig, dass jede Änderung eine entsprechende Versionserhöhung (Inkrement) zur Folge hat. Dabei wird zwischen technischen und inhaltlichen Änderungen unterschieden, um die Auswirkungen auf die Kompatibilität und Funktionalität des Formulars korrekt zu kommunizieren. Das folgende [SemVer-Verfahren](https://semver.org/lang/de/) SOLLTE als Grundlage für die Versionierung von Formulardefinitionen im Rahmen von ISiK-kompatiblen Formularen verwendet werden.
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
 **Diskussion/Ausnahme/Alternative - Hinweis für Stakeholder:**  
 In bestimmten Anwendungsfällen, wie beispielsweise bei Formularen für das tägliche Mittags-Menü oder anderen regelmäßig wechselnden Inhalten, kann eine kalendarische oder tagesbasierte Versionierung sinnvoll sein. Hierbei könnte die Version anhand des Datums (z. B. `2024-06-14`) vergeben werden, um die Aktualität und Nachvollziehbarkeit der jeweiligen Formularversion sicherzustellen.  
 Diese Form der Versionierung erscheint insbesondere dann angebracht, wenn Inhalte häufig und planmäßig angepasst werden und eine klassische semantische Versionierung (SemVer) nicht den Anforderungen genügt. Stakeholder sollten in solchen Fällen gemeinsam mit den Nutzenden und Entwickelnden die geeignete Versionierungsstrategie festlegen. 
 Über Rückmeldungen zu den Versionsstrategien von Seiten der Implementierenden und Anwendern würden wir uns freuen.
 
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/>
 
 
 ##### Inkrement der Major Nummer 

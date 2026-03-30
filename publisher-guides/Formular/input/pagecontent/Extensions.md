@@ -50,10 +50,11 @@ Für die verschiedenen [Interaktionen](FunktionenInteraktionen.html) werden vers
 
 | Hinweis | Out-Of-Scope Extensions |
 |---------|---------------------|
-| <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die folgenden Extensions sind im Rahmen des Moduls out-of-scope und sollten nicht genutzt werden. Falls Extensions für einen bestimmten Use Case benötigt werden, soll bitte im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen werden. Abhängig von der Rückmeldung kann diese Extension in späteren Releases verbindlich gemacht werden. |
+| <img src="Betriebskoordination_Gruen_gematik.svg" width="40"/> | Die folgenden Extensions sind im Rahmen des Moduls out-of-scope und sollten nicht genutzt werden. Falls Extensions für einen bestimmten Use Case benötigt werden, soll bitte im [Chat](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) ein Feedback zu hinterlassen werden. Abhängig von der Rückmeldung kann diese Extension in späteren Releases verbindlich gemacht werden. |
 
 
 #### Core Extensions (Questionnaire)
+
 | Extension Name | Context | Beschreibung |
 |---------------|---------|--------------|
 | [11179-permitted-value-conceptmap](https://hl7.org/fhir/R4/extension-11179-permitted-value-conceptmap.html) | Questionnaire.item.answerValueSet | Verknüpft erlaubte Werte mit einer ConceptMap |

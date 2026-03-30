@@ -4,7 +4,7 @@ topic: FormularDatenRueckuebermittlung
 
 ## Interaktion: FormularDaten-Rückübermittlung
 
-Die Rückübermittlung von {{pagelink:FormularDaten}} erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md)
+Die Rückübermittlung von {{pagelink:FormularDaten}} erfolgt gemäß den Festlegungen in [ISiK Basis Stufe 6: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md)
 
 <plantuml>
 @startuml
