@@ -6,7 +6,7 @@ Description: "Dieses Profil ermöglicht die Nutzung von in Gesundheitsberufen t�
 
 In FHIR werden PersonImGesundheitsberuf mit der [`Practitioner`](https://hl7.org/fhir/R4/practitioner.html)-Ressource
  repräsentiert.  
- Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPatient valide sind, auch valide sind gegen:
+ Für das Profil ISIKPersonImGesundheitsberuf wird eine Kompatibilität mit folgenden Profilen angestrebt; allerdings kann nicht sichergestellt werden, dass Instanzen, die gegen ISIKPersonImGesundheitsberuf valide sind, auch valide sind gegen:
 * [Profil KBV_PR_Base_Practitioner der KBV Basisprofile](https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner). 
 * [Profil HiGHmed_IC_Practitioner, MI Initiative - HiGHmed Use Case Infection Control der  Medizininformatik Initiative ](https://simplifier.net/medizininformatikinitiative-highmed-ic/highmed-ic-practitioner)
 
@@ -18,8 +18,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(practitioner-eu)
-//* insert CompliesWith(TIPractitioner|1.1.1)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu)
+// * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-practitioner)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner)
 * obeys prac-de-1
 * . ^constraint[5].source = Canonical(ISiKPersonImGesundheitsberuf)
 * identifier 1.. MS

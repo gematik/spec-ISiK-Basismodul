@@ -1,0 +1,69 @@
+{
+  "resourceType": "Encounter",
+  "id": "isik-encounter-Sternenfall",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "abteilungskontakt",
+          "system": "http://fhir.de/CodeSystem/Kontaktebene"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "VN",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "system": "https://test.krankenhaus.de/fhir/sid/aufnahmenummer",
+      "value": "Sternenfall-20200310-001"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "display": "Inpatient"
+  },
+  "subject": {
+    "reference": "Patient/isik-patient-156722"
+  },
+  "period": {
+    "start": "2020-03-10T20:17:06+01:00"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/isik-station-anaesthesie"
+      },
+      "physicalType": {
+        "coding": [
+          {
+            "code": "wa",
+            "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "display": "Ward"
+          }
+        ]
+      }
+    }
+  ],
+  "account": [
+    {
+      "identifier": {
+        "value": "174357",
+        "system": "https://test.krankenhaus.de/fhir/sid/fallnummer"
+      }
+    }
+  ]
+}

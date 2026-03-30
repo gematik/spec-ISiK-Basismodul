@@ -24,7 +24,7 @@ Da Implantate auch im Kontext des EHDS berücksichtigt werden, erscheint eine Au
 "
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(DeviceEuHdr)
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/device-eu-hdr)
 * status 1.. MS
   * ^short = "Status des Implantats"
   * ^comment = "Begründung MS: Der Status gibt an, ob das Implantat aktuell im Körper des Patienten vorhanden ist oder nicht 

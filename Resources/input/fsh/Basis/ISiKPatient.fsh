@@ -24,8 +24,8 @@ Es ist zu beachten, dass das Profil ISiKPatient NICHT unmittelbar kompatibel mit
 
 * insert Meta
 * insert CommonElements
-//* insert CompliesWith(TIPatient|1.1.1)
-//* insert CompliesWith(PatientEu)
+// * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-patient)
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/patient-eu)
 * obeys isik-pat-1
 * . ^constraint[5].source = Canonical(ISiKPatient)
 * identifier MS

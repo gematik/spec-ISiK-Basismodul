@@ -17,6 +17,10 @@ Die verwendbaren Extensions sind nicht mit profiliert, sondern im IG unter Spezi
   * ^comment = "**Begründung MS:**
   In dieser Extension wird die Zweckbestimmung angegeben, welche die FormularDefinition, auf der diese FormularDaten basieren, für die Verwendung innerhalb eines Medizinproduktes identifiziert hat. Sobald diese Extension vorhanden ist, sollten die Konsequenzen für die Anzeige und Verarbeitung der FormularDaten geprüft werden. Ein Formularrenderer, der sich nicht mit dem Thema MDR und Medizinprodukte auseinandergesetzt hat, sollte hier auf das im FHIR-Standard festgelegte Verhalten bei [modifierExtension](http://hl7.org/fhir/extensibility.html#modifierExtension) zurückgreifen."  
 * modifierExtension[MpFormular].valueString MS
+* text MS
+  * ^short = "Menschlich lesbare Zusammenfassung der FormularDaten"
+  * ^comment = "**Begründung MS:**
+  Wird ein Formular nicht im Kontext der `Datenübermittlung aus Subsystemen` übertragen, wo ein Narrativ im Kontext der Composition gefordert wird, muss an dieser Stelle eine menschenlesbare Zusammenfassung der FormularDaten bereitgestellt werden, damit die Informationen auch ohne Zugriff auf die zugrunde liegende FormularDefinition und die strukturierte Darstellung der Formulardaten interpretiert werden können."
 * identifier MS
   * ^short = "eindeutiger Identifier der FormularDaten"
   * ^comment = "**Begründung MS:**
