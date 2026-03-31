@@ -33,14 +33,14 @@ Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (F
 
 Bei der Erstellung und späteren Bearbeitung einer Formulardefinition ist es wichtig, dass jede Änderung eine entsprechende Versionserhöhung (Inkrement) zur Folge hat. Dabei wird zwischen technischen und inhaltlichen Änderungen unterschieden, um die Auswirkungen auf die Kompatibilität und Funktionalität des Formulars korrekt zu kommunizieren. Das folgende [SemVer-Verfahren](https://semver.org/lang/de/) SOLLTE als Grundlage für die Versionierung von Formulardefinitionen im Rahmen von ISiK-kompatiblen Formularen verwendet werden.
 
-<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/></br>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/><br>
 
 **Diskussion/Ausnahme/Alternative - Hinweis für Stakeholder:**  
 In bestimmten Anwendungsfällen, wie beispielsweise bei Formularen für das tägliche Mittags-Menü oder anderen regelmäßig wechselnden Inhalten, kann eine kalendarische oder tagesbasierte Versionierung sinnvoll sein. Hierbei könnte die Version anhand des Datums (z. B. `2024-06-14`) vergeben werden, um die Aktualität und Nachvollziehbarkeit der jeweiligen Formularversion sicherzustellen.  
 Diese Form der Versionierung erscheint insbesondere dann angebracht, wenn Inhalte häufig und planmäßig angepasst werden und eine klassische semantische Versionierung (SemVer) nicht den Anforderungen genügt. Stakeholder sollten in solchen Fällen gemeinsam mit den Nutzenden und Entwickelnden die geeignete Versionierungsstrategie festlegen. 
 Über Rückmeldungen zu den Versionsstrategien von Seiten der Implementierenden und Anwendern würden wir uns freuen.
 
-<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/></br>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/><br>
 
 
 ##### Inkrement der Major Nummer 
