@@ -50,8 +50,9 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard
 
   Hinweis: i.d.R. 'order'"
-* doNotPerform ..0
-  * ^comment = "Begründung der Kardinalitätsänderung: Use Case für dieses Feld ist nicht im Scope"
+* doNotPerform MS
+  * ^short = "Nicht durchführen"
+  * ^comment = "**Begründung MS:** Die Kennzeichnung als Must-Support erfolgt, da es sich um ein als Modifier-Element markiertes Feld in der Kernspezifikation handelt. Und wegen der Kompatibilität mit eRezept und ePA Profilen, welche die Angabe von 'doNotPerform' nicht verbieten." 
 * medicationCodeableConcept MS
   * ^short = "Medikament in codierter Form oder ggf. als Freitext"
   * ^comment = "Begründung des Must-Support: Basisinformation
