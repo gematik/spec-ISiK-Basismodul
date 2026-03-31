@@ -144,7 +144,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * interpretation = $v3-ObservationInterpretation#H "High"
 * interpretation.text = "Hypertensive Krise"
-* bodySite = $sct#368208008 "Left arm"
+* bodySite = $sct#66480008 "Structure of left forearm"
 * method = $sct#113011001 "Palpation"
 * device = Reference(ExampleDevice)
 * note.text = "Arterielle Blutdruckmessung über arteriellen Katheter"

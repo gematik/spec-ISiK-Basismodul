@@ -20,6 +20,7 @@ InstanceOf: ISiKProzedurReanimation
 Usage: #example
 * extension.url = "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum"
 * extension.valueDateTime = "2026-04-23"
+* category = $sct#373110003 "Emergency procedure"
 * status = #completed
 * code.coding[0] = $sct#89666000 "Kardiopulmonale Reanimation"
 * code.coding[=].version = "http://snomed.info/sct/11000274103/version/20251115"

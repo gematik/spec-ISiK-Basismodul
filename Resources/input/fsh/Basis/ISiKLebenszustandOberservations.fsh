@@ -108,7 +108,7 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Pregnancy status"
+* code = $loinc#82810-3 "Schwangerschaftsstatus"
   * coding.version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -134,7 +134,7 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code.coding[loinc] = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus der letzten Menstruationsperiode"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
