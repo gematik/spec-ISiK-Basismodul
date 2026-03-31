@@ -19,14 +19,14 @@ BODY:
 
 ```json
 {
-"resourceType": "Parameters",
-"id": "ParametersExampleUpdateMetadata",
-"parameter": [
-{
-"name": "docStatus",
-"valueCode": "final"
-}
-]
+  "resourceType": "Parameters",
+  "id": "ParametersExampleUpdateMetadata",
+  "parameter": [
+    {
+      "name": "docStatus",
+      "valueCode": "final"
+    }
+  ]
 }
 ```
 
