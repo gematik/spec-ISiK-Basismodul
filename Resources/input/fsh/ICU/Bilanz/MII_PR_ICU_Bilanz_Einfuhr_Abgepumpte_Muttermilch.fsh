@@ -11,8 +11,7 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 1.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #819975003
-* code.coding[sct] ^patternCoding.display = "Intake of maternal expressed breast milk (observable entity)"
+* code.coding[sct] ^patternCoding.code = #819975003 // "Intake of maternal expressed breast milk (observable entity)"
 * code.coding[sct].code MS
 * code.coding[loinc] ..0 MS
 * code.coding[IEEE-11073] ..0 MS
@@ -33,7 +32,7 @@ Usage: #example
 * status = #final
 * category.coding[hl7-category] = $observation-category#exam "Exam"
 * category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
-* code.coding[sct] = $sct#819975003 "Intake of maternal expressed breast milk (observable entity)"
+* code.coding[sct] = $sct#819975003 "Intake of maternal expressed breast milk"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T09:30:00+02:00"
 * valueQuantity.value = 60

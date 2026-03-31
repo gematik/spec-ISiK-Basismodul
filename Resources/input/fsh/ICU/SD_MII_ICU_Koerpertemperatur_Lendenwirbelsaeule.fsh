@@ -24,4 +24,4 @@ Usage: #example
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#122496007 "Structure of lumbar vertebral column (body structure)"
+* bodySite = $sct#122496007 "Lumbar spine structure"

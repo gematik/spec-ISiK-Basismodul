@@ -11,13 +11,11 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 2.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #251845003
-* code.coding[sct] ^patternCoding.display = "Fluid output from wound drain (observable entity)"
+* code.coding[sct] ^patternCoding.code = #251845003 // "Fluid output from wound drain (observable entity)"
 * code.coding[sct].code MS
 * code.coding[loinc] 1..1 MS
 * code.coding[loinc] ^patternCoding.system = $loinc
-* code.coding[loinc] ^patternCoding.code = #9203-1
-* code.coding[loinc] ^patternCoding.display = "Fluid output wound drain"
+* code.coding[loinc] ^patternCoding.code = #9203-1 // "Fluid output wound drain"
 * code.coding[loinc].code MS
 * code.coding[IEEE-11073] ..0 MS
 
@@ -37,7 +35,7 @@ Usage: #example
 * status = #final
 * category.coding[hl7-category] = $observation-category#exam "Exam"
 * category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
-* code.coding[sct] = $sct#251845003 "Fluid output from wound drain (observable entity)"
+* code.coding[sct] = $sct#251845003 "Fluid output from wound drain"
 * code.coding[loinc] = $loinc#9203-1 "Fluid output wound drain"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T20:00:00+02:00"

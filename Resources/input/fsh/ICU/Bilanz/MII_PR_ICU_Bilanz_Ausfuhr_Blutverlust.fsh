@@ -11,13 +11,11 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 2.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #250771004
-* code.coding[sct] ^patternCoding.display = "Actual blood loss"
+* code.coding[sct] ^patternCoding.code = #250771004 // "Actual blood loss"
 * code.coding[sct].code MS
 * code.coding[loinc] 1..1 MS
 * code.coding[loinc] ^patternCoding.system = $loinc
-* code.coding[loinc] ^patternCoding.code = #81661-1
-* code.coding[loinc] ^patternCoding.display = "Blood loss [Volume] Measured"
+* code.coding[loinc] ^patternCoding.code = #81661-1 "Blood loss [Volume] Measured"
 * code.coding[loinc].code MS
 * code.coding[IEEE-11073] ..0 MS
 

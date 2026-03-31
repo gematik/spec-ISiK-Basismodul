@@ -73,3 +73,16 @@ Description: "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses Cod
 * ^caseSensitive = false
 * #ambulant "Ambulanter Kontakt"
 * #virtuell "Virtueller Kontakt"
+
+CodeSystem: MimeTypeCS
+Id: MimeTypeCS
+Title: "MIME Types (Fragment)"
+Description: "Fragment des CodeSystems urn:ietf:bcp:13 mit den in ISiK relevanten MIME-Typen."
+* insert Meta
+* ^url = "urn:ietf:bcp:13"
+* ^content = #fragment
+* ^caseSensitive = false
+* #application/fhir+xml "FHIR XML"
+* #application/fhir+json "FHIR JSON"
+* #application/pdf "PDF"
+* #image/jpeg "JPEG"

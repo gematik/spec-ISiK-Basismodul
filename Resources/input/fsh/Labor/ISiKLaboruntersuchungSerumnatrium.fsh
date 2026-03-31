@@ -23,5 +23,5 @@ Usage: #example
 * referenceRange
   * low = 135 $cs-ucum#mmol/L
   * high = 145 $cs-ucum#mmol/L
-  * appliesTo = $sct#248152002 "female"
+  * appliesTo = $sct#248152002 "Weiblich"
 * insert EffectiveAndPerformer

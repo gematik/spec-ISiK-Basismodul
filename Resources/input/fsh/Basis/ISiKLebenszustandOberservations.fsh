@@ -108,7 +108,7 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Pregnancy status"
+* code = $loinc#82810-3 "Schwangerschaftsstatus"
   * coding.version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -134,7 +134,7 @@ Instance: ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel
 InstanceOf: ISiKSchwangerschaftErwarteterEntbindungstermin
 Usage: #example
 Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
-* code.coding[loinc] = $loinc#11779-6 "Delivery date Estimated from last menstrual period"
+* code.coding[loinc] = $loinc#11779-6 "Entbindungstermin, geschätzt aus der letzten Menstruationsperiode"
   * version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
@@ -162,13 +162,13 @@ InstanceOf: ISiKAlkoholAbusus
 Usage: #example
 Title: "ISiKAlkoholAbususBeispiel"
 * code.coding[snomed-ct] = $sct#15167005 "Schädlicher Gebrauch von Alkohol"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#74043-1 "Alcohol use disorder"
   * version = "2.77"  
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
+* valueCodeableConcept = ExpandedYesNoIndicator#Y "Ja"
 * encounter = Reference(Fachabteilungskontakt)
 * performer = Reference(PractitionerWalterArzt)
 
@@ -190,8 +190,8 @@ Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
 Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
-* code.coding[snomed-ct] = $sct#77176002 "Smoker"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+* code.coding[snomed-ct] = $sct#77176002 "Raucher"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#72166-2 "Tobacco smoking status"
   * version = "2.77"
 * status = #final
@@ -221,7 +221,7 @@ Usage: #example
 Title: "ISiKStillstatusBeispiel"
 Description: "ISiKStillstatusBeispiel"
 * code.coding[snomed-ct] = $sct#413712001 "Breastfeeding (mother)"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#63895-7 "Breastfeeding status"
   * version = "2.77" 
 * status = #final

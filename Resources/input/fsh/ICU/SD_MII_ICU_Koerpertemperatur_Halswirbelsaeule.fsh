@@ -18,10 +18,10 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Halswirbelsaeule
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#364419004 "Temperature of cervical spine"
+  * coding[sct] = $sct#364419004 "Cervical spine temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#122494005 "Structure of cervical vertebral column (body structure)"
+* bodySite = $sct#122494005 "Structure of cervical vertebral column"

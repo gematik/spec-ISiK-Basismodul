@@ -8,7 +8,7 @@ Description: "Beispielstation Anaesthesie"
 * id = "isik-station-anaesthesie"
 * identifier[standortnummer-dkg]
   * value = "ANEITS" 
-* operationalStatus = $v2-0116#O "Occupied" 
+* operationalStatus = $v2-0116#O "belegt" 
 * name = "Intensivstation Anaesthesie"
 * mode = #instance
 * type = $v3-RoleCode#ICU "Intensive care unit"

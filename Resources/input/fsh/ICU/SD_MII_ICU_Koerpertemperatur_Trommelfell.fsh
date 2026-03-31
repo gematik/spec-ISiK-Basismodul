@@ -21,11 +21,11 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#8333-7 "Tympanic membrane temperature"
-  * coding[snomed] = $sct#415974002 "Core body temperature measured at tympanic membrane"
+  * coding[snomed] = $sct#415974002 "Körperkerntemperatur gemessen am Trommelfell"
   * coding[specific-IEEE-11073] = $IEEE11073#150392 "MDC_TEMP_TYMP"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#42859004 "Tympanic membrane structure (body structure)"
+* bodySite = $sct#42859004 "Tympanic membrane structure"

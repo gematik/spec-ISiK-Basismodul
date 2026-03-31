@@ -17,7 +17,7 @@ Description: "Dieses ValueSet enthält Codes für Vitaldaten sowie Daten aus dem
 * $IEEE11073#152852 "Pulmonary Vascular Resistance Index"
 * $IEEE11073#150428 "Ventricular stroke"
 * $IEEE11073#149764 "Left Ventricular Stroke Work Index"
-* $IEEE11073#150368 "Body temperature - Core"
+* $IEEE11073#150368 "MDC_TEMP_CORE"
 * $IEEE11073#150456 "Oxygen saturation in Arterial blood by Pulse oximetry"
 * $IEEE11073#160300 "Postductal SpO2"
 * $IEEE11073#160296 "Preductal SpO2"

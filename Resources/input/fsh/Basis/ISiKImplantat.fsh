@@ -43,7 +43,7 @@ Instance: ISiKImplantatHerzschrittmacher
 InstanceOf: ISiKImplantat
 Usage: #example
 * status = #active
-* type = $sct#14106009 "Cardiac pacemaker, device (physical object)"
+* type = $sct#14106009 "Herzschrittmacher"
 * deviceName
   * name = "Evoque DR"
   * type = #manufacturer-name
@@ -60,5 +60,5 @@ Instance: ISiKImplantatHueftprothese
 InstanceOf: ISiKImplantat
 Usage: #example
 * status = #active
-* type = $sct#10796001 "Hip joint prosthesis (physical object)"
+* type = $sct#67270000 "Hüftprothese"
 * patient = Reference(PatientinMusterfrau)
