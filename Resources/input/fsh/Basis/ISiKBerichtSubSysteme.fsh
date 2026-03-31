@@ -18,7 +18,7 @@ Die ISiK-Spezifikation begegnet diesen Herausforderungen, indem sie die Übermit
 
 (Semi-)Strukturierte Dokumente werden in FHIR mit der `Composition`-Ressource repräsentiert, 
 die die Dokumentenmetadaten sowie die textuelle Repräsentation des Dokumentes enthält.
-Die Composition referenziert auf beliebige weiter FHIR-Ressourcen, die die strukturierten Komponenten des Dokumentes darstellen.
+Die Composition referenziert auf beliebige weitere FHIR-Ressourcen, die die strukturierten Komponenten des Dokumentes darstellen.
 
 Für den Transport wird die Composition zusammen mit allen direkt oder indirekt referenzierten Ressourcen in eine `Bundle`-Ressource
  vom Typ `document` aggregiert. 

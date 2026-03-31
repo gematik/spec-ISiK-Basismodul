@@ -34,6 +34,7 @@ https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Medikation
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Subscriptions  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Terminplanung  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Vitalparameter  
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Organspendeerkennung
 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.
