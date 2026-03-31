@@ -109,79 +109,11 @@ Der dargestellte Workflow orientiert sich am [Workflow](https://hl7.org/fhir/uv/
 
 #### Normalfluss
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Endpoint as Client (REST-Hook Endpoint)
-    participant Subscription Server
-
-    rect rgb(230, 240, 255)
-    note over Client,Endpoint: Client-System
-    end
-
-    Client->>Subscription Server: GET /metadata
-    Subscription Server-->>Client: CapabilityStatement
-
-    Client->>Subscription Server: POST /Subscription
-    Subscription Server->>Endpoint: POST Handshake
-    Endpoint-->>Subscription Server: HTTP 200 OK
-    Subscription Server->>Subscription Server: Subscription.status = active
-
-    loop solange Subscription aktiv ist
-        alt relevantes Ereignis eingetreten
-            Subscription Server->>Endpoint: POST Notification Bundle (history, id-only)
-            Client->>Subscription Server: GET /[ResourceType]/[id]
-            Subscription Server-->>Client: Resource
-        else keine Notification innerhalb heartbeatPeriod
-            Subscription Server->>Endpoint: POST Heartbeat Bundle
-        end
-    end
-```
+<img src="Workflow_Normalfluss.png">
 
 #### Fehlerfall
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Endpoint as Client (REST-Hook Endpoint)
-    participant Subscription Server
-
-    rect rgb(230, 240, 255)
-    note over Client,Endpoint: Client-System
-    end
-
-    loop solange Subscription aktiv und fehlerfrei ist
-        Subscription Server->>Endpoint: POST Notification Bundle
-        Endpoint-->>Subscription Server: HTTP 200 OK
-    end
-
-    Subscription Server->>Endpoint: POST Notification Bundle
-    Endpoint-->>Subscription Server: Fehler / keine Antwort
-
-    Subscription Server->>Subscription Server: set Subscription.status = error
-    Note over Subscription Server,Endpoint: Weitere Notifications werden<br/> nicht regulär zugestellt
-
-    Client->>Subscription Server: GET /Subscription/[id]/$status
-    Subscription Server-->>Client: Status + Diagnose
-
-    Client->>Endpoint: Endpunkt reaktivieren
-
-    Client->>Subscription Server: PUT /Subscription/[id] (status=requested)
-    Subscription Server->>Endpoint: POST Handshake
-    Endpoint-->>Subscription Server: HTTP 200 OK
-    Subscription Server->>Subscription Server: set Subscription.status = active
-
-    Client->>Subscription Server: GET /Subscription/[id]/$events?eventsSinceNumber=X
-    Subscription Server-->>Client: Event-Übersicht / Nachlieferung
-
-    Client->>Subscription Server: GET /[ResourceType]/[id]
-    Subscription Server-->>Client: Resource
-
-    loop Normalbetrieb
-        Subscription Server->>Endpoint: POST Notification Bundle
-        Endpoint-->>Subscription Server: HTTP 200 OK
-    end
-```
+<img src="Workflow_Fehlerfall.png">
 
 ---
 
