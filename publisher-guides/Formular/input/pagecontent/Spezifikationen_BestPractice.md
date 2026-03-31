@@ -10,7 +10,7 @@ ohne dass dies die Nutzbarkeit des Formulars einschränkt.
 
 ### Annotation für die Vorbelegung
 
-Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profiles repräsentiert werden können, müssen *zwingend* für die automatische Vorbelegung annotiert werden.
+Formularfelder, die Daten erheben, die durch ein Element des ISiK-Patienten- oder ISiK-Encounter-Profils repräsentiert werden können, müssen *zwingend* für die automatische Vorbelegung annotiert werden.
 Formularfelder, die Daten erheben, die durch ein ISiK-Profil des Ressourcen-Typs Observation repräsentiert werden können, müssen *zwingend* in der Modellierung an das ISiK-Profil angepasst werden und für die automatische Vorbelegung annotiert werden.
 
 ### Annotation für die Extraktion
@@ -30,7 +30,7 @@ FormularDefinitionen sollten immer das Vorhandensein eines Patienten- und Encoun
 ### Formulare im Kontext von Medizinprodukten
 Erfüllt eine Software ein Kriterium aus der MDR Art. 2, wird sie zum Medizinprodukt. Formulare sind kein Medizinprodukt, es kann allerdings Einsatzzwecke geben, bei denen die Kriterien der MDR erfüllt sind. Konkretes Beispiel wäre die Nutzung von Berechnungen auf deren Basis z.B. Entscheidungen am individuellen Patienten abgeleitet werden. Die Verantwortlichkeit für die Inverkehrbringung liegt hierbei beim Hersteller der Software. Aus diesem Grund ist es wichtig, sich Gedanken über den Einsatzzweck zu machen und diesen festzulegen. Ist ein Formular für eine statistische Auswertung im Forschungskontext gedacht, kann es durch eine Software angezeigt, berechnet und verarbeitet werden, ohne unter die MDR zu fallen. Ist das selbe Formular aber mit medizinischem Zweck am individuellen Patienten im Einsatz, kann die anzeigende, berechnende und verarbeitende Software durchaus unter die MDR fallen.
 
-Aus diesem Grund soll im Rahmen des Moduls die Möglichkeit gegeben werden, die Zweckbestimmung eines Formulars mit zu erfassen und so teilweise strukturiert anzugeben, ob das Formular ohne vorheriges Auseinandersetzen mit der MDR angezeigt, berechnet und verarbeitet werden darf, oder ob hier gewissen Bedingungen erfüllt werden müssen. Für weitere Informationen zu diesem Thema verweisen wir auf die [Richtlinie](https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf).
+Aus diesem Grund soll im Rahmen des Moduls die Möglichkeit gegeben werden, die Zweckbestimmung eines Formulars mit zu erfassen und so teilweise strukturiert anzugeben, ob das Formular ohne vorheriges Auseinandersetzen mit der MDR angezeigt, berechnet und verarbeitet werden darf, oder ob hier gewisse Bedingungen erfüllt werden müssen. Für weitere Informationen zu diesem Thema verweisen wir auf die [Richtlinie](https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf).
 
 
 Mit der Extension [ISiKMpFormularExtension](StructureDefinition-ISiKMpFormularExtension.html) besteht die Möglichkeit anzugeben, dass das Formular innerhalb eines Medizinproduktes eingesetzt wird und zusätzlich eine Zweckbestimmung anzugeben ist. Die Interpretation der Zweckbestimmung und der daraus folgenden Konsequenzen für die eingesetzte Software liegt im Verantwortungsbereich des Software-Hersteller!

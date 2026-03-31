@@ -4,6 +4,8 @@ topic: ReleaseNotes
 
 ### Version 6.0.0-rc
 
+Datum: 02.04.2026
+
 * `improve` Das pattern auf `Patient` im subjectType von FormularDefinition wurde entfernt, damit auch weitere Use Cases mit dem Modul umsetzbar sind. Die Anforderungen und Einschränkungen, die in diesem IG für ISiK-Formulare definiert sind, beziehen sich trotzdem weiterhin auf Formulare mit subjectType `Patient`.
 
 * `improve` Das Akteursmodell wurde um zwei neue optionale Akteure erweitert: `FormularDatenExtraktor` und `FormularDatenVorbeleger`. Diese eigenständigen Akteure können Teilfunktionen (Extraktion bzw. Vorbelegung) aus dem FormularRenderer auslagern. Dies ermöglicht schlankere Renderer-Implementierungen, insbesondere im mobilen Umfeld oder für Szenarien ohne direkten Leistungserbringer-Infrastrukturzugriff (z.B. TI-Messenger).
