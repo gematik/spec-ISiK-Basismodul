@@ -109,11 +109,11 @@ Der dargestellte Workflow orientiert sich am [Workflow](https://hl7.org/fhir/uv/
 
 #### Normalfluss
 
-<img src="Workflow_Normalfluss.png">
+<img src="Workflow_Normalfluss.png" />
 
 #### Fehlerfall
 
-<img src="Workflow_Fehlerfall.png">
+<img src="Workflow_Fehlerfall.png" />
 
 ---
 
