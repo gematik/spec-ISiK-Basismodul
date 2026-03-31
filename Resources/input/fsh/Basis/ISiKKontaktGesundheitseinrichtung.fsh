@@ -45,6 +45,8 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/encounter-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung)
 * obeys ISiK-enc-1 and ISiK-enc-2 and ISiK-enc-3 and ISiK-enc-4 and ISiK-enc-5 and ISiK-enc-6 and ISiK-enc-7 and ISiK-enc-8
 * extension MS
 * extension contains ExtensionAufnahmegrund named Aufnahmegrund 0..1 MS
@@ -117,7 +119,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   erfolgt im Vorgriff auf eine entsprechende Anpassung in FHIR R5."
   * ^binding.description = "Eingeschränkter Status vgl. FHIR R5"
 * class MS
-* class from EncounterClassDE (required)
+* class from ISiKEncounterClassDE (required)
   * ^short = "Fallart"
   * ^comment = "Die Klassifikation von Encountern nach Fallarten folgt den internationalen Vorgaben und 
   dient der groben Unterscheidung von Besuchen mit und ohne Bettendisposition (ambulant/stationär). 
@@ -184,6 +186,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^patternCoding.system = $FachabteilungsschluesselErweitertCS
     * ^short = "Fachabteilungsschlüssel"
     * ^comment = "Fachabteilungen gemäß Anhang 1 der BPflV inkl. Spezialisierungen"
+* priority MS
+  * ^short = "Aufnahmepriorität"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
 * subject 1.. MS
   * ^short = "Patientenbezug"
   * ^comment = "**Begründung Must-Support:** Ein Patientenbezug des Kontakt MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
@@ -208,6 +213,9 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
     * ^comment = "Hier ist stets das *tatsächliche* Entlassdatum anzugeben.
     *Geplante* Entlassdaten müssen über die Extension `plannedEndDate` erfasst werden."
   
+* reasonCode MS
+  * ^short = "Grund des Aufenthalts"
+  * ^comment = "**Begründung MS:** Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR)."
 * diagnosis 
   * ^short = "Falldiagnosen/-prozeduren"
   * ^comment = "Verweis auf Diagnosen/Prozeduren, die eine besondere Rolle im Kontext eines Encounters einnehmen, z.B. 'Aufnahmediagnose'   
@@ -309,7 +317,7 @@ nach § 301 Abs. 3 SGB V. Somit sind diese über den Kontakt und nicht über den
   Die Slices `Station`, `Zimmer` und `Bettenstellplatz` verwenden jeweils ein Pattern auf dem status-Element mit dem Wert 'active'.
   Diese Einschränkung dient der sicheren Abbildung des aktuellen Aufenthaltsortes und soll garantieren, dass – wenn bekannt – stets nur ein aktueller Standort dokumentiert wird.
 
-  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z. B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
+  Gleichwohl erlaubt die offene Slicing-Strategie (`slicing.rules = open`), dass **weitere Slices mit abweichenden `status`-Werten** (z.B. `planned`, `reserved`, `completed`) verwendet werden dürfen.  
   Damit ist es möglich, zusätzlich auch historische oder geplante Aufenthaltsorte zu dokumentieren, sofern diese Information erfasst wird. Bei Verlegungen in einen anderen Fachbereich, welcher auch einen Wechsel des Aufenthaltsortes zur Folge hat, SOLL der Status der Location auf 'completed' gesetzt werden.
   """
   * physicalType from $LocationPhysicalTypeVS (extensible)

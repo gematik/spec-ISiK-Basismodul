@@ -20,8 +20,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/procedure-obl-eu-hdr"
-//* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/procedure-eu-eps"
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/procedure-obl-eu-hdr)
+// * insert CompliesWith(http://hl7.eu/fhir/eps/StructureDefinition/procedure-eu-eps)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure)
 * obeys proc-ISiK-1 and proc-ISiK-2
 * . ^constraint[5].source = Canonical(ISiKProzedur)
 * extension MS

@@ -1,4 +1,4 @@
-Auf der Seite [Akteure](Akteure.html) definiert finden sich Akteure im Kontext dieses Moduls, die nicht mittels eines CapabilityStatement definiert sind. Diese Akteure sind entweder nicht technisch über Interaktionen mit einzelnen FHIR-Ressourcen abbildbar, oder beschreiben Komponenten, die ein Frontend betreffen. Um eine vergleichbare Vorgabe zur Implementierung zu treffen, sind die Anforderungen im Folgenden aufgeführt.
+Auf der Seite [Akteure](Akteure.html) finden sich Akteure im Kontext dieses Moduls, die nicht mittels eines CapabilityStatement definiert sind. Diese Akteure sind entweder nicht technisch über Interaktionen mit einzelnen FHIR-Ressourcen abbildbar, oder beschreiben Komponenten, die ein Frontend betreffen. Um eine vergleichbare Vorgabe zur Implementierung zu treffen, sind die Anforderungen im Folgenden aufgeführt.
 
 ### Anforderungen FormularLauncher
 
@@ -21,7 +21,7 @@ Für den Akteur FormularLauncher sind drei Varianten definiert. Je Variante sind
     - Ist dieser Parameter nicht implementiert, sollte ein Auswahldialog vorhanden sein, um im Falle eines durch das Formular benötigten Encounter-Kontext, den passenden auszuwählen. Hierbei kann aus allen Encounter-Ressourcen eines Abrechnungsfall-Kontextes gewählt werden.(SHOULD)
 - Parameter Canonical
     - MAY
-    - Ist dieser Parameter nicht implementiert, sollte ein Auswahldialog vorgahanden sein, bei dem aus verfügbaren FormularDefinitionen ausgewählt werden kann. (SHOULD)
+    - Ist dieser Parameter nicht implementiert, sollte ein Auswahldialog vorhanden sein, bei dem aus verfügbaren FormularDefinitionen ausgewählt werden kann. (SHOULD)
 
 #### SMART-App-Launch
 
@@ -29,7 +29,7 @@ TODO
 
 #### Stand-Alone-Launch
 
-Siehe im Abschnitt [FormularRenderer]() TODO.
+Siehe im Abschnitt [FormularRenderer](FunktionenInteraktionen.md#interaktion-formularrendering).
 
 ### Anforderungen FormularDefinitionsErsteller
 
@@ -59,11 +59,10 @@ Wird ein FormularRenderer in der Stand-Alone-Variante implementiert, so muss die
 
 Wird ein FormularRenderer in der Stand-Alone-Variante implementiert, so muss dieser die Möglichkeit bieten, aus verfügbaren FormularDefinitionen auszuwählen, bevor ein Formular ausgefüllt wird. (SHALL)
 
-Wird ein FormularRenderer in der Stand-Alone-Variante implementiert, so muss dieser die Möglichkeit bieten, zu Konfigurieren, an welchen FHIR-Endpunkt das ausgefüllte Formular versendet wird. (SHALL)
+Wird ein FormularRenderer in der Stand-Alone-Variante implementiert, so muss dieser die Möglichkeit bieten, zu konfigurieren, an welchen FHIR-Endpunkt das ausgefüllte Formular versendet wird. (SHALL)
 
 #### FormularRendering
 
-Ein System, welches die Funktionalität zum Rendern von FormularDefinitionen bereitstellt, muss alle unterschiedlichen Funktionalitäten anbieten, die im Profil [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) mit Must-Support gekennzeichnet, oder auf der Seite [Extensions](extensions.html) nicht als Out-of-scope Extension gelistet sind. (SHALL)
+Ein System, welches die Funktionalität zum Rendern von FormularDefinitionen bereitstellt, muss alle unterschiedlichen Funktionalitäten anbieten, die im Profil [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) mit Must-Support gekennzeichnet, oder auf der Seite [Extensions](extensions.html) nicht als Out-of-scope Extension gelistet sind.
 
 #### FormularDatenVorbelegung
-

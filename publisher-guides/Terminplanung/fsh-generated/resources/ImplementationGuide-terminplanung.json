@@ -101,14 +101,6 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/ISiKCapabilityStatementTerminSubscriptionRolle"
-        },
-        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
-        "exampleBoolean": false,
-        "name": "CapabilityStatement für Rolle &quot;Termin Subscription&quot;"
-      },
-      {
-        "reference": {
           "reference": "CapabilityStatement/ISiKCapabilityStatementTerminologieRolle"
         },
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
@@ -122,6 +114,14 @@
         "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
         "exampleBoolean": false,
         "name": "CapabilityStatement für Rolle StammdatenRolle"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ISiKCapabilityStatementTerminSubscriptionRolle"
+        },
+        "description": "Dieses CapabilityStatement beschreibt alle Interaktionen, \n  die ein System unterstützen MUSS, welches diese Rolle implementiert.   \n  \nDie CapabilityStatements in dieser Spezifikation stellen die Anforderungen seitens der gematik dar (`kind = requirements`). \nZur Unterscheidung von Anforderungen, die erfüllt werden MÜSSEN gegenüber jenen, die erfüllt werden KÖNNEN, \nwird die [CapabilityStatement-Expectation-Extension](https://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html) mit den möglichen Werten `SHALL` (=MUSS) und `MAY` (=KANN) verwendet.",
+        "exampleBoolean": false,
+        "name": "CapabilityStatement für Rolle Termin Subscription"
       },
       {
         "reference": {
@@ -283,7 +283,7 @@
         "reference": {
           "reference": "StructureDefinition/ISiKSubscription"
         },
-        "description": "ISiK Subscription  \n\n**Motivation**\n\nSubscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).\n\nUm als Subsystem über ein Subscription-Event informiert zu werden, KANN der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) genutzt werden.\n\n**Kompatibilität**\n\nDas Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).\nDer [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "ISiK Subscription  \n\n**Motivation**\n\nSubscription ist eine FHIR Ressource, um als Client-System Benachrichtigungen über Events auf dem FHIR Server anzufragen. Der Subscription Mechanismus in FHIR R4 ist nicht geeignet, um alle relevanten Events (hier im Speziellen das Mergen von Patienten) zu unterstützen. Daher basiert das ISiK Subscription-Profil auf dem [Subscriptions R5 Backport Profil von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/StructureDefinition-backport-subscription.html).\n\nUm als Subsystem über ein Subscription-Event informiert zu werden, MUSS der FHIR Subscription Mechanismus gemäß des [Subscriptions R5 Backport IGs von HL7](https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) vom Subscription Server Akteur unterstützt werden.\n\n**Kompatibilität**\n\nDas Profil ISiKSubscription basiert auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html).\nDer [SubscriptionStatus](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-status-r4.html), sowie das [Subscription Notification Bundle](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription-notification-r4.html) werden unverändert direkt aus dem [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/index.html) genutzt.  \n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiK Subscription"
       },
@@ -291,9 +291,23 @@
         "reference": {
           "reference": "StructureDefinition/ISiKSubscriptionTermin"
         },
-        "description": "ISiK Subscription  \n### Motivation\n\nDie Subscription Ressource für Appointments unterstützt den Informationsaustausch von Termininformationen, die ausgehend vom Termin Repository eine Änderung erfahren haben.\nHierdurch können Client-Systeme über relevante Terminänderungen informiert werden, um beispielsweise die Anzeige von Termininformationen zu aktualisieren oder Benachrichtigungen (bspw. im Fall von abgesagten Terminen) an Patienten zu senden.\n\n### Kompatibilität\n\nDas Profi ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welches wiederum auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-subscription.html) basiert.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
+        "description": "ISiK Subscription  \n**Motivation**\n\nDie Subscription Ressource für Appointments unterstützt den Informationsaustausch von Termininformationen, die ausgehend vom Termin Repository eine Änderung erfahren haben.\nHierdurch können Client-Systeme über relevante Terminänderungen informiert werden, um beispielsweise die Anzeige von Termininformationen zu aktualisieren oder Benachrichtigungen (bspw. im Fall von abgesagten Terminen) an Patienten zu senden.\n\n**Kompatibilität**\n\nDas Profil ISiKSubscriptionTermin basiert auf dem Profil ISiKSubscription, welches wiederum auf dem [Backport-Subscription Profil](https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription.html) basiert.\n\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiK Subscription Termine"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/isik-encounter-Sternenfall"
+        },
+        "exampleBoolean": false,
+        "name": "isik-encounter-Sternenfall"
+      },
+      {
+        "reference": {
+          "reference": "Patient/isik-patient-156722"
+        },
+        "exampleBoolean": false,
+        "name": "isik-patient-156722"
       },
       {
         "reference": {
@@ -342,6 +356,14 @@
         "description": "Dieses Profil beschreibt die maschinenlesbare Repräsentation von \nsystem-spezifischen Kodierungen in ISiK-Szenarien.  \n\n**Motivation**\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus-/System-interne Kodierungen. Das Profil ISiKKatalog (CodeSystem) als Profil erlaubt die Repräsentation der dazugehörigen Codes und Display-Werte. \n\nEine maschinenlesbare Repräsentation dieser Kodierungen erlaubt es Clients, dazugehörige Anzeigetext und Definitionen zu verarbeiten.\n\nEin Codesystem eignet sich auch dazu, auf dessen Basis definierte ValueSets zu expandieren (https://hl7.org/fhir/R4/valueset-operation-expand.html).\nDa ISiKValueSet expandierte Valuesets vorsieht, ist eine dynamische Expansion in der Regel nicht erforderlich.\nDarüber hinausgehend ist ein Use Case im Kontext der Katalogabfrage folgender: Ein Client möchte eine Expansion neu generieren (z.B. mit anderen Expansionen-Parametern), um das ValueSet beispielsweise in einer anderen Sprache auszugeben. ",
         "exampleBoolean": false,
         "name": "ISiKCodeSystem"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKEncounterClassDE"
+        },
+        "description": "Erweitert das ValueSet EncounterClassDE der Deutschen Basisprofile um die Codes ACUTE, NONAC und OBSENC aus dem HL7 v3 ActCode System zur Harmonisierung mit dem HL7 Europe Hospital Discharge Report (HDR). Ein Issue zur Aufnahme dieser Codes in EncounterClassDE wurde bei den Deutschen Basisprofilen eingereicht.",
+        "exampleBoolean": false,
+        "name": "ISiKEncounterClassDE"
       },
       {
         "reference": {
@@ -513,14 +535,6 @@
         "description": "Dieses Profil beschreibt die maschinenlesbare Auswahl von Codes \nfür die Kodierung spezifischer FHIR-Elemente in ISiK-Szenarien.\n\n**Motivation**\n\nISiK erlaubt in diversen Kontexten die Erweiterung der Kodierung durch Krankenhaus- / System-interne Kodierungen.\nMittels der Veröffentlichung von ValueSets können Auswahllisten für externe Clients bereitgestellt werden, sodass diese entsprechende Kodierungen ebenfalls anbieten können.\n\n**Kompatibilität**\n\nFür das Profil ISiKValueSet wurde bis zum Zeitpunkt der Veröffentlichung kein Abgleich der Kompatibilität zu anderen Profilen (der KBV und der Medizininformatik-Initiative) durchgeführt.\nHinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.",
         "exampleBoolean": false,
         "name": "ISiKValueSet"
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/MimeTypeCS"
-        },
-        "description": "Fragment des CodeSystems urn:ietf:bcp:13 mit den in ISiK relevanten MIME-Typen.",
-        "exampleBoolean": false,
-        "name": "MIME Types (Fragment)"
       },
       {
         "reference": {

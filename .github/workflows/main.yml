@@ -51,7 +51,7 @@ jobs:
         if: github.event_name != 'pull_request'
 
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.8.5
+        uses: FirelyTeam/firely-terminal-pipeline@v0.8.7
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources/
           DOTNET_VALIDATION_ENABLED: false
@@ -66,7 +66,6 @@ jobs:
             -display-issues-are-warnings
             -advisor-file validator/advisor.json
             -resolution-context file:Resources/fsh-generated/resources/
-            -tx https://tx.fhir.de/fhir
             -sct 11000274103
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
@@ -100,14 +99,15 @@ jobs:
             Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.gender.extension[0]
             Patient-IsikPatientTemplate.json|Validation_VAL_Profile_NotSlice||Patient.birthDate.extension[0]
             Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.gender.extension[0]
-            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]
+            Questionnaire-DemoTemplatebasedExtractionQuestionnaire.json|Validation_VAL_Profile_NotSlice||Questionnaire.contained[0]/*Patient/IsikPatientTemplate*/.birthDate.extension[0]^
+            |Terminology_TX_NoValid_16|*Encounter Status ValueSet*|*
 
       - name: Validate Resource Status
         uses: patrick-werner/fhir-resource-status-check@1.2.1
         with:
           folder: './Resources/fsh-generated/resources/'
       - name: Add & Commit
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           committer_name: GitHub Actions Bot
           committer_email: ActionBot@github.com

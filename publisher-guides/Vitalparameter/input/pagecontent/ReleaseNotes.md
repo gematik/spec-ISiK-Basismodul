@@ -5,10 +5,11 @@
 Datum: tbd.
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
+* `change` `ISiKKoerpertemperatur` wurde entfernt; das Profil wurde ausschließlich als Zwischenstufe für `ISiKKoerperkerntemperatur` genutzt, diese obsolete Zwischenebene entfällt https://github.com/gematik/spec-ISiK-Basismodul/pull/1104
 
 Mit Inkrafttreten der Stufe 6 werden auch sämtliche nachfolgend aufgeführten Änderungen verbindlich.
 

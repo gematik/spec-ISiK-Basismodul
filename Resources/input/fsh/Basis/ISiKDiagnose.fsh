@@ -24,11 +24,11 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 
 * insert Meta
 * insert CommonElements
-/*
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr"
-*/
+// * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core)
+// * insert CompliesWith(http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps)
+// * insert CompliesWith(http://hl7.eu/fhir/hdr/StructureDefinition/condition-obl-eu-hdr)
+// * insert CompliesWith(https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose)
+// * insert CompliesWith(https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis)
 * obeys isik-con1
 * extension MS
 * extension ^slicing.discriminator.type = #value

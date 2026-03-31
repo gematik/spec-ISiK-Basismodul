@@ -14,6 +14,14 @@ Datum: tbd.
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Hinzufügen von zwei weiteren Subscription Topics zur Abbildung von aktualisierten bzw. abgesagten Terminen https://github.com/gematik/spec-ISiK-Basismodul/pull/1087
+* `improve` Subscription-Modul für Stufe 6 normativ erweitert https://github.com/gematik/spec-ISiK-Basismodul/pull/1114/
+  * Verpflichtende Unterstützung von ISiK-konformen FHIR Subscriptions für den Subscription Server-Akteur (normativer Status von KANN auf MUSS angehoben)
+  * Payload in Notifications auf `id-only` beschränkt — Ressourcendaten werden nicht übertragen (Pull-Prinzip)
+  * Vollständiger Subscription-Workflow dokumentiert: Topic Discovery, Subscription-Anlage, Handshake/Aktivierung, Notifications, Heartbeat, `$status`, `$events`, Recovery und Fehlerhandling
+  * Sicherheitsanforderungen festgelegt: Write-Only-Semantik für `channel.header`, kein PHI-Payload in Notifications
+  * Heartbeat-Pflicht normativ dokumentiert (`heartbeatPeriod`)
+  * CapabilityStatement-Extension `capabilitystatement-subscriptiontopic-canonical` verpflichtend mit allen ISiK-Topics (inkl. generischem Topic)
+  * Topic-Definitionen für alle SubscriptionTopics präzisiert (Trigger-Semantik je Code)
 
 ----
 

@@ -11,11 +11,13 @@ Datum: tbd.
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * `improve` Hinzufügen eines Profils zur Abbildung von Serumnatrium aus dem Kontext der Organspendeerkennung auf Intensivstationen https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
 * Initiales Draft für die Stufe 6
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `improve` Verpflichtende Einführung des Suchparameters `_lastUpdated`  https://github.com/gematik/spec-ISiK-Basismodul/pull/1053
 * `improve` Einführung des Suchparameters `code-value-quantity` https://github.com/gematik/spec-ISiK-Basismodul/pull/1064
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
-
+* `improve` Zweiter optionaler `category`-Slice (`loinc-observation-class`) in `ISiKLaboruntersuchung` zur Einordnung in einen LOINC-Fachbereich (z. B. Hematology, Chemistry) ergänzt; neues ValueSet `ISiKLaborbereichVS` https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
+* `improve` `valueCodeableConcept` mit `preferred`-Binding auf das IPS-ValueSet `results-coded-values-laboratory` in `ISiKLaboruntersuchung` ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
+* `improve` `method` erhält ein `extensible`-Binding auf SNOMED-CT-Konzepte unterhalb von `#272394005` (Technique); neues ValueSet `ISiKLaborMethodeVS` https://github.com/gematik/spec-ISiK-Basismodul/pull/1112
 
 Mit der Stufe 6 werden alle Technical Corrections der Stufe 5 bindend.
 

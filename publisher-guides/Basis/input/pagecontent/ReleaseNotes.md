@@ -15,7 +15,7 @@ Tags werden folgendermaßen verwendet:
 ### Version 6.0.0-rc
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068 - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
-* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - amalog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
+* `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
 * `improve` Kompatibilität des Profils ISiKStandort zum EHDS Profil Location (EU Core) wurde mittels complies-with Extension sichergestellt https://github.com/gematik/spec-ISiK-Basismodul/pull/1046
 * `improve` EHDS-Alignment für ISiKDiagnose und ISiKProzedur: Hinweise zu HL7 Europe Spezifikationen (EPS/HDR) und optionale BodyStructure-Extension für Lateralität hinzugefügt https://github.com/gematik/spec-ISiK-Basismodul/pull/1057
@@ -26,12 +26,16 @@ Tags werden folgendermaßen verwendet:
 * `improve` Implicit Rules auf 0..0 beschränkt https://github.com/gematik/spec-ISiK-Basismodul/pull/1075
 * `improve` Anpassung des verwendeten ValueSets auf Location.physicalType und Encounter.location.physicalType hin zum FHIR Core ValueSet mit extensible binding-strength https://github.com/gematik/spec-ISiK-Basismodul/pull/1074
 * `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich`, so dass es zum entsprechenden Profil der VSDM2 Spezifikation kompatibel ist. Zusätzlich Integration einer Erläuterung in Bezug auf Verhätnis des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` zum VSDM2 `VSDMCoveragePKV` Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1070
+* `improve` Einführung des Profils `ISiKLeistungserbringerrolle`, basierend auf dem PracitionerRole Profil aus dem EHDS https://github.com/gematik/spec-ISiK-Basismodul/pull/1062 
 * `documentation` Klarstellung zu Abfragen jenseits des Patienten- und Encounter-Kontextes
 * `improve` Ergänzung der Operationen Patient-everything und Encounter-everything im ISiK CpS der Rolle Stammdaten https://github.com/gematik/spec-ISiK-Basismodul/pull/1096
 * `improve` Änderungen der Profil- und Suchparameter-Vorgaben zu Organization und Location - auch aus dem Kontext des Use Cases Organspendeerkennung - https://github.com/gematik/spec-ISiK-Basismodul/pull/1094 
   - Profile Station und Organization und spezielle Suchparameter verpflichtend
   - Kardinalitäts-Vorgaben auf Station.managingOrganization entfernt
 * `improve` Hinzufügen eines EHDS kompatiblen Device Profils https://github.com/gematik/spec-ISiK-Basismodul/pull/1090
+* `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
+* `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` https://github.com/gematik/spec-ISiK-Basismodul/pull/1120
+* `improve` Anpassung der Kardinalität von Organization.name zu 1..1, um eine Kompatibilität zum EHDS und der ePA herzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/1119
 
 ### Version 5.x.x
 

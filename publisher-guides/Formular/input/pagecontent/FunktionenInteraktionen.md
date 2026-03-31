@@ -16,7 +16,7 @@ Die vorgeschlagenen Übergabe-Parameter sind:
 - [obligatorisch] Patientennummer (gängig PID; Identifier am [ISiKPatient](https://gematik.de/fhir/isik/StructureDefinition/ISiKPatient))
     - Ist für die Herstellung eines passenden Launch-Context nach SDC unabdingbar
 - [optional] Abrechnungsnummer (gängig Fallnummer; Identifier am [ISiKAbrechnungsfall](https://gematik.de/fhir/isik/StructureDefinition/ISiKAbrechnungsfall))
-    - Mit der Abrechnungsnummer kann eingeschränkt werden, welche Encounter für die Extraktion von Daten ausgewählt werden können. Der richtige Encounter muss gemäß der Beschreibungen in [ISiK Basis Stufe 5: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) manuell gewahlt werden
+    - Mit der Abrechnungsnummer kann eingeschränkt werden, welche Encounter für die Extraktion von Daten ausgewählt werden können. Der richtige Encounter muss gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) manuell gewählt werden
 - [optional] Aufnahmenummer (Identifier am [ISiKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung))
     - Mit der Aufnahmenummer kann der richtige Encounter bereits mit übergeben werden
 - [optional] Canonical der [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)
@@ -28,9 +28,15 @@ Die vorgeschlagenen Übergabe-Parameter sind:
 Der standardisierte Aufruf einer beliebigen webbbasierten Applikation aus einem klinischen Primärsystem heraus wird im Modul ISiK-Connect beschrieben und sollte für den Aufruf eines Formular-Renderers mit Übergabe eines Benutzer-, Patienten- und Encounterkontextes präferiert zum Einsatz kommen.
 
 #### Stand-Alone-Launch
-Beim Stand-Alone Launch startet der Benutzer den Formular-Renderer ohne Kontext.  Der Patienten- und Encounter-Kontext wird im Formular-Renderer gemäß der Beschreibungen in [ISiK Basis Stufe 5: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) vom Anwender manuell getroffen.
+Beim Stand-Alone Launch startet der Benutzer den Formular-Renderer ohne Kontext.  Der Patienten- und Encounter-Kontext wird im Formular-Renderer gemäß der Beschreibungen in [ISiK Basis Stufe 6: Herstellung von Patient- und Encounterkontext](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Patient-Besuch-Kontext.html) vom Anwender manuell getroffen.
 
 Beim Stand-Alone-Launch muss sichergestellt sein, dass ein adäquater Sicherheitsmechanismus zum Einsatz kommt, damit bestehende Berechtigungsstrukturen nicht außer Kraft gesetzt werden.
+
+### Interaktion: FormularRendering
+
+Die Interaktion FormularRendering beschreibt die Darstellung einer [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) in einem [FormularRenderer](Akteure.html#formularrenderer) und die damit verbundenen Interaktionen mit dem Anwender, um die entsprechenden [FormularDaten](StructureDefinition-ISiKFormularDaten.html) zu erheben. Dabei sind alle "In-Scope"-Extensions auf der Seite [Extensions](Extensions.html) zu interpretieren und entsprechend darzustellen. Ebenso sind die folgenden Interaktionen zu beachten, sofern sie nicht in einen eigenen Akteur augelagert sind.
+Ist die FormularDatenVorbelegung ausgelagert, so sollte beim FormularRendering ein QuestionnaireResponse entgegen genommen werden können, der im Rahmen der Vorbelegunmg erstellt wurde und die entsprechenden Daten bereits enthält, damit diese im Formular dargestellt werden können.
+
 
 ### Interaktion: FormularDefinitionsVerwaltung
 Die Interaktion FormularDefinitionsVerwaltung dient der Bereitstellung von FormularDefinitionen.
@@ -106,12 +112,27 @@ Die folgenden Core und SDC Extensions sind für die Extraktion in dieser Stufe r
 
 ### Interaktion: FormularDaten-Rückübermittlung
 
-Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe-5: Datenübermittlung aus Subsystemen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Datenuebermittlung-aus-Subsystemen.html)
+Die Rückübermittlung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) erfolgt gemäß den Festlegungen in [ISiK Basis Stufe 6: Datenübermittlung aus Subsystemen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Datenuebermittlung-aus-Subsystemen.html)
 
 <div>
 {% include formDatRueckuebermittlung.svg %}
 </div>
 
-| **Work in Progress** | **Fehlendes Artefakt** |
-|-|-|
-|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/c604c61a3887bd5532d2c7392eb20d8c79403028/Material/images/piktogramme/Betriebskoordination_Gruen_gematik.svg" width="40"/> | In der weiteren Entwicklung dieses Moduls wird ein Dokumenten-Profil festgelegt, das die Rückübermittlung von FormularDaten, FormularDefintionen und Strukturierten Inhalten, sowie die Erstellung von Narrativen für die menschenlesbare Darstellung von Formularinhalten spezifiziert |
+Das Bundle für die Rückübermittlung MUSS folgendem Profil entsprechen: [FormularDatenRueckuebermittlungBundle](StructureDefinition-FormularDatenRueckuebermittlungBundle.html)
+
+Dieses Bundle enthält neben den üblichen Bestandteilen eines ISiKBerichtBundles (Composition, Patient, Encounter) zusätzlich:
+
+- [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) (0..1) - die Referenz auf die FormularDefinition, die der Rückübermittlung zugrunde liegt (optional, falls bereits im Zielsystem vorhanden)
+- [FormularDaten](StructureDefinition-ISiKFormularDaten.html) (1..1) - das ausgefüllte Questionnaire in Form einer QuestionnaireResponse
+- FormularDatenExtrakt (..*) - die extrahierten Daten aus dem Formular (z.B. Observations bei observation-based extraction)
+
+**Hinweis zur menschenlesbaren Repräsentation:**
+In der aktuellen Ausbaustufe ist es von zentraler Bedeutung, dass das Narrative (Composition.text und Composition.section.text) vollständig und korrekt ausgefüllt wird. Alle im Formular ausgefüllten Informationen MÜSSEN in der menschenlesbaren Repräsentation sichtbar sein, da Primärsysteme derzeit lediglich verpflichtet sind, diese anzuzeigen.
+
+**Hinweis zu strukturierten Daten:**
+Primärsysteme müssen in der aktuellen Stufe die strukturierten Anteile (FormularDaten und FormularDatenExtrakt) nicht übernehmen. Es wird jedoch empfohlen, das vollständige Bundle zu persistieren, sodass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner strukturierter Daten möglich ist, diese auch rückwirkend erfolgen kann.
+
+Weitere Details zu Interaktionen und Verarbeitung finden sich in [ISiK Basis: Datenübermittlung aus Subsystemen](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Daten%C3%BCbermittlung-aus-Subsystemen.page.md).
+
+#### Übbermittlung von FormularDaten außerhalb der "Datenübermittlung aus Subsystemen"
+In bestimmten Anwendungsfällen kann es erforderlich sein, die Rückübermittlung von FormularDaten auch außerhalb der in ISiK Basis Stufe-6 beschriebenen "Datenübermittlung aus Subsystemen" durchzuführen. In diesem Fall ist die Nutzung von `QuestionnaireResponse.text` erforderlich, um eine menschenlesbare Repräsentation der Daten zu übermitteln. 
