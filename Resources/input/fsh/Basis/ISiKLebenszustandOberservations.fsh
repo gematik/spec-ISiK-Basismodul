@@ -168,7 +168,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
-* valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
+* valueCodeableConcept = ExpandedYesNoIndicator#Y "Ja"
 * encounter = Reference(Fachabteilungskontakt)
 * performer = Reference(PractitionerWalterArzt)
 
@@ -190,7 +190,7 @@ Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
 Usage: #example
 Title: "ISiKRaucherStatusBeispiel"
-* code.coding[snomed-ct] = $sct#77176002 "Smoker"
+* code.coding[snomed-ct] = $sct#77176002 "Raucher"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[loinc] = $loinc#72166-2 "Tobacco smoking status"
   * version = "2.77"

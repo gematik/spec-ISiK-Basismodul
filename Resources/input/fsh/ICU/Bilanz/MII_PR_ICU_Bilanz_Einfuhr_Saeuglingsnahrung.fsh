@@ -11,8 +11,7 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 1.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #1204305004
-* code.coding[sct] ^patternCoding.display = "Measured volume of intake of infant formula"
+* code.coding[sct] ^patternCoding.code = #1204305004 // "Measured volume of intake of infant formula (observable entity)"
 * code.coding[sct].code MS
 * code.coding[loinc] ..0 MS
 * code.coding[IEEE-11073] ..0 MS

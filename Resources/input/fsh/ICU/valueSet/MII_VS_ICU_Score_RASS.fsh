@@ -6,7 +6,7 @@ Description: "Value set for RASS Score
 Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module entnommen - https://github.com/medizininformatik-initiative/kerndatensatzmodul-intensivmedizin/blob/master/input/fsh/valuesets/MII_VS_ICU_Score_RASS.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 3.3.2026"
 * insert Meta
 
-* $loinc#LA17287-6 "Combative +4"
+* $loinc#LA17287-6 "Combative"
 * $loinc#LA33959-0 "Very agitated +3"
 * $loinc#LA33960-8 "Agitated +2"
 * $loinc#LA16474-1 "Restless +1"

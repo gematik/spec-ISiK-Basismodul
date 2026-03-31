@@ -21,11 +21,11 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#8331-1 "Oral temperature"
-  * coding[snomed] = $sct#415945006 "Estimated core body temperature measured in sublingual space"
+  * coding[snomed] = $sct#415945006 "Orale Temperatur"
   * coding[specific-IEEE-11073] = $IEEE11073#188424 "Oral temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#123851003 "Mouth region structure (body structure)"
+* bodySite = $sct#123851003 "Mouth region structure"

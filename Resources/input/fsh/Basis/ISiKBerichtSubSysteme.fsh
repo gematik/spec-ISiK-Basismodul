@@ -253,8 +253,8 @@ Title: "Beatmung - ICU-Aufnahme"
 * id = "61a2e9af-88f9-4ee2-a97f-c136530aadba"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Prozedur</h3>    <div><strong>Typ:</strong><ul><li><span>Jet ventilation procedure (procedure)</span><span> (http://snomed.info/sct)</span></li></ul></div>  <div><strong>Status:</strong><span>COMPLETED</span></div>  <div><strong>Kategorie:</strong><span><ul><li><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></li></ul></span></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>    <div><strong>Durchführungszeitraum:</strong><span>21.07.2025 00:00</span><span> (laufend)</span></div>            </div>"
-* category = $sct#40617009 "Artificial ventilation (regime/therapy)"
-* code = $sct#4764004 "Jet ventilation procedure (procedure)"
+* category = $sct#40617009 "Künstliche Beatmung"
+* code = $sct#4764004 "Jet ventilation procedure"
 * status = #completed
 * subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * performedPeriod
@@ -269,7 +269,7 @@ Title: "Unterstützungsdruck Beatmung - ICU-Aufnahme"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3>  <div><strong>Typ:</strong><span><span>Pressure support setting Ventilator</span><span> (http://loinc.org)</span></span></div>  <div><strong>Status:</strong><span>FINAL</span></div>  <div><strong>Kategorie:</strong><ul><li><span><span><span>Artificial ventilation (regime/therapy)</span><span> (http://snomed.info/sct)</span></span></span></li></ul></div>  <div><strong>Patient:</strong><span>urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79</span></div>  <div><strong>Zeitpunkt:</strong><span>2025-07-21T00:00:00+02:00</span></div>  <div><strong>Wert:</strong><span>6</span><span>cm[H2O]</span></div>    <div><strong>Teil von:</strong><ul><li><span>urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba</span></li></ul></div>  </div>"
 * partOf = Reference(urn:uuid:61a2e9af-88f9-4ee2-a97f-c136530aadba)
 * status = #final
-* category = $sct#40617009 "Artificial ventilation (regime/therapy)"
+* category = $sct#40617009 "Künstliche Beatmung"
 * code = $loinc#20079-0 "Pressure support setting Ventilator"
 * subject = Reference(urn:uuid:11c3de2f-d461-4063-a0c2-fde122e76a79)
 * effectiveDateTime = "2025-07-21T00:00:00+02:00"

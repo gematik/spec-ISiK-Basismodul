@@ -18,10 +18,10 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Stirn
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#415922000 "Temperature of forehead"
+  * coding[sct] = $sct#415922000 "Stirntemperatur"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#52795006 "Forehead structure (body structure)"
+* bodySite = $sct#52795006 "Forehead structure"

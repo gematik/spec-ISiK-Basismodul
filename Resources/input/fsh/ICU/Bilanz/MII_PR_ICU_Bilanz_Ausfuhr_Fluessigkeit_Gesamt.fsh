@@ -10,14 +10,12 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 
 * code.coding 2.. MS
 * code.coding[sct] 1..1 MS
-* code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #251847006
-* code.coding[sct] ^patternCoding.display = "Total fluid loss"
+* code.coding[sct] ^patternCoding.system = $sct 
+* code.coding[sct] ^patternCoding.code = #251847006 // "Total fluid loss"
 * code.coding[sct].code MS
 * code.coding[loinc] 1..1 MS
 * code.coding[loinc] ^patternCoding.system = $loinc
-* code.coding[loinc] ^patternCoding.code = #9257-7
-* code.coding[loinc] ^patternCoding.display = "Fluid output total Measured"
+* code.coding[loinc] ^patternCoding.code = #9257-7 // "Fluid output total Measured"
 * code.coding[loinc].code MS
 * code.coding[IEEE-11073] ..0 MS
 

@@ -18,10 +18,10 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Gelenk
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#250124002 "Temperature of joint"
+  * coding[sct] = $sct#250124002 "Joint temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#39352004 "Joint structure (body structure)"
+* bodySite = $sct#39352004 "Joint structure"

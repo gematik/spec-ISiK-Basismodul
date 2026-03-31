@@ -11,13 +11,11 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 2.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #1162667009
-* code.coding[sct] ^patternCoding.display = "Volume of drainage of bile duct (observable entity)"
+* code.coding[sct] ^patternCoding.code = #1162667009 // "Volume of drainage of bile duct (observable entity)"
 * code.coding[sct].code MS
 * code.coding[loinc] 1..1 MS
 * code.coding[loinc] ^patternCoding.system = $loinc
-* code.coding[loinc] ^patternCoding.code = #9113-2
-* code.coding[loinc] ^patternCoding.display = "Fluid output biliary drain"
+* code.coding[loinc] ^patternCoding.code = #9113-2 // "Fluid output biliary drain"
 * code.coding[loinc].code MS
 * code.coding[IEEE-11073] ..0 MS
 
@@ -37,7 +35,7 @@ Usage: #example
 * status = #final
 * category.coding[hl7-category] = $observation-category#exam "Exam"
 * category.coding[kdsicu-category] = $sct#364396009 " Fluid balance observable"
-* code.coding[sct] = $sct#1162667009 "Volume of drainage of bile duct (observable entity)"
+* code.coding[sct] = $sct#1162667009 "Volume of drainage of bile duct"
 * code.coding[loinc] = $loinc#9113-2 "Fluid output biliary drain"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2025-07-15T12:00:00+02:00"

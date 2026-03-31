@@ -68,7 +68,7 @@ Usage: #example
 Title: "RASS-Wert"
 Description: "RASS -4 am 2020-03-11T20:17:06+01:00"
 * status = #final
-* code.coding = $sct#1345050000 "Richmond Agitation Sedation Scale score (observable entity)"
+* code.coding = $sct#1345050000 "Richmond Agitation Sedation Scale score"
 * category[exam] = $observation-category#exam "Exam"
 * subject = Reference(ExampleOrganPatientSternenfall)
 * effectiveDateTime = "2020-03-11T20:17:06+01:00"

@@ -93,7 +93,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
   * coding[snomed] = $sct#75367002 "Blood pressure"
   * coding[IEEE11073] = $IEEE11073#150016 "MDC_PRESS_BLD"
   * text = "Systolischer und Diastolischer Blutdruck"
@@ -102,7 +102,7 @@ Usage: #example
 * performer.reference = "Practitioner/example"
 * interpretation = $v3-ObservationInterpretation#L "low"
 * interpretation.text = "Below low normal"
-* bodySite = $sct#368209003 "Right arm"
+* bodySite = $sct#368209003 "Right upper arm structure"
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
@@ -124,7 +124,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * component[SystolicBP].valueQuantity = 90 'mm[Hg]' "mmHg"
@@ -135,7 +135,7 @@ InstanceOf: ISiKBlutdruckSystemischArteriell
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blutdruck (Liste) optional mit allen Unterbegriffen"
   * coding[snomed] = $sct#75367002 "Blood pressure"
   * coding[IEEE11073] = $IEEE11073#150016 "MDC_PRESS_BLD"
   * text = "Blutdruck - Intensivmonitoring"
