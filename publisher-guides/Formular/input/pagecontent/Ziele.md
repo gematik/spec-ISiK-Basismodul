@@ -19,10 +19,10 @@ Dieses Modul wird verbindliche Festlegungen für Formular-Metadaten treffen, die
 Dieses Modul wird verbindliche  Mindestanforderungen für die Darstellung und das dynamische Verhalten von [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html)en in [FormularRenderer](Akteure.html#formularrenderer)n vorgeben. 
   
 ### Vorbelegung von Formularen
-Diese Modul wird verbindliche Festlegungen für eine verlässliche Vorbelegung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) anhand entsprechender Annotationen in den Formular-Definitionen und durch Zugriff auf vorhandene Daten im aufrufenden, ISiK-konformen[^1] Anwendungssystem treffen.
+Dieses Modul wird verbindliche Festlegungen für eine verlässliche Vorbelegung von [FormularDaten](StructureDefinition-ISiKFormularDaten.html) anhand entsprechender Annotationen in den Formular-Definitionen und durch Zugriff auf vorhandene Daten im aufrufenden, ISiK-konformen[^1] Anwendungssystem treffen.
   
 ### Validierung von FormularDaten
-Dieses Modul wird verbindliche Vorgaben enthalten, wie [FormularRenderer](Akteure.html#formularrenderer) die erhobenen Daten gegen die [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) validieren  
+Dieses Modul wird verbindliche Vorgaben enthalten, wie [FormularRenderer](Akteure.html#formularrenderer) die erhobenen Daten gegen die [FormularDefinition](StructureDefinition-ISiKFormularDefinition.html) validieren.  
  
 ### Extraktion von FormularDaten in FHIR-Ressourcen 
 Dieses Modul wird verbindliche Festlegungen für eine verlässliche Extraktion von validen [FormularDaten](StructureDefinition-ISiKFormularDaten.html) in wiederverwendbare FHIR-Ressourcen anhand entsprechender Annotationen in den Formular-Definitionen treffen.

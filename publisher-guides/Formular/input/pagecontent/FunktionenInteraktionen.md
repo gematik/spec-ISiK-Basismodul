@@ -78,7 +78,7 @@ sondern gegen die zugrundeliegende [FormularDefinition](StructureDefinition-ISiK
 
 | **Warnung** | **Missing Feature** |
 |-|-|
-|<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/refs/heads/archive-stable-pics-etc/Material/piktogramme/Ampel%20auf%20Rot_Blau_gematik.svg" alt="gematik logo" width="75"/> | Die Validierung von QuestionnaireResponse-Ressourcen gegen Questionnaires wird nicht von allen Validatoren unterstützt!|
+|<img src="Ampel_auf_Rot_Blau_gematik.svg" alt="gematik logo" width="75"/> | Die Validierung von QuestionnaireResponse-Ressourcen gegen Questionnaires wird nicht von allen Validatoren unterstützt!|
 
 Die folgenden Core und SDC Extensions sind für die Validierung in dieser Stufe relevant. Unter [Extensions](Extensions.html) sind mehr Informationen dazu zu finden.
 
