@@ -1,8 +1,4 @@
-﻿---
-topic: Akteure
----
-
-### Darstellung der Akteure
+﻿### Darstellung der Akteure
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
   <img src="Betriebskoordination_Gruen_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />

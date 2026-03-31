@@ -28,8 +28,6 @@ Die Implementierung von IHE-MHD ist unproblematisch, solange sie die einzige Tra
 
 Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar. 
 
-Die Problematik wird in der internationalen FHIR-Community diskutiert und [IHE prüft derzeit](https://github.com/IHE/ITI.MHD/issues/100), ob eine Anpassung der Spezifikation verfolgt werden soll.
-
 ##### Update für ISiK Stufe 3 und folgende Stufen 
 In ISiK Stufe 2 kam aufgrund der beschriebenen Problematik anstelle der Transaktion die im Rahmen von ISiK spezifizierte Operation "$submit-document" zum Einsatz. 
 Zwischenzeitlich ist IHE der oben genannten Argumentation gefolgt und lässt als Alternative zur Transaction die Übermittlung von Dokumenten als einfache CREATE-Interaktion zu (IHE MHD ITI-105 "Simplified Publish").
