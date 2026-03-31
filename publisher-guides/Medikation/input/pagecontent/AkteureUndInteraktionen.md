@@ -24,5 +24,3 @@ Die Interaktionen sind somit in allen drei Bereichen äquivalent:
         <img src="Interaktionen.svg" alt="Interaktionen" style="width: 100%;">
     </div>
 </figure>
-
-Zum AMTS-Akteur siehe den entsprechenden Abschnitt unter Use Cases.
