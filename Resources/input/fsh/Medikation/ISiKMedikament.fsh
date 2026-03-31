@@ -20,7 +20,6 @@ Es kann nicht sichergestellt werden, dass Instanzen, die gegen ISiKMedikament va
 
 Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.gematik.de/servicedesk/customer/portal/16) gemeldet werden.
 """
-Description: "Dieses Profil ermöglicht die Abbildung von patientenunabhängigen Informationen zu Medikamenten in ISiK Szenarien."
 // * insert CompliesWith(http://hl7.eu/fhir/mpd/StructureDefinition/Medication-eu-mpd)
 * insert Meta
 * insert CommonElements
