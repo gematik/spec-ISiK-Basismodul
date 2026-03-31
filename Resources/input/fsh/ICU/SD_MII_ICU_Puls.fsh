@@ -28,7 +28,7 @@ InstanceOf: SD_MII_ICU_Puls
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#8499008 "Pulse, function"
+  * coding[sct] = $sct#8499008 "Pulse"
   * coding[IEEE-11073] = $IEEE11073#149514 "Pulse rate"
 * subject = Reference(Patient/202)
 * effectivePeriod

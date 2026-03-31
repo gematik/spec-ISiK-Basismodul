@@ -18,10 +18,10 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Brustwirbelsaeule
 Usage: #example
 * status = #final
 * code
-  * coding[sct] = $sct#364424001 "Temperature of thoracic spine"
+  * coding[sct] = $sct#364424001 "Thoracic spine temperature"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#122495006 "Structure of thoracic vertebral column (body structure)"
+* bodySite = $sct#122495006 "Thoracic spine structure"

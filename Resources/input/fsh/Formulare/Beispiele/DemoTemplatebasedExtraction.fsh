@@ -42,20 +42,20 @@ Title: "DemoTemplatebasedExtractionQuestionnaire"
       * valueCoding
         * system = "http://hl7.org/fhir/administrative-gender"
         * code = #unknown
-        * display = "Unbekannt"
+        * display = "Unknown"
       * initialSelected = true
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #male
-      * display = "Männlich"
+      * display = "Male"
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #female
-      * display = "Weiblich"
+      * display = "Female"
     * answerOption[+].valueCoding
       * system = "http://hl7.org/fhir/administrative-gender"
       * code = #other
-      * display = "Anderes"
+      * display = "Other"
   * item[+]
     * linkId = "birthDate"
     * text = "Geburtsdatum"

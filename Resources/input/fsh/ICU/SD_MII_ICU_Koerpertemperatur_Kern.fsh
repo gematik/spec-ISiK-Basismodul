@@ -20,9 +20,9 @@ Usage: #example
 * status = #final
 * code
   * coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-  * coding[snomed] = $sct#276885007 "Core body temperature"
-  * coding[coretemp-IEEE11073] = $IEEE11073#150368 "Body temperature - Core"
-  * coding[loinc] = $loinc#8310-5 "Body temperature"
+  * coding[snomed] = $sct#276885007 "Körperkerntemperatur"
+  * coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
+  * coding[loinc] = $loinc#8310-5 "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"

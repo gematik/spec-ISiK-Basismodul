@@ -2,7 +2,7 @@ ValueSet: ObservationCodesCRP
 Id: ObservationCodesCRP
 Description: "Enthält LOINC-Codes für die Observation CRP"
 * insert Meta
-* $loinc#71426-1 "C-reaktives Protein [Masse/Volumen] in Blut mittels Hochsensitivitätsmethode"
+* $loinc#71426-1 "C reactive protein [Mass/volume] in Blood by High sensitivity method"
 * $loinc#30522-7 "C-reaktives Protein [Masse/Volumen] in Serum oder Plasma mittels Hochsensitivitätsmethode"
 * $loinc#76486-0 "C-reaktives Protein [Mol/Volumen] in Serum oder Plasma mittels Hochsensitivitätsmethode"
 * $loinc#45062-7 "C-reaktives Protein [Masse/Volumen] in Liquor"
@@ -24,7 +24,7 @@ ValueSet: ObservationCodesGFR
 Id: ObservationCodesGFR
 Description: "Enthält LOINC-Codes für die Observation GFR"
 * insert Meta
-* $loinc#98980-6 "Glomeruläre Filtrationsrate/1,73 qm.geschätzt:Volumenrate pro Fläche:Zeitpunkt:Serum, Plasma oder Blut:Quantitativ:Creatinin- und Cystatin-C-basierte Formel (CKD-EPI 2021)"
+* $loinc#98980-6 "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine and Cystatin C-based formula (CKD-EPI 2021)/1.73 sq M"
 * $loinc#98979-8 "Glomeruläre Filtrationsrate/1,73 qm.geschätzt:Volumenrate pro Fläche:Zeitpunkt:Serum, Plasma oder Blut:Quantitativ:Creatinin-basierte Formel (CKD-EPI 2021)"
 * $loinc#94677-2 "Glomeruläre Filtrationsrate/1,73 qm.geschätzt:Volumenrate pro Fläche:Zeitpunkt:Serum, Plasma oder Blut:Quantitativ:Creatinin- und Cystatin-C-basierte Formel (CKD-EPI)"
 * $loinc#62238-1 "Glomeruläre Filtrationsrate/1,73 qm.geschätzt:Volumenrate pro Fläche:Zeitpunkt:Serum, Plasma oder Blut:Quantitativ:Creatinin-basierte Formel (CKD-EPI)"
@@ -41,7 +41,7 @@ ValueSet: ObservationCodesHb
 Id: ObservationCodesHb
 Description: "Enthält LOINC-Codes für die Observation Hb"
 * insert Meta
-* $loinc#11559-2 "Fraktioniertes Oxyhämoglobin in Blut"
+* $loinc#11559-2 "Fractional oxyhemoglobin in Blood"
 * $loinc#14276-0 "Hämoglobin F-Verteilung [Interpretation] in Blut mittels Kleihauer-Betke-Methode"
 * $loinc#14563-1 "Hämoglobin.gastrointestinal [Nachweis] in Stuhl --1. Probenmaterial"
 * $loinc#14775-1 "Hämoglobin [Masse/Volumen] in arteriellem Blut mittels Oximetrie"
@@ -174,7 +174,7 @@ ValueSet: ObservationCodesPCT
 Id: ObservationCodesPCT
 Description: "Enthält LOINC-Codes für die Observation PCT"
 * insert Meta
-* $loinc#33959-8 "Procalcitonin [Masse/Volumen] in Serum oder Plasma"
+* $loinc#33959-8 "Procalcitonin [Mass/volume] in Serum or Plasma"
 * $loinc#75241-0 "Procalcitonin [Masse/Volumen] in Serum oder Plasma mittels Immunoassay"
 * $loinc#51637-7 "Thrombokrit [Volumenfraktion] in Blut"
 
@@ -189,7 +189,7 @@ ValueSet: ObservationCodesSerumkreatinin
 Id: ObservationCodesSerumkreatinin
 Description: "Enthält LOINC-Codes für die Observation Serumkreatinin"
 * insert Meta
-* $loinc#39802-4 "Creatinin in Dialyseflüssigkeit/Creatinin in Serum oder Plasma"
+* $loinc#39802-4 "Creatinine in dialysis fluid/Creatinine in serum or plasma"
 * $loinc#70266-2 "Creatinin in Peritonealflüssigkeit/Creatinin in Serum"
 * $loinc#70264-7 "Creatinin in Pleuraflüssigkeit/Creatinin in Serum"
 * $loinc#2160-0 "Creatinin [Masse/Volumen] in Serum oder Plasma"
@@ -234,7 +234,7 @@ ValueSet: ObservationCodesThrombozyten
 Id: ObservationCodesThrombozyten
 Description: "Enthält LOINC-Codes für die Observation Thrombozyten"
 * insert Meta
-* $loinc#13057-5 "Thrombozyten [Einheiten/Volumen] in Dialysat"
+* $loinc#13057-5 "Platelets [Units/volume] in Dialysis fluid"
 * $loinc#26515-7 "Thrombozyten [#/Volumen] in Blut"
 * $loinc#26516-5 "Thrombozyten [#/Volumen] in Plasma"
 * $loinc#49497-1 "Thrombozyten [#/Volumen] in Blut mittels Schätzung"
@@ -255,7 +255,7 @@ ValueSet: ObservationCodesTroponin
 Id: ObservationCodesTroponin
 Description: "Enthält LOINC-Codes für die Observation Troponin"
 * insert Meta
-* $loinc#48425-3 "Troponin T.kardial [Masse/Volumen] in Blut"
+* $loinc#48425-3 "Troponin T.cardiac [Mass/volume] in Blood"
 * $loinc#42757-5 "Troponin I.kardial [Masse/Volumen] in Blut"
 * $loinc#6597-9 "Troponin T.kardial [Masse/Volumen] in venösem Blut"
 * $loinc#10839-9 "Troponin I.kardial [Masse/Volumen] in Serum oder Plasma"
@@ -275,7 +275,7 @@ ValueSet: ObservationCodesTSH
 Id: ObservationCodesTSH
 Description: "Enthält LOINC-Codes für die Observation TSH"
 * insert Meta
-* $loinc#3015-5 "Thyreotropin [Einheiten/Volumen] in Blut"
+* $loinc#3015-5 "Thyrotropin [Units/volume] in Blood"
 * $loinc#26998-5 "Thyreotropin [Einheiten/Volumen] in Speichel"
 * $loinc#3016-3 "Thyreotropin [Einheiten/Volumen] in Serum oder Plasma"
 * $loinc#14999-7 "Thyreotropin [Einheiten/Volumen] in Serum oder Plasma --Basislinie"

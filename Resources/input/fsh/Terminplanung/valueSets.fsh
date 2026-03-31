@@ -12,7 +12,7 @@ ValueSet: ISiKTerminPriority
 Id: ISiKTerminPriority
 Description: "Enthaelt alle SNOMED Codes, die eine valide Priorität für den ISiKTermin sind"
 * insert Meta
-* $sct#709122007 "ASAP"
+* $sct#709122007 "As soon as possible"
 * $sct#441808003 "Delayed priority"
 * $sct#103390000 "Elective"
 * $sct#25876001 "Emergency"

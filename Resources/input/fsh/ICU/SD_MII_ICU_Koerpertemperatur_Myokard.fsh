@@ -26,4 +26,4 @@ Usage: #example
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#74281007 "Myocardium structure (body structure)"
+* bodySite = $sct#74281007 "Myocardium structure"

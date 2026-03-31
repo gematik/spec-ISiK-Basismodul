@@ -20,11 +20,11 @@ InstanceOf: SD_MII_ICU_Koerpertemperatur_Leiste
 Usage: #example
 * status = #final
 * code
-  * coding[snomed] = $sct#415929009 "Estimated core body temperature measured in inguinal region"
+  * coding[snomed] = $sct#415929009 "Groin temperature"
   * coding[specific-loinc] = $loinc#104063-3 "Body temperature - Groin"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#26893007 "Inguinal region structure (body structure)"
+* bodySite = $sct#26893007 "Inguinal region structure"

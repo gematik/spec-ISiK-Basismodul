@@ -167,7 +167,7 @@ Usage: #example
 * type = #allergy
 * category = #environment
 * criticality = #low
-* code = $sct#256262001 "Betula pendula pollen"
+* code = $sct#256262001 "Silberbirkenpollen"
 * patient = Reference(PatientinMusterfrau)
 * onsetDateTime = "1987"
 * recordedDate = 2011-05-12
@@ -178,6 +178,6 @@ Usage: #example
   * time = 2024-02-20T14:34:12+01:00
   * text = "Patientin berichtet von einer leichten Verschlimmerung in den letzten 3 Jahren."
 * reaction
-  * manifestation = $sct#76067001 "Sneezing (finding)"
+  * manifestation = $sct#76067001 "Niesen"
   * severity = #moderate
   * exposureRoute = $sct#14910006 "Inspiration"
