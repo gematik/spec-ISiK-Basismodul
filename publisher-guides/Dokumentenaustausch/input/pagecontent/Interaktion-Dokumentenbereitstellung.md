@@ -1,8 +1,4 @@
-﻿---
-topic: Dokumentenbereitstellung
----
-
-### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
+﻿### Dokumentenbereitstellung (IHE MHD ITI-105 (Simplified Publish))
 
 Die Dokumentenbereitstellung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html). Die verlinkte Webseite bietet weiterführende Informationen zum Simplified Push, einschließlich grafischer Darstellungen der Interaktionen.
 
