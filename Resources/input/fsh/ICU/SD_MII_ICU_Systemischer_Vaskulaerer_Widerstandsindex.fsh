@@ -25,7 +25,7 @@ Usage: #example
 * status = #final
 * code
   * coding[loinc] = $loinc#8837-7 "Systemic vascular Resistance index"
-  * coding[sct] = $sct#276900001 "Systemic vascular Resistance index"
+  * coding[sct] = $sct#276900001 "Systemic vascular resistance index"
   * coding[IEEE-11073] = $IEEE11073#149760 "Systemic vascular resistance indexed"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod

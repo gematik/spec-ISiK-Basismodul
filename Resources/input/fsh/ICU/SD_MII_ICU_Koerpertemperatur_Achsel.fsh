@@ -20,11 +20,11 @@ Usage: #example
 * status = #final
 * code
   * coding[specific-loinc] = $loinc#8328-7 "Axillary temperature"
-  * coding[snomed] = $sct#415882003 "Estimated core body temperature measured in axillary region"
+  * coding[snomed] = $sct#415882003 "Axillary temperature"
   * coding[specific-IEEE-11073] = $IEEE11073#188452 "MDC_TEMP_AXILLA"
 * subject = Reference(PatientinMusterfrau)
 * effectivePeriod
   * start = "2019-12-23T09:30:10+01:00"
   * end = "2019-12-23T10:30:10+01:00"
 * valueQuantity = 37 'Cel' "degree Celsius"
-* bodySite = $sct#91470000 "Axillary region structure (body structure)"
+* bodySite = $sct#91470000 "Axillary region structure"

@@ -36,7 +36,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-* code.coding[snomed] = $sct#276885007 "Core body temperature"
+* code.coding[snomed] = $sct#276885007 "Körperkerntemperatur"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körpertemperatur"
@@ -61,7 +61,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
-* code.coding[snomed] = $sct#276885007 "Core body temperature"
+* code.coding[snomed] = $sct#276885007 "Körperkerntemperatur"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.coding[IEEE11073] = $IEEE11073#150364 "MDC_TEMP_BODY"
 * code.text = "Körperkerntemperatur - Intensivmonitoring"
@@ -69,7 +69,7 @@ Usage: #example
 * effectiveDateTime = "2024-01-15T16:45:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 42.5 'Cel' "°C"
-* method = $sct#448169003 "Digital thermometry"
+* method = $sct#448169003 "Hauskatze"
 * bodySite = $sct#245544008 "Entire esophagus"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Hyperthermie - Ösophageale Kerntemperaturmessung bei maligner Hyperthermie"

@@ -27,8 +27,8 @@ InstanceOf: ISiKKoerpergroesse
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8302-2 "Body height"
-* code.coding[snomed] = $sct#1153637007 "Body height"
+* code = $loinc#8302-2 "Körpergröße"
+* code.coding[snomed] = $sct#1153637007 "Körpergröße"
 * code.text = "Körpergröße"
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2020-10-11"
@@ -40,7 +40,7 @@ InstanceOf: ISiKKoerpergroesse
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#8302-2 "Body height"
+* code = $loinc#8302-2 "Körpergröße"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 48 'cm' "centimeter"
@@ -50,8 +50,8 @@ InstanceOf: ISiKKoerpergroesse
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8302-2 "Body height"
-* code.coding[snomed] = $sct#1153637007 "Body height"
+* code = $loinc#8302-2 "Körpergröße"
+* code.coding[snomed] = $sct#1153637007 "Körpergröße"
 * code.coding[IEEE11073] = $IEEE11073#188740 "MDC_LEN_BODY_ACTUAL"
 * code.text = "Körpergröße - Klinische Messung"
 * subject = Reference(PatientinNormal)
@@ -59,5 +59,5 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 205 'cm' "centimeter"
 * method = $sct#414135002 "Estimated"
-* bodySite = $sct#38266002 "Entire body as a whole"
+* bodySite = $sct#38266002 "Gesamter Körper als Ganzes"
 * note.text = "Körpergröße geschätzt aufgrund der Bettlägerigkeit des Patienten"

@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mii-ex-prozedur-durchfuehrungsabsicht",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht",
+  "version": "6.0.0-rc",
+  "name": "MII_EX_Prozedur_Durchfuehrungsabsicht",
+  "title": "MII EX Prozedur Durchführungsabsicht",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-03",
+  "publisher": "gematik GmbH",
+  "description": "Intention der Prozedur\nDie Datenstruktur wurde dem laufenden Stand der Entwicklung des MII Basis Modul entnommen - https://github.com/medizininformatik-initiative/kerndatensatz-basis/blob/main/input/fsh/extensions/MII_EX_Prozedur_Durchfuehrungsabsicht.fsh - Details zur Kompatibilität mit dem ISiK Package der Stufe 6 wurden angepasst und Metadaten des Ursprungsschemas zum Teil entfernt. Stand 31.3.2026.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Procedure"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://gematik.de/fhir/isik/StructureDefinition/mii-ex-prozedur-durchfuehrungsabsicht"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/mii-vs-prozedur-durchfuehrungsabsicht-snomedct"
+        }
+      },
+      {
+        "id": "Extension.value[x].system",
+        "path": "Extension.value[x].system",
+        "min": 1,
+        "fixedUri": "http://snomed.info/sct",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.value[x].code",
+        "path": "Extension.value[x].code",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

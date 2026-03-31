@@ -113,7 +113,7 @@ InstanceOf: ISiKStandort
 Usage: #example
 * identifier[standortnummer-dkg]
   * value = "123456"
-* operationalStatus = $v2-0116#O "Occupied"
+* operationalStatus = $v2-0116#O "belegt"
 * name = "Krankenhaus Standort"
 * mode = #instance
 * type = $v3-RoleCode#HOSP "Hospital"
@@ -144,7 +144,7 @@ Usage: #example
 // kein eigenes Profil vorhanden
 * identifier[standortnummer-dkg]
   * value = "123456" 
-* operationalStatus = $v2-0116#O "Occupied" 
+* operationalStatus = $v2-0116#O "belegt" 
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
@@ -172,7 +172,7 @@ Usage: #example
 //  noch kein eigenes Profil vorhanden
 * identifier[standortnummer-dkg]
   * value = "123456" 
-* operationalStatus = $v2-0116#O "Occupied" 
+* operationalStatus = $v2-0116#O "belegt" 
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
@@ -200,7 +200,7 @@ InstanceOf: ISiKStandort
 Usage: #example
 * identifier[standortnummer-dkg]
   * value = "123456" 
-* operationalStatus = $v2-0116#O "Occupied" 
+* operationalStatus = $v2-0116#O "belegt" 
 * name = "Station A"
 * mode = #instance
 * type = $v3-RoleCode#PEDICU "Pediatric intensive care unit"

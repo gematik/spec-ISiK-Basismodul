@@ -11,8 +11,7 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding[sct] ..0 MS
 * code.coding[loinc] 1..1 MS
 * code.coding[loinc] ^patternCoding.system = $loinc
-* code.coding[loinc] ^patternCoding.code = #9217-1
-* code.coding[loinc] ^patternCoding.display = "Output.stool [Volume]"
+* code.coding[loinc] ^patternCoding.code = #9217-1 // "Output.stool [Volume]"
 * code.coding[loinc].code MS
 * code.coding[IEEE-11073] ..0 MS
 

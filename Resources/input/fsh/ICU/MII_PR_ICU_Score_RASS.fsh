@@ -26,7 +26,7 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * code.coding 1..1 MS
 * code.coding.system = $sct (exactly)
 * code.coding.code = #1345050000 (exactly)
-* code.coding.display = "Richmond Agitation Sedation Scale score (observable entity)"
+* code.coding.display = "Richmond Agitation Sedation Scale score"
 * code.coding.code ^comment = "Instrument/Observation type is represented using SNOMED CT observable entity. Answer options are represented using LOINC Answer List LL6536-8. Ordinal score is not exchanged; implementers may derive it internally."
 
 // Subject must be a patient

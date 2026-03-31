@@ -10,8 +10,7 @@ Description: "Dieses Profil wurde aus dem Modul KDS ICU entnommen und dient der 
 * code.coding 2.. MS
 * code.coding[sct] 1..1 MS
 * code.coding[sct] ^patternCoding.system = $sct
-* code.coding[sct] ^patternCoding.code = #251843005
-* code.coding[sct] ^patternCoding.display = "Fluid output from drain"
+* code.coding[sct] ^patternCoding.code = #251843005 // "Fluid output from drain"
 * code.coding[sct].code MS
 * code.coding[loinc] ..0 MS
 * code.coding[IEEE-11073] 1..1 MS

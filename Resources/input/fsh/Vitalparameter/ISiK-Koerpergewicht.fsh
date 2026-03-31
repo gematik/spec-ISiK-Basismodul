@@ -27,8 +27,8 @@ InstanceOf: ISiKKoerpergewicht
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#29463-7 "Body weight"
-* code.coding[snomed] = $sct#27113001 "Body weight"
+* code = $loinc#29463-7 "Körpergewicht"
+* code.coding[snomed] = $sct#27113001 "Körpergewicht"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht"
 * subject = Reference(PatientinMusterfrau)
@@ -41,7 +41,7 @@ InstanceOf: ISiKKoerpergewicht
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#29463-7 "Body weight"
+* code = $loinc#29463-7 "Körpergewicht"
 * subject = Reference(PatientinMinimal)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 2.1 'kg' "kilogram"
@@ -51,15 +51,15 @@ InstanceOf: ISiKKoerpergewicht
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#29463-7 "Body weight"
-* code.coding[snomed] = $sct#27113001 "Body weight"
+* code = $loinc#29463-7 "Körpergewicht"
+* code.coding[snomed] = $sct#27113001 "Körpergewicht"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht - Bettwaage"
 * subject = Reference(PatientinNormal)
 * effectiveDateTime = "2024-01-15T08:00:00+01:00"
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 185 'kg' "kilogram"
-* method = $sct#786458005 "Measurement using bed scale"
-* bodySite = $sct#38266002 "Entire body as a whole"
+* method = $sct#786458005 "Selbst angegebenes übliches Körpergewicht"
+* bodySite = $sct#38266002 "Gesamter Körper als Ganzes"
 * note.text = "Gewichtsmessung mit kalibrierten Bettwaage bei bettlägerigem Patienten"
 * device = Reference(ExampleDevice)
