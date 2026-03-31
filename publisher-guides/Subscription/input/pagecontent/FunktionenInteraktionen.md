@@ -109,11 +109,21 @@ Der dargestellte Workflow orientiert sich am [Workflow](https://hl7.org/fhir/uv/
 
 #### Normalfluss
 
-<img src="Workflow_Normalfluss.png" />
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Workflow_Normalfluss.png" alt="Workflow Normalfluss" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Workflow Normalfluss</figcaption>
+</figure>
 
 #### Fehlerfall
 
-<img src="Workflow_Fehlerfall.png" />
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="Workflow_Fehlerfall.png" alt="Workflow Fehlerfall" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung:</strong>Workflow Fehlerfall</figcaption>
+</figure>
 
 ---
 
