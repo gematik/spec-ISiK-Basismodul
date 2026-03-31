@@ -33,14 +33,14 @@ Dies können sowohl Personen/Organisationen sein, die mittels FHIR Short Hand (F
 
 Bei der Erstellung und späteren Bearbeitung einer Formulardefinition ist es wichtig, dass jede Änderung eine entsprechende Versionserhöhung (Inkrement) zur Folge hat. Dabei wird zwischen technischen und inhaltlichen Änderungen unterschieden, um die Auswirkungen auf die Kompatibilität und Funktionalität des Formulars korrekt zu kommunizieren. Das folgende [SemVer-Verfahren](https://semver.org/lang/de/) SOLLTE als Grundlage für die Versionierung von Formulardefinitionen im Rahmen von ISiK-kompatiblen Formularen verwendet werden.
 
-<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/></br>
 
 **Diskussion/Ausnahme/Alternative - Hinweis für Stakeholder:**  
 In bestimmten Anwendungsfällen, wie beispielsweise bei Formularen für das tägliche Mittags-Menü oder anderen regelmäßig wechselnden Inhalten, kann eine kalendarische oder tagesbasierte Versionierung sinnvoll sein. Hierbei könnte die Version anhand des Datums (z. B. `2024-06-14`) vergeben werden, um die Aktualität und Nachvollziehbarkeit der jeweiligen Formularversion sicherzustellen.  
 Diese Form der Versionierung erscheint insbesondere dann angebracht, wenn Inhalte häufig und planmäßig angepasst werden und eine klassische semantische Versionierung (SemVer) nicht den Anforderungen genügt. Stakeholder sollten in solchen Fällen gemeinsam mit den Nutzenden und Entwickelnden die geeignete Versionierungsstrategie festlegen. 
 Über Rückmeldungen zu den Versionsstrategien von Seiten der Implementierenden und Anwendern würden wir uns freuen.
 
-<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/>
+<img src="Betriebskoordination_Gruen_gematik.svg" width="40"/></br>
 
 
 ##### Inkrement der Major Nummer 
@@ -84,7 +84,7 @@ Unter einem Formular-Renderer ist in diesem Modul eine Software zu verstehen, da
 * [FormularDatenExtraktion](FunktionenInteraktionen.html#interaktion-formulardatenextraktion)
 * [FormularDatenRückübermittlung](FunktionenInteraktionen.html#interaktion-formulardaten-r%C3%BCck%C3%BCbermittlung) in der Rolle "Sender"
 
-Einige aufgeführte Funktionen können auch in eigene Akteure ausgelagert werden. Dies betrifft insbesondere die Funktionen FormularDatenVorbelegung und FormularDatenExtraktion. Dies ist meist sinnvoll zur Verschlankung von FormularRenderern, bspe. im mobilen Einsatz oder ohne Zugriff auf die Leistungserbringer-Infrastriuktur. Auf der Seite [Beispielszenarien](Spezifikationen_Beispielszenarien.html) wird eine Nutzung der Funktion FormularDatenExtraktion durch einen eigenständigen Akteur im Kontext des TI-Messengers beschrieben.
+Einige aufgeführte Funktionen können auch in eigene Akteure ausgelagert werden. Dies betrifft insbesondere die Funktionen FormularDatenVorbelegung und FormularDatenExtraktion. Dies ist meist sinnvoll zur Verschlankung von FormularRenderern, bspw. im mobilen Einsatz oder ohne Zugriff auf die Leistungserbringer-Infrastriuktur. Auf der Seite [Beispielszenarien](Spezifikationen_Beispielszenarien.html) wird eine Nutzung der Funktion FormularDatenExtraktion durch einen eigenständigen Akteur im Kontext des TI-Messengers beschrieben.
 
 #### Aufgaben des Formular-Renderers
 

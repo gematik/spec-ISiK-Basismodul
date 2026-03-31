@@ -11,7 +11,7 @@ Das Modul wurde von Stufe 5 auf Stufe 6 an verschiedenen Stellen überarbeitet. 
 
 ### Motivation "ISiK Formulare"
 
-Der überwiegende Teil der Datenerfassung im Gesundheitswesen geschieht Formular-basiert. Bislang fehlt es jedoch an einem standardisierten Verfahren, um Fragebögen und Formulare zwischen Systemen auszutauschen und mit den bereits vorhandenen, standardisierten Daten in den Systemen der Anwender zu verknüpfen.
+Der überwiegende Teil der Datenerfassung im Gesundheitswesen geschieht formularbasiert. Bislang fehlt es jedoch an einem standardisierten Verfahren, um Fragebögen und Formulare zwischen Systemen auszutauschen und mit den bereits vorhandenen, standardisierten Daten in den Systemen der Anwender zu verknüpfen.
 Die Folge sind lange Latenzen, bis die Formulare den Anwendern zur Verfügung stehen, hohe Kosten für die individuelle Implementierung und Konfiguration in den proprietären Formulareditoren der einzelnen Systeme,
 und redundante Datenerfassung aufgrund der fehlenden Verknüpfungen zu den bereits vorhandenen Daten. 
 Aufgrund uneinheitlicher Modellierung der Formulare, sind die erhobenen Daten häufig nicht wiederverwendbar.
