@@ -81,7 +81,6 @@ Title: "Serumnatrium 130 mmol/L"
 Description: "Serumnatriumwert 130 mmol/L am 2020-03-11T01:04:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
-* category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 130 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T01:04:00+01:00"
@@ -94,7 +93,6 @@ Title: "Serumnatrium 133 mmol/L"
 Description: "Serumnatriumwert 133 mmol/L am 2020-03-11T01:59:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
-* category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 133 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T01:59:00+01:00"
@@ -107,7 +105,6 @@ Title: "Serumnatrium 130 mmol/L"
 Description: "Serumnatriumwert 130 mmol/L am 2020-03-11T03:06:00+01:00"
 * status = #final
 * subject = Reference(ExampleOrganPatientSternenfall)
-* category.coding[0] = $cs-observation-category#laboratory
 * code.coding[loinc] = $loinc#2951-2
 * valueQuantity = 130 $cs-ucum#mmol/L
 * effectiveDateTime = "2020-03-11T03:06:00+01:00"
