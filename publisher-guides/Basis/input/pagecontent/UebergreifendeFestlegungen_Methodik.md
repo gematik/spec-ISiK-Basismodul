@@ -1,6 +1,3 @@
----
-topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Methodik
----
 ### Methodik
 
 Anforderungen als Ausdruck normativer Festlegungen werden durch die dem [RFC2119](https://tools.ietf.org/html/rfc2119) entsprechenden, in Großbuchstaben geschriebenen deutschen Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN sowie ihrer Pluralformen gekennzeichnet.
@@ -13,5 +10,5 @@ Das Weglassen einer SOLL/SHOULD‑Anforderung ist nur zulässig, wenn der Herste
 Fehlt eine akzeptable Begründung, gilt die Nichterfüllung einer SHOULD‑Anforderung als Nichtkonformität.
 
 MAY/KANN drückt in ISiK eine freiwillig zu erfüllende Anforderung aus. Die Anforderung wird über einen Test abgedeckt, dessen Ergebnis ist jedoch nicht maßgeblich für die Zertifizierung eines Systems gegen das betreffende Modul.
-Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung, erscheint das Ergebnis im Testbericht.
+Bei erfolgreichem Durchlaufen eines Tests zu einer freiwilligen Anforderung erscheint das Ergebnis im Testbericht.
 

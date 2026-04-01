@@ -1,7 +1,3 @@
----
-topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Performance
----
-
 ### Performance-Aspekte
 
 Alle beteiligten Akteure (Server wie Clients) tragen eine (Teil-)Verantwortung für die Sicherstellung einer performanten REST-API. Zweck einer performanten REST-API ist, dass die typischen Arbeitsabläufe der jeweiligen Nutzer (z. B. Arzt, Pflege, Verwaltung) ohne wahrnehmbare Verzögerung durchgeführt werden können. Insbesondere dürfen für klinisch kritische Funktionen keine Wartezeiten entstehen, die eine zeitgerechte Patientenversorgung beeinträchtigen.
@@ -15,7 +11,7 @@ Da zur Gewährleistung der Performance während der Entwicklung sowohl Client- a
 #### Performance-Kategorien - zunächst zur Antwortzeit (Baseline)
 Die Performance-Kategorien und entsprechende Anforderungen beziehen sich zum jetzigen Zeitpunkt alle auf den Aspekt **Antwortzeit als Baseline**.
 
-Die Antwortzeit bezeichnet dabei  einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.
+Die Antwortzeit bezeichnet dabei einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert. Dabei wird hier zusätzlich eine Antwortzeit ohne signifikante Lasteinwirkung angenommen.
 
 
 Die Antwortzeit dabei bezeichnet einen Request/Reply-Zyklus zwischen einem Client und einem Server, der die Zeitspanne von der Absendung einer Anfrage durch den Client bis zum vollständigen Empfang der Antwort durch den Client in der Test-Umgebung umfasst und deckt sich damit weitgehend mit dem Konzept der Bearbeitungszeit wie [hier](https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/#2.1) definiert.
@@ -27,33 +23,33 @@ Die Antwortzeit bezeichnet einen Request/Reply-Zyklus zwischen einem Client und 
 
 Für diese Performance-Kategorien gilt:
 
-- PK1: Request-Anfrage von Ressourcen unter bekannter ID
-  - Anforderung: "unter einer Sekunde"
-  - Beispiel: GET baseURL/Patient/89186842
-  - Beispiel: GET baseURL/Observation/67890
-  - Beispiel: GET baseURL/DocumentReference/54321
-    - oder : baseURL/DocumentReference?_id=54321
-  - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
+- **PK1:** Request-Anfrage von Ressourcen unter bekannter ID
+  - Anforderung: **"unter einer Sekunde"**
+    - Beispiel: `GET baseURL/Patient/89186842`
+    - Beispiel: `GET baseURL/Observation/67890`
+    - Beispiel: `GET baseURL/DocumentReference/54321`
+      - oder : `baseURL/DocumentReference?_id=54321`
+    - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
 
-- PK2: Suchanfragen zum Auffinden von Ressourcen auf Basis von weitestgehend eindeutigen Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
-  - Anforderung "unter einer Sekunde"
-  - Beispielanfrage baseURL/Patient?identifier=12345 
-  - Beispielanfrage baseURL/Patient?birthdate=1982-01-13
-  - Beispielanfrage - Medikationsliste der einzelnen Patienten für eine Station: baseURL/MedicationRequest?patient=Patient/89186842
-  - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
+- **PK2:** Suchanfragen zum Auffinden von Ressourcen auf Basis von weitestgehend eindeutigen Metadaten (z. B. .identifier und .birthdate) ohne _include und _revInclude, ohne Chaining.
+  - Anforderung **"unter einer Sekunde"**
+    - Beispielanfrage `baseURL/Patient?identifier=12345` 
+    - Beispielanfrage `baseURL/Patient?birthdate=1982-01-13`
+    - Beispielanfrage - Medikationsliste der einzelnen Patienten für eine Station: `baseURL/MedicationRequest?patient=Patient/89186842`
+    - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
 
-- PK3: Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass Patient.id bekannt.
-  - Anforderung: "unter 2 Sekunden"
-  - Beispielanfrage: baseURL/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|R10.0&patient=89186842
-  - Beispielanfrage: baseURL/Condition?patient=Patient/89186842
-  - Beispielanfrage: baseURL/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&patient=Patient/89186842
-  - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
+- **PK3:** Suchanfragen zum Auffinden von Patienten-gebundenen Ressourcen (ohne _include und _revInclude ohne Chaining) unter der Annahme, dass `Patient.id` bekannt.
+  - Anforderung: **"unter 2 Sekunden"**
+    - Beispielanfrage: `baseURL/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|R10.0&patient=89186842`
+    - Beispielanfrage: `baseURL/Condition?patient=Patient/89186842`
+    - Beispielanfrage: `baseURL/Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&patient=Patient/89186842`
+    - Ausnahme: DocumentReference-Ressource mit base64 kodiertem Attachment bzw. Binary
 
-- PK4: Suchanfragen auf Patient und Encounter unter der Annahme, dass .identifier unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
+- **PK4:** Suchanfragen auf Patient und Encounter unter der Annahme, dass `.identifier` unbekannt und dass ein sehr großer Ergebnisraum der Suchanfrage möglich ist.
   - Kontext: Listen- und Übersichtsabfragen (z.B. Patientenlisten, Falllisten)
-  - Anforderung: "unter 5 Sekunden"
-  - Beispielanfrage - alle Patienten mit dem Namen Müller: baseURL/Patient?name=Müller
-  - Beispielanfrage - alle Patienten auf der Station "123": baseURL/_has:Encounter:patient:location=Location/ward123
+  - Anforderung: **"unter 5 Sekunden"**
+    - Beispielanfrage - alle Patienten mit dem Namen Müller: `baseURL/Patient?name=Müller`
+    - Beispielanfrage - alle Patienten auf der Station "123": `baseURL/_has:Encounter:patient:location=Location/ward123`
 
 Als vorwiegend unkritisch gelten Abfragen (PK5 bis PK6), die z. B.
 - im Rahmen der Planungs- und Organisationsinformationen mit Bezug zu Patienten (z.B. Terminpläne, Belegungspläne), 
@@ -65,16 +61,16 @@ Für diese Performance-Kategorien sind längere Antwortzeiten grundsätzlich tol
 
 Für diese Performance-Kategorien gilt:
 
-- PK5: weitere Suchanfragen bzw. Operationen.
-  - Anforderung: "Unter 60 Sekunden"
-  - Beispielanfrage - Prozeduren für eine Station: baseURL/Procedure?encounter.location=Location/ward123
-  - Beispielanfrage - Liste aller Stationen: baseURL/Location?type=http://terminology.hl7.org/CodeSystem/location-physical-type|wa
-  - Beispielanfrage - Niereninsuffizienz Screening mittels Serumkreatinin: baseURL/Observation?code=http://loinc.org|2160-0&combo-code-value-quantity=gt1.0|mg/dL
+- **PK5:** weitere Suchanfragen bzw. Operationen.
+  - Anforderung: **"Unter 60 Sekunden"**
+    - Beispielanfrage - Prozeduren für eine Station: `baseURL/Procedure?encounter.location=Location/ward123`
+    - Beispielanfrage - Liste aller Stationen: `baseURL/Location?type=http://terminology.hl7.org/CodeSystem/location-physical-type|wa`
+    - Beispielanfrage - Niereninsuffizienz Screening mittels Serumkreatinin: `baseURL/Observation?code=http://loinc.org|2160-0&combo-code-value-quantity=gt1.0|mg/dL`
 
-- PK6: weitere Suchanfragen und Custom-Operation
-  - Anforderung: nicht geprüft
-  - Beispiel - Operation zur Terminbuchung in ISiK : baseURL/$book 
-  - Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): baseURL/MedicationRequest
+- **PK6:** weitere Suchanfragen und Custom-Operation
+  - Anforderung: **nicht geprüft**
+    - Beispiel - Operation zur Terminbuchung in ISiK : `baseURL/$book` 
+    - Beispielanfrage - Alle verschriebenen bzw. verabreichten Medikamente (relevant bei auffälligen Medikationschargen): `baseURL/MedicationRequest`
 
 Für diese Performance-Kategorien werden im Test-System des Zertifizierungsverfahrens die entsprechenden Performance-Anforderungen (z.B. Antwortzeiten - ggf. unter Berücksichtigung der Perzentile -; aber vorerst keine Lasten, Durchsatz etc.)implementiert.
 

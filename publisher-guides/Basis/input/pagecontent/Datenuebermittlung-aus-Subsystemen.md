@@ -1,10 +1,6 @@
-﻿---
-topic: DatenübermittlungSubsystem
----
+﻿In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:
 
-In der heterogenen Systemlandschaft im Krankenhaus sind eine Vielzahl spezialisierter Subsysteme im Einsatz. Die Ergebnisse aus diesen Subsystemen sind aktuell jedoch häufig nicht in den Primärsystemen des Krankenhauses verfügbar, denn es bestehen folgende Herausforderungen:
-
-1. Die Daten in Subsystemen sind sehr heterogen und können hochspezialisiert sein.
+1. Die Daten in Subsystemen sind sehr heterogen und können hoch spezialisiert sein.
 1. Bei der Nutzung dieser Subsysteme besteht häufig ein Interesse, auf die menschenlesbare Repräsentation der strukturierten Daten einwirken zu können.
 1. Künftig ist mit Szenarien zu rechnen, bei denen Befunde aus Subsystemen in eine elektronische Patientenakte übertragen werden sollen.
 1. Aktuell werden Befunde, obwohl diese in den Subsystemen in hochstrukturierter Form vorliegen, nur als PDF an das Primärsystem übermittelt. Oft weil kein strukturiertes Format spezifiziert ist, das sowohl versendendes Subsystem als auch empfangendes Primärsystem implementiert haben. 
@@ -54,8 +50,9 @@ In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Dokument in folgenden
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
         <img src="Composition_Bundle.svg" alt="Composition Bundle" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung:</strong>Composition Bundle Zuordnung </figcaption>
+    <figcaption><strong>Abbildung: </strong>Composition Bundle Zuordnung </figcaption>
 </figure>
+
 
 Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.
 
@@ -68,19 +65,19 @@ Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammen
 
 Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus dem Document-Bundle zu extrahieren:
 
-* Die aufzulösende Referenz ist eine URN (immer absolut, z. B. "urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12"):
+* Die aufzulösende Referenz ist eine URN (immer absolut, z. B. `urn:uuid:9d1714da-b7e6-455b-bfd2-69ce0ff5fb12`):
   * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
   * Wenn einer gefunden wird, ist die Auflösung erfolgreich (und endet hier)
   * Andernfalls schlägt die Auflösung fehl (und endet hier). Die Referenz hat in dieser Spezifikation keine definierte Bedeutung.
 
-* Wenn die Referenz eine absolute URL ist (z. B. "https://fhir.example.org/base/Patient/123", "https://fhir.example.org/base/Patient/123/_history/a"):
+* Wenn die Referenz eine absolute URL ist (z. B. `https://fhir.example.org/base/Patient/123`, `https://fhir.example.org/base/Patient/123/_history/1`):
   * Suche nach einem Bundle-Entry mit einer fullUrl, die mit dem reference.value übereinstimmt
   * Wenn einer gefunden wird, ist die Auflösung hier erfolgreich (und endet)
   * Wird mehr als ein Eintrag gefunden, KANN der Server nach der neuesten Version suchen (basierend auf meta.lastUpdated). Wenn jener auf diese Weise genau eine aktuelle Version findet, ist die Auflösung erfolgreich (und endet hier)
 
-* Wenn die Referenz die Form "[Typ]/[id]" hat (z. B. "Patient/123")
-  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. "https://fhir.example.org/Observation/456"):
-    * Extrahiert wird die [root] aus der fullUrl des Bundle-Entries und mit der relative Referenz zusammengefügt (z. B. "https://fhir.example.org/" + "Patient/123" --> "https://fhir.example.org/Patient/123")
+* Wenn die Referenz die Form `[Typ]/[id]` hat (z. B. `Patient/123`)
+  * Wenn der Bundle-Entry, der den Verweis enthält, eine FullUrl hat, die dem [RESTful-URL-Regex](https://hl7.org/fhir/R4/references.html#regex) entspricht (z. B. `https://fhir.example.org/Observation/456`):
+    * Extrahiert wird die `[root]` aus der fullUrl des Bundle-Entries und mit der relativen Referenz zusammengefügt (z. B. `https://fhir.example.org/` + `Patient/123` --> `https://fhir.example.org/Patient/123`)
     * Gefolgt wird den Schritten für die Auflösung absoluter Referenzen. Siehe oben.
 
 ### Persistierung der menschenlesbaren Repräsentation
@@ -88,9 +85,9 @@ Folgende Fälle sind zu beachten, um eine Patient-/ und Encounter-Ressource aus 
 Das Narrative der Ressource KANN innerhalb einer DocumentReference-Ressource persistiert werden. Zum derzeitigen Zeitpunkt obliegt es der jeweiligen Implementierung wie diese DocumentReference Ressource ausgestaltet ist.
 Ein Mapping der Composition-Metadaten auf DocumentReference-Metadaten KANN der FHIR Kernspezifikation entnommen werden. Siehe [Abschnitt "2.42.8.7 FHIR Composition"](https://www.hl7.org/fhir/R4/documentreference-mappings.html#fhircomposition).
 
-Das Narrative MUSS als Binary-Ressource unter DocumentReference.content.attachment.url angegeben werden.
+Das Narrative MUSS als Binary-Ressource unter `DocumentReference.content.attachment.url` angegeben werden.
 
-**Hinweis:** Es ist zu beachten, dass in einem Attachment-Datentyp im Element "url" eine absolute URL anzugeben ist. Somit muss zunächst das Binary auf dem externen System per POST angelegt werden. Der hieraus resultierende Link kann anschließend im Attachment verwendet werden.
+**Hinweis:** Es ist zu beachten, dass in einem Attachment-Datentyp im Element `url` eine absolute URL anzugeben ist. Somit muss zunächst das Binary auf dem externen System per POST angelegt werden. Der hieraus resultierende Link kann anschließend im Attachment verwendet werden.
 
 Falls ein Bundle erneut mit dem gleichen Bundle.identifier übermittelt wird, MUSS eine neue DocumentReference erstellt werden, welche unter DocumentReference.relatesTo.target angegeben wird.
 

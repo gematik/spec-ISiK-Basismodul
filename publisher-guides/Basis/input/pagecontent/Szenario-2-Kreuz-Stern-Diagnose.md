@@ -1,6 +1,3 @@
----
-expand: 5
----
 ### Szenario 2: Kreuz-Stern Diagnose
 
 * volljährige, hauptversicherte Patientin

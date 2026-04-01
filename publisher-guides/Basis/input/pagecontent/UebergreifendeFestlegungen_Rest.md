@@ -1,11 +1,6 @@
----
-topic: markdown-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Rest
----
-
-
 ### Read-Interaktionen
 Instanzen von Datenobjekten, die die REST-Interaktion "READ" fordern, MÜSSEN per HTTP GET auf ```[BASE_URL]/[resourceType]/[ID]``` abgerufen werden können. 
-Siehe: https://www.hl7.org/fhir/R4/http.html#read 
+Siehe: [RESTful API - read](https://www.hl7.org/fhir/R4/http.html#read) 
 
 ### Profil-Konformität
 Instanzen, die von einem ISiK-konformen Server über READ-Interaktionen bereitgestellt werden, SOLLEN valide gegen die entsprechenden ISiK-Profile sein. Ausnahmen bilden Instanzen, die für Anwendungsfälle außerhalb des ISIK-Scopes erstellt wurden oder historische Daten, die bereits *vor* der ISiK-Implementierung erzeugt, oder aus nicht-ISiK-konformen Systemen übernommen wurden.
