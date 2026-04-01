@@ -20,13 +20,13 @@ Die Verwendung des MS-Flag an Profil-Elementen hat im Kontext dieses Leitfadens 
     Beispielhafte Abfrage in zwei Schritten: 
     
     - Suche eines speziellen Encounter
-    ```
+    ```text
     GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
     ```
     
     - Suche der zugehörigen Diagnosen
-    ```
+    ```text
     GET BASE_URL/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
     ```
 
