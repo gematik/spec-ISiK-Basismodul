@@ -131,7 +131,7 @@ Dieser Ansatz gewährleistet, dass klinische Daten eindeutig dem korrekten Abtei
 
 Die Basis-Abfrage für alle zu einem Abrechnungsfall gehörenden Encounter erfolgt über den `account:identifier` Suchparameter:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
 ```
 
@@ -143,42 +143,42 @@ Je nach Anwendungsfall können zusätzliche Filter verwendet werden, um die Erge
 
 **Einschränkung auf Abteilungskontakte** (empfohlen für Systeme, die zusätzliche Encounter-Typen implementieren):
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
 ```
 
 **Ausschluss vor- und nachstationärer Kontakte**:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer
 ```
 
 Oder für Intensivkontakte:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
 ```
 
 **Kombination mehrerer Kontaktarten**:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/kontaktart-de|normalstationaer,http://fhir.de/CodeSystem/kontaktart-de|intensivstationaer
 ```
 
 **Einschränkung auf aktive Encounter**:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &status=in-progress
 ```
 
 **Zeitliche Einschränkung**:
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://example.org/fhir/sid/fallnummer|F-2024-123456
     &date=ge2024-01-01&date=le2024-12-31
 ```
@@ -193,25 +193,25 @@ Nach der Ermittlung der relevanten Encounter können alle klinischen Ressourcen 
 
 Angenommen, die Abfrage aus Schritt 1 hat folgende Encounter-IDs zurückgeliefert: `Encounter/123`, `Encounter/456`, `Encounter/789`
 
-```http
+```
 GET BASE_URL/Condition?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Prozeduren
 
-```http
+```
 GET BASE_URL/Procedure?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Observations (z.B. Vitalparameter)
 
-```http
+```
 GET BASE_URL/Observation?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
 ##### Beispiel: Ermittlung aller Medikationsverordnungen
 
-```http
+```
 GET BASE_URL/MedicationRequest?encounter=Encounter/123,Encounter/456,Encounter/789
 ```
 
@@ -223,7 +223,7 @@ Ein typischer Workflow für die Abfrage aller Diagnosen eines Abrechnungsfalls k
 
 **1. Ermittlung der Encounter:**
 
-```http
+```
 GET BASE_URL/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/sid/fallnummer|F-2024-123456
     &type=http://fhir.de/CodeSystem/Kontaktebene|abteilungskontakt
 ```
@@ -293,7 +293,7 @@ GET BASE_URL/Encounter?account:identifier=http://krankenhaus-beispiel.de/fhir/si
 
 **2. Abfrage der Diagnosen für alle ermittelten Encounter:**
 
-```http
+```
 GET BASE_URL/Condition?encounter=Encounter/enc-innere-medizin,Encounter/enc-intensivmedizin
 ```
 
