@@ -1,5 +1,4 @@
 
-Status: Aktiv
 
 Realm: Deutschland
 

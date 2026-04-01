@@ -1,11 +1,5 @@
-﻿---
-topic: ImplementationGuide-markdown-Einfuehrung
----
-
-Status: Draft
-
+﻿
 Realm: Deutschland
-
 
 ----
 
