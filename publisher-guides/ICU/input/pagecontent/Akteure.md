@@ -1,7 +1,4 @@
-﻿---
-topic: Akteure
----
-
+﻿
 ### Darstellung der Akteure
 
 <div style="display: flex; align-items: stretch; gap: 1rem;">
