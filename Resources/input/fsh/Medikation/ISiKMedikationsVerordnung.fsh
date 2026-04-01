@@ -2,6 +2,7 @@ Profile: ISiKMedikationsVerordnung
 Parent: MedicationRequest
 Id: ISiKMedikationsVerordnung
 Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnungen eines Patienten in ISiK Szenarien."
+// * insert CompliesWith(http://hl7.eu/fhir/mpd/StructureDefinition/MedicationRequest-eu-mpd)
 * insert Meta
 * insert CommonElements
 * extension MS
