@@ -1,7 +1,3 @@
----
-expand: 5
----
-
 ### Szenario 1: DRG Fall - Kind mit Wahlleistung
 
 * minderjähriges Kind

@@ -21,20 +21,31 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 
 **1. SMART-App-Launch**: Wenn der Aufruf des Clients im Rahmen von ISiK-Connect erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext den Client. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Connect - Launch Context und Scopes](https://gemspec.gematik.de/ig/fhir/isik/connect/6.0.0-rc/ConformanceScopesKontexte.html)). 
 
-<div style="display: flex; align-items: stretch; gap: 1rem;">
-  <img src="Ampel auf Gruen_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
-  <p style="margin: 0;"><strong>Best Practice Empfehlung: </strong>Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.</p>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; margin: 1rem 0;">
+  <img src="Ampel auf Gruen_Blau_gematik.svg"
+       style="width: 60px; height: auto;" />
+  <p style="margin: 0;">
+    <strong>Best Practice Empfehlung:</strong>
+    Aus Gründen der Anwenderfreundlichkeit, Interoperabilität und Sicherheit ist dieses Verfahren zu empfehlen.
+  </p>
 </div>
 
-**2. Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus dem Feldinhalt von PV1.#19). Anhand dieser kann der Client die im Modul Basis beschriebenen Suchfunktionen für die Encounter-Ressource verwenden, um passende Aufenthalte zu identifizieren (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. (Siehe Modul [Basis - Encounter Interkationen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html#Encounter_Interaktionen)
+**2. Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus dem Feldinhalt von `PV1.#19`). Anhand dieser kann der Client die im Modul Basis beschriebenen Suchfunktionen für die Encounter-Ressource verwenden, um passende Aufenthalte zu identifizieren (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. (Siehe Modul [Basis - Encounter Interkationen](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/StructureDefinition-ISiKKontaktGesundheitseinrichtung.html#Encounter_Interaktionen)
 
 **Diskussion**
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 75px; ">
-        <img src="Betriebskoordination_Hellblau_gematik.svg"  style="width: 100%;">
-    </div>
-</figure>
-**Kontexterstellung über logische Identifier:** Derzeit wird in der Entwickler-Community der Bedarf diskutiert, den Patienten- und Fallkontext auch ausschließlich auf Basis einer bekannten (Abrechnungs-)Fall und Patientennummer zuzuordnen, was insbesondere die Zuordnung von Ressourcen erleichtert, die aus HL7 V2-Datenströmen erzeugt werden. Ein Beitrag zu dieser Diskussion kann auf [chat.fhir.org](https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext) geleistet werden. 
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; margin: 1rem 0;">
+  <img src="Betriebskoordination_Hellblau_gematik.svg"
+       style="width: 60px; height: auto;" />
+  <p style="margin: 0;">
+    <strong>Kontexterstellung über logische Identifier:</strong>
+    Derzeit wird in der Entwickler-Community der Bedarf diskutiert, den Patienten- und Fallkontext auch ausschließlich auf Basis einer bekannten (Abrechnungs-)Fall- und Patientennummer zuzuordnen, was insbesondere die Zuordnung von Ressourcen erleichtert, die aus HL7 V2-Datenströmen erzeugt werden.
+    Ein Beitrag zu dieser Diskussion kann auf
+    <a href="https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.2C.20VITAL.2C.20MED.5D.20Herstellung.20von.20Patienten-.20und.20Fallkontext">
+      chat.fhir.org
+    </a>
+    geleistet werden.
+  </p>
+</div>
 
 **3. Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuell auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!) und etabliert den Kontext, nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
 
@@ -42,9 +53,13 @@ Ungeachtet der serverseitigen Implementierungsvariante, können Clients stets ei
 
 **Warnung**
 
-<div style="display: flex; align-items: stretch; gap: 1rem;">
-  <img src="Ampel_auf_Rot_Blau_gematik.svg" style="width: 20%; max-width: 20%; height: auto; max-height: 75px; object-fit: contain; align-self: stretch;" />
-  <p style="margin: 0;"><strong>Gefahr fehlerhafter Zuordnung: </strong>Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.</p>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; margin: 1rem 0;">
+  <img src="Ampel_auf_Rot_Blau_gematik.svg"
+       style="width: 60px; height: auto;" />
+  <p style="margin: 0;">
+    <strong>Gefahr fehlerhafter Zuordnung:</strong>
+    Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.
+  </p>
 </div>
 
 ### Austausch von Informationen im ISiK-Kontext ohne Patienten-Informationen
@@ -126,5 +141,3 @@ Beispiel für eine Patient-Ressource ohne identifizierende Patienteninformatione
   },
   ...
 ```
-
-

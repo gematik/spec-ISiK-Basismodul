@@ -1,7 +1,4 @@
-﻿---
-topic: UebergreifendeFestlegungen-KompatibilitaetDerGematikSpezifikation-IHE
----
-### Kompatibilität zu IHE-Profilen
+﻿### Kompatibilität zu IHE-Profilen
 
 Die ISiK-Spezifikationen werden basierend auf folgenden IHE-Profilen entwickelt:
 * [PDQm (Patient Demographic Query for mobile)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)

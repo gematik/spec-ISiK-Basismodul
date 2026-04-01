@@ -1,7 +1,3 @@
----
-topic: Akteurs- und Rollenmodell
----
-
 Das hier dargestellte Modell unterscheidet zwischen **Rollen** und **Akteuren** als zentrale Konzepte zur modularen Beschreibung von Funktionalitäten in einem ISiK-Modul.
 
 ### Rollen: Wiederverwendbare Funktionseinheiten
@@ -32,3 +28,4 @@ Zur Verdeutlichung der Abhängigkeiten zwischen Rollen und Akteuren steht das un
     </div>
     <figcaption><strong>Abbildung: </strong>Akteurs- und Rollenmodell</figcaption>
 </figure>
+

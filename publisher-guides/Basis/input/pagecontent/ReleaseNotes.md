@@ -1,7 +1,3 @@
----
-topic: ImplementationGuide-markdown-ReleaseNotes
----
-
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
 Tags werden folgendermaßen verwendet:
@@ -39,7 +35,7 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 5.x.x
 
-* fix: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
+* `fix`: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
 
 ### Version 5.1.1
 
