@@ -10,6 +10,8 @@ Tags werden folgendermaßen verwendet:
 
 ### Version 6.0.0-rc
 
+Datum: 02.04.2026
+
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068 - siehe auch [ADR im commit](https://github.com/gematik/spec-ISiK-Basismodul/commit/574c026e118c429f046a05f18ef83dfe0aa7d620)
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` - analog zu TC 5.1.2 https://github.com/gematik/spec-ISiK-Basismodul/pull/1040
 * `documentation` Beschreibung des Profils `ISiKVersicherungsverhaeltnisSelbstzahler` wurde korrigiert (analog zu TC 5.1.2) https://github.com/gematik/spec-ISiK-Basismodul/pull/1029
@@ -32,10 +34,7 @@ Tags werden folgendermaßen verwendet:
 * `improve` Anpassung des Encounters im Sinne der Kompatibilität zum EHDS Profil aus Hospital Discharge Report (HDR) https://github.com/gematik/spec-ISiK-Basismodul/pull/1107
 * `improve` Entfernung des deprecated Identifier-Slice VersichertenId-GKV aus dem Profil `ISiKPatient` https://github.com/gematik/spec-ISiK-Basismodul/pull/1120
 * `improve` Anpassung der Kardinalität von Organization.name zu 1..1, um eine Kompatibilität zum EHDS und der ePA herzustellen https://github.com/gematik/spec-ISiK-Basismodul/pull/1119
-
-### Version 5.x.x
-
-* `fix`: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung.
+* `fix`: ValueSet-Binding in Procedure.code[Ops] auf OpsVS entfernt, da dieses ValueSet in ValueSet.compose.include.version ein "*" verwendet. Dieses Feature wird von gängigen Terminologieservern nicht unterstützt und führt zu Validierungsfehlern. Durch die weiterhin bestehende Verwendung des OpsCoding-Profils ergibt sich jedoch keine inhaltliche Änderung - Analog zu einer Änderung aus noch nicht veröffentlichter Technical Correction der Stufe 5
 
 ### Version 5.1.1
 

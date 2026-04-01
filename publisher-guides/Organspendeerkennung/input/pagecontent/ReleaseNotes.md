@@ -9,7 +9,7 @@ Im Fall von prozessorientierten Implementierungsleitfäden beginnt die Versionie
 
 ### Version 6.0.0-rc
 
-Datum: tbd.
+Datum: 02.04.2026
 
 * `improve` Einführung zahlreicher Profile zur Abdeckung des geschilderten Use Cases: Neben den Verpflichtenden Profilen (GCS, RASS, Pupillenlichtreaktion - direkt und indirekt, und Pupillengroesse) weitere optional umzusetzende Profile. https://github.com/gematik/spec-ISiK-Basismodul/pull/1048 
     * vgl. auch Vorgaben und Release Notes zum IG "ICU"
