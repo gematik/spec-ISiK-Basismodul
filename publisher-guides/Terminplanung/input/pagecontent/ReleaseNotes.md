@@ -4,7 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 ### Version 6.0.0-rc
 
-Datum: tbd.
+Datum: 02.04.2026
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * `documentation` Update und Verbesserung der Ressourcen-Angaben

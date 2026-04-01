@@ -6,7 +6,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 
 ### Version 6.0.0-rc
 
-Datum: tbd.
+Datum: 02.04.2026
 
 * `improve` Performance und Paging-Anforderungen in den übergreifenden Festlegungen eingebracht (gilt für alle Module) https://github.com/gematik/spec-ISiK-Basismodul/pull/1068
 * `improve` Hinzufügen eines Profils zur Abbildung von Serumnatrium aus dem Kontext der Organspendeerkennung auf Intensivstationen https://github.com/gematik/spec-ISiK-Basismodul/pull/1047
