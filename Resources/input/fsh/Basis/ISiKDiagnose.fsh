@@ -229,7 +229,7 @@ Usage: #example
 * bodySite.coding[snomed-ct] = $sct#1290031003 "Structure of left eye proper"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
 
-Instance: MittelgradigeIntelligenzminderung
+Instance: AkuteInfektionDerOberenAtemwege
 InstanceOf: ISiKDiagnose
 Usage: #example
 * clinicalStatus = $condition-clinical#active
