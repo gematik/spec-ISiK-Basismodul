@@ -28,7 +28,7 @@ https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-AMTS
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Basis  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Connect   
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Dokumentenaustausch  
-https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Formular/
+https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Formular  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Labor  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Medikation  
 https://gematik.github.io/spec-ISiK-Basismodul/main-stufe-6/ISiK-Subscriptions  
