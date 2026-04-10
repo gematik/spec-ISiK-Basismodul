@@ -24,7 +24,7 @@ und welche nicht.
 |&emsp;*Modes:*|Full population|Answer context<br>Choice selection|
 |&emsp;*Design:*| Observation Based<br> Expression Based|StructureMap based|
 |Form Data Extraction|
-|&emsp;*Design:*| Observation Based|Definition Based <br> StructureMap based|
+|&emsp;*Design:*| Observation Based<br> Template Based|Definition Based <br> StructureMap based|
 
 ### Übergreifende Festlegungen
 
