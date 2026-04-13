@@ -19,19 +19,18 @@ with
 
 <tabs>
     <tab title="Interaktionen"> 
-        {{page:Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-REST.page.md}}
+        {{page:FQL-Capability-REST}}
     </tab>
     <tab title="Suchparameter">
-        {{page:Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Search.page.md}}
+        {{page:FQL-Capability-Search}}
     </tab>
     <tab title="Operationen">
-        {{page:Einfuehrung/Datenobjekte/Datenobjekte_DocumentReference/FQL-Capability-Operations.page.md}}
+        {{page:FQL-Capability-Operations}}
     </tab>
     <tab title="Link">
     <!-- Achtung: Link muss noch händisch gesetzt werden, hier funktioniert der Platzhalter %capability nicht!-->
         {{pagelink:CapabilityStatement}}
     </tab>
 </tabs>
-
 
 
