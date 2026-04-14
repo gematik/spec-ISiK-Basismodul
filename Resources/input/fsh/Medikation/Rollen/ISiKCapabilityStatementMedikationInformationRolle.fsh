@@ -61,7 +61,7 @@ Usage: #definition
         * valueCode = #SHALL
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter        
-     * searchParam[0]
+    * searchParam[0]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
