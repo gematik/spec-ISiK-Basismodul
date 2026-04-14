@@ -1,4 +1,0 @@
----
-topic: FormularRendering
----
-## Funktion: FormularRendering
