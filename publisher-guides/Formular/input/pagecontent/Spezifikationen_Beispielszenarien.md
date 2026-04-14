@@ -22,7 +22,7 @@ Krankenhäuser sind verpflichtet, diverse Sachverhalte (z.B. meldepflichtige Erk
    * Über das ISiK-Connect-/Formular-Modul wird ein **webbasierter Formular-Renderer** direkt aus dem Primärsystem gestartet – inkl. Patienten- und Fallkontext.
 
 3. **Vorbelegung der Daten**
-   * Das Formular wird automatisch mit melderelevanten, vorhandenen FHIR-Daten befüllt, z.B:
+   * Das Formular wird automatisch mit melderelevanten, vorhandenen FHIR-Daten befüllt, z.B. :
      * Patientendaten
      * Diagnosen
      * Behandlungsinformationen
