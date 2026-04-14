@@ -1,5 +1,11 @@
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: tbd
+
+* `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zur den Rollen im Medikationsmodul https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
