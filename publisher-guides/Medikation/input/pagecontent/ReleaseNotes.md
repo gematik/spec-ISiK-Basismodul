@@ -4,7 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
-* `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zur den Rollen im Medikationsmodul https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
+* `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
 
 ### Version 6.0.0-rc
 
