@@ -27,6 +27,7 @@ Usage: #example
 * version = "2.0.2"
 * name = "TestValueSet"
 * status = #active
+* experimental = true
 * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
 * useContext.valueCodeableConcept = http://hl7.org/fhir/resource-types#Encounter
 * expansion.timestamp = "2022-03-30"

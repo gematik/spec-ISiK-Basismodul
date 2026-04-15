@@ -21,6 +21,7 @@ Usage: #example
 * name = "TestKatalog"
 * status = #active
 * content = #complete
+* experimental = true
 * concept[0].code = #test
 * concept[0].display = "Test"
 * concept[0].definition = "Dies ist ein Test-Code"
