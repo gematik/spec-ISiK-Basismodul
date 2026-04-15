@@ -1,5 +1,5 @@
 Profile: ISiKOrganisationFachabteilung
-Parent: Organization
+Parent: ISiKOrganisation
 Id: ISiKOrganisationFachabteilung
 Description: "Dieses Profil beschreibt die Organisationseinheit Fachabteilung innerhalb eines Krankenhauses.
 
@@ -28,36 +28,15 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * insert CommonElements
 // * insert CompliesWith(http://hl7.eu/fhir/base/StructureDefinition/organization-eu)
 // * insert CompliesWith(https://gematik.de/fhir/ti/StructureDefinition/ti-organization)
-* identifier 1..* MS
+* identifier 
   * ^short = "Identifikatoren der Fachabteilung"
   * ^comment = "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden."
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
 * identifier contains 
-  IKNR 0..1 MS and //Die Kardinalitätsfestlegung entspricht der Profil-Festlegung der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2
-  BSNR 0..1 MS and //Die Kardinalitätsfestlegung entspricht der Profil-Festlegung der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2
-  TelematikID 0..1 MS and
   Abteilungsidentifikator 1..1 MS
 /* TODO: zu prüfen, ob sinnvoll zur Abdeckung gennanter UCs in ISiK
   KIMAdresse 0..1 MS and
   TIMAdresse 0..1 MS and
 */
-* identifier[IKNR] MS
-* identifier[IKNR] only $identifier-iknr
-  * ^short = "Institutionskennzeichen"
-  * ^patternIdentifier.system = $identifier-iknr-system  
-  * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist. "
-* identifier[BSNR] MS
-* identifier[BSNR] only $identifier-bsnr
-  * ^short = "Betriebsstättennummer"
-  * ^patternIdentifier.system = $identifier-bsnr-system
-  * ^comment = "Motivation: Entsprechend der Profilierung im Rahmen der Stakeholderbefragung zu einem Profil Organisation in der Arbeitsgruppe zum ISIK Basismodul Stufe 4 und der Vorgabe der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization), muss ein System eine Betriebsstättennummer (BSNR) verarbeiten können, sofern diese Information verfügbar ist."
-* identifier[TelematikID] MS
-* identifier[TelematikID] only $identifer-TelematikID
-  * ^short = "Telematik-ID"
-  * ^patternIdentifier.system = $identifer-TelematikID-system
-  * ^comment = "Motivation: Entsprechend der Profil-Festlegung der KBV Organisation 1.5.0. (https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization) und der VZD-FHIR-Directory Organisation-Ressource in der Version 0.10.2 (https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory), muss ein System ein Institutionskennzeichen (IKNR) verarbeiten können, sofern diese Information verfügbar ist."
 * identifier[Abteilungsidentifikator] MS
   * ^short = "Krankenhausinterner Abteilungsidentifikator"
   * system 1.. MS
@@ -72,94 +51,16 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * identifier[TIMAdresse].type 0..1
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 */
-* active MS
-  * ^short = "Aktiv/Inaktiv Status"
-  * ^comment = "Motivation: Ein System muss prüfen können, ob eine Fachabteilung als Organisation aktiv ist oder nicht, sofern diese Information verfügbar ist."
-* type MS
-  * ^short = "Art der Organisation"
-  * ^comment = "Motivation: Ein System muss den Typ einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist. 
-  Die Festlegung einer endlichen Menge von Organisations-Formen in verbindlicher weise, ist zum Zeitpunkt der Festlegung nicht möglich."
-* type ^slicing.discriminator.type = #pattern
-* type ^slicing.discriminator.path = "$this"
-* type ^slicing.rules = #open
-* type ^slicing.ordered = false
 * type contains
-  organisationstyp 1..1 MS and
-  ErweiterterFachabteilungsschluessel 0..1 MS and
+  organisationstyp 1..1 and
   Fachbereich 0..1 MS
-* type[organisationstyp] = $organization_type#dept
-  * ^short = "Angabe des Organisations-Typ"
-  * ^comment = "Motivation: Eine Fachabteilung muss als solche hinsichtlich des Typs kodiert werden."
-* type[ErweiterterFachabteilungsschluessel] from $FachabteilungsschluesselErweitertVS
-  * ^short = "Angabe des §301 Fachabteilungsschlüssel"
-  * ^comment = "Motivation: Das ValueSet muss bindend sein, damit Systemübergreifend der Fachabteilungstyp einheitlich kodiert werden kann. 
-  
-  Dieses ValueSet KANN über ein Mapping (siehe Abschnitt https://wiki.hl7.de/index.php?title=IG:Value_Sets_f%C3%BCr_XDS#DocumentEntry.practiceSettingCode) mit dem ValueSet der Fachrichtung verknüpft werden und darüber ggf. die Integration von Systemen erleichtern."  
-* type[ErweiterterFachabteilungsschluessel].coding.system 1.. MS
-* type[ErweiterterFachabteilungsschluessel].coding.code 1.. MS
+
 * type[Fachbereich] from $IHEpracticeSettingVS (required)
   * ^short = "Angabe des IHE-PracticeSetting Code"
   * ^comment = "Motivation: Ein Fachbereich muss als solcher hinsichtlich des Typs kodiert werden."
 * type[Fachbereich].coding.system 1.. MS
 * type[Fachbereich].coding.code 1.. MS
-* name 1.. MS
-  * ^short = "Name der Organisation"
-  * ^comment = "Motivation: Einer Organisation oder Organisationseinheit muss ein Name zugewiesen werden.
-  Begründung Pflichtfeld: Da der Name sowohl im Kontext des EHDS als auch im Rahmen der ePA als verpflichtendes Element definiert ist, wird er in ISiK aus Gründen der Kompatibilität ebenfalls als Pflichtfeld festgelegt."
-* alias MS
-  * ^short = "Alias der Organisation"
-  * ^comment = "Hinweis: unter Umständen können hier Kürzel genutzt werden. Motivation: Ein System muss den Alias einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-* telecom MS
-  * ^short = "Kontaktinformation"
-  * ^comment = "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-* address MS
-  * ^short = "Adresse der Organisation"
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-  * ^comment = "In order to differentiate between post box addresses and physical addresses, street names and house numbers, and to add city district names, vendors can opt to support the extensions as suggested in the German Address Base Profile http://fhir.de/StructureDefinition/address-de-basis.\r\nSuch differentiations are however not required within the scope of this specification."
-* address contains
-    Strassenanschrift 0..* MS and
-    Postfach 0..* MS
-* address[Postfach] only AddressDeBasis
-  * ^short = "Postfachadresse"
-  * ^comment = "Adresse, die nur für postalische Zustellung genutzt werden kann."
-  * obeys address-cnt-2or3-char
-  * extension[Stadtteil] MS
-  * ^patternAddress.type = #postal
-  * type 1.. MS
-  * line 1.. MS
-    * extension[Strasse] 0..0 
-    * extension[Hausnummer] 0..0 
-    * extension[Adresszusatz] 0..0 
-    * extension[Postfach] 0..1 MS
-  * city 1.. MS
-  * postalCode 1.. MS
-  * country 1.. MS
-* address[Strassenanschrift] only AddressDeBasis
-  * ^short = "Straßenanschrift"
-  * ^comment = "Wohn- oder Aufenthaltsort des Patienten"
-  * obeys address-cnt-2or3-char
-  * extension[Stadtteil] MS
-  * ^patternAddress.type = #both
-  * type 1.. MS
-  * line 1.. MS
-    * extension[Strasse] 0..1 MS
-    * extension[Hausnummer] 0..1 MS
-    * extension[Adresszusatz] 0..1 MS
-    * extension[Postfach] 0..0
-  * city 1.. MS
-  * postalCode 1.. MS
-  * country 1.. MS
-* partOf MS
-  * ^short = "Übergeordnete Organisation"
-  * ^comment = "Motivation: System muss die Hierarchie einer Organisationseinheit innherhalb einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-* contact MS
-  * ^short = "Kontaktperson oder -abteilung"
-  * ^comment = "Motivation: Ein System muss Kontaktinformation einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
-* endpoint MS
-  * ^short = "Technischer Endpunkt"
-  * ^comment = "Motivation: Ein System muss den technischen Endpunkt einer Organisation zum Abruf bereitstellen, sofern diese Information verfügbar ist."
+* name 1..
 
 
 
