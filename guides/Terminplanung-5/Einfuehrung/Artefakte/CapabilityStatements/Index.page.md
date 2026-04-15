@@ -1,6 +1,0 @@
----
-topic: CapabilityStatementsTermin
-
----
-
-## {{page-title}}
