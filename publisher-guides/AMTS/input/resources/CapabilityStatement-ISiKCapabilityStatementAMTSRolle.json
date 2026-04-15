@@ -151,20 +151,21 @@
                 }
               ],
               "name": "risk",
-              "definition": "http://hl7.org/fhir/SearchParameter/RiskAssessment-risk",
               "type": "token",
-              "documentation": "**Beispiel:**  \n        `GET [base]/RiskAssessment?risk=http://terminology.hl7.org/CodeSystem/risk-probability|high`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        "
+              "documentation": "**Beispiel:**  \n        `GET [base]/RiskAssessment?risk=http://terminology.hl7.org/CodeSystem/risk-probability|high`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        ",
+              "definition": "http://hl7.org/fhir/SearchParameter/RiskAssessment-risk"
             },
             {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
+                  "valueCode": "MAY"
                 }
               ],
-              "name": "_lastUpdated",
-              "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). "
+              "name": "_tag",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+              "type": "token",
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
             }
           ]
         },
@@ -257,9 +258,9 @@
                 }
               ],
               "name": "date",
-              "definition": "http://hl7.org/fhir/SearchParameter/conformance-date",
               "type": "date",
-              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
+              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). ",
+              "definition": "http://hl7.org/fhir/SearchParameter/conformance-date"
             },
             {
               "extension": [
@@ -269,9 +270,9 @@
                 }
               ],
               "name": "_profile",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile",
               "type": "uri",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). ",
-              "definition": "http://hl7.org/fhir/SearchParameter/Resource-profile"
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
             },
             {
               "extension": [
@@ -396,9 +397,9 @@
                 }
               ],
               "name": "patient.identifier",
-              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "**Beispiele:**  \n        `GET [base]/RiskAssessment?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`\n\n        `GET [base]/RiskAssessment?patient.identifier=1032702`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        "
+              "documentation": "**Beispiele:**  \n        `GET [base]/RiskAssessment?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702`\n\n        `GET [base]/RiskAssessment?patient.identifier=1032702`\n\n        **Anwendungshinweise:** Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Token Search'](https://hl7.org/fhir/R4/search.html#token).\n\n        Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt 'Chained Parameters'](https://hl7.org/fhir/R4/search.html#chaining).\n\n        ",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient"
             },
             {
               "extension": [
@@ -408,9 +409,9 @@
                 }
               ],
               "name": "date",
+              "definition": "http://hl7.org/fhir/SearchParameter/conformance-date",
               "type": "date",
-              "documentation": "**Beispiel:** Suche nach allen Patienten-Ressourcen, die seit dem 1. Januar neu angelegt oder geändert wurden:  \n        `GET [base]/Patient?_lastUpdated=ge2026-01-01`  \n        **Beispiel:** Suche nach allen Observations eines Patienten im Zeitraum einer Stunde:  \n        `GET [base]/Observation?_lastUpdated=ge2026-03-05T10:20:10.423+02:00&_lastUpdate=lt2026-03-05T11:20:10.423+02:00&patient=Patient/12345`  \n        **Anwendungshinweis:**\n        Dieser Suchparameter dient dem Datenabgleich zwischen Systemen und ist auch für die *patientenübergreifende* Suche zugelassen.\n        Server *können* die Anfrage mit einer OperationOutcome-Ressource und dem Fehlercode `too-costly` beantworten, wenn das vom Client gewählte Zeitfenster oder die Treffermenge zu groß ist\n        und die Durchführhung der Suchanfrage das System unverhältnismäßig stark belasten würde.\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [_lastUpdated](https://hl7.org/fhir/search.html#_lastUpdated). ",
-              "definition": "http://hl7.org/fhir/SearchParameter/conformance-date"
+              "documentation": "**Beispiel:**\n        `GET [base]/[Resourcetype]?_tag=https://example.org/codes|needs-review`\n        **Anwendungshinweis:**\n        Weitere Details siehe FHIR-Kernspezifikation, Abschnitt [Parameters for all resources](https://hl7.org/fhir/R4/search.html#all)\n        sowie Abschnitt [Tags](https://www.hl7.org/fhir/R4/resource.html#simple-tags).  "
             },
             {
               "extension": [
