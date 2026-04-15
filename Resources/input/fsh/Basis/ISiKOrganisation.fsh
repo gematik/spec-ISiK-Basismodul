@@ -52,7 +52,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 */
 * type contains
-  organisationstyp 1..1 and
   Fachbereich 0..1 MS
 
 * type[Fachbereich] from $IHEpracticeSettingVS (required)
