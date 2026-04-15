@@ -4,7 +4,7 @@ Description: "If there is no Observation.value, a dataAbsentReason must be given
 * expression = "value.exists().not() implies dataAbsentReason.exists()"
 * source = Canonical(SD_MII_ICU_Monitoring_Und_Vitaldaten)
 
-Invariant: obs-10
+Invariant: isik-obs-3
 Description: "Either subject XOR encounter exists"
 * severity = #error
 * expression = "$this.encounter.exists() xor $this.subject.exists()"

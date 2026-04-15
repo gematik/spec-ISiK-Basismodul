@@ -6,7 +6,7 @@ Description: """Die Datenstruktur wurde dem laufenden Stand der Entwicklung des 
 
 * insert Meta
 
-* obeys obs-10 and vs-de-2
+* obeys isik-obs-3 and vs-de-2
 * identifier MS
 * partOf 1..1 MS
 * partOf only Reference(Procedure)
