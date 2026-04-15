@@ -4,11 +4,6 @@ Description: "If there is no Observation.value, a dataAbsentReason must be given
 * expression = "value.exists().not() implies dataAbsentReason.exists()"
 * source = Canonical(SD_MII_ICU_Monitoring_Und_Vitaldaten)
 
-Invariant: obs-value-or-dataAbsentReason
-Description: "Observation must have either value or dataAbsentReason."
-* severity = #error
-* expression = "value.exists() xor dataAbsentReason.exists()"
-
 Invariant: obs-10
 Description: "Either subject XOR encounter exists"
 * severity = #error
