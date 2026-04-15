@@ -63,6 +63,7 @@ Usage: #example
 * status = #active
 * content = #complete
 * caseSensitive = true
+* experimental = true
 * concept[0].code = #test
 * concept[0].display = "Test"
 * concept[0].definition = "Dies ist ein Test-Code"
