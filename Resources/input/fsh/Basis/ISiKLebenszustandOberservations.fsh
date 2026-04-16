@@ -94,7 +94,7 @@ Id: ISiKSchwangerschaftsstatus
 Title: "ISiK Schwangerschaftsstatus"
 Description: "Schwangerschaftsstatus einer Patientin"
 * insert Meta
-* code = $loinc#82810-3
+* code.coding[loinc] = $loinc#82810-3
 * valueCodeableConcept 1.. MS
   * ^comment = "Motivation: Harmonisierung mit KBV (KBV_PR_Base_RelatedPerson)"
 * valueCodeableConcept from SchwangerschaftsstatusVS
@@ -108,8 +108,8 @@ Instance: ISiKSchwangerschaftsstatusBeispiel
 InstanceOf: ISiKSchwangerschaftsstatus
 Usage: #example
 Title: "ISiKSchwangerschaftsstatusBeispiel"
-* code = $loinc#82810-3 "Pregnancy status"
-  * coding.version = "2.77"
+* code.coding[loinc] = $loinc#82810-3 "Pregnancy status"
+* code.coding[loinc].version = "2.77"
 * status = #final
 * subject = Reference(PatientinMusterfrau)
 * effectiveDateTime = "2024-01-01"
@@ -124,7 +124,7 @@ Parent: ISiKLebensZustand
 Id: ISiKSchwangerschaftErwarteterEntbindungstermin
 Title: "ISiK Schwangerschaft - Erwarteter Entbindungstermin"
 * insert Meta
-* code from SchwangerschaftEtMethodeVS
+* code.coding[loinc] from SchwangerschaftEtMethodeVS
 * value[x] only dateTime
 * valueDateTime 1.. MS
   * ^comment = "Motivation: Eine Observation MUSS immer einen Wert enthalten"
