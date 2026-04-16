@@ -8,6 +8,13 @@ Tags werden folgendermaßen verwendet:
 
 - 'fix' sollte nur verwendet werden für Behebung von **Fehlern** an den (potentiell) normativen Inhalten der Spec (Anforderungen + Profile + CpS); Typo fixes werden nicht in die Releasenotes aufgenommen.
 
+### Version 6.0.0-rc1
+
+Datum: tbd
+
+* `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1149
+* `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1163
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
