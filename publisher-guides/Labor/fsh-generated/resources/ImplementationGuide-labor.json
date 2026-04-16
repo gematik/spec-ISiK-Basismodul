@@ -173,6 +173,30 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ISiKLaborMethodeVS"
+        },
+        "description": "SNOMED-CT-Codes für Untersuchungsmethoden im Labor (alle Konzepte unterhalb von #272394005 'Technique (qualifier value)').",
+        "exampleBoolean": false,
+        "name": "ISiK Labor Methode"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ISiKLaborbereichVS"
+        },
+        "description": "LOINC-Codes zur Kategorisierung von Laboruntersuchungen nach Fachbereichen.",
+        "exampleBoolean": false,
+        "name": "ISiK Laborbereich"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKCoding"
+        },
+        "description": "Data Type profile for Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKCoding"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ISiKLaboruntersuchung"
         },
         "description": "Dieses Profil ermöglicht die Abbildung von Informationen zur Laboruntersuchungen eines Patienten in ISiK Szenarien. Es dient primär als Vorlage, von der spezifische Laboruntersuchungs-Profile abgeleitet werden, kann aber grundsätzlich auch zur Repräsentation von nicht weiter ausspezifizierten Laboruntersuchungen genutzt werden.\n\nViele medizinischen Entscheidungen benötigen Informationen zu den Laboruntersuchungen eines Patienten. Hierzu gehören z.B. aktuelle Nierenfunktionswerte, Leberwerte, Blutbildwerte oder Hormone aus Schilddrüse.\nJede dieser Untersuchungen wird durch bestimmte [[https://loinc.org/ LOINC]] oder [[http://snomed.info/sct SNOMED CT]] Codes bezeichnet. Der angegebene Wert ist durch genaue Einheitenangaben in [[http://unitsofmeasure.org UCUM]] zu konkretitiseren.\nMotivierender Use-Case zur Einführung dieser Profile ist die [Arzneitmitteltherapiesicherheit im Krankenhaus - AMTS](https://gemspec.gematik.de/ig/fhir/isik/amts/6.0.0-rc/UseCases.html).\n\nIn FHIR werden Untersuchungen, bzw. Beobachtungen als [`Observation`](https://hl7.org/fhir/R4/observation.html)-Ressource repräsentiert. Zugehörige Codes und Einheiten sind den entsprechenden Valuessets zu entnehmen.",
@@ -250,6 +274,14 @@
         "description": "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung TSH eines Patienten in ISiK Szenarien.",
         "exampleBoolean": false,
         "name": "ISiKLaboruntersuchungTSH"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ISiKLoincCoding"
+        },
+        "description": "Data Type profile for LOINC Codings in ISiK",
+        "exampleBoolean": false,
+        "name": "ISiKLoincCoding"
       },
       {
         "reference": {

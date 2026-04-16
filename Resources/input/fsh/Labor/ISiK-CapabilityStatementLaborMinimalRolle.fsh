@@ -25,6 +25,8 @@ Usage: #definition
   * resource[+]
     * type = #Observation
     * insert CapabilityStatementExpectationExt(SHALL)
+    * supportedProfile[+] = Canonical(ISiKLaboruntersuchung)
+      * insert CapabilityStatementExpectationExt(SHALL)
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungSerumkreatinin)
       * insert CapabilityStatementExpectationExt(SHALL)
     * supportedProfile[+] = Canonical(ISiKLaboruntersuchungPCT)
