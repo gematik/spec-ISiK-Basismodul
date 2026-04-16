@@ -13,7 +13,7 @@ Die Erfassung der Organisation in strukturierter Form ermöglicht u.a.:
 - Zuweisungen von Diensten an bestimmte Bereiche der Aufbauorganisation im Rahmen des Terminmanagements
 - Die Raum- und Betten-Belegung in strukturierter Form (interdisziplinär)
 
-Auch die Erfassung des Krankenhauses als Ganzem ist relevant.
+Auch die Erfassung des Krankenhauses als Ganzes ist relevant.
 Entsprechend fokussieren die folgenden Profile zur Organisation auf das Krankenhaus als Ganzes und die Fachabteilung als Organisation.  
 
 **Kompatibilität**
@@ -66,7 +66,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 Profile: ISiKOrganisation
 Parent: Organization
 Id: ISiKOrganisation
-Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als ganzem in ISiK-Szenarien."
+Description: "Dieses Profil beschreibt die Nutzung von Organisationseinheiten innerhalb eines Krankenhauses oder eines Krankenhauses als Ganzes in ISiK-Szenarien."
 * insert Meta
 * identifier 1..* MS
   * ^slicing.discriminator.type = #pattern
