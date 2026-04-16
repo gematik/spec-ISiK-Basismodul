@@ -117,7 +117,7 @@ Title: "ISiKSchwangerschaftsstatusBeispiel"
   * coding.version = "2.77"
 * hasMember = Reference(ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel)
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKSchwangerschaftErwarteterEntbindungstermin
 Parent: ISiKLebensZustand
@@ -140,7 +140,7 @@ Title: "ISiKSchwangerschaftErwarteterEntbindungsterminBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueDateTime = "2024-08-01"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKAlkoholAbusus
 Parent: ISiKLebensZustand
@@ -153,7 +153,7 @@ Title: "ISiK Alkohol Abusus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from YesNoUnknownNotAsked
-* performer = Reference(PractitionerWalterArzt)
+
 
 Instance: ISiKAlkoholAbususBeispiel
 InstanceOf: ISiKAlkoholAbusus
@@ -168,7 +168,7 @@ Title: "ISiKAlkoholAbususBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = ExpandedYesNoIndicator#Y "Yes"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKRaucherStatus
 Parent: ISiKLebensZustand
@@ -181,7 +181,7 @@ Title: "ISiK Raucherstatus"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from CurrentSmokingStatusUvIps
-* performer = Reference(PractitionerWalterArzt)
+
 
 Instance: ISiKRaucherStatusBeispiel
 InstanceOf: ISiKRaucherStatus
@@ -197,7 +197,7 @@ Title: "ISiKRaucherStatusBeispiel"
 * valueCodeableConcept = $loinc#LA15920-4 "Former smoker"
   * coding.version = "2.77"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
+
 
 Profile: ISiKStillstatus
 Parent: ISiKLebensZustand
@@ -210,7 +210,6 @@ Description: "Profil zur Abbildung ob gestillt/Muttermilch abgepumpt und gefütt
 * value[x] only CodeableConcept
 * valueCodeableConcept 1.. MS
 * valueCodeableConcept from StillstatusVS
-* performer = Reference(PractitionerWalterArzt)
 
 Instance: ISiKStillstatusBeispiel
 InstanceOf: ISiKStillstatus
@@ -226,4 +225,3 @@ Description: "ISiKStillstatusBeispiel"
 * effectiveDateTime = "2024-01-01"
 * valueCodeableConcept = $loinc#LA29252-6 "Currently breastfeeding"
 * encounter = Reference(Fachabteilungskontakt)
-* performer = Reference(PractitionerWalterArzt)
