@@ -10,6 +10,7 @@ Datum: tbd
 
 * `fix` Fehlender LOINC-Slice in .component für ISIKBlutdurck hinzugefügt. Keine inhaltiche Änderung, Änderung betrifft nur die Validierung von Instanzen.
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `fix` Entfernung des Patterns auf Observation.performer in den Profilen: `ISiKStillstatus`, `ISiKAlkoholAbusus` und `ISiKRaucherstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1169
 
 
 ## Version 5.1.1

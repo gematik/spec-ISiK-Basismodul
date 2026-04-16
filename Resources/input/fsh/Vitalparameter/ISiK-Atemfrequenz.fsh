@@ -58,7 +58,7 @@ Usage: #example
 * performer = Reference(PractitionerWalterArzt)
 * valueQuantity = 35 '/min' "Atemzüge pro Minute"
 * method = $sct#37931006 "Auscultation"
-* bodySite = $sct#181216001 "Entire chest"
+* bodySite.coding = $sct#181216001 "Entire chest"
   * version = "http://snomed.info/sct/11000274103/version/20251115"
 * interpretation = $v3-ObservationInterpretation#H "High"
 * note.text = "Tachypnoe bei akuter respiratorischer Insuffizienz"
