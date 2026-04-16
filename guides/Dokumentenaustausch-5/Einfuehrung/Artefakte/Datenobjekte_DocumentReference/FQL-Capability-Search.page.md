@@ -1,3 +1,7 @@
+---
+topic: FQL-Capability-Search
+---
+
 <fql>
 from
     CapabilityStatement

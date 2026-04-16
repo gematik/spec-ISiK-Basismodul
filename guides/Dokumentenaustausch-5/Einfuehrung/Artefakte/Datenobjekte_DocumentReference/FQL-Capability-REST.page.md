@@ -1,3 +1,7 @@
+---
+topic: FQL-Capability-REST
+---
+
 <fql output="inline">
 from
     CapabilityStatement
