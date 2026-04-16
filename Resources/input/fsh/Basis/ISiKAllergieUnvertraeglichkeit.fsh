@@ -87,7 +87,7 @@ Bitte auch beachten, dass verificationStatus bei Condition derzeit KEIN MS-Flag 
     * insert Comment-Reference-Subject(Begründung MS)
 * encounter MS
   * ^short = "Aufenthaltsbezug"
-  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der AllergieUnverträglichkeit MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen."
+  * ^comment = "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen exponiert und empfangen werden können."
   * reference 1.. MS
     * ^short = "Encounter-Link"
     * insert Comment-Reference-Encounter(Begründung MS)

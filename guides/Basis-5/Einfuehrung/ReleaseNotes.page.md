@@ -26,6 +26,10 @@ Die Tags werden folgendermaßen verwendet:
 * `improve` Lockerung der Name-Kardinalität von 1..1 auf ..1 im Profil ISiKAngehoeriger; Ergänzung fehlender Kommentare im Profil ISiKPersonImGesundheitsberuf https://github.com/gematik/spec-ISiK-Basismodul/pull/1059
 * `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1150
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
+* `documentation` Anpassung des Must-Support Kommentars bei `ISiKAllergieUnvertraeglichkeit.encounter` und `ISiKDiagnose.encounter` https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
+* `documentation` Hinzufügen einer Erläuterung zur Klarstellung der Priorisierung bei `Account.coverage.priority` https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
+* `documentation` Entfernung des Abschnitts `generische Ressourcentypen` von der Seite zur Rest-API https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
+* `fix` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
 
 ## Version 5.1.1
 
