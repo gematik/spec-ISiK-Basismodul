@@ -53,7 +53,7 @@ Usage: #definition
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter    
  
-    * searchParam[0]
+    * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
@@ -131,7 +131,7 @@ Usage: #definition
         * valueCode = #SHALL
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter    
-    * searchParam[0]
+    * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
@@ -207,7 +207,7 @@ Usage: #definition
         * valueCode = #SHALL
     * insert CommonSearchParameters 
     * insert OptionalTagSearchParameter    
-    * searchParam[0]
+    * searchParam[+]
       * extension
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
