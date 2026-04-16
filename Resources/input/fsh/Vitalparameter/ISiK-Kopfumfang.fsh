@@ -28,6 +28,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9843-4 "Head Occipital-frontal circumference"
 * code.coding[snomed] = $sct#363812007 "Head circumference"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang"
 * subject = Reference(PatientinMusterfrau)
@@ -52,6 +53,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9843-4 "Head Occipital-frontal circumference"
 * code.coding[snomed] = $sct#363812007 "Head circumference"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153856 "MDC_CIRCUM_HEAD"
 * code.text = "Kopfumfang - Pädiatrische Verlaufskontrolle"
 * subject = Reference(PatientinNormal)

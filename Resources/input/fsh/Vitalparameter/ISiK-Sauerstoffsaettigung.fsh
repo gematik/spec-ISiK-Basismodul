@@ -58,6 +58,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
 * code.coding[snomed] = $sct#442476006 "Arterial oxygen saturation"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150324 "MDC_SAT_O2_ART"
 * code.text = "Pulsoximetrische Sauerstoffsättigung - Intensivmonitoring"
 * subject = Reference(PatientinNormal)
@@ -71,9 +72,11 @@ Usage: #example
 * device = Reference(ExampleDevice)
 * component[0].code.coding[0] = $loinc#3151-8 "Inhaled oxygen flow rate"
 * component[=].code.coding[+] = $sct#427081008 "Delivered oxygen flow rate"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * component[=].code.text = "Sauerstoffflussrate"
 * component[=].valueQuantity = 15 'L/min' "Liter pro Minute"
 * component[+].code.coding[0] = $loinc#3150-0 "Inhaled oxygen concentration"
 * component[=].code.coding[+] = $sct#250774007 "Inspired oxygen concentration"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * component[=].code.text = "Inspiratorische Sauerstoffkonzentration - FiO2"
 * component[=].valueQuantity = 100 '%' "%"
