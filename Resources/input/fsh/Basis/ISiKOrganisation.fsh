@@ -47,7 +47,6 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Motivation: Ein Fachbereich muss als solcher hinsichtlich des Typs kodiert werden."
 * type[Fachbereich].coding.system 1.. MS
 * type[Fachbereich].coding.code 1.. MS
-* name 1..
 
 
 
