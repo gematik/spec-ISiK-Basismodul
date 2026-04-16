@@ -33,24 +33,12 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Mindestens ein Identifikator muss für die Fachabteilung angegeben werden."
 * identifier contains 
   Abteilungsidentifikator 1..1 MS
-/* TODO: zu prüfen, ob sinnvoll zur Abdeckung gennanter UCs in ISiK
-  KIMAdresse 0..1 MS and
-  TIMAdresse 0..1 MS and
-*/
 * identifier[Abteilungsidentifikator] MS
   * ^short = "Krankenhausinterner Abteilungsidentifikator"
   * system 1.. MS
   * value 1.. MS
   * ^patternIdentifier.type = $sct#225746001 // Ward
   * ^comment = "Motivation: Für IDs, die Krankhausintern spezifischen Fachabteilungen vergeben werden, ist diese Identifier zu nutzen - analog zu Slice Abteilungsidentifikator in https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/mii_pr_struktur_abteilung."
-/* TODO s.o.
-* identifier[KIMAdresse] only $GEM_PR_KIM_AdressIdentifier
-* identifier[KIMAdresse].type 0..1
-* identifier[KIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#kim-2.0 (exactly)
-* identifier[TIMAdresse] only $GEM_PR_TIM_AdressIdentifier
-* identifier[TIMAdresse].type 0..1
-* identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
-*/
 * type contains
   Fachbereich 0..1 MS
 
