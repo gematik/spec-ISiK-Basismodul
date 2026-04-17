@@ -68,7 +68,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * ^comment = "Motivation: Ein System muss die Geodaten eines Standorts zum Abruf bereitstellen, sofern diese Information verfügbar ist."
 * managingOrganization MS 
   * ^short = "Verwaltende Organisation des Standorts"
-  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert."
+  * ^comment = """Begründung Must-Support: Vergleiche MII Profilierung eines Standortes (s.u.). Dennoch ist im Kontext von ISiK die Angabe der verwaltenden Organisation eines Standorts nicht zwingend erforderlich, um nicht notwendige Komplexität in der Abbildung von Standorten zu vermeiden. Daher wird die Angabe der verwaltenden Organisation als MS definiert.
   
   Hintergrund: Vergleiche https://simplifier.net/medizininformatikinitiative-modulstrukturdaten/sd_mii_struktur_location"""
 * partOf MS
@@ -86,7 +86,7 @@ Description: "Dieses Profil dient der strukturierten Erfassung von Räumen (als 
 * physicalType = $LocationPhysicalType#ro "Room"
 * operationalStatus MS  
 * operationalStatus from $v2-0116-BedStatus
-  * ^comment = "Belegungsstatus eines Raums"
+  * ^short = "Belegungsstatus eines Raums"
   * ^comment = "Motivation: Entsprechend der Bedarfsmeldung im Rahmen der AG zur Ausbaustufe 4 muss ein System den Belegungsstatus eines Raums zum Abruf bereitstellen, sofern diese Information verfügbar ist. Dies dient z.B. der Markierung als 'Isoliert'."
 
 Profile: ISiKStandortBettenstellplatz
