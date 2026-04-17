@@ -26,7 +26,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#8867-4 "Heart rate"
 * code.coding[snomed] = $sct#364075005 "Heart rate"
-  * version = "http://snomed.info/sct/11000274103/version/20251115"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
 * code.coding[IEEE11073] = $IEEE11073#147842 "MDC_ECG_HEART_RATE"
 * code.text = "Herzfrequenz"
 * subject = Reference(PatientinMusterfrau)
@@ -51,7 +51,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8867-4 "Heart rate"
 * code.coding[snomed] = $sct#364075005 "Heart rate"
-  * version = "http://snomed.info/sct/11000274103/version/20251115"
+  * version = "http://snomed.info/sct/11000274103/version/20231115"
 * code.coding[IEEE11073] = $IEEE11073#147842 "MDC_ECG_HEART_RATE"
 * code.text = "Herzfrequenz - EKG-Monitoring"
 * subject = Reference(PatientinNormal)
