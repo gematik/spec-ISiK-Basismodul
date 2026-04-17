@@ -26,7 +26,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code = $loinc#29463-7 "Body weight"
 * code.coding[snomed] = $sct#27113001 "Body weight"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht"
 * subject = Reference(PatientinMusterfrau)
@@ -51,7 +51,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#29463-7 "Body weight"
 * code.coding[snomed] = $sct#27113001 "Body weight"
-  * version = "http://snomed.info/sct/11000274103/version/20231115"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#188736 "MDC_MASS_BODY_ACTUAL"
 * code.text = "Körpergewicht - Bettwaage"
 * subject = Reference(PatientinNormal)
