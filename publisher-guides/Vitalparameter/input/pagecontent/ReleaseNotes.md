@@ -1,5 +1,12 @@
 ﻿Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.
 
+### Version 6.0.0-rc1 (Benehmensherstellung)
+
+Datum: tbd
+
+* `fix` Entfernung des Patterns auf Observation.performer in den Profilen: `ISiKStillstatus`, `ISiKAlkoholAbusus` und `ISiKRaucherstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
+* `improve` Hinzufügen der Snomed-Versionen zu den Beispielen https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
+
 ### Version 6.0.0-rc
 
 Datum: 02.04.2026
