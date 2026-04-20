@@ -29,7 +29,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
 * code.coding[snomed] = $sct#276885007 "Core body temperature"
-  * version = "http://snomed.info/sct/11000274103/version/20251115"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körpertemperatur"
 * subject = Reference(PatientinMusterfrau)
@@ -54,7 +54,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code.coding[coretemp-loinc] = $loinc#8329-5 "Body temperature - Core"
 * code.coding[snomed] = $sct#276885007 "Core body temperature"
-  * version = "http://snomed.info/sct/11000274103/version/20251115"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[coretemp-IEEE11073] = $IEEE11073#150368 "MDC_TEMP_CORE"
 * code.text = "Körperkerntemperatur - Intensivmonitoring"
 * subject = Reference(PatientinNormal)
