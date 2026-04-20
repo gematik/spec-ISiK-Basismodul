@@ -23,14 +23,14 @@
         "path": "Observation",
         "constraint": [
           {
-            "key": "obs-10",
+            "key": "isik-obs-3",
             "human": "Either subject XOR encounter exists",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung",
             "severity": "error",
-            "expression": "$this.encounter.exists() xor $this.subject.exists()"
+            "expression": "encounter.exists() xor subject.exists()"
           },
           {
-            "key": "vs-de-2",
+            "key": "isik-obs-4",
             "human": "If there is no component or hasMember element then either a value[x] or a data absent reason must be present",
             "source": "https://gematik.de/fhir/isik/StructureDefinition/mii-pr-vent-icu-parameter-von-beatmung",
             "severity": "error",
