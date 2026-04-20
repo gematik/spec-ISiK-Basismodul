@@ -52,6 +52,15 @@
       {
         "id": "Condition.extension",
         "path": "Condition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -284,7 +293,7 @@
         "id": "Condition.encounter",
         "path": "Condition.encounter",
         "short": "Aufenthaltsbezug",
-        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS stets zum Zwecke der Nachvollziehbarkeit und Datenintegrität vorliegen.",
+        "comment": "**Begründung Must-Support:** Ein Aufenthaltsbezug der Diagnose MUSS zum Zwecke der Nachvollziehbarkeit und Datenintegrität exponiert und empfangen werden können.",
         "mustSupport": true
       },
       {
