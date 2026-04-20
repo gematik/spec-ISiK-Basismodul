@@ -58,7 +58,7 @@ Usage: #example
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
 * code.coding[snomed] = $sct#442476006 "Arterial oxygen saturation"
-  * version = "http://snomed.info/sct/11000274103/version/20251115"
+//  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#150324 "MDC_SAT_O2_ART"
 * code.text = "Pulsoximetrische Sauerstoffsättigung - Intensivmonitoring"
 * subject = Reference(PatientinNormal)
