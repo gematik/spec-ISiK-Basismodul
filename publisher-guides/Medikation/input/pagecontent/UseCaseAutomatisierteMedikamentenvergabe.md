@@ -78,6 +78,8 @@ Der apothekenseitige Prozess innerhalb des Unit-Dose-Systems gliedert sich typis
 
 4. **Übergabe an die Verifikation:** Die bereitgestellten Unit-Dose-Päckchen werden von der Pflegefachkraft am Patientenbett per Barcode-Scan verifiziert (BCMA, Prozessschritt 4 des Closed Loop) und verabreicht.
 
+Die Erzeugung der Einzel-Dosen ist ein gesonderter Prozess der zuvor ablaufen muss. Er wird in diesem IG nicht näher behandelt, da es sich hierbei eher um logistischen Prozess handelt, der nicht dem Scope von ISiK zugeordnet wird.
+
 #### Vorteile des Unit-Dose-Systems
 
 Das Unit-Dose-System bietet gegenüber traditionellen Verfahren wesentliche Vorteile:
