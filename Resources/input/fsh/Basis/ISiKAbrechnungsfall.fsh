@@ -17,7 +17,7 @@ ohne die Gesamtheit aller Kontakte betrachten zu müssen.
 
 In FHIR wird der Abrechnungsfall mit der `Account`-Ressource repräsentiert.
 
-Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Abbildung-des-Konstrukts-Fall.page.md?version=current).
+Weitere Hinweise zu den Abgrenzungen der Begrifflichkeiten Fall und Kontakt finden sie unter [Fall-Begriff in ISiK](https://simplifier.net/guide/isik-basis-stufe-5/Einfuehrung/UseCasesAnwendung/Abbildung-des-Konstrukts-Fall.page.md).
 
 ### Kompatibilität
 * zum Zeitpunkt der Veröffentlichung sind keine abweichenden Modellierungen der Account-Ressource bekannt.
