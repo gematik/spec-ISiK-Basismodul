@@ -96,7 +96,7 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
   * priority MS
     * ^short = "Priorität"
     * ^comment = "**Begründung des MS:** Wenn ein Primärsystem mehrere Kostenträger angibt, 
-    sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. Hierbei ist ist die Priorisierung aufsteigend zur interpretieren. Demnach hat der Kostenträger mit der priority 1 die höchste Priorität, der mit priority 2 die zweithöchste Priorität etc.      
+    sollte für lesende Systeme ersichtlich sein, welches der Hauptkostenträger ist. Hierbei ist die Priorisierung aufsteigend zu interpretieren. Demnach hat der Kostenträger mit der priority 1 die höchste Priorität, der mit priority 2 die zweithöchste Priorität etc.      
     **Historie:**  
     Diskussionstand der ISIK-Arbeitsgruppe vom 28.5.: Die Abbildung über einen Integer ist wünschenswert. 
     Eine binäre Einteilung in Hauptkostenträger (1) und alle anderen (2) wird der Komplexität der Priorisierung zur Kostenträgerschaft nicht gerecht. 
