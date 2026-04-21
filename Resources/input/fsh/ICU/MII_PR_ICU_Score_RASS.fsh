@@ -20,8 +20,6 @@ Die Datenstruktur wurde dem laufenden Stand der Entwicklung des MII ICU Module e
 * category contains exam 1..1 MS
 * category[exam] = $observation-category#exam "Exam"
 
-* obeys obs-value-or-dataAbsentReason
-
 * code 1..1 MS
 * code.coding 1..1 MS
 * code.coding.system = $sct (exactly)
