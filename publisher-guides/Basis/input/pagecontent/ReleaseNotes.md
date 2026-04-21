@@ -18,7 +18,7 @@ Datum: tbd
 * `documentation` Anpassung des Must-Support Kommentars bei `ISiKAllergieUnvertraeglichkeit.encounter` und `ISiKDiagnose.encounter` https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
 * `documentation` Hinzufügen einer Erläuterung zur Klarstellung der Priorisierung bei `Account.coverage.priority` https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
 * `documentation` Entfernung des Abschnitts `generische Ressourcentypen` von der Seite zur Rest-API https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
-* `fix` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
+* `documentation` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz https://github.com/gematik/spec-ISiK-Basismodul/pull/1170
 
 ### Version 6.0.0-rc
 
