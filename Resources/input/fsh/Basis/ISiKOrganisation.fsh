@@ -51,6 +51,9 @@ Hinweise zu Inkompatibilitäten können über die [Portalseite](https://service.
 * identifier[TIMAdresse].type 0..1
 * identifier[TIMAdresse].type = https://gematik.de/fhir/directory/CodeSystem/EndpointDirectoryConnectionType#tim
 */
+* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
 * type contains
   Fachbereich 0..1 MS
 
