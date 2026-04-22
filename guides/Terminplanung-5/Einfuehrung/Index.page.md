@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Terminplanung/main-stufe-4/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.1.2
+Version: 5.1.2-v2
 
 Datum: 22.04.2026
 

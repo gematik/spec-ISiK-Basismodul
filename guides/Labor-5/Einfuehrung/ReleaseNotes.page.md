@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
-## Version 5.1.2
+## Version 5.1.2-v2
 
 Datum: 22.04.2026
 
