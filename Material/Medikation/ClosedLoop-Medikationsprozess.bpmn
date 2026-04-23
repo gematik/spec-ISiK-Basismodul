@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
-             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
-             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             id="sid-clmp-01"
-             targetNamespace="http://bpmn.io/bpmn"
-             exporter="bpmn-js (https://demo.bpmn.io)"
-             exporterVersion="17.0.2">
-
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-clmp-01" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.13.2">
   <collaboration id="Collaboration_CLMP">
     <participant id="Participant_CLMP" name="Closed-Loop-Medikationsprozess" processRef="Process_CLMP" />
   </collaboration>
-
   <process id="Process_CLMP" isExecutable="false">
     <laneSet id="LaneSet_1">
       <lane id="Lane_Arzt" name="Arzt / CPOE-System">
@@ -32,108 +22,81 @@
         <flowNodeRef>Task_Transport</flowNodeRef>
       </lane>
       <lane id="Lane_Pflege" name="Pflege / BCMA / eMAR">
-        <flowNodeRef>Task_ScanPatient</flowNodeRef>
         <flowNodeRef>Task_ScanMed</flowNodeRef>
         <flowNodeRef>Gateway_5R</flowNodeRef>
         <flowNodeRef>Task_Verabreichen</flowNodeRef>
         <flowNodeRef>Task_Doku</flowNodeRef>
         <flowNodeRef>EndEvent_1</flowNodeRef>
         <flowNodeRef>EndEvent_Abbruch</flowNodeRef>
+        <flowNodeRef>Task_ScanPatient</flowNodeRef>
       </lane>
     </laneSet>
-
-    <!-- ===== Lane 1: Arzt / CPOE ===== -->
-    <startEvent id="StartEvent_1" name="Medikationsbedarf erkannt">
+    <startEvent id="StartEvent_1" name="Medikations-bedarf erkannt">
       <outgoing>Flow_1</outgoing>
     </startEvent>
-
     <task id="Task_CPOE" name="Verordnung im CPOE erfassen">
       <incoming>Flow_1</incoming>
       <incoming>Flow_5</incoming>
       <incoming>Flow_8</incoming>
       <outgoing>Flow_2</outgoing>
     </task>
-
     <task id="Task_CDSS" name="Automatische CDSS-Prüfung (Interaktionen, Dosis, Allergien)">
       <incoming>Flow_2</incoming>
       <outgoing>Flow_3</outgoing>
     </task>
-
-    <exclusiveGateway id="Gateway_CDSS" name="CDSS-Warnung?" default="Flow_6">
+    <exclusiveGateway id="Gateway_CDSS" name="CDSS-Warnung?">
       <incoming>Flow_3</incoming>
       <outgoing>Flow_4</outgoing>
       <outgoing>Flow_6</outgoing>
     </exclusiveGateway>
-
     <task id="Task_Anpassen" name="Verordnung anpassen">
       <incoming>Flow_4</incoming>
       <outgoing>Flow_5</outgoing>
     </task>
-
-    <!-- ===== Lane 2: Apotheke ===== -->
     <task id="Task_Pharma" name="Pharmazeutische Prüfung und Freigabe">
       <incoming>Flow_6</incoming>
       <outgoing>Flow_7</outgoing>
     </task>
-
-    <exclusiveGateway id="Gateway_Freigabe" name="Freigabe erteilt?" default="Flow_9">
+    <exclusiveGateway id="Gateway_Freigabe" name="Freigabe erteilt?">
       <incoming>Flow_7</incoming>
       <outgoing>Flow_8</outgoing>
       <outgoing>Flow_9</outgoing>
     </exclusiveGateway>
-
-    <!-- ===== Lane 3: Kommissionierung / Unit Dose ===== -->
     <task id="Task_Kommission" name="Automatisierte Kommissionierung (Unit-Dose-Roboter)">
       <incoming>Flow_9</incoming>
       <outgoing>Flow_10</outgoing>
     </task>
-
     <task id="Task_Verpackung" name="Patientenindividuelle Verpackung und Barcode-Etikettierung">
       <incoming>Flow_10</incoming>
       <outgoing>Flow_11</outgoing>
     </task>
-
     <task id="Task_Transport" name="Transport auf Station">
       <incoming>Flow_11</incoming>
       <outgoing>Flow_12</outgoing>
     </task>
-
-    <!-- ===== Lane 4: Pflege / BCMA / eMAR ===== -->
-    <task id="Task_ScanPatient" name="Patientenarmband scannen">
-      <incoming>Flow_12</incoming>
-      <outgoing>Flow_13</outgoing>
-    </task>
-
     <task id="Task_ScanMed" name="Medikamenten-Barcode scannen">
       <incoming>Flow_13</incoming>
       <outgoing>Flow_14</outgoing>
     </task>
-
-    <exclusiveGateway id="Gateway_5R" name="5R-Prüfung bestanden?" default="Flow_16">
+    <exclusiveGateway id="Gateway_5R" name="5R-Prüfung bestanden?">
       <incoming>Flow_14</incoming>
       <outgoing>Flow_15</outgoing>
       <outgoing>Flow_16</outgoing>
     </exclusiveGateway>
-
     <task id="Task_Verabreichen" name="Medikament verabreichen">
       <incoming>Flow_16</incoming>
       <outgoing>Flow_17</outgoing>
     </task>
-
     <task id="Task_Doku" name="Verabreichung im eMAR dokumentieren">
       <incoming>Flow_17</incoming>
       <outgoing>Flow_18</outgoing>
     </task>
-
     <endEvent id="EndEvent_1" name="Kreislauf geschlossen">
       <incoming>Flow_18</incoming>
     </endEvent>
-
     <endEvent id="EndEvent_Abbruch" name="Verabreichung gestoppt">
       <incoming>Flow_15</incoming>
     </endEvent>
-
-    <!-- ===== Sequence Flows ===== -->
     <sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_CPOE" />
     <sequenceFlow id="Flow_2" sourceRef="Task_CPOE" targetRef="Task_CDSS" />
     <sequenceFlow id="Flow_3" sourceRef="Task_CDSS" targetRef="Gateway_CDSS" />
@@ -152,170 +115,138 @@
     <sequenceFlow id="Flow_16" name="Bestanden" sourceRef="Gateway_5R" targetRef="Task_Verabreichen" />
     <sequenceFlow id="Flow_17" sourceRef="Task_Verabreichen" targetRef="Task_Doku" />
     <sequenceFlow id="Flow_18" sourceRef="Task_Doku" targetRef="EndEvent_1" />
+    <task id="Task_ScanPatient" name="Patienten- armband scannen">
+      <incoming>Flow_12</incoming>
+      <outgoing>Flow_13</outgoing>
+    </task>
   </process>
-
   <bpmndi:BPMNDiagram id="BpmnDiagram_1">
     <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Collaboration_CLMP">
-
-      <!-- Pool -->
       <bpmndi:BPMNShape id="Participant_CLMP_di" bpmnElement="Participant_CLMP" isHorizontal="true">
         <omgdc:Bounds x="160" y="60" width="1900" height="950" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-
-      <!-- Lanes -->
-      <bpmndi:BPMNShape id="Lane_Arzt_di" bpmnElement="Lane_Arzt" isHorizontal="true">
-        <omgdc:Bounds x="190" y="60" width="1870" height="250" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_Apotheke_di" bpmnElement="Lane_Apotheke" isHorizontal="true">
-        <omgdc:Bounds x="190" y="310" width="1870" height="200" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_Kommission_di" bpmnElement="Lane_Kommission" isHorizontal="true">
-        <omgdc:Bounds x="190" y="510" width="1870" height="200" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_Pflege_di" bpmnElement="Lane_Pflege" isHorizontal="true">
         <omgdc:Bounds x="190" y="710" width="1870" height="300" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
-      <!-- ===== Lane 1: Arzt / CPOE ===== -->
+      <bpmndi:BPMNShape id="Lane_Kommission_di" bpmnElement="Lane_Kommission" isHorizontal="true">
+        <omgdc:Bounds x="190" y="510" width="1870" height="200" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Apotheke_di" bpmnElement="Lane_Apotheke" isHorizontal="true">
+        <omgdc:Bounds x="190" y="310" width="1870" height="200" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Arzt_di" bpmnElement="Lane_Arzt" isHorizontal="true">
+        <omgdc:Bounds x="190" y="60" width="1870" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
         <omgdc:Bounds x="260" y="162" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="236" y="205" width="85" height="27" />
+          <omgdc:Bounds x="244" y="205" width="71" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_CPOE_di" bpmnElement="Task_CPOE">
         <omgdc:Bounds x="360" y="140" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_CDSS_di" bpmnElement="Task_CDSS">
         <omgdc:Bounds x="530" y="140" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Gateway_CDSS_di" bpmnElement="Gateway_CDSS" isMarkerVisible="true">
         <omgdc:Bounds x="700" y="155" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="760" y="170" width="80" height="14" />
+          <omgdc:Bounds x="758" y="170" width="85" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_Anpassen_di" bpmnElement="Task_Anpassen">
         <omgdc:Bounds x="530" y="225" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
-      <!-- ===== Lane 2: Apotheke ===== -->
       <bpmndi:BPMNShape id="Task_Pharma_di" bpmnElement="Task_Pharma">
         <omgdc:Bounds x="810" y="370" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Gateway_Freigabe_di" bpmnElement="Gateway_Freigabe" isMarkerVisible="true">
         <omgdc:Bounds x="980" y="385" width="50" height="50" />
         <bpmndi:BPMNLabel>
           <omgdc:Bounds x="1040" y="400" width="80" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
-      <!-- ===== Lane 3: Kommissionierung ===== -->
       <bpmndi:BPMNShape id="Task_Kommission_di" bpmnElement="Task_Kommission">
         <omgdc:Bounds x="1070" y="570" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_Verpackung_di" bpmnElement="Task_Verpackung">
         <omgdc:Bounds x="1240" y="570" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_Transport_di" bpmnElement="Task_Transport">
         <omgdc:Bounds x="1410" y="570" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
-      <!-- ===== Lane 4: Pflege ===== -->
       <bpmndi:BPMNShape id="Task_ScanPatient_di" bpmnElement="Task_ScanPatient">
         <omgdc:Bounds x="1070" y="810" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_ScanMed_di" bpmnElement="Task_ScanMed">
         <omgdc:Bounds x="1240" y="810" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Gateway_5R_di" bpmnElement="Gateway_5R" isMarkerVisible="true">
         <omgdc:Bounds x="1410" y="825" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1390" y="882" width="90" height="14" />
+          <omgdc:Bounds x="1405" y="882" width="60" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_Verabreichen_di" bpmnElement="Task_Verabreichen">
         <omgdc:Bounds x="1530" y="810" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="Task_Doku_di" bpmnElement="Task_Doku">
         <omgdc:Bounds x="1700" y="810" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="EndEvent_1_di" bpmnElement="EndEvent_1">
         <omgdc:Bounds x="1870" y="832" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <omgdc:Bounds x="1848" y="875" width="80" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
       <bpmndi:BPMNShape id="EndEvent_Abbruch_di" bpmnElement="EndEvent_Abbruch">
         <omgdc:Bounds x="1417" y="940" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <omgdc:Bounds x="1460" y="950" width="90" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-
-      <!-- ===== Edges ===== -->
       <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
         <omgdi:waypoint x="296" y="180" />
         <omgdi:waypoint x="360" y="180" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
         <omgdi:waypoint x="460" y="180" />
         <omgdi:waypoint x="530" y="180" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
         <omgdi:waypoint x="630" y="180" />
         <omgdi:waypoint x="700" y="180" />
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_CDSS → Task_Anpassen (Warnung, nach unten) -->
       <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
         <omgdi:waypoint x="725" y="205" />
         <omgdi:waypoint x="725" y="265" />
         <omgdi:waypoint x="630" y="265" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="735" y="230" width="50" height="14" />
+          <omgdc:Bounds x="677" y="230" width="45" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
-      <!-- Task_Anpassen → Task_CPOE (Schleife zurück) -->
       <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
         <omgdi:waypoint x="530" y="265" />
         <omgdi:waypoint x="410" y="265" />
         <omgdi:waypoint x="410" y="220" />
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_CDSS → Task_Pharma (Keine Warnung, rechts und nach unten) -->
       <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
         <omgdi:waypoint x="750" y="180" />
         <omgdi:waypoint x="780" y="180" />
@@ -325,13 +256,10 @@
           <omgdc:Bounds x="785" y="290" width="80" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
         <omgdi:waypoint x="910" y="410" />
         <omgdi:waypoint x="980" y="410" />
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_Freigabe → Task_CPOE (Rückfrage, nach oben zurück) -->
       <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
         <omgdi:waypoint x="1005" y="385" />
         <omgdi:waypoint x="1005" y="100" />
@@ -341,8 +269,6 @@
           <omgdc:Bounds x="690" y="82" width="60" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_Freigabe → Task_Kommission (Freigabe, nach unten) -->
       <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
         <omgdi:waypoint x="1005" y="435" />
         <omgdi:waypoint x="1005" y="610" />
@@ -351,36 +277,28 @@
           <omgdc:Bounds x="1010" y="520" width="50" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
         <omgdi:waypoint x="1170" y="610" />
         <omgdi:waypoint x="1240" y="610" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
         <omgdi:waypoint x="1340" y="610" />
         <omgdi:waypoint x="1410" y="610" />
       </bpmndi:BPMNEdge>
-
-      <!-- Task_Transport → Task_ScanPatient (Lane-Wechsel nach unten) -->
       <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
         <omgdi:waypoint x="1460" y="650" />
         <omgdi:waypoint x="1460" y="780" />
         <omgdi:waypoint x="1120" y="780" />
         <omgdi:waypoint x="1120" y="810" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
         <omgdi:waypoint x="1170" y="850" />
         <omgdi:waypoint x="1240" y="850" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
         <omgdi:waypoint x="1340" y="850" />
         <omgdi:waypoint x="1410" y="850" />
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_5R → EndEvent_Abbruch (Abweichung, nach unten) -->
       <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
         <omgdi:waypoint x="1435" y="875" />
         <omgdi:waypoint x="1435" y="940" />
@@ -388,8 +306,6 @@
           <omgdc:Bounds x="1440" y="900" width="65" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
-      <!-- Gateway_5R → Task_Verabreichen (Bestanden, nach rechts) -->
       <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
         <omgdi:waypoint x="1460" y="850" />
         <omgdi:waypoint x="1530" y="850" />
@@ -397,17 +313,14 @@
           <omgdc:Bounds x="1470" y="832" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
         <omgdi:waypoint x="1630" y="850" />
         <omgdi:waypoint x="1700" y="850" />
       </bpmndi:BPMNEdge>
-
       <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
         <omgdi:waypoint x="1800" y="850" />
         <omgdi:waypoint x="1870" y="850" />
       </bpmndi:BPMNEdge>
-
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </definitions>

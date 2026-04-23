@@ -58,6 +58,17 @@ Im Closed-Loop-Medikationsprozess sind typischerweise folgende Akteure beteiligt
 
 Studien belegen, dass der vollständig implementierte Closed Loop die Rate klinisch relevanter Medikationsfehler substantiell reduziert. Insbesondere die Kombination aus CPOE, klinischer Entscheidungsunterstützung, Unit-Dose-Versorgung und BCMA adressiert die fehleranfälligsten Übergänge im Medikationskreislauf. Die lückenlose digitale Kette verhindert sowohl Transkriptionsfehler (z. B. beim händischen Übertragen von Verordnungen) als auch Verwechslungen bei der Verabreichung.
 
+#### Prozessdarstellung
+
+Das nachfolgende BPMN-Diagramm stellt den oben beschriebenen Prozess in einer möglichen Form dar. In der Praxis können institutionsspezifische Abweichungen auftreten – beispielsweise erfolgt die Kommissionierung der Medikamente in einigen Krankenhäusern nicht zentral über die Apotheke, sondern dezentral auf Stationsebene mittels automatisierter Ausgabegeräte (Automated Dispensing Cabinets).
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="ClosedLoop-Medikationsprozess.svg" alt="Closed-Loop-Medikationsprozess" style="width: 100%;">
+    </div>
+    <figcaption>Abbildung: Closed-Loop-Medikationsprozess</figcaption>
+</figure>
+
 ### Unit-Dose-System
 
 #### Was ist das Unit-Dose-System?
