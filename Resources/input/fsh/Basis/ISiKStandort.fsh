@@ -105,12 +105,14 @@ Instance: RaumStandortBeispiel
 InstanceOf: ISiKStandortRaum
 Usage: #example
 * physicalType = $LocationPhysicalType#ro "Room"
+* operationalStatus = $v2-0116#O "Occupied" 
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
 
 Instance: BettenstellplatzStandortBeispiel
 InstanceOf: ISiKStandortBettenstellplatz
 Usage: #example
 * physicalType = $LocationPhysicalType#bd "Bed"
+* operationalStatus = $v2-0116#O "Occupied" 
 * managingOrganization = Reference(AbteilungAllgemeinchirurgieOrganisationBeispiel)
 * partOf = Reference(RaumStandortBeispiel)
 
@@ -120,7 +122,7 @@ Usage: #example
 //  noch kein eigenes Profil vorhanden
 * identifier[standortnummer-dkg]
   * value = "123456" 
-* operationalStatus = $v2-0116#O "Occupied" 
+
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
