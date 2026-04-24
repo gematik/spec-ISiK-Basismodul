@@ -36,9 +36,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150017
     * coding[SCT] = $sct#271649006
+    * coding[LOINC] = $loinc#8480-6
 * component[DiastolicBP] MS
   * ^comment = "Motivation MS: Kodierung des diastolischen Blutdrucks."
   * ^short = "Diastolischer Blutdruck"
@@ -51,9 +53,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150018
     * coding[SCT] = $sct#271650006
+    * coding[LOINC] = $loinc#8462-4
   * dataAbsentReason MS
     * ^comment = "Motivation MS: Dieses Feld erlaubt die Angabe von Gründen für fehlende Untersuchungsergebnisse"
     * ^short = "Grund für fehlendes Untersuchungsergebniss"
@@ -75,9 +79,11 @@ Das Profil ISiKBlutdruckSystemischArteriell ist vom Profil [VitalSignDE_Blutdruc
       * ^slicing.rules = #open
     * coding contains 
         IEEE11073 0..1 and
-        SCT 0..1
+        SCT 0..1 and
+        LOINC 1..1
     * coding[IEEE11073] = $IEEE11073#150019
     * coding[SCT] = $sct#6797001
+    * coding[LOINC] = $loinc#8478-0
 
 Instance: ISiKBlutdruckSystemischArteriellExample
 InstanceOf: ISiKBlutdruckSystemischArteriell
@@ -97,17 +103,17 @@ Usage: #example
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 107 'mm[Hg]' "mmHg"
 * component[DiastolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150018 "MDC_PRESS_BLD_DIA"
   * code.coding[SCT] = $sct#271650006 "Diastolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 60 'mm[Hg]' "mmHg"
 * component[meanBP]
   * code.coding[IEEE11073] = $IEEE11073#150019 "MDC_PRESS_BLD_MEAN"
   * code.coding[SCT] = $sct#6797001 "Mittlerer arterieller Druck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 80 'mm[Hg]' "mmHg"
 
 Instance: ISiKBlutdruckSystemischArteriellMinExample
@@ -142,18 +148,18 @@ Usage: #example
 * component[SystolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150017 "MDC_PRESS_BLD_SYS"
   * code.coding[SCT] = $sct#271649006 "Systolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 200 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"
 * component[DiastolicBP]
   * code.coding[IEEE11073] = $IEEE11073#150018 "MDC_PRESS_BLD_DIA"
   * code.coding[SCT] = $sct#271650006 "Diastolischer Blutdruck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 120 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"
 * component[meanBP]
   * code.coding[IEEE11073] = $IEEE11073#150019 "MDC_PRESS_BLD_MEAN"
   * code.coding[SCT] = $sct#6797001 "Mittlerer arterieller Druck"
-    * version = "http://snomed.info/sct/11000274103"
+    * version = "http://snomed.info/sct/11000274103/version/20251115"
   * valueQuantity = 147 'mm[Hg]' "mmHg"
   * interpretation = $v3-ObservationInterpretation#H "High"

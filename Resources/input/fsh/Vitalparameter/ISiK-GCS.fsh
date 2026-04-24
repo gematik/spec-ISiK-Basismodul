@@ -56,6 +56,7 @@ InstanceOf: ISiKGCS
 Usage: #example
 * code = $loinc#9269-2 "Glasgow coma score total"
 * code.coding[snomed] = $sct#248241002 "Glasgow coma score"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153728 "MDC_SCORE_GLAS_COMA"
 * valueQuantity = 11 '1' "Punktwert"
 * status = #final
@@ -89,6 +90,7 @@ InstanceOf: ISiKGCS
 Usage: #example
 * code = $loinc#9269-2 "Glasgow coma score total"
 * code.coding[snomed] = $sct#248241002 "Glasgow coma score"
+  * version = "http://snomed.info/sct/11000274103/version/20251115"
 * code.coding[IEEE11073] = $IEEE11073#153728 "MDC_SCORE_GLAS_COMA"
 * valueQuantity = 15 '1' "Punktwert"
 * status = #final
