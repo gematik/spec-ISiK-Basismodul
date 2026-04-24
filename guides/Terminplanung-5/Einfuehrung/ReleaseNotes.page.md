@@ -9,6 +9,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 Datum: 22.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` in allen Profilen außer dem ISiKTermin Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `fix` Added missing "PATCH" interaction in FQL rendering of the ISiKCapabilityStatementTerminRepositoryRolle https://github.com/gematik/spec-ISiK-Basismodul/pull/1176
 
 
 ## Version 5.1.1
