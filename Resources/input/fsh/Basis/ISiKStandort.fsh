@@ -148,7 +148,7 @@ Usage: #example
 // bei Raum & Bettenstellplatz MS, nicht bei Standort
 * name = "Station A"
 * mode = #instance
-* type = $v3-RoleCode#HU "Hospital Unit"
+* type = $v3-RoleCode#HU "Hospital unit"
 * address.line = "Krankenhausstraße 123"
 * address.city = "Musterstadt"
 * address.postalCode = "12345"
