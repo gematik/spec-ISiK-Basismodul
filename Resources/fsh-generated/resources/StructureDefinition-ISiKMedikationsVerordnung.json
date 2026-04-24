@@ -453,12 +453,21 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "isik-dosage-as-needed-for",
+            "severity": "error",
+            "human": "Wenn Indikationen für eine Bedarfsmedikation angegeben sind und asNeededBoolean vorhanden ist, MUSS asNeededBoolean true sein.",
+            "expression": "asNeeded.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeeded.empty() or asNeeded.hasValue().not() or (asNeeded = true)",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsVerordnung"
+          }
+        ],
         "mustSupport": true
       },
       {
         "id": "MedicationRequest.dosageInstruction.text",
         "path": "MedicationRequest.dosageInstruction.text",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsanweisungen in strukturierte Dosierungsanweisungen umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsanweisung als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsanweisungen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n\n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n\n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n\n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
       },
       {
         "id": "MedicationRequest.dosageInstruction.patientInstruction",
@@ -505,6 +514,82 @@
         "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsDuration.code",
         "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].code",
         "min": 1
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]",
+        "sliceName": "boundsRange",
+        "short": "Bereich für die Begrenzung",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low",
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.value",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.unit",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.unit",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.system",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.low.code",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].low.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high",
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.value",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.unit",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.unit",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.system",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsRange.high.code",
+        "path": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].high.code",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod",
@@ -611,27 +696,43 @@
       {
         "id": "MedicationRequest.dosageInstruction.asNeeded[x]",
         "path": "MedicationRequest.dosageInstruction.asNeeded[x]",
+        "short": "Bedarfsmedikation (ja/nein)",
+        "comment": "Begründung des Must-Support: Abbildung einer Bedarfsmedikation.",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
+        "path": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "$this"
+              "type": "value",
+              "path": "url"
             }
           ],
           "ordered": false,
           "rules": "open"
-        }
+        },
+        "short": "Indikation für die Bedarfsmedikation",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
       },
       {
-        "id": "MedicationRequest.dosageInstruction.asNeeded[x]:asNeededBoolean",
-        "path": "MedicationRequest.dosageInstruction.asNeeded[x]",
-        "sliceName": "asNeededBoolean",
-        "short": "Bedarfsmedikation",
+        "id": "MedicationRequest.dosageInstruction.asNeeded[x].extension:asNeededFor",
+        "path": "MedicationRequest.dosageInstruction.asNeeded[x].extension",
+        "sliceName": "asNeededFor",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
-            "code": "boolean"
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+            ]
           }
         ],
         "mustSupport": true
@@ -756,6 +857,7 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
         "sliceName": "doseQuantity",
         "short": "Dosis",
+        "comment": "Das Must-Support-Flag auf doseQuantity bedeutet, dass produzierende Systeme zur Kodierung der Dosisangaben nach eigenem Ermessen entweder den Datentyp Quantity oder Ratio verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können.",
         "type": [
           {
             "code": "Quantity",
@@ -764,6 +866,34 @@
             ]
           }
         ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.value",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].value",
+        "short": "Dosiswert",
+        "comment": "**Begründung MS:** Der Dosiswert ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].unit",
+        "short": "Menschenlesbare Dosis-Einheit",
+        "comment": "**Begründung MS:** Die menschenlesbare Dosis-Einheit ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.system",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].system",
+        "short": "CodeSystem der Dosisangabe",
+        "comment": "**Begründung MS:** Das CodeSystem der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.code",
+        "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x].code",
+        "short": "Code der Dosisangabe",
+        "comment": "**Begründung MS:** Der Code der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können.",
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseRange",
@@ -824,7 +954,7 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
         "sliceName": "rateRatio",
         "short": "Raten-Verhältnis",
-        "comment": "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können.",
+        "comment": "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können.",
         "min": 0,
         "max": "1",
         "type": [
@@ -842,7 +972,7 @@
           {
             "code": "Quantity",
             "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantity"
+              "https://gematik.de/fhir/isik/StructureDefinition/MedicationQuantityDoseForm"
             ]
           }
         ],
@@ -907,7 +1037,7 @@
         "path": "MedicationRequest.dosageInstruction.doseAndRate.rate[x]",
         "sliceName": "rateQuantity",
         "short": "Rate",
-        "comment": "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden KÖNNEN. Beim Empfang und Verarbeitung der eingehenden Daten MÜSSEN dagegen beide Datentypen interpretiert werden können.",
+        "comment": "Das Must-Support-Flag auf rateRatio bzw. rateQuantity bedeutet, dass produzierende Systeme zur Kodierung der Ratenangaben nach eigenem Ermessen entweder den Datentyp Ratio oder Quantity verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können.",
         "min": 0,
         "max": "1",
         "type": [

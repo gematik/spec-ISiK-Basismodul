@@ -4,6 +4,7 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Datum: tbd
 
+* `improve` Gemeinsame Auslagerung der `DosageDE`-Vorgaben für ISiKMedikationsVerordnung und ISiKMedikationsInformation in ein RuleSet; Bedarfsmedikation wird auf `asNeededBoolean` eingeschränkt, die R5-Backport-Extension `Dosage.asNeededFor` lokal ergänzt und die zugehörige R5-Invariante für die Konsistenz von `asNeededBoolean` und `asNeededFor` übernommen.
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition https://github.com/gematik/spec-ISiK-Basismodul/pull/1155
 

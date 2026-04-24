@@ -511,12 +511,21 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "isik-dosage-as-needed-for",
+            "severity": "error",
+            "human": "Wenn Indikationen für eine Bedarfsmedikation angegeben sind und asNeededBoolean vorhanden ist, MUSS asNeededBoolean true sein.",
+            "expression": "asNeeded.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor').empty() or asNeeded.empty() or asNeeded.hasValue().not() or (asNeeded = true)",
+            "source": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"
+          }
+        ],
         "mustSupport": true
       },
       {
         "id": "MedicationStatement.dosage.text",
         "path": "MedicationStatement.dosage.text",
-        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme  die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n        \n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n    \n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n    \n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert.\n"
+        "comment": "Festlegung zum Must-Support: Die Verarbeitung MUSS unterstützt werden, indem empfangende Systeme die Freitext-Dosierungsinformation entweder direkt in der Textform persistieren, ODER die Informationen in eine alternative (strukturierte) Form umwandeln (ggf. unter Einwirkung geeigneter Nutzer). Im letzteren Fall KANN auf eine Persistierung in Textform verzichtet werden, um Inkonsistenzen zu vermeiden.\n\n    Ein System KANN jedoch strukturierte Dosierungsinformationen in Freitext-Dosierungsinformationen umwandeln, um sie in einem Dokument oder einer Benutzeroberfläche anzuzeigen - dabei ist auf Konsistenzwahrung zu allen strukturierten Elementen zu achten.\n\n    Hinweis: Diese Festlegung folgt und spezifiziert folgende MS-Festlegung aus dem [ISiK Basismodul](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/Index_Festlegungen.html/UebergreifendeFestlegungen_Must-Support-Flags): 'Systeme KÖNNEN es darüber hinaus ermöglichen, dass die jeweiligen Informationen vom Anwender ergänzt oder editiert werden.'\n\n    Zum Beispiel könnte ein empfangendes System die Freitext-Dosierungsinformation in strukturierte Dosierungsinformation umwandeln, um sie in einer Medikationsverwaltung anzuzeigen oder später zu exponieren. Geht es zum Beispiel um eine Angabe zu Tageszeiten der Einnahme in der freitextlichen Dosierungsinformation als 'Morgens, Mittags, Abends', so könnte das empfangende System diese Angabe in strukturierte Dosierungsinformationen umwandeln, die die Einnahmezeiten in kodierter Form mit 'MORN', 'NOON', 'EVE' deklariert."
       },
       {
         "id": "MedicationStatement.dosage.patientInstruction",
@@ -745,27 +754,43 @@
       {
         "id": "MedicationStatement.dosage.asNeeded[x]",
         "path": "MedicationStatement.dosage.asNeeded[x]",
+        "short": "Bedarfsmedikation (ja/nein)",
+        "comment": "Begründung des Must-Support: Abbildung einer Bedarfsmedikation.",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.asNeeded[x].extension",
+        "path": "MedicationStatement.dosage.asNeeded[x].extension",
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
-              "path": "$this"
+              "type": "value",
+              "path": "url"
             }
           ],
           "ordered": false,
           "rules": "open"
-        }
+        },
+        "short": "Indikation für die Bedarfsmedikation",
+        "comment": "Begründung des Must-Support: Ermöglicht die Angabe mehrerer Indikationen für die Bedarfsmedikation, z.B. 'Schmerzen', 'Fieber', 'Hustenreiz' etc. Diese Bedingungen sind ODER verknüpft, d.h. die Bedarfsmedikation soll bei Vorliegen einer ODER mehrerer dieser Bedingungen angewendet werden."
       },
       {
-        "id": "MedicationStatement.dosage.asNeeded[x]:asNeededBoolean",
-        "path": "MedicationStatement.dosage.asNeeded[x]",
-        "sliceName": "asNeededBoolean",
-        "short": "Bedarfsmedikation",
+        "id": "MedicationStatement.dosage.asNeeded[x].extension:asNeededFor",
+        "path": "MedicationStatement.dosage.asNeeded[x].extension",
+        "sliceName": "asNeededFor",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
-            "code": "boolean"
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+            ]
           }
         ],
         "mustSupport": true
@@ -1092,6 +1117,7 @@
       {
         "id": "MedicationStatement.dosage.maxDosePerPeriod.numerator",
         "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator",
+        "min": 1,
         "type": [
           {
             "code": "Quantity",
@@ -1105,6 +1131,7 @@
       {
         "id": "MedicationStatement.dosage.maxDosePerPeriod.denominator",
         "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator",
+        "min": 1,
         "type": [
           {
             "code": "Quantity",
