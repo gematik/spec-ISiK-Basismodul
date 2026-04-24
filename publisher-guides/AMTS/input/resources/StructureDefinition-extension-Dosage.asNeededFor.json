@@ -1,0 +1,49 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "extension-Dosage.asNeededFor",
+  "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor",
+  "version": "6.0.0-rc",
+  "name": "ExtensionDosageAsNeededFor",
+  "title": "Dosage As Needed For",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-04-02",
+  "publisher": "gematik GmbH",
+  "description": "R5 Backport-Extension zur Angabe einer oder mehrerer Bedingungen, unter denen eine Bedarfsmedikation angewendet werden soll.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Dosage.asNeeded[x]"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Dosage.asNeededFor"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      }
+    ]
+  }
+}
