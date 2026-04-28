@@ -11,6 +11,7 @@ Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähi
 Datum: 22.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY`
+* `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1184
 
 
 ## Version 5.1.1
