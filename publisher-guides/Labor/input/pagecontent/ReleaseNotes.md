@@ -3,6 +3,12 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
+### Version 6.0.0-rc1
+
+Datum: tbd
+
+* `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1182
+
 
 ### Version 6.0.0-rc
 
