@@ -6,27 +6,6 @@
       "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikationsInformation"
     ]
   },
-  "dosage": [
-    {
-      "doseAndRate": [
-        {
-          "doseQuantity": {
-            "system": "http://unitsofmeasure.org",
-            "value": 1,
-            "unit": "Tbl.",
-            "code": "1"
-          }
-        }
-      ],
-      "timing": {
-        "repeat": {
-          "timeOfDay": [
-            "22:00:00"
-          ]
-        }
-      }
-    }
-  ],
   "status": "active",
   "medicationCodeableConcept": {
     "coding": [
@@ -50,6 +29,27 @@
   "reasonReference": [
     {
       "reference": "Condition/DiagnoseParkinson"
+    }
+  ],
+  "dosage": [
+    {
+      "timing": {
+        "repeat": {
+          "timeOfDay": [
+            "22:00:00"
+          ]
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "Tbl.",
+            "system": "http://unitsofmeasure.org",
+            "code": "1"
+          }
+        }
+      ]
     }
   ]
 }
