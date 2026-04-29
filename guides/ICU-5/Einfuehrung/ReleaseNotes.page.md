@@ -15,6 +15,11 @@ Darüber hinaus wird die Versionierung unabhängig von allen anderen Modulen und
 Datum: 22.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `improve` Profil `ISiKKoerpertemperatur` entfernt
+* `add` Neues ICU-Profil `SD_MII_ICU_Koerperkerntemperatur_Stirn` inklusive Beispielinstanz `Koerperkerntemperatur-stirn` ergänzt.
+* `improve` ValueSet `ISiKKernTempSctVS` erweitert um SNOMED-Code `1366425007` („Estimated core body temperature measured on forehead“).
+* `improve` CapabilityStatements aktualisiert: `ISiKCapabilityStatementVitalSignStandardSourceRolle` nutzt `ISiKKoerperkerntemperatur` statt `ISiKKoerpertemperatur`; `ISiKCapabilityStatementVitalSignICUSourceMinimalRolle` ergänzt `SD_MII_ICU_Koerperkerntemperatur_Stirn`.
+* `improve` Abhängigkeit `de.basisprofil.r4` auf `1.6.0-ballot2` angehoben.
 
 
 ## Version 5.1.1
