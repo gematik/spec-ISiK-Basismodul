@@ -34,6 +34,7 @@ Datum: 22.04.2026
 * `documentation` Entfernung des Abschnitts `generische Ressourcentypen` von der Seite zur Rest-API https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
 * `documentation` Anpassung der Beispiele zu den Standort Profilen. Entfernen des Codes Occupied an einer Station und Ergänzung an Beispielen zu Raum und Bettenstellplatz https://github.com/gematik/spec-ISiK-Basismodul/pull/1164
 * `improve` Anpassung des Profils `ISiKVersicherungsverhaeltnisGesetzlich` zur Herstellung der Kompatibilität zu dem VSDM 2.0 Coverage Profil https://github.com/gematik/spec-ISiK-Basismodul/pull/1072
+* `improve` Backport der Paging Anforderungen aus Stufe 6 
 
 ## Version 5.1.1
 
