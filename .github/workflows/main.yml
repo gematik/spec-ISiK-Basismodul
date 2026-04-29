@@ -30,6 +30,10 @@ permissions:
   actions: write
   contents: write
 
+concurrency:
+  group: fhir-validation-${{ github.ref }}
+  cancel-in-progress: false
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
@@ -45,10 +49,13 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
 
       - name: Checkout code (Main)
         uses: actions/checkout@v6
         if: github.event_name != 'pull_request'
+        with:
+          fetch-depth: 0
 
       - name: Firely.Terminal (GitHub Actions)
         uses: FirelyTeam/firely-terminal-pipeline@v0.7.27
@@ -101,3 +108,4 @@ jobs:
           committer_email: ActionBot@github.com
           add: Resources/fsh-generated/resources/
           message: auto-generated FHIR files by GitHub Actions (CI FSH to FHIR Validation)
+          pull: '--rebase --autostash'

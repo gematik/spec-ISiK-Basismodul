@@ -265,6 +265,21 @@ Für die Abbildung der Pausierung einer Medikation wird empfohlen, **mehrere `Me
       * ^patternCoding.system = $cs-sct
     * text MS
   * doseAndRate 
+    * doseQuantity MS
+      * ^short = "Dosis"
+      * ^comment = "Das Must-Support-Flag auf doseQuantity bedeutet, dass produzierende Systeme zur Kodierung der Dosisangaben nach eigenem Ermessen entweder den Datentyp Quantity oder Ratio verwenden können. Beim Empfang und Verarbeitung der eingehenden Daten müssen dagegen beide Datentypen interpretiert werden können."
+      * value MS
+        * ^short = "Dosiswert"
+        * ^comment = "**Begründung MS:** Der Dosiswert ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * unit MS
+        * ^short = "Menschenlesbare Dosis-Einheit"
+        * ^comment = "**Begründung MS:** Die menschenlesbare Dosis-Einheit ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * system MS
+        * ^short = "CodeSystem der Dosisangabe"
+        * ^comment = "**Begründung MS:** Das CodeSystem der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
+      * code MS
+        * ^short = "Code der Dosisangabe"
+        * ^comment = "**Begründung MS:** Der Code der Dosisangabe ist notwendig, um die Dosisangabe korrekt interpretieren zu können."
     * doseRange MS
       * ^short = "Dosisbereich"
       * low MS
