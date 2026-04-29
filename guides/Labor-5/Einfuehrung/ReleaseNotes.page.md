@@ -6,11 +6,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Es handelt sich um ein **Support Modul**, was nicht eigenständig funktionsfähig ist (eigene Use Cases bedient) oder bestätigtigungsrelevant ist.
 
-## Version 5.x.x
+## Version 5.1.2
 
-Datum: tbd
+Datum: 22.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY`
+* `documentation` Ausschreiben der Abkürzungen der Laboruntersuchungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1184
 
 
 ## Version 5.1.1

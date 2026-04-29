@@ -9,11 +9,12 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
-## Version 5.x.x
+## Version 5.1.2
 
-Datum: tbd
+Datum: 22.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
+* `documentation` Fehler im Rendering der Tabelle 'Interaktionen' auf der Seite des Artifakts ISiKDokumentenMetadaten behoben https://github.com/gematik/spec-ISiK-Basismodul/pull/1157
 
 
 ## Version 5.1.1

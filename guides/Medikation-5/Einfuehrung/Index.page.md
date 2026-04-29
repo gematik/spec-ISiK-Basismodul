@@ -1,9 +1,9 @@
 <img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Medikation/main-stufe-4/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
-Version: 5.1.1
+Version: 5.1.2
 
-Datum: 17.12.2025
+Datum: 22.04.2026
 
 
 Status: Aktiv
@@ -20,9 +20,9 @@ Eine möglichst medienbruch-freie Kommunikation innerhalb dieses Workflows zwisc
 
 Dies gilt ebenso für die Dokumentation und Weiterverarbeitung der Aufnahme- bzw. Entlassmedikation (Medikationsplan), die derzeit noch häufig in Form von manueller und somit fehleranfälliger Übertragung der Medikationsangaben umgesetzt wird.
 
-Das ISiK-Modul "Medikation" möchte diese Daten-Integration ermöglichen und stellt in dieser Ausbaustufe strukturierte Kommunikationsmöglichkeiten auf Basis einer RESTful API zum Austausch von Medikationsinformationen ("Medikationsplan") sowie Verordnungs- und Verabreichungsdaten zur Verfügung. Derzeit nicht berücksichtigt ist das Apothekenwesen.
+Das ISiK-Modul "Medikation" möchte eine elektronische Übertragung der Daten ermöglichen und stellt in dieser Ausbaustufe strukturierte Kommunikationsmöglichkeiten auf Basis einer RESTful API zum Austausch von Medikationsinformationen ("Medikationsplan") sowie Verordnungs- und Verabreichungsdaten zur Verfügung. Derzeit nicht berücksichtigt ist das Apothekenwesen.
 
-Diese Spezifikation lehnt sich an die entsprechenden Teile des IHE-Profils HMW (Hospital Medication Workflow) sowie partiell auch an das IHE-Profil CMPD (Community Medication Prescription and Dispense) an. Weiterhin erfolgte ein Abgleich mit den aktuell in Deutschland bestehenden Spezifikationen im Bereich Medikation.
+Diese Spezifikation lehnt sich an die entsprechenden Teile des IHE-Profils HMW (Hospital Medication Workflow) sowie partiell auch an das IHE-Profil CMPD (Community Medication Prescription and Dispense) an. Weiterhin erfolgte ein Abgleich mit den aktuell in Deutschland bestehenden Spezifikationen im Bereich Medikation, bspw. dem [dgmP](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/dgmp-scenarios.html) bzw. dem [Medication DE IG](https://ig.fhir.de/igs/medication/index.html).
 
 Der Fokus dieser Spezifikation liegt auf den Festlegungen zum Datenaustausch innerhalb einer Einrichtung, jedoch ist diese offen in dem Sinn, dass auch eine Nutzung in anderen Kontexten möglich ist.
 
