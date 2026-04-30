@@ -57,7 +57,7 @@ Description: "Das Datenobjekt ISiKKalender bietet die Möglichkeit Kalender für
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Schedule.name named KalenderName 0..1 MS
 * extension[KalenderName]
   * ^comment = "Begründung Must-Support-Flag (MS): Die KalenderName-Extension ermöglicht es einen menschenlesbaren Namen zu definieren, welcher zur Wiedererkennbarkeit des Kalenders im Rahmen der Terminplanung dient."
-  * valueString 1..100
+  * valueString 1..1
 
 Instance: ISiKKalenderExample
 InstanceOf: ISiKKalender

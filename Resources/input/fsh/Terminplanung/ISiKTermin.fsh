@@ -14,7 +14,7 @@ Description: "Das Datenobjekte ISiKTermin repräsentiert einen gebuchten Termin,
 * insert Meta
 * insert CommonElements
 * extension MS
-* extension contains AppointmentReplaces named replaces 0..1 MS
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces named replaces 0..1 MS
   * ^comment = "Begründung zum Must Support: Termineabsagen sollten verkettbar sein, da am originalen Termin noch weitere Informationen hängen können."
 * status MS
   * ^short = "Der Status des Termins"
