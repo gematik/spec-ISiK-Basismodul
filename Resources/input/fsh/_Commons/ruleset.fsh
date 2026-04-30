@@ -67,6 +67,11 @@ RuleSet: ExpectationImports (expectation)
   * url = Canonical(ExtensionISiKCapabilityStatementImportsExpectation)
   * valueCode = {expectation}
 
+RuleSet: BackportExtensionWg(wg)
+* extension[+]
+  * url = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+  * valueCode = #{wg}
+
 RuleSet: SupportedProfileCapExpectationExt(canonical, expectation)
 * supportedProfile[+] = Canonical({canonical})
   * insert CapabilityStatementExpectationExt({expectation})
@@ -338,3 +343,4 @@ RuleSet: OperationEncounterEverything
     - Es müssen alle Ressourcen inkludiert werden, die aus den oben identifizierten Ressourcen referenziert werden, einschließlich Binaries und Attachments.
     
   Ein ISiK Akteur darf sinnvolle Limits für die Einschränkung der Ergebnismenge definieren, wie die Forcierung von Pagination über den Parameter `_count` oder die Einschränkung des Zeitraums der zurückgegebenen Ressourcen über den Parameter `_since`. Hierbei sollten die Hinweise und vorgaben der [ISiK-Spezifikation zu Performance](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Performance.html) beachtet werden."
+

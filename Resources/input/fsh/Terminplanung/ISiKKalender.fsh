@@ -66,6 +66,7 @@ Id: ScheduleName
 Context: Schedule
 Description: "Diese Erweiterung ermöglicht es, einem FHIR Schedule (Kalender) einen menschenlesbaren Namen zuzuweisen, der eine schnelle Identifikation und Unterscheidung mehrerer Kalender in Terminplanungsanwendungen erlaubt. Der Name dient zur besseren Übersichtlichkeit, z. B. bei der Auswahl eines Kalenders durch Nutzer oder in Verwaltungsoberflächen für Terminressourcen."
 * insert Meta
+* insert BackportExtensionWg(pa)
 * ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Schedule.name"
 * value[x] only string

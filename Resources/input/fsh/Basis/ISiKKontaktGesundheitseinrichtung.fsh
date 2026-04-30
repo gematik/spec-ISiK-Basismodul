@@ -402,6 +402,7 @@ Id: PlannedStartDate
 Context: Encounter
 Description: "Diese Extension dient der Erfassung des geplanten Startzeitpunkts (dateTime) eines Encounters, z. B. einer stationären Aufnahme, Operation oder eines Termins. Sie ermöglicht eine strukturierte Terminplanung, erleichtert die Koordination verschiedener Versorgungsprozesse und verbessert die Kommunikation zwischen Systemen und Leistungserbringern."
 * insert Meta
+* insert BackportExtensionWg(pa)
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedStartDate"
 * value[x] only dateTime
 
@@ -411,6 +412,7 @@ Id: PlannedEndDate
 Context: Encounter
 Description: "Diese Erweiterung dokumentiert das geplante Enddatum bzw. den geplanten Endzeitpunkt eines Encounters. Sie unterstützt die Vorausplanung von Aufenthalten oder Behandlungen, beispielsweise für die Ressourcenplanung, Terminverwaltung und für die Kommunikation mit nachfolgenden Einrichtungen."
 * insert Meta
+* insert BackportExtensionWg(pa)
 * ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Encounter.plannedEndDate"
 * value[x] only dateTime
 
