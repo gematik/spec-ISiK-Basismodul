@@ -67,11 +67,6 @@ RuleSet: ExpectationImports (expectation)
   * url = Canonical(ExtensionISiKCapabilityStatementImportsExpectation)
   * valueCode = {expectation}
 
-RuleSet: BackportExtensionWg(wg)
-* extension[+]
-  * url = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
-  * valueCode = #{wg}
-
 RuleSet: SupportedProfileCapExpectationExt(canonical, expectation)
 * supportedProfile[+] = Canonical({canonical})
   * insert CapabilityStatementExpectationExt({expectation})

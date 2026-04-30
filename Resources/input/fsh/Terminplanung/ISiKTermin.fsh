@@ -130,19 +130,6 @@ Description: "Diese Extension ermöglicht die strukturierte Angabe der Dringlich
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept from ISiKTerminPriority (required)
 
-// This extension can be safely removed as soon as a package for R5 backport extensions is published and referenced by this project
-//WIP
-Extension: AppointmentReplaces
-Id: AppointmentReplaces
-Context: Appointment
-Description: "Mit dieser Erweiterung kann eine neue Appointment-Ressource auf eine frühere, ersetzte Appointment-Ressource verweisen, z. B. bei einer Terminverschiebung oder -umbuchung. Dies erleichtert die Nachverfolgung von Terminänderungen und stellt sicher, dass der Zusammenhang zwischen ursprünglichem und aktuellem Termin eindeutig dokumentiert ist."
-* insert Meta
-* insert BackportExtensionWg(pa)
-* ^publisher = "HL7 (Backport bereitgestellt durch gematik GmbH)"
-* ^url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Appointment.replaces"
-* value[x] only Reference(Appointment)
-* valueReference 0..1
-
 Invariant: ISiK-app-1
 Description: "Der Endzeitpunkt eines Termins MUSS nach dem Startzeitpunkt liegen"
 Severity: #error
