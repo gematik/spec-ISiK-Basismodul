@@ -26,8 +26,14 @@
   ],
   "dependsOn": [
     {
+      "packageId": "hl7.fhir.uv.xver-r5.r4",
+      "version": "0.1.0",
+      "uri": "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+      "id": "hl7_fhir_uv_xver_r5_r4"
+    },
+    {
       "packageId": "hl7.fhir.uv.ips",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
       "id": "hl7_fhir_uv_ips"
     },
@@ -39,7 +45,7 @@
     },
     {
       "packageId": "de.basisprofil.r4",
-      "version": "1.5.4",
+      "version": "1.6.0-ballot2",
       "uri": "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
       "id": "de_basisprofil_r4"
     },
@@ -50,12 +56,6 @@
       "id": "de_ihe_d_terminology"
     },
     {
-      "packageId": "dvmd.kdl.r4",
-      "version": "2025.0.1",
-      "uri": "http://fhir.org/packages/dvmd.kdl.r4/ImplementationGuide/dvmd.kdl.r4",
-      "id": "dvmd_kdl_r4"
-    },
-    {
       "packageId": "ihe.formatcode.fhir",
       "version": "1.4.0",
       "uri": "https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir",
@@ -63,7 +63,7 @@
     },
     {
       "packageId": "hl7.fhir.uv.sdc",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
       "id": "hl7_fhir_uv_sdc"
     },
@@ -72,6 +72,18 @@
       "version": "1.0.6",
       "uri": "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
       "id": "de_gematik_terminology"
+    },
+    {
+      "packageId": "de.fhir.medication",
+      "version": "1.0.4",
+      "uri": "http://ig.fhir.de/igs/medication/ImplementationGuide/de.fhir.medication",
+      "id": "de_fhir_medication"
+    },
+    {
+      "packageId": "de.gematik.ti",
+      "version": "1.1.1",
+      "uri": "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+      "id": "de_gematik_ti"
     }
   ],
   "definition": {
@@ -160,6 +172,13 @@
         "description": "ISiK definiert an dieser Stelle eigene Encounter Typen. Dieses CodeSystem ist als Übergangslösung zu verstehen, da die Inhalte beim TC Terminologien von HL7 eingebracht sind und sobald sie dort publiziert sind, wird eine Migration auf die dortigen Codes erfolgen.",
         "exampleBoolean": false,
         "name": "Erweiterung von Encounter.type in ISiK"
+      },
+      {
+        "reference": {
+          "reference": "Parameters/exp-params"
+        },
+        "exampleBoolean": false,
+        "name": "exp-params"
       },
       {
         "reference": {
@@ -762,8 +781,16 @@
         "value": "ballot"
       },
       {
-        "code": "no-validate",
+        "code": "display-warnings",
         "value": "true"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/resources/Parameters-exp-params.json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://example.org/fhir/CodeSystem/TestKatalog"
       }
     ]
   }
