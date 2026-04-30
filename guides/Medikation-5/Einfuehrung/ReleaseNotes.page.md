@@ -11,6 +11,8 @@ Datum: 24.04.2026
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition https://github.com/gematik/spec-ISiK-Basismodul/pull/1154
+* `fix` `doseQuantity` wurde mit feinerem Must-Support versehen. `doseQuantity` ist im Medication-IG bereits als MS definiert; die erneute MS-Setzung erfolgt hier zur Behebung eines Validierungsfehlers des FHIR Validators. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
+* `fix` Aktualisierung von Dependencies in `sushi-config.yaml`: `de.fhir.medication` auf `1.0.4` (Korrektur fehlerhafter Invarianten in `1.0.3`), Umstellung von `hl7.fhir.extensions.r5` auf `hl7.fhir.uv.xver-r5.r4` (Nutzung des offiziellen backport Extension package), `hl7.fhir.uv.sdc` von `4.0.0-ballot` auf `4.0.0`. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
 
 
 ## Version 5.1.1

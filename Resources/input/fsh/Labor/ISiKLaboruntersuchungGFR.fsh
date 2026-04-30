@@ -1,7 +1,7 @@
 Profile: ISiKLaboruntersuchungGFR
 Parent: ISiKLaboruntersuchung
 Id: ISiKLaboruntersuchungGFR
-Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung GFR eines Patienten in ISiK Szenarien."
+Description: "Dieses Profil ermöglicht die Abbildung der Laboruntersuchung der Glomerulären Filtrationsrate (GFR) eines Patienten in ISiK Szenarien."
 * insert Meta
 * insert CommonElements
 * code.coding[loinc] from ObservationCodesGFR
