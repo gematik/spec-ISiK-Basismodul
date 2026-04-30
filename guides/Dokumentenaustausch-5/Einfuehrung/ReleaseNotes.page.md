@@ -11,7 +11,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 ## Version 5.1.2
 
-Datum: 22.04.2026
+Datum: 30.04.2026
 
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
 * `documentation` Fehler im Rendering der Tabelle 'Interaktionen' auf der Seite des Artifakts ISiKDokumentenMetadaten behoben https://github.com/gematik/spec-ISiK-Basismodul/pull/1157
