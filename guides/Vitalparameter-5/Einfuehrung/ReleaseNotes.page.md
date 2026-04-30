@@ -6,7 +6,7 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 ## Version 5.1.2
 
-Datum: 24.04.2026
+Datum: 30.04.2026
 
 * `fix` Fehlender LOINC-Slice in .component für ISIKBlutdurck hinzugefügt. Keine inhaltiche Änderung, Änderung betrifft nur die Validierung von Instanzen.
 * `fix` Schwächung der Verpflichtung zur Umsetzung des Suchparameters '_tag' von `SHALL` zu `MAY` https://github.com/gematik/spec-ISiK-Basismodul/pull/1034
