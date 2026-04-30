@@ -12,7 +12,7 @@ Usage: #definition
   Verpflichtend ist in diesem Kontext nur die Rolle `FormularDefinitionsVerwalterRolle` und `CompositionKonsumentenRolle`, die weiteren Rollen sind optional, da sie ggf. auch von anderen Akteuren bereitgestellt werden können.
   """
 
-* imports[+] = Canonical(ISiKCpSFormDefinitionsVerwalterRolle)
+* imports[+] = Canonical(ISiKCapabilityStatementFormularDefinitionsVerwalterRolle)
   * insert ExpectationImports(#SHALL)
 
 * rest.mode = #server
