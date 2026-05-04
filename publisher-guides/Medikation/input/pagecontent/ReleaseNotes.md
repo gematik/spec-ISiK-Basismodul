@@ -6,7 +6,7 @@ Datum: tbd
 
 * `fix` Hinzufügen der Rulesets `CommonSearchParameters` und `OptionalTagSearchParameter` zu den Rollen CapabilityStatements https://github.com/gematik/spec-ISiK-Basismodul/pull/1161 - analog zu TC 5.1.2 siehe https://github.com/gematik/spec-ISiK-Basismodul/pull/1158
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition https://github.com/gematik/spec-ISiK-Basismodul/pull/1155
-* `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in der Medikation-Verordnung; stattdessen wird `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) https://github.com/gematik/spec-ISiK-Basismodul/pull/1191
+* `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in der Medikation-Verordnung; stattdessen wird `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) https://github.com/gematik/spec-ISiK-Basismodul/pull/1192
 
 ### Version 6.0.0-rc
 
