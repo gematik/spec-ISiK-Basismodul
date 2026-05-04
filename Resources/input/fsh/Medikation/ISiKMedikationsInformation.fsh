@@ -454,11 +454,7 @@ Usage: #example
 * reasonReference.reference = "Condition/DiagnoseDiabetesMellitus"
 * dosage
   * patientInstruction = "Dosierung nach BZ, gemäß Informationsblatt vom 20.02.2024"
-  * timing
-    * repeat
-      * timeOfDay = 07:00:00
-      * timeOfDay = 13:00:00
-      * timeOfDay = 19:00:00
+
 
 // Beispiel Parkinson-Medikation: Medikament 1
 Instance: ExampleISiKMedikationsInformationParkinson1
