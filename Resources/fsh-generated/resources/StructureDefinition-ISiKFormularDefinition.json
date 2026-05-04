@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKFormularDefinition",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKFormularDefinition",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKFormularDefinition",
   "status": "active",
   "experimental": false,
@@ -35,6 +35,20 @@
         "path": "Questionnaire.meta.lastUpdated",
         "short": "Zeitpunkt der letzten Änderung",
         "comment": "Alle von einem Server bereitgestellten Ressourcen SOLLEN über ein `lastUpdate` verfügen.\n  Von Clients erzeugte Ressourcen, die im Kontext einer CREATE-Interaktion übermittelt werden, MÜSSEN NICHT über ein `lastUpdate`verfügen. "
+      },
+      {
+        "id": "Questionnaire.modifierExtension",
+        "path": "Questionnaire.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "Questionnaire.modifierExtension:MDR-Relevant",

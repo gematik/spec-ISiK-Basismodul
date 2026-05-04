@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKontaktGesundheitseinrichtung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKontaktGesundheitseinrichtung",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKKontaktGesundheitseinrichtung",
   "status": "active",
   "experimental": false,
@@ -101,6 +101,16 @@
       {
         "id": "Encounter.extension",
         "path": "Encounter.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -621,6 +631,20 @@
         "short": "Details zum Aufenthalt",
         "comment": "Details zu einem stationären Aufenthalt",
         "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization.extension",
+        "path": "Encounter.hospitalization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "Encounter.hospitalization.extension:Wahlleistung",

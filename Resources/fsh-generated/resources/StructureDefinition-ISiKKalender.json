@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKKalender",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKKalender",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKKalender",
   "status": "active",
   "experimental": false,
@@ -39,6 +39,16 @@
       {
         "id": "Schedule.extension",
         "path": "Schedule.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {

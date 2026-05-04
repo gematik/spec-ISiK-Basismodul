@@ -8,7 +8,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKPersonImGesundheitsberuf",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKPersonImGesundheitsberuf",
   "status": "active",
   "experimental": false,
@@ -465,6 +465,20 @@
         "short": "Ist das Geschlecht des Arztes bekannt, MUSS es bereitgestellt werden. Eine korrekte Kodierung des Geschlechtseintrags 'divers' MUSS per GenderOtherDE-Extension unterstüzt werden.",
         "comment": "Geschlecht der Person",
         "mustSupport": true
+      },
+      {
+        "id": "Practitioner.gender.extension",
+        "path": "Practitioner.gender.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "Practitioner.gender.extension:Geschlecht-Administrativ",

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKAMTSBewertung",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKAMTSBewertung",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKAMTSBewertung",
   "title": "ISiK AMTS-Bewertung",
   "status": "active",
@@ -40,6 +40,16 @@
       {
         "id": "RiskAssessment.extension",
         "path": "RiskAssessment.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDiagnose",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDiagnose",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKDiagnose",
   "status": "active",
   "experimental": false,
@@ -52,6 +52,15 @@
       {
         "id": "Condition.extension",
         "path": "Condition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {

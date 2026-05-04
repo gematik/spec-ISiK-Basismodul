@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKMedikament",
   "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKMedikament",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "name": "ISiKMedikament",
   "status": "active",
   "experimental": false,
@@ -250,6 +250,16 @@
       {
         "id": "Medication.ingredient.extension",
         "path": "Medication.ingredient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "short": "Wirkstofftyp",
         "comment": "Begründung des Must-Support: Alignment mit den MII-Profilen\n\n    Hinweis: Hiermit kann geklärt werden, ob es sich um eine Angabe zum Wirkstoff oder zum exakten Inhaltsstoff (z.B. Salze) handelt.",
         "mustSupport": true
