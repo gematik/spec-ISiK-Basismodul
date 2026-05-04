@@ -39,6 +39,16 @@
       {
         "id": "MedicationRequest.extension",
         "path": "MedicationRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "mustSupport": true
       },
       {
@@ -118,34 +128,6 @@
       {
         "id": "MedicationRequest.extension:behandlungsziel.value[x]",
         "path": "MedicationRequest.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.extension:medicationRequestReplaces",
-        "path": "MedicationRequest.extension",
-        "sliceName": "medicationRequestReplaces",
-        "short": "Welche Medikationsverordnung wird ersetzt?",
-        "comment": "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.\n\n    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.\n    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/isik/StructureDefinition/ExtensionISiKMedicationRequestReplaces"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.extension:medicationRequestReplaces.value[x]",
-        "path": "MedicationRequest.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "MedicationRequest.extension:medicationRequestReplaces.value[x].reference",
-        "path": "MedicationRequest.extension.value[x].reference",
         "mustSupport": true
       },
       {
@@ -1009,8 +991,9 @@
       {
         "id": "MedicationRequest.priorPrescription",
         "path": "MedicationRequest.priorPrescription",
-        "short": "Vorherige Verordnung bei fortgesetzter Therapie",
-        "comment": "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.\n\n  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
+        "short": "Vorherige Verordnung mit Bezug zur aktuellen Verordnung",
+        "comment": "Begründung des Must-Support: Erforderlich zur Abbildung des fachlichen Zusammenhangs zwischen Verordnungen (z. B. Fortführung, Änderung oder Ersetzung) und zur Nachvollziehbarkeit der Medikationshistorie.",
+        "mustSupport": true
       }
     ]
   }
