@@ -8,8 +8,7 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
 * extension contains
     ExtensionISiKAcceptedRisk named acceptedRisk 0..1 MS and
     ExtensionISiKMedikationsart named medikationsart 0..1 MS and
-    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS and
-    ExtensionISiKMedicationRequestReplaces named medicationRequestReplaces 0..1 MS
+    ExtensionISiKBehandlungsziel named behandlungsziel 0..1 MS
 * extension[acceptedRisk]
   * ^short = "akzeptiertes (in Kauf genommenes) Risiko"
   * ^comment = "Begründung des Must-Support: Folgeinformation der AMTS-Bewertung, sollte auch an nachfolgende Behandelnde übermittelbar sein
@@ -31,14 +30,6 @@ Description: "Dieses Profil ermöglicht die Abbildung von Medikationsverordnunge
 
   Hinweis: Freitext-Beschreibung des Behandlungsziels."
   * valueString MS
-* extension[medicationRequestReplaces]
-  * ^short = "Welche Medikationsverordnung wird ersetzt?"
-  * ^comment = "Begründung des Must-Support: historische Nachvollziehbarkeit ersetzter Verordnungen.
-
-    Hinweis: Diese Extension dient der Abbildung einer Verordnung, die eine vorherige Medikation ersetzt - z.B. bei Unverträglichkeit, mangelnder Wirksamkeit oder Wechsel des Wirkstoffs.
-    Abgrenzung: Im Gegensatz zum Feld 'priorPrescription', das eine Folgeverordnung bei fortgesetzter Therapie beschreibt, kennzeichnet diese Extension eine bewusste Ablösung der ursprünglichen Verordnung."
-  * valueReference MS
-    * reference MS
 * status MS
   * ^short = "Status der Verordnungsinformation"
   * ^comment = "Begründung des Must-Support: Erforderliche Angabe im FHIR-Standard.
@@ -260,11 +251,9 @@ Begründung zu Must-Support: Konsolidierung mit MII Profil: https://www.medizini
   * ^short = "Ersatz zulässig"
   * ^comment = "Begründung des Must-Support: Alignment mit dem (E-)Rezept"
   * allowedBoolean MS
-* priorPrescription 
-  * ^short = "Vorherige Verordnung bei fortgesetzter Therapie"
-  * ^comment = "Hinweis: Dieses Feld dient der Referenz auf eine frühere Verordnung, auf deren Basis die aktuelle Verschreibung fortgeführt wird - z.B. bei Folgerezepten.
-
-  Abgrenzung: Im Gegensatz zur Extension 'medicationRequestReplaces', die das Ersetzen einer Verordnung (z.B. bei Unverträglichkeit) abbildet, beschreibt 'priorPrescription' eine Fortführung einer bestehenden Medikation."
+* priorPrescription MS
+  * ^short = "Vorherige Verordnung mit Bezug zur aktuellen Verordnung"
+  * ^comment = "Begründung des Must-Support: Erforderlich zur Abbildung des fachlichen Zusammenhangs zwischen Verordnungen (z. B. Fortführung, Änderung oder Ersetzung) und zur Nachvollziehbarkeit der Medikationshistorie."
 
 Instance: ExampleISiKMedikationsVerordnung
 InstanceOf: ISiKMedikationsVerordnung
@@ -294,7 +283,7 @@ Usage: #example
 Instance: ExampleISiKMedikationsVerordnung2
 InstanceOf: ISiKMedikationsVerordnung
 Usage: #example
-* extension[medicationRequestReplaces].valueReference.reference = "MedicationRequest/77777"
+* priorPrescription = Reference(ExampleISiKMedikationsVerordnung)
 * status = #active
 * intent = #order
 * medicationReference = Reference(ExampleISiKMedikament8)
