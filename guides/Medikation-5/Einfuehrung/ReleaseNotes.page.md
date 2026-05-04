@@ -4,6 +4,13 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+## Version 5.1.3
+
+Datum: TBD
+
+* `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in Medikation-Verordnung und Medikation-Statement; in der Medikation-Verordnung wird stattdessen `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) https://github.com/gematik/spec-ISiK-Basismodul/pull/1193
+
+
 ## Version 5.1.2
 
 Datum: 30.04.2026
@@ -13,7 +20,6 @@ Datum: 30.04.2026
 * `fix` Fehlendes MS zum ISiKATCCoding hinzugefügt, die Version war bisher schon 1..1, aber es fehlte die MS-Definition https://github.com/gematik/spec-ISiK-Basismodul/pull/1154
 * `fix` `doseQuantity` wurde mit feinerem Must-Support versehen. `doseQuantity` ist im Medication-IG bereits als MS definiert; die erneute MS-Setzung erfolgt hier zur Behebung eines Validierungsfehlers des FHIR Validators. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
 * `fix` Aktualisierung von Dependencies in `sushi-config.yaml`: `de.fhir.medication` auf `1.0.4` (Korrektur fehlerhafter Invarianten in `1.0.3`), Umstellung von `hl7.fhir.extensions.r5` auf `hl7.fhir.uv.xver-r5.r4` (Nutzung des offiziellen backport Extension package), `hl7.fhir.uv.sdc` von `4.0.0-ballot` auf `4.0.0`. https://github.com/gematik/spec-ISiK-Basismodul/pull/1185
-* `improve` Entfernen der `replaces`-Extension (`extension.medicationRequestReplaces`) in Medikation-Verordnung und Medikation-Statement; in der Medikation-Verordnung wird stattdessen `MedicationRequest.priorPrescription` verwendet. ([chat.fhir.org](https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Definition.20of.20MedicationRequest.2EpriorPrescription/with/542711071)) 
 
 
 ## Version 5.1.1
