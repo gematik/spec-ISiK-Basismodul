@@ -124,7 +124,7 @@ Der Suchparameter ``_include`` MUSS verpflichtend für Suchparameter implementie
 
     - Beispiele: ``GET [base]/Encounter?_include=Encounter:patient``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_include" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.md#capabilitystatements).
+    - Für alle Referenzen, für die ein Chaining unterstützt wird, MUSS auch der _include-Parameter implementiert werden. Alle unterstützten Include-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 
 Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert werden.
@@ -133,7 +133,7 @@ Für Suchparameter KÖNNEN die Festlegungen für `_revinclude` implementiert wer
 
     - Beispiele: ``GET [base]/Patient?_revinclude=Encounter:subject``
     - Anwendungshinweise: Weitere Informationen zur Suche nach "_revinclude" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Including other resources in result"](https://www.hl7.org/fhir/R4/search.html#revinclude).
-    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe {{pagelink:ISiK CapabilityStatements Basis}}.
+    - Alle unterstützten Revinclude-Referenzen MÜSSEN im CapabilityStatement unter ```CapabilityStatement.rest.resource.searchRevInclude``` angegeben werden. Siehe [ISiK CapabilityStatements Basis](artifacts.html#capabilitystatements).
 
 Im Kontext dieser Spezifikation (einschließlich weitere ISIK Module) werden - wo notwendig - weitere Festlegungen für [Chaining](https://hl7.org/fhir/R4/search.html#chaining) und [Reverse Chaining](https://hl7.org/fhir/R4/search.html#has) getroffen.
 
