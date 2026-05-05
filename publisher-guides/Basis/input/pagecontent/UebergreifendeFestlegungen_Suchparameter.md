@@ -158,21 +158,7 @@ Diese grundlegenden Best-Practice-Empfehlungen beziehen sich auf die korrekte Ve
 
 | Modifier | Suchparameter-Typ | Beschreibung | Festlegung |
 | --- | --- | --- | --- |
-| `:missing` | alle (außer Composite) | Gibt Ressourcen zurück, für die kein Wert für den Parameter vorliegt (`:missing=true`) bzw. für die ein Wert vorliegt (`:missing=false`) | keine ISiK-Festlegung |
-| `:exact` | String | Exaktes Matching inkl. Groß-/Kleinschreibung und Diakritika – kein partielles Matching | keine ISiK-Festlegung |
 | `:contains` | String | Partielles Matching – findet den Suchbegriff an beliebiger Stelle im String, unabhängig von Groß-/Kleinschreibung | MUSS für alle spezifizierten Suchparameter vom Typ 'String' |
-| `:text` | String | Erweiterte Volltextsuche auf String-Feldern | keine ISiK-Festlegung |
 | `:text` | Token | Suche auf dem `.text`- bzw. `.display`-Element eines Coding oder CodeableConcept (implizites partielles Matching) | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "Coding" oder "CodeableConcept" angewendet werden |
 | `:not` | Token | Schließt Ressourcen mit dem angegebenen Code aus; Ressourcen ohne Wert für das Element MÜSSEN im Ergebnis enthalten sein | MUSS für alle spezifizierten Suchparameter vom Typ 'Token', sofern diese auf die Datentypen "code", "Coding" oder "CodeableConcept" angewendet werden |
-| `:above` | Token | Prüft, ob ein Code im Codesystem die angegebenen Suchcodes subsumiert (Hierarchie aufwärts) | keine ISiK-Festlegung |
-| `:below` | Token | Prüft, ob ein Code durch den Suchcode subsumiert wird (Hierarchie abwärts) | keine ISiK-Festlegung |
-| `:in` | Token | Prüft, ob der Code in dem angegebenen Value Set enthalten ist | keine ISiK-Festlegung |
-| `:not-in` | Token | Prüft, ob der Code nicht in dem angegebenen Value Set enthalten ist | keine ISiK-Festlegung |
-| `:of-type` | Token | Filtert Identifier nach Typ und Wert (Format: `system\|code\|value`) | keine ISiK-Festlegung |
-| `:[type]` | Reference | Schränkt die Suche auf einen bestimmten Ressourcen-Typ ein (z.B. `subject:Patient=...`) | keine ISiK-Festlegung |
 | `:identifier` | Reference | Suche anhand des Identifiers der referenzierten Ressource statt per Ressourcen-ID (logische Referenz) | KANN für alle spezifizierten Suchparameter vom Typ 'Reference'; MUSS wenn die Reference eine 1..1-Kardinalität hat oder ein MS-Flag auf Reference.identifier gesetzt ist |
-| `:above` | Reference | Transitives Traversieren hierarchischer Referenzen aufwärts | keine ISiK-Festlegung |
-| `:below` | Reference | Transitives Traversieren hierarchischer Referenzen abwärts | keine ISiK-Festlegung |
-| `:above` | URI | Findet URIs, die dem angegebenen Wert entsprechen oder einer übergeordneten Hierarchie-Ebene angehören | keine ISiK-Festlegung |
-| `:below` | URI | Findet alle URIs, die mit dem angegebenen Wert beginnen (Präfix-Matching) | keine ISiK-Festlegung |
-| `:iterate` | `_include`, `_revinclude` | Ermöglicht iteratives/rekursives Einbinden verknüpfter Ressourcen | keine ISiK-Festlegung |
