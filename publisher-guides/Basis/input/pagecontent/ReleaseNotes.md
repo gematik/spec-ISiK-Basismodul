@@ -15,7 +15,9 @@ Datum: tbd
 * `fix` Ableitung des Profils `ISiKOrganisationFachabteilung` vom Profil `ISiKOrganisation` wurde integriert https://github.com/gematik/spec-ISiK-Basismodul/pull/1166
 * `fix` Anpassung des Pattern/ ValueSet-Bindings auf Observation.code in den Profilen `ISiKSchwangerschaftErwarteterEntbindungstermin` und `ISiKSchwangerschaftsstatus` https://github.com/gematik/spec-ISiK-Basismodul/pull/1149
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1163
-* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180   
+* `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180
+* `improve` QA-Verbesserungen: IG-Publisher-Parameter hinzugefügt, ignoreWarnings.txt eingeführt, Umstellung auf deutsche Display-Validierung https://github.com/gematik/spec-ISiK-Basismodul/pull/1190
+* `fix` Fehlerhafte Links in der Dokumentation korrigiert https://github.com/gematik/spec-ISiK-Basismodul/pull/1190   
  
 ### Version 6.0.0-rc
 
