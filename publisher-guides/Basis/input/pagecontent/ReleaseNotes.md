@@ -17,7 +17,7 @@ Datum: tbd
 * `fix` Bei Test-Terminologien wurde das experimental Flag ergänzt https://github.com/gematik/spec-ISiK-Basismodul/pull/1163
 * `fix` Suchparameter `clinicalStatus` für das Profil `ISiKDiagnose` wurde von `SHALL` zu `MAY` geändert https://github.com/gematik/spec-ISiK-Basismodul/pull/1180
 * `documentation` Ergänzung einer Tabelle für [Search-Modifier](https://gemspec.gematik.de/ig/fhir/isik/basis/6.0.0-rc/UebergreifendeFestlegungen_Suchparameter.html) https://github.com/gematik/spec-ISiK-Basismodul/pull/1196
-* `documentation` Entfernung von redundantem Text in Performance Anforderungen
+* `documentation` Entfernung von redundantem Text in Performance Anforderungen https://github.com/gematik/spec-ISiK-Basismodul/pull/1198
  
 ### Version 6.0.0-rc
 
