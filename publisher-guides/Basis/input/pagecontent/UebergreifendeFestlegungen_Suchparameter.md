@@ -6,7 +6,7 @@ Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in be
 - Stationslisten 
     - Beispielabruf: `GET baseURL/Location?characteristic=wa`
 - Patienten je Station
-    - Beispielabruf: `GET baseURL/Patient?location=Location/123`
+    - Beispielabruf: `GET baseURL/Patient?_has:Encounter:subject:location=Location/123`
 - Alle zur Verfügung stehenden Medikamente
     - Beispielabruf: `GET baseURL/Medication`
 - Alle verschriebenen bzw. verabreichten Medikamente (u. a. relevantbei auffälligen Medikationschargen)
