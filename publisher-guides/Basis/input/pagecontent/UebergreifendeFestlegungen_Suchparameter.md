@@ -5,7 +5,7 @@ Auf Basis dieser grundsätzlichen Design-Entscheidung können Clients davon ausg
 Neben Patienten- und Encounter- zentrierten abfragen, SOLLEN bzw. (MÜSSEN in bestimmten Kontexten) bereitstellende Systeme auch generische Abfragen wie folgende unterstützen:
 - Stationslisten 
     - Beispielabruf: `GET baseURL/Location?characteristic=wa`
-- Patienten je Station
+- Patienten auf einer bestimmten Station mit einem aktiven Kontakt auf dieser Station
     - Beispielabruf: `GET baseURL/Patient?_has:Encounter:subject:location=Location/123`
 - Alle zur Verfügung stehenden Medikamente
     - Beispielabruf: `GET baseURL/Medication`
